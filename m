@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FEE81F17F3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 13:39:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A5D71F17FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 13:41:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fpTgQxuCp91Vw4fwNFNhVjf26yffZO4b5Yz9ksxV1YQ=; b=bIMrredb4oNHTX
-	7+mu4E5ezlApYHreGH4eMZjHNVduogfuW1krpDdBkUD2F/amsdlnkEsr0zMDVeutFpv/ke+/FO54b
-	2CDn7YszgEOVshKgof1D5W6cHkgpk7PLgd8okKO3OUwjRpSwo+uGqkavKt9ac4TE2fanX4ZwAyGYt
-	4Ds/o8DMVMSCAFVqH1iApBhl35oxnalPeMd9LNV6xi2G90oLReKlDipOFvM8INokxqHF8Fda/2tGm
-	oqjeZVSsEtSaopIH6Pyqkv+dCu+00rbQ8hb4l2wnr1zd7i1xHp4KfEiNwIhqUOKIh4f2D+TaojK4B
-	OYcMcXkd4dJxh1JUgNLw==;
+	List-Owner; bh=vGAfUHWbE8J165VZZqdsp33hma/AqdUNFfGmumddrIc=; b=e2naNYhReNcE0u
+	bYHAD6CFkiK84ojvDnL1nO0TVEI+gzXLlUYC7dz69I2PlrNAvU+MrBAoxPhRgHi/eEaCVROhhUNHk
+	L6uMjWnBYmQpqUmBlcbVRXoJAuLuhT67JR1V1ERx0m2bO8ja17BPj3zhCBNdMiW5r4Ke2xk3NRaO8
+	dsv649Xs+/NyALwEg4ky6Q/8acDn32ZYORBMZOUXB1/9h+C3Gc5i9e2KhtDBbV9qx3e0u1n11T0aH
+	GkQxk6A9tqyfOjNTMsfzJs9Ig/fTuoo4w4oRR4pdxKlEvpMhKZF7ZkyZxBtL0qs3g7zZu9oycIZZc
+	fdv8Yn+cP670KtTgexew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiG7O-0002VY-IH; Mon, 08 Jun 2020 11:39:06 +0000
+	id 1jiG9v-0005bT-9r; Mon, 08 Jun 2020 11:41:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiG7G-0002Tj-Gz
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 11:39:00 +0000
+ id 1jiG9g-0005aR-7U; Mon, 08 Jun 2020 11:41:29 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DCCFF2074B;
- Mon,  8 Jun 2020 11:38:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2BC7F2074B;
+ Mon,  8 Jun 2020 11:41:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591616338;
- bh=Zl/yqsOe6XvPuDsdXn5eL/LxofYRwuiRdfSA1r83qmE=;
+ s=default; t=1591616487;
+ bh=DmTP+R00hgjrOLOeBDRKCkR3lbdywEqFNzNYJiJ/9g8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=eja//h3ITTR540LH3moJdaVVujXmeh4Q0guFKDFy/IV3zPH44iN2VTcSvufIwlglH
- RWrj2MGV07SXcgnxO95beb1v/pFzWIVdQ4vkcw6Mh/Vu3In/2iWdhqSnk6kXL4qzIX
- WK8pjllHjuh7g1MW6lSUGPMukmJNBI2bVPQfhWLs=
-Date: Mon, 8 Jun 2020 12:38:53 +0100
+ b=JbL6Wfi3XAZf4JBHA7zCHYqu52uXAkRpBGfM2e+jrUTCruNQin1wN5Tlo47AbVGlM
+ AjZyUbNTxOoeU/BBquz9f6/iQjUJHQdwQpmssTv0qgMnj8K612NWB8DJLksTlD3k5i
+ V38ykbx4EQ/PhxsPL7s7vI98Gje1t/MAV6wWiH6U=
+Date: Mon, 8 Jun 2020 12:41:23 +0100
 From: Will Deacon <will@kernel.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [RFC PATCH] iommu/arm-smmu: Remove shutdown callback
-Message-ID: <20200608113852.GA3108@willie-the-truck>
-References: <20200607110918.1733-1-saiprakash.ranjan@codeaurora.org>
- <20200608081846.GA1542@willie-the-truck>
- <08c293eefc20bc2c67f2d2639b93f0a5@codeaurora.org>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200608114122.GB3108@willie-the-truck>
+References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
+ <20200518155545.GO32394@willie-the-truck>
+ <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+ <20200521092311.GB5091@willie-the-truck>
+ <CAJ2QiJK4h=5abVdODWTYg8Loy0Hhnhm1HrBzAM3bZXKtGXYK+Q@mail.gmail.com>
+ <20200601073957.GD8601@willie-the-truck>
+ <CAJ2QiJ+-VV9bXbdfqHxeZgUiGBg_iMqBQcSH5cD_sfb-UQpQ6w@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <08c293eefc20bc2c67f2d2639b93f0a5@codeaurora.org>
+In-Reply-To: <CAJ2QiJ+-VV9bXbdfqHxeZgUiGBg_iMqBQcSH5cD_sfb-UQpQ6w@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_043858_652901_B13B5C85 
-X-CRM114-Status: GOOD (  31.03  )
+X-CRM114-CacheID: sfid-20200608_044128_310655_E96A5D1C 
+X-CRM114-Status: GOOD (  28.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,87 +81,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 08, 2020 at 02:43:03PM +0530, Sai Prakash Ranjan wrote:
-> On 2020-06-08 13:48, Will Deacon wrote:
-> > On Sun, Jun 07, 2020 at 04:39:18PM +0530, Sai Prakash Ranjan wrote:
-> > > Remove SMMU shutdown callback since it seems to cause more
-> > > problems than benefits. With this callback, we need to make
-> > > sure that all clients/consumers of SMMU do not perform any
-> > > DMA activity once the SMMU is shutdown and translation is
-> > > disabled. In other words we need to add shutdown callbacks
-> > > for all those clients to make sure they do not perform any
-> > > DMA or else we see all kinds of weird crashes during reboot
-> > > or shutdown. This is clearly not scalable as the number of
-> > > clients of SMMU would vary across SoCs and we would need to
-> > > add shutdown callbacks to almost all drivers eventually.
-> > > This callback was added for kexec usecase where it was known
-> > > to cause memory corruptions when SMMU was not shutdown but
-> > > that does not directly relate to SMMU because the memory
-> > > corruption could be because of the client of SMMU which is
-> > > not shutdown properly before booting into new kernel. So in
-> > > that case, we need to identify the client of SMMU causing
-> > > the memory corruption and add appropriate shutdown callback
-> > > to the client rather than to the SMMU.
-> > > 
-> > > Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> > > ---
-> > >  drivers/iommu/arm-smmu-v3.c | 6 ------
-> > >  drivers/iommu/arm-smmu.c    | 6 ------
-> > >  2 files changed, 12 deletions(-)
-> > 
-> > This feels like a giant bodge to me and I think that any driver which
-> > continues to perform DMA after its ->shutdown() function has been
-> > invoked
-> > is buggy. Wouldn't that cause problems with kexec(), for example?
-> > 
+On Tue, Jun 02, 2020 at 07:34:47PM +0530, Prabhakar Kushwaha wrote:
+> On Mon, Jun 1, 2020 at 1:10 PM Will Deacon <will@kernel.org> wrote:
+> > On Thu, May 21, 2020 at 04:52:02PM +0530, Prabhakar Kushwaha wrote:
+> > > On Thu, May 21, 2020 at 2:53 PM Will Deacon <will@kernel.org> wrote:
+> > > > On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
+> > > > > What kind of issue you are foreseeing in using memcpy(). May be we can
+> > > > > try to find a solution.
+> > > >
+> > > > Well the thing might not be cache-coherent to start with...
+> > > >
+> > >
+> > > Thanks for telling possible issue area.  Let me try to explain why
+> > > this should not be an issue.
+> > >
+> > > kdump kernel runs from reserved memory space defined during the boot
+> > > of first kernel. kdump does not touch memory of the previous kernel.
+> > > So no page has been created in kdump kernel  and  there should not be
+> > > any data/attribute/coherency issue from MMU point of view .
+> >
+> > Then how does this work?:
+> >
+> >         rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> >
+> > You're explicitly asking for a write-back mapping.
+> >
 > 
-> Yes it is definitely a bug in the client driver if DMA is performed
-> after shutdown callback of that respective driver is invoked and it must
-> be fixed in that driver. But here the problem I was describing is not that,
-> most of the drivers do not have a shutdown callback to begin with and adding
-> it just because of shutdown dependency on SMMU doesn't seem so well because
-> we can have many more such clients in the future and then we have to just go
-> on adding the shutdown callbacks everywhere.
-
-I'm not sure why you're trying to treat these cases differently. It's also
-not "just because of SMMU", is it? Like I said, kexec() would be broken
-regardless.
-
-The bottom line is that after running ->shutdown() (or skipping it if it's
-not implemented) for a driver, then the device must no longer perform DMA.
-
-> > There's a clear shutdown dependency ordering, where the clients of the
-> > SMMU need to shutdown before the SMMU itself, but that's not really
-> > the SMMU driver's problem to solve.
-> > 
+> As i mentioned earlier, I will replace it with MEMREMAP_WT to make
+> sure data is written into the memory.
 > 
-> The problem with kexec may not be directly related to SMMU as you said
-> above if DMA is performed after the client shutdown callback, then its a
-> bug in the client driver, so that needs to be fixed in the client driver,
-> not the SMMU. So is there any point in having the SMMU shutdown callback?
+> Please note, this memmap is temporary for copying older SMMU table to
+> cfg->strtab.
+> Here, cfg->strtab & cfg->strtab_dma allocated via dmam_alloc_coherent
+> during SMMU probe.
+> 
+> 
+> > > During SMMU probe functions,  dmem_alloc_coherent() will be used
+> > > allocate new memory (part of existing flow).
+> > > This patch copy STE or first level descriptor to *this* memory, after
+> > > mapping physical address using memremap().
+> > > It just copy everything  so there should not be any issue related to
+> > > attribute/content.
+> > >
+> > > Yes, copying  done after mapping it as MEMREMAP_WB. if you want I can
+> > > use it as MEMREMAP_WT
+> >
+> > You need to take into account whether or not the device is coherent, and the
+> > DMA API is designed to handle that for you. But even then, this is fragile
+> > as hell because you end up having to infer the hardware configuration
+> > from the device to understand the size and format of the data structures.
+> > If the crashkernel isn't identical to the host kernel (in terms of kconfig,
+> > driver version, firmware tables, cmdline etc) then this is very likely to
+> > go wrong.
+> 
+> There are two possible scenarios for mismatched kdump kernel
+> 1.  kdump kernel does not have the devices' driver
+> 2.  kdump kernel have the different variation/configuration of driver
+> 
+> This patch create temporary SMMU table entries which are overwritten
+> by driver-probe.
 
-Given that the SMMU mediates DMA transactions for all upstream masters
-based on in-memory data (e.g. page tables), then I think it's a /very/
-good idea to tear that down as part of the shutdown callback before
-the memory is effectively free()d.
+What exactly does this achieve, given that you don't copy the context
+descriptors or the page tables?
 
-One thing I would be in favour of is changing the ->shutdown() code to
-honour disable_bypass=1 so that we put the SMMU in an aborting state
-instead of passthrough. Would that help at all? It would at least
-avoid the memory corruption on missing shutdown callback.
+> Driver's probe will overwrite SMMU entries based on its new
+> requirement (size, format, data structures etc).
+> 
+> for "1",  As  no device driver,  SMMU entry will remain there.
+> Means no-one looking for the copied content (even if device continued
+> to perform DMA).
+> 
+> About coherency between Cores and Memory(DMA).
+> At the time of crash:  Only one CPU is allowed to remain continue,
+> rest are stopped.
+> __crash_kexec --> machine_crash_shutdown --> crash_smp_send_stop()
+> 
+> The active CPU is used to boot kdump kernel. hence none of the CPUs is
+> looking for data copied by DMA.
+> Coherency issue should not be there.
 
-> As you see, with this SMMU shutdown callback, we need to add shutdown
-> callbacks in all the client drivers.
+I'm talking about coherency between the SMMU and the CPU, so I don't think
+the number of CPUs is relevant.
 
-I don't see the problem with that. Why is it a problem?
+> please let me know your view.
+
+It still seems extremely fragile to me, so I continue to think that this
+is the wrong approach.
 
 Will
 
