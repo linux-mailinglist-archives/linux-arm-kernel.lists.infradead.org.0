@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0527B1F2061
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:58:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 956C81F208A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 22:13:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0uow6ymlH1QcYFCcBPjWJVYzQY0B5xFj61CKHyAD0FY=; b=Qm2eaAppDe7aTl
-	uaZLBJUo93m97ggUwPmlImA1rLozGKKV1UgnbhG2A764+9va4BFaFmCrOwZSuu5S1+WoOWVlZ9/MS
-	kFcLuIOVQwtV61YJEFmDN2PehV6DdPAo04Bnwkh6RYhJ62BeY/+NI9ygszPfn3eNbOKz8GiyulZza
-	XpOpVe2WxbYqcB/b3Eaw2IeUrMfbUzk6rM6hBDXvTFwxpUgrm21avXOBaHSwsqGC++f1FLVAfrr1k
-	PjBmSED11cFYRv0ocRpntsD6fcgaq3P1/Knb8KgBtSIu9/jLk6vPM5kv4mcPm0T66LRBmuTdD/D6V
-	c/IuKxrxF28ij6/OUD4Q==;
+	List-Owner; bh=FLInFwvmu+Ca2WLCCv97YYvJBek5QLxkSt/3cmRB23Q=; b=NXdZZRGf9DDxmq
+	gvZVrn9WOffpP9IOoau0DGD2Q3pBMUet+iItqIvYrtfyXjqb5dNGMsA8T7a7M3A+wADSTEpJNf1SH
+	4TxCwtumN0N8MKKFI5vFLP2MQo4fEuhiiFyBZN0w6aPaNUgRlOBtOsNIrVtaOKW/qJ4Bjb41J+9TT
+	z17V1DNrmqZbhpEUqAaUJFJRb865h+rtUcEj+sc+qOgm6g6Xa6OKhFSoeNjXcRZeGB5UiOFE4RVkk
+	nuYBn2EOvu4daevmzFyQEfDID/SN0kJbc2vD4eZ2gr9B3szi1CUkQH//9xrzB3E6DHz2CvYH0kQbi
+	O9VNbx4NjcZu9CFmQlTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiNua-0006I6-In; Mon, 08 Jun 2020 19:58:24 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jiO9X-0006RX-Lj; Mon, 08 Jun 2020 20:13:51 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiNuT-0006Hi-NE; Mon, 08 Jun 2020 19:58:19 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r9so722358wmh.2;
- Mon, 08 Jun 2020 12:58:17 -0700 (PDT)
+ id 1jiO9Q-0006R5-Oq; Mon, 08 Jun 2020 20:13:46 +0000
+Received: by mail-wr1-x444.google.com with SMTP id l11so18867325wru.0;
+ Mon, 08 Jun 2020 13:13:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=hdQaIlY7CCtvVuS9ppbF0BzHnZFr+mv1ZVx/h1Baqkk=;
- b=i9lBX/+XoJVZ4smkO6RXjNuKvBeBSn7Jezy6IKlbX1vzVqHheo10kSfSIHx8hKrfNy
- al3momOoRbDC/qO/NExvm5ij8QaHZP+qxrY85+7iDCCflNQkQZg+GxGlU0OG/WBD6n9N
- hMHlAd3B4WPZe3FxPBwOX92MBq5DQVlV0YZ/wUQEhiPh6ghBqmUBROnYhApUugkxP8X7
- Nbgl6pWLBWOTMeVJs84+sXpXhkfmS7nbuXTKQSy0/27MxFqc39p3j8IXWS2PPuwwbNvu
- C5MHFDJuEuh83QQmyJvuGP0MmyJ0pfpoVzwlcCaG3coppPYlXTCyCvHHVK+Ll7zPJ++f
- kuWw==
+ bh=jVlgVc/GdIbK4y0NjDmH2j1F9bPmxyBu0CijBkevcuM=;
+ b=GxIa0nqH3YUvqdMVrSneYuxpK1li2NwjOC2tWa3ClFigHXItIT4pCIhWKCGPN2Bymx
+ Zg62Ie4jnV1UlyOpeipP+9nzTvFNmVqLlAhssoN2o9wqGjw/otPOjhmxKV0GLj2Hc0Im
+ vov50u7EGIh1TN9NEv5+NxVlULBtyE2M7GkVaBpV6vmDBNDTxAs1DFMZLQMi9R1UCNE5
+ uYGxTe4vRw2mmCAenIBFOdWLTY3KL05EHCLHzKw0Oob/Sz4GJstY9gIa388V83hDUUu9
+ sWlnW+1ZhVctL3goGD9+QZ8Dz3TavvBgXdQwKjqt9Gr/4K5D9C02vU0nY7XxmM+WVsSi
+ k40A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=hdQaIlY7CCtvVuS9ppbF0BzHnZFr+mv1ZVx/h1Baqkk=;
- b=a0arNCdoYCPRYvGp+YK+zkNhKnkcXklFrXQmvNfpMxgpwmsEojL+Ku2lfGZo0Wuj1V
- qX1/XaDeyrN5iZMeXemNtczhBx6qTDtsQupAf9xL2CPbQxwtpsUWgBalAjOj3dXZivtM
- EpapqbV98x+FPssDDXAYAo/7aeZ5Plx9ACAh/09KpyaR+nCZk4OwHuTw6SLYoO8iKs6c
- WqzgCXEfkqokvrr1fU8o7ep0P8tWlhjUMJzEUUtqopPffd9bzL/LRffRz8/ID2fdpzOD
- sIB5RXV688+qaF6CPm+wdz4u4Ti5wzrBC86ZQ8M2/5OqC3IPW0NyrDChZImn4yIEs4bM
- TfZQ==
-X-Gm-Message-State: AOAM533qba+dxzaRGaSzTSC/cd9ceQDaNik+4IwZgZgIoS8SECaiqSq+
- jrkyDCIQ3lU+VaUq6Xml+Ng=
-X-Google-Smtp-Source: ABdhPJypEeqfejRUltyYbz5n5bW5+Ans7YR1WBmQV7ByI2tOOKYM8eGJckH5rGeMzXQrm13AkAWBIw==
-X-Received: by 2002:a7b:cbd9:: with SMTP id n25mr349108wmi.30.1591646295437;
- Mon, 08 Jun 2020 12:58:15 -0700 (PDT)
+ bh=jVlgVc/GdIbK4y0NjDmH2j1F9bPmxyBu0CijBkevcuM=;
+ b=piDyE7HlzYJEOEcg8oqMspnt+6RuNnpkihrQI3OFJ9/BN/zthNO73y4DFAOQXR6Adn
+ B7dxcn1vEXCoeF1+8nkh0QQAA2U0sS4mTAe1esaFeKKJFWbvZa7k5Ts9IIndiAV9UfrI
+ wg2zp2Ud5Ft1WI5AqknBOiYtyY0FIyy0EtGofmrKPKbEx/SJwMKNlFmP8/K+/Bsxo+ZX
+ t6Jr8MIyXTrgaa2shWtGyHZSYgMvKEiBQqphYSenst2AtR54t5nIK9kVh+DnW1E6GVRK
+ uLvaGK456ezV01nBgGBCiE6hlE0FVFK9NTrajjYKL02chs2ufF6Ku8EZ4rYXEAKzKyCe
+ 0QhQ==
+X-Gm-Message-State: AOAM533mVBk3AmifPGvxGyRdyxgvZmBi2ROfvKUCWqp9icC1zs7jGpzD
+ GSTvu1LQCZI0norNieW+m6s=
+X-Google-Smtp-Source: ABdhPJz8p+SkU30y3q1K8nACUgnVpvdsIVwmKe+81wFUlwKOO2+ifmHhPj6JqE0sNud54W5ZsPxS3Q==
+X-Received: by 2002:a5d:4c45:: with SMTP id n5mr474621wrt.341.1591647221781;
+ Mon, 08 Jun 2020 13:13:41 -0700 (PDT)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- e10sm782956wrn.11.2020.06.08.12.58.11
+ r4sm813582wro.32.2020.06.08.13.13.37
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 08 Jun 2020 12:58:14 -0700 (PDT)
-Subject: Re: [PATCH 1/9] dt-bindings: reset: Add a binding for the RPi
- Firmware USB reset
+ Mon, 08 Jun 2020 13:13:40 -0700 (PDT)
+Subject: Re: [PATCH 2/9] reset: Add Raspberry Pi 4 firmware USB reset
+ controller
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, f.fainelli@gmail.com,
  gregkh@linuxfoundation.org, wahrenst@gmx.net, robh@kernel.org,
  mathias.nyman@linux.intel.com, Eric Anholt <eric@anholt.net>,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
+ Philipp Zabel <p.zabel@pengutronix.de>
 References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
- <20200608192701.18355-2-nsaenzjulienne@suse.de>
+ <20200608192701.18355-3-nsaenzjulienne@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <ffc9ec9e-bd1c-a8dd-8a68-a15bf95c919b@gmail.com>
-Date: Mon, 8 Jun 2020 12:58:09 -0700
+Message-ID: <7e88dd76-5b75-c326-6f89-42a69bfe1ede@gmail.com>
+Date: Mon, 8 Jun 2020 13:13:36 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200608192701.18355-2-nsaenzjulienne@suse.de>
+In-Reply-To: <20200608192701.18355-3-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_125817_805482_FA5B07A4 
-X-CRM114-Status: GOOD (  18.66  )
+X-CRM114-CacheID: sfid-20200608_131344_806916_70A3C8D5 
+X-CRM114-Status: GOOD (  13.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -109,7 +109,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: lorenzo.pieralisi@arm.com, tim.gover@raspberrypi.org, helgaas@kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -118,65 +118,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 6/8/2020 12:26 PM, Nicolas Saenz Julienne wrote:
-> The firmware running on the RPi VideoCore can be used to reset and
-> initialize the board's xHCI controller. The reset controller is passed
-> to the PCI device through the DT, hence this binding.
+> The Raspberry Pi 4 gets its USB functionality from VL805, a PCIe chip
+> that implements the xHCI. After a PCI fundamental reset, VL805's
+> firmware may either be loaded directly from an EEPROM or, if not
+> present, by the SoC's co-processor, VideoCore. RPi4's VideoCore OS
+> contains both the non public firmware load logic and the VL805 firmware
+> blob.
+> 
+> We control this trough a reset controller device that's able to trigger
+> the aforementioned process when relevant.
 > 
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > ---
->  .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 21 +++++++++++++++++++
->  1 file changed, 21 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-> index b48ed875eb8e..8f9d0986c28f 100644
-> --- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-> +++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-> @@ -39,6 +39,22 @@ properties:
->        - compatible
->        - "#clock-cells"
->  
-> +  usb-reset:
-> +    type: object
+
+[snip]
+
+> +static int rpi_usb_reset_reset(struct reset_controller_dev *rcdev,
+> +				unsigned long id)
+> +{
+> +	struct rpi_usb_reset *priv = to_rpi_usb(rcdev);
+> +	u32 dev_addr;
+> +	int ret;
 > +
-> +    properties:
-> +      compatible:
-> +        const: raspberrypi,firmware-usb-reset
+> +	/*
+> +	 * The pci device address is expected like this:
+> +	 *
+> +	 * PCI_BUS << 20 | PCI_SLOT << 15 | PCI_FUNC << 12
+> +	 *
+> +	 * But since rpi's PCIe setup is hardwired, we know the address in
+> +	 * advance.
+> +	 */
+> +	dev_addr = 0x100000;
 
-I would make this less USB centric, even if this is the only consumer of
-the reset controller for now, there could, in premise be other blocks
-that require a reset (e.g.: V3D) that would involve going to the VPU
-firmware because of various requirements (security, register blocking etc.).
+You could encode the device address as part of the reset identifier,
+such that if we ever have more devices to reset, then we only need to
+define new identifiers for them, and internally within your reset
+controller provide you can resolve that reset identifier 0 is PCI_BUS <<
+20 | PCI_SLOT << 15 | PCI_FUN << 12 for instance.
 
-> +
-> +      "#clock-cells":
-
-Did not you mean #reset-cells here?
-
-
-> +        const: 0
-> +        description: >
-> +          There is only one reset line available, so no need for cell decoding.
-> +
-> +    required:
-> +      - compatible
-> +      - "#reset-cells"
-> +
->      additionalProperties: false
->  
->  required:
-> @@ -55,5 +71,10 @@ examples:
->              compatible = "raspberrypi,firmware-clocks";
->              #clock-cells = <1>;
->          };
-> +
-> +        usb_reset: usb-reset {
-> +            compatible = "raspberrypi,firmware-usb-reset";
-> +            #reset-cells = <0>;
-> +        };
->      };
->  ...
-> 
-
+This would make your reset controller define a "#reset-cells" property
+to 1 now, such that no further DT ABI breakage would occur if you were
+to extend it later on.
 -- 
 Florian
 
