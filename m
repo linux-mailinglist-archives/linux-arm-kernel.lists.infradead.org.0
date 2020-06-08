@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A39CB1F2739
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:46:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6FF21F275D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:47:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qDuC/t3j/ASlAkLz8UcMAlAwdhrlmM8P8Fwew7ZL99c=; b=kGLepU+knPol3P
-	O5JHUTNwa9D3aYtot9jsjKe4FrcQGZ5G/jALtV6Wkpo0syprUio3zUYtvoQjTQKyYAutwkXOvXxbh
-	cc1RLpQj1wVMkiHpO/jWVo47cX+c8dfYa+qZcpaVI8j334EnEKLbf94nrbFWcISRbWxbWr2YuFKaX
-	JMV1fSqm5vXQWQS0elcZHL/LrcFR4dF8SxhpOFFM3nm7qboD3AkRhFsb7ID8pGZZSYnwnZg8AvjU8
-	j+1LpahtGlOVnLBMRtxXZJRB8Q+HR5K8doXIsNrqlXw5qzxUZyNNDLXkS5GQWorBXVKTlaZu6ykB8
-	Ja0ePIcA2v3yuXbuQsjQ==;
+	List-Owner; bh=17pqv+QhTnh1870L6rFa15P04wroUw7KSc4m38vsWv4=; b=doNLWaH+4x2cWA
+	RaB/Z+SDG5QRoOGjCwg+ZHakvZyvui7Lzl3kF4egUQCnSB3sPcDCRQgLOVOsKYUP8OyuQTgQ6TyCD
+	poeadouTPIBvgUJHG5pgJWHmPx1k5+nLg9Oo6jDTkSCjfxjW0t1I3TK7ux2MOfdf6CrH4aqyKSNW+
+	/9iwC893FHE1Hb97WwDA1vyjWi+QlpFIc8GljClUe4oEoJDLPpNiIq5k3YS1XoYRp53H9cPGOqo6H
+	Q++89LmyZIZ0ianEIxfELl6j8E/4VHoz9sBOUAMvFyfgOsZdfyusR4i951C1FcTXSDVhfzqJqPsOg
+	Q2yxAw3MwIlEAxw46CCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRTj-00023F-Jb; Mon, 08 Jun 2020 23:46:55 +0000
+	id 1jiRTy-0002Jh-T3; Mon, 08 Jun 2020 23:47:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR5P-0001SZ-Nd
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:22:05 +0000
+ id 1jiR5t-0001oP-W7
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:22:20 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 49F562087E;
- Mon,  8 Jun 2020 23:21:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 76A182089D;
+ Mon,  8 Jun 2020 23:22:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658507;
- bh=HYSVE/1juFSqORM3IGHffuIE4Q+k2VgOnbKSYKG6VWg=;
+ s=default; t=1591658537;
+ bh=Gxj7NJy++zrxJItnna10bJ8S6b4CO3tywMDXwu5ZHfs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FbHiTPLte85PtnlZY8KHXelSbugjvGYovtytiYiS2OvldOQJmPcX9elJJ6IF6Br27
- VJ6Y0zIWuk3JBeEiMj0ZD6h5GFLbVbFcyvTGu/FMDsktToDD49vMcV/t+NTnR4FLli
- ie94AQNVppEaIjMSwBG6Xz8gsIrgwJGEcZlNqPCY=
+ b=lYrKzwKib8emyJxy0bBDLWeYJ+Jhbrkm7LGW80GvY4RnPH7B7SXFa8sS3pybU4gji
+ D8t/Ajvk7qrhMFOAZMXhVDtI7dc9KlnIjnAjGyb10GdJ4DPspLfvIiql783CoMwd3v
+ nSRUn4eomrAna3/8NzrvrxRTRoCQ1MTt3fVWZTds=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 137/175] crypto: stm32/crc32 - fix multi-instance
-Date: Mon,  8 Jun 2020 19:18:10 -0400
-Message-Id: <20200608231848.3366970-137-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 160/175] mmc: sdhci-esdhc-imx: fix the mask for
+ tuning start point
+Date: Mon,  8 Jun 2020 19:18:33 -0400
+Message-Id: <20200608231848.3366970-160-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231848.3366970-1-sashal@kernel.org>
 References: <20200608231848.3366970-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162147_824184_E3D59CAC 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20200608_162218_162552_72368B69 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,129 +80,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Nicolas Toromanoff <nicolas.toromanoff@st.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-crypto@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Haibo Chen <haibo.chen@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Toromanoff <nicolas.toromanoff@st.com>
+From: Haibo Chen <haibo.chen@nxp.com>
 
-[ Upstream commit 10b89c43a64eb0d236903b79a3bc9d8f6cbfd9c7 ]
+[ Upstream commit 1194be8c949b8190b2882ad8335a5d98aa50c735 ]
 
-Ensure CRC algorithm is registered only once in crypto framework when
-there are several instances of CRC devices.
+According the RM, the bit[6~0] of register ESDHC_TUNING_CTRL is
+TUNING_START_TAP, bit[7] of this register is to disable the command
+CRC check for standard tuning. So fix it here.
 
-Update the CRC device list management to avoid that only the first CRC
-instance is used.
-
-Fixes: b51dbe90912a ("crypto: stm32 - Support for STM32 CRC32 crypto module")
-
-Signed-off-by: Nicolas Toromanoff <nicolas.toromanoff@st.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Fixes: d87fc9663688 ("mmc: sdhci-esdhc-imx: support setting tuning start point")
+Signed-off-by: Haibo Chen <haibo.chen@nxp.com>
+Link: https://lore.kernel.org/r/1590488522-9292-1-git-send-email-haibo.chen@nxp.com
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/crypto/stm32/stm32-crc32.c | 48 ++++++++++++++++++++++--------
- 1 file changed, 36 insertions(+), 12 deletions(-)
+ drivers/mmc/host/sdhci-esdhc-imx.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/crypto/stm32/stm32-crc32.c b/drivers/crypto/stm32/stm32-crc32.c
-index 93969d23a4a8..e68b856d03b6 100644
---- a/drivers/crypto/stm32/stm32-crc32.c
-+++ b/drivers/crypto/stm32/stm32-crc32.c
-@@ -93,16 +93,29 @@ static int stm32_crc_setkey(struct crypto_shash *tfm, const u8 *key,
- 	return 0;
- }
+diff --git a/drivers/mmc/host/sdhci-esdhc-imx.c b/drivers/mmc/host/sdhci-esdhc-imx.c
+index dccb4df46512..b03d65222622 100644
+--- a/drivers/mmc/host/sdhci-esdhc-imx.c
++++ b/drivers/mmc/host/sdhci-esdhc-imx.c
+@@ -87,7 +87,7 @@
+ #define ESDHC_STD_TUNING_EN		(1 << 24)
+ /* NOTE: the minimum valid tuning start tap for mx6sl is 1 */
+ #define ESDHC_TUNING_START_TAP_DEFAULT	0x1
+-#define ESDHC_TUNING_START_TAP_MASK	0xff
++#define ESDHC_TUNING_START_TAP_MASK	0x7f
+ #define ESDHC_TUNING_STEP_MASK		0x00070000
+ #define ESDHC_TUNING_STEP_SHIFT		16
  
--static int stm32_crc_init(struct shash_desc *desc)
-+static struct stm32_crc *stm32_crc_get_next_crc(void)
- {
--	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
--	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
- 	struct stm32_crc *crc;
- 
- 	spin_lock_bh(&crc_list.lock);
- 	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
-+	if (crc)
-+		list_move_tail(&crc->list, &crc_list.dev_list);
- 	spin_unlock_bh(&crc_list.lock);
- 
-+	return crc;
-+}
-+
-+static int stm32_crc_init(struct shash_desc *desc)
-+{
-+	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
-+	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
-+	struct stm32_crc *crc;
-+
-+	crc = stm32_crc_get_next_crc();
-+	if (!crc)
-+		return -ENODEV;
-+
- 	pm_runtime_get_sync(crc->dev);
- 
- 	/* Reset, set key, poly and configure in bit reverse mode */
-@@ -127,9 +140,9 @@ static int stm32_crc_update(struct shash_desc *desc, const u8 *d8,
- 	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
- 	struct stm32_crc *crc;
- 
--	spin_lock_bh(&crc_list.lock);
--	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
--	spin_unlock_bh(&crc_list.lock);
-+	crc = stm32_crc_get_next_crc();
-+	if (!crc)
-+		return -ENODEV;
- 
- 	pm_runtime_get_sync(crc->dev);
- 
-@@ -202,6 +215,8 @@ static int stm32_crc_digest(struct shash_desc *desc, const u8 *data,
- 	return stm32_crc_init(desc) ?: stm32_crc_finup(desc, data, length, out);
- }
- 
-+static unsigned int refcnt;
-+static DEFINE_MUTEX(refcnt_lock);
- static struct shash_alg algs[] = {
- 	/* CRC-32 */
- 	{
-@@ -292,12 +307,18 @@ static int stm32_crc_probe(struct platform_device *pdev)
- 	list_add(&crc->list, &crc_list.dev_list);
- 	spin_unlock(&crc_list.lock);
- 
--	ret = crypto_register_shashes(algs, ARRAY_SIZE(algs));
--	if (ret) {
--		dev_err(dev, "Failed to register\n");
--		clk_disable_unprepare(crc->clk);
--		return ret;
-+	mutex_lock(&refcnt_lock);
-+	if (!refcnt) {
-+		ret = crypto_register_shashes(algs, ARRAY_SIZE(algs));
-+		if (ret) {
-+			mutex_unlock(&refcnt_lock);
-+			dev_err(dev, "Failed to register\n");
-+			clk_disable_unprepare(crc->clk);
-+			return ret;
-+		}
- 	}
-+	refcnt++;
-+	mutex_unlock(&refcnt_lock);
- 
- 	dev_info(dev, "Initialized\n");
- 
-@@ -318,7 +339,10 @@ static int stm32_crc_remove(struct platform_device *pdev)
- 	list_del(&crc->list);
- 	spin_unlock(&crc_list.lock);
- 
--	crypto_unregister_shashes(algs, ARRAY_SIZE(algs));
-+	mutex_lock(&refcnt_lock);
-+	if (!--refcnt)
-+		crypto_unregister_shashes(algs, ARRAY_SIZE(algs));
-+	mutex_unlock(&refcnt_lock);
- 
- 	pm_runtime_disable(crc->dev);
- 	pm_runtime_put_noidle(crc->dev);
 -- 
 2.25.1
 
