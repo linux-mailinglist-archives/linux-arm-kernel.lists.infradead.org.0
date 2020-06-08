@@ -2,94 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2FF81F1D29
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 18:22:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 432381F1D54
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 18:30:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5lpiv0FoCcdWX51SqnnBd5g+3tMJNoUvs+5C1YFw/iU=; b=hcEISGJoUY6CGh
-	SGMGJm+WlZ1vAVnv5te9ePEvZIZ0tmSldmV7IWOyUv3Iiqs0nxTt9ZxqjlFrKLkdaKdSsRb83+I29
-	PsnjX3rOqMMwvEabEfWRg3qYXd53aqaN5NNalJbTUXf4CYMzTN5aPnl4T4h7+WqE2rCLJnf+kSEhz
-	FUQrClcEeh+kGfn7EeDIsV9w0l0LEuioLIGoPvbufrG90Aumfb4yDuN6Be7ML9rKWxQvDboQpynsW
-	jfVp2I8q3bjwivuTC16878Ey+L0KU6psa0FZh0q9ewEAuOQhWf5jdtt6taIGINWOCqYWz6JQKnbiq
-	1VDTDmYFNSIj+5Qxy2qw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0nCXhapqioKZY230Am7C782T7ypTWgRA2r7TsRjcLPo=; b=O7F5pMK9q/cVcm
+	BvPP7eyrM2C0hoUqmWR2Gjm8/L9tYmzr2SKJGB85vW5UmuPlPhdkAs/6qMPnQQbylnIri3+VC7MG+
+	jUMoGLJD4FTl5zQ/0MzQhcuWzANgr2a6UE4jH2/SG0oY53NdyvKQUUSNa6XvZL10fseH6Qjklw3zX
+	qfzDtL04Fj18hLcwhTQ+d5M+LB8liclU997+/ajrNhy/vAeMOVQkFf2kb9AsdZFUFYuJdUSZl0eZb
+	R2E9YgLpKfiaB//ETuGDqdLd3JCjSnWiLTsZ5N3QmpHMR8wypGlSiPnMeY97GfqXuTAoRVRtsiSzi
+	hf9raIrolcD+x7hHq+8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiKXy-0006cW-7S; Mon, 08 Jun 2020 16:22:50 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiKXr-0006bz-Cj
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 16:22:44 +0000
-Received: by mail-pg1-x541.google.com with SMTP id w20so8962186pga.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jun 2020 09:22:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=xb9iduIo0ZsY8UkuJNW0EYDly2gzKS1dDnF5Tlucm3E=;
- b=ZxMZviQzRAeJ5DYVXko9AgnUzdM+2XqibnUTpLy53K/ePADf3nmLYW8DBnT5/aKoIL
- awbhhoGIqdDybOaGZ7VBexdf371ynrzzMrAq6zwTY3CXtFMFR8OBdoQSwtjBo9TzwdIc
- TVxxa6xjPf+NciarOzBz7a354AQp9mdHivGVD3N/9+oBGCiSqER9KZA67fFU5vrX8vMQ
- aD8umA50I5wjNKq1ULpY4j/kXYULB450Zx06+gjAe1ySU5kWjpDFX48Vged7P4Ps7qnt
- LeTOuy+pUf0e23rx8MlIYOdyAuHrTi0leShThPh5oJJdRxxkwoP4z1wtV8trIWBfq0bT
- zW1g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=xb9iduIo0ZsY8UkuJNW0EYDly2gzKS1dDnF5Tlucm3E=;
- b=K9CjjpiWsAoCW4KR21kKFlj1Nt3biOssSS0FgjeJrgIxvqpF7A8HZdAuMZWCSCWiCc
- NjHZVcECmwTLmuwxpmFd023OcfiRHnEMQdJSRuZ6LPIPShPuCbTA3PEJIOBdBISwkZou
- h606tdtwUhirSCj2DwA5u/ko+jpQd9xmKctazs7D+ZBXf+xfXEA5tu3MoveNBCiVc0Vl
- tkcfh7790qAiYkYVk31TMMrBintSzIndegCp2LxoPMDChEP7YteUlcfSDVdCkkruTaV7
- ceKMVRvHcDUINSlGbpNRniA6Azf5IVg0sswI8dc14RWOHb0eYNAzuuzCP1HVjhfQTe15
- KQUg==
-X-Gm-Message-State: AOAM530rh7ViWT9P/SwOl0AR6IelRdnOgBj5ACfRuE0Lb4rn5/5zRk5N
- QkLykX3C+8HhV8OZIS8HrmU=
-X-Google-Smtp-Source: ABdhPJxYAdGwPeXtwY/l/RnJjV2BHHPTERXRM6uP6tdjLlvz+7+36VZTNJg5ogRbBq84QCGe0sAkZA==
-X-Received: by 2002:a63:5024:: with SMTP id e36mr20019756pgb.438.1591633361854; 
- Mon, 08 Jun 2020 09:22:41 -0700 (PDT)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id c9sm7015334pfr.72.2020.06.08.09.22.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 08 Jun 2020 09:22:41 -0700 (PDT)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH] mmc: sdhci-of-arasan: Add missed checks for
- devm_clk_register()
-Date: Tue,  9 Jun 2020 00:22:26 +0800
-Message-Id: <20200608162226.3259186-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.26.2
+	id 1jiKep-00028Z-LX; Mon, 08 Jun 2020 16:29:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiKeU-00022v-F3
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 16:29:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 197121FB;
+ Mon,  8 Jun 2020 09:29:32 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.6.198])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6C2273F73D;
+ Mon,  8 Jun 2020 09:29:30 -0700 (PDT)
+Date: Mon, 8 Jun 2020 17:29:22 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2] KVM: arm64: Remove host_cpu_context member from vcpu
+ structure
+Message-ID: <20200608162922.GA12957@C02TD0UTHF1T.local>
+References: <20200608085657.1405730-1-maz@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200608085657.1405730-1-maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_092243_431786_6F28379F 
-X-CRM114-Status: GOOD (  10.06  )
-X-Spam-Score: 1.6 (+)
+X-CRM114-CacheID: sfid-20200608_092934_626268_A11BD3D5 
+X-CRM114-Status: GOOD (  21.29  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [202.120.40.82 listed in dnsbl.sorbs.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hslester96[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [hslester96[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,53 +62,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Chuhong Yuan <hslester96@gmail.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, kernel-team@android.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ Andrew Scull <ascull@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These functions do not check the return value of devm_clk_register():
-  - sdhci_arasan_register_sdcardclk()
-  - sdhci_arasan_register_sampleclk()
+On Mon, Jun 08, 2020 at 09:56:57AM +0100, Marc Zyngier wrote:
+> For very long, we have kept this pointer back to the per-cpu
+> host state, despite having working per-cpu accessors at EL2
+> for some time now.
+> 
+> Recent investigations have shown that this pointer is easy
+> to abuse in preemptible context, which is a sure sign that
+> it would better be gone. Not to mention that a per-cpu
+> pointer is faster to access at all times.
+> 
+> Reported-by: Andrew Scull <ascull@google.com>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 
-Therefore, add the missed checks to fix them.
+From a quick scan, this looks sane to me, so FWIW:
 
-Fixes: c390f2110adf1 ("mmc: sdhci-of-arasan: Add ability to export card clock")
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
- drivers/mmc/host/sdhci-of-arasan.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 
-diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
-index db9b544465cd..fb26e743e1fd 100644
---- a/drivers/mmc/host/sdhci-of-arasan.c
-+++ b/drivers/mmc/host/sdhci-of-arasan.c
-@@ -1299,6 +1299,8 @@ sdhci_arasan_register_sdcardclk(struct sdhci_arasan_data *sdhci_arasan,
- 	clk_data->sdcardclk_hw.init = &sdcardclk_init;
- 	clk_data->sdcardclk =
- 		devm_clk_register(dev, &clk_data->sdcardclk_hw);
-+	if (IS_ERR(clk_data->sdcardclk))
-+		return PTR_ERR(clk_data->sdcardclk);
- 	clk_data->sdcardclk_hw.init = NULL;
- 
- 	ret = of_clk_add_provider(np, of_clk_src_simple_get,
-@@ -1349,6 +1351,8 @@ sdhci_arasan_register_sampleclk(struct sdhci_arasan_data *sdhci_arasan,
- 	clk_data->sampleclk_hw.init = &sampleclk_init;
- 	clk_data->sampleclk =
- 		devm_clk_register(dev, &clk_data->sampleclk_hw);
-+	if (IS_ERR(clk_data->sampleclk))
-+		return PTR_ERR(clk_data->sampleclk);
- 	clk_data->sampleclk_hw.init = NULL;
- 
- 	ret = of_clk_add_provider(np, of_clk_src_simple_get,
--- 
-2.26.2
+Mark.
 
+> ---
+> 
+> Notes:
+>     v2: Stick to this_cpu_ptr() in pmu.c, as this only used on the
+>         kernel side and not the hypervisor.
+> 
+>  arch/arm64/include/asm/kvm_host.h | 3 ---
+>  arch/arm64/kvm/arm.c              | 3 ---
+>  arch/arm64/kvm/hyp/debug-sr.c     | 4 ++--
+>  arch/arm64/kvm/hyp/switch.c       | 6 +++---
+>  arch/arm64/kvm/hyp/sysreg-sr.c    | 6 ++++--
+>  arch/arm64/kvm/pmu.c              | 8 ++------
+>  6 files changed, 11 insertions(+), 19 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index 59029e90b557..ada1faa92211 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -284,9 +284,6 @@ struct kvm_vcpu_arch {
+>  	struct kvm_guest_debug_arch vcpu_debug_state;
+>  	struct kvm_guest_debug_arch external_debug_state;
+>  
+> -	/* Pointer to host CPU context */
+> -	struct kvm_cpu_context *host_cpu_context;
+> -
+>  	struct thread_info *host_thread_info;	/* hyp VA */
+>  	struct user_fpsimd_state *host_fpsimd_state;	/* hyp VA */
+>  
+> diff --git a/arch/arm64/kvm/arm.c b/arch/arm64/kvm/arm.c
+> index 14b747266607..6ddaa23ef346 100644
+> --- a/arch/arm64/kvm/arm.c
+> +++ b/arch/arm64/kvm/arm.c
+> @@ -340,10 +340,8 @@ void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
+>  void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+>  {
+>  	int *last_ran;
+> -	kvm_host_data_t *cpu_data;
+>  
+>  	last_ran = this_cpu_ptr(vcpu->kvm->arch.last_vcpu_ran);
+> -	cpu_data = this_cpu_ptr(&kvm_host_data);
+>  
+>  	/*
+>  	 * We might get preempted before the vCPU actually runs, but
+> @@ -355,7 +353,6 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+>  	}
+>  
+>  	vcpu->cpu = cpu;
+> -	vcpu->arch.host_cpu_context = &cpu_data->host_ctxt;
+>  
+>  	kvm_vgic_load(vcpu);
+>  	kvm_timer_vcpu_load(vcpu);
+> diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
+> index 0fc9872a1467..e95af204fec7 100644
+> --- a/arch/arm64/kvm/hyp/debug-sr.c
+> +++ b/arch/arm64/kvm/hyp/debug-sr.c
+> @@ -185,7 +185,7 @@ void __hyp_text __debug_switch_to_guest(struct kvm_vcpu *vcpu)
+>  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+>  		return;
+>  
+> -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> +	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	guest_ctxt = &vcpu->arch.ctxt;
+>  	host_dbg = &vcpu->arch.host_debug_state.regs;
+>  	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+> @@ -207,7 +207,7 @@ void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
+>  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
+>  		return;
+>  
+> -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> +	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	guest_ctxt = &vcpu->arch.ctxt;
+>  	host_dbg = &vcpu->arch.host_debug_state.regs;
+>  	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+> index fc09c3dfa466..fc671426c14b 100644
+> --- a/arch/arm64/kvm/hyp/switch.c
+> +++ b/arch/arm64/kvm/hyp/switch.c
+> @@ -544,7 +544,7 @@ static bool __hyp_text __hyp_handle_ptrauth(struct kvm_vcpu *vcpu)
+>  		return false;
+>  	}
+>  
+> -	ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> +	ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	__ptrauth_save_key(ctxt->sys_regs, APIA);
+>  	__ptrauth_save_key(ctxt->sys_regs, APIB);
+>  	__ptrauth_save_key(ctxt->sys_regs, APDA);
+> @@ -715,7 +715,7 @@ static int __kvm_vcpu_run_vhe(struct kvm_vcpu *vcpu)
+>  	struct kvm_cpu_context *guest_ctxt;
+>  	u64 exit_code;
+>  
+> -	host_ctxt = vcpu->arch.host_cpu_context;
+> +	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	host_ctxt->__hyp_running_vcpu = vcpu;
+>  	guest_ctxt = &vcpu->arch.ctxt;
+>  
+> @@ -820,7 +820,7 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
+>  
+>  	vcpu = kern_hyp_va(vcpu);
+>  
+> -	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> +	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	host_ctxt->__hyp_running_vcpu = vcpu;
+>  	guest_ctxt = &vcpu->arch.ctxt;
+>  
+> diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+> index 6d2df9fe0b5d..143d7b7358f2 100644
+> --- a/arch/arm64/kvm/hyp/sysreg-sr.c
+> +++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+> @@ -265,12 +265,13 @@ void __hyp_text __sysreg32_restore_state(struct kvm_vcpu *vcpu)
+>   */
+>  void kvm_vcpu_load_sysregs(struct kvm_vcpu *vcpu)
+>  {
+> -	struct kvm_cpu_context *host_ctxt = vcpu->arch.host_cpu_context;
+>  	struct kvm_cpu_context *guest_ctxt = &vcpu->arch.ctxt;
+> +	struct kvm_cpu_context *host_ctxt;
+>  
+>  	if (!has_vhe())
+>  		return;
+>  
+> +	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	__sysreg_save_user_state(host_ctxt);
+>  
+>  	/*
+> @@ -301,12 +302,13 @@ void kvm_vcpu_load_sysregs(struct kvm_vcpu *vcpu)
+>   */
+>  void kvm_vcpu_put_sysregs(struct kvm_vcpu *vcpu)
+>  {
+> -	struct kvm_cpu_context *host_ctxt = vcpu->arch.host_cpu_context;
+>  	struct kvm_cpu_context *guest_ctxt = &vcpu->arch.ctxt;
+> +	struct kvm_cpu_context *host_ctxt;
+>  
+>  	if (!has_vhe())
+>  		return;
+>  
+> +	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
+>  	deactivate_traps_vhe_put();
+>  
+>  	__sysreg_save_el1_state(guest_ctxt);
+> diff --git a/arch/arm64/kvm/pmu.c b/arch/arm64/kvm/pmu.c
+> index e71d00bb5271..b5ae3a5d509e 100644
+> --- a/arch/arm64/kvm/pmu.c
+> +++ b/arch/arm64/kvm/pmu.c
+> @@ -163,15 +163,13 @@ static void kvm_vcpu_pmu_disable_el0(unsigned long events)
+>   */
+>  void kvm_vcpu_pmu_restore_guest(struct kvm_vcpu *vcpu)
+>  {
+> -	struct kvm_cpu_context *host_ctxt;
+>  	struct kvm_host_data *host;
+>  	u32 events_guest, events_host;
+>  
+>  	if (!has_vhe())
+>  		return;
+>  
+> -	host_ctxt = vcpu->arch.host_cpu_context;
+> -	host = container_of(host_ctxt, struct kvm_host_data, host_ctxt);
+> +	host = this_cpu_ptr(&kvm_host_data);
+>  	events_guest = host->pmu_events.events_guest;
+>  	events_host = host->pmu_events.events_host;
+>  
+> @@ -184,15 +182,13 @@ void kvm_vcpu_pmu_restore_guest(struct kvm_vcpu *vcpu)
+>   */
+>  void kvm_vcpu_pmu_restore_host(struct kvm_vcpu *vcpu)
+>  {
+> -	struct kvm_cpu_context *host_ctxt;
+>  	struct kvm_host_data *host;
+>  	u32 events_guest, events_host;
+>  
+>  	if (!has_vhe())
+>  		return;
+>  
+> -	host_ctxt = vcpu->arch.host_cpu_context;
+> -	host = container_of(host_ctxt, struct kvm_host_data, host_ctxt);
+> +	host = this_cpu_ptr(&kvm_host_data);
+>  	events_guest = host->pmu_events.events_guest;
+>  	events_host = host->pmu_events.events_host;
+>  
+> -- 
+> 2.26.2
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
