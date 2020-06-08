@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E365F1F2051
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:51:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0527B1F2061
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:58:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gxH/Ev8A4tuaZPzdvL0V2EItKf8w5DHzGd0iuWokM4E=; b=YJNqzClhjdodmq
-	CqpA3kRVBfsK6Z7AGWFbmaNhWMDcgjd8XYILrn0u7b9eAc+NfIwAGk+j6TVoE6n5MH0BqMftnh03k
-	f8sNv4R/yVZUtgUtyQzqcqHaK+9uwBmfa2QT5bKM6A0IbiaAgWxDpz9v0LqavZcDJeQ2ssJu8JTai
-	KY64sxTJAYDotFIl/kwNPF2pJJZGtG+3xXz58p2eDBIpPmqajOruNoPZxriypjD5Pt00OhFDISfsW
-	Qtzt//IsEiMK4sx/mEux5lHAncrJDXSeYSscixG2VvG8a1Tmpmah5lwp4neejbFMF900G4R2Lvrgf
-	eI3PoHluP8NLVkZgXDNA==;
+	List-Owner; bh=0uow6ymlH1QcYFCcBPjWJVYzQY0B5xFj61CKHyAD0FY=; b=Qm2eaAppDe7aTl
+	uaZLBJUo93m97ggUwPmlImA1rLozGKKV1UgnbhG2A764+9va4BFaFmCrOwZSuu5S1+WoOWVlZ9/MS
+	kFcLuIOVQwtV61YJEFmDN2PehV6DdPAo04Bnwkh6RYhJ62BeY/+NI9ygszPfn3eNbOKz8GiyulZza
+	XpOpVe2WxbYqcB/b3Eaw2IeUrMfbUzk6rM6hBDXvTFwxpUgrm21avXOBaHSwsqGC++f1FLVAfrr1k
+	PjBmSED11cFYRv0ocRpntsD6fcgaq3P1/Knb8KgBtSIu9/jLk6vPM5kv4mcPm0T66LRBmuTdD/D6V
+	c/IuKxrxF28ij6/OUD4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiNnf-0002df-BS; Mon, 08 Jun 2020 19:51:15 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jiNua-0006I6-In; Mon, 08 Jun 2020 19:58:24 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiNnW-0002dB-Q7; Mon, 08 Jun 2020 19:51:08 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e1so18807647wrt.5;
- Mon, 08 Jun 2020 12:51:06 -0700 (PDT)
+ id 1jiNuT-0006Hi-NE; Mon, 08 Jun 2020 19:58:19 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r9so722358wmh.2;
+ Mon, 08 Jun 2020 12:58:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=o5RsBAa3pHyGyH1Nf7xqWjY4s1FOdQYE7k1GR7WvK+Y=;
- b=N3vINQBBjDhjwltCTk4vLqaHoCDmpSznY1srZ5V/zbmPxdqlnC+/pmPlQHHoAwIe9B
- oUaY7MSfZe4RcX5zuaV2XyDtBx1bR9mPWAw7K8PoLXukvY8ImPCBpiGot87xw/RFYKix
- GLxs4Af3xmFpKolPH1YeZ+Rmw0/ZrgO0S9ioEUI/Tz0SSzVEgZ2UB3KYF9jtXSk/6s7b
- ip2VxR06bCDpND0T303PPmw3GNmtaFCBLGMH08iyT3g9YBE4QSONyykzMR3Y+qwLSU60
- fd6immvVGQp9DZJhlGWE7rmFD1svntJnV4yvgdsl+NNBFAWQzIZ2CXJFWPSNtNba4wPR
- SDjg==
+ bh=hdQaIlY7CCtvVuS9ppbF0BzHnZFr+mv1ZVx/h1Baqkk=;
+ b=i9lBX/+XoJVZ4smkO6RXjNuKvBeBSn7Jezy6IKlbX1vzVqHheo10kSfSIHx8hKrfNy
+ al3momOoRbDC/qO/NExvm5ij8QaHZP+qxrY85+7iDCCflNQkQZg+GxGlU0OG/WBD6n9N
+ hMHlAd3B4WPZe3FxPBwOX92MBq5DQVlV0YZ/wUQEhiPh6ghBqmUBROnYhApUugkxP8X7
+ Nbgl6pWLBWOTMeVJs84+sXpXhkfmS7nbuXTKQSy0/27MxFqc39p3j8IXWS2PPuwwbNvu
+ C5MHFDJuEuh83QQmyJvuGP0MmyJ0pfpoVzwlcCaG3coppPYlXTCyCvHHVK+Ll7zPJ++f
+ kuWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=o5RsBAa3pHyGyH1Nf7xqWjY4s1FOdQYE7k1GR7WvK+Y=;
- b=H2uwV4Dmy/+oUjauWl98nrFYkdzbAgtlBMQSg8Ft/Ovlz3xnwb+eajujQml4VEdtTq
- /FV1/Xa0yU+E4qSHjmXoWPJdYfTcH9sZEt9sm9rpUa6kXmASQISXkPxkgoq/u4jUcDHS
- r2gTkSeRYTe09oien0dYdL18UcwXHxg1KRPBFnt6YMCVkTndAe+0Jv623XVLE9HqkThZ
- 8Ib8s6ZeEDDTE3N/nSYO6axuWEyAXvHuVU82jqKNZPiJVoX9PBVi6Rn2siO7yywkHVuZ
- 321NMxTVLn+Y4lGENi5M4x+uda03X0VSPt8XlszWg15v0dKNWSfcdhHvvBMzmG3g09fY
- rBrA==
-X-Gm-Message-State: AOAM533LV1wAZFGM+JuG7/M8d+tLe4rRfyyEYYrwHVoeiw8eytFzRqHl
- NQOxpm2R+7Kuq8bh0lBlgJtGLDic
-X-Google-Smtp-Source: ABdhPJw+Lng+MYT9sFvOIDd5/BQc0mai6p2yW5rVQDkoQhjjOqgKoQROdpu5l2JKcDlSnSwrtuty3Q==
-X-Received: by 2002:adf:b198:: with SMTP id q24mr421481wra.368.1591645865305; 
- Mon, 08 Jun 2020 12:51:05 -0700 (PDT)
+ bh=hdQaIlY7CCtvVuS9ppbF0BzHnZFr+mv1ZVx/h1Baqkk=;
+ b=a0arNCdoYCPRYvGp+YK+zkNhKnkcXklFrXQmvNfpMxgpwmsEojL+Ku2lfGZo0Wuj1V
+ qX1/XaDeyrN5iZMeXemNtczhBx6qTDtsQupAf9xL2CPbQxwtpsUWgBalAjOj3dXZivtM
+ EpapqbV98x+FPssDDXAYAo/7aeZ5Plx9ACAh/09KpyaR+nCZk4OwHuTw6SLYoO8iKs6c
+ WqzgCXEfkqokvrr1fU8o7ep0P8tWlhjUMJzEUUtqopPffd9bzL/LRffRz8/ID2fdpzOD
+ sIB5RXV688+qaF6CPm+wdz4u4Ti5wzrBC86ZQ8M2/5OqC3IPW0NyrDChZImn4yIEs4bM
+ TfZQ==
+X-Gm-Message-State: AOAM533qba+dxzaRGaSzTSC/cd9ceQDaNik+4IwZgZgIoS8SECaiqSq+
+ jrkyDCIQ3lU+VaUq6Xml+Ng=
+X-Google-Smtp-Source: ABdhPJypEeqfejRUltyYbz5n5bW5+Ans7YR1WBmQV7ByI2tOOKYM8eGJckH5rGeMzXQrm13AkAWBIw==
+X-Received: by 2002:a7b:cbd9:: with SMTP id n25mr349108wmi.30.1591646295437;
+ Mon, 08 Jun 2020 12:58:15 -0700 (PDT)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- s8sm772992wrg.50.2020.06.08.12.51.01
+ e10sm782956wrn.11.2020.06.08.12.58.11
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 08 Jun 2020 12:51:04 -0700 (PDT)
-Subject: Re: [PATCH 7/9] usb: host: pci-quirks: Bypass xHCI quirks for
- Raspberry Pi 4
+ Mon, 08 Jun 2020 12:58:14 -0700 (PDT)
+Subject: Re: [PATCH 1/9] dt-bindings: reset: Add a binding for the RPi
+ Firmware USB reset
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, f.fainelli@gmail.com,
  gregkh@linuxfoundation.org, wahrenst@gmx.net, robh@kernel.org,
  mathias.nyman@linux.intel.com, Eric Anholt <eric@anholt.net>,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
 References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
- <20200608192701.18355-8-nsaenzjulienne@suse.de>
+ <20200608192701.18355-2-nsaenzjulienne@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <6b1084e1-05ca-5321-46fd-7b6f83224a49@gmail.com>
-Date: Mon, 8 Jun 2020 12:50:58 -0700
+Message-ID: <ffc9ec9e-bd1c-a8dd-8a68-a15bf95c919b@gmail.com>
+Date: Mon, 8 Jun 2020 12:58:09 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200608192701.18355-8-nsaenzjulienne@suse.de>
+In-Reply-To: <20200608192701.18355-2-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_125106_903702_FBF36BAB 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20200608_125817_805482_FA5B07A4 
+X-CRM114-Status: GOOD (  18.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -109,7 +109,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: lorenzo.pieralisi@arm.com, tim.gover@raspberrypi.org, helgaas@kernel.org,
- linux-kernel@vger.kernel.org
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -118,58 +118,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 6/8/2020 12:26 PM, Nicolas Saenz Julienne wrote:
-> The board doesn't need the quirks to be run, and takes case of its own
-
-(if you have to resubmit) takes care
-
-> initialization trough a reset controller device. So let's bypass it
-
-its quirk.
-
-> quirk.
+> The firmware running on the RPi VideoCore can be used to reset and
+> initialize the board's xHCI controller. The reset controller is passed
+> to the PCI device through the DT, hence this binding.
 > 
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > ---
->  drivers/usb/host/pci-quirks.c | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
+>  .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 21 +++++++++++++++++++
+>  1 file changed, 21 insertions(+)
 > 
-> diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
-> index 92150ecdb036..4b3be05d1290 100644
-> --- a/drivers/usb/host/pci-quirks.c
-> +++ b/drivers/usb/host/pci-quirks.c
-> @@ -16,6 +16,8 @@
->  #include <linux/export.h>
->  #include <linux/acpi.h>
->  #include <linux/dmi.h>
-> +#include <linux/of.h>
-> +
->  #include "pci-quirks.h"
->  #include "xhci-ext-caps.h"
+> diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+> index b48ed875eb8e..8f9d0986c28f 100644
+> --- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+> +++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+> @@ -39,6 +39,22 @@ properties:
+>        - compatible
+>        - "#clock-cells"
 >  
-> @@ -1248,6 +1250,16 @@ static void quirk_usb_early_handoff(struct pci_dev *pdev)
->  	 */
->  	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
->  		return;
+> +  usb-reset:
+> +    type: object
 > +
-> +	/*
-> +	 * Bypass the Raspberry Pi 4 controller xHCI controller, things are
-> +	 * taken care by the board's co-processor.
+> +    properties:
+> +      compatible:
+> +        const: raspberrypi,firmware-usb-reset
 
-taken care of by.
+I would make this less USB centric, even if this is the only consumer of
+the reset controller for now, there could, in premise be other blocks
+that require a reset (e.g.: V3D) that would involve going to the VPU
+firmware because of various requirements (security, register blocking etc.).
 
-With that:
-
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-
-> +	 */
-> +	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483 &&
-> +	    of_device_is_compatible(of_get_parent(pdev->bus->dev.of_node),
-> +				    "brcm,bcm2711-pcie"))
-> +		return;
 > +
->  	if (pdev->class != PCI_CLASS_SERIAL_USB_UHCI &&
->  			pdev->class != PCI_CLASS_SERIAL_USB_OHCI &&
->  			pdev->class != PCI_CLASS_SERIAL_USB_EHCI &&
+> +      "#clock-cells":
+
+Did not you mean #reset-cells here?
+
+
+> +        const: 0
+> +        description: >
+> +          There is only one reset line available, so no need for cell decoding.
+> +
+> +    required:
+> +      - compatible
+> +      - "#reset-cells"
+> +
+>      additionalProperties: false
+>  
+>  required:
+> @@ -55,5 +71,10 @@ examples:
+>              compatible = "raspberrypi,firmware-clocks";
+>              #clock-cells = <1>;
+>          };
+> +
+> +        usb_reset: usb-reset {
+> +            compatible = "raspberrypi,firmware-usb-reset";
+> +            #reset-cells = <0>;
+> +        };
+>      };
+>  ...
 > 
 
 -- 
