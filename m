@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F8631F22CF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:11:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0BE71F249E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:24:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oprX98BKV1b3EswOXTlstEFQDT+JksGr12Qx5I90dn4=; b=Pws0UYYPfXu1LC
-	PCQs8qE9450MTqsPoztez9u1yPmFYN1yb9huppfT5VHsoROTGAHHp6uwgZfadb3cAGqhkX0piHO4x
-	qbmbnj1H2awFF11100WVlnUWqZxSeeSy7VLUo4I79GQP9T5xLQv+gwnzq11EASB9g1TixJbMhQYkw
-	fss+Rkkz3SRvLKGpvpS3no/e0yGsdP4TQqqVR9UMf3/ITj8YIiIHA/rOZzxOrLPPlREOOpLEzso97
-	aReYhM7UeoCNZJs07SLcT8xlFkQ7ICdm0Pss3UNbsNyb1nPyH2JVsa7v5a3vcgR/DtqTXO5Ul/URz
-	AJXIHIohBVmFeIYoL0KQ==;
+	List-Owner; bh=Z92Q0sqN1ZXe/nE7VgcwVVMxwDkdpVim9Lkx8erGGtw=; b=bo82Is7K/ssQww
+	fWu0bR9ecx/k0k0ad+ILwxOszxy52E73iFyYr7rv4fKS+nOQmwFxm8WFmVaefbOp4s2YYSnsRe5Ex
+	Fpttr/ipN/sb94VytzjTXdVDtYJRQMcb8pO45Og9OemQ3eHyu8JZGlV+xzHuuI22cjSds6vvepbBx
+	UgjugKIYfctxPaA5vgto8NZL8eafHFTiy4Q+1w/QnuuvkkOGtEHe+nPeXjVp0bYJEUO7W+i3ZrAT8
+	FQa2M230KxBBWDLIs3DziVxAHpDtB3TqwTHmOtxXwmCk6vgyU4p2QaJcnq5+273es6a/xucSzC1eZ
+	wV6n631Wo6mRSt1xYxRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQv7-0004FP-1v; Mon, 08 Jun 2020 23:11:09 +0000
+	id 1jiR7T-0002qA-BL; Mon, 08 Jun 2020 23:23:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQrt-0007hz-F0; Mon, 08 Jun 2020 23:07:50 +0000
+ id 1jiQx3-0006Vl-PM; Mon, 08 Jun 2020 23:13:13 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B99522086A;
- Mon,  8 Jun 2020 23:07:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F1C820897;
+ Mon,  8 Jun 2020 23:13:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657668;
- bh=PRuINvBRZW2mZwEv6yL9odErB1I7qLxkutEUY51xAFc=;
+ s=default; t=1591657989;
+ bh=kmJ5BQn3b7/Tj0a78WgwZwTGYE27MlHWgm1yPvfpigU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=UJUV0YaVsV7c2Vo+aIuG2esMjFNttNQCp9gIq4S37E3DtsvCslivS0wX9BbEzutp7
- R+MecZQAIJQVSV18Zcl27yUJK3bRB5drN9AJ/uH0PF2Uev8v5oKqGMNHsOIOfeyJN4
- 2h+BXF0Os6EALcOKpvCzC4JTZNDh54fhQpDaqhg4=
+ b=ItI77MPtEp+Sm4XiSrpxJmrEpqBKIfIFIC+Obv0bYcLeGEObzAbnYktKuWuJD8i8F
+ sre6XUYBQFpQ0/LGlKFW9rirOSMZfDB5To0FXV+tCs6XoeuuQLR5mEzvLPEvHbFcGS
+ kDNlHkNkfy4uI0sU6T+9VfRzm5s86c7HdNbHOwQE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 078/274] Bluetooth: btmtkuart: Improve exception
- handling in btmtuart_probe()
-Date: Mon,  8 Jun 2020 19:02:51 -0400
-Message-Id: <20200608230607.3361041-78-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 048/606] arm64: dts: meson-g12b-ugoos-am6: fix usb
+ vbus-supply
+Date: Mon,  8 Jun 2020 19:02:53 -0400
+Message-Id: <20200608231211.3363633-48-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
-References: <20200608230607.3361041-1-sashal@kernel.org>
+In-Reply-To: <20200608231211.3363633-1-sashal@kernel.org>
+References: <20200608231211.3363633-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160749_528133_42B1A87C 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20200608_161309_963666_AD1ED243 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,77 +79,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Marcel Holtmann <marcel@holtmann.org>,
- Chuhong Yuan <hslester96@gmail.com>, linux-bluetooth@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chuhong Yuan <hslester96@gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
 
-[ Upstream commit 4803c54ca24923a30664bea2a7772db6e7303c51 ]
+commit 4e025fd91ba32a16ed8131158aa63cd37d141cbb upstream.
 
-Calls of the functions clk_disable_unprepare() and hci_free_dev()
-were missing for the exception handling.
-Thus add the missed function calls together with corresponding
-jump targets.
+The USB supply used the wrong property, fixing:
+meson-g12b-ugoos-am6.dt.yaml: usb@ffe09000: 'vbus-regulator' does not match any of the regexes: '^usb@[0-9a-f]+$', 'pinctrl-[0-9]+'
 
-Fixes: 055825614c6b ("Bluetooth: btmtkuart: add an implementation for clock osc property")
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-Signed-off-by: Marcel Holtmann <marcel@holtmann.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Fixes: 2cd2310fca4c ("arm64: dts: meson-g12b-ugoos-am6: add initial device-tree")
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Link: https://lore.kernel.org/r/20200326160857.11929-2-narmstrong@baylibre.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- drivers/bluetooth/btmtkuart.c | 14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/bluetooth/btmtkuart.c b/drivers/bluetooth/btmtkuart.c
-index e11169ad8247..8a81fbca5c9d 100644
---- a/drivers/bluetooth/btmtkuart.c
-+++ b/drivers/bluetooth/btmtkuart.c
-@@ -1015,7 +1015,7 @@ static int btmtkuart_probe(struct serdev_device *serdev)
- 	if (btmtkuart_is_standalone(bdev)) {
- 		err = clk_prepare_enable(bdev->osc);
- 		if (err < 0)
--			return err;
-+			goto err_hci_free_dev;
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+index ccd0bced01e8..2e66d6418a59 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+@@ -545,7 +545,7 @@ &uart_AO {
+ &usb {
+ 	status = "okay";
+ 	dr_mode = "host";
+-	vbus-regulator = <&usb_pwr_en>;
++	vbus-supply = <&usb_pwr_en>;
+ };
  
- 		if (bdev->boot) {
- 			gpiod_set_value_cansleep(bdev->boot, 1);
-@@ -1028,10 +1028,8 @@ static int btmtkuart_probe(struct serdev_device *serdev)
- 
- 		/* Power on */
- 		err = regulator_enable(bdev->vcc);
--		if (err < 0) {
--			clk_disable_unprepare(bdev->osc);
--			return err;
--		}
-+		if (err < 0)
-+			goto err_clk_disable_unprepare;
- 
- 		/* Reset if the reset-gpios is available otherwise the board
- 		 * -level design should be guaranteed.
-@@ -1063,7 +1061,6 @@ static int btmtkuart_probe(struct serdev_device *serdev)
- 	err = hci_register_dev(hdev);
- 	if (err < 0) {
- 		dev_err(&serdev->dev, "Can't register HCI device\n");
--		hci_free_dev(hdev);
- 		goto err_regulator_disable;
- 	}
- 
-@@ -1072,6 +1069,11 @@ static int btmtkuart_probe(struct serdev_device *serdev)
- err_regulator_disable:
- 	if (btmtkuart_is_standalone(bdev))
- 		regulator_disable(bdev->vcc);
-+err_clk_disable_unprepare:
-+	if (btmtkuart_is_standalone(bdev))
-+		clk_disable_unprepare(bdev->osc);
-+err_hci_free_dev:
-+	hci_free_dev(hdev);
- 
- 	return err;
- }
+ &usb2_phy0 {
 -- 
 2.25.1
 
