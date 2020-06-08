@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12D691F25E4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:36:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B58791F25E6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:36:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xkihGvUWOe96Jt5kQhOqohRSS6gHjBSViBZp+J+MDLI=; b=L30i5kprXz9Z3Q
-	/eMiaHPwgH+CPyuYeGpm362H0i+SVrEuwpZRQGIjngnQecHZ2tqBJCALbDZBusJfWaF2xtL72VLNI
-	v113LlrnAcpoVrCYLivuSxk3ohyLOme7F5I8pwSFSrQOC5lwW6L3Whcu7Qq/p1bun4UwpHyOAFDxs
-	h0W8+rkuzhVT1OFXRT2180Y+J7rZK0DFUtyZooWjCnstfSbr/4DQp5Z5K8D6o5JrdTGw5rNTqY73b
-	f1Eck59+eXlYloNCimy538jlhpyQ3q3jw5FQBXEx0xt4eyRjUnkEvGnHLYQvevhvAHz8ONAM9WsOI
-	q2zY/c5UgPdktqjyXsHA==;
+	List-Owner; bh=XKnbtuVgBXqcQL9h0AAwL5mAyzNrGOJFOLpJpTbh3Us=; b=ogXnOuJ+1yCmMG
+	D4U5gu27m7nJ9y5JxX23E5wbp3l9YvZLlyzVM3rVDt6cNDTDP2CVbC3vNoOTMRT82LiC3WUFYLk+q
+	gz3VT9qE6piRJPrGXwbTAdrv+e5UrFkUv/ND7POf/hcUXvQS/+fQcRB0a1VO70N0N5y6tiaNTxd9T
+	HFGsLMNQeg2ELB2+yHI5WE4TCtDxraVeVY+LAiV7StRHo/BHq8jcyL8XYzf38o9bGkyVzwzUwKnit
+	t2blf662TD68rhaTCmyQ2w+0lradvJMy/AyTvuv30vk7gXg7LnNpEIN1KLq/dDUz7vOV7qZKYFcjZ
+	EhoEqzEQETPr2d9CAQQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRJ9-0004Bw-7U; Mon, 08 Jun 2020 23:35:59 +0000
+	id 1jiRJS-0004UP-D8; Mon, 08 Jun 2020 23:36:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR25-0004oq-LF; Mon, 08 Jun 2020 23:18:26 +0000
+ id 1jiR2A-0004vs-F6
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:18:29 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C2F8920842;
- Mon,  8 Jun 2020 23:18:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A21C02088E;
+ Mon,  8 Jun 2020 23:18:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658300;
- bh=KlyNs6xYV4r0qSVA/sqnvpMD4awrGAD7Rgv1smJS0j4=;
+ s=default; t=1591658305;
+ bh=kHnwlx9BCRreA8gSpamAv5AUS0PWWZVe+8Pj/JLgOwo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=2l1XS6hVHaxBPFOoRlDPhywu+zENAFc5rFhR/AvEYLUtrj8NSNXbDrCuqN1l1qJZZ
- L/8T+99o5WCpLuyjfwJvlh95izr8cmFOF4F6kwp2SFqX4DV8FGSHmdsXgHdH6Td6eB
- 5yL+WmiVbIJerilmxqzj8EKFo85djExn9sg+tTTA=
+ b=mr0MEHwvY1KKWj4DljtbQrNio5LtuHRBDWVbr8a0smgLDOuywmXaP78DCzIZcSsY2
+ KEIUjwsrBZn6AV+y9XdnSHw+0LptDfMNkPXhZoMCnvctA8h8zJv7QdK5dM4fNhYuPO
+ 3DZlTTuUBZN5qFp6QjLMoovMrKlZxfNJnkgG9qu8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 303/606] soc: mediatek: cmdq: return send msg
- error code
-Date: Mon,  8 Jun 2020 19:07:08 -0400
-Message-Id: <20200608231211.3363633-303-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 307/606] ARM: dts/imx6q-bx50v3: Set display
+ interface clock parents
+Date: Mon,  8 Jun 2020 19:07:12 -0400
+Message-Id: <20200608231211.3363633-307-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231211.3363633-1-sashal@kernel.org>
 References: <20200608231211.3363633-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161821_883797_529E1F66 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200608_161826_727762_C1FC3A70 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +80,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: Robert Beckett <bob.beckett@collabora.com>, devicetree@vger.kernel.org,
+ Sasha Levin <sashal@kernel.org>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>, Ian Ray <ian.ray@ge.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+From: Robert Beckett <bob.beckett@collabora.com>
 
-[ Upstream commit 34c4e4072603ff5c174df73b973896abb76cbb51 ]
+[ Upstream commit 665e7c73a7724a393b4ec92d1ae1e029925ef2b7 ]
 
-Return error code to client if send message fail,
-so that client has chance to error handling.
+Avoid LDB and IPU DI clocks both using the same parent. LDB requires
+pasthrough clock to avoid breaking timing while IPU DI does not.
 
-Fixes: 576f1b4bc802 ("soc: mediatek: Add Mediatek CMDQ helper")
-Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
-Link: https://lore.kernel.org/r/1583664775-19382-6-git-send-email-dennis-yc.hsieh@mediatek.com
-Signed-off-by: Matthias Brugger <matthias.bgg@gmail.com>
+Force IPU DI clocks to use IMX6QDL_CLK_PLL2_PFD0_352M as parent
+and LDB to use IMX6QDL_CLK_PLL5_VIDEO_DIV.
+
+This fixes an issue where attempting atomic modeset while using
+HDMI and display port at the same time causes LDB clock programming
+to destroy the programming of HDMI that was done during the same
+modeset.
+
+Cc: stable@vger.kernel.org
+Signed-off-by: Robert Beckett <bob.beckett@collabora.com>
+[Use IMX6QDL_CLK_PLL2_PFD0_352M instead of IMX6QDL_CLK_PLL2_PFD2_396M
+ originally chosen by Robert Beckett to avoid affecting eMMC clock
+ by DRM atomic updates]
+Signed-off-by: Ian Ray <ian.ray@ge.com>
+[Squash Robert's and Ian's commits for bisectability, update patch
+ description and add stable tag]
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/mediatek/mtk-cmdq-helper.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/imx6q-b450v3.dts  |  7 -------
+ arch/arm/boot/dts/imx6q-b650v3.dts  |  7 -------
+ arch/arm/boot/dts/imx6q-b850v3.dts  | 11 -----------
+ arch/arm/boot/dts/imx6q-bx50v3.dtsi | 15 +++++++++++++++
+ 4 files changed, 15 insertions(+), 25 deletions(-)
 
-diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-index db37144ae98c..87ee9f767b7a 100644
---- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-+++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-@@ -351,7 +351,9 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
- 		spin_unlock_irqrestore(&client->lock, flags);
- 	}
+diff --git a/arch/arm/boot/dts/imx6q-b450v3.dts b/arch/arm/boot/dts/imx6q-b450v3.dts
+index 95b8f2d71821..fb0980190aa0 100644
+--- a/arch/arm/boot/dts/imx6q-b450v3.dts
++++ b/arch/arm/boot/dts/imx6q-b450v3.dts
+@@ -65,13 +65,6 @@ panel_in_lvds0: endpoint {
+ 	};
+ };
  
--	mbox_send_message(client->chan, pkt);
-+	err = mbox_send_message(client->chan, pkt);
-+	if (err < 0)
-+		return err;
- 	/* We can send next packet immediately, so just call txdone. */
- 	mbox_client_txdone(client->chan, 0);
+-&clks {
+-	assigned-clocks = <&clks IMX6QDL_CLK_LDB_DI0_SEL>,
+-			  <&clks IMX6QDL_CLK_LDB_DI1_SEL>;
+-	assigned-clock-parents = <&clks IMX6QDL_CLK_PLL3_USB_OTG>,
+-				 <&clks IMX6QDL_CLK_PLL3_USB_OTG>;
+-};
+-
+ &ldb {
+ 	status = "okay";
  
+diff --git a/arch/arm/boot/dts/imx6q-b650v3.dts b/arch/arm/boot/dts/imx6q-b650v3.dts
+index 611cb7ae7e55..8f762d9c5ae9 100644
+--- a/arch/arm/boot/dts/imx6q-b650v3.dts
++++ b/arch/arm/boot/dts/imx6q-b650v3.dts
+@@ -65,13 +65,6 @@ panel_in_lvds0: endpoint {
+ 	};
+ };
+ 
+-&clks {
+-	assigned-clocks = <&clks IMX6QDL_CLK_LDB_DI0_SEL>,
+-			  <&clks IMX6QDL_CLK_LDB_DI1_SEL>;
+-	assigned-clock-parents = <&clks IMX6QDL_CLK_PLL3_USB_OTG>,
+-				 <&clks IMX6QDL_CLK_PLL3_USB_OTG>;
+-};
+-
+ &ldb {
+ 	status = "okay";
+ 
+diff --git a/arch/arm/boot/dts/imx6q-b850v3.dts b/arch/arm/boot/dts/imx6q-b850v3.dts
+index e4cb118f88c6..1ea64ecf4291 100644
+--- a/arch/arm/boot/dts/imx6q-b850v3.dts
++++ b/arch/arm/boot/dts/imx6q-b850v3.dts
+@@ -53,17 +53,6 @@ chosen {
+ 	};
+ };
+ 
+-&clks {
+-	assigned-clocks = <&clks IMX6QDL_CLK_LDB_DI0_SEL>,
+-			  <&clks IMX6QDL_CLK_LDB_DI1_SEL>,
+-			  <&clks IMX6QDL_CLK_IPU1_DI0_PRE_SEL>,
+-			  <&clks IMX6QDL_CLK_IPU2_DI0_PRE_SEL>;
+-	assigned-clock-parents = <&clks IMX6QDL_CLK_PLL5_VIDEO_DIV>,
+-				 <&clks IMX6QDL_CLK_PLL5_VIDEO_DIV>,
+-				 <&clks IMX6QDL_CLK_PLL2_PFD2_396M>,
+-				 <&clks IMX6QDL_CLK_PLL2_PFD2_396M>;
+-};
+-
+ &ldb {
+ 	fsl,dual-channel;
+ 	status = "okay";
+diff --git a/arch/arm/boot/dts/imx6q-bx50v3.dtsi b/arch/arm/boot/dts/imx6q-bx50v3.dtsi
+index fa27dcdf06f1..1938b04199c4 100644
+--- a/arch/arm/boot/dts/imx6q-bx50v3.dtsi
++++ b/arch/arm/boot/dts/imx6q-bx50v3.dtsi
+@@ -377,3 +377,18 @@ pci_root: root@0,0 {
+ 		#interrupt-cells = <1>;
+ 	};
+ };
++
++&clks {
++	assigned-clocks = <&clks IMX6QDL_CLK_LDB_DI0_SEL>,
++			  <&clks IMX6QDL_CLK_LDB_DI1_SEL>,
++			  <&clks IMX6QDL_CLK_IPU1_DI0_PRE_SEL>,
++			  <&clks IMX6QDL_CLK_IPU1_DI1_PRE_SEL>,
++			  <&clks IMX6QDL_CLK_IPU2_DI0_PRE_SEL>,
++			  <&clks IMX6QDL_CLK_IPU2_DI1_PRE_SEL>;
++	assigned-clock-parents = <&clks IMX6QDL_CLK_PLL5_VIDEO_DIV>,
++				 <&clks IMX6QDL_CLK_PLL5_VIDEO_DIV>,
++				 <&clks IMX6QDL_CLK_PLL2_PFD0_352M>,
++				 <&clks IMX6QDL_CLK_PLL2_PFD0_352M>,
++				 <&clks IMX6QDL_CLK_PLL2_PFD0_352M>,
++				 <&clks IMX6QDL_CLK_PLL2_PFD0_352M>;
++};
 -- 
 2.25.1
 
