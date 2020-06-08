@@ -2,118 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84BB61F1BB7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 17:09:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A8621F1B90
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 17:01:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DnXKhkVNU4ufda5vQ78qDhNIeOu9CZvBVoMW2DiU4iY=; b=GaOlefzcpNDsjx
-	BDNFwJIfgxJ2wVOD3xSTaxBVu6cisNZLYfSOSNO9TvYrQUy4goX5dJyyFo7sxruibAAWEuepZtnBk
-	12uZ0YB8GYAWyOtSSqzS3bT9bW/+0SfZNeGEWAhUyislJDfACbeP5biehwuhvZ/u14VaCiOd06cJy
-	2aI/deHxjU+HvoKnBmxFEd80/ebSj8sI9eWt1WGB8UPU4BaTz/zrYRBW527T56+iOWVntb5HY0ppp
-	CiNB75yBO/5RwujIrC+ZNFXEfdHIbgJtUrsar9lTsaIOM/hXr7S1HR3ODXUacrOYbhJgDqUgUc4+0
-	QNgL6BgmpNM7j1MB+Hpg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=vhiDkFTaSaNhInEJFRRncrl5eO6FlZTfawd2qeQlGC4=; b=fIKBgbhgvXms5O
+	cX8tmn4QPWb8JVWM8LZgc/YcOnDtZIRXS1HbeGgGTEvMng1ToxguJI3aPD5eyF2dlGY5q/lbrCt//
+	fFNgHFzRI3+LTGBtSA+4GSTLLBnRb5pyNikavBrpEhifLn3EGEb91NoNrjPYfkTdXSpqKf4T5NNra
+	Jl2p78ao3K+G86uJwhSkbKX+LTt4HPgwcMrg2baAhUI8z9lg+c3+u7jFxdo4ESQh5gB0EsH94oZ7j
+	kOk8DM77qOTkQflZfMZq3SJm/bj7ee3Q6xD9mRfQWG9k84OzBwy/5uTjZMOGNIg9E5BVEGDDyt94p
+	Pws0431W8rfPnff+9aTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiJOZ-0000sq-8x; Mon, 08 Jun 2020 15:09:03 +0000
-Received: from mail-eopbgr40054.outbound.protection.outlook.com ([40.107.4.54]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1jiJHD-00062C-4V; Mon, 08 Jun 2020 15:01:27 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiJOP-0000s7-CT
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 15:08:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=PABPK+dd5AbMZ4HdQsz+Bew3KBpotYhnIZFWupDFUP4fzwd6jrmVXrVt8tRI3POsBGvyQlnTm2/MNeZk+CLw7BaQHplCnN6BaN9BWnRBV9pFoyauxhyxEib+ilcM4EOzmjn64japtypShzlkd4F0THrRWbSUIpPqCehwg+RnzT4INx+u0+m0hYHt92JR9njImWq3Jk55c4BotI9oNKpmw1GJ9n+W4WwCpnmN+uUy2L8fYp6GfmaqiNK7amRrcdaESul+WCVDzjXzLc3dEnJnXB25XBG3zovJWsnWjHI5b4Rwmhr5B/yZ5bpedJV9A2/1FHjNVcOvBolCi9wx+LFZ+A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5FKlWPTAeyaJ8sOWNBlus9Z2N57C0qPEf58EnFV4lps=;
- b=hcMXCBd8rGQ0uh0Xat6gKtbEmpqGSuOpWi8lXBRA96R/POmMCzoqb9YC+f7Tm8gLpab2qcsqCSHYqTKNER9rVmgOcHtID1HlLczQCG6b3ot0zMmpzcKRtWF+MfBjqx+2vjp0KS5foO4UWHfmmNq07YRExKG0CYLIsxPbLBtQB4QbfHNHfzUSPoKstfsHItPPMfXPlw1KJqUmIz8wUclP8XFTzi9v7U2lBpUEy9sM2pX+24kDVo7dKx+AEHbgeC+TQBGrKndlPghhI7remOvxmRG8jw5V95Bzty1AllEze5dBHubsVZWeuDynL1SaLbc2n5C9SXLfDodQUOvl+uTEUQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5FKlWPTAeyaJ8sOWNBlus9Z2N57C0qPEf58EnFV4lps=;
- b=s4wqM6weKf6fte54xPswchSLLs5ct8Ve14HmRCY6jyfx6Aqhb9mFwP8YO2TkAqAM2rA0U/rjHgJH5NzGX/i/kUa+MPiozAtBw4qMuHVOS1SQ2Pu2tJQdXh9p9E7FDyg21HPQ3w5BcRtVqGnxiThDpvBH9G2sxj396dpffxs2u8s=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6589.eurprd04.prod.outlook.com (2603:10a6:803:128::25)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.19; Mon, 8 Jun
- 2020 15:08:45 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.023; Mon, 8 Jun 2020
- 15:08:45 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: RE: [PATCH v9 RESEND 01/13] spi: imx: add dma_sync_sg_for_device
- after fallback from dma
-Thread-Topic: [PATCH v9 RESEND 01/13] spi: imx: add dma_sync_sg_for_device
- after fallback from dma
-Thread-Index: AQHWPBYcMy4ZpJEEjkym0JBjSJknZajOy8sAgAABToA=
-Date: Mon, 8 Jun 2020 15:08:45 +0000
-Message-ID: <VE1PR04MB66388F89015F774EE3FFF69D89850@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1591485677-20533-1-git-send-email-yibin.gong@nxp.com>
- <1591485677-20533-2-git-send-email-yibin.gong@nxp.com>
- <20200608143458.GH4593@sirena.org.uk>
-In-Reply-To: <20200608143458.GH4593@sirena.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.235.111]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a383b15f-303f-447b-b947-08d80bbdd6c6
-x-ms-traffictypediagnostic: VE1PR04MB6589:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB658929D4432D10EC54230EF489850@VE1PR04MB6589.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 042857DBB5
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: yggd+lQBqrcdTQvrdA/yvpMkcRZs67hV0FLXqSdated3FmPRX4pfcPkleNYp/B71QR21XGhXx/DCZLSFJlbEMkzsRurII8a0/ekoVi/0W7bTRU5NCsb9ayYN5ahkblY+tfTbp7jh/H/q4Hnl50S2ES2fFG4bed7W/Qe5XTNCkpuDPsh0/AfarGxaXsGilFKjn/eCxCUQ6zX+HlXzscdv8j8H4mQYOdXGzmVx7Uol7FgQCr1UclnbmJlr1sA9WG/TLVCo39bh5Ob1WRhzq0bq1DdlcJIPHpojz2+E9MqlCtImGEdFL2aE7mFfb1LDH4z4oPVopdkL8JYGe75GY7uINFF6zMiTVKWa13T1fLaVf/LkiKgE90t7a+DKB4K90tn3mwn6ymAocBz/jO0rPhcyzQ==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(136003)(39860400002)(346002)(366004)(376002)(396003)(2906002)(9686003)(26005)(316002)(186003)(53546011)(7696005)(6506007)(55016002)(33656002)(83380400001)(71200400001)(54906003)(966005)(64756008)(66446008)(66556008)(7416002)(8936002)(4326008)(8676002)(478600001)(66946007)(66476007)(5660300002)(52536014)(86362001)(76116006)(6916009);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 7yWBjfzKb6mhHSQSSgwxJjsysI3YVC5b/rSyOZJiZp8oZZY9WSlUKSWJUnwlnYbTSybzgkmkUs/orVsxtEEBZ1hik45T/LjjVciMsq5oHy/HSsbRCKdbVPCGd7+s8j5JXPMOhcdod4hpX3XcHwo0ESn/PHnoB2rr/RiAG4mPM85f7kJI1fGCxBqIRIaKNm20DXtHT6o5vnZ3c4vahBWkhN7iQOGoSZsBkZotlcuzp1nLwLBpaub5xApFmdvmQA1+xXfWigclRwiu9aj2sljS2eINNy6tZKGxFPVaMM1UAMs+OWooAFkTG11S4NNrItHy3X4tkDZ4ZL5mOw8HQe36p0fk/vFu0X/oqgZgXrEJLPninaHgM0JQ8NMRBq5JpJK/Tp3s5W87a6vt0pYsAoi6n1ZLK0TfwXwj3JcL3VeCMJlxDmSH8CRQFW5TODtAVCtA44u85osrRbrwon4sxCZhbGGSIAzH1V/EvyPJ6aLlKAI=
+ id 1jiJH4-00061R-NP
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 15:01:20 +0000
+IronPort-SDR: KVvz+3Tzr6y+9dykawWAhseyKZEewPcWgHRaY04n987/UqePT8rZRbC9XVVqR1Cg7D3qzy+QLV
+ QawYqI3LRwRA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 08 Jun 2020 08:01:17 -0700
+IronPort-SDR: qk19wMuB5NTP1uhyGuehwhAT0ySMHmi+z3MF99ChcbZ2MX6hiD8ivvEKHQyNffbsw5Uvs3gXmx
+ MmWyMS0KOLAQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,487,1583222400"; d="scan'208";a="472714449"
+Received: from xsang-optiplex-9020.sh.intel.com (HELO xsang-OptiPlex-9020)
+ ([10.239.159.140])
+ by fmsmga005.fm.intel.com with ESMTP; 08 Jun 2020 08:01:14 -0700
+Date: Mon, 8 Jun 2020 23:12:47 +0800
+From: kernel test robot <lkp@intel.com>
+To: Michael Walle <michael@walle.cc>, linux-gpio@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-hwmon@vger.kernel.org, linux-pwm@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v4 03/11] irqchip: add sl28cpld interrupt controller
+ support
+Message-ID: <20200608151247.GC31689@xsang-OptiPlex-9020>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a383b15f-303f-447b-b947-08d80bbdd6c6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Jun 2020 15:08:45.2507 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: PLZGp4zsuFDODko2+vaCejWCnulNEZEnVKQ3CIFcu+wtCs4aTp9b2Co0DYPs3/nodTXU1EmOacL4+oQz+mi2Kg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6589
+Content-Disposition: inline
+In-Reply-To: <20200604211039.12689-4-michael@walle.cc>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_080853_490454_50EBF7D5 
-X-CRM114-Status: GOOD (  17.54  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200608_080118_772492_5931262F 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.4.54 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.4.54 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FAKE_REPLY_C           No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,74 +75,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
- "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ kbuild-all@lists.01.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/06/08 22:35 Mark Brown <broonie@kernel.org> wrote:
-> On Sun, Jun 07, 2020 at 07:21:05AM +0800, Robin Gong wrote:
-> > In case dma transfer failed and fallback to pio, tx_buf/rx_buf need to
-> > be taken care cache since they have already been maintained by spi.c
-> 
-> Is this needed as part of this series?  This looks like an independent fix and it
-> seems better to get this in independently.
-But that's used to fix one patch [05/13]of the v8 patch set. To be honest, I'm also
-not sure how to handle it so that I merged both into first v9....For now, I think you
-are right, since 'fallback pio' patch could be independent this series. Will resend in
-v10.
-> 
-> > Fixes: bcd8e7761ec9("spi: imx: fallback to PIO if dma setup failure")
-> > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-> > Reported-by: Matthias Schiffer <matthias.schiffer@ew.tq-group.com>
-> > Link:
-> > https://lore.kernel.org/linux-arm-kernel/5d246dd81607bb6e5cb9af86ad4e5
-> > 3f7a7a99c50.camel@ew.tq-group.com/
-> 
-> The Link is usually to the patch on the list.
-Okay, will remove it.
-> 
-> > --- a/drivers/spi/spi-imx.c
-> > +++ b/drivers/spi/spi-imx.c
-> > @@ -1456,6 +1456,13 @@ static int spi_imx_pio_transfer(struct spi_device
-> *spi,
-> >  		return -ETIMEDOUT;
-> >  	}
-> >
-> > +	if (transfer->rx_sg.sgl) {
-> > +		struct device *rx_dev = spi->controller->dma_rx->device->dev;
-> > +
-> > +		dma_sync_sg_for_device(rx_dev, transfer->rx_sg.sgl,
-> > +				       transfer->rx_sg.nents, DMA_TO_DEVICE);
-> > +	}
-> > +
-> >  	return transfer->len;
-> >  }
-> 
-> This is confusing - why are we DMA mapping to the device after doing a PIO
-> transfer?
-'transfer->rx_sg.sgl' condition check that's the case fallback PIO after DMA transfer
-failed. But the spi core still think the buffer should be in 'device' while spi driver
-touch it by PIO(CPU), so sync it back to device to ensure all received data flush to DDR.
-  
+Hi Michael,
+
+I love your patch! Perhaps something to improve:
+
+[auto build test WARNING on next-20200604]
+[cannot apply to gpio/for-next hwmon/hwmon-next ljones-mfd/for-mfd-next shawnguo/for-next v5.7 v5.7-rc7 v5.7-rc6 v5.7]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+
+url:    https://github.com/0day-ci/linux/commits/Michael-Walle/Add-support-for-Kontron-sl28cpld/20200605-051333
+base:    d4899e5542c15062cc55cac0ca99025bb64edc61
+:::::: branch date: 26 hours ago
+:::::: commit date: 26 hours ago
+compiler: gcc-9 (Debian 9.3.0-13) 9.3.0
+
+If you fix the issue, kindly add following tag as appropriate
+Reported-by: kernel test robot <lkp@intel.com>
+
+
+cppcheck warnings: (new ones prefixed by >>)
+
+>> drivers/irqchip/irq-sl28cpld.c:56:10: warning: Checking if unsigned variable 'irq' is less than zero. [unsignedLessThanZero]
+    if (irq < 0)
+            ^
+
+# https://github.com/0day-ci/linux/commit/b13743c1f1a52746beaa071e5d008c84d59fbd7f
+git remote add linux-review https://github.com/0day-ci/linux
+git remote update linux-review
+git checkout b13743c1f1a52746beaa071e5d008c84d59fbd7f
+vim +/irq +56 drivers/irqchip/irq-sl28cpld.c
+
+b13743c1f1a527 Michael Walle 2020-06-04  35  
+b13743c1f1a527 Michael Walle 2020-06-04  36  static int sl28cpld_intc_probe(struct platform_device *pdev)
+b13743c1f1a527 Michael Walle 2020-06-04  37  {
+b13743c1f1a527 Michael Walle 2020-06-04  38  	struct device *dev = &pdev->dev;
+b13743c1f1a527 Michael Walle 2020-06-04  39  	struct sl28cpld_intc *irqchip;
+b13743c1f1a527 Michael Walle 2020-06-04  40  	unsigned int irq;
+b13743c1f1a527 Michael Walle 2020-06-04  41  	u32 base;
+b13743c1f1a527 Michael Walle 2020-06-04  42  	int ret;
+b13743c1f1a527 Michael Walle 2020-06-04  43  
+b13743c1f1a527 Michael Walle 2020-06-04  44  	if (!dev->parent)
+b13743c1f1a527 Michael Walle 2020-06-04  45  		return -ENODEV;
+b13743c1f1a527 Michael Walle 2020-06-04  46  
+b13743c1f1a527 Michael Walle 2020-06-04  47  	irqchip = devm_kzalloc(dev, sizeof(*irqchip), GFP_KERNEL);
+b13743c1f1a527 Michael Walle 2020-06-04  48  	if (!irqchip)
+b13743c1f1a527 Michael Walle 2020-06-04  49  		return -ENOMEM;
+b13743c1f1a527 Michael Walle 2020-06-04  50  
+b13743c1f1a527 Michael Walle 2020-06-04  51  	irqchip->regmap = dev_get_regmap(dev->parent, NULL);
+b13743c1f1a527 Michael Walle 2020-06-04  52  	if (!irqchip->regmap)
+b13743c1f1a527 Michael Walle 2020-06-04  53  		return -ENODEV;
+b13743c1f1a527 Michael Walle 2020-06-04  54  
+b13743c1f1a527 Michael Walle 2020-06-04  55  	irq = platform_get_irq(pdev, 0);
+b13743c1f1a527 Michael Walle 2020-06-04 @56  	if (irq < 0)
+b13743c1f1a527 Michael Walle 2020-06-04  57  		return irq;
+b13743c1f1a527 Michael Walle 2020-06-04  58  
+b13743c1f1a527 Michael Walle 2020-06-04  59  	ret = device_property_read_u32(&pdev->dev, "reg", &base);
+b13743c1f1a527 Michael Walle 2020-06-04  60  	if (ret)
+b13743c1f1a527 Michael Walle 2020-06-04  61  		return -EINVAL;
+b13743c1f1a527 Michael Walle 2020-06-04  62  
+b13743c1f1a527 Michael Walle 2020-06-04  63  	irqchip->chip.name = "sl28cpld-intc";
+b13743c1f1a527 Michael Walle 2020-06-04  64  	irqchip->chip.irqs = sl28cpld_irqs;
+b13743c1f1a527 Michael Walle 2020-06-04  65  	irqchip->chip.num_irqs = ARRAY_SIZE(sl28cpld_irqs);
+b13743c1f1a527 Michael Walle 2020-06-04  66  	irqchip->chip.num_regs = 1;
+b13743c1f1a527 Michael Walle 2020-06-04  67  	irqchip->chip.status_base = base + INTC_IP;
+b13743c1f1a527 Michael Walle 2020-06-04  68  	irqchip->chip.mask_base = base + INTC_IE;
+b13743c1f1a527 Michael Walle 2020-06-04  69  	irqchip->chip.mask_invert = true,
+b13743c1f1a527 Michael Walle 2020-06-04  70  	irqchip->chip.ack_base = base + INTC_IP;
+b13743c1f1a527 Michael Walle 2020-06-04  71  
+b13743c1f1a527 Michael Walle 2020-06-04  72  	return devm_regmap_add_irq_chip_np(&pdev->dev, dev->of_node,
+b13743c1f1a527 Michael Walle 2020-06-04  73  					   irqchip->regmap, irq,
+b13743c1f1a527 Michael Walle 2020-06-04  74  					   IRQF_SHARED | IRQF_ONESHOT, 0,
+b13743c1f1a527 Michael Walle 2020-06-04  75  					   &irqchip->chip, &irqchip->irq_data);
+b13743c1f1a527 Michael Walle 2020-06-04  76  }
+b13743c1f1a527 Michael Walle 2020-06-04  77  
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+
 
 _______________________________________________
 linux-arm-kernel mailing list
