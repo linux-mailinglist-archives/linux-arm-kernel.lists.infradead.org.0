@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BF341F1464
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 10:19:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E62C1F146A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 10:22:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=69y0vr5Rs3TGtVpGp+jTWvo0Ll99Ttb6N4yApx9WV8k=; b=N9UT9dSqWsFGgd
-	jnGRp2W3+o8tijs7V46hrQC85k2/Ce2kQuB+GEdYp9Ul6yRNJAfba9rED+qet3PA/SnTTrr+kwm/0
-	qY7FSEceRl02rh7HVgGFzn3Vj8g5YBK0aM8PAvBh6ewbciTkqe2Wql1jGbrCCn6qKt3hwOaQbPxrZ
-	YPxv/Kh3OjcU9LpTXAUHCSTgz11hTF3xPZ+/3TB7cVbZKPTf03yNbYuQA+pce2QD7XuAwfebSa+6X
-	zmWM6gug33je4QTb2FI9ZY6GJlhGDx8wZVkA7vJW20h8vsrl3bWOmXZIS50hVNKBopOOgZ+F58ytr
-	3VrEQPtYCHVnz8lcCmHQ==;
+	List-Owner; bh=dTEQHe/IoOZOxCEEW25LxSpM4ufnCS04uDelbQLFToU=; b=RnZehd4gJteJA+
+	y8LvUR6PwmfGCx1lb/2DmenXMFeqLL03KgyhazRpRJzKxvGXnEnBtGHdo0rVjanXrysudpce2hDtz
+	ufLRCXwRpkxeDcvMdmz0OzCHL0X8QosBEsNsBoAjSzyWGdCC4FEiKIU+ZALzu01ev3xl7HfPMjlcH
+	YWTxX8xr/Y2kO/8WAOkiywxcbJWVfQ5rstygBdQkxjhjgSp8+sV/FyFE/VResiOtmKph8ir8k2C5U
+	MD5Ug/Vq4rKw9bZGgSj3IL94IQuhnsfJBDTMH47nsNN6hXrXdZHL0Rxym2CAtOwAs6W1l+aGqUq8l
+	BVzGmL+Z6Hr8cVqWZjUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiCzl-0002uL-OY; Mon, 08 Jun 2020 08:19:01 +0000
+	id 1jiD2h-0005xx-7Y; Mon, 08 Jun 2020 08:22:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiCzd-0002th-RQ
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 08:18:55 +0000
+ id 1jiD2Z-0005xW-K0
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 08:21:56 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 86E3A20656;
- Mon,  8 Jun 2020 08:18:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 29EB7206A4;
+ Mon,  8 Jun 2020 08:21:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591604331;
- bh=/IVx+9cPa/hdjtqn+bLeDhAxS+2dke/9caQWfUasXMg=;
+ s=default; t=1591604515;
+ bh=ukk9VRIP+NjAOTVBv02xmYFvysWUmJ7wdix9Sz1YUBI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nX2kx0ZJvQ6eZb5gFid2h2iyefJIxDMhLvhqHQ4r8PSN5juMtyzG6Rk24zGvO1Rsy
- YWYrlfUa7aCsUXURPJMHFxn4msfRGLefqDnBmBLqgQrVlSjZWwHAIHDjTXHV99AK/q
- dYwj7VLYrifpUdMj+buPBiepFMcBy74p2nfhMrh0=
-Date: Mon, 8 Jun 2020 09:18:46 +0100
+ b=przoaiwQeAzLSZk7wk1fXs7LbXR2q1ElpNm4y4G4hry5jp8BG3bmFL4W7pvFh+nMY
+ S+XH4vrnwcNbV7M5QamQrf/gsc1k0nNmXnlyWjlmU4/04j56h2zuZF3/+Kbks36fue
+ PI6l3TokD7x551whAvn2qViDrcSEepnoFN6GrnK4=
+Date: Mon, 8 Jun 2020 09:21:51 +0100
 From: Will Deacon <will@kernel.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [RFC PATCH] iommu/arm-smmu: Remove shutdown callback
-Message-ID: <20200608081846.GA1542@willie-the-truck>
-References: <20200607110918.1733-1-saiprakash.ranjan@codeaurora.org>
+To: Joe Perches <joe@perches.com>
+Subject: Re: [Possible PATCH]arm64: ftrace: Change CONFIG_FTRACE_WITH_REGS to
+ CONFIG_DYNAMIC_FTRACE_WITH_REGS
+Message-ID: <20200608082150.GB1542@willie-the-truck>
+References: <b9b27f2233bd1fa31d72ff937beefdae0e2104e5.camel@perches.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200607110918.1733-1-saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <b9b27f2233bd1fa31d72ff937beefdae0e2104e5.camel@perches.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_011853_907482_980D92ED 
-X-CRM114-Status: GOOD (  15.98  )
+X-CRM114-CacheID: sfid-20200608_012155_674143_AECCA948 
+X-CRM114-Status: GOOD (  17.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,47 +77,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 07, 2020 at 04:39:18PM +0530, Sai Prakash Ranjan wrote:
-> Remove SMMU shutdown callback since it seems to cause more
-> problems than benefits. With this callback, we need to make
-> sure that all clients/consumers of SMMU do not perform any
-> DMA activity once the SMMU is shutdown and translation is
-> disabled. In other words we need to add shutdown callbacks
-> for all those clients to make sure they do not perform any
-> DMA or else we see all kinds of weird crashes during reboot
-> or shutdown. This is clearly not scalable as the number of
-> clients of SMMU would vary across SoCs and we would need to
-> add shutdown callbacks to almost all drivers eventually.
-> This callback was added for kexec usecase where it was known
-> to cause memory corruptions when SMMU was not shutdown but
-> that does not directly relate to SMMU because the memory
-> corruption could be because of the client of SMMU which is
-> not shutdown properly before booting into new kernel. So in
-> that case, we need to identify the client of SMMU causing
-> the memory corruption and add appropriate shutdown callback
-> to the client rather than to the SMMU.
+On Sat, Jun 06, 2020 at 12:25:50PM -0700, Joe Perches wrote:
+> CONFIG_FTRACE_WITH_REGS does not exist as a Kconfig symbol.
 > 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Signed-off-by: Joe Perches <joe@perches.com>
 > ---
->  drivers/iommu/arm-smmu-v3.c | 6 ------
->  drivers/iommu/arm-smmu.c    | 6 ------
->  2 files changed, 12 deletions(-)
+> 
+> I don't have the hardware, so I can't tell if this is a
+> correct change, but it is a logical one.
+> 
+> Found by a test script that looks for IS_ENABLED(FOO)
+> where FOO must also exist in Kconfig files.
+> 
+>  arch/arm64/kernel/ftrace.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/kernel/ftrace.c b/arch/arm64/kernel/ftrace.c
+> index 8618faa82e6d..86a5cf9bc19a 100644
+> --- a/arch/arm64/kernel/ftrace.c
+> +++ b/arch/arm64/kernel/ftrace.c
+> @@ -69,7 +69,8 @@ static struct plt_entry *get_ftrace_plt(struct module *mod, unsigned long addr)
+>  
+>  	if (addr == FTRACE_ADDR)
+>  		return &plt[FTRACE_PLT_IDX];
+> -	if (addr == FTRACE_REGS_ADDR && IS_ENABLED(CONFIG_FTRACE_WITH_REGS))
+> +	if (addr == FTRACE_REGS_ADDR &&
+> +	    IS_ENABLED(CONFIG_DYNAMIC_FTRACE_WITH_REGS))
+>  		return &plt[FTRACE_REGS_PLT_IDX];
 
-This feels like a giant bodge to me and I think that any driver which
-continues to perform DMA after its ->shutdown() function has been invoked
-is buggy. Wouldn't that cause problems with kexec(), for example?
+Ha! So much for 100-char lines ;)
 
-There's a clear shutdown dependency ordering, where the clients of the
-SMMU need to shutdown before the SMMU itself, but that's not really
-the SMMU driver's problem to solve.
+(fix looks good to me, I'll queue it for -rc1)
 
 Will
 
