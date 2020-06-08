@@ -2,79 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A18F41F214F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 23:09:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 061451F21AF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 00:00:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kmujb4BS2pd0NTic+0QZZSkbrzVx5NcHPB0AsKjWV/k=; b=P65TqUPhCebH73yOQw1xkOgEg
-	GsKwaZRZJe10msM7bDo1A9bN24BmgchRboyqzRxVlJkdV8DCCN5d1IdCE17da+vWdJURWmIdSipOu
-	O0v36Fic4mK8QweDamOIPokDbRW9RnDSxfZTOUzqHAL9y9AbeDND4s/hp1XllX6h7/TLVf/v6Zj4H
-	8/v4J36OM0SoAhlnbP14+PLCOFRZWe542OgS7slkpjc3EcGQjcSAzWC+/BGoziIMwZAoOXZPG1U9G
-	d+U+HQq/B2aVjJQoW1A/aWukwCA6LcrdJbEHHMMbl+CZGgs0MkEM1nrg1ap7qCTzWfCH9YHazWTWV
-	r4XKTacHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NBIprjt/II51aR0PKn5bnlBu+WwZ4oo2oPreKw6j0fo=; b=MMSt7HiCIOlPPT
+	jxLo1uAJ8RW+BmC3sCET4dKCUZg4Gzvx+D/LwKROBBQj2FNdgD56lZoIkJzSB2uPujsp83G3r23Ri
+	vAbCHDaV+Z6PyaY096aYVo3fhNlY41UOt3vKuA0KRc3J+QpC8kORrY4gBluwUKilSap2OqvIWh+HF
+	Qqt7pzODkO38joIapy+sRgNSPCTBoX8RQuyJ3mmZ/NdUealezVbjL9iZfol25irmDKNcV3mtZzR1W
+	e/WDX25wsNSBBLOsyxh2seX8jkbJvxe/WWfR/DrfA7O1ZVislGLaSsf8388v6zPl9DDI7Rp+QqeMl
+	g/7I5QV+ErTZ3LX+Uc7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiP19-0004gH-DI; Mon, 08 Jun 2020 21:09:15 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jiPoE-0000dX-0x; Mon, 08 Jun 2020 21:59:58 +0000
+Received: from kernel.crashing.org ([76.164.61.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiP10-0004e4-VR
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 21:09:09 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 3DA9322EE4;
- Mon,  8 Jun 2020 23:09:01 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1591650543;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=2o+gSIhCA0jJNy2hw5k+4oXmbqw0ZtEPZKBPuFUvEFQ=;
- b=fAUewLH+4d6OiOYXWhfJBtFX0y8jTLo61f7QVJVPY5w3zbVLy6w8N0q47/HwuL6JeT5Cwb
- jdzU0mv2Z36vbI9tUGCmrDNWaQN67/ZcVBodL1hm/WCnRQBJ5dfS8s6gWbpYPAclh3wi6r
- +U2nnX3dLFvpKaYmQH72ZqqNv0hmuts=
-MIME-Version: 1.0
-Date: Mon, 08 Jun 2020 23:09:01 +0200
-From: Michael Walle <michael@walle.cc>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
- controller
-In-Reply-To: <20200608185651.GD4106@dell>
-References: <20200604211039.12689-1-michael@walle.cc>
- <20200604211039.12689-3-michael@walle.cc> <20200605065709.GD3714@dell>
- <20200605105026.GC5413@sirena.org.uk>
- <c5632bfab3956265e90fc2fb6c0b3cae@walle.cc>
- <20200606114645.GB2055@sirena.org.uk>
- <dc052a5c77171014ecc465b1da8b7ef8@walle.cc> <20200608082827.GB3567@dell>
- <CAHp75VdiH=J-ovCdh1RFJDW_bJM8=pbXRaHmB691GLb-5oBmYQ@mail.gmail.com>
- <7d7feb374cbf5a587dc1ce65fc3ad672@walle.cc> <20200608185651.GD4106@dell>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <32231f26f7028d62aeda8fdb3364faf1@walle.cc>
-X-Sender: michael@walle.cc
+ id 1jiPo6-0000d8-L0
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 21:59:52 +0000
+Received: from localhost (gate.crashing.org [63.228.1.57])
+ (authenticated bits=0)
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 058LxGv3017657
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Mon, 8 Jun 2020 16:59:20 -0500
+Message-ID: <0940571f9daa9829f70616b3036a2b3b3f25953c.camel@kernel.crashing.org>
+Subject: Re: [PATCH] irqchip/gic-v3-its: Don't try to move a disabled irq
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Thomas Gleixner <tglx@linutronix.de>, "maz@kernel.org" <maz@kernel.org>,
+ "Saidi, Ali" <alisaidi@amazon.com>
+Date: Tue, 09 Jun 2020 07:59:15 +1000
+In-Reply-To: <87mu5dacs7.fsf@nanos.tec.linutronix.de>
+References: <AE04B507-C5E2-44D2-9190-41E9BE720F9D@amazon.com>
+ <622fb6be108e894ee365d6b213535c8b@kernel.org>
+ <f9e9d8c37eb92e4b9576bfcb4386ff6ef00eddce.camel@amazon.com>
+ <87mu5dacs7.fsf@nanos.tec.linutronix.de>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_140907_311815_8875832F 
-X-CRM114-Status: GOOD (  38.55  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200608_145950_882573_2A981080 
+X-CRM114-Status: GOOD (  29.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,175 +62,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>,
- Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine-K?= =?UTF-8?Q?=C3=B6nig?=
- <u.kleine-koenig@pengutronix.de>, david.m.ertman@intel.com,
- Guenter Roeck <linux@roeck-us.net>, devicetree <devicetree@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, shiraz.saleem@intel.com,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: "jason@lakedaemon.net" <jason@lakedaemon.net>, "Machulsky,
+ Zorik" <zorik@amazon.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Zilberman,
+ Zeev" <zeev@amazon.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "Woodhouse, David" <dwmw@amazon.co.uk>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-06-08 20:56, schrieb Lee Jones:
-> On Mon, 08 Jun 2020, Michael Walle wrote:
+On Mon, 2020-06-08 at 15:48 +0200, Thomas Gleixner wrote:
+> "Herrenschmidt, Benjamin" <benh@amazon.com> writes:
+> > On Wed, 2020-06-03 at 16:16 +0100, Marc Zyngier wrote:
+> > > > My original patch should certain check activated and not disabled.
+> > > > With that do you still have reservations Marc?
+> > > 
+> > > I'd still prefer it if we could do something in core code, rather
+> > > than spreading these checks in the individual drivers. If we can't,
+> > > fair enough. But it feels like the core set_affinity function could
+> > > just do the same thing in a single place (although the started vs
+> > > activated is yet another piece of the puzzle I didn't consider,
+> > > and the ITS doesn't need the "can_reserve" thing).
+> > 
+> > For the sake of fixing the problem in a timely and backportable way I
+> > would suggest first merging the fix, *then* fixing the core core.
 > 
->> Am 2020-06-08 12:02, schrieb Andy Shevchenko:
->> > +Cc: some Intel people WRT our internal discussion about similar
->> > problem and solutions.
->> >
->> > On Mon, Jun 8, 2020 at 11:30 AM Lee Jones <lee.jones@linaro.org> wrote:
->> > > On Sat, 06 Jun 2020, Michael Walle wrote:
->> > > > Am 2020-06-06 13:46, schrieb Mark Brown:
->> > > > > On Fri, Jun 05, 2020 at 10:07:36PM +0200, Michael Walle wrote:
->> > > > > > Am 2020-06-05 12:50, schrieb Mark Brown:
->> >
->> > ...
->> >
->> > > Right.  I'm suggesting a means to extrapolate complex shared and
->> > > sometimes intertwined batches of register sets to be consumed by
->> > > multiple (sub-)devices spanning different subsystems.
->> > >
->> > > Actually scrap that.  The most common case I see is a single Regmap
->> > > covering all child-devices.
->> >
->> > Yes, because often we need a synchronization across the entire address
->> > space of the (parent) device in question.
->> >
->> > >  It would be great if there was a way in
->> > > which we could make an assumption that the entire register address
->> > > space for a 'tagged' (MFD) device is to be shared (via Regmap) between
->> > > each of the devices described by its child-nodes.  Probably by picking
->> > > up on the 'simple-mfd' compatible string in the first instance.
->> > >
->> > > Rob, is the above something you would contemplate?
->> > >
->> > > Michael, do your register addresses overlap i.e. are they intermingled
->> > > with one another?  Do multiple child devices need access to the same
->> > > registers i.e. are they shared?
->> 
->> No they don't overlap, expect for maybe the version register, which is
->> just there once and not per function block.
+> The "fix" is just wrong
 > 
-> Then what's stopping you having each device Regmap their own space?
+> > 	if (cpu != its_dev->event_map.col_map[id]) {
+> > 		target_col = &its_dev->its->collections[cpu];
+> > -		its_send_movi(its_dev, target_col, id);
+> > +
+> > +		/* If the IRQ is disabled a discard was sent so don't move */
+> > +		if (!irqd_irq_disabled(d))
+> 
+> That check needs to be !irqd_is_activated() because enable_irq() does
+> not touch anything affinity related.
 
-Because its just one I2C device, AFAIK thats not possible, right?
+Right. Note: other  drivers  (like arch/powerpc/sysdev/xive/common.c
+use irqd_is_started() ... this gets confusing :)
 
-> The issues I wish to resolve using 'simple-mfd' are when sub-devices
-> register maps overlap and intertwine.
+> > +			its_send_movi(its_dev, target_col, id);
+> > +
+> > 		its_dev->event_map.col_map[id] = cpu;
+> > 		irq_data_update_effective_affinity(d, cpumask_of(cpu));
 > 
->> > > > > > But, there is more in my driver:
->> > > > > >  (1) there is a version check
->> > >
->> > > If we can rid the Regmap dependency, then creating an entire driver to
->> > > conduct a version check is unjustifiable.  This could become an inline
->> > > function which is called by each of the sub-devices instead, for
->> > > example.
->> 
->> sounds good to me. (although there would then be a probe fail per 
->> sub-device
->> if the version is not supported)
-> 
-> I don't see an issue with that.  I would put that check inside a
-> shared call though, complete with support for locking.
-> 
->> > > > > >  (2) there is another function for which there is no suitable linux
->> > > > > >      subsystem I'm aware of and thus which I'd like to us sysfs
->> > > > > >      attributes for: This controller supports 16 non-volatile
->> > > > > >      configuration bits. (this is still TBD)
->> > >
->> > > There is a place for everything in Linux.
->> > >
->> > > What do these bits configure?
->> 
->> - hardware strappings which have to be there before the board powers 
->> up,
->>   like clocking mode for different SerDes settings
->> - "keep-in-reset" bits for onboard peripherals if you want to save 
->> power
->> - disable watchdog bits (there is a watchdog which is active right 
->> from
->>   the start and supervises the bootloader start and switches to 
->> failsafe
->>   mode if it wasn't successfully started)
->> - special boot modes, like eMMC, etc.
->> 
->> Think of it as a 16bit configuration word.
-> 
-> And you wish for users to be able to view these at run-time?
+> And then these associtations are disconnected from reality in any case.
 
-And esp. change them.
+Not sure what you mean here, that said...
 
-> Can they adapt any of them on-the-fly or will the be RO?
+> Something like the completely untested patch below should work.
 
-They are R/W but only will only affect the board behavior after a reset.
+Ok. One possible issue though is before, the driver always had the
+opportunity to "vet" the affinity mask for whatever platform
+constraints may be there and change it before applying it. This is no
+longer the case on a deactivated interrupt with your patch as far as I
+can tell. I don't know if that is a problem and if drivers that do that
+have what it takes to "fixup" the affinity at startup time, the ones I
+wrote don't need that feature, but...
 
--michael
+Cheers,
+Ben.
 
+> Thanks,
 > 
->> > > > > TBH I'd also say that the enumeration of the subdevices for this
->> > > > > device should be in the device rather than the DT, they don't
->> > > > > seem to be things that exist outside of this one device.
->> > > >
->> > > > We're going circles here, formerly they were enumerated in the MFD.
->> > > > Yes, they are devices which aren't likely be used outside a
->> > > > "sl28cpld", but there might there might be other versions of the
->> > > > sl28cpld with other components on different base addresses. I
->> > > > don't care if they are enumerated in DT or MFD, actually, I'd
->> > > > prefer the latter. _But_ I would like to have the device tree
->> > > > properties for its subdevices, e.g. the ones for the watchdog or
->> > > > whatever components there might be in the future.
->> > >
->> > > [...]
->> > >
->> > > > MFD core can
->> > > > match a device tree node today; but only one per unique compatible
->> > > > string. So what should I use to differentiate the different
->> > > > subdevices?
->> > >
->> > > Right.  I have been aware of this issue.  The only suitable solution
->> > > to this would be to match on 'reg'.
->> 
->> see below (1)
->> 
->> > >
->> > > FYI: I plan to fix this.
->> > >
->> > > If your register map needs to change, then I suggest that this is
->> > > either a new device or at least a different version of the device and
->> > > would also have to be represented as different (sub-)mfd_cell.
->> > >
->> > > > Rob suggested the internal offset, which I did here.
->> > >
->> > > FWIW, I don't like this idea.  DTs should not have to be modified
->> > > (either in the first instance or subsequently) or specifically
->> > > designed to patch inadequacies in any given OS.
->> 
->> How does (1) play together with this? What do you propose the "reg"
->> property should contain?
+>         tglx
 > 
-> Whatever is in the 'reg' property contained in the Device Tree node.
-> Either the full address or an offset would be suitable.
+> ---
+>  arch/x86/kernel/apic/vector.c |   21 +++------------------
+>  kernel/irq/manage.c           |   37 +++++++++++++++++++++++++++++++++++--
+>  2 files changed, 38 insertions(+), 20 deletions(-)
 > 
-> Caveat: All this thinking has been done on-the-fly.  I would need to
-> look at some examples of existing devices and start coding before I
-> could really think the solution through.
-> 
-> Happy to discuss and/or take recommendations though.
+> --- a/arch/x86/kernel/apic/vector.c
+> +++ b/arch/x86/kernel/apic/vector.c
+> @@ -446,12 +446,10 @@ static int x86_vector_activate(struct ir
+>  	trace_vector_activate(irqd->irq, apicd->is_managed,
+>  			      apicd->can_reserve, reserve);
+>  
+> -	/* Nothing to do for fixed assigned vectors */
+> -	if (!apicd->can_reserve && !apicd->is_managed)
+> -		return 0;
+> -
+>  	raw_spin_lock_irqsave(&vector_lock, flags);
+> -	if (reserve || irqd_is_managed_and_shutdown(irqd))
+> +	if (!apicd->can_reserve && !apicd->is_managed)
+> +		assign_irq_vector_any_locked(irqd);
+> +	else if (reserve || irqd_is_managed_and_shutdown(irqd))
+>  		vector_assign_managed_shutdown(irqd);
+>  	else if (apicd->is_managed)
+>  		ret = activate_managed(irqd);
+> @@ -775,21 +773,8 @@ void lapic_offline(void)
+>  static int apic_set_affinity(struct irq_data *irqd,
+>  			     const struct cpumask *dest, bool force)
+>  {
+> -	struct apic_chip_data *apicd = apic_chip_data(irqd);
+>  	int err;
+>  
+> -	/*
+> -	 * Core code can call here for inactive interrupts. For inactive
+> -	 * interrupts which use managed or reservation mode there is no
+> -	 * point in going through the vector assignment right now as the
+> -	 * activation will assign a vector which fits the destination
+> -	 * cpumask. Let the core code store the destination mask and be
+> -	 * done with it.
+> -	 */
+> -	if (!irqd_is_activated(irqd) &&
+> -	    (apicd->is_managed || apicd->can_reserve))
+> -		return IRQ_SET_MASK_OK;
+> -
+>  	raw_spin_lock(&vector_lock);
+>  	cpumask_and(vector_searchmask, dest, cpu_online_mask);
+>  	if (irqd_affinity_is_managed(irqd))
+> --- a/kernel/irq/manage.c
+> +++ b/kernel/irq/manage.c
+> @@ -195,9 +195,9 @@ void irq_set_thread_affinity(struct irq_
+>  			set_bit(IRQTF_AFFINITY, &action->thread_flags);
+>  }
+>  
+> +#ifdef CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK
+>  static void irq_validate_effective_affinity(struct irq_data *data)
+>  {
+> -#ifdef CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK
+>  	const struct cpumask *m = irq_data_get_effective_affinity_mask(data);
+>  	struct irq_chip *chip = irq_data_get_irq_chip(data);
+>  
+> @@ -205,9 +205,19 @@ static void irq_validate_effective_affin
+>  		return;
+>  	pr_warn_once("irq_chip %s did not update eff. affinity mask of irq %u\n",
+>  		     chip->name, data->irq);
+> -#endif
+>  }
+>  
+> +static inline void irq_init_effective_affinity(struct irq_data *data,
+> +					       const struct cpumask *mask)
+> +{
+> +	cpumask_copy(irq_data_get_effective_affinity_mask(data), mask);
+> +}
+> +#else
+> +static inline void irq_validate_effective_affinity(struct irq_data *data) { }
+> +static inline boot irq_init_effective_affinity(struct irq_data *data,
+> +					       const struct cpumask *mask) { }
+> +#endif
+> +
+>  int irq_do_set_affinity(struct irq_data *data, const struct cpumask *mask,
+>  			bool force)
+>  {
+> @@ -304,6 +314,26 @@ static int irq_try_set_affinity(struct i
+>  	return ret;
+>  }
+>  
+> +static bool irq_set_affinity_deactivated(struct irq_data *data,
+> +					 const struct cpumask *mask, bool force)
+> +{
+> +	struct irq_desc *desc = irq_data_to_desc(data);
+> +
+> +	/*
+> +	 * If the interrupt is not yet activated, just store the affinity
+> +	 * mask and do not call the chip driver at all. On activation the
+> +	 * driver has to make sure anyway that the interrupt is in a
+> +	 * useable state so startup works.
+> +	 */
+> +	if (!IS_ENABLED(CONFIG_IRQ_DOMAIN_HIERARCHY) || irqd_is_activated(data))
+> +		return false;
+> +
+> +	cpumask_copy(desc->irq_common_data.affinity, mask);
+> +	irq_init_effective_affinity(data, mask);
+> +	irqd_set(data, IRQD_AFFINITY_SET);
+> +	return true;
+> +}
+> +
+>  int irq_set_affinity_locked(struct irq_data *data, const struct cpumask *mask,
+>  			    bool force)
+>  {
+> @@ -314,6 +344,9 @@ int irq_set_affinity_locked(struct irq_d
+>  	if (!chip || !chip->irq_set_affinity)
+>  		return -EINVAL;
+>  
+> +	if (irq_set_affinity_deactivated(data, mask, force))
+> +		return 0;
+> +
+>  	if (irq_can_move_pcntxt(data) && !irqd_is_setaffinity_pending(data)) {
+>  		ret = irq_try_set_affinity(data, mask, force);
+>  	} else {
+
 
 _______________________________________________
 linux-arm-kernel mailing list
