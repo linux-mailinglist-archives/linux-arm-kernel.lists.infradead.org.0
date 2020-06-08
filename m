@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 430221F1971
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 14:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0B691F1981
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 14:59:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JHUzkWhUO6s6f+IsNSNrvlKeJliLsmjauvx2Ob+OabA=; b=VxifUbOeF+jW30
-	dYhtJGMDeUMIXwg4UVFhbUqQ31hSAHgMVpKzEKpsnMDmuNFEjGcDCYumL1eEQ1UKnquxGouefZoOV
-	kpDVyq99tMIJZHz2WuzW4QRgyvlq1lKegqd3Ihv86feNc0/eFXLGuw6veuzzIuPGR6NH0G0DrO+NB
-	x5f7meUJ+ZkDk1VbMQiBMzdkWCegm2yvRLuBnM58wd9w8GQxhiwphJFqB6LPXHMDDBmbmdyMwqlpD
-	CxRupK4YDbb86hU3r0n3WrqTz8kcIOBi/z0D7vAWlWqS8Zy0cRyDQScz9zgblHoTBRYptrMfkZcYM
-	ohJAu7XV8UVHb+ebFweA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HofY05i/wguqcLrk/19XDakCW/wYAzbNKWM5tgCx4Jw=; b=bG1YgRBCcZHh+xpi0fnJ5ydyf
+	dXa8JXiyC/NxU7ykiQRx0ocVi13rR98H/VYJH6t6WVlnZQaf5CVdlS9HSB5A8EORbLfat9dpefy7P
+	RXU7RpLjzP0+NfTxSWbPBipZvwjD9lAsMcpOJzQwOVVTa7C2IJFJUuoLdSEybArTGcl4WfXiTpEHq
+	piXatHNeBvH5nKlpZRPKLDi0WFULm4z/r6sXEGIly/hPvPN0MU7qhYQ19HnoNfbUKOKyT5HII1vXu
+	gaUtVNsfN/PpjNC7jfSz2fS+VKkWEqYNa6xFNlhZY1k5BPuG4W0CfO06NoIjDecZE0MVMhvPF//83
+	zrgC8b9+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiHKX-0001cU-M5; Mon, 08 Jun 2020 12:56:45 +0000
-Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiHKP-0001TT-Vw; Mon, 08 Jun 2020 12:56:39 +0000
-Received: by mail-ej1-x644.google.com with SMTP id k11so18178361ejr.9;
- Mon, 08 Jun 2020 05:56:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3UgnuIt4eUiizz8RKz+CLNlYY+s+snxRvwn2Nqiv8mA=;
- b=hnKDm+e2wot8X7hijnXlTxsjlMzVZArEMQbqShrDH6BDk82Q6ZkDZvU9ieBAB3VXsj
- Sw0/GsjulOpiufvM9GBWh1bFGDpFygFoqIVcxFSAjZM45cWJlpjXeL3ePl5g9RD8bIUE
- 6kukCAywLyQ19gqgsYBKwAflTXhxGLjdSh6Qu5fd7mVBJcgM/hi6VHnCyjb4HRe4RrZy
- b7Xkpjf9ogah8/JARCAT5p5Bda1Tbhh3iZXkAF7tgNeBS2mNErfLjAunjpd1wV42eyaD
- jlhLAZCSQMmZxrLezsMEjlvIQMNG9UB2EDzN+3DlOz9LBfzIXnFM0tw49prqWFSt6U+1
- JmPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3UgnuIt4eUiizz8RKz+CLNlYY+s+snxRvwn2Nqiv8mA=;
- b=mUnZYOhn4qsq+OgjstuX1AgpDR4jorvCF/2J1+j5iQzaPBUTm6DzYs1vvKMZqGN16S
- AWgG+jQxXS6q+emdWU2PHB3x8lKj9tAfVNjZCkEX2OGjUrats315tJpr+5DmhuH5XAq+
- 8zS0xc9bMRqOpQgvOUEOI8sko2osgc8uPSwAJbd36AvsZnKl3axT1/6I5y5j3w3rstQS
- qtIV9iWWpXKyQ4reDq+ztm31BowQtsJFLzg7i+ELw4qv98NI/MyCxDIs3paaEazTr9RX
- YYwtvQi08Ry+HqkWgv9rRGDkRfPbvdaZLFbTkMzle7jSvBsrrWlpahHkuAOANGhm1mNc
- pRhw==
-X-Gm-Message-State: AOAM530e7dasKJhY6bJWPk/LXKBDEYuiun+yOq3Y5nerRjZrx3rYr1JZ
- U/57lNRvc2x6rFVdsdo7rf6MXjm4hlD+RR+bYvo=
-X-Google-Smtp-Source: ABdhPJyghfSi7+bGOS7SQqFDAcG804xFwgxwAKvBvSPJfgOsYDUEIS+KYDI19lMl7J6498uIrMhJhNEBfHuxmhpBMek=
-X-Received: by 2002:a17:906:160a:: with SMTP id
- m10mr21575123ejd.170.1591620995724; 
- Mon, 08 Jun 2020 05:56:35 -0700 (PDT)
+	id 1jiHNS-0002R3-IG; Mon, 08 Jun 2020 12:59:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiHNB-0002Ow-F4; Mon, 08 Jun 2020 12:59:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAD0631B;
+ Mon,  8 Jun 2020 05:59:28 -0700 (PDT)
+Received: from [10.37.12.95] (unknown [10.37.12.95])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 73C403F52E;
+ Mon,  8 Jun 2020 05:59:25 -0700 (PDT)
+Subject: Re: [PATCH v8 4/8] PM / EM: add support for other devices than CPUs
+ in Energy Model
+To: Dan Carpenter <dan.carpenter@oracle.com>
+References: <20200608115155.GY30374@kadam>
+ <b347fb60-46d3-e59c-59fa-a2b10932fc49@arm.com> <20200608125127.GN22511@kadam>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <da0debe1-73da-33f1-c24e-154c2123c522@arm.com>
+Date: Mon, 8 Jun 2020 13:59:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20200605125545.31974-1-frank@allwinnertech.com>
- <20200605151810.vmgnnzp7cadfwsu5@gilmour.lan>
-In-Reply-To: <20200605151810.vmgnnzp7cadfwsu5@gilmour.lan>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Mon, 8 Jun 2020 20:54:51 +0800
-Message-ID: <CAEExFWuoHhLqt4aukmP30SSXmwnmYuRq2t5HWKUBvreeABg=XQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] mmc: sunxi-mmc: do not hide address in sunxi_mmc_irq()
-To: Maxime Ripard <maxime@cerno.tech>
+In-Reply-To: <20200608125127.GN22511@kadam>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_055638_030436_02AEAF24 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_055929_595492_043CF1B3 
+X-CRM114-Status: GOOD (  17.84  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tiny.windzz[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,43 +64,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marex@denx.de, Ulf Hansson <ulf.hansson@linaro.org>,
- linux-mmc@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, rmfrfs@gmail.com,
- Chen-Yu Tsai <wens@csie.org>, linux-mediatek@lists.infradead.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Frank Lee <frank@allwinnertech.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- chaotian.jing@mediatek.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: kbuild-all@lists.01.org, lkp@intel.com, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, kbuild@lists.01.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cw00.choi@samsung.com, linux-mediatek@lists.infradead.org, linux-imx@nxp.com,
+ linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, Dan Carpenter <error27@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 11:18 PM Maxime Ripard <maxime@cerno.tech> wrote:
->
-> Hi,
->
-> On Fri, Jun 05, 2020 at 08:55:44PM +0800, Frank Lee wrote:
-> > From: Yangtao Li <tiny.windzz@gmail.com>
-> >
-> > Using %px to show the actual address in sunxi_mmc_irq()
-> > to help us to debug issue.
-> >
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > Signed-off-by: Frank Lee <frank@allwinnertech.com>
->
-> I'm fairly sure this hash is on purpose, and both the commit log of the
-> %px introduction (ad67b74d2469) and the checkpatch message are pretty
-> explicit about it.
->
-> What issue were you trying to solve here?
 
-There doesn't seem to be a strong requirement to force this to be printed out,
-I just think that ____ptrval____ is very unpleasant.
 
-Or delete %p directly?
+On 6/8/20 1:51 PM, Dan Carpenter wrote:
+> On Mon, Jun 08, 2020 at 01:34:37PM +0100, Lukasz Luba wrote:
+>> Hi Dan,
+>>
+>> Thank you for your analyzes.
+>>
+>> On 6/8/20 12:51 PM, Dan Carpenter wrote:
+>>> Hi Lukasz,
+>>>
+>>> I love your patch! Perhaps something to improve:
+>>>
+>>> url:    https://github.com/0day-ci/linux/commits/Lukasz-Luba/Add-support-for-devices-in-the-Energy-Model/20200527-180614
+>>> base:   https://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git linux-next
+>>>
+>>> config: i386-randconfig-m021-20200605 (attached as .config)
+>>> compiler: gcc-9 (Debian 9.3.0-13) 9.3.0
+>>>
+>>> If you fix the issue, kindly add following tag as appropriate
+>>> Reported-by: kernel test robot <lkp@intel.com>
+>>> Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+>>>
+>>> smatch warnings:
+>>> kernel/power/energy_model.c:316 em_dev_register_perf_domain() error: we previously assumed 'dev->em_pd' could be null (see line 277)
+>>>
+>>> # https://github.com/0day-ci/linux/commit/110d050cb7ba1c96e63ada498979d1fd99529be2
+>>> git remote add linux-review https://github.com/0day-ci/linux
+>>> git remote update linux-review
+>>> git checkout 110d050cb7ba1c96e63ada498979d1fd99529be2
+>>> vim +316 kernel/power/energy_model.c
+>>>
+>>> 0e294e607adaf3 Lukasz Luba     2020-05-27  262  int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states,
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  263  				struct em_data_callback *cb, cpumask_t *cpus)
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  264  {
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  265  	unsigned long cap, prev_cap = 0;
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  266  	int cpu, ret;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  267
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  268  	if (!dev || !nr_states || !cb)
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  269  		return -EINVAL;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  270
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  271  	/*
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  272  	 * Use a mutex to serialize the registration of performance domains and
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  273  	 * let the driver-defined callback functions sleep.
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  274  	 */
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  275  	mutex_lock(&em_pd_mutex);
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  276
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27 @277  	if (dev->em_pd) {
+>>>                                                               ^^^^^^^^^^
+>>> Check for NULL.
+>>>
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  278  		ret = -EEXIST;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  279  		goto unlock;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  280  	}
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  281
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  282  	if (_is_cpu_device(dev)) {
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  283  		if (!cpus) {
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  284  			dev_err(dev, "EM: invalid CPU mask\n");
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  285  			ret = -EINVAL;
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  286  			goto unlock;
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  287  		}
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  288
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  289  		for_each_cpu(cpu, cpus) {
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  290  			if (em_cpu_get(cpu)) {
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  291  				dev_err(dev, "EM: exists for CPU%d\n", cpu);
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  292  				ret = -EEXIST;
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  293  				goto unlock;
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  294  			}
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  295  			/*
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  296  			 * All CPUs of a domain must have the same
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  297  			 * micro-architecture since they all share the same
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  298  			 * table.
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  299  			 */
+>>> 8ec59c0f5f4966 Vincent Guittot 2019-06-17  300  			cap = arch_scale_cpu_capacity(cpu);
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  301  			if (prev_cap && prev_cap != cap) {
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  302  				dev_err(dev, "EM: CPUs of %*pbl must have the same capacity\n",
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  303  					cpumask_pr_args(cpus));
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  304
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  305  				ret = -EINVAL;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  306  				goto unlock;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  307  			}
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  308  			prev_cap = cap;
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  309  		}
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  310  	}
+>>> 27871f7a8a341e Quentin Perret  2018-12-03  311
+>>> 110d050cb7ba1c Lukasz Luba     2020-05-27  312  	ret = em_create_pd(dev, nr_states, cb, cpus);
+>>>
+>>>
+>>> If it's a _is_cpu_device() then it iterates through a bunch of devices
+>>> and sets up cpu_dev->em_pd for each.  Presumably one of the devices is
+>>> "dev" or this would crash pretty early on in testing?
+>>
+>> Yes, all of the devices taken from 'cpus' mask will get the em_pd set
+>> including the suspected @dev.
+>> To calm down this static analyzer I can remove the 'else'
+>> in line 204 to make 'dev->em_pd = pd' set always.
+>> 199         if (_is_cpu_device(dev))
+>> 200                 for_each_cpu(cpu, cpus) {
+>> 201                         cpu_dev = get_cpu_device(cpu);
+>> 202                         cpu_dev->em_pd = pd;
+>> 203                 }
+>> 204         else
+>> 205                 dev->em_pd = pd;
+>>
+>>
+>> Do you think it's a good solution and will work for this tool?
+> 
+> It's not about the tool...  Ignore the tool when it's wrong.  But I do
+> think the code is slightly more clear without the else statement.
+> 
+> Arguments could be made either way.  Removing the else statement means
+> we set dev->em_pd twice...  But I *personally* lean vaguely towards
+> removing the else statement.  :P
 
-Yangtao
+Thanks, I will remove the else statement and add your 'Reported-by'
+
+Regards,
+Lukasz
+
+> 
+> That would make the warning go away as well.
+> 
+> regards,
+> dan carpenter
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
