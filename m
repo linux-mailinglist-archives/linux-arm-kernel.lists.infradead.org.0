@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0155A1F266E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:40:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 810A51F266F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:41:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vBQqWv/1VvK87bySukH2mt4uEUyOj5vtIYFTy7OaN2s=; b=mtsRMrLTwBSVoX
-	ljzBe643SvkGyvJZuVBkzA4cEmnHQ4LNLJ689vYOJL9oCHx/UvD5RDV8vCKVzQlj3W8P0dvzjQmN/
-	gJlOvMMxHxGIZypwgsCScolR4oVYaPh+30X8id6c0uvaC64GV2KuQ5/hsxgZNElr9rdEtGf/OBMzb
-	xcZV11MgVVzVRQX1eHp4V9q/xcR1Ml79tg9cvz6kFxnmWDCtLYnuFtZ417pIOv2iDTt4pb5msy4Lm
-	yoFFPh4/sNsISbEinav15U7RaVvPXuqDVSz/ihDKaYsnp1VQlYBW+Vj3cxIu/2WbohP4HqOM43J9E
-	jb8K3tXpaaaOh2XN58AA==;
+	List-Owner; bh=ipUGkvdT4y3iJIFKdUnwLCa8Vh3yrKWwMMsSRzoDtVM=; b=RoW3dJRh+F+X2k
+	yg9cxjkuaw8yBbXw8515H2Ffh51ipcp3fbwOLlFJecHWJTXNy9JBdWGObCapBSwxxUHCKErrHkpLV
+	Zr2TX6Eh5pHcJDED5W76cSxXWYkiDc3QJxgBT58LJvoDHcZDnDsrwJOzu1/m+H16Ghn1SAVUM57py
+	SYH88hrfZR2VmMHq648+/CVCGU6jJSF4Um46d/ID9sphYzB7jsFjeXPPaIEsNNKVbkvI2UF2mICi7
+	DmfjJlO4RRVJQvsbvuexP6YY6PcHnhEbb8t+Sb6tn8uD+u3TF85NXyy5BF7yaNg0TloSZh1xyYxB0
+	U/QQ2Gt0+qgwXR1bYUGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRNb-0002NR-L8; Mon, 08 Jun 2020 23:40:35 +0000
+	id 1jiRNx-0002hD-Cc; Mon, 08 Jun 2020 23:40:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR3N-00062V-53
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:19:43 +0000
+ id 1jiR3Z-0006Cj-9E
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:19:59 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D31E520842;
- Mon,  8 Jun 2020 23:19:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 05D122088E;
+ Mon,  8 Jun 2020 23:19:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658380;
- bh=MR39vtB/C9XrQbTfXckuJXqd4TZpcXNPYMB/BQEKY5Q=;
+ s=default; t=1591658392;
+ bh=asa8ONHvLvSLrkUv5RGqx9vJCcv05F7tTMtmQgGoEZs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kwVYBgie9M3UW4xz+qmE0pMIWtEXXau7rIW6MP3DrUmCkWCPwLFQXzTLSUpnKznjN
- 46Je7Dr4+Anzt6km9+0nQqL2ABhilVloXGNO09y/kJlvkR/H2Xr+WuISIkvwL6HxU4
- i/uPMHUOqejYC+kVDt7UUxk57S494Vw81xroxJ2Q=
+ b=fbiKSj3EBiqR5lGUeIAKqSQahNPsXjjuFXA0a7TB3bfIRwSHRp2dADQ/tpmnr/RG4
+ dnaL2GUhtDTzGskkxqxqkbCJ6kvgdaelacjUHbIh8psxzwYUmGl9miMgHa97ZifkiO
+ RGxsFjv21gEJg7Tkotgz0ObzgCkEHf8EGQ5ECj+s=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 042/175] ACPI/IORT: Fix PMCG node single ID
- mapping handling
-Date: Mon,  8 Jun 2020 19:16:35 -0400
-Message-Id: <20200608231848.3366970-42-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 050/175] ARM: 8978/1: mm: make act_mm() respect
+ THREAD_SIZE
+Date: Mon,  8 Jun 2020 19:16:43 -0400
+Message-Id: <20200608231848.3366970-50-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231848.3366970-1-sashal@kernel.org>
 References: <20200608231848.3366970-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161941_228986_1987CFC3 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20200608_161953_361034_994129D4 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,62 +80,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Hanjun Guo <guoahanjun@huawei.com>,
- Tuan Phan <tuanphan@os.amperecomputing.com>, linux-acpi@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tuan Phan <tuanphan@os.amperecomputing.com>
+From: Linus Walleij <linus.walleij@linaro.org>
 
-[ Upstream commit 50c8ab8d9fbf5b18d5162a797ca26568afc0af1a ]
+[ Upstream commit e1de94380af588bdf6ad6f0cc1f75004c35bc096 ]
 
-An IORT PMCG node can have no ID mapping if its overflow interrupt is
-wire based therefore the code that parses the PMCG node can not assume
-the node will always have a single mapping present at index 0.
+Recent work with KASan exposed the folling hard-coded bitmask
+in arch/arm/mm/proc-macros.S:
 
-Fix iort_get_id_mapping_index() by checking for an overflow interrupt
-and mapping count.
+  bic     rd, sp, #8128
+  bic     rd, rd, #63
 
-Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG")
+This forms the bitmask 0x1FFF that is coinciding with
+(PAGE_SIZE << THREAD_SIZE_ORDER) - 1, this code was assuming
+that THREAD_SIZE is always 8K (8192).
 
-Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
-Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
-Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Link: https://lore.kernel.org/r/1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com
-Signed-off-by: Will Deacon <will@kernel.org>
+As KASan was increasing THREAD_SIZE_ORDER to 2, I ran into
+this bug.
+
+Fix it by this little oneline suggested by Ard:
+
+  bic     rd, sp, #(THREAD_SIZE - 1) & ~63
+
+Where THREAD_SIZE is defined using THREAD_SIZE_ORDER.
+
+We have to also include <linux/const.h> since the THREAD_SIZE
+expands to use the _AC() macro.
+
+Cc: Ard Biesheuvel <ardb@kernel.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>
+Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/acpi/arm64/iort.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/mm/proc-macros.S | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 5a7551d060f2..bc95a5eebd13 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -361,6 +361,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
- static int iort_get_id_mapping_index(struct acpi_iort_node *node)
- {
- 	struct acpi_iort_smmu_v3 *smmu;
-+	struct acpi_iort_pmcg *pmcg;
+diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
+index 5461d589a1e2..60ac7c5999a9 100644
+--- a/arch/arm/mm/proc-macros.S
++++ b/arch/arm/mm/proc-macros.S
+@@ -5,6 +5,7 @@
+  *  VMA_VM_FLAGS
+  *  VM_EXEC
+  */
++#include <linux/const.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/thread_info.h>
  
- 	switch (node->type) {
- 	case ACPI_IORT_NODE_SMMU_V3:
-@@ -388,6 +389,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
- 
- 		return smmu->id_mapping_index;
- 	case ACPI_IORT_NODE_PMCG:
-+		pmcg = (struct acpi_iort_pmcg *)node->node_data;
-+		if (pmcg->overflow_gsiv || node->mapping_count == 0)
-+			return -EINVAL;
-+
- 		return 0;
- 	default:
- 		return -EINVAL;
+@@ -30,7 +31,7 @@
+  * act_mm - get current->active_mm
+  */
+ 	.macro	act_mm, rd
+-	bic	\rd, sp, #8128
++	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
+ 	bic	\rd, \rd, #63
+ 	ldr	\rd, [\rd, #TI_TASK]
+ 	.if (TSK_ACTIVE_MM > IMM12_MASK)
 -- 
 2.25.1
 
