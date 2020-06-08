@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BCC41F2284
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:09:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D3F31F228A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:09:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IrMreIiHYPcdFz8alQ2GsDjinBd3auXV631E8y6S5zk=; b=HuuqysfUfvBdT1
-	46YsK5+wDCTR5Y+CJjfGMT/Et8JHlp1NKdFAWiJvhMcnykUZywLC4IR4dXUKLZNo0VEiB5fijxQw/
-	6gUSlbh3h13w/LOvVgWz6Qsldl/2FU2sY7w4QKTqTOfaYYPZZjIFhScbAOix7GC/D9NDOPF991DA6
-	bOUk2yguvYdSLsBYkkaNn4hJJ566mxV3agPwgGqnsepp+3hx5yI8DbkBsK7MQ9CMzuXFj8Ho2LQR+
-	wY4i2B40i6DZaUNxi2hL6nghsNo1zOzcSY1N+QS+F343RM6t0XuuBdu15E9mj1ZQhPcO7I2WC4lwX
-	DawVHoy0eLIuCtpgdZ+A==;
+	List-Owner; bh=3R9js/jFxLhC30ESWxWPl400Xr3DgqpM85QNUFaYAFA=; b=Lj++CcOzUKSSGA
+	N7h9vOiDo5g8GU7X0xAaj4OQGEmxnpZeOLNfwVsqMjoIDcapwUQIGMkG7o9uwRpRwdFInipw9E7zH
+	D9K50KpPhQHhCNgs1I0f4tYlsxOHU/kWC84nKxjYuWGM4t3lHW8bPV5FtQxb6sz3SAfcC46iILXPN
+	ojj3VzU9ZqgmF6hKlhCbEPGhb5qOZdoU6pSuKtcUYLX6pcMvSHCqGKGNBAN3BTHONDTHk+VWHEgDu
+	vk5t51E3eAU8WRDPVHB3VU0g8Hst6CcfCIGsiTDjNY9SEudlltd13AJUw5SrwWPuovLLaefiogzuQ
+	jWr1DjoKsqo4y+Y4e2DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQtM-0000MQ-1d; Mon, 08 Jun 2020 23:09:20 +0000
+	id 1jiQtm-0000iO-6F; Mon, 08 Jun 2020 23:09:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQrQ-0007FR-DZ
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:29 +0000
+ id 1jiQrT-0007IB-Cj
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:31 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DFD862087E;
- Mon,  8 Jun 2020 23:07:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 427F920888;
+ Mon,  8 Jun 2020 23:07:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657639;
- bh=KeY6RO9Q9yvF6MpjhhdIDXm5QTdCoMZ8/UAisDVoSoY=;
+ s=default; t=1591657642;
+ bh=YE2oEMu6XyWmC2vXfQbvn/OXs6e+k5Ysv8EGha9IAKY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WbgJ/i4sg4h8Y0wZ+arhDFkzAolxdi//qOflGTRZ87/9CJ3TkxA8Ju4nsTs9fdgVr
- gHnLOTex3yxdm4kvm8LAgfAfDWfZXImVluJFfr/w9BqxBGUvjN2ZDP0ljGyCFnNfr0
- HOhCHwuhvUJY+okaxINPSgaTw6feoTQ8DwVLLIeI=
+ b=vq3CXwS5riurYyniTn2wDL2g6iruKlXF/O1OrrnMMI8uYpXATpiUtjeAgFcO6UiNy
+ M7fd0sJ+yx1nUKqaI00KSJvdpaCRCpeXbZumSdsVXZp0ufOROOgyWpipaCdI1DIASl
+ xOk65YxxlQ7ir1q9nQpboSrPO3zMNb8iXqRuouZg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 057/274] pmu/smmuv3: Clear IRQ affinity hint on
- device removal
-Date: Mon,  8 Jun 2020 19:02:30 -0400
-Message-Id: <20200608230607.3361041-57-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 059/274] ACPI/IORT: Fix PMCG node single ID
+ mapping handling
+Date: Mon,  8 Jun 2020 19:02:32 -0400
+Message-Id: <20200608230607.3361041-59-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160720_585406_043DF398 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20200608_160723_503590_315D413F 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,82 +81,61 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Hanjun Guo <guoahanjun@huawei.com>,
+ Tuan Phan <tuanphan@os.amperecomputing.com>, linux-acpi@vger.kernel.org,
  Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+From: Tuan Phan <tuanphan@os.amperecomputing.com>
 
-[ Upstream commit 10f6cd2af21bb44faab31a50ec3361d7649e5a39 ]
+[ Upstream commit 50c8ab8d9fbf5b18d5162a797ca26568afc0af1a ]
 
-Currently when trying to remove the SMMUv3 PMU module we get a
-WARN_ON_ONCE from free_irq(), because the affinity hint set during probe
-hasn't been properly cleared.
+An IORT PMCG node can have no ID mapping if its overflow interrupt is
+wire based therefore the code that parses the PMCG node can not assume
+the node will always have a single mapping present at index 0.
 
-[  238.878383] WARNING: CPU: 0 PID: 175 at kernel/irq/manage.c:1744 free_irq+0x324/0x358
-...
-[  238.897263] Call trace:
-[  238.897998]  free_irq+0x324/0x358
-[  238.898792]  devm_irq_release+0x18/0x28
-[  238.899189]  release_nodes+0x1b0/0x228
-[  238.899984]  devres_release_all+0x38/0x60
-[  238.900779]  device_release_driver_internal+0x10c/0x1d0
-[  238.901574]  driver_detach+0x50/0xe0
-[  238.902368]  bus_remove_driver+0x5c/0xd8
-[  238.903448]  driver_unregister+0x30/0x60
-[  238.903958]  platform_driver_unregister+0x14/0x20
-[  238.905075]  arm_smmu_pmu_exit+0x1c/0xecc [arm_smmuv3_pmu]
-[  238.905547]  __arm64_sys_delete_module+0x14c/0x260
-[  238.906342]  el0_svc_common.constprop.0+0x74/0x178
-[  238.907355]  do_el0_svc+0x24/0x90
-[  238.907932]  el0_sync_handler+0x11c/0x198
-[  238.908979]  el0_sync+0x158/0x180
+Fix iort_get_id_mapping_index() by checking for an overflow interrupt
+and mapping count.
 
-Just like the other perf drivers, clear the affinity hint before
-releasing the device.
+Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG")
 
-Fixes: 7d839b4b9e00 ("perf/smmuv3: Add arm64 smmuv3 pmu driver")
-Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Link: https://lore.kernel.org/r/20200422084805.237738-1-jean-philippe@linaro.org
+Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
+Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Link: https://lore.kernel.org/r/1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/perf/arm_smmuv3_pmu.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/acpi/arm64/iort.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
-index f01a57e5a5f3..48e28ef93a70 100644
---- a/drivers/perf/arm_smmuv3_pmu.c
-+++ b/drivers/perf/arm_smmuv3_pmu.c
-@@ -814,7 +814,7 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 	if (err) {
- 		dev_err(dev, "Error %d registering hotplug, PMU @%pa\n",
- 			err, &res_0->start);
--		return err;
-+		goto out_clear_affinity;
- 	}
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 7d04424189df..ec04435a7cea 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -414,6 +414,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
+ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
+ {
+ 	struct acpi_iort_smmu_v3 *smmu;
++	struct acpi_iort_pmcg *pmcg;
  
- 	err = perf_pmu_register(&smmu_pmu->pmu, name, -1);
-@@ -833,6 +833,8 @@ static int smmu_pmu_probe(struct platform_device *pdev)
+ 	switch (node->type) {
+ 	case ACPI_IORT_NODE_SMMU_V3:
+@@ -441,6 +442,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
  
- out_unregister:
- 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
-+out_clear_affinity:
-+	irq_set_affinity_hint(smmu_pmu->irq, NULL);
- 	return err;
- }
- 
-@@ -842,6 +844,7 @@ static int smmu_pmu_remove(struct platform_device *pdev)
- 
- 	perf_pmu_unregister(&smmu_pmu->pmu);
- 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
-+	irq_set_affinity_hint(smmu_pmu->irq, NULL);
- 
- 	return 0;
- }
+ 		return smmu->id_mapping_index;
+ 	case ACPI_IORT_NODE_PMCG:
++		pmcg = (struct acpi_iort_pmcg *)node->node_data;
++		if (pmcg->overflow_gsiv || node->mapping_count == 0)
++			return -EINVAL;
++
+ 		return 0;
+ 	default:
+ 		return -EINVAL;
 -- 
 2.25.1
 
