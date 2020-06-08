@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D242A1F27B5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:49:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F0581F27BB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:50:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LG2a1183RTF5gKl6rI63ZGZh1blZjBPJdVItDCoY3e0=; b=Jfcaxt0tDhMzdS
-	JaGE0D2AQefA0nH8AMtz4andTkdJ7wIVuTv+qxTrWeh/PHEUz/7l/5zG/uU7LkLLxYhnI3QPFCFQe
-	OehxlATNmhg9b+rdOYaPWb2+CSiLd9RYMIdOrOS6VWsZQGLQpoYC5Z02YJMYAaC2uq/JR6wMQiGEA
-	vav/zpdrk6/dIv6zFMm4TRvXRgdeNDJwRg846z/buuMycz3PjswfuBnHwt9mPUSg6zv6w61awvYoz
-	q8BtaYiV/SR3pSgIJsgpP3HoqUlaaHgl5HjS+tziLLtdQsJZfIy6yvDnZOn0UoIuQJIUnJ/c1+ey/
-	xh7coliIt5zD/XhoKTRw==;
+	List-Owner; bh=hPS0Vl7VounBB7aje2OenACKmOUoei8GMSnomkDbRoU=; b=NCOlOixrY39zXG
+	CPxWVxG30SSKXqWnlc6s0h4ggeAeCgBD33Vds9mzRNv9S9MoTgCu3dPdCONtzPyrlAs3j4JDCTQ31
+	usxGMLp18RFEtV+SNZKe5jBHxoNWubmAqlFGbh2/x91sAv/Y+5uKUozvRqU4xwPgRcNOS7UeFoO3d
+	2Ip+/PkAz2eKx1e3US2ONLVcgbgUbmxbBL68ly8E1PORpifxLX8Oqd+uK5kqc5+lwcpA8i1pE8VDh
+	bWtzpE414Gy9BySu49qx2QGutTJb9G6h+DiqdKswT/r0zxKqsZc5H4SW5Wgu0BfP4cpumbaZ3CxSW
+	JuJFK9wtu+IkErGLQnzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRWY-0004pH-9k; Mon, 08 Jun 2020 23:49:50 +0000
+	id 1jiRXV-000888-Tt; Mon, 08 Jun 2020 23:50:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR7O-00032X-Tw
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:23:54 +0000
+ id 1jiR7l-0003N1-Hm; Mon, 08 Jun 2020 23:24:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA9D32074B;
- Mon,  8 Jun 2020 23:23:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CA99820C09;
+ Mon,  8 Jun 2020 23:24:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658629;
- bh=joHfT7bcauPIx7wZQqsTyIJ76SF7kDA5AvCTJjZoit0=;
+ s=default; t=1591658652;
+ bh=IqCUM9sZg594VtkheaSNPK3OdjQSTv3twTQ/DtdW8k8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=txjB6elzn7/AJAM9EwIbnXKd5PDtrBm1pgTH2LmGcoItfggNpOLtLy4IhatWNHziM
- HeDkrc3fVgzJPENpiux3qk9UCndUShbAi0id5AJfQkm0OySf+qqUc+2VsWTHxxdTk7
- jNVPl1OGDeGoAW19v1y2h2NuXkut45khSpfObWyM=
+ b=Eqs4ko/ZwLhdCeE2CTzK/RymRNakwWD5+OkYkSD20NLAq5c9UeXn12gXOh4nMA4Kq
+ gO9jzBNFVYuY422qcCpqlGmm58iF4TRBCn3eRqQOcoyxtNiiww0uUrtP9GOIFXeay8
+ 1fBfOAfLtr068UN0xeKCVNyUzMRhszv5Gms93kRo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 053/106] net: allwinner: Fix use correct return
- type for ndo_start_xmit()
-Date: Mon,  8 Jun 2020 19:21:45 -0400
-Message-Id: <20200608232238.3368589-53-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 071/106] mt76: avoid rx reorder buffer overflow
+Date: Mon,  8 Jun 2020 19:22:03 -0400
+Message-Id: <20200608232238.3368589-71-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -50,8 +48,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162351_077458_D69EDD99 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20200608_162413_615744_2376BD60 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,51 +79,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- Yunjian Wang <wangyunjian@huawei.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>,
+ Chih-Min Chen <chih-min.chen@mediatek.com>, linux-wireless@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunjian Wang <wangyunjian@huawei.com>
+From: Ryder Lee <ryder.lee@mediatek.com>
 
-[ Upstream commit 09f6c44aaae0f1bdb8b983d7762676d5018c53bc ]
+[ Upstream commit 7c4f744d6703757be959f521a7a441bf34745d99 ]
 
-The method ndo_start_xmit() returns a value of type netdev_tx_t. Fix
-the ndo function to use the correct type. And emac_start_xmit() can
-leak one skb if 'channel' == 3.
+Enlarge slot to support 11ax 256 BA (256 MPDUs in an AMPDU)
 
-Signed-off-by: Yunjian Wang <wangyunjian@huawei.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+Signed-off-by: Chih-Min Chen <chih-min.chen@mediatek.com>
+Signed-off-by: Ryder Lee <ryder.lee@mediatek.com>
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/allwinner/sun4i-emac.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/wireless/mediatek/mt76/agg-rx.c | 8 ++++----
+ drivers/net/wireless/mediatek/mt76/mt76.h   | 6 +++---
+ 2 files changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/net/ethernet/allwinner/sun4i-emac.c b/drivers/net/ethernet/allwinner/sun4i-emac.c
-index 3143de45baaa..c458b81ba63a 100644
---- a/drivers/net/ethernet/allwinner/sun4i-emac.c
-+++ b/drivers/net/ethernet/allwinner/sun4i-emac.c
-@@ -433,7 +433,7 @@ static void emac_timeout(struct net_device *dev)
- /* Hardware start transmission.
-  * Send a packet to media from the upper layer.
-  */
--static int emac_start_xmit(struct sk_buff *skb, struct net_device *dev)
-+static netdev_tx_t emac_start_xmit(struct sk_buff *skb, struct net_device *dev)
+diff --git a/drivers/net/wireless/mediatek/mt76/agg-rx.c b/drivers/net/wireless/mediatek/mt76/agg-rx.c
+index 73c8b2805c97..d44d57e6eb27 100644
+--- a/drivers/net/wireless/mediatek/mt76/agg-rx.c
++++ b/drivers/net/wireless/mediatek/mt76/agg-rx.c
+@@ -154,8 +154,8 @@ void mt76_rx_aggr_reorder(struct sk_buff *skb, struct sk_buff_head *frames)
+ 	struct ieee80211_sta *sta;
+ 	struct mt76_rx_tid *tid;
+ 	bool sn_less;
+-	u16 seqno, head, size;
+-	u8 ackp, idx;
++	u16 seqno, head, size, idx;
++	u8 ackp;
+ 
+ 	__skb_queue_tail(frames, skb);
+ 
+@@ -240,7 +240,7 @@ void mt76_rx_aggr_reorder(struct sk_buff *skb, struct sk_buff_head *frames)
+ }
+ 
+ int mt76_rx_aggr_start(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tidno,
+-		       u16 ssn, u8 size)
++		       u16 ssn, u16 size)
  {
- 	struct emac_board_info *db = netdev_priv(dev);
- 	unsigned long channel;
-@@ -441,7 +441,7 @@ static int emac_start_xmit(struct sk_buff *skb, struct net_device *dev)
+ 	struct mt76_rx_tid *tid;
  
- 	channel = db->tx_fifo_stat & 3;
- 	if (channel == 3)
--		return 1;
-+		return NETDEV_TX_BUSY;
+@@ -264,7 +264,7 @@ EXPORT_SYMBOL_GPL(mt76_rx_aggr_start);
  
- 	channel = (channel == 1 ? 1 : 0);
+ static void mt76_rx_aggr_shutdown(struct mt76_dev *dev, struct mt76_rx_tid *tid)
+ {
+-	u8 size = tid->size;
++	u16 size = tid->size;
+ 	int i;
  
+ 	cancel_delayed_work(&tid->reorder_work);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
+index 2eab35879163..7b1667ec619e 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76.h
++++ b/drivers/net/wireless/mediatek/mt76/mt76.h
+@@ -193,8 +193,8 @@ struct mt76_rx_tid {
+ 	struct delayed_work reorder_work;
+ 
+ 	u16 head;
+-	u8 size;
+-	u8 nframes;
++	u16 size;
++	u16 nframes;
+ 
+ 	u8 started:1, stopped:1, timer_pending:1;
+ 
+@@ -537,7 +537,7 @@ int mt76_get_survey(struct ieee80211_hw *hw, int idx,
+ void mt76_set_stream_caps(struct mt76_dev *dev, bool vht);
+ 
+ int mt76_rx_aggr_start(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tid,
+-		       u16 ssn, u8 size);
++		       u16 ssn, u16 size);
+ void mt76_rx_aggr_stop(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tid);
+ 
+ void mt76_wcid_key_setup(struct mt76_dev *dev, struct mt76_wcid *wcid,
 -- 
 2.25.1
 
