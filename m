@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E14C1F20C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 22:38:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 911D11F210F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 22:57:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BUQRLh8jDG3rJvw5lJzewaPRNW6IGWMhK01cLMXg8P0=; b=jR4nMlvEsP0+p2
-	uMfYM3toqATHLRtCNaEVLllmkWjzVaX1nqFq9HNx6qgZ4aiDap0MSz0mw7Tb6XX4YwbNyt9nNXJy4
-	C3w0RjIbcI3n0IutBZThgU2L7RSoM8HBqi2lpRPhCpUHYsUEKpntZQf/c+BduUmYEJfnSQKfQbbgy
-	fJC5LwP/6LU783qOmhCLJOqG7HLQHC3j9vXOZhm9oEax6+UFaNqy4KA8c0pqZvBPBK2oSN17kmRM0
-	njOFaWXFDJFjCai1zxWEAHhfsxibhg3vox3gpWGSwV3kMxEq0waLkqEPCqBhvC6IEWDE19G7A6rCE
-	apF1pBgIKWKk8ribxuOg==;
+	List-Owner; bh=/rwV2KWKUOf699blmRgYR3vVYnW05b5vZNy04STPBE4=; b=ZXNtojyjYd2VDJ
+	tfVL36Y2mlt+8m/qrzDtiChmCcXjv9olcSh6euaUeEGNqnoYA69i+3+0KNUVn9raXl8SUJy/rZ63H
+	+h0VLFK3D4H3gfqRuOsoXanAp0NNyF0/Pm6eKDBUgwQx6r5BHe2soEboDAYWKL4iFF9Ejx2QyUy2J
+	7HciWTi/aBxaD0oTf6x1fbdiarQef41rSYjlDosQoF36Qh147cXbZ22QynAcsLFFnz1BVplrwrkN+
+	aA1SE4okjdkc0K8NpBd2x9a1/0n2EWofoNGEEf9Gt/mcqezPgMEXt15xAKFJ47qu0WElqe9VdjJDf
+	WbibAWeAxjwLLo8MdajA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiOXW-0004E3-5P; Mon, 08 Jun 2020 20:38:38 +0000
-Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
+	id 1jiOph-00076A-Jh; Mon, 08 Jun 2020 20:57:25 +0000
+Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiOXM-0004D4-TP
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 20:38:30 +0000
-Received: by mail-yb1-xb4a.google.com with SMTP id y189so23000130ybc.14
+ id 1jiOpZ-00075q-PJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 20:57:19 +0000
+Received: by mail-qk1-x74a.google.com with SMTP id m29so15371519qkm.17
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jun 2020 13:38:28 -0700 (PDT)
+ Mon, 08 Jun 2020 13:57:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=5otuoY2gGErOy9A+cbCl1OR8KmTp9iNB+S30IArJGxY=;
- b=KYzOYiQt3FGzO24Ji/cgJDS2qf8jKUBMSw0hou1XPe1iZ0NlVNuyLLK6BVkY7wpIEr
- 4nju/eU6yQqj6iQg3Pj88h6aC9XpeUhO6aRvg/Z3EHx1d3uJqRlPI36O1665sP+Riv3V
- ORNQ/AVH79J0kEBSAxKrGpHIofF7rH4KVneMUC+7Lz8w5qRoCdxfnJ7Bs5IV5yMtTbtq
- +z/X8TVEvqXJL+EzAMEnLS03+TpJtP2O5tmH70OLnKM6p5Fv0DS2LhNfQRWuO3vIAsHd
- VrTGN6E7yLxjULQgMxXdaUowGrlPR4ev7g6d3XZ4mLcwIUCfXE4ic5pRxQymDSQFJ4Ja
- MnZQ==
+ :cc; bh=n0Z0MVW9fjL11OJnRXmUnpTQPi7wV6ggXRGNscFMQpE=;
+ b=oo1e6e+nKKXbeOsMhQCwbm6s/L45uVQdd/hGh3/yPQQOcvkOLFMzvCnGOkZ/M4dVDX
+ 1oVCNc2iXN7++m4+rOZmjF0iFk1fuK/YEPAZXwUCVC7IVo878hSqVKtkRBhYi6aPbt9H
+ iIStaqx25B2k3CpwnBtkUyxXbpbpZZG/SSlqAD3nKeW/3YfkmWxbR5TyhkKstzLoqyUH
+ Yy90d3w2oPVcq4YL6lYzFLyB2mh8sXBHbuNJjNjZOutWJsBC9ylJF4mXEwj0O6IbUvHk
+ BQzUSOYm0OUb6Xnqj5jfUYvyej9eIoZCxE9ERJwYLUo7hRSehhA1kZVJC3cTkVB0YfFM
+ XHUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=5otuoY2gGErOy9A+cbCl1OR8KmTp9iNB+S30IArJGxY=;
- b=qOBMdYEUiQ6dEpYUBnjmbv33c4qNZl1tx0IQLyVYDm30/5I11icSgbKA0SXwriw3/a
- lw8FZ2tBdkTGyL/NRf9216IQ60KTGZ9VibAm4HCf5JKLPd6opQipYmfydSzSq5Ni4rq9
- HTLhnDTBKlYc5nyIDLK+EGXAjOLL5rfPXaas9XX65RlFzAdNKLOpPaywH/7uU/TEnBpZ
- 1z4M2MhKkV5ZEQ/Oljo7ccV/6DqyYGOQJxL/w9ENks3z8HDnerGVTcMBUNq5islSkvVX
- SwXJCHvRI8sNN8Liz0sRaaXk0RIxQUN5c0shVAr8OjcVGLQJ4m3z1d8YezhW/lc+g7r3
- kSpw==
-X-Gm-Message-State: AOAM532xZk65Xgq100XH4yveYjXIaWwRYB1oA7sOCdkG9aK5OSq8YJSS
- pH/rU2Mr6TnI1WUDWaX3sZjT0K9Di48Swit3eE8=
-X-Google-Smtp-Source: ABdhPJwMCfh6+j1JcOF7Ui/FzLouS0/CmQh3VYSy0Ww5vOQqYGp9/ZKrVXazWyjuLYCs7jqttRbM/Z4w4upIk0lRVbk=
-X-Received: by 2002:a5b:54e:: with SMTP id r14mr956210ybp.93.1591648707480;
- Mon, 08 Jun 2020 13:38:27 -0700 (PDT)
-Date: Mon,  8 Jun 2020 13:38:17 -0700
-In-Reply-To: <CAKwvOdnBhHnhUZ9MHgqEQ4nEyzHWUH+DPV-J0KoYyWNEnsDHbg@mail.gmail.com>
-Message-Id: <20200608203818.189423-1-ndesaulniers@google.com>
+ bh=n0Z0MVW9fjL11OJnRXmUnpTQPi7wV6ggXRGNscFMQpE=;
+ b=YHsbqGCGG/5sbv5gIuQMD1Ka2+8WTC8uYCNjo3ZQ2hZCbLS5gp4N6et41DqJOzdkvT
+ NR3dSogGwbXNjhfEFqf/RkNzZq9+jIy7OUYwzzIxeVJ/NVGWb6aNSchI4E407bGI/sFN
+ Avm1uTa6NXTo1Vxvbl10IDqGjlSxvcfSoAXkteeKZnGZgPC67dmVf4LVrl0sgxD1sEs8
+ j53sCeb0/bs/Z5N4TKj2nQYhhjJsCrQtPco5JJLZj09z/6FTIuJSECkrOmskLR+3MheO
+ 7+/WDyhGOjX3ZTBb4X4FqHlROgY/hN834bkUokRVlahxDA/WQQenxRfQT8apmM61I5Qx
+ 7duw==
+X-Gm-Message-State: AOAM530EYQ4dEmyiqlqi7ofPo2ysHRRTSBYpB4DLn4MMtoIuhKbCHTBp
+ OctwBkFxZcTI8VCYDPXDYyzivircqFA0fX/BSSc=
+X-Google-Smtp-Source: ABdhPJwVKC1j3i6Ut6j8xgrtVABDjElPORqoydWyMT9uIcnpRaKe05GOFjjqf5w7zzY2GkvtF57h3f/PX45fHBLS67A=
+X-Received: by 2002:a0c:f652:: with SMTP id s18mr597254qvm.96.1591649835537;
+ Mon, 08 Jun 2020 13:57:15 -0700 (PDT)
+Date: Mon,  8 Jun 2020 13:57:08 -0700
+In-Reply-To: <20200528072031.GA22156@willie-the-truck>
+Message-Id: <20200608205711.109418-1-ndesaulniers@google.com>
 Mime-Version: 1.0
-References: <CAKwvOdnBhHnhUZ9MHgqEQ4nEyzHWUH+DPV-J0KoYyWNEnsDHbg@mail.gmail.com>
+References: <20200528072031.GA22156@willie-the-truck>
 X-Mailer: git-send-email 2.27.0.278.ge193c7cf3a9-goog
-Subject: [PATCH v2] arm64: acpi: fix UBSAN warning
+Subject: [PATCH v2] arm64: vdso32: add CONFIG_THUMB2_COMPAT_VDSO
 From: Nick Desaulniers <ndesaulniers@google.com>
-To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_133828_972630_989C2ED3 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20200608_135717_844655_80C74C55 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,84 +94,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
+ Masahiro Yamada <masahiroy@kernel.org>,
  Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Ard Biesheuvel <ardb@kernel.org>, Allison Randal <allison@lohutok.net>
+ clang-built-linux@googlegroups.com, Manoj Gupta <manojgupta@google.com>,
+ Luis Lozano <llozano@google.com>, Nathan Chancellor <natechancellor@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Will reported a UBSAN warning:
+Allow the compat vdso (32b) to be compiled as either THUMB2 (default) or
+ARM.
 
-UBSAN: null-ptr-deref in arch/arm64/kernel/smp.c:596:6
-member access within null pointer of type 'struct acpi_madt_generic_interrupt'
-CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-rc6-00124-g96bc42ff0a82 #1
-Call trace:
- dump_backtrace+0x0/0x384
- show_stack+0x28/0x38
- dump_stack+0xec/0x174
- handle_null_ptr_deref+0x134/0x174
- __ubsan_handle_type_mismatch_v1+0x84/0xa4
- acpi_parse_gic_cpu_interface+0x60/0xe8
- acpi_parse_entries_array+0x288/0x498
- acpi_table_parse_entries_array+0x178/0x1b4
- acpi_table_parse_madt+0xa4/0x110
- acpi_parse_and_init_cpus+0x38/0x100
- smp_init_cpus+0x74/0x258
- setup_arch+0x350/0x3ec
- start_kernel+0x98/0x6f4
+For THUMB2, the register r7 is reserved for the frame pointer, but
+code in arch/arm64/include/asm/vdso/compat_gettimeofday.h
+uses r7. Explicitly set -fomit-frame-pointer, since unwinding through
+interworked THUMB2 and ARM is unreliable anyways. See also how
+CONFIG_UNWINDER_FRAME_POINTER cannot be selected for
+CONFIG_THUMB2_KERNEL for ARCH=arm.
 
-This is from the use of the ACPI_OFFSET in
-arch/arm64/include/asm/acpi.h. Replace its use with offsetof from
-include/linux/stddef.h which should implement the same logic using
-__builtin_offsetof, so that UBSAN wont warn.
+This also helps toolchains that differ in their implicit value if the
+choice of -f{no-}omit-frame-pointer is left unspecified, to not error on
+the use of r7.
 
-Link: https://lore.kernel.org/lkml/20200521100952.GA5360@willie-the-truck/
-Cc: stable@vger.kernel.org
-Reported-by: Will Deacon <will@kernel.org>
-Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+2019 Q4 ARM AAPCS seeks to standardize the use of r11 as the reserved
+frame pointer register, but no production compiler that can compile the
+Linux kernel currently implements this.  We're actively discussing such
+a transition with ARM toolchain developers currently.
+
+Link: https://static.docs.arm.com/ihi0042/i/aapcs32.pdf
+Link: https://bugs.chromium.org/p/chromium/issues/detail?id=1084372
+Cc: Stephen Boyd <swboyd@google.com>
+Cc: Robin Murphy <robin.murphy@arm.com>
+Cc: Dave Martin <Dave.Martin@arm.com>
+Reported-by: Luis Lozano <llozano@google.com>
+Tested-by: Manoj Gupta <manojgupta@google.com>
 Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
 ---
 Changes V1 -> V2:
-* Just fix one of the two warnings, specific to arm64.
-* Put warning in commit message.
+* add THUMB2_COMPAT_VDSO config, making -mthumb/-marm configurable
+  rather than hard coding.
+* Fixed https://reviews.llvm.org/D80828 in Clang, but still an issue.
+  Not due to implicit state of -marm vs -mthumb, but actually
+  -f{no-}omit-frame-pointer due to
+  https://source.chromium.org/chromiumos/chromiumos/codesearch/+/master:src/third_party/toolchain-utils/compiler_wrapper/config.go;l=110,
+  which prefixes -fno-omit-frame-pointer for all arches and projects.
+  Projects that don't set -f{no-}omit-frame-pointer thus don't overwrite
+  the prefixed -fno-omit-frame-pointer, which is an issue when inline
+  asm compiled as -mthumb uses r7.
+* I don't have a strong preference on the default state of this config.
 
- arch/arm64/include/asm/acpi.h | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ arch/arm64/Kconfig                | 8 ++++++++
+ arch/arm64/kernel/vdso32/Makefile | 8 ++++++++
+ 2 files changed, 16 insertions(+)
 
-diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
-index b263e239cb59..a45366c3909b 100644
---- a/arch/arm64/include/asm/acpi.h
-+++ b/arch/arm64/include/asm/acpi.h
-@@ -12,6 +12,7 @@
- #include <linux/efi.h>
- #include <linux/memblock.h>
- #include <linux/psci.h>
-+#include <linux/stddef.h>
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 7f9d38444d6d..fe9e6b231cac 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1299,6 +1299,14 @@ config COMPAT_VDSO
+ 	  You must have a 32-bit build of glibc 2.22 or later for programs
+ 	  to seamlessly take advantage of this.
  
- #include <asm/cputype.h>
- #include <asm/io.h>
-@@ -31,14 +32,14 @@
-  * is therefore used to delimit the MADT GICC structure minimum length
-  * appropriately.
-  */
--#define ACPI_MADT_GICC_MIN_LENGTH   ACPI_OFFSET(  \
-+#define ACPI_MADT_GICC_MIN_LENGTH   offsetof(  \
- 	struct acpi_madt_generic_interrupt, efficiency_class)
++config THUMB2_COMPAT_VDSO
++	bool "Compile the vDSO in THUMB2 mode"
++	depends on COMPAT_VDSO
++	default y
++	help
++	  Compile the compat vDSO with -mthumb -fomit-frame-pointer if y, otherwise
++	  as -marm.
++
+ menuconfig ARMV8_DEPRECATED
+ 	bool "Emulate deprecated/obsolete ARMv8 instructions"
+ 	depends on SYSCTL
+diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
+index 3964738ebbde..7ea1e827e505 100644
+--- a/arch/arm64/kernel/vdso32/Makefile
++++ b/arch/arm64/kernel/vdso32/Makefile
+@@ -105,6 +105,14 @@ VDSO_CFLAGS += -D__uint128_t='void*'
+ VDSO_CFLAGS += $(call cc32-disable-warning,shift-count-overflow)
+ VDSO_CFLAGS += -Wno-int-to-pointer-cast
  
- #define BAD_MADT_GICC_ENTRY(entry, end)					\
- 	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
- 	(unsigned long)(entry) + (entry)->header.length > (end))
++# Compile as THUMB2 or ARM. Unwinding via frame-pointers in THUMB2 is
++# unreliable.
++ifeq ($(CONFIG_THUMB2_COMPAT_VDSO), y)
++VDSO_CFLAGS += -mthumb -fomit-frame-pointer
++else
++VDSO_CFLAGS += -marm
++endif
++
+ VDSO_AFLAGS := $(VDSO_CAFLAGS)
+ VDSO_AFLAGS += -D__ASSEMBLY__
  
--#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
-+#define ACPI_MADT_GICC_SPE  (offsetof(struct acpi_madt_generic_interrupt, \
- 	spe_interrupt) + sizeof(u16))
- 
- /* Basic configuration for ACPI */
 -- 
 2.27.0.278.ge193c7cf3a9-goog
 
