@@ -2,45 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0EE91F1FCD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:28:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C4211F1FC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:27:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hCxSYSSKUR6JfgTq6XGB/iZxtZPL2BDbF1l7W8Cu10E=; b=RhXYyv/iMdb3Gm
-	Pfgxfvb7Pt2T6joNIqr04uV0R2pM5BVjL7CsY5WVigAvHmfrnJsqGcRJm7W/8lyyooboSgPEnAmmn
-	oNZSjab9NqEtGqtmAf/zKlPjaCNAdsk5B0EjF1mKVIBNS7+0QE3J4NecFi4VZLZ37QeDNnei3yBGD
-	9EXGlKiXytr2tI+zhlyLHet1e3OxXiwr69FNxuF90ZhePWwAChfCqQ9vIkJisO+cd4kaAWjHLdV9n
-	b0/+0yfOY3Uf9HXX9/YYwKIuxbUcxtouL1wWtaSDUrCkjpVdasbZ0Fd6m9xtia6Jdw/DEARe3WoF2
-	q+4uwTaueCzgJpqXhy2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U8q2Womqh75K0mjgYJmEVXf9lsY4WoL+iThjorcgdGo=; b=XytSCc1BtfX0c+
+	38MGKytsIuJbOdyNyTpcDGZk43ZYb1yqMRPqGl++eWJepg+B+edugoF+G/io01clxF/Bxd+WtM+8F
+	AT8ltPnYw1+zPhUSBnk86xW9g/wT8qMOEHDW8sdwMHRS7WKCPQibTB7/wJPuc4fuLRtJ3KOvC7eoQ
+	GROLZGZUMvhQATT4QDyyt8ouWqLrXIVp5lp5+0neoKiOhuqCaFgGv4nxkKuUmVIquddzMuOLPrxux
+	JwnDxAO2EWQgC34S+8JNSO6sH+X6HHowVlAXmRGfiMw5McaFzuhwRsAjTUL+VMemnPq7qz2ZmH0yn
+	EKgZTXxPRMTJCEkRNm9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiNRC-0002RY-HM; Mon, 08 Jun 2020 19:28:02 +0000
+	id 1jiNQv-0002Gg-3l; Mon, 08 Jun 2020 19:27:45 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiNQj-0002Eg-E7; Mon, 08 Jun 2020 19:27:35 +0000
+ id 1jiNQj-0002Eh-E7; Mon, 08 Jun 2020 19:27:34 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id E1636AE41;
- Mon,  8 Jun 2020 19:27:31 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id B0A7CAE71;
+ Mon,  8 Jun 2020 19:27:32 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  robh@kernel.org, mathias.nyman@linux.intel.com,
  Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-usb@vger.kernel.org
-Subject: [PATCH 0/9] Raspberry Pi 4 USB firmware initialization rework
-Date: Mon,  8 Jun 2020 21:26:52 +0200
-Message-Id: <20200608192701.18355-1-nsaenzjulienne@suse.de>
+ linux-usb@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
+Subject: [PATCH 1/9] dt-bindings: reset: Add a binding for the RPi Firmware
+ USB reset
+Date: Mon,  8 Jun 2020 21:26:53 +0200
+Message-Id: <20200608192701.18355-2-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200608192701.18355-1-nsaenzjulienne@suse.de>
+References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_122733_621585_D91385D8 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20200608_122733_621936_5C2235FB 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,57 +69,59 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: lorenzo.pieralisi@arm.com, tim.gover@raspberrypi.org, helgaas@kernel.org,
- linux-kernel@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
-loaded directly from an EEPROM or, if not present, by the SoC's
-co-processor, VideoCore. This series reworks how we handle this.
+The firmware running on the RPi VideoCore can be used to reset and
+initialize the board's xHCI controller. The reset controller is passed
+to the PCI device through the DT, hence this binding.
 
-The previous solution makes use of PCI quirks and exporting platform
-specific functions. Albeit functional it feels pretty shoehorned. This
-proposes an alternative way of handling the triggering of the xHCI chip
-initialization trough means of a reset controller.
-
-The benefits are pretty evident: less platform churn in core xHCI code,
-and no explicit device dependency management in pcie-brcmstb.
-
-Note that patch #1 depend on another series[1].
-
-The series is based on next-20200605.
-
-[1] https://lwn.net/ml/linux-kernel/cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech/
-
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
+ .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 21 +++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-Nicolas Saenz Julienne (9):
-  dt-bindings: reset: Add a binding for the RPi Firmware USB reset
-  reset: Add Raspberry Pi 4 firmware USB reset controller
-  ARM: dts: bcm2711: Add firmware usb reset node
-  ARM: dts: bcm2711: Add reset controller to xHCI node
-  usb: xhci-pci: Add support for reset controllers
-  Revert "USB: pci-quirks: Add Raspberry Pi 4 quirk"
-  usb: host: pci-quirks: Bypass xHCI quirks for Raspberry Pi 4
-  Revert "firmware: raspberrypi: Introduce vl805 init routine"
-  Revert "PCI: brcmstb: Wait for Raspberry Pi's firmware when present"
-
- .../arm/bcm/raspberrypi,bcm2835-firmware.yaml |  21 +++
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts         |  12 ++
- drivers/firmware/Kconfig                      |   3 +-
- drivers/firmware/raspberrypi.c                |  61 ---------
- drivers/pci/controller/pcie-brcmstb.c         |  17 ---
- drivers/reset/Kconfig                         |   9 ++
- drivers/reset/Makefile                        |   1 +
- drivers/reset/reset-raspberrypi-usb.c         | 122 ++++++++++++++++++
- drivers/usb/host/pci-quirks.c                 |  22 ++--
- drivers/usb/host/xhci-pci.c                   |   9 ++
- include/soc/bcm2835/raspberrypi-firmware.h    |   7 -
- 11 files changed, 184 insertions(+), 100 deletions(-)
- create mode 100644 drivers/reset/reset-raspberrypi-usb.c
-
+diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+index b48ed875eb8e..8f9d0986c28f 100644
+--- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
++++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+@@ -39,6 +39,22 @@ properties:
+       - compatible
+       - "#clock-cells"
+ 
++  usb-reset:
++    type: object
++
++    properties:
++      compatible:
++        const: raspberrypi,firmware-usb-reset
++
++      "#clock-cells":
++        const: 0
++        description: >
++          There is only one reset line available, so no need for cell decoding.
++
++    required:
++      - compatible
++      - "#reset-cells"
++
+     additionalProperties: false
+ 
+ required:
+@@ -55,5 +71,10 @@ examples:
+             compatible = "raspberrypi,firmware-clocks";
+             #clock-cells = <1>;
+         };
++
++        usb_reset: usb-reset {
++            compatible = "raspberrypi,firmware-usb-reset";
++            #reset-cells = <0>;
++        };
+     };
+ ...
 -- 
 2.26.2
 
