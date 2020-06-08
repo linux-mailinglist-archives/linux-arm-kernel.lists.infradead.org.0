@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F22B1F227E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:09:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BCC41F2284
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:09:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XidIKrT4EZ3mLERMAD/UXE7f7aVMMbwDQrFLd7WCS3c=; b=akUJUIvdY4CVNp
-	ryRp7OJoj4Hd2I0WAwnvEMt5nduY/BH0qpUeWuqVw/J4u1k+8CohgJDy9AEFptkK7Ve/iBFCPU2dl
-	RbGkgS2eLzpHktGFXF9xKkVH0EB1f+lXilRt2+NRMfL4u8/ur1neGWVTqJt5WaFnKijj6GRFayNlB
-	BLV6SH6eGYFDvddsrU1L8xKHGwNVGSVEHrrGdlpp1ri1JmGBdlVCE3GlOjvHKWyGi5Nkbh3Bos9wt
-	S/phVWrisTfTngdzaeV/gbXeW2GnqtFshmC4s4KF+Mn+KtpBXz84PF7qvhNswNfKXCD+br+IcuNrV
-	eJmUL5KzoencgF8WVq2w==;
+	List-Owner; bh=IrMreIiHYPcdFz8alQ2GsDjinBd3auXV631E8y6S5zk=; b=HuuqysfUfvBdT1
+	46YsK5+wDCTR5Y+CJjfGMT/Et8JHlp1NKdFAWiJvhMcnykUZywLC4IR4dXUKLZNo0VEiB5fijxQw/
+	6gUSlbh3h13w/LOvVgWz6Qsldl/2FU2sY7w4QKTqTOfaYYPZZjIFhScbAOix7GC/D9NDOPF991DA6
+	bOUk2yguvYdSLsBYkkaNn4hJJ566mxV3agPwgGqnsepp+3hx5yI8DbkBsK7MQ9CMzuXFj8Ho2LQR+
+	wY4i2B40i6DZaUNxi2hL6nghsNo1zOzcSY1N+QS+F343RM6t0XuuBdu15E9mj1ZQhPcO7I2WC4lwX
+	DawVHoy0eLIuCtpgdZ+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQsu-0008Re-Vc; Mon, 08 Jun 2020 23:08:52 +0000
+	id 1jiQtM-0000MQ-1d; Mon, 08 Jun 2020 23:09:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQrI-00078U-Eu
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:19 +0000
+ id 1jiQrQ-0007FR-DZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:29 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E6E520888;
- Mon,  8 Jun 2020 23:07:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DFD862087E;
+ Mon,  8 Jun 2020 23:07:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657631;
- bh=CnVp9pwpDTm0m2p+hSbXaay1pQhH2Cr6uUvMrwh7L4Q=;
+ s=default; t=1591657639;
+ bh=KeY6RO9Q9yvF6MpjhhdIDXm5QTdCoMZ8/UAisDVoSoY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=asC0ZA2Kf7DQBdLkqrlomrj2p18prOf9rXA/3a50M2saW74UL/sxWig7wuYS/0Trk
- cj2JzGb8u6WKcAG7IwLwbv2PwcYcx0IvfywyL4gfHw4gR4QyZBjxczCf1hE0GCw887
- VIojbkv2t5sHzIVeHdN0ameH6FJGoZM2I96Njzbs=
+ b=WbgJ/i4sg4h8Y0wZ+arhDFkzAolxdi//qOflGTRZ87/9CJ3TkxA8Ju4nsTs9fdgVr
+ gHnLOTex3yxdm4kvm8LAgfAfDWfZXImVluJFfr/w9BqxBGUvjN2ZDP0ljGyCFnNfr0
+ HOhCHwuhvUJY+okaxINPSgaTw6feoTQ8DwVLLIeI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 050/274] cpuidle: psci: Fixup execution order when
- entering a domain idle state
-Date: Mon,  8 Jun 2020 19:02:23 -0400
-Message-Id: <20200608230607.3361041-50-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 057/274] pmu/smmuv3: Clear IRQ affinity hint on
+ device removal
+Date: Mon,  8 Jun 2020 19:02:30 -0400
+Message-Id: <20200608230607.3361041-57-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160712_609742_8233ED28 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20200608_160720_585406_043DF398 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,70 +80,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- linux-pm@vger.kernel.org, "Rafael J . Wysocki" <rafael.j.wysocki@intel.com>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ulf Hansson <ulf.hansson@linaro.org>
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 
-[ Upstream commit 8b7ce5e49049ca78c238f03d70569a73da049f32 ]
+[ Upstream commit 10f6cd2af21bb44faab31a50ec3361d7649e5a39 ]
 
-Moving forward, platforms are going to need to execute specific "last-man"
-operations before a domain idle state can be entered. In one way or the
-other, these operations needs to be triggered while walking the
-hierarchical topology via runtime PM and genpd, as it's at that point the
-last-man becomes known.
+Currently when trying to remove the SMMUv3 PMU module we get a
+WARN_ON_ONCE from free_irq(), because the affinity hint set during probe
+hasn't been properly cleared.
 
-Moreover, executing last-man operations needs to be done after the CPU PM
-notifications are sent through cpu_pm_enter(), as otherwise it's likely
-that some notifications would fail. Therefore, let's re-order the sequence
-in psci_enter_domain_idle_state(), so cpu_pm_enter() gets called prior
-pm_runtime_put_sync().
+[  238.878383] WARNING: CPU: 0 PID: 175 at kernel/irq/manage.c:1744 free_irq+0x324/0x358
+...
+[  238.897263] Call trace:
+[  238.897998]  free_irq+0x324/0x358
+[  238.898792]  devm_irq_release+0x18/0x28
+[  238.899189]  release_nodes+0x1b0/0x228
+[  238.899984]  devres_release_all+0x38/0x60
+[  238.900779]  device_release_driver_internal+0x10c/0x1d0
+[  238.901574]  driver_detach+0x50/0xe0
+[  238.902368]  bus_remove_driver+0x5c/0xd8
+[  238.903448]  driver_unregister+0x30/0x60
+[  238.903958]  platform_driver_unregister+0x14/0x20
+[  238.905075]  arm_smmu_pmu_exit+0x1c/0xecc [arm_smmuv3_pmu]
+[  238.905547]  __arm64_sys_delete_module+0x14c/0x260
+[  238.906342]  el0_svc_common.constprop.0+0x74/0x178
+[  238.907355]  do_el0_svc+0x24/0x90
+[  238.907932]  el0_sync_handler+0x11c/0x198
+[  238.908979]  el0_sync+0x158/0x180
 
-Fixes: ce85aef570df ("cpuidle: psci: Manage runtime PM in the idle path")
-Reported-by: Lina Iyer <ilina@codeaurora.org>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-Acked-by: Sudeep Holla <sudeep.holla@arm.com>
-Signed-off-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
+Just like the other perf drivers, clear the affinity hint before
+releasing the device.
+
+Fixes: 7d839b4b9e00 ("perf/smmuv3: Add arm64 smmuv3 pmu driver")
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Link: https://lore.kernel.org/r/20200422084805.237738-1-jean-philippe@linaro.org
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/cpuidle/cpuidle-psci.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ drivers/perf/arm_smmuv3_pmu.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-index bae9140a65a5..d0fb585073c6 100644
---- a/drivers/cpuidle/cpuidle-psci.c
-+++ b/drivers/cpuidle/cpuidle-psci.c
-@@ -58,6 +58,10 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
- 	u32 state;
- 	int ret;
+diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
+index f01a57e5a5f3..48e28ef93a70 100644
+--- a/drivers/perf/arm_smmuv3_pmu.c
++++ b/drivers/perf/arm_smmuv3_pmu.c
+@@ -814,7 +814,7 @@ static int smmu_pmu_probe(struct platform_device *pdev)
+ 	if (err) {
+ 		dev_err(dev, "Error %d registering hotplug, PMU @%pa\n",
+ 			err, &res_0->start);
+-		return err;
++		goto out_clear_affinity;
+ 	}
  
-+	ret = cpu_pm_enter();
-+	if (ret)
-+		return -1;
-+
- 	/* Do runtime PM to manage a hierarchical CPU toplogy. */
- 	pm_runtime_put_sync_suspend(pd_dev);
+ 	err = perf_pmu_register(&smmu_pmu->pmu, name, -1);
+@@ -833,6 +833,8 @@ static int smmu_pmu_probe(struct platform_device *pdev)
  
-@@ -65,10 +69,12 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
- 	if (!state)
- 		state = states[idx];
+ out_unregister:
+ 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
++out_clear_affinity:
++	irq_set_affinity_hint(smmu_pmu->irq, NULL);
+ 	return err;
+ }
  
--	ret = psci_enter_state(idx, state);
-+	ret = psci_cpu_suspend_enter(state) ? -1 : idx;
+@@ -842,6 +844,7 @@ static int smmu_pmu_remove(struct platform_device *pdev)
  
- 	pm_runtime_get_sync(pd_dev);
+ 	perf_pmu_unregister(&smmu_pmu->pmu);
+ 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
++	irq_set_affinity_hint(smmu_pmu->irq, NULL);
  
-+	cpu_pm_exit();
-+
- 	/* Clear the domain state to start fresh when back from idle. */
- 	psci_set_domain_state(0);
- 	return ret;
+ 	return 0;
+ }
 -- 
 2.25.1
 
