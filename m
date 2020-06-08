@@ -2,87 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00E871F1DEF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 18:58:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C0E31F1E12
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 19:03:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gGtIqQVJHuj6Nni3pFiWqw77+t804PZRUGvyBp1LjMg=; b=icGB7/d+Snlj+T
-	+o7GH2lDy6P7+AuM+UNVQckz+NtZ6/dt+Fz3duHi6qI44Mlp28gB7V44FPB0FgH428mVcrXtYSWUB
-	lkFkgqmn6uYosLtFFMCydSvZQ0XtYMtfCw8pfWpd2rxRw23q3VKyRkxJTgNaLzhCJffQWn6H0vC71
-	uAihuR4vT8A9ORcyVcS8blgUyh9Xq+CN6xsPZntXYW+dr1ppHF63SdmCmS0dJYNptA4A+Bv1qLqmX
-	EYX4f0gNowtxUh/LAkRZXV0jqW/i3ulJPlQ9lQkUh6uB4vQerCXi6dHhYjZlSv0fNGSANGRPAW0Ed
-	Z0EJXJlnmm7+kXmapNlw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=StIw2QufQesHV6pi+eIr3I3ZFeE0RmlSHUFsY6+YeqQ=; b=lQKAjXk6gQmpsv
+	w7tkxQSvXxkmaQ+mpZu5veiI5LvhU7CY/YBXju3g6zYSF7YX5+ecfxl102ka3OKCONM3xxQxjzUB2
+	FmsJqG7HXlkgO4BatoZXYEl9nq5ylHFVu56ILUWiKTEP6y+yBFG5hrlt8cSc88Mzy23P4454hQrxK
+	92JSWzfluHjUwH8mFQPHHF4mCa62L8IEG10bMZ0DFpDaZlezmNe9bcXSytJ3BMLQVOA4hxLm84ijT
+	H28D9zucAm40C804XNl1/UQkdhHfyArYNZnY+v3GMEZt9Ddi3cEVD/sB3vmszLAqZSdi6HMlGORGE
+	aKiCnbw4fFQJxeCezVrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiL6m-0003wh-Le; Mon, 08 Jun 2020 16:58:48 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiL6b-0003vY-NF
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 16:58:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591635514;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=DjeaWq24L9IqEh+sMIQV7yL5aFDflGPNZnawA6peKro=;
- b=SZRZaTK0CGgse3iVlG/3X6EenAuA5nEdaQyTTHLE2U8XAOEbPvc9cFaK3BAuXwGABO1V+X
- WDkMkqwQUr1HDdbOreQSUC4wAN8QSke6r3ujlQGqZ8oUWxXLKIuvy/n5ggtz4oFLsvTLS4
- ny2n7ihC9raP5pWF9amtE3uQcDW51O8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-459-kkFr2eOeNk2Vl7IHHGtkgg-1; Mon, 08 Jun 2020 12:58:10 -0400
-X-MC-Unique: kkFr2eOeNk2Vl7IHHGtkgg-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 73EAFA0C09;
- Mon,  8 Jun 2020 16:58:08 +0000 (UTC)
-Received: from [10.36.112.85] (ovpn-112-85.ams2.redhat.com [10.36.112.85])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 7115679598;
- Mon,  8 Jun 2020 16:58:06 +0000 (UTC)
-Subject: Re: [PATCH] KVM: arm64: Allow in-atomic injection of SPIs
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20200526161136.451312-1-maz@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <0a3875f0-9918-51f3-08eb-29a72eeb1306@redhat.com>
-Date: Mon, 8 Jun 2020 18:58:04 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+	id 1jiLAu-0007EF-0y; Mon, 08 Jun 2020 17:03:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiLAk-0007Cs-M0
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 17:02:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF4C31FB;
+ Mon,  8 Jun 2020 10:02:51 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.97])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 78DE33F73D;
+ Mon,  8 Jun 2020 10:02:48 -0700 (PDT)
+Date: Mon, 8 Jun 2020 18:02:39 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v8 9/9] firmware: arm_scmi: Add Base notifications support
+Message-ID: <20200608170239.GA13622@bogus>
+References: <20200520081118.54897-1-cristian.marussi@arm.com>
+ <20200520081118.54897-10-cristian.marussi@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200526161136.451312-1-maz@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+Content-Disposition: inline
+In-Reply-To: <20200520081118.54897-10-cristian.marussi@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_095837_834329_8F0A5593 
-X-CRM114-Status: GOOD (  25.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_100254_817369_37A06433 
+X-CRM114-Status: GOOD (  24.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [207.211.31.81 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,106 +63,217 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Sudeep Holla <sudeep.holla@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ Jonathan.Cameron@Huawei.com, dave.martin@arm.com, lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 5/26/20 6:11 PM, Marc Zyngier wrote:
-> On a system that uses SPIs to implement MSIs (as it would be
-> the case on a GICv2 system exposing a GICv2m to its guests),
-> we deny the possibility of injecting SPIs on the in-atomic
-> fast-path.
-> 
-> This results in a very large amount of context-switches
-> (roughly equivalent to twice the interrupt rate) on the host,
-> and suboptimal performance for the guest (as measured with
-> a test workload involving a virtio interface backed by vhost-net).
-> Given that GICv2 systems are usually on the low-end of the spectrum
-> performance wise, they could do without the aggravation.
-> 
-> We solved this for GICv3+ITS by having a translation cache. But
-> SPIs do not need any extra infrastructure, and can be immediately
-> injected in the virtual distributor as the locking is already
-> heavy enough that we don't need to worry about anything.
-> 
-> This halves the number of context switches for the same workload.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
+On Wed, May 20, 2020 at 09:11:18AM +0100, Cristian Marussi wrote:
+> Make SCMI Base protocol register with the notification core.
+>
+> Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 > ---
->  arch/arm64/kvm/vgic/vgic-irqfd.c | 20 ++++++++++++++++----
->  arch/arm64/kvm/vgic/vgic-its.c   |  3 +--
->  2 files changed, 17 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm64/kvm/vgic/vgic-irqfd.c b/arch/arm64/kvm/vgic/vgic-irqfd.c
-> index d8cdfea5cc96..11a9f81115ab 100644
-> --- a/arch/arm64/kvm/vgic/vgic-irqfd.c
-> +++ b/arch/arm64/kvm/vgic/vgic-irqfd.c
-There is still a comment above saying
- * Currently only direct MSI injection is supported.
-> @@ -107,15 +107,27 @@ int kvm_arch_set_irq_inatomic(struct kvm_kernel_irq_routing_entry *e,
->  			      struct kvm *kvm, int irq_source_id, int level,
->  			      bool line_status)
->  {
-> -	if (e->type == KVM_IRQ_ROUTING_MSI && vgic_has_its(kvm) && level) {
-> +	if (!level)
-> +		return -EWOULDBLOCK;
+> V6 --> V7
+> - fixed report.timestamp type
+> - fix max_payld_sz initialization
+> - fix report layout and initialization
+> - expose SCMI_EVENT_ in linux/scmi_protocol.h
+> V5 --> V6
+> - added handle argument to fill_custom_report()
+> V4 --> V5
+> - fixed unsual return construct
+> V3 --> V4
+> - scmi_event field renamed
+> V2 --> V3
+> - added handle awareness
+> V1 --> V2
+> - simplified .set_notify_enabled() implementation moving the ALL_SRCIDs
+>   logic out of protocol. ALL_SRCIDs logic is now in charge of the
+>   notification core, together with proper reference counting of enables
+> - switched to devres protocol-registration
+> ---
+>  drivers/firmware/arm_scmi/base.c | 118 +++++++++++++++++++++++++++++--
+>  include/linux/scmi_protocol.h    |   9 +++
+>  2 files changed, 123 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
+> index ce7d9203e41b..dcb098d8d823 100644
+> --- a/drivers/firmware/arm_scmi/base.c
+> +++ b/drivers/firmware/arm_scmi/base.c
+> @@ -5,7 +5,13 @@
+>   * Copyright (C) 2018 ARM Ltd.
+>   */
+>
+> +#include <linux/scmi_protocol.h>
 > +
-> +	switch (e->type) {
-> +	case KVM_IRQ_ROUTING_MSI: {
->  		struct kvm_msi msi;
->  
-> +		if (!vgic_has_its(kvm))
-> +			return -EINVAL;
-Shouldn't we return -EWOULDBLOCK by default?
-QEMU does not use that path with GICv2m but in kvm_set_routing_entry() I
-don't see any check related to the ITS.
+>  #include "common.h"
+> +#include "notify.h"
 > +
->  		kvm_populate_msi(e, &msi);
-> -		if (!vgic_its_inject_cached_translation(kvm, &msi))
-> -			return 0;
-> +		return vgic_its_inject_cached_translation(kvm, &msi);
+> +#define SCMI_BASE_NUM_SOURCES		1
+> +#define SCMI_BASE_MAX_CMD_ERR_COUNT	1024
+>
 
->  	}
->  
-> -	return -EWOULDBLOCK;
-> +	case KVM_IRQ_ROUTING_IRQCHIP:
-> +		/* Injecting SPIs is always possible in atomic context */
-> +		return vgic_irqfd_set_irq(e, kvm, irq_source_id, 1, line_status);
-what about the 	mutex_lock(&kvm->lock) called from within
-vgic_irqfd_set_irq/kvm_vgic_inject_irq/vgic_lazy_init
-> +
-> +	default:
-> +		return -EWOULDBLOCK;
-> +	}
->  }
->  
->  int kvm_vgic_setup_default_irq_routing(struct kvm *kvm)
-> diff --git a/arch/arm64/kvm/vgic/vgic-its.c b/arch/arm64/kvm/vgic/vgic-its.c
-> index c012a52b19f5..40cbaca81333 100644
-> --- a/arch/arm64/kvm/vgic/vgic-its.c
-> +++ b/arch/arm64/kvm/vgic/vgic-its.c
-> @@ -757,9 +757,8 @@ int vgic_its_inject_cached_translation(struct kvm *kvm, struct kvm_msi *msi)
->  
->  	db = (u64)msi->address_hi << 32 | msi->address_lo;
->  	irq = vgic_its_check_cache(kvm, db, msi->devid, msi->data);
+I am not sure of this, see below.
+
+>  enum scmi_base_protocol_cmd {
+>  	BASE_DISCOVER_VENDOR = 0x3,
+> @@ -19,16 +25,25 @@ enum scmi_base_protocol_cmd {
+>  	BASE_RESET_AGENT_CONFIGURATION = 0xb,
+>  };
+>
+> -enum scmi_base_protocol_notify {
+> -	BASE_ERROR_EVENT = 0x0,
+> -};
 > -
->  	if (!irq)
-> -		return -1;
-> +		return -EWOULDBLOCK;
->  
->  	raw_spin_lock_irqsave(&irq->irq_lock, flags);
->  	irq->pending_latch = true;
-> 
-Thanks
+>  struct scmi_msg_resp_base_attributes {
+>  	u8 num_protocols;
+>  	u8 num_agents;
+>  	__le16 reserved;
+>  };
+>
+> +struct scmi_msg_base_error_notify {
+> +	__le32 event_control;
+> +#define BASE_TP_NOTIFY_ALL	BIT(0)
+> +};
+> +
+> +struct scmi_base_error_notify_payld {
+> +	__le32 agent_id;
+> +	__le32 error_status;
+> +#define IS_FATAL_ERROR(x)	((x) & BIT(31))
+> +#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
+> +	__le64 msg_reports[SCMI_BASE_MAX_CMD_ERR_COUNT];
 
-Eric
+This entire payload needs to fit in shmem and having huge shmem just
+for this sounds not so good to me. If this can be large, it needs to
+be iterated multiple times to get the full log.
 
+> +};
+> +
+>  /**
+>   * scmi_base_attributes_get() - gets the implementation details
+>   *	that are associated with the base protocol.
+> @@ -222,6 +237,95 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
+>  	return ret;
+>  }
+>
+> +static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
+> +{
+> +	int ret;
+> +	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
+> +	struct scmi_xfer *t;
+> +	struct scmi_msg_base_error_notify *cfg;
+> +
+> +	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
+> +				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
+> +	if (ret)
+> +		return ret;
+> +
+> +	cfg = t->tx.buf;
+> +	cfg->event_control = cpu_to_le32(evt_cntl);
+> +
+> +	ret = scmi_do_xfer(handle, t);
+> +
+> +	scmi_xfer_put(handle, t);
+> +	return ret;
+> +}
+> +
+> +static bool scmi_base_set_notify_enabled(const struct scmi_handle *handle,
+> +					 u8 evt_id, u32 src_id, bool enable)
+> +{
+> +	int ret;
+> +
+> +	ret = scmi_base_error_notify(handle, enable);
+> +	if (ret)
+> +		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] ret:%d\n",
+> +			SCMI_PROTOCOL_BASE, evt_id, ret);
+> +
+
+I would make all these debug as they are not fatal. The users can decide
+if they are fatal and log it appropriately.
+
+> +	return !ret;
+> +}
+> +
+> +static void *scmi_base_fill_custom_report(const struct scmi_handle *handle,
+> +					  u8 evt_id, u64 timestamp,
+> +					  const void *payld, size_t payld_sz,
+> +					  void *report, u32 *src_id)
+> +{
+> +	void *rep = NULL;
+> +
+> +	switch (evt_id) {
+> +	case SCMI_EVENT_BASE_ERROR_EVENT:
+
+Drop switch for now, just check for evt_id to be SCMI_EVENT_BASE_ERROR_EVENT.
+
+> +	{
+> +		int i;
+> +		const struct scmi_base_error_notify_payld *p = payld;
+> +		struct scmi_base_error_report *r = report;
+> +
+> +		/*
+> +		 * BaseError notification payload is variable in size but
+> +		 * up to a maximum length determined by the struct ponted by p.
+> +		 * Instead payld_sz is the effective length of this notification
+> +		 * payload so cannot be greater of the maximum allowed size as
+> +		 * pointed by p.
+> +		 */
+> +		if (sizeof(*p) < payld_sz)
+> +			break;
+> +
+> +		r->timestamp = timestamp;
+> +		r->agent_id = le32_to_cpu(p->agent_id);
+> +		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
+> +		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
+> +		for (i = 0; i < r->cmd_count; i++)
+> +			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
+> +		*src_id = 0;
+> +		rep = r;
+> +		break;
+> +	}
+> +	default:
+> +		break;
+> +	}
+> +
+> +	return rep;
+> +}
+> +
+> +static const struct scmi_event base_events[] = {
+> +	{
+> +		.id = SCMI_EVENT_BASE_ERROR_EVENT,
+> +		.max_payld_sz = sizeof(struct scmi_base_error_notify_payld),
+> +		.max_report_sz = sizeof(struct scmi_base_error_report) +
+> +				  SCMI_BASE_MAX_CMD_ERR_COUNT * sizeof(u64),
+> +	},
+> +};
+> +
+> +static const struct scmi_protocol_event_ops base_event_ops = {
+> +	.set_notify_enabled = scmi_base_set_notify_enabled,
+> +	.fill_custom_report = scmi_base_fill_custom_report,
+> +};
+> +
+>  int scmi_base_protocol_init(struct scmi_handle *h)
+>  {
+>  	int id, ret;
+> @@ -256,6 +360,12 @@ int scmi_base_protocol_init(struct scmi_handle *h)
+>  	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
+>  		rev->num_agents);
+>
+> +	scmi_register_protocol_events(handle,
+> +				      SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
+
+The size 4 * PAGE_SZ is not clear. For me this can't be more that
+max_msg_size.
+
+The comments in this patch applies to last 5 patches(all protocols basically)
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
