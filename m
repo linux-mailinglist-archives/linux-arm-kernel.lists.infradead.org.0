@@ -2,158 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62AC51F1628
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 12:02:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DBBE1F1635
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 12:02:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wr6njetygd7S/h5HPNJ+vcz9ztmZQ6qRLFZcihlIiQk=; b=rOkcbva8J+nXBi
-	aF7xEMXIyYG0zdVnuEaOFvvzsUkRLlGHmzblqDwaQDNKIxi+W0SIdBvaL87VaJkNm7OIQ3AkC0UXR
-	UIdEfgvyUzyho6glJwKgc/qIScRTAh6EOTyVFmuNs5DdGxh1Zp4NhnevtPGs7K9o7m7bkllQvtJkU
-	OE6VJNvUgSs9iErmMAoo69zfqHx0sdWbcuiRfaH8uWcZiMuzv+RtiCZgVt+m2WkFIfUbgdisgMj63
-	pO5zPn94EojuDCdwTy1hevcmRdL9n/lL8EjTiWtPDsWu3864j9kiVu7lziM88Dek05RmpuNUQ+hXd
-	8uDLGy5SoU+4zyR+NrrA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=90H1XzBpfUwU3TLtr/TaGjE8xH1AnEd6OJTSzvzF9GA=; b=QoTP/A0yiAykTo
+	E0EclLu3ofKclQIO1of67OsjIfgGuK427PxvOYCmpQL/2IKJtEi77HpEB8uTiFC+1YRXuF4GB7Hal
+	5phbmhhp3sL0o+gC1Cug6UgZUgjKOddyvZ5sQw/oDvGT1R3HrWwcgeZNKI/RDC2dxx4n+bz6iEBAg
+	X1CUMActPaiDrASzxV1Yd47rBErxSgZz49ZRKysglgpOcNo4N6qFOw6JkUrE2IU6ev1O9cyKzEg2v
+	MSrZNqQcVbJfGVIRes2i8vyXGSQ0TXs5Q4za3U5ePCvyo3zKgKRVIFsy/cQ37U/zkMTFmmRk+vM4C
+	hspEWamLWwgFwA1k+b1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiEbS-00075t-EO; Mon, 08 Jun 2020 10:02:02 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jiEc9-0007Tq-Nr; Mon, 08 Jun 2020 10:02:45 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiEbK-00074o-3k; Mon, 08 Jun 2020 10:01:55 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y17so16676873wrn.11;
- Mon, 08 Jun 2020 03:01:53 -0700 (PDT)
+ id 1jiEby-0007TI-0C
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 10:02:35 +0000
+Received: by mail-pg1-x541.google.com with SMTP id d10so8537758pgn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 08 Jun 2020 03:02:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=tfoZcTB/rns0s7mq7n3JxCfpjHzUnkxUEnaoUGd4KXE=;
- b=ltp8V3MZN9j4czwE8uWybnZdbtSGKJPIxtjowNXPGiDepr261suoBLOTRy1Bl3zcMz
- fDSbtdexarlhdNLiXMnYLduK3dk1h872AsQajuKBXnXEupXSSGgqerpVWJXks9msh0TG
- 4e2Lusg8uGlVqXPvmGIwHTbJ4xKAOqNAZCmbUyeyGz2zo940xiKBcQpTMB6HxSBDVLZM
- e/AQ5W+ITHE3q/C3PVeNSbTE21dHsPLiiQ2l7Wi+G7aVVhD+YWPpaVxj3yuCy/e2eOKs
- 0q/fRgNpf51MM/7rUK8mDjUPS2b1/olshQm3arx/l9AFx8k/KY8a8isuLizExYDxRsNT
- FRiw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2zoo0ERaliX/JjKEGnYqTQZHfKutQDjXGBUR6MxE50E=;
+ b=up0PRyxOK9NsFIv2bsBl0byvSjs9TKlq7122/ilkRkEttg+3QL6Te0gWz3TYNBv0vi
+ IE21MrMkSmBoOM0mY4Ym6dD4h0fHd8PJqbmjpqRLAoD8EgiLZJlztmdayzlMxvl64uad
+ DTmDDiOoifJ+qZNcLaLd2QSV/HmYZnGjko8DYlFAtHLeNrU6eLEN23fhJDEXcZO9k6su
+ 5btG1FU90NfVPGLZPU9H4xy++nNO22Mb48r9L7eryuGK6DS+fMUjxg5jPDGiU2+oNHCp
+ xKXJVPkjQbjd51oijoYnbZKVI1lUIdfoc2nsSSfQ/4wyGgwYugHqOswiCBWgOn9shtpA
+ CEbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=tfoZcTB/rns0s7mq7n3JxCfpjHzUnkxUEnaoUGd4KXE=;
- b=abPYJbTFPyJk4cIZ+1v+GVv2PRc1WeJCFj/OU1TkdeKE8MdeecTYb5z5Gpej4YczvS
- YexYrzYml5TnOjDtQsNiGiroFqJ1U6fR1B7obbNH1iyNw1SJVwugaJmazp40EQ6+gPgH
- zIdHkDKIT6n9My2QLps1FniKyAOl382n8mLUiN2abcDQluhJhXU0EU5XN4U2JSdZ001i
- jsl2LlJmfmUeaj/ID/SfG96DmfKL8bA4ipCgUAld0HcuQj3fpVyJZod4A9AUqG/9YzVE
- aqjJWvN+FOVNBuj80ue9LS+pn5z9DEEhKah0SubZH91pUj0t99PuP6G7trJjFeWFXr5S
- SmZw==
-X-Gm-Message-State: AOAM531gDFqYIiMi/uFOY0Z0aKefkZ9p3dYav/2IY8w/rcp5Y2/FkHaX
- ooWCUwbzZBdWkSIcuwqBH8M=
-X-Google-Smtp-Source: ABdhPJysQLEWjZ1oMqrwEGoQM7pzQsU5HJrAXSeFZ0ViWHmfG83V+NxYPSrtV7GTzPURKbIgI+VSEw==
-X-Received: by 2002:adf:fecc:: with SMTP id q12mr23297945wrs.135.1591610512676; 
- Mon, 08 Jun 2020 03:01:52 -0700 (PDT)
-Received: from ziggy.stardust ([213.195.114.138])
- by smtp.gmail.com with ESMTPSA id o6sm1601669wmc.39.2020.06.08.03.01.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 08 Jun 2020 03:01:52 -0700 (PDT)
-Subject: Re: [PATCH] mfd: mt6360: Fix register driver NULL pointer by add
- driver name
-To: Gene Chen <gene.chen.richtek@gmail.com>, lee.jones@linaro.org
-References: <1591609125-3761-1-git-send-email-gene.chen.richtek@gmail.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <f3904a83-862d-8f34-6925-f0618bfbd0d9@gmail.com>
-Date: Mon, 8 Jun 2020 12:01:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2zoo0ERaliX/JjKEGnYqTQZHfKutQDjXGBUR6MxE50E=;
+ b=tZYQA9a1OToyxGsFlO/qrKoackUj5r83AFUkfKcrT5dKgTvDsj8pdrARPrm3KtjvvA
+ bTcONKjoan9RQl16XoOBqoKUwNYh8HcgXeiHUYTRU84GxUnBAZQPJO8FcKvzgB0CpI2Z
+ Hq6O4JNTvuhkar5nN0IDWcDCL3S5Uy8K4JcF1fZumT7hdyPnYc/yKhET3+xRtFsmBFl4
+ 4o1s1Bm2tQO0mvGTpm9gMoE8eh8me1ggflb5aApmsh/1AaR3qIFG4KcMN/SDAGBdZPWS
+ LBUD0QLPJL9YKbvqpc0DxrV4mzolWnsFDhdN44cpcHOimVyxBkZa2qwyxQ0x8nxmUONM
+ oz2w==
+X-Gm-Message-State: AOAM531u/dONNxmzbOAwqF4237qRS66V6pLWg8lHqKgta59lQBILhne+
+ y1FQcoyhLYoo7wl3woGk6LJ+XHipZp5fwiHU5dU=
+X-Google-Smtp-Source: ABdhPJx86tPKDhVhcYy12URCDzcRNhNuX2MCH50rKMBNeLvTYoOCyhjdRnZsCXkMUtFO7r9gOz6BiOXhGjPZOdlfhLw=
+X-Received: by 2002:a63:ff52:: with SMTP id s18mr20149238pgk.203.1591610553061; 
+ Mon, 08 Jun 2020 03:02:33 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1591609125-3761-1-git-send-email-gene.chen.richtek@gmail.com>
-Content-Language: en-US
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-3-michael@walle.cc>
+ <20200605065709.GD3714@dell> <20200605105026.GC5413@sirena.org.uk>
+ <c5632bfab3956265e90fc2fb6c0b3cae@walle.cc>
+ <20200606114645.GB2055@sirena.org.uk>
+ <dc052a5c77171014ecc465b1da8b7ef8@walle.cc> <20200608082827.GB3567@dell>
+In-Reply-To: <20200608082827.GB3567@dell>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Mon, 8 Jun 2020 13:02:21 +0300
+Message-ID: <CAHp75VdiH=J-ovCdh1RFJDW_bJM8=pbXRaHmB691GLb-5oBmYQ@mail.gmail.com>
+Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
+ controller
+To: Lee Jones <lee.jones@linaro.org>, 
+ Ranjani Sridharan <ranjani.sridharan@linux.intel.com>, david.m.ertman@intel.com,
+ shiraz.saleem@intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_030154_173132_D3D83154 
-X-CRM114-Status: GOOD (  17.19  )
+X-CRM114-CacheID: sfid-20200608_030234_042748_CDF9B44F 
+X-CRM114-Status: GOOD (  31.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
+ provider [andy.shevchenko[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -174,74 +100,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
- linux-mediatek@lists.infradead.org, Wilma.Wu@mediatek.com,
- linux-arm-kernel@lists.infradead.org, shufan_lee@richtek.com
+Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, devicetree <devicetree@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
++Cc: some Intel people WRT our internal discussion about similar
+problem and solutions.
 
+On Mon, Jun 8, 2020 at 11:30 AM Lee Jones <lee.jones@linaro.org> wrote:
+> On Sat, 06 Jun 2020, Michael Walle wrote:
+> > Am 2020-06-06 13:46, schrieb Mark Brown:
+> > > On Fri, Jun 05, 2020 at 10:07:36PM +0200, Michael Walle wrote:
+> > > > Am 2020-06-05 12:50, schrieb Mark Brown:
 
-On 08/06/2020 11:38, Gene Chen wrote:
-> From: Gene Chen <gene_chen@richtek.com>
-> 
-> accidentally remove driver name when
-> replace probe by probe_new in add mt6360 mfd driver patch v4
-> 
-> [  121.243012] EAX: c2a8bc64 EBX: 00000000 ECX: 00000000 EDX: 00000000
-> [  121.243012] ESI: c2a8bc79 EDI: 00000000 EBP: e54bdea8 ESP: e54bdea0
-> [  121.243012] DS: 007b ES: 007b FS: 0000 GS: 0000 SS: 0068 EFLAGS: 00010286
-> [  121.243012] CR0: 80050033 CR2: 00000000 CR3: 02ec3000 CR4: 000006b0
-> [  121.243012] Call Trace:
-> [  121.243012]  kset_find_obj+0x3d/0xc0
-> [  121.243012]  driver_find+0x16/0x40
-> [  121.243012]  driver_register+0x49/0x100
-> [  121.243012]  ? i2c_for_each_dev+0x39/0x50
-> [  121.243012]  ? __process_new_adapter+0x20/0x20
-> [  121.243012]  ? cht_wc_driver_init+0x11/0x11
-> [  121.243012]  i2c_register_driver+0x30/0x80
-> [  121.243012]  ? intel_lpss_pci_driver_init+0x16/0x16
-> [  121.243012]  mt6360_pmu_driver_init+0xf/0x11
-> [  121.243012]  do_one_initcall+0x33/0x1a0
-> [  121.243012]  ? parse_args+0x1eb/0x3d0
-> [  121.243012]  ? __might_sleep+0x31/0x90
-> [  121.243012]  ? kernel_init_freeable+0x10a/0x17f
-> [  121.243012]  kernel_init_freeable+0x12c/0x17f
-> [  121.243012]  ? rest_init+0x110/0x110
-> [  121.243012]  kernel_init+0xb/0x100
-> [  121.243012]  ? schedule_tail_wrapper+0x9/0xc
-> [  121.243012]  ret_from_fork+0x19/0x24
-> [  121.243012] Modules linked in:
-> [  121.243012] CR2: 0000000000000000
-> [  121.243012] random: get_random_bytes called from init_oops_id+0x3a/0x40 with crng_init=0
-> [  121.243012] ---[ end trace 38a803400f1a2bee ]---
-> [  121.243012] EIP: strcmp+0x11/0x30
-> 
-> Signed-off-by: Gene Chen <gene_chen@richtek.com>
-> ---
->  drivers/mfd/mt6360-core.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/mfd/mt6360-core.c b/drivers/mfd/mt6360-core.c
-> index db8cdf5..e9cacc2 100644
-> --- a/drivers/mfd/mt6360-core.c
-> +++ b/drivers/mfd/mt6360-core.c
-> @@ -412,6 +412,7 @@ MODULE_DEVICE_TABLE(of, mt6360_pmu_of_id);
->  
->  static struct i2c_driver mt6360_pmu_driver = {
->  	.driver = {
-> +		.name = "mt6360_pmu",
+...
 
-seems we doubled the work, anyway:
-Reviewed-by: Matthias Brugger <matthias.bgg@kernel.org>
+> Right.  I'm suggesting a means to extrapolate complex shared and
+> sometimes intertwined batches of register sets to be consumed by
+> multiple (sub-)devices spanning different subsystems.
+>
+> Actually scrap that.  The most common case I see is a single Regmap
+> covering all child-devices.
 
+Yes, because often we need a synchronization across the entire address
+space of the (parent) device in question.
 
->  		.pm = &mt6360_pmu_pm_ops,
->  		.of_match_table = of_match_ptr(mt6360_pmu_of_id),
->  	},
-> 
+>  It would be great if there was a way in
+> which we could make an assumption that the entire register address
+> space for a 'tagged' (MFD) device is to be shared (via Regmap) between
+> each of the devices described by its child-nodes.  Probably by picking
+> up on the 'simple-mfd' compatible string in the first instance.
+>
+> Rob, is the above something you would contemplate?
+>
+> Michael, do your register addresses overlap i.e. are they intermingled
+> with one another?  Do multiple child devices need access to the same
+> registers i.e. are they shared?
+>
+> > > > But, there is more in my driver:
+> > > >  (1) there is a version check
+>
+> If we can rid the Regmap dependency, then creating an entire driver to
+> conduct a version check is unjustifiable.  This could become an inline
+> function which is called by each of the sub-devices instead, for
+> example.
+>
+> > > >  (2) there is another function for which there is no suitable linux
+> > > >      subsystem I'm aware of and thus which I'd like to us sysfs
+> > > >      attributes for: This controller supports 16 non-volatile
+> > > >      configuration bits. (this is still TBD)
+>
+> There is a place for everything in Linux.
+>
+> What do these bits configure?
+>
+> > > TBH I'd also say that the enumeration of the subdevices for this
+> > > device should be in the device rather than the DT, they don't
+> > > seem to be things that exist outside of this one device.
+> >
+> > We're going circles here, formerly they were enumerated in the MFD.
+> > Yes, they are devices which aren't likely be used outside a
+> > "sl28cpld", but there might there might be other versions of the
+> > sl28cpld with other components on different base addresses. I
+> > don't care if they are enumerated in DT or MFD, actually, I'd
+> > prefer the latter. _But_ I would like to have the device tree
+> > properties for its subdevices, e.g. the ones for the watchdog or
+> > whatever components there might be in the future.
+>
+> [...]
+>
+> > MFD core can
+> > match a device tree node today; but only one per unique compatible
+> > string. So what should I use to differentiate the different
+> > subdevices?
+>
+> Right.  I have been aware of this issue.  The only suitable solution
+> to this would be to match on 'reg'.
+>
+> FYI: I plan to fix this.
+>
+> If your register map needs to change, then I suggest that this is
+> either a new device or at least a different version of the device and
+> would also have to be represented as different (sub-)mfd_cell.
+>
+> > Rob suggested the internal offset, which I did here.
+>
+> FWIW, I don't like this idea.  DTs should not have to be modified
+> (either in the first instance or subsequently) or specifically
+> designed to patch inadequacies in any given OS.
+>
+> > But then, there is less use in duplicating the offsets in the MFD
+> > just to have the MFD enumerate the subdevices and then match
+> > the device tree nodes against it. I can just use
+> > of_platform_populate() to enumerate the children and I won't
+> > have to duplicate the base addresses.
+>
+> Which is fine.  However this causes a different issue for you.  By
+> stripping out the MFD code you render the MFD portion seemingly
+> superfluous.  Another issue driver authors commonly contend with.
+
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
