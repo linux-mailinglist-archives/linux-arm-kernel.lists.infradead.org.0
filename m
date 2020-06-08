@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D38E1F2212
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:06:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79B821F222A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xU5RT0etDPe3WzaG6plE92ED0vjwoGdBEW6FTLZTJ+I=; b=rd8/IEvLytwnW5
-	lv3PI+Xp1xjMInO9pCE8bxHYNlAiGpYdpG/CsUm1KZHwDTzvzWagdpfGfk4uzVoDamxCV0jXomD69
-	X9hZ1JhbimZwBKWIYz+oOarkOMAVe9rx7IEWtUoYDmMIxC7S06b5hlm5pfUnzWvEIKx6zdxwneISN
-	GymCG5KmJ1tUeeILPOOzubOf/tgX06Flxd8lluWk/tkWphoiLYR2xqPoIveNKGrbHEIVoJBZ/7ZSV
-	OGdE91ComLqWVXfmPh18AImNJWFbZBVbM5ynLEcJSpYhBSHQQx6yFFlapZBf2DUd5dCenn1mp5cyH
-	YXvMxXhMwRDtnsFbAJdg==;
+	List-Owner; bh=3PsVgksnEPWfaiEVoi9l+HYLv9ZxGEPI73UtLL7O7Ko=; b=o9vht/ideni4w0
+	qwTNhPEgX8kHtFDmRyo1G5b0kWiJKfNgCPvR+LJrs/r69+pSJjWCT3dxhstWkcXz4ixUmT3Xlp/ml
+	QC9STzAcqAmjuOpFpPRsBEQRUIq8yiMuAtxXQq5zH4CdVXMXcuOybCzjrF7S9HU73RSKZzfY+oAYd
+	nwLkr90vrKIKLXVbTRb+aYniJiYjBRcjr3w0NTxq426xSUyhFyeiQo7GUGKG0W9lrvadkSqbAeoiz
+	mffHK9/70ZQXQyybqQM1EGQhvbp7IBrSuHsNgmnbRDJp61+PU98F51O6Ed64Tv1qi/aVxkMXcQUbI
+	EZMaHUu+sr/uTZAFEuew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQqY-0006K9-Ov; Mon, 08 Jun 2020 23:06:26 +0000
+	id 1jiQqs-0006bW-Ct; Mon, 08 Jun 2020 23:06:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQqQ-0006J2-ST
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:06:20 +0000
+ id 1jiQqi-0006Zx-1k
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:06:37 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 83AF82078B;
- Mon,  8 Jun 2020 23:06:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D4D3E207C3;
+ Mon,  8 Jun 2020 23:06:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657578;
- bh=Mo/LmzV2QH5IQjVnMsc7iY/hSjl6NooGCziyrango3A=;
+ s=default; t=1591657595;
+ bh=1Bo6mQ3UXemvfcY+3K6du4CSfs7iEjEpfOdhQeNvJW0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PaZI19HqaswJ2RRRfF6TMBox4I5+8A9tCnSqXso92wcV+bTthSBYnR8N4jlrXOGrm
- +qK4Z82ucPg1pQqh4rwciI61DEpr+JnSvOQUbxGW8/NrnpS5vWMmT3Ec0/NWAim8uu
- ndu3d3CjJfQLVuuTdLlf8hyOCGV1oFRLHY69EwlI=
+ b=sa9v6HA9KjtrGk9x6r6bvrXPTUW7Ql3ItsrtWESnorKSSlruutG8Hy+up7uRxrWcI
+ zNa2/5CgKYlhZOpLXPrZZwr3g0XQsomm8w8XeMpcvyj3sz/4yxSxu8173pn8xD0Mbu
+ RbQ8eJVBg+dLH2Y1ESl/mPpHHu3VAAgSmXn/T27w=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 008/274] media: imx: imx7-mipi-csis: Cleanup and
- fix subdev pad format handling
-Date: Mon,  8 Jun 2020 19:01:41 -0400
-Message-Id: <20200608230607.3361041-8-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 022/274] arm64/kernel: Fix range on invalidating
+ dcache for boot page tables
+Date: Mon,  8 Jun 2020 19:01:55 -0400
+Message-Id: <20200608230607.3361041-22-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160618_964715_CEE3CE26 
-X-CRM114-Status: GOOD (  15.31  )
+X-CRM114-CacheID: sfid-20200608_160636_130574_F79FAAD6 
+X-CRM114-Status: GOOD (  14.87  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,173 +80,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Rui Miguel Silva <rmfrfs@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
+ Gavin Shan <gshan@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+From: Gavin Shan <gshan@redhat.com>
 
-[ Upstream commit d321dd233b9f2bb407b8e6b4759408f09ec207c3 ]
+[ Upstream commit 9d2d75ede59bc1edd8561f2ee9d4702a5ea0ae30 ]
 
-The subdev set pad format operation currently misbehaves in multiple ways:
+Prior to commit 8eb7e28d4c642c31 ("arm64/mm: move runtime pgds to
+rodata"), idmap_pgd_dir, tramp_pg_dir, reserved_ttbr0, swapper_pg_dir,
+and init_pg_dir were contiguous at the end of the kernel image. The
+maintenance at the end of __create_page_tables assumed these were
+contiguous, and affected everything from the start of idmap_pg_dir
+to the end of init_pg_dir.
 
-- mipi_csis_try_format() unconditionally stores the format in the device
-  state, even for V4L2_SUBDEV_FORMAT_TRY.
+That commit moved all but init_pg_dir into the .rodata section, with
+other data placed between idmap_pg_dir and init_pg_dir, but did not
+update the maintenance. Hence the maintenance is performed on much
+more data than necessary (but as the bootloader previously made this
+clean to the PoC there is no functional problem).
 
-- The format is never stored in the pad cfg, but the pad cfg format
-  always overwrites the format requested by the user.
+As we only alter idmap_pg_dir, and init_pg_dir, we only need to perform
+maintenance for these. As the other dirs are in .rodata, the bootloader
+will have initialised them as expected and cleaned them to the PoC. The
+kernel will initialize them as necessary after enabling the MMU.
 
-- The sink format is not propagated to the source.
+This patch reworks the maintenance to only cover the idmap_pg_dir and
+init_pg_dir to avoid this unnecessary work.
 
-Fix all this by reworking the set format operation as follows:
-
-1. For the source pad, turn set() into get() as the source format is not
-   modifiable.
-2. Validate the requested format and updated the stored format
-   accordingly.
-3. Return the format actually set.
-4. Propagate the format from sink to source.
-
-Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Acked-by: Rui Miguel Silva <rmfrfs@gmail.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Signed-off-by: Gavin Shan <gshan@redhat.com>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Link: https://lore.kernel.org/r/20200427235700.112220-1-gshan@redhat.com
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/imx/imx7-mipi-csis.c | 82 ++++++++++------------
- 1 file changed, 37 insertions(+), 45 deletions(-)
+ arch/arm64/include/asm/pgtable.h |  1 +
+ arch/arm64/kernel/head.S         | 12 +++++++++---
+ arch/arm64/kernel/vmlinux.lds.S  |  1 +
+ 3 files changed, 11 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-index fbc1a924652a..6318f0aebb4b 100644
---- a/drivers/staging/media/imx/imx7-mipi-csis.c
-+++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-@@ -669,28 +669,6 @@ static int mipi_csis_init_cfg(struct v4l2_subdev *mipi_sd,
- 	return 0;
- }
+diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+index 538c85e62f86..25f56df7ed9a 100644
+--- a/arch/arm64/include/asm/pgtable.h
++++ b/arch/arm64/include/asm/pgtable.h
+@@ -457,6 +457,7 @@ extern pgd_t init_pg_dir[PTRS_PER_PGD];
+ extern pgd_t init_pg_end[];
+ extern pgd_t swapper_pg_dir[PTRS_PER_PGD];
+ extern pgd_t idmap_pg_dir[PTRS_PER_PGD];
++extern pgd_t idmap_pg_end[];
+ extern pgd_t tramp_pg_dir[PTRS_PER_PGD];
  
--static struct csis_pix_format const *
--mipi_csis_try_format(struct v4l2_subdev *mipi_sd, struct v4l2_mbus_framefmt *mf)
--{
--	struct csi_state *state = mipi_sd_to_csis_state(mipi_sd);
--	struct csis_pix_format const *csis_fmt;
--
--	csis_fmt = find_csis_format(mf->code);
--	if (!csis_fmt)
--		csis_fmt = &mipi_csis_formats[0];
--
--	v4l_bound_align_image(&mf->width, 1, CSIS_MAX_PIX_WIDTH,
--			      csis_fmt->pix_width_alignment,
--			      &mf->height, 1, CSIS_MAX_PIX_HEIGHT, 1,
--			      0);
--
--	state->format_mbus.code = csis_fmt->code;
--	state->format_mbus.width = mf->width;
--	state->format_mbus.height = mf->height;
--
--	return csis_fmt;
--}
--
- static struct v4l2_mbus_framefmt *
- mipi_csis_get_format(struct csi_state *state,
- 		     struct v4l2_subdev_pad_config *cfg,
-@@ -703,53 +681,67 @@ mipi_csis_get_format(struct csi_state *state,
- 	return &state->format_mbus;
- }
+ extern void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd);
+diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+index 57a91032b4c2..32f5ecbec0ea 100644
+--- a/arch/arm64/kernel/head.S
++++ b/arch/arm64/kernel/head.S
+@@ -394,13 +394,19 @@ SYM_FUNC_START_LOCAL(__create_page_tables)
  
--static int mipi_csis_set_fmt(struct v4l2_subdev *mipi_sd,
-+static int mipi_csis_get_fmt(struct v4l2_subdev *mipi_sd,
- 			     struct v4l2_subdev_pad_config *cfg,
- 			     struct v4l2_subdev_format *sdformat)
- {
- 	struct csi_state *state = mipi_sd_to_csis_state(mipi_sd);
--	struct csis_pix_format const *csis_fmt;
- 	struct v4l2_mbus_framefmt *fmt;
- 
--	if (sdformat->pad >= CSIS_PADS_NUM)
--		return -EINVAL;
--
--	fmt = mipi_csis_get_format(state, cfg, sdformat->which, sdformat->pad);
--
- 	mutex_lock(&state->lock);
--	if (sdformat->pad == CSIS_PAD_SOURCE) {
--		sdformat->format = *fmt;
--		goto unlock;
--	}
--
--	csis_fmt = mipi_csis_try_format(mipi_sd, &sdformat->format);
--
-+	fmt = mipi_csis_get_format(state, cfg, sdformat->which, sdformat->pad);
- 	sdformat->format = *fmt;
--
--	if (csis_fmt && sdformat->which == V4L2_SUBDEV_FORMAT_ACTIVE)
--		state->csis_fmt = csis_fmt;
--	else
--		cfg->try_fmt = sdformat->format;
--
--unlock:
- 	mutex_unlock(&state->lock);
- 
- 	return 0;
- }
- 
--static int mipi_csis_get_fmt(struct v4l2_subdev *mipi_sd,
-+static int mipi_csis_set_fmt(struct v4l2_subdev *mipi_sd,
- 			     struct v4l2_subdev_pad_config *cfg,
- 			     struct v4l2_subdev_format *sdformat)
- {
- 	struct csi_state *state = mipi_sd_to_csis_state(mipi_sd);
-+	struct csis_pix_format const *csis_fmt;
- 	struct v4l2_mbus_framefmt *fmt;
- 
--	mutex_lock(&state->lock);
-+	/*
-+	 * The CSIS can't transcode in any way, the source format can't be
-+	 * modified.
-+	 */
-+	if (sdformat->pad == CSIS_PAD_SOURCE)
-+		return mipi_csis_get_fmt(mipi_sd, cfg, sdformat);
+ 	/*
+ 	 * Since the page tables have been populated with non-cacheable
+-	 * accesses (MMU disabled), invalidate the idmap and swapper page
+-	 * tables again to remove any speculatively loaded cache lines.
++	 * accesses (MMU disabled), invalidate those tables again to
++	 * remove any speculatively loaded cache lines.
+ 	 */
++	dmb	sy
 +
-+	if (sdformat->pad != CSIS_PAD_SINK)
-+		return -EINVAL;
+ 	adrp	x0, idmap_pg_dir
++	adrp	x1, idmap_pg_end
++	sub	x1, x1, x0
++	bl	__inval_dcache_area
++
++	adrp	x0, init_pg_dir
+ 	adrp	x1, init_pg_end
+ 	sub	x1, x1, x0
+-	dmb	sy
+ 	bl	__inval_dcache_area
  
- 	fmt = mipi_csis_get_format(state, cfg, sdformat->which, sdformat->pad);
+ 	ret	x28
+diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
+index 497f9675071d..94402aaf5f5c 100644
+--- a/arch/arm64/kernel/vmlinux.lds.S
++++ b/arch/arm64/kernel/vmlinux.lds.S
+@@ -139,6 +139,7 @@ SECTIONS
  
-+	mutex_lock(&state->lock);
-+
-+	/* Validate the media bus code and clamp the size. */
-+	csis_fmt = find_csis_format(sdformat->format.code);
-+	if (!csis_fmt)
-+		csis_fmt = &mipi_csis_formats[0];
-+
-+	fmt->code = csis_fmt->code;
-+	fmt->width = sdformat->format.width;
-+	fmt->height = sdformat->format.height;
-+
-+	v4l_bound_align_image(&fmt->width, 1, CSIS_MAX_PIX_WIDTH,
-+			      csis_fmt->pix_width_alignment,
-+			      &fmt->height, 1, CSIS_MAX_PIX_HEIGHT, 1, 0);
-+
- 	sdformat->format = *fmt;
+ 	idmap_pg_dir = .;
+ 	. += IDMAP_DIR_SIZE;
++	idmap_pg_end = .;
  
-+	/* Propagate the format from sink to source. */
-+	fmt = mipi_csis_get_format(state, cfg, sdformat->which,
-+				   CSIS_PAD_SOURCE);
-+	*fmt = sdformat->format;
-+
-+	/* Store the CSIS format descriptor for active formats. */
-+	if (sdformat->which == V4L2_SUBDEV_FORMAT_ACTIVE)
-+		state->csis_fmt = csis_fmt;
-+
- 	mutex_unlock(&state->lock);
- 
- 	return 0;
+ #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+ 	tramp_pg_dir = .;
 -- 
 2.25.1
 
