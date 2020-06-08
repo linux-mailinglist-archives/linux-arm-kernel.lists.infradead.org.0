@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EBB31F248F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:23:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 482AD1F22A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:10:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UyHHt0t4O+H8LvKUWSN0HS2zy5cNDXiXU4zuF+AZM+Q=; b=IoSbauycTwsPjK
-	5OW8VVkcDR5Skdf5bmCear359HrVs+CUcQb6PexQgBe7DVskFVeejZaPM6Xmqk/x+zZ4cdYEeTCOL
-	y6QvCyVE5+AmzTB5j+0IkQPtsS7yFXpIemKAHtZLp2r8uQZlIppyTR9zX3uCMKeNRVZUj6HuRUmsP
-	YYpMdkbbomZnTDw7cs0PTDClnhdgOgWMEyXSHnMdIzaaYz0+MvhlFH2vN1nSOFNWn9uv84hQUcaJJ
-	uKg1i1Gw6/1fv9dOOVPgRH6pOx55oGNeWQeu+WsZBMPSb51oAEzTQ8ZGZ0ZLt2qQDwyn6IXlXUGwi
-	CzGyj8+SOe7216dypwVA==;
+	List-Owner; bh=ipUGkvdT4y3iJIFKdUnwLCa8Vh3yrKWwMMsSRzoDtVM=; b=TMb2jWmCoQW3rR
+	5g6zRi0x/mrVB20hYWpf2OEDXGXH6g6NhlIzmwPrvd6COkstLKqeOfaimTNK7hywcYXyINjJihPs3
+	ebiiYKUPb6apHRN2pRmyDTiBFelg5HfIkV6HLoO25oUDktC6uRcwxEz1IPkca9W9TGjSM383dA4i9
+	wvioSZYACB7bU31KpSA1a04RNQS5B33snAPgevSrgkFXnZFsu7C1fgaSxhUm5AuoDovWZgOIySlwl
+	i8tgNUD8XdKa+tyH+yxoa9h45zO2HqxuVA1/p3cYFIMY/aKpcyB3xTJTN/ahMHN2dxwUtgam0NH+G
+	RDvxRWLGdJX9MmzIdcXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiR6a-000296-2m; Mon, 08 Jun 2020 23:23:00 +0000
+	id 1jiQuX-0001Bb-3X; Mon, 08 Jun 2020 23:10:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQwm-0006I5-Ku
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:12:54 +0000
+ id 1jiQri-0007XN-QB
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:40 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EA35920B80;
- Mon,  8 Jun 2020 23:12:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2652E2086A;
+ Mon,  8 Jun 2020 23:07:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657971;
- bh=Yf6tijfTtkC0daEZSzoDMhzmrg/OWgETF9rfSQTSNGw=;
+ s=default; t=1591657658;
+ bh=asa8ONHvLvSLrkUv5RGqx9vJCcv05F7tTMtmQgGoEZs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=J/nmDo6tmPGgBdJDjGiJKR5FYeQQxJIC6ss1nCQ099jMorsuL2M6lyxjNxW2BtUBM
- NU7g61fvlN2XHm47aY7oxLIyjr/x/YIiCkKvOrCPbShWr65ls2lt3UDdBh3VyNkL6i
- OUnz7pb8nEMrwozIY5+fn2K6b0ciQ9kTDZ2wRq9s=
+ b=xFuu7ttfb3sjtwrGPnq9s6o7cB5lVCU14IoUfuvMsTMN4Dwus1QZH0/+C3YOA2Sek
+ Lp60ROA2KDpvLj9IUXkwboIquzTIko5c48PcGNXE7Q0PTuw4UTz4XIUGJpSHebWMPY
+ XmaEc1H/OyNSCgH2whzQlc9/iIywc0K23mka7mr8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 034/606] ARM: dts: imx6dl-yapp4: Fix Ursa board
- Ethernet connection
-Date: Mon,  8 Jun 2020 19:02:39 -0400
-Message-Id: <20200608231211.3363633-34-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 070/274] ARM: 8978/1: mm: make act_mm() respect
+ THREAD_SIZE
+Date: Mon,  8 Jun 2020 19:02:43 -0400
+Message-Id: <20200608230607.3361041-70-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200608231211.3363633-1-sashal@kernel.org>
-References: <20200608231211.3363633-1-sashal@kernel.org>
+In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
+References: <20200608230607.3361041-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161252_840680_A32E8902 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20200608_160738_881627_163159FA 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,36 +80,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, devicetree@vger.kernel.org,
- =?UTF-8?q?Michal=20Vok=C3=A1=C4=8D?= <michal.vokac@ysoft.com>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogTWljaGFsIFZva8OhxI0gPG1pY2hhbC52b2thY0B5c29mdC5jb20+Cgpjb21taXQgY2Jl
-NjNhODM1ODMxMDI0NGU2MDA3Mzk4YmQyYzdjNzBjN2ZkNTFjZCB1cHN0cmVhbS4KClRoZSBZIFNv
-ZnQgeWFwcDQgcGxhdGZvcm0gc3VwcG9ydHMgdXAgdG8gdHdvIEV0aGVybmV0IHBvcnRzLgpUaGUg
-VXJzYSBib2FyZCB0aG91Z2ggaGFzIG9ubHkgb25lIEV0aGVybmV0IHBvcnQgcG9wdWxhdGVkIGFu
-ZCB0aGF0IGlzCnRoZSBwb3J0QDIuIFNpbmNlIHRoZSBpbnRyb2R1Y3Rpb24gb2YgdGhpcyBwbGF0
-Zm9ybSBpbnRvIG1haW5saW5lIGEgd3JvbmcKcG9ydCB3YXMgZGVsZXRlZCBhbmQgdGhlIEV0aGVy
-bmV0IGNvdWxkIG5ldmVyIHdvcmsuIEZpeCB0aGlzIGJ5IGRlbGV0aW5nCnRoZSBjb3JyZWN0IHBv
-cnQgbm9kZS4KCkZpeGVzOiA4NzQ4OWVjM2E3N2YgKCJBUk06IGR0czogaW14OiBBZGQgWSBTb2Z0
-IElPVEEgRHJhY28sIEh5ZHJhIGFuZCBVcnNhIGJvYXJkcyIpCkNjOiBzdGFibGVAdmdlci5rZXJu
-ZWwub3JnClNpZ25lZC1vZmYtYnk6IE1pY2hhbCBWb2vDocSNIDxtaWNoYWwudm9rYWNAeXNvZnQu
-Y29tPgpTaWduZWQtb2ZmLWJ5OiBTaGF3biBHdW8gPHNoYXduZ3VvQGtlcm5lbC5vcmc+ClNpZ25l
-ZC1vZmYtYnk6IEdyZWcgS3JvYWgtSGFydG1hbiA8Z3JlZ2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+
-Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvaW14NmRsLXlhcHA0LXVyc2EuZHRzIHwgMiArLQogMSBm
-aWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEv
-YXJjaC9hcm0vYm9vdC9kdHMvaW14NmRsLXlhcHA0LXVyc2EuZHRzIGIvYXJjaC9hcm0vYm9vdC9k
-dHMvaW14NmRsLXlhcHA0LXVyc2EuZHRzCmluZGV4IDBkNTk0ZTRiZDU1OS4uYTExNzNiZjViZmY1
-IDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9pbXg2ZGwteWFwcDQtdXJzYS5kdHMKKysr
-IGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NmRsLXlhcHA0LXVyc2EuZHRzCkBAIC0zOCw3ICszOCw3
-IEBAICZyZWdfdXNiX2gxX3ZidXMgewogfTsKIAogJnN3aXRjaF9wb3J0cyB7Ci0JL2RlbGV0ZS1u
-b2RlLyBwb3J0QDI7CisJL2RlbGV0ZS1ub2RlLyBwb3J0QDM7CiB9OwogCiAmdG91Y2hzY3JlZW4g
-ewotLSAKMi4yNS4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+From: Linus Walleij <linus.walleij@linaro.org>
+
+[ Upstream commit e1de94380af588bdf6ad6f0cc1f75004c35bc096 ]
+
+Recent work with KASan exposed the folling hard-coded bitmask
+in arch/arm/mm/proc-macros.S:
+
+  bic     rd, sp, #8128
+  bic     rd, rd, #63
+
+This forms the bitmask 0x1FFF that is coinciding with
+(PAGE_SIZE << THREAD_SIZE_ORDER) - 1, this code was assuming
+that THREAD_SIZE is always 8K (8192).
+
+As KASan was increasing THREAD_SIZE_ORDER to 2, I ran into
+this bug.
+
+Fix it by this little oneline suggested by Ard:
+
+  bic     rd, sp, #(THREAD_SIZE - 1) & ~63
+
+Where THREAD_SIZE is defined using THREAD_SIZE_ORDER.
+
+We have to also include <linux/const.h> since the THREAD_SIZE
+expands to use the _AC() macro.
+
+Cc: Ard Biesheuvel <ardb@kernel.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>
+Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/arm/mm/proc-macros.S | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
+index 5461d589a1e2..60ac7c5999a9 100644
+--- a/arch/arm/mm/proc-macros.S
++++ b/arch/arm/mm/proc-macros.S
+@@ -5,6 +5,7 @@
+  *  VMA_VM_FLAGS
+  *  VM_EXEC
+  */
++#include <linux/const.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/thread_info.h>
+ 
+@@ -30,7 +31,7 @@
+  * act_mm - get current->active_mm
+  */
+ 	.macro	act_mm, rd
+-	bic	\rd, sp, #8128
++	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
+ 	bic	\rd, \rd, #63
+ 	ldr	\rd, [\rd, #TI_TASK]
+ 	.if (TSK_ACTIVE_MM > IMM12_MASK)
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
