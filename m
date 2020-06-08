@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35CFD1F27AC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:48:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 582B11F27AD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:48:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vauFTn6pWGTekNZBCq7Jnb0QYfQ19rqSvmmfu1YrMLg=; b=Bn6BImgJLvSlDr
-	U7XqTUqaFl9Ek5FB5U+KGbSSK0uFVvWYUd9N167TeHwhzdojB140fXMbLWTPCYyjrMD7kqc1/Zwi/
-	9e+RFZscoEl7mK7AtgmTfnpQBazjyZTNTwCgRtMZpvIZo8gkaKqCEHUnggKmSFkP5aOLnDFBwD/YP
-	aKtkH4FciWMJHNrWLYxfHdLYeQ/cjaf+68fnnO+T1EsDfLuUZ88Mjkg4YP+knSQHLmcXlqwT7KJmB
-	d8miJAaJVDkayvvBmHxNoFFqE9O9TTWerdVUPm5jDXjQpuCtCRb5xQN5JLxsO0HFRdFhp7G+O4bHB
-	ReK+hN75UVicOmXucQjg==;
+	List-Owner; bh=ipUGkvdT4y3iJIFKdUnwLCa8Vh3yrKWwMMsSRzoDtVM=; b=Mhja7x6MEfL7Zm
+	dRNdwOPQ/LbBcLVv4JDpWAFJe/TGXabmgV4cVmf8dHtD+MbiY5MIgck4wi8EG4p5nX+u2yk6bZc3n
+	75RgwHimQjWOXdpDqlm477Lt+Kh0Pul5JupUpgHeKGC546RUm66ChKqetONzA/HJtkD363i8rX/po
+	neYLSmLw5r+q3HZvkwFCuxno9A7UO/WIFUkcFeQie4fuJlc6DObFZz1uugeKJrOd+nvdLfMM8gNXe
+	vWyrMqzFEwJ1+Ohf9TnCP/XYYP45PIDM4lxGWs9JCc40JOcukr21So197RuGQrqphX/1XsduV+l+H
+	hOilaafGoifrWRnOfpcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRUx-0003Lm-RP; Mon, 08 Jun 2020 23:48:11 +0000
+	id 1jiRVK-0003br-Ip; Mon, 08 Jun 2020 23:48:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR6W-0002Ja-TZ
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:22:58 +0000
+ id 1jiR6k-0002V2-Tu
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:23:12 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0D02A20842;
- Mon,  8 Jun 2020 23:22:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 603FA2087E;
+ Mon,  8 Jun 2020 23:23:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658576;
- bh=g7s+4E0FWjGLf3fU+sdwvbuqe4aR7mVLH5Y7cpF0E24=;
+ s=default; t=1591658590;
+ bh=asa8ONHvLvSLrkUv5RGqx9vJCcv05F7tTMtmQgGoEZs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=q6mwnPbdKztpj4WttRFk2/Z1v1Spby6kHfE8e1npcbnDR6gbTmUxlD/iz7D3Kvn8e
- yNKaP8UAjaV0U6c1T450SigWyFBr24PgaoSjhz9k7Ob/ZSz+Q+wb6BebFtcYwgMb0J
- g3ok/KIWWD/UjF0SGdcTEtDPcnM9eJenTyRBMmuw=
+ b=aA+7+Z+6Cu5gA8pdyBP8hLH/9d+FBMSdvLcI13C8gh9Z/+l6vb9XmqsvM9hw/WEjo
+ B3afBHpyBT3VSx74T4mFLJ9/mOeAw2KLv3eLLIhENVMcNccwE4E8jbO+6jMDQ7zIYU
+ dNxj3miqN2rVaXBfCQz60xQTEnS6ssKsWlOi1S8Y=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 014/106] arm64: insn: Fix two bugs in encoding
- 32-bit logical immediates
-Date: Mon,  8 Jun 2020 19:21:06 -0400
-Message-Id: <20200608232238.3368589-14-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 024/106] ARM: 8978/1: mm: make act_mm() respect
+ THREAD_SIZE
+Date: Mon,  8 Jun 2020 19:21:16 -0400
+Message-Id: <20200608232238.3368589-24-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162256_994357_C18253E8 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20200608_162311_006884_42848314 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,106 +80,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Luke Nelson <luke.r.nels@gmail.com>,
- Marc Zyngier <maz@kernel.org>, clang-built-linux@googlegroups.com,
- Luke Nelson <lukenels@cs.washington.edu>, linux-arm-kernel@lists.infradead.org,
- Will Deacon <will@kernel.org>, Xi Wang <xi.wang@gmail.com>
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Luke Nelson <lukenels@cs.washington.edu>
+From: Linus Walleij <linus.walleij@linaro.org>
 
-[ Upstream commit 579d1b3faa3735e781ff74aac0afd598515dbc63 ]
+[ Upstream commit e1de94380af588bdf6ad6f0cc1f75004c35bc096 ]
 
-This patch fixes two issues present in the current function for encoding
-arm64 logical immediates when using the 32-bit variants of instructions.
+Recent work with KASan exposed the folling hard-coded bitmask
+in arch/arm/mm/proc-macros.S:
 
-First, the code does not correctly reject an all-ones 32-bit immediate,
-and returns an undefined instruction encoding.
+  bic     rd, sp, #8128
+  bic     rd, rd, #63
 
-Second, the code incorrectly rejects some 32-bit immediates that are
-actually encodable as logical immediates. The root cause is that the code
-uses a default mask of 64-bit all-ones, even for 32-bit immediates.
-This causes an issue later on when the default mask is used to fill the
-top bits of the immediate with ones, shown here:
+This forms the bitmask 0x1FFF that is coinciding with
+(PAGE_SIZE << THREAD_SIZE_ORDER) - 1, this code was assuming
+that THREAD_SIZE is always 8K (8192).
 
-  /*
-   * Pattern: 0..01..10..01..1
-   *
-   * Fill the unused top bits with ones, and check if
-   * the result is a valid immediate (all ones with a
-   * contiguous ranges of zeroes).
-   */
-  imm |= ~mask;
-  if (!range_of_ones(~imm))
-          return AARCH64_BREAK_FAULT;
+As KASan was increasing THREAD_SIZE_ORDER to 2, I ran into
+this bug.
 
-To see the problem, consider an immediate of the form 0..01..10..01..1,
-where the upper 32 bits are zero, such as 0x80000001. The code checks
-if ~(imm | ~mask) contains a range of ones: the incorrect mask yields
-1..10..01..10..0, which fails the check; the correct mask yields
-0..01..10..0, which succeeds.
+Fix it by this little oneline suggested by Ard:
 
-The fix for both issues is to generate a correct mask based on the
-instruction immediate size, and use the mask to check for all-ones,
-all-zeroes, and values wider than the mask.
+  bic     rd, sp, #(THREAD_SIZE - 1) & ~63
 
-Currently, arch/arm64/kvm/va_layout.c is the only user of this function,
-which uses 64-bit immediates and therefore won't trigger these bugs.
+Where THREAD_SIZE is defined using THREAD_SIZE_ORDER.
 
-We tested the new code against llvm-mc with all 1,302 encodable 32-bit
-logical immediates and all 5,334 encodable 64-bit logical immediates.
+We have to also include <linux/const.h> since the THREAD_SIZE
+expands to use the _AC() macro.
 
-Fixes: ef3935eeebff ("arm64: insn: Add encoder for bitwise operations using literals")
-Suggested-by: Will Deacon <will@kernel.org>
-Co-developed-by: Xi Wang <xi.wang@gmail.com>
-Signed-off-by: Xi Wang <xi.wang@gmail.com>
-Signed-off-by: Luke Nelson <luke.r.nels@gmail.com>
-Reviewed-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200508181547.24783-2-luke.r.nels@gmail.com
-Signed-off-by: Will Deacon <will@kernel.org>
+Cc: Ard Biesheuvel <ardb@kernel.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>
+Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/insn.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ arch/arm/mm/proc-macros.S | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
-index 3e6229e30109..cd37edbdedcb 100644
---- a/arch/arm64/kernel/insn.c
-+++ b/arch/arm64/kernel/insn.c
-@@ -1490,16 +1490,10 @@ static u32 aarch64_encode_immediate(u64 imm,
- 				    u32 insn)
- {
- 	unsigned int immr, imms, n, ones, ror, esz, tmp;
--	u64 mask = ~0UL;
--
--	/* Can't encode full zeroes or full ones */
--	if (!imm || !~imm)
--		return AARCH64_BREAK_FAULT;
-+	u64 mask;
+diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
+index 5461d589a1e2..60ac7c5999a9 100644
+--- a/arch/arm/mm/proc-macros.S
++++ b/arch/arm/mm/proc-macros.S
+@@ -5,6 +5,7 @@
+  *  VMA_VM_FLAGS
+  *  VM_EXEC
+  */
++#include <linux/const.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/thread_info.h>
  
- 	switch (variant) {
- 	case AARCH64_INSN_VARIANT_32BIT:
--		if (upper_32_bits(imm))
--			return AARCH64_BREAK_FAULT;
- 		esz = 32;
- 		break;
- 	case AARCH64_INSN_VARIANT_64BIT:
-@@ -1511,6 +1505,12 @@ static u32 aarch64_encode_immediate(u64 imm,
- 		return AARCH64_BREAK_FAULT;
- 	}
- 
-+	mask = GENMASK(esz - 1, 0);
-+
-+	/* Can't encode full zeroes, full ones, or value wider than the mask */
-+	if (!imm || imm == mask || imm & ~mask)
-+		return AARCH64_BREAK_FAULT;
-+
- 	/*
- 	 * Inverse of Replicate(). Try to spot a repeating pattern
- 	 * with a pow2 stride.
+@@ -30,7 +31,7 @@
+  * act_mm - get current->active_mm
+  */
+ 	.macro	act_mm, rd
+-	bic	\rd, sp, #8128
++	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
+ 	bic	\rd, \rd, #63
+ 	ldr	\rd, [\rd, #TI_TASK]
+ 	.if (TSK_ACTIVE_MM > IMM12_MASK)
 -- 
 2.25.1
 
