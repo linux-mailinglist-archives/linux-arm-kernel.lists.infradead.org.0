@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A03D31F27AB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:47:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35CFD1F27AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:48:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K/jx2/azfvBXkGYzAQwWV4GpucmdvHYoykSp4T1UE4M=; b=aNjyHWcN0MJYsn
-	LnYlRFinrpL/gOBKNh54D6DhZ2gey1Nxa7mBBGcT6aeuzaINEV/Wy3eBuTGX770SgWYaQZrea/Qy5
-	hvTXhzpMsrZDsNGzKHDYT0RXFj2f4sQRO7uiWhQU+xktJLNHg/nvWYnxg4rBNjZW7P0gV/BAJgtHS
-	rYIEcdGeheUm7wQH10bdXQyC6/m41iMHH/5XmWrhpPaod6l6U/WsneVyJVTKOldxH4oaJAbSTFFYm
-	mDNOC3cDOoeXw0oaOqcH4uRhmw4XKz2RPHNSRct1cssP8jRorO8qwYO0JE8a1M9DwelZRnebCT6f1
-	ITLUBo8f8Ctg6VcO3GHw==;
+	List-Owner; bh=vauFTn6pWGTekNZBCq7Jnb0QYfQ19rqSvmmfu1YrMLg=; b=Bn6BImgJLvSlDr
+	U7XqTUqaFl9Ek5FB5U+KGbSSK0uFVvWYUd9N167TeHwhzdojB140fXMbLWTPCYyjrMD7kqc1/Zwi/
+	9e+RFZscoEl7mK7AtgmTfnpQBazjyZTNTwCgRtMZpvIZo8gkaKqCEHUnggKmSFkP5aOLnDFBwD/YP
+	aKtkH4FciWMJHNrWLYxfHdLYeQ/cjaf+68fnnO+T1EsDfLuUZ88Mjkg4YP+knSQHLmcXlqwT7KJmB
+	d8miJAaJVDkayvvBmHxNoFFqE9O9TTWerdVUPm5jDXjQpuCtCRb5xQN5JLxsO0HFRdFhp7G+O4bHB
+	ReK+hN75UVicOmXucQjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRUc-00031J-IP; Mon, 08 Jun 2020 23:47:50 +0000
+	id 1jiRUx-0003Lm-RP; Mon, 08 Jun 2020 23:48:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR6S-0002GR-W3
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:22:54 +0000
+ id 1jiR6W-0002Ja-TZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:22:58 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 91D0820842;
- Mon,  8 Jun 2020 23:22:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0D02A20842;
+ Mon,  8 Jun 2020 23:22:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658572;
- bh=CY52Bl6hIbhNX7WaF6Vsas88tR+RJPp+8Q5PkrVQ+eg=;
+ s=default; t=1591658576;
+ bh=g7s+4E0FWjGLf3fU+sdwvbuqe4aR7mVLH5Y7cpF0E24=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vp/Toiib1plIK7goIcaMXbI40N69wwItt0R08mzJTLBJkguxI4giijvnEFOsJSgaJ
- SFVactodennwc8rnrtOyfwSwwLFtyYdBcbfUt0dRe4bBfdqZwYCGDR3XIbyPK2CrZH
- hQkJUqdG7OukCVSGGWAkRsl/S4kYD9hAW59eWP6U=
+ b=q6mwnPbdKztpj4WttRFk2/Z1v1Spby6kHfE8e1npcbnDR6gbTmUxlD/iz7D3Kvn8e
+ yNKaP8UAjaV0U6c1T450SigWyFBr24PgaoSjhz9k7Ob/ZSz+Q+wb6BebFtcYwgMb0J
+ g3ok/KIWWD/UjF0SGdcTEtDPcnM9eJenTyRBMmuw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 011/106] arm64: cacheflush: Fix KGDB trap
- detection
-Date: Mon,  8 Jun 2020 19:21:03 -0400
-Message-Id: <20200608232238.3368589-11-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 014/106] arm64: insn: Fix two bugs in encoding
+ 32-bit logical immediates
+Date: Mon,  8 Jun 2020 19:21:06 -0400
+Message-Id: <20200608232238.3368589-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162253_085159_A7880CF6 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20200608_162256_994357_C18253E8 
+X-CRM114-Status: GOOD (  15.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,70 +80,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, Will Deacon <will@kernel.org>,
- Douglas Anderson <dianders@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Luke Nelson <luke.r.nels@gmail.com>,
+ Marc Zyngier <maz@kernel.org>, clang-built-linux@googlegroups.com,
+ Luke Nelson <lukenels@cs.washington.edu>, linux-arm-kernel@lists.infradead.org,
+ Will Deacon <will@kernel.org>, Xi Wang <xi.wang@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Daniel Thompson <daniel.thompson@linaro.org>
+From: Luke Nelson <lukenels@cs.washington.edu>
 
-[ Upstream commit ab8ad279ceac4fc78ae4dcf1a26326e05695e537 ]
+[ Upstream commit 579d1b3faa3735e781ff74aac0afd598515dbc63 ]
 
-flush_icache_range() contains a bodge to avoid issuing IPIs when the kgdb
-trap handler is running because issuing IPIs is unsafe (and not needed)
-in this execution context. However the current test, based on
-kgdb_connected is flawed: it both over-matches and under-matches.
+This patch fixes two issues present in the current function for encoding
+arm64 logical immediates when using the 32-bit variants of instructions.
 
-The over match occurs because kgdb_connected is set when gdb attaches
-to the stub and remains set during normal running. This is relatively
-harmelss because in almost all cases irq_disabled() will be false.
+First, the code does not correctly reject an all-ones 32-bit immediate,
+and returns an undefined instruction encoding.
 
-The under match is more serious. When kdb is used instead of kgdb to access
-the debugger then kgdb_connected is not set in all the places that the
-debug core updates sw breakpoints (and hence flushes the icache). This
-can lead to deadlock.
+Second, the code incorrectly rejects some 32-bit immediates that are
+actually encodable as logical immediates. The root cause is that the code
+uses a default mask of 64-bit all-ones, even for 32-bit immediates.
+This causes an issue later on when the default mask is used to fill the
+top bits of the immediate with ones, shown here:
 
-Fix by replacing the ad-hoc check with the proper kgdb macro. This also
-allows us to drop the #ifdef wrapper.
+  /*
+   * Pattern: 0..01..10..01..1
+   *
+   * Fill the unused top bits with ones, and check if
+   * the result is a valid immediate (all ones with a
+   * contiguous ranges of zeroes).
+   */
+  imm |= ~mask;
+  if (!range_of_ones(~imm))
+          return AARCH64_BREAK_FAULT;
 
-Fixes: 3b8c9f1cdfc5 ("arm64: IPI each CPU after invalidating the I-cache for kernel mappings")
-Signed-off-by: Daniel Thompson <daniel.thompson@linaro.org>
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
-Link: https://lore.kernel.org/r/20200504170518.2959478-1-daniel.thompson@linaro.org
+To see the problem, consider an immediate of the form 0..01..10..01..1,
+where the upper 32 bits are zero, such as 0x80000001. The code checks
+if ~(imm | ~mask) contains a range of ones: the incorrect mask yields
+1..10..01..10..0, which fails the check; the correct mask yields
+0..01..10..0, which succeeds.
+
+The fix for both issues is to generate a correct mask based on the
+instruction immediate size, and use the mask to check for all-ones,
+all-zeroes, and values wider than the mask.
+
+Currently, arch/arm64/kvm/va_layout.c is the only user of this function,
+which uses 64-bit immediates and therefore won't trigger these bugs.
+
+We tested the new code against llvm-mc with all 1,302 encodable 32-bit
+logical immediates and all 5,334 encodable 64-bit logical immediates.
+
+Fixes: ef3935eeebff ("arm64: insn: Add encoder for bitwise operations using literals")
+Suggested-by: Will Deacon <will@kernel.org>
+Co-developed-by: Xi Wang <xi.wang@gmail.com>
+Signed-off-by: Xi Wang <xi.wang@gmail.com>
+Signed-off-by: Luke Nelson <luke.r.nels@gmail.com>
+Reviewed-by: Marc Zyngier <maz@kernel.org>
+Link: https://lore.kernel.org/r/20200508181547.24783-2-luke.r.nels@gmail.com
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/include/asm/cacheflush.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/kernel/insn.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
-index 19844211a4e6..a449a1c602d3 100644
---- a/arch/arm64/include/asm/cacheflush.h
-+++ b/arch/arm64/include/asm/cacheflush.h
-@@ -90,7 +90,7 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
- 	 * IPI all online CPUs so that they undergo a context synchronization
- 	 * event and are forced to refetch the new instructions.
- 	 */
--#ifdef CONFIG_KGDB
+diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+index 3e6229e30109..cd37edbdedcb 100644
+--- a/arch/arm64/kernel/insn.c
++++ b/arch/arm64/kernel/insn.c
+@@ -1490,16 +1490,10 @@ static u32 aarch64_encode_immediate(u64 imm,
+ 				    u32 insn)
+ {
+ 	unsigned int immr, imms, n, ones, ror, esz, tmp;
+-	u64 mask = ~0UL;
+-
+-	/* Can't encode full zeroes or full ones */
+-	if (!imm || !~imm)
+-		return AARCH64_BREAK_FAULT;
++	u64 mask;
+ 
+ 	switch (variant) {
+ 	case AARCH64_INSN_VARIANT_32BIT:
+-		if (upper_32_bits(imm))
+-			return AARCH64_BREAK_FAULT;
+ 		esz = 32;
+ 		break;
+ 	case AARCH64_INSN_VARIANT_64BIT:
+@@ -1511,6 +1505,12 @@ static u32 aarch64_encode_immediate(u64 imm,
+ 		return AARCH64_BREAK_FAULT;
+ 	}
+ 
++	mask = GENMASK(esz - 1, 0);
++
++	/* Can't encode full zeroes, full ones, or value wider than the mask */
++	if (!imm || imm == mask || imm & ~mask)
++		return AARCH64_BREAK_FAULT;
 +
  	/*
- 	 * KGDB performs cache maintenance with interrupts disabled, so we
- 	 * will deadlock trying to IPI the secondary CPUs. In theory, we can
-@@ -100,9 +100,9 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
- 	 * the patching operation, so we don't need extra IPIs here anyway.
- 	 * In which case, add a KGDB-specific bodge and return early.
- 	 */
--	if (kgdb_connected && irqs_disabled())
-+	if (in_dbg_master())
- 		return;
--#endif
-+
- 	kick_all_cpus_sync();
- }
- 
+ 	 * Inverse of Replicate(). Try to spot a repeating pattern
+ 	 * with a pow2 stride.
 -- 
 2.25.1
 
