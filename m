@@ -2,101 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 597D71F1770
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 13:18:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A281F178B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 13:22:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xEThptHgDUQGWpbHGgwJf31wzmMVJeLl9v67RnSGZWY=; b=XRojD1D5zyIjDS
-	dnsmdIr9z0zY4JmBg1Pwr3SQy7jndOAneUVEcc2Or620GYjTxp4YExo7my//FKfkUm3NpijsfYsZy
-	AjLFtJuoViuwoZ1Nc1Alh8M+ZeVFEXq3EKN3O0gJgllFvXr0EoFLsmzCydBZYZ/2C5a0OzWjmrdEa
-	gzxdyaziaJuLd2VktUO0gGs4pR07g3fUVBBpwKPQJcmO8FAbYGL04DUkt6gOqsYFHFhFx7PoykNtB
-	IqVjgwPOtfElEw7P7g5cEIrXGSZdwKZ1TSSkEaydIUv5QRZWckcHc39k/vHQGei0CUpIldTjXlwGZ
-	LPQmbkyDOQVpcyI89j8w==;
+	List-Owner; bh=nRdUATG/LB9HUIoS+HFS19p44ewthJwCGKCvXqlsUxE=; b=HTds7p31tHiQKE
+	o+Hs1I5VnFrDbXrS4tooSLeVnDGnQeUswRvAJFamGpHDAaxbayJWtBUyKLemcJHfQAvltc6l1JmuC
+	BZBTl5TnHtB7OpGJWSB9D5tLrF4ErpHFFjrymTyrjXaxAxlUGrohb8rEiPeDJ+BmVZhjMFXFJhoPB
+	gH4U5Aknjq2NiC9AAGsotEIOqXxstBnOJlY3xJ1AvmB1TRVhSw4gQ76Z0RMVb2OHIwb+6PD139zC7
+	a6S2D5B/EoGaL78VT4oINjDSbGE+E2GoJLbAPuc3dH9zxj62ZGi7rnAlIR+srdblvJ9boa9TFQKCY
+	3MMboiHyCL6zIYO8LO1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiFnj-0004TO-91; Mon, 08 Jun 2020 11:18:47 +0000
-Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
+	id 1jiFrR-0007S6-8j; Mon, 08 Jun 2020 11:22:37 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiFnc-0004Sq-4s
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 11:18:41 +0000
-Received: by mail-pf1-x431.google.com with SMTP id b5so8402525pfp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jun 2020 04:18:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=bLGHAPpBMCAk0XEijfEImk2BbxF7rnJc2dl2Taiz1TQ=;
- b=TaSeTrlVy0Eb/aruMNajP24/DLeWRd9UFdtv6Dj3gjkKh/9LLrMOB2uP/JbEbb9+a0
- /eecysEbxfYfxZaAI4VpkTG/+hIJpU2+HYkSU7YWBauOPir/dzTWnUU76V1HHw+Mc3La
- JKb9NDNzINJjPg6Ji9GUO5U0GUd+RYQ6kbkmaXOBc5xsXNIa3VgPPmxTzCFvibeFrNYr
- kxukMwwf7TpfibkoNfeTHbv1jWbpAk8Gw5IX+F8x1wfdJ7kB3WwKckYPQDZ6ESVJQMzG
- yy4dpGQIfkVMzththSiR2XHutN/3S8l/tws+7BDwAESu37w3DayBWbC28jRVaGR8Psb+
- Jyuw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=bLGHAPpBMCAk0XEijfEImk2BbxF7rnJc2dl2Taiz1TQ=;
- b=Ft1ddyEQ8i0a8Tg8DwO4Ak9n9Ze6KrXyyPGNlI1MuBunPWcQNf/IKCPd4mvdhrbqP2
- vVE6ZSAR5RZNFYISWYuNiJuEvxASqLweceP2jmrv4QL2Uu77Ia0Zpr6vhSZCvLaaDQAQ
- 2XNT8GE9eMunUxCCotJrSE/VnidV2uo4q2AifRi7njRYJe9y3ZiA+lU7xURqgru/s43G
- oAUkdJh1uwzaQrW0Ege70kzvE0g7yCHJfs17P9N5HAC72hPsk7jjt86nm5A7IUZ9GKmG
- smuNgBT+FaPXV5HnvxGUdDOCL3vpeGM/ESVzHckVqosFrn2IEOcniK2JCYJCySArI1DX
- J1HQ==
-X-Gm-Message-State: AOAM531TtabspPfsNDxFT6AtuoSOk0zEkVeTeZiWc4xLQf81ma4EtuyV
- aU3rcq2K4h7UfOdniJWzx9A=
-X-Google-Smtp-Source: ABdhPJxWAsknwr6X6weG46CCyPiDJ6zxhw57RFAOpXcc9g4MLuJgL2JQ5nD2XZVJyYDryEQq8k1y9g==
-X-Received: by 2002:a63:5d62:: with SMTP id o34mr19595022pgm.420.1591615117630; 
- Mon, 08 Jun 2020 04:18:37 -0700 (PDT)
-Received: from localhost ([49.207.55.212])
- by smtp.gmail.com with ESMTPSA id d4sm15396959pjm.55.2020.06.08.04.18.36
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 08 Jun 2020 04:18:36 -0700 (PDT)
-Date: Mon, 8 Jun 2020 16:48:34 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: ARM: vmsplit 4g/4g
-Message-ID: <20200608111834.GB5736@afzalpc>
-References: <20200512104758.GA12980@afzalpc>
- <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
- <20200514111755.GA4997@afzalpc>
- <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
- <20200514133545.GA5020@afzalpc>
- <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
- <20200516060624.GA6371@afzalpc>
- <CAK8P3a01FYoWY9sZKU1q=UQ3ut4srwXXUeGRzW6APi+GpoKo1w@mail.gmail.com>
- <20200607125932.GA4576@afzalpc>
- <CAK8P3a2=o6RkONUoHTaR-2jpXg-wa-YnCYi0a4gAknYmvu8X7Q@mail.gmail.com>
+ id 1jiFrE-0007RG-0l
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 11:22:26 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id EEEA02A35BA
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
+ patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
+ platform-driver-x86@vger.kernel.org
+Subject: [PATCH v4 0/7] Support inhibiting input devices
+Date: Mon,  8 Jun 2020 13:22:04 +0200
+Message-Id: <20200608112211.12125-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <2336e15d-ff4b-bbb6-c701-dbf3aa110fcd@redhat.com>
+References: <2336e15d-ff4b-bbb6-c701-dbf3aa110fcd@redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2=o6RkONUoHTaR-2jpXg-wa-YnCYi0a4gAknYmvu8X7Q@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_041840_185050_8D1A39C4 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_042224_322378_1878A909 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:431 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,39 +62,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
+ Laxman Dewangan <ldewangan@nvidia.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Len Brown <lenb@kernel.org>, Michael Hennerich <michael.hennerich@analog.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
+ Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
+ Barry Song <baohua@kernel.org>, Ferruh Yigit <fery@cypress.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Sun, Jun 07, 2020 at 09:26:26PM +0200, Arnd Bergmann wrote:
-
-> I think you have to use get_user_pages() though instead of
-> get_user_pages_fast(),
-> in order to be able to check the permission bits to prevent doing a
-> copy_to_user()
-> into read-only mappings.
-
-i was not aware of this, is it documented somewhere ?, afaiu,
-difference b/n get_user_pages_fast() & get_user_pages() is that fast
-version will try to pin pages w/o acquiring mmap_sem if possible.
-
-> Do you want me to review the uaccess patch to look for any missing
-> corner cases, or do you want to do the whole set of user access helpers
-> first?
-
-i will cleanup and probably post RFC initially for the changes
-handling copy_{from,to}_user() to get feedback.
-
-Regards
-afzal
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBpcyBhIHF1aWNrIHJlc3BpbiBvZiB2Mywgd2l0aCBqdXN0IHR3byBzbWFsbCBjaGFuZ2Vz
+LCBwbGVhc2Ugc2VlCnRoZSBjaGFuZ2Vsb2cgYmVsb3cuCgpVc2Vyc3BhY2UgbWlnaHQgd2FudCB0
+byBpbXBsZW1lbnQgYSBwb2xpY3kgdG8gdGVtcG9yYXJpbHkgZGlzcmVnYXJkIGlucHV0CmZyb20g
+Y2VydGFpbiBkZXZpY2VzLgoKQW4gZXhhbXBsZSB1c2UgY2FzZSBpcyBhIGNvbnZlcnRpYmxlIGxh
+cHRvcCwgd2hvc2Uga2V5Ym9hcmQgY2FuIGJlIGZvbGRlZAp1bmRlciB0aGUgc2NyZWVuIHRvIGNy
+ZWF0ZSB0YWJsZXQtbGlrZSBleHBlcmllbmNlLiBUaGUgdXNlciB0aGVuIG11c3QgaG9sZAp0aGUg
+bGFwdG9wIGluIHN1Y2ggYSB3YXkgdGhhdCBpdCBpcyBkaWZmaWN1bHQgdG8gYXZvaWQgcHJlc3Np
+bmcgdGhlIGtleWJvYXJkCmtleXMuIEl0IGlzIHRoZXJlZm9yZSBkZXNpcmFibGUgdG8gdGVtcG9y
+YXJpbHkgZGlzcmVnYXJkIGlucHV0IGZyb20gdGhlCmtleWJvYXJkLCB1bnRpbCBpdCBpcyBmb2xk
+ZWQgYmFjay4gVGhpcyBvYnZpb3VzbHkgaXMgYSBwb2xpY3kgd2hpY2ggc2hvdWxkCmJlIGtlcHQg
+b3V0IG9mIHRoZSBrZXJuZWwsIGJ1dCB0aGUga2VybmVsIG11c3QgcHJvdmlkZSBzdWl0YWJsZSBt
+ZWFucyB0bwppbXBsZW1lbnQgc3VjaCBhIHBvbGljeS4KCkR1ZSB0byBpbnRlcmFjdGlvbnMgd2l0
+aCBzdXNwZW5kL3Jlc3VtZSwgYSBoZWxwZXIgaGFzIGJlZW4gYWRkZWQgZm9yIGRyaXZlcnMKdG8g
+ZGVjaWRlIGlmIHRoZSBkZXZpY2UgaXMgYmVpbmcgdXNlZCBvciBub3QgKFBBVENIIDEvNykgYW5k
+IGl0IGhhcyBiZWVuCmFwcGxpZWQgdG8gcmVsZXZhbnQgZHJpdmVycyAoUEFUQ0ggMiw0LDUsNi83
+KS4KClBBVENIIDcvNyBhZGRzIHN1cHBvcnQgZm9yIGluaGliaXRpbmcgaW5wdXQgZGV2aWNlcy4K
+ClRoaXMgd29yayBpcyBpbnNwaXJlZCBieToKCmh0dHBzOi8vY2hyb21pdW0uZ29vZ2xlc291cmNl
+LmNvbS9jaHJvbWl1bW9zL3RoaXJkX3BhcnR5L2tlcm5lbC8rLzQ1YzJkN2JiMzk4Zjc0YWRmYWUw
+MDE3ZTIwYjIyNDE1MmZkZTM4MjIKCmFuZAoKaHR0cHM6Ly9jaHJvbWl1bS5nb29nbGVzb3VyY2Uu
+Y29tL2Nocm9taXVtb3MvdGhpcmRfcGFydHkva2VybmVsLysvNGNlMGU4YTM2OTdlZGI4ZmQwNzEx
+MTBiM2FmNjUwMTQ1MTIwNjFjNwoKSW4gdGhpcyByZXNwaW4gdGhlIGVsYW5faTJjIHBhdGNoIGlz
+IGRyb3BwZWQgYW5kIGNvbnZlcnRpbmcgaXQgd2lsbCBiZQphZGRyZXNzZWQgbGF0ZXIuCgp2My4u
+djQ6Ci0gdXBkYXRlZCB0aGUgY29tbWVudCBpbiBpbnB1dF9vcGVuX2RldmljZSgpIChIYW5zKQot
+IHVzZWQgbW9yZSBzdHJhaWdodGZvcndhcmQgbG9ja2luZyBwYXR0ZXJuIGluIGFkYy9leHlub3Mg
+KE1pY2hhxYIpCgp2Mi4udjM6Ci0gaWdub3JlZCBhdXRvcmVwZWF0IGV2ZW50cyBpbiBpbnB1dF9n
+ZXRfZGlzcG9zaXRpb24oKSBpZiBhIGtleSBpcyBub3QKcHJlc3NlZCAoSGFucykKLSBkcm9wcGVk
+IGluaGliaXQoKS91bmluaGliaXQoKSBkcml2ZXIgY2FsbGJhY2tzIChIYW5zKQotIHNwbGl0IEFD
+UEkgYnV0dG9uIHBhdGNoIGludG8gdGFraW5nIHRoZSBsb2NrIGFuZCB1c2luZyB0aGUgaGVscGVy
+IChSYWZhZWwpCi0gZHJvcHBlZCB0aGUgZWxhbl9pMmMgY29udmVyc2lvbgotIGZpeGVkIHR5cG9z
+IGluIGV4eW5vcyBhZGMKCnYxLi52MjoKLSBhZGRlZCBpbnB1dF9kZXZpY2VfZW5hYmxlZCgpIGhl
+bHBlciBhbmQgdXNlZCBpdCBpbiBkcml2ZXJzIChEbWl0cnkpCi0gdGhlIGZhY3Qgb2Ygb3Blbigp
+IGFuZCBjbG9zZSgpIGJlaW5nIGNhbGxlZCBpbiBpbmhpYml0L3VuaW5oaWJpdCBwYXRocyBoYXMK
+YmVlbiBlbXBoYXNpemVkIGluIHRoZSBjb21taXQgbWVzc2FnZSBvZiBQQVRDSCA2LzcgKERtaXRy
+eSkKCkFuZHJ6ZWogUGlldHJhc2lld2ljeiAoNik6CiAgSW5wdXQ6IGFkZCBpbnB1dF9kZXZpY2Vf
+ZW5hYmxlZCgpCiAgSW5wdXQ6IHVzZSBpbnB1dF9kZXZpY2VfZW5hYmxlZCgpCiAgQUNQSTogYnV0
+dG9uOiBBY2Nlc3MgaW5wdXQgZGV2aWNlJ3MgdXNlcnMgdW5kZXIgYXBwcm9wcmlhdGUgbXV0ZXgK
+ICBBQ1BJOiBidXR0b246IFVzZSBpbnB1dF9kZXZpY2VfZW5hYmxlZCgpIGhlbHBlcgogIGlpbzog
+YWRjOiBleHlub3M6IFVzZSBpbnB1dF9kZXZpY2VfZW5hYmxlZCgpCiAgcGxhdGZvcm0veDg2OiB0
+aGlua3BhZF9hY3BpOiBVc2UgaW5wdXRfZGV2aWNlX2VuYWJsZWQoKQoKUGF0cmlrIEZpbW1sICgx
+KToKICBJbnB1dDogQWRkICJpbmhpYml0ZWQiIHByb3BlcnR5CgogZHJpdmVycy9hY3BpL2J1dHRv
+bi5jICAgICAgICAgICAgICAgICAgICAgICB8ICAgNyArLQogZHJpdmVycy9paW8vYWRjL2V4eW5v
+c19hZGMuYyAgICAgICAgICAgICAgICB8ICAgNiArLQogZHJpdmVycy9pbnB1dC9pbnB1dC5jICAg
+ICAgICAgICAgICAgICAgICAgICB8IDEyNSArKysrKysrKysrKysrKysrKystLQogZHJpdmVycy9p
+bnB1dC9qb3lzdGljay94cGFkLmMgICAgICAgICAgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1
+dC9rZXlib2FyZC9lcDkzeHhfa2V5cGFkLmMgICAgICB8ICAgMiArLQogZHJpdmVycy9pbnB1dC9r
+ZXlib2FyZC9ncGlvX2tleXMuYyAgICAgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9rZXli
+b2FyZC9pbXhfa2V5cGFkLmMgICAgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9rZXlib2Fy
+ZC9pcGFxLW1pY3JvLWtleXMuYyAgICB8ICAgMiArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC9s
+cGMzMnh4LWtleXMuYyAgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC9wbWlj
+OHh4eC1rZXlwYWQuYyAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC9weGEyN3hf
+a2V5cGFkLmMgICAgICB8ICAgMiArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC9zYW1zdW5nLWtl
+eXBhZC5jICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC9zcGVhci1rZXlib2Fy
+ZC5jICAgICB8ICAgOCArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC9zdC1rZXlzY2FuLmMgICAg
+ICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9rZXlib2FyZC90ZWdyYS1rYmMuYyAgICAgICAg
+ICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC9taXNjL2RydjI2MHguYyAgICAgICAgICAgICAgICB8
+ICAgNCArLQogZHJpdmVycy9pbnB1dC9taXNjL2RydjI2NjUuYyAgICAgICAgICAgICAgICB8ICAg
+NCArLQogZHJpdmVycy9pbnB1dC9taXNjL2RydjI2NjcuYyAgICAgICAgICAgICAgICB8ICAgNCAr
+LQogZHJpdmVycy9pbnB1dC9taXNjL2dwMmFwMDAyYTAwZi5jICAgICAgICAgICB8ICAgNCArLQog
+ZHJpdmVycy9pbnB1dC9taXNjL2t4dGo5LmMgICAgICAgICAgICAgICAgICB8ICAgNCArLQogZHJp
+dmVycy9pbnB1dC9taXNjL3NpcmZzb2Mtb25rZXkuYyAgICAgICAgICB8ICAgMiArLQogZHJpdmVy
+cy9pbnB1dC9tb3VzZS9uYXZwb2ludC5jICAgICAgICAgICAgICB8ICAgNCArLQogZHJpdmVycy9p
+bnB1dC90b3VjaHNjcmVlbi9hZDc4NzkuYyAgICAgICAgICB8ICAgNiArLQogZHJpdmVycy9pbnB1
+dC90b3VjaHNjcmVlbi9hdG1lbF9teHRfdHMuYyAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90
+b3VjaHNjcmVlbi9hdW8tcGl4Y2lyLXRzLmMgICB8ICAgOCArLQogZHJpdmVycy9pbnB1dC90b3Vj
+aHNjcmVlbi9idTIxMDI5X3RzLmMgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNj
+cmVlbi9jaGlwb25lX2ljbjgzMTguYyB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVl
+bi9jeXR0c3BfY29yZS5jICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9l
+ZXRpX3RzLmMgICAgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9la3Rm
+MjEyNy5jICAgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9pbXg2dWxf
+dHNjLmMgICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9pcGFxLW1pY3Jv
+LXRzLmMgICB8ICAgMiArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9pcXM1eHguYyAgICAg
+ICAgICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9scGMzMnh4X3RzLmMgICAg
+ICB8ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9tZWxmYXNfbWlwNC5jICAgICB8
+ICAgNCArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9tbXMxMTQuYyAgICAgICAgICB8ICAg
+NiArLQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi9waXhjaXJfaTJjX3RzLmMgICB8ICAgOCAr
+LQogZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi91Y2IxNDAwX3RzLmMgICAgICB8ICAgNCArLQog
+ZHJpdmVycy9pbnB1dC90b3VjaHNjcmVlbi93bTk3eHgtY29yZS5jICAgICB8ICAxNCArKy0KIGRy
+aXZlcnMvaW5wdXQvdG91Y2hzY3JlZW4vemZvcmNlX3RzLmMgICAgICAgfCAgIDggKy0KIGRyaXZl
+cnMvcGxhdGZvcm0veDg2L3RoaW5rcGFkX2FjcGkuYyAgICAgICAgfCAgIDQgKy0KIGluY2x1ZGUv
+bGludXgvaW5wdXQuaCAgICAgICAgICAgICAgICAgICAgICAgfCAgMTQgKystCiA0MiBmaWxlcyBj
+aGFuZ2VkLCAyMjggaW5zZXJ0aW9ucygrKSwgOTYgZGVsZXRpb25zKC0pCgoKYmFzZS1jb21taXQ6
+IDNkNzdlNmE4ODA0YWJjYzA1MDRjOTA0YmQ2ZTVjZGYzYTVjZjgxNjIKLS0gCjIuMTcuMQoKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
+ZWwK
