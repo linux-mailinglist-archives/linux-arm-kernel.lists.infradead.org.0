@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D3F31F228A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:09:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 769891F228C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:10:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3R9js/jFxLhC30ESWxWPl400Xr3DgqpM85QNUFaYAFA=; b=Lj++CcOzUKSSGA
-	N7h9vOiDo5g8GU7X0xAaj4OQGEmxnpZeOLNfwVsqMjoIDcapwUQIGMkG7o9uwRpRwdFInipw9E7zH
-	D9K50KpPhQHhCNgs1I0f4tYlsxOHU/kWC84nKxjYuWGM4t3lHW8bPV5FtQxb6sz3SAfcC46iILXPN
-	ojj3VzU9ZqgmF6hKlhCbEPGhb5qOZdoU6pSuKtcUYLX6pcMvSHCqGKGNBAN3BTHONDTHk+VWHEgDu
-	vk5t51E3eAU8WRDPVHB3VU0g8Hst6CcfCIGsiTDjNY9SEudlltd13AJUw5SrwWPuovLLaefiogzuQ
-	jWr1DjoKsqo4y+Y4e2DA==;
+	List-Owner; bh=zqKe3KK9HCJrzcOSpz6iyHhTw1Xd2663VJ9cEGC0McE=; b=dKg0kJjjCZOn1e
+	t6vv4MV92Es6z/IlQ/I662I6utU1FAwY6jw1G4lhbWHJhgN7vGu38d85t98X+a64gIHHq1tAlnySo
+	5I9uLI6Duj3UhdTbohmjp2UNcsbbwSGSaeePs9irW1kIWnMH0aG2axarZBi50U+X6CXhfSqTE63XX
+	9b94iGjjvwnFHdTQ6Yo+QwD5t8WtVFAgh3cH1fFjmu9lOJiz5yXtSzYp9kRtOFnXvKKLlr/pZ7Aw4
+	QfVC5wICY0AicVmSgWuuIjKlkOloElu29PMLeCKJi+UQDuXaYrZGUm/8kytsc0GPU6BL+k+k+HaHA
+	e9c8XO8LSjD6Blb8xzZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQtm-0000iO-6F; Mon, 08 Jun 2020 23:09:46 +0000
+	id 1jiQtv-00010L-35; Mon, 08 Jun 2020 23:09:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQrT-0007IB-Cj
+ id 1jiQrY-0007Ms-OM
  for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:31 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 427F920888;
- Mon,  8 Jun 2020 23:07:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 763BC20885;
+ Mon,  8 Jun 2020 23:07:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657642;
- bh=YE2oEMu6XyWmC2vXfQbvn/OXs6e+k5Ysv8EGha9IAKY=;
+ s=default; t=1591657648;
+ bh=a7t4fStzPG3m+Up+iFgKY9RcL2ZlUDwF9z2e11dlUNg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vq3CXwS5riurYyniTn2wDL2g6iruKlXF/O1OrrnMMI8uYpXATpiUtjeAgFcO6UiNy
- M7fd0sJ+yx1nUKqaI00KSJvdpaCRCpeXbZumSdsVXZp0ufOROOgyWpipaCdI1DIASl
- xOk65YxxlQ7ir1q9nQpboSrPO3zMNb8iXqRuouZg=
+ b=abR3F+p/nCT5iEkISgY0CdHMVwKunteYVFPFRaktVNFedWObq8KkwlUltMEqBTfOO
+ Iljwlp+56tWPbbKKIDJQTHYQjUAffYWzMMCWYy0wbkcsAwFB0Kif7DSAMxKptNdaia
+ I8tABKf7RNUG36YnE91pVcqtFO731x9DA5RHw7rE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 059/274] ACPI/IORT: Fix PMCG node single ID
- mapping handling
-Date: Mon,  8 Jun 2020 19:02:32 -0400
-Message-Id: <20200608230607.3361041-59-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 063/274] clocksource/drivers/timer-versatile:
+ Clear OF_POPULATED flag
+Date: Mon,  8 Jun 2020 19:02:36 -0400
+Message-Id: <20200608230607.3361041-63-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160723_503590_315D413F 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20200608_160728_820367_22F3B8F7 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,62 +80,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Hanjun Guo <guoahanjun@huawei.com>,
- Tuan Phan <tuanphan@os.amperecomputing.com>, linux-acpi@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Saravana Kannan <saravanak@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tuan Phan <tuanphan@os.amperecomputing.com>
+From: Saravana Kannan <saravanak@google.com>
 
-[ Upstream commit 50c8ab8d9fbf5b18d5162a797ca26568afc0af1a ]
+[ Upstream commit 7a3768c206a006525afc090f92d4d618d8356b92 ]
 
-An IORT PMCG node can have no ID mapping if its overflow interrupt is
-wire based therefore the code that parses the PMCG node can not assume
-the node will always have a single mapping present at index 0.
+The commit 4f41fe386a94 ("clocksource/drivers/timer-probe: Avoid
+creating dead devices") broke the handling of arm,vexpress-sysreg [1].
 
-Fix iort_get_id_mapping_index() by checking for an overflow interrupt
-and mapping count.
+The arm,vexpress-sysreg device is handled by both timer-versatile.c and
+drivers/mfd/vexpress-sysreg.c. While the timer driver doesn't use the
+device, the mfd driver still needs a device to probe.
 
-Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG")
+So, this patch clears the OF_POPULATED flag to continue creating the
+device.
 
-Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
-Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
-Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Link: https://lore.kernel.org/r/1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com
-Signed-off-by: Will Deacon <will@kernel.org>
+[1] - https://lore.kernel.org/lkml/20200324175955.GA16972@arm.com/
+
+Fixes: 4f41fe386a94 ("clocksource/drivers/timer-probe: Avoid creating dead devices")
+Signed-off-by: Saravana Kannan <saravanak@google.com>
+Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Link: https://lore.kernel.org/r/20200324195302.203115-1-saravanak@google.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/acpi/arm64/iort.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/clocksource/timer-versatile.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 7d04424189df..ec04435a7cea 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -414,6 +414,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
- static int iort_get_id_mapping_index(struct acpi_iort_node *node)
+diff --git a/drivers/clocksource/timer-versatile.c b/drivers/clocksource/timer-versatile.c
+index e4ebb656d005..f5d017b31afa 100644
+--- a/drivers/clocksource/timer-versatile.c
++++ b/drivers/clocksource/timer-versatile.c
+@@ -6,6 +6,7 @@
+ 
+ #include <linux/clocksource.h>
+ #include <linux/io.h>
++#include <linux/of.h>
+ #include <linux/of_address.h>
+ #include <linux/sched_clock.h>
+ 
+@@ -22,6 +23,8 @@ static int __init versatile_sched_clock_init(struct device_node *node)
  {
- 	struct acpi_iort_smmu_v3 *smmu;
-+	struct acpi_iort_pmcg *pmcg;
+ 	void __iomem *base = of_iomap(node, 0);
  
- 	switch (node->type) {
- 	case ACPI_IORT_NODE_SMMU_V3:
-@@ -441,6 +442,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
- 
- 		return smmu->id_mapping_index;
- 	case ACPI_IORT_NODE_PMCG:
-+		pmcg = (struct acpi_iort_pmcg *)node->node_data;
-+		if (pmcg->overflow_gsiv || node->mapping_count == 0)
-+			return -EINVAL;
++	of_node_clear_flag(node, OF_POPULATED);
 +
- 		return 0;
- 	default:
- 		return -EINVAL;
+ 	if (!base)
+ 		return -ENXIO;
+ 
 -- 
 2.25.1
 
