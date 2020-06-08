@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 298351F27BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:51:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96A041F27C1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:52:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nUmtDXL+JW5KKDxb9eq+Fny0j4a9KUfuYOw2eKGeees=; b=KIOwxItz6ROz3p
-	oJc3s/cgijmm9ACE95IbQ/NPh3qQKBI06RUtFRu2jJu0ZosDaESRU5d8WcoGy6LowhSpGXsmVf9Ex
-	ioXT4Qgf+GrrFJfUkL6rapaVqqSANfMOwAqM3K5G2y6I4V6C4wQdiU6kLGVihfXDoTFCIGIV4zWV5
-	1lhTGA0jDxkiSPEYWw8JRqqqTzuvhicyLP45rewknwTv69lPoId2be4plTfaFx13eIgm0cskniGc/
-	zlh5cWSscjXwj/45ElKfADwy/Ax6cMV0qDO0XSpYUDSJRiBHNgvrV71eZb/WHpnFrl7RdXX1A0Cne
-	uuf+ZTa6RsLobi3CnfnQ==;
+	List-Owner; bh=VRXEMIWlag5/mBqcraTxGFAnyN46XCV6/DBRmUVXqNM=; b=ZjE5trWsrdM4d+
+	H/abTr638IBZvOv3vJoYfRLevzq5RI+qqZysk+IJ2sogLzegOdx/5DW2QmPdgbdVCR8Ru3Z+Ni+iF
+	h+q+y5BBtV0GiR3zoxFfFpa8osjSYcLD4mlzQ7/PsmDYy2/MoUpFG7WLkaMy4Ye1SkXEi3g3KM/jY
+	xwcjWYqvhXqiUmQITyeZ1z9ng77h/2AMutm77hIsbNtswi1naa2crfkBQ7kjM3cfAynkZr6XZThfU
+	R1PTYbhy+DjcR17qJx57grvwTvLLdm3MlkV//THFYVBvjVXE+IG8ALN6wjaJZU19cyOnJikDVrtkt
+	mOQ2v2RUrUAekHsqF54A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRXq-0008Po-E8; Mon, 08 Jun 2020 23:51:10 +0000
+	id 1jiRYs-0000q9-FN; Mon, 08 Jun 2020 23:52:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR7n-0003QK-Qf; Mon, 08 Jun 2020 23:24:30 +0000
+ id 1jiR7z-0003Yj-Be
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:24:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7F3F12074B;
- Mon,  8 Jun 2020 23:24:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 50ED920842;
+ Mon,  8 Jun 2020 23:24:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658655;
- bh=F2UQ3f/EJyLX8uuLRDqCa52FwSXPHX2BTvdYFegJOio=;
+ s=default; t=1591658666;
+ bh=ZTU3zThxyPlECEFoIX7cZNwQcTmXBmQX+MGobFN3YjM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=i9+qSicAo2zEcve4uB7nPflL65Ypx3DeaYT5wZetPTkZ6YfYxg3lRL7DRw2JOepfW
- T/X/xrlpsypTWY++jM+8dwuV2Yh9+wqAdRENLxSEwKJl3iEAAxTKkvEt8pR3CGbUiH
- hRb3c208abLzBJO4t8+N5iO3BZNam6PKGq/ENA7c=
+ b=nB+Q/mFTAL2xjSt/5L/FycPrNM8nC05QXpVJezZrn1aTd+7XEVEfhoXOGStI1802w
+ gNgyUcrZevRtSlFdoD1L7DsoWGloF8TafXI6E0g1q4muIAvsb6fBYijc8v1t4EYMk2
+ LDkQI1FjXZxal1YN8BefWCYKt2DstP9Jm5k26Ons=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 073/106] net: dsa: mt7530: set CPU port to
- fallback mode
-Date: Mon,  8 Jun 2020 19:22:05 -0400
-Message-Id: <20200608232238.3368589-73-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 081/106] crypto: stm32/crc32 - fix ext4 chksum
+ BUG_ON()
+Date: Mon,  8 Jun 2020 19:22:13 -0400
+Message-Id: <20200608232238.3368589-81-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162415_922273_897F2D27 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20200608_162427_791861_D97AB084 
+X-CRM114-Status: GOOD (  16.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,84 +80,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, DENG Qingfang <dqfext@gmail.com>,
- linux-mediatek@lists.infradead.org, "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Nicolas Toromanoff <nicolas.toromanoff@st.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, linux-crypto@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: DENG Qingfang <dqfext@gmail.com>
+From: Nicolas Toromanoff <nicolas.toromanoff@st.com>
 
-[ Upstream commit 38152ea37d8bdaffa22603e0a5b5b86cfa8714c9 ]
+[ Upstream commit 49c2c082e00e0bc4f5cbb7c21c7f0f873b35ab09 ]
 
-Currently, setting a bridge's self PVID to other value and deleting
-the default VID 1 renders untagged ports of that VLAN unable to talk to
-the CPU port:
+Allow use of crc_update without prior call to crc_init.
+And change (and fix) driver to use CRC device even on unaligned buffers.
 
-	bridge vlan add dev br0 vid 2 pvid untagged self
-	bridge vlan del dev br0 vid 1 self
-	bridge vlan add dev sw0p0 vid 2 pvid untagged
-	bridge vlan del dev sw0p0 vid 1
-	# br0 cannot send untagged frames out of sw0p0 anymore
+Fixes: b51dbe90912a ("crypto: stm32 - Support for STM32 CRC32 crypto module")
 
-That is because the CPU port is set to security mode and its PVID is
-still 1, and untagged frames are dropped due to VLAN member violation.
-
-Set the CPU port to fallback mode so untagged frames can pass through.
-
-Fixes: 83163f7dca56 ("net: dsa: mediatek: add VLAN support for MT7530")
-Signed-off-by: DENG Qingfang <dqfext@gmail.com>
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+Signed-off-by: Nicolas Toromanoff <nicolas.toromanoff@st.com>
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/dsa/mt7530.c | 11 ++++++++---
- drivers/net/dsa/mt7530.h |  6 ++++++
- 2 files changed, 14 insertions(+), 3 deletions(-)
+ drivers/crypto/stm32/stm32_crc32.c | 98 +++++++++++++++---------------
+ 1 file changed, 48 insertions(+), 50 deletions(-)
 
-diff --git a/drivers/net/dsa/mt7530.c b/drivers/net/dsa/mt7530.c
-index 8b39a211ecb6..616afd81536a 100644
---- a/drivers/net/dsa/mt7530.c
-+++ b/drivers/net/dsa/mt7530.c
-@@ -860,10 +860,15 @@ mt7530_port_set_vlan_aware(struct dsa_switch *ds, int port)
- 		   PCR_MATRIX_MASK, PCR_MATRIX(MT7530_ALL_MEMBERS));
+diff --git a/drivers/crypto/stm32/stm32_crc32.c b/drivers/crypto/stm32/stm32_crc32.c
+index 29d2095d9dfd..749b51762b18 100644
+--- a/drivers/crypto/stm32/stm32_crc32.c
++++ b/drivers/crypto/stm32/stm32_crc32.c
+@@ -28,8 +28,10 @@
  
- 	/* Trapped into security mode allows packet forwarding through VLAN
--	 * table lookup.
-+	 * table lookup. CPU port is set to fallback mode to let untagged
-+	 * frames pass through.
- 	 */
--	mt7530_rmw(priv, MT7530_PCR_P(port), PCR_PORT_VLAN_MASK,
--		   MT7530_PORT_SECURITY_MODE);
-+	if (dsa_is_cpu_port(ds, port))
-+		mt7530_rmw(priv, MT7530_PCR_P(port), PCR_PORT_VLAN_MASK,
-+			   MT7530_PORT_FALLBACK_MODE);
-+	else
-+		mt7530_rmw(priv, MT7530_PCR_P(port), PCR_PORT_VLAN_MASK,
-+			   MT7530_PORT_SECURITY_MODE);
+ /* Registers values */
+ #define CRC_CR_RESET            BIT(0)
+-#define CRC_CR_REVERSE          (BIT(7) | BIT(6) | BIT(5))
+ #define CRC_INIT_DEFAULT        0xFFFFFFFF
++#define CRC_CR_REV_IN_WORD      (BIT(6) | BIT(5))
++#define CRC_CR_REV_IN_BYTE      BIT(5)
++#define CRC_CR_REV_OUT          BIT(7)
  
- 	/* Set the port as a user port which is to be able to recognize VID
- 	 * from incoming packets before fetching entry within the VLAN table.
-diff --git a/drivers/net/dsa/mt7530.h b/drivers/net/dsa/mt7530.h
-index 403adbe5a4b4..101d309ee445 100644
---- a/drivers/net/dsa/mt7530.h
-+++ b/drivers/net/dsa/mt7530.h
-@@ -148,6 +148,12 @@ enum mt7530_port_mode {
- 	/* Port Matrix Mode: Frames are forwarded by the PCR_MATRIX members. */
- 	MT7530_PORT_MATRIX_MODE = PORT_VLAN(0),
+ #define CRC_AUTOSUSPEND_DELAY	50
  
-+	/* Fallback Mode: Forward received frames with ingress ports that do
-+	 * not belong to the VLAN member. Frames whose VID is not listed on
-+	 * the VLAN table are forwarded by the PCR_MATRIX members.
-+	 */
-+	MT7530_PORT_FALLBACK_MODE = PORT_VLAN(1),
+@@ -38,8 +40,6 @@ struct stm32_crc {
+ 	struct device    *dev;
+ 	void __iomem     *regs;
+ 	struct clk       *clk;
+-	u8               pending_data[sizeof(u32)];
+-	size_t           nb_pending_bytes;
+ };
+ 
+ struct stm32_crc_list {
+@@ -59,7 +59,6 @@ struct stm32_crc_ctx {
+ 
+ struct stm32_crc_desc_ctx {
+ 	u32    partial; /* crc32c: partial in first 4 bytes of that struct */
+-	struct stm32_crc *crc;
+ };
+ 
+ static int stm32_crc32_cra_init(struct crypto_tfm *tfm)
+@@ -101,25 +100,22 @@ static int stm32_crc_init(struct shash_desc *desc)
+ 	struct stm32_crc *crc;
+ 
+ 	spin_lock_bh(&crc_list.lock);
+-	list_for_each_entry(crc, &crc_list.dev_list, list) {
+-		ctx->crc = crc;
+-		break;
+-	}
++	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
+ 	spin_unlock_bh(&crc_list.lock);
+ 
+-	pm_runtime_get_sync(ctx->crc->dev);
++	pm_runtime_get_sync(crc->dev);
+ 
+ 	/* Reset, set key, poly and configure in bit reverse mode */
+-	writel_relaxed(bitrev32(mctx->key), ctx->crc->regs + CRC_INIT);
+-	writel_relaxed(bitrev32(mctx->poly), ctx->crc->regs + CRC_POL);
+-	writel_relaxed(CRC_CR_RESET | CRC_CR_REVERSE, ctx->crc->regs + CRC_CR);
++	writel_relaxed(bitrev32(mctx->key), crc->regs + CRC_INIT);
++	writel_relaxed(bitrev32(mctx->poly), crc->regs + CRC_POL);
++	writel_relaxed(CRC_CR_RESET | CRC_CR_REV_IN_WORD | CRC_CR_REV_OUT,
++		       crc->regs + CRC_CR);
+ 
+ 	/* Store partial result */
+-	ctx->partial = readl_relaxed(ctx->crc->regs + CRC_DR);
+-	ctx->crc->nb_pending_bytes = 0;
++	ctx->partial = readl_relaxed(crc->regs + CRC_DR);
+ 
+-	pm_runtime_mark_last_busy(ctx->crc->dev);
+-	pm_runtime_put_autosuspend(ctx->crc->dev);
++	pm_runtime_mark_last_busy(crc->dev);
++	pm_runtime_put_autosuspend(crc->dev);
+ 
+ 	return 0;
+ }
+@@ -128,31 +124,49 @@ static int stm32_crc_update(struct shash_desc *desc, const u8 *d8,
+ 			    unsigned int length)
+ {
+ 	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
+-	struct stm32_crc *crc = ctx->crc;
+-	u32 *d32;
+-	unsigned int i;
++	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
++	struct stm32_crc *crc;
 +
- 	/* Security Mode: Discard any frame due to ingress membership
- 	 * violation or VID missed on the VLAN table.
- 	 */
++	spin_lock_bh(&crc_list.lock);
++	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
++	spin_unlock_bh(&crc_list.lock);
+ 
+ 	pm_runtime_get_sync(crc->dev);
+ 
+-	if (unlikely(crc->nb_pending_bytes)) {
+-		while (crc->nb_pending_bytes != sizeof(u32) && length) {
+-			/* Fill in pending data */
+-			crc->pending_data[crc->nb_pending_bytes++] = *(d8++);
++	/*
++	 * Restore previously calculated CRC for this context as init value
++	 * Restore polynomial configuration
++	 * Configure in register for word input data,
++	 * Configure out register in reversed bit mode data.
++	 */
++	writel_relaxed(bitrev32(ctx->partial), crc->regs + CRC_INIT);
++	writel_relaxed(bitrev32(mctx->poly), crc->regs + CRC_POL);
++	writel_relaxed(CRC_CR_RESET | CRC_CR_REV_IN_WORD | CRC_CR_REV_OUT,
++		       crc->regs + CRC_CR);
++
++	if (d8 != PTR_ALIGN(d8, sizeof(u32))) {
++		/* Configure for byte data */
++		writel_relaxed(CRC_CR_REV_IN_BYTE | CRC_CR_REV_OUT,
++			       crc->regs + CRC_CR);
++		while (d8 != PTR_ALIGN(d8, sizeof(u32)) && length) {
++			writeb_relaxed(*d8++, crc->regs + CRC_DR);
+ 			length--;
+ 		}
+-
+-		if (crc->nb_pending_bytes == sizeof(u32)) {
+-			/* Process completed pending data */
+-			writel_relaxed(*(u32 *)crc->pending_data,
+-				       crc->regs + CRC_DR);
+-			crc->nb_pending_bytes = 0;
+-		}
++		/* Configure for word data */
++		writel_relaxed(CRC_CR_REV_IN_WORD | CRC_CR_REV_OUT,
++			       crc->regs + CRC_CR);
+ 	}
+ 
+-	d32 = (u32 *)d8;
+-	for (i = 0; i < length >> 2; i++)
+-		/* Process 32 bits data */
+-		writel_relaxed(*(d32++), crc->regs + CRC_DR);
++	for (; length >= sizeof(u32); d8 += sizeof(u32), length -= sizeof(u32))
++		writel_relaxed(*((u32 *)d8), crc->regs + CRC_DR);
++
++	if (length) {
++		/* Configure for byte data */
++		writel_relaxed(CRC_CR_REV_IN_BYTE | CRC_CR_REV_OUT,
++			       crc->regs + CRC_CR);
++		while (length--)
++			writeb_relaxed(*d8++, crc->regs + CRC_DR);
++	}
+ 
+ 	/* Store partial result */
+ 	ctx->partial = readl_relaxed(crc->regs + CRC_DR);
+@@ -160,22 +174,6 @@ static int stm32_crc_update(struct shash_desc *desc, const u8 *d8,
+ 	pm_runtime_mark_last_busy(crc->dev);
+ 	pm_runtime_put_autosuspend(crc->dev);
+ 
+-	/* Check for pending data (non 32 bits) */
+-	length &= 3;
+-	if (likely(!length))
+-		return 0;
+-
+-	if ((crc->nb_pending_bytes + length) >= sizeof(u32)) {
+-		/* Shall not happen */
+-		dev_err(crc->dev, "Pending data overflow\n");
+-		return -EINVAL;
+-	}
+-
+-	d8 = (const u8 *)d32;
+-	for (i = 0; i < length; i++)
+-		/* Store pending data */
+-		crc->pending_data[crc->nb_pending_bytes++] = *(d8++);
+-
+ 	return 0;
+ }
+ 
 -- 
 2.25.1
 
