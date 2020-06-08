@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C0E31F1E12
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 19:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16AAB1F1E14
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 19:03:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=StIw2QufQesHV6pi+eIr3I3ZFeE0RmlSHUFsY6+YeqQ=; b=lQKAjXk6gQmpsv
-	w7tkxQSvXxkmaQ+mpZu5veiI5LvhU7CY/YBXju3g6zYSF7YX5+ecfxl102ka3OKCONM3xxQxjzUB2
-	FmsJqG7HXlkgO4BatoZXYEl9nq5ylHFVu56ILUWiKTEP6y+yBFG5hrlt8cSc88Mzy23P4454hQrxK
-	92JSWzfluHjUwH8mFQPHHF4mCa62L8IEG10bMZ0DFpDaZlezmNe9bcXSytJ3BMLQVOA4hxLm84ijT
-	H28D9zucAm40C804XNl1/UQkdhHfyArYNZnY+v3GMEZt9Ddi3cEVD/sB3vmszLAqZSdi6HMlGORGE
-	aKiCnbw4fFQJxeCezVrg==;
+	List-Owner; bh=5DfZCpdZWIDupIIYPzGNY34nASwJ22YB5hMmhRrjKsw=; b=t0Rwq/4qt0VQ9s
+	2LTRCVRw2UguOXuF+LKCX+RV0NuVVadYpWVaFRFIKRUFMP36HRm+eF/vku0Hf+9tnhxHrXkCY9sES
+	Rw0qg1fZOxIUo5QjWyyw1nDWYcP6GiwdgJiVBHcdzjtn6xI7fB8QwmpNVtXAyYXtt7qF/gaLEIv+e
+	VYxHb6+ThqFopQ8YqhGKZgLIc4jISF5ey3BAwiZxnWkqmWfrU/r3WuO+dlmuGNQolxcWNWvHbXt9Y
+	vzucSaB/27nxU0uYl9Wb8hkNMPtbmMeb82cilyaJf4tphq32yn5oH2+hwUMwxzF5e8G/mG6zFgXH6
+	/HWkX31uRwJw2Qmct20A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiLAu-0007EF-0y; Mon, 08 Jun 2020 17:03:04 +0000
+	id 1jiLBA-0007R9-V1; Mon, 08 Jun 2020 17:03:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiLAk-0007Cs-M0
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 17:02:56 +0000
+ id 1jiLAx-0007Oz-Qa
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 17:03:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF4C31FB;
- Mon,  8 Jun 2020 10:02:51 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 549151FB;
+ Mon,  8 Jun 2020 10:03:07 -0700 (PDT)
 Received: from bogus (unknown [10.37.12.97])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 78DE33F73D;
- Mon,  8 Jun 2020 10:02:48 -0700 (PDT)
-Date: Mon, 8 Jun 2020 18:02:39 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F5573F73D;
+ Mon,  8 Jun 2020 10:03:01 -0700 (PDT)
+Date: Mon, 8 Jun 2020 18:02:58 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v8 9/9] firmware: arm_scmi: Add Base notifications support
-Message-ID: <20200608170239.GA13622@bogus>
+Subject: Re: [PATCH v8 1/9] firmware: arm_scmi: Add notification
+ protocol-registration
+Message-ID: <20200608170258.GB13622@bogus>
 References: <20200520081118.54897-1-cristian.marussi@arm.com>
- <20200520081118.54897-10-cristian.marussi@arm.com>
+ <20200520081118.54897-2-cristian.marussi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200520081118.54897-10-cristian.marussi@arm.com>
+In-Reply-To: <20200520081118.54897-2-cristian.marussi@arm.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_100254_817369_37A06433 
-X-CRM114-Status: GOOD (  24.32  )
+X-CRM114-CacheID: sfid-20200608_100307_946194_09D663CD 
+X-CRM114-Status: GOOD (  33.76  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,205 +72,530 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 09:11:18AM +0100, Cristian Marussi wrote:
-> Make SCMI Base protocol register with the notification core.
+On Wed, May 20, 2020 at 09:11:10AM +0100, Cristian Marussi wrote:
+> Add core SCMI Notifications protocol-registration support: allow protocols
+> to register their own set of supported events, during their initialization
+> phase. Notification core can track multiple platform instances by their
+> handles.
 >
 > Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 > ---
-> V6 --> V7
-> - fixed report.timestamp type
-> - fix max_payld_sz initialization
-> - fix report layout and initialization
-> - expose SCMI_EVENT_ in linux/scmi_protocol.h
-> V5 --> V6
-> - added handle argument to fill_custom_report()
-> V4 --> V5
-> - fixed unsual return construct
-> V3 --> V4
-> - scmi_event field renamed
-> V2 --> V3
-> - added handle awareness
-> V1 --> V2
-> - simplified .set_notify_enabled() implementation moving the ALL_SRCIDs
->   logic out of protocol. ALL_SRCIDs logic is now in charge of the
->   notification core, together with proper reference counting of enables
-> - switched to devres protocol-registration
-> ---
->  drivers/firmware/arm_scmi/base.c | 118 +++++++++++++++++++++++++++++--
->  include/linux/scmi_protocol.h    |   9 +++
->  2 files changed, 123 insertions(+), 4 deletions(-)
+>  drivers/firmware/arm_scmi/Makefile |   2 +-
+>  drivers/firmware/arm_scmi/common.h |   4 +
+>  drivers/firmware/arm_scmi/notify.c | 435 +++++++++++++++++++++++++++++
+>  drivers/firmware/arm_scmi/notify.h |  56 ++++
+>  include/linux/scmi_protocol.h      |   3 +
+>  5 files changed, 499 insertions(+), 1 deletion(-)
+>  create mode 100644 drivers/firmware/arm_scmi/notify.c
+>  create mode 100644 drivers/firmware/arm_scmi/notify.h
 >
-> diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
-> index ce7d9203e41b..dcb098d8d823 100644
-> --- a/drivers/firmware/arm_scmi/base.c
-> +++ b/drivers/firmware/arm_scmi/base.c
-> @@ -5,7 +5,13 @@
->   * Copyright (C) 2018 ARM Ltd.
->   */
->
-> +#include <linux/scmi_protocol.h>
+> diff --git a/drivers/firmware/arm_scmi/notify.c b/drivers/firmware/arm_scmi/notify.c
+> new file mode 100644
+> index 000000000000..8b620fc7df50
+> --- /dev/null
+> +++ b/drivers/firmware/arm_scmi/notify.c
+> @@ -0,0 +1,435 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * System Control and Management Interface (SCMI) Notification support
+> + *
+> + * Copyright (C) 2020 ARM Ltd.
+> + */
+> +/**
+> + * DOC: Theory of operation
+> + *
+> + * SCMI Protocol specification allows the platform to signal events to
+> + * interested agents via notification messages: this is an implementation
+> + * of the dispatch and delivery of such notifications to the interested users
+> + * inside the Linux kernel.
+> + *
+> + * An SCMI Notification core instance is initialized for each active platform
+> + * instance identified by the means of the usual &struct scmi_handle.
+> + *
+> + * Each SCMI Protocol implementation, during its initialization, registers with
+> + * this core its set of supported events using scmi_register_protocol_events():
+> + * all the needed descriptors are stored in the &struct registered_protocols and
+> + * &struct registered_events arrays.
+> + */
 > +
->  #include "common.h"
+> +#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+> +
+> +#include <linux/bug.h>
+> +#include <linux/compiler.h>
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/kernel.h>
+> +#include <linux/kfifo.h>
+> +#include <linux/mutex.h>
+> +#include <linux/refcount.h>
+> +#include <linux/scmi_protocol.h>
+> +#include <linux/slab.h>
+> +#include <linux/types.h>
+> +
 > +#include "notify.h"
 > +
-> +#define SCMI_BASE_NUM_SOURCES		1
-> +#define SCMI_BASE_MAX_CMD_ERR_COUNT	1024
->
+> +#define	SCMI_MAX_PROTO			256
 
-I am not sure of this, see below.
+[nit] Space after define instead of tab.
 
->  enum scmi_base_protocol_cmd {
->  	BASE_DISCOVER_VENDOR = 0x3,
-> @@ -19,16 +25,25 @@ enum scmi_base_protocol_cmd {
->  	BASE_RESET_AGENT_CONFIGURATION = 0xb,
->  };
->
-> -enum scmi_base_protocol_notify {
-> -	BASE_ERROR_EVENT = 0x0,
-> -};
-> -
->  struct scmi_msg_resp_base_attributes {
->  	u8 num_protocols;
->  	u8 num_agents;
->  	__le16 reserved;
->  };
->
-> +struct scmi_msg_base_error_notify {
-> +	__le32 event_control;
-> +#define BASE_TP_NOTIFY_ALL	BIT(0)
+> +#define	SCMI_ALL_SRC_IDS		0xffffUL
+
+Once you move {PROTO,EVT,SRC}_ID_MASK here, you can just {re-}use SRC_ID_MASK
+
+> +/*
+> + * Builds an unsigned 32bit key from the given input tuple to be used
+> + * as a key in hashtables.
+> + */
+> +#define MAKE_HASH_KEY(p, e, s)			\
+> +	((u32)(((p) << 24) | ((e) << 16) | ((s) & SCMI_ALL_SRC_IDS)))
+> +
+
+You can use {PROTO,EVT,SRC}_ID_MASK here and FIELD_PREP in the above
+macro.
+
+> +#define MAKE_ALL_SRCS_KEY(p, e)			\
+> +	MAKE_HASH_KEY((p), (e), SCMI_ALL_SRC_IDS)
+> +
+> +struct scmi_registered_protocol_events_desc;
+> +
+
+Just a thought here: can we rename all protocol_event* as just event*.
+The term protocol is kind of implicit and makes the names too long.
+I feel some are really too long :). Similar if you think protocol
+is implicit elsewhere, drop it.
+
+> +/**
+> + * struct scmi_notify_instance  - Represents an instance of the notification
+> + * core
+> + * @gid: GroupID used for devres
+> + * @handle: A reference to the platform instance
+> + * @registered_protocols: A statically allocated array containing pointers to
+> + *			  all the registered protocol-level specific information
+> + *			  related to events' handling
+> + *
+> + * Each platform instance, represented by a handle, has its own instance of
+> + * the notification subsystem represented by this structure.
+> + */
+> +struct scmi_notify_instance {
+> +	void						*gid;
+> +	struct scmi_handle				*handle;
+> +	struct scmi_registered_protocol_events_desc	**registered_protocols;
 > +};
 > +
-> +struct scmi_base_error_notify_payld {
-> +	__le32 agent_id;
-> +	__le32 error_status;
-> +#define IS_FATAL_ERROR(x)	((x) & BIT(31))
-> +#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
-> +	__le64 msg_reports[SCMI_BASE_MAX_CMD_ERR_COUNT];
-
-This entire payload needs to fit in shmem and having huge shmem just
-for this sounds not so good to me. If this can be large, it needs to
-be iterated multiple times to get the full log.
-
+> +/**
+> + * struct events_queue  - Describes a queue and its associated worker
+> + * @sz: Size in bytes of the related kfifo
+> + * @kfifo: A dedicated Kernel kfifo descriptor
+> + *
+> + * Each protocol has its own dedicated events_queue descriptor.
+> + */
+> +struct events_queue {
+> +	size_t				sz;
+> +	struct kfifo			kfifo;
 > +};
 > +
->  /**
->   * scmi_base_attributes_get() - gets the implementation details
->   *	that are associated with the base protocol.
-> @@ -222,6 +237,95 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
->  	return ret;
->  }
->
-> +static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
+
+[nit] Add tabs only for alignment, just to keep it uniform throughout.
+
+> +/**
+> + * struct scmi_event_header  - A utility header
+> + * @timestamp: The timestamp, in nanoseconds (boottime), which was associated
+> + *	       to this event as soon as it entered the SCMI RX ISR
+> + * @evt_id: Event ID (corresponds to the Event MsgID for this Protocol)
+> + * @payld_sz: Effective size of the embedded message payload which follows
+> + * @payld: A reference to the embedded event payload
+> + *
+> + * This header is prepended to each received event message payload before
+> + * queueing it on the related &struct events_queue.
+> + */
+> +struct scmi_event_header {
+> +	u64	timestamp;
+> +	u8	evt_id;
+> +	size_t	payld_sz;
+> +	u8	payld[];
+> +} __packed;
+> +
+
+Is this directly read from the shmem ? Trying to understand need for
+__packed.
+
+> +struct scmi_registered_event;
+> +
+> +/**
+> + * struct scmi_registered_protocol_events_desc  - Protocol Specific information
+> + * @id: Protocol ID
+> + * @ops: Protocol specific and event-related operations
+> + * @equeue: The embedded per-protocol events_queue
+> + * @ni: A reference to the initialized instance descriptor
+> + * @eh: A reference to pre-allocated buffer to be used as a scratch area by the
+> + *	deferred worker when fetching data from the kfifo
+> + * @eh_sz: Size of the pre-allocated buffer @eh
+> + * @in_flight: A reference to an in flight &struct scmi_registered_event
+> + * @num_events: Number of events in @registered_events
+> + * @registered_events: A dynamically allocated array holding all the registered
+> + *		       events' descriptors, whose fixed-size is determined at
+> + *		       compile time.
+> + *
+> + * All protocols that register at least one event have their protocol-specific
+> + * information stored here, together with the embedded allocated events_queue.
+> + * These descriptors are stored in the @registered_protocols array at protocol
+> + * registration time.
+> + *
+> + * Once these descriptors are successfully registered, they are NEVER again
+> + * removed or modified since protocols do not unregister ever, so that, once
+> + * we safely grab a NON-NULL reference from the array we can keep it and use it.
+> + */
+> +struct scmi_registered_protocol_events_desc {
+> +	u8					id;
+> +	const struct scmi_protocol_event_ops	*ops;
+> +	struct events_queue			equeue;
+> +	struct scmi_notify_instance		*ni;
+> +	struct scmi_event_header		*eh;
+> +	size_t					eh_sz;
+> +	void					*in_flight;
+> +	int					num_events;
+> +	struct scmi_registered_event		**registered_events;
+> +};
+> +
+> +/**
+> + * struct scmi_registered_event  - Event Specific Information
+> + * @proto: A reference to the associated protocol descriptor
+> + * @evt: A reference to the associated event descriptor (as provided at
+> + *       registration time)
+> + * @report: A pre-allocated buffer used by the deferred worker to fill a
+> + *	    customized event report
+> + * @num_sources: The number of possible sources for this event as stated at
+> + *		 events' registration time
+> + * @sources: A reference to a dynamically allocated array used to refcount the
+> + *	     events' enable requests for all the existing sources
+> + * @sources_mtx: A mutex to serialize the access to @sources
+> + *
+> + * All registered events are represented by one of these structures that are
+> + * stored in the @registered_events array at protocol registration time.
+> + *
+> + * Once these descriptors are successfully registered, they are NEVER again
+> + * removed or modified since protocols do not unregister ever, so that once we
+> + * safely grab a NON-NULL reference from the table we can keep it and use it.
+> + */
+> +struct scmi_registered_event {
+> +	struct scmi_registered_protocol_events_desc	*proto;
+> +	const struct scmi_event				*evt;
+> +	void						*report;
+> +	u32						num_sources;
+> +	refcount_t					*sources;
+> +	struct mutex					sources_mtx;
+> +};
+> +
+> +/**
+> + * scmi_kfifo_free()  - Devres action helper to free the kfifo
+> + * @kfifo: The kfifo to free
+> + */
+> +static void scmi_kfifo_free(void *kfifo)
+> +{
+> +	kfifo_free((struct kfifo *)kfifo);
+> +}
+> +
+> +/**
+> + * scmi_initialize_events_queue()  - Allocate/Initialize a kfifo buffer
+> + * @ni: A reference to the notification instance to use
+> + * @equeue: The events_queue to initialize
+> + * @sz: Size of the kfifo buffer to allocate
+> + *
+> + * Allocate a buffer for the kfifo and initialize it.
+> + *
+> + * Return: 0 on Success
+> + */
+> +static int scmi_initialize_events_queue(struct scmi_notify_instance *ni,
+> +					struct events_queue *equeue, size_t sz)
+> +{
+> +	if (kfifo_alloc(&equeue->kfifo, sz, GFP_KERNEL))
+> +		return -ENOMEM;
+> +	/* Size could have been roundup to power-of-two */
+> +	equeue->sz = kfifo_size(&equeue->kfifo);
+> +
+> +	return devm_add_action_or_reset(ni->handle->dev, scmi_kfifo_free,
+> +					&equeue->kfifo);
+> +}
+> +
+> +/**
+> + * scmi_allocate_registered_protocol_desc()  - Allocate a registered protocol
+> + * events' descriptor
+> + * @ni: A reference to the &struct scmi_notify_instance notification instance
+> + *	to use
+> + * @proto_id: Protocol ID
+> + * @queue_sz: Size of the associated queue to allocate
+> + * @eh_sz: Size of the event header scratch area to pre-allocate
+> + * @num_events: Number of events to support (size of @registered_events)
+> + * @ops: Pointer to a struct holding references to protocol specific helpers
+> + *	 needed during events handling
+> + *
+> + * It is supposed to be called only once for each protocol at protocol
+> + * initialization time, so it warns if the requested protocol is found already
+> + * registered.
+> + *
+> + * Return: The allocated and registered descriptor on Success
+> + */
+> +static struct scmi_registered_protocol_events_desc *
+> +scmi_allocate_registered_protocol_desc(struct scmi_notify_instance *ni,
+> +				       u8 proto_id, size_t queue_sz,
+> +				       size_t eh_sz, int num_events,
+> +				const struct scmi_protocol_event_ops *ops)
 > +{
 > +	int ret;
-> +	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
-> +	struct scmi_xfer *t;
-> +	struct scmi_msg_base_error_notify *cfg;
+> +	struct scmi_registered_protocol_events_desc *pd;
 > +
-> +	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
-> +				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
-> +	if (ret)
-> +		return ret;
-> +
-> +	cfg = t->tx.buf;
-> +	cfg->event_control = cpu_to_le32(evt_cntl);
-> +
-> +	ret = scmi_do_xfer(handle, t);
-> +
-> +	scmi_xfer_put(handle, t);
-> +	return ret;
-> +}
-> +
-> +static bool scmi_base_set_notify_enabled(const struct scmi_handle *handle,
-> +					 u8 evt_id, u32 src_id, bool enable)
-> +{
-> +	int ret;
-> +
-> +	ret = scmi_base_error_notify(handle, enable);
-> +	if (ret)
-> +		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] ret:%d\n",
-> +			SCMI_PROTOCOL_BASE, evt_id, ret);
-> +
+> +	/* Ensure protocols are up to date */
+> +	smp_rmb();
+> +	if (ni->registered_protocols[proto_id]) {
+> +		WARN_ON(1);
 
-I would make all these debug as they are not fatal. The users can decide
-if they are fatal and log it appropriately.
+Can't this be if (WARN_ON(ni->registered_protocols[proto_id])) ?
 
-> +	return !ret;
-> +}
-> +
-> +static void *scmi_base_fill_custom_report(const struct scmi_handle *handle,
-> +					  u8 evt_id, u64 timestamp,
-> +					  const void *payld, size_t payld_sz,
-> +					  void *report, u32 *src_id)
-> +{
-> +	void *rep = NULL;
-> +
-> +	switch (evt_id) {
-> +	case SCMI_EVENT_BASE_ERROR_EVENT:
-
-Drop switch for now, just check for evt_id to be SCMI_EVENT_BASE_ERROR_EVENT.
-
-> +	{
-> +		int i;
-> +		const struct scmi_base_error_notify_payld *p = payld;
-> +		struct scmi_base_error_report *r = report;
-> +
-> +		/*
-> +		 * BaseError notification payload is variable in size but
-> +		 * up to a maximum length determined by the struct ponted by p.
-> +		 * Instead payld_sz is the effective length of this notification
-> +		 * payload so cannot be greater of the maximum allowed size as
-> +		 * pointed by p.
-> +		 */
-> +		if (sizeof(*p) < payld_sz)
-> +			break;
-> +
-> +		r->timestamp = timestamp;
-> +		r->agent_id = le32_to_cpu(p->agent_id);
-> +		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
-> +		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
-> +		for (i = 0; i < r->cmd_count; i++)
-> +			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
-> +		*src_id = 0;
-> +		rep = r;
-> +		break;
-> +	}
-> +	default:
-> +		break;
+> +		return ERR_PTR(-EINVAL);
 > +	}
 > +
-> +	return rep;
+> +	pd = devm_kzalloc(ni->handle->dev, sizeof(*pd), GFP_KERNEL);
+> +	if (!pd)
+> +		return ERR_PTR(-ENOMEM);
+> +	pd->id = proto_id;
+> +	pd->ops = ops;
+> +	pd->ni = ni;
+> +
+> +	ret = scmi_initialize_events_queue(ni, &pd->equeue, queue_sz);
+> +	if (ret)
+> +		return ERR_PTR(ret);
+> +
+> +	pd->eh = devm_kzalloc(ni->handle->dev, eh_sz, GFP_KERNEL);
+> +	if (!pd->eh)
+> +		return ERR_PTR(-ENOMEM);
+> +	pd->eh_sz = eh_sz;
+> +
+> +	pd->registered_events = devm_kcalloc(ni->handle->dev, num_events,
+> +					     sizeof(char *), GFP_KERNEL);
+> +	if (!pd->registered_events)
+> +		return ERR_PTR(-ENOMEM);
+> +	pd->num_events = num_events;
+> +
+> +	return pd;
 > +}
 > +
-> +static const struct scmi_event base_events[] = {
-> +	{
-> +		.id = SCMI_EVENT_BASE_ERROR_EVENT,
-> +		.max_payld_sz = sizeof(struct scmi_base_error_notify_payld),
-> +		.max_report_sz = sizeof(struct scmi_base_error_report) +
-> +				  SCMI_BASE_MAX_CMD_ERR_COUNT * sizeof(u64),
-> +	},
-> +};
+> +/**
+> + * scmi_register_protocol_events()  - Register Protocol Events with the core
+> + * @handle: The handle identifying the platform instance against which the
+> + *	    the protocol's events are registered
+> + * @proto_id: Protocol ID
+> + * @queue_sz: Size in bytes of the associated queue to be allocated
+> + * @ops: Protocol specific event-related operations
+> + * @evt: Event descriptor array
+> + * @num_events: Number of events in @evt array
+> + * @num_sources: Number of possible sources for this protocol on this
+> + *		 platform.
+> + *
+> + * Used by SCMI Protocols initialization code to register with the notification
+> + * core the list of supported events and their descriptors: takes care to
+> + * pre-allocate and store all needed descriptors, scratch buffers and event
+> + * queues.
+> + *
+> + * Return: 0 on Success
+> + */
+> +int scmi_register_protocol_events(const struct scmi_handle *handle,
+> +				  u8 proto_id, size_t queue_sz,
+> +				  const struct scmi_protocol_event_ops *ops,
+> +				  const struct scmi_event *evt, int num_events,
+> +				  int num_sources)
+> +{
+> +	int i;
+> +	size_t payld_sz = 0;
+> +	struct scmi_registered_protocol_events_desc *pd;
+> +	struct scmi_notify_instance *ni;
 > +
-> +static const struct scmi_protocol_event_ops base_event_ops = {
-> +	.set_notify_enabled = scmi_base_set_notify_enabled,
-> +	.fill_custom_report = scmi_base_fill_custom_report,
-> +};
+> +	if (!ops || !evt || proto_id >= SCMI_MAX_PROTO)
+> +		return -EINVAL;
 > +
->  int scmi_base_protocol_init(struct scmi_handle *h)
->  {
->  	int id, ret;
-> @@ -256,6 +360,12 @@ int scmi_base_protocol_init(struct scmi_handle *h)
->  	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
->  		rev->num_agents);
->
-> +	scmi_register_protocol_events(handle,
-> +				      SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
+> +	/* Ensure notify_priv is updated */
+> +	smp_rmb();
+> +	if (unlikely(!handle->notify_priv))
+> +		return -ENOMEM;
+> +	ni = handle->notify_priv;
+> +
+> +	/* Attach to the notification main devres group */
+> +	if (!devres_open_group(ni->handle->dev, ni->gid, GFP_KERNEL))
+> +		return -ENOMEM;
+> +
+> +	for (i = 0; i < num_events; i++)
+> +		payld_sz = max_t(size_t, payld_sz, evt[i].max_payld_sz);
+> +	pd = scmi_allocate_registered_protocol_desc(ni, proto_id, queue_sz,
+> +				    sizeof(struct scmi_event_header) + payld_sz,
+> +						    num_events, ops);
+> +	if (IS_ERR(pd))
+> +		goto err;
+> +
+> +	for (i = 0; i < num_events; i++, evt++) {
+> +		struct scmi_registered_event *r_evt;
+> +
+> +		r_evt = devm_kzalloc(ni->handle->dev, sizeof(*r_evt),
+> +				     GFP_KERNEL);
+> +		if (!r_evt)
+> +			goto err;
+> +		r_evt->proto = pd;
+> +		r_evt->evt = evt;
+> +
+> +		r_evt->sources = devm_kcalloc(ni->handle->dev, num_sources,
+> +					      sizeof(refcount_t), GFP_KERNEL);
+> +		if (!r_evt->sources)
+> +			goto err;
+> +		r_evt->num_sources = num_sources;
+> +		mutex_init(&r_evt->sources_mtx);
+> +
+> +		r_evt->report = devm_kzalloc(ni->handle->dev,
+> +					     evt->max_report_sz, GFP_KERNEL);
+> +		if (!r_evt->report)
+> +			goto err;
+> +
+> +		pd->registered_events[i] = r_evt;
+> +		/* Ensure events are updated */
+> +		smp_wmb();
+> +		pr_info("SCMI Notifications: registered event - %X\n",
+> +			MAKE_ALL_SRCS_KEY(r_evt->proto->id, r_evt->evt->id));
+> +	}
+> +
+> +	/* Register protocol and events...it will never be removed */
+> +	ni->registered_protocols[proto_id] = pd;
+> +	/* Ensure protocols are updated */
+> +	smp_wmb();
+> +
+> +	devres_close_group(ni->handle->dev, ni->gid);
+> +
+> +	return 0;
+> +
+> +err:
+> +	pr_warn("SCMI Notifications - Proto:%X - Registration Failed !\n",
+> +		proto_id);
+> +	/* A failing protocol registration does not trigger full failure */
+> +	devres_close_group(ni->handle->dev, ni->gid);
+> +
+> +	return -ENOMEM;
+> +}
+> +
+> +/**
+> + * scmi_notification_init()  - Initializes Notification Core Support
+> + * @handle: The handle identifying the platform instance to initialize
+> + *
+> + * This function lays out all the basic resources needed by the notification
+> + * core instance identified by the provided handle: once done, all of the
+> + * SCMI Protocols can register their events with the core during their own
+> + * initializations.
+> + *
+> + * Note that failing to initialize the core notifications support does not
+> + * cause the whole SCMI Protocols stack to fail its initialization.
+> + *
+> + * SCMI Notification Initialization happens in 2 steps:
+> + * * initialization: basic common allocations (this function)
+> + * * registration: protocols asynchronously come into life and registers their
+> + *		   own supported list of events with the core; this causes
+> + *		   further per-protocol allocations
+> + *
+> + * Any user's callback registration attempt, referring a still not registered
+> + * event, will be registered as pending and finalized later (if possible)
+> + * by scmi_protocols_late_init() work.
+> + * This allows for lazy initialization of SCMI Protocols due to late (or
+> + * missing) SCMI drivers' modules loading.
+> + *
+> + * Return: 0 on Success
+> + */
+> +int scmi_notification_init(struct scmi_handle *handle)
+> +{
+> +	void *gid;
+> +	struct scmi_notify_instance *ni;
+> +
+> +	gid = devres_open_group(handle->dev, NULL, GFP_KERNEL);
+> +	if (!gid)
+> +		return -ENOMEM;
+> +
+> +	ni = devm_kzalloc(handle->dev, sizeof(*ni), GFP_KERNEL);
+> +	if (!ni)
+> +		goto err;
+> +
+> +	ni->gid = gid;
+> +	ni->handle = handle;
+> +
+> +	ni->registered_protocols = devm_kcalloc(handle->dev, SCMI_MAX_PROTO,
+> +						sizeof(char *), GFP_KERNEL);
 
-The size 4 * PAGE_SZ is not clear. For me this can't be more that
-max_msg_size.
+May not be too expensive, do we have to allocate for all 256 possible
+protocols ? Will it help if we share list of implemented protocols.
+I know this may get complex once we add support for registering protocols
+later, but do we need it now ?
 
-The comments in this patch applies to last 5 patches(all protocols basically)
+> +	if (!ni->registered_protocols)
+> +		goto err;
+> +
+> +	handle->notify_priv = ni;
+> +	/* Ensure handle is up to date */
+> +	smp_wmb();
+> +
+> +	pr_info("SCMI Notifications Core Enabled.\n");
+> +
+> +	devres_close_group(handle->dev, ni->gid);
+> +
+> +	return 0;
+> +
+> +err:
+> +	pr_warn("SCMI Notifications - Initialization Failed.\n");
+
+You have defined pr_fmt, do you still need "SCMI Notifications" for
+all the logging(err/warn/info) everywhere in the file. Making use of
+it will help you trim the messages without loosing it in the log. Update
+pr_fmt if needed.
+
+> +	devres_release_group(handle->dev, NULL);
+> +	return -ENOMEM;
+> +}
+> +
+> +/**
+> + * scmi_notification_exit()  - Shutdown and clean Notification core
+> + * @handle: The handle identifying the platform instance to shutdown
+> + */
+> +void scmi_notification_exit(struct scmi_handle *handle)
+> +{
+> +	struct scmi_notify_instance *ni;
+> +
+> +	/* Ensure notify_priv is updated */
+> +	smp_rmb();
+> +	if (unlikely(!handle->notify_priv))
+> +		return;
+> +	ni = handle->notify_priv;
+> +
+> +	devres_release_group(ni->handle->dev, ni->gid);
+> +}
+> diff --git a/drivers/firmware/arm_scmi/notify.h b/drivers/firmware/arm_scmi/notify.h
+> new file mode 100644
+> index 000000000000..54094aaf812a
+> --- /dev/null
+> +++ b/drivers/firmware/arm_scmi/notify.h
+> @@ -0,0 +1,56 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * System Control and Management Interface (SCMI) Message Protocol
+> + * notification header file containing some definitions, structures
+> + * and function prototypes related to SCMI Notification handling.
+> + *
+> + * Copyright (C) 2020 ARM Ltd.
+> + */
+> +#ifndef _SCMI_NOTIFY_H
+> +#define _SCMI_NOTIFY_H
+> +
+> +#include <linux/device.h>
+> +#include <linux/types.h>
+> +
+> +/**
+> + * struct scmi_event  - Describes an event to be supported
+> + * @id: Event ID
+> + * @max_payld_sz: Max possible size for the payload of a notif msg of this kind
+> + * @max_report_sz: Max possible size for the report of a notif msg of this kind
+
+:s/notif msg of this kind/notification message/
 
 --
 Regards,
