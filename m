@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ABC61F27BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:51:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D78301F27C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:52:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XLT/YEHP+vJaQ17XbjEyWhnpxDi7tCIYG4meW4oKkUI=; b=CGZyL565hwoifD
-	5Hd1wVQrRstr5S1NJP0NWvTYPrHImr/QplCL5qDuEH6hlP8LHnGmLYGO7cXzluDlL++DHbztXZieh
-	sh0P2Qfn980Ybo1DMbjP1nv7xe2NIAKOUebPwWChF/CS8rfGBsnge1PqwByqhg80/LXDWAsaekl/1
-	PpQ2pnW0n3j5KQaKyg+3IJ0JMb63kc+s5ZSCWZ+QT+3FWJ433EIjmGeQsvI5gUHeP6/mzPQMLH0G1
-	aOmCdZki18NHfTsZXnYe0v24uM1o5Ez4UurYIOB3nwHNYh9YD64JK1Zhcyesl40OMFyVg7zrz2d3z
-	5ZhYdHaRCexqo9w7br4A==;
+	List-Owner; bh=w0mvp0dg9LeazgNFuhbaaAa8l1zV1wOKq/om6t1rE5s=; b=Ik4gCG+pHAeLlD
+	iVleAWslfK5g3bTJxIRH545DmvVZwIAcV7Tr7VebfqsYEC/6rml2ZT3aTZJmdoAewRb5C2ElgxRml
+	TZMY3qhafRbSNs5a8JqrPH1Mmz2rYH4Nw1ekHj7Ymgd0s4ShYWmqet51OE9o6iAA6NcvfaXzi1/DU
+	h8J3eNPyjqSUGsgy4d4vd/9LzBKYSxs/F4LCWL68YssyQHR2DOuWbH6GZjxxhkbJGpQLa8z/il47Q
+	EVw2liS2hNURe9ZqTIoDTVcuGJNFx15RWrIE2yzNlagOT3kNCy7J4QFCAeQCFCZgA3mX2XFUEcPoX
+	INPKzv/SJS7vkB7ZeAnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRYD-0000HH-0J; Mon, 08 Jun 2020 23:51:33 +0000
+	id 1jiRYZ-0000Ye-GG; Mon, 08 Jun 2020 23:51:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR80-0003ZW-MA
+ id 1jiR81-0003af-CL
  for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:24:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8D12720872;
- Mon,  8 Jun 2020 23:24:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D05EC2087E;
+ Mon,  8 Jun 2020 23:24:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658667;
- bh=BrI+WuGkxm4WQ+ii/45L5i8ok4mIJVhc91mXai6/4ZQ=;
+ s=default; t=1591658668;
+ bh=JSyUSw4bTz9KQOzqWW/fuVJIcakQ6IBfFtwiMOHZIDU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TaK7PXg4Xnk4i2cWW2W+W5coJiHzkpjfZg42kDc/BYp7JSLYEXe8ZXWlZiNdn1d9D
- QP246c7c/buOZ2M/3EXqf2dzbt57dFW6QT09W0PvitWBFojpC8XJ+MpxsvJFM/Iy4o
- JQdG75Fverczysx7lYIZlhUfZgCOMGEBBAMTSshc=
+ b=MgF/oicMaWpL/CHCCLe7hn8asIQsu79aRP1QCNcn6t2vci7O5faJ16vtjHsygXFET
+ jQghewutg6A4rs5K5YlsxoUuSaslia2LF8v3Dm6Zz8DELMKyvrlN8I12x+EqYV7jjw
+ FaELqVdpA1Pmo3UpN3sp7j3UObqNnHY/lCmfiPc0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 082/106] crypto: stm32/crc32 - fix run-time self
- test issue.
-Date: Mon,  8 Jun 2020 19:22:14 -0400
-Message-Id: <20200608232238.3368589-82-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 083/106] crypto: stm32/crc32 - fix multi-instance
+Date: Mon,  8 Jun 2020 19:22:15 -0400
+Message-Id: <20200608232238.3368589-83-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162428_926840_C36AF5C9 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20200608_162429_600878_DA50E4DD 
+X-CRM114-Status: GOOD (  13.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,13 +90,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Nicolas Toromanoff <nicolas.toromanoff@st.com>
 
-[ Upstream commit a8cc3128bf2c01c4d448fe17149e87132113b445 ]
+[ Upstream commit 10b89c43a64eb0d236903b79a3bc9d8f6cbfd9c7 ]
 
-Fix wrong crc32 initialisation value:
-"alg: shash: stm32_crc32 test failed (wrong result) on test vector 0,
-cfg="init+update+final aligned buffer"
-cra_name="crc32c" expects an init value of 0XFFFFFFFF,
-cra_name="crc32" expects an init value of 0.
+Ensure CRC algorithm is registered only once in crypto framework when
+there are several instances of CRC devices.
+
+Update the CRC device list management to avoid that only the first CRC
+instance is used.
 
 Fixes: b51dbe90912a ("crypto: stm32 - Support for STM32 CRC32 crypto module")
 
@@ -105,43 +104,104 @@ Signed-off-by: Nicolas Toromanoff <nicolas.toromanoff@st.com>
 Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/crypto/stm32/stm32_crc32.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/crypto/stm32/stm32_crc32.c | 48 ++++++++++++++++++++++--------
+ 1 file changed, 36 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/crypto/stm32/stm32_crc32.c b/drivers/crypto/stm32/stm32_crc32.c
-index 749b51762b18..c5ad83ad2f72 100644
+index c5ad83ad2f72..47d31335c2d4 100644
 --- a/drivers/crypto/stm32/stm32_crc32.c
 +++ b/drivers/crypto/stm32/stm32_crc32.c
-@@ -28,10 +28,10 @@
- 
- /* Registers values */
- #define CRC_CR_RESET            BIT(0)
--#define CRC_INIT_DEFAULT        0xFFFFFFFF
- #define CRC_CR_REV_IN_WORD      (BIT(6) | BIT(5))
- #define CRC_CR_REV_IN_BYTE      BIT(5)
- #define CRC_CR_REV_OUT          BIT(7)
-+#define CRC32C_INIT_DEFAULT     0xFFFFFFFF
- 
- #define CRC_AUTOSUSPEND_DELAY	50
- 
-@@ -65,7 +65,7 @@ static int stm32_crc32_cra_init(struct crypto_tfm *tfm)
- {
- 	struct stm32_crc_ctx *mctx = crypto_tfm_ctx(tfm);
- 
--	mctx->key = CRC_INIT_DEFAULT;
-+	mctx->key = 0;
- 	mctx->poly = CRC32_POLY_LE;
+@@ -93,16 +93,29 @@ static int stm32_crc_setkey(struct crypto_shash *tfm, const u8 *key,
  	return 0;
  }
-@@ -74,7 +74,7 @@ static int stm32_crc32c_cra_init(struct crypto_tfm *tfm)
- {
- 	struct stm32_crc_ctx *mctx = crypto_tfm_ctx(tfm);
  
--	mctx->key = CRC_INIT_DEFAULT;
-+	mctx->key = CRC32C_INIT_DEFAULT;
- 	mctx->poly = CRC32C_POLY_LE;
- 	return 0;
+-static int stm32_crc_init(struct shash_desc *desc)
++static struct stm32_crc *stm32_crc_get_next_crc(void)
+ {
+-	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
+-	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
+ 	struct stm32_crc *crc;
+ 
+ 	spin_lock_bh(&crc_list.lock);
+ 	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
++	if (crc)
++		list_move_tail(&crc->list, &crc_list.dev_list);
+ 	spin_unlock_bh(&crc_list.lock);
+ 
++	return crc;
++}
++
++static int stm32_crc_init(struct shash_desc *desc)
++{
++	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
++	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
++	struct stm32_crc *crc;
++
++	crc = stm32_crc_get_next_crc();
++	if (!crc)
++		return -ENODEV;
++
+ 	pm_runtime_get_sync(crc->dev);
+ 
+ 	/* Reset, set key, poly and configure in bit reverse mode */
+@@ -127,9 +140,9 @@ static int stm32_crc_update(struct shash_desc *desc, const u8 *d8,
+ 	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
+ 	struct stm32_crc *crc;
+ 
+-	spin_lock_bh(&crc_list.lock);
+-	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
+-	spin_unlock_bh(&crc_list.lock);
++	crc = stm32_crc_get_next_crc();
++	if (!crc)
++		return -ENODEV;
+ 
+ 	pm_runtime_get_sync(crc->dev);
+ 
+@@ -202,6 +215,8 @@ static int stm32_crc_digest(struct shash_desc *desc, const u8 *data,
+ 	return stm32_crc_init(desc) ?: stm32_crc_finup(desc, data, length, out);
  }
+ 
++static unsigned int refcnt;
++static DEFINE_MUTEX(refcnt_lock);
+ static struct shash_alg algs[] = {
+ 	/* CRC-32 */
+ 	{
+@@ -294,12 +309,18 @@ static int stm32_crc_probe(struct platform_device *pdev)
+ 	list_add(&crc->list, &crc_list.dev_list);
+ 	spin_unlock(&crc_list.lock);
+ 
+-	ret = crypto_register_shashes(algs, ARRAY_SIZE(algs));
+-	if (ret) {
+-		dev_err(dev, "Failed to register\n");
+-		clk_disable_unprepare(crc->clk);
+-		return ret;
++	mutex_lock(&refcnt_lock);
++	if (!refcnt) {
++		ret = crypto_register_shashes(algs, ARRAY_SIZE(algs));
++		if (ret) {
++			mutex_unlock(&refcnt_lock);
++			dev_err(dev, "Failed to register\n");
++			clk_disable_unprepare(crc->clk);
++			return ret;
++		}
+ 	}
++	refcnt++;
++	mutex_unlock(&refcnt_lock);
+ 
+ 	dev_info(dev, "Initialized\n");
+ 
+@@ -320,7 +341,10 @@ static int stm32_crc_remove(struct platform_device *pdev)
+ 	list_del(&crc->list);
+ 	spin_unlock(&crc_list.lock);
+ 
+-	crypto_unregister_shashes(algs, ARRAY_SIZE(algs));
++	mutex_lock(&refcnt_lock);
++	if (!--refcnt)
++		crypto_unregister_shashes(algs, ARRAY_SIZE(algs));
++	mutex_unlock(&refcnt_lock);
+ 
+ 	pm_runtime_disable(crc->dev);
+ 	pm_runtime_put_noidle(crc->dev);
 -- 
 2.25.1
 
