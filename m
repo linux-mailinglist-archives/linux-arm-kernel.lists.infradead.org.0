@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 138EF1F3FFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 17:58:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81ED51F4004
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 17:59:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/tVYzW8J/fh+F467hkzTulgkVQ2ElLDULeUTT5rj8q8=; b=djyumuaXOMrmKS
-	MLOPjMRtUTJMfNA0EdRBYwckMU10QoI8zjTJSvNtgMG10SDvDtruczM85sJLZ8BcRW69QxUNx9f/C
-	2YUsTkR+M/NQCf8zgjXP/mlO8LCb8kYG7scwjN8fHrv3J77sF5aCWBcKiUKehg380RX1QFyLJ2FJI
-	8KfqOFrSLuBMYrmxw41V0/Hx6lRh6BGomjjGN84/iMPyxigLpg4SL/F9Gj0AqrRKUlr7E+cZsmYbb
-	Ds5jIFqa3Ach/lttuN5fXAo20uPuuCoTbHM+Fo5XLRLoQp+rLGYOqO9bz4JiK6cGsBfMYdmjhuEdY
-	GEtWQDlBpIrNkUgW8zdg==;
+	List-Owner; bh=t6/2Qi8snHP6Z5YKVh/oJY/k9NpDaA15cMCIXCt7D+A=; b=Eko9VzBrHHIOC1
+	26HShwuvv2S7Z5Yqm1w7IkVQqHaWq6fPD/UmBDWXz4fWM/Bf1dFP8xgSZoQiVh5YJm2ogegqtXmuk
+	pG7lUdpb04HHzbaV0P+u0y3QKyTORY5Q1uiLsUnU8iBDqhiI3PMlKbjzBid2lmywqOVnGYV8q31qC
+	/ch7mYMXWKkzRn9qdX4lNFWHdUo0pVlf7ZVD8WVTVwjFKwKYo715UcWu8UouKn3AJHQMBcEAqiqwb
+	JdoqUiWdihLjqXYbLh1G18aSHuginVCFraXB6e/qQJfD9DSaM2r0PXABFBGEEzYHbx2tCykm851U4
+	LRgzuoDFTcK/7490c0VQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jigeK-0006Vz-7p; Tue, 09 Jun 2020 15:58:52 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1jigem-0006mT-Va; Tue, 09 Jun 2020 15:59:21 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jigeA-0006VZ-C2
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 15:58:43 +0000
-Received: by mail-il1-x144.google.com with SMTP id 18so20785269iln.9
+ id 1jigeb-0006m7-5K
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 15:59:10 +0000
+Received: by mail-il1-x143.google.com with SMTP id g3so20764432ilq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 08:58:42 -0700 (PDT)
+ Tue, 09 Jun 2020 08:59:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XTmR8DDTbpuRLrg4Dxe54sTFIEfxL4/fHVrG5Q0Qecc=;
- b=AB6ptOdnB5z9Lot4ciWyiYuE6HGmWmbIwdMI2v9p37RW9vIGnX/vnPMfTcceN8kysj
- UeJRlrLlFtiLLa7ZUCBXFTB2if6niO5aciWexn6lLt74ARj+tvU7J0a6CMOm0N9Old5M
- 0nNC/R75byfQkSBdHR0mO6oZN/MWIenirMnIZZZhA0Ku37cS/9VNeowWKVBSEFX/O7L1
- rUIuP1MX3QyEoJOP33FebN6F3wNj4C1hyz+NirfswshNJwyJG8B2m/ifCXWECX8DJl/1
- HOPF2UlCgfmOR8x4cXZOO6fbDlugUqovL3TaiN7r6LMrsSBhN4WbBcqbXTE3gf6CvMbn
- /WHw==
+ :cc; bh=y7SNiI5A6RVtZsHvA5zBiQnX39Ic6ndLkU+dDGZxkkE=;
+ b=BYvYUZgKPOiFqhDqHbdFaVtVeJjo2pF7jf1ADysyareZY2mE4JGcQkzWaTDD40WYr9
+ rFsr99M5cb58XA+NucQrVrbraWMQKkQOnByLp3ArV3tE+p6LIQpWDb5q8GXyVna1RXsH
+ 8XvEZItxotESA+kA9wSCI+i1eisarnUJ/tKVc/XVlldBXDeoMjuvSp6QoPHDktjB6I26
+ As3IEs6xOqwP4bavd8E4NI8w0pAsUTvIZ/oewpgNE0SkevnlK7NrW75K1gn1CSOrCmei
+ N4zXN0vWMHe5hLTpfmrSvAM3KYJjns0Vxnc4yE1ECaYPUXayuSn38H2DsKjFYrp4nkAD
+ Nm9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=XTmR8DDTbpuRLrg4Dxe54sTFIEfxL4/fHVrG5Q0Qecc=;
- b=Nktv0ZKAJMue57gsRjhlJiYuOm2lp29qI7RvhMUC8fJdjqFzu9YOC0Xcoc42WaeY3p
- EZd1W2Pzb6UZmZNQ+QrDZUolTT9xuZI2ETpuNWFsUdzXzY3Pm93KIYlQNHm0is93fI2+
- sAJdoU2cLFV0g0eE3UpSgI9yXxQlJYIRzJTBcd1zdUTOiwnU2vvNzYSkTrR7wLWp/m6D
- mJxaNn60fTia+V+ktFq3bFSwb0yQe6eRICb9BgK+JWjJSonduFd1w/1uOF4vju9mxR0x
- IjuB/0LAzgAJ9COkY0CDwqUvsQhjVpCrPJJHJeWCBHbZ4uv4uMA+al9+D6npl6+QWuIO
- cOUA==
-X-Gm-Message-State: AOAM533ZY3JBBGgGklnDRM6T2CIw5zKBanETcy+7SKT9DTYH5LLEecNl
- FCmc62O38YUsqhjiYpkm0Z8qOWf9+NBpT20Srr8=
-X-Google-Smtp-Source: ABdhPJxux6g3vaB/cZUTBdsI/fsNLkF6h3A6gvPaXzdAi095druL3kMv7nH5YKpHBp3ajTNuv4JMpDOTRu2EDD2z9o8=
-X-Received: by 2002:a92:ad02:: with SMTP id w2mr18619302ilh.184.1591718321670; 
- Tue, 09 Jun 2020 08:58:41 -0700 (PDT)
+ bh=y7SNiI5A6RVtZsHvA5zBiQnX39Ic6ndLkU+dDGZxkkE=;
+ b=CO6CTUnxHFo4DkrxSpiPJN7xcu+8//03ZiR6YEmwIgk0jK+FhKTH0YBwXpIdwJIbC6
+ oKXE5cCVXjlWrM85jgMA16svzIviEYrAr1nINyFN7nhQk7xlSZ6u6PxAr+LGFXmnJJnC
+ o3CvN+j5oFEQDJRPXdv4RAwcm3HKMRRNtg5G93xGbuG+9sMgnFlvVIASKSusdWWaOvZa
+ ymyEtxR/eHtp3juaj/RYxiAp4IbYQ3ieXAq20ila8gYi8dvjB/rfYmnI4IEO8qbrmmp2
+ 6/tq+NSr7vHZakwDn94M7b+LG328rG69AeuWTxoIh4wk9F+yLhBu4bGO+6MUglbNK/r6
+ LKzg==
+X-Gm-Message-State: AOAM532iUiSRujgnMCQWis1+PbkWk76UFSvLH1iMO1p6hAfaDMpRhilE
+ pUhghxwq/DOunqI4FlkPJldd1O1tABx6Jprk46I=
+X-Google-Smtp-Source: ABdhPJwrxzXrTqDvIYEv7sGYGoTfNgdI9+AwSKTngZ8wOe8qpPn+MALOTP1Ir5yJrOFe2XEpcp7yexnICas3NiVZxPk=
+X-Received: by 2002:a92:914a:: with SMTP id t71mr27627735ild.200.1591718348616; 
+ Tue, 09 Jun 2020 08:59:08 -0700 (PDT)
 MIME-Version: 1.0
 References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
-In-Reply-To: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
+ <1591605038-8682-2-git-send-email-dillon.minfei@gmail.com>
+In-Reply-To: <1591605038-8682-2-git-send-email-dillon.minfei@gmail.com>
 From: dillon min <dillon.minfei@gmail.com>
-Date: Tue, 9 Jun 2020 23:58:05 +0800
-Message-ID: <CAL9mu0+hmyYGrTeHhvOhPHLm3nSWTt5waAr9e6Lzrdqxp5x5iQ@mail.gmail.com>
-Subject: Re: [PATCH 0/2] Use 'arm_nommu_dma_ops' to handle dma memroy if
- device offer consistent dma memory region
+Date: Tue, 9 Jun 2020 23:58:32 +0800
+Message-ID: <CAL9mu0KWq-ANkLBRv_49kGzWf_kDPjMvMeA7S4E6f5MpVtjKaw@mail.gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: stm32: Setup 4M bytes reserved memory for
+ mmap
 To: Rob Herring <robh+dt@kernel.org>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
  Alexandre Torgue <alexandre.torgue@st.com>, linux@armlinux.org.uk, 
@@ -66,15 +67,15 @@ To: Rob Herring <robh+dt@kernel.org>,
  Kate Stewart <kstewart@linuxfoundation.org>, 
  allison@lohutok.net, info@metux.net, tglx@linutronix.de, hch@lst.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_085842_452904_CB066A17 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20200609_085909_198388_CDC3B91C 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [dillon.minfei[at]gmail.com]
@@ -117,26 +118,41 @@ On Mon, Jun 8, 2020 at 4:30 PM <dillon.minfei@gmail.com> wrote:
 >
 > From: dillon min <dillon.minfei@gmail.com>
 >
-> when do mmap on /dev/fb0, we will get -6 error on cortex-m3/m4 or armv7m
-> platform without cache support, this is caused by following reason:
+> To mmap a framebuffer or v4l2 buffer from kernel to userspace on
+> no-mmu platform, we need rely on 'arm_nommu_dma_ops' from
+> arch/arm/mm/dma-mapping-nommu.c , so setup 4M bytes memory
+> reserved for this purpose.
 >
-> on armv7m platform, if no cache support, we will use dma direct mapping,
-> but, this is not support on !MMU hardware, just return '-ENXIO' error
->
-> so, add use_reserved_mem() for these armv7m hardware but no-cache support.
-> eg, stm32f429/stm32f469.
->
-> verified on stm32f469-disco board, mmap frambuffer to userspace.
->
-> dillon min (2):
->   ARM: dts: stm32: Setup 4M bytes reserved memory for mmap
->   arm-nommu: Add use_reserved_mem() to check if device support reserved
->     memory
->
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> ---
 >  arch/arm/boot/dts/stm32f469-disco.dts | 14 ++++++++++++++
->  arch/arm/mm/dma-mapping-nommu.c       | 28 +++++++++++++++++++++++++++-
->  2 files changed, 41 insertions(+), 1 deletion(-)
+>  1 file changed, 14 insertions(+)
 >
+> diff --git a/arch/arm/boot/dts/stm32f469-disco.dts b/arch/arm/boot/dts/stm32f469-disco.dts
+> index 9397db0c43de..082b24ee81f7 100644
+> --- a/arch/arm/boot/dts/stm32f469-disco.dts
+> +++ b/arch/arm/boot/dts/stm32f469-disco.dts
+> @@ -65,6 +65,20 @@
+>                 reg = <0x00000000 0x1000000>;
+>         };
+>
+> +       reserved-memory {
+> +               #address-cells = <1>;
+> +               #size-cells = <1>;
+> +               ranges;
+> +
+> +               linux,dma {
+> +                       compatible = "shared-dma-pool";
+> +                       size = <0x400000>;
+> +                       no-map;
+> +                       linux,dma-default;
+> +               };
+> +
+> +       };
+> +
+>         aliases {
+>                 serial0 = &usart3;
+>         };
 > --
 > 2.7.4
 >
