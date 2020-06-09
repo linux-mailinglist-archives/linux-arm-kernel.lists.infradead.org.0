@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2739D1F3E30
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:33:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 079C11F3E3E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:33:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Zr2QmNGQAlbFcyvGRoFraCDh5rvbpVNGkk0RHQhUHt0=; b=peY6Muf/tJYj1hA7o0DMwElfCs
-	EsXbclA2BTA8trGEXqv2axF1N8dm6JjMCSd/4YYoKlUilsp6ERLh5ehNcodbH7h0Ei0qD0cMJugED
-	2M4muaM0WFVjQ6tSnNDZ6Tr2LCJihgsIncC8LTUDdb1g+FvR/512vhHgP7s04t9KRWfDul+f5gd/V
-	PUqoSu46ugyTVOMMz72ZANtX/FmMaiWbW3oRcMh8EsmXul6uz4/4bKb+EIbPKMWBcwVRqd5rOj8pP
-	j9c9ba6QZoxdpRTigDq3HaKbOP2HtQaszX4V1hC6wk1m8TMFbYl8nHR4w10g2X/3SKqyVg65obNoV
-	iZ1oitbg==;
+	bh=8Cndb0ZBz7CVULns146U60ckYEsDnIgA45ZFRD0Ni7A=; b=Yrlqv1JMI5kuwtYfE3TWg9EFCr
+	RFuck4AU9zntmrfWCbf6ZVl33EQqbL6afx8pv4HYW/KDCtkLUjzynm6MymPZSwIRyi+FbcjzNidG6
+	JUXPIziUTaYA2sRCrLOcXfjMv4v8uM040qaOP3SxX5/kC2K7QC63jlVt5OmcG0mfGUn2CZzm0tdp0
+	hzdteeaBo86eeVnw6kyTOzrnkbCyatAQlxv1mzejategbvf3hcDp66p0phTJrbJHdpU/sNBXbWoYN
+	Y8EzpdJhbUTTseCl+YKYiosLpcpOzh/E5YawRDl61v3mmOBRG57nXLytotuD45fv1reeoCBJyPgio
+	qN0Hr78A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jifJE-0006Ux-Ug; Tue, 09 Jun 2020 14:33:00 +0000
+	id 1jifJO-0006kb-LX; Tue, 09 Jun 2020 14:33:10 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jifIV-0005sh-Uv
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:32:17 +0000
+ id 1jifIX-0005xd-Ch
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:32:18 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A879B1A13DB;
- Tue,  9 Jun 2020 16:32:14 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E2291A13E3;
+ Tue,  9 Jun 2020 16:32:16 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2866E1A13DE;
- Tue,  9 Jun 2020 16:32:10 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 915D51A13DA;
+ Tue,  9 Jun 2020 16:32:11 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 927EC402F0;
- Tue,  9 Jun 2020 22:32:04 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A5073402F3;
+ Tue,  9 Jun 2020 22:32:05 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
  stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
  s.hauer@pengutronix.de, linux-gpio@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3 2/9] pinctrl: imx: Support building i.MX pinctrl driver as
- module
-Date: Tue,  9 Jun 2020 22:21:18 +0800
-Message-Id: <1591712485-20609-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 3/9] pinctrl: imx8mm: Support building as module
+Date: Tue,  9 Jun 2020 22:21:19 +0800
+Message-Id: <1591712485-20609-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591712485-20609-1-git-send-email-Anson.Huang@nxp.com>
 References: <1591712485-20609-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_073216_131146_B1E3E758 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20200609_073217_568358_9D31C9DE 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,56 +78,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Export necessary functions to support building i.MX common pinctrl
-driver and its user to be built as module.
+Support building i.MX8MM pinctrl driver as module.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-Changes since V2:
-	- add "depends on OF" to fix build error when using x86 randconfig.
+No change.
 ---
- drivers/pinctrl/freescale/Kconfig       | 3 ++-
- drivers/pinctrl/freescale/pinctrl-imx.c | 4 ++++
- 2 files changed, 6 insertions(+), 1 deletion(-)
+ drivers/pinctrl/freescale/Kconfig          |  2 +-
+ drivers/pinctrl/freescale/pinctrl-imx8mm.c | 10 ++++------
+ 2 files changed, 5 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/pinctrl/freescale/Kconfig b/drivers/pinctrl/freescale/Kconfig
-index f6c00d5..3383fc2 100644
+index 3383fc2..073f562 100644
 --- a/drivers/pinctrl/freescale/Kconfig
 +++ b/drivers/pinctrl/freescale/Kconfig
-@@ -1,6 +1,7 @@
- # SPDX-License-Identifier: GPL-2.0-only
- config PINCTRL_IMX
--	bool
-+	tristate "IMX pinctrl driver"
-+	depends on OF
- 	select GENERIC_PINCTRL_GROUPS
- 	select GENERIC_PINMUX_FUNCTIONS
- 	select GENERIC_PINCONF
-diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c b/drivers/pinctrl/freescale/pinctrl-imx.c
-index cb7e0f0..116d808 100644
---- a/drivers/pinctrl/freescale/pinctrl-imx.c
-+++ b/drivers/pinctrl/freescale/pinctrl-imx.c
-@@ -11,6 +11,7 @@
+@@ -125,7 +125,7 @@ config PINCTRL_IMX7ULP
+ 	  Say Y here to enable the imx7ulp pinctrl driver
+ 
+ config PINCTRL_IMX8MM
+-	bool "IMX8MM pinctrl driver"
++	tristate "IMX8MM pinctrl driver"
+ 	depends on ARCH_MXC
+ 	select PINCTRL_IMX
+ 	help
+diff --git a/drivers/pinctrl/freescale/pinctrl-imx8mm.c b/drivers/pinctrl/freescale/pinctrl-imx8mm.c
+index 6d1038a..eca1424 100644
+--- a/drivers/pinctrl/freescale/pinctrl-imx8mm.c
++++ b/drivers/pinctrl/freescale/pinctrl-imx8mm.c
+@@ -5,6 +5,7 @@
+ 
+ #include <linux/err.h>
  #include <linux/init.h>
- #include <linux/io.h>
- #include <linux/mfd/syscon.h>
 +#include <linux/module.h>
- #include <linux/of.h>
  #include <linux/of_device.h>
- #include <linux/of_address.h>
-@@ -878,6 +879,7 @@ int imx_pinctrl_probe(struct platform_device *pdev,
- 
- 	return pinctrl_enable(ipctl->pctl);
- }
-+EXPORT_SYMBOL_GPL(imx_pinctrl_probe);
- 
- static int __maybe_unused imx_pinctrl_suspend(struct device *dev)
- {
-@@ -897,3 +899,5 @@ const struct dev_pm_ops imx_pinctrl_pm_ops = {
- 	SET_LATE_SYSTEM_SLEEP_PM_OPS(imx_pinctrl_suspend,
- 					imx_pinctrl_resume)
+ #include <linux/pinctrl/pinctrl.h>
+ #include <linux/platform_device.h>
+@@ -326,6 +327,7 @@ static const struct of_device_id imx8mm_pinctrl_of_match[] = {
+ 	{ .compatible = "fsl,imx8mm-iomuxc", .data = &imx8mm_pinctrl_info, },
+ 	{ /* sentinel */ }
  };
-+EXPORT_SYMBOL_GPL(imx_pinctrl_pm_ops);
++MODULE_DEVICE_TABLE(of, imx8mm_pinctrl_of_match);
+ 
+ static int imx8mm_pinctrl_probe(struct platform_device *pdev)
+ {
+@@ -340,9 +342,5 @@ static struct platform_driver imx8mm_pinctrl_driver = {
+ 	},
+ 	.probe = imx8mm_pinctrl_probe,
+ };
+-
+-static int __init imx8mm_pinctrl_init(void)
+-{
+-	return platform_driver_register(&imx8mm_pinctrl_driver);
+-}
+-arch_initcall(imx8mm_pinctrl_init);
++module_platform_driver(imx8mm_pinctrl_driver);
 +MODULE_LICENSE("GPL v2");
 -- 
 2.7.4
