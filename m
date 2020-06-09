@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0106B1F4552
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 20:14:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F14721F4565
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 20:15:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OhznIGZLO8/0mLiB0HJ9i70hkFAUFdHFtbYoHIVTXmY=; b=TxBWOTjnhDxMCu
-	UonCgU8O7wEABZ9pU3kssWi1/PV2SgGVovJNwYD79Y2XTnvuNoAycQdXrHQq4+WC1LigP7n0QQUTP
-	sZp5FUKiYEmcFHtTMY0IaP1Qx+A07T2T6352SUyLL3VhX6jAMhaYIfSkf1rLVjrhYDp3iOnYjO/WR
-	toDqkrcto0P4pSartD7/o6NK/JNL/nlkPAZJ9Tcqo869ijJn07edizpLfghEhc5fUcg4wodEz9B5D
-	IypiLLcIA2jqZcZeSGxNDSMd+4ewwUQI0zdi9OcVSwsuY2ZMFwxLK3kO8qdgeH0zDNGfOjHBwoLXZ
-	yj2hIX/4ZDlFAyZeB8SQ==;
+	List-Owner; bh=M0ZoDM+w2NGguf78Lm1AB9DaFltkdxnrIDLf0plXXWs=; b=dIEFhF0DUNuFun
+	ateEzCHxSM5szwykfD0p+vNgEh0rU4tg4noagqmzxXwJIeXoyqix6S8sOPtvW4nfBFWp4nzij8PEI
+	mY5M3SSimDgoTVIM3zZlJbZFf6sLK2GFxkcVApLr8S8tDOvt5JwaH896AxrG2+wRcFuBikbSjgOZU
+	36LumSWs8kk/6Q8MaZ3imUsrhXC3AfN7isIWEF5zCNDRz975Iju3L+7rL44jGCyZsI+VbBmbu+U5A
+	cop2epXlzDH9ZodqF8uDpaEmf2fpkC9EWi1yReeop61xpPYtVr4jBLZZAGs4T48NbNZG0Axfzs+kE
+	rcEe8z0aW56Y+XtT9WPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiim0-00044K-R2; Tue, 09 Jun 2020 18:14:56 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jiimU-0006nY-FA; Tue, 09 Jun 2020 18:15:26 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiilt-00043w-3v; Tue, 09 Jun 2020 18:14:50 +0000
-Received: by mail-pf1-x443.google.com with SMTP id j1so10259736pfe.4;
- Tue, 09 Jun 2020 11:14:48 -0700 (PDT)
+ id 1jiimJ-0006mh-Lc; Tue, 09 Jun 2020 18:15:16 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id d6so1749997pjs.3;
+ Tue, 09 Jun 2020 11:15:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=AS/XdckXtD5JdzBhAwpc/WtJW1ZnWelaj/7RjUzTTTY=;
- b=ofzyfTDcbSR0iVmnOlwQrNgiLJk688yu4yKaniy1FmZvGhVlPmR+qx/S/V2J7M31i7
- sBnfLijv4zGVBlM8tTHwV2tNvqMN+eDLy/8nYxIzkQtZvE6Q8X8CS9bzGYaRwW1CAcrc
- Qrcz9dMBcwoiAizOECxolgNx0k32d1nYqZuCe9ln3pCAjSHZrgAmF4lyMxqvNMX3Z+aC
- J6LVha9AtTt8375Pm2xUf/D/tE+irK0XKxAOAJsLCfkXGjeey0Wl3ZvgxB+IXUjmGal8
- XZPVk9P3DPqQ8/qQzNUA6OI0QqTJQIJe7v/gRidSRM89xL/wXCYAIBPFoRdFNRIToIs9
- eeBw==
+ bh=gHQQinCIzqEJjug0+1o/FM1FbKMIGL0TZzTmm0jtFe0=;
+ b=e3AFAIm9qkdnmKstkqTej98vjlXzkrM4oxyUFCst7qAsdixmAdSgQq2gB7aGfH/qdB
+ VHOBBkrRqJQmVOdDmi7tCO/XfK6BWEdt9eyRAkP617IiZ10ASUg9PLz3wTWeKe/ZOsaC
+ BGKW7W7/OJO7RVHSxHmnMRwt+yNpagJVEecAqP/+FfCjE4Xfb7AlzUcguvxlPWdXlzg1
+ YpDo9TYHKudPl9x+J7xex+BD05hyNiviKb/0Cy3XSrYaWD1MMGbRYA70KFE/uXfgZxFB
+ NGfMM39GQ12P5V2/VxAy7ZOeh7QqQF+1TyYDeBLjSOOFNudXyewvLeeoEUTn/iFHZHy0
+ tEYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=AS/XdckXtD5JdzBhAwpc/WtJW1ZnWelaj/7RjUzTTTY=;
- b=FDaA32lJyzdnD5+lt+dm7tNwOLbSECBE8SR3THrnRmbs6lmvKmwdNxnenc1r/oiIhB
- XdlXq+Fk4rperuUsLjZaplFwYNf4tMuGFligR4pEjqPNPsmmt+TkSlOn15sTAcT1LRsb
- ZWbYxhUHRXYsQaWNMjAMxt8tb/bnM4y3mo+I2+tYRLqPlYIq69IVLPBa5W8Csv5ryl1J
- g7GWb0uXBm0lxPapdSK3RcAnE+0ZLFkjtcTnXCy7KYKjB6lHEXCFN55/CgnJ+v7P+sA8
- 6NdSsLGZfg9s8xRB5UVNLyik945MNZtas2LlI3IcZVvT24p0Lh3FnDmVr7yXLXYQIkbu
- sEZA==
-X-Gm-Message-State: AOAM530tqRXjZwF8NJHbELB2JVy3ag5ZSK2yave9Mj49cIqr0UxtqDSn
- Pg6fiFq+k1eObonfL0OZJWg=
-X-Google-Smtp-Source: ABdhPJx2SlXa0n42ZaJT1vZCe4xrRMIjnru6dBSBFP7GNH70CVg7MYDKbKWTswiYGotNLgBCKvVhAA==
-X-Received: by 2002:a63:eb42:: with SMTP id b2mr25756419pgk.105.1591726488350; 
- Tue, 09 Jun 2020 11:14:48 -0700 (PDT)
+ bh=gHQQinCIzqEJjug0+1o/FM1FbKMIGL0TZzTmm0jtFe0=;
+ b=gagDOcxA7E+U75PTIkbeSCPhpUkPLk8ukttDvZMmK2rEAYMkDQfk1Ufkodu1ZCZlK6
+ mCaDBKuNH9zRDbSdc5fviPHWgN0qEnlBo+LX1VB/g2NkZ2kGMVd/82yNSYO/wf7WuRe1
+ L+4D3cN0cuW6Ku0IU8NLJP+GeJtCtVStHbyIKdydH8fC49ihbmEKT21TZUFY/6kVmXGa
+ ofDiANbNMF3tAldVTMA/wk0SPIAMsX2KDeD8RYY1iExg4Yoj84b3yWtmkl1Jaw2FW5sT
+ 8G8uiX1jvgkXgOmi/01CgA/hH3xEz8hv5QUB6wqt92EB30xyvIGmlPJ3Lgz5wSoV7usI
+ KBiQ==
+X-Gm-Message-State: AOAM531HwUpDN15v8L7qykLKLJNF4Kn8wgVLFCNtXALl6Nm97GUVHCtt
+ 88kV0XqdpM2qYgsih70zpPM=
+X-Google-Smtp-Source: ABdhPJxVHA6APINNipQ33TCWmNwWJ73EzJUJGU/KU0wvxLGZAMSGUEEFIoUuKd++Lj4a45zWrRPmfQ==
+X-Received: by 2002:a17:90b:3691:: with SMTP id
+ mj17mr5551336pjb.152.1591726514140; 
+ Tue, 09 Jun 2020 11:15:14 -0700 (PDT)
 Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id w12sm9688715pfn.68.2020.06.09.11.14.46
+ by smtp.gmail.com with ESMTPSA id y187sm10829920pfb.46.2020.06.09.11.15.11
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Jun 2020 11:14:47 -0700 (PDT)
-Subject: Re: [PATCH v2 6/9] Revert "USB: pci-quirks: Add Raspberry Pi 4 quirk"
+ Tue, 09 Jun 2020 11:15:13 -0700 (PDT)
+Subject: Re: [PATCH v2 8/9] Revert "firmware: raspberrypi: Introduce vl805
+ init routine"
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, f.fainelli@gmail.com,
  gregkh@linuxfoundation.org, wahrenst@gmx.net, p.zabel@pengutronix.de,
- linux-kernel@vger.kernel.org, Mathias Nyman <mathias.nyman@intel.com>
+ linux-kernel@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
 References: <20200609175003.19793-1-nsaenzjulienne@suse.de>
- <20200609175003.19793-7-nsaenzjulienne@suse.de>
+ <20200609175003.19793-9-nsaenzjulienne@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <59accf8f-c947-4efb-f8fc-1df821b35c3d@gmail.com>
-Date: Tue, 9 Jun 2020 11:14:44 -0700
+Message-ID: <ca1f5edf-77b8-bcc6-0e69-3ff8497782cb@gmail.com>
+Date: Tue, 9 Jun 2020 11:15:10 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200609175003.19793-7-nsaenzjulienne@suse.de>
+In-Reply-To: <20200609175003.19793-9-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_111449_155177_385E6916 
-X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-CacheID: sfid-20200609_111515_741024_2767AC19 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -105,9 +108,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: tim.gover@raspberrypi.org, mathias.nyman@linux.intel.com,
  linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- andy.shevchenko@gmail.com, lorenzo.pieralisi@arm.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- helgaas@kernel.org, linux-arm-kernel@lists.infradead.org
+ andy.shevchenko@gmail.com, lorenzo.pieralisi@arm.com, helgaas@kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -115,14 +117,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 6/9/2020 10:49 AM, Nicolas Saenz Julienne wrote:
-> This reverts commit c65822fef4adc0ba40c37a47337376ce75f7a7bc.
+On 6/9/2020 10:50 AM, Nicolas Saenz Julienne wrote:
+> This reverts commit fbbc5ff3f7f9f4cad562e530ae2cf5d8964fe6d3.
 > 
-> The initialization of Raspberry Pi 4's USB chip is now handled through a
-> reset controller. No need to directly call the firmware routine trough a
-> pci quirk.
+> The vl805 init routine has moved into drivers/reset/reset-raspberrypi.c
 > 
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
