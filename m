@@ -2,89 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 882CC1F3ABA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 14:35:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 738F91F3AC0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 14:37:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:In-Reply-To:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	 bh=IsQQlJB8G43J4vLAMPxoMnwFNBTCgAPV2cjpdiDyh5k=; b=HyPvf3bx/sTWD8Rr/EekcbCyO
-	tcQKRU9jKKTd7Iu1+hz3PkXmHXFn1mHh7jzZE/vlVn/5bISrj9kTevWkshY7tnXDOEsEPatgwbMKF
-	hHoVs91LxWfJfjwcj5J+3dXb1hrEkByx+iN88mP/WaVnUjujLKXpD698cK2BhQGCGu81+tJn6817I
-	F7hu5XKseqS4ldtLZNhYK96IcPvXuAFYO5arTtZdwaoJzqo5fNcdlqblrPxdl99VkDaRmPB1C9Lq8
-	3rlp+PBIMhnoOyLUd5NlEHnD4ui3+aDn8hmW+nAhYTI3DQY6AxcsOQhQW0shJw+1mj+ZgmmxhvXGf
-	aqUk7jRsQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=762TeisCvGsHCXB5tTADrZlxznitDLrVFzGK4ffI4Zo=; b=tWwKya9HFI6/t7
+	myanLqj9/1JuW+fV1CJys76G+3eB0xr2JKa+ayjx5gIhamEKD1AJy1flChvgGmaq2rBYRrByLhrR+
+	MqnUdaV2hk9MZKL3iBn2JPkB3FJ0fms0m3a7gybFXijx2jH5uTdvL9/xm2Fu1iSvY3pGhAd+Reekb
+	DJTGbSwI9HI5QYb7/0TQZsyRYcWvQvsz+XMshPuSQcyCP5IYt307u60QoOZxElx3A3+x/BRc3Rbof
+	1RvW30XX+dKwiLNoIW+IwnPxtuyrJSPnMMsj2nT+PLo3XQPwMI9SWJc6DQvDJ8v21bV/VkH36SEqa
+	/dGRVvnCA5rJaAbwPwMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jidTO-0003Gm-1H; Tue, 09 Jun 2020 12:35:22 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1jidVJ-0003cU-EV; Tue, 09 Jun 2020 12:37:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jidTG-0003GF-1F
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 12:35:15 +0000
-Received: by mail-qt1-x843.google.com with SMTP id z1so17415252qtn.2
+ id 1jidVC-0003c1-2f
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 12:37:15 +0000
+Received: from mail-oi1-f173.google.com (mail-oi1-f173.google.com
+ [209.85.167.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8C7672083E
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 05:35:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marek-ca.20150623.gappssmtp.com; s=20150623;
- h=to:from:in-reply-to:cc:subject:message-id:date:user-agent
- :mime-version:content-language:content-transfer-encoding;
- bh=MeSGjtf7ae/7P3bfWyApibNOTiaNr3viHuFx36eHAB8=;
- b=imwqMnsvria0XrGAIKQsk0Jz7LxxxsMtXDBQQRKdRz/zTJfR0C2SqLWVTrMv9CbcH2
- IvPvgD35f24gPdtqoWNmel0vy8rOv28sKNgNa3U8Q2Bb3do9NkajPgy5cCygT7Uz8bcI
- FEjTjq7MJSdGu/QJUksMxYwMdC6NQFCEx/8XaY1tuNqh8tNW5H98CHZhAH7VGisYUTEJ
- ebnF7y4NOUWNKUdW/qHjVgNwbnZsgHzqYozqytqeFnujKgy4iQbUyx65Tsj0mt4186S5
- 9m07MCZmx8i3+orl8xQx/H80WFojTsT3zZ0aDx7jsyaSndAtVLqiQ61ExhGewDLoQmO9
- sHsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:in-reply-to:cc:subject:message-id:date
- :user-agent:mime-version:content-language:content-transfer-encoding;
- bh=MeSGjtf7ae/7P3bfWyApibNOTiaNr3viHuFx36eHAB8=;
- b=sYnkjh/kTPSPzYQIc5HGKFfGTiZM5h4UwERAYEN309wgZ4brAzxj/IZgSXC1wO5Ynq
- 9QoFecS0iLfvP84Khori00CVG/u+5GyP4836OKDMgVbdHJkHv5CVfDJydzh/I+ryhK2c
- LbO34+bNdzF5HzKqmTDpQE09kY+DaY7wyHcAR+ROp4QC53TJhpfYShAhBejR3n29LYHO
- MWe1RXEZfdirilMOt1fnwZxJHMVXh806dXFd5Bspfip2z97sGuS4I/nNuIMVe+UiiMYD
- WJ9ldl8ufS0A0rq1OLv72kPOLRZNkRP709fMcZiScU2gj95e6peP0yzfZ+aZnxl1UP79
- nByA==
-X-Gm-Message-State: AOAM531hGl9v1g+EargnUM2W1gDYmtXMi6dVaS2M4yjdp3hqnkmZIRjc
- MF6cPM0j6K4hJ1hc4035cps/Xza07rM=
-X-Google-Smtp-Source: ABdhPJwyDe0qh5vy4c4qxEgkzx6WIoDTfeC/u0w+hpA5WWimPthJirlkec24NyewhLYvDNHGNE4YBQ==
-X-Received: by 2002:ac8:4b79:: with SMTP id g25mr28963542qts.29.1591706112265; 
- Tue, 09 Jun 2020 05:35:12 -0700 (PDT)
-Received: from [192.168.0.189] ([147.253.86.153])
- by smtp.gmail.com with ESMTPSA id m126sm8664050qke.99.2020.06.09.05.35.11
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Jun 2020 05:35:11 -0700 (PDT)
-To: Ard Biesheuvel <ardb@kernel.org>
-From: Jonathan Marek <jonathan@marek.ca>
-In-Reply-To: <CAMj1kXFS8Vvjfpb8HYzRvsaB0j7bs+2V4rXE8DzfNMJxsV3r0g@mail.gmail.com>
+ Tue,  9 Jun 2020 12:37:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591706233;
+ bh=6hn159fsqZIHh5PutlLrsHY0pDoWlQD6fsjd0lYTSEo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=wozfJ//sOWF296rlskOdPK9stB9oMRMHo56tg7n8yUcSG0IusUqEBuAG3JlCD3RVD
+ WVaeKCtNLwbVfeT+s7EngqNkpQmzwATIB/86wrXfeQSiMkVnwT6cZ5T8iKq/B0UQHW
+ yb5Fah6DC+sl8jpgfQFeZy/9Wlksu/MkCR0XBlaw=
+Received: by mail-oi1-f173.google.com with SMTP id a3so6576987oid.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jun 2020 05:37:13 -0700 (PDT)
+X-Gm-Message-State: AOAM5314ZpROvq871OwIJ6Gq4qZVXzRmHAjTzxntAwFmv+31ybMzrVe5
+ DhSJTujWStdQPG+vrXYEj/H3/+1oNO50Frz6uKk=
+X-Google-Smtp-Source: ABdhPJy0ly3ETuMrRD3rwgTiXo84h4KT81M8ZkpNfrjPC0CpKq6ZkTnq1W+weFmtnEwWARTqajWJ7zFDb/n3j+vDcY0=
+X-Received: by 2002:aca:6144:: with SMTP id v65mr3107434oib.33.1591706232951; 
+ Tue, 09 Jun 2020 05:37:12 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAMj1kXFS8Vvjfpb8HYzRvsaB0j7bs+2V4rXE8DzfNMJxsV3r0g@mail.gmail.com>
+ <24c1529e-1c8e-6912-965a-f4b921e09d79@marek.ca>
+In-Reply-To: <24c1529e-1c8e-6912-965a-f4b921e09d79@marek.ca>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Tue, 9 Jun 2020 14:37:01 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXF-eLc0RWmjfUYAk9BJ15-A5FwnPWo0nXoyqFQa3A62Mw@mail.gmail.com>
+Message-ID: <CAMj1kXF-eLc0RWmjfUYAk9BJ15-A5FwnPWo0nXoyqFQa3A62Mw@mail.gmail.com>
 Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for removing
  it entirely
-Message-ID: <24c1529e-1c8e-6912-965a-f4b921e09d79@marek.ca>
-Date: Tue, 9 Jun 2020 08:35:33 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-Content-Language: en-US
+To: Jonathan Marek <jonathan@marek.ca>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_053514_145155_B13793C7 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200609_053714_146264_8539FDBE 
+X-CRM114-Status: GOOD (  11.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,15 +90,22 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, 9 Jun 2020 at 14:35, Jonathan Marek <jonathan@marek.ca> wrote:
+>
+> Hi,
+>
+> Just want to add that this patch also broke booting my arm64 kernel
+> (CONFIG_RANDOMIZE_BASE=n). This is on a recent qualcomm board.
 
-Just want to add that this patch also broke booting my arm64 kernel 
-(CONFIG_RANDOMIZE_BASE=n). This is on a recent qualcomm board.
+Which bootloader does it use?
+
+I take it reverting the patch and enabling
+CONFIG_RANDOMIZE_TEXT_OFFSET makes it fail as well?
 
 _______________________________________________
 linux-arm-kernel mailing list
