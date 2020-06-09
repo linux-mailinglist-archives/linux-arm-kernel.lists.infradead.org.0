@@ -2,52 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90FA41F4343
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:52:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 738EF1F43A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:56:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NBHGwJFZcmQA32z0mv3mZoUuxFrYxtbAsisb16+tuxI=; b=A037JRXZyfJnO8
-	+Yj3nwD6FBGLetMQmmlarc6S3MeHC5QoyRbVfc5+UHwapXu7RNAGaaelidAiyTM+wxbbr1BBhG2+h
-	50jzVqNjpW4W1J14Z2Il7cES4OpIoUf8IbcaOWl6YRAvgT1rvT9JBYCzfv/rXXaGWk1rqI7uV7JzE
-	gIjQeRwU6Tmpq5EvuwCKZg5LlxAHBn8Aaq6ddadPRRENVoP35ptUY2DVv6wCQuVzazbJbGPqI3umB
-	5Tjyf7vNIbqqWQZuzb/LTtUJDZfEPQXkMo/WX0UG+CKGOTX5twEczpXZDxIERN+1vabOTV/oG83Oo
-	Caor9ctT0zjD2lZ3lpsg==;
+	List-Owner; bh=OZ9c2EzVJyCfAYzqsZbcmySFKSDYwYqYI41N0xb4ffE=; b=bP1TBNFussUon4
+	6tWcFwG3jrAvbpEE5WecYq6jEQOmPSyF9fZv7hc1NEH1uXV/Sojeje5ppvxBPHyrk8op6BnyaTirp
+	QsbuDqIniTL6CC9AQalcAaf8ecMeQ7cEs9S9p+19C6/CFoC7iTXPDHDvUj1QINPBf6ZVO/4bm27FL
+	vliL86aanY7K7Ec2HhxMGJpxGBIEHGnd+dcxx77YwzLWGBrnzLZzZSbtRip1C0CoQRb43AIABNbrQ
+	w/jjTVQmetB0w51x4u/E6yzjgcUKRZNg3pwkKmH2wla0KlimDt9XNFWgZVEMxBxha4JGi02aKAKOz
+	D0WS0iRNp68gLrS59TXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiiQ0-0002r5-AH; Tue, 09 Jun 2020 17:52:12 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jiiTe-0008LP-Hx; Tue, 09 Jun 2020 17:55:58 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiiMb-0006Ol-01; Tue, 09 Jun 2020 17:48:42 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id E95962A0752
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Subject: [PATCH v9 08/11] drm: stm: dw-mipi-dsi: let the bridge handle the HW
- version check
-Date: Tue,  9 Jun 2020 20:49:56 +0300
-Message-Id: <20200609174959.955926-9-adrian.ratiu@collabora.com>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20200609174959.955926-1-adrian.ratiu@collabora.com>
-References: <20200609174959.955926-1-adrian.ratiu@collabora.com>
+ id 1jiiOF-0001fd-Qh; Tue, 09 Jun 2020 17:50:28 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 7E5A5B198;
+ Tue,  9 Jun 2020 17:50:25 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
+ p.zabel@pengutronix.de, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: [PATCH v2 4/9] ARM: dts: bcm2711: Add reset controller to xHCI node
+Date: Tue,  9 Jun 2020 19:49:57 +0200
+Message-Id: <20200609175003.19793-5-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200609175003.19793-1-nsaenzjulienne@suse.de>
+References: <20200609175003.19793-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_104841_184965_CCF5D3F1 
-X-CRM114-Status: GOOD (  13.26  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200609_105024_048551_3B4DDD97 
+X-CRM114-Status: GOOD (  10.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,99 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Philippe CORNU <philippe.cornu@st.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Yannick FERTRE <yannick.fertre@st.com>,
- Andrzej Hajda <a.hajda@samsung.com>, linux-imx@nxp.com, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- Emil Velikov <emil.velikov@collabora.com>
+Cc: devicetree@vger.kernel.org, tim.gover@raspberrypi.org,
+ mathias.nyman@linux.intel.com, linux-pci@vger.kernel.org,
+ linux-usb@vger.kernel.org, andy.shevchenko@gmail.com,
+ lorenzo.pieralisi@arm.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, helgaas@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The stm mipi-dsi platform driver added a version test in
-commit fa6251a747b7 ("drm/stm: dsi: check hardware version")
-so that HW revisions other than v1.3x get rejected. The rockchip
-driver had no such check and just assumed register layouts are
-v1.3x compatible.
+The chip is hardwired to the board's PCIe bus and needs to be properly
+setup trough a firmware routine after a PCI fundamental reset. Pass the
+reset controller phandle that takes care of triggering the
+initialization to the relevant PCI device.
 
-Having such tests was a good idea because only v130/v131 layouts
-were supported at the time, however since adding multiple layout
-support in the bridge, the version is automatically checked for
-all drivers, compatible layouts get picked and unsupported HW is
-automatically rejected by the bridge, so there's no use keeping
-the test in the stm driver.
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-The main reason prompting this change is that the stm driver
-test immediately disabled the peripheral clock after reading
-the version, making the bridge read version 0x0 immediately
-after in its own probe(), so we move the clock disabling after
-the bridge does the version test.
-
-Tested on STM32F769 and STM32MP1.
-
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: Emil Velikov <emil.velikov@collabora.com>
-Reported-by: Adrian Pop <pop.adrian61@gmail.com>
-Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
 ---
-New in v6.
----
- drivers/gpu/drm/stm/dw_mipi_dsi-stm.c | 16 +++++++---------
- 1 file changed, 7 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-index 2e1f2664495d0..45f67f8a5f6c8 100644
---- a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-+++ b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-@@ -396,26 +396,19 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
- 		goto err_dsi_probe;
- 	}
+Changes since v1:
+ - Update to match new binding
+
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+index 0cef95058fb0..e74ca0c86137 100644
+--- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
++++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+@@ -207,6 +207,13 @@ phy1: ethernet-phy@1 {
+ 	};
+ };
  
-+	/* enable pclk so MMIO register values can be read, else reads == 0x0 */
- 	ret = clk_prepare_enable(pclk);
- 	if (ret) {
- 		DRM_ERROR("%s: Failed to enable peripheral clk\n", __func__);
- 		goto err_dsi_probe;
- 	}
- 
--	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
--	clk_disable_unprepare(pclk);
--
--	if (dsi->hw_version != HWVER_130 && dsi->hw_version != HWVER_131) {
--		ret = -ENODEV;
--		DRM_ERROR("bad dsi hardware version\n");
--		goto err_dsi_probe;
--	}
--
- 	dw_mipi_dsi_stm_plat_data.base = dsi->base;
- 	dw_mipi_dsi_stm_plat_data.priv_data = dsi;
- 
- 	platform_set_drvdata(pdev, dsi);
- 
-+	/* setup the bridge, this will also access MMIO registers via regmap */
- 	dsi->dsi = dw_mipi_dsi_probe(pdev, &dw_mipi_dsi_stm_plat_data);
- 	if (IS_ERR(dsi->dsi)) {
- 		ret = PTR_ERR(dsi->dsi);
-@@ -423,6 +416,11 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
- 		goto err_dsi_probe;
- 	}
- 
-+	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
++&pcie0 {
++	usb@1,0 {
++		reg = <0 0 0 0 0>;
++		resets = <&reset 0>;
++	};
++};
 +
-+	/* initial MMIO config done, disable clk to save power */
-+	clk_disable_unprepare(pclk);
-+
- 	return 0;
- 
- err_dsi_probe:
+ /* uart0 communicates with the BT module */
+ &uart0 {
+ 	pinctrl-names = "default";
 -- 
-2.27.0
+2.26.2
 
 
 _______________________________________________
