@@ -2,75 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B17161F411B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 18:39:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4C3E1F415A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 18:49:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u19IA8DOidW6Cj+TPf1VFNBIUOgBg3ZGgPvZ1JlYLEM=; b=NSy8MO6MhDkVhY
-	zUdqrE1Bq74J5kLmxbJAbGcMQiz6YFWiFsPsc5L9D/FrgcQM0XQ7krKFGG1l0WwmWe/vEtYqYv8FE
-	IwRE9ja8ZUjLt3OvoRamPqE52aQvv82jM5j8Kh15R+aMO6tsFt2VSQF/yLH/blq/Naszf885+dcPc
-	CWchCiNvVyFyxJfjwJ/65nErQFHcbZzdL7wAa+d/h+5iwfIKICjiTaL+sI4DEbMO0xCn9B7ka4WqA
-	Ja20BWcbBCR9tstvpqsJu5+1v1+qkL823tcgYtnqGeP+9iqR8Zqzc1KnYKxnd52vacuL+jYszAt5w
-	YG0IVSRiaIPODtZl00Ug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=BGsisdBu6NnSvU3QoWlF+ggJe8dnjVEWxiALuLcfbBU=; b=p6/iXswMVPon3y
+	UsDEOseFdbCA2lnuekFgqH1X1LXHYUIFyW27N7oTSOs/kfqUmEEbihCtcoCVL1QTKAg2SkS0qNHho
+	lzycxfl1SvkjgtuBPD82uTTij0PeQTmBCokO7DM4oLJgHHFNr16gfMalERuOVzDklA2udkYR773ck
+	ZupXPhCwmj8f+QaE3JbLgiqzszVCCyO644KEvwupIrnK3MbMqhKWf+DEFC6zJ17XRH9dd/1vpqH4t
+	D3rqiHES9ts5Gstd230FlAN0EtgvZxIe0K3589bmtICNPqsjMZDw2/GQN7xVvwDnqG9Z+MOuQfEYP
+	Crr6VALAhtGoUZo26MRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jihHg-0002IN-E3; Tue, 09 Jun 2020 16:39:32 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1jihRT-0008Kx-1a; Tue, 09 Jun 2020 16:49:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jihHU-0002GG-GX
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 16:39:24 +0000
-Received: by mail-ot1-x342.google.com with SMTP id 97so5763606otg.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 09:39:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=v7mrV9A8x5gROdoWHb4mBMuLQK66GuFHbbDU9aAaIY4=;
- b=UxlslCOp5lHCML8zHfSxii0/aaaTdlNzCPYYCv2xzb4wWEZtWsF+k5/n8Osgdx0hJy
- BfJRocyU0Eo8PTSI7zAl6DbWAZBVkW4kXvOXpX/QENIqRqsf2TPNP9lYxPtdLLVWVtAE
- ZrBxyXn9wMMr4aKFJuJRt1jw1DUCO9QEpG8AY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=v7mrV9A8x5gROdoWHb4mBMuLQK66GuFHbbDU9aAaIY4=;
- b=lrr9m3c7gN/B/TTnY+VATnSsatPDQGHBaDVO4ofdp0ZlWNEynxL/uc16TMKkyXd03d
- oo6rAAUlRDizhrwyJUErHzKNHWj5gAbhiO8Dxz4JD42i2UdUJjIHZHqkJKv1cX3k3PNY
- RuBSoFPknBC2UaN1wD9ORhM+FIkRe/jGsjSoAZXcNNKXz7oie2SCSGIpMeqBznunBgT3
- dXg3g6oGJNSEw7lExOhNTlpuAbMyoZeYb0U4RsVQU3rL15u/9mJWJe9bhd3mJv8MuvNW
- aJPlqe5hWe9RD1LyNE9LfbSgsUHf00LKc/Mub7o7BVAOM+CHQhp1kVuW/SOLCCKVOsxt
- QccQ==
-X-Gm-Message-State: AOAM533u21uhK6xxpW4n96i7+BUzMOluu2Q041IqfEOAf8JzYhgUHr0B
- 8NVMn4N64FWpE251a6q/CIDuYzjaj57uA9uro8v8yA==
-X-Google-Smtp-Source: ABdhPJyzEiiGK0RgxvAB9nvhNz9jMbudR88GwxzWaWaK//yF7MA0SnaEkI/Owvhift8/7RXSbhpKtNM5VXKxf/ldzwA=
-X-Received: by 2002:a9d:768a:: with SMTP id j10mr23941760otl.188.1591720759321; 
- Tue, 09 Jun 2020 09:39:19 -0700 (PDT)
+ id 1jihRJ-0008KR-Go
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 16:49:30 +0000
+Received: from localhost (mobile-166-170-222-206.mycingular.net
+ [166.170.222.206])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3D1D420737;
+ Tue,  9 Jun 2020 16:49:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591721368;
+ bh=5Q7RvyofmbZbrB/I38g1tWmxg8QS/w1w0oFGJk1TAAE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=dvG4keriVYERu7ME7jmTxlggF24dPHuT8ZHwsHgyeBv8aHb5TopY1KdfJVDndSoXl
+ RxQiw2j9xiinR8ke3p9Ltba3X4AhyTf4XbSb9RwT2AqKWdKTjRg+cV7DgApD257z37
+ fAvyNM3ngOAOHRMuIGrK7cGIhRs7rGlN9Hoz8zWA=
+Date: Tue, 9 Jun 2020 11:49:26 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
+Message-ID: <20200609164926.GA1452092@bjorn-Precision-5520>
 MIME-Version: 1.0
-References: <20200609162700.953260-1-adrian.ratiu@collabora.com>
- <20200609162700.953260-12-adrian.ratiu@collabora.com>
-In-Reply-To: <20200609162700.953260-12-adrian.ratiu@collabora.com>
-From: Daniel Vetter <daniel.vetter@ffwll.ch>
-Date: Tue, 9 Jun 2020 18:39:08 +0200
-Message-ID: <CAKMK7uGLQCj_oJcbXynt_1bmwBQy6ncUgc49DPejyfCtb68e_g@mail.gmail.com>
-Subject: Re: [PATCH v9 11/11] Documentation: gpu: todo: Add dw-mipi-dsi
- consolidation plan
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a38bhE_VO_eVcsfsGKgED=gmSEntQmrhwbLkeA6Si0qaw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_093922_333805_29B6EB40 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200609_094929_597939_F02101CE 
+X-CRM114-Status: GOOD (  27.44  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,6 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,90 +75,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Andrzej Hajda <a.hajda@samsung.com>, Jonas Karlman <jonas@kwiboo.se>,
- Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jean-philippe <jean-philippe@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ linux-pci <linux-pci@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
+ kenneth-lee-2012@foxmail.com,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Wangzhou <wangzhou1@hisilicon.com>,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Zhangfei Gao <zhangfei.gao@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 9, 2020 at 6:25 PM Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
->
-> This documents the longer-term plan to cleanup the dw-mipi-dsi bridge
-> based drivers after the regmap refactor and i.MX6 driver have landed.
->
-> The goal is to get the entire bridge logic in one place and continue
-> the refactorings under the drm/bridge tree.
->
-> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-> Cc: Boris Brezillon <boris.brezillon@collabora.com>
-> Cc: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Daniel Vetter <daniel.vetter@ffwll.ch>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
-
-This cc's the world, but not dri-devel. Can you pls resubmit with that added?
-
-Thanks, Daniel
-
-> ---
->  Documentation/gpu/todo.rst | 25 +++++++++++++++++++++++++
->  1 file changed, 25 insertions(+)
->
-> diff --git a/Documentation/gpu/todo.rst b/Documentation/gpu/todo.rst
-> index 658b52f7ffc6c..2b142980a4b16 100644
-> --- a/Documentation/gpu/todo.rst
-> +++ b/Documentation/gpu/todo.rst
-> @@ -548,6 +548,31 @@ See drivers/gpu/drm/amd/display/TODO for tasks.
->
->  Contact: Harry Wentland, Alex Deucher
->
-> +Reorganize dw-mipi-dsi bridge-based host-controller drivers
-> +-----------------------------------------------------------
-> +
-> +The Synopsys DW MIPI DSI bridge is used by a number of SoC platform drivers
-> +(STM, Rockchip, i.MX) which don't cleanly encapsulate their bridge logic which
-> +gets split between the Synopsys bridge (drm/bridge/synopsys/dw-mipi-dsi.c) and
-> +platform drivers like drm/imx/dw_mipi_dsi-imx6.c by passing around the bridge
-> +configuration regmap, creating new bridges / daisy chaining in platform drivers,
-> +duplicating encoder creation, having too much encoder logic instead of using the
-> +simple encoder interface and so on.
-> +
-> +The goal of this rework is to make the dw-mipi-dsi driver a better encapsulated
-> +bridge by moving all bridge-related logic under drm/bridge, including the SoC
-> +bindings which chain to the core Synopsys code under drm/bridge/dw-mipi-dsi/
-> +from which they can be further consolidated and cleaned up.
-> +
-> +If this goal proves to be impossible then drm_bridge might not be the correct
-> +abstraction for these host controllers and unifying their logic into a helper
-> +library encapsulating a drm_encoder might be more desirable, in other words to
-> +move away from drm_bridge entirely.
-> +
-> +Contact: Adrian Ratiu, Daniel Vetter, Laurent Pinchart
-> +
-> +Level: Intermediate
-> +
->  Bootsplash
->  ==========
->
-> --
-> 2.27.0
->
-
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBKdW4gMDksIDIwMjAgYXQgMTE6MTU6MDZBTSArMDIwMCwgQXJuZCBCZXJnbWFubiB3
+cm90ZToKPiBPbiBUdWUsIEp1biA5LCAyMDIwIGF0IDY6MDIgQU0gWmhhbmdmZWkgR2FvIDx6aGFu
+Z2ZlaS5nYW9AbGluYXJvLm9yZz4gd3JvdGU6Cj4gPiBPbiAyMDIwLzYvOSDkuIrljYgxMjo0MSwg
+Qmpvcm4gSGVsZ2FhcyB3cm90ZToKPiA+ID4gT24gTW9uLCBKdW4gMDgsIDIwMjAgYXQgMTA6NTQ6
+MTVBTSArMDgwMCwgWmhhbmdmZWkgR2FvIHdyb3RlOgo+ID4gPj4gT24gMjAyMC82LzYg5LiK5Y2I
+NzoxOSwgQmpvcm4gSGVsZ2FhcyB3cm90ZToKPiA+ID4+Pj4gKysrIGIvZHJpdmVycy9pb21tdS9p
+b21tdS5jCj4gPiA+Pj4+IEBAIC0yNDE4LDYgKzI0MTgsMTAgQEAgaW50IGlvbW11X2Z3c3BlY19p
+bml0KHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0Cj4gPiA+Pj4+IGZ3bm9kZV9oYW5kbGUgKmlv
+bW11X2Z3bm9kZSwKPiA+ID4+Pj4gICAgICAgICAgIGZ3c3BlYy0+aW9tbXVfZndub2RlID0gaW9t
+bXVfZndub2RlOwo+ID4gPj4+PiAgICAgICAgICAgZndzcGVjLT5vcHMgPSBvcHM7Cj4gPiA+Pj4+
+ICAgICAgICAgICBkZXZfaW9tbXVfZndzcGVjX3NldChkZXYsIGZ3c3BlYyk7Cj4gPiA+Pj4+ICsK
+PiA+ID4+Pj4gKyAgICAgICBpZiAoZGV2X2lzX3BjaShkZXYpKQo+ID4gPj4+PiArICAgICAgICAg
+ICAgICAgcGNpX2ZpeHVwX2RldmljZShwY2lfZml4dXBfZmluYWwsIHRvX3BjaV9kZXYoZGV2KSk7
+Cj4gPiA+Pj4+ICsKPiA+ID4+Pj4KPiA+ID4+Pj4gVGhlbiBwY2lfZml4dXBfZmluYWwgd2lsbCBi
+ZSBjYWxsZWQgdHdpY2UsIHRoZSBmaXJzdCBpbiBwY2lfYnVzX2FkZF9kZXZpY2UuCj4gPiA+Pj4+
+IEhlcmUgaW4gaW9tbXVfZndzcGVjX2luaXQgaXMgdGhlIHNlY29uZCB0aW1lLCBzcGVjaWZpY2Fs
+bHkgZm9yIGlvbW11X2Z3c3BlYy4KPiA+ID4+Pj4gV2lsbCBzZW5kIHRoaXMgd2hlbiA1LjgtcmMx
+IGlzIG9wZW4uCj4gPiA+Pj4gV2FpdCwgdGhpcyB3aG9sZSBmaXh1cCBhcHByb2FjaCBzZWVtcyB3
+cm9uZyB0byBtZS4gIE5vIG1hdHRlciBob3cgeW91Cj4gPiA+Pj4gZG8gdGhlIGZpeHVwLCBpdCdz
+IHN0aWxsIGEgZml4dXAsIHdoaWNoIG1lYW5zIGl0IHJlcXVpcmVzIG9uZ29pbmcKPiA+ID4+PiBt
+YWludGVuYW5jZS4gIFN1cmVseSB3ZSBkb24ndCB3YW50IHRvIGhhdmUgdG8gYWRkIHRoZSBWZW5k
+b3IvRGV2aWNlIElECj4gPiA+Pj4gZm9yIGV2ZXJ5IG5ldyBBTUJBIGRldmljZSB0aGF0IGNvbWVz
+IGFsb25nLCBkbyB3ZT8KPiA+ID4+Pgo+ID4gPj4gSGVyZSB0aGUgZmFrZSBwY2kgZGV2aWNlIGhh
+cyBzdGFuZGFyZCBQQ0kgY2ZnIHNwYWNlLCBidXQgcGh5c2ljYWwKPiA+ID4+IGltcGxlbWVudGF0
+aW9uIGlzIGJhc2Ugb24gQU1CQQo+ID4gPj4gVGhleSBjYW4gcHJvdmlkZSBwYXNpZCBmZWF0dXJl
+Lgo+ID4gPj4gSG93ZXZlciwKPiA+ID4+IDEsIGRvZXMgbm90IHN1cHBvcnQgdGxwIHNpbmNlIHRo
+ZXkgYXJlIG5vdCByZWFsIHBjaSBkZXZpY2VzLgo+ID4gPj4gMi4gZG9lcyBub3Qgc3VwcG9ydCBw
+cmksIGluc3RlYWQgc3VwcG9ydCBzdGFsbCAocHJvdmlkZWQgYnkgc21tdSkKPiA+ID4+IEFuZCBz
+dGFsbCBpcyBub3QgYSBwY2kgZmVhdHVyZSwgc28gaXQgaXMgbm90IGRlc2NyaWJlZCBpbiBzdHJ1
+Y3QgcGNpX2RldiwKPiA+ID4+IGJ1dCBpbiBzdHJ1Y3QgaW9tbXVfZndzcGVjLgo+ID4gPj4gU28g
+d2UgdXNlIHRoaXMgZml4dXAgdG8gdGVsbCBwY2kgc3lzdGVtIHRoYXQgdGhlIGRldmljZXMgY2Fu
+IHN1cHBvcnQgc3RhbGwsCj4gPiA+PiBhbmQgaGVyZWJ5IHN1cHBvcnQgcGFzaWQuCj4gPiA+IFRo
+aXMgZGlkIG5vdCBhbnN3ZXIgbXkgcXVlc3Rpb24uICBBcmUgeW91IHByb3Bvc2luZyB0aGF0IHdl
+IHVwZGF0ZSBhCj4gPiA+IHF1aXJrIGV2ZXJ5IHRpbWUgYSBuZXcgQU1CQSBkZXZpY2UgaXMgcmVs
+ZWFzZWQ/ICBJIGRvbid0IHRoaW5rIHRoYXQKPiA+ID4gd291bGQgYmUgYSBnb29kIG1vZGVsLgo+
+ID4KPiA+IFllcywgeW91IGFyZSByaWdodCwgYnV0IHdlIGRvIG5vdCBoYXZlIGFueSBiZXR0ZXIg
+aWRlYSB5ZXQuCj4gPiBDdXJyZW50bHkgd2UgaGF2ZSB0aHJlZSBmYWtlIHBjaSBkZXZpY2VzLCB3
+aGljaCBzdXBwb3J0IHN0YWxsIGFuZCBwYXNpZC4KPiA+IFdlIGhhdmUgdG8gbGV0IHBjaSBzeXN0
+ZW0ga25vdyB0aGUgZGV2aWNlIGNhbiBzdXBwb3J0IHBhc2lkLCBiZWNhdXNlIG9mCj4gPiBzdGFs
+bCBmZWF0dXJlLCB0aG91Z2ggbm90IHN1cHBvcnQgcHJpLgo+ID4gRG8geW91IGhhdmUgYW55IG90
+aGVyIGlkZWFzPwo+IAo+IEl0IHNvdW5kcyBsaWtlIHRoZSBiZXN0IHdheSB3b3VsZCBiZSB0byBh
+bGxvY2F0ZSBhIFBDSSBjYXBhYmlsaXR5IGZvciBpdCwgc28KPiBkZXRlY3Rpb24gY2FuIGJlIGRv
+bmUgdGhyb3VnaCBjb25maWcgc3BhY2UsIGF0IGxlYXN0IGluIGZ1dHVyZSBkZXZpY2VzLAo+IG9y
+IHBvc3NpYmx5IGFmdGVyIGEgZmlybXdhcmUgdXBkYXRlIGlmIHRoZSBjb25maWcgc3BhY2UgaW4g
+eW91ciBzeXN0ZW0KPiBpcyBjb250cm9sbGVkIGJ5IGZpcm13YXJlIHNvbWV3aGVyZS4gIE9uY2Ug
+dGhlcmUgaXMgYSBwcm9wZXIgbWVjaGFuaXNtCj4gdG8gZG8gdGhpcywgdXNpbmcgZml4dXBzIHRv
+IGRldGVjdCB0aGUgZWFybHkgZGV2aWNlcyB0aGF0IGRvbid0IHVzZSB0aGF0Cj4gc2hvdWxkIGJl
+IHVuY29udHJvdmVyc2lhbC4gSSBoYXZlIG5vIGlkZWEgd2hhdCB0aGUgcHJvY2VzcyBvciB0aW1l
+bGluZQo+IGlzIHRvIGFkZCBuZXcgY2FwYWJpbGl0aWVzIGludG8gdGhlIFBDSWUgc3BlY2lmaWNh
+dGlvbiwgb3IgaWYgdGhpcyBvbmUKPiB3b3VsZCBiZSBhY2NlcHRhYmxlIHRvIHRoZSBQQ0kgU0lH
+IGF0IGFsbC4KClRoYXQgc291bmRzIGxpa2UgYSBwb3NzaWJpbGl0eS4gIFRoZSBzcGVjIGFscmVh
+ZHkgZGVmaW5lcyBhClZlbmRvci1TcGVjaWZpYyBFeHRlbmRlZCBDYXBhYmlsaXR5IChQQ0llIHI1
+LjAsIHNlYyA3LjkuNSkgdGhhdCBtaWdodApiZSBhIGNhbmRpZGF0ZS4KCj4gSWYgZGV0ZWN0aW9u
+IGNhbm5vdCBiZSBkb25lIHRocm91Z2ggUENJIGNvbmZpZyBzcGFjZSwgdGhlIG5leHQgYmVzdAo+
+IGFsdGVybmF0aXZlIGlzIHRvIHBhc3MgYXV4aWxpYXJ5IGRhdGEgdGhyb3VnaCBmaXJtd2FyZS4g
+T24gRFQgYmFzZWQKPiBtYWNoaW5lcywgeW91IGNhbiBsaXN0IG5vbi1ob3RwbHVnZ2FibGUgUENJ
+ZSBkZXZpY2VzIGFuZCBhZGQgY3VzdG9tCj4gcHJvcGVydGllcyB0aGF0IGNvdWxkIGJlIHJlYWQg
+ZHVyaW5nIGRldmljZSBlbnVtZXJhdGlvbi4gSSBhc3N1bWUKPiBBQ1BJIGhhcyBzb21ldGhpbmcg
+c2ltaWxhciwgYnV0IEkgaGF2ZSBub3QgZG9uZSB0aGF0LgoKQUNQSSBoYXMgX0RTTSAoQUNQSSB2
+Ni4zLCBzZWMgOS4xLjEpLCB3aGljaCBtaWdodCBiZSBhIGNhbmRpZGF0ZS4gIEkKbGlrZSB0aGlz
+IGJldHRlciB0aGFuIGEgUENJIGNhcGFiaWxpdHkgYmVjYXVzZSB0aGUgcHJvcGVydHkgeW91IG5l
+ZWQKdG8gZXhwb3NlIGlzIG5vdCBhIFBDSSBwcm9wZXJ0eS4KCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
