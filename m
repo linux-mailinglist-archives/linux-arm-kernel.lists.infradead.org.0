@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1A9E1F4824
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 22:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B4451F4830
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 22:35:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2f5UXoGuiHJVcxyE7zZaQqdQ5dhsRJBn68+HP+crZCw=; b=P7WS2x4ESezWkf
-	83WTX7TeRfzSAx5RJC5hsSDDpgfz3KoKPg6Evd7nXzX90uml8ooRsii/kM9oS1sMQPoF1vTuNkvrM
-	o/o3FJAyLzoIgqHkts1xBp6CWX9ncr7fdl2EyByQDpNXX582UZaNiGz34IGp3u+mAMN5l+ljTRUfE
-	F+YdON6W4EccwdNXWX0eEBoTNqChznHs9lfjqxykBtWEMTtDrllM3jRh9LTRFPx45PqUmzSH2/aMl
-	9DJUoa5xbQhfycBtSOw8bJ9r1iH3dXHuhHP4Eof32RGXVk+0FBAvd7Dxdgp/Fo3ZBSAWlNNz1+MR7
-	ZT3UoRD3QT+USyWkeWGQ==;
+	List-Owner; bh=l+qsva7xKqv61t2USEO5ANNgXfBZaz1EqSfBNcTrBIY=; b=ILL6a26XfrpbXF
+	2UiBjlSvtp7UA3Bz2OseOzhF9H1zPTC/prX7T5rapl7pFNBes4vBHGUULzLksG7RKlk5JZPMQ0DX8
+	xUNW7E80M+bbKWS1sHv35Sz58BsMmgZ23I5eccOpY/gno0890mLGP2vYl/HRtoshIL/gqme95BHvJ
+	fuQCb8mFJrd/2C/zRv3C2TMIPr0n7/UjDgnswWvOYjyjJskTfHT9FVQdqNWlHedhYlSpONfgbHkCR
+	jgMezdjxq8cVWy9fLo3X3Z4qXB9vN9a6m4f53vwYYVfiKR3fSL7SsfIwYJmu3WZMHaLoEDHLBXNv5
+	05zzxto5zktvIlF6AqRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jikuJ-0000zt-1q; Tue, 09 Jun 2020 20:31:39 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jikuA-0000zP-W0
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 20:31:32 +0000
-Received: by mail-il1-f194.google.com with SMTP id g3so21612219ilq.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 13:31:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=xpHxwxJyEi+QmAQh0g22EZ0JVBelN+B/lL6QJi2kkls=;
- b=sOUZY0sOU/Nq/nzzGAV8AY/Ilga9GlbqYLW/4HPP/oh242ep14CVrTkhspq2sX//7x
- 6dqWFltWoT/oK6dB4Ouj3QMPq1uKtKa+gaZuXM8+8uqZVpZy2Dd8fGFoGjFh/sNmuOUS
- q3gdhYywP4iraQpjCzQhJb/fc5qiezwIZjgUFW8OyJU281Tc7ZfhQkrm05Qis7I1hNSc
- FNW6N3V1r3Fg9D7r/7tawDqpEgNKlRruFD0yBtidKhAeC55kwi69buI+HwTyzZoNa/lW
- 1Q4AbyF6JYikflWwsb0bcUvS7irgYcGcFUGmexrWMFsizlu4IpFw9XVneGwf5jVWjLBT
- Z6RA==
-X-Gm-Message-State: AOAM530JiauZweHP2EgFaPpONhoa99gDLjfNR2JXFbcmXgfqLD3VRM/n
- klu9wWC0wqLJ9jFfhC+EaA==
-X-Google-Smtp-Source: ABdhPJyDdn+hAQ2PPSVGXZ5rLVbU0/5fzDWB5qz782naSnxuAHkG5eN2ZKhBcbafUZj+J+E2dFQVRg==
-X-Received: by 2002:a92:489b:: with SMTP id j27mr28987060ilg.295.1591734690074; 
- Tue, 09 Jun 2020 13:31:30 -0700 (PDT)
-Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id r1sm9823178iln.77.2020.06.09.13.31.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 09 Jun 2020 13:31:29 -0700 (PDT)
-Received: (nullmailer pid 1404522 invoked by uid 1000);
- Tue, 09 Jun 2020 20:31:28 -0000
-Date: Tue, 9 Jun 2020 14:31:28 -0600
-From: Rob Herring <robh@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH v4 1/9] dt-bindings: atmel-tcb: convert bindings to
- json-schema
-Message-ID: <20200609203128.GA1404472@bogus>
-References: <20200529232749.299627-1-alexandre.belloni@bootlin.com>
- <20200529232749.299627-2-alexandre.belloni@bootlin.com>
+	id 1jikxy-0003w7-MK; Tue, 09 Jun 2020 20:35:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jikxn-0003LR-Sj
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 20:35:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 821121F1;
+ Tue,  9 Jun 2020 13:35:07 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9C8163F73D;
+ Tue,  9 Jun 2020 13:35:05 -0700 (PDT)
+Date: Tue, 9 Jun 2020 21:35:03 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH v2] arm64: vdso32: add CONFIG_THUMB2_COMPAT_VDSO
+Message-ID: <20200609203502.GA21214@gaia>
+References: <20200528072031.GA22156@willie-the-truck>
+ <20200608205711.109418-1-ndesaulniers@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200529232749.299627-2-alexandre.belloni@bootlin.com>
+In-Reply-To: <20200608205711.109418-1-ndesaulniers@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_133131_025865_9356F4D1 
-X-CRM114-Status: GOOD (  10.17  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200609_133515_996203_C11885C6 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.194 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,36 +63,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kamel.bouhara@bootlin.com, devicetree@vger.kernel.org,
- Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Masahiro Yamada <masahiroy@kernel.org>,
+ linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
+ Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 30 May 2020 01:27:41 +0200, Alexandre Belloni wrote:
-> Convert Atmel Timer Counter Blocks bindings to DT schema format using
-> json-schema.
-> 
-> Also move it out of mfd as it is not and has never been related to mfd.
-> 
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> ---
-> Changes in v4:
->  - use oneOf to describe possible clock-names list
-> 
->  .../devicetree/bindings/mfd/atmel-tcb.txt     |  56 --------
->  .../soc/microchip/atmel,at91rm9200-tcb.yaml   | 131 ++++++++++++++++++
->  2 files changed, 131 insertions(+), 56 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/mfd/atmel-tcb.txt
->  create mode 100644 Documentation/devicetree/bindings/soc/microchip/atmel,at91rm9200-tcb.yaml
-> 
+On Mon, Jun 08, 2020 at 01:57:08PM -0700, Nick Desaulniers wrote:
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 7f9d38444d6d..fe9e6b231cac 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1299,6 +1299,14 @@ config COMPAT_VDSO
+>  	  You must have a 32-bit build of glibc 2.22 or later for programs
+>  	  to seamlessly take advantage of this.
+>  
+> +config THUMB2_COMPAT_VDSO
+> +	bool "Compile the vDSO in THUMB2 mode"
+> +	depends on COMPAT_VDSO
+> +	default y
+> +	help
+> +	  Compile the compat vDSO with -mthumb -fomit-frame-pointer if y, otherwise
+> +	  as -marm.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Now that we understood the issue (I think), do we actually need this
+choice? Why not going for -mthumb -fomit-frame-pointer always for the
+compat vdso?
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
