@@ -2,90 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 759631F3A39
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:58:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C0A21F3A49
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 14:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7V5JwpizStS72zZVlCmxixS5OkeX3qptoJ9rQ9Py8fU=; b=fTVtgWwkaxWHc9
-	T8fQxC3IcdFTLA6reb3d9Fi485zeHFoSvw+t9FTb1YyrnuxWHdVkQ81HQjbblN6HfV858i4QD+4qV
-	NG9TR5WJ+gJ5hwXcL3V6HB0TEVTG8a9EKP6My8IWWXux1vUXE/uSjje0UepD2+UFrLWP7rySDv/e0
-	gPRhImhA4uFo/NGwxVeA8LmPfZ46tRm3ocmAUw9j7RkVYBxO/CSBI4XDAHKJL2yF/ouDuKqveps6p
-	e6pJ3Xb3U7T7JkT7IMuILbnOQ/wmd698p8eeZ7s7P1dAzO1wo6WDklab5JsdceJhKTtE2LKMg6PwG
-	Eg4eo1tJdB8l2VK3i7Wg==;
+	List-Owner; bh=ooV27VWFDQeMaFZvlCCuEXPpkZWJ3Dcsls+NeFTNMfY=; b=aystHxU+zie6Nm
+	a0etQeR/L/gOBWOvOJ8l15aI1P7ydEwQlrXkbAcO2PhItjv20flmwwiSj33ASlud4vMWcr/CL1ZA6
+	PDkOndF82l61ypJm+V/KjUvUkIPNno7CsgHv0bkv7jBp6D08c8V/eB4ciddMDfX3fNi8PWBSY9pSy
+	Yp22P/lFOT45gnhD9fmPSnSTwd4/j2CB9iuQ+3GRXHt1CBIoR7ItUXVcmFkSgkq5j6xr0QHH7ju65
+	ndWlJ37xQ67pusaKao3yZ3ljWk5pgJnfLLyv2dE0ZiAQIEovEJeixF/p8K5IC/VXCmiphaRao42/V
+	RoLlft8E9t8EiWBZsY0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jicu3-0003mb-Gz; Tue, 09 Jun 2020 11:58:51 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jicvV-0007MK-Dq; Tue, 09 Jun 2020 12:00:21 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jictt-0003ko-Jw
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 11:58:43 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 059Bqvon011403; Tue, 9 Jun 2020 13:58:32 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=UV2eXHMfLb4/QtK9KJPbsnZv2k9uIAuEYmQYk8262qk=;
- b=u1OyNj4wmzH1WqEapVeXG4DIXGN+mCrBe0N901xIQxKR9VXxYP+4ymbwgFnsMH7Hk48+
- NmRP1j2FDl0KNyG88neEcWsP+ZfYZSDUxarwExqv+fbwrYr/W52tmN7NZrBFBVZ3WMKJ
- tErkQjmm+aBVijF0llzKzhjK7pMboE2i0ApVA8uwWQoDpUe4O0QvODlQorcXxIoLAUpl
- gTI7SzFFn16RWnGJqTktIQyBebMUYG3o2ydubbxE2PK5jHRRXaVeQiIBQbgaW3Sdb3hn
- JvnJHC/3ZKdKjKVnx9FPlyqOT2uZtN5atU0iJiOrn0fQaXquX4CDflPpY4p+B2qFMpXL pQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31g21fy1rx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 09 Jun 2020 13:58:32 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1072E10002A;
- Tue,  9 Jun 2020 13:58:32 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 04DF52ACA01;
- Tue,  9 Jun 2020 13:58:32 +0200 (CEST)
-Received: from localhost (10.75.127.51) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 9 Jun 2020 13:58:31
- +0200
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <hugues.fruchet@st.com>, <mchehab@kernel.org>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>
-Subject: [PATCH v5 3/3] ARM: dts: stm32: Set DCMI frequency requirement for
- stm32mp15x
-Date: Tue, 9 Jun 2020 13:58:25 +0200
-Message-ID: <20200609115825.10748-4-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
-In-Reply-To: <20200609115825.10748-1-benjamin.gaignard@st.com>
-References: <20200609115825.10748-1-benjamin.gaignard@st.com>
+ id 1jicvM-0006go-Aa
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 12:00:14 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jicvD-0006J2-Ev; Tue, 09 Jun 2020 14:00:03 +0200
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jicv9-00033i-Mm; Tue, 09 Jun 2020 13:59:59 +0200
+Message-ID: <73fdeca7b651252f7907635e97f9f9b31e702868.camel@pengutronix.de>
+Subject: Re: [PATCH 5/9] usb: xhci-pci: Add support for reset controllers
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Florian Fainelli
+ <f.fainelli@gmail.com>, gregkh@linuxfoundation.org, wahrenst@gmx.net, 
+ robh@kernel.org, mathias.nyman@linux.intel.com, Eric Anholt
+ <eric@anholt.net>,  bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-pci@vger.kernel.org, linux-usb@vger.kernel.org, Mathias Nyman
+ <mathias.nyman@intel.com>
+Date: Tue, 09 Jun 2020 13:59:59 +0200
+In-Reply-To: <382b81937757de570a83ba4ff9276221c0bba547.camel@suse.de>
+References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
+ <20200608192701.18355-6-nsaenzjulienne@suse.de>
+ <5d3200cc-17cc-026f-1dfe-c10ec949f9ad@gmail.com>
+ <382b81937757de570a83ba4ff9276221c0bba547.camel@suse.de>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-09_03:2020-06-09,
- 2020-06-09 signatures=0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_045842_012359_5B18E1BB 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200609_050012_394056_B2880A19 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,38 +77,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- valentin.schneider@arm.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: lorenzo.pieralisi@arm.com, helgaas@kernel.org, linux-kernel@vger.kernel.org,
+ tim.gover@raspberrypi.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make sure that CPUs will at least run at 650Mhz when streaming
-sensor frames.
+Hi Nicolas,
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- arch/arm/boot/dts/stm32mp151.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+On Tue, 2020-06-09 at 13:18 +0200, Nicolas Saenz Julienne wrote:
+> Hi Florian, thanks for the reviews!
+> 
+> On Mon, 2020-06-08 at 12:43 -0700, Florian Fainelli wrote:
+> > On 6/8/2020 12:26 PM, Nicolas Saenz Julienne wrote:
+> > > Some atypical users of xhci-pci might need to manually reset their xHCI
+> > > controller before starting the HCD setup. Check if a reset controller
+> > > device is available to the PCI bus and trigger a reset.
+> > > 
+> > > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > > ---
+> > >  drivers/usb/host/xhci-pci.c | 9 +++++++++
+> > >  1 file changed, 9 insertions(+)
+> > > 
+> > > diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
+> > > index ef513c2fb843..45f70facdfcd 100644
+> > > --- a/drivers/usb/host/xhci-pci.c
+> > > +++ b/drivers/usb/host/xhci-pci.c
+[...]
+> > > @@ -347,6 +349,13 @@ static int xhci_pci_probe(struct pci_dev *dev, const
+> > > struct pci_device_id *id)
+> > >  			return retval;
+> > >  	}
+> > >  
+> > > +	reset = devm_reset_control_get(&dev->bus->dev, NULL);
+> > 
+> > Should not this be devm_reset_control_get_optional()?
+> 
+> Yes, you're right.
 
-diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
-index 3ea05ba48215..f6d7bf4f8231 100644
---- a/arch/arm/boot/dts/stm32mp151.dtsi
-+++ b/arch/arm/boot/dts/stm32mp151.dtsi
-@@ -1091,6 +1091,7 @@
- 			clock-names = "mclk";
- 			dmas = <&dmamux1 75 0x400 0x0d>;
- 			dma-names = "tx";
-+			st,stm32-dcmi-min-frequency = <650000>;
- 			status = "disabled";
- 		};
- 
--- 
-2.15.0
+Please use devm_reset_control_get_optional_exclusive() while you're at
+it.
 
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
