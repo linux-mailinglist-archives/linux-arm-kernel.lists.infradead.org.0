@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 646681F39A1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:26:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 671031F39A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:28:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7e+iQ3IblI5sexPa05e8IGBOxzV06K3YdTrZfvT+qWQ=; b=XC5v/GKLbDqt1z
-	HjhlBHk6f1Qq8F/vfDbToJzFP/ZNI9QrIgsfxYJwdR1exkjjQCuXvtLZ6UaU6s+c+Uj4r/EuHJLwv
-	M2oDi+JlitUc7fjIb1/A8KpxYNprA192SO3JxiyTqdHwaQnv+upUpAwz39CnNi14kd+8mEY4FN5c1
-	YddcneZQxIaMV33oivOCT8Dg0LdDhwlGmYH4nYIq2JQBhynwvuR9N6VBXiP1NfFItol5KGNaLIj/N
-	VkiuN71u47ab59qNL8jWkuDi99HF3uh1T1CmiueUCB4j4qKXuMrjF6phh9UJuBxgVp8ZQSwXcrwc/
-	nMJ1nkA01B1zBbBr/pnw==;
+	List-Owner; bh=nT2CzMxPk3OQ+Xi4hi9TcnHxw1bSzmWW79i/w8FUs1E=; b=ETsVscmp9vP2k3
+	6sl/W4rn++uG6YNHyo523ladDBnAxZBdEV/w/+Tue+GlRlnPZ2qr4CfRuAsSrpdrDbvtqop/oolVh
+	J9Q4mo1kQ1z0xzHYKYPMdKBn3dFkgsRyTMgqA14LiR+f/wMvAFmxOITw+96e4Ku/UEJUZ0SeLjKk5
+	qGojNA6v6sFdsjx3WApkatFCBGgF3qDzl+4zfujJf8KBLK3fY/CU3HipLbJ1+MIXFMvNbudNdF26f
+	MNDslhUTabEI3IMLMTD2F9+vUHU+iYLS7SvokhxkTGSK+3fdVPN3/Xua67MDpBfK+0UhCEn7K2cNc
+	5oWRCDWVnaWtB7K2u97g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jicOZ-0006m2-HI; Tue, 09 Jun 2020 11:26:19 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jicQz-0007ky-IY; Tue, 09 Jun 2020 11:28:49 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jicNT-0004Bl-Tw; Tue, 09 Jun 2020 11:25:21 +0000
-Received: by mail-wm1-x341.google.com with SMTP id k26so2731651wmi.4;
- Tue, 09 Jun 2020 04:25:09 -0700 (PDT)
+ id 1jicQr-0007kC-2l; Tue, 09 Jun 2020 11:28:42 +0000
+Received: by mail-wr1-x442.google.com with SMTP id q11so20912238wrp.3;
+ Tue, 09 Jun 2020 04:28:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=N6xeeXvpkYdEt1bQcjol91JJXVVrY/bVfMi7ubXpypo=;
- b=NjZa5clsGq5j/0unT0y99S6KtGw8tq1rjznUkEOwRaKul6OX8NMdrG93LOALD3K2gG
- MjTtJRO9bWZ46GA3Lqu1Y7meiHt2Hc8TnpniSEafIr1pUo1FiqMSeScbgBUfsMIb7ETP
- ATb2bloqMHspwcaHahSxKRH0tOTsUvr99PF9BTRb1AwNkwvyo8XPEQjKVllDsH8bM2eF
- nmlONzMRwcQK6XhXPLsmDkf7qsXKbMx43HeAeYjq8M0BR6d75wEuGOmt98oRQmR6q0Fh
- UY5FQ8FomKsPRWBirr4cvXJ97i9T8jwumkUxo+pwLMNJ/sW7foemW+lfpda7MxHLTFGL
- Eetg==
+ bh=Wv1KQ5fDwzvCL7klQbnh2wel3Uw0e3luPyw/9ylWfE4=;
+ b=W3B+lIkYwdi6QiofX1iUSrrDBLhvdB0ys9xrIn82NAAyUzlhFd6OZRVpGSxBWu7r0m
+ ClFQQp6tFkS2FihvNemUM/Ygs/B7NeGPqh0H7SND1VjB249FAq78uy/O+bT+K3urTmaz
+ i2stcm+Bgg4niCuTKHGOpHMgGIbnWoKm9KoWsg+BM8iv01VeHKu4Px+8b4DMuaP4O+5L
+ qGEcELs+shgGYZylmLuY2kyPMXusnDx48cDfY+WiuyHuw6lrB2zHfXi7wSyD5w/mOC9S
+ yqpwGfr9k1m0WBkkTl6+HtTnHYu7JI93XM2uEhbPOUNrsvErBirLPnDKbo5E8UA7Y90O
+ 2mxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=N6xeeXvpkYdEt1bQcjol91JJXVVrY/bVfMi7ubXpypo=;
- b=ThwML0TUDTRPDlhpAV96bZUJhQDtktmOThnyCfc2bVOKyz8LB09ByZlaGycXGuFTyp
- xsZnM+HaerzQPkPAUFkvzHVOUgrsQPJ69sFcAczSIYAcvvud8xNVmJq5UCgK9b4lNI5a
- NGQ1Eq9ZFYfBPCbjZvj1enVo7jI/kWip0YA4s/qqvYvmlSxq/QNFPI6wXBk33k+2GC9w
- b5QjB3Q9uNHPqh6M4jTk4cPQaTuw2ja/yZRLOCm+wkERaSd0ALBFOPafJBWIxScQdNlg
- QwYj6unMwg3yf+KOghoRAHZmXobJ26O9Zetxnh9N5YZG/Z8oHuPHEnyXcPBGgTKj4jb3
- Claw==
-X-Gm-Message-State: AOAM533tbxsIeRwDFpIwvlZVlSrMOxXFirZO6nJCjRViheyo581HY8An
- r2Q1UjpUQNj7lN6jn1J3sgw=
-X-Google-Smtp-Source: ABdhPJx9J4l5CIFvskPvDKnsbGCgmJNu7nWcI+IKqSy+tqcdZhelv+pViZweNpTewKkiiFu/f/jhfg==
-X-Received: by 2002:a1c:62d6:: with SMTP id w205mr3328660wmb.97.1591701906851; 
- Tue, 09 Jun 2020 04:25:06 -0700 (PDT)
+ bh=Wv1KQ5fDwzvCL7klQbnh2wel3Uw0e3luPyw/9ylWfE4=;
+ b=POvbi57+DKQCYQvgrPB38RxAHrXj+Moo9166a+LEKMkyQw/qhpBInOEMsjC4XaL9Sa
+ eRBlMBJ5DMYQ52UZMo834DPEWLNs+gqfvJWnsGzKR+RXJl38ybMHBK9jW/D6FPdkQHkt
+ 09pmDsCQ50xRp3Z+6pwwM1VKzQR+D8cNBLYGeC7jflgQrI/+74SpvFdEH5xRFlYUrDiv
+ wfR2s4jOylPMzmJgxkEL1xLOc/qelzN7sNM2/lnF80qSgmW+6WFvEd+muWjfOEnSiCVz
+ UPPQ3YZdw6CAfBncnG8Xz0m07KDGPwgqn8QnJo6WN92Ej3Bn1lQm3FQpoIREKQBpshnc
+ 44KQ==
+X-Gm-Message-State: AOAM531rwp7pTw/ODbNpmIQJg5fk7R4rvwod+lLmx0M6MA7kKt/+iSKm
+ afrAL6Gjd63VVI7vCGZK6B0=
+X-Google-Smtp-Source: ABdhPJy529EcE6IuzhjftgsDXuphdW0GgPrYJkeQltCYlT85bnO6RVLOf/QF8BPMM3gJNvILg9cDsA==
+X-Received: by 2002:adf:ff82:: with SMTP id j2mr3745444wrr.375.1591702119728; 
+ Tue, 09 Jun 2020 04:28:39 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.114.138])
- by smtp.gmail.com with ESMTPSA id w3sm2688134wmg.44.2020.06.09.04.25.04
+ by smtp.gmail.com with ESMTPSA id c6sm3064947wro.92.2020.06.09.04.28.37
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Jun 2020 04:25:06 -0700 (PDT)
-Subject: Re: [PATCH v6 1/4] mmc: mediatek: add MT6779 MMC driver support
+ Tue, 09 Jun 2020 04:28:38 -0700 (PDT)
+Subject: Re: [PATCH v6 3/4] mmc: mediatek: command queue support
 To: Chun-Hung Wu <chun-hung.wu@mediatek.com>, mirq-linux@rere.qmqm.pl,
  Jonathan Hunter <jonathanh@nvidia.com>, Al Cooper <alcooperx@gmail.com>,
  Adrian Hunter <adrian.hunter@intel.com>,
@@ -76,7 +76,7 @@ To: Chun-Hung Wu <chun-hung.wu@mediatek.com>, mirq-linux@rere.qmqm.pl,
  Stanley Chu <stanley.chu@mediatek.com>,
  Kuohong Wang <kuohong.wang@mediatek.com>
 References: <1591665502-6573-1-git-send-email-chun-hung.wu@mediatek.com>
- <1591665502-6573-2-git-send-email-chun-hung.wu@mediatek.com>
+ <1591665502-6573-4-git-send-email-chun-hung.wu@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -152,23 +152,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <a95eae56-4011-a9c8-90b4-7a906ffd7e6c@gmail.com>
-Date: Tue, 9 Jun 2020 13:25:03 +0200
+Message-ID: <41a6af77-cd90-5a1a-7405-cec003e7abb6@gmail.com>
+Date: Tue, 9 Jun 2020 13:28:36 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.1
 MIME-Version: 1.0
-In-Reply-To: <1591665502-6573-2-git-send-email-chun-hung.wu@mediatek.com>
+In-Reply-To: <1591665502-6573-4-git-send-email-chun-hung.wu@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_042512_117828_40A2B255 
-X-CRM114-Status: GOOD (  18.56  )
+X-CRM114-CacheID: sfid-20200609_042841_176649_4C7CA346 
+X-CRM114-Status: GOOD (  24.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [matthias.bgg[at]gmail.com]
@@ -205,50 +205,215 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 09/06/2020 03:18, Chun-Hung Wu wrote:
-> MT6779 add cqhci support, so need to add new code
-> to support it.
+> Support command queue for mt6779 platform.
+> a. Add msdc_set_busy_timeout() to calculate emmc write timeout.
+> b. Connect mtk msdc driver to cqhci driver through
+>    host->cq_host->ops = &msdc_cmdq_ops;
+> c. msdc_cmdq_irq() will link up with cqchi_irq(). Besides, it provides
+>    more irq error messages like RSPCRCERR/CMDTO/DATACRCERR/DATTMO.
+> d. Use the options below to separate support for CQHCI or not, because
+>    some of our platform does not support CQHCI hence no kernel option:
+>    CONFIG_MMC_CQHCI.
+>    #if IS_ENABLED(CONFIG_MMC_CQHCI)
+>    XXX //Support CQHCI
+>    #else
+>    XXX //Not support CQHCI
+>    #endif
 > 
 
-Please work on the commit message. For example it mentions cqhci while the code
-does not. Better describe what technical specification the controller has etc
+I think that we don't need the #if IS_ENABLED() because we add a boolean in the
+msdc_host.
 
 > Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
 > ---
->  drivers/mmc/host/mtk-sd.c | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
+>  drivers/mmc/host/mtk-sd.c | 119 ++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 119 insertions(+)
 > 
 > diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
-> index b221c02..8ada675 100644
+> index 84a7bd44..9d69269 100644
 > --- a/drivers/mmc/host/mtk-sd.c
 > +++ b/drivers/mmc/host/mtk-sd.c
-> @@ -538,6 +538,18 @@ struct msdc_host {
->  	.use_internal_cd = true,
+> @@ -31,6 +31,8 @@
+>  #include <linux/mmc/sdio.h>
+>  #include <linux/mmc/slot-gpio.h>
+>  
+> +#include "cqhci.h"
+> +
+>  #define MAX_BD_NUM          1024
+>  
+>  /*--------------------------------------------------------------------------*/
+> @@ -152,6 +154,7 @@
+>  #define MSDC_INT_DMA_BDCSERR    (0x1 << 17)	/* W1C */
+>  #define MSDC_INT_DMA_GPDCSERR   (0x1 << 18)	/* W1C */
+>  #define MSDC_INT_DMA_PROTECT    (0x1 << 19)	/* W1C */
+> +#define MSDC_INT_CMDQ           (0x1 << 28)	/* W1C */
+>  
+>  /* MSDC_INTEN mask */
+>  #define MSDC_INTEN_MMCIRQ       (0x1 << 0)	/* RW */
+> @@ -182,6 +185,7 @@
+>  /* SDC_CFG mask */
+>  #define SDC_CFG_SDIOINTWKUP     (0x1 << 0)	/* RW */
+>  #define SDC_CFG_INSWKUP         (0x1 << 1)	/* RW */
+> +#define SDC_CFG_WRDTOC          (0x1fff  << 2)  /* RW */
+>  #define SDC_CFG_BUSWIDTH        (0x3 << 16)	/* RW */
+>  #define SDC_CFG_SDIO            (0x1 << 19)	/* RW */
+>  #define SDC_CFG_SDIOIDE         (0x1 << 20)	/* RW */
+> @@ -230,6 +234,7 @@
+>  #define MSDC_PATCH_BIT_DECRCTMO   (0x1 << 30)	/* RW */
+>  
+>  #define MSDC_PATCH_BIT1_CMDTA     (0x7 << 3)    /* RW */
+> +#define MSDC_PB1_BUSY_CHECK_SEL   (0x1 << 7)    /* RW */
+>  #define MSDC_PATCH_BIT1_STOP_DLY  (0xf << 8)    /* RW */
+>  
+>  #define MSDC_PATCH_BIT2_CFGRESP   (0x1 << 15)   /* RW */
+> @@ -431,9 +436,11 @@ struct msdc_host {
+>  				 /* cmd response sample selection for HS400 */
+>  	bool hs400_mode;	/* current eMMC will run at hs400 mode */
+>  	bool internal_cd;	/* Use internal card-detect logic */
+> +	bool cqhci;		/* support eMMC hw cmdq */
+>  	struct msdc_save_para save_para; /* used when gate HCLK */
+>  	struct msdc_tune_para def_tune_para; /* default tune setting */
+>  	struct msdc_tune_para saved_tune_para; /* tune result of CMD21/CMD19 */
+> +	struct cqhci_host *cq_host;
 >  };
 >  
-> +static const struct mtk_mmc_compatible mt6779_compat = {
-> +	.clk_div_bits = 12,
-> +	.hs400_tune = false,
-> +	.pad_tune_reg = MSDC_PAD_TUNE0,
-> +	.async_fifo = true,
-> +	.data_tune = true,
-> +	.busy_check = true,
-> +	.stop_clk_fix = true,
-> +	.enhance_rx = true,
-> +	.support_64g = true,
+>  static const struct mtk_mmc_compatible mt8135_compat = {
+> @@ -764,6 +771,15 @@ static void msdc_set_timeout(struct msdc_host *host, u64 ns, u64 clks)
+>  		      (u32)(timeout > 255 ? 255 : timeout));
+>  }
+>  
+> +static void msdc_set_busy_timeout(struct msdc_host *host, u64 ns, u64 clks)
+> +{
+> +	u64 timeout;
+> +
+> +	timeout = msdc_timeout_cal(host, ns, clks);
+> +	sdr_set_field(host->base + SDC_CFG, SDC_CFG_WRDTOC,
+> +		      (u32)(timeout > 8191 ? 8191 : timeout));
+> +}
+> +
+>  static void msdc_gate_clock(struct msdc_host *host)
+>  {
+>  	clk_disable_unprepare(host->src_clk_cg);
+> @@ -1480,6 +1496,36 @@ static void msdc_enable_sdio_irq(struct mmc_host *mmc, int enb)
+>  		pm_runtime_put_noidle(host->dev);
+>  }
+>  
+> +#if IS_ENABLED(CONFIG_MMC_CQHCI)
+> +static irqreturn_t msdc_cmdq_irq(struct msdc_host *host, u32 intsts)
+> +{
+> +	int cmd_err = 0, dat_err = 0;
+> +
+> +	if (intsts & MSDC_INT_RSPCRCERR) {
+> +		cmd_err = -EILSEQ;
+> +		dev_err(host->dev, "%s: CMD CRC ERR", __func__);
+> +	} else if (intsts & MSDC_INT_CMDTMO) {
+> +		cmd_err = -ETIMEDOUT;
+> +		dev_err(host->dev, "%s: CMD TIMEOUT ERR", __func__);
+> +	}
+> +
+> +	if (intsts & MSDC_INT_DATCRCERR) {
+> +		dat_err = -EILSEQ;
+> +		dev_err(host->dev, "%s: DATA CRC ERR", __func__);
+> +	} else if (intsts & MSDC_INT_DATTMO) {
+> +		dat_err = -ETIMEDOUT;
+> +		dev_err(host->dev, "%s: DATA TIMEOUT ERR", __func__);
+> +	}
+> +
+> +	if (cmd_err || dat_err) {
+> +		dev_err(host->dev, "cmd_err = %d, dat_err =%d, intsts = 0x%x",
+> +			cmd_err, dat_err, intsts);
+> +	}
+> +
+> +	return cqhci_irq(host->mmc, 0, cmd_err, dat_err);
+> +}
+> +#endif
+> +
+>  static irqreturn_t msdc_irq(int irq, void *dev_id)
+>  {
+>  	struct msdc_host *host = (struct msdc_host *) dev_id;
+> @@ -1516,6 +1562,16 @@ static irqreturn_t msdc_irq(int irq, void *dev_id)
+>  		if (!(events & (event_mask & ~MSDC_INT_SDIOIRQ)))
+>  			break;
+>  
+> +#if IS_ENABLED(CONFIG_MMC_CQHCI)
+> +		if ((host->mmc->caps2 & MMC_CAP2_CQE) &&
+> +		    (events & MSDC_INT_CMDQ)) {
+> +			msdc_cmdq_irq(host, events);
+> +			/* clear interrupts */
+> +			writel(events, host->base + MSDC_INT);
+> +			return IRQ_HANDLED;
+> +		}
+> +#endif
+> +
+>  		if (!mrq) {
+>  			dev_err(host->dev,
+>  				"%s: MRQ=NULL; events=%08X; event_mask=%08X\n",
+> @@ -2200,6 +2256,36 @@ static int msdc_get_cd(struct mmc_host *mmc)
+>  		return !val;
+>  }
+>  
+> +static void msdc_cqe_enable(struct mmc_host *mmc)
+> +{
+> +	struct msdc_host *host = mmc_priv(mmc);
+> +
+> +	/* enable cmdq irq */
+> +	writel(MSDC_INT_CMDQ, host->base + MSDC_INTEN);
+> +	/* enable busy check */
+> +	sdr_set_bits(host->base + MSDC_PATCH_BIT1, MSDC_PB1_BUSY_CHECK_SEL);
+> +	/* default write data / busy timeout 20s */
+> +	msdc_set_busy_timeout(host, 20 * 1000000000ULL, 0);
+> +	/* default read data timeout 1s */
+> +	msdc_set_timeout(host, 1000000000ULL, 0);
+> +}
+> +
+> +void msdc_cqe_disable(struct mmc_host *mmc, bool recovery)
+> +{
+> +	struct msdc_host *host = mmc_priv(mmc);
+> +
+> +	/* disable cmdq irq */
+> +	sdr_clr_bits(host->base + MSDC_INTEN, MSDC_INT_CMDQ);
+> +	/* disable busy check */
+> +	sdr_clr_bits(host->base + MSDC_PATCH_BIT1, MSDC_PB1_BUSY_CHECK_SEL);
+> +
+> +	if (recovery) {
+> +		sdr_set_field(host->base + MSDC_DMA_CTRL,
+> +			      MSDC_DMA_CTRL_STOP, 1);
+> +		msdc_reset_hw(host);
+> +	}
+> +}
+> +
+>  static const struct mmc_host_ops mt_msdc_ops = {
+>  	.post_req = msdc_post_req,
+>  	.pre_req = msdc_pre_req,
+> @@ -2216,6 +2302,11 @@ static int msdc_get_cd(struct mmc_host *mmc)
+>  	.hw_reset = msdc_hw_reset,
+>  };
+>  
+> +static const struct cqhci_host_ops msdc_cmdq_ops = {
+> +	.enable         = msdc_cqe_enable,
+> +	.disable        = msdc_cqe_disable,
 > +};
 > +
->  static const struct of_device_id msdc_of_ids[] = {
->  	{ .compatible = "mediatek,mt8135-mmc", .data = &mt8135_compat},
->  	{ .compatible = "mediatek,mt8173-mmc", .data = &mt8173_compat},
-> @@ -547,6 +559,7 @@ struct msdc_host {
->  	{ .compatible = "mediatek,mt7622-mmc", .data = &mt7622_compat},
->  	{ .compatible = "mediatek,mt8516-mmc", .data = &mt8516_compat},
->  	{ .compatible = "mediatek,mt7620-mmc", .data = &mt7620_compat},
-> +	{ .compatible = "mediatek,mt6779-mmc", .data = &mt6779_compat},
->  	{}
->  };
->  MODULE_DEVICE_TABLE(of, msdc_of_ids);
-> 
+>  static void msdc_of_property_parse(struct platform_device *pdev,
+>  				   struct msdc_host *host)
+>  {
+> @@ -2236,6 +2327,12 @@ static void msdc_of_property_parse(struct platform_device *pdev,
+>  		host->hs400_cmd_resp_sel_rising = true;
+>  	else
+>  		host->hs400_cmd_resp_sel_rising = false;
+> +
+> +	if (of_property_read_bool(pdev->dev.of_node,
+> +				  "mediatek,cqhci"))
+> +		host->cqhci = true;
+> +	else
+> +		host->cqhci = false;
+
+Does this mean that there are mt6779 contoller which do not support cqhci?
+Otherwise could add the boolean in struct mtk_mmc_compatible and get rid of the
+device tree requirement.
+
+Regards,
+Matthias
 
 _______________________________________________
 linux-arm-kernel mailing list
