@@ -2,73 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78ABB1F359F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 09:59:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 397521F35B4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 10:07:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aQ6pXoI4OJs5q9hDFThqDp+9mYhQWMx8RpjiSttq0+Q=; b=DpNxBgF31laeMJ
-	ZeRnRvlD0uQpUy+aJVp1sHok35rM+FcJ4UJK0WJnUJyTA5Gj4Ep8KSOyiB1cKwEB1Sl+kmKMRP9Io
-	uQpffYrK89dWTJRJvdbvJIsMfqol9a98HlmELippvNjddvdS4u5AIKuwZg3VHY5yGM5OGLocLBP5M
-	lsgzykQ4fLs3n8uZz9IPcyLcJwGof7bvzhyk0i0A8ZJN9bn961oc63jGIR5quxNsAevCiW/yA3++4
-	YryVOTNIPvj2W6rpZXN9/jYHkBninQoKbwqUIqGk8HKB6MLOeJP7STLg59GM6gvqKxneO+7+DFq1k
-	K3AvLu8bEZbsIwchgqMg==;
+	List-Owner; bh=CNVQtqa9YEKn6tuyvRGoaaVzYNsvRktONsF4eSp4h+U=; b=WWHDzKo4+dp5C6
+	iieC7PS4POQtVukfHjkgVIqTvzqSW3GrPxFxpxbn8RbBy2m6ktX4S15BRlT7W/6Uh2lZdrKWXETQh
+	Fm33i9LQTeoQPvpehz02YYvOW991sNb+w7wjQ1B9BnTeGup8XtgGSMXxdjnvbAnslUJ53tTp97Sb8
+	Fo1K97yekvBB1B/p1gooeXOqOaFWTsVaN990xPMPiRhKYoQr/1Ko5v6puutSWxKkaZqt791RrAIHV
+	dPtdwzwL1QF6siABt6FrDMzcZqhU82usY74X9osLLMBahYjcoEEJXWZUWosTmAFITepAsERoVe00Z
+	H9mdxHiz8ZzS8iet2ZaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiZA1-0002FA-5L; Tue, 09 Jun 2020 07:59:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jiZHr-00082z-On; Tue, 09 Jun 2020 08:07:11 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiZ9q-0002Dz-JX
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 07:58:56 +0000
-Received: from mail-oi1-f178.google.com (mail-oi1-f178.google.com
- [209.85.167.178])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jiZHg-000819-U9
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 08:07:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1591690019;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=G0HJ2ZITbsuLPi3uiPc++ZxP4bS/tgFYIBzHuNokNxA=;
+ b=ZF6ZNjK/HmGu6C/K5N8ccNJUG6iFdin8qjy0gW9SDL7QgmZ5+SHyjvsIs4A6ZThLLVycVb
+ pxN/8BkF3wRBDolwfwnr3wf+BCkuOxznEIuRstHvQHTZvb1Lg4G9RQMwXYRYtMvyf9T1Cf
+ M/8UikZB6zKgvUDhSD9wA++fsbpaJ3A=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-299-47teND3zMnmeErxsHtjMtQ-1; Tue, 09 Jun 2020 04:06:57 -0400
+X-MC-Unique: 47teND3zMnmeErxsHtjMtQ-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DFF992081A
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  9 Jun 2020 07:58:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591689534;
- bh=gLxLpnDha3syMmZIalD47Kf4pqdSrEtHsNSdFF36XKQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=pwvrAAMBm8cxhfpWaRwbtpz0K4cXXsJO2j2T9K0XctngwcfRrLnK9XAm0fQ4aG5FD
- 2BCFiXbr8vghBI4Q40ywmrNIAiODrPCrV5aQ029+7dKGJjkWFChSu9nsyxTD+dWKJp
- hARqWn0qt7Y5WEATT1m2GunfEupOMiKVEI6v6OXA=
-Received: by mail-oi1-f178.google.com with SMTP id i74so17924615oib.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 00:58:53 -0700 (PDT)
-X-Gm-Message-State: AOAM5316tn3Dp9Q1Azmw69kQ2Hx0gPaxrDIFHUMP8L2x/sK+OADLKW2J
- P5/kXOjAK/zIQ1v3DbRThh88DH2u4KF+e2hi4l8=
-X-Google-Smtp-Source: ABdhPJxSAcEceqG5g/vpQvYjPkEZ4Ons5owNEr0NEq+uvtSqIOw8DQ2g65p90uK6jStiN5nEqzjKPJJp8/RQcbTZ654=
-X-Received: by 2002:aca:b887:: with SMTP id i129mr2264784oif.47.1591689533242; 
- Tue, 09 Jun 2020 00:58:53 -0700 (PDT)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 88D59800053;
+ Tue,  9 Jun 2020 08:06:55 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-114-66.rdu2.redhat.com
+ [10.10.114.66])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 7A1515D9E5;
+ Tue,  9 Jun 2020 08:06:53 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <nycvar.YSQ.7.77.849.2006082137050.1353413@knanqh.ubzr>
+References: <nycvar.YSQ.7.77.849.2006082137050.1353413@knanqh.ubzr>
+ <nycvar.YSQ.7.76.1708292307400.2606@knanqh.ubzr>
+ <20200608224725.GH1605@shell.armlinux.org.uk>
+To: Nicolas Pitre <nico@fluxnic.net>
+Subject: Re: [PULL REQUEST v2] FDPIC ELF support for ARM
 MIME-Version: 1.0
-References: <20200607135834.898294-1-ardb@kernel.org>
- <20200607135834.898294-2-ardb@kernel.org>
- <96a36110-68e1-89e3-2d59-b16f01abae21@gmx.de>
- <CAMj1kXG9XTtsyLQ=njM8LPCYCE2tOrrYQtctU_acNAxLfe=5oQ@mail.gmail.com>
- <f8a485d2-1e00-1d02-58a4-2e1684bfbfb4@gmx.de>
-In-Reply-To: <f8a485d2-1e00-1d02-58a4-2e1684bfbfb4@gmx.de>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 9 Jun 2020 09:58:41 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXGLoKDLJAihThkkcYwNpr12inneEB3dMOqvcZFm9oR5_w@mail.gmail.com>
-Message-ID: <CAMj1kXGLoKDLJAihThkkcYwNpr12inneEB3dMOqvcZFm9oR5_w@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] efi/arm: decompressor: deal with HYP mode boot
- gracefully
-To: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Content-ID: <2913174.1591690012.1@warthog.procyon.org.uk>
+Date: Tue, 09 Jun 2020 09:06:52 +0100
+Message-ID: <2913175.1591690012@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_005854_688336_F2EEFCE3 
-X-CRM114-Status: GOOD (  20.86  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200609_010701_050698_1E361412 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [207.211.31.120 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -90,119 +99,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-efi <linux-efi@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: dhowells@redhat.com, Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 8 Jun 2020 at 12:46, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
->
-> On 6/8/20 1:08 AM, Ard Biesheuvel wrote:
-> > On Sun, 7 Jun 2020 at 19:24, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-> >>
-> >> On 6/7/20 3:58 PM, Ard Biesheuvel wrote:
-> >>> EFI on ARM only supports short descriptors, and given that it mandates
-> >>> that the MMU and caches are on, it is implied that booting in HYP mode
-> >>> is not supported.
-> >>>
-> >>> However, implementations of EFI exist (i.e., U-Boot) that ignore this
-> >>> requirement, which is not entirely unreasonable, given that it makes
-> >>> HYP mode inaccessible to the operating system.
-> >>>
-> >>> So let's make sure that we can deal with this condition gracefully.
-> >>> We already tolerate booting the EFI stub with the caches off (even
-> >>> though this violates the EFI spec as well), and so we should deal
-> >>> with HYP mode boot with MMU and caches either on or off.
-> >>>
-> >>> - When the MMU and caches are on, we can ignore the HYP stub altogether,
-> >>>   since we can carry on executing at HYP. We do need to ensure that we
-> >>>   disable the MMU at HYP before entering the kernel proper.
-> >>>
-> >>> - When the MMU and caches are off, we have to drop to SVC mode so that
-> >>>   we can set up the page tables using short descriptors. In this case,
-> >>>   we need to install the HYP stub as usual, so that we can return to HYP
-> >>>   mode before handing over to the kernel proper.
-...
->
-> Hello Ard,
->
-> thanks for supplying a branch for testing:
-> https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=efi-arm-hyp-mode
->
-> The OrangePi PC boots fine with this branch. PSCI is enabled. Rebooting
-> the system works fine. See log below.
->
-> With the patch 2/2 you add an output line for the exceptions level and
-> the MMU status. Above you state "We already tolerate booting the EFI
-> stub with the caches off." This relates to a workaround in U-Boot
-> accomodating old GRUB versions (CONFIG_EFI_GRUB_ARM32_WORKAROUND=y).
->
-> Would a further diagnostic line showing if D-cache and I-cache is
-> enabled make sense?
->
-> Tested-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
->
-> Loading Linux 5.7.0-armmp-lpae+ ...
-> Loading initial ramdisk ...
-> EFI stub: Running in HYP mode with MMU enabled
+Nicolas Pitre <nico@fluxnic.net> wrote:
 
-BTW is this with or without the GRUB hack?
+> Well... of course it could also be silly to run gdb on ELF_FDPIC-only 
+> systems as such systems are expected to have highly constrained 
+> resources.
 
+gdbserver and kgdb work.  But on a NOMMU system, FDPIC allows for executable
+and library text segment and rodata segment sharing and you can't set
+breakpoints by instruction substitution in anything that's shared - uclibc,
+for example - so you have to be very careful.
 
-> EFI stub: Booting Linux Kernel...
-> EFI stub: ERROR: Could not determine UEFI Secure Boot status.
-> EFI stub: Using DTB from configuration table
-> EFI stub: Exiting boot services and installing virtual address map...
-> EHCI failed to shut down host controller.
-> [    0.000000] Booting Linux on physical CPU 0x0
-> [    0.000000] Linux version 5.7.0-armmp-lpae+ (user@node)
-> (arm-linux-gnueabihf-gcc (Debian 9.3.0-13) 9.3.0, GNU ld (GNU Binutils
-> for Debian) 2.34) #10 SMP Mon Jun 8 03:44:37 CEST 2020
-> [    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7),
-> cr=30c5387d
-> [    0.000000] CPU: div instructions available: patching division code
-> [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing
-> instruction cache
-> [    0.000000] OF: fdt: Machine model: Xunlong Orange Pi PC
-> [    0.000000] Memory policy: Data cache writealloc
-> [    0.000000] efi: EFI v2.80 by Das U-Boot
-> [    0.000000] efi: RTPROP=0x78f30040 SMBIOS=0x78f2a000
-> MEMRESERVE=0x6a1fa040
-> [    0.000000] cma: Reserved 16 MiB at 0x000000007f000000
-> [    0.000000] Zone ranges:
-> [    0.000000]   DMA      [mem 0x0000000040000000-0x000000006fffffff]
-> [    0.000000]   Normal   empty
-> [    0.000000]   HighMem  [mem 0x0000000070000000-0x000000007fffffff]
-> [    0.000000] Movable zone start for each node
-> [    0.000000] Early memory node ranges
-> [    0.000000]   node   0: [mem 0x0000000040000000-0x0000000078f07fff]
-> [    0.000000]   node   0: [mem 0x0000000078f08000-0x0000000078f09fff]
-> [    0.000000]   node   0: [mem 0x0000000078f0a000-0x0000000078f24fff]
-> [    0.000000]   node   0: [mem 0x0000000078f25000-0x0000000078f28fff]
-> [    0.000000]   node   0: [mem 0x0000000078f29000-0x0000000078f29fff]
-> [    0.000000]   node   0: [mem 0x0000000078f2a000-0x0000000078f2afff]
-> [    0.000000]   node   0: [mem 0x0000000078f2b000-0x0000000078f2cfff]
-> [    0.000000]   node   0: [mem 0x0000000078f2d000-0x0000000078f2dfff]
-> [    0.000000]   node   0: [mem 0x0000000078f2e000-0x0000000078f2ffff]
-> [    0.000000]   node   0: [mem 0x0000000078f30000-0x0000000078f32fff]
-> [    0.000000]   node   0: [mem 0x0000000078f33000-0x0000000078f33fff]
-> [    0.000000]   node   0: [mem 0x0000000078f34000-0x0000000078f34fff]
-> [    0.000000]   node   0: [mem 0x0000000078f35000-0x0000000078f35fff]
-> [    0.000000]   node   0: [mem 0x0000000078f36000-0x0000000078f36fff]
-> [    0.000000]   node   0: [mem 0x0000000078f37000-0x0000000078f38fff]
-> [    0.000000]   node   0: [mem 0x0000000078f39000-0x0000000078f3efff]
-> [    0.000000]   node   0: [mem 0x0000000078f3f000-0x000000007df65fff]
-> [    0.000000]   node   0: [mem 0x000000007df66000-0x000000007df66fff]
-> [    0.000000]   node   0: [mem 0x000000007df67000-0x000000007dfb9fff]
-> [    0.000000]   node   0: [mem 0x000000007dfba000-0x000000007dfbcfff]
-> [    0.000000]   node   0: [mem 0x000000007dfbd000-0x000000007fffffff]
-> [    0.000000] Initmem setup node 0 [mem
-> 0x0000000040000000-0x000000007fffffff]
-> [    0.000000] psci: probing for conduit method from DT.
-> [    0.000000] psci: Using PSCI v0.1 Function IDs from DT
+David
+
 
 _______________________________________________
 linux-arm-kernel mailing list
