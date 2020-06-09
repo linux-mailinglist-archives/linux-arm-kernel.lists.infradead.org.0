@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19F821F3D74
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:00:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05EEF1F3D99
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:07:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZT41C2JggPAA+t9tfYikv+btZ9h5bF9Xg4DJ2IC3EPo=; b=ts0Ktjjrs6sQsEUI0FV7Ezg3B
-	9FDjXP6ww+3nGRhPc92Su9lx+PL9M9hHu9oLg13wPT+4/P3wGQ8qTsl/D4yuC1DR/16Q8phDz6NsL
-	Mf+tbU3yDkH2/NehY3Q7ysU7hGVDYrfoXbR3zjW2V1AJ45QDKOgJFEaq2sn1oKFlBOzFaYXr15hW+
-	4yhjaiQv4Bd9ADRWdddztRDsLcsZ0A4j7awl1ONWsug7cmCVqJ/Q0ViHAaJXhLoSKzEhv+oTMb/Cu
-	6XcaJszJqAQ0WQ+EuspUtPlTYD6O8M7NMhUmQFRhn4alnb+6ilbAtA7n9Q9EeOHEn+jQorYVKvAJ7
-	QPsjzHEZg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NONq1nFXR+tG01E241bRY7FwsHLmRitNqSNb8jubsIo=; b=LYPNKKTSEElFaM
+	AWJfnI3ZZv5bvRu8DMVEWEYypsqRP6+C5bMMxk9kZYGw2oMvbSQNtLK47nd1XKZlQIUZcu9R9m9k3
+	vOVDgpvE5e//XG5nsychcJ54lULm1r6BnJuR8Rzqob0fjy0j+DGYSwKCVMtzj5rpGuW+M5tcpHd9v
+	zgupxAV3fOGDoh7Zfrjg+JpA10lWDV603OiKKLtC0gQsxatE+6VT5YFvr/V4EaWB0I4jfaP/S+u/E
+	yLPxfA5XVaR6GORm+Q/0h868+f7wBIxDxPdmjsjD8BPH1ggdZr+sl4EYphVZI+Rssc4nCBHnWtbEl
+	nZ9bmMhlzI0+Kl+jCA3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jieni-0005lE-5v; Tue, 09 Jun 2020 14:00:26 +0000
+	id 1jieun-00024P-0e; Tue, 09 Jun 2020 14:07:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiena-0005ko-DR
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:00:20 +0000
+ id 1jieud-00022z-IK
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:07:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A541A1FB;
- Tue,  9 Jun 2020 07:00:13 -0700 (PDT)
-Received: from [10.37.12.95] (unknown [10.37.12.95])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E48C13F66F;
- Tue,  9 Jun 2020 07:00:08 -0700 (PDT)
-Subject: Re: [PATCH] firmware: arm_scmi: Use signed integer to report transfer
- status
-To: Sudeep Holla <sudeep.holla@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20200609134503.55860-1-sudeep.holla@arm.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <d2aaadd1-d988-2978-f5e8-06b131c61b94@arm.com>
-Date: Tue, 9 Jun 2020 15:00:05 +0100
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E6E31FB;
+ Tue,  9 Jun 2020 07:07:31 -0700 (PDT)
+Received: from [10.57.49.155] (unknown [10.57.49.155])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 83BD23F66F;
+ Tue,  9 Jun 2020 07:07:28 -0700 (PDT)
+Subject: Re: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
+ support reserved memory
+To: dillon.minfei@gmail.com, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com, linux@armlinux.org.uk,
+ kstewart@linuxfoundation.org, allison@lohutok.net, info@metux.net,
+ tglx@linutronix.de
+References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
+ <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
+Date: Tue, 9 Jun 2020 15:08:14 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200609134503.55860-1-sudeep.holla@arm.com>
+In-Reply-To: <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_070018_499881_B841EDFE 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20200609_070735_695598_0B7C1982 
+X-CRM114-Status: GOOD (  22.69  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,85 +68,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jim Quinlan <james.quinlan@broadcom.com>
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 6/9/20 2:45 PM, Sudeep Holla wrote:
-> Currently the trace event 'scmi_xfer_end' reports the status of the
-> transfer using the unsigned status field read from the firmware. This
-> may not be easy to interpret and also may miss to present any timeouts
-> that happen in the driver.
+On 6/8/20 9:30 AM, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
 > 
-> Let us use signed integer so that error values are emitted out after
-> they are mapped from firmware errors to standard linux error codes.
-> While at this, let us also include any timeouts in the driver itself.
+> Currently, we use dma direct to request coherent memory for driver on armv7m
+> platform if 'cacheid' is zero, but dma_direct_can_mmap() is return false,
+> dma_direct_mmap() return -ENXIO for CONFIG_MMU undefined platform.
 > 
-> Cc: Jim Quinlan <james.quinlan@broadcom.com>
-> Cc: Lukasz Luba <lukasz.luba@arm.com>
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> so we have to back to use 'arm_nommu_dma_ops', add use_reserved_mem() to check
+> if device support global or device corherent memory. if yes, then call
+> set_dma_ops()
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
 > ---
->   drivers/firmware/arm_scmi/driver.c | 3 +--
->   include/trace/events/scmi.h        | 6 +++---
->   2 files changed, 4 insertions(+), 5 deletions(-)
+>  arch/arm/mm/dma-mapping-nommu.c | 28 +++++++++++++++++++++++++++-
+>  1 file changed, 27 insertions(+), 1 deletion(-)
 > 
-> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-> index 7483cacf63f9..136acbe2f4a1 100644
-> --- a/drivers/firmware/arm_scmi/driver.c
-> +++ b/drivers/firmware/arm_scmi/driver.c
-> @@ -392,8 +392,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
->   		info->desc->ops->mark_txdone(cinfo, ret);
->   
->   	trace_scmi_xfer_end(xfer->transfer_id, xfer->hdr.id,
-> -			    xfer->hdr.protocol_id, xfer->hdr.seq,
-> -			    xfer->hdr.status);
-> +			    xfer->hdr.protocol_id, xfer->hdr.seq, ret);
->   
->   	return ret;
->   }
-> diff --git a/include/trace/events/scmi.h b/include/trace/events/scmi.h
-> index f076c430d243..f3a4b4d60714 100644
-> --- a/include/trace/events/scmi.h
-> +++ b/include/trace/events/scmi.h
-> @@ -35,7 +35,7 @@ TRACE_EVENT(scmi_xfer_begin,
->   
->   TRACE_EVENT(scmi_xfer_end,
->   	TP_PROTO(int transfer_id, u8 msg_id, u8 protocol_id, u16 seq,
-> -		 u32 status),
-> +		 int status),
->   	TP_ARGS(transfer_id, msg_id, protocol_id, seq, status),
->   
->   	TP_STRUCT__entry(
-> @@ -43,7 +43,7 @@ TRACE_EVENT(scmi_xfer_end,
->   		__field(u8, msg_id)
->   		__field(u8, protocol_id)
->   		__field(u16, seq)
-> -		__field(u32, status)
-> +		__field(int, status)
->   	),
->   
->   	TP_fast_assign(
-> @@ -54,7 +54,7 @@ TRACE_EVENT(scmi_xfer_end,
->   		__entry->status = status;
->   	),
->   
-> -	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u status=%u",
-> +	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u status=%d",
->   		__entry->transfer_id, __entry->msg_id, __entry->protocol_id,
->   		__entry->seq, __entry->status)
->   );
+> diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
+> index 287ef898a55e..e1c213fec152 100644
+> --- a/arch/arm/mm/dma-mapping-nommu.c
+> +++ b/arch/arm/mm/dma-mapping-nommu.c
+> @@ -14,6 +14,7 @@
+>  #include <asm/cacheflush.h>
+>  #include <asm/outercache.h>
+>  #include <asm/cp15.h>
+> +#include <linux/of.h>
+>  
+>  #include "dma.h"
+>  
+> @@ -188,6 +189,31 @@ const struct dma_map_ops arm_nommu_dma_ops = {
+>  };
+>  EXPORT_SYMBOL(arm_nommu_dma_ops);
+>  
+> +static bool use_reserved_mem(struct device *dev)
+> +{
+> +	struct device_node *np;
+> +
+> +	np = of_find_node_by_path("/reserved-memory/linux,dma");
+> +
+> +	if (np &&
+> +		of_device_is_compatible(np, "shared-dma-pool") &&
+> +		of_property_read_bool(np, "no-map") &&
+> +		of_property_read_bool(np, "linux,dma-default")) {
+> +		/* has global corherent mem support */
+> +		of_node_put(np);
+> +		return true;
+> +	}
+> +
+> +	np = of_parse_phandle(dev->of_node, "memory-region", 0);
+> +	if (np) {
+> +		/* has dev corherent mem support */
+> +		of_node_put(np);
+> +		return true;
+> +	}
+> +
+> +	return false;
+> +}
+> +
+>  void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>  			const struct iommu_ops *iommu, bool coherent)
+>  {
+> @@ -206,6 +232,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>  		dev->archdata.dma_coherent = (get_cr() & CR_M) ? coherent : true;
+>  	}
+>  
+> -	if (!dev->archdata.dma_coherent)
+> +	if (!dev->archdata.dma_coherent || use_reserved_mem(dev))
+>  		set_dma_ops(dev, &arm_nommu_dma_ops);
+>  }
 > 
 
-Indeed looks better with the Linux like ret status
+Sorry I have to NAK this hack :(
 
-Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
+Digging git history reveled 79964a1c2972 ("ARM: 8633/1: nommu: allow mmap when !CONFIG_MMU")
+which make me wonder if diff below does the trick for you
 
-Regards,
-Lukasz
+diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+index 8f4bbda..8623b9e 100644
+--- a/kernel/dma/direct.c
++++ b/kernel/dma/direct.c
+@@ -456,14 +456,14 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+ #else /* CONFIG_MMU */
+ bool dma_direct_can_mmap(struct device *dev)
+ {
+-	return false;
++	return true;
+ }
+ 
+ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+ 		void *cpu_addr, dma_addr_t dma_addr, size_t size,
+ 		unsigned long attrs)
+ {
+-	return -ENXIO;
++	return vm_iomap_memory(vma, vma->vm_start, (vma->vm_end - vma->vm_start));;
+ }
+ #endif /* CONFIG_MMU */
+
+Cheers
+Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
