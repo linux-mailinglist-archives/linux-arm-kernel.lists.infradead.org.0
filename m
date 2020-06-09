@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66BB21F3D62
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:55:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19F821F3D74
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:00:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RKf1CGB3qChmTsaGlKJWFS0ROUEyBCoNgk+0MzvFdGk=; b=Jqxcy9cv9yMtH92fFX6wIf0i9
-	fwbnRMvUDfTSKj9R39l5X8kyRgYxuhrvdOU3gjKaIgnPzNeT3WnM5N1z9+m+Yy/YivPXhm2ZE8/YI
-	kA/ze37IyPgONEm23NIWJgz1TIolMDyoOZqGFVBX5JgNH73+bmNTf4FfK47F0Jp4j/EY02sCgjEbu
-	G9O1AZT+H/Lmw3M9pLV+A7NVoShl+bhxYU7ti7Efiw9m2YWUeyfhAFB5Vzi2stUyWps1c/jTdSf5Q
-	ZIgnDkrAS7viWFnzO5b4kInAv70HQ+FRwwDvuQwfUQ4eZtdHw/xoNbaJVM/2Hu+9lR/XCOwvdteaL
-	NnhyGLoVA==;
+	 bh=ZT41C2JggPAA+t9tfYikv+btZ9h5bF9Xg4DJ2IC3EPo=; b=ts0Ktjjrs6sQsEUI0FV7Ezg3B
+	9FDjXP6ww+3nGRhPc92Su9lx+PL9M9hHu9oLg13wPT+4/P3wGQ8qTsl/D4yuC1DR/16Q8phDz6NsL
+	Mf+tbU3yDkH2/NehY3Q7ysU7hGVDYrfoXbR3zjW2V1AJ45QDKOgJFEaq2sn1oKFlBOzFaYXr15hW+
+	4yhjaiQv4Bd9ADRWdddztRDsLcsZ0A4j7awl1ONWsug7cmCVqJ/Q0ViHAaJXhLoSKzEhv+oTMb/Cu
+	6XcaJszJqAQ0WQ+EuspUtPlTYD6O8M7NMhUmQFRhn4alnb+6ilbAtA7n9Q9EeOHEn+jQorYVKvAJ7
+	QPsjzHEZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jieiM-00080Q-6y; Tue, 09 Jun 2020 13:54:54 +0000
-Received: from m43-7.mailgun.net ([69.72.43.7])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jieiB-0007z1-UX
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:54:48 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1591710886; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=MI3qK4wgmDjHmo1cYjSV72uJg5VksJKTM0Lx81cwbYE=;
- b=j8PpGbAO23e7sN0uRmdzH5+1k86hvq/MbzMGjLXURhc84gBn4D+RCxKhozbvhvcL1ivDk1HR
- N5pUKSJhLsFj3V7QhxOpW4M2PBK8UFTI//Vxapdv8/7B/A4c/fiTbUUjV+RzdZcmg4sRuTjW
- WqHY1m6PKDUlns0TDzw64c5ck8Q=
-X-Mailgun-Sending-Ip: 69.72.43.7
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n04.prod.us-west-2.postgun.com with SMTP id
- 5edf949b117610c7ffdb583f (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 09 Jun 2020 13:54:35
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id E0DEFC433CA; Tue,  9 Jun 2020 13:54:34 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 326BFC433C6;
- Tue,  9 Jun 2020 13:54:34 +0000 (UTC)
+	id 1jieni-0005lE-5v; Tue, 09 Jun 2020 14:00:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiena-0005ko-DR
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:00:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A541A1FB;
+ Tue,  9 Jun 2020 07:00:13 -0700 (PDT)
+Received: from [10.37.12.95] (unknown [10.37.12.95])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E48C13F66F;
+ Tue,  9 Jun 2020 07:00:08 -0700 (PDT)
+Subject: Re: [PATCH] firmware: arm_scmi: Use signed integer to report transfer
+ status
+To: Sudeep Holla <sudeep.holla@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+References: <20200609134503.55860-1-sudeep.holla@arm.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <d2aaadd1-d988-2978-f5e8-06b131c61b94@arm.com>
+Date: Tue, 9 Jun 2020 15:00:05 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Date: Tue, 09 Jun 2020 19:24:34 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross
- <agross@kernel.org>
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: sc7180: Add support to skip
- powering up of ETM
-In-Reply-To: <7599d58142dcefbcb08a2eaff71c7f411a1d52b1.1589539293.git.saiprakash.ranjan@codeaurora.org>
-References: <cover.1589539293.git.saiprakash.ranjan@codeaurora.org>
- <7599d58142dcefbcb08a2eaff71c7f411a1d52b1.1589539293.git.saiprakash.ranjan@codeaurora.org>
-Message-ID: <70271f66ad792f7ab16a907ddf73e0f3@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <20200609134503.55860-1-sudeep.holla@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_065446_645567_5D4A96A1 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200609_070018_499881_B841EDFE 
+X-CRM114-Status: GOOD (  18.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.72.43.7 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [69.72.43.7 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,117 +65,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: Jim Quinlan <james.quinlan@broadcom.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
 
-On 2020-05-15 16:21, Sai Prakash Ranjan wrote:
-> Add "qcom,skip-power-up" property to skip powering up ETM
-> on SC7180 SoC to workaround a hardware errata where CPU
-> watchdog counter is stopped when ETM power up bit is set
-> (i.e., when TRCPDCR.PU = 1).
+
+On 6/9/20 2:45 PM, Sudeep Holla wrote:
+> Currently the trace event 'scmi_xfer_end' reports the status of the
+> transfer using the unsigned status field read from the firmware. This
+> may not be easy to interpret and also may miss to present any timeouts
+> that happen in the driver.
 > 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Let us use signed integer so that error values are emitted out after
+> they are mapped from firmware errors to standard linux error codes.
+> While at this, let us also include any timeouts in the driver itself.
+> 
+> Cc: Jim Quinlan <james.quinlan@broadcom.com>
+> Cc: Lukasz Luba <lukasz.luba@arm.com>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 > ---
+>   drivers/firmware/arm_scmi/driver.c | 3 +--
+>   include/trace/events/scmi.h        | 6 +++---
+>   2 files changed, 4 insertions(+), 5 deletions(-)
 > 
-> Depends on ETM driver change here -
-> https://lore.kernel.org/patchwork/cover/1242100/
+> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+> index 7483cacf63f9..136acbe2f4a1 100644
+> --- a/drivers/firmware/arm_scmi/driver.c
+> +++ b/drivers/firmware/arm_scmi/driver.c
+> @@ -392,8 +392,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
+>   		info->desc->ops->mark_txdone(cinfo, ret);
+>   
+>   	trace_scmi_xfer_end(xfer->transfer_id, xfer->hdr.id,
+> -			    xfer->hdr.protocol_id, xfer->hdr.seq,
+> -			    xfer->hdr.status);
+> +			    xfer->hdr.protocol_id, xfer->hdr.seq, ret);
+>   
+>   	return ret;
+>   }
+> diff --git a/include/trace/events/scmi.h b/include/trace/events/scmi.h
+> index f076c430d243..f3a4b4d60714 100644
+> --- a/include/trace/events/scmi.h
+> +++ b/include/trace/events/scmi.h
+> @@ -35,7 +35,7 @@ TRACE_EVENT(scmi_xfer_begin,
+>   
+>   TRACE_EVENT(scmi_xfer_end,
+>   	TP_PROTO(int transfer_id, u8 msg_id, u8 protocol_id, u16 seq,
+> -		 u32 status),
+> +		 int status),
+>   	TP_ARGS(transfer_id, msg_id, protocol_id, seq, status),
+>   
+>   	TP_STRUCT__entry(
+> @@ -43,7 +43,7 @@ TRACE_EVENT(scmi_xfer_end,
+>   		__field(u8, msg_id)
+>   		__field(u8, protocol_id)
+>   		__field(u16, seq)
+> -		__field(u32, status)
+> +		__field(int, status)
+>   	),
+>   
+>   	TP_fast_assign(
+> @@ -54,7 +54,7 @@ TRACE_EVENT(scmi_xfer_end,
+>   		__entry->status = status;
+>   	),
+>   
+> -	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u status=%u",
+> +	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u status=%d",
+>   		__entry->transfer_id, __entry->msg_id, __entry->protocol_id,
+>   		__entry->seq, __entry->status)
+>   );
 > 
-> ---
->  arch/arm64/boot/dts/qcom/sc7180.dtsi | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> index 8b3707347547..de4bae4ec224 100644
-> --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> @@ -1657,6 +1657,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1676,6 +1677,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1695,6 +1697,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1714,6 +1717,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1733,6 +1737,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1752,6 +1757,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1771,6 +1777,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
-> @@ -1790,6 +1797,7 @@
->  			clocks = <&aoss_qmp>;
->  			clock-names = "apb_pclk";
->  			arm,coresight-loses-context-with-cpu;
-> +			qcom,skip-power-up;
-> 
->  			out-ports {
->  				port {
 
-I have sent this patch as a part of other coresight changes
-to keep all coresight DT changes together[1], we can drop this
-patch now.
+Indeed looks better with the Linux like ret status
 
-[1] - https://lore.kernel.org/patchwork/cover/1253969/
+Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
 
-Thanks,
-Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
