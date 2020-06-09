@@ -2,71 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 985BC1F3955
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:14:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 469671F396C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:18:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NZUeMzn49/kXSVuINc56VTrwFvGbUBL1ZtlCE72aiOs=; b=CTBWoaDHNigD0O
-	/0Xp8y4J0RhZiG/3e86Onf9mK1yLLxgtbTIHyWS+3KxNBEYkx4r2YQqx7DvHgOqD3JaGFIveKn1kr
-	CmHcH9AZKCX1mfxtzIlx8Poc5DlNNFGNzej7VnyAl1/mUFc5qSVbMdgk35LtWobekXMW14x2NWaKZ
-	FioJjYzrasvhYbKK619VjCrT0D8Cuhk9oDbgpEVaOVCFa9Aq2icup2X/+YA++RMzodNo+2jjSfntQ
-	buWFgoODu83vBcoDdA1wWP9BkiApCEFCNHDPRLfbs/QyCPrQ5wD0GAC4paHw815t/cYCOeRlT6u5z
-	wagAsq4zavM9bBVsD0vw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GG2p6TsXzbem45JpvldjhsrF+/KzFKc9dn9j/fTHsgE=; b=O3uhxJw9FbKTjuGV/FbuGpBOx
+	1CiGrPAlYMCmcYp6X98c9Ktfo/h9ABvXP5WuP5wD8IhQvHHN8wWNGem9PGwkne5Vm7bifZZiF9PoG
+	zbGB8ENJJ/J8KQM7/8+9jgtqXTX/4zq99IUGK4z187+aHQBkoob7ft0siAOdLIYcyTFEdbpEI6nE6
+	D2e+alwDh40mWsvec0ORq+ZSu5+MDDvu41lvEZU+pyiLYuOI9I6Uatnf+bro2bVy/qhaaDPFgBNbO
+	9bwHpA0b2yapP2MX7MYash6Z5h/Dobl8h/xrjFHazkAB2CcoCBJ7j27pUCjcRsZvyiXuotWZ/DqZH
+	B1oFviWeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jicDS-0003sq-MP; Tue, 09 Jun 2020 11:14:50 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1jicHK-00074P-U5; Tue, 09 Jun 2020 11:18:50 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jicDC-0003m4-Cs; Tue, 09 Jun 2020 11:14:36 +0000
-IronPort-SDR: gCgmhvoJynK7uq9tR8ieUrqA4gdzHJsCm+stwg3PAklw+xi9CJhdqyHowEHEcSjejdSLk+P2IB
- b3zWH83Re4Hw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 09 Jun 2020 04:14:30 -0700
-IronPort-SDR: 1x2X09s+C+ZmFmpenHPAYX2alWHxwwRofz1VOCvBr/3CFXAO8x1AES5WZ0cMkbs0UWxKP4TrPA
- gyns/aLdBahg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,491,1583222400"; d="scan'208";a="379708876"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga001.fm.intel.com with ESMTP; 09 Jun 2020 04:14:26 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jicD6-00BsuX-SU; Tue, 09 Jun 2020 14:14:28 +0300
-Date: Tue, 9 Jun 2020 14:14:28 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V7, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
-Message-ID: <20200609111428.GH2428291@smile.fi.intel.com>
-References: <20200605105412.18813-1-dongchun.zhu@mediatek.com>
- <20200605105412.18813-3-dongchun.zhu@mediatek.com>
- <20200605124643.GG2428291@smile.fi.intel.com>
- <1591424358.8804.599.camel@mhfsdcap03>
- <20200608132720.GS2428291@smile.fi.intel.com>
- <1591674341.8804.628.camel@mhfsdcap03>
+ id 1jicHC-00073z-P0; Tue, 09 Jun 2020 11:18:44 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 7B218ACF2;
+ Tue,  9 Jun 2020 11:18:44 +0000 (UTC)
+Message-ID: <382b81937757de570a83ba4ff9276221c0bba547.camel@suse.de>
+Subject: Re: [PATCH 5/9] usb: xhci-pci: Add support for reset controllers
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>, gregkh@linuxfoundation.org, 
+ wahrenst@gmx.net, robh@kernel.org, mathias.nyman@linux.intel.com, Eric
+ Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com, 
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-usb@vger.kernel.org,  Mathias Nyman <mathias.nyman@intel.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Date: Tue, 09 Jun 2020 13:18:38 +0200
+In-Reply-To: <5d3200cc-17cc-026f-1dfe-c10ec949f9ad@gmail.com>
+References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
+ <20200608192701.18355-6-nsaenzjulienne@suse.de>
+ <5d3200cc-17cc-026f-1dfe-c10ec949f9ad@gmail.com>
+User-Agent: Evolution 3.36.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1591674341.8804.628.camel@mhfsdcap03>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_041434_478004_CA87BCC9 
-X-CRM114-Status: GOOD (  22.77  )
+X-CRM114-CacheID: sfid-20200609_041843_105379_FACA3731 
+X-CRM114-Status: GOOD (  18.22  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,109 +69,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- louis.kuo@mediatek.com, srv_heupstream@mediatek.com, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: lorenzo.pieralisi@arm.com, helgaas@kernel.org, linux-kernel@vger.kernel.org,
+ tim.gover@raspberrypi.org
+Content-Type: multipart/mixed; boundary="===============3362320323325549340=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 11:45:41AM +0800, Dongchun Zhu wrote:
-> On Mon, 2020-06-08 at 16:27 +0300, Andy Shevchenko wrote:
-> > On Sat, Jun 06, 2020 at 02:19:18PM +0800, Dongchun Zhu wrote:
-> > > On Fri, 2020-06-05 at 15:46 +0300, Andy Shevchenko wrote:
-> > > > On Fri, Jun 05, 2020 at 06:54:12PM +0800, Dongchun Zhu wrote:
 
-...
-
-> > > > > +#define DW9768_AAC_TIME_DEFAULT			0x20
-> > > > 
-> > > > Hex? Why not decimal?
-> > > > 
-> > > 
-> > > There is one optional property 'dongwoon,aac-timing' defined in DT.
-> > > I don't know whether you have noticed that.
-> > > 
-> > > 'DW9768_AAC_TIME_DEFAULT' is the value set to AACT[5:0] register.
-> > > I thought the Hex unit should be proper as it is directly written to the
-> > > Hex register.
-> > 
-> > I see. I would rather put it like (BIT(6) / 2) to show explicitly that we
-> > choose half of the resolution.
-> > 
-> 
-> I knew your idea.
-> '(BIT(6) / 2)' may somewhat show the meaning of 'median of the total
-> range of AACT[5:0]'.
-> 
-> But this value is still very obscure relative to '0x20'.
-> As I thought that simple is the best, especially for kernel upstream
-> patch.
-
-Okay, let's wait for maintainers to speak up.
-
-...
-
-> > > > > +	for ( ; val >= 0; val -= DW9768_MOVE_STEPS) {
-> > > > > +		ret = dw9768_set_dac(dw9768, val);
-> > > > > +		if (ret) {
-> > > > > +			dev_err(&client->dev, "I2C write fail: %d", ret);
-> > > > > +			return ret;
-> > > > > +		}
-> > > > > +		usleep_range(move_delay_us, move_delay_us + 1000);
-> > > > > +	}
-> > > > 
-> > > > 
-> > > > It will look more naturally in the multiplier kind of value.
-> > > > 
-> > > > 	unsigned int steps = DIV_ROUND_UP(...);
-> > > > 
-> > > > 	while (steps--) {
-> > > > 		...(..., steps * ..._MOVE_STEPS);
-> > > > 		...
-> > > > 	}
-> > > > 
-> > > > but double check arithmetics.
-> > > 
-> > > The current coding style is actually updated with reference to your
-> > > previous comments on DW9768 v3:
-> > > https://patchwork.linuxtv.org/patch/61856/
-> > 
-> > I understand, but can you consider to go further and see if the proposal works?
-> > 
-> 
-> In fact, your suggestion is something like one another method to set DAC
-> value to actuator.
-> It is like there may be several solutions to a question.
-> 
-> Yes. I just tried the new method and it works as expected.
-> u32 steps = DIV_ROUND_UP(dw9768->focus->val, DW9768_MOVE_STEPS);
-> while (steps--) {
-> 	ret = dw9768_set_dac(dw9768, steps * DW9768_MOVE_STEPS);
-> 	if (ret)
-> 		return ret;
-> 	usleep_range(move_delay_us, move_delay_us + 1000);
-> }
-> 
-> But from my perspective, I may prefer to the original method.
-> As here what we really care is the DAC value,
-> 'dw9768_set_dac(dw9768, val)' seems more simple.
-
-OK.
+--===============3362320323325549340==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-NVYfO6rea++DlkfIypsN"
 
 
--- 
-With Best Regards,
-Andy Shevchenko
+--=-NVYfO6rea++DlkfIypsN
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Florian, thanks for the reviews!
+
+On Mon, 2020-06-08 at 12:43 -0700, Florian Fainelli wrote:
+>=20
+> On 6/8/2020 12:26 PM, Nicolas Saenz Julienne wrote:
+> > Some atypical users of xhci-pci might need to manually reset their xHCI
+> > controller before starting the HCD setup. Check if a reset controller
+> > device is available to the PCI bus and trigger a reset.
+> >=20
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > ---
+> >  drivers/usb/host/xhci-pci.c | 9 +++++++++
+> >  1 file changed, 9 insertions(+)
+> >=20
+> > diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
+> > index ef513c2fb843..45f70facdfcd 100644
+> > --- a/drivers/usb/host/xhci-pci.c
+> > +++ b/drivers/usb/host/xhci-pci.c
+> > @@ -12,6 +12,7 @@
+> >  #include <linux/slab.h>
+> >  #include <linux/module.h>
+> >  #include <linux/acpi.h>
+> > +#include <linux/reset.h>
+> > =20
+> >  #include "xhci.h"
+> >  #include "xhci-trace.h"
+> > @@ -339,6 +340,7 @@ static int xhci_pci_probe(struct pci_dev *dev, cons=
+t
+> > struct pci_device_id *id)
+> >  	struct xhci_hcd *xhci;
+> >  	struct usb_hcd *hcd;
+> >  	struct xhci_driver_data *driver_data;
+> > +	struct reset_control *reset;
+> > =20
+> >  	driver_data =3D (struct xhci_driver_data *)id->driver_data;
+> >  	if (driver_data && driver_data->quirks & XHCI_RENESAS_FW_QUIRK) {
+> > @@ -347,6 +349,13 @@ static int xhci_pci_probe(struct pci_dev *dev, con=
+st
+> > struct pci_device_id *id)
+> >  			return retval;
+> >  	}
+> > =20
+> > +	reset =3D devm_reset_control_get(&dev->bus->dev, NULL);
+>=20
+> Should not this be devm_reset_control_get_optional()?
+
+Yes, you're right.
+
+Regards,
+Nicolas
+
+> > +	if (IS_ERR(reset)) {
+> > +		retval =3D PTR_ERR(reset);
+> > +		return retval;
+> > +	}
+> > +	reset_control_reset(reset);
+> > +
+> >  	/* Prevent runtime suspending between USB-2 and USB-3 initialization =
+*/
+> >  	pm_runtime_get_noresume(&dev->dev);
+> > =20
+> >=20
 
 
+--=-NVYfO6rea++DlkfIypsN
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7fcA4ACgkQlfZmHno8
+x/42lggAr4gRLoLdRsOhuBSqjjZLdGcfoxGXMXDpXwxrRsd71lmv+/LtQABORuU3
+Y4M35yyADqBeIuOMtzBSNCxGdLhCxhz4oRZwlAZMO2BRmbv5nVYbesB4JGCeGQ6j
+Kac2Fhfb5aBF7KhISqp7HGN5cH6fQQAgjiPebWDmCNqg0k/kC82VQgJ+JfB3uL3t
+3IuTyHni/9N/xdxeLwZDMjASxQGWRwCq0U+7uGJmsP1lYFB0ucjHa9egEzdeNbui
+DgOvWHSrBjNS3t3bcSpaG5IUspjT+zCYVUOr24zhW7k2WurtDGlkx5Oeh3+/Pipf
++z7kYFcTP0uYL6kbSA4G7CdRzBFWHw==
+=WpCe
+-----END PGP SIGNATURE-----
+
+--=-NVYfO6rea++DlkfIypsN--
+
+
+
+--===============3362320323325549340==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3362320323325549340==--
+
+
