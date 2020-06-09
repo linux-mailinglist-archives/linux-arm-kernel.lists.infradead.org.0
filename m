@@ -2,75 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D83661F31A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 03:15:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E47D1F31B9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 03:19:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jd3clndv4NS/LWqk51NOwqiJuV0A16XYeja5Kl5Gwl8=; b=C/JfQiEgFmFIH2D43NkH/nc72P
-	3df3VGPC6eclH7KWCJ8/gQmy9HlfjD+RfFUiC6dfOf1Y+G9V6XSF73LYab8S55dvt7+du6KVQC1zK
-	YE3/8yaiwLHcMwxhwsBL2ZnoCNHkKaRAUT8SRMgJlbjIghWmqxdRyPFbAvVD4AE+ykwK+66S75UNb
-	44IqExGPf2hFU+MFL92AKQaMV7QW1G4GFAJsR11kCnwVeoa90xvBrc5bM6c1YAf8WvjvmWl/OScIQ
-	aa5qi3bsM0UfPaR9q9fIR2iiKz0chb4HDG/AdQh4m7TqJ3pdBXWTOyiSTLracv4fcSJQPLylyhFac
-	TYoERWxQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CI86xbcF41yeh8FZKzbcRNo4dQMxuevZr0rYa4LQixM=; b=UOaQT41uKihIEB
+	bLvgyhd6jj2keTpb8TzSzB/ZtcOfMddxgAJL2cSXto1cCNcjW9TOIF6jNHXIQH87Jnw+T0zfvWbdf
+	2tWTM2Fxxw/AH0SJ/IpkrZLGZVv4mbC+Wn5o0mHGyqMerPSd624PdCmmvJIL1UnUQZrw4bAsw5Y3f
+	+xccSI50ThvLbT5Wu1dveMBC8oWFnccinox/fgEa3bimkjDRjT812+fMYu7q/hMgVOzcl93sdmSk7
+	ATdvUX9OU+vG1Rm2OWugrZOXv8sZdjiIfgrnLnPqXerHD8lVLhFtLaMLud5vnsgz8K7ooXa72pPgu
+	/jiH45DahQGrWMVCjORg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiSrc-0001XL-1n; Tue, 09 Jun 2020 01:15:40 +0000
-Received: from lucky1.263xmail.com ([211.157.147.135])
+	id 1jiSum-00025k-E3; Tue, 09 Jun 2020 01:18:56 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiSrF-0007zV-13; Tue, 09 Jun 2020 01:15:20 +0000
-Received: from localhost (unknown [192.168.167.32])
- by lucky1.263xmail.com (Postfix) with ESMTP id 465EE992D4;
- Tue,  9 Jun 2020 09:15:09 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P3328T139696397076224S1591665277471272_; 
- Tue, 09 Jun 2020 09:15:08 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <386409c45240ea87101dcb272f3c2ccc>
-X-RL-SENDER: sugar.zhang@rock-chips.com
-X-SENDER: zxg@rock-chips.com
-X-LOGIN-NAME: sugar.zhang@rock-chips.com
-X-FST-TO: vkoul@kernel.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Sugar Zhang <sugar.zhang@rock-chips.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 04/13] ARM: dts: rk3036: Add 'arm,
- pl330-periph-burst' for dmac
-Date: Tue,  9 Jun 2020 09:14:18 +0800
-Message-Id: <1591665267-37713-5-git-send-email-sugar.zhang@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
-References: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+ id 1jiSuc-00023X-9P; Tue, 09 Jun 2020 01:18:48 +0000
+X-UUID: 2ba83f73f0564494a826e8927b6b04a6-20200608
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=0WegPlvM9vUi/d04qilRhSbRo+qKS3G08/0Uft4NY9Y=; 
+ b=DIXfy89t42jmOiSyXyBEzAhusEY83G6oER3qJhjGUjJNNoxDJXy26YV+3QCN/x9LuNi3+xS5dIhgE1/bUCPGbH8uh6yaUwJoeIBMajOeMWkUBbTVSCVlO9lgn5ABKmlPMdSBjGKwpI0sXWEXjhZ2LkCBw4QbfBjNLoBwMCIN1FU=;
+X-UUID: 2ba83f73f0564494a826e8927b6b04a6-20200608
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <chun-hung.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1136865740; Mon, 08 Jun 2020 17:18:38 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 8 Jun 2020 18:18:35 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 9 Jun 2020 09:18:32 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Tue, 9 Jun 2020 09:18:32 +0800
+From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+To: <mirq-linux@rere.qmqm.pl>, Jonathan Hunter <jonathanh@nvidia.com>, "Al
+ Cooper" <alcooperx@gmail.com>, Adrian Hunter <adrian.hunter@intel.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ <bcm-kernel-feedback-list@broadcom.com>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Michal Simek
+ <michal.simek@xilinx.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Chaotian Jing <chaotian.jing@mediatek.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Matthias Brugger <matthias.bgg@gmail.com>, "Linus
+ Walleij" <linus.walleij@linaro.org>, Pavel Machek <pavel@ucw.cz>, Kate
+ Stewart <kstewart@linuxfoundation.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Martin Blumenstingl
+ <martin.blumenstingl@googlemail.com>, Pan Bian <bianpan2016@163.com>, "Thomas
+ Gleixner" <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ "Mathieu Malaterre" <malat@debian.org>, Stanley Chu
+ <stanley.chu@mediatek.com>, "Kuohong Wang" <kuohong.wang@mediatek.com>
+Subject: [PATCH v6 0/4] mmc: mediatek: add mmc cqhci support
+Date: Tue, 9 Jun 2020 09:18:18 +0800
+Message-ID: <1591665502-6573-1-git-send-email-chun-hung.wu@mediatek.com>
+X-Mailer: git-send-email 1.9.1
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: F4D6614A1A95732A3231291BAAF20B2BCD9D03A15DF698C063B4A42EA2E20AE42000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_181518_084626_7A01885C 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200608_181846_341303_FD85DBC7 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.135 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.135 listed in wl.mailspike.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,46 +99,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Sugar Zhang <sugar.zhang@rock-chips.com>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-arm-msm@vger.kernel.org, Chun-Hung Wu <chun-hung.wu@mediatek.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ kernel-team@android.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch Add the quirk to specify to use burst transfer
-for better compatible and higher performance.
+This series provides MediaTek cqhci implementations as below:
+  - Extend mmc_of_parse() to parse CQE bindings
+  - Remove redundant host CQE bindings
+  - Refine msdc timeout api to reduce redundant code
+  - MediaTek command queue support
+  - dt-bindings for mt6779
 
-Signed-off-by: Sugar Zhang <sugar.zhang@rock-chips.com>
+v1 -> v2:
+  - Add more patch details in commit message
+  - Separate msdc timeout api refine to individual patch
 
----
+v2 -> v3:
+  - Remove CR-Id, Change-Id and Feature in patches
+  - Add Signed-off-by in patches
 
-Changes in v2:
-- fix FATAL ERROR: Unable to parse input tree
+v3 -> v4:
+  - Refine CQE bindings in mmc_of_parse (Ulf Hansson)
+  - Remove redundant host CQE bindings (Linux Walleij)
 
- arch/arm/boot/dts/rk3036.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+v4 -> v5:
+  - Add Acked-by and more maintainers
 
-diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
-index d9a0c9a2..0935670 100644
---- a/arch/arm/boot/dts/rk3036.dtsi
-+++ b/arch/arm/boot/dts/rk3036.dtsi
-@@ -67,6 +67,7 @@
- 				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
- 			#dma-cells = <1>;
- 			arm,pl330-broken-no-flushp;
-+			arm,pl330-periph-burst;
- 			clocks = <&cru ACLK_DMAC2>;
- 			clock-names = "apb_pclk";
- 		};
+v5 -> v6:
+  - Move CQE bindings back to vendor driver
+  - Add mt6779 mmc support as an individual patch
+  - Error handling for cq_host devm_kzallo()
+
+Chun-Hung Wu (4):
+  [1/4] mmc: mediatek: add MT6779 MMC driver support
+  [2/4] mmc: mediatek: refine msdc timeout api
+  [3/4] mmc: mediatek: command queue support
+  [4/4] dt-bindings: mmc: mediatek: Add document for mt6779
+
+ Documentation/devicetree/bindings/mmc/mtk-sd.txt |   4 +
+ drivers/mmc/host/mtk-sd.c                        | 164 +++++++++++++++++++++--
+ 2 files changed, 158 insertions(+), 10 deletions(-)
+
 -- 
-2.7.4
-
-
-
-
+1.9.1
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
