@@ -2,110 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68C6C1F4930
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 00:00:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E44B01F4936
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 00:04:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zq6Hnmfz/vbj3YXn8XQguce3d9ScWyUCtTp+HE2Qjuo=; b=e6jWiEzsN+laG6
-	okvNGBB/h4/JVgoNn6YRZdzLtokmfMYAR/PsgbjqO4dq5GM5Af38sYlB3GQXYnUnpD/KklWzod+Vg
-	0r+FtqMh7Is1qI1dYCEthU3Xjl5vWnYXn/Dwer1HKhpDXpNc964Gr6F/VB7/aE2wkpG1h/48zbgpH
-	QaJW8y8g6WWNGKYPg6Gh36AR6ApacsJhNl5wSZejbRkgAlu4cRx2z2CYlLg5oRQr/KqpkgEq5PnxJ
-	2Rv8TePBBcxRXO+0gWPx3g3vUkiTr3eRF7bkSDke9M/tcZYNiO3wQfqnudzXx7EaVtPWrALY0mE8F
-	4RNjU6utt7PxAnuZg6lQ==;
+	List-Owner; bh=M8rfY+urZZUpE51KmTQRcTJIsrG85y5BGvT3TcOseRs=; b=q/zGBmtUX4Q55y
+	4i6VzKZGEbxjYSJSRIyAIbMckw1FyBwzPC9wVNJDcVNs6jHiOArHE6N9jyl4VX3A1ccqH0cvnuQ+0
+	ina2AtLu3/MIpCZnCwy3XVxVMMMREHsP9a63tf56lAF3DKeYNdcWmkf700W5N4c/Q2SIR8Wh1xJ+C
+	G6CiaCy8y0f5J1X8Y98+7+sdObp7wf2n/p75F4+opvKDdOvx9ZqkfsOFjbZwEcEiF830y4mWjiPyq
+	WDbqd6r/Z2WeCmHvR9j03aNgW1nui11wW/G+t+bIRNg7JMZvIt2PFBZXvQ6GdBYrL+OkcgXTj0ey3
+	u4tJ6ibIUiksHHjbfSmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jimHj-0002Fq-0Z; Tue, 09 Jun 2020 21:59:55 +0000
-Received: from mail-eopbgr60070.outbound.protection.outlook.com ([40.107.6.70]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1jimLl-00059C-G1; Tue, 09 Jun 2020 22:04:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jimHb-0002FN-Ru
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 21:59:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WQ6nmkd+AKQtzkzaETXpfYbMkNS8lSxScvP0lCvLLmFRsgKSlZBraAS1s9FkTqpocurU4ijy97XfCjrN4NmHU7MCqSSsX6SyK2YULkR43xE2Bw/KBuMBeXSujonzX0QxMLCsEYN0V7Y3xyIyWSCXoqco4hqqJ+gUnzJpYncA4fOO0aB7DvARcIlp6GhvnO3txqJbn5+VMtY0+tFujsnfwjRiJ+iDdzB2bhdS12lkJ9PoMnnQgqZlGmSq4acplT0MSvHtCCcF+hE+0OqQJO8IDzQbBnrodlXS8icOVaRuQ9w2MfnB/yhm4dFcPiX6a3vK3LpknIoKhIPL6uKaSc0ZkQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=m+DcaWwVqcFZW0A8Qv8wxDKOUeQhUR+SJNpcNmxNtX8=;
- b=NLYt+n/8FAPr9u2MKXCCiBm0pBVUPryHnLGAh+QoQwBe5ndFQLPbpHJic0wTmCGnIRX45oSHu/Fasi8ge8ulg0Ri/+wW2sd1Qo07CfwVICyNi5DU31HiF9ioeEU5Ll2AyFkpf5wM64pGifrG6gOFHGQeJtYW8YXPCuPyHDpxW1phSl9giFs+1Iaratizfmy+gOolTv4pFRVSkkVRCT4yWNFPLem47OxEShYVflHFbTNUoOx4tdT075kgQNlm0YEmVkqgoWbkuc8J3W9dNCXoDwdU7HkRWSaPAit75IgGwdKdHqUKmYdqHnC0EGPbuGpEhw44ds7cBnrSEj6kgvKHug==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=m+DcaWwVqcFZW0A8Qv8wxDKOUeQhUR+SJNpcNmxNtX8=;
- b=K/D7GYfFtAxI77ZnCXq/wLmuK2x6R2qSflDEgw7Y997SIKs/Xi4PWyg+ZD/A3gims26fPKDTyUw3f0fjmkKM3wEZLH09cgJ8iGg109WtGVY618KIPMmQCRjlL4mN2NW/yEidO3sUrv/F++/uOuqhIU5bh6z8e27fRTnGtzUZ4+o=
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (2603:10a6:803:121::30)
- by VE1PR04MB6493.eurprd04.prod.outlook.com (2603:10a6:803:11f::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Tue, 9 Jun
- 2020 21:59:44 +0000
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::48b1:c82c:905:da9f]) by VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::48b1:c82c:905:da9f%3]) with mapi id 15.20.3088.018; Tue, 9 Jun 2020
- 21:59:44 +0000
-From: Leo Li <leoyang.li@nxp.com>
-To: "Y.b. Lu" <yangbo.lu@nxp.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-Thread-Topic: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-Thread-Index: AQHWL9lTv6y2cJdOCkaNFPUZn6UCfajPZbSQgABGOoCAAUaRsA==
-Date: Tue, 9 Jun 2020 21:59:44 +0000
-Message-ID: <VE1PR04MB6687C5843AD4FE041BA37CCE8F820@VE1PR04MB6687.eurprd04.prod.outlook.com>
-References: <20200522013052.2838-1-yangbo.lu@nxp.com>
- <VE1PR04MB668745C015609F7D875FBFDE8F850@VE1PR04MB6687.eurprd04.prod.outlook.com>
- <AM7PR04MB6885E81887C3C17B854BD6E6F8820@AM7PR04MB6885.eurprd04.prod.outlook.com>
-In-Reply-To: <AM7PR04MB6885E81887C3C17B854BD6E6F8820@AM7PR04MB6885.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [136.49.234.194]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 165c3c36-1bb2-494b-9fc1-08d80cc06b3a
-x-ms-traffictypediagnostic: VE1PR04MB6493:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB64931276A9E7FE11347941C48F820@VE1PR04MB6493.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:862;
-x-forefront-prvs: 042957ACD7
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: dzKL8B/sCgGwmULEw+5KNVFTIKX8nDMLZZtsBR8j+xLiHFzPpX88AcV6mX/s/vtmCo5eZvMKksUhSJLtWyM3Gmo8H/jZ++jX8QMQzWbaSBzkhU9uUMkpmzn/KxmK5wJvH9suWCO1Vm8whADf+KXKOlKrfsf1feA4Y1W5t/tTbpAUQ38oYojrfLfnruosZNNV/9O1eiT0a6zlbHvQLXx1XvLvEKInoqFvivJcVf889xxJ7BcWqjCdWcnjM5GtgJhxsB/5TpLO1gL4Wp660f1mYSLI8gBiTB0oSvXY7KKVJCRCR3vggvPM1gZ8NH+1k5RM
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6687.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(396003)(136003)(366004)(346002)(39860400002)(64756008)(316002)(66946007)(71200400001)(5660300002)(76116006)(53546011)(66556008)(54906003)(33656002)(6506007)(9686003)(66446008)(7696005)(2906002)(66476007)(55016002)(52536014)(8936002)(478600001)(110136005)(186003)(26005)(4326008)(8676002)(86362001)(83380400001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 9vsogqlBA5mRxZ6m7CrEcgWAWw4p1L6z3Xr2SpUqv+1VD09uOWZbqd643fENG9ytJLvBEV0u6sDz9EGXCOMKvLJNa/r97X5+Y/L8RRXWwt7qZqdpnJQXDCvp+1C6jBjo73ukHrkqZ1rFUCqi+uD6h58qY9BRnbLShzrkBh41sAiL8ySy0vSWkhUZMda8Pb7sZjlDQwTapfuZLhFcqtdFlMb0GkzsW06dIGJGDY6UOdMfCQ/G3ZHq6ciVIc3TSoXnVYkwF6IvrP09l+iGlj7PwrqCQlyryPve0/4YFaeJyL9l6HdBZ10qDBXb7rgPoncaNcBYOcZRSP1zENwtrcb4sdzSZiOIh+WnsLvyiiczJ0wzRdwxLz77389ZZnzyYMRpgrCUKaZFEwhg/bmp86n4fAQux5vg+aL4PVAdyMy0JcjHtDsxOmGJg4T28Blk1/hsb2c8zYpUnf1ziVB8OLBbfIRcFvluVsvpDB6E0wMBrAEYq8Y6e9C/R4OjCzc6P1xD
+ id 1jimLe-00058S-5T
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 22:03:59 +0000
+Received: from mail-oi1-f177.google.com (mail-oi1-f177.google.com
+ [209.85.167.177])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6899320825
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  9 Jun 2020 22:03:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591740237;
+ bh=flZ33ysLlKU45UAun+m9I+uL1J5SSmfePQ8hOU6DJfg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=lkIALF/Bz5PHpbWDPE/TVnpI2c/G/+3TP5jdAxlBZenjXoI743llcFBTqAjEKIa2d
+ mk3YMda7mIEGR7kVGu9J1XQi1oUtLlNrQTctAeflcrM3BX9rl37Vd9DR+QmZfHdYB8
+ kpWx8xVi3QwABVCAkftswnHytL9YYHSyJfGQscPo=
+Received: by mail-oi1-f177.google.com with SMTP id x202so170885oix.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jun 2020 15:03:57 -0700 (PDT)
+X-Gm-Message-State: AOAM531Z1URsmT+8bK0r7bUfTYU5nYsvWYa6/4jDxX3TdfJvaqUkMw0j
+ +uVO9SqRZhbnCdSIgi752GPyOJgBAnuPyDkH7g==
+X-Google-Smtp-Source: ABdhPJzUR9iieM8EaueMmaUiEVRgOMVztBfW1AHBkxHha+Gjto8AsBpZQbvbkHWaNeJrgkpACTnHBYgdAkwtI7Cit6Y=
+X-Received: by 2002:aca:d943:: with SMTP id q64mr294871oig.147.1591740236611; 
+ Tue, 09 Jun 2020 15:03:56 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 165c3c36-1bb2-494b-9fc1-08d80cc06b3a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jun 2020 21:59:44.4413 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: MfMfVcyjUHZI15gmPtm7ahud6Sa2+d/7z7dc5sb2Lwt+eyUFJJ9Loxhj6hy1sSL1oXn3TA5TgTMzm2WXjk+JAA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6493
+References: <20200609110136.GJ4106@dell>
+In-Reply-To: <20200609110136.GJ4106@dell>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 9 Jun 2020 16:03:45 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqK1BfYa2WfHFUwm9MB+aZVF5zehDSTZj0MhjuhJyYXdTA@mail.gmail.com>
+Message-ID: <CAL_JsqK1BfYa2WfHFUwm9MB+aZVF5zehDSTZj0MhjuhJyYXdTA@mail.gmail.com>
+Subject: Re: [RFC] MFD's relationship with Device Tree (OF)
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_145947_989630_E1767C65 
-X-CRM114-Status: GOOD (  23.53  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200609_150358_248602_F320DE4E 
+X-CRM114-Status: GOOD (  36.67  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.6.70 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.6.70 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -113,6 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,96 +85,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Cochran <richardcochran@gmail.com>, Shawn Guo <shawnguo@kernel.org>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Michael Walle <michael@walle.cc>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Guenter Roeck <linux@roeck-us.net>,
+ GregKroah-Hartmangregkh@linuxfoundation.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jun 9, 2020 at 5:01 AM Lee Jones <lee.jones@linaro.org> wrote:
+>
+> Good morning,
+>
+> After a number of reports/queries surrounding a known long-term issue
+> in the MFD core, including the submission of a couple of attempted
+> solutions, I've decided to finally tackle this one myself.
+>
+> Currently, when a child platform device (sometimes referred to as a
+> sub-device) is registered via the Multi-Functional Device (MFD) API,
+> the framework attempts to match the newly registered platform device
+> with its associated Device Tree (OF) node.  Until now, the device has
+> been allocated the first node found with an identical OF compatible
+> string.  Unfortunately, if there are, say for example '3' devices
+> which are to be handled by the same driver and therefore have the same
+> compatible string, each of them will be allocated a pointer to the
+> *first* node.
+>
+> Let me give you an example.
+>
+> I have knocked up an example 'parent' and 'child' device driver.  The
+> parent utilises the MFD API to register 3 identical children, each
+> controlled by the same driver.  This happens a lot.  Fortunately, in
+> the majority of cases, the OF nodes are also totally identical, but
+> what if you wish to configure one of the child devices with different
+> attributes or resources supplied via Device Tree, like a clock?  This
+> is currently impossible.
+>
+> Here is the Device Tree representation for the 1 parent and the 3
+> child (sub) devices described above:
+>
+>         parent {
+>                 compatible = "mfd,of-test-parent";
+>
+>                 child@0 {
 
+Just a note, unit-address implies there is a 'reg' property. Why
+that's important below.
 
-> -----Original Message-----
-> From: Y.b. Lu <yangbo.lu@nxp.com>
-> Sent: Monday, June 8, 2020 9:30 PM
-> To: Leo Li <leoyang.li@nxp.com>; linux-arm-kernel@lists.infradead.org
-> Cc: Shawn Guo <shawnguo@kernel.org>; Richard Cochran
-> <richardcochran@gmail.com>
-> Subject: RE: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-> 
-> Hi Leo,
-> 
-> > -----Original Message-----
-> > From: Leo Li <leoyang.li@nxp.com>
-> > Sent: Tuesday, June 9, 2020 6:20 AM
-> > To: Y.b. Lu <yangbo.lu@nxp.com>; linux-arm-kernel@lists.infradead.org
-> > Cc: Y.b. Lu <yangbo.lu@nxp.com>; Shawn Guo <shawnguo@kernel.org>;
-> > Richard Cochran <richardcochran@gmail.com>
-> > Subject: RE: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-> >
-> >
-> >
-> > > -----Original Message-----
-> > > From: Yangbo Lu <yangbo.lu@nxp.com>
-> > > Sent: Thursday, May 21, 2020 8:31 PM
-> > > To: linux-arm-kernel@lists.infradead.org
-> > > Cc: Y.b. Lu <yangbo.lu@nxp.com>; Shawn Guo <shawnguo@kernel.org>;
-> > > Leo Li <leoyang.li@nxp.com>; Richard Cochran
-> > > <richardcochran@gmail.com>
-> > > Subject: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-> > >
-> > > The timer fixed interval period pulse generator register is used to
-> > > generate periodic pulses. The down count register loads the value
-> > > programmed in the fixed period interval (FIPER). At every tick of
-> > > the timer accumulator overflow, the counter decrements by the value
-> > > of TMR_CTRL[TCLK_PERIOD]. It generates a pulse when the down
-> counter
-> > > value reaches zero. It reloads the down counter in the cycle following a
-> pulse.
-> > >
-> > > To use the TMR_FIPER register to generate desired periodic pulses.
-> > > The value should programmed is, desired_period - tclk_period
-> > >
-> > > Current tmr-fiper2 value is to generate 100us periodic pulses.
-> > > (But the value should have been 99995, not 99990. The tclk_period is
-> > > 5.)
-> > This
-> > > patch is to generate 1 second periodic pulses with value
-> > > 999999995 programmed which is more desired by user.
-> > >
-> > > Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
-> > > ---
-> > > Changes for v2:
-> > > 	- Added more discription in commit message.
-> > > Changes for v3:
-> > > 	- Mentioned effect of the change in commit message.
-> > > ---
-> > >  arch/arm/boot/dts/ls1021a.dtsi | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > >
-> > > diff --git a/arch/arm/boot/dts/ls1021a.dtsi
-> > > b/arch/arm/boot/dts/ls1021a.dtsi index 760a68c..b2ff27a 100644
-> > > --- a/arch/arm/boot/dts/ls1021a.dtsi
-> > > +++ b/arch/arm/boot/dts/ls1021a.dtsi
-> > > @@ -772,7 +772,7 @@
-> > >  			fsl,tmr-prsc    = <2>;
-> > >  			fsl,tmr-add     = <0xaaaaaaab>;
-> > >  			fsl,tmr-fiper1  = <999999995>;
-> > > -			fsl,tmr-fiper2  = <99990>;
-> > > +			fsl,tmr-fiper2  = <999999995>;
-> >
-> > I noticed that the fiper2 is now the same as fiper1.  Can we just use
-> > fiper1 to generate the 1s pulse?  Or both of them have to be used?
-> 
-> PPS signal is frequently used by users. And more than 1 channel may be
-> needed.
-> I think we can configure two PPS signals on fiper1/fiper2 in default.
-> For specific periodic pulse, user can configure the period wanted by
-> themselves.
+>                         compatible = "mfd,of-test-child";
+>                         clocks = <&clock 0>;
+>                 };
+>
+>                 child@1 {
+>                         compatible = "mfd,of-test-child";
+>                         clocks = <&clock 1>;
+>                 };
+>
+>                 child@2 {
+>                         compatible = "mfd,of-test-child";
+>                         clocks = <&clock 2>;
+>                 };
+>         };
+>
+> This is how we register those devices from MFD:
+>
+> static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL("mfd_of_test_child", NULL, NULL, 0, 0, "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd_of_test_child", NULL, NULL, 0, 1, "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd_of_test_child", NULL, NULL, 0, 2, "mfd,of-test-child")
+> };
+>
+> ... which we pass into mfd_add_devices() for processing.
+>
+> In an ideal world.  The devices with the platform_id; 0, 1 and 2 would
+> be matched up to Device Tree nodes; child@0, child@1 and child@2
+> respectively.  Instead all 3 devices will be allocated a pointer to
+> child@0's OF node, which is obviously not correct.
+>
+> This is how it looks when each of the child devices are probed:
+>
+>  [0.708287] mfd-of-test-parent mfd_of_test: Registering 3 devices
+>  [...]
+>  [0.712511] mfd-of-test-child mfd_of_test_child.0: Probing platform device: 0
+>  [0.712710] mfd-of-test-child mfd_of_test_child.0: Using OF node: child@0
+>  [0.713033] mfd-of-test-child mfd_of_test_child.1: Probing platform device: 1
+>  [0.713381] mfd-of-test-child mfd_of_test_child.1: Using OF node: child@0
+>  [0.713691] mfd-of-test-child mfd_of_test_child.2: Probing platform device: 2
+>  [0.713889] mfd-of-test-child mfd_of_test_child.2: Using OF node: child@0
+>
+> "Why is it when I change child 2's clock rate, it also changes 0's?"
+>
+> Whoops!
+>
+> So in order to fix this, we need to make MFD more-cleverer!
+>
+> However, this is not so simple.  There are some rules we should abide
+> by (I use "should" intentionally here, as something might just have to
+> give):
+>
+>  a) Since Device Tree is designed to describe hardware, inserting
+>     arbitrary properties into DT is forbidden.  This precludes things
+>     we would ordinarily be able to match on, like 'id' or 'name'.
+>  b) As an extension to a) DTs should also be OS agnostic, so
+>     properties like 'mfd-device', 'mfd-order' etc are also not
+>     not suitable for inclusion.
+>  c) The final solution should ideally be capable of supporting both
+>     newly defined and current trees (without retroactive edits)
+>     alike.
 
-If this is an application specific setting, wouldn't it be better to be part of the board dts instead of the SoC dtsi?
+Presumably anything current already works. If you had the above
+example already, requiring updating the DT to make it work seems fine.
 
-Regards,
-Leo
+>  d) Existing properties could be used, but not abused.  For example,
+>     one of my suggestions (see below) is to use the 'reg' property.
+>     This is fine in principle but loading 'reg' with arbitrary values
+>     (such as; 0, 1, 2 ... x) which 1) clearly do not have anything to
+>     do with registers and 2) would be meaningless in other OSes/
+>     implementations, just to serve our purpose, is to be interpreted
+>     as an abuse.
+
+Multiple instances of something implies you have some way to address
+them and 'reg' is what defines the address of something. 0,1,2,etc.
+looks suspiciously like just some kernel defined indexes, but if
+that's how things are defined in the datasheet I'm okay with them.
+
+The one wrinkle is there's only one address space at one level, so
+gpio@0, gpio@1, pwm@0, pwm@1, etc. doesn't really work (well, it
+works, but having overlapping addresses is not good practice). Either
+we relax that in this case or we can add another level to group nodes.
+
+>
+> Proposal 1:
+>
+> As mentioned above, my initial thoughts were to use the 'reg' property
+> to match an MFD cell entry with the correct DT node.  However, not
+> all Device Tree nodes have 'reg' properties.  Particularly true in the
+> case of MFD, where memory resources are usually shared with the parent
+> via Regmap, or (as in the case of the ab8500) the MFD handles all
+> register transactions via its own API.
+
+Just to pick on ab8500, it should have had 'reg' property IMO. The
+'bank' is clearly a h/w property and how you address each sub-device.
+
+>
+> Proposal 2:
+>
+> If we can't guarantee that all DT nodes will have at least one
+> property in common to be used for matching and we're prevented from
+> supplying additional, potentially bespoke properties, then we must
+> seek an alternative procedure.
+>
+> It should be possible to match based on order.  However, the developer
+> would have to guarantee that the order in which the child devices are
+> presented to the MFD API are in exactly the same order as they are
+> represented in the Device Tree.  The obvious draw-back to this
+> strategy is that it's potentially very fragile.
+
+I don't think we should use order.
+
+>
+> Current Proposal:
+>
+> How about a collection of Proposal 1 and Proposal 2?  First we could
+> attempt a match on the 'reg' property.  Then, if that fails, we would
+> use the fragile-but-its-all-we-have Proposal 2 as the fall-back.
+
+Yes, we should use 'reg' whenever possible. If we don't have 'reg',
+then you shouldn't have a unit-address either and you can simply match
+on the node name (standard DT driver matching is with compatible,
+device_type, and node name (w/o unit-address)). We've generally been
+doing 'classname-N' when there's no 'reg' to do 'classname@N'.
+Matching on 'classname-N' would work with node name matching as only
+unit-addresses are stripped.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
