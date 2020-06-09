@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76F4A1F3C62
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:27:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 949251F3C63
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:28:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CM7UwaaLCpm2fSr6hgpno1ebAnSPTqfiay9om+Fjr1g=; b=cfGO+lRA8eku6cLE5vS6Q0YwkF
-	KxKkjfW2qND0NDwYFtkmXaeSXNo3Q6WbQWmin2yYVmKPFgj9zWZuT8+wpm1/AS7ayoXpT9xTepn7b
-	ZLXMmyE4bWTQ7bXvUqA/1fCkN1wGiEOqiVA076Mjj17affJfYhg3Y4u3M+M52Lp5o4nyfaeXo82We
-	yHe5j80C7cSCkH7xmpIkz4uihAf9wxwEiQs4q39X26gLadv5u5TxaJ4qWLjTPMWtLJgK2DqKQjXdZ
-	n41duBHHHbCFDkHqgdbHEmjtoV/xoyQVyVMQqF+oh4yGHNGuTbZ5RZIIqDw+SLZx4t9PvwqThLWli
-	9DXpI0Nw==;
+	bh=QAZzTBSIDLKpEYbmXA0IjMyhtMWvpQbc2W4GCr/hVvo=; b=Gy+N6v9WMdA7zltHKLx1T44cb7
+	xq8msQ00NrB9GXB9AIjyrMo89eSn8BOXnlxon766mTWZf6+ZHcSpPM7d+vxVgFn+USwrC7thyng0B
+	WwBjb28lg/I/iAgxItNxjgvBNFkMvvs08GVDC8dBjrXQS1Udwp1iVxyk115CvZqqAkKOxG5DbWhf4
+	rWDZI1WgBH72c4p9miNsOvkXoMQpJvs4aqBQLei1PC9Zi0I/dZfzlc2yusWitb909bfdhPUxhgX3U
+	ZNRvGsxY8SuV/s5soF0Si3vQgG5u/WQtIT7BqaCY0/SmVOlYPaWtk3Zy60xNdjgCFDJez+qXHWkfC
+	/+OIXjxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jieI4-0003GH-7X; Tue, 09 Jun 2020 13:27:44 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jieIF-0003Xw-0C; Tue, 09 Jun 2020 13:27:55 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jieHI-0002nT-Af
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:26:57 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id q24so1411446pjd.1
+ id 1jieHM-0002pw-05
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:27:02 +0000
+Received: by mail-pg1-x543.google.com with SMTP id p21so10271843pgm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 06:26:56 -0700 (PDT)
+ Tue, 09 Jun 2020 06:26:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ILMp3Me4a0Jm6IXnxt02gFbANgGUJCet44DEGXP16Yk=;
- b=gspW10yeD3Ig3PPYkYAVOZpbqMtWXRLVN0T31UeUe73zINPZZIkp2J90gD4VRGZHRZ
- iei35GZ+L/HjWrOg5uE4kxF6UzLLPvgeKkmc/wuMMP6SbKRkjMN+lroR5GRS6HDFOC3M
- GILf2G94TsrTC6KaJtoRlQ5nCSgq8s+IOThlYfIaLcIG0Tle9BHjkS1aUtyWY0j2qUBI
- jjrZIyqlBdTXNeP4nOt59d+yhBLTVJEw5Q8fAf98w0bMEa0bNtU7uNHKQAHjJxOVYyFb
- 4P8UBdyM6effNFMGY3mv0tzNh08zuFrIOV1LFj//LcHmqyXGRqK+MHsyybWBW7FSfcTP
- T+LA==
+ bh=aYMF8YUhot7LiLw3oFS3/mzi/UrWf4Gg+68yZs/PTjs=;
+ b=sgGbqRUkyDWUtzzQdzNZIOrKXN8s30ddQ1jDBSWTsBSz8ST1UW2xY9er013Keh0tkb
+ bbVb0EAZmz2FcjOg0tY1AtsIZtW6tCFJhZMb40jRIq7cTqJyhRgeg1/rIt13DaBrDOKd
+ 0PEEey68luuZLlZB/zCUTuNcmeAm0R/8loPKH+3lOODVmw2CAmdfA/uM2yNnfhQwAe5o
+ anOSKZzUJ5moWHDDQ7UxW5LdFo9iz2Q3Ksg90oBDa0q565HCN57RA1oo+Jc6SlZNAnv6
+ HMi59cFDI7fajeJCX6zy9/VDju2JIaa5Fzyx+FrW+BGjsRTkk7o8yov5/DHzX+SF2h7m
+ ZZIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ILMp3Me4a0Jm6IXnxt02gFbANgGUJCet44DEGXP16Yk=;
- b=uOKC5Jq9jbYHbEtXUVoSll4buMKp5fUPS/US/SB86NcALS1f0u2QXHnNietB00k8CL
- jHYLlEVJa1UiwdA3n3WkyXPaUPWfgmg0e6M4+iq+xV/8vWduYx1wOOgcp41g3sw7XMg4
- FXwpOMmaFodQErkFlbolD6QxdWiOWR8dS6gXpcfVxVyn905N+6y9usY7QkJDP5KEDQ8e
- Pcw/qFGdhqqmMqVXgSuSbBMeEWoKwYQ6dAdfLFs1WSVBP8oXKRsgBEmZ6o6L3qisQjBJ
- vyhnB8lJIBHdK59f4rQEZstkgQx6jVECJ0o901bc9E/Di5uCyGG50iS1PJDpF0j72Ju7
- jamQ==
-X-Gm-Message-State: AOAM5320Iw7MZIQj5jsRscjrup9omSzPVojdtDoygewxQVqZOPtOZWSU
- h68vstS4yqqYjqBNF+NXddQ=
-X-Google-Smtp-Source: ABdhPJyhL/LlvJFTDaH4V0AA0HNsugFg+Z3y3YeifkPG4RFoaxYuVgLw6vdy/MZ9yTGT+92M7VrQQw==
-X-Received: by 2002:a17:90a:c70d:: with SMTP id
- o13mr4775927pjt.73.1591709215755; 
- Tue, 09 Jun 2020 06:26:55 -0700 (PDT)
+ bh=aYMF8YUhot7LiLw3oFS3/mzi/UrWf4Gg+68yZs/PTjs=;
+ b=XHtvhfStxtyJOR6/K0alGkULx0XKhUvOiEk+gJT3GMQ2KBNmo5BrptiV5oDghYkmgO
+ gsBs2KQUZCWWtReQuyyu6vN6s8PN4UgSjUiQpXL8tmmzZBClCbGtH0gflXnoDyxARHJm
+ 9oUNfcrevJjZxSi0XuHrzOsIly6UdMXPHGazsNxINsQD7Mxu87h7OqijOqsN2ZetRN5E
+ VEIUmySy3N+OaSppGezJFnYOjVG0r6GxJEuBqASFEXPapkmXkbStxucEApx8GWQh0vXS
+ zv34reLdiCU/p0K3Xlew9EYyZqRNi45A6p6ATvQubM++TLZ5h6GluQdaiSfMdClsjLbK
+ CXmQ==
+X-Gm-Message-State: AOAM531mNzc5+E5TS0LBVUQMR/SmB9ojUvgP+BK+v1TihcsL1SLAecHl
+ OaGJ81E9hHcpyYI4WboKo30=
+X-Google-Smtp-Source: ABdhPJw7afLAjpJsItQsnX3qt0rEIAvvOvZk+nKKPPFz9OcVyn+axZGQ/zVVsYCjoQRpV5oByTFdOg==
+X-Received: by 2002:a65:46cc:: with SMTP id n12mr24887487pgr.80.1591709219129; 
+ Tue, 09 Jun 2020 06:26:59 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.42])
- by smtp.gmail.com with ESMTPSA id b5sm2624348pjz.34.2020.06.09.06.26.52
+ by smtp.gmail.com with ESMTPSA id b5sm2624348pjz.34.2020.06.09.06.26.56
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 09 Jun 2020 06:26:55 -0700 (PDT)
+ Tue, 09 Jun 2020 06:26:58 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: robh+dt@kernel.org, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
  p.zabel@pengutronix.de, pierre-yves.mordret@st.com,
  philippe.schenker@toradex.com
-Subject: [PATCH v4 2/4] ARM: dts: stm32: Add pin map for I2C3 controller on
- stm32f4
-Date: Tue,  9 Jun 2020 21:26:41 +0800
-Message-Id: <1591709203-12106-3-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v4 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco
+ board
+Date: Tue,  9 Jun 2020 21:26:42 +0800
+Message-Id: <1591709203-12106-4-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591709203-12106-1-git-send-email-dillon.minfei@gmail.com>
 References: <1591709203-12106-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_062656_406246_2AD9555F 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200609_062700_218372_4D582E50 
+X-CRM114-Status: GOOD (  11.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [dillon.minfei[at]gmail.com]
@@ -112,37 +111,75 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-This patch adds the pin configuration for I2C3 controller on
-stm32f4.
+Enable the stmpe811 touch screen on stm32429-disco board.
 
 Signed-off-by: dillon min <dillon.minfei@gmail.com>
 ---
- arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ arch/arm/boot/dts/stm32f429-disco.dts | 47 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 47 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
-index 392fa143ce07..051f33627e15 100644
---- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
-@@ -316,6 +316,18 @@
- 				};
- 			};
+diff --git a/arch/arm/boot/dts/stm32f429-disco.dts b/arch/arm/boot/dts/stm32f429-disco.dts
+index 30c0f6717871..fad1ec10efb6 100644
+--- a/arch/arm/boot/dts/stm32f429-disco.dts
++++ b/arch/arm/boot/dts/stm32f429-disco.dts
+@@ -49,6 +49,8 @@
+ #include "stm32f429.dtsi"
+ #include "stm32f429-pinctrl.dtsi"
+ #include <dt-bindings/input/input.h>
++#include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/gpio/gpio.h>
  
-+			i2c3_pins: i2c3-0 {
-+				pins {
-+					pinmux = <STM32_PINMUX('C', 9, AF4)>,
-+						/* I2C3_SDA */
-+						 <STM32_PINMUX('A', 8, AF4)>;
-+						/* I2C3_SCL */
-+					bias-disable;
-+					drive-open-drain;
-+					slew-rate = <3>;
-+				};
-+			};
+ / {
+ 	model = "STMicroelectronics STM32F429i-DISCO board";
+@@ -127,3 +129,48 @@
+ 	pinctrl-names = "default";
+ 	status = "okay";
+ };
 +
- 			dcmi_pins: dcmi-0 {
- 				pins {
- 					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
++&i2c3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&i2c3_pins>;
++	clock-frequency = <100000>;
++	status = "okay";
++
++	stmpe811@41 {
++		compatible = "st,stmpe811";
++		reg = <0x41>;
++		interrupts = <15 IRQ_TYPE_EDGE_FALLING>;
++		interrupt-parent = <&gpioa>;
++		/* 3.25 MHz ADC clock speed */
++		st,adc-freq = <1>;
++		/* 12-bit ADC */
++		st,mod-12b = <1>;
++		/* internal ADC reference */
++		st,ref-sel = <0>;
++		/* ADC converstion time: 80 clocks */
++		st,sample-time = <4>;
++
++		stmpe_touchscreen {
++			compatible = "st,stmpe-ts";
++			/* 8 sample average control */
++			st,ave-ctrl = <3>;
++			/* 7 length fractional part in z */
++			st,fraction-z = <7>;
++			/*
++			 * 50 mA typical 80 mA max touchscreen drivers
++			 * current limit value
++			 */
++			st,i-drive = <1>;
++			/* 1 ms panel driver settling time */
++			st,settling = <3>;
++			/* 5 ms touch detect interrupt delay */
++			st,touch-det-delay = <5>;
++		};
++
++		stmpe_adc {
++			compatible = "st,stmpe-adc";
++			/* forbid to use ADC channels 3-0 (touch) */
++			st,norequest-mask = <0x0F>;
++		};
++	};
++};
 -- 
 2.7.4
 
