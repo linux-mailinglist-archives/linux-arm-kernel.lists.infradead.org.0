@@ -2,79 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B3C41F47F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 22:18:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B22001F47F5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 22:18:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v7JZ3ETaOm1fPO1rR74uDvArK5BRXPAzRxyPPH2InsY=; b=T6NlbQsrSdtsdO
-	8vXuXG+haIMCoVsBpMlPOCMADUcjx5Qx3Zi8i8qht1GvAsyEosqrez0jpmT+c+GMam9EPOn6/UUL3
-	NnNQHVGyNRKKjO9Pfs32FoTtBP8OdSFr5tq80AeoUwn4KrZdlXT62k6oBLRa8NYqQx3/InowYRbDD
-	fFkDtrbHFIz4/i1sUQTQt6ep+ZG+NRE1yNayxyxB5t2kqupeyCmuTCxutbpHF0FXfwIKkslvSV7Yz
-	D6m3PxtyxgwxHBDk38tHIfFX78QWPpUVvI4utcC2mo2izXgMnPiadB6R0hk6MiaGZ5lHXRrjGPdno
-	4MJjGB+30xB9wVYnxxGg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qase71Im5oStqsJGLFbzxpqU+DZ8McpQPonmrwpvbEQ=; b=rpgKdiWfhtvKRK
+	cQOxSGm3baKEJyfjIPHkNFcmm5XJXQa1Oy0wZgwIrqKZieSIlPewEIyuxzZqDL3lWwH5FgrOet49j
+	j9RwLhVbd8OiWs1bL5p7RT9u/GQhu8DW+5jf/orpEcm3mXdBa6gQk+PQyCDsn56Qqty2bj5ktj9z1
+	6anWZmGF7SAMytDPgYkfI3hXBsbA8MFhF94B/sIR/HBPnpPiIrOkit+17jfUxp7RAQ/HADSdaRqHk
+	YUXr+2+t4aIpVXw2iGcDXJxuEfri4rqcAVgCESEeGwmEpVsaIH8QsfkMF7ZwjpHEDHiw9ovChRWNW
+	oOgib4RZhWJPXXTsvQrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jikhC-00087E-JX; Tue, 09 Jun 2020 20:18:06 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jikhY-0008Uo-FX; Tue, 09 Jun 2020 20:18:28 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jikh5-00086c-OB
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 20:18:00 +0000
-Received: by mail-lj1-x243.google.com with SMTP id i27so15788520ljb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 13:17:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mggLRhO6jV+80x85AIwbQKfAsdh+EvbfaEBrzUoF754=;
- b=A0He62nniIxI+L1AbHk3rE/VXClOAjqfDgCzp1WHM1n/EZXSsg9v78RosIK0D61xsS
- ZYKlq1DqgEfEXDdlhkm59HdRiBFK6LdyoaGLJvX9CdbMTkENFvrZ7hC74dcsHPxaSRDH
- /KSfFGClu/jrFSfutcREkx7xys3KkhNId+5LCdiAdqBUyrW71bytWH0r5JN+dmfs0ux6
- pyo/GMthib2jqyTuXnMikf9NdHJcoq+B1icAgmZ6/bei6J/10Zlmn+CWRCoHfYWoFmKg
- fHLSt7oRnFJxPymARXiRwnAWOzKoM2Id2uJ9/8mCEZ7a32GxF6lHDAnB5w/zrpdam/b8
- T+Yw==
+ id 1jikhP-0008TT-DJ; Tue, 09 Jun 2020 20:18:20 +0000
+Received: by mail-ej1-x641.google.com with SMTP id f7so18437ejq.6;
+ Tue, 09 Jun 2020 13:18:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=KC+Q83VPZzMlqolXBXEKcpuJ9FScuGWzx6JhmUmNyNc=;
+ b=EeNW4UjvW+6S95WUz7HfGxgUJn1gTCj9PL6zjddRXbKFlkdYb0qnzEyUpYMLYEBiAG
+ 5Rk84vvPjS3gHPAYgklMyLmwQ5uNOFj89xf6Yon8QKt9Q8pdrWfMXS97H/Ihba6ITkc+
+ WclOMXtoecZUjQB8R98r2/NXbXX7JvmvqBCMKumx/43z/WX1pANRxrDhuSrRgIYlCeXx
+ 2aL4nUYA/1uv+6qkZKxmqJ34ZlRvI5H2zb5c3g+vhEzR4kpKQoY7sUWwv0DrS80AAuTs
+ gxqySTzEuew1YaXOkua01d7GqKwBOhsDiJUAvxgZMF1xtZEV0IAiCwSak0YQlO6KSJHd
+ rJag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mggLRhO6jV+80x85AIwbQKfAsdh+EvbfaEBrzUoF754=;
- b=CG02rzFHdEP9N6EdCFqOKf+4UPmMyQB+O8r49uOfw1Jz1gnLJWkBWF0YHjILMYDlEg
- EmBi5fd3EKQkP4Ge52OA/4B2n5E0gwJRv5efx1HIWTSRxAfKjSTpReyMwx9vgX5Xb5j3
- LPVkD1mI3+e3M1Wx7Mo35w2lv6yUA8RQbudnb7KyKH9I5PO8J738C7N9IPySU/gsG42X
- Y2ijX3vslwlYlWw5ZfuuISeSnYKpTv6CPZx26NaN7qcpRE78QUh8M9HyBLM6/XujEy0o
- BkTPkgNsC13LjAEIZLZL1TwHFpARFNWNLL6mRyq/P7E3MTAioeOVRQs00lELcjrQLBj7
- nYpQ==
-X-Gm-Message-State: AOAM530qAFyZq1zbV8E6n3gmhfNWCrXpQdMRfnRvpPIDnJ3uCwBFukV4
- Fq2VV/wb+PFyIs8Oc3kt8JQKOCfiJ1gS7RsLJpMosw==
-X-Google-Smtp-Source: ABdhPJx2JZxpBTnplr7BzxaE0lgmN1ukFVtWGan+ErNICCKV3KzvNkJgmWsN0z+/QfxCYPIeA2p/0hov9iJAP1U2vnw=
-X-Received: by 2002:a2e:974a:: with SMTP id f10mr1695ljj.283.1591733877567;
- Tue, 09 Jun 2020 13:17:57 -0700 (PDT)
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=KC+Q83VPZzMlqolXBXEKcpuJ9FScuGWzx6JhmUmNyNc=;
+ b=GHx+pguHjVLJTHTBlOxXdFArskceF/0mUx3d486wmWNzZsPsQAQt+bbI3N0mBdw0g1
+ gzhyJXTcajSImziKzirbiJ0STnsmd6avBaJyWstcos8oK9nypv2HgCc+GgV+NJRcTZFt
+ VBwpky/jyiLwz6Vy8vU7Y5WHRmbBjQ1ZAZDDwNXJ2U+xp8MfP0BbHYoZAJcGE08CpOqm
+ LjkX8i6G5qXQEVctsj6IPpzILvb7wR/nb7/Nv8Kgjij4sRiEpB8fDRoq1u8AmZIQGKLS
+ fbo35gfgtmkrrVO/AmRwcNuDw2db/HtmcNCDhR3rThNT5Jf1ZRA4THkHtmn8U5ptf1MY
+ 078w==
+X-Gm-Message-State: AOAM531/tte89cEay2cDkPrzpD+hlRvIQhVLQn5U6Qn+mbdAN/nZVvIr
+ 9G/gHHENBj9+cji4QDQkzWc2qPrW
+X-Google-Smtp-Source: ABdhPJxfFjAQ2iFrXqTiotmLGJ0K4tuq7uoLusv+WJ6CJh25HXZ7mplpOTW07mjA7oajhYRrItzAWw==
+X-Received: by 2002:a17:906:799:: with SMTP id
+ l25mr135009ejc.234.1591733897541; 
+ Tue, 09 Jun 2020 13:18:17 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id y12sm13986179ejr.77.2020.06.09.13.18.16
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 09 Jun 2020 13:18:17 -0700 (PDT)
+Subject: Re: [PATCH v6 2/8] mtd: rawnand: rockchip: NFC drivers for RK3308,
+ RK2928 and others
+From: Johan Jonker <jbx6244@gmail.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>, miquel.raynal@bootlin.com,
+ richard@nod.at, vigneshr@ti.com, robh+dt@kernel.org
+References: <20200609074020.23860-1-yifeng.zhao@rock-chips.com>
+ <20200609074020.23860-3-yifeng.zhao@rock-chips.com>
+ <7eb89126-9d4b-9cdf-0f77-3242df36e090@gmail.com>
+Message-ID: <0b83ca45-3218-aaff-1462-7e08ae1e3afd@gmail.com>
+Date: Tue, 9 Jun 2020 22:18:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-References: <20200609200446.153209-1-linus.walleij@linaro.org>
- <20200609200446.153209-4-linus.walleij@linaro.org>
- <CADaigPX_9mBqr3hKA0-aC-TOY3hEnXnQremMiPopw8DUcGCzgQ@mail.gmail.com>
-In-Reply-To: <CADaigPX_9mBqr3hKA0-aC-TOY3hEnXnQremMiPopw8DUcGCzgQ@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 9 Jun 2020 22:17:46 +0200
-Message-ID: <CACRpkdbY=ALou98n6uW8C5Wwup1-qyaNZhqTSwC8B5FydjbgQA@mail.gmail.com>
-Subject: Re: [PATCH 4/4] drm: pl111: Update documentation
-To: Eric Anholt <eric@anholt.net>
+In-Reply-To: <7eb89126-9d4b-9cdf-0f77-3242df36e090@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_131759_785255_16983515 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200609_131819_453068_E0974688 
+X-CRM114-Status: GOOD (  17.97  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,28 +106,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Russell King <linux@armlinux.org.uk>, Maxime Ripard <mripard@kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 9, 2020 at 10:11 PM Eric Anholt <eric@anholt.net> wrote:
+On 6/9/20 6:10 PM, Johan Jonker wrote:
 
-> FWIW, series is Reviewed-by: Eric Anholt <eric@anholt.net>
+> On 6/9/20 9:40 AM, Yifeng Zhao wrote:
 
-Thanks Eric, do I remember correct that you were using this
-driver for something like a clock display? Are you still using it
-for that?
+[..]
 
-Nowadays the biggest user is arguably the ARM FVP emulator
-which is running a full Android stack using this driver.
+>> +static int rk_nfc_write_page(struct mtd_info *mtd, struct nand_chip *chip,
+>> +			     const u8 *buf, int page, int raw)
+>> +{
+>> +	struct rk_nfc *nfc = nand_get_controller_data(chip);
+>> +	struct rk_nfc_nand_chip *rk_nand = to_rk_nand(chip);
+>> +	struct nand_ecc_ctrl *ecc = &chip->ecc;
+>> +	int oob_step = (ecc->bytes > 60) ? NFC_MAX_OOB_PER_STEP :
+>> +			NFC_MIN_OOB_PER_STEP;
+>> +	int pages_per_blk = mtd->erasesize / mtd->writesize;
+>> +	int ret = 0, i, boot_rom_mode = 0;
+>> +	dma_addr_t dma_data, dma_oob;
+>> +	u32 reg;
+>> +	u8 *oob;
+>> +
+>> +	nand_prog_page_begin_op(chip, page, 0, NULL, 0);
+>> +
+>> +	if (!raw) {
+>> +		memcpy(nfc->page_buf, buf, mtd->writesize);
+>> +		memset(nfc->oob_buf, 0xff, oob_step * ecc->steps);
+>> +
+> 
+>> +		/*
+>> +		 * The first 8(some devices are 4 or 16) blocks in use by
+> 
+> are in use by
+> 
+>> +		 * the boot ROM and the first 32 bits of oob need to link
+>> +		 * to the next page address in the same block.
+>> +		 * Config the ECC algorithm supported by the boot ROM.
+>> +		 */
+>> +		if (page < pages_per_blk * rk_nand->boot_blks &&
+>> +		    chip->options & NAND_IS_BOOT_MEDIUM) {
+>> +			boot_rom_mode = 1;
+>> +			if (rk_nand->boot_ecc != ecc->strength)
+>> +				rk_nfc_hw_ecc_setup(chip, ecc,
+>> +						    rk_nand->boot_ecc);
+>> +		}
+> 
+> Helper?
+> 
+>> +
+>> +		/*
+> 
 
-Yours,
-Linus Walleij
+
+>> +		 * Swap the first oob with the seventh oob and bad block
+> 
+> 
+> Swap the first oob byte with the seventh oob byte.
+> 
+>> +		 * mask is saved at the seventh oob.
+> 
+> The bad block mask is stored at the seventh oob byte.
+
+Just wondering bit or byte?
+seventh or eight?
+
+> 
+>> +		 */
+>> +		swap(chip->oob_poi[0], chip->oob_poi[7]);
+
+uint8_t *oob_poi;
+
+1: oob_poi points to a byte I think?
+
+What was the swap puspose? A bit or a byte?
+There's 4 bytes oob per step.
+Could you explain?
+
+2: oob_poi[7] counting starts at [0] #1, [7] is then #8 ?
+Is that correct?
+
+>> +
+>> +		for (i = 0; i < ecc->steps; i++) {
+>> +			oob = chip->oob_poi + i * NFC_SYS_DATA_SIZE;
+>> +			reg = oob[0] | oob[1] << 8 | oob[2] << 16 |
+>> +			      oob[3] << 24;
+>> +			if (!i && boot_rom_mode)
+>> +				reg = (page & (pages_per_blk - 1)) * 4;
+>> +
+>> +			if (nfc->cfg->type == NFC_V6 ||
+>> +			    nfc->cfg->type == NFC_V8)
+>> +				nfc->oob_buf[i * oob_step / 4] = reg;
+>> +			else
+>> +				nfc->oob_buf[i] = reg;
+>> +		}
+>> +
+>> +		dma_data = dma_map_single(nfc->dev, (void *)nfc->page_buf,
+>> +					  mtd->writesize, DMA_TO_DEVICE);
+>> +		dma_oob = dma_map_single(nfc->dev, nfc->oob_buf,
+>> +					 ecc->steps * oob_step,
+>> +					 DMA_TO_DEVICE);
+>> +
+>> +		reinit_completion(&nfc->done);
+>> +		writel(INT_DMA, nfc->regs + nfc->cfg->int_en_off);
+>> +
+>> +		rk_nfc_xfer_start(nfc, NFC_WRITE, ecc->steps, dma_data,
+>> +				  dma_oob);
+>> +		ret = wait_for_completion_timeout(&nfc->done,
+>> +						  msecs_to_jiffies(100));
+>> +		if (!ret)
+>> +			dev_warn(nfc->dev, "write: wait dma done timeout.\n");
+>> +		/*
+>> +		 * Whether the DMA transfer is completed or not. The driver
+>> +		 * needs to check the NFC`s status register to see if the data
+>> +		 * transfer was completed.
+>> +		 */
+>> +		ret = rk_nfc_wait_for_xfer_done(nfc);
+>> +
+>> +		dma_unmap_single(nfc->dev, dma_data, mtd->writesize,
+>> +				 DMA_TO_DEVICE);
+>> +		dma_unmap_single(nfc->dev, dma_oob, ecc->steps * oob_step,
+>> +				 DMA_TO_DEVICE);
+>> +
+> 
+>> +		if (boot_rom_mode && rk_nand->boot_ecc != ecc->strength)
+>> +			rk_nfc_hw_ecc_setup(chip, ecc, ecc->strength);
+> 
+> Helper?
+> 
+>> +
+>> +		if (ret) {
+>> +			ret = -EIO;
+> 
+>> +			dev_err(nfc->dev,
+>> +				 "write: wait transfer done timeout.\n");
+> 
+> align
+> 
+>> +		}
+>> +	} else {
+
+>> +		rk_nfc_write_buf(chip, buf, mtd->writesize + + mtd->oobsize);
+
+Too many +++ here?                                         ^ ^
+
+>> +	}
+>> +
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ret = nand_prog_page_end_op(chip);
+>> +
+>> +	/* Deselect the currently selected target. */
+>> +	rk_nfc_select_chip(chip, -1);
+>> +
+>> +	return ret;
+>> +}
 
 _______________________________________________
 linux-arm-kernel mailing list
