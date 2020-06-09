@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D09821F39C4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:31:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B8D81F39DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:36:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ImoHv9Tqs+LpZfiE9m6zdOZZeOi64WWf999xLfdoHKg=; b=oRSto8oGpmrT8J
-	DW7UI6GfVYD0X6ovZbpKEy6jogtYNFQ/p4z+pVDBPNfIAYxrcamiK6WapHGgAdDASSMFsZFFeDXF1
-	0s2gNc6iIGiMnb0xYG4H/8Kn3WP5ERBwEIo/tW6nGiMxABa+EIngwK9fDM0kdAldo3zKvjXah6rdr
-	HhG992Z6HvcD4eFhaMVZccFD3buwLD1QJjzOlFc3LqE9A+kRowAPHiWh+yPLI5xROKo0hjwPocXSq
-	7RRzTAz3vQ3fhSkJ6LAXOPLuFdqPY6ByVsNIXXLHdQfFHe3lPzODZPiMjpkusSTWBCqXcFV7UJ6Gu
-	vign5wfxXZ9zp9bmXZZQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VFdSp4rWbnYfSUo3L8aZugZe3fi7dMJdqdLpau0Rhcw=; b=Upcoq0j1i0bpr+
+	vcNcom+JYu7iQSKU8F6OOMIxNrrXEW2IivH53vbkPkPUsiyHGMdlrQ7LycWiFUfglxR7LaIwB9FPs
+	09Z6m3vqQXZZqrye8z4vUX+f7EciVhlpGBSHgO1/HOh9bVfS/eKCxjhsrwVsZpmDUxlGITEaJL5Nn
+	NYHtErr4dTMIyVLEzSH6iLU0ijTukJnguPdZbktctoPjdCSUM9eFoSNZt7omD1Xie74AUesZ5Iawj
+	yaMEmQDo63RBpQ1nmAeB9u1tW0wijorBD2TKmdYAZ5vE2bFY4rMFslBeIRRUyCbj3WSaLemYKJ0qR
+	doQ3kam28mx0Lfa8BPFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jicTi-0002wy-Il; Tue, 09 Jun 2020 11:31:38 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jicYn-0007NF-CE; Tue, 09 Jun 2020 11:36:53 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jicT1-0002Va-NG
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 11:30:57 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f185so2755306wmf.3
+ id 1jicYf-0007Mr-Bu
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 11:36:46 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g10so2485458wmh.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 04:30:55 -0700 (PDT)
+ Tue, 09 Jun 2020 04:36:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=bH/+slbZjQBA3mYlSc2q+05536qmkTvC1HCFI8ZmnIE=;
- b=FTaZexr38TGn3YldlZdOFciSIxmG1MkcO6rPSsRRK4OfWjR7a9gl0znAiEgoyR3yqb
- oTZdf4NyeLjorwZbZS+BzsoRhdFSkVyOE1jmVDzeRY0z+NiigUPSAB+vJonQsdyZhbJW
- m5pkDmKAQQTdWGczJtXE97kyNt8D2kTqi6e5kHFoxu7jciVPisI/tGL3iBgJLTlKD3/O
- nqrY1zAnQYjnvsPZkU2pP3U24LuTyyUpnX8fVPmclfVgMGNY0QN5LjKnsVK+3qY7UGRc
- cXGMUDfjqXuvWfc0gsiLHkriW9FNNFLjR4vkpcXbfLNi9JPj0GkkAMiY+JG596M8lnv/
- T6+g==
+ h=cc:subject:to:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=fJYvnclAzUmRLcosHFWh9bntbC7vT1JGF1oeBQ8Fq+s=;
+ b=P2R1mKLhXQWVtCHOxyai+DAZG41BWFjzm6j5avzQXpSxNuWLd0zI2ZAIIc4x6l13KB
+ GEcfW60U9ZqCVsXLm6z7mcme2KgyqBb5RWZc70Hk0AZ6Mtu+pis4mraUV6zQJH8zljMV
+ qYWcjAv1XASWjh+/rDLdQNtMWElHzIr/os7SwX0XTelKWCK5SeyY1cJuyvsrbCneQa9F
+ aC6/pkYQzN7xovrsGRi9bT5EkdkW63s+3+44tBo9v9cQWQrRqCQlpxOSqUVmholNMdDP
+ shbRCf93kJQnue9etZw6zuflr/vzK0Nn9J8yiv593lo4AHo3RmMikB9eQjXZAGG1PiEm
+ patA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=bH/+slbZjQBA3mYlSc2q+05536qmkTvC1HCFI8ZmnIE=;
- b=pR1akvFfZXoLImH8kMis3n6nfJhDj13/2RVVxnt7W9N5CYRol0rx/vhlsM/eTrs3sD
- loYESi00gur2oxCXfkFNp0Wgz8ndal3RbYjK4tWm2YAFlwukEHHCP6SQJFup6lmYxCXL
- A0ACrNSH+Np2geNG5VbtkKh84TcNMD6Kh6+GPhVL//BasokgTqhddKgggCICmjmN/jIk
- fmJXf6D/seay8Oa5FGF9+7bBn6fSNNAMhR8+43rETs8ctLYwl9IzMf5PZPJWKifPpA+j
- YJFLWxbUn147IUOG8dbXExMyudTCZZCJx0SGyny0LEhZ4FeJpWsJAyvao3CNUqfh3r13
- lEuQ==
-X-Gm-Message-State: AOAM530pzf1HH4aTaUs7aTeZq5vY9DbNS7kuF5Qu72S/8SJ6FFrDOLyX
- yY31FMFvxnzFGzP/7+9CzHE=
-X-Google-Smtp-Source: ABdhPJyb/putWPrIRSQ+MFJ+GR8f+CvA9NmKmGqs0c02IlxuemZcWgOwbIIuRScgxih6gY0m3eHiJw==
-X-Received: by 2002:a7b:c204:: with SMTP id x4mr3508031wmi.22.1591702254431;
- Tue, 09 Jun 2020 04:30:54 -0700 (PDT)
-Received: from skynet.lan (28.red-83-49-61.dynamicip.rima-tde.net.
- [83.49.61.28])
- by smtp.gmail.com with ESMTPSA id l17sm2609877wmi.16.2020.06.09.04.30.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 09 Jun 2020 04:30:53 -0700 (PDT)
-From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
- f.fainelli@gmail.com, bcm-kernel-feedback-list@broadcom.com,
- julia.lawall@lip6.fr, f4bug@amsat.org, jonas.gorski@gmail.com,
- lkp@intel.com, linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] clk: bcm63xx-gate: add BCM6318 support
-Date: Tue,  9 Jun 2020 13:30:49 +0200
-Message-Id: <20200609113049.4035426-3-noltari@gmail.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200609113049.4035426-1-noltari@gmail.com>
-References: <20200609113049.4035426-1-noltari@gmail.com>
+ h=x-gm-message-state:cc:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=fJYvnclAzUmRLcosHFWh9bntbC7vT1JGF1oeBQ8Fq+s=;
+ b=KmBl0Ne40MSNXKdgm5JNuJQ77VWDwZdwXDDW4wOuXogNMNPQwe/lDsDoklv3yVwn14
+ ywV2aMdYqzhoClp7vz36ha3iBW4FZ5hSBJ+hHpJdSuH3EzvcFyS7odm5hvBpNSAExPIt
+ 3kLgvtsZON797v5jeaaq5L5+AV+LCHs+bepqkSscXExLe6jUvgoTN11IAvXokelDVt+Q
+ VKhiFICMvxapNxRK37QtCti9kbjEtsTjPCXyojcHKF3dwdsCkCc0U0gm4LyDH1Kx52qx
+ oIO7Tk1Rovvjr1Y6vPCWk/lLq6/YL76RwbB0+hBMT0V5fZ9ExFPiVNtIq8jksYJ82fUn
+ wzBg==
+X-Gm-Message-State: AOAM5332ox2uEmgRiXHSPLTyVb6uV9zdpRWVrZhO/80CIZBgrE2m1skY
+ 258d5XQ9vUoRV0ZO8wipYVQ=
+X-Google-Smtp-Source: ABdhPJyM2GfdDSPkYVRuDWbPh+MpdEr3Po9Fi8MZXny0ZoMELo/Ho+aLHDQS1ZFhLdAvqQECBsw8NQ==
+X-Received: by 2002:a1c:4d11:: with SMTP id o17mr3447033wmh.37.1591702604028; 
+ Tue, 09 Jun 2020 04:36:44 -0700 (PDT)
+Received: from ?IPv6:2001:a61:253c:8201:b2fb:3ef8:ca:1604?
+ ([2001:a61:253c:8201:b2fb:3ef8:ca:1604])
+ by smtp.gmail.com with ESMTPSA id z206sm2699467wmg.30.2020.06.09.04.36.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 09 Jun 2020 04:36:43 -0700 (PDT)
+Subject: Re: [PATCH v2 5/6] prctl.2: Add PR_PAC_RESET_KEYS (arm64)
+To: Dave Martin <Dave.Martin@arm.com>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-6-git-send-email-Dave.Martin@arm.com>
+From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
+Message-ID: <1084d017-54f3-475c-be1b-aabc801d9a71@gmail.com>
+Date: Tue, 9 Jun 2020 13:36:42 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <1590614258-24728-6-git-send-email-Dave.Martin@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_043055_755553_88E91792 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20200609_043645_405427_73EECE6E 
+X-CRM114-Status: GOOD (  16.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [noltari[at]gmail.com]
+ provider [mtk.manpages[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,62 +103,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, mtk.manpages@gmail.com,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIHN1cHBvcnQgZm9yIHRoZSBnYXRlZCBjbG9jayBjb250cm9sbGVycyBmb3VuZCBvbiB0aGUg
-QkNNNjMxOC4KClNpZ25lZC1vZmYtYnk6IMOBbHZhcm8gRmVybsOhbmRleiBSb2phcyA8bm9sdGFy
-aUBnbWFpbC5jb20+Ci0tLQogZHJpdmVycy9jbGsvYmNtL2Nsay1iY202M3h4LWdhdGUuYyB8IDQ0
-ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDQ0IGluc2Vy
-dGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2Nsay9iY20vY2xrLWJjbTYzeHgtZ2F0ZS5j
-IGIvZHJpdmVycy9jbGsvYmNtL2Nsay1iY202M3h4LWdhdGUuYwppbmRleCA5OGU4ODQ5NTdkYjgu
-LjEyMzk0YzA5MWQxMyAxMDA2NDQKLS0tIGEvZHJpdmVycy9jbGsvYmNtL2Nsay1iY202M3h4LWdh
-dGUuYworKysgYi9kcml2ZXJzL2Nsay9iY20vY2xrLWJjbTYzeHgtZ2F0ZS5jCkBAIC00MCw2ICs0
-MCw0OCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGNsa19iY202M3h4X3RhYmxlX2VudHJ5IGJjbTMz
-NjhfY2xvY2tzW10gPSB7CiAJeyB9LAogfTsKIAorc3RhdGljIGNvbnN0IHN0cnVjdCBjbGtfYmNt
-NjN4eF90YWJsZV9lbnRyeSBiY202MzE4X2Nsb2Nrc1tdID0geworCXsgLm5hbWUgPSAiYWRzbF9h
-c2IiLCAuYml0ID0gMCwgfSwKKwl7IC5uYW1lID0gInVzYl9hc2IiLCAuYml0ID0gMSwgfSwKKwl7
-IC5uYW1lID0gIm1pcHNfYXNiIiwgLmJpdCA9IDIsIH0sCisJeyAubmFtZSA9ICJwY2llX2FzYiIs
-IC5iaXQgPSAzLCB9LAorCXsgLm5hbWUgPSAicGh5bWlwc19hc2IiLCAuYml0ID0gNCwgfSwKKwl7
-IC5uYW1lID0gInJvYm9zd19hc2IiLCAuYml0ID0gNSwgfSwKKwl7IC5uYW1lID0gInNhcl9hc2Ii
-LCAuYml0ID0gNiwgfSwKKwl7IC5uYW1lID0gInNkcl9hc2IiLCAuYml0ID0gNywgfSwKKwl7IC5u
-YW1lID0gInN3cmVnX2FzYiIsIC5iaXQgPSA4LCB9LAorCXsgLm5hbWUgPSAicGVyaXBoX2FzYiIs
-IC5iaXQgPSA5LCB9LAorCXsgLm5hbWUgPSAiY3B1YnVzMTYwIiwgLmJpdCA9IDEwLCB9LAorCXsg
-Lm5hbWUgPSAiYWRzbCIsIC5iaXQgPSAxMSwgfSwKKwl7IC5uYW1lID0gInNhcjEyNCIsIC5iaXQg
-PSAxMiwgfSwKKwl7IC5uYW1lID0gIm1pcHMiLCAuYml0ID0gMTMsIC5mbGFncyA9IENMS19JU19D
-UklUSUNBTCwgfSwKKwl7IC5uYW1lID0gInBjaWUiLCAuYml0ID0gMTQsIH0sCisJeyAubmFtZSA9
-ICJyb2Jvc3cyNTAiLCAuYml0ID0gMTYsIH0sCisJeyAubmFtZSA9ICJyb2Jvc3cwMjUiLCAuYml0
-ID0gMTcsIH0sCisJeyAubmFtZSA9ICJzZHIiLCAuYml0ID0gMTksIC5mbGFncyA9IENMS19JU19D
-UklUSUNBTCwgfSwKKwl7IC5uYW1lID0gInVzYiIsIC5iaXQgPSAyMCwgfSwKKwl7IC5uYW1lID0g
-Imhzc3BpIiwgLmJpdCA9IDI1LCB9LAorCXsgLm5hbWUgPSAicGNpZTI1IiwgLmJpdCA9IDI3LCB9
-LAorCXsgLm5hbWUgPSAicGh5bWlwcyIsIC5iaXQgPSAyOCwgfSwKKwl7IC5uYW1lID0gImFmZSIs
-IC5iaXQgPSAyOSwgfSwKKwl7IC5uYW1lID0gInFwcm9jIiwgLmJpdCA9IDMwLCB9LAorCXsgfSwK
-K307CisKK3N0YXRpYyBjb25zdCBzdHJ1Y3QgY2xrX2JjbTYzeHhfdGFibGVfZW50cnkgYmNtNjMx
-OF91YnVzX2Nsb2Nrc1tdID0geworCXsgLm5hbWUgPSAiYWRzbC11YnVzIiwgLmJpdCA9IDAsIH0s
-CisJeyAubmFtZSA9ICJhcmItdWJ1cyIsIC5iaXQgPSAxLCAuZmxhZ3MgPSBDTEtfSVNfQ1JJVElD
-QUwsIH0sCisJeyAubmFtZSA9ICJtaXBzLXVidXMiLCAuYml0ID0gMiwgLmZsYWdzID0gQ0xLX0lT
-X0NSSVRJQ0FMLCB9LAorCXsgLm5hbWUgPSAicGNpZS11YnVzIiwgLmJpdCA9IDMsIH0sCisJeyAu
-bmFtZSA9ICJwZXJpcGgtdWJ1cyIsIC5iaXQgPSA0LCAuZmxhZ3MgPSBDTEtfSVNfQ1JJVElDQUws
-IH0sCisJeyAubmFtZSA9ICJwaHltaXBzLXVidXMiLCAuYml0ID0gNSwgfSwKKwl7IC5uYW1lID0g
-InJvYm9zdy11YnVzIiwgLmJpdCA9IDYsIH0sCisJeyAubmFtZSA9ICJzYXItdWJ1cyIsIC5iaXQg
-PSA3LCB9LAorCXsgLm5hbWUgPSAic2RyLXVidXMiLCAuYml0ID0gOCwgfSwKKwl7IC5uYW1lID0g
-InVzYi11YnVzIiwgLmJpdCA9IDksIH0sCisJeyB9LAorfTsKKwogc3RhdGljIGNvbnN0IHN0cnVj
-dCBjbGtfYmNtNjN4eF90YWJsZV9lbnRyeSBiY202MzI4X2Nsb2Nrc1tdID0gewogCXsgLm5hbWUg
-PSAicGh5X21pcHMiLCAuYml0ID0gMCwgfSwKIAl7IC5uYW1lID0gImFkc2xfcXByb2MiLCAuYml0
-ID0gMSwgfSwKQEAgLTIxNyw2ICsyNTksOCBAQCBzdGF0aWMgaW50IGNsa19iY202M3h4X3JlbW92
-ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCiBzdGF0aWMgY29uc3Qgc3RydWN0IG9m
-X2RldmljZV9pZCBjbGtfYmNtNjN4eF9kdF9pZHNbXSA9IHsKIAl7IC5jb21wYXRpYmxlID0gImJy
-Y20sYmNtMzM2OC1jbG9ja3MiLCAuZGF0YSA9ICZiY20zMzY4X2Nsb2NrcywgfSwKKwl7IC5jb21w
-YXRpYmxlID0gImJyY20sYmNtNjMxOC1jbG9ja3MiLCAuZGF0YSA9ICZiY202MzE4X2Nsb2Nrcywg
-fSwKKwl7IC5jb21wYXRpYmxlID0gImJyY20sYmNtNjMxOC11YnVzLWNsb2NrcyIsIC5kYXRhID0g
-JmJjbTYzMThfdWJ1c19jbG9ja3MsIH0sCiAJeyAuY29tcGF0aWJsZSA9ICJicmNtLGJjbTYzMjgt
-Y2xvY2tzIiwgLmRhdGEgPSAmYmNtNjMyOF9jbG9ja3MsIH0sCiAJeyAuY29tcGF0aWJsZSA9ICJi
-cmNtLGJjbTYzNTgtY2xvY2tzIiwgLmRhdGEgPSAmYmNtNjM1OF9jbG9ja3MsIH0sCiAJeyAuY29t
-cGF0aWJsZSA9ICJicmNtLGJjbTYzNjItY2xvY2tzIiwgLmRhdGEgPSAmYmNtNjM2Ml9jbG9ja3Ms
-IH0sCi0tIAoyLjI2LjIKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hello Dave,
+
+I've applied this patch (manually, because 4/6 is not yet applied).
+I have a question below.
+
+On 5/27/20 11:17 PM, Dave Martin wrote:
+> Add documentation for the PR_PAC_RESET_KEYS ioctl added in Linux
+> 5.0 for arm64.
+> 
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> 
+> ---
+> 
+> Since v1:
+> 
+>  * Clarify explicitly that PR_PAC_RESET_KEYS is redundant when combined
+>    with execve().
+> 
+>  * Move error condition details into the prctl description, to avoid
+>    excessive duplication while keeping keeping related pieces of text
+>    closer together.
+> 
+>  * In lieu of having a separate man page to cross reference for detailed
+>    guidance, cross-reference the kernel documentation.
+> 
+>  * Add safety warning.  This is deliberately vague, pending ongoing
+>    discussions with libc folks.
+> ---
+>  man2/prctl.2 | 80 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 80 insertions(+)
+> 
+
+[...]
+
+> +.IP
+> +.B Warning:
+> +Because the compiler or run-time environment
+> +may be using some or all of the keys,
+> +a successful
+
+Things got a bit garbled here. I think the next few lines should have been 
+at the end.
+> +.IP
+> +For more information, see the kernel source file
+> +.I Documentation/arm64/pointer\-authentication.rst
+> +.\"commit b693d0b372afb39432e1c49ad7b3454855bc6bed
+> +(or
+> +.I Documentation/arm64/pointer\-authentication.txt
+> +before Linux 5.3).
+> +.B PR_PAC_RESET_KEYS
+> +may crash the calling process.
+> +The conditions for using it safely are complex and system-dependent.
+> +Don't use it unless you know what you are doing.
+
+I applied the following change after your patch; is it okay?
+
+ .IP
+ .B Warning:
+ Because the compiler or run-time environment
+ may be using some or all of the keys,
+ a successful
++may crash the calling process.
++The conditions for using it safely are complex and system-dependent.
++Don't use it unless you know what you are doing.
+ .IP
+ For more information, see the kernel source file
+ .I Documentation/arm64/pointer\-authentication.rst
+@@ -1020,9 +1023,6 @@ For more information, see the kernel source file
+ .I Documentation/arm64/pointer\-authentication.txt
+ before Linux 5.3).
+ .B PR_PAC_RESET_KEYS
+-may crash the calling process.
+-The conditions for using it safely are complex and system-dependent.
+-Don't use it unless you know what you are doing.
+ .\" prctl PR_SET_PDEATHSIG
+ .TP
+ .BR PR_SET_PDEATHSIG " (since Linux 2.1.57)"
+
+[...]
+
+Thanks,
+
+Michael
+
+
+-- 
+Michael Kerrisk
+Linux man-pages maintainer; http://www.kernel.org/doc/man-pages/
+Linux/UNIX System Programming Training: http://man7.org/training/
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
