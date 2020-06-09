@@ -2,93 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF1EB1F41F3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:15:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7EC51F4218
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:22:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0j31ZbtGkUdVAWX+5HBItHYLaD8cRsCkv7Jv9wYj3Ag=; b=onLtMiwWKzhjS/
-	qRgqj8uFbaa+6ied51r5nbgautgIAynMxjzQUMYxPU2k1tV3tRayOlTnJeuIQu/biikfFeETT5G7Z
-	khhVwZGrFYQOFx3wq0VqUQLa79QL5IVRaOyGVeGDcFVRDdD3uOQmPC3GB4slZ3UTyBklbmIbQrBB2
-	ij8vVBcJ0z3giFz2BL0G3LB2swZUXhDqbu47eWdaHaGDmfZkHXTeFu0j0qaFOxBW8GODyRCQzKuWq
-	m4m3Sd6kNQ+NO3QwO99Ut72u7sBg9dd3Aox/Q0kvwSTfXkju1cuOfB7291uOzDC18hWess8TPY6eL
-	4/gefOeUDrkNZ7wpPGaw==;
+	List-Owner; bh=hFR/Xmk6XYjlvPPuDmXJWeHMTArtWcYfBkUiEzRFaoE=; b=Ab/qQPfDMvVhlo
+	XUBZmDcO139QvWN0AOKpjMktXjHZ91NeEfMszz9OU940owV/KjygB33rKAGTgvV4zU5D4p2bwnuLY
+	SKOQ7HI2ao7CIX42uh0Hry6gaQnojqBDQ+XpAYMRYgcpFQuwKJXv8gRhKgIV5USJM30DMvT/UVB1f
+	oa0qj8JVlLiohXBTqacBua3xTkka8Xpa6bGPu4xDMRFRb7LOZ9OdzTg3BMeS3bbhJpgoZaIB7spRj
+	rM6v70KwLuiJmFxp0m6u7uXhU6EohaGlw7qut4Aj50EuAjB4BdIp0EIA7Ql0+FhcmSCECVykjLcuZ
+	M3F16YkeqmGJoupi00vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jihqV-00023F-HC; Tue, 09 Jun 2020 17:15:31 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jihqN-00022l-6N
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 17:15:24 +0000
-Received: by mail-io1-f68.google.com with SMTP id i25so9005338iog.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 10:15:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=JGLI/jshAv4UOtJl5rWJiq7REK+PfEQZi+2RrLn3IFA=;
- b=nk9KhM1aSEHpRzJXTgvHW/fkrgpkMSTSIR7Bns2FYC616DMiK4fkwfbAJrVCiZirpM
- tbF3GInJobBssrdViXoL8AnzPusDMqomwX6z13RJfM34YUHCM22rNDuEKinMbbJ7fo+R
- SW0KG7TyO9sK2arsDIAfzihRiKiXlngmPUqp1QIujMtKYQyhbfbHvBXCCbkZ8Eq/ih8c
- eXmMaT/AtTgVMGz2QXM4Uo6/4ETia72EmwYA/1H3sPvwXaQpu/HmaTDssrHIbKCz9otf
- UWuK8mVaSOKjecj2CIp81JhDT3AdkmaGk3iHuwBX/3idV4USOj7W8G9LXhLi3A9yezGU
- 9X1w==
-X-Gm-Message-State: AOAM533IsyVWtESzKbS+8lfSlPCm71298g7WYQiGxF0AJzs36s08NcVR
- AvBCLmZcY+87MYNaNwahlQ==
-X-Google-Smtp-Source: ABdhPJyom2HW81zaEPBo0bO0otJQ7le36pAHDKSbZIdASMosYcxXzc1o/KabAiMefhklBHue5cmzqQ==
-X-Received: by 2002:a5d:8e14:: with SMTP id e20mr28764204iod.156.1591722922294; 
- Tue, 09 Jun 2020 10:15:22 -0700 (PDT)
-Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id k5sm9534836ili.80.2020.06.09.10.15.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 09 Jun 2020 10:15:21 -0700 (PDT)
-Received: (nullmailer pid 1093153 invoked by uid 1000);
- Tue, 09 Jun 2020 17:15:20 -0000
-Date: Tue, 9 Jun 2020 11:15:20 -0600
-From: Rob Herring <robh@kernel.org>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld
- management controller
-Message-ID: <20200609171520.GC1019634@bogus>
-References: <dc052a5c77171014ecc465b1da8b7ef8@walle.cc>
- <20200608082827.GB3567@dell>
- <CAHp75VdiH=J-ovCdh1RFJDW_bJM8=pbXRaHmB691GLb-5oBmYQ@mail.gmail.com>
- <7d7feb374cbf5a587dc1ce65fc3ad672@walle.cc>
- <20200608185651.GD4106@dell>
- <32231f26f7028d62aeda8fdb3364faf1@walle.cc>
- <20200609064735.GH4106@dell>
- <32287ac0488f7cbd5a7d1259c284e554@walle.cc>
- <20200609144201.GK4583@sirena.org.uk>
- <a2bae71634fe288f067d5e92090b7561@walle.cc>
+	id 1jihxZ-0005ao-JA; Tue, 09 Jun 2020 17:22:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jihxS-0005ZK-8q
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 17:22:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E83971F1;
+ Tue,  9 Jun 2020 10:22:38 -0700 (PDT)
+Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1CA333F73D;
+ Tue,  9 Jun 2020 10:22:35 -0700 (PDT)
+Date: Tue, 9 Jun 2020 18:22:32 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [RFC PATCH v2 6/6] prctl.2: Add tagged address ABI control
+ prctls (arm64)
+Message-ID: <20200609172232.GA63286@C02TF0J2HF1T.local>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-7-git-send-email-Dave.Martin@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a2bae71634fe288f067d5e92090b7561@walle.cc>
+In-Reply-To: <1590614258-24728-7-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_101523_234616_1DD6B84F 
-X-CRM114-Status: GOOD (  18.42  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200609_102242_399608_93A5BCBA 
+X-CRM114-Status: GOOD (  26.49  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,65 +63,244 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>,
- Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- david.m.ertman@intel.com, Guenter Roeck <linux@roeck-us.net>,
- devicetree <devicetree@vger.kernel.org>, Jean Delvare <jdelvare@suse.com>,
- linux-watchdog@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, shiraz.saleem@intel.com,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Michael Kerrisk <mtk.manpages@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 05:01:17PM +0200, Michael Walle wrote:
-> Am 2020-06-09 16:42, schrieb Mark Brown:
-> > On Tue, Jun 09, 2020 at 04:38:31PM +0200, Michael Walle wrote:
-> > 
-> > >   mfd-device@10 {
-> > >     compatible = "simple-regmap", "simple-mfd";
-> > >     reg = <10>;
-> > >     regmap,reg-bits = <8>;
-> > >     regmap,val-bits = <8>;
-> > >     sub-device@0 {
-> > >       compatible = "vendor,sub-device0";
-> > >       reg = <0>;
-> > >     };
-> > 
-> > A DT binding like this is not a good idea, encoding the details of the
-> > register map into the DT binding makes it an ABI which is begging for
-> > trouble.  I'd also suggest that any device using a generic driver like
-> > this should have a specific compatible string for the device so we can
-> > go back and add quirks later if we need them.
-> 
-> Like in the spidev case, yes. But OTOH if I _just_ encode the parameters
-> for the regmap a MFD, Lee don't agree because its just a shim. So either
-> way I seem to be stuck here.
-> 
-> Where should I put the code to create an i2c driver, init a regmap and
-> populate its childen?
+Hi Dave,
 
-Find another driver doing this already and rename it 'simple-mfd' (no 
-relation to the DT binding) and add your compatible string to it. 
-'Generic' or 'simple' drivers don't require generic/simple DT bindings.
+On Wed, May 27, 2020 at 10:17:38PM +0100, Dave P Martin wrote:
+> --- a/man2/prctl.2
+> +++ b/man2/prctl.2
+> @@ -1504,6 +1504,143 @@ For more information, see the kernel source file
+>  (or
+>  .I Documentation/arm64/sve.txt
+>  before Linux 5.3).
+> +.\" prctl PR_SET_TAGGED_ADDR_CTRL
+> +.\" commit 63f0c60379650d82250f22e4cf4137ef3dc4f43d
+> +.TP
+> +.BR PR_SET_TAGGED_ADDR_CTRL " (since Linux 5.4, only on arm64)"
+> +Controls support for passing tagged userspace addresses to the kernel
+> +(i.e., addresses where bits 56\(em63 are not all zero).
 
-Or extend the existing syscon driver to look up the bus_type and create 
-the regmap based on the bus type?
+Nitpick: maybe say "userspace addresses" again inside the brackets since
+kernel addresses have all top bits 1.
 
-Rob
+> +.IP
+> +The level of support is selected by
+> +.IR "(unsigned int) arg2" ,
+
+We use (unsigned long) for arg2.
+
+> +which can be one of the following:
+> +.RS
+> +.TP
+> +.B 0
+> +Addresses that are passed
+> +for the purpose of being dereferenced by the kernel
+> +must be untagged.
+> +.TP
+> +.B PR_TAGGED_ADDR_ENABLE
+> +Addresses that are passed
+> +for the purpose of being dereferenced by the kernel
+> +may be tagged, with the exceptions summarized below.
+> +.RE
+> +.IP
+> +The remaining arguments
+> +.IR arg3 ", " arg4 " and " arg5
+> +must all be zero.
+
+Indeed. The above commit didn't have this, we added it later in commit
+3e91ec89f527b9870fe42dcbdb74fd389d123a95.
+
+> +.IP
+> +On success, the mode specified in
+> +.I arg2
+> +is set for the calling thread and the the return value is 0.
+> +If the arguments are invalid,
+> +the mode specified in
+> +.I arg2
+> +is unrecognized,
+> +or if this feature is disabled or unsupported by the kernel,
+> +the call fails with
+> +.BR EINVAL .
+> +.IP
+> +In particular, if
+> +.BR prctl ( PR_SET_TAGGED_ADDR_CTRL ,
+> +0, 0, 0, 0)
+> +fails with
+> +.B EINVAL
+> +then all addresses passed to the kernel must be untagged.
+> +.IP
+> +Irrespective of which mode is set,
+> +addresses passed to certain interfaces
+> +must always be untagged:
+
+Maybe you could add some extra info from the kernel comment (commit
+b2a84de2a2deb76a6a51609845341f508c518c03) along the lines of "... to
+avoid the creation of aliasing mappings in userspace).
+
+> +.RS
+> +.IP \(em
+> +.BR brk (2),
+> +.BR mmap (2),
+> +.BR shmat (2),
+> +and the
+> +.I new_address
+> +argument of
+> +.BR mremap (2).
+> +.IP
+> +(Prior to Linux 5.6 these accepted tagged addresses,
+> +but the behaviour may not be what you expect.
+> +Don't rely on it.)
+
+shmat() was not part of the subsequent fix
+(dcde237319e626d1ec3c9d8b7613032f0fd4663a), it always rejected tagged
+address. But I guess it doesn't matter much, the user should not pass
+tagged addresses to these syscalls anyway.
+
+You could move shmat() down together with shmdt().
+
+> +.IP \(em
+> +\(oqpolymorphic\(cq interfaces
+> +that accept pointers to arbitrary types cast to a
+> +.I void *
+> +or other generic type, specifically
+> +.BR prctl (2),
+> +.BR ioctl (2),
+> +and in general
+> +.BR setsockopt (2)
+> +(only certain specific
+> +.BR setsockopt (2)
+> +options allow tagged addresses).
+> +.IP \(em
+> +.BR shmdt (2).
+> +.RE
+> +.IP
+> +This list of exclusions may shrink
+> +when moving from one kernel version to a later kernel version.
+> +While the kernel may make some guarantees
+> +for backwards compatibility reasons,
+> +for the purposes of new software
+> +the effect of passing tagged addresses to these interfaces
+> +is unspecified.
+> +.IP
+> +The mode set by this call is inherited across
+> +.BR fork (2)
+> +and
+> +.BR clone (2).
+> +The mode is reset by
+> +.BR execve (2)
+> +to 0
+> +(i.e., tagged addresses not permitted in the user/kernel ABI).
+> +.IP
+> +.B Warning:
+> +Because the compiler or run-time environment
+> +may make use of address tagging,
+> +a successful
+> +.B PR_SET_TAGGED_ADDR_CTRL
+> +may crash the calling process.
+
+I don't think PR_SET_TAGGED_ADDR_CTRL could crash the calling process.
+Rather disabling tagged addresses would break it. If a process is using
+tagged addresses but does not pass them to the kernel, it will continue
+to do so even when the syscalls accept such addresses.
+
+> +The conditions for using it safely are complex and system-dependent.
+> +Don't use it unless you know what you are doing.
+
+This syscall is intended for the C library if the heap allocator
+generates tagged addresses. So it's not a general purpose prctl() random
+application code could call. Anyway I'm fine with your warning of not
+doing it but you may want to clarify the intent.
+
+> +.IP
+> +For more information, see the kernel source file
+> +.IR Documentation/arm64/tagged\-address\-abi.rst .
+> +.\" prctl PR_GET_TAGGED_ADDR_CTRL
+> +.\" commit 63f0c60379650d82250f22e4cf4137ef3dc4f43d
+> +.TP
+> +.BR PR_GET_TAGGED_ADDR_CTRL " (since Linux 5.4, only on arm64)"
+> +Returns the current tagged address mode
+> +for the calling thread.
+> +.IP
+> +Arguments
+> +.IR arg2 ", " arg3 ", " arg4 " and " arg5
+> +must all be zero.
+> +.IP
+> +If the arguments are invalid
+> +or this feature is disabled or unsupported by the kernel,
+> +the call fails with
+> +.BR EINVAL .
+> +In particular, if
+> +.BR prctl ( PR_GET_TAGGED_ADDR_CTRL ,
+> +0, 0, 0, 0)
+> +fails with
+> +.BR EINVAL ,
+> +then this feature is definitely unsupported or disabled,
+
+I guess it's outside the scope of the prctl.2 to describe how the
+feature was disabled (e.g. sysctl).
+
+> +and all addresses passed to the kernel must be untagged.
+> +.IP
+> +Otherwise, the call returns a nonnegative value
+> +describing the current tagged address mode,
+> +encoded in the same way as the
+> +.I arg2
+> +argument of
+> +.BR PR_SET_TAGGED_ADDR_CTRL .
+> +.IP
+> +For more information, see the kernel source file
+> +.IR Documentation/arm64/tagged\-address\-abi.rst .
+>  .\"
+>  .\" prctl PR_TASK_PERF_EVENTS_DISABLE
+>  .TP
+> @@ -1749,6 +1886,7 @@ On success,
+>  .BR PR_GET_SPECULATION_CTRL ,
+>  .BR PR_SVE_GET_VL ,
+>  .BR PR_SVE_SET_VL ,
+> +.BR PR_GET_TAGGED_ADDR_CTRL ,
+>  .BR PR_GET_THP_DISABLE ,
+>  .BR PR_GET_TIMING ,
+>  .BR PR_GET_TIMERSLACK ,
+> @@ -2057,6 +2195,24 @@ is
+>  .B PR_SVE_GET_VL
+>  and SVE is not available on this platform.
+>  .TP
+> +.B EINVAL
+> +.I option
+> +is
+> +.BR PR_SET_TAGGED_ADDR_CTRL
+> +and the arguments are invalid or unsupported.
+> +See the description of
+> +.B PR_SET_TAGGED_ADDR_CTRL
+> +above for details.
+> +.TP
+> +.B EINVAL
+> +.I option
+> +is
+> +.BR PR_GET_TAGGED_ADDR_CTRL
+> +and the arguments are invalid or unsupported.
+> +See the description of
+> +.B PR_GET_TAGGED_ADDR_CTRL
+> +above for details.
+> +.TP
+>  .B ENODEV
+>  .I option
+>  was
+
+Apart from some minor nits above, the documentation looks fine.
+
+Thanks for writing this up.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
