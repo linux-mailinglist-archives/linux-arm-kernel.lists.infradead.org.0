@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4209C1F3AEB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 14:47:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 182FE1F3AE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 14:46:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=60UD9X7VSes/HRSDm8j8vJ0GGVRxYFPqCOjVhlzFTlg=; b=GJLxrY2eBcHzB+
-	osRQQ62hn60SvjrrgEhkvPKttxkXqzi1zwmfuIQhKivPbQKC4exRlmnVj6B+Dax6K1DQO49UKAxC2
-	JJxCmxDqk7+BBpWX0/LxALnU7bYZk8/A8jtUzXM2zjlW0CgRo7XpNXRgdbItHAnSvmqS5bekR3tAf
-	F5p9ilqtV1Mjq/dewScmH2l+tsJo94ujEz56f0BtGMVKFLtNfhqTDbLwIgFjXMC8dRbZqLm5llKQD
-	hVAX3ncGutLW/oDV/tvO7aRzcNT/pFYhKz8HEF6cUwX6O8ystGwr3ITBePnqtCpTo6L6ivKLzFUvL
-	+Z6GoN+o2Q0zW2xrpiDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EksS168g4GiWWGGQsduvw079ADh0N0pF7jR6cHR/8lw=; b=MtzmWDJeMvevPR
+	rj+GoEC35KAIbsq9AVuimre1RC6Ag98y6Garglh6LWqHEEFeaGPiwf8XwGaUsv6umtORmb/BKNdDl
+	cQjuJinj3gbf9yrJaTyD2TFXpoZgoUuil52nNss2pzIGdqatMD+uh3rBXlri+V/S+7iVxEcTmbRYs
+	6eFBwGCE6kOjlDqtC+TG3rnGcCbIESO5yOJQ9Ctyd0iDY520BE00kRooavlalmpz+m7LDe7FEx1x5
+	NL64Qfo09ompinYiHWXsEguPDFKJgfZ4opvdKqOasfU2+U3GC81sZ6BrMAonIIMbGEAEtwn2YJSqS
+	IpQmKnYwxgMLmHvv7bnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jidei-0001DV-6l; Tue, 09 Jun 2020 12:47:04 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jideP-000139-AU; Tue, 09 Jun 2020 12:46:45 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jideA-0000zn-CT; Tue, 09 Jun 2020 12:46:32 +0000
+ id 1jide9-0000zm-Fv
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 12:46:32 +0000
 Received: from Q.local (cpc89242-aztw30-2-0-cust488.18-1.cable.virginm.net
  [86.31.129.233])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 69A37291;
- Tue,  9 Jun 2020 14:46:15 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 8A22231F;
+ Tue,  9 Jun 2020 14:46:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
  s=mail; t=1591706776;
- bh=e3OIMaowMErPAcp8NkPKang2PFc5JcVtp2mzp1SGQas=;
- h=From:To:Cc:Subject:Date:From;
- b=EOdFenfdoWi99kjLMHynj4J1fzXhK70x9pvPJKGRwe+u9s7ClkH6rqbqST2T0r5e5
- rd2CXOXDlipTFhHia9lb8Zg7V4PjvCiyTFMXq9uTY1o2DVNqSQeMO1a0klpHPm0VND
- 3avMiOPNyTukk9rgiob/Q4qsq6cY/3qW7k1hOjx8=
+ bh=a7uVQzE49137RdV07bw9OGdl1LVEpyOGkBAVLWh288A=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=taZU2srR0rq3tgq0s/XYJ2NbHuZs6zcUWj6cz+aBT1b1hB61FHXbyOHh9JXUzTZ12
+ LVQwPXpUuMpxeZ/R4EJSZbNfQblSD22m3FzzTFP0XOvUygWwbDAMGb3vTHEEd6Wxpt
+ tF41LyJbmXKQ7v6f5wO7MMyx34q6QqND8H+03DB8=
 From: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
 To: Kieran Bingham <kieran.bingham@ideasonboard.com>
-Subject: [PATCH 00/17] spelling.txt: /decriptors/descriptors/
-Date: Tue,  9 Jun 2020 13:45:53 +0100
-Message-Id: <20200609124610.3445662-1-kieran.bingham+renesas@ideasonboard.com>
+Subject: [PATCH 01/17] arch: arm: mach-davinci: Fix trivial spelling
+Date: Tue,  9 Jun 2020 13:45:54 +0100
+Message-Id: <20200609124610.3445662-2-kieran.bingham+renesas@ideasonboard.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200609124610.3445662-1-kieran.bingham+renesas@ideasonboard.com>
+References: <20200609124610.3445662-1-kieran.bingham+renesas@ideasonboard.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_054630_570066_09284438 
-X-CRM114-Status: UNSURE (   4.60  )
+X-CRM114-CacheID: sfid-20200609_054629_684767_F38A9774 
+X-CRM114-Status: UNSURE (   8.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,92 +72,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-rdma@vger.kernel.org, netdev@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, virtualization@lists.linux-foundation.org,
- linux-renesas-soc@vger.kernel.org, linux-gpio@vger.kernel.org,
+Cc: Jiri Kosina <trivial@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
+ Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
+ linux-renesas-soc@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- linux-mtd@lists.infradead.org, ath10k@lists.infradead.org,
- linux-input@vger.kernel.org, linuxppc-dev@lists.ozlabs.org, linux-mm@kvack.org,
- linux-arm-kernel@lists.infradead.org
+ "moderated list:ARM SUB-ARCHITECTURES" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I wouldn't normally go through spelling fixes, but I caught sight of
-this typo twice, and then foolishly grepped the tree for it, and saw how
-pervasive it was.
+The word 'descriptor' is misspelled throughout the tree.
 
-so here I am ... fixing a typo globally... but with an addition in
-scripts/spelling.txt so it shouldn't re-appear ;-)
+Fix it up accordingly:
+    decriptors -> descriptors
 
-Cc: linux-arm-kernel@lists.infradead.org (moderated list:TI DAVINCI MACHINE SUPPORT)
-Cc: linux-kernel@vger.kernel.org (open list)
-Cc: linux-pm@vger.kernel.org (open list:DEVICE FREQUENCY EVENT (DEVFREQ-EVENT))
-Cc: linux-gpio@vger.kernel.org (open list:GPIO SUBSYSTEM)
-Cc: dri-devel@lists.freedesktop.org (open list:DRM DRIVERS)
-Cc: linux-rdma@vger.kernel.org (open list:HFI1 DRIVER)
-Cc: linux-input@vger.kernel.org (open list:INPUT (KEYBOARD, MOUSE, JOYSTICK, TOUCHSCREEN)...)
-Cc: linux-mtd@lists.infradead.org (open list:NAND FLASH SUBSYSTEM)
-Cc: netdev@vger.kernel.org (open list:NETWORKING DRIVERS)
-Cc: ath10k@lists.infradead.org (open list:QUALCOMM ATHEROS ATH10K WIRELESS DRIVER)
-Cc: linux-wireless@vger.kernel.org (open list:NETWORKING DRIVERS (WIRELESS))
-Cc: linux-scsi@vger.kernel.org (open list:IBM Power Virtual FC Device Drivers)
-Cc: linuxppc-dev@lists.ozlabs.org (open list:LINUX FOR POWERPC (32-BIT AND 64-BIT))
-Cc: linux-usb@vger.kernel.org (open list:USB SUBSYSTEM)
-Cc: virtualization@lists.linux-foundation.org (open list:VIRTIO CORE AND NET DRIVERS)
-Cc: linux-mm@kvack.org (open list:MEMORY MANAGEMENT)
+Signed-off-by: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
+---
+ arch/arm/mach-davinci/board-da830-evm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-
-Kieran Bingham (17):
-  arch: arm: mach-davinci: Fix trivial spelling
-  drivers: infiniband: Fix trivial spelling
-  drivers: gpio: Fix trivial spelling
-  drivers: mtd: nand: raw: Fix trivial spelling
-  drivers: net: Fix trivial spelling
-  drivers: scsi: Fix trivial spelling
-  drivers: usb: Fix trivial spelling
-  drivers: gpu: drm: Fix trivial spelling
-  drivers: regulator: Fix trivial spelling
-  drivers: input: joystick: Fix trivial spelling
-  drivers: infiniband: Fix trivial spelling
-  drivers: devfreq: Fix trivial spelling
-  include: dynamic_debug.h: Fix trivial spelling
-  kernel: trace: Fix trivial spelling
-  mm: Fix trivial spelling
-  regulator: gpio: Fix trivial spelling
-  scripts/spelling.txt: Add descriptors correction
-
- arch/arm/mach-davinci/board-da830-evm.c  | 2 +-
- drivers/devfreq/devfreq-event.c          | 4 ++--
- drivers/gpio/TODO                        | 2 +-
- drivers/gpu/drm/drm_dp_helper.c          | 2 +-
- drivers/infiniband/hw/hfi1/iowait.h      | 2 +-
- drivers/infiniband/hw/hfi1/ipoib_tx.c    | 2 +-
- drivers/infiniband/hw/hfi1/verbs_txreq.h | 2 +-
- drivers/input/joystick/spaceball.c       | 2 +-
- drivers/mtd/nand/raw/mxc_nand.c          | 2 +-
- drivers/mtd/nand/raw/nand_bbt.c          | 2 +-
- drivers/net/wan/lmc/lmc_main.c           | 2 +-
- drivers/net/wireless/ath/ath10k/usb.c    | 2 +-
- drivers/net/wireless/ath/ath6kl/usb.c    | 2 +-
- drivers/net/wireless/cisco/airo.c        | 2 +-
- drivers/regulator/fixed.c                | 2 +-
- drivers/regulator/gpio-regulator.c       | 2 +-
- drivers/scsi/ibmvscsi/ibmvfc.c           | 2 +-
- drivers/scsi/ibmvscsi/ibmvscsi.c         | 2 +-
- drivers/scsi/qla2xxx/qla_inline.h        | 2 +-
- drivers/scsi/qla2xxx/qla_iocb.c          | 6 +++---
- drivers/usb/core/of.c                    | 2 +-
- include/drm/drm_dp_helper.h              | 2 +-
- include/linux/dynamic_debug.h            | 2 +-
- kernel/trace/trace_events.c              | 2 +-
- mm/balloon_compaction.c                  | 4 ++--
- scripts/spelling.txt                     | 1 +
- 26 files changed, 30 insertions(+), 29 deletions(-)
-
+diff --git a/arch/arm/mach-davinci/board-da830-evm.c b/arch/arm/mach-davinci/board-da830-evm.c
+index a273ab25c668..1076886938b6 100644
+--- a/arch/arm/mach-davinci/board-da830-evm.c
++++ b/arch/arm/mach-davinci/board-da830-evm.c
+@@ -266,7 +266,7 @@ static struct mtd_partition da830_evm_nand_partitions[] = {
+ 	}
+ };
+ 
+-/* flash bbt decriptors */
++/* flash bbt descriptors */
+ static uint8_t da830_evm_nand_bbt_pattern[] = { 'B', 'b', 't', '0' };
+ static uint8_t da830_evm_nand_mirror_pattern[] = { '1', 't', 'b', 'B' };
+ 
 -- 
 2.25.1
 
