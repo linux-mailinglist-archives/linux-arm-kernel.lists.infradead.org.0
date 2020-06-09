@@ -2,82 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A3DD1F3F29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 17:23:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB86F1F3F2E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 17:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ogbQb1s/nmdEsPk/vNnByZQdooLworNW4h7YQ/QJ9b8=; b=ZLNcXoOwhgaP12
-	wtPzr/dnZQSCVutiIcQ9yyJxXpx/tmk5QPWcCqYskuk1D7pc0luu9U3u7rrAxTPyvrcfqyNnRR9RN
-	tNBVCqLh+a5ncFfdl8tvxKxZHUqkwaxWDiIXvKNIld9N99C7p5Pb+BF4iPqbJa2C+xU1U0LNchwGj
-	PZ1XcavPUi0oXAylByxp+XZyTQWxUXer8RMkLYT1lBsEUAf7jE/BUaO33rCoDyzM2pr5S12sTI0aE
-	Q3Uwxfkq1r8V71MOH+JDl7Eiqk0wBrVgFpad4f/17nTIa21p/f4fgU9iFQ28X+jv2ajuOADdmHu9g
-	OVQ5217RjtylJkp+xzYQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kePe7uS4Q//Sk1i85CwaPzg0g4ESm5EI4+pNJbJ/Bbc=; b=QcomF4nGNRLan15ThdxWKnysz
+	ueCNPaGRKr1zKxAJg/QUJE/Bj2TZReAP53drwuY5R9Fl/REV28jzhjwqA+dDV9nou34uXi7SCf34W
+	Da8cygwn2+t+uefLsfrAF1Q+Hu/Y4a3s8cw3M40zTbyWX+mRn/25ZGq7FirTa2drgU21Acj0TJG59
+	FAWjv+Ws77ICce7QtYx5wDGCaXnZEhtmWPPkLMR66SZvvprvGAPwAVopcu4JqpMyejh/I8DfUlM5c
+	rN6IqUD1JmfQMxAuylZQpXohwQfJ3hiaBIOOARfryXK/SkZvvmUUe1HRmVbxcx1d5f9abpD2Wae1F
+	ZSsZ3rmbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jig5r-00071P-K6; Tue, 09 Jun 2020 15:23:15 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1jig6m-0007L2-FW; Tue, 09 Jun 2020 15:24:12 +0000
+Received: from mail-eopbgr130075.outbound.protection.outlook.com
+ ([40.107.13.75] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jig5f-000714-8l
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 15:23:04 +0000
-Received: by mail-io1-xd43.google.com with SMTP id r77so10203758ior.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 08:23:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Tm2L6wHDp3vnilQA0CPW6PPlVERzEGHmJnGxVxjkT7E=;
- b=T+Zzc+a927fTmCQYyxa3HRIQOfzwB1rlff67AJQPfhedtRBsi15M7hvfbqDBXLIz2Q
- 4KRSTB9cKCGWi5zszA165U7802EQ1b74v54j3AsREkXTLXlxzSrced4LqVHdtgrT1BQ9
- icKt9YViOgQcAKVNZjPcxK88gttpktYPeUNKqPo0gT68ATxzhYHzokNHc6pQNtrlY3IB
- KLlyZtOGJ7375RmWBKPKHCsRXSeqb8bmjuZkdeSsCP5k1BIfCRczdUBF+5569MGYmO+T
- 9qN0v9U3DtCz4Hj+aIgzbWRsAMWfOM1PmMsRZr4OhT+ygqb8U0vc40a1PdHjSqLm2//i
- 88sw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Tm2L6wHDp3vnilQA0CPW6PPlVERzEGHmJnGxVxjkT7E=;
- b=P8y9DBGXLgTu/09QEGbidhN+hcZEIJNShQ0+Tj/GI1PXMEXXQ+LFmNIcI3L0WlTf6q
- vACpYYEvBAGc8uJm9HD9TLklXlo0GzgMioaCj8Fk0DFv9gWlWiMUavpa4QsDlxM36vnz
- GYnMIPZCVUdJrtsCnLevHMHXiw0uSxxfm9C03mmRFT+FF6cxgZEolTbyWbrv+GwLI3DV
- 0WVfQwXHP0c1ZqcYU4V7vyRx6LwI3GAleMRQIm3k9bkg/TEd8v30LWw6Pw5ugVupw+Ob
- E0NAOsRe5OgVJMpZH49qrYF3iyZSnapAjSv3ckNVHI5NoW7H0gwI0Qx/kI9qt1xDjGoZ
- VesA==
-X-Gm-Message-State: AOAM5316suZB22NRkrBXltkGaIcX03fvC40L5yAV1j7tnfHvKW0rW6m+
- NmqBzV0Z4fURcuMfVHt0nkuiHBB2k4jBV1cL7uU=
-X-Google-Smtp-Source: ABdhPJzVZNaa7SnqUFgCpq6WJTUKH4jHLaYl37zbFlWb1E6BwdaMRDZEkUg9vCMO67A149eiG/aXayH1ph7RpIU/MNM=
-X-Received: by 2002:a05:6638:d05:: with SMTP id
- q5mr26413027jaj.2.1591716182166; 
- Tue, 09 Jun 2020 08:23:02 -0700 (PDT)
+ id 1jig6Z-0007HL-O4
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 15:24:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=S6rQvHwyjA9qfhtoIs05AR1Phf7Jlb0g03WWUA7PEe+1x2ljc8iGko9GjcCDaxMCVYZZCBBZFAdkiLmhRUa3BXOoq/sEFnbbZFzlanZGgwA/gpIPcQqNH9R5/JAUQBdu8ybWS9taX88sq7EXoNJiT1cZ9uG2b4WfvHIuxV9/Aus8mGU44C/zIRYlqS/AL/gsfH1mb5stl8z1iMGapLeV28M7LZk4AHAQrp6PKSQ9vqtbDSVJWHO6JawNAPNM3ssJcd/LtU/a97Tl8n1hY5hyQR+/0SIMtaFbu0tU/a+05tqMoXaX1pedF4tbz0wnzJIlLx5nZv3wYj44HffIGwDFqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4/Eg52HAcsZDxMss1/lGKk4XD7GfJu+qbIiQvqzKMX4=;
+ b=j75yrmaDH/AbJSVgzmsyQS2uH01XK1Y2NIpz27g9lCHITi20rlM6F24ohAv34DNRvShvtZ1Im7sxSjl0LRxXeymSwQx0ZBe86eYF6T5Re1Cr08LRRuGsllGdnpxHlfOh0EgSjWF+31AlXxNtunmWgr9FtRSouucSPf9hd22Jo2/xv91efHSLMSj5Nb5nxpnuWZMm/EYc0ZNlKkyUfMfJY5ltTdX8c30dqICaiWHTwXAO+l4J+83uUMyQEJm22GFHQvth/AfxBltumEQEJJqjtqQlaS+i5rmRq3BIxtRpvOUqe79dRcCqw6c6t6H+LNRevnVOemc1ojW/pVzudRx3qg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4/Eg52HAcsZDxMss1/lGKk4XD7GfJu+qbIiQvqzKMX4=;
+ b=R4Wsw5AwoQVjVI37sbcbzvQwxF2002ztm1H9XEUB8d5I2y9ffRHjmUut2UNSmHh3CZ31jp16aHRdYzY359A9a5Q+i8FNFJo/p0JNRxgO141vmPW2dbtFRu9P3DWSdh0kFzoSKrBfzVxLPEFTXOwV6uBno04FDcGj937PHciKWYk=
+Authentication-Results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+Received: from VI1PR0402MB3712.eurprd04.prod.outlook.com
+ (2603:10a6:803:1c::25) by VI1PR0402MB3519.eurprd04.prod.outlook.com
+ (2603:10a6:803:8::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Tue, 9 Jun
+ 2020 15:23:53 +0000
+Received: from VI1PR0402MB3712.eurprd04.prod.outlook.com
+ ([fe80::c8c0:bf87:1424:88ae]) by VI1PR0402MB3712.eurprd04.prod.outlook.com
+ ([fe80::c8c0:bf87:1424:88ae%6]) with mapi id 15.20.3066.023; Tue, 9 Jun 2020
+ 15:23:53 +0000
+Subject: Re: [PATCH] soc: imx8m: Correct i.MX8MP UID fuse offset
+To: Anson Huang <Anson.Huang@nxp.com>, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ leonard.crestez@nxp.com, abel.vesa@nxp.com, l.stach@pengutronix.de,
+ peng.fan@nxp.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1591708550-14058-1-git-send-email-Anson.Huang@nxp.com>
+From: Iuliana Prodan <iuliana.prodan@nxp.com>
+Message-ID: <7a4091c5-dc57-31c3-3445-c6b16a565928@nxp.com>
+Date: Tue, 9 Jun 2020 18:23:49 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
+In-Reply-To: <1591708550-14058-1-git-send-email-Anson.Huang@nxp.com>
+Content-Language: en-US
+X-ClientProxiedBy: AM3PR05CA0132.eurprd05.prod.outlook.com
+ (2603:10a6:207:2::34) To VI1PR0402MB3712.eurprd04.prod.outlook.com
+ (2603:10a6:803:1c::25)
 MIME-Version: 1.0
-References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
- <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
- <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
-In-Reply-To: <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
-From: dillon min <dillon.minfei@gmail.com>
-Date: Tue, 9 Jun 2020 23:22:24 +0800
-Message-ID: <CAL9mu0+__0Z3R3TcSrj9-kPxsyQHKS9WqK1u58P0dEZ+Jd-wbQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
- support reserved memory
-To: Vladimir Murzin <vladimir.murzin@arm.com>, hch@lst.de
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.1.6] (86.121.160.118) by
+ AM3PR05CA0132.eurprd05.prod.outlook.com (2603:10a6:207:2::34) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3088.18 via Frontend Transport; Tue, 9 Jun 2020 15:23:51 +0000
+X-Originating-IP: [86.121.160.118]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 363bdcf2-e491-43f9-100d-08d80c891e11
+X-MS-TrafficTypeDiagnostic: VI1PR0402MB3519:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB35194922A4F1E118B948EBC98C820@VI1PR0402MB3519.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1060;
+X-Forefront-PRVS: 042957ACD7
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 4Bp1dFdWswmWWDOaoYxvoRXmqD50rygUdCfrQ37+MN1CM6qSRYFpJXKQ9X25FFg0MoiuxLurx0ni2EA38pyLJn1+qHiFOTwHVmQ13Lypz/5vDLKe46QDOgLTJSWf79qXa8qEi3EYO5ygJT8BcMu2zLOP2YQHlvVbp9p0KE+huK+/NSxbca2nCwCcnx4iuBo71zyys9wMDKgc/bitkJaQJEgUwyhDGG+6fZoPsi+kMW+alb3Dop9RtvKlBLwmpiLObkKaszqd0eAPQKF/ozJU7rxEIXHqOOcA85MS/XI5aUGNOIq7rXnQ4ohO8bCqcvWYV+sa/bg7GQ9cdWDmEtGyLuCFHUpbEQ1nKu8zIJyircElV0q5+QaxLV/zT5xlmMebDqT59g44gEGldqJ18RaNvsqsB3LfdgvNwDpMjmq0yVc=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR0402MB3712.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(346002)(366004)(136003)(376002)(39860400002)(396003)(86362001)(8936002)(66476007)(66946007)(31686004)(66556008)(83380400001)(2616005)(31696002)(5660300002)(2906002)(8676002)(36756003)(956004)(4326008)(16526019)(44832011)(186003)(26005)(52116002)(16576012)(316002)(6486002)(478600001)(53546011)(32563001)(921003)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: 6XVzbktVP64DN3wBl957K0sEOkQ42L4jD+3kqv8Pu4ILl8zJCwQc8EUGZLJ7F6S922pwb6DldAZ3zB9bnly1pZGB0UoXLpE6lBsTDTbXTfSwMxof7UgBvMnrAIL0eXhigzghn1PHdPBqnPvvrfbDVsV0BYs0h0mTs5wehHStR1SNTDA9K6T7X9jcdkAhiVcsj8T4YTpl6xEzKDUOXEoHPHpklZCJX6+OWjXU6Gr7ur1bz9SgECMAmht17Ner2vWuyjB3MN4GOjqiO0OTJd3c9Dwr4dxnV/gisigSFghk9gLMySArOZ5zWKxkzUuP+4km2RotPx6Ab4ft7jX72iUS/Dh8ohv12/fhmRYQolapF6GWvFV9sCt1EF2RRBGghVGjDjZe33LQjcwXOX6VET3QtqE6pd68bR+JomwN2OT2ZECBFoY3lEQbTkHmZMhK9z7XKZfikZKafX4+tMuStDaoU8beG7znQhGu6SJMAH7u5Nmhe8RHIfGVzAOQqf4et7gL
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 363bdcf2-e491-43f9-100d-08d80c891e11
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jun 2020 15:23:52.9441 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: FEb1+RMwBv20aDKruh1EypjPNnlgKW5AaspWe8/REE2dyvAopBlDlcKbUdeyWUQjh2halI94M6CzXyQy/J4PYg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3519
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_082303_378617_793EDF9F 
-X-CRM114-Status: GOOD (  24.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200609_082359_837325_DD62B63E 
+X-CRM114-Status: GOOD (  14.68  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dillon.minfei[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.13.75 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.13.75 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,6 +119,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,147 +131,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
- linux@armlinux.org.uk,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, tglx@linutronix.de,
- info@metux.net, linux-stm32@st-md-mailman.stormreply.com, allison@lohutok.net
-Content-Type: text/plain; charset="us-ascii"
+Cc: Linux-imx@nxp.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vladimir,
 
-Thanks for reviewing.
 
-Hi Christoph Hellwig,
+On 6/9/2020 4:15 PM, Anson Huang wrote:
+> Correct i.MX8MP UID fuse offset according to fuse map:
+> 
+> UID_LOW: 0x420
+> UID_HIGH: 0x430
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-I just want to know if kernel dma mapping/direct is focused on
-platforms with MMU.
-leave arch code to handle dma coherent memory management themself for
-no-MMU platform.
+If this patch corrects the imx8mp UID shouldn't have a Fixes tag?
 
-so, you just return error code in kernel/dma/mapping.c,direct.c
-without CONFIG_MMU defined ?
-which means dma-direct mapping doesn't support !CONFIG_MMU is not a
-bug, but design as it's.
-or, just return error code currently, will add dma direct mapping
-support for !CONFIG_MMU in the
-future?
-
-As Vladimir Murzin's suggestion has changes in kernel code, I need
-your input to get
-the design goal about dma-direct mapping, thanks.
-
-On Tue, Jun 9, 2020 at 10:07 PM Vladimir Murzin <vladimir.murzin@arm.com> wrote:
->
-> On 6/8/20 9:30 AM, dillon.minfei@gmail.com wrote:
-> > From: dillon min <dillon.minfei@gmail.com>
-> >
-> > Currently, we use dma direct to request coherent memory for driver on armv7m
-> > platform if 'cacheid' is zero, but dma_direct_can_mmap() is return false,
-> > dma_direct_mmap() return -ENXIO for CONFIG_MMU undefined platform.
-> >
-> > so we have to back to use 'arm_nommu_dma_ops', add use_reserved_mem() to check
-> > if device support global or device corherent memory. if yes, then call
-> > set_dma_ops()
-> >
-> > Signed-off-by: dillon min <dillon.minfei@gmail.com>
-> > ---
-> >  arch/arm/mm/dma-mapping-nommu.c | 28 +++++++++++++++++++++++++++-
-> >  1 file changed, 27 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
-> > index 287ef898a55e..e1c213fec152 100644
-> > --- a/arch/arm/mm/dma-mapping-nommu.c
-> > +++ b/arch/arm/mm/dma-mapping-nommu.c
-> > @@ -14,6 +14,7 @@
-> >  #include <asm/cacheflush.h>
-> >  #include <asm/outercache.h>
-> >  #include <asm/cp15.h>
-> > +#include <linux/of.h>
-> >
-> >  #include "dma.h"
-> >
-> > @@ -188,6 +189,31 @@ const struct dma_map_ops arm_nommu_dma_ops = {
-> >  };
-> >  EXPORT_SYMBOL(arm_nommu_dma_ops);
-> >
-> > +static bool use_reserved_mem(struct device *dev)
-> > +{
-> > +     struct device_node *np;
-> > +
-> > +     np = of_find_node_by_path("/reserved-memory/linux,dma");
-> > +
-> > +     if (np &&
-> > +             of_device_is_compatible(np, "shared-dma-pool") &&
-> > +             of_property_read_bool(np, "no-map") &&
-> > +             of_property_read_bool(np, "linux,dma-default")) {
-> > +             /* has global corherent mem support */
-> > +             of_node_put(np);
-> > +             return true;
-> > +     }
-> > +
-> > +     np = of_parse_phandle(dev->of_node, "memory-region", 0);
-> > +     if (np) {
-> > +             /* has dev corherent mem support */
-> > +             of_node_put(np);
-> > +             return true;
-> > +     }
-> > +
-> > +     return false;
-> > +}
-> > +
-> >  void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
-> >                       const struct iommu_ops *iommu, bool coherent)
-> >  {
-> > @@ -206,6 +232,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
-> >               dev->archdata.dma_coherent = (get_cr() & CR_M) ? coherent : true;
-> >       }
-> >
-> > -     if (!dev->archdata.dma_coherent)
-> > +     if (!dev->archdata.dma_coherent || use_reserved_mem(dev))
-> >               set_dma_ops(dev, &arm_nommu_dma_ops);
-> >  }
-> >
->
-> Sorry I have to NAK this hack :(
->
-> Digging git history reveled 79964a1c2972 ("ARM: 8633/1: nommu: allow mmap when !CONFIG_MMU")
-> which make me wonder if diff below does the trick for you
->
-> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> index 8f4bbda..8623b9e 100644
-> --- a/kernel/dma/direct.c
-> +++ b/kernel/dma/direct.c
-> @@ -456,14 +456,14 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
->  #else /* CONFIG_MMU */
->  bool dma_direct_can_mmap(struct device *dev)
->  {
-> -       return false;
-> +       return true;
->  }
->
->  int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
->                 void *cpu_addr, dma_addr_t dma_addr, size_t size,
->                 unsigned long attrs)
->  {
-> -       return -ENXIO;
-> +       return vm_iomap_memory(vma, vma->vm_start, (vma->vm_end - vma->vm_start));;
->  }
->  #endif /* CONFIG_MMU */
-Yes, this is a quite nice way to support !CONFIG_MMU without cache on
-platforms. I will try your suggestion.
-thanks
-
->
-> Cheers
-> Vladimir
+> ---
+>   drivers/soc/imx/soc-imx8m.c | 8 ++++++--
+>   1 file changed, 6 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/soc/imx/soc-imx8m.c b/drivers/soc/imx/soc-imx8m.c
+> index 7b0759a..0bc8314 100644
+> --- a/drivers/soc/imx/soc-imx8m.c
+> +++ b/drivers/soc/imx/soc-imx8m.c
+> @@ -22,6 +22,8 @@
+>   #define OCOTP_UID_LOW			0x410
+>   #define OCOTP_UID_HIGH			0x420
+>   
+> +#define IMX8MP_OCOTP_UID_OFFSET		0x10
+> +
+>   /* Same as ANADIG_DIGPROG_IMX7D */
+>   #define ANADIG_DIGPROG_IMX8MM	0x800
+>   
+> @@ -87,6 +89,8 @@ static void __init imx8mm_soc_uid(void)
+>   {
+>   	void __iomem *ocotp_base;
+>   	struct device_node *np;
+> +	u32 offset = of_machine_is_compatible("fsl,imx8mp") ?
+> +		     IMX8MP_OCOTP_UID_OFFSET : 0;
+>   
+>   	np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-ocotp");
+>   	if (!np)
+> @@ -95,9 +99,9 @@ static void __init imx8mm_soc_uid(void)
+>   	ocotp_base = of_iomap(np, 0);
+>   	WARN_ON(!ocotp_base);
+>   
+> -	soc_uid = readl_relaxed(ocotp_base + OCOTP_UID_HIGH);
+> +	soc_uid = readl_relaxed(ocotp_base + OCOTP_UID_HIGH + offset);
+>   	soc_uid <<= 32;
+> -	soc_uid |= readl_relaxed(ocotp_base + OCOTP_UID_LOW);
+> +	soc_uid |= readl_relaxed(ocotp_base + OCOTP_UID_LOW + offset);
+>   
+>   	iounmap(ocotp_base);
+>   	of_node_put(np);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
