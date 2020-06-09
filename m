@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6F7C1F49A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 00:54:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62C5C1F49BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 00:58:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jnz6k3k8MXbCZFUzUNh82in+T4ECl+2725iEYt53vjU=; b=WdA6OM0U8U30ZL
-	wfvLIy0ycAvtHcrDILXhahc7qBPsV/km5h2XFhGSvfxO/EyC1WsfBe1Mn92MXkMtzrlOFivV3a6Mu
-	CxREsTdsyrjzklAjlrD55oWgw2CK7lpss5QKa6GexLLwFRm4KrgE5/jwtnihsDyfsZSNhdT6Voa5X
-	GII7nlSwzVHxr3xHauHYGzzGR1pQAgRTBCHFd1msdZtgbUjalPBVnJQr1vsokybKTJ/SUhhHoNwAj
-	syU5ZYYDFYu00MNdM2LaZRCH8ftNApzoIWWMToN3ENLTtEskzjyaMAjeq1fu4aMSOxlwlPNg9mswC
-	YWc/cRl80oMU7sxNTr1Q==;
+	List-Owner; bh=XYMrX2TR5W+HCEccSB0HRuj7+sB7jvzvDkgsOawdWwI=; b=cQqWdtwN9HL0WE
+	/IqAT0uXDzlwKbinKFE7mSwCyZgygG7ouQsm0AsSeVcclyT0x+7LjlVz0xZvz2tV99DSe1ZNV1js5
+	zQiFnw4fGNTHtOv+sQsQymE3lgpMBHjVOOq0cHzfiiJIcllZZPX5JJEv5Usr9g1nUysGvxVt558ES
+	hdDXl8sBp2XXG8quZtYRgUJ/KQ1oGTBYlou2tydAgkse/z1Jl4ob3JqYB1qwaSNEAhPwfpUAd1Rri
+	ZJFHyEW5uBHNz+t8rSJBSf9QIQvRIx3QTWd4eH18QqIXp9XV/1t95MXICKM4R3d4NXgy5m1knjcWf
+	VD4i5VVEa8XY2UKYhy3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jin8U-0003p0-M2; Tue, 09 Jun 2020 22:54:26 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1jinBr-0006iI-SU; Tue, 09 Jun 2020 22:57:55 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jin8K-0003oT-HR
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 22:54:17 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id q2so136563vsr.1
+ id 1jinBk-0006hf-0H
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 22:57:49 +0000
+Received: by mail-ua1-x944.google.com with SMTP id r1so195005uam.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 15:54:16 -0700 (PDT)
+ Tue, 09 Jun 2020 15:57:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uselWGWC3qoQQOxqWlrwlyYH4mqd92kQlOeG7RAljPU=;
- b=FyAfw76hywaz53lg/VPnGi9e8IgE5jPMksWxgn5Xkbqe/yhjElKv8fMDCl4QFtXQIt
- pSyJYqrnMJYgTyWBELqlUZa5CVrDBu1huuKU9dWbO6W+XR2+iweBUHxOBj0i2RvfGdFs
- 8NiNQVMybZaYdmRyiKjkdD25LAg7GOjVAE2ahVKfo1TFfOTPVhQxv3vrhhJB1ZZYju2x
- Sdae+oKvdyfhBYlT1ObztTGi8b7ZlawE8tQkILK8OymFeQLH+QUknrl0lziOECLhGpgE
- 9Z2h7cuvDa588K6R2CH8Tk7KwRtyK4jUdgDpy+UOvR8NULevc8eRomSXClkk9nY8gFC8
- 7ASA==
+ :cc; bh=Xl5EexOSop6lv+UL7XlaACYBiSImdbhXFtk47GA4aNo=;
+ b=jGKUzdkMHAPPrsDAO+KgKuAkBcwZtqhUNuimhvROzoJ9soMzQeLhFacPERf2F1XAt1
+ d2bGPLktS4oAbDypyJsO1bp4jOu+yrHrzisYt7q9+K1Hi0hoL3YOduunxwK7YD7Qt7z0
+ y3licW0I0Hm1qOPCUTKLoyKQp/3B2kLD9SN+DIFf4qUocN8tZ+JcyuvkpeJa+Nx5P9Na
+ 1hfqO82s7cJ49zBil2iU4uF0YAvQfZ67+OT8TQ3PAwA47G7EZ666/1ojukkE3Jpdnxbt
+ eMot5sAzs9ckGI/LQ9GzRveHRIuIi8iCm7iWgocOAu+Hv9q8sX3vAn7FZhDyBYP80Kmo
+ spbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=uselWGWC3qoQQOxqWlrwlyYH4mqd92kQlOeG7RAljPU=;
- b=GDSnTizef1p2jFH708SXiYuQF1qPsrfWGfi+oTAFEFK+FXF4XbrHeCjkErtb9Jw8/3
- b4+klkiCYPyrRuhRvQdLlzBgrKahQHhJEGh9nwz7q5op+G6YCjC4VXxOHw2XD9XgNLi/
- wl6s0G7UqGOuLCz8zTrSRAR2RYik3xzy7cWc9AbT4lJLKsGRVPABLWrj8TYmawSqJRwG
- jvSUhZgdeKc41wL2qMNJci7QioyCDyKMTxCAWP8TzflL5bNf+KVI4M0KpMYLbEkAbS/J
- RhYRAJL9t/SrxaWv6FzmHxe+lPB0RGt84vxeEqIi/tx368etXJ1r/9x1rm1NUPJOQhu+
- u96Q==
-X-Gm-Message-State: AOAM5338gCoAxZ/U298pV3Xp5Gu+ZleSR4zAQ1W2AIDAw+8VHuCkxfn8
- RiUoKtkQhIIYyK+Ralf2Vgj9Cza4dQ2MymAgqxr7HA==
-X-Google-Smtp-Source: ABdhPJx3dLS9VTThWqaFRDlqN1S9f5h0OrZVTBbY5/ftQgTD5GsCLfsUQ7mDqtAcQKwPK2rVrq3OTLOUBty+qRmGSEY=
-X-Received: by 2002:a67:af10:: with SMTP id v16mr448564vsl.235.1591743255002; 
- Tue, 09 Jun 2020 15:54:15 -0700 (PDT)
+ bh=Xl5EexOSop6lv+UL7XlaACYBiSImdbhXFtk47GA4aNo=;
+ b=tb/Pv8K2DYWO4Nx59xlgfks0C5d6ROYZV0X2tMwr3GOMyYjCwtvIyxeiV2G8MBYU0j
+ ZJ/2YBVdbNMREfNNmoW0VagOlw24gJuVN5vyYA24yxEpwz3jhhmmBr939maMq10H4sVp
+ L9beYxDLrn0BvywxVerSqyBCJVhCqy3ca87eRCDDl4lrTlSIqSiJklEwRYXgrb9Z2QRa
+ 7FUDvG5wzQcRm/0Hmzr/Y+WTgUzFf/gQaCSgH+82lkTPr5fo/1UrRc2H3PIvD8VVJRoM
+ akexQqxWz3SLwpZybRVCjqG8LYO75r+qN36cOy+VvCLOgxIaYSlA9z9+MkYdgNg3rx5M
+ hMeg==
+X-Gm-Message-State: AOAM531RFmaLi620jPhXCKyOST4S9lQEkMJihzLAOeG4kM7oAgPDUQdE
+ wo3JcwyxbaD/9oXcu76cCzMU/EXNn496jSzGyNWpug==
+X-Google-Smtp-Source: ABdhPJw+x8rHkvjQXtHjLxkujrakxTirbbawkFrKZAQkOg8tp5FX1PiZ/3qyVw3h4kYT7bC0/YyoJYi+dfxe0RsUL8o=
+X-Received: by 2002:ab0:70c9:: with SMTP id r9mr536687ual.15.1591743466435;
+ Tue, 09 Jun 2020 15:57:46 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-3-sean.j.christopherson@intel.com>
-In-Reply-To: <20200605213853.14959-3-sean.j.christopherson@intel.com>
+ <20200605213853.14959-5-sean.j.christopherson@intel.com>
+In-Reply-To: <20200605213853.14959-5-sean.j.christopherson@intel.com>
 From: Ben Gardon <bgardon@google.com>
-Date: Tue, 9 Jun 2020 15:54:04 -0700
-Message-ID: <CANgfPd-hDAUe188X4HNt7bQ=5_RxtOmpnEet3C3CwpJPxi4y4Q@mail.gmail.com>
-Subject: Re: [PATCH 02/21] KVM: x86/mmu: Consolidate "page" variant of memory
- cache helpers
+Date: Tue, 9 Jun 2020 15:57:35 -0700
+Message-ID: <CANgfPd8p=SzkWucGm=a-ajRMfYmY1sPjeXBeZ6cHeAviQg9pag@mail.gmail.com>
+Subject: Re: [PATCH 04/21] KVM: x86/mmu: Remove superfluous gotos from
+ mmu_topup_memory_caches()
 To: Sean Christopherson <sean.j.christopherson@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_155416_596836_638541F4 
-X-CRM114-Status: GOOD (  16.16  )
+X-CRM114-CacheID: sfid-20200609_155748_062315_A9F7DF89 
+X-CRM114-Status: GOOD (  14.96  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
@@ -120,88 +120,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Fri, Jun 5, 2020 at 2:39 PM Sean Christopherson
 <sean.j.christopherson@intel.com> wrote:
 >
-> Drop the "page" variants of the topup/free memory cache helpers, using
-> the existence of an associated kmem_cache to select the correct alloc
-> or free routine.
+> Return errors directly from mmu_topup_memory_caches() instead of
+> branching to a label that does the same.
 >
 > No functional change intended.
 >
 > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> Reviewed-by: Ben Gardon <bgardon@google.com>
+Reviewed-by: Ben Gardon <bgardon@google.com>
 > ---
->  arch/x86/kvm/mmu/mmu.c | 37 +++++++++++--------------------------
->  1 file changed, 11 insertions(+), 26 deletions(-)
+>  arch/x86/kvm/mmu/mmu.c | 8 +++-----
+>  1 file changed, 3 insertions(+), 5 deletions(-)
 >
 > diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-> index 0830c195c9ed..cbc101663a89 100644
+> index 36c90f004ef4..ba70de24a5b0 100644
 > --- a/arch/x86/kvm/mmu/mmu.c
 > +++ b/arch/x86/kvm/mmu/mmu.c
-> @@ -1067,7 +1067,10 @@ static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache, int min)
->         if (cache->nobjs >= min)
->                 return 0;
->         while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
-> -               obj = kmem_cache_zalloc(cache->kmem_cache, GFP_KERNEL_ACCOUNT);
-> +               if (cache->kmem_cache)
-> +                       obj = kmem_cache_zalloc(cache->kmem_cache, GFP_KERNEL_ACCOUNT);
-> +               else
-> +                       obj = (void *)__get_free_page(GFP_KERNEL_ACCOUNT);
->                 if (!obj)
->                         return cache->nobjs >= min ? 0 : -ENOMEM;
->                 cache->objects[cache->nobjs++] = obj;
-> @@ -1082,30 +1085,12 @@ static int mmu_memory_cache_free_objects(struct kvm_mmu_memory_cache *cache)
->
->  static void mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
->  {
-> -       while (mc->nobjs)
-> -               kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
-> -}
-> -
-> -static int mmu_topup_memory_cache_page(struct kvm_mmu_memory_cache *cache,
-> -                                      int min)
-> -{
-> -       void *page;
-> -
-> -       if (cache->nobjs >= min)
-> -               return 0;
-> -       while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
-> -               page = (void *)__get_free_page(GFP_KERNEL_ACCOUNT);
-> -               if (!page)
-> -                       return cache->nobjs >= min ? 0 : -ENOMEM;
-> -               cache->objects[cache->nobjs++] = page;
-> +       while (mc->nobjs) {
-> +               if (mc->kmem_cache)
-> +                       kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
-> +               else
-> +                       free_page((unsigned long)mc->objects[--mc->nobjs]);
->         }
-> -       return 0;
-> -}
-> -
-> -static void mmu_free_memory_cache_page(struct kvm_mmu_memory_cache *mc)
-> -{
-> -       while (mc->nobjs)
-> -               free_page((unsigned long)mc->objects[--mc->nobjs]);
->  }
->
->  static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
-> @@ -1116,7 +1101,7 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+> @@ -1100,13 +1100,11 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+>         r = mmu_topup_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache,
 >                                    8 + PTE_PREFETCH_NUM);
 >         if (r)
->                 goto out;
-> -       r = mmu_topup_memory_cache_page(&vcpu->arch.mmu_page_cache, 8);
-> +       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_cache, 8);
+> -               goto out;
+> +               return r;
+>         r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_cache, 8);
 >         if (r)
->                 goto out;
->         r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
-> @@ -1127,7 +1112,7 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
->  static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
->  {
->         mmu_free_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache);
-> -       mmu_free_memory_cache_page(&vcpu->arch.mmu_page_cache);
-> +       mmu_free_memory_cache(&vcpu->arch.mmu_page_cache);
->         mmu_free_memory_cache(&vcpu->arch.mmu_page_header_cache);
+> -               goto out;
+> -       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
+> -out:
+> -       return r;
+> +               return r;
+> +       return mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
 >  }
 >
+>  static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
 > --
 > 2.26.0
 >
