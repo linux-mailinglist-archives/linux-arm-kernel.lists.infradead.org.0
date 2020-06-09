@@ -2,69 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A037A1F3558
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 09:46:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64C5A1F350B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 09:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=s+DcJwxC5wv6gYKNZFVezLSQ3Xg/nt2Ze93A8D38gcQ=; b=pP/ukbB8gh/48dz0Z8oMeFXmUt
-	iGYNue9BAmc12yZPxttaBZmmUFiaL1dqRwB0pAnZXldHzYpel8Gv5cvUfdsnUWmlc4ubVlxCWh5HL
-	635RXzLsaQpwU4i5gjeFFML/LinfSXRLlssS1HkHE+aDPTYPdQ/SdGtHD3qkVl1+am6Z9O5VX37Nk
-	p/x4Hdi1mFfLd45M/OZMG+6H4LLH4/nIZi99p916cgOWsCwoJY69lwU1VrK+QudzQH8PWPZwjqFEF
-	ZuhJEs9UcvuVJZj19nMM4GwFMBWjt0tE1LmqpUux6wEylMVGxIQuXB/Ll6fC+eoJ9PwMsXHkmjLE4
-	hNH7RgZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9C/bTTA+99BwRa3ZIdsIk756BhJotPsQELsD38Ryzvc=; b=W+Tcwu54eDAHbbnVmixKC3Gjs
+	UhN0F/dtG5618aysDlhhQeEisiTOOQjUwVOvI80xXPx8VKDv0Ui+KYjCqBu+RNS8mS2X51qf8WTFe
+	MD6YSDrezaBtcgj1quONfh3RlYJ9YbLokuc0jla7064KPFikppEqqBYRBN9GkP41tKNhzvjw91ECX
+	vymDkvhgrfIBd/7t1WjbOQr+S3aCC/dMUPKBGTzNThegx/62fJuAresQAfGGv2COnSCwhL2pol1K6
+	6awDHyO2oeKJ4giKdggXGyrM+V3/mrV5hcrwgoP3ogi44NaGSIN67VCj4bLvDZtKny1EhY6NO0WTG
+	esQgU0p9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiYyD-0001BB-7d; Tue, 09 Jun 2020 07:46:53 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jiYpy-0007xU-Ng; Tue, 09 Jun 2020 07:38:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiYuz-0004nM-EM
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 07:43:47 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A5EA51A129F;
- Tue,  9 Jun 2020 09:43:31 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 92D001A00E4;
- Tue,  9 Jun 2020 09:43:21 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 33B0740326;
- Tue,  9 Jun 2020 15:43:09 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: linux@armlinux.org.uk, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, mturquette@baylibre.com,
- sboyd@kernel.org, oleksandr.suvorov@toradex.com, stefan.agner@toradex.com,
- arnd@arndb.de, abel.vesa@nxp.com, peng.fan@nxp.com, aisheng.dong@nxp.com,
- tglx@linutronix.de, allison@lohutok.net, gregkh@linuxfoundation.org,
- info@metux.net, leonard.crestez@nxp.com, fugang.duan@nxp.com,
- daniel.baluta@nxp.com, yuehaibing@huawei.com, sfr@canb.auug.org.au,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org
-Subject: [PATCH V2 9/9] clk: imx8qxp: Support module build
-Date: Tue,  9 Jun 2020 15:32:13 +0800
-Message-Id: <1591687933-19495-10-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
-References: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jiYpr-0007x9-SH
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 07:38:17 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F023F2074B;
+ Tue,  9 Jun 2020 07:38:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591688295;
+ bh=XX5d5KaAtphU/kZf+qt3bMEwCoOYeQG5XQlitoBuT0Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=FXRWngKX4+Iu3JVdr/H3JTL7xz8zVI8QGaVBS/zbkHU+9Y4uLj8Gd51PkCr0Nlvyh
+ /Ufzaws0PeRTThPPgPdtdgDZN+xT/YYUv9EBxKghVg+4KsIr9ZH1Q+zYUEXd+MWHa2
+ xFskecywmzejx7r+8aPwA/faRCckoRf+kzZ0BqN8=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jiYpp-001OCI-9n; Tue, 09 Jun 2020 08:38:13 +0100
+MIME-Version: 1.0
+Date: Tue, 09 Jun 2020 08:38:13 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 3/3] KVM: arm64: Enforce PtrAuth being disabled if not
+ advertized
+In-Reply-To: <20200604153900.GE75320@C02TD0UTHF1T.local>
+References: <20200604133354.1279412-1-maz@kernel.org>
+ <20200604133354.1279412-4-maz@kernel.org>
+ <20200604153900.GE75320@C02TD0UTHF1T.local>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <8c340ebe6be5d9c866c24ad55ed0a841@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: mark.rutland@arm.com, kvm@vger.kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ will@kernel.org, catalin.marinas@arm.com, kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_004333_657145_B5D6DD20 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200609_003815_934924_3E0B483F 
+X-CRM114-Status: GOOD (  18.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,58 +93,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: kernel-team@android.com, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support building i.MX8QXP clock driver as module.
+Hi Mark,
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-No change.
----
- drivers/clk/imx/Kconfig            | 2 +-
- drivers/clk/imx/clk-imx8qxp-lpcg.c | 1 +
- drivers/clk/imx/clk-imx8qxp.c      | 1 +
- 3 files changed, 3 insertions(+), 1 deletion(-)
+On 2020-06-04 16:39, Mark Rutland wrote:
+> Hi Marc,
+> 
+> On Thu, Jun 04, 2020 at 02:33:54PM +0100, Marc Zyngier wrote:
+>> Even if we don't expose PtrAuth to a guest, the guest can still
+>> write to its SCTIRLE_1 register and set the En{I,D}{A,B} bits
+>> and execute PtrAuth instructions from the NOP space. This has
+>> the effect of trapping to EL2, and we currently inject an UNDEF.
+> 
+> I think it's worth noting that this is an ill-behaved guest, as those
+> bits are RES0 when pointer authentication isn't implemented.
+> 
+> The rationale for RES0/RES1 bits is that new HW can rely on old SW
+> programming them with the 0/1 as appropriate, and that old SW that does
+> not do so may encounter behaviour which from its PoV is UNPREDICTABLE.
+> The SW side of the contract is that you must program them as 0/1 unless
+> you know they're allocated with a specific meaning.
+> 
+> With that in mind I think the current behaviour is legitimate: from the
+> guest's PoV it's the same as there being a distinct extension which it
+> is not aware of where the En{I,D}{A,B} bits means "trap some HINTs to
+> EL1".
+> 
+> I don't think that we should attempt to work around broken software 
+> here
+> unless we absolutely have to, as it only adds complexity for no real
+> gain.
 
-diff --git a/drivers/clk/imx/Kconfig b/drivers/clk/imx/Kconfig
-index 060f9c3..26cedbf 100644
---- a/drivers/clk/imx/Kconfig
-+++ b/drivers/clk/imx/Kconfig
-@@ -37,7 +37,7 @@ config CLK_IMX8MQ
- 	    Build the driver for i.MX8MQ CCM Clock Driver
- 
- config CLK_IMX8QXP
--	bool "IMX8QXP SCU Clock"
-+	tristate "IMX8QXP SCU Clock"
- 	depends on ARCH_MXC && IMX_SCU && ARM64
- 	select MXC_CLK_SCU
- 	help
-diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-index 04c8ee3..8afaefc 100644
---- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
-+++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-@@ -232,3 +232,4 @@ static struct platform_driver imx8qxp_lpcg_clk_driver = {
- };
- 
- builtin_platform_driver(imx8qxp_lpcg_clk_driver);
-+MODULE_LICENSE("GPL v2");
-diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
-index 5e2903e..a34c7c5 100644
---- a/drivers/clk/imx/clk-imx8qxp.c
-+++ b/drivers/clk/imx/clk-imx8qxp.c
-@@ -152,3 +152,4 @@ static struct platform_driver imx8qxp_clk_driver = {
- 	.probe = imx8qxp_clk_probe,
- };
- builtin_platform_driver(imx8qxp_clk_driver);
-+MODULE_LICENSE("GPL v2");
+Fair enough. I was worried of the behaviour difference between HW 
+without
+PtrAuth and a guest with HW not advertised. Ideally, they should have
+the same behaviour, but the architecture feels a bit brittle here.
+
+Anyway, I'll drop this patch, and hopefully no guest will play this
+game (they'll know pretty quickly about the issue anyway).
+
+Thanks,
+
+         M.
 -- 
-2.7.4
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
