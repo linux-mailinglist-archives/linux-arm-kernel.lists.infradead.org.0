@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DD3E1F3D2B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:50:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC8791F3D46
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:51:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=f/LM7gfiAguPa3WIEgB2mHBAw5Tpc6HGARHOZ8rrCYs=; b=RuZ
-	jag6vp0bYwDa09FGXKREJLmAje7KfMR6zGMyNgBVlTh1R9uOWlvu4oElb/zvheNydM1C7x7Z5PJMD
-	J3MOPKsZxmwVmTv7j/a1wGixwmJXMOXBrnpRpQO9cFBSLuZ22dzFNkYhxfQ5W1NvLU76LWwt0ar6X
-	PX4ERwTQi/4sVQ86zYGPYZ6xsBB8ks+DIo7ZkxZbPvbNA6hJUJ+v2+qmiF2ESmt6kLTsxxreMhdVk
-	QPgmn9+AqVvDy0HmpTTuzbtv6q9sPsnlK8zndr7/jTGWhS/VB5s+6I+VJPKuEx1aT3vNLGRvL2q4u
-	lgS3gjmokKpJbJBm/m4FfrRQRvuCIMg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=eNXrZiNiyOOYz6x3U6MR45Ag+tqIyeyie3lK3VS+TgY=; b=IV9q1OJCnXfWKhkWz/ihj5u92p
+	z50L+AtYT/nOfZXO4gtrjyMIJHCmHqS6QvO5bnD1bnwkVg45tY1TgpYNKmiBAjQOWg2xIgidGq19z
+	ekx69sybQSdCOLdIGI/YdVldvDT17S6D770lDnaddftx2EEAxj6TrmpLiCXTEMlpPGV3lNKXii3fU
+	KHkaa8T0pCmp8SRgDj1qcmsG9dhE53TUicXlwK2nN72DsbzPLMVIBhoK6CGvaWpzHCXCJLbB9f7Ik
+	+LpJ1IKmZOxyp0akFlKzGjQuHdunaKR8JL4w//lECZhpDC09bddxhLUBrPuiCzqvxtHmZpF5WRmMh
+	OhZlGeEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiedY-0002pL-Jp; Tue, 09 Jun 2020 13:49:56 +0000
+	id 1jiefL-0006kI-PP; Tue, 09 Jun 2020 13:51:47 +0000
 Received: from out30-54.freemail.mail.aliyun.com ([115.124.30.54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiecm-0002MU-C6
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:49:14 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R771e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e01419;
+ id 1jied2-0002MW-I1
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:49:27 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R141e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e01358;
  MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=20; SR=0;
- TI=SMTPD_---0U.6GXtb_1591710536; 
+ TI=SMTPD_---0U.6I2zz_1591710537; 
 Received: from localhost(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0U.6GXtb_1591710536) by smtp.aliyun-inc.com(127.0.0.1);
- Tue, 09 Jun 2020 21:48:56 +0800
+ fp:SMTPD_---0U.6I2zz_1591710537) by smtp.aliyun-inc.com(127.0.0.1);
+ Tue, 09 Jun 2020 21:48:57 +0800
 From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
 To: herbert@gondor.apana.org.au, davem@davemloft.net, dhowells@redhat.com,
  mcoquelin.stm32@gmail.com, alexandre.torgue@st.com, jmorris@namei.org,
  serge@hallyn.com, nramas@linux.microsoft.com, tusharsu@linux.microsoft.com,
  zohar@linux.ibm.com, gilad@benyossef.com, pvanleeuwen@rambus.com
-Subject: [PATCH v3 0/8] crpyto: introduce OSCCA certificate and SM2 asymmetric
- algorithm 
-Date: Tue,  9 Jun 2020 21:48:47 +0800
-Message-Id: <20200609134855.21431-1-tianjia.zhang@linux.alibaba.com>
+Subject: [PATCH v3 1/8] crypto: sm3 - export crypto_sm3_final function
+Date: Tue,  9 Jun 2020 21:48:48 +0800
+Message-Id: <20200609134855.21431-2-tianjia.zhang@linux.alibaba.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200609134855.21431-1-tianjia.zhang@linux.alibaba.com>
+References: <20200609134855.21431-1-tianjia.zhang@linux.alibaba.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_064908_660788_5D081E4A 
-X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-CacheID: sfid-20200609_064924_838074_8ACC42D2 
+X-CRM114-Status: UNSURE (   7.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,107 +82,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello all,
+Both crypto_sm3_update and crypto_sm3_finup have been
+exported, exporting crypto_sm3_final, to avoid having to
+use crypto_sm3_finup(desc, NULL, 0, dgst) to calculate
+the hash in some cases.
 
-This new module implement the OSCCA certificate and SM2 public key
-algorithm. It was published by State Encryption Management Bureau, China.
-List of specifications for OSCCA certificate and SM2 elliptic curve
-public key cryptography:
-
-* GM/T 0003.1-2012
-* GM/T 0003.2-2012
-* GM/T 0003.3-2012
-* GM/T 0003.4-2012
-* GM/T 0003.5-2012
-* GM/T 0015-2012
-* GM/T 0009-2012 
-
-IETF: https://tools.ietf.org/html/draft-shen-sm2-ecdsa-02
-oscca: http://www.oscca.gov.cn/sca/xxgk/2010-12/17/content_1002386.shtml
-scctc: http://www.gmbz.org.cn/main/bzlb.html
-
-These patchs add the OID object identifier defined by OSCCA. The
-x509 certificate supports sm2-with-sm3 type certificate parsing
-and verification.
-
-The sm2 algorithm is based on libgcrypt's mpi implementation, and has
-made some additions to the kernel's original mpi library, and added the
-implementation of ec to better support elliptic curve-like algorithms.
-
-sm2 has good support in both openssl and gnupg projects, and sm3 and sm4
-of the OSCCA algorithm family have also been implemented in the kernel.
-
-Among them, sm3 and sm4 have been well implemented in the kernel.
-This group of patches has newly introduced sm2. In order to implement
-sm2 more perfectly, I expanded the mpi library and introduced the
-ec implementation of the mpi library as the basic algorithm. Compared
-to the kernel's crypto/ecc.c, the implementation of mpi/ec.c is more
-complete and elegant, sm2 is implemented based on these algorithms.
-
+Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
 ---
-v3 changes:
-  1. integrity asymmetric digsig support sm2-with-sm3 algorithm.
-  2. remove unused sm2_set_priv_key().
-  3. rebase on mainline.
+ crypto/sm3_generic.c | 7 ++++---
+ include/crypto/sm3.h | 2 ++
+ 2 files changed, 6 insertions(+), 3 deletions(-)
 
-v2 changes:
-  1. simplify the sm2 algorithm and only retain the verify function.
-  2. extract the sm2 certificate code into a separate file.
-
-Tianjia Zhang (8):
-  crypto: sm3 - export crypto_sm3_final function
-  lib/mpi: Extend the MPI library
-  lib/mpi: Introduce ec implementation to MPI library
-  crypto: sm2 - introduce OSCCA SM2 asymmetric cipher algorithm
-  crypto: testmgr - support test with different ciphertext per
-    encryption
-  X.509: support OSCCA certificate parse
-  X.509: support OSCCA sm2-with-sm3 certificate verification
-  integrity: Asymmetric digsig supports SM2-with-SM3 algorithm
-
- crypto/Kconfig                            |   17 +
- crypto/Makefile                           |    8 +
- crypto/asymmetric_keys/Makefile           |    1 +
- crypto/asymmetric_keys/public_key.c       |    6 +
- crypto/asymmetric_keys/public_key_sm2.c   |   59 +
- crypto/asymmetric_keys/x509_cert_parser.c |   14 +-
- crypto/asymmetric_keys/x509_public_key.c  |    2 +
- crypto/sm2.c                              |  473 +++++++
- crypto/sm2signature.asn1                  |    4 +
- crypto/sm3_generic.c                      |    7 +-
- crypto/testmgr.c                          |    7 +-
- include/crypto/public_key.h               |   14 +
- include/crypto/sm2.h                      |   25 +
- include/crypto/sm3.h                      |    2 +
- include/linux/mpi.h                       |  193 +++
- include/linux/oid_registry.h              |    6 +
- lib/mpi/Makefile                          |    6 +
- lib/mpi/ec.c                              | 1538 +++++++++++++++++++++
- lib/mpi/mpi-add.c                         |  207 +++
- lib/mpi/mpi-bit.c                         |  251 ++++
- lib/mpi/mpi-cmp.c                         |   46 +-
- lib/mpi/mpi-div.c                         |  259 ++++
- lib/mpi/mpi-internal.h                    |   53 +
- lib/mpi/mpi-inv.c                         |  143 ++
- lib/mpi/mpi-mod.c                         |  155 +++
- lib/mpi/mpi-mul.c                         |  166 +++
- lib/mpi/mpicoder.c                        |  336 +++++
- lib/mpi/mpih-div.c                        |  294 ++++
- lib/mpi/mpih-mul.c                        |   25 +
- lib/mpi/mpiutil.c                         |  204 +++
- security/integrity/digsig_asymmetric.c    |   14 +-
- 31 files changed, 4517 insertions(+), 18 deletions(-)
- create mode 100644 crypto/asymmetric_keys/public_key_sm2.c
- create mode 100644 crypto/sm2.c
- create mode 100644 crypto/sm2signature.asn1
- create mode 100644 include/crypto/sm2.h
- create mode 100644 lib/mpi/ec.c
- create mode 100644 lib/mpi/mpi-add.c
- create mode 100644 lib/mpi/mpi-div.c
- create mode 100644 lib/mpi/mpi-inv.c
- create mode 100644 lib/mpi/mpi-mod.c
- create mode 100644 lib/mpi/mpi-mul.c
-
+diff --git a/crypto/sm3_generic.c b/crypto/sm3_generic.c
+index 3468975215ca..193c4584bd00 100644
+--- a/crypto/sm3_generic.c
++++ b/crypto/sm3_generic.c
+@@ -149,17 +149,18 @@ int crypto_sm3_update(struct shash_desc *desc, const u8 *data,
+ }
+ EXPORT_SYMBOL(crypto_sm3_update);
+ 
+-static int sm3_final(struct shash_desc *desc, u8 *out)
++int crypto_sm3_final(struct shash_desc *desc, u8 *out)
+ {
+ 	sm3_base_do_finalize(desc, sm3_generic_block_fn);
+ 	return sm3_base_finish(desc, out);
+ }
++EXPORT_SYMBOL(crypto_sm3_final);
+ 
+ int crypto_sm3_finup(struct shash_desc *desc, const u8 *data,
+ 			unsigned int len, u8 *hash)
+ {
+ 	sm3_base_do_update(desc, data, len, sm3_generic_block_fn);
+-	return sm3_final(desc, hash);
++	return crypto_sm3_final(desc, hash);
+ }
+ EXPORT_SYMBOL(crypto_sm3_finup);
+ 
+@@ -167,7 +168,7 @@ static struct shash_alg sm3_alg = {
+ 	.digestsize	=	SM3_DIGEST_SIZE,
+ 	.init		=	sm3_base_init,
+ 	.update		=	crypto_sm3_update,
+-	.final		=	sm3_final,
++	.final		=	crypto_sm3_final,
+ 	.finup		=	crypto_sm3_finup,
+ 	.descsize	=	sizeof(struct sm3_state),
+ 	.base		=	{
+diff --git a/include/crypto/sm3.h b/include/crypto/sm3.h
+index 1438942dc773..42ea21289ba9 100644
+--- a/include/crypto/sm3.h
++++ b/include/crypto/sm3.h
+@@ -35,6 +35,8 @@ struct shash_desc;
+ extern int crypto_sm3_update(struct shash_desc *desc, const u8 *data,
+ 			      unsigned int len);
+ 
++extern int crypto_sm3_final(struct shash_desc *desc, u8 *out);
++
+ extern int crypto_sm3_finup(struct shash_desc *desc, const u8 *data,
+ 			     unsigned int len, u8 *hash);
+ #endif
 -- 
 2.17.1
 
