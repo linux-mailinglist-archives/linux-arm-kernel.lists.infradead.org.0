@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEC971F3554
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 09:46:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A037A1F3558
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 09:46:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=7/paneFz6rHSR6Z63NqipFxQxtTxK6tatO+ZRN0d8qQ=; b=iL3wKbywXJMjKWlQhbQVdLx8h6
-	BHOA7d+po6iljveCHSWm7mK5bfzv0jQwUOLBLRYAD6x2e6NEw/thqjNUiESZp5Ga/oDpLcg/C3K3z
-	uWneJlh3UK8PHyrgnwmms3MMso2lIrsmyUODFI+TWfDkddZttIw0nBCHOqak+fd/1dGm4Dm/CCKG3
-	hXsCYl01AvwaF0SFKxyp7zHxZiIqdmJ4dj3mltyfNDMH7NEbC4/gutIw817vzrdlGZvF7khg1x1e+
-	f/a4DA11PVItVQk6Wwg19NYGYCociFGXu+PExwdHCh1F3VZbFNdYniaOiQW7h4RSbTeLhjT66vW2E
-	58K0qNUg==;
+	bh=s+DcJwxC5wv6gYKNZFVezLSQ3Xg/nt2Ze93A8D38gcQ=; b=pP/ukbB8gh/48dz0Z8oMeFXmUt
+	iGYNue9BAmc12yZPxttaBZmmUFiaL1dqRwB0pAnZXldHzYpel8Gv5cvUfdsnUWmlc4ubVlxCWh5HL
+	635RXzLsaQpwU4i5gjeFFML/LinfSXRLlssS1HkHE+aDPTYPdQ/SdGtHD3qkVl1+am6Z9O5VX37Nk
+	p/x4Hdi1mFfLd45M/OZMG+6H4LLH4/nIZi99p916cgOWsCwoJY69lwU1VrK+QudzQH8PWPZwjqFEF
+	ZuhJEs9UcvuVJZj19nMM4GwFMBWjt0tE1LmqpUux6wEylMVGxIQuXB/Ll6fC+eoJ9PwMsXHkmjLE4
+	hNH7RgZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiYxl-0000tM-6c; Tue, 09 Jun 2020 07:46:25 +0000
+	id 1jiYyD-0001BB-7d; Tue, 09 Jun 2020 07:46:53 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiYuw-0004le-VA
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 07:43:44 +0000
+ id 1jiYuz-0004nM-EM
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 07:43:47 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 354C81A1286;
- Tue,  9 Jun 2020 09:43:29 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A5EA51A129F;
+ Tue,  9 Jun 2020 09:43:31 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 515931A129F;
- Tue,  9 Jun 2020 09:43:19 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 92D001A00E4;
+ Tue,  9 Jun 2020 09:43:21 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F23414031B;
- Tue,  9 Jun 2020 15:43:06 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 33B0740326;
+ Tue,  9 Jun 2020 15:43:09 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: linux@armlinux.org.uk, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, mturquette@baylibre.com,
@@ -45,16 +45,16 @@ To: linux@armlinux.org.uk, shawnguo@kernel.org, s.hauer@pengutronix.de,
  daniel.baluta@nxp.com, yuehaibing@huawei.com, sfr@canb.auug.org.au,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org
-Subject: [PATCH V2 8/9] clk: imx8mq: Support module build
-Date: Tue,  9 Jun 2020 15:32:12 +0800
-Message-Id: <1591687933-19495-9-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 9/9] clk: imx8qxp: Support module build
+Date: Tue,  9 Jun 2020 15:32:13 +0800
+Message-Id: <1591687933-19495-10-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
 References: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_004331_164786_5D6EAB93 
-X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-CacheID: sfid-20200609_004333_657145_B5D6DD20 
+X-CRM114-Status: UNSURE (   9.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -83,37 +83,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support building i.MX8MQ clock driver as module.
+Support building i.MX8QXP clock driver as module.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No change.
 ---
- drivers/clk/imx/Kconfig      | 2 +-
- drivers/clk/imx/clk-imx8mq.c | 1 +
- 2 files changed, 2 insertions(+), 1 deletion(-)
+ drivers/clk/imx/Kconfig            | 2 +-
+ drivers/clk/imx/clk-imx8qxp-lpcg.c | 1 +
+ drivers/clk/imx/clk-imx8qxp.c      | 1 +
+ 3 files changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/clk/imx/Kconfig b/drivers/clk/imx/Kconfig
-index 0811bed..060f9c3 100644
+index 060f9c3..26cedbf 100644
 --- a/drivers/clk/imx/Kconfig
 +++ b/drivers/clk/imx/Kconfig
-@@ -30,7 +30,7 @@ config CLK_IMX8MP
- 	    Build the driver for i.MX8MP CCM Clock Driver
+@@ -37,7 +37,7 @@ config CLK_IMX8MQ
+ 	    Build the driver for i.MX8MQ CCM Clock Driver
  
- config CLK_IMX8MQ
--	bool "IMX8MQ CCM Clock Driver"
-+	tristate "IMX8MQ CCM Clock Driver"
- 	depends on ARCH_MXC
- 	select MXC_CLK
+ config CLK_IMX8QXP
+-	bool "IMX8QXP SCU Clock"
++	tristate "IMX8QXP SCU Clock"
+ 	depends on ARCH_MXC && IMX_SCU && ARM64
+ 	select MXC_CLK_SCU
  	help
-diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
-index a64aace..2861c31 100644
---- a/drivers/clk/imx/clk-imx8mq.c
-+++ b/drivers/clk/imx/clk-imx8mq.c
-@@ -643,3 +643,4 @@ static struct platform_driver imx8mq_clk_driver = {
- 	},
+diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
+index 04c8ee3..8afaefc 100644
+--- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
++++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
+@@ -232,3 +232,4 @@ static struct platform_driver imx8qxp_lpcg_clk_driver = {
  };
- module_platform_driver(imx8mq_clk_driver);
+ 
+ builtin_platform_driver(imx8qxp_lpcg_clk_driver);
++MODULE_LICENSE("GPL v2");
+diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
+index 5e2903e..a34c7c5 100644
+--- a/drivers/clk/imx/clk-imx8qxp.c
++++ b/drivers/clk/imx/clk-imx8qxp.c
+@@ -152,3 +152,4 @@ static struct platform_driver imx8qxp_clk_driver = {
+ 	.probe = imx8qxp_clk_probe,
+ };
+ builtin_platform_driver(imx8qxp_clk_driver);
 +MODULE_LICENSE("GPL v2");
 -- 
 2.7.4
