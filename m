@@ -2,58 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAFCA1F4786
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 21:50:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E8CE1F478E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 21:52:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dgDFHeKo9r21UMZzdZv6JRkX/AxnXvHdrLVMCzRFzuk=; b=eaAoDakr7AlsLrOrmDmOqQZMJ
-	KoopLuJHLHBdzT3Ac2B09LPZ1zJtGFkiyuwBagfRUhJAvcnJ+PNMkjg5uyPOq+x3aA37vC83tmksN
-	lftaD/lPD4mMhYKH/oVtwiWkOe22+AJPGqPKU9ScJvGonjEqpde7yDhWWAY2WDZCK6qZYddkLjmik
-	cIxWpFmZj/E9FZ93hvbWcnBSPYmm9SFmTRtseSRGmVf3LJfa1qLKl3EGdED6i25yAEyA/mtEtmTeV
-	IL4xeAzpFVe3sWBAv1u/b6KpV3NN+OwMlQYxobqn03MIZNi+OE9oaHYtyFwt3FObuX2WuxNHK3BcK
-	oyF1IcMZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o+CADT2LXWU1pzRjUk3c9d4bj/Sdl/IWixiC/D4AaYE=; b=Lj9YRduUB5nIoI
+	tTiPMB9jdcNIPRCY3tJokg46L01N7QbMuElvBublrhMKIiZHubmlzV+k4tzr2oIADi3G6RxDSmXj1
+	NQFZAHCpNdcUnGIz/y0AbzQ1T4Y0qc6Gvc2Eq+9zzfgM7tZyIEiVT98jg4R0Ay+mg+SuFw6LDfENd
+	NvfBkYPptBP9tYUqrLnJSjkDLSslzsMBPEEveOBVvH9CdKfyOOe2sLrIgX0V+GsJTTIIRiH9aLsBv
+	nkE1i+WtJVinTstilQDj00gVnGVzDl1DE6Kw2jW/L03WuJ98Kuh3rXICCcTL0rKrnZ/9I8PUXn2S4
+	gML7A9ivlnscCjY4sGLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jikGm-0000dd-9t; Tue, 09 Jun 2020 19:50:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jikGf-0000ck-IL
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 19:50:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7C6F51F1;
- Tue,  9 Jun 2020 12:50:37 -0700 (PDT)
-Received: from [192.168.122.166] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EAECE3F73D;
- Tue,  9 Jun 2020 12:50:36 -0700 (PDT)
-Subject: Re: [PATCH v2] arm64: acpi: fix UBSAN warning
-To: Nick Desaulniers <ndesaulniers@google.com>, Will Deacon
- <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-References: <CAKwvOdnBhHnhUZ9MHgqEQ4nEyzHWUH+DPV-J0KoYyWNEnsDHbg@mail.gmail.com>
- <20200608203818.189423-1-ndesaulniers@google.com>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <dfdbce19-74dd-40a6-b083-168406bc214e@arm.com>
-Date: Tue, 9 Jun 2020 14:50:36 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
-MIME-Version: 1.0
-In-Reply-To: <20200608203818.189423-1-ndesaulniers@google.com>
+	id 1jikHx-00010n-Dp; Tue, 09 Jun 2020 19:52:01 +0000
+Received: from mail-eopbgr150049.outbound.protection.outlook.com
+ ([40.107.15.49] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jikHj-0000zv-0e
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 19:51:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=k4736FyEEgswp/2TDTDMh0ieDLbynmRFhT0iH7FxvFjiYzXBPaQGhXedHUFFc3vC55vXobYkhtCP+mJCbZhAlZ+ldYYi69bPqWseWKaYOF58WQaoDZ00d1I2z+yWaXWv80ECv67PWU20ylr7N60V2eAw2kIbxI98HzZCm/w5aW5y74j78fVjubq4DMV6NfSVnE1KTPK2fcRNsUzFEH9ERy++t4/BtUFYaLsAI3ZyOhSjbWibiSankt/EhbX3ZFbUlBWVA+ECegxMdv/HsnSkjx/acqEer/jspfMDPYcKLl4KlIVzncXyj49Jk2OwF+YtNyeOqm3qzlgvSXJ38XaOhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IN6TzoYfE/umvJXHNcb2c90kdwzIA11jSd0LDxHzmHM=;
+ b=IGL85+kkJk//j9RU/DTCvHt8fKl3bDPZvCuGFr7x/lznfE47IUhxSoi6VBHq0YA4R/1rGvLE4KOYa4ciN+4cu+6DwxDte7fMdrF90SKANcRu5sK9n/ptk763QyzoRwCmaNjlGwSeosLKmzWqgPx2kfEPspTBVX9sOnG2FRPcD3fiLgRzO9lnDAdjAh2R5Rwg4Ew+YT/QvUYVkOX9x+Wn324ILwId+ZxXkLjPxVNcazw4JP45lT1YN9VPzTVSRk9ltQH3iSyevXshiJQiciAccz770WKuH2GO3Lej2snRrPbj21TiMYzSuWRyukBeqS0YrcmbmQlnU0a22A66Xn9+yg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IN6TzoYfE/umvJXHNcb2c90kdwzIA11jSd0LDxHzmHM=;
+ b=rJppI3bAlUAWf0IHk5o3c9rHPHhv1BPiA4radMwoNgNk13QtWdjmg1/WcX3l+Dy32da1Eg1PSIFxhTd5+asXVVkAJO4tbG6Ge73mL+va4ISE0xes8A1LT873xalh1hKlxaHbezXINKIRxUszY/4R1lgsJSMK5KPRg4q/SPQ4pvM=
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (2603:10a6:803:121::30)
+ by VE1PR04MB6559.eurprd04.prod.outlook.com (2603:10a6:803:126::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Tue, 9 Jun
+ 2020 19:51:44 +0000
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::48b1:c82c:905:da9f]) by VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::48b1:c82c:905:da9f%3]) with mapi id 15.20.3088.018; Tue, 9 Jun 2020
+ 19:51:43 +0000
+From: Leo Li <leoyang.li@nxp.com>
+To: Hui Song <hui.song_1@nxp.com>, "linux-devel@linux.nxdi.nxp.com"
+ <linux-devel@linux.nxdi.nxp.com>, Shawn Guo <shawnguo@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Linus
+ Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
+ <bgolaszewski@baylibre.com>
+Subject: RE: [PATCH] gpio: mpc8xxx: change the gpio interrupt flags.
+Thread-Topic: [PATCH] gpio: mpc8xxx: change the gpio interrupt flags.
+Thread-Index: AQHWPkPJIX2y5uVvV0i+EVd9iXRd3qjQsZ0w
+Date: Tue, 9 Jun 2020 19:51:43 +0000
+Message-ID: <VE1PR04MB66874A7F9C037E5F9C3A99FB8F820@VE1PR04MB6687.eurprd04.prod.outlook.com>
+References: <20200609093741.44050-1-hui.song_1@nxp.com>
+In-Reply-To: <20200609093741.44050-1-hui.song_1@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [136.49.234.194]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 0dbb603f-908a-44a7-d35d-08d80cae8947
+x-ms-traffictypediagnostic: VE1PR04MB6559:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB65594CB1A982F7E817ED6BDF8F820@VE1PR04MB6559.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2201;
+x-forefront-prvs: 042957ACD7
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: bLrpEOG+KydswZAY2SXQfRs9l+ozWyIUxIVdlGEJWOFAOwhJvF8oEeTr2iiTG8a4rpTz3DlmyUG9/pN3iywrg/YvTTDC3WrStIrJf1lgLC7kWz0xsdl1Ite0Zw56wEAnveLXxcLTIz3zEr8tPsJPOdCkGK1Ygl7ltbcP4FkX+UsnosUy5NvRNIYoEHuUqmmGrOYZHCRUlWnKyV/fA6Ec7cFrIAtpbp2fuZAn6DCeU19YgkXxHurYVJch+Ieps3v6oFvDGbiH26Hbd+4ndA/v6L0pR1tdNmfT8WvLdcTeq8OlYzzpeqneSHsCjQ87WKLABAY5iWxXVsQm7P8KlaZlneXthseQ5EtDzjWw0WIEMDOLxRAHN8Cp9zI1B9shElXI
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6687.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(39850400004)(346002)(376002)(136003)(396003)(186003)(55016002)(316002)(66476007)(26005)(66446008)(66556008)(66946007)(64756008)(9686003)(478600001)(7696005)(54906003)(52536014)(4326008)(76116006)(83380400001)(5660300002)(6506007)(86362001)(8676002)(110136005)(8936002)(53546011)(2906002)(71200400001)(33656002)(32563001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: aRfp5H8uesVbGMRiu+dFKqyycku9ACPnPXSZq9JiTSFFG42tky3EVvV0/58xGsmnYcG/vDJqjPRJ9FiJJC2E75d+if2iAY+iGCLQPQYanV67RN89Jwskgvkwe3jPE/hyOel2Ix7mSdhYE29O313eFgXU0ENP13P2SYKX4+U9Mem5KruAjqvyUvoX2/y7Z4zwmAKXVtmblXFAGqEX+duk0QMspsv1562aT78WyKMSsxOgok4b9OjpXNU666S+AABkw8i2G8FsNZD6A6vGJgdDzM25Wn6NcpiEc97xm1Gxh40wR5/j8fcc0vP6uZIEv++DumgLDnlz3VxUVTuaDY3vBE5YOWM/1jyzudhdZQockTEs5htwL5eTzQIRDQPZ/vNL2044G2NSZzP4FDuUpCbbQu66DkmbnvUi6YNt/pcNwbIdIadvSS4HPvOPgUFK8P1hWt3kPcHSv52cZjI8nStsGK+LyedTHjOgmDHycnMMXW7LaZh370xlBR+PZt8JUDqV
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0dbb603f-908a-44a7-d35d-08d80cae8947
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jun 2020 19:51:43.8194 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: WAG+PeNtOtE/UaZHafbs1v8z355eEtJVVw35IAukvz8vngqxENMw7o5QoPoks574k4mPYdgvd60u76RYU1qi6A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6559
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_125041_693261_42AD1EB0 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200609_125147_056602_18292B10 
+X-CRM114-Status: GOOD (  14.39  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.15.49 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.15.49 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,98 +125,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Ard Biesheuvel <ardb@kernel.org>, Allison Randal <allison@lohutok.net>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Hui Song <hui.song_1@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On 6/8/20 3:38 PM, Nick Desaulniers wrote:
-> Will reported a UBSAN warning:
+
+> -----Original Message-----
+> From: Hui Song <hui.song_1@nxp.com>
+> Sent: Tuesday, June 9, 2020 4:38 AM
+> To: linux-devel@linux.nxdi.nxp.com; Shawn Guo <shawnguo@kernel.org>;
+> Leo Li <leoyang.li@nxp.com>; Rob Herring <robh+dt@kernel.org>; Mark
+> Rutland <mark.rutland@arm.com>; Linus Walleij <linus.walleij@linaro.org>;
+> Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> Cc: linux-arm-kernel@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-gpio@vger.kernel.org; Hui Song
+> <hui.song_1@nxp.com>
+> Subject: [PATCH] gpio: mpc8xxx: change the gpio interrupt flags.
 > 
-> UBSAN: null-ptr-deref in arch/arm64/kernel/smp.c:596:6
-> member access within null pointer of type 'struct acpi_madt_generic_interrupt'
-> CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-rc6-00124-g96bc42ff0a82 #1
-> Call trace:
->   dump_backtrace+0x0/0x384
->   show_stack+0x28/0x38
->   dump_stack+0xec/0x174
->   handle_null_ptr_deref+0x134/0x174
->   __ubsan_handle_type_mismatch_v1+0x84/0xa4
->   acpi_parse_gic_cpu_interface+0x60/0xe8
->   acpi_parse_entries_array+0x288/0x498
->   acpi_table_parse_entries_array+0x178/0x1b4
->   acpi_table_parse_madt+0xa4/0x110
->   acpi_parse_and_init_cpus+0x38/0x100
->   smp_init_cpus+0x74/0x258
->   setup_arch+0x350/0x3ec
->   start_kernel+0x98/0x6f4
+> From: Song Hui <hui.song_1@nxp.com>
 > 
-> This is from the use of the ACPI_OFFSET in
-> arch/arm64/include/asm/acpi.h. Replace its use with offsetof from
-> include/linux/stddef.h which should implement the same logic using
-> __builtin_offsetof, so that UBSAN wont warn.
+> delete the interrupt IRQF_NO_THREAD flags.
 
-I looked at the longer thread about this, given that it appears to be a 
-false positive with respect to the macro, I tend to prefer Ard's 
-suggestion of just changing the offset value (1 should be sufficient 
-rather than 0) to avoid this kind of problem in the future.
-
-But either way, this change looks fine too.
-
-Reviewed-by: Jeremy Linton <jeremy.linton@arm.com>
-
-Thanks,
+I think this is the correct direction but would be better to describe a little bit on what motived this change.  Any issue encountered or latency optimization?
 
 > 
-> Link: https://lore.kernel.org/lkml/20200521100952.GA5360@willie-the-truck/
-> Cc: stable@vger.kernel.org
-> Reported-by: Will Deacon <will@kernel.org>
-> Suggested-by: Ard Biesheuvel <ardb@kernel.org>
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
 > ---
-> Changes V1 -> V2:
-> * Just fix one of the two warnings, specific to arm64.
-> * Put warning in commit message.
+>  drivers/gpio/gpio-mpc8xxx.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
->   arch/arm64/include/asm/acpi.h | 5 +++--
->   1 file changed, 3 insertions(+), 2 deletions(-)
+> diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c index
+> 604dfec..1e86652 100644
+> --- a/drivers/gpio/gpio-mpc8xxx.c
+> +++ b/drivers/gpio/gpio-mpc8xxx.c
+> @@ -417,7 +417,7 @@ static int mpc8xxx_probe(struct platform_device
+> *pdev)
 > 
-> diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
-> index b263e239cb59..a45366c3909b 100644
-> --- a/arch/arm64/include/asm/acpi.h
-> +++ b/arch/arm64/include/asm/acpi.h
-> @@ -12,6 +12,7 @@
->   #include <linux/efi.h>
->   #include <linux/memblock.h>
->   #include <linux/psci.h>
-> +#include <linux/stddef.h>
->   
->   #include <asm/cputype.h>
->   #include <asm/io.h>
-> @@ -31,14 +32,14 @@
->    * is therefore used to delimit the MADT GICC structure minimum length
->    * appropriately.
->    */
-> -#define ACPI_MADT_GICC_MIN_LENGTH   ACPI_OFFSET(  \
-> +#define ACPI_MADT_GICC_MIN_LENGTH   offsetof(  \
->   	struct acpi_madt_generic_interrupt, efficiency_class)
->   
->   #define BAD_MADT_GICC_ENTRY(entry, end)					\
->   	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
->   	(unsigned long)(entry) + (entry)->header.length > (end))
->   
-> -#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
-> +#define ACPI_MADT_GICC_SPE  (offsetof(struct acpi_madt_generic_interrupt, \
->   	spe_interrupt) + sizeof(u16))
->   
->   /* Basic configuration for ACPI */
-> 
+>  	ret = devm_request_irq(&pdev->dev, mpc8xxx_gc->irqn,
+>  			       mpc8xxx_gpio_irq_cascade,
+> -			       IRQF_NO_THREAD | IRQF_SHARED, "gpio-
+> cascade",
+> +			       IRQF_SHARED, "gpio-cascade",
+>  			       mpc8xxx_gc);
+>  	if (ret) {
+>  		dev_err(&pdev->dev, "%s: failed to devm_request_irq(%d),
+> ret = %d\n",
+> --
+> 2.9.5
 
 
 _______________________________________________
