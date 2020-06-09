@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 502891F4696
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 20:47:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23A941F469C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 20:48:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kz1+gkcmaerbsUEnK19WPsQBMhCZ1vJaYPMj5HIgZ1k=; b=UIrwxiRRYhFAak
-	QgUEe89wOb9+3IU5+iHw9ekxe1BZ52Euohz5C47k05Nk6Nia9Ny6SlseB7qStjm9awSfJTBEIBM89
-	Q9E9eAbC85yQWDYuKyIiQDfsRoMTE8we3xco+inI1gDajN3/ou5aMXN+7XfxOAx3iKWGcrwgr3HGu
-	2bZ5Z5VGt6PHsWagFKgthJiDfdU/0pGMt694QJX/uGYfz82Ddg2HfhkiDITI2H06EuvuFR/zyufVB
-	c6OkoX3sy3/pJ4t/gcK1zIwz294/LPKrMXByzOgVCHFOfwEnwbno5QVbnxbBYh2X84lHMexouHFsr
-	Q8s4bCKESTdsg//n1chA==;
+	List-Owner; bh=+LWyXTCeplWrU/yLpXdf3hOjXBzbnUhM3+yanGtJDvo=; b=NSIxeTwM9vIt/c
+	nLljEqVq0B71XfyWP+fT7sZ1794T6PG+jp9Fv8BDV5tSeCbBs6KimUqlQDpmIJR1pc1pMLYx7hQqk
+	E6/eotG8w92Py0JKK1RfLdZFNs3LiGxlCJ12Gjq5iaELtjzyfHT/6ACdWjKAdXpkDbAwk9WpgK/o3
+	buVTQUAj576MfNJnx6sisEpzejQPCuRANsnX3H068xWcuE2mTNv9I98NOmPxj8Ujsb/C3Ca9ymhrC
+	z7zbjVxE3mMD7T5UNh90VY2T+eoU38aMIfgjqjIkOmQKSRTq3w6DQ9oDk5lThpgYYH7nbjm2HmbIN
+	iDz3YX+R+JHKgvYmvkNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jijHi-000264-6h; Tue, 09 Jun 2020 18:47:42 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jijIM-0002Mt-Qu; Tue, 09 Jun 2020 18:48:22 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jijHW-00025d-Oo
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 18:47:31 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id m2so1791576pjv.2
+ id 1jijIA-0002Ln-71
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 18:48:12 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id h95so1787542pje.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 11:47:30 -0700 (PDT)
+ Tue, 09 Jun 2020 11:48:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=uJfu7VCoabwyy7XV4REVbfqvINHE8jJHSSQxXyuHXd8=;
- b=RRs1XpvKUrWcGC9rIH96xpb3pTK7Sz9Y478qOvPHNO4RLX043gSI9fVBKTbIjskAsD
- NYVbHiStuO9ZNyJZjm0N/3IRfTEgzEFthkAy/Nt63yzoJ0aFhLDWR5b0DOgY+O1mRVuG
- TpNIJcS9r6syyH23xPO0c25GxRl4Du26VqrsU=
+ bh=j2PL+pbfi1kh+J0AmLH2dyW1hfo8dchWmGFi/N5y4y0=;
+ b=doetDBC8GLhAH/GPYh2nF/OZwCESJtT3x/5JwmFQppNQJr5rFhUwRcyR9FtefDzGs1
+ RdTitQklosNO5HKOvlQUQJc+B3qoYVCfPRU7nKjg3lVc0+kFRfhloN8Q1BIilhESUAsl
+ UifY/flT3XKb72YemuUE0ejI83VnmR69D+rOc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=uJfu7VCoabwyy7XV4REVbfqvINHE8jJHSSQxXyuHXd8=;
- b=lq26NFgMEqINPLN6mYXxz0PnIVIZDYqmemedqnocf8g8MarNeVTDt//fcrHV/FYR1S
- V2+S7i4T+iawY7VxczfMoN20pl8Dqxhsfgk2Mhr9+KHOUuuW55PQcjJlPTs2G4N4PC/D
- 9PNnCwti10rgfjVzzpowvVyJnmNVXcU0DS9Sb4Xdpg5GO+EYP/iwm6hJk5J27SbBT3Lb
- oPnAVRKsyi9lkbEBuoJdUcqpYDqZb8d9dLOh14Hwrgj67ItJkM1aSZV7WfIhgkKeBwcl
- sdr01TaV9TUqc4qrkhtcjCPWmA+DJcRP6Ja7mHB0y74u3y32odCvMk81yJ+xtkizSSu3
- cK4g==
-X-Gm-Message-State: AOAM533QfwrfZgbW9e9yjcc0jVmgpWAsRhdOkzITLQeXH4EQz4krhTR+
- ZklOJQick2N/jI2gLBvVNJeS+w==
-X-Google-Smtp-Source: ABdhPJx/4VVBlneDG36Q/SLWPtFp+CtxwJnOIUCT1u2jRalyMTmf8uve0S/G2MJuu/H/na/+h9PhSA==
-X-Received: by 2002:a17:90a:30a5:: with SMTP id
- h34mr6603724pjb.36.1591728450330; 
- Tue, 09 Jun 2020 11:47:30 -0700 (PDT)
+ bh=j2PL+pbfi1kh+J0AmLH2dyW1hfo8dchWmGFi/N5y4y0=;
+ b=GlLVfmLSU+M7LFNNFxE+pxncXWhxHO5rTnrYiGqaQ/zvS9DSC0u1/kndckvz1RUkOg
+ jcNoiwhrBjzoYsCGE06jplfehT9lDee6XJOOp3evbInyA9Qns45nWbdX6+Lv/RFbgXej
+ 7IZJHvFuYzRlbrPeB3pufXsMwrtegMcJ1hikgQty8B04atGGPB0pDoqCu8zoaUBn7Pgl
+ ciinPYB2JZs/Ds9qSSNhBz4/O7aflmmcIVr+FjYP/ZhZ5NsfIirV/WnyZ/jbKAw8Rp7U
+ ny5N5cfrSaEYLxpb4MYYd0BfemfZQEjh5Rvvyquid2+fAH5K9uwWyciqlhhPed+wCzs7
+ rYMQ==
+X-Gm-Message-State: AOAM5302PIU02dJOj4CHLFOoQD4Tch2hgWvgnalLnGct9QjWi7O47eNS
+ OxXnIUpgo+L8GjXIjV+cr0GqeA==
+X-Google-Smtp-Source: ABdhPJyddt1fAWGutCRi8Fa6NrDKr2oQjU7wdUGjNSxmmyNx0/oNHsTyK+GsePEnmx8lD9WMuMMOGA==
+X-Received: by 2002:a17:90a:2647:: with SMTP id
+ l65mr6474171pje.20.1591728489562; 
+ Tue, 09 Jun 2020 11:48:09 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id f3sm3388976pjw.57.2020.06.09.11.47.29
+ by smtp.gmail.com with ESMTPSA id j13sm3223850pje.25.2020.06.09.11.48.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 09 Jun 2020 11:47:29 -0700 (PDT)
-Date: Tue, 9 Jun 2020 11:47:28 -0700
+ Tue, 09 Jun 2020 11:48:08 -0700 (PDT)
+Date: Tue, 9 Jun 2020 11:48:07 -0700
 From: Kees Cook <keescook@chromium.org>
 To: Alexander Popov <alex.popov@linux.com>
-Subject: Re: [PATCH 3/5] gcc-plugins/stackleak: Add 'verbose' plugin parameter
-Message-ID: <202006091147.193047096C@keescook>
+Subject: Re: [PATCH 4/5] gcc-plugins/stackleak: Don't instrument itself
+Message-ID: <202006091147.1B8E3ABE@keescook>
 References: <20200604134957.505389-1-alex.popov@linux.com>
- <20200604134957.505389-4-alex.popov@linux.com>
+ <20200604134957.505389-5-alex.popov@linux.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200604134957.505389-4-alex.popov@linux.com>
+In-Reply-To: <20200604134957.505389-5-alex.popov@linux.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_114730_809079_925DE1A2 
-X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-CacheID: sfid-20200609_114810_454188_EFB4943D 
+X-CRM114-Status: UNSURE (   9.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -120,14 +120,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 04, 2020 at 04:49:55PM +0300, Alexander Popov wrote:
-> Add 'verbose' plugin parameter for stackleak gcc plugin.
-> It can be used for printing additional info about the kernel code
-> instrumentation.
-> 
-> For using it add the following to scripts/Makefile.gcc-plugins:
->   gcc-plugin-cflags-$(CONFIG_GCC_PLUGIN_STACKLEAK) \
->     += -fplugin-arg-stackleak_plugin-verbose
+On Thu, Jun 04, 2020 at 04:49:56PM +0300, Alexander Popov wrote:
+> There is no need to try instrumenting functions in kernel/stackleak.c.
+> Otherwise that can cause issues if the cleanup pass of stackleak gcc plugin
+> is disabled.
 > 
 > Signed-off-by: Alexander Popov <alex.popov@linux.com>
 
