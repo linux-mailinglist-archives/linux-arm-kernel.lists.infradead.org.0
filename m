@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC9DB1F32C1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 05:48:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E552A1F32C3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 05:48:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xWPziyIiYNly9LVsUlyL4MA9P22ubLqNzLfxWN5Qqs4=; b=B7iqLocxOvR+bo
-	+OEoysiWOGWMvbrXulBeQDRN3UED2SKt8WSzxa51PQKKXgWzyFbCzuWzJj6DSWSFlzsBFFXizJg6n
-	5u+r8Pm0uSEd9JyuucG6OvZ/SWv7Pc7KZJPULRWJZg83jiLAj1xRWwUBGRcRZAHj+DgoEa7D0DSPb
-	7Gd0S30RkD0r31W3/8K5Rb68gtbOu3KeTDEHxuRoUcIJGHfg6yfvjX5OVjZQVe/jH3HtwY0tJlAlv
-	PRRkFmwPKIiX9afc3l7LybdSDIcWXh1W9pM1MlCFVcEbUDsc8CXrSmTrro6tHDX1NUBaVeTRZygY3
-	Smf/AW16zUB6lcsRGRiw==;
+	List-Owner; bh=1H0uGdLJtZIiYwEcSP8o8PWN0DPUEFMLz6SxXKCrVi8=; b=OEbZisSq2oXuBv
+	On0leoazghEhBCS3EpAe0GervpUbA2xizu/ClA0x2Gtyhf3NOhH3ZImanX5ESRXdA/FAuQ5BSLmH+
+	LTCX6CGUKtqBC8VzLnDA75NfvUpksIe3Jf0In5N31vPVmqcKsyTOk7p+N/bE2G5iSwtA026igB/qx
+	USsLJChLb6QePBMp0MBodDWWPNyXrFmsTLp9bpQwaliCRQvh0fqsRC+/UU//cHDFbIlg7D03Lm030
+	V5QasxWzfA5rNiz5+7CdMO16HHShF95OfqDEPaBhofIetpvTxUxoCfMtik3VqV26i0gAQOFCtzzQI
+	7dzMbsVojCi6RFp7P3Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiVFL-0007rf-Md; Tue, 09 Jun 2020 03:48:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jiVFo-00088h-Mg; Tue, 09 Jun 2020 03:48:48 +0000
+Received: from pb-smtp21.pobox.com ([173.228.157.53])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiVFD-0007qP-6F; Tue, 09 Jun 2020 03:48:13 +0000
-X-UUID: 11186d23897f4382addd68684bb287fa-20200608
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=40bvsHbdvRwM9Lgi+QQEZZMxTMobgTcPYCKNo+R6gBM=; 
- b=OMW37jJJKadCQAdW+GKVWwY3XoA5m1aWfD9XDMSCmM0zMGrWkvWXD6BJn/G2NT/cKnCGLP+U7DMBHoYC86Gx0iSkMs06roOgoApOOrfIDXvoS41DxA5kMlUVuMgZ0ip6xnwnw+LyuaToGyFWMby8CWkSUZlJnR2Pvf0Sogcq+PU=;
-X-UUID: 11186d23897f4382addd68684bb287fa-20200608
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1597433306; Mon, 08 Jun 2020 19:48:04 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 8 Jun 2020 20:48:01 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 9 Jun 2020 11:47:54 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 9 Jun 2020 11:47:52 +0800
-Message-ID: <1591674341.8804.628.camel@mhfsdcap03>
-Subject: Re: [V7, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Date: Tue, 9 Jun 2020 11:45:41 +0800
-In-Reply-To: <20200608132720.GS2428291@smile.fi.intel.com>
-References: <20200605105412.18813-1-dongchun.zhu@mediatek.com>
- <20200605105412.18813-3-dongchun.zhu@mediatek.com>
- <20200605124643.GG2428291@smile.fi.intel.com>
- <1591424358.8804.599.camel@mhfsdcap03>
- <20200608132720.GS2428291@smile.fi.intel.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jiVFf-00087U-Vg
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 03:48:42 +0000
+Received: from pb-smtp21.pobox.com (unknown [127.0.0.1])
+ by pb-smtp21.pobox.com (Postfix) with ESMTP id 1635ACF379;
+ Mon,  8 Jun 2020 23:48:34 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=5OlcDNR2vfGU+JrC8EWDrHoCx/I=; b=pO45yD
+ 8jmq2UleM9UARvxOQvgpeza94m7pRrJ8xpRu16zpb9AAnFXFy7WfwSOQp1mGz0cI
+ pux6kQmg7NFrbmIl8FDvFlLxQqgd3kMoZtRDTXMasNgmTdVpK74SUzkZR6vYuYUu
+ vcyjvLwCe9u/snugU65MOu8JhP4zX6FZJDToE=
+Received: from pb-smtp21.sea.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp21.pobox.com (Postfix) with ESMTP id 0CD75CF378;
+ Mon,  8 Jun 2020 23:48:34 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=S36lGtH9wvh9hu50dKmXkxhiESqwO9+qA0lKzbKsET0=;
+ b=DKJ9+WGFQ/mZWMHmh2mBPCjezWR3O1klH1PEwGdl3boXkKJVm4rCVR6JTxNlNYvBiUtocbX2BrpVc36EJo9RhCtmPoy3KEElwAgv4XpUbveMFdKg3skogD7Z/Uc1hk61VtW0rOUUYOmpjhvYlGFIOHQJMt/TcGTXf3kaX7Pl8yc=
+Received: from yoda.home (unknown [24.203.50.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp21.pobox.com (Postfix) with ESMTPSA id C3AA2CF376;
+ Mon,  8 Jun 2020 23:48:30 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id BC4672DA0C08;
+ Mon,  8 Jun 2020 23:48:27 -0400 (EDT)
+Date: Mon, 8 Jun 2020 23:48:27 -0400 (EDT)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PULL REQUEST v2] FDPIC ELF support for ARM
+In-Reply-To: <20200608224725.GH1605@shell.armlinux.org.uk>
+Message-ID: <nycvar.YSQ.7.77.849.2006082137050.1353413@knanqh.ubzr>
+References: <nycvar.YSQ.7.76.1708292307400.2606@knanqh.ubzr>
+ <20200608224725.GH1605@shell.armlinux.org.uk>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 831D5E9863D577205AEB68EF6132BEFD4D39F2DA95B875E27B49D7640377CC602000:8
-X-MTK: N
+X-Pobox-Relay-ID: 15A8B93E-AA04-11EA-8448-8D86F504CC47-78420484!pb-smtp21.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_204811_236930_0AC675F7 
-X-CRM114-Status: GOOD (  25.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_204840_086764_EEDF7617 
+X-CRM114-Status: GOOD (  23.35  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [173.228.157.53 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,139 +86,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- louis.kuo@mediatek.com, srv_heupstream@mediatek.com, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: David Howells <dhowells@redhat.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andy,
+On Mon, 8 Jun 2020, Russell King - ARM Linux admin wrote:
 
-On Mon, 2020-06-08 at 16:27 +0300, Andy Shevchenko wrote:
-> On Sat, Jun 06, 2020 at 02:19:18PM +0800, Dongchun Zhu wrote:
-> > On Fri, 2020-06-05 at 15:46 +0300, Andy Shevchenko wrote:
-> > > On Fri, Jun 05, 2020 at 06:54:12PM +0800, Dongchun Zhu wrote:
+> Nico,
 > 
-> ...
+> Al Viro has identified this in include/uapi/linux/elfcore.h:
 > 
-> > > > +	depends on I2C && VIDEO_V4L2
-> > > 
-> > > No compile test?
-> > > 
-> > 
-> > Sorry?
-> > Kconfig here is based on the current media tree master branch.
-> > It is also what the other similar drivers from Dongwoon do. 
+>         elf_gregset_t pr_reg;   /* GP registers */
+> #ifdef CONFIG_BINFMT_ELF_FDPIC
+>         /* When using FDPIC, the loadmap addresses need to be communicated
+>          * to GDB in order for GDB to do the necessary relocations.  The
+>          * fields (below) used to communicate this information are placed
+>          * immediately after ``pr_reg'', so that the loadmap addresses may
+>          * be viewed as part of the register set if so desired.
+>          */
+>         unsigned long pr_exec_fdpic_loadmap;
+>         unsigned long pr_interp_fdpic_loadmap;
+> #endif
+>         int pr_fpvalid;         /* True if math co-processor being used.  */
 > 
-> COMPILE_TEST.
-> I dunno if it's established or not practice in media subsystem.
-> 
-> ...
-> 
-> > > > +/*
-> > > > + * DW9768 requires waiting time (delay time) of t_OPR after power-up,
-> > > > + * or in the case of PD reset taking place.
-> > > > + */
-> > > > +#define DW9768_T_OPR_US				1000
-> > > > +#define DW9768_Tvib_MS_BASE10			(64 - 1)
-> > > > +#define DW9768_AAC_MODE_DEFAULT			2
-> > > 
-> > > > +#define DW9768_AAC_TIME_DEFAULT			0x20
-> > > 
-> > > Hex? Why not decimal?
-> > > 
-> > 
-> > There is one optional property 'dongwoon,aac-timing' defined in DT.
-> > I don't know whether you have noticed that.
-> > 
-> > 'DW9768_AAC_TIME_DEFAULT' is the value set to AACT[5:0] register.
-> > I thought the Hex unit should be proper as it is directly written to the
-> > Hex register.
-> 
-> I see. I would rather put it like (BIT(6) / 2) to show explicitly that we
-> choose half of the resolution.
-> 
+> which means if CONFIG_BINFMT_ELF_FDPIC is enabled for a target that
+> also uses ELF, then the ELF coredump format breaks.
 
-I knew your idea.
-'(BIT(6) / 2)' may somewhat show the meaning of 'median of the total
-range of AACT[5:0]'.
+Damn... indeed.
 
-But this value is still very obscure relative to '0x20'.
-As I thought that simple is the best, especially for kernel upstream
-patch.
-
-> ...
+> David Howells says this evening:
 > 
-> > > > +	val = ((unsigned char)ret & ~mask) | (val & mask);
-> > > 
-> > > This cast is weird.
-> > > 
-> > 
-> > Thanks for the review, but this cast is using classical pattern from
-> > your suggestion on OV02A10 v5:
-> > https://patchwork.linuxtv.org/patch/59788/
-> > 
-> > So I wonder whether it is still required to be refined currently.
-> > Or what would it be supposed to do for the cast?
+> 23:42 < dhowells> you weren't meant to use ELF and ELF_FDPIC both
 > 
-> Okay, does it produce a warning w/o cast?
-> If yes, replace it at least to be the same type as mask and val.
-> 
+> So, we now have a problem; your code has done something that was never
+> intended to be permitted, and there are configurations where the kernel
+> breaks the user API.  This only affects ARM as this is the only arch
+> that was silly enough to allow ELF and ELF_FDPIC.
 
-No.
+Well... of course it could also be silly to run gdb on ELF_FDPIC-only 
+systems as such systems are expected to have highly constrained 
+resources.
 
-> ...
-> 
-> > > > +	for ( ; val >= 0; val -= DW9768_MOVE_STEPS) {
-> > > > +		ret = dw9768_set_dac(dw9768, val);
-> > > > +		if (ret) {
-> > > > +			dev_err(&client->dev, "I2C write fail: %d", ret);
-> > > > +			return ret;
-> > > > +		}
-> > > > +		usleep_range(move_delay_us, move_delay_us + 1000);
-> > > > +	}
-> > > 
-> > > 
-> > > It will look more naturally in the multiplier kind of value.
-> > > 
-> > > 	unsigned int steps = DIV_ROUND_UP(...);
-> > > 
-> > > 	while (steps--) {
-> > > 		...(..., steps * ..._MOVE_STEPS);
-> > > 		...
-> > > 	}
-> > > 
-> > > but double check arithmetics.
-> > 
-> > The current coding style is actually updated with reference to your
-> > previous comments on DW9768 v3:
-> > https://patchwork.linuxtv.org/patch/61856/
-> 
-> I understand, but can you consider to go further and see if the proposal works?
-> 
+So a typical use case would consist in developing ELF_FDPIC binaries on 
+a regular ELF host (handy as they can be tested natively) and possibly 
+using gdb on them. So IMHO not having foreseen simultaneous usage of ELF 
+and ELF_FDPIC here is rather unfortunate.
 
-In fact, your suggestion is something like one another method to set DAC
-value to actuator.
-It is like there may be several solutions to a question.
+I suspect riscv will end up in the same situation when they upstream 
+their fdpic support.
 
-Yes. I just tried the new method and it works as expected.
-u32 steps = DIV_ROUND_UP(dw9768->focus->val, DW9768_MOVE_STEPS);
-while (steps--) {
-	ret = dw9768_set_dac(dw9768, steps * DW9768_MOVE_STEPS);
-	if (ret)
-		return ret;
-	usleep_range(move_delay_us, move_delay_us + 1000);
-}
+Admitedly I'm not a huge gdb user and didn't look closely at the 
+existing coredump interface details when I enabled ELF_FDPIC on ARM. 
+This is all generic architecture-independent code so it ought to "just 
+work", right?
 
-But from my perspective, I may prefer to the original method.
-As here what we really care is the DAC value,
-'dw9768_set_dac(dw9768, val)' seems more simple.
+So here's how I think this could be "fixed". This is not ideal. The 
+fdpic support in Arm gdb would have to cope, but I doubt this is going 
+to affect a lot of people without the knowledge to figure things out. If 
+someone has a better idea/suggestion please say so.
+
+diff --git a/fs/binfmt_elf_fdpic.c b/fs/binfmt_elf_fdpic.c
+index 240f666635..3005a97fe1 100644
+--- a/fs/binfmt_elf_fdpic.c
++++ b/fs/binfmt_elf_fdpic.c
+@@ -1339,7 +1339,7 @@ static inline void fill_note(struct memelfnote *note, const char *name, int type
+  * fill up all the fields in prstatus from the given task struct, except
+  * registers which need to be filled up separately.
+  */
+-static void fill_prstatus(struct elf_prstatus *prstatus,
++static void fill_prstatus(struct elf_fdpic_prstatus *prstatus,
+ 			  struct task_struct *p, long signr)
+ {
+ 	prstatus->pr_info.si_signo = prstatus->pr_cursig = signr;
+@@ -1422,7 +1422,7 @@ static int fill_psinfo(struct elf_prpsinfo *psinfo, struct task_struct *p,
+ struct elf_thread_status
+ {
+ 	struct list_head list;
+-	struct elf_prstatus prstatus;	/* NT_PRSTATUS */
++	struct elf_fdpic_prstatus prstatus;	/* NT_PRSTATUS */
+ 	elf_fpregset_t fpu;		/* NT_PRFPREG */
+ 	struct task_struct *thread;
+ #ifdef ELF_CORE_COPY_XFPREGS
+@@ -1557,7 +1557,7 @@ static int elf_fdpic_core_dump(struct coredump_params *cprm)
+ 	loff_t offset = 0, dataoff;
+ 	int numnote;
+ 	struct memelfnote *notes = NULL;
+-	struct elf_prstatus *prstatus = NULL;	/* NT_PRSTATUS */
++	struct elf_fdpic_prstatus *prstatus = NULL;	/* NT_PRSTATUS */
+ 	struct elf_prpsinfo *psinfo = NULL;	/* NT_PRPSINFO */
+  	LIST_HEAD(thread_list);
+  	struct list_head *t;
+diff --git a/include/uapi/linux/elfcore.h b/include/uapi/linux/elfcore.h
+index baf0356230..501658a007 100644
+--- a/include/uapi/linux/elfcore.h
++++ b/include/uapi/linux/elfcore.h
+@@ -61,8 +61,27 @@ struct elf_prstatus
+ 	long	pr_instr;		/* Current instruction */
+ #endif
+ 	elf_gregset_t pr_reg;	/* GP registers */
++	int pr_fpvalid;		/* True if math co-processor being used.  */
++};
++
+ #ifdef CONFIG_BINFMT_ELF_FDPIC
+-	/* When using FDPIC, the loadmap addresses need to be communicated
++struct elf_fdpic_prstatus
++{
++	struct elf_siginfo pr_info;	/* Info associated with signal */
++	short	pr_cursig;		/* Current signal */
++	unsigned long pr_sigpend;	/* Set of pending signals */
++	unsigned long pr_sighold;	/* Set of held signals */
++	pid_t	pr_pid;
++	pid_t	pr_ppid;
++	pid_t	pr_pgrp;
++	pid_t	pr_sid;
++	struct __kernel_old_timeval pr_utime;	/* User time */
++	struct __kernel_old_timeval pr_stime;	/* System time */
++	struct __kernel_old_timeval pr_cutime;	/* Cumulative user time */
++	struct __kernel_old_timeval pr_cstime;	/* Cumulative system time */
++	elf_gregset_t pr_reg;	/* GP registers */
++	/*
++	 * When using FDPIC, the loadmap addresses need to be communicated
+ 	 * to GDB in order for GDB to do the necessary relocations.  The
+ 	 * fields (below) used to communicate this information are placed
+ 	 * immediately after ``pr_reg'', so that the loadmap addresses may
+@@ -70,9 +89,9 @@ struct elf_prstatus
+ 	 */
+ 	unsigned long pr_exec_fdpic_loadmap;
+ 	unsigned long pr_interp_fdpic_loadmap;
+-#endif
+ 	int pr_fpvalid;		/* True if math co-processor being used.  */
+ };
++#endif
+ 
+ #define ELF_PRARGSZ	(80)	/* Number of chars for args */
+ 
+@@ -92,7 +111,18 @@ struct elf_prpsinfo
+ };
+ 
+ #ifndef __KERNEL__
++#if defined(CONFIG_BINFMT_ELF_FDPIC) && \
++    (defined(CONFIG_SUPERH32) || defined(CONFIG_C6X))
++/*
++ * This is to be backward compatible with those architectures that
++ * traditionally don't have both ELF and ELF_FDPIC configured at the same
++ * time and that expect prstatus_t to contain pr_exec_fdpic_loadmap and
++ * pr_exec_fdpic_loadmap.
++ */
++typedef struct elf_fdpic_prstatus prstatus_t;
++#else
+ typedef struct elf_prstatus prstatus_t;
++#endif
+ typedef struct elf_prpsinfo prpsinfo_t;
+ #define PRARGSZ ELF_PRARGSZ 
+ #endif
 
 _______________________________________________
 linux-arm-kernel mailing list
