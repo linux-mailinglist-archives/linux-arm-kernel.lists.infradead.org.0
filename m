@@ -2,82 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C46201F489F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 23:07:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABF911F48B3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 23:16:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kPXGKVZ1iQXiImJHjPChM4ZybyM3q7UmKJ5wjKWLzkk=; b=Xy0hNhN7lazu7B
-	NcS3VGYPTvIhMRIIAg75Eb1uL/h1Mkz8LYruaT0WFKUcPlITyFDS456E4Y17aQwkIAYBpJYTxp0Tr
-	J6R4ZwoEWuSHkLt3aGHVwja+ugo3+LlNDKKFdYGz90IRyMwooz/KBZGOxwQNBWH3J+cKMwQnDcwYL
-	AWOXRrWb/B4P62S3RCgsLVgOVtcq6h6RQScT9GrYCanEaqpGjX4f7mldXNi58W7g7DszdUB0tVdzP
-	ovlgr4jko5ZB5sn5z3M22rDSAEQC5HPGo5+Sr1t+bdKO7KlHq5aNy00SiNrO8WMSmNYomfb7UoBuf
-	Wfo5ZP1ufvyVPXwrhPYA==;
+	List-Owner; bh=+622RBKMXEec4EKKug4futzKANnHYe5ZY8NES64OANM=; b=RPUv2IbpLkmcJ3
+	elqzFEbeoJsCqAnTCGdTG/LHiKehhoXlOEIOm66OFoEobBoNby19BP4CFFHObwdgfGDK29LRqaE09
+	6hhu3zgWU6Vszqg+yWCHB0gVAlW6INvnjBOHHPWYsFX2fjmGE5Ts/CKu0pQHGk+KmGuHpwWvHpzPs
+	487ney5B02u3gbWJuqtfVoRjcXZLGDrCddDVZB8bKqNxT4gO+8he5Rep2PTG2+YVTYqDG3iLTzmw8
+	4hfIqK4rr9qzt44Pv6Tx71bpRB349LMSfbItzKEcHHGEMoQkrPBolq3OofITce/9xswLEOkbn7ENR
+	xGtDi12ibhXzLhzklEDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jilSy-0005zn-Ko; Tue, 09 Jun 2020 21:07:28 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
+	id 1jilbX-0003Ft-Cg; Tue, 09 Jun 2020 21:16:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jilSq-0005yZ-M9
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 21:07:22 +0000
-Received: by mail-ua1-x941.google.com with SMTP id b10so118166uaf.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 14:07:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=f15ThlgRIs3s50AvF0kFQ8PMHdAjHFT357oOtlUx/ug=;
- b=YQTUSvv3PxEEhj5ujE/dPySButOyH55bK4Xn7FFJQPplWJdwV27lg1hiiGZPMl+Csy
- utkQv6pOjG6DMuuUAn6OW8rUDsTwDk+L09wjyrOsEHgSM9DO1jG+4DXrAkvtnH7+VocI
- GJeE84ALY1lEBJxLNfWmnbxI8H4dKWQGgYe6NIzbLwEX92BP0BVccbN5ywjf+ad2hItV
- hOK3koJ698Vs9caFgU0Oz67/J789jH+4rxh31hXP0eWCQ0G50xlrah8Vhcbhoz+wsVGG
- RvWp/Z6BsjYqNpoy5p5CsKAw38VlYjZy47xgAAr8XRHehyo5E50oaLRajAfxViZwx+CC
- YVIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=f15ThlgRIs3s50AvF0kFQ8PMHdAjHFT357oOtlUx/ug=;
- b=P1Q87y8SFgSBiPO34fHx50cNbu8FFU35FusCXin/46hFiiJM/67T6EAgs7ruAeB2QD
- ftVWsJzP4G3KbEFi7Q/zkixG/vjbZg+VWGAgpNNWnNQt9w8zw+I/GlgVFWGJkVPJaaCj
- wjUL+MTMwhHlcO1VA+TgKpb2JIUAf16H1UJXyoeQgyPyCaqqJuJwCJR5sCyYwQDBKZpR
- Qv8FnIapACokZicNA8Ducykj3BcdEejTCvboTfOsgfpnRR+Ixo+O5k7l2c8oy+lXo0bd
- j47OWKbKrZMJlRCanEN5/LXJDYWK9IYxvWh4sizsjcL3wC1RBmuNipWw0vEFbK2vN8mt
- gLvQ==
-X-Gm-Message-State: AOAM533IPBet+xwqI4n5Wcw/k6lhgPgIgMI6kB51JN4HwGdnR8Qg3Kie
- Ld4BYXOcjphBd2aMxrS/qeBGs9ImKLr1H0CyuPZdow==
-X-Google-Smtp-Source: ABdhPJwQ+viuUyt4Xvfz0B/F5q8uWrpKqo6vNNs2uM0NepreAFEA0QuoyJVSJ76WQkzVbDy0sso7BcdwlZvUGeg7c1M=
-X-Received: by 2002:ab0:6012:: with SMTP id j18mr260224ual.69.1591736832385;
- Tue, 09 Jun 2020 14:07:12 -0700 (PDT)
+ id 1jilbP-0003FY-Oy
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 21:16:13 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 14EB0206D5;
+ Tue,  9 Jun 2020 21:16:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591737370;
+ bh=e26IpfGJ9WhIIDdNAB2BegdKpPxmPKMY/Is6gl++1es=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=FHDziFwD/dq7QDdliYeGTcN1ASQzrlpy/nXiO8tY7COvOY8lJSQnK5B2MtWqTpBXz
+ oW71W1X4mMgrDI9YcqWIDMAOfZcMF+Xy3YWHm9FVxwWeWppV24HA4SWHZunLxby0Qg
+ Xo1DNTY6ue0ejJZCrNc+nFrQSfKEYJ5FQMnfay98=
 MIME-Version: 1.0
-References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-2-sean.j.christopherson@intel.com>
-In-Reply-To: <20200605213853.14959-2-sean.j.christopherson@intel.com>
-From: Ben Gardon <bgardon@google.com>
-Date: Tue, 9 Jun 2020 14:07:01 -0700
-Message-ID: <CANgfPd87=eS6h=GX6CxZRwAj=MTET-AtVAjVQn4i1zkwZ4ApXw@mail.gmail.com>
-Subject: Re: [PATCH 01/21] KVM: x86/mmu: Track the associated kmem_cache in
- the MMU caches
-To: Sean Christopherson <sean.j.christopherson@intel.com>
+In-Reply-To: <202005310615.TVwTAUgp%lkp@intel.com>
+References: <202005310615.TVwTAUgp%lkp@intel.com>
+Subject: Re: [clk:clk-mediatek 5/6] drivers/clk/mediatek/clk-mt6765.c:537:35:
+ warning: unused variable 'ifr0_cg_regs'
+From: Stephen Boyd <sboyd@kernel.org>
+To: "Owen, Chen," <owen.chen@mediatek.com>, kbuild test robot <lkp@intel.com>
+Date: Tue, 09 Jun 2020 14:16:09 -0700
+Message-ID: <159173736939.242598.14069411610834841250@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_140720_742012_10F5EEAD 
-X-CRM114-Status: GOOD (  17.59  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200609_141611_831748_7288BEC7 
+X-CRM114-Status: GOOD (  10.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,8 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,132 +76,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <christoffer.dall@arm.com>,
- Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, Claudio Imbrenda <imbrenda@linux.ibm.com>,
- kvmarm@lists.cs.columbia.edu, Janosch Frank <frankja@linux.ibm.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Junaid Shahid <junaids@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>, Cornelia Huck <cohuck@redhat.com>,
- Peter Shier <pshier@google.com>, linux-mips@vger.kernel.org,
- James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, Peter Feiner <pfeiner@google.com>
+Cc: kbuild-all@lists.01.org, clang-built-linux@googlegroups.com,
+ Mars Cheng <mars.cheng@mediatek.com>, Macpaul Lin <macpaul.lin@mediatek.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 2:39 PM Sean Christopherson
-<sean.j.christopherson@intel.com> wrote:
->
-> Track the kmem_cache used for non-page KVM MMU memory caches instead of
-> passing in the associated kmem_cache when filling the cache.  This will
-> allow consolidating code and other cleanups.
->
-> No functional change intended.
->
-> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-Reviewed-by: Ben Gardon <bgardon@google.com>
-> ---
->  arch/x86/include/asm/kvm_host.h |  1 +
->  arch/x86/kvm/mmu/mmu.c          | 24 +++++++++++-------------
->  2 files changed, 12 insertions(+), 13 deletions(-)
->
-> diff --git a/arch/x86/include/asm/kvm_host.h b/arch/x86/include/asm/kvm_host.h
-> index 1da5858501ca..16347b050754 100644
-> --- a/arch/x86/include/asm/kvm_host.h
-> +++ b/arch/x86/include/asm/kvm_host.h
-> @@ -251,6 +251,7 @@ struct kvm_kernel_irq_routing_entry;
->   */
->  struct kvm_mmu_memory_cache {
->         int nobjs;
-> +       struct kmem_cache *kmem_cache;
->         void *objects[KVM_NR_MEM_OBJS];
->  };
->
-> diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-> index fdd05c233308..0830c195c9ed 100644
-> --- a/arch/x86/kvm/mmu/mmu.c
-> +++ b/arch/x86/kvm/mmu/mmu.c
-> @@ -1060,15 +1060,14 @@ static void walk_shadow_page_lockless_end(struct kvm_vcpu *vcpu)
->         local_irq_enable();
->  }
->
-> -static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache,
-> -                                 struct kmem_cache *base_cache, int min)
-> +static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache, int min)
->  {
->         void *obj;
->
->         if (cache->nobjs >= min)
->                 return 0;
->         while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
-> -               obj = kmem_cache_zalloc(base_cache, GFP_KERNEL_ACCOUNT);
-> +               obj = kmem_cache_zalloc(cache->kmem_cache, GFP_KERNEL_ACCOUNT);
->                 if (!obj)
->                         return cache->nobjs >= min ? 0 : -ENOMEM;
->                 cache->objects[cache->nobjs++] = obj;
-> @@ -1081,11 +1080,10 @@ static int mmu_memory_cache_free_objects(struct kvm_mmu_memory_cache *cache)
->         return cache->nobjs;
->  }
->
-> -static void mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc,
-> -                                 struct kmem_cache *cache)
-> +static void mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
->  {
->         while (mc->nobjs)
-> -               kmem_cache_free(cache, mc->objects[--mc->nobjs]);
-> +               kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
->  }
->
->  static int mmu_topup_memory_cache_page(struct kvm_mmu_memory_cache *cache,
-> @@ -1115,25 +1113,22 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
->         int r;
->
->         r = mmu_topup_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache,
-> -                                  pte_list_desc_cache, 8 + PTE_PREFETCH_NUM);
-> +                                  8 + PTE_PREFETCH_NUM);
->         if (r)
->                 goto out;
->         r = mmu_topup_memory_cache_page(&vcpu->arch.mmu_page_cache, 8);
->         if (r)
->                 goto out;
-> -       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache,
-> -                                  mmu_page_header_cache, 4);
-> +       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
->  out:
->         return r;
->  }
->
->  static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
->  {
-> -       mmu_free_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache,
-> -                               pte_list_desc_cache);
-> +       mmu_free_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache);
->         mmu_free_memory_cache_page(&vcpu->arch.mmu_page_cache);
-> -       mmu_free_memory_cache(&vcpu->arch.mmu_page_header_cache,
-> -                               mmu_page_header_cache);
-> +       mmu_free_memory_cache(&vcpu->arch.mmu_page_header_cache);
->  }
->
->  static void *mmu_memory_cache_alloc(struct kvm_mmu_memory_cache *mc)
-> @@ -5684,6 +5679,9 @@ int kvm_mmu_create(struct kvm_vcpu *vcpu)
->         uint i;
->         int ret;
->
-> +       vcpu->arch.mmu_pte_list_desc_cache.kmem_cache = pte_list_desc_cache;
-> +       vcpu->arch.mmu_page_header_cache.kmem_cache = mmu_page_header_cache;
-> +
->         vcpu->arch.mmu = &vcpu->arch.root_mmu;
->         vcpu->arch.walk_mmu = &vcpu->arch.root_mmu;
->
-> --
-> 2.26.0
->
+Quoting kbuild test robot (2020-05-30 15:25:16)
+> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-mediatek
+> head:   571cfadcc628dd5591444f7289e27445ea732f4c
+> commit: 1aca9939bf72893887cb7e3455e44c864bada2f9 [5/6] clk: mediatek: Add MT6765 clock support
+> config: x86_64-allyesconfig (attached as .config)
+> compiler: clang version 11.0.0 (https://github.com/llvm/llvm-project 2388a096e7865c043e83ece4e26654bd3d1a20d5)
+> reproduce (this is a W=1 build):
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # install x86_64 cross compiling tool for clang build
+>         # apt-get install binutils-x86-64-linux-gnu
+>         git checkout 1aca9939bf72893887cb7e3455e44c864bada2f9
+>         # save the attached .config to linux build tree
+>         COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross ARCH=x86_64 
+> 
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All warnings (new ones prefixed by >>, old ones prefixed by <<):
+> 
+> >> drivers/clk/mediatek/clk-mt6765.c:537:35: warning: unused variable 'ifr0_cg_regs' [-Wunused-const-variable]
+> static const struct mtk_gate_regs ifr0_cg_regs = {
+> ^
+> >> drivers/clk/mediatek/clk-mt6765.c:543:35: warning: unused variable 'ifr1_cg_regs' [-Wunused-const-variable]
+> static const struct mtk_gate_regs ifr1_cg_regs = {
+> ^
+> 2 warnings generated.
+> 
+> vim +/ifr0_cg_regs +537 drivers/clk/mediatek/clk-mt6765.c
+> 
+>    536  
+>  > 537  static const struct mtk_gate_regs ifr0_cg_regs = {
+>    538          .set_ofs = 0x200,
+>    539          .clr_ofs = 0x200,
+>    540          .sta_ofs = 0x200,
+>    541  };
+>    542  
+>  > 543  static const struct mtk_gate_regs ifr1_cg_regs = {
+>    544          .set_ofs = 0x74,
+>    545          .clr_ofs = 0x74,
+>    546          .sta_ofs = 0x74,
+>    547  };
+>    548  
+> 
+
+Thanks. I'm just going to pile a patch on top of clk-next to remove
+these two structures.
 
 _______________________________________________
 linux-arm-kernel mailing list
