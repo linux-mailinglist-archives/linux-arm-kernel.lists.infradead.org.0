@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 493A91F35E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 10:09:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DAAC1F35E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 10:10:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A3S1YuoxLYVsCCv3wSaMY6pcKvOlCwa778eNQehO+98=; b=EKI9wfWnCAaKKh
-	lc4x/aMsZ8N+HWsKyucQOqP9eXKAuBjgB/ywOnhZlituUiknjoBbTwIb0sGON1dggo5IVl6tVkBao
-	SX0LNUVE+XsHdht0AMV/wYquHqwBiaVnf/CUa+7RQANkuStR7vY//VwFpuw91rfJ+4IDiGfPLKvZY
-	Bluh0q6JyQoZUBMt4TI3ovNs1sYllWsfaFkd2Zs708CGxAQBTIwPCdux/iQn/P6w+2ShT/ePJ/dYr
-	Py9Ah66StymLrrerMjfA8t2yc4spUpZEnAFCSuUirr4wPL1nsJxINXuMhbVAbreCJ9y5iM4PlW27p
-	J22qrobQJilggE6FUqFQ==;
+	List-Owner; bh=qQf636SfziFQpeElrJqEk3gRdd+j14aYlgJCCfl3g2g=; b=AjwlE60w2Q4FLI
+	AEMrBePi9wjgml77MEZ6Ab9PdQhV/VUIGXgl7wgaAxWogVsk+ZJAV7vKdkYeTutOC+wr4GL+n4EUd
+	+KLxGOe9trKMu7i4Ht5UmbKkAkCsZO+Z0w0yFIR+4CvA6RMp5b3ZrfuYkQgU+Ocyj27BU3j6V/zKS
+	MwdnM1HkCWVg48rUnAe4ECDfuL6fZtzFYOssHpqGJgle024301nj05zi1arn3a0qNWxXo9TciKG1N
+	otDlkWqjlNXH6XcJKIbWc0ZACas2Yka7XNv3kL+zdb/eOu9WzwtB8FfWQ2du5+aJQfvoPzk/atk4G
+	i2k97w1F4aV5zzRuyEvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiZK7-0001Bg-D6; Tue, 09 Jun 2020 08:09:31 +0000
+	id 1jiZKV-0001Vn-Af; Tue, 09 Jun 2020 08:09:55 +0000
 Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiZJ8-0000ZA-7M
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 08:08:35 +0000
+ id 1jiZJG-0000ZA-OJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 08:08:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1591690110; x=1623226110;
+ t=1591690118; x=1623226118;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=EXViZJNoUAiedo3upJN/pWpw3+V8c4VqVgPBgGd+VnY=;
- b=GJlOYyXVWyYYyL0kQ0QOtu7RdMXGQovHpnRsPg5qSgqcOe0B9rWCVrbi
- u6PKsAemLYnWnVaownczV4wPelcmHNfPrvJ3xT9Nt0qDJAwJqo/5poYg+
- squqpjQabuUx22AExMmk6/tuUMWuOTYruoVjaGsah2PKo6L5B+XtziKt4
- OmtbeWC93K1BYG75lu2W9dpDMiH5Pk35Gn5uuSVJUB70YaxCsK7OVKO92
- 6u6DJDRlL/SDbbcTrTI+n82JfvABa7pKzXWFmmwfOvxJcwYVNuTcmuYH+
- b4ElyW+HeVxMFxCG2pi163UgGJs5saGxcN+EJm7yzWlIul4vLnrBRm++6 w==;
-IronPort-SDR: FLOeC5uNuX7vgoZEChRdO9fNed5hRF+qIDQ4ty7HM7RTm9TOpUIcfqEPmqjBJjRJibmmjawtUl
- Aanm9Il+p8QTRBNNifO3W/wSFrzf4uVHb/VxX9axuz6vH77JwFZPVx8ZP5ZtLeENHE2H+mOXLE
- e1MYSBBXbDf8OK+yw6J8/NrS1VFwjZf7CfPcXZlvc4qJRNRLvd7HiJpMXQ77vqTmFF0vXXKd5t
- /CsOJZ2pxXHJ5t/jdddtGSvoLFmByXXJZGdsOBymnfh6rB0T8gwwvWOHGYb6NxPaIvfrw3109L
- Whs=
-X-IronPort-AV: E=Sophos;i="5.73,491,1583218800"; d="scan'208";a="79412819"
+ bh=CVX3KheKEZUyLSS073Y9Q703DmBTx+PPKOvv792Yx6Q=;
+ b=pj/t/FlG4MINsruym3n3i+xFlmLam2o+fdA+Wej2Ce9XGi7LaD0qLtcf
+ RM/8FClPj2cGxpZVPiuz9AuHnn9g9wdUHO1WWuKw0Es08b1VtPTmDZmTz
+ OPYTtRqYOUURqUIMMVpcmHfv/N16XuLvke2n9DDTJNByn5BsxYXtN6vQ/
+ zXMQoYpH6OXCaVUUjVg1ywrCbhLM9j4s3W6z9YStG2hQYhzdoDkt/bwBp
+ 9td4Gp9AsdRk1uXNHh3fItFFBf3H1WgfmYHgPedgQOgrUZLhOaPDhQTHC
+ o/l5w+n59x1aTDZOIopRo3qrCifBcRzIpYD3Jv71BisUz16GHmdT93xUA Q==;
+IronPort-SDR: xnpxjOnPkOs999EkK6zJ9UllPwRvBrkLSbWE3RXdU0eiOAfXLEbxa1g0Xdu+z54Bjj4IZU7Pc4
+ MCgLQxd6FCpzDXIcOnaqOq9RoOE9xbr+GPOMQmIatWOwxpWrqd3rDhX8jki57HmNGTiFKOrobB
+ PKeGA8lU3SjbM0hsYdSQOeBpip6JAKMaJYXmw/hUvRyoiZERrRcJiWtcdl5+CfWXtuXjTOains
+ RdaM4pzIkygcrxEbgo1RvkZ2QbPmL+GmI5phLrn91y3rAAFT0Zy59FJIR13RqO4/fEsD0HccHS
+ W3E=
+X-IronPort-AV: E=Sophos;i="5.73,491,1583218800"; d="scan'208";a="79412848"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 09 Jun 2020 01:08:29 -0700
+ 09 Jun 2020 01:08:35 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1847.3; Tue, 9 Jun 2020 01:08:28 -0700
+ 15.1.1847.3; Tue, 9 Jun 2020 01:08:31 -0700
 Received: from soft-dev15.microsemi.net (10.10.115.15) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1847.3 via Frontend Transport; Tue, 9 Jun 2020 01:08:25 -0700
+ 15.1.1847.3 via Frontend Transport; Tue, 9 Jun 2020 01:08:29 -0700
 From: Lars Povlsen <lars.povlsen@microchip.com>
 To: Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>, "Linus
  Walleij" <linus.walleij@linaro.org>
-Subject: [PATCH v2 06/10] dt-bindings: clock: sparx5: Add Sparx5 SoC DPLL clock
-Date: Tue, 9 Jun 2020 10:07:05 +0200
-Message-ID: <20200609080709.9654-6-lars.povlsen@microchip.com>
+Subject: [PATCH v2 07/10] dt-bindings: clock: sparx5: Add bindings include file
+Date: Tue, 9 Jun 2020 10:07:06 +0200
+Message-ID: <20200609080709.9654-7-lars.povlsen@microchip.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200609080709.9654-1-lars.povlsen@microchip.com>
 References: <20200608123024.5330-1-lars.povlsen@microchip.com>
  <20200609080709.9654-1-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_010830_288691_50ADA96B 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20200609_010838_887894_ADEEF1D9 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -109,73 +110,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This add the DT bindings documentation for the Sparx5 SoC DPLL clock
+The Sparx5 support 9 different clock outputs. This include file has
+defines for each supported clock ordinal.
 
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 ---
- .../bindings/clock/microchip,sparx5-dpll.yaml | 52 +++++++++++++++++++
- 1 file changed, 52 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
+ include/dt-bindings/clock/microchip,sparx5.h | 23 ++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 include/dt-bindings/clock/microchip,sparx5.h
 
-diff --git a/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml b/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
+diff --git a/include/dt-bindings/clock/microchip,sparx5.h b/include/dt-bindings/clock/microchip,sparx5.h
 new file mode 100644
-index 0000000000000..39559a0a598ad
+index 0000000000000..4b04dabacec2c
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
-@@ -0,0 +1,52 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/clock/microchip,sparx5-dpll.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/include/dt-bindings/clock/microchip,sparx5.h
+@@ -0,0 +1,23 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
++/*
++ * Copyright (c) 2019 Microchip Inc.
++ *
++ * Author: Lars Povlsen <lars.povlsen@microchip.com>
++ */
 +
-+title: Microchip Sparx5 DPLL Clock
++#ifndef _DT_BINDINGS_CLK_SPARX5_H
++#define _DT_BINDINGS_CLK_SPARX5_H
 +
-+maintainers:
-+  - Lars Povlsen <lars.povlsen@microchip.com>
++#define CLK_ID_CORE	0
++#define CLK_ID_DDR	1
++#define CLK_ID_CPU2	2
++#define CLK_ID_ARM2	3
++#define CLK_ID_AUX1	4
++#define CLK_ID_AUX2	5
++#define CLK_ID_AUX3	6
++#define CLK_ID_AUX4	7
++#define CLK_ID_SYNCE	8
 +
-+description: |
-+  The Sparx5 DPLL clock controller generates and supplies clock to
-+  various peripherals within the SoC.
++#define N_CLOCKS	9
 +
-+properties:
-+  compatible:
-+    const: microchip,sparx5-dpll
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  '#clock-cells':
-+    const: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - '#clock-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  # Clock provider for eMMC:
-+  - |
-+    lcpll_clk: lcpll-clk {
-+        compatible = "fixed-clock";
-+        #clock-cells = <0>;
-+        clock-frequency = <2500000000>;
-+    };
-+    clks: clock-controller@61110000c {
-+        compatible = "microchip,sparx5-dpll";
-+        #clock-cells = <1>;
-+        clocks = <&lcpll_clk>;
-+        reg = <0x1110000c 0x24>;
-+    };
-+
-+...
++#endif
 --
 2.27.0
 
