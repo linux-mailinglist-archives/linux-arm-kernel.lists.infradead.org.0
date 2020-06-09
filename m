@@ -2,57 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13C481F42C0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:47:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF7D41F4308
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:49:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mz7a2DD+Y4iu5VQUYdkUoqaG7CVKz7j0rXhLFwJTF2c=; b=iOXU3F42HMOH56
-	aov1FC9Ops8rvrDzYBc31H+Sbzja6KUMsqudwIGkEi5WXXoK0wVzGhD0QwYlfODQue7gtnbgq9AlN
-	cLBuvIK/48yvU8ShXZNuA1g8ki0spQovq8GqbPZx+z1fleLqcRp0nmshnHAPgXuG6S8ryuLXSczkP
-	Z2WgoFLqxFakabnp8ihwY79s/iGr2uZmpS4OdWMnkFtlwt8JyKgM7dSmn01J6WI7XTQ0USZtecAWx
-	YI09aUG52hv3TbxsbqHmSUQFD/YucPVx3o55wGaj2HKuCylssss6Ww0t+/TxtCDT2NZ5hoMIEhnhI
-	xs1jcYs6te60e6dlCr3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4O7CmrJEwLTFkj0cMMxb3AhrzWOAjNm+Epv4bHHmrYc=; b=IQYB8vMgz4NVRL
+	B8qYqZycgPNoiQzHWS/nfouNv6VAFy5ylvWtM3LhdEPteviUBYjZwdcpij3CBbK04/VV1XhOvq0+X
+	exvI0XS40rDsSk0h7eubkdZjKGNDu1FWmjHUSUMkx7+LIK3QgmS5lGFCZTkwNAvsSfnh1Q2rhYwNU
+	5UBdEwwZlWJC+AiyyLSp06ilXJEasADhrvZLdhSaRycu3MxuFNO1em3SbzUZsjW43Srhm6+VT95DO
+	ZzEs0tiD951vPROX1lvH9AB492bPuyGSCGoOyCIX6sxUPWDnTQd/7wpLYAi2LVBRPhrLGxWHxznhq
+	Z53/vvwdxe8ao8sawHcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiiLD-0005rd-7y; Tue, 09 Jun 2020 17:47:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiiL2-0005r6-Rj
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 17:47:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 45AD51F1;
- Tue,  9 Jun 2020 10:47:02 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A21CA3F73D;
- Tue,  9 Jun 2020 10:47:00 -0700 (PDT)
-Date: Tue, 9 Jun 2020 18:46:54 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v2] arm64: acpi: fix UBSAN warning
-Message-ID: <20200609174654.GA2994@e121166-lin.cambridge.arm.com>
-References: <CAKwvOdnBhHnhUZ9MHgqEQ4nEyzHWUH+DPV-J0KoYyWNEnsDHbg@mail.gmail.com>
- <20200608203818.189423-1-ndesaulniers@google.com>
+	id 1jiiNE-0006cl-5B; Tue, 09 Jun 2020 17:49:20 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiiMV-0006KJ-4b; Tue, 09 Jun 2020 17:48:36 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id 132B52A3B67
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Subject: [PATCH v9 00/11] Genericize DW MIPI DSI bridge and add i.MX 6 driver
+Date: Tue,  9 Jun 2020 20:49:48 +0300
+Message-Id: <20200609174959.955926-1-adrian.ratiu@collabora.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200608203818.189423-1-ndesaulniers@google.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_104704_981936_86E1EEF7 
-X-CRM114-Status: GOOD (  17.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200609_104835_309539_E5D1CE39 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,89 +58,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Ard Biesheuvel <ardb@kernel.org>, Allison Randal <allison@lohutok.net>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Philippe CORNU <philippe.cornu@st.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-imx@nxp.com, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 08, 2020 at 01:38:17PM -0700, Nick Desaulniers wrote:
-> Will reported a UBSAN warning:
-> 
-> UBSAN: null-ptr-deref in arch/arm64/kernel/smp.c:596:6
-> member access within null pointer of type 'struct acpi_madt_generic_interrupt'
-> CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-rc6-00124-g96bc42ff0a82 #1
-> Call trace:
->  dump_backtrace+0x0/0x384
->  show_stack+0x28/0x38
->  dump_stack+0xec/0x174
->  handle_null_ptr_deref+0x134/0x174
->  __ubsan_handle_type_mismatch_v1+0x84/0xa4
->  acpi_parse_gic_cpu_interface+0x60/0xe8
->  acpi_parse_entries_array+0x288/0x498
->  acpi_table_parse_entries_array+0x178/0x1b4
->  acpi_table_parse_madt+0xa4/0x110
->  acpi_parse_and_init_cpus+0x38/0x100
->  smp_init_cpus+0x74/0x258
->  setup_arch+0x350/0x3ec
->  start_kernel+0x98/0x6f4
-> 
-> This is from the use of the ACPI_OFFSET in
-> arch/arm64/include/asm/acpi.h. Replace its use with offsetof from
-> include/linux/stddef.h which should implement the same logic using
-> __builtin_offsetof, so that UBSAN wont warn.
-> 
-> Link: https://lore.kernel.org/lkml/20200521100952.GA5360@willie-the-truck/
-> Cc: stable@vger.kernel.org
-> Reported-by: Will Deacon <will@kernel.org>
-> Suggested-by: Ard Biesheuvel <ardb@kernel.org>
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
-> ---
-> Changes V1 -> V2:
-> * Just fix one of the two warnings, specific to arm64.
-> * Put warning in commit message.
-> 
->  arch/arm64/include/asm/acpi.h | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
+[Re-submitting to cc dri-devel, sorry about the noise]
 
-Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Hello all,
 
-> diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
-> index b263e239cb59..a45366c3909b 100644
-> --- a/arch/arm64/include/asm/acpi.h
-> +++ b/arch/arm64/include/asm/acpi.h
-> @@ -12,6 +12,7 @@
->  #include <linux/efi.h>
->  #include <linux/memblock.h>
->  #include <linux/psci.h>
-> +#include <linux/stddef.h>
->  
->  #include <asm/cputype.h>
->  #include <asm/io.h>
-> @@ -31,14 +32,14 @@
->   * is therefore used to delimit the MADT GICC structure minimum length
->   * appropriately.
->   */
-> -#define ACPI_MADT_GICC_MIN_LENGTH   ACPI_OFFSET(  \
-> +#define ACPI_MADT_GICC_MIN_LENGTH   offsetof(  \
->  	struct acpi_madt_generic_interrupt, efficiency_class)
->  
->  #define BAD_MADT_GICC_ENTRY(entry, end)					\
->  	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
->  	(unsigned long)(entry) + (entry)->header.length > (end))
->  
-> -#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
-> +#define ACPI_MADT_GICC_SPE  (offsetof(struct acpi_madt_generic_interrupt, \
->  	spe_interrupt) + sizeof(u16))
->  
->  /* Basic configuration for ACPI */
-> -- 
-> 2.27.0.278.ge193c7cf3a9-goog
-> 
+v9 cleanly applies on top of latest next-20200609 tree.
+
+v9 does not depend on other patches as the last binding doc has been merged.
+
+All feedback up to this point has been addressed. Specific details in
+individual patch changelogs.
+
+The biggest changes are the deprecation of the Synopsys DW bridge bind()
+API in favor of of_drm_find_bridge() and .attach callbacks, the addition
+of a TODO entry which outlines future planned bridge driver refactorings
+and a reordering of some i.MX 6 patches to appease checkpatch.
+
+The idea behind the TODO is to get this regmap and i.MX 6 driver merged
+and then do the rest of refactorings in-tree because it's easier and the
+refactorings themselves are out-of-scope of this series which is adding
+i.MX 6 support and is quite big already, so please, if there are more
+refactoring ideas, let's add them to the TODO doc. :) I intend to tackle
+those after this series is merged to avoid two complex inter-dependent
+simultaneous series.
+
+As always more testing is welcome especially on Rockchip and STM SoCs.
+
+Big thank you to everyone who has contributed to this up to now,
+Adrian
+
+Adrian Ratiu (11):
+  drm: bridge: dw_mipi_dsi: add initial regmap infrastructure
+  drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
+  drm: bridge: dw_mipi_dsi: add dsi v1.01 support
+  drm: bridge: dw_mipi_dsi: remove bind/unbind API
+  dt-bindings: display: add i.MX6 MIPI DSI host controller doc
+  ARM: dts: imx6qdl: add missing mipi dsi properties
+  drm: imx: Add i.MX 6 MIPI DSI host platform driver
+  drm: stm: dw-mipi-dsi: let the bridge handle the HW version check
+  drm: bridge: dw-mipi-dsi: split low power cfg register into fields
+  drm: bridge: dw-mipi-dsi: fix bad register field offsets
+  Documentation: gpu: todo: Add dw-mipi-dsi consolidation plan
+
+ .../display/imx/fsl,mipi-dsi-imx6.yaml        | 112 +++
+ Documentation/gpu/todo.rst                    |  25 +
+ arch/arm/boot/dts/imx6qdl.dtsi                |   8 +
+ drivers/gpu/drm/bridge/synopsys/Kconfig       |   1 +
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 713 ++++++++++++------
+ drivers/gpu/drm/imx/Kconfig                   |   8 +
+ drivers/gpu/drm/imx/Makefile                  |   1 +
+ drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 399 ++++++++++
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |   7 +-
+ drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  16 +-
+ 10 files changed, 1059 insertions(+), 231 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+ create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
+
+-- 
+2.27.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
