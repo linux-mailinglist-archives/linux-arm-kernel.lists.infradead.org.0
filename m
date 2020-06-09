@@ -2,114 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1AAD1F4990
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 00:49:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6F7C1F49A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 00:54:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BdV+gFv6MrsIcP/YG+np7FyyAoudfpW6QzyL2jvY0FQ=; b=LWKrW750Gz12tD
-	vDwb7zRj+aJGn6AdXSVoPBPMQen5+4VMkW9J3gSsBkjcYGL3akwvYBBKFZzNZrTjWeXuuxk69/RsI
-	ov/ohgVEn5Af9qOg8Nu2cbfXUBLLSFRf0mglhzb3boCgjoTyUmWlR0Ikh6faj+tyBnzvKRZC5LDHm
-	lx4FJP+kC0wZUCLDUjU31LshGEEFqgxOuUqRQRFgjN8C67bq28ljOO43cn00h7+W10w/2PmY3apdc
-	p7Cyj8ZzczpFL3cHoIP0MHfRvCQ8CxNHlwuOF7012LJhv7t61mScnscQstKMZ47uRw53MIymKtqDb
-	+cvVz6Hf9XYyVfh42PVg==;
+	List-Owner; bh=jnz6k3k8MXbCZFUzUNh82in+T4ECl+2725iEYt53vjU=; b=WdA6OM0U8U30ZL
+	wfvLIy0ycAvtHcrDILXhahc7qBPsV/km5h2XFhGSvfxO/EyC1WsfBe1Mn92MXkMtzrlOFivV3a6Mu
+	CxREsTdsyrjzklAjlrD55oWgw2CK7lpss5QKa6GexLLwFRm4KrgE5/jwtnihsDyfsZSNhdT6Voa5X
+	GII7nlSwzVHxr3xHauHYGzzGR1pQAgRTBCHFd1msdZtgbUjalPBVnJQr1vsokybKTJ/SUhhHoNwAj
+	syU5ZYYDFYu00MNdM2LaZRCH8ftNApzoIWWMToN3ENLTtEskzjyaMAjeq1fu4aMSOxlwlPNg9mswC
+	YWc/cRl80oMU7sxNTr1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jin3T-00009x-4T; Tue, 09 Jun 2020 22:49:15 +0000
-Received: from mail-vi1eur05on2078.outbound.protection.outlook.com
- ([40.107.21.78] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jin8U-0003p0-M2; Tue, 09 Jun 2020 22:54:26 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jin3J-000096-OM
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 22:49:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UOWMrd8Z2S/9k7NncZUh3LjgvhnfJUHRLzpRyOsakMaTouzudBuZ+ZDrcrEYaHCHXRCEyA/vHMYRRp5PBBZbEE/2ZZ5Xp2vSehRNBz2tyUIAaQwXbp/lpdgukgrZ4+HxOXCEMYv8KIgrtzd2WCMyBihMp6o0Lj0Iyg+L2lnQ/rJqvkb8oIq34g0ET6CWye1niaAxyIhhTStGSsOBZCF7whQIxz3SEItmhsP6/yUsW9uOj0G7vOShOk2wDnj2w7h+TipACPvJ4tH+wZYJjuN8kkBgnLlxUyFjEWKyzkF3xqGq5iVL3el0VDNY6whMvE1tikV0BOgjpDv1X4zqzv5U2w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dgZM0LGLKYuobA3Xixb2KGGVCp/2govML2blk93+E18=;
- b=DXB66+y4oUjxjAJm2b+A8rv7qO8UgxaM335oP0CqVUyu0aSpYCYhja2vSurkwRfc8u57t1B1R5M9dRFKkuUbpMVwv/UrXuoGty/H7ibC6TgsOOGK/phMz7y/gx5CBj2P8oo7NGqUNwwwKxctDVXfMBzmLN3SQyHDr0cy9ngvIfcamt7+4xYEOl/IqIkqviqmS3tBrMThby91mT5n3LeYCXN/9yS3LJ7io2kpijAaSktQK6LfFD34JeUuqp18o13rLWuzXvYSspRt4OVk6vGJwTmN5iSGsnO8k1qRBdxK73ZVLrae0AMiYl6VOSQHCw7hwpn5UnT8qPphdWAh6TfKcQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dgZM0LGLKYuobA3Xixb2KGGVCp/2govML2blk93+E18=;
- b=mKShn9JQN7HrS+M/PVpvw6iTVlDjVTU6kDKmPhkbBGfGc+E9j5i1+GbfCGok16Qog/YWaYT+hCbbt3bk6xVgiM7VaXR3G/T2zR9lwdsJuIePo4iau0xij03Hov+ZeY4N0u2vZnLHkWBcpFACDd9I9WC+vBk3wj9nDcPu3YOJIVw=
-Received: from AM0PR0402MB3905.eurprd04.prod.outlook.com (2603:10a6:208:b::23)
- by AM0PR0402MB3393.eurprd04.prod.outlook.com (2603:10a6:208:21::23)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Tue, 9 Jun
- 2020 22:49:01 +0000
-Received: from AM0PR0402MB3905.eurprd04.prod.outlook.com
- ([fe80::bde6:6e57:8c23:79ae]) by AM0PR0402MB3905.eurprd04.prod.outlook.com
- ([fe80::bde6:6e57:8c23:79ae%7]) with mapi id 15.20.3066.023; Tue, 9 Jun 2020
- 22:49:01 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Iuliana Prodan <iuliana.prodan@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, Leonard Crestez <leonard.crestez@nxp.com>, Abel Vesa
- <abel.vesa@nxp.com>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>, Peng
- Fan <peng.fan@nxp.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] soc: imx8m: Correct i.MX8MP UID fuse offset
-Thread-Topic: [PATCH] soc: imx8m: Correct i.MX8MP UID fuse offset
-Thread-Index: AQHWPmGaLCVYIW/uG0iQCSK/g/UPiajQZy+AgAB5hxCAAAKcIA==
-Date: Tue, 9 Jun 2020 22:49:01 +0000
-Message-ID: <AM0PR0402MB3905BE3E0047941D5880ABA6F5820@AM0PR0402MB3905.eurprd04.prod.outlook.com>
-References: <1591708550-14058-1-git-send-email-Anson.Huang@nxp.com>
- <7a4091c5-dc57-31c3-3445-c6b16a565928@nxp.com>
- <AM0PR0402MB3905F42A025BF12B1D6B26A0F5820@AM0PR0402MB3905.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR0402MB3905F42A025BF12B1D6B26A0F5820@AM0PR0402MB3905.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.13.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 0f9c01b5-7d70-4c71-8850-08d80cc74ddc
-x-ms-traffictypediagnostic: AM0PR0402MB3393:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR0402MB3393D2C82068A78B012A08EFF5820@AM0PR0402MB3393.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2276;
-x-forefront-prvs: 042957ACD7
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: R3NvqPZmj7KOQOYM7DRzT+mAdbjKx2zfjJ8vkisqqlTp01cdqAk5hnFZoBpFamOHfznIYsVorKHVoRMlsGwCoeLF3i4e9Ol7PG7oU0saPolZy3Ed2hJIXdkjHAQ1b1SBjsnn8vvJDWCVkk7PDozUeECOAcj5vd1X9pTs+qO9MdXmxQ2Z0tmFYiY/IcxwFfiwUKPEydYGa015DGwfYZvJ9kIuWRPePUhQJOXy/6Q7QflHnrVPoUynoXtBiStNTbgXQHSn4xGXtlt7RuO5fEofdxP50GeakaE5i38WvADpRyLTIpLGQjJZm2sAyah8Sn99fab8KJIxNi7x5bA6wCRNBBIY4hyPbjoAJv9UHxqtuL1n/ybqYkq/po3P6csZ9e5I2Vl5s7hXenh75K35QQILnA==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR0402MB3905.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(136003)(366004)(376002)(346002)(39860400002)(396003)(2940100002)(26005)(44832011)(71200400001)(8936002)(7696005)(4326008)(53546011)(8676002)(2906002)(6506007)(86362001)(4744005)(316002)(66946007)(66476007)(66556008)(110136005)(5660300002)(76116006)(478600001)(52536014)(55016002)(186003)(64756008)(66446008)(33656002)(9686003)(32563001)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: IgqWo23sJo9evQfb+vttTE8Va3TpdkfYuqo3Fs5tEGvw50NX1DWzkDwbd/eFBk1M3kMmARw2MOnP5CiJXf6NtnySS7Dg/FDnlio6i2arbCd86H14ZxNSD+ejJw1aJSKMRJAhQQHr0CchJsrNJLd2UE3epkzyzIDIOT4CFHmj3rZGqUdDm1F1wO+33/smcWVB0i7nf4KxCDoLh6K/19ovEZkNx8DUUAO2RjLvEyZS/NzC36IBVtU4CvFYjTnLlftxnMgVbREDnlYq51TyrlWvzaRkJvE2A801YOUgJWNEdVbYJw6IoPU154vTeS8YrAQtCaJJwG3WQ3usRc85w1JlyBlD+Yg82d+VGKg7DVBjHR/0AaizxCTcntdUfP7j8ceQJhaGXDXXoi4/rkORQgsVl4FN/1nvvZY1kkx1/MZDSXrKU46p1q+3Nq/L2VZi5fBfBQEGZif9HA1xHZcaJTXxfnrwH8O2UNajmY4iqaMdDIokrZ6hFbwe1aszWABulXyJ
+ id 1jin8K-0003oT-HR
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 22:54:17 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id q2so136563vsr.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jun 2020 15:54:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uselWGWC3qoQQOxqWlrwlyYH4mqd92kQlOeG7RAljPU=;
+ b=FyAfw76hywaz53lg/VPnGi9e8IgE5jPMksWxgn5Xkbqe/yhjElKv8fMDCl4QFtXQIt
+ pSyJYqrnMJYgTyWBELqlUZa5CVrDBu1huuKU9dWbO6W+XR2+iweBUHxOBj0i2RvfGdFs
+ 8NiNQVMybZaYdmRyiKjkdD25LAg7GOjVAE2ahVKfo1TFfOTPVhQxv3vrhhJB1ZZYju2x
+ Sdae+oKvdyfhBYlT1ObztTGi8b7ZlawE8tQkILK8OymFeQLH+QUknrl0lziOECLhGpgE
+ 9Z2h7cuvDa588K6R2CH8Tk7KwRtyK4jUdgDpy+UOvR8NULevc8eRomSXClkk9nY8gFC8
+ 7ASA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uselWGWC3qoQQOxqWlrwlyYH4mqd92kQlOeG7RAljPU=;
+ b=GDSnTizef1p2jFH708SXiYuQF1qPsrfWGfi+oTAFEFK+FXF4XbrHeCjkErtb9Jw8/3
+ b4+klkiCYPyrRuhRvQdLlzBgrKahQHhJEGh9nwz7q5op+G6YCjC4VXxOHw2XD9XgNLi/
+ wl6s0G7UqGOuLCz8zTrSRAR2RYik3xzy7cWc9AbT4lJLKsGRVPABLWrj8TYmawSqJRwG
+ jvSUhZgdeKc41wL2qMNJci7QioyCDyKMTxCAWP8TzflL5bNf+KVI4M0KpMYLbEkAbS/J
+ RhYRAJL9t/SrxaWv6FzmHxe+lPB0RGt84vxeEqIi/tx368etXJ1r/9x1rm1NUPJOQhu+
+ u96Q==
+X-Gm-Message-State: AOAM5338gCoAxZ/U298pV3Xp5Gu+ZleSR4zAQ1W2AIDAw+8VHuCkxfn8
+ RiUoKtkQhIIYyK+Ralf2Vgj9Cza4dQ2MymAgqxr7HA==
+X-Google-Smtp-Source: ABdhPJx3dLS9VTThWqaFRDlqN1S9f5h0OrZVTBbY5/ftQgTD5GsCLfsUQ7mDqtAcQKwPK2rVrq3OTLOUBty+qRmGSEY=
+X-Received: by 2002:a67:af10:: with SMTP id v16mr448564vsl.235.1591743255002; 
+ Tue, 09 Jun 2020 15:54:15 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0f9c01b5-7d70-4c71-8850-08d80cc74ddc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jun 2020 22:49:01.6279 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: q+p0pO7QbI8n6TxI0CIww33IInWeOS9DRlMICPW+nw8FCEXZw6JEhl++Tv31isZRlr6jY4M/aH8SObajYDtzKA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0402MB3393
+References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
+ <20200605213853.14959-3-sean.j.christopherson@intel.com>
+In-Reply-To: <20200605213853.14959-3-sean.j.christopherson@intel.com>
+From: Ben Gardon <bgardon@google.com>
+Date: Tue, 9 Jun 2020 15:54:04 -0700
+Message-ID: <CANgfPd-hDAUe188X4HNt7bQ=5_RxtOmpnEet3C3CwpJPxi4y4Q@mail.gmail.com>
+Subject: Re: [PATCH 02/21] KVM: x86/mmu: Consolidate "page" variant of memory
+ cache helpers
+To: Sean Christopherson <sean.j.christopherson@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_154905_796690_1954B888 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200609_155416_596836_638541F4 
+X-CRM114-Status: GOOD (  16.16  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -117,8 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.78 listed in wl.mailspike.net]
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -130,44 +98,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Christoffer Dall <christoffer.dall@arm.com>,
+ Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, Claudio Imbrenda <imbrenda@linux.ibm.com>,
+ kvmarm@lists.cs.columbia.edu, Janosch Frank <frankja@linux.ibm.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Junaid Shahid <junaids@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ kvm-ppc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jim Mattson <jmattson@google.com>, Cornelia Huck <cohuck@redhat.com>,
+ Peter Shier <pshier@google.com>, linux-mips@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, Peter Feiner <pfeiner@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Luliana
+On Fri, Jun 5, 2020 at 2:39 PM Sean Christopherson
+<sean.j.christopherson@intel.com> wrote:
+>
+> Drop the "page" variants of the topup/free memory cache helpers, using
+> the existence of an associated kmem_cache to select the correct alloc
+> or free routine.
+>
+> No functional change intended.
+>
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+> Reviewed-by: Ben Gardon <bgardon@google.com>
+> ---
+>  arch/x86/kvm/mmu/mmu.c | 37 +++++++++++--------------------------
+>  1 file changed, 11 insertions(+), 26 deletions(-)
+>
+> diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
+> index 0830c195c9ed..cbc101663a89 100644
+> --- a/arch/x86/kvm/mmu/mmu.c
+> +++ b/arch/x86/kvm/mmu/mmu.c
+> @@ -1067,7 +1067,10 @@ static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache, int min)
+>         if (cache->nobjs >= min)
+>                 return 0;
+>         while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
+> -               obj = kmem_cache_zalloc(cache->kmem_cache, GFP_KERNEL_ACCOUNT);
+> +               if (cache->kmem_cache)
+> +                       obj = kmem_cache_zalloc(cache->kmem_cache, GFP_KERNEL_ACCOUNT);
+> +               else
+> +                       obj = (void *)__get_free_page(GFP_KERNEL_ACCOUNT);
+>                 if (!obj)
+>                         return cache->nobjs >= min ? 0 : -ENOMEM;
+>                 cache->objects[cache->nobjs++] = obj;
+> @@ -1082,30 +1085,12 @@ static int mmu_memory_cache_free_objects(struct kvm_mmu_memory_cache *cache)
+>
+>  static void mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
+>  {
+> -       while (mc->nobjs)
+> -               kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
+> -}
+> -
+> -static int mmu_topup_memory_cache_page(struct kvm_mmu_memory_cache *cache,
+> -                                      int min)
+> -{
+> -       void *page;
+> -
+> -       if (cache->nobjs >= min)
+> -               return 0;
+> -       while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
+> -               page = (void *)__get_free_page(GFP_KERNEL_ACCOUNT);
+> -               if (!page)
+> -                       return cache->nobjs >= min ? 0 : -ENOMEM;
+> -               cache->objects[cache->nobjs++] = page;
+> +       while (mc->nobjs) {
+> +               if (mc->kmem_cache)
+> +                       kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
+> +               else
+> +                       free_page((unsigned long)mc->objects[--mc->nobjs]);
+>         }
+> -       return 0;
+> -}
+> -
+> -static void mmu_free_memory_cache_page(struct kvm_mmu_memory_cache *mc)
+> -{
+> -       while (mc->nobjs)
+> -               free_page((unsigned long)mc->objects[--mc->nobjs]);
+>  }
+>
+>  static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+> @@ -1116,7 +1101,7 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+>                                    8 + PTE_PREFETCH_NUM);
+>         if (r)
+>                 goto out;
+> -       r = mmu_topup_memory_cache_page(&vcpu->arch.mmu_page_cache, 8);
+> +       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_cache, 8);
+>         if (r)
+>                 goto out;
+>         r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
+> @@ -1127,7 +1112,7 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+>  static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
+>  {
+>         mmu_free_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache);
+> -       mmu_free_memory_cache_page(&vcpu->arch.mmu_page_cache);
+> +       mmu_free_memory_cache(&vcpu->arch.mmu_page_cache);
+>         mmu_free_memory_cache(&vcpu->arch.mmu_page_header_cache);
+>  }
+>
+> --
+> 2.26.0
+>
 
-> Subject: RE: [PATCH] soc: imx8m: Correct i.MX8MP UID fuse offset
-> 
-> Hi, Luliana
-> 
-> 
-> > Subject: Re: [PATCH] soc: imx8m: Correct i.MX8MP UID fuse offset
-> >
-> >
-> >
-> > On 6/9/2020 4:15 PM, Anson Huang wrote:
-> > > Correct i.MX8MP UID fuse offset according to fuse map:
-> > >
-> > > UID_LOW: 0x420
-> > > UID_HIGH: 0x430
-> > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > If this patch corrects the imx8mp UID shouldn't have a Fixes tag?
-> 
-> I thought about this, but I was confused that this file name is changed by
-> commit fc40200ebf82 ("soc: imx: increase build coverage for imx8m soc
-> driver"), so if to add fix tag, should I add the tag to point to first patch of
-> drivers/soc/imx/soc-imx8m.c, or the original commit of supporting 8MP UID in
-> drivers/soc/imx/soc-imx8.c which is no long there.
-
-I think it should be commit fc40200ebf82 ("soc: imx: increase build coverage for imx8m soc
-driver"), will send a V2 patch.
-
-Thanks,
-Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
