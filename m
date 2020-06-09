@@ -2,68 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 016831F3B8B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:14:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 032A81F3C4F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 15:27:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b/Px/2mr9vUatGHwWHRtesDWfPV0QY1npRPhwe3zGu4=; b=i60s98UMPn+m8u
-	arN+Ma3aad2P1ptcEQh/YHLCycKt0pJ+EbfgblDMXh5PZNfmGhJ2RYKR/B1db2NxZpXrfGUacmbsl
-	G+L8TiOBUlEZugW3ftSksi8dvs4LgRDQhCsAgr38Na416k9fKrKURIm2QvIMxPbcv/dUyPB+n1kYL
-	sduZw47kspNn5uiAVF44jD/uIdGaFa9mJJmuBQ6FKE1IJcmiQ+qmDHN/anWaMOnuOV9PZii3QtcB0
-	5/JVS0FB2am4cVXJaT7m2to4U+l9e2QVK+IfYjIliAGaSbDExMKdFTOO7WGJrdz5yd2qujrlDHJVY
-	98Hvb3CcUfaKV+Ryqodw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hNJyeDU8cbmxSD2mfgABfLLDMSxrmi7VmYdHAOP50wc=; b=chO
+	wCU4fgzD5bwbH7ZWDzr7x7Lrl6kn4HxmV79c6RHTXfaZXwt4liSOHje8RrmEASujBkms4hvbgkjYA
+	gOFihq1DyLBzM8Lv/a9ol6OW08+uxRadjB5V2Jl/i0Rp742anp/A+jZU0tUGlcs4Yp30d6AFNilb0
+	wyMp80cWqNHuBIrToYxQW7v+kjC8IX4bPM/VEMAdBwbHia3RHJS/QsTMEXVilVQLfdS8asOxNH6Fl
+	dGA6Hgy4u4W12w6wzGJ5wHgyWQp1Ea1sBHog7f52eV5Xsf5yI76b98YIRyE3iDYdumjglI1Cz2M8q
+	8hNuLPRVkhJZlpnIA8LIN5ayK1ACEqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jie59-0001wt-Kc; Tue, 09 Jun 2020 13:14:23 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jieHC-0002ad-Ea; Tue, 09 Jun 2020 13:26:50 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jie51-0001wD-QU
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:14:17 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jie4q-0006Ap-DQ; Tue, 09 Jun 2020 15:14:04 +0200
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jie4p-0000V1-1j; Tue, 09 Jun 2020 15:14:03 +0200
-Date: Tue, 9 Jun 2020 15:14:03 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [PATCH] net: ethernet: mvneta: add support for 2.5G DRSGMII mode
-Message-ID: <20200609131402.GL11869@pengutronix.de>
-References: <20200608074716.9975-1-s.hauer@pengutronix.de>
- <20200608145737.GG1006885@lunn.ch>
- <20200609125535.GK11869@pengutronix.de>
- <20200609131216.GJ1022955@lunn.ch>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200609131216.GJ1022955@lunn.ch>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 15:13:06 up 110 days, 20:43, 124 users,  load average: 0.03, 0.14,
- 0.18
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1jieH1-0002YW-LD
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 13:26:41 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 080982000DD;
+ Tue,  9 Jun 2020 15:26:36 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 65A11201213;
+ Tue,  9 Jun 2020 15:26:31 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7B7474029F;
+ Tue,  9 Jun 2020 21:26:25 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, leonard.crestez@nxp.com, abel.vesa@nxp.com,
+ l.stach@pengutronix.de, peng.fan@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] soc: imx8m: Correct i.MX8MP UID fuse offset
+Date: Tue,  9 Jun 2020 21:15:50 +0800
+Message-Id: <1591708550-14058-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_061415_854955_DC00538E 
-X-CRM114-Status: GOOD (  18.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200609_062639_826551_9BD534BA 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,56 +68,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kernel@pengutronix.de, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Russell King <rmk+kernel@armlinux.org.uk>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+Correct i.MX8MP UID fuse offset according to fuse map:
 
-On Tue, Jun 09, 2020 at 03:12:16PM +0200, Andrew Lunn wrote:
-> On Tue, Jun 09, 2020 at 02:55:35PM +0200, Sascha Hauer wrote:
-> > On Mon, Jun 08, 2020 at 04:57:37PM +0200, Andrew Lunn wrote:
-> > > On Mon, Jun 08, 2020 at 09:47:16AM +0200, Sascha Hauer wrote:
-> > > > The Marvell MVNETA Ethernet controller supports a 2.5 Gbps SGMII mode
-> > > > called DRSGMII.
-> > > > 
-> > > > This patch adds a corresponding phy-mode string 'drsgmii' and parses it
-> > > > from DT. The MVNETA then configures the SERDES protocol value
-> > > > accordingly.
-> > > > 
-> > > > It was successfully tested on a MV78460 connected to a FPGA.
-> > > 
-> > > Hi Sascha
-> > > 
-> > > Is this really overclocked SGMII, or 2500BaseX? How does it differ
-> > > from 2500BaseX, which mvneta already supports?
-> > 
-> > I think it is overclocked SGMII or 2500BaseX depending on the Port MAC
-> > Control Register0 PortType setting bit.
-> > As said to Russell we have a fixed link so nobody really cares if it's
-> > SGMII or 2500BaseX. This boils down the patch to fixing the Serdes
-> > configuration setting for 2500BaseX.
-> 
-> Hi Sascha
-> 
-> Does 2500BaseX work for your use case? Since this drsmgii mode is not
-> well defined, i would prefer to not add it, unless it is really
-> needed.
+UID_LOW: 0x420
+UID_HIGH: 0x430
 
-Yes, it does, see updated patch I just sent.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx8m.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-Sascha
-
+diff --git a/drivers/soc/imx/soc-imx8m.c b/drivers/soc/imx/soc-imx8m.c
+index 7b0759a..0bc8314 100644
+--- a/drivers/soc/imx/soc-imx8m.c
++++ b/drivers/soc/imx/soc-imx8m.c
+@@ -22,6 +22,8 @@
+ #define OCOTP_UID_LOW			0x410
+ #define OCOTP_UID_HIGH			0x420
+ 
++#define IMX8MP_OCOTP_UID_OFFSET		0x10
++
+ /* Same as ANADIG_DIGPROG_IMX7D */
+ #define ANADIG_DIGPROG_IMX8MM	0x800
+ 
+@@ -87,6 +89,8 @@ static void __init imx8mm_soc_uid(void)
+ {
+ 	void __iomem *ocotp_base;
+ 	struct device_node *np;
++	u32 offset = of_machine_is_compatible("fsl,imx8mp") ?
++		     IMX8MP_OCOTP_UID_OFFSET : 0;
+ 
+ 	np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-ocotp");
+ 	if (!np)
+@@ -95,9 +99,9 @@ static void __init imx8mm_soc_uid(void)
+ 	ocotp_base = of_iomap(np, 0);
+ 	WARN_ON(!ocotp_base);
+ 
+-	soc_uid = readl_relaxed(ocotp_base + OCOTP_UID_HIGH);
++	soc_uid = readl_relaxed(ocotp_base + OCOTP_UID_HIGH + offset);
+ 	soc_uid <<= 32;
+-	soc_uid |= readl_relaxed(ocotp_base + OCOTP_UID_LOW);
++	soc_uid |= readl_relaxed(ocotp_base + OCOTP_UID_LOW + offset);
+ 
+ 	iounmap(ocotp_base);
+ 	of_node_put(np);
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
