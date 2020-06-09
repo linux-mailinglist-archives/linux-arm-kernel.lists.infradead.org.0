@@ -2,109 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A7441F3248
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 04:29:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADB8C1F325B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 04:45:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LGC3pGimUtESFiJAsrdL+tuYO5P/Wyt3SrgC4oxfUR4=; b=ffzseFoSFdwA33
-	PtZU+gbRmP7vRBtKlwyuEaYUhubFj5wUw1sL/mMZ2eWPUhy88b/Mof4YDF5HSYnaoRri9TYuizVoD
-	CptXDclEEidiR2YLEp3EaiFx8kisV7c6A9CFMNqXblqX11qHYB8xvZIS/6gUM2/K9D3T5eHvJuFi3
-	IPsHivxcEORRdK81P4fQ7VkBqjWflwSvlkkFaY64g7fBXb4vFhF+IM14sWwzepVfRGerNMkTXQnH1
-	s0ifg2qwlNkt1NO5ymH37PK00QINNwMD+IF+O6O1+Vm7UPAQi8UnHlVdXNhnF5kHhejLpQ632QjZx
-	D8WLx7x6dAhi4YRpCbGA==;
+	List-Owner; bh=VI7ZftstLMYKo6ODMjV3FN9vKyQJEZffVjjdFTSahsE=; b=TNLMPg5qeS98LN
+	z/iFBbZN+A8jfV/U2SGLLqQcKTzPuIOfmz0OUQd2PAkFhAZWITLjiKTGyG7vGpYqJwrV2xel5blfC
+	sG6qQAw+kSbn9LaFV4XUOuwH5cOfMKPga/MGdplxZeKo6L65TqoWqBs+zh+/wvfrl96gK8VZ9Tyey
+	9RQqT57H0AofoybV+q7688QqiYOGKJmXB4YUEteN/mBSIPUMXpJLj0BCR4D+/ODtRVBsZZt5z4HFr
+	LNvLt62/XhAiOZuBkJuw3UcKaXw7RsX0TrjjUvagUesEN1G+g1BMbMjntuChppUrruHrO4Fbk8uCm
+	omN/EQwbXcIiRcnZxuSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiU1N-00028q-QW; Tue, 09 Jun 2020 02:29:49 +0000
-Received: from mail-eopbgr60061.outbound.protection.outlook.com ([40.107.6.61]
+	id 1jiUGl-0007A3-MB; Tue, 09 Jun 2020 02:45:43 +0000
+Received: from mail-eopbgr60082.outbound.protection.outlook.com ([40.107.6.82]
  helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiU1G-00028X-F9
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 02:29:43 +0000
+ id 1jiUGe-00079E-Tv
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 02:45:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=b/zvXRC2f7AZLlENiWkZvDzXmRHdvWaycfSDvwNX8XGVAw2lreK8V1iwFht0TRR/HYGbB88+KIZRK3ER3WhA+IrR5o9iA5VCcUwdX8DqdSr8S0TRnPLaFK4p+VkLQBtK8bVNUXUmbWvdavOarg+1cw10ZG4gFh7rQQDeYCWNKaLWPBUK4sgC1OA18i7FDQgSo4R2Xt2JNTozkDIhZN6giQLvOdxhfbkcZA2bzxfT75UJ3b+HWfOOimyYvJ72LMkcEPyISWykUOjvmznYDUxuMtlM4T2eyc7QWXXCgla4wdWwtSjpKBBrM/JdOwg/quh6K5DOYQxbeHfr5Hwt2pCBOA==
+ b=d4sZAjPcjgT5J9cJvMMUl67dL4prIBMPPHPllkrcTTARLKiBl96dIkaLeHGDRNAL3p5FW7IUq4Y+2mDfgqKl3Z3nspHfZCfmaRbWyMD0uBzVcz3jqAC24tqN0E5yY3SCzug53UMe7kcpNfHwEPRJqncHf0L6YnTPOYbdCz/B0fPqY89GV+zYz0hu62w07Hwg4NVUZlourV8cV9tO0MNyq0xk7RLlq6pHF2D8jGCftHc597grdLauHHkptqYkrKH5N+2ZMeP7OwzIecTJ3B36S3fCt6n3c0zLzl7FG9mwa1nB1CQpx0wUhEmC6hcdPWDw2e/gvmdTadVvgZBlPNwJ7Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Tf9U9/AiOtrep7i6he5oPWjDpTV0kQSmw0sSQDSAIO8=;
- b=lU1mTeoBsgSJYElB1xMpu0/dGz9ZOi8CnOFR9HtnhGPukr4VCMzvDajD3AFYokfMXQ0i727a57v+ssp5NVB5geTdIGmphNJDVd33KsTsMAcdLhVpHjqP8vnU9Syt4ov4OqskqIKT2DjxvLgEWfZI+UNL/w0+QQtRPfBIIFeVl2xt9YOm2He1iYQHbrvQLkjDYwnUnhSkvfRZd4K+oShkUbHLf+sFkDXSXaEvb58AmhBy+7z3ZIrYzCAVL/lKMBQIGiMZPGVK2UIKMmiVBq7KCqkslw4Rlihst31b4w4zzfwlTuR4A0MYp/aIJkMWcfnII3cWY+QPLJ3C5z3RO/GKHg==
+ bh=IO76/tfyCIrbLJ0tSwuSMqcd/CCnMGsl+/J4mvn0Se0=;
+ b=fk/IsQxsepIZpuvM0qFGtGp+6H3PpmTnn8YPWMTzucVva2jBV9mgsj+R2WrTK1ZhpGqdQ6hxHkv3GetWoSo3mCf3ZX/UTmFNEzWUkP2/srLmhXMjmEFhT9V39+MZ6g2+qqwfu+Py2F1jQVGqbTd2ylJg2IJ1ZopzaCa4LCh/QgetUJ4w74nTLPNZVtDUve2uIIdKHyys6UDN4ccNEnBhpo3P+sgZ9xlvm1OrUwRnTxIOmLfn6aKU+/eDQNGXZ+0lkYonAn6+Pi0BaDkK6ZDpweXt/hyRkh24DSIo85oWhFb8gPxVlcqS04PcMN7sbBmWIGRsqU4h26kWofpMs/qvIQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Tf9U9/AiOtrep7i6he5oPWjDpTV0kQSmw0sSQDSAIO8=;
- b=rM0brEINNeGpoRK1xYV++gjlG/dmNFiE168bpqlIOSZf8dtjMxv7kmOssa5s7xXfh04+cuM5tmPPSyRNCM+RRPJvRXKrm/HMg2L13UXPwXcZufOx/0f6eIoQJYFcrQz2EeALmaWkysJOAUNRryf29UgAAPokargIEy5lxJ6CFsI=
-Received: from AM7PR04MB6885.eurprd04.prod.outlook.com (2603:10a6:20b:10d::24)
- by AM7PR04MB7078.eurprd04.prod.outlook.com (2603:10a6:20b:121::12)
+ bh=IO76/tfyCIrbLJ0tSwuSMqcd/CCnMGsl+/J4mvn0Se0=;
+ b=CX/+Tg4r8jrsUwdAN0LjU59QQdxaVGt1TylYs2Er56+APam7NpxDsgTgJQRwnpU8cJgQ8zPz7iWWulb+xuRv1XfIaWI4F43iQRL42XxCqzgeKMsKG2+UbkD6tr78JF7ouMOYHLhAB0x2Ujsqtn0oFD+SR1Leie//VmwpnI1IOUQ=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ by VE1PR04MB6493.eurprd04.prod.outlook.com (2603:10a6:803:11f::11)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Tue, 9 Jun
- 2020 02:29:36 +0000
-Received: from AM7PR04MB6885.eurprd04.prod.outlook.com
- ([fe80::fdc0:9eff:2931:d11b]) by AM7PR04MB6885.eurprd04.prod.outlook.com
- ([fe80::fdc0:9eff:2931:d11b%7]) with mapi id 15.20.3066.023; Tue, 9 Jun 2020
- 02:29:36 +0000
-From: "Y.b. Lu" <yangbo.lu@nxp.com>
-To: Leo Li <leoyang.li@nxp.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-Thread-Topic: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-Thread-Index: AQHWL9lT6NzBjMxkeEyGUwX2yrM6W6jPZh0AgABEbnA=
-Date: Tue, 9 Jun 2020 02:29:35 +0000
-Message-ID: <AM7PR04MB6885E81887C3C17B854BD6E6F8820@AM7PR04MB6885.eurprd04.prod.outlook.com>
-References: <20200522013052.2838-1-yangbo.lu@nxp.com>
- <VE1PR04MB668745C015609F7D875FBFDE8F850@VE1PR04MB6687.eurprd04.prod.outlook.com>
-In-Reply-To: <VE1PR04MB668745C015609F7D875FBFDE8F850@VE1PR04MB6687.eurprd04.prod.outlook.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Tue, 9 Jun
+ 2020 02:45:32 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.023; Tue, 9 Jun 2020
+ 02:45:32 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: RE: [PATCH v9 RESEND 01/13] spi: imx: add dma_sync_sg_for_device
+ after fallback from dma
+Thread-Topic: [PATCH v9 RESEND 01/13] spi: imx: add dma_sync_sg_for_device
+ after fallback from dma
+Thread-Index: AQHWPBYcMy4ZpJEEjkym0JBjSJknZajOy8sAgAABToCAAA6IgIAAsIcw
+Date: Tue, 9 Jun 2020 02:45:32 +0000
+Message-ID: <VE1PR04MB66386CEECCACEC111BA5D69589820@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1591485677-20533-1-git-send-email-yibin.gong@nxp.com>
+ <1591485677-20533-2-git-send-email-yibin.gong@nxp.com>
+ <20200608143458.GH4593@sirena.org.uk>
+ <VE1PR04MB66388F89015F774EE3FFF69D89850@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200608153139.GI4593@sirena.org.uk>
+In-Reply-To: <20200608153139.GI4593@sirena.org.uk>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.73]
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a192bb27-025a-4a31-2085-08d80c1cf3bc
-x-ms-traffictypediagnostic: AM7PR04MB7078:
+x-ms-office365-filtering-correlation-id: cfde2409-ed8f-45c7-a302-08d80c1f2dd6
+x-ms-traffictypediagnostic: VE1PR04MB6493:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM7PR04MB70780F5D99470C29D7A23227F8820@AM7PR04MB7078.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1091;
+x-microsoft-antispam-prvs: <VE1PR04MB6493489B171EF7B7C1CD45A489820@VE1PR04MB6493.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 042957ACD7
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: ltemUHwZzsMoMJCIqPyyJhGRiJSmDPyz7c64a2gUTMz/u7w3HQeAWS7GKBicCXOF9eGDzEZjOrb66qdXsQXy5crOSysoR+3vxssFaDcZ/ErNRqq6bkJfQc+Zewm93M+LVXQAFuRd6Cxmn88DNAY8jh27CCvUbdCEZbUtEOICGhf4XuRZwA80GPaOY9bE9ssrMk4JBCGaWp/jaV2NDMs+yT9w55L8lJ+E1ixJGNVln7aPwwWxTdNBQ5Nf6cjvAYRP1s56PB6QTlzNBN1Yz11XKq8mX6T9fTzfafKxPAH/BxR9ETFYNa8d9f/V5hdk2s5mTWhs2VbcuLMoO5keAXgRJw==
+x-microsoft-antispam-message-info: 75JVlDZTc45ktXLUkkP0wwFoeN4lSzy93Z+eLZwl5NYl33R/h4kWf7rclbPcFfp/Hr7858HRJ+4Dl2l1Xs4f4xZQAOOps5oBtWpzczK+DfnKAbXZa03us6avvsuWbUAoHIo3g/QyqnwkSvURvzW5LJA3domYr3a91ShkiZ92gCGbdAJQsWFeKp1V7oeE48UzGq4hRxYWsn+iiT2ubpTD2WS5EQlrWi838dlLJpFU67FLjizYaewGqqWlkBaLl6o02bGMGpo4R6LU57wCIK2TQ924J5HFvc5VPym3usFSYxHd3AiBJAXiq7y4+EHbbfojrQgTlSVTWFW4i+TqaSl33w==
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM7PR04MB6885.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(376002)(346002)(39860400002)(396003)(136003)(366004)(54906003)(52536014)(2906002)(64756008)(6506007)(66476007)(33656002)(316002)(66946007)(53546011)(76116006)(55016002)(110136005)(9686003)(66556008)(83380400001)(478600001)(8676002)(186003)(4326008)(8936002)(71200400001)(66446008)(7696005)(5660300002)(86362001)(26005);
+ SFS:(4636009)(346002)(39860400002)(376002)(366004)(136003)(396003)(478600001)(186003)(8676002)(8936002)(26005)(7416002)(4326008)(52536014)(83380400001)(86362001)(66446008)(76116006)(5660300002)(66946007)(71200400001)(64756008)(6916009)(316002)(9686003)(2906002)(55016002)(66476007)(7696005)(54906003)(53546011)(6506007)(33656002)(66556008);
  DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: EAAAQ625qt+TL/sXQbyKkVQEZh2Exn9lUbownsKx1IpSU2qyIRHrT9ZIBIZuXqNxE+9uq0HC8b7Md4e6AxiVrxcM5UQBHYNK5AW+qbvRpmy7lY8ROnjDi2ZEhC9Zf05Xu35nfw+GRbXgF8BldZMy1UNAkE7Q8BlAjkGnqZI+W9Xj8/7+PB71pcyudT7yPZp546rhpDiOmf0F3XhHgQScOUB6uco1mjkuC8ersgm8fqLbjr18CR3JneUBDBoebEm5Rltc6Sgd6elBWJTYJ3LxpRES3R4/6gRkWwBuLoSdgllDKWulAm2mq4UrphuGf9zMZSAOjdI8VpXd8QLfcqBY2lRA5xncEfkxifzXcNbgkFSp4ts5fYLpOBiKlKIQ9XNgjLJ5C+7EJC2gkXjYCIR9cmcQ3Oiknzd1vNBWMg7Yha+q1Ohw0JWsCS+zfIsjSa+CWNog6AFSUyLP7Yoya34PUOTTJ1zIxv47Bt1QZdDzb2o=
+x-ms-exchange-antispam-messagedata: hO2DvtM4az7TLY4jkICt08OocKPdr5nMGZPCSVXlSaM7PesCPb+NwOR2bc9EsoqeVFSPntKj2WBp/ZnIjBkmMMHzGvJ0+IEnRlb28vo8h2BZu3t7CL8K36CQxzCUfxDlAKkUvhX09mTXkMR5JDJ6okMjYzT/2lGvbvxIPT5tkwX4atjkOki0GHl090oJglqCTilmudVtatWQj5xbwYDbO7hTm3ikI+jGvO0j75uDrQ6ICU9Gb1zl0o+oDoJskTx6/EgPhR0PCoovlYS8cImv74MG91rdjAhmJksafoquYTKZ02tItFEgvJDYWFC/bB4YAkrMSwOmq1FG5YT+ddX/ksIvKmLtXCyo1IqRjWkJOFyS1GRn44VX2X8fUciWvH+ckkQhykFmqpsYOpKv/uLPoYDe3jb6R9Sw6E4Twx7UhAwb1dRfq8AOX78VQUFVe/5K6aYEZBC6gIVjzwZapboQinHCsQB9bmAer/xvcNH00ew=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a192bb27-025a-4a31-2085-08d80c1cf3bc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jun 2020 02:29:36.0307 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: cfde2409-ed8f-45c7-a302-08d80c1f2dd6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jun 2020 02:45:32.3926 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: dgjn07Y4neYdT1EURjqaJf/WfsHx6ZagtROPFg/WqesNFtAxNiFjfOS1qmzwyALmvChf+D6QDa+Y0dQCOAYzjA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB7078
+X-MS-Exchange-CrossTenant-userprincipalname: M/E+eaQ5iDkZ9IIG3FOTrmm8dynedfNcqg8C3Z4cXg3Wfa7AwhLPZVU+XwG+rUaUF8RVauTKayvsvwM0Z/oEOQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6493
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_192942_564131_E0534DCB 
-X-CRM114-Status: GOOD (  21.81  )
+X-CRM114-CacheID: sfid-20200608_194536_967474_8E8A701D 
+X-CRM114-Status: GOOD (  15.91  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.6.61 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.6.61 listed in wl.mailspike.net]
+ low trust [40.107.6.82 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.82 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -123,84 +127,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Cochran <richardcochran@gmail.com>, Shawn Guo <shawnguo@kernel.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
+ "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leo,
+On 2020/06/08 23:32 Mark Brown <broonie@kernel.org> wrote: 
+> On Mon, Jun 08, 2020 at 03:08:45PM +0000, Robin Gong wrote:
+> 
+> > > > +	if (transfer->rx_sg.sgl) {
+> > > > +		struct device *rx_dev = spi->controller->dma_rx->device->dev;
+> > > > +
+> > > > +		dma_sync_sg_for_device(rx_dev, transfer->rx_sg.sgl,
+> > > > +				       transfer->rx_sg.nents, DMA_TO_DEVICE);
+> > > > +	}
+> > > > +
+> 
+> > > This is confusing - why are we DMA mapping to the device after doing
+> > > a PIO transfer?
+> 
+> > 'transfer->rx_sg.sgl' condition check that's the case fallback PIO
+> > after DMA transfer failed. But the spi core still think the buffer
+> > should be in 'device' while spi driver touch it by PIO(CPU), so sync it back to
+> device to ensure all received data flush to DDR.
+> 
+> So we sync it back to the device so that we can then do another sync to CPU?
+Yes, spi.c will sync to CPU again in spi_unmap_buf() after transfer done finally.
+Otherwise, the fresh received data by CPU in this fallback case may be invalidated
+by spi.c, which led to the data corrupt on Matthias's side.
 
-> -----Original Message-----
-> From: Leo Li <leoyang.li@nxp.com>
-> Sent: Tuesday, June 9, 2020 6:20 AM
-> To: Y.b. Lu <yangbo.lu@nxp.com>; linux-arm-kernel@lists.infradead.org
-> Cc: Y.b. Lu <yangbo.lu@nxp.com>; Shawn Guo <shawnguo@kernel.org>;
-> Richard Cochran <richardcochran@gmail.com>
-> Subject: RE: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-> 
-> 
-> 
-> > -----Original Message-----
-> > From: Yangbo Lu <yangbo.lu@nxp.com>
-> > Sent: Thursday, May 21, 2020 8:31 PM
-> > To: linux-arm-kernel@lists.infradead.org
-> > Cc: Y.b. Lu <yangbo.lu@nxp.com>; Shawn Guo <shawnguo@kernel.org>; Leo
-> > Li <leoyang.li@nxp.com>; Richard Cochran <richardcochran@gmail.com>
-> > Subject: [v3] ARM: dts: ls1021a: output PPS signal on FIPER2
-> >
-> > The timer fixed interval period pulse generator register is used to generate
-> > periodic pulses. The down count register loads the value programmed in the
-> > fixed period interval (FIPER). At every tick of the timer accumulator overflow,
-> > the counter decrements by the value of TMR_CTRL[TCLK_PERIOD]. It
-> > generates a pulse when the down counter value reaches zero. It reloads the
-> > down counter in the cycle following a pulse.
-> >
-> > To use the TMR_FIPER register to generate desired periodic pulses. The
-> > value should programmed is, desired_period - tclk_period
-> >
-> > Current tmr-fiper2 value is to generate 100us periodic pulses.
-> > (But the value should have been 99995, not 99990. The tclk_period is 5.)
-> This
-> > patch is to generate 1 second periodic pulses with value
-> > 999999995 programmed which is more desired by user.
-> >
-> > Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
-> > ---
-> > Changes for v2:
-> > 	- Added more discription in commit message.
-> > Changes for v3:
-> > 	- Mentioned effect of the change in commit message.
-> > ---
-> >  arch/arm/boot/dts/ls1021a.dtsi | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > diff --git a/arch/arm/boot/dts/ls1021a.dtsi b/arch/arm/boot/dts/ls1021a.dtsi
-> > index 760a68c..b2ff27a 100644
-> > --- a/arch/arm/boot/dts/ls1021a.dtsi
-> > +++ b/arch/arm/boot/dts/ls1021a.dtsi
-> > @@ -772,7 +772,7 @@
-> >  			fsl,tmr-prsc    = <2>;
-> >  			fsl,tmr-add     = <0xaaaaaaab>;
-> >  			fsl,tmr-fiper1  = <999999995>;
-> > -			fsl,tmr-fiper2  = <99990>;
-> > +			fsl,tmr-fiper2  = <999999995>;
-> 
-> I noticed that the fiper2 is now the same as fiper1.  Can we just use fiper1 to
-> generate the 1s pulse?  Or both of them have to be used?
+> TBH I'm a bit surprised that there's a requirement that we explicitly undo a
+> sync and that a redundant double sync in the same direction might be an issue
+Considering DMA transfer may be failed(for example, sdma firmware may not be
+updated as ERR009165 depends on), we'd better fallback to PIO to ensure no any
+function break here. Thus should clean fresh rx data from cache into external memory
+as real 'device' received by DMA. Understood a bit confusing here, but that way could
+be avoided by any code changing in spi.c. Or make some code changes in spi.c to cancel
+spi_unmap_buf() in such fallback case?
 
-PPS signal is frequently used by users. And more than 1 channel may be needed.
-I think we can configure two PPS signals on fiper1/fiper2 in default.
-For specific periodic pulse, user can configure the period wanted by themselves.
-Thanks.
-
+> but I've not had a need to care so I'm perfectly prepared to believe there is.
 > 
-> >  			fsl,max-adj     = <499999999>;
-> >  			fsl,extts-fifo;
-> >  		};
-> > --
-> > 2.7.4
-
+> At the very least this needs a comment.
+Okay, I'll add comment here in next.
 
 _______________________________________________
 linux-arm-kernel mailing list
