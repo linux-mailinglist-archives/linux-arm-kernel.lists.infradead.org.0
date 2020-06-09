@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52BA91F43B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:56:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 270D81F43A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:56:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=32OKEePtF4aNj7bqKygCpJ59mwG8FRu+nWFVG5tJZ8o=; b=AJtsULTVsOUrTq
-	mxo1IJ2XxDvH7fOuINLPYEd4ZX/cR4RBhc2ftN7jAmneDqUpViqPWzn+Bzrk0OyXT5ehWU4AMk7dn
-	wqUk77PFz2iIlAjYQkDG/s46EbcnWMf4pzpENn9djh1LUDTeyd7Rj6xM1vRvs6p/PvuT4aMrt2m3/
-	E5Xxjv6d4RHVGmk6n9GXI4dysT6BzUEOY/hgb6VtepI8C7Qq7IkHLhnuZ4zJLCb3OU11svTbnvcO1
-	7dfzIazHVhp4Eum6HSBRVzGVZN/7KJ29PQFXffwvPKY7B/b48gG1x3vJTV5ZRYY37/YHY8Lt88dp+
-	pt0mTKvBe79Fe7EbvjYQ==;
+	List-Owner; bh=BjAFyukRdL2g9k+O48aqhnn7mY8IjIez33NzEmK9oNY=; b=RgFj0HJg2Q2KjL
+	sFSokAVwYoa85VVaXx2UhtI6zMpEgFLVOpr4oA2EE5smOxzToHeJT7D7OYdG8SLQ5q84RbXZIQERu
+	2U7g4mOUL4bavgw2CkG9eb3xcrFzOM3yZFC6NQVlh0F28KPhKQtNQ0cbr9MjZDmm2y9Mx3tYi549n
+	AkdV78qy8ybNfnsvi6GzC2/Tg8CR6thIRN7uqxXiJmSJKO59QUv18NsbgyEYqYSg7SQGa0aW/PDI0
+	dZddrMnKFhAlwgmLRDcWrmoyNSB4Hu+LzXHi+raDwgTAg8rW/AJRDmpuaPNgpVKPt5gntwl1iC3z4
+	bRFQq/t/R4Q759qkpMhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiiUT-0000h8-2i; Tue, 09 Jun 2020 17:56:49 +0000
+	id 1jiiUD-0000PN-Ue; Tue, 09 Jun 2020 17:56:33 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiiOI-0001ig-1F; Tue, 09 Jun 2020 17:50:29 +0000
+ id 1jiiOI-0001kL-TI; Tue, 09 Jun 2020 17:50:29 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id A147BB14A;
- Tue,  9 Jun 2020 17:50:27 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id A1E7FB14B;
+ Tue,  9 Jun 2020 17:50:28 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  p.zabel@pengutronix.de, linux-kernel@vger.kernel.org,
  Mathias Nyman <mathias.nyman@intel.com>
-Subject: [PATCH v2 6/9] Revert "USB: pci-quirks: Add Raspberry Pi 4 quirk"
-Date: Tue,  9 Jun 2020 19:49:59 +0200
-Message-Id: <20200609175003.19793-7-nsaenzjulienne@suse.de>
+Subject: [PATCH v2 7/9] usb: host: pci-quirks: Bypass xHCI quirks for
+ Raspberry Pi 4
+Date: Tue,  9 Jun 2020 19:50:00 +0200
+Message-Id: <20200609175003.19793-8-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200609175003.19793-1-nsaenzjulienne@suse.de>
 References: <20200609175003.19793-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_105026_245533_2145F188 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20200609_105027_382111_2AEAFBC0 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,69 +75,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit c65822fef4adc0ba40c37a47337376ce75f7a7bc.
-
-The initialization of Raspberry Pi 4's USB chip is now handled through a
-reset controller. No need to directly call the firmware routine trough a
-pci quirk.
+The board doesn't need the quirks to be run, and takes care of its own
+initialization trough a reset controller device. So let's bypass them.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
- drivers/firmware/Kconfig      |  3 +--
- drivers/usb/host/pci-quirks.c | 16 ----------------
- 2 files changed, 1 insertion(+), 18 deletions(-)
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index fbd785dd0513..4843e94713a4 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -178,9 +178,8 @@ config ISCSI_IBFT
- 	  Otherwise, say N.
- 
- config RASPBERRYPI_FIRMWARE
--	bool "Raspberry Pi Firmware Driver"
-+	tristate "Raspberry Pi Firmware Driver"
- 	depends on BCM2835_MBOX
--	default USB_PCI
- 	help
- 	  This option enables support for communicating with the firmware on the
- 	  Raspberry Pi.
+---
+
+Changes since v1:
+ - Correct typos
+
+ drivers/usb/host/pci-quirks.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
 diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
-index 0b949acfa258..92150ecdb036 100644
+index 92150ecdb036..294412ebbd0b 100644
 --- a/drivers/usb/host/pci-quirks.c
 +++ b/drivers/usb/host/pci-quirks.c
-@@ -16,9 +16,6 @@
+@@ -16,6 +16,8 @@
  #include <linux/export.h>
  #include <linux/acpi.h>
  #include <linux/dmi.h>
--
--#include <soc/bcm2835/raspberrypi-firmware.h>
--
++#include <linux/of.h>
++
  #include "pci-quirks.h"
  #include "xhci-ext-caps.h"
  
-@@ -1246,24 +1243,11 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
- 
- static void quirk_usb_early_handoff(struct pci_dev *pdev)
- {
--	int ret;
--
- 	/* Skip Netlogic mips SoC's internal PCI USB controller.
- 	 * This device does not need/support EHCI/OHCI handoff
+@@ -1248,6 +1250,16 @@ static void quirk_usb_early_handoff(struct pci_dev *pdev)
  	 */
  	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
  		return;
--
--	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
--		ret = rpi_firmware_init_vl805(pdev);
--		if (ret) {
--			/* Firmware might be outdated, or something failed */
--			dev_warn(&pdev->dev,
--				 "Failed to load VL805's firmware: %d. Will continue to attempt to work, but bad things might happen. You should fix this...\n",
--				 ret);
--		}
--	}
--
++
++	/*
++	 * Bypass the Raspberry Pi 4 controller xHCI controller, things are
++	 * taken care of by the board's co-processor.
++	 */
++	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483 &&
++	    of_device_is_compatible(of_get_parent(pdev->bus->dev.of_node),
++				    "brcm,bcm2711-pcie"))
++		return;
++
  	if (pdev->class != PCI_CLASS_SERIAL_USB_UHCI &&
  			pdev->class != PCI_CLASS_SERIAL_USB_OHCI &&
  			pdev->class != PCI_CLASS_SERIAL_USB_EHCI &&
