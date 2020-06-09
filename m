@@ -2,52 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05EEF1F3D99
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:07:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A21BA1F3DAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 16:12:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NONq1nFXR+tG01E241bRY7FwsHLmRitNqSNb8jubsIo=; b=LYPNKKTSEElFaM
-	AWJfnI3ZZv5bvRu8DMVEWEYypsqRP6+C5bMMxk9kZYGw2oMvbSQNtLK47nd1XKZlQIUZcu9R9m9k3
-	vOVDgpvE5e//XG5nsychcJ54lULm1r6BnJuR8Rzqob0fjy0j+DGYSwKCVMtzj5rpGuW+M5tcpHd9v
-	zgupxAV3fOGDoh7Zfrjg+JpA10lWDV603OiKKLtC0gQsxatE+6VT5YFvr/V4EaWB0I4jfaP/S+u/E
-	yLPxfA5XVaR6GORm+Q/0h868+f7wBIxDxPdmjsjD8BPH1ggdZr+sl4EYphVZI+Rssc4nCBHnWtbEl
-	nZ9bmMhlzI0+Kl+jCA3w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VTOxdxf7lV0WqJNjkwV5XDby+weI7sEfCWSLiiQvQcU=; b=YQYhv/MXBjRdFE
+	7B7XmlYQP6ZSKd7rEAqRtNismk4i6TtmJ8WsGQHZdONq7u4RhltKfBGpkh+LLwJI/mjtX/4KakCzW
+	/xMv/1UDQdCseV/wa8QokIEbR2SqJyXRg1Q0H/fgRZbl5DQtoUPpaBPhOypAOSv61R1utXXwRO/4L
+	6hRom3jGmjUjbO0DBXcw9EgRNWStr0XSG68bSuDWUuC7sPxIV0P2cuEK7Aweo6rgMaAebtNdXj1fK
+	SMM0chzVnM/PD+b2sg30wRIFyhNw5e0TOHHwk3PbiaciXIIwD9rKmKgs07CkZhaJKRB97xcpjQb7U
+	XsfZj3OoodtbDKGcRl/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jieun-00024P-0e; Tue, 09 Jun 2020 14:07:45 +0000
+	id 1jieyx-0006lW-1v; Tue, 09 Jun 2020 14:12:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jieud-00022z-IK
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:07:37 +0000
+ id 1jieyo-0006g7-KH
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 14:11:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E6E31FB;
- Tue,  9 Jun 2020 07:07:31 -0700 (PDT)
-Received: from [10.57.49.155] (unknown [10.57.49.155])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 83BD23F66F;
- Tue,  9 Jun 2020 07:07:28 -0700 (PDT)
-Subject: Re: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
- support reserved memory
-To: dillon.minfei@gmail.com, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- alexandre.torgue@st.com, linux@armlinux.org.uk,
- kstewart@linuxfoundation.org, allison@lohutok.net, info@metux.net,
- tglx@linutronix.de
-References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
- <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
-Date: Tue, 9 Jun 2020 15:08:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FACE1FB;
+ Tue,  9 Jun 2020 07:11:51 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 41CEE3F66F;
+ Tue,  9 Jun 2020 07:11:50 -0700 (PDT)
+Date: Tue, 9 Jun 2020 15:11:42 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 4/6] prctl.2: Add SVE prctls (arm64)
+Message-ID: <20200609140948.GA25945@arm.com>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-5-git-send-email-Dave.Martin@arm.com>
+ <20200609095734.GA25362@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200609095734.GA25362@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_070735_695598_0B7C1982 
-X-CRM114-Status: GOOD (  22.69  )
+X-CRM114-CacheID: sfid-20200609_071154_757237_0439A063 
+X-CRM114-Status: GOOD (  34.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,111 +64,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Michael Kerrisk <mtk.manpages@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/8/20 9:30 AM, dillon.minfei@gmail.com wrote:
-> From: dillon min <dillon.minfei@gmail.com>
+On Tue, Jun 09, 2020 at 10:57:35AM +0100, Will Deacon wrote:
+> Hi Dave,
 > 
-> Currently, we use dma direct to request coherent memory for driver on armv7m
-> platform if 'cacheid' is zero, but dma_direct_can_mmap() is return false,
-> dma_direct_mmap() return -ENXIO for CONFIG_MMU undefined platform.
+> On Wed, May 27, 2020 at 10:17:36PM +0100, Dave Martin wrote:
+> > Add documentation for the the PR_SVE_SET_VL and PR_SVE_GET_VL
+> > prctls added in Linux 4.15 for arm64.
 > 
-> so we have to back to use 'arm_nommu_dma_ops', add use_reserved_mem() to check
-> if device support global or device corherent memory. if yes, then call
-> set_dma_ops()
+> Looks really good to me, thanks. Just a few comments inline.
 > 
-> Signed-off-by: dillon min <dillon.minfei@gmail.com>
-> ---
->  arch/arm/mm/dma-mapping-nommu.c | 28 +++++++++++++++++++++++++++-
->  1 file changed, 27 insertions(+), 1 deletion(-)
+> > diff --git a/man2/prctl.2 b/man2/prctl.2
+> > index cab9915..91df7c8 100644
+> > --- a/man2/prctl.2
+> > +++ b/man2/prctl.2
+> > @@ -1291,6 +1291,148 @@ call failing with the error
+> >  .BR ENXIO .
+> >  For further details, see the kernel source file
+> >  .IR Documentation/admin\-guide/kernel\-parameters.txt .
+> > +.\" prctl PR_SVE_SET_VL
+> > +.\" commit 2d2123bc7c7f843aa9db87720de159a049839862
+> > +.\" linux-5.6/Documentation/arm64/sve.rst
+> > +.TP
+> > +.BR PR_SVE_SET_VL " (since Linux 4.15, only on arm64)"
+> > +Configure the thread's SVE vector length,
+> > +as specified by
+> > +.IR "(int) arg2" .
+> > +Arguments
+> > +.IR arg3 ", " arg4 " and " arg5
+> > +are ignored.
+> > +.IP
+> > +The bits of
+> > +.I arg2
+> > +corresponding to
+> > +.B PR_SVE_VL_LEN_MASK
+> > +must be set to the desired vector length in bytes.
+> > +This is interpreted as an upper bound:
+> > +the kernel will select the greatest available vector length
+> > +that does not exceed the value specified.
+> > +In particular, specifying
+> > +.B SVE_VL_MAX
+> > +(defined in
+> > +.I <asm/sigcontext.h>)
+> > +for the
+> > +.B PR_SVE_VL_LEN_MASK
+> > +bits requests the maximum supported vector length.
+> > +.IP
+> > +In addition,
+> > +.I arg2
+> > +must be set to one of the following combinations of flags:
 > 
-> diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
-> index 287ef898a55e..e1c213fec152 100644
-> --- a/arch/arm/mm/dma-mapping-nommu.c
-> +++ b/arch/arm/mm/dma-mapping-nommu.c
-> @@ -14,6 +14,7 @@
->  #include <asm/cacheflush.h>
->  #include <asm/outercache.h>
->  #include <asm/cp15.h>
-> +#include <linux/of.h>
->  
->  #include "dma.h"
->  
-> @@ -188,6 +189,31 @@ const struct dma_map_ops arm_nommu_dma_ops = {
->  };
->  EXPORT_SYMBOL(arm_nommu_dma_ops);
->  
-> +static bool use_reserved_mem(struct device *dev)
-> +{
-> +	struct device_node *np;
-> +
-> +	np = of_find_node_by_path("/reserved-memory/linux,dma");
-> +
-> +	if (np &&
-> +		of_device_is_compatible(np, "shared-dma-pool") &&
-> +		of_property_read_bool(np, "no-map") &&
-> +		of_property_read_bool(np, "linux,dma-default")) {
-> +		/* has global corherent mem support */
-> +		of_node_put(np);
-> +		return true;
-> +	}
-> +
-> +	np = of_parse_phandle(dev->of_node, "memory-region", 0);
-> +	if (np) {
-> +		/* has dev corherent mem support */
-> +		of_node_put(np);
-> +		return true;
-> +	}
-> +
-> +	return false;
-> +}
-> +
->  void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
->  			const struct iommu_ops *iommu, bool coherent)
->  {
-> @@ -206,6 +232,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
->  		dev->archdata.dma_coherent = (get_cr() & CR_M) ? coherent : true;
->  	}
->  
-> -	if (!dev->archdata.dma_coherent)
-> +	if (!dev->archdata.dma_coherent || use_reserved_mem(dev))
->  		set_dma_ops(dev, &arm_nommu_dma_ops);
->  }
+> How about saying:
 > 
+>   In addition, the other bits of arg2 must be set according to the following
+>   combinations of flags:
+> 
+> Otherwise I find it a bit fiddly to read, because it's valid to have
+> flags of 0 and a non-zero length.
 
-Sorry I have to NAK this hack :(
+0 is listed, so I hoped that was clear enough.
 
-Digging git history reveled 79964a1c2972 ("ARM: 8633/1: nommu: allow mmap when !CONFIG_MMU")
-which make me wonder if diff below does the trick for you
+Maybe just write "must be one of the following values:"?
 
-diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-index 8f4bbda..8623b9e 100644
---- a/kernel/dma/direct.c
-+++ b/kernel/dma/direct.c
-@@ -456,14 +456,14 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
- #else /* CONFIG_MMU */
- bool dma_direct_can_mmap(struct device *dev)
- {
--	return false;
-+	return true;
- }
- 
- int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
- 		void *cpu_addr, dma_addr_t dma_addr, size_t size,
- 		unsigned long attrs)
- {
--	return -ENXIO;
-+	return vm_iomap_memory(vma, vma->vm_start, (vma->vm_end - vma->vm_start));;
- }
- #endif /* CONFIG_MMU */
+0 is a value, but I can see why you might be uneasy about 0 being
+described as a "combination of flags".
+
+> > +.RS
+> > +.TP
+> > +.B 0
+> > +Perform the change immediately.
+> > +At the next
+> > +.BR execve (2)
+> > +in the thread,
+> > +the vector length will be reset to the value configured in
+> > +.IR /proc/sys/abi/sve_default_vector_length .
+> 
+> (implementation note: does this mean that 'sve_default_vl' should be
+>  an atomic_t, as it can be accessed concurrently? We probably need
+>  {READ,WRITE}_ONCE() at the very least, as I'm not seeing any locks
+>  that help us here...)
+
+Is this purely theoretical?  Can you point to what could go wrong?
+
+While I doubt I thought about this very hard and I agree that you're
+right in principle, I think there are probably non-atomic sysctls and
+debugs files etc. all over the place.
+
+I didn't want to clutter the code unnecessarily.
+
+> > +.B PR_SVE_VL_INHERIT
+> > +Perform the change immediately.
+> > +Subsequent
+> > +.BR execve (2)
+> > +calls will preserve the new vector length.
+> > +.TP
+> > +.B PR_SVE_SET_VL_ONEXEC
+> > +Defer the change, so that it is performed at the next
+> > +.BR execve (2)
+> > +in the thread.
+> > +Further
+> > +.BR execve (2)
+> > +calls will reset the vector length to the value configured in
+> > +.IR /proc/sys/abi/sve_default_vector_length .
+> > +.TP
+> > +.B "PR_SVE_SET_VL_ONEXEC | PR_SVE_VL_INHERIT"
+> > +Defer the change, so that it is performed at the next
+> > +.BR execve (2)
+> > +in the thread.
+> > +Further
+> > +.BR execve (2)
+> > +calls will preserve the new vector length.
+> > +.RE
+> > +.IP
+> > +In all cases,
+> > +any previously pending deferred change is canceled.
+> > +.IP
+> > +The call fails with error
+> > +.B EINVAL
+> > +if SVE is not supported on the platform, if
+> > +.I arg2
+> > +is unrecognized or invalid, or the value in the bits of
+> > +.I arg2
+> > +corresponding to
+> > +.B PR_SVE_VL_LEN_MASK
+> > +is outside the range
+> > +.BR SVE_VL_MIN .. SVE_VL_MAX
+> > +or is not a multiple of 16.
+> > +.IP
+> > +On success,
+> > +a nonnegative value is returned that describes the
+> > +.I selected
+> > +configuration,
+> 
+> If I'm reading the kernel code correctly, this is slightly weird, as
+> the returned value may contain the PR_SVE_VL_INHERIT flag but it will
+> never contain the PR_SVE_SET_VL_ONEXEC flag. Is that right?
+
+Yes, which is an oddity.
+
+I suppose we could fake that up actually by returning that flag if
+sve_vl and sve_vl_onexec are different, but we don't currently do this.
+
+> If so, maybe just say something like:
+> 
+>   On success, a nonnegative value is returned that describes the selected
+>   configuration in the same way as PR_SVE_GET_VL.
+
+How does that help?  PR_SVE_GET_VL doesn't fully clarify the oddity you
+call out anyway.
+
+Really, I preferred not to have people relying on this one way or the
+other.  The only sensible reason for an _ONEXEC is because you've
+committed to calling execve().  On such a path, queryng the vector
+length isn't likely to be useful.
+
+Maybe I was optimistic.
+
+> > +which may differ from the current configuration if
+> > +.B PR_SVE_SET_VL_ONEXEC
+> > +was specified.
+> > +The value is encoded in the same way as the return value of
+> > +.BR PR_SVE_GET_VL .
+> > +.IP
+> > +The configuration (including any pending deferred change)
+> > +is inherited across
+> > +.BR fork (2)
+> > +and
+> > +.BR clone (2).
+> > +.IP
+> > +.B Warning:
+> > +Because the compiler or run-time environment
+> > +may be using SVE, using this call without the
+> > +.B PR_SVE_SET_VL_ONEXEC
+> > +flag may crash the calling process.
+> > +The conditions for using it safely are complex and system-dependent.
+> > +Don't use it unless you really know what you are doing.
+> > +.IP
+> > +For more information, see the kernel source file
+> > +.I Documentation/arm64/sve.rst
+> > +.\"commit b693d0b372afb39432e1c49ad7b3454855bc6bed
+> > +(or
+> > +.I Documentation/arm64/sve.txt
+> > +before Linux 5.3).
+> 
+> I think I'd drop the kernel reference here, as it feels like we're saying
+> "only do this if you know what you're doing" on one hand, but then "if you
+> don't know what you're doing, see this other documentation" on the other.
+
+Well, the docmuentation doesn't answer those questions either.
+
+I could just swap the warning and the cross-reference, so that the
+cross-reference doesn't seem to follow on from "knowing what you're
+doing"?
 
 Cheers
-Vladimir
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
