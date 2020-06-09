@@ -2,56 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC9C91F3F1C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 17:20:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A3DD1F3F29
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 17:23:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PguBIZlXgHpOq48OFWpmvFLufISwUe1sJCiwRfcHUNA=; b=QnTQcjISW23mvV
-	s7rcO2cuHrakqLywtTgS42GnBcSWWXO1vvJKnIF3E51SgyFiy1ytntMc+3KnVCZE/kZHOzqDcYvSm
-	DWap+ar/OzsQ1dAwh5GeIj/fYioGfE4ho2PmjX02PiQcKu2+e1TiI/8utd8OLrZx7teNDabLF0Nyw
-	RmeXfOdQFXyGyt3PVD5irvHJR4l38f8QLBTJqWjsNRPCmbnPCL+z/Ipr/Bm54pBHoQn42+60C3MQZ
-	ZQHFrjZM/bekZWyej4Qs9x+wBsjSkoSx7zEOFf6GC5AslRodzac7iglI3vHPVb6jeankAztQtin8o
-	5MfhHSiuMBFrYEQLfDfw==;
+	List-Owner; bh=ogbQb1s/nmdEsPk/vNnByZQdooLworNW4h7YQ/QJ9b8=; b=ZLNcXoOwhgaP12
+	wtPzr/dnZQSCVutiIcQ9yyJxXpx/tmk5QPWcCqYskuk1D7pc0luu9U3u7rrAxTPyvrcfqyNnRR9RN
+	tNBVCqLh+a5ncFfdl8tvxKxZHUqkwaxWDiIXvKNIld9N99C7p5Pb+BF4iPqbJa2C+xU1U0LNchwGj
+	PZ1XcavPUi0oXAylByxp+XZyTQWxUXer8RMkLYT1lBsEUAf7jE/BUaO33rCoDyzM2pr5S12sTI0aE
+	Q3Uwxfkq1r8V71MOH+JDl7Eiqk0wBrVgFpad4f/17nTIa21p/f4fgU9iFQ28X+jv2ajuOADdmHu9g
+	OVQ5217RjtylJkp+xzYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jig3E-0004ge-Mn; Tue, 09 Jun 2020 15:20:32 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jig2X-0003jd-06
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 15:19:50 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 4AAD38088;
- Tue,  9 Jun 2020 15:20:37 +0000 (UTC)
-Date: Tue, 9 Jun 2020 08:19:43 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: Tomi Valkeinen <tomi.valkeinen@ti.com>
-Subject: Re: [PATCH 1/5] drm/omap: Fix suspend resume regression after
- platform data removal
-Message-ID: <20200609151943.GL37466@atomide.com>
-References: <20200531193941.13179-1-tony@atomide.com>
- <20200531193941.13179-2-tony@atomide.com>
- <16ba1808-5c7f-573d-8dd0-c80cac2f476e@ti.com>
- <20200603140639.GG37466@atomide.com>
- <47e286dd-f87a-4440-5bde-1f7b53e8b672@ti.com>
+	id 1jig5r-00071P-K6; Tue, 09 Jun 2020 15:23:15 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jig5f-000714-8l
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 15:23:04 +0000
+Received: by mail-io1-xd43.google.com with SMTP id r77so10203758ior.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jun 2020 08:23:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Tm2L6wHDp3vnilQA0CPW6PPlVERzEGHmJnGxVxjkT7E=;
+ b=T+Zzc+a927fTmCQYyxa3HRIQOfzwB1rlff67AJQPfhedtRBsi15M7hvfbqDBXLIz2Q
+ 4KRSTB9cKCGWi5zszA165U7802EQ1b74v54j3AsREkXTLXlxzSrced4LqVHdtgrT1BQ9
+ icKt9YViOgQcAKVNZjPcxK88gttpktYPeUNKqPo0gT68ATxzhYHzokNHc6pQNtrlY3IB
+ KLlyZtOGJ7375RmWBKPKHCsRXSeqb8bmjuZkdeSsCP5k1BIfCRczdUBF+5569MGYmO+T
+ 9qN0v9U3DtCz4Hj+aIgzbWRsAMWfOM1PmMsRZr4OhT+ygqb8U0vc40a1PdHjSqLm2//i
+ 88sw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Tm2L6wHDp3vnilQA0CPW6PPlVERzEGHmJnGxVxjkT7E=;
+ b=P8y9DBGXLgTu/09QEGbidhN+hcZEIJNShQ0+Tj/GI1PXMEXXQ+LFmNIcI3L0WlTf6q
+ vACpYYEvBAGc8uJm9HD9TLklXlo0GzgMioaCj8Fk0DFv9gWlWiMUavpa4QsDlxM36vnz
+ GYnMIPZCVUdJrtsCnLevHMHXiw0uSxxfm9C03mmRFT+FF6cxgZEolTbyWbrv+GwLI3DV
+ 0WVfQwXHP0c1ZqcYU4V7vyRx6LwI3GAleMRQIm3k9bkg/TEd8v30LWw6Pw5ugVupw+Ob
+ E0NAOsRe5OgVJMpZH49qrYF3iyZSnapAjSv3ckNVHI5NoW7H0gwI0Qx/kI9qt1xDjGoZ
+ VesA==
+X-Gm-Message-State: AOAM5316suZB22NRkrBXltkGaIcX03fvC40L5yAV1j7tnfHvKW0rW6m+
+ NmqBzV0Z4fURcuMfVHt0nkuiHBB2k4jBV1cL7uU=
+X-Google-Smtp-Source: ABdhPJzVZNaa7SnqUFgCpq6WJTUKH4jHLaYl37zbFlWb1E6BwdaMRDZEkUg9vCMO67A149eiG/aXayH1ph7RpIU/MNM=
+X-Received: by 2002:a05:6638:d05:: with SMTP id
+ q5mr26413027jaj.2.1591716182166; 
+ Tue, 09 Jun 2020 08:23:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <47e286dd-f87a-4440-5bde-1f7b53e8b672@ti.com>
+References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
+ <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
+ <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
+In-Reply-To: <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
+From: dillon min <dillon.minfei@gmail.com>
+Date: Tue, 9 Jun 2020 23:22:24 +0800
+Message-ID: <CAL9mu0+__0Z3R3TcSrj9-kPxsyQHKS9WqK1u58P0dEZ+Jd-wbQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
+ support reserved memory
+To: Vladimir Murzin <vladimir.murzin@arm.com>, hch@lst.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_081949_079622_AACBCE00 
-X-CRM114-Status: GOOD (  28.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200609_082303_378617_793EDF9F 
+X-CRM114-Status: GOOD (  24.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dillon.minfei[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,109 +96,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, "Andrew F . Davis" <afd@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Keerthy <j-keerthy@ti.com>, Suman Anna <s-anna@ti.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux@armlinux.org.uk,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, tglx@linutronix.de,
+ info@metux.net, linux-stm32@st-md-mailman.stormreply.com, allison@lohutok.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Tomi Valkeinen <tomi.valkeinen@ti.com> [200609 07:05]:
-> On 03/06/2020 17:06, Tony Lindgren wrote:
-> > * Tomi Valkeinen <tomi.valkeinen@ti.com> [200603 12:34]:
-> > > Hi Tony,
-> > > 
-> > > On 31/05/2020 22:39, Tony Lindgren wrote:
-> > > > When booting without legacy platform data, we no longer have omap_device
-> > > > calling PM runtime suspend for us on suspend. This causes the driver
-> > > > context not be saved as we have no suspend and resume functions defined.
-> > > > 
-> > > > Let's fix the issue by switching over to use UNIVERSAL_DEV_PM_OPS as it
-> > > > will call the existing PM runtime suspend functions on suspend.
-> > > 
-> > > I don't think we can use UNIVERSAL_DEV_PM_OPS, as we can't disable DSS
-> > > modules in any order, but things have to be shut down in orderly manner.
-> > 
-> > OK. I presume you talk about the order of dss child devices here.
-> 
-> Yes, but not only that.
-> 
-> E.g. the dispc driver hasn't been designed to be suspended while active. The
-> only way to properly suspend the dispc HW is to first disable the outputs,
-> wait until they've finished with their current frame, and only then can
-> things be shut down.
+Hi Vladimir,
 
-OK
+Thanks for reviewing.
 
-> The suspend machinery doesn't handle all that (and it couldn't anyway, due
-> to the dependencies to other DSS devices in the pipeline).
+Hi Christoph Hellwig,
 
-OK I replied to your patch with some untested comments that might simplify
-it potentially.
+I just want to know if kernel dma mapping/direct is focused on
+platforms with MMU.
+leave arch code to handle dma coherent memory management themself for
+no-MMU platform.
 
-> > > omapdrm hasn't relied on omap_device calling runtime suspend for us (I
-> > > didn't know it does that). We have system suspend hooks in omap_drv.c:
-> > 
-> > We had omap_device sort of brute forcing things to idle on suspend
-> > which only really works for interconnect target modules with one
-> > device in them.
-> > 
-> > > SIMPLE_DEV_PM_OPS(omapdrm_pm_ops, omap_drm_suspend, omap_drm_resume)
-> > > 
-> > > omap_drm_suspend() is supposed to turn off the displays, which then cause
-> > > dispc_runtime_put (and other runtime_puts) to be called, which result in
-> > > dispc_runtime_suspend (and other runtime PM suspends).
-> > 
-> > OK thanks for explaining, I missed that part.
-> > 
-> > > So... For some reason that's no longer happening? I need to try to find a
-> > > board with which suspend/resume works (without DSS)...
-> > 
-> > Yes it seems something has changed. When diffing the dmesg debug output
-> > on suspend and resume, context save and restore functions are no longer
-> > called as the PM runtime suspend and resume functions are no longer
-> > called on suspend and resume.
-> 
-> I now tested with AM4 SK, and I still can't get system suspend/resume work
-> (without DSS). I have no clue about how to fix that. But if I use pm_test to
-> prevent total suspend, I can reproduce this (or at least looks the same).
+so, you just return error code in kernel/dma/mapping.c,direct.c
+without CONFIG_MMU defined ?
+which means dma-direct mapping doesn't support !CONFIG_MMU is not a
+bug, but design as it's.
+or, just return error code currently, will add dma direct mapping
+support for !CONFIG_MMU in the
+future?
 
-OK
+As Vladimir Murzin's suggestion has changes in kernel code, I need
+your input to get
+the design goal about dma-direct mapping, thanks.
 
-> And now that I look at this, I have a recollection that I've seen this
-> before. What happens is that the system suspend hook (omap_drm_suspend) gets
-> called fine, and it turns off the displays, which leads to
-> dispc_runtime_puts etc. All goes fine.
-> 
-> But there's an extra runtime PM reference (dev.power.usage_count) that seems
-> to come out of nowhere. So when omap_drm_suspend is finished, there's still
-> usage_count of 1, and dispc never suspends fully.
+On Tue, Jun 9, 2020 at 10:07 PM Vladimir Murzin <vladimir.murzin@arm.com> wrote:
+>
+> On 6/8/20 9:30 AM, dillon.minfei@gmail.com wrote:
+> > From: dillon min <dillon.minfei@gmail.com>
+> >
+> > Currently, we use dma direct to request coherent memory for driver on armv7m
+> > platform if 'cacheid' is zero, but dma_direct_can_mmap() is return false,
+> > dma_direct_mmap() return -ENXIO for CONFIG_MMU undefined platform.
+> >
+> > so we have to back to use 'arm_nommu_dma_ops', add use_reserved_mem() to check
+> > if device support global or device corherent memory. if yes, then call
+> > set_dma_ops()
+> >
+> > Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> > ---
+> >  arch/arm/mm/dma-mapping-nommu.c | 28 +++++++++++++++++++++++++++-
+> >  1 file changed, 27 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
+> > index 287ef898a55e..e1c213fec152 100644
+> > --- a/arch/arm/mm/dma-mapping-nommu.c
+> > +++ b/arch/arm/mm/dma-mapping-nommu.c
+> > @@ -14,6 +14,7 @@
+> >  #include <asm/cacheflush.h>
+> >  #include <asm/outercache.h>
+> >  #include <asm/cp15.h>
+> > +#include <linux/of.h>
+> >
+> >  #include "dma.h"
+> >
+> > @@ -188,6 +189,31 @@ const struct dma_map_ops arm_nommu_dma_ops = {
+> >  };
+> >  EXPORT_SYMBOL(arm_nommu_dma_ops);
+> >
+> > +static bool use_reserved_mem(struct device *dev)
+> > +{
+> > +     struct device_node *np;
+> > +
+> > +     np = of_find_node_by_path("/reserved-memory/linux,dma");
+> > +
+> > +     if (np &&
+> > +             of_device_is_compatible(np, "shared-dma-pool") &&
+> > +             of_property_read_bool(np, "no-map") &&
+> > +             of_property_read_bool(np, "linux,dma-default")) {
+> > +             /* has global corherent mem support */
+> > +             of_node_put(np);
+> > +             return true;
+> > +     }
+> > +
+> > +     np = of_parse_phandle(dev->of_node, "memory-region", 0);
+> > +     if (np) {
+> > +             /* has dev corherent mem support */
+> > +             of_node_put(np);
+> > +             return true;
+> > +     }
+> > +
+> > +     return false;
+> > +}
+> > +
+> >  void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+> >                       const struct iommu_ops *iommu, bool coherent)
+> >  {
+> > @@ -206,6 +232,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+> >               dev->archdata.dma_coherent = (get_cr() & CR_M) ? coherent : true;
+> >       }
+> >
+> > -     if (!dev->archdata.dma_coherent)
+> > +     if (!dev->archdata.dma_coherent || use_reserved_mem(dev))
+> >               set_dma_ops(dev, &arm_nommu_dma_ops);
+> >  }
+> >
+>
+> Sorry I have to NAK this hack :(
+>
+> Digging git history reveled 79964a1c2972 ("ARM: 8633/1: nommu: allow mmap when !CONFIG_MMU")
+> which make me wonder if diff below does the trick for you
+>
+> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+> index 8f4bbda..8623b9e 100644
+> --- a/kernel/dma/direct.c
+> +++ b/kernel/dma/direct.c
+> @@ -456,14 +456,14 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+>  #else /* CONFIG_MMU */
+>  bool dma_direct_can_mmap(struct device *dev)
+>  {
+> -       return false;
+> +       return true;
+>  }
+>
+>  int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+>                 void *cpu_addr, dma_addr_t dma_addr, size_t size,
+>                 unsigned long attrs)
+>  {
+> -       return -ENXIO;
+> +       return vm_iomap_memory(vma, vma->vm_start, (vma->vm_end - vma->vm_start));;
+>  }
+>  #endif /* CONFIG_MMU */
+Yes, this is a quite nice way to support !CONFIG_MMU without cache on
+platforms. I will try your suggestion.
+thanks
 
-Hmm no idea about that. My guess is that there might be an issue that was
-masked earlier with omap_device calling the child runtime_suspend.
-
-Currently I'm only able to rmmod -f omapdrm, not sure if these issues might
-be related.
-
-As we now have the interconnect target module as the parent so usage counts
-might be different but should balance out the same way as earlier.
-
-> I think the PM framework does this when starting system suspend process.
-> Maybe this was also happening earlier, but omap_device used to do the final
-> suspend (so omapdrm depended on that functionality, after all...).
-
-Yes the different handling seems to be the main part of the issue.
-
-Regards,
-
-Tony
+>
+> Cheers
+> Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
