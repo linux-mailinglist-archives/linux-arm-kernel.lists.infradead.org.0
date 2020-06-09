@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AE211F399F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:25:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F28F51F39A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 13:25:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4JSCFecnDMJhDlmxJf8eKnVjBRar1nPBfbqohvOEPnE=; b=MmstRURJgs0+Ck
-	kj8X4Lyi7JXuuZRoSUbwYbDVSxodjH8WkpaXhHlwWAYg5nOhmJrBbhfEi0WdK04RvU6kjf+hlmMPY
-	J4MJjvnvF7rppDQqYr+SyxBf/vtObIFBzrYTsiiitWDeC0rw46Fb4WIQpaBplvP03NW20CpEXp0ed
-	xprriNxNYsIgIkFdJbgreUmC/Wz2zybQGb8nreQVLN6QditXPNkbblzibkOUd+1boE33JXHAo2rpn
-	mZjZezOJE3fNL01mUlf9tUvMMrdM73InGLBojCnZxGRecMkSQpW8XiaOD7XFSYlYA9fqooGzcUO/w
-	ZTyufzFjAFaTgsgHW9mg==;
+	List-Owner; bh=pY8IKSksnXFn5V7UtB32azWW3A6X8r4AiAqYceq3+Ko=; b=pILLirJ35GzR9I
+	lF1OTfjMHASr9LfAUDLZXxrOlJN3y6NaLAmkyV7Ul2U4TT4oq7/1haxWHMf+z3tSl2G2PWz3Ei6Yf
+	bHRvoiMa2gMW0vXyzKRm9SdI7KhPiEPu7MhRtQgvKwqw85j1JJq0PRQkOKHJnVl5FX7Ab9WwoFiI+
+	bqW8txLcSkcMs7+L76xJpTMzdmz0ZP0p4cl7noIduE5WYAmi4r/bG+wiPhxwOWsMMm9lgW1LjHbMz
+	no6TpIjEOW7wN4pZnuAmaBydCwhAjwFWNzQjf4r6rwPJguYl4FKHmFIY+w+tTAE9onc5EYxKwSn3H
+	X4DdeYXwzzQ7LMwFf13Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jicNs-00067C-6E; Tue, 09 Jun 2020 11:25:36 +0000
-Received: from mail-eopbgr140042.outbound.protection.outlook.com
- ([40.107.14.42] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1jicOA-0006Sf-2Y; Tue, 09 Jun 2020 11:25:54 +0000
+Received: from mail-eopbgr60062.outbound.protection.outlook.com ([40.107.6.62]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jicMD-0002QG-RZ
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 11:23:55 +0000
+ id 1jicMH-0002U5-8r
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 11:23:59 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=U475S3149HZoTnD/YRuP4lNMn3+FZLBMtJ3AFTAjycGWOpf0uHnEScs+1Hx2uxqOF73hVSE91zCTcwh5JSUxaqFFtklqOaDlVmJ5+enMpLd7uG0HTV9OEf8CMaxellUKB6nyzhG0uKv7Bp6NE/MJOHi3A8B7aHBc7weCU2POhuIso4O8/8ISvQMpc/DbeHn0727y3F3uwL9Ry/UrGUlORYXfkr5NRVUQ3MXw7wJA9UfnImAxj4xTfCKCdgT4ORko2Na/J44Bi2bgM1g6pWGJVL3Gn8vFBRVTUqdHK6jHCjITezihN10hdBhwjkify3vvIGkRGbpUAKMa6sLewHkjdA==
+ b=YjmSV/Lya2LnxEvvsfEPOkAHGcJgey4Iwj2Vcr5nvOHEjqWcDxZm5OWVpY0q+EzR60ZEcGzjj1yI3Ktohw47XNCXpm3dpzVA0PVBSECmJQ96plEmOV/wkD+QcSrCHVL5f3trABwKc/UcBk3NSVkyi13KtGDMUniRCfKTDkwIVPxUqFbqdPrYszxdHD5FObNoURFmsi2Gh9uxak8dJZWYgGSlCO3+Int8ik0Qqg4KjM6nkChtkQ0WVf6L4Vp0z0izlZyzG6q1QAXwvxihtqdZQuknFpWvdvyB4QFUQGtK0yjPZ8gfveIiYKqOO/BrB1bX6fQRayUDKu092+M1CTxt6g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ur3qjH9e9P3rT8fJg5DFtU/aRKtEyuKrmcab7NQHpa0=;
- b=XHJ4QOp8l0eIqs75TbcqezcDh+Zfu8BJ+S8lFvUzqXaDwSQYQmyUeQ/U1jz/S5t9SRPveO7Os9ku9Fau5NZXyQMk0iPI9L+/999bxtXtTgx1/xyndTyeQrgkLtTeQ2stAnty2h9aYUk3NrJgv7hqyIfTVtqDrJBM53eBjJ1sTYBHbx+B1Tt8T96VSxmfCGvFyCCkkA2VvSESmbDjRXNy771z0EYZJO6LuVn6Kg+shzfK4apWuSJJsIDaOOEz5Xa1GCn1OLu3IT+BeGKG1CPjxK91G+oHQzqiQ1g4bC56y/R4AKoK+8m7CFVxJib2+UtcL9Cg1YzES9X0ZIf1OKYqTg==
+ bh=qb2iSjwpZHYsE3KCI9+2iTK60OIDs5FkpAvv2TiiRBk=;
+ b=EMlik7tibEkS/KTskvIND0kSb6QxHTeCA4Wy3hiWJMhFb40sEw+DJM91nfoPHHVR2FRm/cL2UihjZrlwAJxjbq7ATkgM5otBlvGa0KDIvKt94dUbWmGzCLEc9KyCnBugSYjmwJjoSIVnafXNOzXsIqKo08/qb+JLaJvS4ro1jXCbM6tz27UHLBdwFEzqU2Sikwt6pdCRdqKgV3faDRVjkOVK/RnhU/3l/nXHqayLvBBMZRrMA4PdDGZH0wSKHsE+3pR3/FG+3Q8qkVcCaTOIsivCFm2l9PgcaPho8zlxIkjTcI1DSxiIowvzNluUa4xBf6Z5pFOkxG+RhYFTndNKVg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ur3qjH9e9P3rT8fJg5DFtU/aRKtEyuKrmcab7NQHpa0=;
- b=H0d5X8bOm8d+vmoxxRk/k+UQxu4v9XBcPuDVqYcLSCGMdiwWHc+gje874W066UTaTOqQib/wndzPboLJ26V0+g5N7wPSzzze+lIjVQ95fxjIR6/6vMqQBhXUF+HJHh+NQaRGeomXdKPEvl7Rlq59pRLLZdFyyneQwIl3p3whAr4=
+ bh=qb2iSjwpZHYsE3KCI9+2iTK60OIDs5FkpAvv2TiiRBk=;
+ b=IljScxy/uAEVOnpCEEnrwEewpJMVD4RFROlAkv03nJWX5b4ILMgaQijgHbjQqct6zr68VX1KXDI4lT3wOuQgojqvxuNlchNL+RbRNpChvG5oQOZ0ZCWgFt2RInjhsEoKreZNXza+fqMBiCBBcoz/QrUEWeiBwsrKYCzsC1L29QY=
 Authentication-Results: kernel.org; dkim=none (message not signed)
  header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
 Received: from VE1PR04MB6528.eurprd04.prod.outlook.com (2603:10a6:803:127::18)
- by VE1PR04MB6528.eurprd04.prod.outlook.com (2603:10a6:803:127::18)
+ by VE1PR04MB6622.eurprd04.prod.outlook.com (2603:10a6:803:121::13)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Tue, 9 Jun
- 2020 11:23:49 +0000
+ 2020 11:23:52 +0000
 Received: from VE1PR04MB6528.eurprd04.prod.outlook.com
  ([fe80::5086:ae9e:6397:6b03]) by VE1PR04MB6528.eurprd04.prod.outlook.com
  ([fe80::5086:ae9e:6397:6b03%7]) with mapi id 15.20.3066.023; Tue, 9 Jun 2020
- 11:23:49 +0000
+ 11:23:52 +0000
 From: Li Jun <jun.li@nxp.com>
 To: balbi@kernel.org,
 	shawnguo@kernel.org
-Subject: [PATCH 5/6] arm64: dts: imx8mp-evk: enable usb1 as host mode
-Date: Tue,  9 Jun 2020 19:12:44 +0800
-Message-Id: <1591701165-12872-6-git-send-email-jun.li@nxp.com>
+Subject: [PATCH 6/6] dt-bindings: usb: dwc3-imx8mp: add imx8mp dwc3 glue
+ bindings
+Date: Tue,  9 Jun 2020 19:12:45 +0800
+Message-Id: <1591701165-12872-7-git-send-email-jun.li@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591701165-12872-1-git-send-email-jun.li@nxp.com>
 References: <1591701165-12872-1-git-send-email-jun.li@nxp.com>
@@ -66,47 +67,46 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost.localdomain (119.31.174.66) by
  SG2PR02CA0069.apcprd02.prod.outlook.com (2603:1096:4:54::33) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3066.18 via Frontend Transport; Tue, 9 Jun 2020 11:23:45 +0000
+ 15.20.3066.18 via Frontend Transport; Tue, 9 Jun 2020 11:23:49 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: cfd6d3e6-bd59-4d81-34f2-08d80c67949e
-X-MS-TrafficTypeDiagnostic: VE1PR04MB6528:
+X-MS-Office365-Filtering-Correlation-Id: d8e4a52f-f952-48a7-1a59-08d80c6796c6
+X-MS-TrafficTypeDiagnostic: VE1PR04MB6622:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB6528CF79DAE113C0E2383F0189820@VE1PR04MB6528.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:200;
+X-Microsoft-Antispam-PRVS: <VE1PR04MB662213F2BD924CCCACFEE78C89820@VE1PR04MB6622.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3044;
 X-Forefront-PRVS: 042957ACD7
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: IqaDeP/VzQTghCmgOFsNgLsDldE4hLWr0+rc9aQ1eYeigm5GX7SP4EubHIZ5pHJTbz4fP3EK4l5IXRNt5USP83iBe34x4t+n/OgfpB+YebHCmTsrbBnNXws3cC8Z1hrQiD0KMoZgkFEMAWq2BMOx27cu79FjwAFPrV13zgAX7Ch3fUTD+Avc4ylRwPSK2hYmmyaH+E+SatPVKO9VIU0FAo5v5LrYIKbDjphUqqX/CVd3dpWqDIWfWsxgoAMf7YQdLCBqyczMnNprCj2PIvR6CN7urvcE8EHmq/9wUzAih1NR4F7k2iYJor6i9RaZgHnZUW6IbYZkT1Of/y8DGJGhCTXy61E9C+WOkSfF+ZtbPpVnJaC8lglPsN3s+mttoYQN0WSeurxmQrcL3mOekw4NE2QRzdyk3IEtTiVDNuHqKOvZePJBJJRgIyFOtO+tplkhKZtpBV3Ske430F87bS/bGA==
+X-Microsoft-Antispam-Message-Info: 75IXlFsjAFA8GMKdQdW60e/3+0tP2Hr1TMjbh896dfjBrhiGoSJ35Z7Z8GZodU7GnB4hEZvYoNCZXcgNQizMCiMU4FV5Gl5ChSeDtJzoqUPmGZ9sUrEerZkyidG4zwKKUADIkcwvqmYVCpLXaLgfJVWcwScLN9ivbE4Z5DTGImIagbWQpZ+LaqJfxqRqtQjrULUWGCLTDn7XKmQI3NNMNT6RDRGFxcvJ3mtpwb5K6UZzOLBGtfitLQbiBmwdt3SzwY+wzTP5SB+0LhkjZwAS3O+6kc1xBrXiYrbNxlXhnrau0oTrqTdqxH1fBy5PjJojG2Vpo8Vl+UUlkJ5qLGeRrcpxwDiZGNcd7pjRfQxD3g70TYfTViNeJ+M4MB6qs8AqMESoLkKvHR8Pc6FtTkdPnr4EBC7kG6d6hyH6LvYlKgeg+2CfX/Lhmu43xwHZZj6ut2s03FnBuvn95daJGlsYylqIHsdi5oCE6Whr9mzwg0s=
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:VE1PR04MB6528.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(366004)(66556008)(16526019)(186003)(66476007)(26005)(66946007)(69590400007)(6512007)(498600001)(6486002)(52116002)(36756003)(8676002)(86362001)(6506007)(2906002)(4326008)(956004)(83380400001)(8936002)(5660300002)(2616005)(32563001)(414714003)(473944003);
+ SFS:(4636009)(366004)(26005)(186003)(8936002)(8676002)(16526019)(4326008)(83380400001)(86362001)(69590400007)(498600001)(5660300002)(66946007)(66556008)(6666004)(6486002)(2906002)(6506007)(36756003)(52116002)(966005)(2616005)(956004)(6512007)(66476007)(32563001);
  DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: 5/i08jes765fokUNtG90AgfJCVeGRHQjEl/GrXWeJM/ycl3hD1NpNEejkr2mo6LpWxNlh14Jy9FWPxeEuX/KDVMYbQAD1oUJx6VRklmQzb1ZE/yV3tq1cyEsGJWdHV/dep7I95Xz526VFU2UfLuZufIaqd9Px8sA8r5ErKgtApg8Zr4isI5N144fQJOw8lnbFC3TxFF+3nHo7ekuBE0RonNYQZj2f9fG2XH85SEpDfx1eLMCCe5c3o05sFupC22HdWKVzVpQfMpddj+YuVU3Qy3GIFwP0bDSUT+6pnuHRyRDXF9O9KwjmHegByHdcWxHVLNIt0SjW7rJVrYLFamcZvfyPU9N0PoGeIg3mMUD2lQA08AuefJG58PE2qu/BVV22aLW+YNSOWrsOnOy84s9ffTWg2k512200r4PHfoDgdBqOUfvVXS41kgVNMZVrmdQynPR+I0g7EiM1i7DvSqNdaKuempjO+yd3FW6eQ+WW8w=
+X-MS-Exchange-AntiSpam-MessageData: 1jJfodwmo/x3L5t7kzK4I/qPsSkaiePyY/sTAAjsuXoumge8QfesHCi4iaeohaoyRkYCMhltsCSqkTTI714of106LU3s0FHSrstXVkW5GIdUUG73oj7DNNi1vkbjJKCdYm0WSRtsIUAFYxpPUjOBT3VKBPnsH5HlSB2jnMAWgax9HG4SRwj2iKLB+VZHm7cqhuiaKs01ZaNIhm6zYyzUineaYEDtc/C8eLswAcGTHQ/XGSs+1INP7ATRalqpsc7bu3BLu+CwMq+fxHEEqUumeZOtsS0ovQ152SPnH9XaMDvHE6yaK9yQo5+3utobnZaPGHN5WLc/h30H+6pbwUZj+9icD7uEkLat0eZLmWY2i7A/cPoSSRO2Ri9D5R84KoWRM0VZiGe4wXlNKVjQrxaqQLLv/1gUf/zz/HlklC4g+JyakZM7LZ5ACyNgQB6FjyHpMx9qo1s9tewyU7prw5fwREFEfF4kCkK2FOZlFv3msL0=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cfd6d3e6-bd59-4d81-34f2-08d80c67949e
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jun 2020 11:23:48.9674 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d8e4a52f-f952-48a7-1a59-08d80c6796c6
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jun 2020 11:23:52.5943 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: EdIQWzQXUumpu2qFxr66R1Rf5Opy5vKmSYP3IZnnDmI0F8qlnm8XPOcBW//q73Vd
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6528
+X-MS-Exchange-CrossTenant-UserPrincipalName: iPfPrZz/2vef+Hdxde735Yuk+5KomyZV8CyTT58aiIzgWNerkNea/4x5HZs7ceZz
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6622
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_042353_944628_B88A0503 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200609_042357_373032_E7A969D2 
+X-CRM114-Status: GOOD (  12.50  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.14.42 listed in list.dnswl.org]
+ low trust [40.107.6.62 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.14.42 listed in wl.mailspike.net]
+ [40.107.6.62 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -137,70 +137,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable usb host port with type-A connector on imx8mp-evk board.
+NXP imx8mp integrates 2 dwc3 3.30b IP and add some wakeup logic
+to support low power mode, the glue layer is for this wakeup
+functionality, which has a separated interrupt, can support
+wakeup from U3 and connect events for host, and vbus wakeup for
+device.
 
 Signed-off-by: Li Jun <jun.li@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mp-evk.dts | 32 ++++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ .../devicetree/bindings/usb/fsl,imx8mp-dwc3.yaml   | 87 ++++++++++++++++++++++
+ 1 file changed, 87 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
-index 3da1fff..fbe056c 100644
---- a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
-@@ -43,6 +43,19 @@
- 		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
- 		enable-active-high;
- 	};
+diff --git a/Documentation/devicetree/bindings/usb/fsl,imx8mp-dwc3.yaml b/Documentation/devicetree/bindings/usb/fsl,imx8mp-dwc3.yaml
+new file mode 100644
+index 0000000..823db058
+--- /dev/null
++++ b/Documentation/devicetree/bindings/usb/fsl,imx8mp-dwc3.yaml
+@@ -0,0 +1,87 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++# Copyright (c) 2020 NXP
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/usb/fsl,imx8mp-dwc3.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+	reg_usb1_host_vbus: regulator-usb1-vbus {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb1_host_vbus";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_usb1_vbus>;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		gpio = <&gpio1 14 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+		regulator-always-on;
-+	};
++title: NXP iMX8MP Soc USB Controller
 +
- };
- 
- &fec {
-@@ -91,6 +104,19 @@
- 	status = "okay";
- };
- 
-+&usb3_phy1 {
-+	status = "okay";
-+};
++maintainers:
++  - Li Jun <jun.li@nxp.com>
 +
-+&usb3_1 {
-+	status = "okay";
-+};
++properties:
++  compatible:
++    items:
++    - const: fsl,imx8mp-dwc3
 +
-+&usb_dwc3_1 {
-+	dr_mode = "host";
-+	status = "okay";
-+};
++  reg:
++    maxItems: 1
++    description: Address and length of the register set for the wrapper of
++      dwc3 core on the SOC.
 +
- &usdhc2 {
- 	assigned-clocks = <&clk IMX8MP_CLK_USDHC2>;
- 	assigned-clock-rates = <400000000>;
-@@ -172,6 +198,12 @@
- 		>;
- 	};
- 
-+	pinctrl_usb1_vbus: usb1grp {
-+		fsl,pins = <
-+			MX8MP_IOMUXC_GPIO1_IO14__GPIO1_IO14	0x19
-+		>;
-+	};
++  "#address-cells":
++    enum: [ 1, 2 ]
 +
- 	pinctrl_usdhc2: usdhc2grp {
- 		fsl,pins = <
- 			MX8MP_IOMUXC_SD2_CLK__USDHC2_CLK	0x190
++  "#size-cells":
++    enum: [ 1, 2 ]
++
++  interrupts:
++    maxItems: 1
++    description: The interrupt that is asserted when a wakeup event is
++      received.
++
++  clocks:
++    description:
++      A list of phandle and clock-specifier pairs for the clocks
++      listed in clock-names.
++    items:
++      - description: system hsio root clock.
++      - description: system bus AXI clock.
++      - description: suspend clock, used for wakeup logic.
++
++  clock-names:
++    items:
++      - const: hsio
++      - const: bus
++      - const: suspend
++
++# Required child node:
++
++  dwc3:
++    description: This is the node representing the DWC3 controller instance
++      Documentation/devicetree/bindings/usb/dwc3.txt
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8mp-clock.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    usb3_0: usb@32f10100 {
++      compatible = "fsl,imx8mp-dwc3";
++      reg = <0x32f10100 0x8>;
++      clocks = <&clk IMX8MP_CLK_HSIO_ROOT>,
++               <&clk IMX8MP_CLK_HSIO_AXI_DIV>,
++               <&clk IMX8MP_CLK_USB_ROOT>;
++      clock-names = "hsio", "bus", "suspend";
++      assigned-clocks = <&clk IMX8MP_CLK_HSIO_AXI_SRC>;
++      assigned-clock-parents = <&clk IMX8MP_SYS_PLL2_500M>;
++      assigned-clock-rates = <500000000>;
++      interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
++      #address-cells = <1>;
++      #size-cells = <1>;
++      ranges;
++
++      dwc3@38100000 {
++        compatible = "snps,dwc3";
++        reg = <0x38100000 0x10000>;
++        interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
++        phys = <&usb3_phy0>, <&usb3_phy0>;
++        phy-names = "usb2-phy", "usb3-phy";
++      };
++    };
 -- 
 2.7.4
 
