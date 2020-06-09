@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 718F41F41A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:01:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 097601F41AA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 19:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Gff1XXSaQezwLx/yjIJ+4ipEPelucZJnPAt5828nTow=; b=CDhTEdW7ktaKri
-	0dT1cb4yItObeo3ETyxpTzESqBgg+4azxmwgPz9ko7+O0u7JHDb/Xl53wlWLhW28wyASVVJFLSTWo
-	2SaxoC78+0M0yuEqFiHIUNfhF3KroBvUuIx4Z+BfiUH12loZzu9xdFH0vlyTNXzgQY1zFqVc6Toq8
-	FTID+B/zV35ojnFVUc48PpLA80WYN8d79hFYt1Qnw4OUPyJtH9q9vQCrScTUKGwoY6XVJY0sc3Y3D
-	ejyYzvTRuJHIWWsHax3lEHTCa8WXmrSokDjILrIunk/Qpet0jkhdJj+xi8845yrtM7TEswNEQ9p4l
-	P2BUZPVV5MUNfNJdSi6w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VwvgbTKjoXtNSiy4bcuoCX54BSSX1DaqSNIizS5nLX4=; b=SodLBwbOF+Q/I1
+	Q5fX/sF1sfbtpk/nYfEOVlyJlNHj30vjqVvTQfIXXuAIjrVqhgjmv0tYcYwj/mLishUF5tC0ULQ5h
+	FCkxj2KYqP6wLbXZZkvRh9zV8EAalmq5Tt1GWTbdrJYjVO7t51ZF/0OzmSuwAOs1H6uqde23ipBG/
+	r3lAN4JKUZq+ZYtuik3kpUY7NlLoA4HL+EItdMwr0zdz+5fWnR/sGn8QWlbdTDE8DZBA/H2Zpuhu5
+	p75m2lD1kukeiKx28uI7Fcv6EtSBdwVhdfd+OQHGJpyzjF8lcq6oeB9Pn/TzfgRXQmVEvm+SFndDE
+	czRjxWtp78JhTUr9kr7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jihdD-0000dv-2P; Tue, 09 Jun 2020 17:01:47 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jihdu-0001Av-B6; Tue, 09 Jun 2020 17:02:30 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jihd2-0000by-4u
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 17:01:37 +0000
-Received: by mail-wm1-x343.google.com with SMTP id u26so2761062wmn.1
+ id 1jihd3-0000c1-Ta
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jun 2020 17:01:39 +0000
+Received: by mail-wr1-x444.google.com with SMTP id q11so22166813wrp.3
  for <linux-arm-kernel@lists.infradead.org>;
  Tue, 09 Jun 2020 10:01:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+Cvuk1pzHbG73fVpgq0GIbQHX6L3n9Uv+zTQtj358BA=;
- b=uwRr61GzH4KclzZid9/CXcHwf5eoYtMWZzDY0qkmOR68uaurvPCMsPc+62J1hfQ9Ml
- JPFr+vJDWqDrjyK/KP2giDZ7DcMe6alW76klQ9MBCzAa6z3idL10fzSqXzUZw8p+oPRp
- kRwNxapDbK7Q9Eq3NCzU3UZk+7ZpGTOo+71+ACmA/UJtlB4SD1svTnV2j4pfk+dWoVNE
- 3Ox04F449fKhozwb8JYK+5CiQuJ9ALvWHpurtFA4KSIVbpcB5OxaKB8oJhmMsQFBJisz
- 35P64bVXWW8k1YXik9sGtMBFYFoQSrkYw9ZGKhEVyeRQMxiyhMSItUOQrKr6zGwSCcSd
- o5Ow==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=WKkGKM1i+ZwjQU8y1F8HIyZFPfYPlnsKwCB0yR3tEE4=;
+ b=l1KrU7/E31ITIYvTfzAncU/3ntg1p3J+hQNm2CqUP6C5TwinNB1fmslNVYfUmaA97+
+ sXblARRGnzrbPvsWKUx3u3rXRfM+wZayRivtffPho7e6cSWIyu9kMVw18Gbimj3DpJiD
+ lig01x0hwrbI6AHS9YT8uQPrxhQPI8XC8b+jmYeH9Bzve/2XACyki0NJHzUcb+6bG65g
+ B+noBL8e0g3PEanuKZC8jntVyKlxjgOocmPzvxzezW0T7jsMLfZ4/zGQT2gD8DzAEWa/
+ vh2j6aGy5sapw2/KXUmkWNDF/B/rcNVedbz9Jt0y81K2XxU6EYuIwx7WR4hVIhEIK4sN
+ w0kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+Cvuk1pzHbG73fVpgq0GIbQHX6L3n9Uv+zTQtj358BA=;
- b=UtbaGIrZOyFfeOKS0GqUfSKTJ6s4HD3AqtubiRTAnvpNyBdR46Hng2M4+q7s2XRJ7t
- 9D9p8LpIHM4PW6MrngcHRp4YVyBUEB88kXIVqWyWYaIK2KXEI3P0RvJakHF6FHQulpDy
- r0IfErVRGy1kd2+sqhYb19kHwwAUpKPumePwJG0lHdA+i9W9MBVKdPFxPP4ti8786253
- iCyPND0APxZaOPsFjv449k8nLhubULVZ5vqhqZEOqOb9YNvulAWGQgJqyGgLfV5FaDYe
- bZ+mnCkVioGR6Atlla9I2NzUNrjnfVkexMbp4vb0Nhb4TIO5ADJSfgXFKaoK8Ntg7NYU
- B7kg==
-X-Gm-Message-State: AOAM531pnQOGc3YDFHXkhgBXP6bf6HFQ4klPMrHOt7NgX9m/uN9S8UaH
- VIgKxDgQT46SzzprwUfW3QO0I6S1
-X-Google-Smtp-Source: ABdhPJznae/iSDLO0rgV3IEKwGuUJLoEsyMYlY026KsP9G5XR0ZEcKguisUvEa8wR+Y69QU9c/sc8w==
-X-Received: by 2002:a7b:cc82:: with SMTP id p2mr4942530wma.101.1591722089455; 
- Tue, 09 Jun 2020 10:01:29 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=WKkGKM1i+ZwjQU8y1F8HIyZFPfYPlnsKwCB0yR3tEE4=;
+ b=G2xDX0Yja609DieOIv0lV2FA0cRYs6GcwocD4cH+kJrg9+NdltWWOFgAJWtdOf1VjC
+ K/qlpt1xfa9/NMc+uXBO8F6CWV45q8dbrrcydJG/yWn8taaUT5qbF3ZC65LHqHc8632L
+ WWE9d/sz65v8yZiZUCiqtFp1xvRp0GhJnb7XLC25GwHS3ram3/SC+3+NejLn6iXQRdWH
+ 3mfHJ//aRvBc2lkuEqa9sUjIaozHH/DMQl8QjaohelR2KlY4C40ZqJBZjC8yRxAOjBaz
+ TvkLfRzOiCnm71BdUOjnp8vS5uM3QH3DGRaVUIxU+xApRgoomDVssmTVpP8GMUyKkU68
+ 6N6w==
+X-Gm-Message-State: AOAM5333zVH9D6Flk8IAwUL7K7wTSM5xBp4LOfD2/NlUc2ZH+mOfr3u7
+ 98vUW6k9YeG2YjiwvL4EnCqevO9y
+X-Google-Smtp-Source: ABdhPJzgTI+524MDuS7w5lagpPtbOaBYaupWOktz4kyyP9U6rMau70HYUh5ipMQDAj7LI/iV41Sqxw==
+X-Received: by 2002:a5d:400f:: with SMTP id n15mr5825010wrp.419.1591722090607; 
+ Tue, 09 Jun 2020 10:01:30 -0700 (PDT)
 Received: from cluster5 ([80.76.206.81])
- by smtp.gmail.com with ESMTPSA id k26sm3618927wmi.27.2020.06.09.10.01.28
+ by smtp.gmail.com with ESMTPSA id d16sm3500004wmd.42.2020.06.09.10.01.30
  (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
- Tue, 09 Jun 2020 10:01:29 -0700 (PDT)
+ Tue, 09 Jun 2020 10:01:30 -0700 (PDT)
 From: Matthew Hagan <mnhagan88@gmail.com>
 To: 
-Subject: [PATCH 1/3] ARM: dts: NSP: Disable PL330 by default,
- add dma-coherent property
-Date: Tue,  9 Jun 2020 17:58:29 +0100
-Message-Id: <c19be985a3e7abc8ac05fc30678475aeadb73c50.1591719237.git.mnhagan88@gmail.com>
+Subject: [PATCH 2/3] ARM: dts: NSP: Correct amac_base lengths,
+ mailbox reg and add amac3
+Date: Tue,  9 Jun 2020 17:58:30 +0100
+Message-Id: <d638e006713d82d1a6af4bdbcfa516f425264bf6.1591719237.git.mnhagan88@gmail.com>
 X-Mailer: git-send-email 2.25.4
+In-Reply-To: <c19be985a3e7abc8ac05fc30678475aeadb73c50.1591719237.git.mnhagan88@gmail.com>
+References: <c19be985a3e7abc8ac05fc30678475aeadb73c50.1591719237.git.mnhagan88@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_100136_207104_D3E336EE 
-X-CRM114-Status: GOOD (  14.92  )
+X-CRM114-CacheID: sfid-20200609_100137_963166_864A9EC5 
+X-CRM114-Status: GOOD (  12.35  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mnhagan88[at]gmail.com]
@@ -109,153 +111,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the PL330 is enabled by default. However if left in IDM reset, as is
-the case with the Meraki and Synology NSP devices, the system will hang when
-probing for the PL330's AMBA peripheral ID. We therefore should be able to
-disable it in these cases.
+According to gmac/src/et/sys/et_linux.c, IORESOURCE_MEM end address for each
+mac is IPROC_GMACx_REG_BASE+0xbff.
 
-The PL330 is also included among of the list of peripherals put into coherent
-mode, so "dma-coherent" has been added here as well.
+The FA2 mailbox is specified at 0x18025000 but should actually be 0x18025c00,
+length 0x400 according to socregs_nsp.h and board_bu.c. amac3 is at 25000.
 
 Signed-off-by: Matthew Hagan <mnhagan88@gmail.com>
 ---
- arch/arm/boot/dts/bcm-nsp.dtsi     | 4 +++-
- arch/arm/boot/dts/bcm958522er.dts  | 4 ++++
- arch/arm/boot/dts/bcm958525er.dts  | 4 ++++
- arch/arm/boot/dts/bcm958525xmc.dts | 4 ++++
- arch/arm/boot/dts/bcm958622hr.dts  | 4 ++++
- arch/arm/boot/dts/bcm958623hr.dts  | 4 ++++
- arch/arm/boot/dts/bcm958625hr.dts  | 4 ++++
- arch/arm/boot/dts/bcm958625k.dts   | 4 ++++
- 8 files changed, 31 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/bcm-nsp.dtsi | 23 +++++++++++++++++------
+ 1 file changed, 17 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm/boot/dts/bcm-nsp.dtsi b/arch/arm/boot/dts/bcm-nsp.dtsi
-index da6d70f09ef1..920c0f561e5c 100644
+index 920c0f561e5c..512720f39e04 100644
 --- a/arch/arm/boot/dts/bcm-nsp.dtsi
 +++ b/arch/arm/boot/dts/bcm-nsp.dtsi
-@@ -200,7 +200,7 @@ uart1: serial@400 {
+@@ -47,6 +47,7 @@ aliases {
+ 		ethernet0 = &amac0;
+ 		ethernet1 = &amac1;
+ 		ethernet2 = &amac2;
++		ethernet3 = &amac3;
+ 	};
+ 
+ 	cpus {
+@@ -231,7 +232,7 @@ sdio: sdhci@21000 {
+ 
+ 		amac0: ethernet@22000 {
+ 			compatible = "brcm,nsp-amac";
+-			reg = <0x022000 0x1000>,
++			reg = <0x022000 0x0c00>,
+ 			      <0x110000 0x1000>;
+ 			reg-names = "amac_base", "idm_base";
+ 			interrupts = <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
+@@ -241,7 +242,7 @@ amac0: ethernet@22000 {
+ 
+ 		amac1: ethernet@23000 {
+ 			compatible = "brcm,nsp-amac";
+-			reg = <0x023000 0x1000>,
++			reg = <0x023000 0x0c00>,
+ 			      <0x111000 0x1000>;
+ 			reg-names = "amac_base", "idm_base";
+ 			interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
+@@ -251,7 +252,7 @@ amac1: ethernet@23000 {
+ 
+ 		amac2: ethernet@24000 {
+ 			compatible = "brcm,nsp-amac";
+-			reg = <0x024000 0x1000>,
++			reg = <0x024000 0x0c00>,
+ 			      <0x112000 0x1000>;
+ 			reg-names = "amac_base", "idm_base";
+ 			interrupts = <GIC_SPI 149 IRQ_TYPE_LEVEL_HIGH>;
+@@ -259,10 +260,20 @@ amac2: ethernet@24000 {
  			status = "disabled";
  		};
  
--		dma@20000 {
-+		dma: dma@20000 {
- 			compatible = "arm,pl330", "arm,primecell";
- 			reg = <0x20000 0x1000>;
- 			interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>,
-@@ -215,6 +215,8 @@ dma@20000 {
- 			clocks = <&iprocslow>;
- 			clock-names = "apb_pclk";
- 			#dma-cells = <1>;
+-		mailbox: mailbox@25000 {
+-			compatible = "brcm,iproc-fa2-mbox";
+-			reg = <0x25000 0x445>;
++		amac3: ethernet@25000 {
++			compatible = "brcm,nsp-amac";
++			reg = <0x025000 0x0c00>,
++			      <0x113000 0x1000>;
++			reg-names = "amac_base", "idm_base";
+ 			interrupts = <GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>;
 +			dma-coherent;
 +			status = "disabled";
- 		};
- 
- 		sdio: sdhci@21000 {
-diff --git a/arch/arm/boot/dts/bcm958522er.dts b/arch/arm/boot/dts/bcm958522er.dts
-index 8c388eb8a08f..7be4c4e628e0 100644
---- a/arch/arm/boot/dts/bcm958522er.dts
-+++ b/arch/arm/boot/dts/bcm958522er.dts
-@@ -58,6 +58,10 @@ gpio-restart {
- 
- /* USB 3 support needed to be complete */
- 
-+&dma {
-+	status = "okay";
-+};
++		};
 +
- &amac0 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/bcm958525er.dts b/arch/arm/boot/dts/bcm958525er.dts
-index c339771bb22e..515164dacc4d 100644
---- a/arch/arm/boot/dts/bcm958525er.dts
-+++ b/arch/arm/boot/dts/bcm958525er.dts
-@@ -58,6 +58,10 @@ gpio-restart {
- 
- /* USB 3 support needed to be complete */
- 
-+&dma {
-+        status = "okay";
-+};
-+
- &amac0 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/bcm958525xmc.dts b/arch/arm/boot/dts/bcm958525xmc.dts
-index 1c72ec8288de..09092bbd7b63 100644
---- a/arch/arm/boot/dts/bcm958525xmc.dts
-+++ b/arch/arm/boot/dts/bcm958525xmc.dts
-@@ -58,6 +58,10 @@ gpio-restart {
- 
- /* XHCI support needed to be complete */
- 
-+&dma {
-+        status = "okay";
-+};
-+
- &amac0 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/bcm958622hr.dts b/arch/arm/boot/dts/bcm958622hr.dts
-index 96a021cebd97..3c46f5003401 100644
---- a/arch/arm/boot/dts/bcm958622hr.dts
-+++ b/arch/arm/boot/dts/bcm958622hr.dts
-@@ -58,6 +58,10 @@ gpio-restart {
- 
- /* USB 3 and SLIC support needed to be complete */
- 
-+&dma {
-+        status = "okay";
-+};
-+
- &amac0 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/bcm958623hr.dts b/arch/arm/boot/dts/bcm958623hr.dts
-index b2c7f21d471e..6e5c580defe5 100644
---- a/arch/arm/boot/dts/bcm958623hr.dts
-+++ b/arch/arm/boot/dts/bcm958623hr.dts
-@@ -58,6 +58,10 @@ gpio-restart {
- 
- /* USB 3 and SLIC support needed to be complete */
- 
-+&dma {
-+        status = "okay";
-+};
-+
- &amac0 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/bcm958625hr.dts b/arch/arm/boot/dts/bcm958625hr.dts
-index 536fb24f38bb..0509c57a8366 100644
---- a/arch/arm/boot/dts/bcm958625hr.dts
-+++ b/arch/arm/boot/dts/bcm958625hr.dts
-@@ -69,6 +69,10 @@ &i2c0 {
- 	status = "okay";
- };
- 
-+&dma {
-+        status = "okay";
-+};
-+
- &amac0 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/bcm958625k.dts b/arch/arm/boot/dts/bcm958625k.dts
-index 3fcca12d83c2..1557491c1751 100644
---- a/arch/arm/boot/dts/bcm958625k.dts
-+++ b/arch/arm/boot/dts/bcm958625k.dts
-@@ -48,6 +48,10 @@ memory@60000000 {
- 	};
- };
- 
-+&dma {
-+        status = "okay";
-+};
-+
- &amac0 {
- 	status = "okay";
- };
++		mailbox: mailbox@25c00 {
++			compatible = "brcm,iproc-fa2-mbox";
++			reg = <0x25c00 0x400>;
++			interrupts = <GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>;
+ 			#mbox-cells = <1>;
+ 			brcm,rx-status-len = <32>;
+ 			brcm,use-bcm-hdr;
 -- 
 2.25.4
 
