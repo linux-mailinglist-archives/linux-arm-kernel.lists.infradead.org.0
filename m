@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B36CE1F5C5C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 22:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A01FF1F5C60
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 22:04:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lM6A60u7Vy45LpTDQv74gLc0GILzPJeMTD/EZFtkjU4=; b=EOZEaoE2T2hYGH
-	4x3woxIdeoLC5URiISx0smr0FGxLGdiAiGwZQg07OlAJ0kXuw+KPiMnVrGJ7+gJIV/O8EXicQZU3A
-	gxPwxBKtBFllanS8xUYqudjBUFtebeaq6DundKold9yUBpR6xip4/kOBV9S837sVnFvZpfTx6cyhK
-	JSYAunqyuebV2r/MKEiPrOJiklc+O4gJzsSQ1Lux65g4sY38tlQXYd3FZZnf0DVgZMx/kxVvk15q/
-	GuV7vyLDcaPaJ679EV0jhwvLdBGQoRZPCvUTcLjPofLitthjWB1yUK6UrvkK7OZx5IEXz31MeRyUi
-	4qoxhFnYcS10TuK+z15w==;
+	List-Owner; bh=JpfV3nothyOvpign3qHNiC6uu2TkDPDy0UZsSkuZ8OQ=; b=jpEjlPFec0asEu
+	2lVS0av+Ryo+6SVKtVIIf+jDSEfxOYM9lCm7lg07yPo8H2zgyKDLf28/felu0xSexvJh//OSFRfJ6
+	+SkcRNdk8ejKA59xU8q/uIbD9IX1XQX91DVADdZwIVXcOht/VQ7IhnXIVViMeT1SMJ29MuPwpqx60
+	QK1/rpGHf9LxDpU8b6ttve1lL3HiS7WURfTIF8uf+9Iv6w3YOdDDk1XmDTW5Jc4bO6DelFvYoCS6F
+	1mI1I3/Yz+nSURDh0oT7765PfehOw8jlJ7OJXc/rpWsc7zgUXzOh+KG3Py0jpsYLNcehVBCMCn+Os
+	oaLreKbOmqngdCr9MZcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj6wl-0005DZ-14; Wed, 10 Jun 2020 20:03:39 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jj6xm-0005cB-LM; Wed, 10 Jun 2020 20:04:42 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj6wc-0005D6-SN
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 20:03:32 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bh7so1370243plb.11
+ id 1jj6xe-0005bc-2Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 20:04:35 +0000
+Received: by mail-pf1-x442.google.com with SMTP id b201so1596803pfb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 13:03:29 -0700 (PDT)
+ Wed, 10 Jun 2020 13:04:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=gMJmfBXQHkqYBkdWFgkIELmfTMw2QzimZzoX9rnpMvg=;
- b=VmhHMiuh5ohUCH3fDJnKjrDQRFL0Ji8PnJG1vfqLFDTNpxPKF/jUW6bjeiV5SjTR6o
- WXLVjXgIO5BzDsgibhA+L18doG6dCY7DA2U8R4aA2THMwHzIRdDqPqVTIOT51M5UhGjo
- pbeqxJDSxr/3GPDIEZHoH3PhBmMXdRDJJDdIM=
+ bh=DXoJ3aLq9uhplWhtB2O8RgTDmA73SlXyMWG4MRv/Ld0=;
+ b=Les6gM1utqz0wgQgKhZ4Nfpc6QS2e+nlg1Z/E14+jR0X69Sr3LwW3Zm/3lj8osjycK
+ p6DUplVPD/d8Rthsbcyt2ZdYdwH3RELL5O74k3dxdMf4kX7zka4VtVliwa5J4nSVuu9e
+ CL0gdKwiiV/4hvJM+5XPBMzv9WqFgKyQV9MGQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=gMJmfBXQHkqYBkdWFgkIELmfTMw2QzimZzoX9rnpMvg=;
- b=ZilQ39PmTxd5PgLhUtfe/iTVQox/lPfhVs5WYDumor51fPN5aC9MKehAXzAvs+VqcL
- 0XZYSF0k6pu9uU9rTASahDL56mfeb4IH9O/6E55YsUIhYVyqWEpNg5olJxNuFtba/szB
- NOGtDOZ36Ct8EjEubfKbTI5dEmgBE8r1V3WzEQV/meoDsi6sw740KJxuc0d+nYz7sR5S
- iaNRM7S22qLSRclca0GdC/l9WFkA11b2XPxxx3j9jRoN/yu6nS1PiNJA6BduThCfnWC0
- 5VVBUPwmLaUpp1Zf/TTW95Xlh9Kc0S7i5K+DwRnfNMRO/r+pAfMEqrq7H4ZPHiXTuOCt
- //VQ==
-X-Gm-Message-State: AOAM531b5FwPmiibFlbPqcb+MrTTM5Ha221fXFngUZTyzAGJnPEG6Kga
- RTI4oADJEAu1ezHHHPUbBn5FeQ==
-X-Google-Smtp-Source: ABdhPJzkqdGCWRf/l2Trk3MffvrvqWcW6Bumgrl4Vv2VZmme66jypNqah8ksfCDrx7bzuNc50pX7OQ==
-X-Received: by 2002:a17:90a:cb8d:: with SMTP id
- a13mr4644611pju.175.1591819409470; 
- Wed, 10 Jun 2020 13:03:29 -0700 (PDT)
+ bh=DXoJ3aLq9uhplWhtB2O8RgTDmA73SlXyMWG4MRv/Ld0=;
+ b=K39BvlOgHQz1mrXbyWgE3lsocrroZMDPk1eZZzlHhvd643LGJb741eASoNQQ0MtlNi
+ XF0+3gGXWg2kHc+Dz2+EmWAAXsLu3GWgkpj6z0+v3z7WnPysSM1qRrSnFqNZf3TYk4yJ
+ baZ7LQglHIpGJZ982oHDJEOiL5wmI2zzOYZ31tnWemLVtrS1JQBE3IvZmvvdEMTmSXT3
+ BAZoiSxxM3zo5vfwJtwbBmLuBSP0YKVFOSW1q/WK8syrOIUm2eLJiW8SxSACQm3i6Zv7
+ o+ski+Twv8sDRfmDFihKFfLB56GLt45i4yNrlil8c+GT7IRM0iUDLAc5tDf0buspOu+u
+ HvNg==
+X-Gm-Message-State: AOAM533xj/aDpqroIwVSPstXjuNmfeWikL9qLSyo9HzEPRqBJCu8yauB
+ g34Ls9f/VFPF0/y/CcveuqFtdQ==
+X-Google-Smtp-Source: ABdhPJwC9KNAXjpOXoR+vUMW+1gcz/392CyELM73At2IMG3pDZxxAs+wEHjca9ODW8LTFHMHIMEw8g==
+X-Received: by 2002:a63:df48:: with SMTP id h8mr3947452pgj.411.1591819472188; 
+ Wed, 10 Jun 2020 13:04:32 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id l63sm724636pfd.122.2020.06.10.13.03.28
+ by smtp.gmail.com with ESMTPSA id w190sm723093pfw.35.2020.06.10.13.04.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 13:03:28 -0700 (PDT)
-Date: Wed, 10 Jun 2020 13:03:27 -0700
+ Wed, 10 Jun 2020 13:04:30 -0700 (PDT)
+Date: Wed, 10 Jun 2020 13:04:29 -0700
 From: Kees Cook <keescook@chromium.org>
 To: Alexander Popov <alex.popov@linux.com>
-Subject: Re: [PATCH 2/5] gcc-plugins/stackleak: Use asm instrumentation to
- avoid useless register saving
-Message-ID: <202006101302.AC218FA1@keescook>
+Subject: Re: [PATCH 3/5] gcc-plugins/stackleak: Add 'verbose' plugin parameter
+Message-ID: <202006101303.71B51BF1@keescook>
 References: <20200604134957.505389-1-alex.popov@linux.com>
- <20200604134957.505389-3-alex.popov@linux.com>
- <202006091143.AD1A662@keescook>
- <757cbafb-1e13-8989-e30d-33c557d33cc4@linux.com>
+ <20200604134957.505389-4-alex.popov@linux.com>
+ <202006091147.193047096C@keescook>
+ <fb051386-4913-9442-f051-23ed25802c9e@linux.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <757cbafb-1e13-8989-e30d-33c557d33cc4@linux.com>
+In-Reply-To: <fb051386-4913-9442-f051-23ed25802c9e@linux.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_130330_932633_9D2A54A4 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20200610_130434_117856_3685672A 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -122,22 +120,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 06:47:14PM +0300, Alexander Popov wrote:
-> On 09.06.2020 21:46, Kees Cook wrote:
-> The inline asm statement that is used for instrumentation is arch-specific.
-> Trying to add
->   asm volatile("call stackleak_track_stack")
-> in gcc plugin on aarch64 makes gcc break spectacularly.
-
-Ah! Thank you, that eluded my eyes. :)
-
-> I pass the target arch name to the plugin and check it explicitly to avoid that.
+On Wed, Jun 10, 2020 at 06:52:10PM +0300, Alexander Popov wrote:
+> On 09.06.2020 21:47, Kees Cook wrote:
+> > On Thu, Jun 04, 2020 at 04:49:55PM +0300, Alexander Popov wrote:
+> >> Add 'verbose' plugin parameter for stackleak gcc plugin.
+> >> It can be used for printing additional info about the kernel code
+> >> instrumentation.
+> >>
+> >> For using it add the following to scripts/Makefile.gcc-plugins:
+> >>   gcc-plugin-cflags-$(CONFIG_GCC_PLUGIN_STACKLEAK) \
+> >>     += -fplugin-arg-stackleak_plugin-verbose
+> >>
+> >> Signed-off-by: Alexander Popov <alex.popov@linux.com>
+> > 
+> > Acked-by: Kees Cook <keescook@chromium.org>
 > 
-> Moreover, I'm going to create a gcc enhancement request for supporting
-> no_caller_saved_registers attribute on aarch64.
+> I see that I will change this patch after leaving alloca() support.
+> I'm going to add debug printing about functions that call alloca().
+> I have to omit your 'acked-by' for the changed patch, right?
 
-For arm64 right now it looks like the plugin will just remain
-"inefficient" in these cleanup, as before, yes?
+If it changes dramatically, drop my Ack, yes. But since it's going via
+my tree, my Ack is mostly just a quick email marker to say "yes, looks
+good". :)
 
 -- 
 Kees Cook
