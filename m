@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 397371F5308
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 13:21:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E5591F530A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 13:21:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UeCAnl+SgGrnW+hwlJs7AIZvs2EvPnZhlRk5kDODqGc=; b=PDpyk1fAFrFAFh
-	GqWyHizmM/+Ngt2M3WCmBVgOYi+7/yzuxhHnExB229kE04/j5ZKtAQrMV13rrKRmZNVptWCPvMREs
-	bc91yeqUpxcK79Lex3sKaj/El8eVHX1xKTgX0O/8lLTsY4h1HHUa0yaldhUPAgNaSGFmToTGFxQk9
-	+Zgr+yDANo/CAAaoEmGueCH2vJCdJhZVjcb8U0FXkZl98iOVL6cQ/tFN11VG/EueoWcxFPB3okRGR
-	3MqW5qOl1/7ICLx5DlzeqaOaDLC2GbY0aZ10i3jd4/pn+ax3D8Fy5YJpzMFrEGRtsALFg2xzwx08l
-	lKgOJ1m/DUD4kp6BEDqQ==;
+	List-Owner; bh=JH32ICmDXf4uiu7PDAEldb6d3c1uzueLfuFNeoXDQcE=; b=ggUN0UdigEyTKt
+	0kLyQuBOzUAi24/Oj7wZTJ9WJU9wCNBsdk1DYPFCkTRE2XSb4x71HkZvqopbVYQ2w+mTI5gkcoGVc
+	G4xmT5YlwZteVb8+z+pccS+XGEy7geHIA5G3oZCAPmjJ5thOD/hmkGIvYU+2OpQ1IRtROdVI/sQ7D
+	v+4Js6CpoT+uECzF0PB6o18UdCiWZhe9IcGoDLRulJMPJ7b7PPQnADn5P3gBJsnjj+OFftCr9R+pl
+	pda4mOpbSMnOO0RCCDI3koC8b+t2YE+bPkrWcvBLllaIcxQ/JmWIQ8tH2jGZFRoO++NXDxWVf85g7
+	3yHvk3CHvvVvvkevlzYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiynR-0000KC-Qx; Wed, 10 Jun 2020 11:21:29 +0000
+	id 1jiynf-0000VQ-F3; Wed, 10 Jun 2020 11:21:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiynD-0000Jn-6J
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 11:21:16 +0000
+ id 1jiynF-0000K8-Of
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 11:21:19 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 90C21204EA;
- Wed, 10 Jun 2020 11:21:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0BCA02078C;
+ Wed, 10 Jun 2020 11:21:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591788074;
- bh=Vy1uNGpCyh3WA6USKC361S2rQ3bIgdUucbjMN7/azjo=;
+ s=default; t=1591788077;
+ bh=9fKKwsQG+ae0h8ivgqvpkqBV3pK8Ukj9focnXx4zajc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XB3sMSmPStKwcCZbiYtdbjcc80l0y5WR7y4apK8+o9JokOR6gHgKEQwDzHFPMA85c
- FoCa4mEEx9ZMZAoRsv+zHWXuDbAvF/9mmVN4hLO1ZrO/iqgDUErh9zdAoFUs3ez8g3
- nU3W3qhCqAntUiYzsYf4mHoYpPfCt5U6DER3f7lQ=
+ b=bth/F3nXjeNt4SgkC/ZRFpXEHsVWDZed8ygE5hwx80F1Nw1Dyr/CkiNtfJcmvzfg5
+ gqaR8OYTFFoHDZTTVrQgL8hQWKCDC9ZwsZu81O4mDBIOfLp42uNPuxmsI31DEA/fK+
+ cawp48O2k2BCXQ8YOez5JPGYtsYOi+eTe0zUSUaU=
 From: Will Deacon <will@kernel.org>
 To: Nick Desaulniers <ndesaulniers@google.com>,
  Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v2] arm64: acpi: fix UBSAN warning
-Date: Wed, 10 Jun 2020 12:21:08 +0100
-Message-Id: <159178566875.41592.7975510364023488303.b4-ty@kernel.org>
+Subject: Re: [PATCH v2] arm64: vdso32: add CONFIG_THUMB2_COMPAT_VDSO
+Date: Wed, 10 Jun 2020 12:21:09 +0100
+Message-Id: <159178553820.37708.12308914886514191769.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200608203818.189423-1-ndesaulniers@google.com>
-References: <CAKwvOdnBhHnhUZ9MHgqEQ4nEyzHWUH+DPV-J0KoYyWNEnsDHbg@mail.gmail.com>
- <20200608203818.189423-1-ndesaulniers@google.com>
+In-Reply-To: <20200608205711.109418-1-ndesaulniers@google.com>
+References: <20200528072031.GA22156@willie-the-truck>
+ <20200608205711.109418-1-ndesaulniers@google.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_042115_248601_716981D5 
-X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-CacheID: sfid-20200610_042117_827871_13B34300 
+X-CRM114-Status: UNSURE (   8.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,44 +79,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Enrico Weigelt <info@metux.net>, Ard Biesheuvel <ardb@kernel.org>,
- Allison Randal <allison@lohutok.net>
+Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
+ Will Deacon <will@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
+ linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
+ Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 8 Jun 2020 13:38:17 -0700, Nick Desaulniers wrote:
-> Will reported a UBSAN warning:
+On Mon, 8 Jun 2020 13:57:08 -0700, Nick Desaulniers wrote:
+> Allow the compat vdso (32b) to be compiled as either THUMB2 (default) or
+> ARM.
 > 
-> UBSAN: null-ptr-deref in arch/arm64/kernel/smp.c:596:6
-> member access within null pointer of type 'struct acpi_madt_generic_interrupt'
-> CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-rc6-00124-g96bc42ff0a82 #1
-> Call trace:
->  dump_backtrace+0x0/0x384
->  show_stack+0x28/0x38
->  dump_stack+0xec/0x174
->  handle_null_ptr_deref+0x134/0x174
->  __ubsan_handle_type_mismatch_v1+0x84/0xa4
->  acpi_parse_gic_cpu_interface+0x60/0xe8
->  acpi_parse_entries_array+0x288/0x498
->  acpi_table_parse_entries_array+0x178/0x1b4
->  acpi_table_parse_madt+0xa4/0x110
->  acpi_parse_and_init_cpus+0x38/0x100
->  smp_init_cpus+0x74/0x258
->  setup_arch+0x350/0x3ec
->  start_kernel+0x98/0x6f4
+> For THUMB2, the register r7 is reserved for the frame pointer, but
+> code in arch/arm64/include/asm/vdso/compat_gettimeofday.h
+> uses r7. Explicitly set -fomit-frame-pointer, since unwinding through
+> interworked THUMB2 and ARM is unreliable anyways. See also how
+> CONFIG_UNWINDER_FRAME_POINTER cannot be selected for
+> CONFIG_THUMB2_KERNEL for ARCH=arm.
 > 
 > [...]
 
 Applied to arm64 (for-next/core), thanks!
 
-[1/1] arm64: acpi: fix UBSAN warning
-      https://git.kernel.org/arm64/c/a194c33f45f8
+[1/1] arm64: vdso32: add CONFIG_THUMB2_COMPAT_VDSO
+      https://git.kernel.org/arm64/c/625412c210fb
 
 Cheers,
 -- 
