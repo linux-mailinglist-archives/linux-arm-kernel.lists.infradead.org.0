@@ -2,81 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35C391F5650
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 15:56:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D1DA1F565E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 16:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DlnE1r6Bsez7BCgwsW34Z1hbbF+fNvse5e5P9xHYM8M=; b=pXrQ3jT/u9gQO2
-	cPnwePe/tCIopOVlKQgwPXqqPaZwZer9OuyKpSuXz7ZYlMeoNSk2hMTVR4pmhWurFqOYfX7kf8zOw
-	RPDpymjBJzvLkJKSxrltGrbn6rD3KcvE8ir6vKxWkBnypW/zCdSdhTTQ8D/ny9CqUm5iUVZUx+hnb
-	Qd9Jr4SbTMdbKyC7bwypYNsi3YDkumruD8XdAgspqL3KSJ2ryp+vdadR2wxQ6WxLZtbs5J91v0tSb
-	ECM6KVJ6R5R+a38N05/CFiwqUZGePfejxabTuxpGVsyvbvnocfCAa2VfxiCVX07EPlgKrS3nvqfqK
-	i0IcYEtSD4sheQ+NUh2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=l8bP3JDDS/VFbFDC0B9GV1FWPJFYuQcMCwwe4Xt4cnM=; b=GrS9pEbFbnv/jiKS5PGKiz/NJ
+	khNQ8gFHab6H8PAVwsC4aYg1X6ZVH58EgGaXcwMos7KetOEEltGDy/5VQ089gTpQZnxSfO9ZYmiXT
+	WkUwcNm0pg+obeqybHbB8PpJNKscQbqPEecqa5D3ZMMB3jI7uDlf+G1whTbmAqWC7Foyhmz5zdCqB
+	fnACFhZfZDpDhxyrWS0woT1YsSJX8vppbZQ9qh2kqsCQLyZCx/J6neA2UUuhXu1kBhfv2DAc3h12f
+	/YO5/ymVuWvULwE5tvjzQ8SlR4oDfQfgSsHQBjr8+5IZKBL8gnltKpH+u0jtJftg4GbEMXuT2gapv
+	V4JOq2xbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj1Dm-0003jR-Cc; Wed, 10 Jun 2020 13:56:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jj1Gn-0004FW-3V; Wed, 10 Jun 2020 13:59:57 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj1Dc-0003j8-SN
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 13:56:42 +0000
-Received: from mail-ot1-f43.google.com (mail-ot1-f43.google.com
- [209.85.210.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A725207C3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 13:56:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591797400;
- bh=1Cj2Fu88LV4A1GgSyK0XUoUZIOiwmlOBdE+eZjQYBE8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=cxfDQV9c7q2CTPvH9bVVbFxTVYhTD/TelQG5Yq27BP7A4hg/tJgMFNm8ivwMarGjO
- //yBZphNP8a1ZofgNgh46xyBh6cjhJOMoAjWU/nRxi9KUj5kZvUQmlGHWfusM5T/1r
- qGtTogDeicpAsCSSiGjscw3KPco8jXPwv6C5TMzs=
-Received: by mail-ot1-f43.google.com with SMTP id e5so1736737ote.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 06:56:40 -0700 (PDT)
-X-Gm-Message-State: AOAM5339Wfh5QPE1EqZOoyHC9zX0BrA63N0DNqnxdMyaYU0UdQVpJwKm
- dngDozKjoRrBOt6bmb3EiqBQjghKzrtU6rWe5A==
-X-Google-Smtp-Source: ABdhPJzmcV+9T4BOYZL9yyzPscKPz9ct+kzL7+78ybw2OrqunkEGa/Wxk94oESNvy8oQbfWj8DD4LjEjvLDexy9UwZ8=
-X-Received: by 2002:a9d:c29:: with SMTP id 38mr2547303otr.107.1591797399576;
- Wed, 10 Jun 2020 06:56:39 -0700 (PDT)
+ id 1jj1Gd-0004Dr-Ht
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 13:59:50 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 95CC8DAAEE057B21A14B;
+ Wed, 10 Jun 2020 21:59:28 +0800 (CST)
+Received: from [10.173.222.27] (10.173.222.27) by
+ DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
+ 14.3.487.0; Wed, 10 Jun 2020 21:59:20 +0800
+Subject: Re: [PATCH] irqchip/gic-v4.1: Use readx_poll_timeout_atomic() to fix
+ sleep in atomic
+To: <maz@kernel.org>
+References: <20200605052345.1494-1-yuzenghui@huawei.com>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <4a9822bd-0362-7ffe-6e56-3f05a7816d9e@huawei.com>
+Date: Wed, 10 Jun 2020 21:59:17 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-References: <20200601094512.50509-1-sudeep.holla@arm.com>
- <20200601094512.50509-2-sudeep.holla@arm.com>
- <20200609223551.GA1620273@bogus> <20200610074346.GB15939@willie-the-truck>
-In-Reply-To: <20200610074346.GB15939@willie-the-truck>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 10 Jun 2020 07:56:28 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKFDBmyAVjWR9ZxOjU6j2fcCOz32rnnUwBAQzzh-vMa_A@mail.gmail.com>
-Message-ID: <CAL_JsqKFDBmyAVjWR9ZxOjU6j2fcCOz32rnnUwBAQzzh-vMa_A@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/3] dt-bindings: Add ARM PSA FF binding for
- non-secure VM partitions
-To: Will Deacon <will@kernel.org>
+In-Reply-To: <20200605052345.1494-1-yuzenghui@huawei.com>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_065640_936617_B52F17CD 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200610_065947_760308_8202641D 
+X-CRM114-Status: GOOD (  16.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.35 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,38 +69,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Sudeep Holla <sudeep.holla@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org, wangjingyi11@huawei.com,
+ wanghaibin.wang@huawei.com, tglx@linutronix.de, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 1:43 AM Will Deacon <will@kernel.org> wrote:
->
-> On Tue, Jun 09, 2020 at 04:35:51PM -0600, Rob Herring wrote:
-> > On Mon, Jun 01, 2020 at 10:45:10AM +0100, Sudeep Holla wrote:
-> > > Add devicetree bindings for a Arm PSA FF-A compliant non-secure partition
-> > > at virtual interface(VMs).
-> > >
-> > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > > ---
-> > >  .../devicetree/bindings/arm/arm,psa-ffa.txt   | 47 +++++++++++++++++++
-> > >  1 file changed, 47 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/arm/arm,psa-ffa.txt
-> >
-> > I'm hoping this goes away if the firmware is discoverable, but if not DT
-> > bindings are DT schema now.
->
-> We'll need the binding for the kvm host side, because there are plenty
-> of partition properties that are not discoverable (e.g. number of vCPUs).
+Hi Marc,
 
-BTW, there's already a partitioning binding for Power in ePAPR. I've
-not paid much attention to it, but maybe it could be useful here.
+Sorry to ping you in the merge window, but ...
 
-Rob
+On 2020/6/5 13:23, Zenghui Yu wrote:
+> readx_poll_timeout() can sleep if @sleep_us is specified by the caller,
+> and is therefore unsafe to be used inside the atomic context, which is
+> this case when we use it to poll the GICR_VPENDBASER.Dirty bit in
+> irq_set_vcpu_affinity() callback.
+
+this seems like an urgent thing to me. Without this patch, CPUs are
+easily to get stuck on my board with GICv4.1 enabled. So it'd be good if
+you can have a look and take this as a fix (if it is correct).
+
+
+Thanks,
+Zenghui
+
+> 
+> Let's convert to its atomic version instead which helps to get the v4.1
+> board back to life!
+> 
+> Fixes: 96806229ca03 ("irqchip/gic-v4.1: Add support for VPENDBASER's Dirty+Valid signaling")
+> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+> ---
+>   drivers/irqchip/irq-gic-v3-its.c | 8 ++++----
+>   1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
+> index cd685f521c77..6a5a87fc4601 100644
+> --- a/drivers/irqchip/irq-gic-v3-its.c
+> +++ b/drivers/irqchip/irq-gic-v3-its.c
+> @@ -3797,10 +3797,10 @@ static void its_wait_vpt_parse_complete(void)
+>   	if (!gic_rdists->has_vpend_valid_dirty)
+>   		return;
+>   
+> -	WARN_ON_ONCE(readq_relaxed_poll_timeout(vlpi_base + GICR_VPENDBASER,
+> -						val,
+> -						!(val & GICR_VPENDBASER_Dirty),
+> -						10, 500));
+> +	WARN_ON_ONCE(readq_relaxed_poll_timeout_atomic(vlpi_base + GICR_VPENDBASER,
+> +						       val,
+> +						       !(val & GICR_VPENDBASER_Dirty),
+> +						       10, 500));
+>   }
+>   
+>   static void its_vpe_schedule(struct its_vpe *vpe)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
