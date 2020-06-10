@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79F761F50E9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:09:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D8511F50F2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:10:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t3DjsEEYzn4eNqsP83r7I3DLoc6t5NSM5ShLXlouzvE=; b=BD6/C8pqEk5gHJ
-	0M4/SaJV63za6mNtS2NSsxnCTnIDKWK8WuDBf9xaPW9rW6z620c32pD4kiJJ16QippJSVEKLftmyh
-	4sD1UO0w/WGEAv6Q9edJ4YuRht7PTIX+7UVDHmmEkXDoMtFusfaGnGi/x+qrCJgzxDfRNONpD0y66
-	QH5dVJ0lZwFzllkvre8FwSG24FoLGNRuoM1f2Dym98qlQj+rVLl5yMpX/YVS7vcM7SB6DOlpiaUIr
-	HirkM6oQaA2gUPYXvZVEDeSaoDZI8sqL9fov+SkhWrWfXCeQR2WCwnkMWecbh1nT/lweXU50twWu7
-	ftsspmSohvd6iNnPHTXQ==;
+	List-Owner; bh=mNeQyfjJSy4a9Wl0rN12jhaV10iUJ5WCNuuScOPJVPU=; b=qnmgiw5QuvW7dA
+	gCEa0vjIKqTbquy5bkYVdf6wbAEIJxxYLKaXNmpGj0Udoh6cRVoCLCYbgNNP9ITne3b+QAKVFbsVA
+	YlqvA4O+g6LKn+OctenWj3fdNX/2esS+tZqV3skikOlMn7Fj5K4KRUYFAkUjDuinm2AIvRFf0zM/n
+	kWANtLQe/di53wCnoNCiyossQ+G8uebdnFfO0+nslKPbPpxQiwCMSekXpi8rjojxiKmzrTiALWMNw
+	BI82Q8Pp/yFpZifNsUWby6r7/ioFSydhnY6gJCDM8pEulnvfl5n3TVadytSwiSjdZLeKiTSj968ET
+	vAAqeKmZmzrL+NKN8zMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiwjq-0002yO-Ne; Wed, 10 Jun 2020 09:09:38 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jiwkQ-0003RC-0p; Wed, 10 Jun 2020 09:10:14 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiwjb-0002ww-Js
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:09:26 +0000
-Received: by mail-pl1-x643.google.com with SMTP id d8so715510plo.12
+ id 1jiwk2-0003JJ-IQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:09:55 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id jz3so609093pjb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 02:09:23 -0700 (PDT)
+ Wed, 10 Jun 2020 02:09:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=njZa5CzYc0CB1WfMjMWMPTZpIxgWAFaChxUBp8ZpFSA=;
- b=vMeq1g38pphUh+pKX/GurD3h/meY+OMNYdk7FVLctA/zY4fJVLGxODXeCI0af+4X5z
- 6bJhJCLOB6zjQxF6j4qg9lf29LKJ/MlLts46Z0hnDgSBriUG1vf7URUNj381KBQ8d5FN
- z0JAAoJ10WqiD/M0GwjwWaSbv7G9+md6gt29g=
+ bh=8rOPH/PbuLqa2Cv7xwtOA9u/UUbRhuHyuujsYiUr6F0=;
+ b=eBHYdxR1Xa52Fqd6sKtA6Rq9srTsGJmyYGxwbZSYDhJs6eswpgfL+p9qNHFYDV7KsI
+ ea0S7VZZel+/Np8snAXVZxKW3KU7rulyRGs1hilXxkMK4Au7hYZWzXz9YV1FisLONDxq
+ 3C5cCG9B7w6VuXyD5NLkLc9pSlNglhlDmqEDk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=njZa5CzYc0CB1WfMjMWMPTZpIxgWAFaChxUBp8ZpFSA=;
- b=r1Kqv87/vs72RaNo7wPP5Sqsr/BHE9MhnBlcKcvcKUPsOdQOhuh03PjrXT6seexLBY
- qa0IAThVwKywDhZwnBc1ZAahsTl/bGYSDr0ARc7qd4VG3H8BTiLd1lBICjFFTqtRGQ9J
- 2fi1Ip7xmA5iKGJ/IjdpUPVXU1q3pCRJwBGic1tyHyT1BR1P7ymbgu3Fq/4ipw5lpIoS
- G8dcX6gb9s0wbCa5f10Is1wqfyxbA31e+UH0uY8rQnD+p89wxoJmWw4HM5tpGGxi6Fe4
- ntpn8hJ7NhbQATm60Vzc7vzBefRSqevYf0D+m2h6LY53txhHiKuyuvKbtI6HO7L+mkzV
- svSA==
-X-Gm-Message-State: AOAM533UfZ3W2ABiyrtvEJ2Qit3GXjoJV8pNZpBUM/0Hoj0jIJqYMlz3
- 9rVzDG9CVTcJysiIbqW4vUQUbQ==
-X-Google-Smtp-Source: ABdhPJx/lI1p0cF49lGIaJXRlYtG/08x4becUViY4asj3Yx5wttRu38tEyMB17hDW1TgIVPKSiUpNg==
-X-Received: by 2002:a17:902:9342:: with SMTP id
- g2mr2218358plp.326.1591780162932; 
- Wed, 10 Jun 2020 02:09:22 -0700 (PDT)
+ bh=8rOPH/PbuLqa2Cv7xwtOA9u/UUbRhuHyuujsYiUr6F0=;
+ b=fGIwJOBo2rRGJWI3vuuv9UX56u2ot5/qu3YDCUySD1Gkx8YypM5+yMvgBP7PXxLIrv
+ 4O6iiQpwXQHx3iEuTq3yU6bwMIrHWJYy9ODqbmzxiSGL5k/v7UTVzNAKflfT5yyoz8qM
+ +BR94XekpYnOT8KKvXKA6PZUHFH+cTGmk/pd8JhCTrZJstZGOmsocme5kJsXZblPiOEg
+ cshDWg/ufsQ1jKIEIWIwXoUgzQv5SeHLTPdIQDSDp5xn9D4mqqTJd+la2cAxMUtlZSKo
+ RLycswzo/W/cR3azpF0l2OtB9jPpRo5vXCnRqUPXU9l8/LkvssWwTLUvNK9FTptinI0e
+ YTBA==
+X-Gm-Message-State: AOAM531QizpVdeW6gIYXggKimMD0DvkoUS3p/0BeMw6xgdQI5cKL9U1r
+ EAam0uEPUn1kF79GquC5xVtI0g==
+X-Google-Smtp-Source: ABdhPJww724krgp0BaN7nCeOkrtyuYDvte4q30IE/QoN+f33C/Hjei4IWQ+/yy2VykQxBXRYOfRA7Q==
+X-Received: by 2002:a17:902:968b:: with SMTP id
+ n11mr2104726plp.331.1591780189664; 
+ Wed, 10 Jun 2020 02:09:49 -0700 (PDT)
 Received: from shiro.work (p1285116-ipngn200805sizuokaden.shizuoka.ocn.ne.jp.
  [114.171.61.116])
- by smtp.googlemail.com with ESMTPSA id nl8sm5191620pjb.13.2020.06.10.02.09.16
+ by smtp.googlemail.com with ESMTPSA id nl8sm5191620pjb.13.2020.06.10.02.09.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 02:09:22 -0700 (PDT)
+ Wed, 10 Jun 2020 02:09:49 -0700 (PDT)
 From: Daniel Palmer <daniel@0x0f.com>
 To: 
-Subject: [PATCH v2 4/5] ARM: mstar: Add dts for msc313(e) based BreadBee boards
-Date: Wed, 10 Jun 2020 18:04:02 +0900
-Message-Id: <20200610090421.3428945-5-daniel@0x0f.com>
+Subject: [PATCH v2 5/5] ARM: mstar: Add dts for 70mai midrive d08
+Date: Wed, 10 Jun 2020 18:04:03 +0900
+Message-Id: <20200610090421.3428945-6-daniel@0x0f.com>
 X-Mailer: git-send-email 2.27.0.rc0
 In-Reply-To: <20191014061617.10296-2-daniel@0x0f.com>
 References: <20191014061617.10296-2-daniel@0x0f.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_020924_468087_E973951D 
-X-CRM114-Status: GOOD (  15.88  )
+X-CRM114-CacheID: sfid-20200610_020950_668004_89C87DC0 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,55 +108,50 @@ Cc: Linus Walleij <linus.walleij@linaro.org>,
  linux-arm-kernel@lists.infradead.org, Nathan Huckleberry <nhuck15@gmail.com>,
  devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
  allen <allen.chen@ite.com.tw>, tim.bird@sony.com,
- Maxime Ripard <mripard@kernel.org>, Lubomir Rintel <lkundrak@v3.sk>,
- Rob Herring <robh+dt@kernel.org>, Gregory Fong <gregory.0xf0@gmail.com>,
- Doug Anderson <armlinux@m.disordat.com>,
+ Will Deacon <will@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ Gregory Fong <gregory.0xf0@gmail.com>, Doug Anderson <armlinux@m.disordat.com>,
  Nathan Chancellor <natechancellor@gmail.com>, k@japko.eu,
+ Christian Lamparter <chunkeey@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
  =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
  Mark Brown <broonie@kernel.org>, Marc Zyngier <maz@kernel.org>,
  Andrew Morton <akpm@linux-foundation.org>,
- "David S. Miller" <davem@davemloft.net>, Mike Rapoport <rppt@kernel.org>
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BreadBee is an opensource development board based on the
-MStar msc313(e) SoC.
-
-Hardware details, schematics and so on can be found at:
-https://github.com/breadbee/breadbee
+Adds inital support for the 70mai midrive d08 dash camera.
 
 Signed-off-by: Daniel Palmer <daniel@0x0f.com>
 ---
- arch/arm/boot/dts/Makefile                    |  3 +++
- .../dts/infinity-msc313-breadbee_crust.dts    | 25 +++++++++++++++++++
- .../boot/dts/infinity3-msc313e-breadbee.dts   | 25 +++++++++++++++++++
- 3 files changed, 53 insertions(+)
- create mode 100644 arch/arm/boot/dts/infinity-msc313-breadbee_crust.dts
- create mode 100644 arch/arm/boot/dts/infinity3-msc313e-breadbee.dts
+ arch/arm/boot/dts/Makefile                    |  3 ++-
+ .../boot/dts/mercury5-ssc8336n-midrive08.dts  | 25 +++++++++++++++++++
+ 2 files changed, 27 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/boot/dts/mercury5-ssc8336n-midrive08.dts
 
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index e6a1cac0bfc7..4a5f8075a4f6 100644
+index 4a5f8075a4f6..35c7ecc52c60 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
-@@ -1342,6 +1342,9 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += \
- 	mt8127-moose.dtb \
- 	mt8135-evbp1.dtb
+@@ -1344,7 +1344,8 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += \
  dtb-$(CONFIG_ARCH_MILBEAUT) += milbeaut-m10v-evb.dtb
-+dtb-$(CONFIG_ARCH_MSTARV7) += \
-+	infinity-msc313-breadbee_crust.dtb \
-+	infinity3-msc313e-breadbee.dtb
+ dtb-$(CONFIG_ARCH_MSTARV7) += \
+ 	infinity-msc313-breadbee_crust.dtb \
+-	infinity3-msc313e-breadbee.dtb
++	infinity3-msc313e-breadbee.dtb \
++	mercury5-ssc8336n-midrive08.dtb
  dtb-$(CONFIG_ARCH_ZX) += zx296702-ad1.dtb
  dtb-$(CONFIG_ARCH_ASPEED) += \
  	aspeed-ast2500-evb.dtb \
-diff --git a/arch/arm/boot/dts/infinity-msc313-breadbee_crust.dts b/arch/arm/boot/dts/infinity-msc313-breadbee_crust.dts
+diff --git a/arch/arm/boot/dts/mercury5-ssc8336n-midrive08.dts b/arch/arm/boot/dts/mercury5-ssc8336n-midrive08.dts
 new file mode 100644
-index 000000000000..8a827c8fd8b2
+index 000000000000..4ee50ecf6ab1
 --- /dev/null
-+++ b/arch/arm/boot/dts/infinity-msc313-breadbee_crust.dts
++++ b/arch/arm/boot/dts/mercury5-ssc8336n-midrive08.dts
 @@ -0,0 +1,25 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
@@ -165,42 +160,11 @@ index 000000000000..8a827c8fd8b2
 + */
 +
 +/dts-v1/;
-+#include "infinity-msc313.dtsi"
++#include "mercury5-ssc8336n.dtsi"
 +
 +/ {
-+	model = "breadbee-crust";
-+	compatible = "thingyjp,breadbee-crust", "mstar,infinity";
-+
-+	aliases {
-+		serial0 = &pm_uart;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+};
-+
-+&pm_uart {
-+	status = "okay";
-+};
-diff --git a/arch/arm/boot/dts/infinity3-msc313e-breadbee.dts b/arch/arm/boot/dts/infinity3-msc313e-breadbee.dts
-new file mode 100644
-index 000000000000..423bb32e6b74
---- /dev/null
-+++ b/arch/arm/boot/dts/infinity3-msc313e-breadbee.dts
-@@ -0,0 +1,25 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2019 thingy.jp.
-+ * Author: Daniel Palmer <daniel@thingy.jp>
-+ */
-+
-+/dts-v1/;
-+#include "infinity3-msc313e.dtsi"
-+
-+/ {
-+	model = "breadbee";
-+	compatible = "thingyjp,breadbee", "mstar,infinity3";
++	model = "midrive d08";
++	compatible = "70mai,midrived08", "mstar,mercury5";
 +
 +	aliases {
 +		serial0 = &pm_uart;
