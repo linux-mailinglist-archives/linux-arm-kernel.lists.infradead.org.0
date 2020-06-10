@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1D721F5E45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 00:20:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F20571F5E63
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 00:35:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0vglvHunub8HpoZElFwBoJDUzvo7lFIOuIhACoX+ivk=; b=fvQ03VgEuACJdQ
-	WfkYs4VtarGD8kNdCL7VGtVevfzs9W4bI2xajrPHVarvnMbYfLf76lMBVkeOdZ5v/yedccZHd2p/N
-	H5AA8aVISiegxZ1WBKikb+XLt1e8XFDD8xKmUVvEDRLvfi473Nb8RFRunywh+r+J1CcIksQWsSpkE
-	MGY7ynJrVUtEObVN4GtPEgZn+XWj1rOzBr/itOa3WA7Oj/n2wpNcQXn/WMzZSa6pmYjQPsW3cOZQl
-	CJDcMgTIQepqLqCXTBJMw6FisjmfGjHF/uDdBzI5dZg6TqdYsknuOz2rO8ZPRAibOt9Z2LBgKKyUA
-	u3ZYJ4VBlTW1Pz2exy9Q==;
+	List-Owner; bh=Th3DXeggVwVLjMmhOA2coZqLha4uU9fAe4vPqxVWwns=; b=flcZH+ZNH64jc7
+	/WivKoRNlsvcfrH9tYsgHrHzbX8Of16rdL2XSztBCR37vr7JYsIAiS2eJZAdI/0YhyPiHFpXZAGbI
+	LJCmuiHj26s8IpBKFKReauLNCYYaRdX8hzpGgAcJ/4sDxQeuUHmz5Sx0OiyZx4E2K/Pl+eQvvWN8h
+	Z24opLy0h/mGvPZyfuK43RSYK3kYJ2w3mlDC+hYk1B5nZkiELrS+atjT4axJY5p+W11Zlr8qktSHz
+	/6Cle91gAi5ImVcvyHIpFEKt9gesRqhdvkrPVPDavogMgSD7fIM8oTyogbfazHnnIY0SYkriPLZI4
+	VW32WXejD1FO+SHmtc4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj95P-0006cU-Hd; Wed, 10 Jun 2020 22:20:43 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1jj9J4-0004Ya-BN; Wed, 10 Jun 2020 22:34:50 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj95G-0006bx-UJ
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 22:20:36 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id u17so2268465vsu.7
+ id 1jj9Iu-0004YC-Bz
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 22:34:41 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id y123so2284933vsb.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 15:20:34 -0700 (PDT)
+ Wed, 10 Jun 2020 15:34:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gbYrwjkRNzZs52wtNe5b9ymrBledc5fgJdW/7CYMczg=;
- b=QyyXrmeKJSKKc54VOXRhBA48lstvw0q3ctLwmRUmYvuniF6MaKqprw76G6WKeXgKXB
- r/jbdUg8yJ7iw34oE1OWz0dWyMIlim7iHYcQtD67/ivBRy+I7B838Bxvx4JWOVUAxYN3
- POzPLtPUSvRylefwwyiJnNCwZ28r+eFHCfQTlfjzukPMl52cDhRE0H8vA3A5R5qZ//vK
- hyVJruxV9jjEt3XKZbDLdCyH9tLqObhgWfqQJpRCLqqkFBHz8EB0eQ7avKhqHHK0zYzj
- RESHvTrXTKtZufFfvsuK5nk/vVANKcnKj1isrCHWI7ENKEYpAZgFY60ZfqvyNfgEDVAL
- 29Zw==
+ :cc; bh=C9LYQ8aclMkdwfJP4cdhxWD4N8cMJMuN6znPHlB3Rsc=;
+ b=UevvpOtsXUfdMcqvIgRfPVVQSDyZs6oXq/Xnj/8uJDFNeQBZ7vzloiU32xzvK6mFCu
+ cGGLwNrdnw/Q0on5lLXJlkuu8D4VI6gjZehfPhGO6t/torNaJ6NxHMQ2JuDgO8FwHc4P
+ o8FP7KzD9QWU8u7G49I5aLDbEK8X8zhTnPGPK+25pdCKJLn9W7w1iBlkb84D2LADSGpc
+ tCqhhzfq26VpCG0se8b1WZwp4CCFSusJSn+larn2+KMSi4aCsCQRQ/S3A4qsfTfUDCpT
+ JYfiX91/2CIDQozv8ZBX3SClrislUPBF+zqSWJE7quvH7sEsU2MJoNuxaq5T13FcVb0X
+ ExAg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=gbYrwjkRNzZs52wtNe5b9ymrBledc5fgJdW/7CYMczg=;
- b=Sy2VeozSFGeU23eyHhFdses7iMM/URf3UlJJxUCBGRA5bUR6bwo4mLaKyLbmHO5L8l
- uOlGfwkWFXx94z5GdGcj3ZbCw3G8AdpbakxqGpmB+xpXWRwCmkFvB/sUnnlff++pjbnZ
- L/79qCd1DOKfYmCoXymctadAzo4iJOCJA+mUPQ00me3FL8w9kDai6vAoweUv2q1cJbXf
- Xr2wqunlkAZoOvpgMekVQh/dBwWtiFxiOyMyYLWnhRclHY1kr0aiqxAzEEJjS/QaV2dK
- /xUqe5G0QxGB1eu65wd4SHGFG9LkAzoM5ajdUfzKhctMTiu+zkVce7oUyqMjmI89ju4q
- EHBg==
-X-Gm-Message-State: AOAM532W6/iuDtAkHNUgYKadIRi0VAfTZV209OpOuUGT0JZshV8vcnXg
- sAlUpKDGP1fqV8x4oC5zMZ6fAjTFRBOChz9t5ebFNw==
-X-Google-Smtp-Source: ABdhPJzOjvq/kbEr1iPy17gDm6Y5SxC/Oi9n4y5NbS27Re14ZbRVe9raYSH+GiU0z+vIPd8N4LFp9am07TBNHW7Kx80=
-X-Received: by 2002:a67:d287:: with SMTP id z7mr4666597vsi.2.1591827633895;
- Wed, 10 Jun 2020 15:20:33 -0700 (PDT)
+ bh=C9LYQ8aclMkdwfJP4cdhxWD4N8cMJMuN6znPHlB3Rsc=;
+ b=Gf7VRgRQaZ8nhWT0so12On6unt3BKTbhVWGOfDagAFGGEjzt05HWqr6jsMZFg/dYUE
+ tQT8oie/Jgf23CpROTYmXblM7miphHdE0IRBICLPbtdBL49BkdmnWgMLo7U7mYbvTRcm
+ NaQ1N40+eAZXvqvlOrjyARzKp3YK9ZdIfFSebufPV5x9EiMJ5WHPCGn5Fso6zpxa11gs
+ 393zB8SYHe4NHF3ZMki7+ReG3S8GJmOUD2eJ4nFWywcPcqxjF39s4yi5ekcH0pTOrQsq
+ sBxAxvDKvzMoNcpA8DtRepUWwr/fYuBnA94rcRPqBOvIRYAzjWXYgLbfehBcrBtTrnuM
+ 5u7Q==
+X-Gm-Message-State: AOAM531z/DEvJD7YrNVAKodJpVsVBr6KmFaXo50oQ45ttXF6pDXMUzZg
+ b7dcc0gMVOuYtPlcDA2fNFW4lGzZoAD5SdSwHWXuFA==
+X-Google-Smtp-Source: ABdhPJzdt1t5lYhNZNFDbxTCIee/fOpBW2dvkZTK5r9pH/LqHC+MVWmHSuu/UxjSaFUQydIW/izqWRJz+CsXZPttueA=
+X-Received: by 2002:a67:79ce:: with SMTP id u197mr4725019vsc.17.1591828478904; 
+ Wed, 10 Jun 2020 15:34:38 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-9-sean.j.christopherson@intel.com>
-In-Reply-To: <20200605213853.14959-9-sean.j.christopherson@intel.com>
+ <20200605213853.14959-8-sean.j.christopherson@intel.com>
+In-Reply-To: <20200605213853.14959-8-sean.j.christopherson@intel.com>
 From: Ben Gardon <bgardon@google.com>
-Date: Wed, 10 Jun 2020 15:20:19 -0700
-Message-ID: <CANgfPd-19pam9sujfsk1pdrp8YhVft1+JAmSS=xgUULqXRyUDg@mail.gmail.com>
-Subject: Re: [PATCH 08/21] KVM: x86/mmu: Clean up the gorilla math in
- mmu_topup_memory_caches()
+Date: Wed, 10 Jun 2020 15:34:28 -0700
+Message-ID: <CANgfPd9UH01vO1SYJ3vrKq4H_DXcJ3OL_VaeY2TV8_ZH9cR1GQ@mail.gmail.com>
+Subject: Re: [PATCH 07/21] KVM: x86/mmu: Topup memory caches after walking
+ GVA->GPA
 To: Sean Christopherson <sean.j.christopherson@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_152034_994383_3D2C727B 
-X-CRM114-Status: GOOD (  21.52  )
+X-CRM114-CacheID: sfid-20200610_153440_425319_C29DDDD6 
+X-CRM114-Status: GOOD (  17.33  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -120,66 +120,48 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Fri, Jun 5, 2020 at 2:39 PM Sean Christopherson
 <sean.j.christopherson@intel.com> wrote:
 >
-> Clean up the minimums in mmu_topup_memory_caches() to document the
-> driving mechanisms behind the minimums.  Now that encountering an empty
-> cache is unlikely to trigger BUG_ON(), it is less dangerous to be more
-> precise when defining the minimums.
+> Topup memory caches after walking the GVA->GPA translation during a
+> shadow page fault, there is no need to ensure the caches are full when
+> walking the GVA.  As of commit f5a1e9f89504f ("KVM: MMU: remove call
+> to kvm_mmu_pte_write from walk_addr"), the FNAME(walk_addr) flow no
+> longer add rmaps via kvm_mmu_pte_write().
 >
-> For rmaps, the logic is 1 parent PTE per level, plus a single rmap, and
-> prefetched rmaps.  The extra objects in the current '8 + PREFETCH'
-> minimum came about due to an abundance of paranoia in commit
-> c41ef344de212 ("KVM: MMU: increase per-vcpu rmap cache alloc size"),
-> i.e. it could have increased the minimum to 2 rmaps.  Furthermore, the
-> unexpected extra rmap case was killed off entirely by commits
-> f759e2b4c728c ("KVM: MMU: avoid pte_list_desc running out in
-> kvm_mmu_pte_write") and f5a1e9f89504f ("KVM: MMU: remove call to
-> kvm_mmu_pte_write from walk_addr").
->
-> For the so called page cache, replace '8' with 2*PT64_ROOT_MAX_LEVEL.
-> The 2x multiplier is needed because the cache is used for both shadow
-> pages and gfn arrays for indirect MMUs.
->
-> And finally, for page headers, replace '4' with PT64_ROOT_MAX_LEVEL.
->
-> Note, KVM now supports 5-level paging, i.e. the old minimums that used a
-> baseline derived from 4-level paging were technically wrong.  But, KVM
-> always allocates roots in a separate flow, e.g. it's impossible in the
-> current implementation to actually need 5 new shadow pages in a single
-> flow.  Use PT64_ROOT_MAX_LEVEL unmodified instead of subtracting 1, as
-> the direct usage is likely more intuitive to uninformed readers, and the
-> inflated minimum is unlikely to affect functionality in practice.
+> This avoids allocating memory in the case that the GVA is unmapped in
+> the guest, and also provides a paper trail of why/when the memory caches
+> need to be filled.
 >
 > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 Reviewed-by: Ben Gardon <bgardon@google.com>
 > ---
->  arch/x86/kvm/mmu/mmu.c | 9 ++++++---
->  1 file changed, 6 insertions(+), 3 deletions(-)
+>  arch/x86/kvm/mmu/paging_tmpl.h | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
 >
-> diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-> index 4b4c3234d623..451e0365e5dd 100644
-> --- a/arch/x86/kvm/mmu/mmu.c
-> +++ b/arch/x86/kvm/mmu/mmu.c
-> @@ -1103,14 +1103,17 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
->  {
->         int r;
+> diff --git a/arch/x86/kvm/mmu/paging_tmpl.h b/arch/x86/kvm/mmu/paging_tmpl.h
+> index 38c576495048..3de32122f601 100644
+> --- a/arch/x86/kvm/mmu/paging_tmpl.h
+> +++ b/arch/x86/kvm/mmu/paging_tmpl.h
+> @@ -791,10 +791,6 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
 >
-> +       /* 1 rmap, 1 parent PTE per level, and the prefetched rmaps. */
->         r = mmu_topup_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache,
-> -                                  8 + PTE_PREFETCH_NUM);
-> +                                  1 + PT64_ROOT_MAX_LEVEL + PTE_PREFETCH_NUM);
->         if (r)
->                 return r;
-> -       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_cache, 8);
-> +       r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_cache,
-> +                                  2 * PT64_ROOT_MAX_LEVEL);
->         if (r)
->                 return r;
-> -       return mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
-> +       return mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache,
-> +                                     PT64_ROOT_MAX_LEVEL);
->  }
+>         pgprintk("%s: addr %lx err %x\n", __func__, addr, error_code);
 >
->  static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
+> -       r = mmu_topup_memory_caches(vcpu);
+> -       if (r)
+> -               return r;
+> -
+>         /*
+>          * If PFEC.RSVD is set, this is a shadow page fault.
+>          * The bit needs to be cleared before walking guest page tables.
+> @@ -822,6 +818,10 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
+>                 return RET_PF_EMULATE;
+>         }
+>
+> +       r = mmu_topup_memory_caches(vcpu);
+> +       if (r)
+> +               return r;
+> +
+>         vcpu->arch.write_fault_to_shadow_pgtable = false;
+>
+>         is_self_change_mapping = FNAME(is_self_change_mapping)(vcpu,
 > --
 > 2.26.0
 >
