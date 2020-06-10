@@ -2,55 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E8671F5034
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 10:23:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A01C1F5045
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 10:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aUP3H9cFapHL+3dc8udPA80gyIcQcIa2rIOdQ9FEUy0=; b=gtFeNITiLp/W2a
-	Q1LKnHmktKBTTWXe2ZSk0usD2eAT7XG3ASvD0epl9AFX3a9Jsqlh0JOaPZIhzjI2WSYPhKzpKc9iH
-	xZOFhUwbTP40KbmLDnERiFgLBwtDRumNUeKbv3d2lqJ3k4zbuKxeOjpEgA84/bF1RX58HpPeLxT5S
-	ZuFgRDyHSmCBiljetGU626l3wNcaMAqr50wVdJJeXL4c+cyTHi6Sxj/tslMR/9dFgEsx2yGXE76R4
-	0lv+j04krouLCGVE4kLO0CJtJCewni41OnF1pXNuFaIq3GdLduAsgw8lp8/u4t/ilgBYi4luovBBR
-	8HlCbYO/GGITZ4ekYSNA==;
+	List-Owner; bh=5A+A2EcqM4Cs/JG5LcxmzC7bp0Fg2RlFVs4NUb1EVfo=; b=Q9Gy9jg9ICgrPJ
+	ucowRdHbtokZHuCnP9Ak4pVtuMCGdOn7NrwbCHL9mMRaxEqhV9DXrkgS9sOSrh4oDsnuWo24bxk3/
+	+zVcekruGLsDT7AOBWg73xgqPf77BFBOvZH/RiY/BenaJuaIjVJpRCs5FOQL4WmEB91bIRl9ntwWO
+	GktdhvV2ehxqlxnza04S+mHPn52zusxU4uQAkmO2qVfQK685zf0DzqG35s82d+88gulS5uFyMHaYk
+	L3Y+jeW732JYhy9ZZQ3ZL0a/T0xxLK+cn2jyWfQukZ2tN8SV/oHg16E/Fjns02ynPuVnRMknz7Aet
+	nqKvn4vJB8POkQJ22DUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiw1G-00053w-Gi; Wed, 10 Jun 2020 08:23:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiw17-00053L-9D
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 08:23:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA28E1F1;
- Wed, 10 Jun 2020 01:23:23 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.97])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 014D63F6CF;
- Wed, 10 Jun 2020 01:23:18 -0700 (PDT)
-Date: Wed, 10 Jun 2020 09:23:15 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: jassisinghbrar@gmail.com
-Subject: Re: [PATCH] firmware: arm_scmi: fix timeout value for send_message
-Message-ID: <20200610082315.GB2689@bogus>
-References: <20200607193023.52344-1-jassisinghbrar@gmail.com>
+	id 1jiw7M-0008LA-Od; Wed, 10 Jun 2020 08:29:52 +0000
+Received: from mail-ej1-f65.google.com ([209.85.218.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiw7F-0008Ki-9T
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 08:29:46 +0000
+Received: by mail-ej1-f65.google.com with SMTP id f7so1591640ejq.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jun 2020 01:29:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=FDSNWzEU1BCo6wG/cdIC3mu6f2xb06oIyPX8U4p2La0=;
+ b=Gxl9XKOZ1E9io58f7YcIe4vPEqZ5po75MQ9cD+5+HGEDCHmj4e8/nBZQt4WliSodsQ
+ cS2oYBnJSnIsWTx+cv8UbWZaLazfhuw7o0RCJTt4h6D9aB52D7NIYlaEGfbidj26nvRy
+ fViqc5PCrQSFwCENqODlbsWDFj4i0E+yhGz7bEBvTbCaQihujRg6O5l63c4cqQaigr3K
+ pb3QrJnj5fxy9gAVXMYqBDZtZlug4bDHlJaue92EYeZal98nhdsC/yNLChRQ2S2RMIrG
+ 9uMxr+twyrMtYzgoPaVAL+ViSPWypTvWIY2PyBFsWQcp7KySpOWylq3Ihh4PaDXYE5Qw
+ /j5Q==
+X-Gm-Message-State: AOAM530RBvDVUInGmY3Sj3YruOHEZhdeRxNw5ZRhTRK9+YLRs6x15A8i
+ d1PaD2BqqYe0oi9pCa1qXzSy38oZXtSB+i4G7ns=
+X-Google-Smtp-Source: ABdhPJxOEtPuPOmj6dC8S4CZ/xJTRRt5rhm7PcV4cCO58Wg9TMbFQP8d/SywDEkq0BNkQlzSPKMmCP8/XoHZ7bIpl94=
+X-Received: by 2002:a17:907:4096:: with SMTP id
+ nm6mr2343355ejb.4.1591777782737; 
+ Wed, 10 Jun 2020 01:29:42 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200607193023.52344-1-jassisinghbrar@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200609113049.4035426-1-noltari@gmail.com>
+ <20200609113049.4035426-3-noltari@gmail.com>
+ <1367fcf3-24ed-9106-a329-da5f8e168e17@gmail.com>
+ <3E897527-55EB-47DB-99ED-C737725F0F9E@gmail.com>
+In-Reply-To: <3E897527-55EB-47DB-99ED-C737725F0F9E@gmail.com>
+From: =?UTF-8?Q?Philippe_Mathieu=2DDaud=C3=A9?= <f4bug@amsat.org>
+Date: Wed, 10 Jun 2020 10:29:31 +0200
+Message-ID: <CAAdtpL7dUZ2RqkrqSxiZxDbp4qY-KdtSc7CyuR+rbnRRA2Yvrw@mail.gmail.com>
+Subject: Re: [PATCH 2/2] clk: bcm63xx-gate: add BCM6318 support
+To: =?UTF-8?B?w4FsdmFybyBGZXJuw6FuZGV6IFJvamFz?= <noltari@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_012325_365246_49BEED7F 
-X-CRM114-Status: GOOD (  22.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200610_012945_328308_6D83A01F 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.218.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [philippe.mathieu.daude[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.218.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,80 +86,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, arnd@arndb.de, viresh.kumar@linaro.org,
- linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
- Jassi Brar <jaswinder.singh@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
- frowand.list@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ kbuild test robot <lkp@intel.com>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ open list <linux-kernel@vger.kernel.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Jonas Gorski <jonas.gorski@gmail.com>, linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 07, 2020 at 02:30:23PM -0500, jassisinghbrar@gmail.com wrote:
-> From: Jassi Brar <jaswinder.singh@linaro.org>
->
-> Currently scmi_do_xfer() submits a message to mailbox api and waits
-> for an apparently very short time. This works if there are not many
-> messages in the queue already. However, if many clients share a
-> channel and/or each client submits many messages in a row, the
-
-The recommendation in such scenarios is to use multiple channel.
-
-> timeout value becomes too short and returns error even if the mailbox
-> is working fine according to the load. The timeout occurs when the
-> message is still in the api/queue awaiting its turn to ride the bus.
->
->  Fix this by increasing the timeout value enough (500ms?) so that it
-> fails only if there is an actual problem in the transmission (like a
-> lockup or crash).
->
-> [If we want to capture a situation when the remote didn't
-> respond within expected latency, then the timeout should not
-> start here, but from tx_prepare callback ... just before the
-> message physically gets on the channel]
->
-
-The bottle neck may not be in the remote. It may be mailbox serialising
-the requests even when it can parallelise.
-
-> Signed-off-by: Jassi Brar <jaswinder.singh@linaro.org>
-> ---
->  drivers/firmware/arm_scmi/driver.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-> index dbec767222e9..46ddafe7ffc0 100644
-> --- a/drivers/firmware/arm_scmi/driver.c
-> +++ b/drivers/firmware/arm_scmi/driver.c
-> @@ -303,7 +303,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
->  	}
->
->  	if (xfer->hdr.poll_completion) {
-> -		ktime_t stop = ktime_add_ns(ktime_get(), SCMI_MAX_POLL_TO_NS);
-> +		ktime_t stop = ktime_add_ns(ktime_get(), 500 * 1000 * NSEC_PER_USEC);
->
-
-This is unacceptable delay for schedutil fast_switch. So no for this one.
-
->  		spin_until_cond(scmi_xfer_done_no_timeout(cinfo, xfer, stop));
->
-> @@ -313,7 +313,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
->  			ret = -ETIMEDOUT;
->  	} else {
->  		/* And we wait for the response. */
-> -		timeout = msecs_to_jiffies(info->desc->max_rx_timeout_ms);
-> +		timeout = msecs_to_jiffies(500);
-
-In general, this hides issues in the remote. We are trying to move towards
-tops 1ms for a request and with MBOX_QUEUE at 20, I see 20ms is more that
-big enough. We have it set to 30ms now. 500ms is way too large and not
-required IMO.
-
---
-Regards,
-Sudeep
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiBXZWQsIEp1biAxMCwgMjAyMCBhdCA4OjEzIEFNIMOBbHZhcm8gRmVybsOhbmRleiBS
+b2phcwo8bm9sdGFyaUBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gSGkgRmxvcmlhbiwKPgo+ID4gRWwg
+MTAganVuIDIwMjAsIGEgbGFzIDQ6MjcsIEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFpbmVsbGlAZ21h
+aWwuY29tPiBlc2NyaWJpw7M6Cj4gPgo+ID4KPiA+Cj4gPiBPbiA2LzkvMjAyMCA0OjMwIEFNLCDD
+gWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgd3JvdGU6Cj4gPj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qg
+Y2xrX2JjbTYzeHhfdGFibGVfZW50cnkgYmNtNjMxOF9jbG9ja3NbXSA9IHsKPiA+PiArICAgIHsg
+Lm5hbWUgPSAiYWRzbF9hc2IiLCAuYml0ID0gMCwgfSwKPiA+PiArICAgIHsgLm5hbWUgPSAidXNi
+X2FzYiIsIC5iaXQgPSAxLCB9LAo+ID4+ICsgICAgeyAubmFtZSA9ICJtaXBzX2FzYiIsIC5iaXQg
+PSAyLCB9LAo+ID4+ICsgICAgeyAubmFtZSA9ICJwY2llX2FzYiIsIC5iaXQgPSAzLCB9LAo+ID4+
+ICsgICAgeyAubmFtZSA9ICJwaHltaXBzX2FzYiIsIC5iaXQgPSA0LCB9LAo+ID4+ICsgICAgeyAu
+bmFtZSA9ICJyb2Jvc3dfYXNiIiwgLmJpdCA9IDUsIH0sCj4gPj4gKyAgICB7IC5uYW1lID0gInNh
+cl9hc2IiLCAuYml0ID0gNiwgfSwKPiA+PiArICAgIHsgLm5hbWUgPSAic2RyX2FzYiIsIC5iaXQg
+PSA3LCB9LAo+ID4+ICsgICAgeyAubmFtZSA9ICJzd3JlZ19hc2IiLCAuYml0ID0gOCwgfSwKPiA+
+PiArICAgIHsgLm5hbWUgPSAicGVyaXBoX2FzYiIsIC5iaXQgPSA5LCB9LAo+ID4+ICsgICAgeyAu
+bmFtZSA9ICJjcHVidXMxNjAiLCAuYml0ID0gMTAsIH0sCj4gPj4gKyAgICB7IC5uYW1lID0gImFk
+c2wiLCAuYml0ID0gMTEsIH0sCj4gPj4gKyAgICB7IC5uYW1lID0gInNhcjEyNCIsIC5iaXQgPSAx
+MiwgfSwKPiA+Cj4gPiBOaXQ6IHRoaXMgc2hvdWxkIGJlIHNhcjEyNQo+Cj4gTmljZSBjYXRjaCwg
+SSB3aWxsIGZpeCB0aGlzIGluIHYyLgo+Cj4gPgo+ID4+ICsgICAgeyAubmFtZSA9ICJtaXBzIiwg
+LmJpdCA9IDEzLCAuZmxhZ3MgPSBDTEtfSVNfQ1JJVElDQUwsIH0sCj4gPj4gKyAgICB7IC5uYW1l
+ID0gInBjaWUiLCAuYml0ID0gMTQsIH0sCj4gPj4gKyAgICB7IC5uYW1lID0gInJvYm9zdzI1MCIs
+IC5iaXQgPSAxNiwgfSwKPiA+PiArICAgIHsgLm5hbWUgPSAicm9ib3N3MDI1IiwgLmJpdCA9IDE3
+LCB9LAo+ID4+ICsgICAgeyAubmFtZSA9ICJzZHIiLCAuYml0ID0gMTksIC5mbGFncyA9IENMS19J
+U19DUklUSUNBTCwgfSwKPiA+PiArICAgIHsgLm5hbWUgPSAidXNiIiwgLmJpdCA9IDIwLCB9LAo+
+ID4KPiA+IFRoaXMgc2hvdWxkIHByb2JhYmx5IGJlICJ1c2JkIiB0byBpbmRpY2F0ZSB0aGlzIGlz
+IHRoZSBVU0IgZGV2aWNlIGNsb2NrCj4gPiAobm90IGhvc3QpCj4KPiBPaywgSSB3aWxsIGNoYW5n
+ZSBpdC4gSSBnb3QgY29uZnVzZWQgYnkgdGhlIGZhY3QgdGhhdCBib3RoICh1c2JkIGFuZCB1c2Jo
+KSB3ZXJlIHByZXNlbnQgb24gNjMxOF9tYXBfcGFydC5oOgo+ICNkZWZpbmUgVVNCRF9DTEtfRU4g
+ICAgICAgICAoMSA8PCAyMCkKPiAjZGVmaW5lIFVTQkhfQ0xLX0VOICAgICAgICAgKDEgPDwgMjAp
+CgpJcyB0aGVyZSBhIGRhdGFzaGVldCB0byB2ZXJpZnkgdGhhdD8KCj4KPiA+Cj4gPiBXaXRoIHRo
+YXQgZml4ZWQ6Cj4gPgo+ID4gUmV2aWV3ZWQtYnk6IEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFpbmVs
+bGlAZ21haWwuY29tPgo+ID4gLS0KPiA+IEZsb3JpYW4KPgoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
