@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DEBE1F51EF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:10:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B0B61F51FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:13:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XkttwmFXhuxSUfhlAkozz8qCthbkuZohvkNRjzDZc+o=; b=DrvQkgIsidjh0n
-	O88+7KhPgmMIzZFDNcmme/+PlX5vj8nWiYjJJCOR0/VM94oVdGnKD4t+yKqDEQ5YWF4e9KrqF+jIl
-	/0me2+wxFvkanAq7ONvXDXNYdEXQyvxPKibY8DfR13smDrpynNrDVrKHqxCSfGerdFWfp4N5j3Fpg
-	E59DltuKM242t8Ky+ryQXJsZOeTC8RuEZNn9EEoPLXtgWL5O+90bcQE3MwzYVIWpjWhz/4pzzBCC1
-	jIAOmCrBieI/gO9fEZe7pXTRCEp8bdKTZgYvk04APFNJzv2IHOOteot8TjUCUcoxiQ93qFKX0H4h6
-	iWynVIZmAXoYrFgt3qOA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ILWa10qxFejyY1Mpu4zb3iaWrWiXMNxUlJAM9jqfvro=; b=EaMOQoOyl2KTxT3edNf7543QPa
+	jKaIsbrjF5tBpfDoe0hKAWgtC0c70tKKdd0uirebl5vjeUnBaDvMMBE7H7IhPXOzyT/AzMpAhf34+
+	ojWePmV/rmQc++pv40Hkh1UZPB77uiZATmcAFoIFSGv6dV/3aMTIKuvGJojH7qVMogzSpNxR8gbW+
+	gJ0hsZeVhE0X52e3raoLMYSWO7jtNwy00/YkSbPO4SDznY9ne6OLoHTpceFei3kKOoU6rapSlGMuL
+	qLecGf6tE5mukr6NYOxILzSG7RK8Hi3CkjW0nA9h1ErOxDshxCR9ucbSG0/J8eweqPW+kvPE4FQIo
+	OOpvNbVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jixgw-00048E-Cl; Wed, 10 Jun 2020 10:10:42 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jixgn-00047f-Ph
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 10:10:35 +0000
-Received: by mail-lf1-x144.google.com with SMTP id u16so1100709lfl.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 03:10:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VAhzONNr7z3ygGUqG934E3Yihpizy6C4bWVguia+sKY=;
- b=dL2TrTTLy7r6e6P3kCV8VlxlA9Db3VcE3zFFe7xcEr8nMHDScBF9vsWQ8ytW1YJrYW
- etOhipCNb6uKdjPJMUNNfm4So/Spq0mvAuxViNW9ugd0BbRtIo/UeVrWOA+Av48tDdMj
- 07fZcBb7KtQoRqCVtf4uBi/r8znrUa4mXMjym8Q7WcXQzJYbQ6R+zNSAIsA3+WnNPVE2
- sXVJYECC0MwXDOt3idZeZQaetYMUte4/kDSMGagZpNxEKtD50aiKyzxVf7FyVDx95dKj
- l/nU+Zz248XNJfMLXvnkbuaYrR36t4JFSvN0tOG2mQBAJtcHCgcjdBecZyVu4FxQb+Nj
- onzA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VAhzONNr7z3ygGUqG934E3Yihpizy6C4bWVguia+sKY=;
- b=J0bZOBMKssfHrXYN1HePl1IC4NO4tYkIMX7nmTJI1Xd5lOKcmSqEZKDHMFu8TkWvbZ
- tmzlu8mAmd3CdSvwZIlhuQxPKUUq/D12b05Ca5egFcdeK9GejQiu/h9AJzVfQftu+2dZ
- BeNtxqPX+aEVP5ov4Jxl/0yI9IOJ6cO8KViVbkYebYoa0lKmXgUDhvt4Y7B+e/gv+kvJ
- 0KnB61okuupTI+hz6HnJaynDwem6CJrde615hmIutCR2p/WcFqhOYqZ4C3cCEHstPeCm
- pEvgcimo1ikf/aEY4FolqrTaZObleMLjfTTivIFPHblF/7Azg/wmFrBq0B+V1l3+3lIV
- zrWg==
-X-Gm-Message-State: AOAM530I8U4nZ0JLCIjgxUKpgmLnVWjnkrTDpDkcueWxQt4dMh+4CbVO
- ZOlzpgph+Fs7gTLzNCP8EiR1puqT8MRsPVy1bAys9w==
-X-Google-Smtp-Source: ABdhPJyTa1XrI/sysgesk54NFQfcSN3GAqb6rinYxiQxuvsa0bLQFSw0HofyX/7Hp343PcO7RYxIXfIdX3ufmtwkHYw=
-X-Received: by 2002:ac2:562b:: with SMTP id b11mr1305542lff.47.1591783832131; 
- Wed, 10 Jun 2020 03:10:32 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200512104758.GA12980@afzalpc>
- <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
- <20200514111755.GA4997@afzalpc>
- <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
- <20200514133545.GA5020@afzalpc>
- <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
- <20200516060624.GA6371@afzalpc>
- <CAK8P3a01FYoWY9sZKU1q=UQ3ut4srwXXUeGRzW6APi+GpoKo1w@mail.gmail.com>
- <20200607125932.GA4576@afzalpc> <20200607161116.GN1551@shell.armlinux.org.uk>
- <20200608110902.GA5736@afzalpc>
-In-Reply-To: <20200608110902.GA5736@afzalpc>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 10 Jun 2020 12:10:21 +0200
-Message-ID: <CACRpkdboPBGBdHaRtZ=OAFvikYZVh=BVu192uyiB8T=yeHHEbA@mail.gmail.com>
-Subject: Re: ARM: vmsplit 4g/4g
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
+	id 1jixjE-0004VF-ER; Wed, 10 Jun 2020 10:13:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jixj5-0004Tl-C9; Wed, 10 Jun 2020 10:12:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A090D1FB;
+ Wed, 10 Jun 2020 03:12:54 -0700 (PDT)
+Received: from e123648.arm.com (unknown [10.37.12.16])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7AB763F73D;
+ Wed, 10 Jun 2020 03:12:44 -0700 (PDT)
+From: Lukasz Luba <lukasz.luba@arm.com>
+To: linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-imx@nxp.com, rjw@rjwysocki.net
+Subject: [RESEND][PATCH v8 4/8] PM / EM: add support for other devices than
+ CPUs in Energy Model
+Date: Wed, 10 Jun 2020 11:12:23 +0100
+Message-Id: <20200610101223.7152-1-lukasz.luba@arm.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200527095854.21714-5-lukasz.luba@arm.com>
+References: <20200527095854.21714-5-lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_031033_836082_B7320E0F 
-X-CRM114-Status: GOOD (  16.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_031255_507398_86447C32 
+X-CRM114-Status: GOOD (  26.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,53 +64,536 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
+ bsegall@google.com, festevam@gmail.com, mka@chromium.org, robh@kernel.org,
+ amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com, khilman@kernel.org,
+ daniel.lezcano@linaro.org, steven.price@arm.com, cw00.choi@samsung.com,
+ mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
+ alyssa.rosenzweig@collabora.com, orjan.eide@arm.com, daniel@ffwll.ch,
+ b.zolnierkie@samsung.com, s.hauer@pengutronix.de, rostedt@goodmis.org,
+ matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com, airlied@linux.ie,
+ tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
+ rdunlap@infradead.org, agross@kernel.org, kernel@pengutronix.de,
+ sudeep.holla@arm.com, patrick.bellasi@matbug.net, shawnguo@kernel.org,
+ lukasz.luba@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 8, 2020 at 1:09 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
-> On Sun, Jun 07, 2020 at 05:11:16PM +0100, Russell King - ARM Linux admin wrote:
-> > On Sun, Jun 07, 2020 at 06:29:32PM +0530, afzal mohammed wrote:
->
-> > > get_user_pages_fast() followed by kmap_atomic() & then memcpy() seems
-> > > to work in principle for user copy.
-> >
-> > Have you done any performance evaluation of the changes yet? I think
-> > it would be a good idea to keep that in the picture. If there's any
-> > significant regression, then that will need addressing.
->
-> Not yet. Yes, i will do the performance evaluation.
->
-> i am also worried about the impact on performance as these
-> [ get_user_pages() or friends, kmap_atomic() ] are additionally
-> invoked in the copy_{from,to}_user() path now.
+Add support for other devices than CPUs. The registration function
+does not require a valid cpumask pointer and is ready to handle new
+devices. Some of the internal structures has been reorganized in order to
+keep consistent view (like removing per_cpu pd pointers).
 
-I am happy to help!
+Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+---
+Hi all,
 
-I am anyway working on MMU-related code (KASan) so I need to be on
-top of this stuff.
+This is just a small change compared to v8 addressing Rafael's
+comments an Dan's static analyzes.
+Here are the changes:
+- added comment about mutex usage in the unregister function
+- changed 'dev' into @dev in the kerneldoc comments
+- removed 'else' statement from em_create_pd() to calm down static analizers
 
-What test is appropriate for this? I would intuitively think hackbench?
+Regards,
+Lukasz
 
-> Note that this was done on a topic branch for user copy. Changes for
-> kernel static mapping to vmalloc has not been merged with these.
-> Also having kernel lowmem w/ a separate asid & switching at kernel
-> entry/exit b/n user & kernel lowmem by changing ttbr0 is yet to be
-> done. Quite a few things remaining to be done to achieve vmsplit 4g/4g
+ include/linux/device.h       |   5 +
+ include/linux/energy_model.h |  29 ++++-
+ kernel/power/energy_model.c  | 244 ++++++++++++++++++++++++-----------
+ 3 files changed, 194 insertions(+), 84 deletions(-)
 
-I will be very excited to look at patches or a git branch once you have
-something you want to show. Also to just understand how you go about
-this. I have several elder systems under my
-roof so my contribution could hopefully be to help and debug any issues
-on these.
+diff --git a/include/linux/device.h b/include/linux/device.h
+index ac8e37cd716a..7023d3ea189b 100644
+--- a/include/linux/device.h
++++ b/include/linux/device.h
+@@ -13,6 +13,7 @@
+ #define _DEVICE_H_
+ 
+ #include <linux/dev_printk.h>
++#include <linux/energy_model.h>
+ #include <linux/ioport.h>
+ #include <linux/kobject.h>
+ #include <linux/klist.h>
+@@ -559,6 +560,10 @@ struct device {
+ 	struct dev_pm_info	power;
+ 	struct dev_pm_domain	*pm_domain;
+ 
++#ifdef CONFIG_ENERGY_MODEL
++	struct em_perf_domain	*em_pd;
++#endif
++
+ #ifdef CONFIG_GENERIC_MSI_IRQ_DOMAIN
+ 	struct irq_domain	*msi_domain;
+ #endif
+diff --git a/include/linux/energy_model.h b/include/linux/energy_model.h
+index 7076cb22b247..2d4689964029 100644
+--- a/include/linux/energy_model.h
++++ b/include/linux/energy_model.h
+@@ -12,8 +12,10 @@
+ 
+ /**
+  * em_perf_state - Performance state of a performance domain
+- * @frequency:	The CPU frequency in KHz, for consistency with CPUFreq
+- * @power:	The power consumed by 1 CPU at this level, in milli-watts
++ * @frequency:	The frequency in KHz, for consistency with CPUFreq
++ * @power:	The power consumed at this level, in milli-watts (by 1 CPU or
++		by a registered device). It can be a total power: static and
++		dynamic.
+  * @cost:	The cost coefficient associated with this level, used during
+  *		energy calculation. Equal to: power * max_frequency / frequency
+  */
+@@ -27,12 +29,16 @@ struct em_perf_state {
+  * em_perf_domain - Performance domain
+  * @table:		List of performance states, in ascending order
+  * @nr_perf_states:	Number of performance states
+- * @cpus:		Cpumask covering the CPUs of the domain
++ * @cpus:		Cpumask covering the CPUs of the domain. It's here
++ *			for performance reasons to avoid potential cache
++ *			misses during energy calculations in the scheduler
++ *			and simplifies allocating/freeing that memory region.
+  *
+- * A "performance domain" represents a group of CPUs whose performance is
+- * scaled together. All CPUs of a performance domain must have the same
+- * micro-architecture. Performance domains often have a 1-to-1 mapping with
+- * CPUFreq policies.
++ * In case of CPU device, a "performance domain" represents a group of CPUs
++ * whose performance is scaled together. All CPUs of a performance domain
++ * must have the same micro-architecture. Performance domains often have
++ * a 1-to-1 mapping with CPUFreq policies. In case of other devices the @cpus
++ * field is unused.
+  */
+ struct em_perf_domain {
+ 	struct em_perf_state *table;
+@@ -71,10 +77,12 @@ struct em_data_callback {
+ #define EM_DATA_CB(_active_power_cb) { .active_power = &_active_power_cb }
+ 
+ struct em_perf_domain *em_cpu_get(int cpu);
++struct em_perf_domain *em_pd_get(struct device *dev);
+ int em_register_perf_domain(cpumask_t *span, unsigned int nr_states,
+ 						struct em_data_callback *cb);
+ int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states,
+ 				struct em_data_callback *cb, cpumask_t *span);
++void em_dev_unregister_perf_domain(struct device *dev);
+ 
+ /**
+  * em_pd_energy() - Estimates the energy consumed by the CPUs of a perf. domain
+@@ -184,10 +192,17 @@ int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states,
+ {
+ 	return -EINVAL;
+ }
++static inline void em_dev_unregister_perf_domain(struct device *dev)
++{
++}
+ static inline struct em_perf_domain *em_cpu_get(int cpu)
+ {
+ 	return NULL;
+ }
++static inline struct em_perf_domain *em_pd_get(struct device *dev)
++{
++	return NULL;
++}
+ static inline unsigned long em_pd_energy(struct em_perf_domain *pd,
+ 			unsigned long max_util, unsigned long sum_util)
+ {
+diff --git a/kernel/power/energy_model.c b/kernel/power/energy_model.c
+index 5b8a1566526a..32d76e78f992 100644
+--- a/kernel/power/energy_model.c
++++ b/kernel/power/energy_model.c
+@@ -1,9 +1,10 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Energy Model of CPUs
++ * Energy Model of devices
+  *
+- * Copyright (c) 2018, Arm ltd.
++ * Copyright (c) 2018-2020, Arm ltd.
+  * Written by: Quentin Perret, Arm ltd.
++ * Improvements provided by: Lukasz Luba, Arm ltd.
+  */
+ 
+ #define pr_fmt(fmt) "energy_model: " fmt
+@@ -15,15 +16,17 @@
+ #include <linux/sched/topology.h>
+ #include <linux/slab.h>
+ 
+-/* Mapping of each CPU to the performance domain to which it belongs. */
+-static DEFINE_PER_CPU(struct em_perf_domain *, em_data);
+-
+ /*
+  * Mutex serializing the registrations of performance domains and letting
+  * callbacks defined by drivers sleep.
+  */
+ static DEFINE_MUTEX(em_pd_mutex);
+ 
++static bool _is_cpu_device(struct device *dev)
++{
++	return (dev->bus == &cpu_subsys);
++}
++
+ #ifdef CONFIG_DEBUG_FS
+ static struct dentry *rootdir;
+ 
+@@ -49,22 +52,30 @@ static int em_debug_cpus_show(struct seq_file *s, void *unused)
+ }
+ DEFINE_SHOW_ATTRIBUTE(em_debug_cpus);
+ 
+-static void em_debug_create_pd(struct em_perf_domain *pd, int cpu)
++static void em_debug_create_pd(struct device *dev)
+ {
+ 	struct dentry *d;
+-	char name[8];
+ 	int i;
+ 
+-	snprintf(name, sizeof(name), "pd%d", cpu);
+-
+ 	/* Create the directory of the performance domain */
+-	d = debugfs_create_dir(name, rootdir);
++	d = debugfs_create_dir(dev_name(dev), rootdir);
+ 
+-	debugfs_create_file("cpus", 0444, d, pd->cpus, &em_debug_cpus_fops);
++	if (_is_cpu_device(dev))
++		debugfs_create_file("cpus", 0444, d, dev->em_pd->cpus,
++				    &em_debug_cpus_fops);
+ 
+ 	/* Create a sub-directory for each performance state */
+-	for (i = 0; i < pd->nr_perf_states; i++)
+-		em_debug_create_ps(&pd->table[i], d);
++	for (i = 0; i < dev->em_pd->nr_perf_states; i++)
++		em_debug_create_ps(&dev->em_pd->table[i], d);
++
++}
++
++static void em_debug_remove_pd(struct device *dev)
++{
++	struct dentry *debug_dir;
++
++	debug_dir = debugfs_lookup(dev_name(dev), rootdir);
++	debugfs_remove_recursive(debug_dir);
+ }
+ 
+ static int __init em_debug_init(void)
+@@ -76,40 +87,34 @@ static int __init em_debug_init(void)
+ }
+ core_initcall(em_debug_init);
+ #else /* CONFIG_DEBUG_FS */
+-static void em_debug_create_pd(struct em_perf_domain *pd, int cpu) {}
++static void em_debug_create_pd(struct device *dev) {}
++static void em_debug_remove_pd(struct device *dev) {}
+ #endif
+-static struct em_perf_domain *
+-em_create_pd(struct device *dev, int nr_states, struct em_data_callback *cb,
+-	     cpumask_t *span)
++
++static int em_create_perf_table(struct device *dev, struct em_perf_domain *pd,
++				int nr_states, struct em_data_callback *cb)
+ {
+ 	unsigned long opp_eff, prev_opp_eff = ULONG_MAX;
+ 	unsigned long power, freq, prev_freq = 0;
+-	int i, ret, cpu = cpumask_first(span);
+ 	struct em_perf_state *table;
+-	struct em_perf_domain *pd;
++	int i, ret;
+ 	u64 fmax;
+ 
+-	if (!cb->active_power)
+-		return NULL;
+-
+-	pd = kzalloc(sizeof(*pd) + cpumask_size(), GFP_KERNEL);
+-	if (!pd)
+-		return NULL;
+-
+ 	table = kcalloc(nr_states, sizeof(*table), GFP_KERNEL);
+ 	if (!table)
+-		goto free_pd;
++		return -ENOMEM;
+ 
+ 	/* Build the list of performance states for this performance domain */
+ 	for (i = 0, freq = 0; i < nr_states; i++, freq++) {
+ 		/*
+ 		 * active_power() is a driver callback which ceils 'freq' to
+-		 * lowest performance state of 'cpu' above 'freq' and updates
++		 * lowest performance state of 'dev' above 'freq' and updates
+ 		 * 'power' and 'freq' accordingly.
+ 		 */
+ 		ret = cb->active_power(&power, &freq, dev);
+ 		if (ret) {
+-			pr_err("pd%d: invalid perf. state: %d\n", cpu, ret);
++			dev_err(dev, "EM: invalid perf. state: %d\n",
++				ret);
+ 			goto free_ps_table;
+ 		}
+ 
+@@ -118,7 +123,8 @@ em_create_pd(struct device *dev, int nr_states, struct em_data_callback *cb,
+ 		 * higher performance states.
+ 		 */
+ 		if (freq <= prev_freq) {
+-			pr_err("pd%d: non-increasing freq: %lu\n", cpu, freq);
++			dev_err(dev, "EM: non-increasing freq: %lu\n",
++				freq);
+ 			goto free_ps_table;
+ 		}
+ 
+@@ -127,7 +133,8 @@ em_create_pd(struct device *dev, int nr_states, struct em_data_callback *cb,
+ 		 * positive, in milli-watts and to fit into 16 bits.
+ 		 */
+ 		if (!power || power > EM_MAX_POWER) {
+-			pr_err("pd%d: invalid power: %lu\n", cpu, power);
++			dev_err(dev, "EM: invalid power: %lu\n",
++				power);
+ 			goto free_ps_table;
+ 		}
+ 
+@@ -142,8 +149,8 @@ em_create_pd(struct device *dev, int nr_states, struct em_data_callback *cb,
+ 		 */
+ 		opp_eff = freq / power;
+ 		if (opp_eff >= prev_opp_eff)
+-			pr_warn("pd%d: hertz/watts ratio non-monotonically decreasing: em_perf_state %d >= em_perf_state%d\n",
+-					cpu, i, i - 1);
++			dev_dbg(dev, "EM: hertz/watts ratio non-monotonically decreasing: em_perf_state %d >= em_perf_state%d\n",
++					i, i - 1);
+ 		prev_opp_eff = opp_eff;
+ 	}
+ 
+@@ -156,30 +163,82 @@ em_create_pd(struct device *dev, int nr_states, struct em_data_callback *cb,
+ 
+ 	pd->table = table;
+ 	pd->nr_perf_states = nr_states;
+-	cpumask_copy(to_cpumask(pd->cpus), span);
+ 
+-	em_debug_create_pd(pd, cpu);
+-
+-	return pd;
++	return 0;
+ 
+ free_ps_table:
+ 	kfree(table);
+-free_pd:
+-	kfree(pd);
++	return -EINVAL;
++}
++
++static int em_create_pd(struct device *dev, int nr_states,
++			struct em_data_callback *cb, cpumask_t *cpus)
++{
++	struct em_perf_domain *pd;
++	struct device *cpu_dev;
++	int cpu, ret;
++
++	if (_is_cpu_device(dev)) {
++		pd = kzalloc(sizeof(*pd) + cpumask_size(), GFP_KERNEL);
++		if (!pd)
++			return -ENOMEM;
++
++		cpumask_copy(em_span_cpus(pd), cpus);
++	} else {
++		pd = kzalloc(sizeof(*pd), GFP_KERNEL);
++		if (!pd)
++			return -ENOMEM;
++	}
++
++	ret = em_create_perf_table(dev, pd, nr_states, cb);
++	if (ret) {
++		kfree(pd);
++		return ret;
++	}
++
++	if (_is_cpu_device(dev))
++		for_each_cpu(cpu, cpus) {
++			cpu_dev = get_cpu_device(cpu);
++			cpu_dev->em_pd = pd;
++		}
++
++	dev->em_pd = pd;
++
++	return 0;
++}
++
++/**
++ * em_pd_get() - Return the performance domain for a device
++ * @dev : Device to find the performance domain for
++ *
++ * Returns the performance domain to which @dev belongs, or NULL if it doesn't
++ * exist.
++ */
++struct em_perf_domain *em_pd_get(struct device *dev)
++{
++	if (IS_ERR_OR_NULL(dev))
++		return NULL;
+ 
+-	return NULL;
++	return dev->em_pd;
+ }
++EXPORT_SYMBOL_GPL(em_pd_get);
+ 
+ /**
+  * em_cpu_get() - Return the performance domain for a CPU
+  * @cpu : CPU to find the performance domain for
+  *
+- * Return: the performance domain to which 'cpu' belongs, or NULL if it doesn't
++ * Returns the performance domain to which @cpu belongs, or NULL if it doesn't
+  * exist.
+  */
+ struct em_perf_domain *em_cpu_get(int cpu)
+ {
+-	return READ_ONCE(per_cpu(em_data, cpu));
++	struct device *cpu_dev;
++
++	cpu_dev = get_cpu_device(cpu);
++	if (!cpu_dev)
++		return NULL;
++
++	return em_pd_get(cpu_dev);
+ }
+ EXPORT_SYMBOL_GPL(em_cpu_get);
+ 
+@@ -188,7 +247,7 @@ EXPORT_SYMBOL_GPL(em_cpu_get);
+  * @dev		: Device for which the EM is to register
+  * @nr_states	: Number of performance states to register
+  * @cb		: Callback functions providing the data of the Energy Model
+- * @span	: Pointer to cpumask_t, which in case of a CPU device is
++ * @cpus	: Pointer to cpumask_t, which in case of a CPU device is
+  *		obligatory. It can be taken from i.e. 'policy->cpus'. For other
+  *		type of devices this should be set to NULL.
+  *
+@@ -201,13 +260,12 @@ EXPORT_SYMBOL_GPL(em_cpu_get);
+  * Return 0 on success
+  */
+ int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states,
+-				struct em_data_callback *cb, cpumask_t *span)
++				struct em_data_callback *cb, cpumask_t *cpus)
+ {
+ 	unsigned long cap, prev_cap = 0;
+-	struct em_perf_domain *pd;
+-	int cpu, ret = 0;
++	int cpu, ret;
+ 
+-	if (!dev || !span || !nr_states || !cb)
++	if (!dev || !nr_states || !cb)
+ 		return -EINVAL;
+ 
+ 	/*
+@@ -216,47 +274,50 @@ int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states,
+ 	 */
+ 	mutex_lock(&em_pd_mutex);
+ 
+-	for_each_cpu(cpu, span) {
+-		/* Make sure we don't register again an existing domain. */
+-		if (READ_ONCE(per_cpu(em_data, cpu))) {
+-			ret = -EEXIST;
+-			goto unlock;
+-		}
++	if (dev->em_pd) {
++		ret = -EEXIST;
++		goto unlock;
++	}
+ 
+-		/*
+-		 * All CPUs of a domain must have the same micro-architecture
+-		 * since they all share the same table.
+-		 */
+-		cap = arch_scale_cpu_capacity(cpu);
+-		if (prev_cap && prev_cap != cap) {
+-			pr_err("CPUs of %*pbl must have the same capacity\n",
+-							cpumask_pr_args(span));
++	if (_is_cpu_device(dev)) {
++		if (!cpus) {
++			dev_err(dev, "EM: invalid CPU mask\n");
+ 			ret = -EINVAL;
+ 			goto unlock;
+ 		}
+-		prev_cap = cap;
++
++		for_each_cpu(cpu, cpus) {
++			if (em_cpu_get(cpu)) {
++				dev_err(dev, "EM: exists for CPU%d\n", cpu);
++				ret = -EEXIST;
++				goto unlock;
++			}
++			/*
++			 * All CPUs of a domain must have the same
++			 * micro-architecture since they all share the same
++			 * table.
++			 */
++			cap = arch_scale_cpu_capacity(cpu);
++			if (prev_cap && prev_cap != cap) {
++				dev_err(dev, "EM: CPUs of %*pbl must have the same capacity\n",
++					cpumask_pr_args(cpus));
++
++				ret = -EINVAL;
++				goto unlock;
++			}
++			prev_cap = cap;
++		}
+ 	}
+ 
+-	/* Create the performance domain and add it to the Energy Model. */
+-	pd = em_create_pd(dev, nr_states, cb, span);
+-	if (!pd) {
+-		ret = -EINVAL;
++	ret = em_create_pd(dev, nr_states, cb, cpus);
++	if (ret)
+ 		goto unlock;
+-	}
+ 
+-	for_each_cpu(cpu, span) {
+-		/*
+-		 * The per-cpu array can be read concurrently from em_cpu_get().
+-		 * The barrier enforces the ordering needed to make sure readers
+-		 * can only access well formed em_perf_domain structs.
+-		 */
+-		smp_store_release(per_cpu_ptr(&em_data, cpu), pd);
+-	}
++	em_debug_create_pd(dev);
++	dev_info(dev, "EM: created perf domain\n");
+ 
+-	pr_debug("Created perf domain %*pbl\n", cpumask_pr_args(span));
+ unlock:
+ 	mutex_unlock(&em_pd_mutex);
+-
+ 	return ret;
+ }
+ EXPORT_SYMBOL_GPL(em_dev_register_perf_domain);
+@@ -285,3 +346,32 @@ int em_register_perf_domain(cpumask_t *span, unsigned int nr_states,
+ 	return em_dev_register_perf_domain(cpu_dev, nr_states, cb, span);
+ }
+ EXPORT_SYMBOL_GPL(em_register_perf_domain);
++
++/**
++ * em_dev_unregister_perf_domain() - Unregister Energy Model (EM) for a device
++ * @dev		: Device for which the EM is registered
++ *
++ * Unregister the EM for the specified @dev (but not a CPU device).
++ */
++void em_dev_unregister_perf_domain(struct device *dev)
++{
++	if (IS_ERR_OR_NULL(dev) || !dev->em_pd)
++		return;
++
++	if (_is_cpu_device(dev))
++		return;
++
++	/*
++	 * The mutex separates all register/unregister requests and protects
++	 * from potential clean-up/setup issues in the debugfs directories.
++	 * The debugfs directory name is the same as device's name.
++	 */
++	mutex_lock(&em_pd_mutex);
++	em_debug_remove_pd(dev);
++
++	kfree(dev->em_pd->table);
++	kfree(dev->em_pd);
++	dev->em_pd = NULL;
++	mutex_unlock(&em_pd_mutex);
++}
++EXPORT_SYMBOL_GPL(em_dev_unregister_perf_domain);
+-- 
+2.17.1
 
-Yours,
-Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
