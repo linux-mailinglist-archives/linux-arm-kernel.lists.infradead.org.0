@@ -2,90 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 328DF1F5136
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:34:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F18B1F513B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:35:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R74YJSuXdd8PZRcF0ZhOmggGCqOQFxp0TdG6XOHwt8s=; b=SPN9zxU+j11sha
-	xkCGefkXRbG+NVMB9ANiXHqqvV5kI11xyXuWBe607kRKj3zVlrlO2YmfmW7spXxU0Vn0johPBMuMI
-	gyqCcAHLo6zV84T48y9IoIodBAMYg8SxmTKKKiT8Xvm+jJaHLCOz4qWN3L2K3JfeOA+Rg3rEBgW+g
-	NWwSmVzV5HtmEZv5VFPKip7FmKPsPUwhaBwcMJTUyO0ZNtJ43vdbXbjNzy8APY7ek/fJATTaJWW1N
-	W9cor3oHE5i+Tqatc60rXYZBLPynhNDbQzA7GEWTMxdpdZ2IvKp5zr9yrp/1hVBWQcJixIBqbRA2v
-	RSsTwLwEsf4ssamrrpmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FZYekltG8QGu68Kkm0pY0WWG4tOvkh+kJXnQv67l1io=; b=slC0vEgnJJjmRNJP9h+niwtVy
+	xXNJIrB/bBFrHGV7vG4ClBJiLLenuiv2OFdGyNS6ADiHIiFH74ydaEZbWTptMiN0nVXTRYyJVIKhF
+	1AB18tRGtFPIOVIm8tY4vhRV06kuniePct/G0cJz55w1szBo1v2IpHBY5j2CS6YRiO0A+0SLFfGFk
+	Hh6PnWZOrJVD8vx/97IQKmarD5TXonukhSny1k0uityMF7KlvaiXSmc/Q0H2ijW3sXRWtltg/TZpv
+	O5pi247VVyeKRNyMj9KSWNC6DLA0BvVSIerNR2DjUchhZiV34eyvA2SRhddYTbWUDll9dkR1IgTzA
+	5zamSj63g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jix7D-0002MZ-VK; Wed, 10 Jun 2020 09:33:47 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jix8v-0005P1-Gg; Wed, 10 Jun 2020 09:35:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jix74-0002MB-J9
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:33:39 +0000
-Received: by mail-pg1-x543.google.com with SMTP id 185so735472pgb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 02:33:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=gDnPaCqGGqbwLUgYXT8RQfx+Yi25CTYpPlgWUh+k1DU=;
- b=XtXvu6K1Uz1YjnpXdERt17M6pBkHDYVwHCy9UaMX6WqDUssPF9INUCclHDNNTCEEaZ
- q4hxviUAlk/YkgC8d4X/EwOfwz635nxrXQW4fBPO0PnzM/9fvI7uDjp7TxKWdvKpPRWt
- tf8FyeFeGTuNMIGxlY0t9umSLy84CNOoRvsoCYdYuU9yjO/H9dpOBO18GL63fSWEU9io
- yX77jxrbWQBzjzT9xMXfRNkrzO2IEXoibRVYJORPvN3liQu8veOBPWuX1FVuqd8BuFpS
- CYYafNkhZEc6/9ZonezXmUYWQiFzMm/As8rBg36aeU8BsKjdUtbQnDRwe6FOJLu+MlQ8
- 7BbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=gDnPaCqGGqbwLUgYXT8RQfx+Yi25CTYpPlgWUh+k1DU=;
- b=cwMCXIrUvp9tGBQQT6ezZQHUeCqP/2SXUeBvLKnjZ7r/V7LGjZEX5buTRKchcZlhqY
- irXKHgHct018hOwk6pFQLTeae8czaz8tbc9W8Pps9eo/Sh8Hy3JZQFNrWnKiXZAcVJ5O
- xzd/m0ICmBAWF5YSxebA86YI6yBPqCJDYdB6RJslSUr3tTktNym5kpNWGxYqjbrDJQkM
- cc5i4ykS8AuSvxp2rK0Q2T6qeobGbblKVZLbWsCFyn9E07y3LFR6dPqzC4etTB34qlxF
- lqET1i4CXjKJghVcSkBISf3DXDeFd43tlU4e9n0KNaSznfw+kJhswePyLur9mwiMtrx1
- inww==
-X-Gm-Message-State: AOAM5320FkLlnEPHe1nBfWO/nwt+UbhSK947XlagXrnPL0ESQJGFP2Ir
- ET6+uvOsXnWamSOAw1XuMGheeA==
-X-Google-Smtp-Source: ABdhPJyzL85kYroXLj9+vmzfJphNT9Bonj9nRBKzkkm5g4L1YoB1Va6xm3HiIlJ7CjmADnx7RrAx1g==
-X-Received: by 2002:a62:8106:: with SMTP id t6mr1985814pfd.103.1591781617417; 
- Wed, 10 Jun 2020 02:33:37 -0700 (PDT)
-Received: from localhost ([122.172.62.209])
- by smtp.gmail.com with ESMTPSA id w73sm12759725pfd.113.2020.06.10.02.33.35
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 10 Jun 2020 02:33:36 -0700 (PDT)
-Date: Wed, 10 Jun 2020 15:03:34 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
-Message-ID: <20200610093334.yznxl2esv5ht27ns@vireshk-i7>
-References: <20200528192005.GA494874@bogus>
- <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
- <20200603180435.GB23722@bogus>
- <CABb+yY0cW1GZHVmwEr19JRdJTmsAxw9uq83QV_aq-tdPJO5_Fg@mail.gmail.com>
- <20200604092052.GD8814@bogus>
- <CABb+yY27Ngb0C-onkU2qyt=uKgG4iVrcv8hGkC+anypQbTRA1w@mail.gmail.com>
- <20200605045645.GD12397@bogus>
- <CABb+yY2YZ99NjHYNi0=KLGFDsVUeJmqiJD3E25Chwk-THJV4iw@mail.gmail.com>
- <20200605085830.GA32372@bogus>
- <CABb+yY2TR7tuMx6u8yah6mO2GwZ5SWYOO80EQRL-i=ybgn=Wog@mail.gmail.com>
+ id 1jix8k-0005OV-Gq
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:35:23 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 09F1D204EC;
+ Wed, 10 Jun 2020 09:35:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591781722;
+ bh=shHPBdfvjaI3EtJEb11KzerLLdcslgIsNxCBWh5ZjTk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=dSd2ibiL2vMc86UmO2AWfVqGqe4bzDItFjD7ASUjGKhEH1viqqOEllRu28FRJgL4Z
+ AzRb1KJdtipjF98or7O09ES6CB/h1kqJU30EIa74mjabfcs7o37qmbIIYGMI5rbwwD
+ jPUTRVpThKrmEHixtenNWxrvZmNr4D7Qdmb/9fDY=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jix8i-001jn4-H9; Wed, 10 Jun 2020 10:35:20 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABb+yY2TR7tuMx6u8yah6mO2GwZ5SWYOO80EQRL-i=ybgn=Wog@mail.gmail.com>
-User-Agent: NeoMutt/20180716-391-311a52
+Date: Wed, 10 Jun 2020 10:35:20 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Daniel Palmer <daniel@0x0f.com>
+Subject: Re: [PATCH v2 3/5] ARM: mstar: Add infinity/mercury series dtsi
+In-Reply-To: <20200610090421.3428945-4-daniel@0x0f.com>
+References: <20191014061617.10296-2-daniel@0x0f.com>
+ <20200610090421.3428945-4-daniel@0x0f.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <35ec0a2bf066509aa1b4b11d3eac2657@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: daniel@0x0f.com, k@japko.eu, tim.bird@sony.com,
+ devicetree@vger.kernel.org, daniel@thingy.jp, robh+dt@kernel.org,
+ linux@armlinux.org.uk, sam@ravnborg.org, linus.walleij@linaro.org,
+ heiko.stuebner@theobroma-systems.com, mripard@kernel.org, lkundrak@v3.sk,
+ stephan@gerhold.net, broonie@kernel.org, allen.chen@ite.com.tw,
+ mchehab+huawei@kernel.org, davem@davemloft.net, gregkh@linuxfoundation.org,
+ corbet@lwn.net, arnd@arndb.de, akpm@linux-foundation.org,
+ armlinux@m.disordat.com, benjamin.gaignard@linaro.org, gregory.0xf0@gmail.com,
+ bgolaszewski@baylibre.com, yamada.masahiro@socionext.com,
+ ndesaulniers@google.com, will@kernel.org, nhuck15@gmail.com,
+ natechancellor@gmail.com, ardb@kernel.org, afaerber@suse.de,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_023338_635810_EBEEA856 
-X-CRM114-Status: GOOD (  24.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_023522_612114_4CE56F7E 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,86 +99,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Devicetree List <devicetree@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Daniel Palmer <daniel@thingy.jp>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Ard Biesheuvel <ardb@kernel.org>,
+ Stephan Gerhold <stephan@gerhold.net>, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, Nathan Huckleberry <nhuck15@gmail.com>,
+ devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ allen <allen.chen@ite.com.tw>, tim.bird@sony.com,
+ Will Deacon <will@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ Gregory Fong <gregory.0xf0@gmail.com>, Doug Anderson <armlinux@m.disordat.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, k@japko.eu,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ Mark Brown <broonie@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05-06-20, 10:42, Jassi Brar wrote:
-> Since origin upto scmi_xfer, there can be many forms of sleep like
-> schedule/mutexlock etc.... think of some userspace triggering sensor
-> or dvfs operation. Linux does not provide real-time guarantees. Even
-> if remote (scmi) firmware guarantee RT response, it makes sense to
-> timeout a response only after the _request is on the bus_  and not
-> when you submit a request to the api (unless you serialise it).
-> IOW, start the timeout from  mbox_client.tx_prepare()  when the
-> message actually gets on the bus.
+Daniel,
 
-There are multiple purposes of the timeout IMO:
+On 2020-06-10 10:04, Daniel Palmer wrote:
+> Adds initial dtsi for the base MStar ARMv7 SoCs, family dtsis for 
+> infinity
+> and mercury families, and then some chip level dtsis for chips in those
+> families.
+> 
+> Signed-off-by: Daniel Palmer <daniel@0x0f.com>
+> ---
+>  MAINTAINERS                              |  3 +
+>  arch/arm/boot/dts/infinity-msc313.dtsi   | 14 +++++
+>  arch/arm/boot/dts/infinity.dtsi          | 10 ++++
+>  arch/arm/boot/dts/infinity3-msc313e.dtsi | 14 +++++
+>  arch/arm/boot/dts/infinity3.dtsi         | 10 ++++
+>  arch/arm/boot/dts/mercury5-ssc8336n.dtsi | 14 +++++
+>  arch/arm/boot/dts/mercury5.dtsi          | 10 ++++
+>  arch/arm/boot/dts/mstar-v7.dtsi          | 71 ++++++++++++++++++++++++
+>  8 files changed, 146 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/infinity-msc313.dtsi
+>  create mode 100644 arch/arm/boot/dts/infinity.dtsi
+>  create mode 100644 arch/arm/boot/dts/infinity3-msc313e.dtsi
+>  create mode 100644 arch/arm/boot/dts/infinity3.dtsi
+>  create mode 100644 arch/arm/boot/dts/mercury5-ssc8336n.dtsi
+>  create mode 100644 arch/arm/boot/dts/mercury5.dtsi
+>  create mode 100644 arch/arm/boot/dts/mstar-v7.dtsi
 
-- Returning early if the other side is dead/hung, in such a case the
-  timeout can be put when the request is put on the bus as we don't
-  care of the time it takes to complete the request until the time the
-  request can be fulfilled. This can be a example of i2c/spi memory
-  read.
+[...]
 
-- Ensuring maximum time in which the request needs to be serviced.
-  There may be hard requirements, like in case for DVFS from
-  scheduler's hot path (which is essential for better working of the
-  overall system). And for such a case the timeout is placed at the
-  right place IMO, i.e. right after a request is submitted to mailbox.
+> diff --git a/arch/arm/boot/dts/mstar-v7.dtsi 
+> b/arch/arm/boot/dts/mstar-v7.dtsi
+> new file mode 100644
+> index 000000000000..0fccc4ca52a4
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/mstar-v7.dtsi
+> @@ -0,0 +1,71 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 thingy.jp.
+> + * Author: Daniel Palmer <daniel@thingy.jp>
+> + */
+> +
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +/ {
+> +	#address-cells = <1>;
+> +	#size-cells = <1>;
+> +	interrupt-parent = <&gic>;
+> +
+> +	cpus {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		cpu0: cpu@0 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a7";
+> +			reg = <0x0>;
+> +		};
+> +	};
+> +
+> +	arch_timer {
+> +		compatible = "arm,armv7-timer";
+> +		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2)
+> +				| IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(2)
+> +				| IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(2)
+> +				| IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(2)
+> +				| IRQ_TYPE_LEVEL_LOW)>;
+> +		clock-frequency = <6000000>;
 
-And some more points I wanted to share..
+This is 2020, and not 2012 anymore. The frequency should be set
+by your favourite bootloader.
 
-- I am not sure I understood the *serializing* part you guys were
-  talking about. I believe mailbox framework is already serializing
-  the requests it is receiving on a single channel with a spin lock,
-  right ? Why does the client need to serialize them as well? Is that
-  for avoiding timeouts ?
+> +	};
+> +
+> +	pmu {
+> +		compatible = "arm,cortex-a7-pmu";
+> +		interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>,
+> +			     <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
+> +			     <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>,
+> +			     <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
+> +	};
+> +
+> +	soc: soc {
+> +		compatible = "simple-bus";
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		ranges;
+> +
+> +		gic: interrupt-controller@16001000 {
+> +			compatible = "arm,cortex-a7-gic";
+> +			#interrupt-cells = <3>;
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			interrupt-controller;
+> +			reg = <0x16001000 0x1000>,
+> +			      <0x16002000 0x1000>;
 
-- For me, and Sudeep as well IIUC, the bigger problem isn't that
-  timeouts are happening and requests are failing (and so changing the
-  timeout to a bigger value isn't going to fix anything), but the
-  problem is that it is taking too long (because of the queue of
-  requests on a channel) for a request to finish after being
-  submitted. Scheduler doesn't care of the underneath logistics for
-  example, all it cares for is the time it takes to change the
-  frequency of a CPU. If you can do it fast enough in a guaranteed
-  manner, then you can use fast switching, otherwise not.
+The GICC region is likely to be 8kB, and not 4kB.
+Missing GICH and GICV regions, as well as the maintenance interrupt.
 
-- The hardware can very well support the case today where this can be
-  done in parallel and (almost) in a guaranteed time-frame. While the
-  software wants to add a limit to that and so wants to serialize
-  requests.
+Thanks,
 
-- As many people have already suggested it (like me, Sudeep, Rob,
-  maybe Bjorn as well), it seems silly to not allow driving the h/w in
-  the most efficient way possible (and allow fast cpu switching in
-  this case).
- 
-> Interesting logs !  The time taken to complete _successful_ requests
-> are arguably better in bad_trace ... there are many <10usec responses
-> in bad_trace, while the fastest response in good_trace is  53usec.
-
-Indeed this is interesting. It may be worth looking (separately) into
-why don't we see those 3 us long requests anymore, or maybe they were
-just not there in the logs.
-
-> And the requests that 'fail/timeout' are purely the result of not
-> serialising them or checkout for timeout at wrong place as explained
-> above.
-
-We can't allow for the requests to go on for ever in some cases, while
-in other cases it may be absolutely fine.
-
+         M.
 -- 
-viresh
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
