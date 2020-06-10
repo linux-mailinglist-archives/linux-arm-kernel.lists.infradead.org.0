@@ -2,86 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64A481F52E4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 13:12:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089861F52E1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 13:10:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4uylMw0uLIoaAx1ESnZw9cIGPNzlmTD9xHb6qufCEsY=; b=oOy
-	4GMkrADDnD4p4UAnQeMZ8fEhT0xrWMgbBB9Upnnq7yDsxd/x+BwBnBEk03B7rOEvQPXTkRJ9x138M
-	9ZWoY6FCXLpyWNAER+t0VopJrGafV7SQYolS9mhZwH5KqXxTpl7KG2iUS/BHKoaX3HDA35HscJoNV
-	HYWO4M4Rs99UEyyapnsD7SVJzjknVyPxxis1vIC2dd0BLcxOWVzDTU0b/khTiHxyU0d+TcSYwh/BT
-	98lEQum6mN37IIG8jFjEppnhKS0aPeHH1ri2SsbWy5H3M6lnJ+fzGCFiFQqZi3utivH8v1nVmSqYQ
-	GMMg9a477Cj8t7+rqXur1NNybZkTJIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9NdQCXshDOE9sv7mUmrLgcWpYtNzZakUKUmWSY1WZ1M=; b=uV2ochiMDstenu
+	SZKVukr52dEuqtKoZdgnm9rD8e7VMNecVaP0oeVaGBSCWH09tVnlOtcnNaudWJ/KxpJc9rf+Ll2t5
+	/DkQ6be80wGb+Va9bByDAwF2wHReXJQ+5x5qsxt5hZn/18sKECr8ZoCVIJv6rFX64oTmsDm+tfgwy
+	NdLCfRMZslEOYMtTfoU9PPT6IivlJ2hwvGLYbWSDuCfbPc1gnDgQyFy2CcPKJ5GmJ5yucb9a/d4sa
+	1K1Rcg4vmEH1PCmccyC0OQz/azGxNmmQpglmBjiF4Tp9aH1ltkt36zo/RyPHUzSJljLspmoiASHhY
+	2y+tikEghz3jJ8mKnjNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiyeB-0002cv-SD; Wed, 10 Jun 2020 11:11:55 +0000
-Received: from m43-7.mailgun.net ([69.72.43.7])
+	id 1jiycc-00010g-9Q; Wed, 10 Jun 2020 11:10:18 +0000
+Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiye0-0002c0-4a
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 11:11:49 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1591787507; h=Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=eobXzs++Nf0GymnLw2TDR9m8XDGyQ+cTGJFMu+d5QZ4=;
- b=ZGFe8N8aOjMc/rwEk6bM4QxIug2DQrJd4t9284PUDgme804b5CNyKyri+dEBXu9mywXszmFG
- HNqoVk8ychAxd6hy2iPrDdYAhOmBp4c3Bri9HcE8aVc4oPKirfyFojyLiBdLnQ7PCHBDHYf3
- nKLb2TG0O6mzx0i61/mi4a0BgQ4=
-X-Mailgun-Sending-Ip: 69.72.43.7
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n03.prod.us-west-2.postgun.com with SMTP id
- 5ee0bfd46bebe35deb7181a9 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 10 Jun 2020 11:11:16
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 727EBC433CA; Wed, 10 Jun 2020 11:11:16 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from localhost
- (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested) (Authenticated sender: sthombre)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 43575C433C6;
- Wed, 10 Jun 2020 11:11:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 43575C433C6
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=sthombre@codeaurora.org
-From: Shyam Thombre <sthombre@codeaurora.org>
-To: catalin.marinas@arm.com, will.deacon@arm.com, ard.biesheuvel@arm.com,
- mark.rutland@arm.com, anshuman.khandual@arm.com, sashal@kernel.org
-Subject: [PATCH] arm64: mm: reset address tag set by kasan sw tagging
-Date: Wed, 10 Jun 2020 16:39:44 +0530
-Message-Id: <1591787384-5823-1-git-send-email-sthombre@codeaurora.org>
-X-Mailer: git-send-email 1.9.1
+ id 1jiycN-00088L-Kn
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 11:10:05 +0000
+Received: from [192.168.42.142] (unknown [212.29.212.82])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx.tkos.co.il (Postfix) with ESMTPSA id F3DD544004C;
+ Wed, 10 Jun 2020 14:09:54 +0300 (IDT)
+Subject: Re: [RFC PATCH] pci: pci-mvebu: setup BAR0 to internal-regs
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+References: <20200608144024.1161237-1-sh@tkos.co.il>
+ <20200608214335.156baaaa@windsurf>
+ <df64c0b9-cba7-c92e-c32d-804a75796f83@tkos.co.il>
+ <20200610122750.389c990f@windsurf.home>
+From: "Shmuel H." <sh@tkos.co.il>
+Message-ID: <ecfaedfb-0176-f321-0427-73dc0cf81110@tkos.co.il>
+Date: Wed, 10 Jun 2020 14:09:53 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.9.0
+MIME-Version: 1.0
+In-Reply-To: <20200610122750.389c990f@windsurf.home>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_041148_096636_A43845E8 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200610_041003_918482_DED15234 
+X-CRM114-Status: GOOD (  15.63  )
+X-Spam-Score: 3.6 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (3.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [212.29.212.82 listed in zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.72.43.7 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [192.115.133.116 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [69.72.43.7 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,42 +67,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shyam Thombre <sthombre@codeaurora.org>, linux-kernel@vger.kernel.org,
+Cc: Baruch Siach <baruch@tkos.co.il>, Jason Cooper <jason@lakedaemon.net>,
+ linux-pci@vger.kernel.org, =?UTF-8?Q?Marek_Beh=c3=ban?= <marek.behun@nic.cz>,
+ Chris ackham <chris.packham@alliedtelesis.co.nz>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KASAN sw tagging sets a random tag of 8 bits in the top byte of the pointer
-returned by the memory allocating functions. So for the functions unaware
-of this change, the top 8 bits of the address must be reset which is done
-by the function arch_kasan_reset_tag().
-
-Signed-off-by: Shyam Thombre <sthombre@codeaurora.org>
----
- arch/arm64/mm/mmu.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index e7fbc62..eae7655 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -723,6 +723,7 @@ int kern_addr_valid(unsigned long addr)
- 	pmd_t *pmdp, pmd;
- 	pte_t *ptep, pte;
- 
-+	addr = arch_kasan_reset_tag(addr);
- 	if ((((long)addr) >> VA_BITS) != -1UL)
- 		return 0;
- 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgVGhvbWFzLAoKT24gNi8xMC8yMCAxOjI3IFBNLCBUaG9tYXMgUGV0YXp6b25pIHdyb3RlOgo+
+IEhlbGxvLAo+Cj4gT24gVHVlLCA5IEp1biAyMDIwIDE0OjIxOjA3ICswMzAwCj4gIlNobXVlbCBI
+LiIgPHNoQHRrb3MuY28uaWw+IHdyb3RlOgo+Cj4+IFVuZm9ydHVuYXRlbHksIHRoZXJlIGlzIGFs
+bW9zdCBubyBkb2N1bWVudGF0aW9uIGFib3V0IHRoZSBwdXJwb3NlIG9mCj4+IHRoaXMgcmVnaXN0
+ZXIgYXBhcnQgZnJvbSB0aGlzIGNyeXB0aWMgc2VudGVuY2U6Cj4+Cj4+IMKgwqDCoMKgICJCQVIw
+IGlzIGRlZGljYXRlZCB0byBpbnRlcm5hbCByZWdpc3RlciBhY2Nlc3MiIChNYXJ2ZWxsIGEzOHgK
+Pj4gZnVuY3Rpb25hbCBkb2NzLCBzZWN0aW9uIDE5LjgpLgo+Pgo+PiBJIGNhbiBvbmx5IGFzc3Vt
+ZSB0aGF0IG9ubHkgc3BlY2lmaWMgZGV2aWNlcyB0cmlnZ2VyIHRoZSBuZWVkIGZvciB0aGUKPj4g
+UENJZSBjb250cm9sbGVyIHRvIGFjY2VzcyB0aGUgU29DJ3MgaW50ZXJuYWwgcmVnaXN0ZXJzIGFu
+ZCB0aGVyZWZvcmUKPj4gd2lsbCBmYWlsIHRvIG9wZXJhdGUgcHJvcGVybHkuCj4gSW4gZmFjdCwg
+c2VjdGlvbiAxMC4yLjYgb2YgdGhlIEFybWFkYSBYUCBkYXRhc2hlZXQsIGFib3V0IE1TSS9NU0kt
+WAo+IHN1cHBvcnQgZ2l2ZXMgYSBoaW50OiBpbiBvcmRlciBmb3IgdGhlIGRldmljZSB0byBkbyBh
+IHdyaXRlIHRvIHRoZSBNU0kKPiBkb29yYmVsbCBhZGRyZXNzLCBpdCBuZWVkcyB0byB3cml0ZSB0
+byBhIHJlZ2lzdGVyIGluIHRoZSAiaW50ZXJuYWwKPiByZWdpc3RlcnMiIHNwYWNlIi4gU28gaXQg
+bWFrZXMgYSBsb3Qgb2Ygc2Vuc2UgdGhhdCB0aGlzIEJBUjAgaGFzIHRvIGJlCj4gY29uZmlndXJl
+ZC4KPgo+IENvdWxkIHlvdSB0cnkgdG8gYm9vdCB5b3VyIHN5c3RlbSB3aXRob3V0IHlvdXIgcGF0
+Y2gsIGFuZCB3aXRoIHRoZQo+IHBjaT1ub21zaSBhcmd1bWVudCBvbiB0aGUga2VybmVsIGNvbW1h
+bmQgbGluZSA/IFRoaXMgd2lsbCBwcmV2ZW50IHRoZQo+IGRyaXZlciBmcm9tIHVzaW5nIE1TSSwg
+c28gaXQgc2hvdWxkIGZhbGxiYWNrIHRvIGxlZ2FjeSBJUlFzLiBJZiB0aGF0Cj4gd29ya3MsIHRo
+ZW4gd2UgaGF2ZSB0aGUgY29uZmlybWF0aW9uIHRoZSBpc3N1ZSBpcyBNU0kgcmVsYXRlZC4gVGhp
+cwo+IHdpbGwgYmUgdXNlZnVsIGp1c3QgdG8gaGF2ZSBhIGdvb2QgY29tbWl0IG1lc3NhZ2UgdGhh
+dCBleHBsYWlucyB0aGUKPiBwcm9ibGVtLCBiZWNhdXNlIG90aGVyd2lzZSBJIGFtIGZpbmUgd2l0
+aCB5b3VyIHBhdGNoLgoKSSBjYW4gY29uZmlybSB0aGF0IHBjaT1ub21zaSBzZWVtcyB0byBzb2x2
+ZSB0aGUgaXNzdWUuIFRoZSB3aWw2MjEwCm9wZXJhdGVzIGFuZCBsb2FkcyBwcm9wZXJseSAod2l0
+aG91dCBteSBwYXRjaCksIG5pY2UgY2F0Y2guCgpJIHdpbGwgc2VuZCBhbiB1cGRhdGVkIHBhdGNo
+IHNob3J0bHkuCgpUaGFua3MhCgotLSAKLSBTaG11ZWwgSGF6YW4KCm1haWx0bzpzaEB0a29zLmNv
+LmlsIHwgdGVsOis5NzItNTIzLTc0Ni00MzUgfCBodHRwOi8vdGtvcy5jby5pbAoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
