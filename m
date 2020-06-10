@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED7281F519C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:55:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 992181F51A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:56:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ClDEPqSVEOPxjUTev82F/UirzzcCKs+9QADpZrNwHUE=; b=boTcoIw8+vTmba
-	qspZVnnbDzrZEqW/0TqIQCWFCAI9Uvr2kLpM2+711/qF7mv1z81j/P2pkSZiwL1scMv4tcgtzbF17
-	WL9UdZJ8Nkpvr7lo/A1sJ+7ha1KDEAuGbQioeULzzVUvViRbPt4bLCyjrpXp/NcR0vG/qlNa69ykt
-	Y91sxvMDZ9nG5uZ42Z46xqQA3q/jv6S4vaYZ1Y4VEnv+3UQMstnzpebMjFCRyHjIZh7cDcyLYjmTj
-	a1HYPZ9oxspifSItX51xcvN6qcNz/22r36O64KWxyuUh0Uf5yM53DbUPocYd9ZFoZGpQ5DJLnC53z
-	j4svShCuLDKQaWrP92Dw==;
+	List-Owner; bh=5cfJ4IjTP83S/O/QZvi6X7AnyKLUzGz9e59mYHECdVE=; b=R6OR8ALVixPYgr
+	ygyZ8hPOj5INRAcSd+RwYFYWTdWOpbfKwLVCTa3sPLqrTwUWRqa/GbHFZ8OrIgax13Z8rueHxm+i2
+	g4Xnwd1S5FWnEPJDz8Znmx233X/9Xf6QR/PkZ7VJ16RIHBP0zCUthGl8C6MHohWVkNBg3sh8MAdpd
+	Q8Vcle7xAmwFN5wYJchsm4iQyMdsBu+89OAdT+EB6iwUiIAdgGOW3PlHTaX1fgqXbGm4p1R+JuDtU
+	G3ATjl3QLcknrrofOCeBAvFK2+Te9iDJOgNUTWa4YZAeoyVdM1+UGMGRalxIEJeP5fDLThiVcikv0
+	4wyVHJq+6MoXPrWmVyCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jixS2-0008KI-VC; Wed, 10 Jun 2020 09:55:18 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1jixSb-0002bG-Nq; Wed, 10 Jun 2020 09:55:53 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jixRj-0008Eo-4t
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:55:00 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 9so1690628ljv.5
+ id 1jixST-0002al-4X
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:55:46 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id w15so1066383lfe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 02:54:58 -0700 (PDT)
+ Wed, 10 Jun 2020 02:55:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=x3zJYnC4xPTLUvpdLo3hJwVKdm6pQi65dX2AKRAnoeU=;
- b=bvYAdsPRtcgtKGb3QnS8DYfgeu9iZZ+3d2bED2t8THtIt6RXgj3rz6bJ0WI05t7K47
- +S2m2gtlLbauUSYPZl432zrDFRlIBRN2mPTRZgZDiXnJNOSYx4dZAXcyf2SSaaUokmrx
- qVB2HZbK17hqs4ANJ7RnqHLEaM7R175Avt5uOuhEsndixOsScfNf8E6yth0csDjL4++i
- 11C+CaDkudPtzHu2RUUIqkccZzBAv+hx+fUpQTfFTIjk8GRHt2BknPV2aPnw55VrtjKi
- BxJJMY/+jFPOQCFmUxcecRWR1wsGxP/jiYvWMPeMx3abSq8ULRS6glsS4+oC4Nrlsum/
- 9Yzw==
+ :cc; bh=IyM/A+avhJkkQHOLp+OvMDI3GG+kxptVRDbu3u0LPow=;
+ b=KZ3GCV4oQ8GoZhjx2pBRStzJRFJC/aeLvAH56Ms+z3A6pyxZAqr26DULM6tE604ET4
+ Neju+GKK0TxS2BEBiYqrK8ZAAy43gpWB8HQ971utdGJQuFszPl9QZgYYUU0sHCWRnhbd
+ 6GIHn8MU1axUgQbHaAfMzacFuagYyooDoAmkS8bnScg9G7g+StfE3LYW19Uxic9LK6On
+ 7FiJDSQEmMhNB5t1sCQgPq+qJ/bSCma6+45ICCeJpUzctEGgFrve+wbAlwsfoxQLe6yE
+ B2GSy1pb47oGu2/e3pTl0eh75S/BCedvE9mxxYG9LjtQNOPinBsLstTJ4vPT9T8lwVVt
+ vW3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=x3zJYnC4xPTLUvpdLo3hJwVKdm6pQi65dX2AKRAnoeU=;
- b=SY3/Lr90ymLvBVUzOBsMZsWTFoq3X2Xs+dWFq4N9w3rm2hwnQmZEo2oCXxpeTJkBoc
- ltpZs88uwMPbDIhoOeujuePH+OJdw/9aTvDQkTujpB7Gm4CNqskd2zQCYVkHMQyFJwGV
- g9VvfTotyYu6PJ2I1amb/1Tg/TrmCsv0/6tN3vwYUxMykXXfmSqWrYHgULXTL0Cfgc/Q
- v/sif52YddKHkAlEMK87wosweSAWuhsd45VfpGkRyUe7KpMIh203Ed7wiw2gkk5A4j/l
- gzvBwNelUtYubzzp+0Gv9ujesrf226C5uvWLwfxqJeadH1ZwV+0+GATrUD7dXFJW9gMh
- 7pbQ==
-X-Gm-Message-State: AOAM532OkmyttfGjTVqXox9C7JBoLrCGOpjKQw1Cabt1bupJfMKBrZn1
- Q4bh35JtU+JxEveQT9y04w207YIT27D9cFfE7iatyQ==
-X-Google-Smtp-Source: ABdhPJyaZm9bWv1+tQfyTESsLtLgh1gwb2LxItCKaISMEvf2pjgPzCFpj8OL4bZ3WpufhOyscllUPZAmRJY1WJJKSVo=
-X-Received: by 2002:a2e:350a:: with SMTP id z10mr1288366ljz.104.1591782897430; 
- Wed, 10 Jun 2020 02:54:57 -0700 (PDT)
+ bh=IyM/A+avhJkkQHOLp+OvMDI3GG+kxptVRDbu3u0LPow=;
+ b=mXt7+DZ9X3WLU0/DMXC4f3DN/opA6Lj5/4XVK2+Ms/bstmiZGarE/mCjNx24wWhCyd
+ DlBJirEIrD97SZhB90GqSbC9R4r8W85lu++rsU951R36aYMj+L1qzMu0BxWnNiG/R5NL
+ bYNVNJotMZPsf52fmKI5KxDcxk7kn78jVYhgPz9gZMEJqdFJ56RR79AgveRsf/GktmHp
+ F/TvJsVYdnRH/TcntgqWhQcNbQQQA8312GOSVek2VP4cI/OfTOwxODgbVqlBMZq38rky
+ uLkr4FbqvTO1E8U/IMv/2hHKnn9vsn9cHYK75xLSZgR03JaHH6TKBHCNxocYyflxf5zf
+ HnQA==
+X-Gm-Message-State: AOAM533RkZkx1H94Yu4AX6YS04Rj93jm+lnNhaG2usVC5ejZ9uUKxoJb
+ +pDn6qSHiJD+5cBKCGFSGCI9n9vckr5m1zVmTM5jrQ==
+X-Google-Smtp-Source: ABdhPJw06BW9DC3WVHZ8QRBMneGYcET56eTT8DIAMhEVt8P5RXWMTPAIOnCaPj54gMD05QlYQar3OpWGUm5iy7QPfE0=
+X-Received: by 2002:ac2:5a07:: with SMTP id q7mr1267243lfn.77.1591782943164;
+ Wed, 10 Jun 2020 02:55:43 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200605224403.181015-1-sebastian.reichel@collabora.com>
- <20200605224403.181015-6-sebastian.reichel@collabora.com>
-In-Reply-To: <20200605224403.181015-6-sebastian.reichel@collabora.com>
+ <20200605224403.181015-7-sebastian.reichel@collabora.com>
+In-Reply-To: <20200605224403.181015-7-sebastian.reichel@collabora.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 10 Jun 2020 11:54:46 +0200
-Message-ID: <CACRpkdabXvC2z3TEzChQb4MAOuFEZXQ_wN63mdSGTQh1YHxaHA@mail.gmail.com>
-Subject: Re: [PATCHv2 5/6] ARM: sa1100: Use GPIO descriptor for gpio-charger
+Date: Wed, 10 Jun 2020 11:55:32 +0200
+Message-ID: <CACRpkdZchnn8EG6HOo_QD=veHJzb_Vy5F2Ma0cEOZUjcZwHPYg@mail.gmail.com>
+Subject: Re: [PATCHv2 6/6] power: supply: gpio-charger: drop legacy GPIO
+ support
 To: Sebastian Reichel <sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_025459_191105_1A193C64 
-X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-CacheID: sfid-20200610_025545_173204_591E31DE 
+X-CRM114-Status: UNSURE (   9.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:231 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:12d listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,15 +109,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Sat, Jun 6, 2020 at 12:44 AM Sebastian Reichel
 <sebastian.reichel@collabora.com> wrote:
 
-> Provide AC detect GPIO via gpiod table instead of
-> legacy platform data so that legacy GPIO support
-> can be removed from the driver.
->
-> Due to lack of hardware this has only been compile
-> tested.
+> All board files have been converted to use boardfile GPIO
+> descriptor tables, so GPIO support can be removed from
+> platform data.
 >
 > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 
+Thanks so much for doing this!
 Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
