@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54C631F524B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:30:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B031F5247
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:29:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jVMCG1Fx08N5OPIkuN47AlrlshmPWOZNCEmIcrNzF9c=; b=LAZUv1VcAuL/mY
-	Ir5piQ4KoaG/75edMww2dT+hFKhb5pX+FxnyIxWtAMy9m0lI7GU59MojZs8axr5YqKgjsCBdChoQn
-	a7q9Sg7lAqYdQjk7v7GfYYuy8kI/PNDNPKHbWW7FG6yYGQWneFpeJWJAnLg/QMesWrsUwYHJ12mOB
-	j5Fl9be0cCFjYd1/90oKpsyTmtHcjv1X1mR/kwU/4GJXSyJgAZCtRWQlyVBXw2FqsoE0WxFBsyyDj
-	+FQmSXB7+Argx7X1rJOC1HUPF+XnrHPpK9lInNWXlAT+NnGVc7y2lAa6Rx2uotawGrwiyeZ7h9FkX
-	NN2mPRHnbuytpwUbNztg==;
+	List-Owner; bh=anGcPS3cADZayNHzlJLc6+StbBZuj3JbhqQcwC4u1Pg=; b=Nns71/TaF/mwxM
+	8ru3cctmq1Et+9V8D13yGgsWRld9speCcqyB3FS7fzQBG5cinb5P6q9HMswD/OayooEqKJE2uADaX
+	AlkRnZPZDOBnTH15Uydb9w87S8DUOHm53isryd2tMkO6UT2xoe7TYZU06NX7QdgxXjVSdtH2g4QRS
+	AGmALU36d4fD/hUc0VlPmCLzUL8lBB19wcdkWGgQLsWMz1Bubj8c3cpvenmzKO1ZFgebSK5s6jFO/
+	lG/i1ocP7x50N6saJHS4q957pJlFN6+osiAVRYfRpM8TPJlKF62pnMwiU1hySv/GIds9nXO7+O4P/
+	tKI6yifAuHqYh/dhQtgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jixzV-0006pH-CX; Wed, 10 Jun 2020 10:29:53 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jixz2-0006d9-FE
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 10:29:26 +0000
-Received: by mail-wr1-x443.google.com with SMTP id r7so1670695wro.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 03:29:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2gvb3h72zonJCVPACju41Fbw0tDgnKx5h0TrDtNmZYU=;
- b=cVxMfXgKRNgr+F74+NX6QkCCJWBVbcaIolD7qRiQgmfdoxxyjdPNvQqSVPvDNHyU5b
- zutGY00KZ+V2A6xa7UdrCQ4mbO4KOBSVlbJnEi24sWcxCPzWJkbKuUydpqJuzjNDhXN4
- ztN4nLKUUI+zmTNQ1wipCZvj9rX1uD5inqNhE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2gvb3h72zonJCVPACju41Fbw0tDgnKx5h0TrDtNmZYU=;
- b=RUQ6xdpDHmiBMAJ5ySMxFg/p0+hjRSGd01qDtJEhZIPoEryjRoPN7OQ9/iGnfHm7Cp
- ATG5li9sfXQnSNmtXXzRi6arpAXYpp0g8mSU38VpXdsm5kmAk8F5NlZlvnlJ7SVUcBx0
- DZdioMivwqvDGv6vMVA9V2Bp/bOciNEavs/8eTDe8XAS1SGrSR9p4zarAzijO42F5vJS
- d4IwhaINkO9wBLH0WSM2gqQiMrInD1PMN25INcVhYuYPqSnLyqQ5HwhVrJyCzbWery1n
- bLJgYejTpFz9E2I2v7gJyfRgny2YRcoMpYbbHIs7PwFSxiKXfzMJ2YH6wwXrq07yGvKX
- 7sUg==
-X-Gm-Message-State: AOAM5307yfSJ/vc0os9mrmrnz0gEdIfEIK9fzUuwhMoG5uUXJQF9RwPT
- N0yXxHY3OgOmCdPlCrQo+krpcibDEyj5LfN5FHElyg==
-X-Google-Smtp-Source: ABdhPJykAxEMxc/5PA42qda+imN1iaGFnWE/E5DN0O6oJJrD3srN7KBugNNqszuh2dH7sSY67I4FzMJcwCuoTywbwrw=
-X-Received: by 2002:adf:f990:: with SMTP id f16mr2793952wrr.311.1591784962225; 
- Wed, 10 Jun 2020 03:29:22 -0700 (PDT)
+	id 1jixzE-0006dK-PH; Wed, 10 Jun 2020 10:29:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jixyz-0006cM-TH
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 10:29:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 400191FB;
+ Wed, 10 Jun 2020 03:29:21 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5FE5E3F73D;
+ Wed, 10 Jun 2020 03:29:19 -0700 (PDT)
+Date: Wed, 10 Jun 2020 11:29:17 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2] arm64: vdso32: add CONFIG_THUMB2_COMPAT_VDSO
+Message-ID: <20200610102916.GA26099@gaia>
+References: <20200528072031.GA22156@willie-the-truck>
+ <20200608205711.109418-1-ndesaulniers@google.com>
+ <20200609203502.GA21214@gaia>
+ <CAKwvOdnDeYQ-tbyW8=tcKcbbFxtDzqk8dCUSzbBYP1amb9a2hg@mail.gmail.com>
+ <20200610084755.GB17035@willie-the-truck>
 MIME-Version: 1.0
-References: <20191014061617.10296-2-daniel@0x0f.com>
- <20200610090421.3428945-2-daniel@0x0f.com>
- <cafee323-841d-92ed-b4ad-a1aaa136864d@suse.de>
-In-Reply-To: <cafee323-841d-92ed-b4ad-a1aaa136864d@suse.de>
-From: Daniel Palmer <daniel@0x0f.com>
-Date: Wed, 10 Jun 2020 19:29:06 +0900
-Message-ID: <CAFr9PXnPPDWg-Jd_1=LgPEYa8Ru7eKm9wE90-DPR-ggv8NzGHA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/5] dt-bindings: arm: Initial MStar vendor prefixes
- and compatible strings
-To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
+Content-Disposition: inline
+In-Reply-To: <20200610084755.GB17035@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_032924_650321_145FE7CC 
-X-CRM114-Status: GOOD (  16.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_032921_985939_9BA3DF08 
+X-CRM114-Status: GOOD (  23.96  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,106 +66,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Daniel Palmer <daniel@thingy.jp>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Sam Ravnborg <sam@ravnborg.org>, Ard Biesheuvel <ardb@kernel.org>,
- Stephan Gerhold <stephan@gerhold.net>, Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- Russell King <linux@armlinux.org.uk>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Nathan Huckleberry <nhuck15@gmail.com>, devicetree@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, allen <allen.chen@ite.com.tw>,
- tim.bird@sony.com, Maxime Ripard <mripard@kernel.org>,
- Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
- Gregory Fong <gregory.0xf0@gmail.com>, Doug Anderson <armlinux@m.disordat.com>,
- Nathan Chancellor <natechancellor@gmail.com>, Krzysztof Adamski <k@japko.eu>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Marc Zyngier <maz@kernel.org>,
- "David S. Miller" <davem@davemloft.net>, Mike Rapoport <rppt@kernel.org>
+Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
+ Masahiro Yamada <masahiroy@kernel.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    const: '/'
-> > +  compatible:
-> > +    oneOf:
-> > +      - description: thingy.jp BreadBee
-> > +        items:
-> > +          - const: thingyjp,breadbee
-> > +          - const: mstar,infinity3
-> > +
-> > +      - description: thingy.jp BreadBee Crust
-> > +        items:
-> > +          - const: thingyjp,breadbee-crust
-> > +          - const: mstar,infinity
-> > +
-> > +      - description: 70mai midrive d08
-> > +        items:
-> > +          - const: 70mai,midrived08
-> > +          - const: mstar,mercury5
->
-> I would advise to restructure these three for forward planning:
+On Wed, Jun 10, 2020 at 09:47:55AM +0100, Will Deacon wrote:
+> On Tue, Jun 09, 2020 at 04:55:13PM -0700, Nick Desaulniers wrote:
+> > On Tue, Jun 9, 2020 at 1:35 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > > On Mon, Jun 08, 2020 at 01:57:08PM -0700, Nick Desaulniers wrote:
+> > > > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> > > > index 7f9d38444d6d..fe9e6b231cac 100644
+> > > > --- a/arch/arm64/Kconfig
+> > > > +++ b/arch/arm64/Kconfig
+> > > > @@ -1299,6 +1299,14 @@ config COMPAT_VDSO
+> > > >         You must have a 32-bit build of glibc 2.22 or later for programs
+> > > >         to seamlessly take advantage of this.
+> > > >
+> > > > +config THUMB2_COMPAT_VDSO
+> > > > +     bool "Compile the vDSO in THUMB2 mode"
+> > > > +     depends on COMPAT_VDSO
+> > > > +     default y
+> > > > +     help
+> > > > +       Compile the compat vDSO with -mthumb -fomit-frame-pointer if y, otherwise
+> > > > +       as -marm.
+> > >
+> > > Now that we understood the issue (I think), do we actually need this
+> > > choice? Why not going for -mthumb -fomit-frame-pointer always for the
+> > > compat vdso?
+> > 
+> > "Why should the compat vdso be configurable?" is a fair question.  I
+> > don't have an answer, but maybe some of the folks on thread do?
+> > 
+> > Our problem is more so "if the vdso is built as thumb, we need it also
+> > explicitly built with -fomit-frame-pointer."  Whether it should be
+> > built as thumb, arm, or configurable (and which default to pick in
+> > that case) are still an open questions.  Will asked for it to be
+> > configurable, so I sent a patch making it configurable.
+> 
+> It's configurable for 32-bit arm,
 
-That makes a lot of sense. To be honest I basically copied something
-that was in-tree to come up with something that would make checkpatch
-happy and didn't think too much about it.
+On 32-bit, the vdso mode is a side-effect of how we build the kernel
+image. I guess we haven't put much thought into whether we want to keep
+the vdso in Thumb-2 or ARM mode.
 
-> >     # Keep list in alphabetical order.
-> > +  "^70mai,.*":
-> > +    description: 70mai
->
-> "70mai Co., Ltd." please - don't just repeat the prefix.
+> so I was just following that as it's
+> hardly a maintenance burden to support both. I suppose you could have
+> a toolchain that only supports one or the other, but it does seem a little
+> esoteric if you're building a kernel for an arm64 CPU.
 
-Understood.
+We could leave the config option in if we ever need to change the compat
+vdso mode. But as not to confuse others with too many options, maybe
+add:
 
-> If you split the vendor prefixes to a preceding patch, they have a
-> chance of getting Reviewed-bys more quickly. You can then also CC the
-> vendors on the prefixes you're assigning for them.
+	bool "Compile the vDSO in THUMB2 mode" if EXPERT
 
-thingy.jp is the vendor I'm using for the breadbee project. As for
-70mai and MStar/Sigmastar I have
-tried reaching out to them in the past and they don't respond. In
-70mai's case their camera doesn't
-run Linux by default so I don't think they will care much.
+Either way:
 
-If it helps I can split them out but I'm not sure if it'll be possible
-to ever get the ok from the other vendors.
-For what it's worth the "mstar" prefix is what was being used in their
-kernels up until very recently when
-they switched everything to using "sstar" for SigmaStar. I considered
-using the sstar prefix but went
-with mstar because SigmaStar is totally unknown whereas MStar is
-slightly known, would be more
-recognisable, most of the chips still have mstar written on them and so on.
-
-> > +ARM/MStar/Sigmastar ARMv7 SoC support
-> > +M:   Daniel Palmer <daniel@thingy.jp>
-> > +L:   linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-> > +S:   Maintained
-> > +F:   Documentation/devicetree/bindings/arm/mstar.yaml
-> > +
-> >   ARM/NEC MOBILEPRO 900/c MACHINE SUPPORT
-> >   M:  Michael Petchkovsky <mkpetch@internode.on.net>
-> >   S:  Maintained
->
-> In theory it's spelled Armv7 since 2017, but MAINTAINERS, subject prefix
-> conventions and many other places in Linux still use the old upper-case
-> spelling, too...
-
-Understood. I'll fix that up.
-
-Thankyou for your input,
-
-Daniel
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
