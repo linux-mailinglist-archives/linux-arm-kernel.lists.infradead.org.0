@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D45B1F5161
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:44:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE00A1F5166
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:44:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wnS4MXjrdO273BU323NllJCNNwjjF2kN8Qoh9aZNjOY=; b=ipA2ej0Qrve+PD
-	IYmj5Q71/51B1j/FcJ3WGIZTHXl5kQ57oRygBLcHnVKGRvvXcM9PKS1I6vtFnu8HMRxR0cx942SLq
-	qOepkD1gLX9NuFB/MTsR6f9cmFqFWSaCJpF5WksTAxWCOsmj04/kGj29WQ4w1hljzwq8r2XQFMHiy
-	PRm6GkFfegCIke03DnJU/9RVXa9iOBxK4CWlxtIwRqMIiDdhTRwLnuRABia3tSXIdMiWH98UCJQvo
-	u38OQV/4x/4G3/a8C79SLphvd4WTy8L7p36rpTPWMlE4TqbMbGw/iuyEr3rSBaTtqeumxyyTuB+jK
-	pIClmRfH8LhznuQwhHtQ==;
+	List-Owner; bh=O/Kse4d47aJ33qpteN9okLG1wzHGL9aKb/4dX2b180M=; b=CV+ev7+q1E//Xm
+	cU5XaRpefl4PFdOCAU2dQgIC+1S5LDMV0BqJv9foti1IZS3dCWq20zZxxbRAS4knUar11+1BnkxEh
+	Lce9vxqkQSUo5UB+EL/jb9OU/ejSEpS3XfTIwBpaJB5YwiPeNc/zVxdAY76qLfttnAgIa4LXFZ/8L
+	4BM7EPQRA3qZixwWURRZPZd4Kw4NMgsLd1QukjOSVKAEbD4TVej993+/Wg3T65Pqgdp40VyBwz6wa
+	jFGmst2GMCstS6qqoVjCW3ciuFnRq0OiJhKzgqfHpRJbVtectV83DE0JlvMCoBZRsTRU2HAsdDJuw
+	NZW6MaNBzOZzqJYgxhkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jixHi-0001IP-A4; Wed, 10 Jun 2020 09:44:38 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jixHO-0001CG-UM
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:44:20 +0000
-Received: by mail-lj1-x244.google.com with SMTP id s1so1676874ljo.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 02:44:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=svyjfmEJc3+r5Bull8lSuu/qgDN2rTAndZ5rJi9Ba2o=;
- b=AMgNG3LbXSbZD6eBl2/IEceHF5cilPgFw2K3RxPXAl8WAyTiHclajD38G1Tc2Q7IIL
- JSAl5vPSokAFzuD6dghWzOBP8VQeaIBnEhmG7l6DbIj5XLzYlaKFxl68kpyO7qxTJuch
- Oknbf4oKQ2BxCbsKbeM4DVYh+BL5fS+J3SitSurgrSviegmUdN1RTWASwgL5E7dK3Eea
- ftChCFiQWkpFaq8mqhE2kLdcsDJoZmen1UBhmI1jCJ/cSLyTijZ0xSpCTHcX9e5qpBOV
- KK4npBNbzohL21ccWphgOTo20/ZK6StWglohLHKmhPuVh27p5gBk18RwPFlLeJWaHDQQ
- dH/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=svyjfmEJc3+r5Bull8lSuu/qgDN2rTAndZ5rJi9Ba2o=;
- b=YNaBukD6mPCrOiCkVa5jDw/neLB5fG6sKOwi5AJtpUCQ036uinQfYE3fGbvXIsde0L
- /miM/BtDreYVtQJUeXRhG3Vf7P+qJzc539Ej2/hV4npUDl7aZggH/UghGmGBsg/EBEAt
- p7xejYlxBoo6jDfpORkZukeSWH5dbYWHSZAKlwmUIUoodI5EQJQS3xl7pAzW4hvW5cCV
- nIO2JgQgC2wL1OOrR6ec3Y4e4SWFvTPTNmWexhszuZK5x9cMzNQmDahmI4FJHtULF0sG
- pED9GlJtO8TrRZBDtYQHXI1RhRvPh+S5KA7oOfKrYpPQQlx50+TqM1FLutQSAPnjITK7
- RR6Q==
-X-Gm-Message-State: AOAM533qbr/trXwk6JRPHD2k9K88RlUQMycw7xrAn4JRycXEnMfKTi8x
- kl0eyNKPj+dgoioN712pnLNoBokyWcNOex5kO5BS2A==
-X-Google-Smtp-Source: ABdhPJxUjW4GtVDMwGhimJkXUwNvX7Tr9JwCOPxfrbQrulwUS0MDRdszf4lJ44i0EOIMa/Nnos4vHOhpiJdziWPCCqs=
-X-Received: by 2002:a2e:350a:: with SMTP id z10mr1266313ljz.104.1591782257094; 
- Wed, 10 Jun 2020 02:44:17 -0700 (PDT)
+	id 1jixHz-0001ep-Ef; Wed, 10 Jun 2020 09:44:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jixHq-0001dd-RX
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:44:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 857B91F1;
+ Wed, 10 Jun 2020 02:44:45 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8786F3F73D;
+ Wed, 10 Jun 2020 02:44:44 -0700 (PDT)
+Date: Wed, 10 Jun 2020 10:44:42 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 4/6] prctl.2: Add SVE prctls (arm64)
+Message-ID: <20200610094440.GD25945@arm.com>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-5-git-send-email-Dave.Martin@arm.com>
+ <20200609095734.GA25362@willie-the-truck>
+ <20200609140948.GA25945@arm.com>
+ <20200609144905.GA28353@willie-the-truck>
 MIME-Version: 1.0
-References: <20200605224403.181015-1-sebastian.reichel@collabora.com>
- <20200605224403.181015-3-sebastian.reichel@collabora.com>
-In-Reply-To: <20200605224403.181015-3-sebastian.reichel@collabora.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 10 Jun 2020 11:44:05 +0200
-Message-ID: <CACRpkdY4RzgpGg-dCSJet-es39bmC7KNxxCjma_mgjpUzVTvKg@mail.gmail.com>
-Subject: Re: [PATCHv2 2/6] power: supply: gpio-charger: Make gpios optional
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <20200609144905.GA28353@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_024419_128129_B936C82B 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_024446_976805_35D42D2C 
+X-CRM114-Status: GOOD (  43.48  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,41 +66,224 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sebastian Reichel <sre@kernel.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
- Russell King <linux@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, kernel@collabora.com,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>,
- Emil Velikov <emil.velikov@collabora.com>
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Michael Kerrisk <mtk.manpages@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 6, 2020 at 12:44 AM Sebastian Reichel
-<sebastian.reichel@collabora.com> wrote:
+On Tue, Jun 09, 2020 at 03:49:05PM +0100, Will Deacon wrote:
+> On Tue, Jun 09, 2020 at 03:11:42PM +0100, Dave Martin wrote:
+> > On Tue, Jun 09, 2020 at 10:57:35AM +0100, Will Deacon wrote:
+> > > On Wed, May 27, 2020 at 10:17:36PM +0100, Dave Martin wrote:
+> > > > diff --git a/man2/prctl.2 b/man2/prctl.2
+> > > > index cab9915..91df7c8 100644
+> > > > --- a/man2/prctl.2
+> > > > +++ b/man2/prctl.2
+> > > > @@ -1291,6 +1291,148 @@ call failing with the error
+> > > >  .BR ENXIO .
+> > > >  For further details, see the kernel source file
+> > > >  .IR Documentation/admin\-guide/kernel\-parameters.txt .
+> > > > +.\" prctl PR_SVE_SET_VL
+> > > > +.\" commit 2d2123bc7c7f843aa9db87720de159a049839862
+> > > > +.\" linux-5.6/Documentation/arm64/sve.rst
+> > > > +.TP
+> > > > +.BR PR_SVE_SET_VL " (since Linux 4.15, only on arm64)"
+> > > > +Configure the thread's SVE vector length,
+> > > > +as specified by
+> > > > +.IR "(int) arg2" .
+> > > > +Arguments
+> > > > +.IR arg3 ", " arg4 " and " arg5
+> > > > +are ignored.
+> > > > +.IP
+> > > > +The bits of
+> > > > +.I arg2
+> > > > +corresponding to
+> > > > +.B PR_SVE_VL_LEN_MASK
+> > > > +must be set to the desired vector length in bytes.
+> > > > +This is interpreted as an upper bound:
+> > > > +the kernel will select the greatest available vector length
+> > > > +that does not exceed the value specified.
+> > > > +In particular, specifying
+> > > > +.B SVE_VL_MAX
+> > > > +(defined in
+> > > > +.I <asm/sigcontext.h>)
+> > > > +for the
+> > > > +.B PR_SVE_VL_LEN_MASK
+> > > > +bits requests the maximum supported vector length.
+> > > > +.IP
+> > > > +In addition,
+> > > > +.I arg2
+> > > > +must be set to one of the following combinations of flags:
+> > > 
+> > > How about saying:
+> > > 
+> > >   In addition, the other bits of arg2 must be set according to the following
+> > >   combinations of flags:
+> > > 
+> > > Otherwise I find it a bit fiddly to read, because it's valid to have
+> > > flags of 0 and a non-zero length.
+> > 
+> > 0 is listed, so I hoped that was clear enough.
+> > 
+> > Maybe just write "must be one of the following values:"?
+> > 
+> > 0 is a value, but I can see why you might be uneasy about 0 being
+> > described as a "combination of flags".
+> 
+> It's more that arg2 *also* holds the length, so saying that arg2 must
+> be set to a combination of flags isn't quite right, because it's actually
+> to set to a combination of flags and the length.
+> 
+> > > > +.RS
+> > > > +.TP
+> > > > +.B 0
+> > > > +Perform the change immediately.
+> > > > +At the next
+> > > > +.BR execve (2)
+> > > > +in the thread,
+> > > > +the vector length will be reset to the value configured in
+> > > > +.IR /proc/sys/abi/sve_default_vector_length .
+> > > 
+> > > (implementation note: does this mean that 'sve_default_vl' should be
+> > >  an atomic_t, as it can be accessed concurrently? We probably need
+> > >  {READ,WRITE}_ONCE() at the very least, as I'm not seeing any locks
+> > >  that help us here...)
+> > 
+> > Is this purely theoretical?  Can you point to what could go wrong?
+> 
+> If the write is torn by the compiler, then a concurrent reader could end
+> up seeing a bogus value. There could also be ToCToU issues if it's re-read.
 
-> While strongly recommended, not all devices have a gpio to
-> detect if the charger is connected. This moves the 'gpios'
-> from required to optional section.
->
-> This also modifies error handling for the GPIO a bit: We
-> no longer fallback to pdata, if a GPIO is specified using
-> GPIO descriptor tables. This is a bit cleaner and does
-> not have any real impact: There are only two mainline pdata
-> users (arm/mach-sa1100/collie.c, arm/mach-pxa/tosa.c) and
-> none of them specify the GPIO via gpiod descriptor tables.
-> Once both have been converted the driver's support for
-> specifying GPIOs numbers in pdata will be dropped.
->
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+It won't be torn in practice, no decision logic depends on the value
+read, and you can't even get from the write to the read or vice-versa
+without crossing a TU boundary (even under LTO), so there's basically
+zero scope for sabotXXXXXoptimisation by the compiler.
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Only root is allowed to write this thing anyway.
 
-Yours,
-Linus Walleij
+> > While I doubt I thought about this very hard and I agree that you're
+> > right in principle, I think there are probably non-atomic sysctls and
+> > debugs files etc. all over the place.
+> > 
+> > I didn't want to clutter the code unnecessarily.
+> 
+> Right, but KCSAN is coming along and so somebody less familiar with the code
+> will hit this eventually.
+
+So the issue is theoretical, probably one of very many similar issues,
+and anyway we have a tool for tracking them down if we need to?
+
+I'm playing devil's advocate here, but I'd debate whether it's worth
+it -- or even wise -- to fix these piecemeal unless we're confident this
+is an egregious case.  Doing so may encourage a false sense of safety.
+When we're in a position to do a treewide cleanup, that would be better,
+no?
+
+> > > > +.B PR_SVE_VL_INHERIT
+> > > > +Perform the change immediately.
+> > > > +Subsequent
+> > > > +.BR execve (2)
+> > > > +calls will preserve the new vector length.
+> > > > +.TP
+> > > > +.B PR_SVE_SET_VL_ONEXEC
+> > > > +Defer the change, so that it is performed at the next
+> > > > +.BR execve (2)
+> > > > +in the thread.
+> > > > +Further
+> > > > +.BR execve (2)
+> > > > +calls will reset the vector length to the value configured in
+> > > > +.IR /proc/sys/abi/sve_default_vector_length .
+> > > > +.TP
+> > > > +.B "PR_SVE_SET_VL_ONEXEC | PR_SVE_VL_INHERIT"
+> > > > +Defer the change, so that it is performed at the next
+> > > > +.BR execve (2)
+> > > > +in the thread.
+> > > > +Further
+> > > > +.BR execve (2)
+> > > > +calls will preserve the new vector length.
+> > > > +.RE
+> > > > +.IP
+> > > > +In all cases,
+> > > > +any previously pending deferred change is canceled.
+> > > > +.IP
+> > > > +The call fails with error
+> > > > +.B EINVAL
+> > > > +if SVE is not supported on the platform, if
+> > > > +.I arg2
+> > > > +is unrecognized or invalid, or the value in the bits of
+> > > > +.I arg2
+> > > > +corresponding to
+> > > > +.B PR_SVE_VL_LEN_MASK
+> > > > +is outside the range
+> > > > +.BR SVE_VL_MIN .. SVE_VL_MAX
+> > > > +or is not a multiple of 16.
+> > > > +.IP
+> > > > +On success,
+> > > > +a nonnegative value is returned that describes the
+> > > > +.I selected
+> > > > +configuration,
+> > > 
+> > > If I'm reading the kernel code correctly, this is slightly weird, as
+> > > the returned value may contain the PR_SVE_VL_INHERIT flag but it will
+> > > never contain the PR_SVE_SET_VL_ONEXEC flag. Is that right?
+> > 
+> > Yes, which is an oddity.
+> > 
+> > I suppose we could fake that up actually by returning that flag if
+> > sve_vl and sve_vl_onexec are different, but we don't currently do this.
+> 
+> I don't think there's any need to change the code, but I think this stuff
+> is worth documenting.
+> 
+> > > If so, maybe just say something like:
+> > > 
+> > >   On success, a nonnegative value is returned that describes the selected
+> > >   configuration in the same way as PR_SVE_GET_VL.
+> > 
+> > How does that help?  PR_SVE_GET_VL doesn't fully clarify the oddity you
+> > call out anyway.
+> 
+> It clarifies it enough for my liking (by explicitly talking about "the bit
+> corresponding to PR_SVE_VL_INHERIT" and not about PR_SVE_SET_VL_ONEXEC),
+> but either way, I think saying that the return value is the same is a
+> useful clarification. If you want to make PR_SVE_GET_VL more explicit,
+> we could do that too.
+
+Fair enough.  I'll just refer to PR_SVE_GET_VL, as you suggest.
+
+I'm not keen to add any new wording at this stage.
+
+> > > > +.B PR_SVE_SET_VL_ONEXEC
+> > > > +flag may crash the calling process.
+> > > > +The conditions for using it safely are complex and system-dependent.
+> > > > +Don't use it unless you really know what you are doing.
+> > > > +.IP
+> > > > +For more information, see the kernel source file
+> > > > +.I Documentation/arm64/sve.rst
+> > > > +.\"commit b693d0b372afb39432e1c49ad7b3454855bc6bed
+> > > > +(or
+> > > > +.I Documentation/arm64/sve.txt
+> > > > +before Linux 5.3).
+> > > 
+> > > I think I'd drop the kernel reference here, as it feels like we're saying
+> > > "only do this if you know what you're doing" on one hand, but then "if you
+> > > don't know what you're doing, see this other documentation" on the other.
+> > 
+> > Well, the docmuentation doesn't answer those questions either.
+> > 
+> > I could just swap the warning and the cross-reference, so that the
+> > cross-reference doesn't seem to follow on from "knowing what you're
+> > doing"?
+> 
+> Ok.
+
+OK, I'll aim to do that then.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
