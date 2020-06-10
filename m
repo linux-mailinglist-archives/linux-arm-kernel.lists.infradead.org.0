@@ -2,92 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85EBA1F5B85
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 20:53:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 304281F5B86
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 20:53:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N0CblQX5HztaQceV8FjLUL48TP7S708jH5fkxhpaL1M=; b=A8ld32e46m1MSF
-	N0++owke2l+7bnORVgvCJyRypBlBK9Ja8f+2FPvcXG///XHHvju66zy6sC5wgY4JmSH2n3DyM/+CD
-	Vj7Moe5aeMYM5yYkGw5NdAB0XcX+alTAOubxxcggA2K8UGEFrtaJfKAQg7KreTv5RrF1FguGsgpdP
-	eXwYapVCI6pnb/AeLecV4J6ZpdxBRc2xbBf1g3+QJsX+asIhad65qplLRDNn6SEL2z3IdU6GwdUeN
-	SLrg/GRRMWpf8rre0EqrzNmyQ018IWX6BZujZd0+cU8zaX6MNxYk2wikrTzTwZ9ume+HmaiIQ2w60
-	AbtKvnhZgwCjJjX67xRg==;
+	List-Owner; bh=kzzQhKgw42eE+ambmDric1AuHg0AAnCdOIvbbTyr9+A=; b=SdHXNZ1zgsv4GH
+	NDFu/ydJ5WEBJEMrajApQzfBomEp75FEVhWpC6hTYADc8N0iZDRjmE+FmtbnStaYpMzzpdvyyuBl9
+	pykMTQnF+7qHimDeLXGMqZ1UnsPXUIKQGgd5NTHg0RiTZqv/xUisgQ88PneSGR6wKbVAcytNqe3m/
+	Dt9rCJkKZKd0X5uL4Gb20ZYi5Tvv60M9IurhaldjoJYVe1YAG//fBM/8h6hjja2rdiPJN2xOPa5Ws
+	KmSgAF8xg06y/KqVFkEISMPlKEGd9ZExCJLi9XyMMbY6eEQXVcNlskBRXCb7JoaW1/DAPbkD1cC6B
+	FvtqjNLXqqSpuDL1Yycw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj5qM-0003Mk-E2; Wed, 10 Jun 2020 18:52:58 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1jj5qZ-0003VV-Bx; Wed, 10 Jun 2020 18:53:11 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj5qD-0003Lz-3J
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 18:52:50 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id f126so837942vkb.13
+ id 1jj5qG-0003Mi-Mz
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 18:52:54 +0000
+Received: by mail-ed1-x544.google.com with SMTP id k8so2165568edq.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 11:52:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ Wed, 10 Jun 2020 11:52:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=vanguardiasur-com-ar.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ou/05hPwTWsJc4qPHUfA/rNqmKzeeLE9v7tAAiFJL6k=;
- b=gEc2R+rVmIe8RhTsWZBHBO23RbA0tr/u76/Es88LGQ/CPuIjId85GC2NsVm8kMoKgL
- xypuOsx9V+65XCavLo3ndTbi2lygTsd1FRAfHTRZ/ft4YFsvaQVS/90q3h6tRE9n54Mf
- xP6C42BDu/Xvcj+jMurPTuDkG8obmR20jvUI42vHwTjju14b7EiA89IQ+Io3L6jolyt7
- RP98ow/xYCC63pO16c+NjSTt4hjR/4a+L2b7Y5x1LoYmsGXUQEMAl+anxxVhRMjwEbfx
- c6Wfd+JbNHcTCTk0eLPkpkHtk69QBNuyxUainnJ40usnuLbLhv3qVR/McNQMZsJakaY8
- 2yBQ==
+ :cc; bh=CbR96mtjILK7CXyFeJfJjgwimFAgYdYYoASbhiEt3b8=;
+ b=UoA6mdIYYeZDClqnXSQssygIn/PG+NX40vT80Y6VCQxi+EBFCnFS6Wr7ztvKGCkcH4
+ 4kVSxit+x0RXy1PUroeD0u6Mbawsqh6va1iTczz8VDIdEiS/jdwT6C3SByXK6bJ8SaMZ
+ LV6c/7zlWnLB6JilPSBzPSB5L+bjUdVQuQ5GhXTTqLQlopf14FpK8Aso+WDEhC12FsN/
+ fxrMi0/plvpnlcpV/SF+2RehWTeVpskRO3SpSH7qOyw6ly41UFj97rly8sB2ZBQhHCNa
+ Ad5iqI3BSb6PpZET2RVQNsoYfKMfTEqHxGejMSn1QviLBu1165Otf+5nmA5rlKCAWQ+h
+ ad1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Ou/05hPwTWsJc4qPHUfA/rNqmKzeeLE9v7tAAiFJL6k=;
- b=QslyOwCapdD3azE/BENVSn52Xi25YUftfrtDU/zqCdULymkr41O2ln/EsYfSz5CDnt
- yGU8jmoXy0BUtjrBVDMhglUKQEgakVYcufZ7ymMYKk5mzPlHKzrD7z+sioZXtMLUdq0q
- igI94lRAXxza2gxzpUkLi/1wKYweOD526DjRoMxVXSrDrpx9p8gZgqgQGPUqpQ0ciNnd
- suuJP7jlVPVIM2bBkeoT2PJznN8JPODNg0Gn5x/6uuecCpn7jMxKOpn6iq9QH3K8n4uX
- wTrSJ/jTKP6WBxASEkmRJ0o9qA9SX/wECZesPpd/CF19dmK4geoEoUNHkZDMDVO57LS0
- x4UA==
-X-Gm-Message-State: AOAM533pEW7T4i6143cmgFQSIE7jUtyf7rWLLkXdBIZBk+B5Hm9x5ltS
- wPk+MEZ5KRsMZqH3HdWzdh6xSuvDMwHKYCbolCPMqQ==
-X-Google-Smtp-Source: ABdhPJxdhrcI3GxwX+s2Z6W5dcJTIvbNz9DMjdWBqnMt5wpbMQTIwtRhtuhfggqhbSRYlsDnW4UACO8A1irmUlXnjZ8=
-X-Received: by 2002:a05:6122:106f:: with SMTP id
- k15mr3512065vko.21.1591815167751; 
- Wed, 10 Jun 2020 11:52:47 -0700 (PDT)
+ bh=CbR96mtjILK7CXyFeJfJjgwimFAgYdYYoASbhiEt3b8=;
+ b=qOtBkbpbj/mIep7Y9PF4WGpPEFwZZ5zW28PwfnHEplbmd+YF56wA8f/DNW4vIp/nBX
+ ZrdHXVUJe6Xslv5chVOce8FnJmyDQpolODtblKw8q+ZRB13LAgsS6YPZUKhYyTtUyiZ5
+ CQMd/GTCs6m0/X0poM+45KPJot/CTEan41kM2yh56AAG2LXdANlGbuOS4ldZn4tqDnhP
+ f7U9IrMysklEOEQG28w4L1kWL6yIeIw/xQhefDbjfbg9fA4xXRNjFdb2ZrmTRvkOetqy
+ 6I2kpD2c2Uf15ZjkOa1vdR/bZrRr0fsESQiVqitNhi3UYoASx5JTD1PC4hs89JDjIP0F
+ iF9w==
+X-Gm-Message-State: AOAM532DmLMvVH2cePo96f+obMls71THvpO32SWVX0lfGtrrzq/iQFG9
+ giL885SFpu0ac+auOQrJ/n1SCTFx3gfZcYWGLEMWaw==
+X-Google-Smtp-Source: ABdhPJxN/GLInQdzFlFb6QNZ7kF/EMF0jdmnsSPEii+SZBgYAz5zF8iUnVPfSKOUH7zSH4rYKOySSHmBDtruvjQjLd8=
+X-Received: by 2002:a05:6402:149:: with SMTP id
+ s9mr3576778edu.375.1591815170564; 
+ Wed, 10 Jun 2020 11:52:50 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-13-sean.j.christopherson@intel.com>
-In-Reply-To: <20200605213853.14959-13-sean.j.christopherson@intel.com>
-From: Ben Gardon <bgardon@google.com>
-Date: Wed, 10 Jun 2020 11:52:35 -0700
-Message-ID: <CANgfPd9Kjb2QH+K3KwPZBFR3wv33tq7WSX=RoJjJHfkAad5TSg@mail.gmail.com>
-Subject: Re: [PATCH 12/21] KVM: x86/mmu: Skip filling the gfn cache for
- guaranteed direct MMU topups
-To: Sean Christopherson <sean.j.christopherson@intel.com>
+References: <20191204124732.10932-1-Jerry-Ch.chen@mediatek.com>
+ <20191204124732.10932-2-Jerry-Ch.chen@mediatek.com>
+ <20200521171101.GA243874@chromium.org>
+ <e31fe64a-c5c1-7b1e-eec1-27111fe43ac2@xs4all.nl>
+ <CAAFQd5Ad_cnv0qztZOk9c2H0Y+XO6tRcRmS1t4dBw5qbG-d8Nw@mail.gmail.com>
+In-Reply-To: <CAAFQd5Ad_cnv0qztZOk9c2H0Y+XO6tRcRmS1t4dBw5qbG-d8Nw@mail.gmail.com>
+From: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
+Date: Wed, 10 Jun 2020 15:52:39 -0300
+Message-ID: <CAAEAJfDboyra5XcEiviJP_3Kk-mDNZH5nstDa_7P7XCV7bu7Pg@mail.gmail.com>
+Subject: Re: [RFC PATCH V4 1/4] media: v4l2-mem2mem: add v4l2_m2m_suspend,
+ v4l2_m2m_resume
+To: Tomasz Figa <tfiga@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_115249_161965_BBB9324A 
-X-CRM114-Status: GOOD (  18.26  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200610_115252_807902_22BA233B 
+X-CRM114-Status: GOOD (  27.60  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,120 +93,216 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <christoffer.dall@arm.com>,
- Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, Claudio Imbrenda <imbrenda@linux.ibm.com>,
- kvmarm@lists.cs.columbia.edu, Janosch Frank <frankja@linux.ibm.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Junaid Shahid <junaids@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>, Cornelia Huck <cohuck@redhat.com>,
- Peter Shier <pshier@google.com>, linux-mips@vger.kernel.org,
- James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, Peter Feiner <pfeiner@google.com>
+Cc: linux-devicetree <devicetree@vger.kernel.org>,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
+ zwisler@chromium.org, srv_heupstream <srv_heupstream@mediatek.com>,
+ Jerry-ch Chen <jerry-ch.chen@mediatek.corp-partner.google.com>,
+ Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
+ Sj Huang <sj.huang@mediatek.com>, yuzhao@chromium.org,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Pi-Hsun Shih <pihsun@chromium.org>,
+ =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <frederic.chen@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 2:39 PM Sean Christopherson
-<sean.j.christopherson@intel.com> wrote:
+Hi everyone,
+
+Thanks for the patch.
+
+On Wed, 10 Jun 2020 at 07:33, Tomasz Figa <tfiga@chromium.org> wrote:
 >
-> Don't bother filling the gfn array cache when the caller is a fully
-> direct MMU, i.e. won't need a gfn array for shadow pages.
+> On Wed, Jun 10, 2020 at 12:29 PM Hans Verkuil <hverkuil@xs4all.nl> wrote:
+> >
+> > On 21/05/2020 19:11, Tomasz Figa wrote:
+> > > Hi Jerry,
+> > >
+> > > On Wed, Dec 04, 2019 at 08:47:29PM +0800, Jerry-ch Chen wrote:
+> > >> From: Pi-Hsun Shih <pihsun@chromium.org>
+> > >>
+> > >> Add two functions that can be used to stop new jobs from being queued /
+> > >> continue running queued job. This can be used while a driver using m2m
+> > >> helper is going to suspend / wake up from resume, and can ensure that
+> > >> there's no job running in suspend process.
+> > >>
+> > >> BUG=b:143046833
+> > >> TEST=build
+> > >>
+
+BUG/TEST tags need to be removed.
+
+> > >> Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
+> > >> Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.corp-partner.google.com>
+
+This mail address probably needs correction?
+
+> > >> ---
+> > >>  drivers/media/v4l2-core/v4l2-mem2mem.c | 40 ++++++++++++++++++++++++++
+> > >>  include/media/v4l2-mem2mem.h           | 22 ++++++++++++++
+> > >>  2 files changed, 62 insertions(+)
+> > >>
+> > >> diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
+> > >> index 5bbdec55b7d7..76ba203e0035 100644
+> > >> --- a/drivers/media/v4l2-core/v4l2-mem2mem.c
+> > >> +++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
+> > >> @@ -47,6 +47,10 @@ module_param(debug, bool, 0644);
+> > >>  #define TRANS_ABORT         (1 << 2)
+> > >>
+> > >>
+> > >> +/* The job queue is not running new jobs */
+> > >> +#define QUEUE_PAUSED                (1 << 0)
+> > >> +
+> > >> +
+> > >>  /* Offset base for buffers on the destination queue - used to distinguish
+> > >>   * between source and destination buffers when mmapping - they receive the same
+> > >>   * offsets but for different queues */
+> > >> @@ -88,6 +92,7 @@ static const char * const m2m_entity_name[] = {
+> > >>   * @job_queue:              instances queued to run
+> > >>   * @job_spinlock:   protects job_queue
+> > >>   * @job_work:               worker to run queued jobs.
+> > >> + * @job_queue_flags:        flags of the queue status, %QUEUE_PAUSED.
+> > >>   * @m2m_ops:                driver callbacks
+> > >>   */
+> > >>  struct v4l2_m2m_dev {
+> > >> @@ -105,6 +110,7 @@ struct v4l2_m2m_dev {
+> > >>      struct list_head        job_queue;
+> > >>      spinlock_t              job_spinlock;
+> > >>      struct work_struct      job_work;
+> > >> +    unsigned long           job_queue_flags;
+> > >>
+> > >>      const struct v4l2_m2m_ops *m2m_ops;
+> > >>  };
+> > >> @@ -267,6 +273,12 @@ static void v4l2_m2m_try_run(struct v4l2_m2m_dev *m2m_dev)
+> > >>              return;
+> > >>      }
+> > >>
+> > >> +    if (m2m_dev->job_queue_flags & QUEUE_PAUSED) {
+> > >> +            spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
+> > >> +            dprintk("Running new jobs is paused\n");
+> > >> +            return;
+> > >> +    }
+> > >> +
+> > >>      m2m_dev->curr_ctx = list_first_entry(&m2m_dev->job_queue,
+> > >>                                 struct v4l2_m2m_ctx, queue);
+> > >>      m2m_dev->curr_ctx->job_flags |= TRANS_RUNNING;
+> > >> @@ -447,6 +459,34 @@ void v4l2_m2m_job_finish(struct v4l2_m2m_dev *m2m_dev,
+> > >>  }
+> > >>  EXPORT_SYMBOL(v4l2_m2m_job_finish);
+> > >>
+> > >> +void v4l2_m2m_suspend(struct v4l2_m2m_dev *m2m_dev)
+> > >> +{
+> > >> +    unsigned long flags;
+> > >> +    struct v4l2_m2m_ctx *curr_ctx;
+> > >> +
+> > >> +    spin_lock_irqsave(&m2m_dev->job_spinlock, flags);
+> > >> +    m2m_dev->job_queue_flags |= QUEUE_PAUSED;
+> > >> +    curr_ctx = m2m_dev->curr_ctx;
+> > >> +    spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
+> > >> +
+> > >> +    if (curr_ctx)
+> > >> +            wait_event(curr_ctx->finished,
+> > >> +                       !(curr_ctx->job_flags & TRANS_RUNNING));
+> > >> +}
+> > >> +EXPORT_SYMBOL(v4l2_m2m_suspend);
+> > >> +
+> > >> +void v4l2_m2m_resume(struct v4l2_m2m_dev *m2m_dev)
+> > >> +{
+> > >> +    unsigned long flags;
+> > >> +
+> > >> +    spin_lock_irqsave(&m2m_dev->job_spinlock, flags);
+> > >> +    m2m_dev->job_queue_flags &= ~QUEUE_PAUSED;
+> > >> +    spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
+> > >> +
+> > >> +    v4l2_m2m_try_run(m2m_dev);
+> > >> +}
+> > >> +EXPORT_SYMBOL(v4l2_m2m_resume);
+> > >> +
+> > >>  int v4l2_m2m_reqbufs(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
+> > >>                   struct v4l2_requestbuffers *reqbufs)
+> > >>  {
+> > >> diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
+> > >> index 5467264771ec..119a195da390 100644
+> > >> --- a/include/media/v4l2-mem2mem.h
+> > >> +++ b/include/media/v4l2-mem2mem.h
+> > >> @@ -183,6 +183,28 @@ v4l2_m2m_buf_done(struct vb2_v4l2_buffer *buf, enum vb2_buffer_state state)
+> > >>      vb2_buffer_done(&buf->vb2_buf, state);
+> > >>  }
+> > >>
+> > >> +/**
+> > >> + * v4l2_m2m_suspend() - stop new jobs from being run and wait for current job
+> > >> + * to finish
+> > >> + *
+> > >> + * @m2m_dev: opaque pointer to the internal data to handle M2M context
+> > >> + *
+> > >> + * Called by a driver in the suspend hook. Stop new jobs from being run, and
+> > >> + * wait for current running job to finish.
+> > >> + */
+> > >> +void v4l2_m2m_suspend(struct v4l2_m2m_dev *m2m_dev);
+> > >> +
+> > >> +/**
+> > >> + * v4l2_m2m_resume() - resume job running and try to run a queued job
+> > >> + *
+> > >> + * @m2m_dev: opaque pointer to the internal data to handle M2M context
+> > >> + *
+> > >> + * Called by a driver in the resume hook. This reverts the operation of
+> > >> + * v4l2_m2m_suspend() and allows job to be run. Also try to run a queued job if
+> > >> + * there is any.
+> > >> + */
+> > >> +void v4l2_m2m_resume(struct v4l2_m2m_dev *m2m_dev);
+> > >> +
+> > >>  /**
+> > >>   * v4l2_m2m_reqbufs() - multi-queue-aware REQBUFS multiplexer
+> > >>   *
+> > >> --
+> > >> 2.18.0
+> > >
+> > > Reviewed-by: Tomasz Figa <tfiga@chromium.org>
+> > >
+> > > [Corrected Hans's email address.]
+> > > Hans, does this look good to you?
+> >
+> > Yes, this looks good.
+> >
+> > Sorry for the late reply.
 >
-> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-Reviewed-by: Ben Gardon <bgardon@google.com>
-> ---
->  arch/x86/kvm/mmu/mmu.c         | 18 ++++++++++--------
->  arch/x86/kvm/mmu/paging_tmpl.h |  4 ++--
->  2 files changed, 12 insertions(+), 10 deletions(-)
+> No worries! Thanks a lot.
 >
-> diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-> index a8f8eebf67df..8d66cf558f1b 100644
-> --- a/arch/x86/kvm/mmu/mmu.c
-> +++ b/arch/x86/kvm/mmu/mmu.c
-> @@ -1101,7 +1101,7 @@ static void mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
->         }
->  }
+> >
+> > I assume this will be part of a future patch series that calls these new functions?
 >
-> -static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
-> +static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu, bool maybe_indirect)
->  {
->         int r;
+> The mtk-jpeg encoder series depends on this patch as well, so I guess
+> it would go together with whichever is ready first.
 >
-> @@ -1114,10 +1114,12 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
->                                    PT64_ROOT_MAX_LEVEL);
->         if (r)
->                 return r;
-> -       r = mmu_topup_memory_cache(&vcpu->arch.mmu_gfn_array_cache,
-> -                                  PT64_ROOT_MAX_LEVEL);
-> -       if (r)
-> -               return r;
-> +       if (maybe_indirect) {
-> +               r = mmu_topup_memory_cache(&vcpu->arch.mmu_gfn_array_cache,
-> +                                          PT64_ROOT_MAX_LEVEL);
-> +               if (r)
-> +                       return r;
-> +       }
->         return mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache,
->                                       PT64_ROOT_MAX_LEVEL);
->  }
-> @@ -4107,7 +4109,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
->         if (fast_page_fault(vcpu, gpa, error_code))
->                 return RET_PF_RETRY;
+> I would also envision someone changing the other existing drivers to
+> use the helpers, as I'm pretty much sure some of them don't handle
+> suspend/resume correctly.
 >
-> -       r = mmu_topup_memory_caches(vcpu);
-> +       r = mmu_topup_memory_caches(vcpu, false);
->         if (r)
->                 return r;
->
-> @@ -5147,7 +5149,7 @@ int kvm_mmu_load(struct kvm_vcpu *vcpu)
->  {
->         int r;
->
-> -       r = mmu_topup_memory_caches(vcpu);
-> +       r = mmu_topup_memory_caches(vcpu, !vcpu->arch.mmu->direct_map);
->         if (r)
->                 goto out;
->         r = mmu_alloc_roots(vcpu);
-> @@ -5341,7 +5343,7 @@ static void kvm_mmu_pte_write(struct kvm_vcpu *vcpu, gpa_t gpa,
->          * or not since pte prefetch is skiped if it does not have
->          * enough objects in the cache.
->          */
-> -       mmu_topup_memory_caches(vcpu);
-> +       mmu_topup_memory_caches(vcpu, true);
->
->         spin_lock(&vcpu->kvm->mmu_lock);
->
-> diff --git a/arch/x86/kvm/mmu/paging_tmpl.h b/arch/x86/kvm/mmu/paging_tmpl.h
-> index 3de32122f601..ac39710d0594 100644
-> --- a/arch/x86/kvm/mmu/paging_tmpl.h
-> +++ b/arch/x86/kvm/mmu/paging_tmpl.h
-> @@ -818,7 +818,7 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
->                 return RET_PF_EMULATE;
->         }
->
-> -       r = mmu_topup_memory_caches(vcpu);
-> +       r = mmu_topup_memory_caches(vcpu, true);
->         if (r)
->                 return r;
->
-> @@ -905,7 +905,7 @@ static void FNAME(invlpg)(struct kvm_vcpu *vcpu, gva_t gva, hpa_t root_hpa)
->          * No need to check return value here, rmap_can_add() can
->          * help us to skip pte prefetch later.
->          */
-> -       mmu_topup_memory_caches(vcpu);
-> +       mmu_topup_memory_caches(vcpu, true);
->
->         if (!VALID_PAGE(root_hpa)) {
->                 WARN_ON(1);
-> --
-> 2.26.0
->
+
+This indeed looks very good. If I understood the issue properly,
+the change would be useful for both stateless (e.g. hantro, et al)
+and stateful (e.g. coda) codecs.
+
+Hantro uses pm_runtime_force_suspend, and I believe that
+could is enough for proper suspend/resume operation.
+
+I'm not seeing any code in CODA to handle this, so not sure
+how it's handling suspend/resume.
+
+Maybe we can have CODA as the first user, given it's a well-maintained
+driver and should be fairly easy to test.
+
+Regards,
+Ezequiel
 
 _______________________________________________
 linux-arm-kernel mailing list
