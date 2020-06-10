@@ -2,79 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F16AB1F5666
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 16:02:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8B901F568B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 16:09:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hod2c4j13nrUJouS8Mh5uk5NeLrkp1maO441oB538jA=; b=SQEN5RpRwp92uc
-	2xBKcjuXADhVEwKyZDxTicZRMIKi8cGPtbMOMTfZfZrTLyeumMHu2u9WCIU8lKcWTgG6h/Bj+OdeQ
-	D9zt7lcE3NEDyybw8id+PO4NF6oEmJ+x7NHhGmBQTaLfsrhiaD+QpAVbMInsvwcQNPY7S1B/vlnJz
-	6G2xik5nw1N0n6RumsPONVQDwmnnkp8R6rc6iUNeFyTfax49XMPMLX1/P3M1PgWgq+fnVHSKmb9y0
-	iHpXY3yKlZw2ny+V0YW9ljDfu+nzNQtpPuvYyiXRIgCzrlDTljZrl3UZJq3IZA6ceI4SYsGgpow8O
-	3KKZ0bxA7THg8E16bfCg==;
+	List-Owner; bh=fwh4m9ur9H5msKynmgF6renjSLpjW+SZ0NrJ+/SWGyA=; b=p6RO47cCtWciov
+	J3DKQWhntwntaW9iTuWv/fR/lImRPYXPUQA+qruSEitFFjJdKsqq6MkZYmzxlbXatnXAoMrbyuBWp
+	+Jj1KYr5nx+oN0vYCW4sEPvpBjfgSBrjIG3vD8byGCa7Lp/JkOe8VbVAnbDOzdhvl3roD7Ritb72L
+	U0oYFgwmhCVlxYHpOqa6bltXN29y6bDxeb1tAsBTo4YNgkatj5I+M5FNyJyPF8UHa6apWozinbaKE
+	2I0mgEXzFEa5tWQGLfVlSoUp60N1/gOH/hrJhd9kmcKXupz+HpQ4S/3oJkgrbCq+5c/Of3azA6b0l
+	UHw943QOkl0ex37eOe/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj1Is-00071s-T9; Wed, 10 Jun 2020 14:02:06 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jj1Po-0001yv-4Q; Wed, 10 Jun 2020 14:09:16 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj1Ik-00071N-7M
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 14:01:59 +0000
-Received: by mail-oi1-f196.google.com with SMTP id x202so2106491oix.11
+ id 1jj1Pc-0001y8-JC
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 14:09:06 +0000
+Received: by mail-wr1-x429.google.com with SMTP id h5so2445006wrc.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 07:01:57 -0700 (PDT)
+ Wed, 10 Jun 2020 07:09:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=3F1gyxKHBurPb/9ok1v4N24kKX2n+9TWOucrfqchLWY=;
+ b=ioj0E5CLNbfjs5oCFAoQKIzYeZBkUzsBNDPcTEesJcSJ6K2WjEvS0sIXyNdZBne2fA
+ YVFOwVpX6Kvagq0fqimlc2N6UHRM3yksJYSb7cdJeqS69EwbPc7lWT+HhdtAD/Sl8MoY
+ LCK4KOoGz/PNI2oe94EnCJZhuHdMPSJZrfkrCERMqgfai5qijCfK4HEipycaa+0Q1CZb
+ jU1hc5X10bIoud+iLtWn8xlol613jWOuAg/hpOKsShywXzBWw8RLjXFtn4XT5b+9hCSC
+ G03APnvbzi4imW3NZmsUKI/D10zqfJWQqo+3rNODPeenxyc17qu4TDyRwkaMioqpAhUc
+ eK1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Nl62HWLkcdUncszr4NfDCSNaITirf4yc7zsH9ph91Mg=;
- b=NzN2BNNLPVRzuibzFntnhxxgZudTm9Uqm2kWUlp5ATg8GylNb9i42eEWJDomZce2t/
- DGpHeAkq3N9NO5q/krd3TSQKQ0Mk3De2PqAr8Vg7yh19eXXKDF5QeIYS4j8Q18TJNdYv
- f30EVo+934skC/u2YcgHJfgsEzBR0QuTDv6aWBypNLxot+JvnlP3BIJBXrIQsMQXaRW3
- 6fWyiWKCL0x3DsHraP0fQ13L4vQqOTT3Id68rHolz6vvyJptvlLkE32dOstZKsJwbQOs
- T2+yoObqOisveaPXGxQ6RzQ9PruE0Z9NvFQWhAQqgmaj4hyiOB66V6VmX5teYEq3b3+q
- kK9g==
-X-Gm-Message-State: AOAM533aaR2NIKZLJs1/v1lZdTrHjZrUvsNEgziMSJjYu94ASNsUGSvM
- hLgtPxG1baXbBDrJpbmu+ijUKrHdcF+PkTWCez4=
-X-Google-Smtp-Source: ABdhPJzorUjsiFcKJqkTkUHEOkzCM8G8rZoea2g27dOAzap4gGLrBRRziPbedIOP6/JlYUlFFWbvc+8f9RAYMPdl7zE=
-X-Received: by 2002:aca:ad88:: with SMTP id w130mr2656825oie.103.1591797717254; 
- Wed, 10 Jun 2020 07:01:57 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=3F1gyxKHBurPb/9ok1v4N24kKX2n+9TWOucrfqchLWY=;
+ b=YbqX8sLbyKRMaiNlSvB8U/d5bTJy73j6I/E04g1O7Uaq+P/T3NAGN8xoFrulMbSIMN
+ jRDPPOLunmMAQJEzO5Kh0FV0KOpoiPL0smdUlqj9UpXXfoNNuvjtLPl6wYkF1PFrNx6D
+ Tm4G9KISztPoLFRZtjUL1vIbuF9TQWFx8994zSasAp1Hyhnx7FOKTys5iKCGxkLq/Gsj
+ C3CVkfvObjll7c8A6rzEyUfKuFy9f4GJD0dlN25uoR+p1X6p9/6HnqxMPsO182iuMY27
+ YW2sKB1h+8O0oOgjNksO3q8vHHmhLGGly3hEYZmn6LkwRNyhtEWotVwvGQfKkw6I9bIk
+ RzEA==
+X-Gm-Message-State: AOAM532OewbP+ZNDwsK3yKvPGe1pJfHGqkbjRsTNIWUruSt8GyO7E3D1
+ A2F2RoxMJQgO5oitzY4paHFOsA1MYhiaqQ==
+X-Google-Smtp-Source: ABdhPJz+sj/GScpXnuaN0U+4nlhrlDJQgiftq51b43NZYNgW3u6u9jGX7pG3KxZLtkZNex4KR2PtwA==
+X-Received: by 2002:a5d:4bcb:: with SMTP id l11mr4180112wrt.363.1591798142300; 
+ Wed, 10 Jun 2020 07:09:02 -0700 (PDT)
+Received: from skynet.lan (28.red-83-49-61.dynamicip.rima-tde.net.
+ [83.49.61.28])
+ by smtp.gmail.com with ESMTPSA id r5sm8565883wrq.0.2020.06.10.07.09.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 10 Jun 2020 07:09:01 -0700 (PDT)
+From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
+To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
+ f.fainelli@gmail.com, bcm-kernel-feedback-list@broadcom.com,
+ julia.lawall@lip6.fr, f4bug@amsat.org, jonas.gorski@gmail.com,
+ lkp@intel.com, linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/2] clk: bcm63xx-gate: add BCM6318 support
+Date: Wed, 10 Jun 2020 16:08:56 +0200
+Message-Id: <20200610140858.207329-1-noltari@gmail.com>
+X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200609113049.4035426-1-noltari@gmail.com>
+References: <20200609113049.4035426-1-noltari@gmail.com>
 MIME-Version: 1.0
-References: <2336e15d-ff4b-bbb6-c701-dbf3aa110fcd@redhat.com>
- <20200608112211.12125-1-andrzej.p@collabora.com>
- <964ca07a-3da5-101f-7edf-64bdeec98a4b@redhat.com>
- <CAJZ5v0hB2ra2K=dd9ZjVyy1V2b1PmFHm79uDO2HtHU1D_4YUbw@mail.gmail.com>
- <6136f26c-e090-e025-af55-4c5f3a6aec92@collabora.com>
- <3e61c9c1-b211-da9f-c55b-b44eb6522f2a@redhat.com>
-In-Reply-To: <3e61c9c1-b211-da9f-c55b-b44eb6522f2a@redhat.com>
-From: "Rafael J. Wysocki" <rafael@kernel.org>
-Date: Wed, 10 Jun 2020 16:01:45 +0200
-Message-ID: <CAJZ5v0gVBzLpQqNrV-kzV84mLB86Gd6Ws63RwBKT=r1WgbeDSQ@mail.gmail.com>
-Subject: Re: [PATCH v4 0/7] Support inhibiting input devices
-To: Hans de Goede <hdegoede@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_070158_263591_C25BF718 
-X-CRM114-Status: GOOD (  17.41  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200610_070904_631142_C2642FA0 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:429 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rjwysocki[at]gmail.com]
+ provider [noltari[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,76 +104,19 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Collabora Kernel ML <kernel@collabora.com>, Nick Dyer <nick@shmanahar.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
- Platform Driver <platform-driver-x86@vger.kernel.org>,
- ibm-acpi-devel@lists.sourceforge.net, Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
- Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
- Linux Samsung SoC <linux-samsung-soc@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- linux-input@vger.kernel.org, Len Brown <lenb@kernel.org>,
- Michael Hennerich <michael.hennerich@analog.com>,
- Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Lars-Peter Clausen <lars@metafoo.de>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Barry Song <baohua@kernel.org>, Ferruh Yigit <fery@cypress.com>,
- patches@opensource.cirrus.com, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 3:21 PM Hans de Goede <hdegoede@redhat.com> wrote:
->
-> Hi,
->
-> On 6/10/20 3:12 PM, Andrzej Pietrasiewicz wrote:
-> > Hi All,
-> >
-
-[cut]
-
-> > What would it mean to become a wakeup source if there are no users,
-> > or nobody has ever opened the device? There are no interested
-> > input handlers (users) so what's the point of becoming a wakeup
-> > source? Why would the system need to wake up?
->
-> Well this is what we have been doing so far, so arguably we
-> need to keep doing it to avoid regressions / breaking our ABI.
->
-> Lets for example take a laptop, where when suspended the
-> power-button is the only valid wakeup-source and this is
-> running good old slackware with fvwm2 or windowmaker as
-> "desktop environment", then likely no process will have
-> the power-button input evdev node open.  Still we should
-> wakeup the laptop on the power-button press, otherwise
-> it will never wakeup.
->
-> Note I agree with you that the way this works is not
-> ideal, I just do not think that we can change it.
-
-Please note that "no users" merely means that user space is not
-interested in receiving and processing the events from that device.
-
-If it is configured for system wakeup, it doesn't matter whether or
-not user space will consume the related events.
-
-Thanks!
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIHN1cHBvcnQgZm9yIHRoZSBnYXRlZCBjbG9jayBjb250cm9sbGVycyBmb3VuZCBvbiB0aGUg
+QkNNNjMxOC4KCsOBbHZhcm8gRmVybsOhbmRleiBSb2phcyAoMik6CiAgZHQtYmluZGluZ3M6IGNs
+b2NrOiBiY202M3h4OiBhZGQgNjMxOCBnYXRlZCBjbG9jayBiaW5kaW5ncwogIGNsazogYmNtNjN4
+eC1nYXRlOiBhZGQgQkNNNjMxOCBzdXBwb3J0CgogLi4uL2JpbmRpbmdzL2Nsb2NrL2JyY20sYmNt
+NjN4eC1jbG9ja3MudHh0ICAgIHwgIDIgKwogZHJpdmVycy9jbGsvYmNtL2Nsay1iY202M3h4LWdh
+dGUuYyAgICAgICAgICAgIHwgNDQgKysrKysrKysrKysrKysrKysrKwogMiBmaWxlcyBjaGFuZ2Vk
+LCA0NiBpbnNlcnRpb25zKCspCgotLSAKMi4yNi4yCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
