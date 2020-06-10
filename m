@@ -2,58 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DD2F1F5013
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 10:12:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60F1B1F501A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 10:13:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zqsvBYSlec96t816c0/YKAVtZr+efrkuAAA7gvzJ3gM=; b=Q+zhgmCdqvJrjT
-	2Y6loDEYPDXaWDIvWSbVfIm2Iu0cYJcxA1OwCsbjZWurpBBtSi5AgPS5jhkPgKQylhhj2/DJXk+OF
-	gAFwg0pJq2vKNRJ6+Y5yOIf1UDRo0p/a/uVEfX1PwDn5h3DTH6Y/uEphY57Il5KeQ78sRO2428FtA
-	2eHJLuyVoLVY6ZTCsmfZPJdarlnhn4cCbmiYDd+a8as4tn7r7VQ16Mwgo2h3P+JkfYTwMSZg7oiPN
-	a9i4QJdh5QLT9uQRhIiKj9iTPdpYDa8AoOG0upiiQy7T/T0aR/HRee8UgEBPIMnPBhL92+1ywgvLS
-	zUe/hFaNcreMq5hWtmzg==;
+	List-Owner; bh=pxAzk1IFvCVLxr7Llh0kX05v0ktbGjS/xnvGWILuSdE=; b=ZCUBEx+c7e2/vb
+	yM/w/Smkh3apxxHVCaBluu3jVqdiU7PDZYpeI1/vqQbinSpyzrBLCWXsJlgcf/xXYBsS+zcGFyTK7
+	znYzAyoWdQpc3E+U+/sJwKMhqP7epiDHyHdseY81dQk15A7Z6OFjW1dugyHByUBBTtPGPKPzkrD1i
+	7ld0gQ6HBMPUl1/hxd0ycwH5kF3E4itpgTngQUZ6lW9GJyiGDtDMSrwKxR5s2cvm6SfJGyzDDpQo0
+	R3m7WBWyWe34XosOLxY/IuQj+2fCyU2r4pU0b5OAKk3PjTgXES0UwZETDVhywFcshbpaBdU5l6i6A
+	wLbXVkk91xcjjrAadRvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jivq6-0006dF-UV; Wed, 10 Jun 2020 08:12:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jivoV-0004zy-9X
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 08:10:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE6251F1;
- Wed, 10 Jun 2020 01:10:21 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.97])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BAA883F6CF;
- Wed, 10 Jun 2020 01:10:18 -0700 (PDT)
-Date: Wed, 10 Jun 2020 09:10:11 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [RFC PATCH 0/3] firmware: Add support for PSA FF-A interface
-Message-ID: <20200610081011.GA2689@bogus>
-References: <20200601094512.50509-1-sudeep.holla@arm.com>
- <20200604133746.GA2951@willie-the-truck>
- <20200609174123.GA5732@bogus>
- <20200610075711.GC15939@willie-the-truck>
+	id 1jivr5-0006xf-Ts; Wed, 10 Jun 2020 08:13:03 +0000
+Received: from mail-eopbgr140087.outbound.protection.outlook.com
+ ([40.107.14.87] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jivqy-0006xC-8l
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 08:12:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PPfHUxEB5ULrYVlhmNR5Q+FtV880MsX5cGGQTqzjjOV6g6+onOqDgvNhSmIwxHdJeiulWM67IwWqfoBBczDP+WdtDkz3deu2Kn/MV5sGptwt6KRQAp0jT8oXSlku4Ytuqvb1sGBvLihedTIzeN7ZP3i/AmKHpworcug0kFoFtMYnYxhWJ4IhAJ2LK8/iCCmfQE2k3Ak2/AUrwncHwg2kQOiQ4xj0WdSSdB2QX+0WmUl28V+FfnOHJfmMRu6n2XW3eHg/9fjjA29kP5eC3AKaMBHBqMTkkL+y51b0KSnNT6zSKkxtsHz6Xezwp//4P89FZobvb8+S6ECTUk3czLch5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1JDwI2mnztvedZd/2SMmY6+rtg50guhSKI23XdFWVgk=;
+ b=e0/sryr5w1GqBXJ3pvF808jFHHLdFKhb7sa11xwUvgbTNPGcQQJaf/Acl4CNP0OF8WcU01RNWxqPBoxfOPsGqIueA3o0Cs6cBdnQ/aVRdVKzoUk+RtPsM8JcnaldCZE6uaiv1W4SD+JEV59S0oUJtdpS5wHVyMom/oUVHExIBTPizfORLs1SmCDszdvgQIaVYbnpwsm2X2S1B7/2ME9qoG5ILPM9p3xlgY+W78sV/qqlql+FF7h1/QEgHF5xARewglrumeC7iv5NeL/3jgXbhUQmDzTQ71G15VvM9C/nnvK8vcAM3mk72y7EdhGFCa6VZR573IWY4RKYcLhx8M+HlQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1JDwI2mnztvedZd/2SMmY6+rtg50guhSKI23XdFWVgk=;
+ b=cY+COcVmP/FonASMHFzKLN5kuTNzaxX7/Qg2jLFuXHh2vO7jkYG1/pbE/RtrloILETZqNdYZyj2F8Y8uJINi9rFr0I4Ca/hegCWvElG50EYLsTftfEs/g4uEd6YvnMQajp1Zp8zzenK0MkfnXToMOR90yE0ESWiBwNcd0RhZNEw=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3787.eurprd04.prod.outlook.com (2603:10a6:8:12::25)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Wed, 10 Jun
+ 2020 08:12:51 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3088.018; Wed, 10 Jun 2020
+ 08:12:51 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "festevam@gmail.com"
+ <festevam@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "stefan@agner.ch" <stefan@agner.ch>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "linux-gpio@vger.kernel.org"
+ <linux-gpio@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH V3 0/9] Support i.MX8 SoCs pinctrl drivers built as module
+Thread-Topic: [PATCH V3 0/9] Support i.MX8 SoCs pinctrl drivers built as module
+Thread-Index: AQHWPmrEZsqXlE5PG069+wE7LuhWwqjRftOAgAABKNA=
+Date: Wed, 10 Jun 2020 08:12:51 +0000
+Message-ID: <DB3PR0402MB39167A62D9D981C2F82B7ABDF5830@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1591712485-20609-1-git-send-email-Anson.Huang@nxp.com>
+ <DB7PR04MB49721DEE875099E086E2486E80830@DB7PR04MB4972.eurprd04.prod.outlook.com>
+In-Reply-To: <DB7PR04MB49721DEE875099E086E2486E80830@DB7PR04MB4972.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 73b96d15-ed44-4c74-3a4e-08d80d161205
+x-ms-traffictypediagnostic: DB3PR0402MB3787:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3787EB3A388D7EB0A712EDC0F5830@DB3PR0402MB3787.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0430FA5CB7
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: O3txY9FON3foiMHwDmtKkGkj5JpC7Y20ralU5r4RXiP2IWfSwzWCi+WJ7twNR9ggUQsNLpNdEP8lDWEFm1gIkt4UyIV7G3J6qg0fB+BNmQ7ubeVqWCJ8D85jjCK41DU56i93kLK8iC13DzzMCENv7t5XTpunNODGJ7FhzegwBWPo0W8CMRmyoxisQXXiyRTXnNDzLGXwwapFa3hCntxCFu9/53fUdPt89bQ8JPxiRwTyAEb2XzByoTdxCBMWTMM0cswwVoNa2s4/kSmI2kBnjWntSU7hupBE/5rk4wO8obG4BKhsfuYot9pfv/Lf0iSnFe+XURyNciLeN0u9P2CZIJsHabkSw9SQs62TARCB8l7ObZ/IHDnfuWNCJBQob/lS
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(6029001)(4636009)(366004)(346002)(136003)(39860400002)(396003)(376002)(55016002)(186003)(33656002)(8936002)(86362001)(478600001)(66446008)(6506007)(44832011)(26005)(9686003)(66946007)(110136005)(83380400001)(7696005)(316002)(64756008)(2906002)(66476007)(66556008)(5660300002)(8676002)(76116006)(4326008)(71200400001)(4744005)(52536014)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: Djoc0rad0iJpRdXR8GmvecziynuRxRQ4fz11QQrf9izj9iJu77Ww+m/1B/GxA94sf28q3rTUTsc4sCPVzzx+pU044mXEDjwTO9M6WWRAU7Q0poEyKpmtEJD7OqmOBR91K5RBuUreTTYPORNJA9b2PlKap97cQcA6Buw3kWwidZ0WBTz79vpK9TXy3zzwXYbE6gge6clDMPrT6o1n4GdvldXaKY4IJbXANhMhESk2NESsg+JLmMw39QQItsvIooK7JpIhpXDQwlc7oG+mybF7vH2IekxqDZJW6lq0cT/AMqOGcdWW5HCvCsj6yDKTP3Di1Z2gRXOefLTuRaa5uov+I5gISJtB8HLWCDtqqFJxasuxh0Bhg6iqvSiDvmE2YXXXXRXnyaQWh/oeqgko+b57TduPde9duQHTbyvVp7CAVQAul0hN9y9QbIzw4rgF8qwVmpvSxKur1i0qjb9OvYq/XFzJs6nQqVUItWRghq2YHr4l+LMiPwT1Frj66IzgaItM
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200610075711.GC15939@willie-the-truck>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 73b96d15-ed44-4c74-3a4e-08d80d161205
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2020 08:12:51.5029 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 1NLAvDM+U+JbQPmvIs0q7RHbDpDEI/f1tQuUQv35t5F5Me4Ls94+V/vUUSeCUZYt2xG5SOMBJro0ufPK5S1uRQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3787
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_011023_382984_5074DC79 
-X-CRM114-Status: GOOD (  23.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200610_011256_309421_0162B2F3 
+X-CRM114-Status: GOOD (  10.34  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.14.87 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.14.87 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,89 +130,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, qwandor@google.com,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, ardb@kernel.org, tabba@google.com
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
 
-On Wed, Jun 10, 2020 at 08:57:12AM +0100, Will Deacon wrote:
-> Hi Sudeep,
->
-> On Tue, Jun 09, 2020 at 06:41:23PM +0100, Sudeep Holla wrote:
 
-[...]
 
+> Subject: RE: [PATCH V3 0/9] Support i.MX8 SoCs pinctrl drivers built as module
+> 
+> > From: Anson Huang <Anson.Huang@nxp.com>
+> > Sent: Tuesday, June 9, 2020 10:21 PM
 > >
-> > Agreed, I added for RxTx buffers and initially to build the parent/child
-> > hierarchy for all users of the driver. Initially I was assuming only
-> > in-kernel users and now I agree we should avoid any in kernel users if
-> > possible.
+> > There are more and mroe requirements that SoC specific modules should
+> > be built as module in order to support generic kernel image, such as
+> > Android GKI concept.
 > >
-> > One thing to note FFA_PARTITION_INFO_GET relies on Rx buffers to send the
-> > information to the caller. So we need to have established buffers before
-> > that and one of the reason you don't find that in this RFC. I dropped that
-> > too which I wanted initially.
->
-> Ok, sounds like we should at least get to a position where we can enumerate
-> things, though.
->
-
-Yes.
-
-[...]
-
+> > This patch series supports i.MX8 SoCs pinctrl drivers to be built as
+> > module, including i.MX8MQ/MM/MN/MP/QXP/QM/DXL SoCs, and it also
+> > supports building i.MX common pinctrl driver and i.MX SCU common
+> > pinctrl driver as module.
 > >
-> > OK, IIUC that covers mostly KVM implementation. We still need a way to
-> > share the RxTx buffer info to the partitions and DT/ACPI(?) is one
-> > possible way. Based on you comment about not needing DT node, do you have
-> > any other way to communicate the buffer info to the partitions ?
->
-> This is only a concern if KVM chooses to provide the Rx/Tx buffer pair
-> though, right? If we punt that down the road for the moment, then we can
-> just rely on FFA_RXTX_MAP for now.
->
+> 
+> This patch series also changed the driver initcall level from arch_initcall to
+> module_init.
+> Maybe you could provide some test information to help the reviewer to better
+> understand the change impact.
 
-Ah OK, I was under the assumption that we didn't want to use FFA_RXTX_{,UN}MAP
+There are still some more changes in V4 I just sent out, which is to cover various config combination,
+will add test info in next version. 
 
-[...]
-
-> >
-> > I am confused a bit. When you refer drivers above, are you referring to
-> > drivers in host kernel(hypervisor) or in the partitions. I fail to
-> > imagine need for the former.
->
-> I'm referring to in-kernel users in the host kernel. For KVM-managed guests,
-> we may not need these, although signalling things like system shutdown might
-> be better off done without relying on userspace. But my point is really that
-> separating the buffer management from the users means we can serialise
-> consumers, whether they are in-kernel or out in userspace.
->
-
-Understood.
-
-> > > What do you think, and do you reckon you can spin a cut-down driver that
-> > > implements the common part of the logic (since I know you've written much
-> > > of this code already)?
-> > >
-> >
-> > I am not sure if I am aligned with your thoughts on the buffer sharing
-> > yet.
->
-> Ok, please let me know if you have any more questions.
->
-
-None ATM. As I mentioned I had ruled out RXTX_{,UN}MAP which was my
-misunderstanding.
-
---
-Regards,
-Sudeep
-
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
