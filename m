@@ -2,83 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C09881F5B4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 20:36:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E071D1F5B5C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 20:40:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D/Itc4lTA99XZpe1HE9bgRKBdG7uL6pSTUkiS0nBxPE=; b=NN8ZGHuXb/bZHv
-	1M83D542vnzqw+s5n4251DPXQaTdBmbohahlLf3hXxzBP0kxDwkg45058FXDLj7uJE/kCkUTn7YNw
-	pqWyGJJnI6LMS7zc2rKT3fGQCCVEM8dBmogSb5uXD6KQ+60NO69ODW+cMY5yizfJNnLAa7TmgW5Eh
-	8Z1F7xHo5BqwUkMykbhtW4RBAYhKusT0HguPCtdEkIOVjVpQxkdzZAl1PkoL8ayYM19Si/oPO+QCb
-	obZM5aG8lUNj6rpRrEUBFuUPMmYlsKgiSzqubO/+sk5hFtAOPlXBGQKa80uDoefYL51VW/9QzK/bH
-	c6OQMFqDdUq7Hez/hibA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VjzQoQoz+B4MlswCHi4CUd2yk2GjxTBpk17blVCXkYo=; b=A88wtYlMpWMF/bhy8940YeRPh
+	SwHBfrHlZjIf5qHVVC8hVXcjEM5bQfGJ1eH9mLcFUk4xXAvUGaeb6MO47gAEEkvopY3SLN1zH5oHn
+	RXM7rExCmHjXcglA/UxDF4uzEg2DArHx9l/vgqqzcu7Q/2kFbcXA+sJp6gZjwCJFnZVB1as8nViA9
+	VsiyX/QonksfLWDUnRFaFBE5ou50idRMRPsPSpzM9Ns3HjeRTxYZsvM6fIovS168yLEJ14NQqDOWc
+	fAT6kYUBb+DfM47FYvmXMffu34hVguKKwE8xiU6eh+qSTUcAyA/KxF5rwyStqBzM3COCrPQWXseuC
+	CsqZa56NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj5aC-0007hT-QY; Wed, 10 Jun 2020 18:36:16 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1jj5eI-0002Pw-J8; Wed, 10 Jun 2020 18:40:30 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj5a0-0007fo-ML
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 18:36:08 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id l17so2771745wmj.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 11:36:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=GAKX/BkxTn/LJgWRS+1X11Mbc2rWzrpG7EzLbVyHFc0=;
- b=RPnWMutX/QRRcz0TMYMoRUA578kiy7PU2Vm88l+RS5gO/Pknvm5sWAtth+EliUqh38
- C/UAvvkRwHxWgIhri0FAZGPcCri1wJvxiuiEWMwfPRcAtMNrizZUhQ5wz7rYsUUYyvaJ
- FtZB75PSjzL6hvGkf/JJzuRYcux77pdBbkM+U=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=GAKX/BkxTn/LJgWRS+1X11Mbc2rWzrpG7EzLbVyHFc0=;
- b=RvaCeV8zccM3wgDCxuIok6xVQeXvj5aoLN91zlCF10McwlD2ceXm1GRDT2uA2xRHrY
- cbbVIXe+g2OPjo2lRmC6y8qODfr/JUGTh+MOCZLa0mGzFHusQqGo5scsKoIvn64HVW2z
- mfZWumzyVEs68MFYNtyFwluzCoQOsZQMGOD6FeJTIFs447krqxpLDeCc7CNBnwETbNZE
- N8oXyo9xaGdh6uogL7KzWJgYd5xKYBGcfmcWnBKk7p5xQYwVMlWwaUhbljBo+eDSh9I7
- DHLtH2vuOBErhLhVvNb9EfJAfIOWQJyBNB8GDhBtKehmgfz7beMZ3RKHN1Y+JIn6KNVf
- gN9w==
-X-Gm-Message-State: AOAM530wd1LKb6T3NNbjVelVBE4UVrqmtPoIgILD+wFoQqZqD5YBIe56
- OKZNdBYYWfacBanWrVSr+Ddu4Jb4m81X+A==
-X-Google-Smtp-Source: ABdhPJy74R1qCnO28Ip6GBZKnzUcwExOKJX50OLQZG2OUIsPlzuJOoCoKc9XcVZG+a5TOL8W/oWneQ==
-X-Received: by 2002:a1c:e0c3:: with SMTP id x186mr4322110wmg.17.1591814162734; 
- Wed, 10 Jun 2020 11:36:02 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id d5sm981424wrb.14.2020.06.10.11.36.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 11:36:02 -0700 (PDT)
-Date: Wed, 10 Jun 2020 18:36:00 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V8, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
-Message-ID: <20200610183600.GI201868@chromium.org>
-References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
- <20200509080627.23222-3-dongchun.zhu@mediatek.com>
- <20200521193204.GA14214@chromium.org>
- <1590209415.8804.431.camel@mhfsdcap03>
+ id 1jj5eA-0002Ou-Tx; Wed, 10 Jun 2020 18:40:24 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id DBB4858015B;
+ Wed, 10 Jun 2020 14:40:16 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 10 Jun 2020 14:40:16 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=udqN551CwjSTVUDc0D3kSahB8HY
+ 8CeSIkA8lNOgclJo=; b=SSOBpvk4b4Pw9e8QupB5MChycdXrWcxNGUbo5+QqOB2
+ EG/b6zh9og0gepAraw33BO9gskuaIRH/d0B35Z8IRps3FyOX9d09lsd8adi6iZud
+ e4LF60hPZkpPmAu/O1VqMmODBhtuiuTNUgkN6kPFd0EfVB6pqxZ0SQ+sbm/y/nRO
+ MNTEjq/SsNEpo9sa0FRTaXDvCrZLPJFIAn6DudP3qcIE9GxA/fgU8wjLHtzPcYpE
+ Nu3K+4rdJ1I2YSTF4zBggLJD53HHuXGiDBIgUIg7GAQMLxDLwTE9cIgBj8SQsIGB
+ DQ4z62PiBkuUX6hQy+lS0Tf3xRZ7FSAlI0tNzJyEtTw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=udqN55
+ 1CwjSTVUDc0D3kSahB8HY8CeSIkA8lNOgclJo=; b=oUMwvVekXmmDKq3tMHHOiq
+ Oe9XPwUXSkst2D1ORd9yRYO9u/dghU0y7YQOhRV5KtF2yslH5qzusgPFowpBlrpU
+ +TGcxs6rkP28NyrODwFw+02LPte9frNWwwH6y/bNeay6zQ2ABLMb3yU7hkmLiWbK
+ TcDdko3D0PsAE3dbjz079ZwugHREMVR+ecCwNXR9JnDW+BjmFHCKW+/rOCZYsI/N
+ ZZvYdbkGu6Td/qD0nK/UgT1g/fsNMLm+PBk8ocOchxmIDUcZ/kuSo8mrQkVZO4Ck
+ snK/aDJys04wqBT2O6DV+tzzKj3CMNH827Hc5u6Pl2u7J461+KLnuKbUKy/HPfYw
+ ==
+X-ME-Sender: <xms:DCnhXtRpnDDHB7tIAsgobtDpskmMLtcq5mgmBd4ZveX-ADkzXrvmjQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehiedgudefudcutefuodetggdotefrod
+ ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+ necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+ enucfjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihi
+ mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
+ htthgvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheei
+ heegudenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtne
+ curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:DCnhXmyjE-mu_wBJfFrUMjijn_JHiqCkLoIfce_gMkkOdJy5pzYR-Q>
+ <xmx:DCnhXi31HyndptgqdHeNm8rYG2sDdpk_rg8DI31Fibd1LTqMSLPWag>
+ <xmx:DCnhXlA-QYkYRubCILB4TOA-06l9HsdBHv39yzdJvOD_yWDnTM09AA>
+ <xmx:ECnhXqjgnNS8FrTCg8Qxbtz9huV6yGQNddfcwbSdHWAb8o8mOm9kaA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 962643280064;
+ Wed, 10 Jun 2020 14:40:12 -0400 (EDT)
+Date: Wed, 10 Jun 2020 20:40:10 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Emil Velikov <emil.l.velikov@gmail.com>
+Subject: Re: [PATCH v3 066/105] drm/vc4: txp: Turn the TXP into a CRTC of its
+ own
+Message-ID: <20200610184010.slnn46azvxvtxp7t@gilmour.lan>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <e9bc87e240b62c80617ea7825144121a470a2d44.1590594512.git-series.maxime@cerno.tech>
+ <CACvgo50j1t5VtMgE7-pquuYRaC_ku5pZ2aBVoD-MCCktfPm-VQ@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1590209415.8804.431.camel@mhfsdcap03>
+In-Reply-To: <CACvgo50j1t5VtMgE7-pquuYRaC_ku5pZ2aBVoD-MCCktfPm-VQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_113604_752636_339B7643 
-X-CRM114-Status: GOOD (  29.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_114023_108199_A2A1BC40 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32a listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [66.111.4.224 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,7 +96,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,273 +108,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, drinkcat@chromium.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, louis.kuo@mediatek.com, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: LAKML <linux-arm-kernel@lists.infradead.org>,
+ Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Content-Type: multipart/mixed; boundary="===============4656724318940572711=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 23, 2020 at 12:50:15PM +0800, Dongchun Zhu wrote:
-> Hi Tomasz,
-> 
-> Thanks for the review. My replies are as below.
-> 
-> On Thu, 2020-05-21 at 19:32 +0000, Tomasz Figa wrote:
-> > Hi Dongchun,
-> > 
-> > On Sat, May 09, 2020 at 04:06:27PM +0800, Dongchun Zhu wrote:
-[snip]
-> > > +{
-> > > +	struct i2c_client *client = to_i2c_client(dev);
-> > > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > > +	int ret;
-> > > +
-> > > +	gpiod_set_value_cansleep(ov02a10->n_rst_gpio, 0);
-> > > +	gpiod_set_value_cansleep(ov02a10->pd_gpio, 0);
-> > > +
-> > > +	ret = clk_prepare_enable(ov02a10->eclk);
-> > > +	if (ret < 0) {
-> > > +		dev_err(dev, "failed to enable eclk\n");
-> > > +		return ret;
-> > > +	}
-> > > +
-> > > +	ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
-> > > +	if (ret < 0) {
-> > > +		dev_err(dev, "failed to enable regulators\n");
-> > > +		goto disable_clk;
-> > > +	}
-> > > +	usleep_range(5000, 6000);
-> > > +
-> > > +	gpiod_set_value_cansleep(ov02a10->pd_gpio, 1);
-> > 
-> > This is a "powerdown" GPIO. It must be set to 0 if the sensor is to be
-> > powered on.
-> > 
-> 
-> The value set by gpiod_set_value_cansleep() API actually depends upon
-> GPIO polarity defined in DT.
-> Since I set GPIO_ACTIVE_LOW to powerdown,
-> gpiod_set_value_cansleep(gpio_desc, value) would set !value to
-> gpio_desc.
-> Thus here powerdown would be low-state when sensor is powered on.
-> For GPIO polarity, I also post a comment to the binding patch.
->
 
-That's true. However, this makes the driver really confusing. If someone
-reads this code and compares with the datasheet, it looks incorrect,
-because in the datasheet the powerdown GPIO needs to be configured low
-for the sensor to operate.
+--===============4656724318940572711==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="heqnr6uenmn6etam"
+Content-Disposition: inline
 
-I'd recommend defining the binding in a way that makes it clear in the driver code
-that it implementes the power sequencing as per the datasheet.
 
-[snip]
-> > > +/*
-> > > + * ov02a10_set_exposure - Function called when setting exposure time
-> > > + * @priv: Pointer to device structure
-> > > + * @val: Variable for exposure time, in the unit of micro-second
-> > > + *
-> > > + * Set exposure time based on input value.
-> > > + *
-> > > + * Return: 0 on success
-> > > + */
-> > > +static int ov02a10_set_exposure(struct ov02a10 *ov02a10, int val)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> > > +	int ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > 
-> > How does this page switch work? According to the documentation I have, the
-> > register allows selecting between a few different pages. However, there
-> > should be two page pointers - one for the AP and the other for the sensor,
-> > so that when the AP is programming page X, the sensor can have consistent
-> > settings from page Y. But here we only set one register and always with
-> > page 1.
-> > 
-> 
-> Thanks for the carefully observation.
-> The style or requirement of register setting here is suggested by OV
-> vendor.
-> From hardware signal behavior and effect-test, this setting should be
-> right.
-> But for your concern, we can also dig into it with OV.
-> Let's have time to talk with OV.
-> 
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_EXPOSURE_H,
-> > > +					val >> OV02A10_EXP_SHIFT);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_EXPOSURE_L, val);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	return i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
-> > > +					 REG_ENABLE);
-> > 
-> > This patch defines REG_GLOBAL_EFFECTIVE to 0x01. I don't see such register
-> > mentioned in the documentation.
-> > 
-> 
-> There may be several editions of sensor documentation.
-> From OV, 0x01 is one register shall be updated to keep
-> exposure/gain/test pattern... register settings effective.
->
+--heqnr6uenmn6etam
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Okay, let's try to get some explanation of this offline.
+Hi Emil,
 
-> > > +}
-> > > +
-> > > +static int ov02a10_set_gain(struct ov02a10 *ov02a10, int val)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> > > +	int ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_GAIN, val);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	return i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
-> > > +					 REG_ENABLE);
-> > > +}
-> > > +
-> > > +static int ov02a10_set_vblank(struct ov02a10 *ov02a10, int val)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> > > +	u32 vts = val + ov02a10->cur_mode->height - OV02A10_BASIC_LINE;
-> > > +	int ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
-> > > +					vts >> OV02A10_VTS_SHIFT);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L, vts);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	return i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
-> > > +					 REG_ENABLE);
-> > > +}
-> > > +
-> > > +static int ov02a10_set_test_pattern(struct ov02a10 *ov02a10, int pattern)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> > > +	int ret;
-> > > +
-> > > +	if (pattern)
-> > > +		pattern = OV02A10_TEST_PATTERN_ENABLE;
-> > 
-> > Is this necessary? Our control can be 0 for disabled and 1 for color bars.
-> > The latter is the same as the above macro.
-> > 
-> 
-> Yes. It looks redundant here.
-> Fixed in next release.
-> 
-> > [snip]
-> > > +static int ov02a10_initialize_controls(struct ov02a10 *ov02a10)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> > > +	const struct ov02a10_mode *mode;
-> > > +	struct v4l2_ctrl_handler *handler;
-> > > +	struct v4l2_ctrl *ctrl;
-> > > +	u64 exposure_max;
-> > > +	u32 pixel_rate, h_blank;
-> > > +	int ret;
-> > > +
-> > > +	handler = &ov02a10->ctrl_handler;
-> > > +	mode = ov02a10->cur_mode;
-> > > +	ret = v4l2_ctrl_handler_init(handler, 7);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	handler->lock = &ov02a10->mutex;
-> > > +
-> > > +	ctrl = v4l2_ctrl_new_int_menu(handler, NULL, V4L2_CID_LINK_FREQ, 0, 0,
-> > > +				      link_freq_menu_items);
-> > > +	if (ctrl)
-> > > +		ctrl->flags |= V4L2_CTRL_FLAG_READ_ONLY;
-> > > +
-> > > +	pixel_rate = to_pixel_rate(0);
-> > > +	v4l2_ctrl_new_std(handler, NULL, V4L2_CID_PIXEL_RATE, 0, pixel_rate, 1,
-> > > +			  pixel_rate);
-> > > +
-> > > +	h_blank = mode->hts_def - mode->width;
-> > > +	ov02a10->hblank = v4l2_ctrl_new_std(handler, NULL, V4L2_CID_HBLANK,
-> > > +					    h_blank, h_blank, 1, h_blank);
-> > > +	if (ov02a10->hblank)
-> > > +		ov02a10->hblank->flags |= V4L2_CTRL_FLAG_READ_ONLY;
-> > > +
-> > 
-> > Do we need to hold a pointer to this control? We don't seem to ever access
-> > it anywhere else in the driver.
-> > 
-> 
-> No.
-> These lines would be removed in next release.
-> 
-> > > +	ov02a10->vblank = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
-> > > +					    V4L2_CID_VBLANK, mode->vts_def -
-> > > +					    mode->height,
-> > > +					    OV02A10_VTS_MAX - mode->height, 1,
-> > > +					    mode->vts_def - mode->height);
-> > > +
-> > 
-> > Ditto.
-> > 
-> 
-> These lines would be removed in next release.
-> 
-> > > +	exposure_max = mode->vts_def - 4;
-> > > +	ov02a10->exposure = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
-> > > +					      V4L2_CID_EXPOSURE,
-> > > +					      OV02A10_EXPOSURE_MIN,
-> > > +					      exposure_max,
-> > > +					      OV02A10_EXPOSURE_STEP,
-> > > +					      mode->exp_def);
-> > > +
-> > > +	ov02a10->anal_gain = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
-> > > +					       V4L2_CID_ANALOGUE_GAIN,
-> > > +					       OV02A10_GAIN_MIN,
-> > > +					       OV02A10_GAIN_MAX,
-> > > +					       OV02A10_GAIN_STEP,
-> > > +					       OV02A10_GAIN_DEFAULT);
-> > 
-> > Ditto.
-> > 
-> 
-> Fields: exposure and anal_gain would be removed in next release.
-> But v4l2_ctrl_new_std remains, as user may set exp/gain. 
-> 
+On Thu, May 28, 2020 at 04:51:31PM +0100, Emil Velikov wrote:
+> Have you considered splitting the series into several parts and
+> focusing on merging one at a time?
+> IIRC this the longest series _ever_ submitted to dri-devel, plus it
+> seems to be growing with each revision.
+>=20
+> Due to the sheer volume, it's likely to miss various points - large or
+> small (like below).
 
-I don't mean removing the controls, but just not storing the returned
-pointers inside driver data.
+Yeah, I know, I wasn't really happy about it either :/ I already removed
+some parts of it to reduce it, but I'll try to be more aggressive.
 
-Best regards,
-Tomasz
+> On Thu, 28 May 2020 at 08:47, Maxime Ripard <maxime@cerno.tech> wrote:
+>=20
+> > +static int vc4_txp_enable_vblank(struct drm_crtc *crtc)
+> > +{
+> > +       return 0;
+> > +}
+> > +
+> > +static void vc4_txp_disable_vblank(struct drm_crtc *crtc) {}
+> > +
+> Core should handle if these are NULL, so the stubs should not be needed.
+
+I'm really not sure actually. In the general case, you'll want to have
+vblank functions, since it doesn't really make sense to have a driver
+without it.
+
+We could argue that with writeback, it might be optional like being done
+here, but you don't really know if you're going to use a writeback
+connector in the CRTC at initialisation time, and all the other
+writeback encoders actually seem to use a real CRTC that can output to a
+real encoder, and therefore has some proper vblank handling too.
+
+So yeah, it really looks like the check is valid, and that driver is
+just the odd case.
+
+Maxime
+
+--heqnr6uenmn6etam
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXuEpCgAKCRDj7w1vZxhR
+xfKbAP4guXZpKOBW0DBgderX3rva9jNmN1dH66Kel2jC5+ha2AD/f4mM9LuoVOUU
+FtD2pyxEBAUtj6eIpZBwTD4vxJiVgg0=
+=v1fz
+-----END PGP SIGNATURE-----
+
+--heqnr6uenmn6etam--
+
+
+--===============4656724318940572711==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4656724318940572711==--
+
