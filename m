@@ -2,65 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABFCF1F4EE7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 09:31:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C76E1F4EF4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 09:34:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UvrvTmXvLc8Gj9fcKiPdfpyP4R9HVM9s/PCy9IBHvJM=; b=eRAgssbxAoppIM
-	i5dyQJV9h3CcUcd/pFg4boRESf0zBtdt5RsEWt2qCB1Y2tStOTQtXmgElg0FTnMxFN6O8wHPKRjuB
-	fT3sJ39rjX9b8EL++IPbKZExCTa8WWjsuujHiJcD9VtLIEVOsrfm7LBTY9TPRs80K473drMq5q/fa
-	azhD0v8f1XTHfw4YnQgpWfktUDmOBNV4zjHH1jQxmleTXLOajguqFU9H4XiDl+tJh/RkfKi179nIk
-	uFK6M4+jW7fqfcRR1/pyQ6ZpCPmSfap9ajoAcvhpNqfylfpbC+cC73QhFTtohhxPlHw6dqslX6bbC
-	/8Q4Ae2Nz+/m0McYC4tw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=1GtSO1pKmpRNQu/bs/xE+Il18lG/p8wIUvZ+A02bKkg=; b=iSuhnuU10RaBj4ivoZXRdNG1RN
+	h1zmevFRKXN1cmVMqayL9ynp0Vko+ouz9XWbSKdBTMzyIkgsbbgANCB4ir7tlp/MR0am9n5uQ9yUw
+	dBUPnUoe/xuEJ9kSsGeLe34FfKvZSz/CvN6z43oeCKRi2VQ9XSZEiaIMPzyNVcjA5zwA6vZmb6OBg
+	Ea+TMZJ/AAmscnOVPtf53hbL/UoxS/5c5jrYBf6J1EUH6m5j4faCRvoAzHA4MsmO7w3A+EUNY99Pw
+	H8Kyzdrg8/wBJ+k2oleIISG4IMQVPtYtgGqP/oC65aQTIrEf7AJchSfE/NreIZFsYPMWQP1NoGgRw
+	7FxC7UFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jivCS-0007QF-TE; Wed, 10 Jun 2020 07:31:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jivFU-0007vw-Cm; Wed, 10 Jun 2020 07:34:12 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jivCK-0007Pj-8o
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 07:30:57 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE19D2064C;
- Wed, 10 Jun 2020 07:30:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591774255;
- bh=IH/VSuSEAGvCmDHtwWjVeUZ11F3kkh8B0kP5JWifwc8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kurjwS8fwiw8EGn0jbytoas/wrEj4xJkUEgxJkvcozH24JD2dlC5y+a4nJD0My3sq
- ul+wjivjzSARUMXtVw/lGNKsv6f0Tp7jqRq/C1+iXJ6YGLS7CKEkCCFlbDtWNARzK4
- Peuog3YYkCA20WJGXvYxTvu65RcFJjBDad24TU9U=
-Date: Wed, 10 Jun 2020 08:30:47 +0100
-From: Will Deacon <will@kernel.org>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH 5/5] gcc-plugins/stackleak: Don't instrument
- vgettimeofday.c in arm64 VDSO
-Message-ID: <20200610073046.GA15939@willie-the-truck>
-References: <20200604134957.505389-1-alex.popov@linux.com>
- <20200604134957.505389-6-alex.popov@linux.com>
- <20200604135806.GA3170@willie-the-truck>
- <202006091149.6C78419@keescook>
+ id 1jivFM-0007vO-OO
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 07:34:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1591774444; x=1623310444;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=H0mGDxnEZFg00erzET87dowCc530Z3JfzOW8o5EaPg0=;
+ b=pJoZi4htaIgh6XAcON5G1C+YLah4AiqN0vGtVj6aB89XhjslASisT3Ix
+ eKx5KHBca+6LmUVR/O55TQD+7vFEP5lleCmRoOJo8zFbjHs87TlpMKrlh
+ osfYFz6PjmCO2aBBA883VMvDV+L8MALxdbL05Lwa+TagnnbzPvbfNctYU
+ 7cg8gfCHlWFreg1MD320dIk3AqLnBftzTTG0fImDJxlrQi9T1JEX1a7aa
+ LxkCFQ11olwFnyTQlGPnlYc5J2honlL1Nz07TE1HlMFSlmBuES9e2ZlUF
+ jR7RQ/RnO/8HwZLX7cK91gFFh5lVdWKH59rptbZRxx27J3dFa7DyHhAp7 A==;
+IronPort-SDR: tRCMCf0cC57dobeWM9CJUIUQEBcjnDkCmmimitTGVaen/LOuUjJfmwx/3UvyiNCGvpEpxrEMxV
+ i+fTQD7Jj/YMoq28YKgrurZQZG8LWNIVhLHfRwhwWyWNu6adaMHKRvFsLsAstV2A6PXoZMQ4yW
+ PmU+Zqxib8XRTAJ3u+e2Kizd0AyEww1SRjyhWZPcKRaZ19R0Eqqn92I2+UC40fPzDrUnvmV0UP
+ 0N/+33BfpjbARGiOuL7HUqz26a0R+IK+AMczYoJ/CyhlHXm01hRpjd3axPeR0ZPhHVA/vMn75m
+ 0HI=
+X-IronPort-AV: E=Sophos;i="5.73,495,1583218800"; d="scan'208";a="82940802"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Jun 2020 00:34:01 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1847.3; Wed, 10 Jun 2020 00:34:01 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1847.3
+ via Frontend Transport; Wed, 10 Jun 2020 00:33:59 -0700
+References: <20200609072828.9088-1-lars.povlsen@microchip.com>
+ <5f006733-52b6-e003-5db3-2ff16596918c@roeck-us.net>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH v2 0/3] hwmon: Adding support for Microchip Sparx5 SoC
+In-Reply-To: <5f006733-52b6-e003-5db3-2ff16596918c@roeck-us.net>
+Date: Wed, 10 Jun 2020 09:33:58 +0200
+Message-ID: <87eeqnidcp.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202006091149.6C78419@keescook>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_003056_351685_9EE343A6 
-X-CRM114-Status: GOOD (  22.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200610_003404_831433_00578F76 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [68.232.147.91 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -68,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,98 +96,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-hardening@lists.openwall.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Sven Schnelle <svens@stackframe.org>, Naohiro Aota <naohiro.aota@wdc.com>,
- Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
- Emese Revfy <re.emese@gmail.com>, Iurii Zaikin <yzaikin@google.com>,
- PaX Team <pageexec@freemail.hu>, Laura Abbott <labbott@redhat.com>,
- Mathias Krause <minipli@googlemail.com>,
- Alexander Popov <alex.popov@linux.com>, linux-kbuild@vger.kernel.org,
- Alexander Monakov <amonakov@ispras.ru>, Michal Marek <michal.lkml@markovi.net>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, notify@kernel.org,
- Florian Weimer <fweimer@redhat.com>, gcc@gcc.gnu.org,
- Brad Spengler <spender@grsecurity.net>, linux-kernel@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Luis Chamberlain <mcgrof@kernel.org>, Jessica Yu <jeyu@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Thiago Jung Bauermann <bauerman@linux.ibm.com>
+Cc: linux-hwmon@vger.kernel.org, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 12:09:27PM -0700, Kees Cook wrote:
-> On Thu, Jun 04, 2020 at 02:58:06PM +0100, Will Deacon wrote:
-> > On Thu, Jun 04, 2020 at 04:49:57PM +0300, Alexander Popov wrote:
-> > > Don't try instrumenting functions in arch/arm64/kernel/vdso/vgettimeofday.c.
-> > > Otherwise that can cause issues if the cleanup pass of stackleak gcc plugin
-> > > is disabled.
-> > > 
-> > > Signed-off-by: Alexander Popov <alex.popov@linux.com>
-> > > ---
-> > >  arch/arm64/kernel/vdso/Makefile | 3 ++-
-> > >  1 file changed, 2 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-> > > index 3862cad2410c..9b84cafbd2da 100644
-> > > --- a/arch/arm64/kernel/vdso/Makefile
-> > > +++ b/arch/arm64/kernel/vdso/Makefile
-> > > @@ -32,7 +32,8 @@ UBSAN_SANITIZE			:= n
-> > >  OBJECT_FILES_NON_STANDARD	:= y
-> > >  KCOV_INSTRUMENT			:= n
-> > >  
-> > > -CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables
-> > > +CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables \
-> > > +		$(DISABLE_STACKLEAK_PLUGIN)
-> > 
-> > I can pick this one up via arm64, thanks. Are there any other plugins we
-> > should be wary of? It looks like x86 filters out $(GCC_PLUGINS_CFLAGS)
-> > when building the vDSO.
-> 
-> I didn't realize/remember that arm64 retained the kernel build flags for
-> vDSO builds. (I'm used to x86 throwing all its flags away for its vDSO.)
-> 
-> How does 32-bit ARM do its vDSO?
-> 
-> My quick run-through on plugins:
-> 
-> arm_ssp_per_task_plugin.c
-> 	32-bit ARM only (but likely needs disabling for 32-bit ARM vDSO?)
 
-On arm64, the 32-bit toolchain is picked up via CC_COMPAT -- does that still
-get the plugins?
+Guenter Roeck writes:
 
-> cyc_complexity_plugin.c
-> 	compile-time reporting only
-> 
-> latent_entropy_plugin.c
-> 	this shouldn't get triggered for the vDSO (no __latent_entropy
-> 	nor __init attributes in vDSO), but perhaps explicitly disabling
-> 	it would be a sensible thing to do, just for robustness?
-> 
-> randomize_layout_plugin.c
-> 	this shouldn't get triggered (again, lacking attributes), but
-> 	should likely be disabled too.
-> 
-> sancov_plugin.c
-> 	This should be tracking the KCOV directly (see
-> 	scripts/Makefile.kcov), which is already disabled here.
-> 
-> structleak_plugin.c
-> 	This should be fine in the vDSO, but there's not security
-> 	boundary here, so it wouldn't be important to KEEP it enabled.
+> On 6/9/20 12:28 AM, Lars Povlsen wrote:
+>> This is an add-on series to the main SoC Sparx5 series
+>> (Message-ID: <20200608123024.5330-1-lars.povlsen@microchip.com>)
+>>
+>> Changes in v2:
+>> - Changes in driver as per review comments
+>>
+>
+> And you expect the reviewers/maintainers to remember what those were ?
+>
 
-Thanks for going through these. In general though, it seems like an
-opt-in strategy would make more sense, as it doesn't make an awful lot
-of sense to me for the plugins to be used to build the vDSO.
+Well, I can see that this might not be the case. I'll be a little more
+specific next time. Sorry about that.
 
-So I would prefer that this patch filters out $(GCC_PLUGINS_CFLAGS).
+For the record, it was:
 
-Will
+- Removed unnecessary #includes
+- Statement reordering in s5_read()
+- Replaced EINVAL with EIO
+- Add 'break' in default: case statement.
+- Removed extra ()
+- Removed superfluous initialization
+
+I got some more comments from Jonathan Cameron
+<Jonathan.Cameron@huawei.com>, so there will be another round.
+
+Thanks,
+
+---Lars
+
+>> Lars Povlsen (3):
+>>   dt-bindings: hwmon: Add Sparx5 temperature sensor
+>>   arm64: dts: sparx5: Add hwmon temperature sensor
+>>   hwmon: sparx5: Add Sparx5 SoC temperature driver
+>>
+>>  .../bindings/hwmon/microchip,sparx5-temp.yaml |  39 +++++
+>>  arch/arm64/boot/dts/microchip/sparx5.dtsi     |   6 +
+>>  drivers/hwmon/Kconfig                         |  10 ++
+>>  drivers/hwmon/Makefile                        |   2 +-
+>>  drivers/hwmon/sparx5-temp.c                   | 152 ++++++++++++++++++
+>>  5 files changed, 208 insertions(+), 1 deletion(-)
+>>  create mode 100644 Documentation/devicetree/bindings/hwmon/microchip,sparx5-temp.yaml
+>>  create mode 100644 drivers/hwmon/sparx5-temp.c
+>>
+>> --
+>> 2.27.0
+>>
+
+-- 
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
