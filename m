@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11ADF1F51DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:06:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10EBD1F51DF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:07:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xhWpcA+zxq3m1KHttPi5B+8J5GI0IO0HTEoFyurgWNc=; b=W9HANH1m3ubroKoRy95RmU/JB
-	82JF9KbNsOuXPIiMJ+pghIh+X/10nd2QDw7AM482apwfb8Vf9GD+M7CZRlYDHRw0U1j31kC78diwa
-	3iR8fRQ1tjSaEvpGfxYxv6fzwEOXyvURROJKMMy+dKQsCh7g1z4fIo2Hj7Y9xGsV0UBmx/ZQanejM
-	kAtGoS5ZjxaqewrXNnsIk95kIOmehH108L0xcbe8iaamFR7RjLORUfUHmrjM+hjfn7Rpz3vJOkbSo
-	coVNOW2j1xmcVwvcprDoVcEZQT6dV5LJpQZfQNxR5XQRJZMcoS4vEJgK0vlpsPJyKKsHo/4KCjiCi
-	JD+5I7jrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6xBoU9FHIvkFmKJE0Ya/vjB9vCNvHfnnUTN/pm+7cgw=; b=gMhthZJbNPserb
+	UsMkVwP8b1jqf7sk2dfnI8Zddc6fi/P/anV3BTaKU3ED3S5hK9dz4of6r7t27XYDNUzMbqU+6L2n2
+	SF9unNLFG2pGg3LZJPEhwhrmGKqeDMc+EItR5Iznt/r/MI9QVxIo3X+gtiIN5taHOc53NviC3AO/G
+	LPnV7FZlosEJLqeVTUlGJQM159CNz0GhA1ojjebUV67DvJ1M4bBy5usUpMXQRan3VSAE8rZCzAk9/
+	K9cavLQETMsgT2E/sTWmbepUQnxgDDlqjLCZUDP6Unl6PGWxFHLwDuVQNKlcYCsMfbD9K8GEgamxI
+	GpcnXu2jTh4wlrgg7UeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jixcV-0000Ui-9D; Wed, 10 Jun 2020 10:06:07 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jixc7-0000F9-N7; Wed, 10 Jun 2020 10:05:44 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B2CCA2072F;
- Wed, 10 Jun 2020 10:05:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591783543;
- bh=APaQDnwvqyDC5iMG3KTrDaueLYPZ/QB5u1pPBN97fzQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=i/tVvb7bSNJHPVR9o4oFfQvz+JUaC9+AfvZ9teYOr6qCELHB1Sz89Bt0fM6yHrVyR
- 7dH8g6nfNICEus/twS/WfT+aacHtih//nzKTxVJMblzSq7tNtNp1EeyibfYVkiJn7X
- FAO+nBY7F5CWHRprRJzg9YDI1N4r3cFgY717ZLWk=
-Date: Wed, 10 Jun 2020 11:05:41 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Alexander Stein <alexander.stein@mailbox.org>
-Subject: Re: [PATCH 1/1] spi: dt-bindings: amlogic, meson-gx-spicc: Fix
- schema for meson-g12a
-Message-ID: <20200610100541.GA5745@sirena.org.uk>
-References: <20200609165527.55183-1-alexander.stein@mailbox.org>
+	id 1jixdG-00011f-UE; Wed, 10 Jun 2020 10:06:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jixd7-000112-Vy
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 10:06:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6904B1FB;
+ Wed, 10 Jun 2020 03:06:45 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4CF843F73D;
+ Wed, 10 Jun 2020 03:06:44 -0700 (PDT)
+Date: Wed, 10 Jun 2020 11:06:42 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [RFC PATCH v2 6/6] prctl.2: Add tagged address ABI control
+ prctls (arm64)
+Message-ID: <20200610100641.GF25945@arm.com>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-7-git-send-email-Dave.Martin@arm.com>
+ <20200609172232.GA63286@C02TF0J2HF1T.local>
 MIME-Version: 1.0
-In-Reply-To: <20200609165527.55183-1-alexander.stein@mailbox.org>
-X-Cookie: Spelling is a lossed art.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200609172232.GA63286@C02TF0J2HF1T.local>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_030543_772860_5F4DA1B5 
-X-CRM114-Status: UNSURE (   7.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200610_030646_115051_A8BBCF7A 
+X-CRM114-Status: GOOD (  41.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,66 +65,305 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-spi@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Michael Kerrisk <mtk.manpages@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5569645884092969577=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jun 09, 2020 at 06:22:32PM +0100, Catalin Marinas wrote:
+> Hi Dave,
+> 
+> On Wed, May 27, 2020 at 10:17:38PM +0100, Dave P Martin wrote:
+> > --- a/man2/prctl.2
+> > +++ b/man2/prctl.2
+> > @@ -1504,6 +1504,143 @@ For more information, see the kernel source file
+> >  (or
+> >  .I Documentation/arm64/sve.txt
+> >  before Linux 5.3).
+> > +.\" prctl PR_SET_TAGGED_ADDR_CTRL
+> > +.\" commit 63f0c60379650d82250f22e4cf4137ef3dc4f43d
+> > +.TP
+> > +.BR PR_SET_TAGGED_ADDR_CTRL " (since Linux 5.4, only on arm64)"
+> > +Controls support for passing tagged userspace addresses to the kernel
+> > +(i.e., addresses where bits 56\(em63 are not all zero).
+> 
+> Nitpick: maybe say "userspace addresses" again inside the brackets since
+> kernel addresses have all top bits 1.
 
---===============5569645884092969577==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="HlL+5n6rz5pIUxbD"
-Content-Disposition: inline
+Happy to do that.  This is a user-facing interface though: userspace
+addresses are the only kind of address there is.
 
+> 
+> > +.IP
+> > +The level of support is selected by
+> > +.IR "(unsigned int) arg2" ,
+> 
+> We use (unsigned long) for arg2.
 
---HlL+5n6rz5pIUxbD
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Hmmm, not quite sure how I came up with unsigned int here.  I'll just
+drop this: the type in the prctl() prototype is unsigned long anyway.
 
-On Tue, Jun 09, 2020 at 06:55:27PM +0200, Alexander Stein wrote:
-> ---
-> spi@13000: clock-names: Additional items are not allowed ('pclk' was unexpected)
-> spi@13000: clock-names: ['core', 'pclk'] is too long
-> spi@13000: clocks: [[2, 23], [2, 258]] is too long
-> spi@15000: clock-names: Additional items are not allowed ('pclk' was unexpected)
-> spi@15000: clock-names: ['core', 'pclk'] is too long
-> spi@15000: clocks: [[2, 29], [2, 261]] is too long
-> ---
+The type is actually moot in this case, since the valid values all fit
+in an unsigned int.
 
-Don't use --- in upstream commit logs, as covered in submitting-patches.rst
-these have special meaning and cause the commit log to be truncated.
+> > +which can be one of the following:
+> > +.RS
+> > +.TP
+> > +.B 0
+> > +Addresses that are passed
+> > +for the purpose of being dereferenced by the kernel
+> > +must be untagged.
+> > +.TP
+> > +.B PR_TAGGED_ADDR_ENABLE
+> > +Addresses that are passed
+> > +for the purpose of being dereferenced by the kernel
+> > +may be tagged, with the exceptions summarized below.
+> > +.RE
+> > +.IP
+> > +The remaining arguments
+> > +.IR arg3 ", " arg4 " and " arg5
+> > +must all be zero.
+> 
+> Indeed. The above commit didn't have this, we added it later in commit
+> 3e91ec89f527b9870fe42dcbdb74fd389d123a95.
 
---HlL+5n6rz5pIUxbD
-Content-Type: application/pgp-signature; name="signature.asc"
+Ah, missed that.  Did any full kernel release expose the unchecked
+behaviour?
 
------BEGIN PGP SIGNATURE-----
+Mind you, there's probably no need to document in any case.
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7gsHQACgkQJNaLcl1U
-h9BsPwf/d3EW/ZwwzGvj1esEpHD8SwSQ+yMMV19B8wr+cD2nLEjXFYIsqnrfSDVx
-j6UU8sI0xLOXt0qIwdaRKGeM6C2FrNcrMWz7mykGzeErPcNLVhWn/aC6yEXDVpFw
-jMP2rLcju1QccfOkPUJ4vl1kCBjCH5EF2wsVvsznwzChd6GeGubN5SHBxZHwaPYg
-fuOWw0KdkFmbVQeXWyi1fCci3+QYvA/oWYGmgec6b/mVv9p27A228+zMNJ2jyOlb
-TrzmRpvVv9BCQp81skBgn5ZQ/gy8XZjke8dGnxw4/FnL5FHYVV0dzehbzmWqTOBi
-69RhVfacZtIKhjOpDq68m7H4gZH19w==
-=1WyB
------END PGP SIGNATURE-----
+> 
+> > +.IP
+> > +On success, the mode specified in
+> > +.I arg2
+> > +is set for the calling thread and the the return value is 0.
+> > +If the arguments are invalid,
+> > +the mode specified in
+> > +.I arg2
+> > +is unrecognized,
+> > +or if this feature is disabled or unsupported by the kernel,
+> > +the call fails with
+> > +.BR EINVAL .
+> > +.IP
+> > +In particular, if
+> > +.BR prctl ( PR_SET_TAGGED_ADDR_CTRL ,
+> > +0, 0, 0, 0)
+> > +fails with
+> > +.B EINVAL
+> > +then all addresses passed to the kernel must be untagged.
+> > +.IP
+> > +Irrespective of which mode is set,
+> > +addresses passed to certain interfaces
+> > +must always be untagged:
+> 
+> Maybe you could add some extra info from the kernel comment (commit
+> b2a84de2a2deb76a6a51609845341f508c518c03) along the lines of "... to
+> avoid the creation of aliasing mappings in userspace).
 
---HlL+5n6rz5pIUxbD--
+It depends.  It's useful if it helps people to guess highly accurately
+the rule for in interface that is too new or that we don't explicitly
+document (such as a random setsockopt or perf widget).
 
+If not, it might be best to say nothing and make guarantees only about
+the explicitly listed interfaces though.
 
---===============5569645884092969577==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+What do you think?
+
+> > +.RS
+> > +.IP \(em
+> > +.BR brk (2),
+> > +.BR mmap (2),
+> > +.BR shmat (2),
+> > +and the
+> > +.I new_address
+> > +argument of
+> > +.BR mremap (2).
+> > +.IP
+> > +(Prior to Linux 5.6 these accepted tagged addresses,
+> > +but the behaviour may not be what you expect.
+> > +Don't rely on it.)
+> 
+> shmat() was not part of the subsequent fix
+> (dcde237319e626d1ec3c9d8b7613032f0fd4663a), it always rejected tagged
+> address. But I guess it doesn't matter much, the user should not pass
+> tagged addresses to these syscalls anyway.
+> 
+> You could move shmat() down together with shmdt().
+
+I guess I was highlighting that shmdt() is a special case, because the
+user would guess from the pattern of the other listed calls that shmdt()
+should accept tagged addresses.  If you think separating it just adds to
+the confusion, I'm happy not too call it out specially here.
+
+OTOH, we could fix shmdt() and document the legacy behaviour as a bug in
+specific kernel versions rather than the canonical behaviour.  But I
+guess that's one for later.
+
+> > +.IP \(em
+> > +\(oqpolymorphic\(cq interfaces
+> > +that accept pointers to arbitrary types cast to a
+> > +.I void *
+> > +or other generic type, specifically
+> > +.BR prctl (2),
+> > +.BR ioctl (2),
+> > +and in general
+> > +.BR setsockopt (2)
+> > +(only certain specific
+> > +.BR setsockopt (2)
+> > +options allow tagged addresses).
+> > +.IP \(em
+> > +.BR shmdt (2).
+> > +.RE
+> > +.IP
+> > +This list of exclusions may shrink
+> > +when moving from one kernel version to a later kernel version.
+> > +While the kernel may make some guarantees
+> > +for backwards compatibility reasons,
+> > +for the purposes of new software
+> > +the effect of passing tagged addresses to these interfaces
+> > +is unspecified.
+> > +.IP
+> > +The mode set by this call is inherited across
+> > +.BR fork (2)
+> > +and
+> > +.BR clone (2).
+> > +The mode is reset by
+> > +.BR execve (2)
+> > +to 0
+> > +(i.e., tagged addresses not permitted in the user/kernel ABI).
+> > +.IP
+> > +.B Warning:
+> > +Because the compiler or run-time environment
+> > +may make use of address tagging,
+> > +a successful
+> > +.B PR_SET_TAGGED_ADDR_CTRL
+> > +may crash the calling process.
+> 
+> I don't think PR_SET_TAGGED_ADDR_CTRL could crash the calling process.
+> Rather disabling tagged addresses would break it. If a process is using
+
+This is precisely how PR_SET_TAGGED_ADDR_CTRL could crash the calling
+process, no?
+
+Rather than try to explain the different cases in detail here and have
+the reader take it as gospel, I thought it would be better to scare them
+a bit and encourage them to so some homework.  Perhaps I'm being too
+cautious.
+
+> tagged addresses but does not pass them to the kernel, it will continue
+> to do so even when the syscalls accept such addresses.
+> 
+> > +The conditions for using it safely are complex and system-dependent.
+> > +Don't use it unless you know what you are doing.
+> 
+> This syscall is intended for the C library if the heap allocator
+> generates tagged addresses. So it's not a general purpose prctl() random
+> application code could call. Anyway I'm fine with your warning of not
+> doing it but you may want to clarify the intent.
+
+Maybe add something like
+
+"This call is primarily intended for use by the run-time environment."
+
+?
+
+> 
+> > +.IP
+> > +For more information, see the kernel source file
+> > +.IR Documentation/arm64/tagged\-address\-abi.rst .
+> > +.\" prctl PR_GET_TAGGED_ADDR_CTRL
+> > +.\" commit 63f0c60379650d82250f22e4cf4137ef3dc4f43d
+> > +.TP
+> > +.BR PR_GET_TAGGED_ADDR_CTRL " (since Linux 5.4, only on arm64)"
+> > +Returns the current tagged address mode
+> > +for the calling thread.
+> > +.IP
+> > +Arguments
+> > +.IR arg2 ", " arg3 ", " arg4 " and " arg5
+> > +must all be zero.
+> > +.IP
+> > +If the arguments are invalid
+> > +or this feature is disabled or unsupported by the kernel,
+> > +the call fails with
+> > +.BR EINVAL .
+> > +In particular, if
+> > +.BR prctl ( PR_GET_TAGGED_ADDR_CTRL ,
+> > +0, 0, 0, 0)
+> > +fails with
+> > +.BR EINVAL ,
+> > +then this feature is definitely unsupported or disabled,
+> 
+> I guess it's outside the scope of the prctl.2 to describe how the
+> feature was disabled (e.g. sysctl).
+
+We could include it here, but I'm thinking we might want a more
+comprehensive separate page to describe how to use MTE in general.
+
+For now, is referencing the kernel documentation enough?
+
+> > +and all addresses passed to the kernel must be untagged.
+> > +.IP
+> > +Otherwise, the call returns a nonnegative value
+> > +describing the current tagged address mode,
+> > +encoded in the same way as the
+> > +.I arg2
+> > +argument of
+> > +.BR PR_SET_TAGGED_ADDR_CTRL .
+> > +.IP
+> > +For more information, see the kernel source file
+> > +.IR Documentation/arm64/tagged\-address\-abi.rst .
+> >  .\"
+> >  .\" prctl PR_TASK_PERF_EVENTS_DISABLE
+> >  .TP
+> > @@ -1749,6 +1886,7 @@ On success,
+> >  .BR PR_GET_SPECULATION_CTRL ,
+> >  .BR PR_SVE_GET_VL ,
+> >  .BR PR_SVE_SET_VL ,
+> > +.BR PR_GET_TAGGED_ADDR_CTRL ,
+> >  .BR PR_GET_THP_DISABLE ,
+> >  .BR PR_GET_TIMING ,
+> >  .BR PR_GET_TIMERSLACK ,
+> > @@ -2057,6 +2195,24 @@ is
+> >  .B PR_SVE_GET_VL
+> >  and SVE is not available on this platform.
+> >  .TP
+> > +.B EINVAL
+> > +.I option
+> > +is
+> > +.BR PR_SET_TAGGED_ADDR_CTRL
+> > +and the arguments are invalid or unsupported.
+> > +See the description of
+> > +.B PR_SET_TAGGED_ADDR_CTRL
+> > +above for details.
+> > +.TP
+> > +.B EINVAL
+> > +.I option
+> > +is
+> > +.BR PR_GET_TAGGED_ADDR_CTRL
+> > +and the arguments are invalid or unsupported.
+> > +See the description of
+> > +.B PR_GET_TAGGED_ADDR_CTRL
+> > +above for details.
+> > +.TP
+> >  .B ENODEV
+> >  .I option
+> >  was
+> 
+> Apart from some minor nits above, the documentation looks fine.
+> 
+> Thanks for writing this up.
+
+Thanks for the review.  I was taking a punt on some of it, so I'm
+reassured that you didn't find too many controversial points.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5569645884092969577==--
-
