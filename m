@@ -2,130 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E12FB1F585A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:52:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C1961F586D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:56:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date
-	:Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7sAzra29vcwbVtBrZoDRX9wJvXnXgKNdtHYBLrRY1Mo=; b=oV2Z33oesjPFQM
-	6dTYqN/17qP2TDhfeFThQvpEnAhbqSu/Ar3K+kVIC93wGKUbHdncgbke9cyo1lvZagEapokbe/s83
-	Zh/or+i/NDSZs/6hdKC7q4wa+OZoei2bfLBr0M93S02xYXb2j8nCES8wX3bm3Pvcb0CX07EPU1jMM
-	AYYWoDjkSlNa25257UVRY3lzMbXBCkH386B2qvzQTK8yiIj5rLzrhOpXjC5/f2gGRLEoCu+ruUS+J
-	IxiAL6zh2v4qKvbWtyhF0I7o7oSEd+cqWwvTQWlakGKtX4fSMfqe7BiJLkGob/O5OL/Msgq1uhr3N
-	1nsAqV8fOO4QSXSluoqQ==;
+	List-Owner; bh=R1a9lNaPyY52b2d6dkjEaudyuHMNJkLPh6otSMPwJbc=; b=EL+ilv+qFLnryw
+	Kb9N8GGW/SktjchY/Jg5QEkGAz1ZhP7stNrSZB74iSBoKbjca+HgFB1MpPqhTfn2DN9VRt3AgjSa6
+	3qibpiDxi4SCYM9k64IBg09Mr7kXNo6vfg4GuPMe+eOHxsw6zmn/c/8ZH/LLAmCA1vM8y7+zukDZq
+	vr7R/6mtCRbIUtPNPpKKiJdMR3PQHGrT2we8wLqih3PkqEjeOLDhKIzpQ9cymEmgCynne5bET34WF
+	+eitskVVqeq6buYrE26idwDj5w9Rvr8yIXfLk1K7/cjXByCxEQfr3Bx7hWeo69fvHD2U80BQ9fJ3x
+	VsayvEgSEyv1Rzm2dUtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj31q-0001kY-Sf; Wed, 10 Jun 2020 15:52:38 +0000
-Received: from mail-lj1-f193.google.com ([209.85.208.193])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj31i-0001k9-7v
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:52:31 +0000
-Received: by mail-lj1-f193.google.com with SMTP id 9so3116344ljv.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 08:52:29 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:reply-to:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=11ALgSq9gv/d3zitAChNViLeQS5L5+FuUfOqP20opAs=;
- b=aJHn0pPHa+Li0iGowTWguLM3t3WP+enwiKeB7zzaHzDoW2QJokM5uvlirv2mwesvQO
- I86T2ge/DkbJKyY+PdpddhFX68R4hRkrLYPz+U8Qq7NZniQL3e+bFA1GKks006Mkzp3m
- tjQhn9rM00xqW2kSvivS3Y84rL88vV7ZLuO3J2tL1EpXWjYX5zjcAejw+4T9JobTTMkm
- 6Bqpp/jyCOEkRxPNOd2wD5SwIXqR3S0ceEs4YTnDBVu2ZWeN7R5+rXwLbz6DIfqugLqe
- v2jnYqZksWoLSNIfIoquUg/w3GiHPtaeGkN0us1QZN+qLkvVIh7Id0mcQ/AeL+5KmPJl
- bOcg==
-X-Gm-Message-State: AOAM533jo7tiD4BLhpt/4LaEQwRdHtbCl0/G5wdFWp6+6gn7QDcLj1Si
- FZ26CKF1E462XFtdc7P1OUA=
-X-Google-Smtp-Source: ABdhPJxOf6x8h9JgbevXiRilQVr0KtvSmXKyYKWZvP/YIghJt7szxiaNzNcR6ibSpZohdi77kgx7cw==
-X-Received: by 2002:a2e:9a4d:: with SMTP id k13mr2102395ljj.43.1591804348403; 
- Wed, 10 Jun 2020 08:52:28 -0700 (PDT)
-Received: from [192.168.42.234] ([213.87.161.124])
- by smtp.gmail.com with ESMTPSA id z15sm29065ljo.102.2020.06.10.08.52.14
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 10 Jun 2020 08:52:27 -0700 (PDT)
-Subject: Re: [PATCH 3/5] gcc-plugins/stackleak: Add 'verbose' plugin parameter
-To: Kees Cook <keescook@chromium.org>
-References: <20200604134957.505389-1-alex.popov@linux.com>
- <20200604134957.505389-4-alex.popov@linux.com>
- <202006091147.193047096C@keescook>
-From: Alexander Popov <alex.popov@linux.com>
-Autocrypt: addr=alex.popov@linux.com; prefer-encrypt=mutual; keydata=
- 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
- j3lCqPk=
-Message-ID: <fb051386-4913-9442-f051-23ed25802c9e@linux.com>
-Date: Wed, 10 Jun 2020 18:52:10 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jj35t-0004eu-V2; Wed, 10 Jun 2020 15:56:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jj35k-0004eI-Sv
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:56:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A52401FB;
+ Wed, 10 Jun 2020 08:56:39 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.97])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 448083F6CF;
+ Wed, 10 Jun 2020 08:56:36 -0700 (PDT)
+Date: Wed, 10 Jun 2020 16:56:29 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>
+Subject: Re: [PATCH] firmware: arm_scmi: fix timeout value for send_message
+Message-ID: <20200610155629.GA7357@bogus>
+References: <20200607193023.52344-1-jassisinghbrar@gmail.com>
+ <20200610082315.GB2689@bogus>
+ <CABb+yY1T03YLwiFvBykxsAHQ9Kpu=r1nRTuaP3Emf5dP=Upm0g@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <202006091147.193047096C@keescook>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CABb+yY1T03YLwiFvBykxsAHQ9Kpu=r1nRTuaP3Emf5dP=Upm0g@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_085230_282635_270EF8BB 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200610_085641_019671_CBD1B944 
+X-CRM114-Status: GOOD (  37.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.193 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [a13xp0p0v88[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [a13xp0p0v88[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -137,50 +64,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: alex.popov@linux.com
-Cc: kernel-hardening@lists.openwall.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Naohiro Aota <naohiro.aota@wdc.com>, Sven Schnelle <svens@stackframe.org>,
- Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
- Emese Revfy <re.emese@gmail.com>, Iurii Zaikin <yzaikin@google.com>,
- PaX Team <pageexec@freemail.hu>, Laura Abbott <labbott@redhat.com>,
- Mathias Krause <minipli@googlemail.com>, linux-kbuild@vger.kernel.org,
- Alexander Monakov <amonakov@ispras.ru>, Michal Marek <michal.lkml@markovi.net>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, notify@kernel.org,
- Florian Weimer <fweimer@redhat.com>, gcc@gcc.gnu.org,
- Brad Spengler <spender@grsecurity.net>, linux-kernel@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Luis Chamberlain <mcgrof@kernel.org>, Jessica Yu <jeyu@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Thiago Jung Bauermann <bauerman@linux.ibm.com>
+Cc: Rob Herring <robh@kernel.org>, "arnd@arndb.de" <arnd@arndb.de>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09.06.2020 21:47, Kees Cook wrote:
-> On Thu, Jun 04, 2020 at 04:49:55PM +0300, Alexander Popov wrote:
->> Add 'verbose' plugin parameter for stackleak gcc plugin.
->> It can be used for printing additional info about the kernel code
->> instrumentation.
->>
->> For using it add the following to scripts/Makefile.gcc-plugins:
->>   gcc-plugin-cflags-$(CONFIG_GCC_PLUGIN_STACKLEAK) \
->>     += -fplugin-arg-stackleak_plugin-verbose
->>
->> Signed-off-by: Alexander Popov <alex.popov@linux.com>
-> 
-> Acked-by: Kees Cook <keescook@chromium.org>
+On Wed, Jun 10, 2020 at 10:21:19AM -0500, Jassi Brar wrote:
+> On Wed, Jun 10, 2020 at 3:23 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+> >
+> > On Sun, Jun 07, 2020 at 02:30:23PM -0500, jassisinghbrar@gmail.com wrote:
+> > > From: Jassi Brar <jaswinder.singh@linaro.org>
+> > >
+> > > Currently scmi_do_xfer() submits a message to mailbox api and waits
+> > > for an apparently very short time. This works if there are not many
+> > > messages in the queue already. However, if many clients share a
+> > > channel and/or each client submits many messages in a row, the
+> >
+> > The recommendation in such scenarios is to use multiple channel.
+> >
+> If SCMI is to be accepted as a standard (which I hope), it has to
+> support most kinds of controllers, but currently the implementation is
+> too myopic. It is only a matter of time, when someone sees value in
+> reusing firmware implementation (scmi) but does not have a MHU like
+> controller.
+>
 
-I see that I will change this patch after leaving alloca() support.
-I'm going to add debug printing about functions that call alloca().
-I have to omit your 'acked-by' for the changed patch, right?
+It is being used with other transports like smc/hvc and virtio.
+But I agree, this experiment made me realise we need to work with
+single channel disabling certain features like fast_switch. I will
+work on that and push a solution. Thanks for asking for traces
+and having stared at it for sometime, I see some issues but that's
+orthogonal to this one. Fixing that won't solve the issue we are
+discussing though.
 
-Best regards,
-Alexander
+But that said, that is not the solution for Juno/MHU. We can parallelise
+there with multiple requests and we should do so.
+
+> > > timeout value becomes too short and returns error even if the mailbox
+> > > is working fine according to the load. The timeout occurs when the
+> > > message is still in the api/queue awaiting its turn to ride the bus.
+> > >
+> > >  Fix this by increasing the timeout value enough (500ms?) so that it
+> > > fails only if there is an actual problem in the transmission (like a
+> > > lockup or crash).
+> > >
+> > > [If we want to capture a situation when the remote didn't
+> > > respond within expected latency, then the timeout should not
+> > > start here, but from tx_prepare callback ... just before the
+> > > message physically gets on the channel]
+> > >
+> >
+> > The bottle neck may not be in the remote. It may be mailbox serialising
+> > the requests even when it can parallelise.
+> >
+> Your logs show (in your test case), using 1 physical channel shows
+> better transfer (those that complete) rates than virtual channels.
+
+Indeed that is expected. It is like comparing output with 1 vs 2 CPUs
+with some multi-thread load. The remote is now handling 2 requests at
+a time and it clearly puts DVFS at priority and this will show up as
+little higher latency for other requests like sensors.
+
+> The transfers that fail are purely because of this short timeout.
+>
+> > >
+> > >       if (xfer->hdr.poll_completion) {
+> > > -             ktime_t stop = ktime_add_ns(ktime_get(), SCMI_MAX_POLL_TO_NS);
+> > > +             ktime_t stop = ktime_add_ns(ktime_get(), 500 * 1000 * NSEC_PER_USEC);
+> > >
+> >
+> > This is unacceptable delay for schedutil fast_switch. So no for this one.
+> >
+> Increasing timeout does not increase latency.
+
+Agreed, but worst case you may be stuck here for 500ms which is not
+acceptable. That's what I meant, not that the request will take 500ms.
+Sorry if I was not clear earlier on that.
+
+> Also scmi_xfer() can not know if it was reached from the fast_switch path.
+>
+> If a platform has many users over a channel such that it can not
+> guarantee low enough latency, then it must not set the
+> fast_switch_possible flag, which is optional for this reason.
+>
+
+Yes, that's what I am trying to explore and that's what I meant above
+when I mentioned I see some issues. I have hacked and checked that doesn't
+change much, the timeout happens but under bit heavy load and not in simpler
+use-case as I showed in my traces. In short, having multiple channels
+helps. And we have been so fixated on Tx in our discussions. More fun
+with Rx and serialising as it impacts remote firmware too.
+
+>
+> > > @@ -313,7 +313,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
+> > >                       ret = -ETIMEDOUT;
+> > >       } else {
+> > >               /* And we wait for the response. */
+> > > -             timeout = msecs_to_jiffies(info->desc->max_rx_timeout_ms);
+> > > +             timeout = msecs_to_jiffies(500);
+> >
+> > In general, this hides issues in the remote.
+> >
+> If you want to uncover remote issues, start the timeout in
+> tx_prepare() because that is when the message is physically sent to
+> the remote.
+>
+
+In that case we need to set it to 1ms as I mentioned earlier. Current
+timeout of 30ms is for MBOX_MAX_LEN=20 which gives more than 1ms for each
+and that's what we are targeting. I see no point in just changing the
+timeout as you already mentioned above it is not changing the latency
+anyway.
+
+> > We are trying to move towards
+> > tops 1ms for a request and with MBOX_QUEUE at 20, I see 20ms is more that
+> > big enough. We have it set to 30ms now. 500ms is way too large and not
+> > required IMO.
+> >
+> Again, increasing timeout does not slow the system down. It is to
+> support more variety of platform setups.
+>
+
+Agreed and I have acknowledge. 30ms is chosen based on experiments and
+also we are trying to achieve 1ms tops for each message. If some platform
+has serious limitation, desc->max_rx_timeout_ms is configurable. We can
+identify the platform and add specific timings for that. Same is true
+do other parameters like the max_len and max_msg_size. If default is not
+suitable, it can be changed.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
