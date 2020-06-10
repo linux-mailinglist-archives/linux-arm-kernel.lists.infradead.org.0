@@ -2,71 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AD521F4FDC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 10:00:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 371AC1F4FE8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 10:05:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iY3QyG0KW2pkqR88eKV0bo6aHXoIgL0VMQ9HeRmShw0=; b=K54ztpNm/ZwypS
-	VT4IONm7IJHFbfpSQK4IsBrToCNlVB2kLZKpPtWewH6o5BVJzgmvwAAH/J8iTa5zDqaO6UdXqEVJm
-	14b2qxMlxl+6U3+wL1oz8xrkvI+nLD95TnNQzlDyRvqUDeWuLwUzCIjn0G0RCHf2lN9/KHh9ssxwB
-	LZ15nT44q0MIpOMQR9S7YOOigIV9tL/3QkRgV37pdqKTmZTb+EDgNO+ciA6eoqNTDhJMwLbt4AF5c
-	pO1QQDQsdM2telLB8DNJZVlgIZMlZPLV5l0uAZNWRIqwA+eA+3HjYlHcyXpxXmOuHNKRKroo1boS1
-	z4Cmm9A9VgKH6T+WAdnA==;
+	List-Owner; bh=2wdDOEaW3O8xNvJv1YZ3oczJmtrvRcNGTSximXB7sDs=; b=HhFpfjoWxNdy9G
+	ohUhNq9ubKmTuF/AN5rmRJ/vUx8bC58sD5BedQMsFxWAg+UFetG0Wmrt1tchf0iEenLu27hCA7LMU
+	pAFkaH323wfH4shntt/Yn+ZaszcJTf2l0OVh9BKJj8NnOuJeh2G+dDUx9qwmGzDTsxTN90kbmMQEo
+	u/DlppeIUfC1l8e8iZqe5H+jAxGRgrBea9057AtZKYP6IE77MaVkfwcnxnL9CpjK5YqV9QvAtlxk4
+	n8ADagAjio25n1HHOsVfAWh1mORnSeXAKhZJVEQf7vKnltAy/g12GiqRtPxSbQd95lIGDKUA/fz58
+	TaztvEuN3L4hD5qpyvMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jivf8-0006Il-Sc; Wed, 10 Jun 2020 08:00:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jivjZ-000073-Kb; Wed, 10 Jun 2020 08:05:17 +0000
+Received: from mail-am6eur05on2086.outbound.protection.outlook.com
+ ([40.107.22.86] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jivex-0006IE-Uv
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 08:00:33 +0000
-Received: from mail-ot1-f45.google.com (mail-ot1-f45.google.com
- [209.85.210.45])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58BE5206C3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 08:00:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591776031;
- bh=FAdHFQnLWqU7V/CLKqgnX3eMb4dwLD/XeGpKGuwa0Ps=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Mzt43DLjx5j4+eQ0b2AuM54n3o6R+cV89y0VsTHH5oFYD0v2ytzXfsanp5EvOffVE
- N8EJhnlmfUFAb0QiZecr5m/KO6unAsS2eFxEHX6pHkFoMDip6ZNIy3MqvrmBPweL2x
- w8vt6zT4dZ6QN5Nv0wRPmVe2fe1V8Ab6DiLV2344=
-Received: by mail-ot1-f45.google.com with SMTP id e5so991648ote.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 01:00:31 -0700 (PDT)
-X-Gm-Message-State: AOAM5336Bw/2VmRcpwmh11rVzTqZ+TXykPNMt/CdzNfhYF/x7B2+M6qq
- jlt3jXN29yxtT1fgXjsl/9tY1QYK2e3o+vom3BU=
-X-Google-Smtp-Source: ABdhPJxuQWr84gMacb/a6f9SzUwi1kqC15NFZ4y1j2X2hWUD8YkhBaBpuZ66t8CNgxHKeOSwAFP/ChjObyX+SAwt+2c=
-X-Received: by 2002:a9d:2de4:: with SMTP id g91mr1622120otb.90.1591776030720; 
- Wed, 10 Jun 2020 01:00:30 -0700 (PDT)
+ id 1jivjO-00078P-2e
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 08:05:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fzrC+StsMeAcGti05hkOkORzQ/+FOnSbhiSc3tCM7uKT7CcdXVBe6/hiYy05kD92e9FXa3n8btJd8B/zyP76Jl08EvKSnOXbqieH0vUD3EafNcp7pmnv0xlSambs6sf0UOi9GJHFXmWLhmxZMkRKCYGmIY0MNyolqp14DoD+hUMSyZ9T8tGRNG7Xbk7u+1NBnZzp5NxoUE1MBChkEftzCl9Jj3BfBk78SD1AzP0X91JtRop1d9CXCdDA4IY0QajkKqrwY3OMwxKmyzRajcALJDCs21wMwXn/48HspZRkqOyPJnFHSnIIJOth19kTIX3UxGMJA5RaQcMwbWMAnLmnLA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iT5EaRQVpYWIRHCuHHLo5DaYJg1ysfnzxLHi2VDxLd8=;
+ b=Mi4AIDlQQgJ41jh6cXXwk694+tg+1CzzGTP8lPdL8T3DJG/g0MiY6/wfOLoLDm4AgjqghCTw/ZZ2HY4SLAAL6cHJUlnQMi/fLTmbQI3Y21kFRjKqluc3Jb4PVuTWR6E3Nm6I8NYIDCubcWcfJEJzpVmBeGD2yn5Btv+PsSkVIne+WCAZYc9l23AIHtTzXFI+qEgE4aoTmUAS4oCIH+2khbevzrnEQjjQAZ9MDr2I8q4h1QZeVhHrkhocFH3JhrKiGFDbylv7WsvTwKA6Uopjm/wNkUumjvVRRDk67tn+RXrzjRQqCSiUp9ZvIRYR155wpzMNFK020+YZV50sbHRMdA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iT5EaRQVpYWIRHCuHHLo5DaYJg1ysfnzxLHi2VDxLd8=;
+ b=qnU863f3FeFPugVYqEhjoP2TMN560Z0JuidotMfTPRV9+zBblRfClpkBb5TGI28kW64PwlqBw/k1Kaup38YZk0EqbEUBEzNI3SOzdgQWdG6wSCDGtp7EI1JOxylfsEUW3fmxLzhnjZR29ZKDcwNuTsG1XsztDeh35ZnJnOfPL1w=
+Received: from DB7PR04MB4972.eurprd04.prod.outlook.com (2603:10a6:10:1c::11)
+ by DB7PR04MB4427.eurprd04.prod.outlook.com (2603:10a6:5:30::29) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Wed, 10 Jun
+ 2020 08:04:57 +0000
+Received: from DB7PR04MB4972.eurprd04.prod.outlook.com
+ ([fe80::8cb5:8821:ad1a:7f6e]) by DB7PR04MB4972.eurprd04.prod.outlook.com
+ ([fe80::8cb5:8821:ad1a:7f6e%4]) with mapi id 15.20.3066.023; Wed, 10 Jun 2020
+ 08:04:57 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "festevam@gmail.com"
+ <festevam@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "stefan@agner.ch" <stefan@agner.ch>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "linux-gpio@vger.kernel.org"
+ <linux-gpio@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH V3 0/9] Support i.MX8 SoCs pinctrl drivers built as module
+Thread-Topic: [PATCH V3 0/9] Support i.MX8 SoCs pinctrl drivers built as module
+Thread-Index: AQHWPmrEVFpeNeUrREGCcvDpD9lSNKjRfJ0g
+Date: Wed, 10 Jun 2020 08:04:57 +0000
+Message-ID: <DB7PR04MB49721DEE875099E086E2486E80830@DB7PR04MB4972.eurprd04.prod.outlook.com>
+References: <1591712485-20609-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1591712485-20609-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 3f9a20c0-a16d-460f-89af-08d80d14f7a0
+x-ms-traffictypediagnostic: DB7PR04MB4427:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB44277E8110CDA3C2202B3D1780830@DB7PR04MB4427.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0430FA5CB7
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: eqDWgCaq/oItxmFNIyEIySiqlw2ZP8Cjx5qK8X96qsXqCllkC6L/q0RkJ0g3VZiRGYe3PURgBwvRoAWR4Dw/XIOP2gPZfTTop3H7Bff8BjeSQWp+7bMpPCotot1MyUe+rD35k+oeV0/S5cLSN7IHl2gE2k0Tcen9NwHEVcKrWi/MoruI/RVcdOTlLLazybKlSIkkmM+6AAi446zNOh6ulS54eJOgdyAYeB2V9njtHLjqUtCeZvbWUdg7BsYeyetRznSlI0yHwoRhh4gThwYK1+8ISGEZVYd4k4HBEvienMxV+7wf3ccFoU4Ly+EQkZ5tZNyaRH3KUN8fUhNkd+aN89NA6mQ/sqRZ0+JlUokcqMUNF8hsuKONTlsp7jQq6Kyj
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB7PR04MB4972.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(6029001)(4636009)(376002)(366004)(136003)(346002)(39860400002)(396003)(71200400001)(8676002)(2906002)(5660300002)(9686003)(55016002)(316002)(66556008)(33656002)(52536014)(110136005)(66446008)(64756008)(44832011)(86362001)(66476007)(76116006)(7696005)(26005)(478600001)(186003)(8936002)(4326008)(6506007)(66946007)(83380400001)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: Is/rz5nbu1DV4GKhZ6KOVI/csW7dHg7GKXepyOXGLM7X3tvSN21rWTzkD6bDFzpO0kev4c0mapeatfljgczDzrk9xYKM1R05W5YDnZlKBFdVIPJHtWubDRNQCUHLZ4hJ4LWkcH5NONm1Na5zHjPMy35Y3xq7erWINK/N/IfXZv+cjEBec0oyfDhEyT2Elju0IhnApsgEuNPIZeeDb+pM5wOb03O6Vt83amXM/EQLvjVXKsq9GOHRjRD4jpED4XGUSIpW1JR2923ANM+XSYqLLY/+kWLo5t3IQ2vvVeShmv6E78K7QTXHNTr6pHtlCa/ACJBdlxLP4WXPFuyLwTIJc6QjtlsU5V78jy6uGkzLFK/2noek9PA8VrW327n6DbrLS7ip/rkwaqhWOwAOAyczZStcHd5Bl9NRB8w3mjRrLOW95JXAgr87Ry89CL6kKT9l0+QFQkcwUfUbwlfsdm02lEDw1uHndhU9PbwKk4SdwzE=
 MIME-Version: 1.0
-References: <20200604022031.164207-1-masahiroy@kernel.org>
- <20200610075837.GD15939@willie-the-truck>
-In-Reply-To: <20200610075837.GD15939@willie-the-truck>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 10 Jun 2020 10:00:19 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXES7MoxWDQeO=D-88fit4H_Qh9SEQmikcJA39d8czPCBQ@mail.gmail.com>
-Message-ID: <CAMj1kXES7MoxWDQeO=D-88fit4H_Qh9SEQmikcJA39d8czPCBQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] efi/libstub/arm64: link stub lib.a conditionally
-To: Will Deacon <will@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3f9a20c0-a16d-460f-89af-08d80d14f7a0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2020 08:04:57.6433 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 6A5ls0PsGN2kWqd5SeH2nZyz7zv4A+jLqcrbstqNDwqniwdznN3QG0Q125XszAhuTZOcStNFUFRU/4J/SHTF/Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4427
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_010032_017042_4A5F77F5 
-X-CRM114-Status: GOOD (  17.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200610_010506_139072_E89FCC85 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.22.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.22.86 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -74,7 +118,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,59 +129,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, linux-efi <linux-efi@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 10 Jun 2020 at 09:58, Will Deacon <will@kernel.org> wrote:
->
-> On Thu, Jun 04, 2020 at 11:20:30AM +0900, Masahiro Yamada wrote:
-> > Since commit 799c43415442 ("kbuild: thin archives make default for
-> > all archs"), core-y is passed to the linker with --whole-archive.
-> > Hence, the whole of stub library is linked to vmlinux.
-> >
-> > Use libs-y so that lib.a is passed after --no-whole-archive for
-> > conditional linking.
-> >
-> > The unused drivers/firmware/efi/libstub/relocate.o will be dropped
-> > for ARCH=arm64.
-> >
-> > Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
-> > ---
-> >
-> > This patch touches under arch/arm64/, but
-> > this is more related to efi.
-> > I am sending this to Ard.
->
-> Ok, I'll ignore this then. Ard -- please yell if you want me to do anything
-> else with it.
->
+> From: Anson Huang <Anson.Huang@nxp.com>
+> Sent: Tuesday, June 9, 2020 10:21 PM
+> 
+> There are more and mroe requirements that SoC specific modules should be
+> built as module in order to support generic kernel image, such as Android GKI
+> concept.
+> 
+> This patch series supports i.MX8 SoCs pinctrl drivers to be built as module,
+> including i.MX8MQ/MM/MN/MP/QXP/QM/DXL SoCs, and it also supports
+> building i.MX common pinctrl driver and i.MX SCU common pinctrl driver as
+> module.
+> 
 
-I am going to send a batch of EFI fixes early next week, so I can take
-this as well, or alternatively, you can apply it directly.
+This patch series also changed the driver initcall level from arch_initcall to module_init.
+Maybe you could provide some test information to help the reviewer to better understand
+the change impact.
 
->
-> > diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> > index 650e1185c190..48a6afa774fc 100644
-> > --- a/arch/arm64/Makefile
-> > +++ b/arch/arm64/Makefile
-> > @@ -145,7 +145,7 @@ export    TEXT_OFFSET
-> >
-> >  core-y               += arch/arm64/
-> >  libs-y               := arch/arm64/lib/ $(libs-y)
-> > -core-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
-> > +libs-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
-> >
-> >  # Default target when executing plain make
-> >  boot         := arch/arm64/boot
-> > --
-> > 2.25.1
-> >
+Regards
+Aisheng
+
+> Compared to V2, the changes are as below:
+> 	- add "depends on OF" to PINCTRL_IMX to fix build error using x86
+> randconfig;
+> 	- change the config dependency of PINCTRL_IMX_SCU to support scenario
+> of
+> 	  building in PINCTRL_IMX while building PINCTRL_IMX_SCU as module,
+> no other
+> 	  good choice in my mind, if you have better idea without changing the
+> driver
+> 	  code, please advise.
+> 
+> Anson Huang (9):
+>   pinctrl: imx: Support building SCU pinctrl driver as module
+>   pinctrl: imx: Support building i.MX pinctrl driver as module
+>   pinctrl: imx8mm: Support building as module
+>   pinctrl: imx8mn: Support building as module
+>   pinctrl: imx8mq: Support building as module
+>   pinctrl: imx8mp: Support building as module
+>   pinctrl: imx8qxp: Support building as module
+>   pinctrl: imx8qm: Support building as module
+>   pinctrl: imx8dxl: Support building as module
+> 
+>  drivers/pinctrl/freescale/Kconfig           | 27 ++++++++++++++-------------
+>  drivers/pinctrl/freescale/pinctrl-imx.c     |  4 ++++
+>  drivers/pinctrl/freescale/pinctrl-imx.h     |  2 +-
+>  drivers/pinctrl/freescale/pinctrl-imx8dxl.c |  9 +++------
+> drivers/pinctrl/freescale/pinctrl-imx8mm.c  | 10 ++++------
+> drivers/pinctrl/freescale/pinctrl-imx8mn.c  | 10 ++++------
+> drivers/pinctrl/freescale/pinctrl-imx8mp.c  | 10 ++++------
+> drivers/pinctrl/freescale/pinctrl-imx8mq.c  |  9 ++++-----
+> drivers/pinctrl/freescale/pinctrl-imx8qm.c  |  9 +++------
+> drivers/pinctrl/freescale/pinctrl-imx8qxp.c |  9 +++------
+>  drivers/pinctrl/freescale/pinctrl-scu.c     |  6 ++++++
+>  11 files changed, 50 insertions(+), 55 deletions(-)
+> 
+> --
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
