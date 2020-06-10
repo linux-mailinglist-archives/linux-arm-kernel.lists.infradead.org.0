@@ -2,100 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 282611F5771
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:14:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44D841F577B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lOItqNfIxtkLZhxcMwr00XLzjxjM8nl1gWDao2MrWp8=; b=rey/ZiZioplmM4
-	lftbCzsZR15djgFaXx0qTPS31zbdnwAdrUGLnt3ENrOuuYcsRsB+Tz95bb4Q2ueQVssORKFCBbk+z
-	lZU1CHQvAZOz5D6RsztJUxbgvR1FJ59GSH+rGutyVi+ViAkdzAlg+HvaMMAJAti2/kbOiYYJIogvs
-	E0GVAy5VAdDimNtI5z/clOP1/3yB6DZpOf413UHEYFksZXuxGUZ/Sw5gfy68V5YaEfjQD/oOZ0uid
-	gO/9HCchK62ly8IU9Iq7aPVYbJYxRmGThQttcpeHWDWhWfcYKoxfcHhk+8M07dD8k5z9qx1G2ZqSw
-	AOvQop5IlnLU5pXaoKUA==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date
+	:Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z085SO1LMmF5qvC8Hh3Y0Vt65GsKWyRDhLHRrr0fclM=; b=B6uN9Ysx7n5PVm
+	criCddJUo1wFW6N5XpDlT3v/9IWPjSos6t1kg2jGv5xLBqKG07+H1li0Zp9Umo1VfgLR2OcsgarUj
+	AkV2yOLX02Jjeb2F1gqtXkLyU492RoRag+hgJHoQHc9s8vuuanXJVgiAx8Qnh0AzDt9Nlpm8b4SAD
+	VS8kfscT6GsHzC1r+kcCtxla+0Su7ESencyGW4K6rqzi17m1eMKgD0+62Qjel39Cxb/6O4zGtPXhn
+	VY3Uu6X3jcXNX/73VrS4H5uKsZzCm4P7t+BNmnPsd7QMTwBFlDRqzsU7tEOR9nKYWNKdQ5u+hkP7k
+	08j1T4pJnCU6zChNkDkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj2Qq-0001IL-6c; Wed, 10 Jun 2020 15:14:24 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jj2Rj-0003bj-J1; Wed, 10 Jun 2020 15:15:19 +0000
+Received: from mail-lf1-f66.google.com ([209.85.167.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj2Qi-0001HV-Ix
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:14:17 +0000
-Received: by mail-wr1-x443.google.com with SMTP id c3so2678812wru.12
+ id 1jj2RX-0002az-1t
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:15:08 +0000
+Received: by mail-lf1-f66.google.com with SMTP id e125so1692204lfd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 08:14:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=u6ZBh3xhLtnUwFe/9xqitT47OizAqnS3qUaRaKdrxcw=;
- b=ipyMb0wxF/MyREsILFzJtU8gHR5aUzsw0s0daHQqbH7uM6WRpP4JA8biPGvx8slP/V
- I0ugUP+QkSviFaGewLZ7pkZDezLRPWJhkHHM9Tk5c+n71n0DtHxjMvPScHnKH0k6O5mH
- KmQQT2TZpS4YDkm6EmYgdbeqjUsWK6Uzi00K4yIAovFk+l+h+7mo9fi46jcudyPX8LZO
- Y9ITq0aKrxNUYNWfa2g1FCNXrmgLA/ea+u8h4C3gvRf6tf2Pb7eAh5Erqfrk7924IGfl
- u/RIs41wmg7mUAcuVwwAHIUU1/11Cn8/DacYgHMyVhCCQ3BBvlNqPtVbx646WTFjYOrB
- w7SQ==
+ Wed, 10 Jun 2020 08:15:06 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=u6ZBh3xhLtnUwFe/9xqitT47OizAqnS3qUaRaKdrxcw=;
- b=dHwEYlOr2bhw1SyeLgdFgJrAG1b7lDawVtrijuK3UVOGmfRvqrIwdX9ItB9LR93NaA
- 874X90l/yg0QaEkul/i+Q93JoucnpmdI0+47sqNZ98QbgvdpIHmvojzaaOCkzI+pcNQs
- 9xXdulV0CURZydIwrWSfhYxfPr/KfUPndgzahiiQk4m4KT9r1X/XdqCr0FcRkdZA63jy
- T1TtpWEFNng4eg632MNzrjjLsdBEe+U68xf5FEVTJrPUa8c/cHxMl2ewlv3T5+mp+0yX
- Z0Ca92o4Kzi7xplvBz0EtQSttBhupvq2H65kx7E6WLkaUqGv/jifGTkbJgZHif2esjfe
- pcrQ==
-X-Gm-Message-State: AOAM5336tSz7FxNi5kppLJYsKLvmhxTwH7lmge9Gx5JDmv1g/DS0ozKN
- bb0axUidZu7f1lSlsERk2iQ=
-X-Google-Smtp-Source: ABdhPJw8Odfle0VCYRg7uO5cn7CQ/GpvarHxi2OiUUCx4yB1jEgciHij0GrTptZw8PPkEqtzM34CxQ==
-X-Received: by 2002:adf:ecc2:: with SMTP id s2mr4721645wro.60.1591802054688;
- Wed, 10 Jun 2020 08:14:14 -0700 (PDT)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- v19sm26227wml.26.2020.06.10.08.14.11
+ h=x-gm-message-state:reply-to:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=eULLehFSRHz8x73A2t2FsqFcAztqdsXSNa1wbwBI/+s=;
+ b=m0Hrl04vhgtVPCOmLGQRSlKsiTJEojXFPbf03PIQ7VPmlp4MTvv+S94VwetMhQxLPa
+ SiHlXcljufGqlTvFEw0hnk9zDeJiyaLjosoCCK11ZZTrODgNTo7DK/DXeXzFUXGnnzDx
+ eZqIqwrTVCT6ttvZ6yqOzCga+3Bhsk+beqnv+/QpGyOef3Zr4lm0qnLtdA/H3sNfgD3M
+ RoOYDP/mCeIiKzefXOGWaAxzleSxjVcbsuat2z7kWw9o/VyzP4I0mOEMUPB8ZPzRoQ9q
+ dVEmp3E7/35sI0nP+Km1HRLsbWy5VL6LU3dGER7W1nkbFy8SKpWtKCFTJ1clKljRScoZ
+ /Arw==
+X-Gm-Message-State: AOAM533QIGUf//3QC/iUyVQvT1K+PN4Sb/30DutgVNR/aU8+SPWlFCKf
+ qcu8JnbsTENQ6wojEti8SoU=
+X-Google-Smtp-Source: ABdhPJz1CK/VSXCRRUwg5UewHR1f/2+/iKm9TQze3wiiRu0Ww5STAIhHliP6V+mzw1ChxnzEVkSq7w==
+X-Received: by 2002:a19:f11c:: with SMTP id p28mr2063891lfh.0.1591802101935;
+ Wed, 10 Jun 2020 08:15:01 -0700 (PDT)
+Received: from [192.168.42.234] ([213.87.161.124])
+ by smtp.gmail.com with ESMTPSA id i8sm5923795lfo.62.2020.06.10.08.14.55
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 10 Jun 2020 08:14:13 -0700 (PDT)
-Subject: Re: [PATCH 2/2] clk: bcm63xx-gate: add BCM6318 support
-To: =?UTF-8?Q?Philippe_Mathieu-Daud=c3=a9?= <f4bug@amsat.org>,
- =?UTF-8?Q?=c3=81lvaro_Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>
-References: <20200609113049.4035426-1-noltari@gmail.com>
- <20200609113049.4035426-3-noltari@gmail.com>
- <1367fcf3-24ed-9106-a329-da5f8e168e17@gmail.com>
- <3E897527-55EB-47DB-99ED-C737725F0F9E@gmail.com>
- <CAAdtpL7dUZ2RqkrqSxiZxDbp4qY-KdtSc7CyuR+rbnRRA2Yvrw@mail.gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <93c429b1-31f4-95c2-1bd9-b3756b396f3a@gmail.com>
-Date: Wed, 10 Jun 2020 08:14:09 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.9.0
+ Wed, 10 Jun 2020 08:15:00 -0700 (PDT)
+Subject: Re: [PATCH 0/5] Improvements of the stackleak gcc plugin
+To: Kees Cook <keescook@chromium.org>
+References: <20200604134957.505389-1-alex.popov@linux.com>
+ <202006091210.C139883AB@keescook>
+From: Alexander Popov <alex.popov@linux.com>
+Autocrypt: addr=alex.popov@linux.com; prefer-encrypt=mutual; keydata=
+ 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
+ j3lCqPk=
+Message-ID: <729988fe-5f92-645c-15a0-eda0f0afbbcb@linux.com>
+Date: Wed, 10 Jun 2020 18:14:51 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <CAAdtpL7dUZ2RqkrqSxiZxDbp4qY-KdtSc7CyuR+rbnRRA2Yvrw@mail.gmail.com>
+In-Reply-To: <202006091210.C139883AB@keescook>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_081416_647048_642A64C7 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_081507_118861_76368D05 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.66 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
+ provider [a13xp0p0v88[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [a13xp0p0v88[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,51 +136,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, kbuild test robot <lkp@intel.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- open list <linux-kernel@vger.kernel.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Jonas Gorski <jonas.gorski@gmail.com>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: alex.popov@linux.com
+Cc: kernel-hardening@lists.openwall.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Naohiro Aota <naohiro.aota@wdc.com>, Sven Schnelle <svens@stackframe.org>,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Emese Revfy <re.emese@gmail.com>, Iurii Zaikin <yzaikin@google.com>,
+ PaX Team <pageexec@freemail.hu>, Laura Abbott <labbott@redhat.com>,
+ Mathias Krause <minipli@googlemail.com>, linux-kbuild@vger.kernel.org,
+ Alexander Monakov <amonakov@ispras.ru>, Michal Marek <michal.lkml@markovi.net>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, notify@kernel.org,
+ Florian Weimer <fweimer@redhat.com>, gcc@gcc.gnu.org,
+ Brad Spengler <spender@grsecurity.net>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Luis Chamberlain <mcgrof@kernel.org>, Jessica Yu <jeyu@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Thiago Jung Bauermann <bauerman@linux.ibm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA2LzEwLzIwMjAgMToyOSBBTSwgUGhpbGlwcGUgTWF0aGlldS1EYXVkw6kgd3JvdGU6Cj4g
-SGksCj4gCj4gT24gV2VkLCBKdW4gMTAsIDIwMjAgYXQgODoxMyBBTSDDgWx2YXJvIEZlcm7DoW5k
-ZXogUm9qYXMKPiA8bm9sdGFyaUBnbWFpbC5jb20+IHdyb3RlOgo+Pgo+PiBIaSBGbG9yaWFuLAo+
-Pgo+Pj4gRWwgMTAganVuIDIwMjAsIGEgbGFzIDQ6MjcsIEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFp
-bmVsbGlAZ21haWwuY29tPiBlc2NyaWJpw7M6Cj4+Pgo+Pj4KPj4+Cj4+PiBPbiA2LzkvMjAyMCA0
-OjMwIEFNLCDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgd3JvdGU6Cj4+Pj4gK3N0YXRpYyBjb25z
-dCBzdHJ1Y3QgY2xrX2JjbTYzeHhfdGFibGVfZW50cnkgYmNtNjMxOF9jbG9ja3NbXSA9IHsKPj4+
-PiArICAgIHsgLm5hbWUgPSAiYWRzbF9hc2IiLCAuYml0ID0gMCwgfSwKPj4+PiArICAgIHsgLm5h
-bWUgPSAidXNiX2FzYiIsIC5iaXQgPSAxLCB9LAo+Pj4+ICsgICAgeyAubmFtZSA9ICJtaXBzX2Fz
-YiIsIC5iaXQgPSAyLCB9LAo+Pj4+ICsgICAgeyAubmFtZSA9ICJwY2llX2FzYiIsIC5iaXQgPSAz
-LCB9LAo+Pj4+ICsgICAgeyAubmFtZSA9ICJwaHltaXBzX2FzYiIsIC5iaXQgPSA0LCB9LAo+Pj4+
-ICsgICAgeyAubmFtZSA9ICJyb2Jvc3dfYXNiIiwgLmJpdCA9IDUsIH0sCj4+Pj4gKyAgICB7IC5u
-YW1lID0gInNhcl9hc2IiLCAuYml0ID0gNiwgfSwKPj4+PiArICAgIHsgLm5hbWUgPSAic2RyX2Fz
-YiIsIC5iaXQgPSA3LCB9LAo+Pj4+ICsgICAgeyAubmFtZSA9ICJzd3JlZ19hc2IiLCAuYml0ID0g
-OCwgfSwKPj4+PiArICAgIHsgLm5hbWUgPSAicGVyaXBoX2FzYiIsIC5iaXQgPSA5LCB9LAo+Pj4+
-ICsgICAgeyAubmFtZSA9ICJjcHVidXMxNjAiLCAuYml0ID0gMTAsIH0sCj4+Pj4gKyAgICB7IC5u
-YW1lID0gImFkc2wiLCAuYml0ID0gMTEsIH0sCj4+Pj4gKyAgICB7IC5uYW1lID0gInNhcjEyNCIs
-IC5iaXQgPSAxMiwgfSwKPj4+Cj4+PiBOaXQ6IHRoaXMgc2hvdWxkIGJlIHNhcjEyNQo+Pgo+PiBO
-aWNlIGNhdGNoLCBJIHdpbGwgZml4IHRoaXMgaW4gdjIuCj4+Cj4+Pgo+Pj4+ICsgICAgeyAubmFt
-ZSA9ICJtaXBzIiwgLmJpdCA9IDEzLCAuZmxhZ3MgPSBDTEtfSVNfQ1JJVElDQUwsIH0sCj4+Pj4g
-KyAgICB7IC5uYW1lID0gInBjaWUiLCAuYml0ID0gMTQsIH0sCj4+Pj4gKyAgICB7IC5uYW1lID0g
-InJvYm9zdzI1MCIsIC5iaXQgPSAxNiwgfSwKPj4+PiArICAgIHsgLm5hbWUgPSAicm9ib3N3MDI1
-IiwgLmJpdCA9IDE3LCB9LAo+Pj4+ICsgICAgeyAubmFtZSA9ICJzZHIiLCAuYml0ID0gMTksIC5m
-bGFncyA9IENMS19JU19DUklUSUNBTCwgfSwKPj4+PiArICAgIHsgLm5hbWUgPSAidXNiIiwgLmJp
-dCA9IDIwLCB9LAo+Pj4KPj4+IFRoaXMgc2hvdWxkIHByb2JhYmx5IGJlICJ1c2JkIiB0byBpbmRp
-Y2F0ZSB0aGlzIGlzIHRoZSBVU0IgZGV2aWNlIGNsb2NrCj4+PiAobm90IGhvc3QpCj4+Cj4+IE9r
-LCBJIHdpbGwgY2hhbmdlIGl0LiBJIGdvdCBjb25mdXNlZCBieSB0aGUgZmFjdCB0aGF0IGJvdGgg
-KHVzYmQgYW5kIHVzYmgpIHdlcmUgcHJlc2VudCBvbiA2MzE4X21hcF9wYXJ0Lmg6Cj4+ICNkZWZp
-bmUgVVNCRF9DTEtfRU4gICAgICAgICAoMSA8PCAyMCkKPj4gI2RlZmluZSBVU0JIX0NMS19FTiAg
-ICAgICAgICgxIDw8IDIwKQo+IAo+IElzIHRoZXJlIGEgZGF0YXNoZWV0IHRvIHZlcmlmeSB0aGF0
-PwoKTm90IGEgcHVibGljIG9uZSwgYnV0IEkgY2FuIGNvbmZpcm0gdGhpcyBpcyBjb3JyZWN0IGdp
-dmVuIHRoZSBpbnRlcm5hbApkYXRhc2hlZXQuCi0tIApGbG9yaWFuCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 09.06.2020 22:15, Kees Cook wrote:
+> On Thu, Jun 04, 2020 at 04:49:52PM +0300, Alexander Popov wrote:
+>> In this patch series I collected various improvements of the stackleak
+>> gcc plugin.
+> 
+> Thanks!
+> 
+>> Alexander Popov (5):
+>>   gcc-plugins/stackleak: Exclude alloca() from the instrumentation logic
+>>   gcc-plugins/stackleak: Use asm instrumentation to avoid useless
+>>     register saving
+> 
+> These look like they might need tweaks (noted in their separate
+> replies).
+
+Thanks for the review, Kees.
+
+>>   gcc-plugins/stackleak: Add 'verbose' plugin parameter
+>>   gcc-plugins/stackleak: Don't instrument itself
+> 
+> If you wanted to reorder the series and move these first, I could take
+> these into my tree right away (they're logically separate from the other
+> fixes).
+
+Ok, I will put "don't instrument itself" at the beginning of v2.
+
+The patch adding 'verbose' plugin parameter depends on the previous patches, so
+I will not move it.
+
+>>   gcc-plugins/stackleak: Don't instrument vgettimeofday.c in arm64 VDSO
+> 
+> This seems good -- though I'm curious about 32-bit ARM and the other
+> HAVE_GCC_PLUGINS architectures with vDSOs (which appears to be all of
+> them except um).
+
+(going to reply in a separate email)
+
+Best regards,
+Alexander
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
