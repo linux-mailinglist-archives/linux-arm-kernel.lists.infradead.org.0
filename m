@@ -2,98 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B902D1F5284
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:39:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03B4C1F5283
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 12:39:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8VXw+Ek6J4n5ykNs6RFU+2mP2g9wu3FXXakKXrvVd7o=; b=k7O207yIIZO2Kn
-	lXyWQ3vf3UalKiYhRWggp9IS5CrZy7TWPUiZvkXM+SgrH9ZZKcHk3kKPOUZJb8D4XkmZkKQ+17hZP
-	llNmhqB0jOsHk/TJ0LA/jtL+5MzLScetYWnfaxnqHKivB0RGYrP7G6J2xwvhQuMMZLH7LJXgQyltM
-	eOZrhA8gYaA7skCkwREWoun8gA2+LZa5TAEddyjQAzA4FCRs01lxGM8MAf/3mEyKqqb5otGAhESaC
-	14e5nM5bo2cDTYh6euqFxie2eru1WKA/Q3oaqRpBsxMgunGMxBuKTcaebbUYv+6RFtOJdmLwqVcgy
-	lp4VqWJynkBqZaYG1Y9w==;
+	List-Owner; bh=meVF0S184SxMYiWHKsSrJEVdGvzLZoSWP2jTWTjljbo=; b=uz2vBw+ftWiSTH
+	+i7/yWQ8ZtnpQZ5xWLRbP/RGkeFmr5KCixAWb0LTX5tiOh8N1yoEKRoaKvlyUqqizTgtX/QziELB4
+	Ijvj4HvqEWzhs1hMdMYN0M9BPg1Pv+SQ+DOKw2/f0LPo1/7ZJLkA9DDrS5EdV7DY/yYqYvU1yQnnF
+	PeQYK6oZCWGDXylXZz4Id2/ixFcy5DbCWGPRzgeOuS7bU1wA3H24foc+R27w9hqMjb0w/WTQzt1VW
+	2xgX61QfqSLDDoAfHYkDoKZCKF+HDeka3SaN2apIy50S2UQpBKax672ZF729XGbjKd0+GWyk0+/nw
+	iCo+x+A461IT5P46rtUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiy97-0005Tp-9K; Wed, 10 Jun 2020 10:39:49 +0000
-Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
+	id 1jiy8H-0005Bb-5R; Wed, 10 Jun 2020 10:38:57 +0000
+Received: from mail-oo1-f65.google.com ([209.85.161.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiy8J-0005JT-TN
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 10:39:01 +0000
-Received: by mail-ej1-x641.google.com with SMTP id o15so1953765ejm.12
+ id 1jiy87-0005Aw-Kb
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 10:38:49 +0000
+Received: by mail-oo1-f65.google.com with SMTP id v26so387476oof.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 03:38:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=b4xt9ro4s6EJh9yAJChrfwEE70fQqv8RKm8O5jxwnF8=;
- b=l1lc9WvNx7QdPB4+apffY5SPACt/ijyjhjbYY0C9EkWG3RnABAwn7TKeVaauSy9NMU
- MPhfLiuNtdM7gCzTJw6ftAbcxtZY2ersGZ0blDLT2GHrZiBZgnN0CO2oE5ddHmxZvIWd
- jimEGBuvkuu8oPARZ7ltp1pHctgWaMHIOf8o4=
+ Wed, 10 Jun 2020 03:38:46 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=b4xt9ro4s6EJh9yAJChrfwEE70fQqv8RKm8O5jxwnF8=;
- b=JiRcgPk88We5ZskMPZKs4NhaiNCKqKagHpksgx7XYlQ5NO6MN+fP1FBFg1Tapr58AF
- qwQG7UwwVexgIAjUT8MGfyRoXLrf37wpmeIPPlO6J7ay6TewsXKLQ1eO6YFVfsN5zFk0
- hWscz9mHqt8yXteSt+FjQQzshfcOOQ/Bj+ObNTRdSlHBqQmRw78IGpxKHmV699IkwAI8
- QRycufRpAGqikYCG+bDPFlgKLxE8t9b2w8RE5tHSp41uhu2lzHUNPbKpDfd2GUPp7dkW
- kGt27PVi2s0S+Uhj8FtkkVKQAkZ+CV7pdpyHGULyQctX0y+1SI7OGzbntivTTsl4ELv+
- 1eAA==
-X-Gm-Message-State: AOAM5337VpInhBPgoZtJ8pH+Bmznd2E8DXth1rxw0L7fkMMfvzuWvWR9
- O6xj53NWYbD8XK2cXUUj30aUY/fMIdf9Yg==
-X-Google-Smtp-Source: ABdhPJwtmEZdwD5NVHCCfa3IZopFYTiaH42Bqd0wukwl7dpYM7Jp/gCL5aUU0n78Yy/PKelV3S1+yw==
-X-Received: by 2002:a17:906:55c9:: with SMTP id
- z9mr2887889ejp.276.1591785536817; 
- Wed, 10 Jun 2020 03:38:56 -0700 (PDT)
-Received: from mail-ed1-f52.google.com (mail-ed1-f52.google.com.
- [209.85.208.52])
- by smtp.gmail.com with ESMTPSA id q12sm15162872ejn.23.2020.06.10.03.38.56
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 10 Jun 2020 03:38:56 -0700 (PDT)
-Received: by mail-ed1-f52.google.com with SMTP id w7so1027099edt.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 03:38:56 -0700 (PDT)
-X-Received: by 2002:adf:e2ce:: with SMTP id d14mr2923508wrj.415.1591785187039; 
- Wed, 10 Jun 2020 03:33:07 -0700 (PDT)
+ bh=yhj0O7kXqY+B3Lbx8zL7czuREuKE1xDVmkNkh9W0Ff8=;
+ b=ofI33tjGHRkJOVt8CyUkKcZmhrqSAsptUErWkP8sxrS2tl9ePGFbcaVp1C0V12sfjP
+ hQp0XmdHHnNh5yIc+f++ULqUpBR2mrbzjbyg2d4wPCedY/x/avWRrJuSj61duvF/C0cU
+ 8xwTBiurDohfMVvIq1zKlZ79ExtXxcyR20eLmROd19QgyJEpQsQBJhSZ+2oTzURmGvfV
+ xb5XZ27ppOVim2hTDKf0zNZ4K+NGKWKjk78AaCuRDg3k8l0NHILsEphCIh2NgbdQfkyu
+ cYSou11/KFYB4XpyMeC78Ca5z+NoLwffmZ1qzT8Rfuzvrb2ePZXWZJYT0viaUeoSsbq0
+ lCLg==
+X-Gm-Message-State: AOAM531uH1LeGsZKwnl59myqCyqePnXaW2qrTO30FYuIQXArdCsTvOKD
+ 2PDrjep2CRPZ+k16PBlv6XAmDmzHJ86l0a+sysw=
+X-Google-Smtp-Source: ABdhPJxAdTpO7LhYnf0dQcSTZJQHhIdlLN/4PFslP7TgkSlriS32Yc+I7+BmEpE6ZYiAWqbF26joucvNTE5ZFDcQo+M=
+X-Received: by 2002:a4a:3c1a:: with SMTP id d26mr1875366ooa.38.1591785522478; 
+ Wed, 10 Jun 2020 03:38:42 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191204124732.10932-1-Jerry-Ch.chen@mediatek.com>
- <20191204124732.10932-2-Jerry-Ch.chen@mediatek.com>
- <20200521171101.GA243874@chromium.org>
- <e31fe64a-c5c1-7b1e-eec1-27111fe43ac2@xs4all.nl>
-In-Reply-To: <e31fe64a-c5c1-7b1e-eec1-27111fe43ac2@xs4all.nl>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 10 Jun 2020 12:32:56 +0200
-X-Gmail-Original-Message-ID: <CAAFQd5Ad_cnv0qztZOk9c2H0Y+XO6tRcRmS1t4dBw5qbG-d8Nw@mail.gmail.com>
-Message-ID: <CAAFQd5Ad_cnv0qztZOk9c2H0Y+XO6tRcRmS1t4dBw5qbG-d8Nw@mail.gmail.com>
-Subject: Re: [RFC PATCH V4 1/4] media: v4l2-mem2mem: add v4l2_m2m_suspend,
- v4l2_m2m_resume
-To: Hans Verkuil <hverkuil@xs4all.nl>
+References: <2336e15d-ff4b-bbb6-c701-dbf3aa110fcd@redhat.com>
+ <20200608112211.12125-1-andrzej.p@collabora.com>
+ <964ca07a-3da5-101f-7edf-64bdeec98a4b@redhat.com>
+In-Reply-To: <964ca07a-3da5-101f-7edf-64bdeec98a4b@redhat.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Wed, 10 Jun 2020 12:38:30 +0200
+Message-ID: <CAJZ5v0hB2ra2K=dd9ZjVyy1V2b1PmFHm79uDO2HtHU1D_4YUbw@mail.gmail.com>
+Subject: Re: [PATCH v4 0/7] Support inhibiting input devices
+To: Hans de Goede <hdegoede@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_033859_978017_CF80E8CD 
-X-CRM114-Status: GOOD (  25.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_033847_676900_C0F14C59 
+X-CRM114-Status: GOOD (  44.57  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ no trust [209.85.161.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rjwysocki[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.161.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,190 +84,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-devicetree <devicetree@vger.kernel.org>,
- =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
- zwisler@chromium.org, srv_heupstream <srv_heupstream@mediatek.com>,
- Jerry-ch Chen <jerry-ch.chen@mediatek.corp-partner.google.com>,
- Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>,
- =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
- Sj Huang <sj.huang@mediatek.com>, yuzhao@chromium.org,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Pi-Hsun Shih <pihsun@chromium.org>,
- =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <frederic.chen@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Collabora Kernel ML <kernel@collabora.com>, Nick Dyer <nick@shmanahar.org>,
+ linux-iio@vger.kernel.org,
+ Platform Driver <platform-driver-x86@vger.kernel.org>,
+ ibm-acpi-devel@lists.sourceforge.net, Laxman Dewangan <ldewangan@nvidia.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
+ Linux Samsung SoC <linux-samsung-soc@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-input@vger.kernel.org, Len Brown <lenb@kernel.org>,
+ Michael Hennerich <michael.hennerich@analog.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
+ Vladimir Zapolskiy <vz@mleia.com>, Lars-Peter Clausen <lars@metafoo.de>,
+ linux-tegra <linux-tegra@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Barry Song <baohua@kernel.org>, Ferruh Yigit <fery@cypress.com>,
+ patches@opensource.cirrus.com, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 12:29 PM Hans Verkuil <hverkuil@xs4all.nl> wrote:
+On Wed, Jun 10, 2020 at 11:50 AM Hans de Goede <hdegoede@redhat.com> wrote:
 >
-> On 21/05/2020 19:11, Tomasz Figa wrote:
-> > Hi Jerry,
+> Hi All,
+>
+> On 6/8/20 1:22 PM, Andrzej Pietrasiewicz wrote:
+> > This is a quick respin of v3, with just two small changes, please see
+> > the changelog below.
 > >
-> > On Wed, Dec 04, 2019 at 08:47:29PM +0800, Jerry-ch Chen wrote:
-> >> From: Pi-Hsun Shih <pihsun@chromium.org>
-> >>
-> >> Add two functions that can be used to stop new jobs from being queued /
-> >> continue running queued job. This can be used while a driver using m2m
-> >> helper is going to suspend / wake up from resume, and can ensure that
-> >> there's no job running in suspend process.
-> >>
-> >> BUG=b:143046833
-> >> TEST=build
-> >>
-> >> Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
-> >> Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.corp-partner.google.com>
-> >> ---
-> >>  drivers/media/v4l2-core/v4l2-mem2mem.c | 40 ++++++++++++++++++++++++++
-> >>  include/media/v4l2-mem2mem.h           | 22 ++++++++++++++
-> >>  2 files changed, 62 insertions(+)
-> >>
-> >> diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
-> >> index 5bbdec55b7d7..76ba203e0035 100644
-> >> --- a/drivers/media/v4l2-core/v4l2-mem2mem.c
-> >> +++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
-> >> @@ -47,6 +47,10 @@ module_param(debug, bool, 0644);
-> >>  #define TRANS_ABORT         (1 << 2)
-> >>
-> >>
-> >> +/* The job queue is not running new jobs */
-> >> +#define QUEUE_PAUSED                (1 << 0)
-> >> +
-> >> +
-> >>  /* Offset base for buffers on the destination queue - used to distinguish
-> >>   * between source and destination buffers when mmapping - they receive the same
-> >>   * offsets but for different queues */
-> >> @@ -88,6 +92,7 @@ static const char * const m2m_entity_name[] = {
-> >>   * @job_queue:              instances queued to run
-> >>   * @job_spinlock:   protects job_queue
-> >>   * @job_work:               worker to run queued jobs.
-> >> + * @job_queue_flags:        flags of the queue status, %QUEUE_PAUSED.
-> >>   * @m2m_ops:                driver callbacks
-> >>   */
-> >>  struct v4l2_m2m_dev {
-> >> @@ -105,6 +110,7 @@ struct v4l2_m2m_dev {
-> >>      struct list_head        job_queue;
-> >>      spinlock_t              job_spinlock;
-> >>      struct work_struct      job_work;
-> >> +    unsigned long           job_queue_flags;
-> >>
-> >>      const struct v4l2_m2m_ops *m2m_ops;
-> >>  };
-> >> @@ -267,6 +273,12 @@ static void v4l2_m2m_try_run(struct v4l2_m2m_dev *m2m_dev)
-> >>              return;
-> >>      }
-> >>
-> >> +    if (m2m_dev->job_queue_flags & QUEUE_PAUSED) {
-> >> +            spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
-> >> +            dprintk("Running new jobs is paused\n");
-> >> +            return;
-> >> +    }
-> >> +
-> >>      m2m_dev->curr_ctx = list_first_entry(&m2m_dev->job_queue,
-> >>                                 struct v4l2_m2m_ctx, queue);
-> >>      m2m_dev->curr_ctx->job_flags |= TRANS_RUNNING;
-> >> @@ -447,6 +459,34 @@ void v4l2_m2m_job_finish(struct v4l2_m2m_dev *m2m_dev,
-> >>  }
-> >>  EXPORT_SYMBOL(v4l2_m2m_job_finish);
-> >>
-> >> +void v4l2_m2m_suspend(struct v4l2_m2m_dev *m2m_dev)
-> >> +{
-> >> +    unsigned long flags;
-> >> +    struct v4l2_m2m_ctx *curr_ctx;
-> >> +
-> >> +    spin_lock_irqsave(&m2m_dev->job_spinlock, flags);
-> >> +    m2m_dev->job_queue_flags |= QUEUE_PAUSED;
-> >> +    curr_ctx = m2m_dev->curr_ctx;
-> >> +    spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
-> >> +
-> >> +    if (curr_ctx)
-> >> +            wait_event(curr_ctx->finished,
-> >> +                       !(curr_ctx->job_flags & TRANS_RUNNING));
-> >> +}
-> >> +EXPORT_SYMBOL(v4l2_m2m_suspend);
-> >> +
-> >> +void v4l2_m2m_resume(struct v4l2_m2m_dev *m2m_dev)
-> >> +{
-> >> +    unsigned long flags;
-> >> +
-> >> +    spin_lock_irqsave(&m2m_dev->job_spinlock, flags);
-> >> +    m2m_dev->job_queue_flags &= ~QUEUE_PAUSED;
-> >> +    spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
-> >> +
-> >> +    v4l2_m2m_try_run(m2m_dev);
-> >> +}
-> >> +EXPORT_SYMBOL(v4l2_m2m_resume);
-> >> +
-> >>  int v4l2_m2m_reqbufs(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
-> >>                   struct v4l2_requestbuffers *reqbufs)
-> >>  {
-> >> diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
-> >> index 5467264771ec..119a195da390 100644
-> >> --- a/include/media/v4l2-mem2mem.h
-> >> +++ b/include/media/v4l2-mem2mem.h
-> >> @@ -183,6 +183,28 @@ v4l2_m2m_buf_done(struct vb2_v4l2_buffer *buf, enum vb2_buffer_state state)
-> >>      vb2_buffer_done(&buf->vb2_buf, state);
-> >>  }
-> >>
-> >> +/**
-> >> + * v4l2_m2m_suspend() - stop new jobs from being run and wait for current job
-> >> + * to finish
-> >> + *
-> >> + * @m2m_dev: opaque pointer to the internal data to handle M2M context
-> >> + *
-> >> + * Called by a driver in the suspend hook. Stop new jobs from being run, and
-> >> + * wait for current running job to finish.
-> >> + */
-> >> +void v4l2_m2m_suspend(struct v4l2_m2m_dev *m2m_dev);
-> >> +
-> >> +/**
-> >> + * v4l2_m2m_resume() - resume job running and try to run a queued job
-> >> + *
-> >> + * @m2m_dev: opaque pointer to the internal data to handle M2M context
-> >> + *
-> >> + * Called by a driver in the resume hook. This reverts the operation of
-> >> + * v4l2_m2m_suspend() and allows job to be run. Also try to run a queued job if
-> >> + * there is any.
-> >> + */
-> >> +void v4l2_m2m_resume(struct v4l2_m2m_dev *m2m_dev);
-> >> +
-> >>  /**
-> >>   * v4l2_m2m_reqbufs() - multi-queue-aware REQBUFS multiplexer
-> >>   *
-> >> --
-> >> 2.18.0
+> > Userspace might want to implement a policy to temporarily disregard input
+> > from certain devices.
 > >
-> > Reviewed-by: Tomasz Figa <tfiga@chromium.org>
-> >
-> > [Corrected Hans's email address.]
-> > Hans, does this look good to you?
+> > An example use case is a convertible laptop, whose keyboard can be folded
+> > under the screen to create tablet-like experience. The user then must hold
+> > the laptop in such a way that it is difficult to avoid pressing the keyboard
+> > keys. It is therefore desirable to temporarily disregard input from the
+> > keyboard, until it is folded back. This obviously is a policy which should
+> > be kept out of the kernel, but the kernel must provide suitable means to
+> > implement such a policy.
 >
-> Yes, this looks good.
+> First of all sorry to start a somewhat new discussion about this
+> while this patch set is also somewhat far along in the review process,
+> but I believe what I discuss below needs to be taken into account.
 >
-> Sorry for the late reply.
-
-No worries! Thanks a lot.
-
+> Yesterday I have been looking into why an Asus T101HA would not stay
+> suspended when the LID is closed. The cause is that the USB HID multi-touch
+> touchpad in the base of the device starts sending events when the screen
+> gets close to the touchpad (so when the LID is fully closed) and these
+> events are causing a wakeup from suspend. HID multi-touch devices
+> do have a way to tell them to fully stop sending events, also disabling
+> the USB remote wakeup the device is doing. The question is when to tell
+> it to not send events though ...
 >
-> I assume this will be part of a future patch series that calls these new functions?
+> So now I've been thinking about how to fix this and I believe that there
+> is some interaction between this problem and this patch-set.
+>
+> The problem I'm seeing on the T101HA is about wakeups, so the question
+> which I want to discuss is:
+>
+> 1. How does inhibiting interact with enabling /
+> disabling the device as a wakeup source ?
+>
+> 2. Since we have now made inhibiting equal open/close how does open/close
+> interact with a device being a wakeup source ?
+>
+> And my own initial (to be discussed) answers to these questions:
+>
+> 1. It seems to me that when a device is inhibited it should not be a
+> wakeup source, so where possible a input-device-driver should disable
+> a device's wakeup capabilities on suspend if inhibited
 
-The mtk-jpeg encoder series depends on this patch as well, so I guess
-it would go together with whichever is ready first.
+If "inhibit" means "do not generate any events going forward", then
+this must also cover wakeup events, so I agree.
 
-I would also envision someone changing the other existing drivers to
-use the helpers, as I'm pretty much sure some of them don't handle
-suspend/resume correctly.
+> 2. This one is trickier I don't think we have really clearly specified
+> any behavior here. The default behavior of most drivers seems to be
+> using something like this in their suspend callback:
+>
+>          if (device_may_wakeup(dev))
+>                  enable_irq_wake(data->irq);
+>          else if (input->users)
+>                  foo_stop_receiving_events(data);
+>
+> Since this is what most drivers seem to do I believe we should keep
+> this as is and that we should just clearly document that if the
+> input_device has users (has been opened) or not does not matter
+> for its wakeup behavior.
+>
+> Combining these 2 answers leads to this new pseudo code template
+> for an input-device's suspend method:
+>
+>         /*
+>          * If inhibited we have already disabled events and
+>          * we do NOT want to setup the device as wake source.
+>          */
+>         if (input->inhibited)
+>                 return 0;
+>
+>          if (device_may_wakeup(dev))
+>                  enable_irq_wake(data->irq);
+>          else if (input->users)
+>                  foo_stop_receiving_events(data);
+>
+> ###
 
-Best regards,
-Tomasz
+Sounds reasonable to me.
+
+> A different, but related issue is how to make devices actually use the
+> new inhibit support on the builtin keyboard + touchpad when say the lid
+> is closed.   Arguably this is an userspace problem, but it is a tricky
+> one. Currently on most modern Linux distributions suspend-on-lid-close
+> is handled by systemd-logind and most modern desktop-environments are
+> happy to have logind handle this for them.
+>
+> But most knowledge about input devices and e.g. heurisitics to decide
+> if a touchpad is internal or external are part of libinput. Now we could
+> have libinput use the new inhibit support (1), but then when the lid
+> closes we get race between whatever process is using libinput trying
+> to inhibit the touchpad (which must be done before to suspend to disable
+> it as wakeup source) and logind trying to suspend the system.
+>
+> One solution here would be to move the setting of the inhibit sysfs
+> attr into logind, but that requires adding a whole bunch of extra
+> knowledge to logind which does not really belong there IMHO.
+>
+> I've been thinking a bit about this and to me it seems that the kernel
+> is in the ideal position to automatically inhibit some devices when
+> some EV_SW transitions from 0->1 (and uninhibit again on 1->0). The
+> issue here is to chose on which devices to enable this. I believe
+> that the auto inhibit on some switches mechanism is best done inside
+> the kernel (disabled by default) and then we can have a sysfs
+> attr called auto_inhibit_ev_sw_mask which can be set to e.g.
+> (1 << SW_LID) to make the kernel auto-inhibit the input-device whenever
+> the lid is closed, or to ((1 << SW_LID) | (1 << SW_TABLET_MODE)) to
+> inhibit both when the lid is closed or when switched to tablet mode.
+
+I agree that the kernel is the right place to handle this, but it
+requires some extra knowledge about dependencies between devices.
+
+It'd be kind of like power resources in ACPI, so for each state of a
+"master" device (in principle, there may be more states of it than
+just two) there would be a list of "dependent" intput devices that
+need to be inhibited when the "master" device goes into that state.
+
+> This could then be combined with a userspace utility run from an
+> udev rule which makes the actual decision what auto_inhibit_ev_sw_mask
+> should be set for a given input device.
+>
+> This will put the mechanism for what we want inside the kernel and
+> leaves the policy on which switches we want this for out of the
+> kernel.
+>
+> Note adding this new auto_inhibit_ev_sw_mask sysfs attr falls
+> somewhat outside the context of this patchset and could be done
+> as a follow up to this patch-set. But I do believe that we need to
+> figure out how (non ChromeOS) userspace can / will use the new inhibit
+> interface before merging it.
 
 _______________________________________________
 linux-arm-kernel mailing list
