@@ -2,86 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 063F31F4E69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 08:46:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D7051F4EA2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 09:11:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hB3msCulazEM+AoMzybl/d7PzO5R8fm4XwqzcG+od98=; b=Zl9bBUqwFIacr4
-	YLQwfMNOb5dVJXbDQC9bAXKX3KAMmWFtl+WicFV1Ofk7untEvT6/oWCCIbU663Nb+mOQX7MLTsQkd
-	W6XOtyEZ9DQlVE/teN9Ge30Ww5qURTXmIJ24RVNE3gmeBaV9/kaS/Khjv6dLWK3L8cpk/7EMuvP0z
-	R8CZNa3qyw/z1INFSFHogPyGLT0x4e/LAyUK7+tPtEDite0hStS0L+b+nYWvwT9yBScJFykkLT3Ut
-	Nt54Nr3umMuARXVSaOmUPcsovmK0VI8s7I4x0FjU8iH8T4enDCqPUmMeH1ZTxLka1IRuNsYCIm2C/
-	j7pxb3BouHxesbPQ55Rg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9KwuaiGjLk9l1uEvJgyDW2K8A2s/gzXQRoqLo5erVmU=; b=e+qKDkEbTdzW9uQL3ogfdTW7w
+	FJGewyKSQZxjIB1hjmuQNS1rXliKipgxAWEvqbYXUZBPgQmPZf3NW7zqdBnh3ublrnx47hn24tM/I
+	j9w2KlpfL1lDyNthj2QyxQWEO2dPsOuvPLBtRL8jQOeIlaGyDT1OPSp4alKc9uWnxeAkLDzTkm+CK
+	MLO2PoV52Ua/f2TLoMQ6t57UBhtJgytF5pG3mAGDzvZg7Z38vKGxLp7vLnkvKJmHlZMxYy3DlZRtY
+	8UM1+MqvgZW/xBOC/AXkGoJJoplrD+JBQPHN5G6HwlAGxX2J/zdRA9XD9M9le0pKW1tpl/rawU78M
+	KWy1L5lvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiuVb-0004Rb-8h; Wed, 10 Jun 2020 06:46:47 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1jiusx-0002OA-67; Wed, 10 Jun 2020 07:10:55 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiuVT-0004Qr-Cl
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 06:46:40 +0000
-Received: by mail-ot1-x342.google.com with SMTP id n6so905906otl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 23:46:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Yin6o44RA9C2iY1zjLC7qjeyYuw8En/EwnMzkJfVbHA=;
- b=conjEMDdAu75471GYPOyD9ApfoQNcdTFD9u5fvVioxjXdiCBsEB+nmD8Z4w1ni5NPq
- p7/iun/lO83U7rEO6kET9GTPXj4KA38CjGV466+SVDXTidx3UmZTldHMfCYp6AQg43Uo
- rN/HEqG0rgkZQhoklfs8sI4eYaJqYh0RzM7uk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Yin6o44RA9C2iY1zjLC7qjeyYuw8En/EwnMzkJfVbHA=;
- b=I/vciqkCUrU17kqSN9p5p3GknUaAhVPhN8TCKSeF+atsGw8o7IwyZ1nga6i62wQ2Q0
- QVMXePKwFSTthwNb0GRtNaxQnOUgKt1hgq3kA5CIaYn1Ck+j+41cRHfKJzqM8e30T5Qz
- jUr9Zl4sVBSbsdMv2UBBy5aQO0xgnmR+aIzDc8YRCV2RjiIOIV4FkZAIgBbAauUTJs5R
- aUmqduWeck0i89WTXPza+ghoejUVwGNPVzYry1L3N5KPOT3lNmH4W6aeR26spDdlW59x
- PKiFdz98Hj0sBdBOUV1Om0sMpELeONv6eyxB2OcPZ4jLBN6M2SBGJXMKh2q1bEX2bl+v
- 3vCg==
-X-Gm-Message-State: AOAM531EUHtyuJVJoAFHK5+Nll6zRiVlXj3s0t+m7Y7g5Mlj05nlpTLO
- 3WUhI8JavwqLOB0k/srtPViYChxUv9Y=
-X-Google-Smtp-Source: ABdhPJzs8ahEJOaOni/p4S2aoVYwi0OTXhdRdXM701zNRkxc1+YD3hdHprJq21MAB0YHTVErrCatKw==
-X-Received: by 2002:a9d:4c0a:: with SMTP id l10mr1419042otf.276.1591771593538; 
- Tue, 09 Jun 2020 23:46:33 -0700 (PDT)
-Received: from mail-ot1-f42.google.com (mail-ot1-f42.google.com.
- [209.85.210.42])
- by smtp.gmail.com with ESMTPSA id q186sm3712945oib.12.2020.06.09.23.46.31
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Jun 2020 23:46:32 -0700 (PDT)
-Received: by mail-ot1-f42.google.com with SMTP id n70so884206ota.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 23:46:31 -0700 (PDT)
-X-Received: by 2002:a05:6830:242e:: with SMTP id
- k14mr1533456ots.36.1591771590799; 
- Tue, 09 Jun 2020 23:46:30 -0700 (PDT)
+ id 1jiusm-0002Me-S6
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 07:10:49 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 6397622EEB;
+ Wed, 10 Jun 2020 09:10:18 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1591773021;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=I0rOB08jXbT35/9E6zpfxRpSFxgkN52VvN9kq0S08UI=;
+ b=BP3GRfS1Htxt164ZGINJVvvIsrhug3C3YB9iZv77clU6dqVW9V1WXPUpQ22YfpMM1ntoEr
+ YS/bN71y7HJTkKvRFG92Mzh4IerfmOY4KFbuVntCq6cb1MyP0eUbpb18EcKja3TOpxz2Jo
+ 0dgVu9RjTAzPW/+Jp8nf2hTIKhyn/+o=
 MIME-Version: 1.0
-References: <1590826218-23653-1-git-send-email-yong.wu@mediatek.com>
- <1590826218-23653-2-git-send-email-yong.wu@mediatek.com>
- <20200609212102.GA1416099@bogus>
-In-Reply-To: <20200609212102.GA1416099@bogus>
-From: Alexandre Courbot <acourbot@chromium.org>
-Date: Wed, 10 Jun 2020 15:46:18 +0900
-X-Gmail-Original-Message-ID: <CAPBb6MXdbEgWtOx_b5ab3hOTdyPPaGDQ2kA21pLjoLE-2sjuTg@mail.gmail.com>
-Message-ID: <CAPBb6MXdbEgWtOx_b5ab3hOTdyPPaGDQ2kA21pLjoLE-2sjuTg@mail.gmail.com>
-Subject: Re: [PATCH v4 01/17] media: dt-binding: mtk-vcodec: Separating
- mtk-vcodec encode node.
-To: Rob Herring <robh@kernel.org>, Tiffany Lin <tiffany.lin@mediatek.com>
+Date: Wed, 10 Jun 2020 09:10:18 +0200
+From: Michael Walle <michael@walle.cc>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
+ controller
+In-Reply-To: <20200609194505.GQ4106@dell>
+References: <dc052a5c77171014ecc465b1da8b7ef8@walle.cc>
+ <20200608082827.GB3567@dell>
+ <CAHp75VdiH=J-ovCdh1RFJDW_bJM8=pbXRaHmB691GLb-5oBmYQ@mail.gmail.com>
+ <7d7feb374cbf5a587dc1ce65fc3ad672@walle.cc> <20200608185651.GD4106@dell>
+ <32231f26f7028d62aeda8fdb3364faf1@walle.cc> <20200609064735.GH4106@dell>
+ <32287ac0488f7cbd5a7d1259c284e554@walle.cc> <20200609151941.GM4106@dell>
+ <95e6ec9bbdf6af7a9ff9c31786f743f2@walle.cc> <20200609194505.GQ4106@dell>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <3a6931248f0efcaf8efbb5425a9bd833@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_234639_450481_6D095462 
-X-CRM114-Status: GOOD (  22.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_001045_221976_D0A8E087 
+X-CRM114-Status: GOOD (  29.79  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,7 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,154 +86,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maoguang Meng <maoguang.meng@mediatek.com>,
- Will Deacon <will.deacon@arm.com>, youlin.pei@mediatek.com,
- Irui Wang <irui.wang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
- Joerg Roedel <joro@8bytes.org>, Evan Green <evgreen@chromium.org>,
- eizan@chromium.org, Matthias Kaehlcke <mka@chromium.org>,
- Yong Wu <yong.wu@mediatek.com>, devicetree@vger.kernel.org,
- cui.zhang@mediatek.com, Tomasz Figa <tfiga@google.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- ming-fan.chen@mediatek.com, "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, anan.sun@mediatek.com,
- srv_heupstream@mediatek.com, LKML <linux-kernel@vger.kernel.org>,
- chao.hao@mediatek.com, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>,
+ Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ =?UTF-8?Q?Uwe_Kleine-K?= =?UTF-8?Q?=C3=B6nig?=
+ <u.kleine-koenig@pengutronix.de>, david.m.ertman@intel.com,
+ Guenter Roeck <linux@roeck-us.net>, devicetree <devicetree@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, shiraz.saleem@intel.com,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 6:21 AM Rob Herring <robh@kernel.org> wrote:
->
-> On Sat, May 30, 2020 at 04:10:02PM +0800, Yong Wu wrote:
-> > From: Maoguang Meng <maoguang.meng@mediatek.com>
-> >
-> > Update binding document since the avc and vp8 hardware encoder in
-> > mt8173 are now separated. Separate "mediatek,mt8173-vcodec-enc" to
-> > "mediatek,mt8173-vcodec-vp8-enc" and "mediatek,mt8173-vcodec-avc-enc".
->
-> The h/w suddenly split in 2? You are breaking compatibility. Up to the
-> Mediatek maintainers to decide if that's okay, but you need to state you
-> are breaking compatibility (here and in the driver) and why that is
-> okay.
+Am 2020-06-09 21:45, schrieb Lee Jones:
+> On Tue, 09 Jun 2020, Michael Walle wrote:
+> 
+>> Am 2020-06-09 17:19, schrieb Lee Jones:
+>> > On Tue, 09 Jun 2020, Michael Walle wrote:
+>> >
+>> > > Am 2020-06-09 08:47, schrieb Lee Jones:
+>> > > > On Mon, 08 Jun 2020, Michael Walle wrote:
+>> > > >
+>> > > > > Am 2020-06-08 20:56, schrieb Lee Jones:
+>> > > > > > On Mon, 08 Jun 2020, Michael Walle wrote:
+>> > > > > >
+>> > > > > > > Am 2020-06-08 12:02, schrieb Andy Shevchenko:
+>> > > > > > > > +Cc: some Intel people WRT our internal discussion about similar
+>> > > > > > > > problem and solutions.
+>> > > > > > > >
+>> > > > > > > > On Mon, Jun 8, 2020 at 11:30 AM Lee Jones <lee.jones@linaro.org> wrote:
+>> > > > > > > > > On Sat, 06 Jun 2020, Michael Walle wrote:
+>> > > > > > > > > > Am 2020-06-06 13:46, schrieb Mark Brown:
+>> > > > > > > > > > > On Fri, Jun 05, 2020 at 10:07:36PM +0200, Michael Walle wrote:
+>> > > > > > > > > > > > Am 2020-06-05 12:50, schrieb Mark Brown:
+>> > > > > > > >
+>> > > > > > > > ...
+>> > > > > > > >
+>> > > > > > > > > Right.  I'm suggesting a means to extrapolate complex shared and
+>> > > > > > > > > sometimes intertwined batches of register sets to be consumed by
+>> > > > > > > > > multiple (sub-)devices spanning different subsystems.
+>> > > > > > > > >
+>> > > > > > > > > Actually scrap that.  The most common case I see is a single Regmap
+>> > > > > > > > > covering all child-devices.
+>> > > > > > > >
+>> > > > > > > > Yes, because often we need a synchronization across the entire address
+>> > > > > > > > space of the (parent) device in question.
+>> > > > > > > >
+>> > > > > > > > >  It would be great if there was a way in
+>> > > > > > > > > which we could make an assumption that the entire register address
+>> > > > > > > > > space for a 'tagged' (MFD) device is to be shared (via Regmap) between
+>> > > > > > > > > each of the devices described by its child-nodes.  Probably by picking
+>> > > > > > > > > up on the 'simple-mfd' compatible string in the first instance.
+>> > > > > > > > >
+>> > > > > > > > > Rob, is the above something you would contemplate?
+>> > > > > > > > >
+>> > > > > > > > > Michael, do your register addresses overlap i.e. are they intermingled
+>> > > > > > > > > with one another?  Do multiple child devices need access to the same
+>> > > > > > > > > registers i.e. are they shared?
+>> > > > > > >
+>> > > > > > > No they don't overlap, expect for maybe the version register, which is
+>> > > > > > > just there once and not per function block.
+>> > > > > >
+>> > > > > > Then what's stopping you having each device Regmap their own space?
+>> > > > >
+>> > > > > Because its just one I2C device, AFAIK thats not possible, right?
+>> > > >
+>> > > > Not sure what (if any) the restrictions are.
+>> > >
+>> > > You can only have one device per I2C address. Therefore, I need one
+>> > > device
+>> > > which is enumerated by the I2C bus, which then enumerates its
+>> > > sub-devices.
+>> > > I thought this was one of the use cases for MFD. (Regardless of how a
+>> > > sub-device access its registers). So even in the "simple-regmap"
+>> > > case this
+>> > > would need to be an i2c device.
+>> 
+>> Here (see below)
+> 
+> Yes, it should still be an I2C device.
+> 
+>> > >
+>> > > E.g.
+>> > >
+>> > > &i2cbus {
+>> > >   mfd-device@10 {
+>> > >     compatible = "simple-regmap", "simple-mfd";
+>> > >     reg = <10>;
+>> > >     regmap,reg-bits = <8>;
+>> > >     regmap,val-bits = <8>;
+>> > >     sub-device@0 {
+>> > >       compatible = "vendor,sub-device0";
+>> > >       reg = <0>;
+>> > >     };
+>> > >     ...
+>> > > };
+>> > >
+>> > > Or if you just want the regmap:
+>> > >
+>> > > &soc {
+>> > >   regmap: regmap@fff0000 {
+>> > >     compatible = "simple-regmap";
+>> > >     reg = <0xfff0000>;
+>> > >     regmap,reg-bits = <16>;
+>> > >     regmap,val-bits = <32>;
+>> > >   };
+>> > >
+>> > >   enet-which-needs-syscon-too@1000000 {
+>> > >     vendor,ctrl-regmap = <&regmap>;
+>> > >   };
+>> > > };
+>> > >
+>> > > Similar to the current syscon (which is MMIO only..).
+>> >
+>> > We do not need a 'simple-regmap' solution for your use-case.
+>> >
+>> > Since your device's registers are segregated, just split up the
+>> > register map and allocate each sub-device with it's own slice.
+>> 
+>> I don't get it, could you make a device tree example for my
+>> use-case? (see also above)
+> 
+>     &i2cbus {
+>         mfd-device@10 {
+>             compatible = "simple-mfd";
+>             reg = <10>;
+> 
+>             sub-device@10 {
+>                 compatible = "vendor,sub-device";
+>                 reg = <10>;
+>             };
+>    };
+> 
+> The Regmap config would be present in each of the child devices.
+> 
+> Each child device would call devm_regmap_init_i2c() in .probe().
 
-In my understanding there is no real hardware using the old bindings
-at the moment, and the split is indeed a reflection of the actual
-hardware layout. Tiffany, can you give your acked-by if this change is
-ok with you?
+Ah, I see. If I'm not wrong, this still means to create an i2c
+device driver with the name "simple-mfd".
 
->
-> >
-> > This is a preparing patch for smi cleaning up "mediatek,larb".
-> >
-> > Signed-off-by: Maoguang Meng <maoguang.meng@mediatek.com>
-> > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> > Signed-off-by: Irui Wang <irui.wang@mediatek.com>
-> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> > ---
-> >  .../devicetree/bindings/media/mediatek-vcodec.txt  | 58 ++++++++++++----------
-> >  1 file changed, 31 insertions(+), 27 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/media/mediatek-vcodec.txt b/Documentation/devicetree/bindings/media/mediatek-vcodec.txt
-> > index 8093335..1023740 100644
-> > --- a/Documentation/devicetree/bindings/media/mediatek-vcodec.txt
-> > +++ b/Documentation/devicetree/bindings/media/mediatek-vcodec.txt
-> > @@ -4,7 +4,9 @@ Mediatek Video Codec is the video codec hw present in Mediatek SoCs which
-> >  supports high resolution encoding and decoding functionalities.
-> >
-> >  Required properties:
-> > -- compatible : "mediatek,mt8173-vcodec-enc" for MT8173 encoder
-> > +- compatible : must be one of the following string:
-> > +  "mediatek,mt8173-vcodec-vp8-enc" for mt8173 vp8 encoder.
-> > +  "mediatek,mt8173-vcodec-avc-enc" for mt8173 avc encoder.
-> >    "mediatek,mt8183-vcodec-enc" for MT8183 encoder.
-> >    "mediatek,mt8173-vcodec-dec" for MT8173 decoder.
-> >  - reg : Physical base address of the video codec registers and length of
-> > @@ -13,10 +15,11 @@ Required properties:
-> >  - mediatek,larb : must contain the local arbiters in the current Socs.
-> >  - clocks : list of clock specifiers, corresponding to entries in
-> >    the clock-names property.
-> > -- clock-names: encoder must contain "venc_sel_src", "venc_sel",,
-> > -  "venc_lt_sel_src", "venc_lt_sel", decoder must contain "vcodecpll",
-> > -  "univpll_d2", "clk_cci400_sel", "vdec_sel", "vdecpll", "vencpll",
-> > -  "venc_lt_sel", "vdec_bus_clk_src".
-> > +- clock-names:
-> > +   avc venc must contain "venc_sel";
-> > +   vp8 venc must contain "venc_lt_sel";
-> > +   decoder  must contain "vcodecpll", "univpll_d2", "clk_cci400_sel",
-> > +   "vdec_sel", "vdecpll", "vencpll", "venc_lt_sel", "vdec_bus_clk_src".
-> >  - iommus : should point to the respective IOMMU block with master port as
-> >    argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-> >    for details.
-> > @@ -80,14 +83,10 @@ vcodec_dec: vcodec@16000000 {
-> >      assigned-clock-rates = <0>, <0>, <0>, <1482000000>, <800000000>;
-> >    };
-> >
-> > -  vcodec_enc: vcodec@18002000 {
-> > -    compatible = "mediatek,mt8173-vcodec-enc";
-> > -    reg = <0 0x18002000 0 0x1000>,    /*VENC_SYS*/
-> > -          <0 0x19002000 0 0x1000>;    /*VENC_LT_SYS*/
-> > -    interrupts = <GIC_SPI 198 IRQ_TYPE_LEVEL_LOW>,
-> > -              <GIC_SPI 202 IRQ_TYPE_LEVEL_LOW>;
-> > -    mediatek,larb = <&larb3>,
-> > -                 <&larb5>;
-> > +vcodec_enc: vcodec@18002000 {
-> > +    compatible = "mediatek,mt8173-vcodec-avc-enc";
-> > +    reg = <0 0x18002000 0 0x1000>;
-> > +    interrupts = <GIC_SPI 198 IRQ_TYPE_LEVEL_LOW>;
-> >      iommus = <&iommu M4U_PORT_VENC_RCPU>,
-> >               <&iommu M4U_PORT_VENC_REC>,
-> >               <&iommu M4U_PORT_VENC_BSDMA>,
-> > @@ -98,8 +97,20 @@ vcodec_dec: vcodec@16000000 {
-> >               <&iommu M4U_PORT_VENC_REF_LUMA>,
-> >               <&iommu M4U_PORT_VENC_REF_CHROMA>,
-> >               <&iommu M4U_PORT_VENC_NBM_RDMA>,
-> > -             <&iommu M4U_PORT_VENC_NBM_WDMA>,
-> > -             <&iommu M4U_PORT_VENC_RCPU_SET2>,
-> > +             <&iommu M4U_PORT_VENC_NBM_WDMA>;
-> > +    mediatek,larb = <&larb3>;
-> > +    mediatek,vpu = <&vpu>;
-> > +    clocks = <&topckgen CLK_TOP_VENC_SEL>;
-> > +    clock-names = "venc_sel";
-> > +    assigned-clocks = <&topckgen CLK_TOP_VENC_SEL>;
-> > +    assigned-clock-parents = <&topckgen CLK_TOP_VCODECPLL>;
-> > +  };
-> > +
-> > +vcodec_enc_lt: vcodec@19002000 {
-> > +    compatible = "mediatek,mt8173-vcodec-vp8-enc";
-> > +    reg =  <0 0x19002000 0 0x1000>;  /* VENC_LT_SYS */
-> > +    interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_LOW>;
-> > +    iommus = <&iommu M4U_PORT_VENC_RCPU_SET2>,
-> >               <&iommu M4U_PORT_VENC_REC_FRM_SET2>,
-> >               <&iommu M4U_PORT_VENC_BSDMA_SET2>,
-> >               <&iommu M4U_PORT_VENC_SV_COMA_SET2>,
-> > @@ -108,17 +119,10 @@ vcodec_dec: vcodec@16000000 {
-> >               <&iommu M4U_PORT_VENC_CUR_CHROMA_SET2>,
-> >               <&iommu M4U_PORT_VENC_REF_LUMA_SET2>,
-> >               <&iommu M4U_PORT_VENC_REC_CHROMA_SET2>;
-> > +    mediatek,larb = <&larb5>;
-> >      mediatek,vpu = <&vpu>;
-> > -    clocks = <&topckgen CLK_TOP_VENCPLL_D2>,
-> > -             <&topckgen CLK_TOP_VENC_SEL>,
-> > -             <&topckgen CLK_TOP_UNIVPLL1_D2>,
-> > -             <&topckgen CLK_TOP_VENC_LT_SEL>;
-> > -    clock-names = "venc_sel_src",
-> > -                  "venc_sel",
-> > -                  "venc_lt_sel_src",
-> > -                  "venc_lt_sel";
-> > -    assigned-clocks = <&topckgen CLK_TOP_VENC_SEL>,
-> > -                      <&topckgen CLK_TOP_VENC_LT_SEL>;
-> > -    assigned-clock-parents = <&topckgen CLK_TOP_VENCPLL_D2>,
-> > -                             <&topckgen CLK_TOP_UNIVPLL1_D2>;
-> > +    clocks = <&topckgen CLK_TOP_VENC_LT_SEL>;
-> > +    clock-names = "venc_lt_sel";
-> > +    assigned-clocks = <&topckgen CLK_TOP_VENC_LT_SEL>;
-> > +    assigned-clock-parents = <&topckgen CLK_TOP_VCODECPLL_370P5>;
-> >    };
-> > --
-> > 1.9.1
+Besides that, I don't like this, because:
+  - Rob already expressed its concerns with "simple-mfd" and so on.
+  - you need to duplicate the config in each sub device
+  - which also means you are restricting the sub devices to be
+    i2c only (unless you implement and duplicate other regmap configs,
+    too). For this driver, SPI and MMIO may be viable options.
+
+Thus, I'd rather implement a simple-mfd.c which implement a common
+I2C driver for now and populate its children using
+devm_of_platform_populate(). This could be extended to support other
+type of regmaps like SPI in the future.
+
+Also some MFD drivers could be moved to this, a likely candidate is
+the smsc-ece1099.c. Although I don't really understand its purpose,
+if don't have CONFIG_OF.
+
+Judging from the existing code, this simple-mfd.c wouldn't just be
+"a list of compatible" strings but also additional quirks and tweaks
+for particular devices in this list.
+
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
