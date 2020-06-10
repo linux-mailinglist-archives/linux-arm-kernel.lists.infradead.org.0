@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A1141F596A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 18:50:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DE0B1F5975
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 18:52:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
-	:In-Reply-To:References:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BpIFmviWNdp9j44vZUczh5VU9iPBVb6ba2IGX5BSFik=; b=qXe+rPWEJp1DHV
-	46BbEaC5VmiF8M2l2O49RuM/PIcPVJZvTjnNtZv077RQQ2b1fTXAjt/lqXSV/pgeBMET7VBw25vZ9
-	Z90CsUdME6fyjIdWXk4C4PQFd97nkzKpm1EKVDtk9jkYCKfZ3udquFnbu8lfQUi0/8EY/xKEaD9w6
-	Ipqz9Anv0A/K3d67W3paDNan3zRpJ3Gmljp1B97A0Y8ST3RbW37WusxMuCdRzdoDUyxjF65vHtzFX
-	2xc0Dn8LYt4foP4J1ZlRVci9qXZo0xz45nIhGf1i/4iNDKoPBDXG3t3yMcp3Ywhmy2pobb5oxWoMM
-	icQTeXLcVItKP/P27Fgg==;
+	List-Owner; bh=JnStK8XD5XsEAA4ohHbnjccDKttfrgK4x4wstCKDU8k=; b=p5AkIAQdLv1CPh
+	JCfLCSoYhnVyf/jRIeADYx2flRaY0FhE03qH0C1W2pCwjGIaV5YUleHXCzuTscuQUOi/jbOFDXPlR
+	5/k83K0z4tATGE0FjD8LbafMlWXA+fVEF4BnnvofGQzZ1MmIYWyF/1Era/L7JySBZqhnDC2XIeNRr
+	ntOqBR90p4wsme4U3ZflR4gYelokJ2R06S3+NDWyT/RIv/zhhq7eWyOuwcCDd7+oqZnoPKdNYq7VG
+	6kmk0t1Lbpi3/bDZTN6vzblk0eEyFZMl7wU/aH6yMfl0XpEztdTxKSO8UNJrjYnKKNkQD1aTORpxo
+	BSEgeVEqED7vsbg6s3jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj3vL-0003lk-LM; Wed, 10 Jun 2020 16:49:59 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jj3xs-0006bl-T1; Wed, 10 Jun 2020 16:52:36 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj3v6-0003jA-Q7
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 16:49:47 +0000
-Received: by mail-lf1-x144.google.com with SMTP id 82so1871442lfh.2
+ id 1jj3xg-0006aZ-Kb
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 16:52:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1591807942;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=EMwUauau342Zml1K34QLPe12sp1DuwpV44r+JLoVGLk=;
+ b=LIQhiR/LoXbRxeitE2BTaGN1RrZbtBiVeHkyNNFh2w7ArnVozYeAE3DslXJmIGSMoiNz+3
+ MDSnQKCug0sHl5iq0HEU2cqH8y9hKXXebT9OSXytJf3O+SRwGuZudpeNIHw8/r50xc97ct
+ OiF/mnghH4V2mn3IRMknLCbhZGx/avk=
+Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
+ [209.85.219.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-197-M314Va8EMQ6FVSPy5g449g-1; Wed, 10 Jun 2020 12:50:28 -0400
+X-MC-Unique: M314Va8EMQ6FVSPy5g449g-1
+Received: by mail-qv1-f72.google.com with SMTP id v1so2307283qvx.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 09:49:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=from:references:in-reply-to:mime-version:thread-index:date
- :message-id:subject:to:cc;
- bh=91n3/Zl9eLHHH5qIw3vnPWPSc0rFiBL6Qnqh8RW28VM=;
- b=WeB/IASBAmThwXzK2oTtBvqWprtOfGeXH+riXG/DfFGVe6+jGpcj9sKI97hrAmf8X5
- FdqSEJJndQlfJojZe1IJEMD6koy/GdH9p37fB1JD8bz5sJ8awhnfcnKZnX6YwM729L7N
- tQ9zSh4N/FKvn7BIihcEjGBfW4lhXWSBQflx4=
+ Wed, 10 Jun 2020 09:50:27 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:references:in-reply-to:mime-version
- :thread-index:date:message-id:subject:to:cc;
- bh=91n3/Zl9eLHHH5qIw3vnPWPSc0rFiBL6Qnqh8RW28VM=;
- b=REFy5Wc/Jd74yt9PKoNaiyXyBBJztnesw2kJsmY4YRxV2IL2b/umfzZXsLILUmFnma
- dPuQx0nbSOxQmvxbIU7acHOSrbEpiqTXancA5zWfRmKDCiG4lTv/zrBl3nN1g6q7CM4E
- bYzJX/ztPb78QSCdXjnyx0BZd6hLCT9VY9e+PK3nY/gHUysqltwGQlYRMmIfQpfsT6o6
- 9KXAoEkVNshRsmTa2Pn++idxbamd2Kz3gY6x6mE9zu7nSSaOEy+ekjm+cyJF85bmdiXg
- k3WdoGBtEkoAjTadmn3aAyPIurkAr9d884WslbwcubwbkRFt39fSv8ueIpkXW4/oRL82
- 9p/g==
-X-Gm-Message-State: AOAM5316UFOxIADYxL0/CpO0UWUckjmZjsUw/WS39kTqrvFGlfMQT5IB
- MwepfvF6qzn/b6+OrqH7vgpfyHzdj4rJS9mypMuw5w==
-X-Google-Smtp-Source: ABdhPJzjDdNu+vWCgQ02I2W89ieHop/hf2pH7D+LXZz0azQiY1HeTCeyqmrjp37878ajgSWGVFawehOf8nD0kbTJq7M=
-X-Received: by 2002:a05:6512:20d:: with SMTP id
- a13mr2227655lfo.36.1591807782586; 
- Wed, 10 Jun 2020 09:49:42 -0700 (PDT)
-From: Bharat Gooty <bharat.gooty@broadcom.com>
-References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
- <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
- <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
- <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
- <f791e777-781c-86ce-7619-1de3fe3e7b90@arm.com>
- <351975548.1986001.1578682810951.JavaMail.zimbra@redhat.com>
- <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
- <974f3601-25f8-f4e6-43a8-ff4275e9c174@arm.com>
- <CACi5LpOK6Q3ud3M3zakexLJNOtHy9TODHyYSHVwE3JHVakKzqA@mail.gmail.com>
- <d401b003-af3e-c525-ba00-0de48486b7a0@broadcom.com>
- f644ddb6fdb926606bb376a9f491ee79@mail.gmail.com
-In-Reply-To: f644ddb6fdb926606bb376a9f491ee79@mail.gmail.com
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=EMwUauau342Zml1K34QLPe12sp1DuwpV44r+JLoVGLk=;
+ b=YhJvC7qI1kM9UZ9TW6gt8ts7UOb3M3j3ZM+Teltj0zugx9Aqt8scrdcEgwxV6ZyuMP
+ sqMQQHG56KiajF6/vXHmhuTnv9VkrJgNapDSrE6VjHtNidVjrwXs4ZlSPHjtWNYiAfXy
+ JDtohOqAWsFC61RFQhssr/zvXkOQRbIFz1I0vUJCjHeshLqODTD7ktB6Oq0NKGhABoCa
+ iH9Rovt9uG3E+az4U+pgUyXExC9dS+fkjXb730KkJ5lM81hs23QPfiYxTaNcEZrXD5j4
+ ZJEoN19YhBGiFC5Uw1PcRVc57O+Q+oPimpFdoEedGpH28AakdWtLpvSeJXXT2bqD+l4V
+ DE6Q==
+X-Gm-Message-State: AOAM533zrhkm/vl3R2E70K3ogHg25uudGTks4HrjQEFTzNrZJYsvYzK1
+ I+tByYAXcU9qdezDGAozdNIESSPDxG3ksc8pLz/mPTJzWTl1Iu9H3moLqf+dugf8u5IyK4BfN56
+ qwpaB9RDvS/F+4AeWGpASU1dLx04n/2MszwU=
+X-Received: by 2002:a37:9cc7:: with SMTP id f190mr3987567qke.236.1591807826875; 
+ Wed, 10 Jun 2020 09:50:26 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyn20TLNz7hD3Ni4blZzJN/2PX0jI8mrO6z2/UHNbD+ObHKXkY/kSbOK73eCMc/XFP0Ereokw==
+X-Received: by 2002:a37:9cc7:: with SMTP id f190mr3987535qke.236.1591807826580; 
+ Wed, 10 Jun 2020 09:50:26 -0700 (PDT)
+Received: from xz-x1 ([2607:9880:19c0:32::2])
+ by smtp.gmail.com with ESMTPSA id 207sm149672qki.134.2020.06.10.09.50.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 10 Jun 2020 09:50:25 -0700 (PDT)
+Date: Wed, 10 Jun 2020 12:50:23 -0400
+From: Peter Xu <peterx@redhat.com>
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+Subject: Re: Possible duplicate page fault accounting on some archs after
+ commit 4064b9827063
+Message-ID: <20200610165023.GA67179@xz-x1>
+References: <20200610174811.44b94525@thinkpad>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 14.0
-Thread-Index: AQGa98r5q5qEPCZDE5DL4GJrrz9qcAGNQyRgApgGah0B/ao0mwIUlx9FAsYr/NkBJYrXxQK1AqgNAhb3920BQkNqpai3DgCQgAAEa2A=
-Date: Wed, 10 Jun 2020 22:19:40 +0530
-Message-ID: <2fd8e2d3f2805aca00cb1bd3d7b40839@mail.gmail.com>
-Subject: RE: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
- in vmcoreinfo
-To: Scott Branden <scott.branden@broadcom.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>
+In-Reply-To: <20200610174811.44b94525@thinkpad>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_094944_873103_3149CB67 
-X-CRM114-Status: GOOD (  26.57  )
+X-CRM114-CacheID: sfid-20200610_095224_757110_7A834962 
+X-CRM114-Status: GOOD (  17.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [205.139.110.61 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,6 +96,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -104,199 +109,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Bharat Gooty <bharat.gooty@broadcom.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ray Jui <ray.jui@broadcom.com>, linuxppc-dev@lists.ozlabs.org,
- James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
- bhupesh linux <bhupesh.linux@gmail.com>, Will Deacon <will@kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-arch@vger.kernel.org, linux-hexagon@vger.kernel.org,
+ Ley Foon Tan <ley.foon.tan@intel.com>, Andrea Arcangeli <aarcange@redhat.com>,
+ linux-xtensa@linux-xtensa.org, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Michal Simek <monstr@monstr.eu>, Nick Hu <nickhu@andestech.com>,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-alpha@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sorry, error message was not posted. Following is the error message
+On Wed, Jun 10, 2020 at 05:48:11PM +0200, Gerald Schaefer wrote:
+> Hi,
 
-crash: cannot determine VA_BITS_ACTUAL
+Hi, Gerald,
 
------Original Message-----
-From: Bharat Gooty [mailto:bharat.gooty@broadcom.com]
-Sent: Wednesday, June 10, 2020 10:18 PM
-To: Scott Branden; 'Bhupesh Sharma'; 'Amit Kachhap'
-Cc: 'Mark Rutland'; 'x86@kernel.org'; 'Will Deacon'; 'Linux Doc Mailing
-List'; 'Catalin Marinas'; 'Ard Biesheuvel'; 'kexec mailing list'; 'Linux
-Kernel Mailing List'; 'Kazuhito Hagio'; 'James Morse'; 'Dave Anderson';
-'bhupesh linux'; 'linuxppc-dev@lists.ozlabs.org'; 'linux-arm-kernel'; 'Steve
-Capper'; Ray Jui
-Subject: RE: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
-in vmcoreinfo
+> 
+> Some architectures have their page fault accounting code inside the fault
+> retry loop, and rely on only going through that code once. Before commit
+> 4064b9827063 ("mm: allow VM_FAULT_RETRY for multiple times"), that was
+> ensured by testing for and clearing FAULT_FLAG_ALLOW_RETRY.
+> 
+> That commit had to remove the clearing of FAULT_FLAG_ALLOW_RETRY for all
+> architectures, and introduced a subtle change to page fault accounting
+> logic in the affected archs. It is now possible to go through the retry
+> loop multiple times, and the affected archs would then account multiple
+> page faults instead of just one.
+> 
+> This was found by coincidence in s390 code, and a quick check showed that
+> there are quite a lot of other architectures that seem to be affected in a
+> similar way. I'm preparing a fix for s390, by moving the accounting behind
+> the retry loop, similar to x86. It is not completely straight-forward, so
+> I leave the fix for other archs to the respective maintainers.
 
-Hello Bhupesh,
-V6 patch set on Linux 5.7, did not help.
-I have applied makedump file
-http://lists.infradead.org/pipermail/kexec/2019-November/023963.html changes
-also (makedump-1.6.6). Tried to apply it on makedumpfile 1.6.7.  Patch set_2
-failed. Would like to know, if you have V5 patch set for makedump file
-changes. With makedump 1.6.6, able to collect the vmore file.
-I used latest crash utility
-(https://www.redhat.com/archives/crash-utility/2019-November/msg00014.html
-changes are present)
-When I used crash utility, following is the error:
+Sorry for not noticing this before.  The accounting part should definitely be
+put at least into a check against fault_flag_allow_retry_first() to mimic what
+was done before.  And I agree it would be even better to put it after the retry
+logic, so if any of the page faults gets a major fault, it'll be accounted as a
+major fault which makes more sense to me, just like what x86 is doing now with:
 
-Thanks,
--Bharat
+	major |= fault & VM_FAULT_MAJOR;
 
+I'm not sure what's the preference of the arch maintainers, just let me know if
+it's preferred to use a single series to address this issue for all affected
+archs (or the archs besides s390), then I'll do.
 
------Original Message-----
-From: Scott Branden [mailto:scott.branden@broadcom.com]
-Sent: Thursday, April 30, 2020 4:34 AM
-To: Bhupesh Sharma; Amit Kachhap
-Cc: Mark Rutland; x86@kernel.org; Will Deacon; Linux Doc Mailing List;
-Catalin Marinas; Ard Biesheuvel; kexec mailing list; Linux Kernel Mailing
-List; Kazuhito Hagio; James Morse; Dave Anderson; bhupesh linux;
-linuxppc-dev@lists.ozlabs.org; linux-arm-kernel; Steve Capper; Ray Jui;
-Bharat Gooty
-Subject: Re: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
-in vmcoreinfo
+Thanks!
 
-Hi Bhupesh,
+-- 
+Peter Xu
 
-On 2020-02-23 10:25 p.m., Bhupesh Sharma wrote:
-> Hi Amit,
->
-> On Fri, Feb 21, 2020 at 2:36 PM Amit Kachhap <amit.kachhap@arm.com> wrote:
->> Hi Bhupesh,
->>
->> On 1/13/20 5:44 PM, Bhupesh Sharma wrote:
->>> Hi James,
->>>
->>> On 01/11/2020 12:30 AM, Dave Anderson wrote:
->>>> ----- Original Message -----
->>>>> Hi Bhupesh,
->>>>>
->>>>> On 25/12/2019 19:01, Bhupesh Sharma wrote:
->>>>>> On 12/12/2019 04:02 PM, James Morse wrote:
->>>>>>> On 29/11/2019 19:59, Bhupesh Sharma wrote:
->>>>>>>> vabits_actual variable on arm64 indicates the actual VA space size,
->>>>>>>> and allows a single binary to support both 48-bit and 52-bit VA
->>>>>>>> spaces.
->>>>>>>>
->>>>>>>> If the ARMv8.2-LVA optional feature is present, and we are running
->>>>>>>> with a 64KB page size; then it is possible to use 52-bits of
->>>>>>>> address
->>>>>>>> space for both userspace and kernel addresses. However, any kernel
->>>>>>>> binary that supports 52-bit must also be able to fall back to
->>>>>>>> 48-bit
->>>>>>>> at early boot time if the hardware feature is not present.
->>>>>>>>
->>>>>>>> Since TCR_EL1.T1SZ indicates the size offset of the memory region
->>>>>>>> addressed by TTBR1_EL1 (and hence can be used for determining the
->>>>>>>> vabits_actual value) it makes more sense to export the same in
->>>>>>>> vmcoreinfo rather than vabits_actual variable, as the name of the
->>>>>>>> variable can change in future kernel versions, but the
->>>>>>>> architectural
->>>>>>>> constructs like TCR_EL1.T1SZ can be used better to indicate
->>>>>>>> intended
->>>>>>>> specific fields to user-space.
->>>>>>>>
->>>>>>>> User-space utilities like makedumpfile and crash-utility, need to
->>>>>>>> read/write this value from/to vmcoreinfo
->>>>>>> (write?)
->>>>>> Yes, also write so that the vmcoreinfo from an (crashing) arm64
->>>>>> system can
->>>>>> be used for
->>>>>> analysis of the root-cause of panic/crash on say an x86_64 host using
->>>>>> utilities like
->>>>>> crash-utility/gdb.
->>>>> I read this as as "User-space [...] needs to write to vmcoreinfo".
->>> That's correct. But for writing to vmcore dump in the kdump kernel, we
->>> need to read the symbols from the vmcoreinfo in the primary kernel.
->>>
->>>>>>>> for determining if a virtual address lies in the linear map range.
->>>>>>> I think this is a fragile example. The debugger shouldn't need to
->>>>>>> know
->>>>>>> this.
->>>>>> Well that the current user-space utility design, so I am not sure we
->>>>>> can
->>>>>> tweak that too much.
->>>>>>
->>>>>>>> The user-space computation for determining whether an address lies
->>>>>>>> in
->>>>>>>> the linear map range is the same as we have in kernel-space:
->>>>>>>>
->>>>>>>>      #define __is_lm_address(addr)    (!(((u64)addr) &
->>>>>>>> BIT(vabits_actual -
->>>>>>>>      1)))
->>>>>>> This was changed with 14c127c957c1 ("arm64: mm: Flip kernel VA
->>>>>>> space"). If
->>>>>>> user-space
->>>>>>> tools rely on 'knowing' the kernel memory layout, they must have to
->>>>>>> constantly be fixed
->>>>>>> and updated. This is a poor argument for adding this to something
->>>>>>> that
->>>>>>> ends up as ABI.
->>>>>> See above. The user-space has to rely on some ABI/guaranteed
->>>>>> hardware-symbols which can be
->>>>>> used for 'determining' the kernel memory layout.
->>>>> I disagree. Everything and anything in the kernel will change. The
->>>>> ABI rules apply to
->>>>> stuff exposed via syscalls and kernel filesystems. It does not apply
->>>>> to kernel internals,
->>>>> like the memory layout we used yesterday. 14c127c957c1 is a case in
->>>>> point.
->>>>>
->>>>> A debugger trying to rely on this sort of thing would have to play
->>>>> catchup whenever it
->>>>> changes.
->>>> Exactly.  That's the whole point.
->>>>
->>>> The crash utility and makedumpfile are not in the same league as other
->>>> user-space tools.
->>>> They have always had to "play catchup" precisely because they depend
->>>> upon kernel internals,
->>>> which constantly change.
->>> I agree with you and DaveA here. Software user-space debuggers are
->>> dependent on kernel internals (which can change from time-to-time) and
->>> will have to play catch-up (which has been the case since the very
->>> start).
->>>
->>> Unfortunately we don't have any clear ABI for software debugging tools -
->>> may be something to look for in future.
->>>
->>> A case in point is gdb/kgdb, which still needs to run with KASLR
->>> turned-off (nokaslr) for debugging, as it confuses gdb which resolve
->>> kernel symbol address from symbol table of vmlinux. But we can
->>> work-around the same in makedumpfile/crash by reading the 'kaslr_offset'
->>> value. And I have several users telling me now they cannot use gdb on
->>> KASLR enabled kernel to debug panics, but can makedumpfile + crash
->>> combination to achieve the same.
->>>
->>> So, we should be looking to fix these utilities which are broken since
->>> the 52-bit changes for arm64. Accordingly, I will try to send the v6
->>> soon while incorporating the comments posted on the v5.
->> Any update on the next v6 version. Since this patch series is fixing the
->> current broken kdump so need this series to add some more fields in
->> vmcoreinfo for Pointer Authentication work.
-> Sorry for the delay. I was caught up in some other urgent arm64
-> user-space issues.
-> I am preparing the v6 now and hopefully will be able to post it out
-> for review later today.
-
-Did v6 get sent out?
-
->
-> Thanks,
-> Bhupesh
->
->
-Regards,
-Scott
 
 _______________________________________________
 linux-arm-kernel mailing list
