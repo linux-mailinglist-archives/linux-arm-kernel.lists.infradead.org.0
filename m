@@ -2,102 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DE0B1F5975
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 18:52:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25EBE1F5983
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 18:54:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JnStK8XD5XsEAA4ohHbnjccDKttfrgK4x4wstCKDU8k=; b=p5AkIAQdLv1CPh
-	JCfLCSoYhnVyf/jRIeADYx2flRaY0FhE03qH0C1W2pCwjGIaV5YUleHXCzuTscuQUOi/jbOFDXPlR
-	5/k83K0z4tATGE0FjD8LbafMlWXA+fVEF4BnnvofGQzZ1MmIYWyF/1Era/L7JySBZqhnDC2XIeNRr
-	ntOqBR90p4wsme4U3ZflR4gYelokJ2R06S3+NDWyT/RIv/zhhq7eWyOuwcCDd7+oqZnoPKdNYq7VG
-	6kmk0t1Lbpi3/bDZTN6vzblk0eEyFZMl7wU/aH6yMfl0XpEztdTxKSO8UNJrjYnKKNkQD1aTORpxo
-	BSEgeVEqED7vsbg6s3jg==;
+	List-Owner; bh=KB3Hia0pnf6hv22uQoYT9WxrH0m4gT9im+s+YLyDajY=; b=MIxcv16DpbCfLZ
+	nxjcUkNJjRpirKo8DM1fSkyz7ZEAic9Dx58/RNj0aZti7VBXhAG6GouE0Jheta4N8HLKYgb3G/gQx
+	ldHy72FJgqFuO9lb8qNBLJOnsTGZN6r7dTrlNBDV5pnxbUQZMSBRCQnz0wrhYFmmONMQqvN5Z4DP7
+	NaJH7iFpK27Ap3jT/HSCe3Q45vb1Pe5ycC4wFyg3c7iikG1XNPKOttTTlfp9cxVCF1EHXeAhRpuS2
+	qmHWNimpr1cI6kDHyFYLV5ydMbECB46te0itbc7Yazy44Llv51kP9EbnhiKDa/zk+rhKx9SnO+wrJ
+	x5lZ401/HqlEvA0dmsiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj3xs-0006bl-T1; Wed, 10 Jun 2020 16:52:36 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jj3zW-000764-6p; Wed, 10 Jun 2020 16:54:18 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj3xg-0006aZ-Kb
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 16:52:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591807942;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=EMwUauau342Zml1K34QLPe12sp1DuwpV44r+JLoVGLk=;
- b=LIQhiR/LoXbRxeitE2BTaGN1RrZbtBiVeHkyNNFh2w7ArnVozYeAE3DslXJmIGSMoiNz+3
- MDSnQKCug0sHl5iq0HEU2cqH8y9hKXXebT9OSXytJf3O+SRwGuZudpeNIHw8/r50xc97ct
- OiF/mnghH4V2mn3IRMknLCbhZGx/avk=
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
- [209.85.219.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-197-M314Va8EMQ6FVSPy5g449g-1; Wed, 10 Jun 2020 12:50:28 -0400
-X-MC-Unique: M314Va8EMQ6FVSPy5g449g-1
-Received: by mail-qv1-f72.google.com with SMTP id v1so2307283qvx.8
+ id 1jj3zO-00075N-0r
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 16:54:11 +0000
+Received: by mail-lj1-x244.google.com with SMTP id s1so3402037ljo.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 09:50:27 -0700 (PDT)
+ Wed, 10 Jun 2020 09:54:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PGXejVSpqx4L2PlHIfd5JVBtSOWL/TuutZfvvE958Z8=;
+ b=ZFce94Usj6EkI4Lk9l8ZbLgBKcrOaOEIKI+lsoHoWwucoH5PaFSFEUF5nSpDfmtX/m
+ zpiTKIsyT2HuVYK0uUKJl0hfSDP//4+ueTqu4gfQUH9jmW1Fx7086RKZCkNC01IFk27w
+ 7I94+DibpxplQFqh0putGbec4FKBVLxsfzedA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=EMwUauau342Zml1K34QLPe12sp1DuwpV44r+JLoVGLk=;
- b=YhJvC7qI1kM9UZ9TW6gt8ts7UOb3M3j3ZM+Teltj0zugx9Aqt8scrdcEgwxV6ZyuMP
- sqMQQHG56KiajF6/vXHmhuTnv9VkrJgNapDSrE6VjHtNidVjrwXs4ZlSPHjtWNYiAfXy
- JDtohOqAWsFC61RFQhssr/zvXkOQRbIFz1I0vUJCjHeshLqODTD7ktB6Oq0NKGhABoCa
- iH9Rovt9uG3E+az4U+pgUyXExC9dS+fkjXb730KkJ5lM81hs23QPfiYxTaNcEZrXD5j4
- ZJEoN19YhBGiFC5Uw1PcRVc57O+Q+oPimpFdoEedGpH28AakdWtLpvSeJXXT2bqD+l4V
- DE6Q==
-X-Gm-Message-State: AOAM533zrhkm/vl3R2E70K3ogHg25uudGTks4HrjQEFTzNrZJYsvYzK1
- I+tByYAXcU9qdezDGAozdNIESSPDxG3ksc8pLz/mPTJzWTl1Iu9H3moLqf+dugf8u5IyK4BfN56
- qwpaB9RDvS/F+4AeWGpASU1dLx04n/2MszwU=
-X-Received: by 2002:a37:9cc7:: with SMTP id f190mr3987567qke.236.1591807826875; 
- Wed, 10 Jun 2020 09:50:26 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJyn20TLNz7hD3Ni4blZzJN/2PX0jI8mrO6z2/UHNbD+ObHKXkY/kSbOK73eCMc/XFP0Ereokw==
-X-Received: by 2002:a37:9cc7:: with SMTP id f190mr3987535qke.236.1591807826580; 
- Wed, 10 Jun 2020 09:50:26 -0700 (PDT)
-Received: from xz-x1 ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id 207sm149672qki.134.2020.06.10.09.50.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 09:50:25 -0700 (PDT)
-Date: Wed, 10 Jun 2020 12:50:23 -0400
-From: Peter Xu <peterx@redhat.com>
-To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PGXejVSpqx4L2PlHIfd5JVBtSOWL/TuutZfvvE958Z8=;
+ b=DXdLYCn5S/fMhqUG3bvEVVjwP+ho4iQkUw7sWd4S7vt5UlyuUkP+nxucuwtGDypcMH
+ sLdCI4MGjK0AviJbcDLZ0zA9xRcuWsOzScVYy1pJP8Y11Zg4uSu9/6KJ6WNO9rLb9sX9
+ wHPZNWCRasJwKQ2EgPviYbLLFJR47u1zQWoNp+vqieowQv71q83Wp/7EyaNkShQpVKhe
+ ojpNuJ92Ue3ahV1H5p2Itb63Zdc9hEuTeV6iHbLWxQ5KuWnwKpQo4h/EogaNzrt+oR8B
+ RHfTCtxlcDudgeywzUoXkKVO2polJ680xMeCBPM/UpBqGet9se4gwgsjss5fZOwQECJ7
+ VwqQ==
+X-Gm-Message-State: AOAM533nNLK5ACidr7eckiaAx1GrkcI87y5zLQuUnlEKt7mYEAJ31q1h
+ DzbwOJrX9mYyXN0fkC/egvE1mZi+fF0=
+X-Google-Smtp-Source: ABdhPJwxX2lkSG789nUucAwwLgFe9ezU0bu/RXgtev5g0AdgR3b/ExGCKuRshYEXpEB+4/IZflG8cg==
+X-Received: by 2002:a2e:a552:: with SMTP id e18mr2216551ljn.162.1591808047684; 
+ Wed, 10 Jun 2020 09:54:07 -0700 (PDT)
+Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com.
+ [209.85.208.177])
+ by smtp.gmail.com with ESMTPSA id z13sm66024ljj.103.2020.06.10.09.54.05
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 10 Jun 2020 09:54:06 -0700 (PDT)
+Received: by mail-lj1-f177.google.com with SMTP id 9so3362110ljc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jun 2020 09:54:05 -0700 (PDT)
+X-Received: by 2002:a2e:8991:: with SMTP id c17mr1979736lji.421.1591808045437; 
+ Wed, 10 Jun 2020 09:54:05 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200610174811.44b94525@thinkpad>
+In-Reply-To: <20200610174811.44b94525@thinkpad>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Wed, 10 Jun 2020 09:53:49 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wgm0_0PjXaSVbrpDfgtn6UbDyWjSRnXvfdebweUYSZ+eA@mail.gmail.com>
+Message-ID: <CAHk-=wgm0_0PjXaSVbrpDfgtn6UbDyWjSRnXvfdebweUYSZ+eA@mail.gmail.com>
 Subject: Re: Possible duplicate page fault accounting on some archs after
  commit 4064b9827063
-Message-ID: <20200610165023.GA67179@xz-x1>
-References: <20200610174811.44b94525@thinkpad>
-MIME-Version: 1.0
-In-Reply-To: <20200610174811.44b94525@thinkpad>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_095224_757110_7A834962 
-X-CRM114-Status: GOOD (  17.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_095410_065039_A183237D 
+X-CRM114-Status: GOOD (  13.55  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.61 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,62 +101,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, linux-hexagon@vger.kernel.org,
- Ley Foon Tan <ley.foon.tan@intel.com>, Andrea Arcangeli <aarcange@redhat.com>,
- linux-xtensa@linux-xtensa.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ linux-mips@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-arch <linux-arch@vger.kernel.org>,
+ linux-hexagon@vger.kernel.org, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Andrea Arcangeli <aarcange@redhat.com>, linux-xtensa@linux-xtensa.org,
+ linux-um <linux-um@lists.infradead.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>, openrisc@lists.librecores.org,
+ Guan Xuetao <gxt@pku.edu.cn>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Michal Simek <monstr@monstr.eu>, Nick Hu <nickhu@andestech.com>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-alpha@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>
+ linux-parisc@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ alpha <linux-alpha@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 05:48:11PM +0200, Gerald Schaefer wrote:
-> Hi,
-
-Hi, Gerald,
-
-> 
-> Some architectures have their page fault accounting code inside the fault
-> retry loop, and rely on only going through that code once. Before commit
-> 4064b9827063 ("mm: allow VM_FAULT_RETRY for multiple times"), that was
-> ensured by testing for and clearing FAULT_FLAG_ALLOW_RETRY.
-> 
-> That commit had to remove the clearing of FAULT_FLAG_ALLOW_RETRY for all
-> architectures, and introduced a subtle change to page fault accounting
-> logic in the affected archs. It is now possible to go through the retry
-> loop multiple times, and the affected archs would then account multiple
-> page faults instead of just one.
-> 
+On Wed, Jun 10, 2020 at 8:48 AM Gerald Schaefer
+<gerald.schaefer@de.ibm.com> wrote:
+>
 > This was found by coincidence in s390 code, and a quick check showed that
 > there are quite a lot of other architectures that seem to be affected in a
 > similar way. I'm preparing a fix for s390, by moving the accounting behind
 > the retry loop, similar to x86. It is not completely straight-forward, so
 > I leave the fix for other archs to the respective maintainers.
 
-Sorry for not noticing this before.  The accounting part should definitely be
-put at least into a check against fault_flag_allow_retry_first() to mimic what
-was done before.  And I agree it would be even better to put it after the retry
-logic, so if any of the page faults gets a major fault, it'll be accounted as a
-major fault which makes more sense to me, just like what x86 is doing now with:
+Hmm. I wonder if we could move the handling into  handle_mm_fault() itself.
 
-	major |= fault & VM_FAULT_MAJOR;
+It's _fairly_ trivial to do on the arch side, just as long as you
+remember to make the VM_FAULT_MAJOR bit sticky like x86 does with that
 
-I'm not sure what's the preference of the arch maintainers, just let me know if
-it's preferred to use a single series to address this issue for all affected
-archs (or the archs besides s390), then I'll do.
+        major |= fault & VM_FAULT_MAJOR;
 
-Thanks!
+right after handle_mm_fault(). But it certainly doesn't seem like it
+would be hard to move into common code in handle_mm_fault() either, by
+just not doing the accounting if it's about to return VM_FAULT_RETRY
+or VM_FAULT_ERROR.
 
--- 
-Peter Xu
+That said, we want that perf_sw_event() accounting too, so we'd have
+to pass in a 'struct regs *' as well. And it's not clear which way
+accounting should go for other callers of handle_mm_fault() (ie gup
+etc).
 
+So I guess just having architectures fix it up individually and make
+sure they don't do it for retry conditions is the right thing to do..
+
+             Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
