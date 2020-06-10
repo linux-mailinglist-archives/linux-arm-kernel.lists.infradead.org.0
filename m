@@ -2,105 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D5C11F5184
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:50:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A1091F5190
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 11:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JTjVkC0AyrRy2mrpJ0PppCW8mrJkDhOdFfnTrM78U6s=; b=j46e5/RMVvZoVTncUmVyRY7ig
-	mCVfmQkkna+9eYuXwdrWFd34Inpz4bp1sIlF7CO3UQeIHRBmwJa5WmuK7UB3+AcGs4ZsM+4lOrECa
-	ZRbi+/HaU1PYvkxxZuOGXzOiwHqyRL5NHOf1vmwGHr67ocnYI3ToeZIWbuYJEcgbrjzyZ7fMndWXV
-	1feSWOSWgC0nmQuiskuCBFnd/3WE0JzNRvvsduuOMyZ+lphvg8MfmCjf4KcLGdh90ZT9/xxjbLcUP
-	SUEcmdEVXGUiGlydFw/a3npEkH2Kl1bNJ4mzt2bAP7cjDoPjHwnF/7qEG8MeKKwyZijCinmJaqLL/
-	+ccSHUqvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FgFQ4SVO/yrraNDii/fwP9dDoLBKcBzKlSi85JHkSRM=; b=AX1fXhR17VYxFx
+	Dd2zAlMKr53GvZink2cPfgiCAAtr8PI3L7mWNLJHUMQpsqgNSJ1EHqIPdFXxjqsTCeRvLV4ISG1Gx
+	zvo/oyz+FP1b5tumbyG8VP2JAFpuCVc17TJetnAmUD251R4OmClq3EIvwLXIjdQzxW9gYQF7FvvX2
+	+2tSyQHLBzTs4Ky09Ts7ead30WAvIz1OX4EMeByni5mfzRk17upTtTfuMS+g8h53qKtyGyixXBiu9
+	nvweHf0F/D6TO7bDDuH9E31wozJy30qrH2QnizOZWOiZYkJBQfPjE5sYCJwq621rK21M1QW8nhu4D
+	7TqsVlkBYzSoWMvfBzag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jixNE-0007CY-Nb; Wed, 10 Jun 2020 09:50:20 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jixPx-0007uf-Bq; Wed, 10 Jun 2020 09:53:09 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jixMz-0005Zk-VL
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:50:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591782603;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=botNO1nlLUjRUQbw+XWbs23AWcnqLx8AKm8BEyvzIAg=;
- b=CgpRQ1FiUqlYRvXACf7GsQf0U+oluBhAkz0VKlt9XX/YZiTa6dhwN1YB81rH7vkJyxzbUR
- xuvTPPmOEEG953f1A7XBYzpDH7p5Q9LaO0hPRV6WHmcG8WZA4XPH+s+mllqoqwsoRu20BG
- 6lAP34PhsUlfjt4n9Zlb1gVntK9RzRw=
-Received: from mail-ej1-f69.google.com (mail-ej1-f69.google.com
- [209.85.218.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-338-D75trqUYO06nt06ybP_nGQ-1; Wed, 10 Jun 2020 05:49:58 -0400
-X-MC-Unique: D75trqUYO06nt06ybP_nGQ-1
-Received: by mail-ej1-f69.google.com with SMTP id t4so834116ejj.12
+ id 1jixPp-0007u7-8y
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 09:53:02 +0000
+Received: by mail-lf1-x141.google.com with SMTP id z206so1080045lfc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 02:49:58 -0700 (PDT)
+ Wed, 10 Jun 2020 02:53:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VRh1o2eQq3dG1Zvvq6SPoPAkNUd6uKb8MY9HPcGIRes=;
+ b=Nw3Qv6ZGCW9xzc0Npt6Hxvu7gTXEq++EwjUUbzdPJcG6Rmm2lnOsTgbc/7UMKErZ4F
+ +d60EC7ezVyJwyo/Pzk1peeneGBaZ8vnz5rtahwqsdD/KUTlvXx5bjYirsjq4Xnsn3Rr
+ uwnTl5GvuV4QptUDJfGI/8DCMBuxlIV+m5bnOiAthlKa8T0NE5IA5N9+2r1o2H9j+SZO
+ 6s7Tf/SPrb0jZG8425cAvfz7dNt4UNaIap+YX3Ht/RTNk5ok2uM1jLbYZc0irh/r0Ggv
+ PntiBWTOV01xkayy/miHT2UwNllJSKy/nYnmMGcyJUNB4Gf9WJWJEX13zvf1sDxIwLRL
+ FnuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=botNO1nlLUjRUQbw+XWbs23AWcnqLx8AKm8BEyvzIAg=;
- b=n5pGvmNhvxhZUJ4UAm3hKPqBE1uwZQoN9uN3I0x+O3V9T1N6VFav8OBg0QJ63aOinw
- AEB6hFhckqpsufRnKIgT76MRUmmBFY3ZvHD5IBPwjLTPe7gDYeOXnZG3hP5gggPRUC2t
- zyCKelXo4Q7D5b35FH0D985lN8Tkzgx0SlO/lQGzx6IRg6kBEnvCcz8zQ5LZbXwFrsOV
- gbzrfKFTO0wQw3rWJwtGwxHzdnU5aiZB/27RUiV0G7AvGXu2Cha1uj8/y0ZZiFV50x+T
- X/OkjvK0IojDvC9XNFs2P9a2HZXnVLP4MLIv0fUaXCLixF6mAYBVdYkhONa+bzx9lLf0
- G5OQ==
-X-Gm-Message-State: AOAM533ZgLiIn/29T78cB1pEk4H+2pHAF/I2WIdCV7KXwQI095ocwNzH
- LLdJE4NgEpSryJ8mjyxqhUkbzAm4RfMYatwxgV8tNqcSo7fEyUFI/ZQ/cE+Fu9M+MA26US5RMQq
- g8/BhfOJNrmUr4f92mQpwYDVjV0Yv+SzjTwc=
-X-Received: by 2002:a17:906:e247:: with SMTP id
- gq7mr2477440ejb.107.1591782597471; 
- Wed, 10 Jun 2020 02:49:57 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJwLuKTyRnDOzIwu58NCqlAlNV6D3hehW65EK1iqNwj/QcEksd5YROS78o3t4aQe67v9IROeVQ==
-X-Received: by 2002:a17:906:e247:: with SMTP id
- gq7mr2477395ejb.107.1591782597158; 
- Wed, 10 Jun 2020 02:49:57 -0700 (PDT)
-Received: from x1.localdomain
- (2001-1c00-0c0c-fe00-d2ea-f29d-118b-24dc.cable.dynamic.v6.ziggo.nl.
- [2001:1c00:c0c:fe00:d2ea:f29d:118b:24dc])
- by smtp.gmail.com with ESMTPSA id f19sm16656165edq.14.2020.06.10.02.49.55
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 10 Jun 2020 02:49:56 -0700 (PDT)
-Subject: Re: [PATCH v4 0/7] Support inhibiting input devices
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
- patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
- platform-driver-x86@vger.kernel.org
-References: <2336e15d-ff4b-bbb6-c701-dbf3aa110fcd@redhat.com>
- <20200608112211.12125-1-andrzej.p@collabora.com>
-From: Hans de Goede <hdegoede@redhat.com>
-Message-ID: <964ca07a-3da5-101f-7edf-64bdeec98a4b@redhat.com>
-Date: Wed, 10 Jun 2020 11:49:55 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VRh1o2eQq3dG1Zvvq6SPoPAkNUd6uKb8MY9HPcGIRes=;
+ b=inTgnEEgC0KucOPRbW3DZEj10jyTMd2HjCsLPUot1t78QOsQENti9gCe4zBD4vDmue
+ EfaTyU50TjzkSYhQss6RtNc9cVpPVtpiAnLkAMLyS+/lOnn6zFkdbkN4BGX1hsiW64gv
+ wIB1jJmJZWKJziI/KgWkME5EKvwBwEbSCFJ2LE4FpngZU2xjbptEtEX0jfMBJc6jD6vS
+ rBs7kaUMs2kHKqYgqmc4tLGcgtIjB++O7XpMqbi5638zsnjmTSgH/SkZN/SQL1afSasN
+ ZEZChVADrTV6YX28ZqwDgy9XJTfQb0eQ09zw2hYSwmTwIX1+dH00AiEZu6/P8tQ1GAaD
+ fZ7A==
+X-Gm-Message-State: AOAM53042br3J/iQlVlsvE+g+pnO4Ru1V0FAHMEz8G1Z4WSXpbGB1yz1
+ YhHe1yUH3iseX+/H/JU8zRZVjJN/i2A6zq4FUAhKKA==
+X-Google-Smtp-Source: ABdhPJzOMSuJGce69DNBlwY6+Eui820jOc7lQXp4MpPIfNmTvz1y18Agd0Fc44hqxES++vxVimhy/4mkOO9C2Qeirek=
+X-Received: by 2002:ac2:5473:: with SMTP id e19mr1273238lfn.21.1591782779579; 
+ Wed, 10 Jun 2020 02:52:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200608112211.12125-1-andrzej.p@collabora.com>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+References: <20200605224403.181015-1-sebastian.reichel@collabora.com>
+ <20200605224403.181015-5-sebastian.reichel@collabora.com>
+In-Reply-To: <20200605224403.181015-5-sebastian.reichel@collabora.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 10 Jun 2020 11:52:48 +0200
+Message-ID: <CACRpkdZWZ196LC8gBv_cUs2=h1Dvko_1Z4y2z571BaDu4jnWtQ@mail.gmail.com>
+Subject: Re: [PATCHv2 4/6] ARM: pxa: Use GPIO descriptor for gpio-charger
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_025006_093241_96833BD2 
-X-CRM114-Status: GOOD (  33.83  )
+X-CRM114-CacheID: sfid-20200610_025301_316779_87B5F8B9 
+X-CRM114-Status: GOOD (  10.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.61 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -110,8 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,163 +91,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
- Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
- Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
- Lars-Peter Clausen <lars@metafoo.de>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Len Brown <lenb@kernel.org>, Michael Hennerich <michael.hennerich@analog.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Barry Song <baohua@kernel.org>,
- Ferruh Yigit <fery@cypress.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sebastian Reichel <sre@kernel.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, kernel@collabora.com,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>,
+ Emil Velikov <emil.velikov@collabora.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+On Sat, Jun 6, 2020 at 12:44 AM Sebastian Reichel
+<sebastian.reichel@collabora.com> wrote:
 
-On 6/8/20 1:22 PM, Andrzej Pietrasiewicz wrote:
-> This is a quick respin of v3, with just two small changes, please see
-> the changelog below.
-> 
-> Userspace might want to implement a policy to temporarily disregard input
-> from certain devices.
-> 
-> An example use case is a convertible laptop, whose keyboard can be folded
-> under the screen to create tablet-like experience. The user then must hold
-> the laptop in such a way that it is difficult to avoid pressing the keyboard
-> keys. It is therefore desirable to temporarily disregard input from the
-> keyboard, until it is folded back. This obviously is a policy which should
-> be kept out of the kernel, but the kernel must provide suitable means to
-> implement such a policy.
+> Provide AC detect GPIO via gpiod table instead of
+> legacy platform data so that legacy GPIO support
+> can be removed from the driver.
+>
+> Also remove useless IRQ resource, which is not
+> used by the driver.
+>
+> Due to lack of hardware this has only been compile
+> tested.
+>
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 
-First of all sorry to start a somewhat new discussion about this
-while this patch set is also somewhat far along in the review process,
-but I believe what I discuss below needs to be taken into account.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-Yesterday I have been looking into why an Asus T101HA would not stay
-suspended when the LID is closed. The cause is that the USB HID multi-touch
-touchpad in the base of the device starts sending events when the screen
-gets close to the touchpad (so when the LID is fully closed) and these
-events are causing a wakeup from suspend. HID multi-touch devices
-do have a way to tell them to fully stop sending events, also disabling
-the USB remote wakeup the device is doing. The question is when to tell
-it to not send events though ...
+Thanks for going the extra mile and doing this deep clean-up.
 
-So now I've been thinking about how to fix this and I believe that there
-is some interaction between this problem and this patch-set.
-
-The problem I'm seeing on the T101HA is about wakeups, so the question
-which I want to discuss is:
-
-1. How does inhibiting interact with enabling /
-disabling the device as a wakeup source ?
-
-2. Since we have now made inhibiting equal open/close how does open/close
-interact with a device being a wakeup source ?
-
-And my own initial (to be discussed) answers to these questions:
-
-1. It seems to me that when a device is inhibited it should not be a
-wakeup source, so where possible a input-device-driver should disable
-a device's wakeup capabilities on suspend if inhibited
-
-2. This one is trickier I don't think we have really clearly specified
-any behavior here. The default behavior of most drivers seems to be
-using something like this in their suspend callback:
-
-         if (device_may_wakeup(dev))
-                 enable_irq_wake(data->irq);
-         else if (input->users)
-                 foo_stop_receiving_events(data);
-
-Since this is what most drivers seem to do I believe we should keep
-this as is and that we should just clearly document that if the
-input_device has users (has been opened) or not does not matter
-for its wakeup behavior.
-
-Combining these 2 answers leads to this new pseudo code template
-for an input-device's suspend method:
-
-	/*
-	 * If inhibited we have already disabled events and
-	 * we do NOT want to setup the device as wake source.
-	 */
-	if (input->inhibited)
-		return 0;
-
-         if (device_may_wakeup(dev))
-                 enable_irq_wake(data->irq);
-         else if (input->users)
-                 foo_stop_receiving_events(data);
-
-###
-
-A different, but related issue is how to make devices actually use the
-new inhibit support on the builtin keyboard + touchpad when say the lid
-is closed.   Arguably this is an userspace problem, but it is a tricky
-one. Currently on most modern Linux distributions suspend-on-lid-close
-is handled by systemd-logind and most modern desktop-environments are
-happy to have logind handle this for them.
-
-But most knowledge about input devices and e.g. heurisitics to decide
-if a touchpad is internal or external are part of libinput. Now we could
-have libinput use the new inhibit support (1), but then when the lid
-closes we get race between whatever process is using libinput trying
-to inhibit the touchpad (which must be done before to suspend to disable
-it as wakeup source) and logind trying to suspend the system.
-
-One solution here would be to move the setting of the inhibit sysfs
-attr into logind, but that requires adding a whole bunch of extra
-knowledge to logind which does not really belong there IMHO.
-
-I've been thinking a bit about this and to me it seems that the kernel
-is in the ideal position to automatically inhibit some devices when
-some EV_SW transitions from 0->1 (and uninhibit again on 1->0). The
-issue here is to chose on which devices to enable this. I believe
-that the auto inhibit on some switches mechanism is best done inside
-the kernel (disabled by default) and then we can have a sysfs
-attr called auto_inhibit_ev_sw_mask which can be set to e.g.
-(1 << SW_LID) to make the kernel auto-inhibit the input-device whenever
-the lid is closed, or to ((1 << SW_LID) | (1 << SW_TABLET_MODE)) to
-inhibit both when the lid is closed or when switched to tablet mode.
-
-This could then be combined with a userspace utility run from an
-udev rule which makes the actual decision what auto_inhibit_ev_sw_mask
-should be set for a given input device.
-
-This will put the mechanism for what we want inside the kernel and
-leaves the policy on which switches we want this for out of the
-kernel.
-
-Note adding this new auto_inhibit_ev_sw_mask sysfs attr falls
-somewhat outside the context of this patchset and could be done
-as a follow up to this patch-set. But I do believe that we need to
-figure out how (non ChromeOS) userspace can / will use the new inhibit
-interface before merging it.
-
-Regards,
-
-Hans
-
-
-
-
-1) There are issues here with libinput not running as root and this
-being a root only sysfs interface but lets ignore those for now,
-note that the auto_inhibit_ev_sw_mask also neatly solves this
-problem
-
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
