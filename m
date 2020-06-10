@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 161AF1F5B79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 20:49:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85EBA1F5B85
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 20:53:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bpc/DQsOLqKM91oEhVSespuvFV1f6rFZKQyRO9YkNiQ=; b=cvQArYAbeZvtwf
-	qSx9z35TARbuu8qICe61u9uAzRW5dJqfWAezJWP/meO77k3f828jojqRYQcK2QX/URuyLKrgLi7OH
-	/w99EYpkocNfD6BijDjqgSqYUOyJP0svjRPVGip4RSuheAXkBRM33p5DrQ720RXy4FmvfV6y3eFcd
-	l++2jjhMqCgg/UkSjhPa8vWimfanu8KTFosL8BZMEjRq7tUGCgia/qK5eKgVD3LITqXLw9P+ivpUt
-	PDnhE+rdru3MY7D1+kh/2HavS9YtJ/RZWg6VpPCDl6oqu4BRKCb/1lLFi30hbOYS4cNCFKeE+CanI
-	oOjjRvp1ljXVkciTWybg==;
+	List-Owner; bh=N0CblQX5HztaQceV8FjLUL48TP7S708jH5fkxhpaL1M=; b=A8ld32e46m1MSF
+	N0++owke2l+7bnORVgvCJyRypBlBK9Ja8f+2FPvcXG///XHHvju66zy6sC5wgY4JmSH2n3DyM/+CD
+	Vj7Moe5aeMYM5yYkGw5NdAB0XcX+alTAOubxxcggA2K8UGEFrtaJfKAQg7KreTv5RrF1FguGsgpdP
+	eXwYapVCI6pnb/AeLecV4J6ZpdxBRc2xbBf1g3+QJsX+asIhad65qplLRDNn6SEL2z3IdU6GwdUeN
+	SLrg/GRRMWpf8rre0EqrzNmyQ018IWX6BZujZd0+cU8zaX6MNxYk2wikrTzTwZ9ume+HmaiIQ2w60
+	AbtKvnhZgwCjJjX67xRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj5mu-0000XZ-Rg; Wed, 10 Jun 2020 18:49:24 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
+	id 1jj5qM-0003Mk-E2; Wed, 10 Jun 2020 18:52:58 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj5ml-0000XG-Fg
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 18:49:16 +0000
-Received: by mail-ua1-x941.google.com with SMTP id a10so1217054uan.8
+ id 1jj5qD-0003Lz-3J
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 18:52:50 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id f126so837942vkb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 11:49:15 -0700 (PDT)
+ Wed, 10 Jun 2020 11:52:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0A0qTEHL/4KHt4CSQ8r/67Dw7HuODJhcnw3jBL6/4J0=;
- b=Uf3Tl88+r0ZyuZCQWfWB4PKDaMKAKtTmR6Y9IRa+cZCE9Bel4uJmzIXjeKMF6RESzG
- LfRsF4qIQ0RgpqHmWzJlWqVEBTAqGpfp3uDaBvyS+7FpOH2I5TCz8Aup8cO5pEGd0SCa
- dZZRdSK4u8zEu43fSdct+eOH+fiK8d8XsddBgDh0+mFmO/treg7/Zgl5ppH2zXln/3rm
- aHbacx6sUYuvLvgSVcBokZ6/H9kJZ2LLodZG55RSeTYZ6S48Q6/WxuvmnbLN+rlClHkk
- xZgdZAOd7KqDVNt1dPiM0Ajs/2q3d6Fqn5vfCVRThl9/PLnPIFWioYOR1khnyt7cBCZC
- QdEg==
+ :cc; bh=Ou/05hPwTWsJc4qPHUfA/rNqmKzeeLE9v7tAAiFJL6k=;
+ b=gEc2R+rVmIe8RhTsWZBHBO23RbA0tr/u76/Es88LGQ/CPuIjId85GC2NsVm8kMoKgL
+ xypuOsx9V+65XCavLo3ndTbi2lygTsd1FRAfHTRZ/ft4YFsvaQVS/90q3h6tRE9n54Mf
+ xP6C42BDu/Xvcj+jMurPTuDkG8obmR20jvUI42vHwTjju14b7EiA89IQ+Io3L6jolyt7
+ RP98ow/xYCC63pO16c+NjSTt4hjR/4a+L2b7Y5x1LoYmsGXUQEMAl+anxxVhRMjwEbfx
+ c6Wfd+JbNHcTCTk0eLPkpkHtk69QBNuyxUainnJ40usnuLbLhv3qVR/McNQMZsJakaY8
+ 2yBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0A0qTEHL/4KHt4CSQ8r/67Dw7HuODJhcnw3jBL6/4J0=;
- b=hERenf4+4kGXDYwEUnYHXinC1dcsvpkhWRmRSc49owFoySDdYkBs761b9d5DhEQk2b
- uvstiXI59UnoTPUf5hBCWY/hUdKbz3vIZDQ9E27IzL1dFrt2jKoXoANiippSFriddcus
- /mnMGgsvF9gXX1byAEcaXkYT85KLeZKtP9GP0ZiBfUkKQcwMzUA81YW0wGmpTyTw301y
- /xDiIP9HAJAi87xX1aHPLY9JGlK3CQ611cNuRsKD2vwMO4S7d6HIyYpEKFvJLSh976XS
- D967WtbLGo+9xAV2sDAROW7cUk+GjaqNWcII5f8weqHBz86HXIqIiHdL9ojaVIikcY8U
- DAyA==
-X-Gm-Message-State: AOAM530usOMmplBfLesEp1EuPbQAiyq7qs12/cwt0NlGICDuFk0TrQi8
- lNDxxyp7GkHBpQfQzjkIx+yo8YLLSvr9PrO1rP3Lxg==
-X-Google-Smtp-Source: ABdhPJx7n1Jzu9stxSW0B8Z2yESjtTjAbgEsU5PcOtsP0CIqXpGR8ePPHUya13zr/XKYKIv2ps3RYwappcy09FCWcjM=
-X-Received: by 2002:ab0:70c9:: with SMTP id r9mr3658814ual.15.1591814953932;
- Wed, 10 Jun 2020 11:49:13 -0700 (PDT)
+ bh=Ou/05hPwTWsJc4qPHUfA/rNqmKzeeLE9v7tAAiFJL6k=;
+ b=QslyOwCapdD3azE/BENVSn52Xi25YUftfrtDU/zqCdULymkr41O2ln/EsYfSz5CDnt
+ yGU8jmoXy0BUtjrBVDMhglUKQEgakVYcufZ7ymMYKk5mzPlHKzrD7z+sioZXtMLUdq0q
+ igI94lRAXxza2gxzpUkLi/1wKYweOD526DjRoMxVXSrDrpx9p8gZgqgQGPUqpQ0ciNnd
+ suuJP7jlVPVIM2bBkeoT2PJznN8JPODNg0Gn5x/6uuecCpn7jMxKOpn6iq9QH3K8n4uX
+ wTrSJ/jTKP6WBxASEkmRJ0o9qA9SX/wECZesPpd/CF19dmK4geoEoUNHkZDMDVO57LS0
+ x4UA==
+X-Gm-Message-State: AOAM533pEW7T4i6143cmgFQSIE7jUtyf7rWLLkXdBIZBk+B5Hm9x5ltS
+ wPk+MEZ5KRsMZqH3HdWzdh6xSuvDMwHKYCbolCPMqQ==
+X-Google-Smtp-Source: ABdhPJxdhrcI3GxwX+s2Z6W5dcJTIvbNz9DMjdWBqnMt5wpbMQTIwtRhtuhfggqhbSRYlsDnW4UACO8A1irmUlXnjZ8=
+X-Received: by 2002:a05:6122:106f:: with SMTP id
+ k15mr3512065vko.21.1591815167751; 
+ Wed, 10 Jun 2020 11:52:47 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-12-sean.j.christopherson@intel.com>
-In-Reply-To: <20200605213853.14959-12-sean.j.christopherson@intel.com>
+ <20200605213853.14959-13-sean.j.christopherson@intel.com>
+In-Reply-To: <20200605213853.14959-13-sean.j.christopherson@intel.com>
 From: Ben Gardon <bgardon@google.com>
-Date: Wed, 10 Jun 2020 11:49:02 -0700
-Message-ID: <CANgfPd9vBbX66RYWhW+Lpsrya8Q4SduDHzpbAhAqRyU3i-gHxA@mail.gmail.com>
-Subject: Re: [PATCH 11/21] KVM: x86/mmu: Zero allocate shadow pages (outside
- of mmu_lock)
+Date: Wed, 10 Jun 2020 11:52:35 -0700
+Message-ID: <CANgfPd9Kjb2QH+K3KwPZBFR3wv33tq7WSX=RoJjJHfkAad5TSg@mail.gmail.com>
+Subject: Re: [PATCH 12/21] KVM: x86/mmu: Skip filling the gfn cache for
+ guaranteed direct MMU topups
 To: Sean Christopherson <sean.j.christopherson@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_114915_539162_CC186EFA 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20200610_115249_161965_BBB9324A 
+X-CRM114-Status: GOOD (  18.26  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -120,44 +121,95 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Fri, Jun 5, 2020 at 2:39 PM Sean Christopherson
 <sean.j.christopherson@intel.com> wrote:
 >
-> Set __GFP_ZERO for the shadow page memory cache and drop the explicit
-> clear_page() from kvm_mmu_get_page().  This moves the cost of zeroing a
-> page to the allocation time of the physical page, i.e. when topping up
-> the memory caches, and thus avoids having to zero out an entire page
-> while holding mmu_lock.
+> Don't bother filling the gfn array cache when the caller is a fully
+> direct MMU, i.e. won't need a gfn array for shadow pages.
 >
-> Cc: Peter Feiner <pfeiner@google.com>
-> Cc: Peter Shier <pshier@google.com>
-> Cc: Junaid Shahid <junaids@google.com>
-> Cc: Jim Mattson <jmattson@google.com>
-> Suggested-by: Ben Gardon <bgardon@google.com>
 > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 Reviewed-by: Ben Gardon <bgardon@google.com>
 > ---
->  arch/x86/kvm/mmu/mmu.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+>  arch/x86/kvm/mmu/mmu.c         | 18 ++++++++++--------
+>  arch/x86/kvm/mmu/paging_tmpl.h |  4 ++--
+>  2 files changed, 12 insertions(+), 10 deletions(-)
 >
 > diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-> index 6b0ec9060786..a8f8eebf67df 100644
+> index a8f8eebf67df..8d66cf558f1b 100644
 > --- a/arch/x86/kvm/mmu/mmu.c
 > +++ b/arch/x86/kvm/mmu/mmu.c
-> @@ -2545,7 +2545,6 @@ static struct kvm_mmu_page *kvm_mmu_get_page(struct kvm_vcpu *vcpu,
->                 if (level > PG_LEVEL_4K && need_sync)
->                         flush |= kvm_sync_pages(vcpu, gfn, &invalid_list);
+> @@ -1101,7 +1101,7 @@ static void mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
 >         }
-> -       clear_page(sp->spt);
->         trace_kvm_mmu_get_page(sp, true);
+>  }
 >
->         kvm_mmu_flush_or_zap(vcpu, &invalid_list, false, flush);
-> @@ -5687,6 +5686,8 @@ int kvm_mmu_create(struct kvm_vcpu *vcpu)
->         vcpu->arch.mmu_page_header_cache.kmem_cache = mmu_page_header_cache;
->         vcpu->arch.mmu_page_header_cache.gfp_zero = __GFP_ZERO;
+> -static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+> +static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu, bool maybe_indirect)
+>  {
+>         int r;
 >
-> +       vcpu->arch.mmu_shadow_page_cache.gfp_zero = __GFP_ZERO;
-> +
->         vcpu->arch.mmu = &vcpu->arch.root_mmu;
->         vcpu->arch.walk_mmu = &vcpu->arch.root_mmu;
+> @@ -1114,10 +1114,12 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
+>                                    PT64_ROOT_MAX_LEVEL);
+>         if (r)
+>                 return r;
+> -       r = mmu_topup_memory_cache(&vcpu->arch.mmu_gfn_array_cache,
+> -                                  PT64_ROOT_MAX_LEVEL);
+> -       if (r)
+> -               return r;
+> +       if (maybe_indirect) {
+> +               r = mmu_topup_memory_cache(&vcpu->arch.mmu_gfn_array_cache,
+> +                                          PT64_ROOT_MAX_LEVEL);
+> +               if (r)
+> +                       return r;
+> +       }
+>         return mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache,
+>                                       PT64_ROOT_MAX_LEVEL);
+>  }
+> @@ -4107,7 +4109,7 @@ static int direct_page_fault(struct kvm_vcpu *vcpu, gpa_t gpa, u32 error_code,
+>         if (fast_page_fault(vcpu, gpa, error_code))
+>                 return RET_PF_RETRY;
 >
+> -       r = mmu_topup_memory_caches(vcpu);
+> +       r = mmu_topup_memory_caches(vcpu, false);
+>         if (r)
+>                 return r;
+>
+> @@ -5147,7 +5149,7 @@ int kvm_mmu_load(struct kvm_vcpu *vcpu)
+>  {
+>         int r;
+>
+> -       r = mmu_topup_memory_caches(vcpu);
+> +       r = mmu_topup_memory_caches(vcpu, !vcpu->arch.mmu->direct_map);
+>         if (r)
+>                 goto out;
+>         r = mmu_alloc_roots(vcpu);
+> @@ -5341,7 +5343,7 @@ static void kvm_mmu_pte_write(struct kvm_vcpu *vcpu, gpa_t gpa,
+>          * or not since pte prefetch is skiped if it does not have
+>          * enough objects in the cache.
+>          */
+> -       mmu_topup_memory_caches(vcpu);
+> +       mmu_topup_memory_caches(vcpu, true);
+>
+>         spin_lock(&vcpu->kvm->mmu_lock);
+>
+> diff --git a/arch/x86/kvm/mmu/paging_tmpl.h b/arch/x86/kvm/mmu/paging_tmpl.h
+> index 3de32122f601..ac39710d0594 100644
+> --- a/arch/x86/kvm/mmu/paging_tmpl.h
+> +++ b/arch/x86/kvm/mmu/paging_tmpl.h
+> @@ -818,7 +818,7 @@ static int FNAME(page_fault)(struct kvm_vcpu *vcpu, gpa_t addr, u32 error_code,
+>                 return RET_PF_EMULATE;
+>         }
+>
+> -       r = mmu_topup_memory_caches(vcpu);
+> +       r = mmu_topup_memory_caches(vcpu, true);
+>         if (r)
+>                 return r;
+>
+> @@ -905,7 +905,7 @@ static void FNAME(invlpg)(struct kvm_vcpu *vcpu, gva_t gva, hpa_t root_hpa)
+>          * No need to check return value here, rmap_can_add() can
+>          * help us to skip pte prefetch later.
+>          */
+> -       mmu_topup_memory_caches(vcpu);
+> +       mmu_topup_memory_caches(vcpu, true);
+>
+>         if (!VALID_PAGE(root_hpa)) {
+>                 WARN_ON(1);
 > --
 > 2.26.0
 >
