@@ -2,134 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52A8F1F57BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:24:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87E2A1F57C7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:26:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date
-	:Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1/0EnPnQqvX/E5oEqSJydln9jP9G1Z3HSCfj556UmHE=; b=gslz2ssF2kb2Cn
-	+ldB36+vU8Qtuy0on9Yewus2/IOUMtO1lLrdQ/fklJLf3FZHXPIp115KP4PeJl5aXOhsLo+axRAzQ
-	wlAktRK5ACF6Cold0Mgf+T4UrKuXtci5FFIYWIxhKwQNQYZQJ0Q4g1qqhIOG21bUNP3fBQKrA7e7d
-	T2SJjXE2QneOv0vdm9PRLRNSCRvLRoe7bY6HHK2JB+FWZ62MqBNTMHXD4KipkzJYfTh3UNuSti8vR
-	Ez0Qdfc4PB7JvvQX49AEwUmiLkIpr6rmp7824Us5cmLzI2bQ3AVFO/RCnF4fYfRB88AarYkzxdvkd
-	aBIw+mdMlh1DVDW/GBmw==;
+	List-Owner; bh=ArIlFg26oGhyfLfSQsvywDR3OuqAfyOl50ktVx46Cnw=; b=aXjcW5bQrSStjH
+	i5QfPJtkKaFDBkMumpC0xG4Uegnq5ZmyKwbFWBvuEJ0vglaQ0z6O1M0RLsFHbJ2Jp5qAxbK5vC4Dc
+	Glehg2uf+JCl6w2HZupgrFQgamWtXNXLQsZYELWDkv9fzewRa+q/w5SyABvbXuobn3sE8jmHFG6cz
+	4jOX2w5yBD5DV3nNygm5P20zXgWfPVaxhNQLUVXIwEpZZK9P2bZEagqvsNWau2qxL/bEb0apLtE03
+	77BEhxBPvvI1hXFSztrH20Nl0JRfswo58VZ9l898PlbmR15m6mcQV+NqekUf8c3opwCZCaGvHaC3l
+	n7XFconUlS554LizIhWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj2at-0008IM-BV; Wed, 10 Jun 2020 15:24:47 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj2ah-0008DG-Bf
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:24:36 +0000
-Received: by mail-lj1-f194.google.com with SMTP id x18so3009919lji.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 08:24:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:reply-to:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=w3siWejRAPilHiUC6jsI5xYy2gYaS5P9S9XuSxXXOMQ=;
- b=MJJyqwCM0JKHnmI3WEzM5Cgso2j+h+XhCZ9PEsZaMmurEWrg5gok89sCNuy9LEz/pb
- 4Ocxa45/dgOyw645M89MLYfAJZ1wbzi3ruXgID0xg7+Y/AAcZvRR6dUn27OUh3pBzsAY
- ygRqwYFv0rStabTRrKApGf8KIfWXRO4zVoi2Vd7FuXSuNichehLgGan80aA44d2Q+b7C
- 1FekEuE14b8LNiJ4EKELAzV0o84kd1ZG+5N6mBXbibsNuQV1/n1jGBYGuk4R5+JPVQ07
- 78tKU1yIun/SC+xvZFxz8uuSHnnXRDBjYv7at+jY8UchtudSClT4WSVVrwacrvQ2+eKT
- fzZQ==
-X-Gm-Message-State: AOAM531esEFkboXGk/S+SH8fCfGW8bpsbY+Ii9cnGL9Dn7BAjDhNSdAS
- oSeDllqMH+Kpq2eAEy7cWnQ=
-X-Google-Smtp-Source: ABdhPJxowAcpKm07CSV2XZBXzUPwDoILgauuX3JgUNqRvEamsMNgGVkLU/8gw9B1bFDjcmHx26rgIA==
-X-Received: by 2002:a05:651c:2d0:: with SMTP id
- f16mr1971844ljo.387.1591802670288; 
- Wed, 10 Jun 2020 08:24:30 -0700 (PDT)
-Received: from [192.168.42.234] ([213.87.161.124])
- by smtp.gmail.com with ESMTPSA id 11sm9227lju.118.2020.06.10.08.24.23
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 10 Jun 2020 08:24:27 -0700 (PDT)
-Subject: Re: [PATCH 1/5] gcc-plugins/stackleak: Exclude alloca() from the
- instrumentation logic
-To: Kees Cook <keescook@chromium.org>
-References: <20200604134957.505389-1-alex.popov@linux.com>
- <20200604134957.505389-2-alex.popov@linux.com>
- <CAG48ez05JOvqzYGr3PvyQGwFURspFWvNvf-b8Y613PX0biug8w@mail.gmail.com>
- <70319f78-2c7c-8141-d751-07f28203db7c@linux.com>
- <202006091133.412F0E89@keescook>
-From: Alexander Popov <alex.popov@linux.com>
-Autocrypt: addr=alex.popov@linux.com; prefer-encrypt=mutual; keydata=
- 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
- j3lCqPk=
-Message-ID: <3b194cd9-909d-7186-0cc4-bf0a0358fe5d@linux.com>
-Date: Wed, 10 Jun 2020 18:24:20 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jj2cp-0002h9-0h; Wed, 10 Jun 2020 15:26:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jj2ch-0002ga-BV
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:26:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F08741F1;
+ Wed, 10 Jun 2020 08:26:37 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E144F3F6CF;
+ Wed, 10 Jun 2020 08:26:36 -0700 (PDT)
+Date: Wed, 10 Jun 2020 16:26:34 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [RFC PATCH v2 6/6] prctl.2: Add tagged address ABI control
+ prctls (arm64)
+Message-ID: <20200610152634.GJ26099@gaia>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-7-git-send-email-Dave.Martin@arm.com>
+ <20200609172232.GA63286@C02TF0J2HF1T.local>
+ <20200610100641.GF25945@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <202006091133.412F0E89@keescook>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200610100641.GF25945@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_082435_403278_7EA914C1 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200610_082639_483924_D9D4B6D2 
+X-CRM114-Status: GOOD (  44.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [a13xp0p0v88[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [a13xp0p0v88[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,87 +66,279 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: alex.popov@linux.com
-Cc: the arch/x86 maintainers <x86@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Michael Kerrisk <mtk.manpages@gmail.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Elena Reshetova <elena.reshetova@intel.com>,
- Naohiro Aota <naohiro.aota@wdc.com>, Sven Schnelle <svens@stackframe.org>,
- Masahiro Yamada <masahiroy@kernel.org>, linux-kbuild@vger.kernel.org,
- Emese Revfy <re.emese@gmail.com>, PaX Team <pageexec@freemail.hu>,
- Iurii Zaikin <yzaikin@google.com>, Mathias Krause <minipli@googlemail.com>,
- Jann Horn <jannh@google.com>, Alexander Monakov <amonakov@ispras.ru>,
- Brad Spengler <spender@grsecurity.net>, Thomas Gleixner <tglx@linutronix.de>,
- Peter Collingbourne <pcc@google.com>, Laura Abbott <labbott@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, notify@kernel.org,
- Florian Weimer <fweimer@redhat.com>, gcc@gcc.gnu.org,
- Michal Marek <michal.lkml@markovi.net>,
- kernel list <linux-kernel@vger.kernel.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Luis Chamberlain <mcgrof@kernel.org>, Jessica Yu <jeyu@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Thiago Jung Bauermann <bauerman@linux.ibm.com>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09.06.2020 21:39, Kees Cook wrote:
-> On Thu, Jun 04, 2020 at 06:23:38PM +0300, Alexander Popov wrote:
->> On 04.06.2020 17:01, Jann Horn wrote:
->>> On Thu, Jun 4, 2020 at 3:51 PM Alexander Popov <alex.popov@linux.com> wrote:
->>>> Some time ago Variable Length Arrays (VLA) were removed from the kernel.
->>>> The kernel is built with '-Wvla'. Let's exclude alloca() from the
->>>> instrumentation logic and make it simpler. The build-time assertion
->>>> against alloca() is added instead.
->>> [...]
->>>> +                       /* Variable Length Arrays are forbidden in the kernel */
->>>> +                       gcc_assert(!is_alloca(stmt));
->>>
->>> There is a patch series from Elena and Kees on the kernel-hardening
->>> list that deliberately uses __builtin_alloca() in the syscall entry
->>> path to randomize the stack pointer per-syscall - see
->>> <https://lore.kernel.org/kernel-hardening/20200406231606.37619-4-keescook@chromium.org/>.
->>
->> Thanks, Jann.
->>
->> At first glance, leaving alloca() handling in stackleak instrumentation logic
->> would allow to integrate stackleak and this version of random_kstack_offset.
+On Wed, Jun 10, 2020 at 11:06:42AM +0100, Dave P Martin wrote:
+> On Tue, Jun 09, 2020 at 06:22:32PM +0100, Catalin Marinas wrote:
+> > On Wed, May 27, 2020 at 10:17:38PM +0100, Dave P Martin wrote:
+> > > --- a/man2/prctl.2
+> > > +++ b/man2/prctl.2
+> > > @@ -1504,6 +1504,143 @@ For more information, see the kernel source file
+> > >  (or
+> > >  .I Documentation/arm64/sve.txt
+> > >  before Linux 5.3).
+> > > +.\" prctl PR_SET_TAGGED_ADDR_CTRL
+> > > +.\" commit 63f0c60379650d82250f22e4cf4137ef3dc4f43d
+> > > +.TP
+> > > +.BR PR_SET_TAGGED_ADDR_CTRL " (since Linux 5.4, only on arm64)"
+> > > +Controls support for passing tagged userspace addresses to the kernel
+> > > +(i.e., addresses where bits 56\(em63 are not all zero).
+> > 
+> > Nitpick: maybe say "userspace addresses" again inside the brackets since
+> > kernel addresses have all top bits 1.
 > 
-> Right, it seems there would be a need for this coverage to remain,
-> otherwise the depth of stack erasure might be incorrect.
+> Happy to do that.  This is a user-facing interface though: userspace
+> addresses are the only kind of address there is.
+
+Living in the kernel land for too long, it's hard to switch perspective ;).
+I think the original sentence makes sense anyway, it should be obvious
+that it refers to user addresses.
+
+> > > +.IP
+> > > +The level of support is selected by
+> > > +.IR "(unsigned int) arg2" ,
+> > 
+> > We use (unsigned long) for arg2.
 > 
-> It doesn't seem like the other patches strictly depend on alloca()
-> support being removed, though?
-
-Ok, I will leave alloca() support, reorganize the patch series and send v2.
-
->> Kees, Elena, did you try random_kstack_offset with upstream stackleak?
+> Hmmm, not quite sure how I came up with unsigned int here.  I'll just
+> drop this: the type in the prctl() prototype is unsigned long anyway.
 > 
-> I didn't try that combination yet, no. It seemed there would likely
-> still be further discussion about the offset series first (though the
-> thread has been silent -- I'll rebase and resend it after rc2).
+> The type is actually moot in this case, since the valid values all fit
+> in an unsigned int.
 
-Ok, please add me to CC list.
+Passing an int doesn't require that the top 32-bit of the long are
+zeroed (in case anyone writes the low-level SVC by hand).
 
-Best regards,
-Alexander
-
->> It looks to me that without stackleak erasing random_kstack_offset can be
->> weaker. I mean, if next syscall has a bigger stack randomization gap, the data
->> on thread stack from the previous syscall is not overwritten and can be used. Am
->> I right?
+> > > +which can be one of the following:
+> > > +.RS
+> > > +.TP
+> > > +.B 0
+> > > +Addresses that are passed
+> > > +for the purpose of being dereferenced by the kernel
+> > > +must be untagged.
+> > > +.TP
+> > > +.B PR_TAGGED_ADDR_ENABLE
+> > > +Addresses that are passed
+> > > +for the purpose of being dereferenced by the kernel
+> > > +may be tagged, with the exceptions summarized below.
+> > > +.RE
+> > > +.IP
+> > > +The remaining arguments
+> > > +.IR arg3 ", " arg4 " and " arg5
+> > > +must all be zero.
+> > 
+> > Indeed. The above commit didn't have this, we added it later in commit
+> > 3e91ec89f527b9870fe42dcbdb74fd389d123a95.
 > 
-> That's correct. I think the combination is needed, but I don't think
-> they need to be strictly tied together.
-> 
->> Another aspect: CONFIG_STACKLEAK_METRICS can be used for guessing kernel stack
->> offset, which is bad. It should be disabled if random_kstack_offset is on.
-> 
-> Agreed.
+> Ah, missed that.  Did any full kernel release expose the unchecked
+> behaviour?
 
+No, they both went into 5.4-rc1. I probably didn't want to rebase the
+series and just added a patch on top.
+
+> Mind you, there's probably no need to document in any case.
+
+I agree. Just mentioned it because I looked at the commit you mentioned
+and there was no check for the arg3..arg5, so went to check the history.
+
+> > > +.IP
+> > > +On success, the mode specified in
+> > > +.I arg2
+> > > +is set for the calling thread and the the return value is 0.
+> > > +If the arguments are invalid,
+> > > +the mode specified in
+> > > +.I arg2
+> > > +is unrecognized,
+> > > +or if this feature is disabled or unsupported by the kernel,
+> > > +the call fails with
+> > > +.BR EINVAL .
+> > > +.IP
+> > > +In particular, if
+> > > +.BR prctl ( PR_SET_TAGGED_ADDR_CTRL ,
+> > > +0, 0, 0, 0)
+> > > +fails with
+> > > +.B EINVAL
+> > > +then all addresses passed to the kernel must be untagged.
+> > > +.IP
+> > > +Irrespective of which mode is set,
+> > > +addresses passed to certain interfaces
+> > > +must always be untagged:
+> > 
+> > Maybe you could add some extra info from the kernel comment (commit
+> > b2a84de2a2deb76a6a51609845341f508c518c03) along the lines of "... to
+> > avoid the creation of aliasing mappings in userspace).
+> 
+> It depends.  It's useful if it helps people to guess highly accurately
+> the rule for in interface that is too new or that we don't explicitly
+> document (such as a random setsockopt or perf widget).
+> 
+> If not, it might be best to say nothing and make guarantees only about
+> the explicitly listed interfaces though.
+
+Fine by me to keep it as it is. We can always update the man page if new
+syscalls come into this category.
+
+> > > +.RS
+> > > +.IP \(em
+> > > +.BR brk (2),
+> > > +.BR mmap (2),
+> > > +.BR shmat (2),
+> > > +and the
+> > > +.I new_address
+> > > +argument of
+> > > +.BR mremap (2).
+> > > +.IP
+> > > +(Prior to Linux 5.6 these accepted tagged addresses,
+> > > +but the behaviour may not be what you expect.
+> > > +Don't rely on it.)
+> > 
+> > shmat() was not part of the subsequent fix
+> > (dcde237319e626d1ec3c9d8b7613032f0fd4663a), it always rejected tagged
+> > address. But I guess it doesn't matter much, the user should not pass
+> > tagged addresses to these syscalls anyway.
+> > 
+> > You could move shmat() down together with shmdt().
+> 
+> I guess I was highlighting that shmdt() is a special case, because the
+> user would guess from the pattern of the other listed calls that shmdt()
+> should accept tagged addresses.  If you think separating it just adds to
+> the confusion, I'm happy not too call it out specially here.
+> 
+> OTOH, we could fix shmdt() and document the legacy behaviour as a bug in
+> specific kernel versions rather than the canonical behaviour.  But I
+> guess that's one for later.
+
+If we patch shmdt() to allow tagged addresses, then it makes sense to
+keep shmat() with the rest of the above. Just pointing out that shmat()
+never allowed tagged pointers
+
+> > > +.IP \(em
+> > > +\(oqpolymorphic\(cq interfaces
+> > > +that accept pointers to arbitrary types cast to a
+> > > +.I void *
+> > > +or other generic type, specifically
+> > > +.BR prctl (2),
+> > > +.BR ioctl (2),
+> > > +and in general
+> > > +.BR setsockopt (2)
+> > > +(only certain specific
+> > > +.BR setsockopt (2)
+> > > +options allow tagged addresses).
+> > > +.IP \(em
+> > > +.BR shmdt (2).
+> > > +.RE
+> > > +.IP
+> > > +This list of exclusions may shrink
+> > > +when moving from one kernel version to a later kernel version.
+> > > +While the kernel may make some guarantees
+> > > +for backwards compatibility reasons,
+> > > +for the purposes of new software
+> > > +the effect of passing tagged addresses to these interfaces
+> > > +is unspecified.
+> > > +.IP
+> > > +The mode set by this call is inherited across
+> > > +.BR fork (2)
+> > > +and
+> > > +.BR clone (2).
+> > > +The mode is reset by
+> > > +.BR execve (2)
+> > > +to 0
+> > > +(i.e., tagged addresses not permitted in the user/kernel ABI).
+> > > +.IP
+> > > +.B Warning:
+> > > +Because the compiler or run-time environment
+> > > +may make use of address tagging,
+> > > +a successful
+> > > +.B PR_SET_TAGGED_ADDR_CTRL
+> > > +may crash the calling process.
+> > 
+> > I don't think PR_SET_TAGGED_ADDR_CTRL could crash the calling process.
+> > Rather disabling tagged addresses would break it. If a process is using
+> 
+> This is precisely how PR_SET_TAGGED_ADDR_CTRL could crash the calling
+> process, no?
+
+I see your point. E.g. it was enabled by glibc but disabled by a user
+application.
+
+> Rather than try to explain the different cases in detail here and have
+> the reader take it as gospel, I thought it would be better to scare them
+> a bit and encourage them to so some homework.  Perhaps I'm being too
+> cautious.
+
+That's fine, leave the warning in place.
+
+> > tagged addresses but does not pass them to the kernel, it will continue
+> > to do so even when the syscalls accept such addresses.
+> > 
+> > > +The conditions for using it safely are complex and system-dependent.
+> > > +Don't use it unless you know what you are doing.
+> > 
+> > This syscall is intended for the C library if the heap allocator
+> > generates tagged addresses. So it's not a general purpose prctl() random
+> > application code could call. Anyway I'm fine with your warning of not
+> > doing it but you may want to clarify the intent.
+> 
+> Maybe add something like
+> 
+> "This call is primarily intended for use by the run-time environment."
+
+That works as well, maybe in addition to the warning. Up to you.
+
+> > > +.IP
+> > > +For more information, see the kernel source file
+> > > +.IR Documentation/arm64/tagged\-address\-abi.rst .
+> > > +.\" prctl PR_GET_TAGGED_ADDR_CTRL
+> > > +.\" commit 63f0c60379650d82250f22e4cf4137ef3dc4f43d
+> > > +.TP
+> > > +.BR PR_GET_TAGGED_ADDR_CTRL " (since Linux 5.4, only on arm64)"
+> > > +Returns the current tagged address mode
+> > > +for the calling thread.
+> > > +.IP
+> > > +Arguments
+> > > +.IR arg2 ", " arg3 ", " arg4 " and " arg5
+> > > +must all be zero.
+> > > +.IP
+> > > +If the arguments are invalid
+> > > +or this feature is disabled or unsupported by the kernel,
+> > > +the call fails with
+> > > +.BR EINVAL .
+> > > +In particular, if
+> > > +.BR prctl ( PR_GET_TAGGED_ADDR_CTRL ,
+> > > +0, 0, 0, 0)
+> > > +fails with
+> > > +.BR EINVAL ,
+> > > +then this feature is definitely unsupported or disabled,
+> > 
+> > I guess it's outside the scope of the prctl.2 to describe how the
+> > feature was disabled (e.g. sysctl).
+> 
+> We could include it here, but I'm thinking we might want a more
+> comprehensive separate page to describe how to use MTE in general.
+> 
+> For now, is referencing the kernel documentation enough?
+
+I think simply saying "unsupported or disabled" is sufficient in the man
+page. The sysctl is not aimed at the user sw/run-time developers but
+rather those controlling the system. For the latter, the kernel
+documentation is sufficient.
+
+So with the (unsigned int) fixed, feel free to add:
+
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+
+I don't have a strong opinion on the other nitpicks, so I'll leave the
+decision to you.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
