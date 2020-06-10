@@ -2,58 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A2C31F5AC1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 19:46:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14F191F5AE5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 19:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+kMc2Lk225oDCYiuMX2oDqa5vqYVP4vuTuUaj4LnKO4=; b=a6pLLSmb6LOko7
-	D6wX/yN3qMIITMyLmnRxuk0DMipupTnrGZm2sbjATX1JDYJc837ibalk2v5l7I5k8N81/70ezZHtC
-	8CZI5qnWlosrwHs3/ZjhXlox/5lXgWHCo+ECn6C3J21bWwk3XGv0llW2gr0m9eoVqsga1DiKzT3hd
-	PixduwLn8Qn3ufA5+SR2uCnyEJjXsELItQZVXqGabCA/x38gaTPsYwhUW7Q7Nt1J2ryqD7Qj4hmZF
-	ImZ3J+e44C21JZ28rQ6Y3Wd+5mAuB/AskKoyYLvYjFsat2AEbeeN8/m96YUAhtsYMa/PXUH6Wk8XC
-	lLwpuJsy5O9t6UHeMpXA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=oKZa58FxE5BrKSeTGUuDIV1XeHxHy03xqM8Hnkkh6lc=; b=nK5mvpaTSqgXj/PBdI1+Vftcb1
+	sbpY39awgFIvQ3JIgCIZ+zDXwHG5P8vqRHRFEoESFzdhn4PfAEXU8w7X++qnGdGhILlzFJRpMVg6g
+	5OTJ9cZyjiCw4hwTQXpmVLA3VCXTwWSnx0BotBRSOdwqiW+qyHXT/TBm4Cm2KD5xtOFmfiwRtiPbi
+	cPcbWt3Gb7UmLyuUBqQvJsTycC6dTtN51qdFtmeykFd4eGo1LCXQepPWf7saNBrMy90gH0R/mLx+H
+	V8VskYXwCbi6mZQm1YXer0swJ1EM4RzDxtBzKs9e5xfxktIKkDpkbjRGrAc3oGGMOBKmXSdfGRvz1
+	IfXsIkuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj4o8-0001sc-EP; Wed, 10 Jun 2020 17:46:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jj50G-0007jZ-KC; Wed, 10 Jun 2020 17:59:08 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj4o0-0001rl-GS
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 17:46:29 +0000
-Received: from dogfood.home (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr
- [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B5AD2204EC;
- Wed, 10 Jun 2020 17:46:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591811188;
- bh=7LgVZ0GSBkgdtxD2GXNfQMricpaNnHonW1nwEMGCzC4=;
- h=From:To:Cc:Subject:Date:From;
- b=K5U/gJ53VVsLIEhSyygGejSzOCTuAcjLxv9SSuFb4/HJxKsaUidHiJsGShQls8EDI
- +CU7rkQrDycdtQi3K5XrsPeBSk8dJa2ZJeUqlFYOS7G/U554/udPhSybXpNBS1iKz1
- X791QJgdCnx/Yeh/Ygy6TLultX2I0YywiNxHP9k4=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: warn on incorrect placement of the kernel by the
- bootloader
-Date: Wed, 10 Jun 2020 19:46:01 +0200
-Message-Id: <20200610174601.159853-1-ardb@kernel.org>
-X-Mailer: git-send-email 2.26.2
+ id 1jj509-0007ib-1x
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 17:59:02 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id n188so798394vkc.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jun 2020 10:58:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=qPDDsblskj7YQmgnouxNlkCLsEOLE3lWy+i5i5BsSyk=;
+ b=Ed8Q/VdKzx70Hkg1B9bBSd28+aKmZRAjdKlNjSK91zvZF1DNrNUf8d9zKBjBQo8+KX
+ TMbuKQtZ+8hS/oVcUn0gyANMUZSv/JLYNPUzvotSJUSZuH11hedRVl/ay8xYXySV2u+7
+ LfihLzrAujQEp2jBfkXLX7uOwCd6pAm8NgE2JxyAfkvudZyT8Q4a+kA1f6g/KC/8hVmD
+ OphOFAhRDfpleloVPlDxzMkTZixMzPD9YgNCLmq+Lbl4cSUqPXqpedqvGjvH3QwzBbw8
+ Ut5k9R/7LO2YhfY3CBiXNN5ktF/nCqYHJ3vDX6DO4QuANJpx2gxqUfeyi81B431vrd5J
+ OHEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=qPDDsblskj7YQmgnouxNlkCLsEOLE3lWy+i5i5BsSyk=;
+ b=bg6bPTXjMDS8D0W8VRXQbc/P70XS9RLWLhc1srgcLl2zV/ZljRmWV6yO7OIPRfldNd
+ 0I2yjtU9N/k25XbG0rXPaLpZtG1/w2NA5BPjapQN5kLwDOf32javxY2hBi/iy0/dGipY
+ 8aprnzOHpigVICQr25YDiQx6NnF7SdrTt658ZrTJx79dv2B15ewDIXcWGVN879iMT5Q6
+ tl58FoG3TumKraURReF02vc2AtXGu4zxPFCIhNODcTLAQpGB2l0lrnBMw3tZrLBD/vk2
+ uVQip9WRrPPCQ1Ncs4nrkQlwLa7sSic3TS/zRx0aD9lsYvPz5ilBQ05NTBdIANP/zxQT
+ abpg==
+X-Gm-Message-State: AOAM53029jN5OVkXH2c60JE7Q+3vIek2AYQsgjh/z986TBW+AdF3wDzN
+ YNrW8Yww2q8qYTLD4NHCbFIU2U49Wez5ynFoKTk=
+X-Google-Smtp-Source: ABdhPJw9uDJgVd9SIg6w/P15cfth+r88JW04PZtQl+ymB+hw4QcQ5bSyBNW+x3Ocs/2YUYOxW0gDFgZPBv8Du1d8H8A=
+X-Received: by 2002:a1f:18c7:: with SMTP id 190mr3423466vky.39.1591811938261; 
+ Wed, 10 Jun 2020 10:58:58 -0700 (PDT)
 MIME-Version: 1.0
+References: <CAOuPNLj4m_jvs90YpAq5r4gAP9o8Y1Uck3HN+MbsTPb3zP=4eA@mail.gmail.com>
+In-Reply-To: <CAOuPNLj4m_jvs90YpAq5r4gAP9o8Y1Uck3HN+MbsTPb3zP=4eA@mail.gmail.com>
+From: Pintu Agarwal <pintu.ping@gmail.com>
+Date: Wed, 10 Jun 2020 23:28:47 +0530
+Message-ID: <CAOuPNLhQFegohvCx3dD-CtDdYrTSfGrJ1M3ps_YLn4j29x5pFw@mail.gmail.com>
+Subject: Re: Generic way for verifying GPIO wakeup capability
+To: Kernelnewbies <kernelnewbies@kernelnewbies.org>, 
+ open list <linux-kernel@vger.kernel.org>, linux-pm@vger.kernel.org, 
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-gpio@vger.kernel.org, 
+ zonque@gmail.com, sergiosiena@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_104628_568725_57700E3B 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200610_105901_117674_B9EC11B8 
+X-CRM114-Status: GOOD (  13.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pintu.ping[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -63,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,64 +97,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, will@kernel.org,
- Ard Biesheuvel <ardb@kernel.org>, jonathan@marek.ca
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit cfa7ede20f133c ("arm64: set TEXT_OFFSET to 0x0 in preparation for
-removing it entirely") results in boot failures when booting kernels that
-are built without KASLR support on broken bootloaders that ignore the
-TEXT_OFFSET value passed via the header, and use the default of 0x80000
-instead.
+On Tue, 9 Jun 2020 at 23:06, Pintu Agarwal <pintu.ping@gmail.com> wrote:
+>
+> Hi All,
+>
+> I am looking for ways to wakeup any devices (from sleep) using any
+> arbitrary gpio wakeup method in a generic way (either from user space
+> or kernel space) that should work on any kernel version (starting from
+> 4.14 onwards).
+>
+> What are the options available right now ?
+> I wanted to experiment with all of them and decide which is best for us.
+>
+> Is /sys/class/gpio/ method still valid with the latest kernel ?
+> Or is there any other method to do it from user space ?
+>
+> One option I know is to use enable/disable_irq_wake() API from kernel
+> driver suspend/resume path.
+> Just like this:
+> https://lwn.net/Articles/569027/
+>
+> But this requires an additional kernel driver and device-tree changes
+> for each gpio wakeup, which the end-user needs to implement on their
+> own.
+>
+> Is there any other existing generic mechanism?
+>
 
-To work around this, turn CONFIG_RELOCATABLE on by default, even if KASLR
-itself (CONFIG_RANDOMIZE_BASE) is turned off, and require CONFIG_EXPERT
-to be enabled to deviate from this. Then, emit a warning into the kernel
-log if we are not booting via the EFI stub (which is permitted to deviate
-from the placement restrictions) and the kernel base address is not placed
-according to the rules as laid out in Documentation/arm64/booting.rst.
+https://embeddedbits.org/new-linux-kernel-gpio-user-space-interface/
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- arch/arm64/Kconfig        | 3 ++-
- arch/arm64/kernel/setup.c | 3 +++
- 2 files changed, 5 insertions(+), 1 deletion(-)
+Is it possible to achieve this using this new interface ?
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 7f9d38444d6d..16c3f158c80e 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1740,8 +1740,9 @@ config ARM64_DEBUG_PRIORITY_MASKING
- endif
- 
- config RELOCATABLE
--	bool
-+	bool "Build a relocatable kernel image" if EXPERT
- 	select ARCH_HAS_RELR
-+	default y
- 	help
- 	  This builds the kernel as a Position Independent Executable (PIE),
- 	  which retains all relocation metadata required to relocate the
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 3fd2c11c09fc..bfeeeea833dd 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -319,6 +319,9 @@ void __init setup_arch(char **cmdline_p)
- 
- 	xen_early_init();
- 	efi_init();
-+	WARN(!efi_enabled(EFI_BOOT) && ((u64)_text % MIN_KIMG_ALIGN) != 0,
-+	     FW_BUG "Kernel image misaligned at boot, please fix your bootloader");
-+
- 	arm64_memblock_init();
- 
- 	paging_init();
--- 
-2.26.2
-
+And I think another option is to use gpio-keys defined in device-tree.
+Will this method work for any wake-capable gpio ?
+How to verify this for any arbitrary gpio ?
 
 _______________________________________________
 linux-arm-kernel mailing list
