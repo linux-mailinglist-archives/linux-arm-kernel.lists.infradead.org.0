@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 015831F4ABD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 03:12:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 606F21F4AC2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 03:15:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,73 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0kkcomygsH1/juyKse9rwDadJUASCcNaEHTZYERt7cQ=; b=C7Juntlk+V/HhajpEPO4/3RqGP
-	JeuROQyMVe5XSz6tAIBJ9M7lMN8abFBA+GJ5oyZEj+na1YxYpWfyDKQMVEFLSIQqbPUIy7xNAC3IZ
-	52fIWQY/ayp7XEznoqHMz7n2gaiRBZowNWpQO7wSPZKCo6pNSKHtc/BNy3mcOTz9DDNcuKxJTp1yF
-	GGESV7g6Ryw0CfP7TaXw0Ew3CuIyOARXRQ7Arop+Zg0zmFzh2SyDdKFmAsVohPwUsJf/PTpHG7/qc
-	AKgOTV4SAP1TqZ/QMB033AWtbpKpnpiHAbZt7A4kMqVQiwKVFq/kyztQmF2c29mTLAKmTd5o69Fjb
-	srivuuFg==;
+	bh=mbwDRJ6qi2q1NXLlMqwblThQ6blyWkExmnvgCwOezgY=; b=hp5nWlD2XVG0RM9jewB4MAVJma
+	S0nWXFqKibyewDDHcctRrr3Dfeae3H5ZvdyttMorrlR2AAFaezhgBJWCLA2A9pSRqvUP/eH1cpUW1
+	19IAJD1+sH0u59wdJWX80TQUg+UycvRemKuZylEeeJ9aOIIbNBnkBYaZEtKedJE8oRpABZaYKQukk
+	I3XMAVUR+FOfQ1mgR266+tFQgb44emnZizDlxt8Kr5dsLe4i+XWxDIQeNX3uMcRU3N/wvKbYrvAc/
+	zMtVsrgrcE1qjlWjI74ooC9CcI9YdEphC+qH6FR0Wosl6yy8noCZkqRmUf7mWNg6VqFy5bk2e7cgV
+	cxrV4wWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jipIA-000191-JI; Wed, 10 Jun 2020 01:12:34 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jipLI-0003zh-AK; Wed, 10 Jun 2020 01:15:48 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jipI1-00017s-SI
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 01:12:27 +0000
-Received: by mail-pg1-x542.google.com with SMTP id 185so210327pgb.10
+ id 1jipL9-0003xD-Fw
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 01:15:40 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id d6so167123pjs.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 18:12:22 -0700 (PDT)
+ Tue, 09 Jun 2020 18:15:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:references:from:message-id:date:user-agent:mime-version
  :in-reply-to:content-language:content-transfer-encoding;
- bh=MqJjdKei4BqUxxWSzNOOcjTAtDFpaAnGp1PKq1aUZgE=;
- b=Lqu4zmHYBn3Tyq8LuoPSLUYoRwuJugO52dN8ZEJ+P54WIG9oEPCqjHeutHQbjyO9jG
- 5WpTtpUBsaU9YBGxLueJFRm2rGRs5Ksj6NLRMl/8ZxLrAOO8Dgxdb2hse6f8rjtkfoA8
- ca2DL+vmyaZk2is4E6e9PwCCqzeyFCcUfqhgTm+Xy41KbEqqpX/Yry5RkDDZtqHnlLR4
- bmVEXtB6y/H6+R766nwtGje3kuAhghFxGxdSp0juxgtzGL+1pc0SF1X54BSGwt5Hu0BJ
- KdiOvzXkQ7DrGGAqxYGlgzFRym9oS59aPCz7chVt+lEE6Plhm8zrqcO86OOIJDIqWqxb
- oM1g==
+ bh=oyato65N6RhbhXQIpX0Ba1w0djuilKUjyr0ebq1Bq+g=;
+ b=XAD197r7c9G2ON3v9ggHzGURpIIX5fCie1iMJMy2/tvb3a6pMJUm1LRwaalwCdjSo1
+ bRWQ62AzU7nw2m1RSWHyug2jEmqSPBTU+253TuIu9NSAB40I8rBOStnwx9SFd/Kz7aBf
+ AFXpVGbRdQpDkfqjeM0EGEFmiA9VT6OLygXfKKm6ZxIapAfh8ea00MQ+x/2REbNxQFaj
+ LTe/89pCIwQgENpdU12qpAam0ryG6tcv1pom0dxVU5v+hej4205SpZ322QqVJm8bc+JC
+ uzHZZ9zc2gnh0Kir/2qbTZYMO1PrSmvhw5lck5EKvImBFD7EeoUk6vIoyYXQBgx85XP+
+ FRog==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=MqJjdKei4BqUxxWSzNOOcjTAtDFpaAnGp1PKq1aUZgE=;
- b=ksnzkL48hqwusu1he94B8jJm+qJTfECOUl89nFbG7Q5ir7mlpliDOnHvwZK+DCHngn
- rOF8yV6eeVx6QONsbYjZVJyOXfIRhpE79/kAaSOU+X5384GRLpXPEk7/3At0cIw/JieV
- 62NybyDjXhM9W1k1gEdJ33sOsvyoDq55YvkTNkDTJSSb3kge71J6KIY+j++coNtEykJC
- aOTr0fACGAZzbRtxWwo80IzlIZchb3N2mUyLRMO7KKAnKtp6FqsvjDnsbUfxq213CQRs
- dQQK8SmAoADIl2tvkppps8oh4VrEYufkzYnU3qdstkb2RWFDNONFkLpUuZMY4pBjgNOc
- AE3A==
-X-Gm-Message-State: AOAM533pbL45j5SXgbf0mxjoIhUZ4+Y8ZlC4/ZQ+Ee4Tj3pnQdqLilHI
- x7Z4czDAnS3L90TWKGvU20U4dr7S
-X-Google-Smtp-Source: ABdhPJzinC8euQD8NFr+jgaQ+nGRBexC6jaF1rTAOGjr0cX59OUmSYfAu7TOiP54MCNY/Xf93OPWvA==
-X-Received: by 2002:a62:1a87:: with SMTP id a129mr483796pfa.95.1591751541968; 
- Tue, 09 Jun 2020 18:12:21 -0700 (PDT)
+ bh=oyato65N6RhbhXQIpX0Ba1w0djuilKUjyr0ebq1Bq+g=;
+ b=K+BFM42uxrQOyg4Io2AZWKwOt1c6TYt5MksbsfH4gMs04/7p4MqgOJG/4mKGP/eXci
+ gYN/4Su5HRWwMcgDCgyphgYpOXGFOwj10lN9D8j2+vLmwH0jW3LjMiHX7sLU9kAyynh5
+ phM9aF6WoYNQxHNvOegQYEP3/n/s+No55s2ho2MeMQBoWwJhdwgdmz9IHPfTtJkpU1Sg
+ HvR51yfMsaR3pBnOypvlAPHZyfhxB1CS3EZUj1bm0WKLj2U1PLHJtnEszamiGMNWtL5i
+ HnlvHmcRAgy3z8DlVg302X+PK7E1rSd4qbopulAShvvdBVZ+urFUOqQMd8iH5X5jSGn8
+ 1/2A==
+X-Gm-Message-State: AOAM532V40eqXBLMvpW5Gwj19g1KesUhnXlGWF94UZjrAbDP2mUdzjID
+ psGgIi4awfwKa8EoHB49xgGiT3WW
+X-Google-Smtp-Source: ABdhPJw4WPqJ6jPJGhBvMYVHRL0Ltxuo05ja1OqxCvgSxGd+SkQ2jtPG1jINATFQyZH3XnEavHuDcQ==
+X-Received: by 2002:a17:90a:b90:: with SMTP id 16mr548953pjr.85.1591751738313; 
+ Tue, 09 Jun 2020 18:15:38 -0700 (PDT)
 Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id 71sm11153202pfb.20.2020.06.09.18.12.20
+ by smtp.gmail.com with ESMTPSA id o1sm11595856pfu.70.2020.06.09.18.15.36
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Jun 2020 18:12:21 -0700 (PDT)
-Subject: Re: [PATCH 3/4] mips: bmips: dts: add BCM6328 power domain support
+ Tue, 09 Jun 2020 18:15:37 -0700 (PDT)
+Subject: Re: [PATCH 1/4] dt-bindings: soc: brcm: add BCM63xx power domain
+ binding
 To: =?UTF-8?Q?=c3=81lvaro_Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>,
  hauke@hauke-m.de, zajec5@gmail.com, tsbogend@alpha.franken.de,
- robh+dt@kernel.org, jonas.gorski@gmail.com,
+ robh+dt@kernel.org, f.fainelli@gmail.com, jonas.gorski@gmail.com,
  bcm-kernel-feedback-list@broadcom.com, linux-mips@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 References: <20200609105244.4014823-1-noltari@gmail.com>
- <20200609105244.4014823-4-noltari@gmail.com>
+ <20200609105244.4014823-2-noltari@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <c63d03d6-77bf-04bf-99c0-953da7197a3f@gmail.com>
-Date: Tue, 9 Jun 2020 18:12:19 -0700
+Message-ID: <f6cbb9bb-15df-6283-a509-ea8a8b9bdaab@gmail.com>
+Date: Tue, 9 Jun 2020 18:15:35 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200609105244.4014823-4-noltari@gmail.com>
+In-Reply-To: <20200609105244.4014823-2-noltari@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_181225_920275_EB49CC4A 
-X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-CacheID: sfid-20200609_181539_538320_65AF73A5 
+X-CRM114-Status: UNSURE (   8.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -85,7 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -115,11 +116,17 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 CgpPbiA2LzkvMjAyMCAzOjUyIEFNLCDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgd3JvdGU6Cj4g
-QkNNNjMyOCBTb0NzIGhhdmUgYSBwb3dlciBkb21haW4gY29udHJvbGxlciB0byBlbmFibGUvZGlz
-YWJsZSBjZXJ0YWluCj4gY29tcG9uZW50cyBpbiBvcmRlciB0byBzYXZlIHBvd2VyLgo+IAo+IFNp
-Z25lZC1vZmYtYnk6IMOBbHZhcm8gRmVybsOhbmRleiBSb2phcyA8bm9sdGFyaUBnbWFpbC5jb20+
-CgpBY2tlZC1ieTogRmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+Ci0tIApG
-bG9yaWFuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+QkNNNjMxOCwgQkNNNjMyOCwgQkNNNjM2MiBhbmQgQkNNNjMyNjggU29DcyBoYXZlIGEgcG93ZXIg
+ZG9tYWluIGNvbnRyb2xsZXIKPiB0byBlbmFibGUvZGlzYWJsZSBjZXJ0YWluIGNvbXBvbmVudHMg
+aW4gb3JkZXIgdG8gc2F2ZSBwb3dlci4KPiAKPiBTaWduZWQtb2ZmLWJ5OiDDgWx2YXJvIEZlcm7D
+oW5kZXogUm9qYXMgPG5vbHRhcmlAZ21haWwuY29tPgo+IC0tLQo+ICAuLi4vZGV2aWNldHJlZS9i
+aW5kaW5ncy9taXBzL2JyY20vc29jLnR4dCAgICAgICB8IDE3ICsrKysrKysrKysrKysrKysrCgpZ
+b3Ugc2hvdWxkIHByb2JhYmx5IGNyZWF0ZSBhIFlBTUwgYmluZGluZyBmcm9tIHRoZSBiZWdpbm5p
+bmcgdGhhdCB3YXkKeW91IGdldCB2YWxpZGF0aW9uIGZvciBmcmVlLiBUaGlzIGZpbGUgc2hvdWxk
+IHVsdGltYXRlbHkgYmUgYnJva2VuIGRvd24KaW50byBzZXBhcmF0ZSBZQU1MIGJpbmRpbmdzLCBi
+dXQgSSBIYXZlIG5vdCBoYWQgdGhlIHRpbWUgdG8gZG8gdGhhdCB5ZXQKKHlvdSBhcmUgd2VsY29t
+ZSB0byBpZiB5b3UgZmVlbCBsaWtlIGl0KS4KCk90aGVyIHRoYW4gdGhhdCwgdGhlIGJpbmRpbmcg
+ZGVmaW5pdGlvbiBsb29rcyBnb29kIHRvIG1lLgotLSAKRmxvcmlhbgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
