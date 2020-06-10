@@ -2,109 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51EF31F4C76
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 06:44:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4AEF1F4CBA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 07:03:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mXkOh3Lx7ozqvYZ6d3orWRP80JZa1OfaXSuka2KBVL4=; b=j4D2Tr3uQB8lUt
-	+zf4FzkaWaw8Arhj3fdAsfJiYZhgfMum4LMR01MNQ/qpOmGvqcotc4jD4C2RqC3GLUTyTHZ/OXpdl
-	wNjD1/5hx/W4VhLIYzm2bVD2iML7q12sVflN087zWJTsyHlMXuvHA0j3R3Zpr5eFbcLAL+Tf6Vypx
-	f2luDRH5n0poofd6Apcr7/R9W5xIddS6Mr0xuoHjI34KNQ4Lk6T8/WUXyxZ0nDl5TgFeNUDMLFt1L
-	963JtBj7yVOiMhFa20ZVg/42l5P3f0gTI/T9piwO5NiBQ0hlqdPfwNCrIAkqFFLbfR67rvvC5JUMd
-	IzL2LfsI1wqIkpJ7/kAg==;
+	List-Owner; bh=ULDnwxaFPujOLRQVfrz+5+/E8SiSJU4XOUXOQJjKh94=; b=eMmReY59t1WAvU
+	8FZ4PBpR3hyPIGMfH5nvZNpF2sSMDeXRRGsf6+MfvsTjtsuK9z3ZW/iz3ByiT6RRDmboGyQLXSqzU
+	FdKBN8/4K0wMXKzsJ52BmA055nTPcI9ueyG/n/gWaW+JiRHgfhrXy/w6nooaU3Ko3CgTm2rEUhc4U
+	ag6VRVXh5BNnc7nZnug4LiFxvBh6DTBwVMEoU1GYzOQ17Lu5yN9mXzpJxoUDB+5W8xKmMe87SQ9HY
+	mbzFL+Cj5dwyN7NoikLsUZVaAjYGtnhlUQBST8krknE3Jow2b/ljsRkUiCZ/1up9w/R3eetmykUAh
+	q+vhDjB1s1HuDWjIqVuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jisbU-0006Su-LF; Wed, 10 Jun 2020 04:44:44 +0000
-Received: from mail-db8eur05on2070.outbound.protection.outlook.com
- ([40.107.20.70] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jistL-0000mt-KX; Wed, 10 Jun 2020 05:03:11 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jisbI-0006SN-NP; Wed, 10 Jun 2020 04:44:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fPWTsHLy87anLw1EhBIUgALzNyob+FcJcf0ybUtqt+ZOkCn1lpW1g59e2K6cyJ2LRm06/77fiE94zd2wNKuAEP0tVQIxs/xVSBm6EeBpCLKJbEkT+qbbabsOFvt/PvtacC0T8kXXZA5g7cwShHbc8tT1o/iUpcsPsIfJVMa7uDSi/i7aXuBletXr6HtBlZeVBBAAY9oiOUQ8Xwb2XGtwxxZJs7h3RFXwA5jBIGew0bnXrbYgwzcirfh6fP24eC5nAO1pq0LKOMzPavAkv4HfdfZL4eo68gUqM0lHqWCwHLEhJsaYAltYaeodkRnSuiH5xyqx6xxB8imIQLpwBwRVRg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6oltITg7nLZNREILYo5nYtOgdOky/5qcF0IGDvgmzmM=;
- b=T9n0hPo1bFPtUeMUQuzi4sx8+IRjzWR9EW0u5Bn8iVKDHWkCUQx/s7aXK6eFH8ClDgSpmAf2ltaGMqFf3dHIrs8etwLnCDXPMgnJnDmZNKtppttr5ICv0wtHTq8u7uKKOVYNHVYIOTqtqJ/8VCqh8fFlYuOwa3Uzy/Qrn/YUQ1CGoZ/q3U4/EDkhzxBbBUp0EAao7w3xMgx4Khvoi65aVlZK5LBKqjok8hB0eNNkJOHHI4TJyaUyyjlX2Wp+/4BdrOef2pwtUagfbc0UEHCcGIm0QqaKgQq/qyxd/C9Tp0o9d7mtNDrrOlz2RUoBWpiauxVemOSVHF0wjXxBWWbp9A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6oltITg7nLZNREILYo5nYtOgdOky/5qcF0IGDvgmzmM=;
- b=cp/TT+Gy7vudzYN0jl6MgsjqI4M9/tLtcSlfZtxk0JU74F2fYefnV5yfVhkCQBXv2JaZ6Oy92AYHyPYLxJIp4t0af5uoFaATDB0s+o4VjLYj+x0IQ1Ze6F9QPAheE1IahkQtq76UwBOhXFsQYUufx1h4lZqrVm7GpWpIABS5bw4=
-Received: from DB8PR04MB7162.eurprd04.prod.outlook.com (2603:10a6:10:12c::13)
- by DB8PR04MB6585.eurprd04.prod.outlook.com (2603:10a6:10:103::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Wed, 10 Jun
- 2020 04:44:22 +0000
-Received: from DB8PR04MB7162.eurprd04.prod.outlook.com
- ([fe80::f0c8:301c:ac45:5ba9]) by DB8PR04MB7162.eurprd04.prod.outlook.com
- ([fe80::f0c8:301c:ac45:5ba9%7]) with mapi id 15.20.3066.023; Wed, 10 Jun 2020
- 04:44:22 +0000
-From: Peter Chen <peter.chen@nxp.com>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: Re: [PATCH] usb/gadget/function: introduce Built-in CDROM support
-Thread-Topic: [PATCH] usb/gadget/function: introduce Built-in CDROM support
-Thread-Index: AQHWPs9uyeBNKYlTkUGbGwgcbN1ORqjRRhwA
-Date: Wed, 10 Jun 2020 04:44:22 +0000
-Message-ID: <20200610044446.GA8540@b29397-desktop>
-References: <ejh@nvidia.com> <mchehab+samsung@kernel.org>
- <benh@kernel.crashing.org>
- <1591756349-17865-1-git-send-email-macpaul.lin@mediatek.com>
-In-Reply-To: <1591756349-17865-1-git-send-email-macpaul.lin@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: mediatek.com; dkim=none (message not signed)
- header.d=none;mediatek.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: b33682ac-0f69-417b-632a-08d80cf8f1e7
-x-ms-traffictypediagnostic: DB8PR04MB6585:
-x-microsoft-antispam-prvs: <DB8PR04MB65851621E67BDB962EF7B40D8B830@DB8PR04MB6585.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3631;
-x-forefront-prvs: 0430FA5CB7
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +6Po5wV/Day/bT2yNtSSwqFdR2Oa9df92QaMxfNF6UQTzF2KqT2L/r//Dk1FYlI8KKjgxXjrdjdc4P040ZOTeGBCq54h9rvTS2FASklYn8HWoCCeWk7iePP7Zf0D9nv/vjXgNo5oH9LSk4mD3xDNHsRJ4NKfOqkdxksSyMgqlTDAtWLlpOrnOh3e6aECthRxLz0QZq2yNQdJqTpv7H/62CeQ519xHluMhz9b5v3W898htpWHgT2Niu7ZZgxsb1K1U3z4Ao6QWs5DnF1buJyinOSbY/bszLZq+4Gz9VNGDCe7wBVo1FNujBexhCpKcUag69M2T3yXY27eQZTFXU5gk0KU6BM3An6sHgDGRJ/n0H+iDENEMMHiAvCTim0HTRNX
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB8PR04MB7162.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(7916004)(136003)(376002)(396003)(39860400002)(366004)(346002)(1076003)(83380400001)(86362001)(33656002)(478600001)(44832011)(8676002)(4326008)(7416002)(33716001)(8936002)(316002)(6506007)(64756008)(186003)(54906003)(9686003)(5660300002)(6512007)(71200400001)(26005)(2906002)(66946007)(66556008)(53546011)(6486002)(66476007)(6916009)(76116006)(91956017)(66446008)(309714004);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: ThUREbbLX+Zy8AN5dZ7hOuOyx4Z5O7Msk1X4kCKPXAPrEYkH3Xdji6wSu/a/SSQwsC+7CtChyhc+OU2vmv6ry2WcV7KNmLvnExea7HajO7Ksu5HyWKFoNwxzBX1fVo9H2nIU0vG5XkI1XpTj/PaY1tGhrNSnrxmBrvEPaPQbWLVxsEm39pa9HXvbZWgve1c3yg72dmtR/b8wmsLz0yqRfoHmOpQSGKXG5iQhkzEZM/snDmxRZtR2aIoJ8GifX6DeawdDuWT0Puc8ZCMWhHEPA5fbUq5JCwH+EnscSTyQ9GxPaiVN2+bi7MLxhUnHD1syeNlNen5me2Vlk/hTlUnByFz5yoSACMOeBSoYYk81T/WOLemNLdTwcOK8n3F+/0tgMA3RJFGfQvstkh09/6WXzbhdC0cdZzp4OCmbNhWRTxGikTGD8IaU5kC0g16OdRYEYlPLDblOB5hHCwbvoMR+G5BhWieyny1wSbU3iCHGq7Gx4WuAKfaK/QIC3aH1RcEP
-x-ms-exchange-transport-forked: True
-Content-ID: <07BA7B64689EFC45860B31D1ACDF78B1@eurprd04.prod.outlook.com>
+ id 1jistD-0000mF-Rg
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 05:03:05 +0000
+Received: by mail-lj1-x244.google.com with SMTP id n23so800839ljh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jun 2020 22:03:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=oZHlftmWeFQbO/o4ojQIvHT9HUS+IliGC7NVIJIzxh4=;
+ b=QuGIKBEqm75+UljnwmxsEGtapzRazjZ0GJcwAWhgPNswyK/hiTscGxipDD6JtBQOSh
+ l+1sdLOO/n0DrarwU5fWSTGKEOuSf+PY+dBAactxULTaaA8ivk1ejK088QmHAAEbQq/O
+ J3BUMks1DVg505/Q8ECp8shnr/bhJTXswyZ9/lqcRv0yvQPxAuCSP+tnamHBfrYeWX9f
+ gNqEYB47k/ECWiQ0SximzkurVxncsRqiJDMEgRWDQx6T19W70GKwQjuyoMUYGNBQY/HZ
+ 5Y4JVstjM+j1FXL2v/3u5rhuQfjK9GsF1G93Q7V1B5JXclv2klEyt1JZF0+r0Ts0bD2d
+ YRyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=oZHlftmWeFQbO/o4ojQIvHT9HUS+IliGC7NVIJIzxh4=;
+ b=Gvqw2yUSCMAEOXn68TJuIUVX5pZ+G2VCJXunvhOZ7OqdPXqKd9zHf4TLmVMfx02qLD
+ bUT1Gp/pFkgR/GH70ph1sfiH6UKedMbAzRFy0whaLS06xPhZjQhDm6z1/RB7X4ydqcwx
+ ydAYPFwEjv00ZXDwRzA40hoELuXBNekliUm7auSwgMA/HmXxTCiP8je3j/gPUBo17hZU
+ Bo8L4zAJn3qQIpFJLb12urAHKdeI6Y/Y2ae4h3zHHxqoqsM9EotFIFYbMMwQReT+pn13
+ YBaqfCGyoyNzBPFqi5Z788j8aEWXuNZk/fvNfNldsqrgjjWllQi+IHIzEP1Je3w9Hy8F
+ X51w==
+X-Gm-Message-State: AOAM531SLb8oGs9T2X7+8TZWnFe9MLb071DC4LSVd/QFRDI/N1vh0ugi
+ sprCBAKA/qcmPI+7WHy8NOZaeuBMNfDVTGmfGy3h+g==
+X-Google-Smtp-Source: ABdhPJx5aD3Y9Wn1iD8aoZouZgWz2nll5BDKJ81Gu8zaeBkHWrSKN4Mdz+zTSwq/R4mBwPHIlINFFuyGnPgme6AfUZA=
+X-Received: by 2002:a2e:7e08:: with SMTP id z8mr686481ljc.339.1591765380781;
+ Tue, 09 Jun 2020 22:03:00 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b33682ac-0f69-417b-632a-08d80cf8f1e7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2020 04:44:22.1506 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: qEWxnmrEEx63WwG+SZII2AVk+7UAGjJWy79YjAW7yY+kiJbPzREP+MMQZlaASG9zdEgiqpVATkb4/ssoLriilA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB6585
+References: <1591272551-21326-1-git-send-email-sumit.garg@linaro.org>
+ <159175395730.242598.3354488505981092317@swboyd.mtv.corp.google.com>
+In-Reply-To: <159175395730.242598.3354488505981092317@swboyd.mtv.corp.google.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Wed, 10 Jun 2020 10:32:49 +0530
+Message-ID: <CAFA6WYNnx+aEfMKmWxwesj2JQga-6H3pOOdBpspkBkLhTdpihQ@mail.gmail.com>
+Subject: Re: [PATCH v2] arm64: Enable perf events based hard lockup detector
+To: Stephen Boyd <swboyd@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_214432_838269_D9885A5E 
-X-CRM114-Status: GOOD (  19.31  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200609_220303_925853_B6760B8B 
+X-CRM114-Status: GOOD (  24.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.70 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.70 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -123,190 +91,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>, Bart Van Assche <bvanassche@acm.org>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Hakieyin Hsieh <hakieyin@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Alan Stern <stern@rowland.harvard.edu>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Macpaul Lin <macpaul.lin@gmail.com>, Justin Hsieh <justinhsieh@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Will Deacon <will@kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Alexandru Elisei <alexandru.elisei@arm.com>,
+ Douglas Anderson <dianders@chromium.org>, acme@kernel.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com,
+ julien.thierry.kdev@gmail.com, namhyung@kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, jolsa@redhat.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20-06-10 10:32:29, Macpaul Lin wrote:
-> Introduce Built-In CDROM (BICR) support.
-> This feature depends on USB_CONFIGFS_MASS_STORAGE option.
-> 
-> 1. Some settings and new function is introduced for BICR.
-> 2. Some work around for adapting Android settings is intorduced as well.
+On Wed, 10 Jun 2020 at 07:22, Stephen Boyd <swboyd@chromium.org> wrote:
+>
+> Quoting Sumit Garg (2020-06-04 05:09:11)
+> > With the recent feature added to enable perf events to use pseudo NMIs
+> > as interrupts on platforms which support GICv3 or later, its now been
+> > possible to enable hard lockup detector (or NMI watchdog) on arm64
+> > platforms. So enable corresponding support.
+> >
+> > One thing to note here is that normally lockup detector is initialized
+> > just after the early initcalls but PMU on arm64 comes up much later as
+> > device_initcall(). So we need to re-initialize lockup detection once
+> > PMU has been initialized.
+> >
+> > Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+> > ---
+> >
+> > This patch is dependent on perf NMI patch-set [1].
+> >
+> > [1] https://patchwork.kernel.org/cover/11047407/
+>
+> That patch series is from last year. Any progress on it?
+>
 
-%s/intorduced/introduced
+Alexandru (in Cc) has been working on rebasing and reworking this
+patch-set with WIP-pmu-nmi branch [1]. For more information refer to
+this thread [2].
 
-> --- a/drivers/usb/gadget/function/f_mass_storage.c
-> +++ b/drivers/usb/gadget/function/f_mass_storage.c
-> @@ -315,6 +315,9 @@ struct fsg_common {
->  	void			*private_data;
->  
->  	char inquiry_string[INQUIRY_STRING_LEN];
-> +
-> +	/* For build-in CDROM */
-> +	u8 bicr;
->  };
->  
->  struct fsg_dev {
-> @@ -369,6 +372,10 @@ static void set_bulk_out_req_length(struct fsg_common *common,
->  	if (rem > 0)
->  		length += common->bulk_out_maxpacket - rem;
->  	bh->outreq->length = length;
-> +
-> +	/* some USB 2.0 hardware requires this setting */
-> +	if (IS_ENABLED(USB_CONFIGFS_BICR))
-> +		bh->outreq->short_not_ok = 1;
->  }
+[1] http://www.linux-arm.org/git?p=linux-ae.git;a=shortlog;h=refs/heads/WIP-pmu-nmi
+[2] https://lkml.org/lkml/2020/5/20/431
 
-Why not use fsg_common.bicr instead of MACRO?
+> >
+> > Changes since RFC:
+> > - Rebased on top of Alex's WIP-pmu-nmi branch.
+> > - Add comment for safe max. CPU frequency.
+> > - Misc. cleanup.
+> >
+> >  arch/arm64/Kconfig             |  2 ++
+> >  arch/arm64/kernel/perf_event.c | 41 +++++++++++++++++++++++++++++++++++++++--
+> >  drivers/perf/arm_pmu.c         |  9 +++++++++
+> >  include/linux/perf/arm_pmu.h   |  2 ++
+> >  4 files changed, 52 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> > index e109aa5..a37f018 100644
+> > --- a/arch/arm64/kernel/perf_event.c
+> > +++ b/arch/arm64/kernel/perf_event.c
+> >  #define ARMV8_A53_PERFCTR_PREF_LINEFILL                                0xC2
+> > @@ -1226,3 +1239,27 @@ void arch_perf_update_userpage(struct perf_event *event,
+> >         userpg->time_shift = (u16)shift;
+> >         userpg->time_offset = -now;
+> >  }
+> > +
+> > +#ifdef CONFIG_HARDLOCKUP_DETECTOR_PERF
+> > +/*
+> > + * Safe maximum CPU frequency in case a particular platform doesn't implement
+> > + * cpufreq driver. Although, architecture doesn't put any restrictions on
+> > + * maximum frequency but 5 GHz seems to be safe maximum given the available
+> > + * Arm CPUs in the market which are clocked much less than 5 GHz. On the other
+> > + * hand, we can't make it much higher as it would lead to a large hard-lockup
+> > + * detection timeout on parts which are running slower (eg. 1GHz on
+> > + * Developerbox) and doesn't possess a cpufreq driver.
+> > + */
+> > +#define SAFE_MAX_CPU_FREQ      5000000000UL // 5 GHz
+> > +u64 hw_nmi_get_sample_period(int watchdog_thresh)
+>
+> Is it ever negative? Odd that this API uses a signed integer.
+>
 
-Peter
->  
->  
-> @@ -527,7 +534,16 @@ static int fsg_setup(struct usb_function *f,
->  				w_length != 1)
->  			return -EDOM;
->  		VDBG(fsg, "get max LUN\n");
-> -		*(u8 *)req->buf = _fsg_common_get_max_lun(fsg->common);
-> +		if (IS_ENABLED(USB_CONFIGFS_BICR) && fsg->common->bicr) {
-> +			/*
-> +			 * When Built-In CDROM is enabled,
-> +			 * we share only one LUN.
-> +			 */
-> +			*(u8 *)req->buf = 0;
-> +		} else {
-> +			*(u8 *)req->buf = _fsg_common_get_max_lun(fsg->common);
-> +		}
-> +		INFO(fsg, "get max LUN = %d\n", *(u8 *)req->buf);
->  
->  		/* Respond with data/status */
->  		req->length = min((u16)1, w_length);
-> @@ -1329,7 +1345,7 @@ static int do_start_stop(struct fsg_common *common)
->  	}
->  
->  	/* Are we allowed to unload the media? */
-> -	if (curlun->prevent_medium_removal) {
-> +	if (!curlun->nofua && curlun->prevent_medium_removal) {
->  		LDBG(curlun, "unload attempt prevented\n");
->  		curlun->sense_data = SS_MEDIUM_REMOVAL_PREVENTED;
->  		return -EINVAL;
-> @@ -2692,6 +2708,7 @@ int fsg_common_set_cdev(struct fsg_common *common,
->  	common->ep0 = cdev->gadget->ep0;
->  	common->ep0req = cdev->req;
->  	common->cdev = cdev;
-> +	common->bicr = 0;
->  
->  	us = usb_gstrings_attach(cdev, fsg_strings_array,
->  				 ARRAY_SIZE(fsg_strings));
-> @@ -2895,6 +2912,33 @@ static void fsg_common_release(struct fsg_common *common)
->  		kfree(common);
->  }
->  
-> +#ifdef USB_CONFIGFS_BICR
-> +ssize_t fsg_bicr_show(struct fsg_common *common, char *buf)
-> +{
-> +	return sprintf(buf, "%d\n", common->bicr);
-> +}
-> +
-> +ssize_t fsg_bicr_store(struct fsg_common *common, const char *buf, size_t size)
-> +{
-> +	int ret;
-> +
-> +	ret = kstrtou8(buf, 10, &common->bicr);
-> +	if (ret)
-> +		return -EINVAL;
-> +
-> +	/* Set Lun[0] is a CDROM when enable bicr.*/
-> +	if (!strcmp(buf, "1"))
-> +		common->luns[0]->cdrom = 1;
-> +	else {
-> +		common->luns[0]->cdrom = 0;
-> +		common->luns[0]->blkbits = 0;
-> +		common->luns[0]->blksize = 0;
-> +		common->luns[0]->num_sectors = 0;
-> +	}
-> +
-> +	return size;
-> +}
-> +#endif
->  
->  /*-------------------------------------------------------------------------*/
->  
-> @@ -3463,6 +3507,7 @@ void fsg_config_from_params(struct fsg_config *cfg,
->  		lun->ro = !!params->ro[i];
->  		lun->cdrom = !!params->cdrom[i];
->  		lun->removable = !!params->removable[i];
-> +		lun->nofua = !!params->nofua[i];
->  		lun->filename =
->  			params->file_count > i && params->file[i][0]
->  			? params->file[i]
-> diff --git a/drivers/usb/gadget/function/f_mass_storage.h b/drivers/usb/gadget/function/f_mass_storage.h
-> index 3b8c4ce2a40a..7097e2ea5cc9 100644
-> --- a/drivers/usb/gadget/function/f_mass_storage.h
-> +++ b/drivers/usb/gadget/function/f_mass_storage.h
-> @@ -140,5 +140,8 @@ void fsg_common_set_inquiry_string(struct fsg_common *common, const char *vn,
->  void fsg_config_from_params(struct fsg_config *cfg,
->  			    const struct fsg_module_parameters *params,
->  			    unsigned int fsg_num_buffers);
-> -
-> +#ifdef CONFIG_USB_CONFIGFS_BICR
-> +ssize_t fsg_bicr_show(struct fsg_common *common, char *buf);
-> +ssize_t fsg_bicr_store(struct fsg_common *common, const char *buf, size_t size);
-> +#endif
->  #endif /* USB_F_MASS_STORAGE_H */
-> diff --git a/drivers/usb/gadget/function/storage_common.c b/drivers/usb/gadget/function/storage_common.c
-> index f7e6c42558eb..8fe96eeddf35 100644
-> --- a/drivers/usb/gadget/function/storage_common.c
-> +++ b/drivers/usb/gadget/function/storage_common.c
-> @@ -441,6 +441,29 @@ ssize_t fsg_store_file(struct fsg_lun *curlun, struct rw_semaphore *filesem,
->  		return -EBUSY;				/* "Door is locked" */
->  	}
->  
-> +	pr_notice("%s file=%s, count=%d, curlun->cdrom=%d\n",
-> +			__func__, buf, (int)count, curlun->cdrom);
-> +
-> +	/*
-> +	 * WORKAROUND for Android:
-> +	 *   VOLD would clean the file path after switching to bicr.
-> +	 *   So when the lun is being a CD-ROM a.k.a. BICR.
-> +	 *   Don't clean the file path to empty.
-> +	 */
-> +	if (curlun->cdrom == 1 && count == 1)
-> +		return count;
-> +
-> +	/*
-> +	 * WORKAROUND: Should be closed the fsg lun for virtual cd-rom,
-> +	 * when switch to other usb functions.
-> +	 * Use the special keyword "off", because the init can
-> +	 * not parse the char '\n' in rc file and write into the sysfs.
-> +	 */
-> +	if (count == 3 &&
-> +			buf[0] == 'o' && buf[1] == 'f' && buf[2] == 'f' &&
-> +			fsg_lun_is_open(curlun))
-> +		((char *) buf)[0] = 0;
-> +
->  	/* Remove a trailing newline */
->  	if (count > 0 && buf[count-1] == '\n')
->  		((char *) buf)[count-1] = 0;		/* Ugh! */
-> -- 
-> 2.18.0
+No it isn't expected to be negative.
 
--- 
+> > +{
+> > +       unsigned int cpu = smp_processor_id();
+> > +       unsigned int max_cpu_freq;
+> > +
+> > +       max_cpu_freq = cpufreq_get_hw_max_freq(cpu);
+> > +       if (max_cpu_freq)
+> > +               return (u64)max_cpu_freq * 1000 * watchdog_thresh;
+> > +       else
+> > +               return (u64)SAFE_MAX_CPU_FREQ * watchdog_thresh;
+>
+> I'd rather see the return unindented and the else dropped.
 
-Thanks,
-Peter Chen
+Okay.
+
+>
+> > +}
+> > +#endif
+> > diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+> > index f96cfc4..6c25c0d1 100644
+> > --- a/drivers/perf/arm_pmu.c
+> > +++ b/drivers/perf/arm_pmu.c
+> > @@ -718,6 +718,15 @@ static int armpmu_get_cpu_irq(struct arm_pmu *pmu, int cpu)
+> >         return per_cpu(hw_events->irq, cpu);
+> >  }
+> >
+> > +bool arm_pmu_irq_is_nmi(void)
+> > +{
+> > +       const struct pmu_irq_ops *irq_ops;
+> > +
+> > +       irq_ops = per_cpu(cpu_irq_ops, smp_processor_id());
+>
+> Can we use this_cpu_ptr()?
+
+this_cpu_ptr() sounds more apt here, will use it instead.
+
+-Sumit
+
+>
+> > +
+> > +       return irq_ops == &pmunmi_ops || irq_ops == &percpu_pmunmi_ops;
+> > +}
+> > +
+> >  /*
+> >   * PMU hardware loses all context when a CPU goes offline.
+> >   * When a CPU is hotplugged back in, since some hardware registers are
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
