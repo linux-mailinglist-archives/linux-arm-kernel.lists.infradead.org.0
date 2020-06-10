@@ -2,58 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 786571F582E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:49:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E12FB1F585A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 17:52:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+1S0Y0YidzGEiNhlzyCS7ExXHWJl1Dq+MwUI1pzwX1E=; b=t+MuIDOWX8XVGv/UH7ZfGOltS
-	Q/tWdhPrrk86FtzMdGDgy84TzICj/YTReEtE1BxG8ytfTZfAG4N1oxzZ8WhW6U49javrN/DeBTB6W
-	vuuUGEU/g3dzse9RzQwzTAYcbhimj/L0P11Hz/x58sj7AV3bbdhEgP091koXxOpO6QXNN74zI+Df3
-	2rg+8aAflGl7tpY+rhHk6M6b3C+H3ht1YEj3DNYrCTkGdNcu+uLXRlV9FKy3/d7lN/N6R5kmcDZev
-	+J+H43pzmcUMN2B0jagCQ8wb7tgHLoDzZjvPrSOgXA+jX1h5rCNxsEBdR0/qKmdcqKPIpp38lFTed
-	Etf+USNzA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date
+	:Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7sAzra29vcwbVtBrZoDRX9wJvXnXgKNdtHYBLrRY1Mo=; b=oV2Z33oesjPFQM
+	6dTYqN/17qP2TDhfeFThQvpEnAhbqSu/Ar3K+kVIC93wGKUbHdncgbke9cyo1lvZagEapokbe/s83
+	Zh/or+i/NDSZs/6hdKC7q4wa+OZoei2bfLBr0M93S02xYXb2j8nCES8wX3bm3Pvcb0CX07EPU1jMM
+	AYYWoDjkSlNa25257UVRY3lzMbXBCkH386B2qvzQTK8yiIj5rLzrhOpXjC5/f2gGRLEoCu+ruUS+J
+	IxiAL6zh2v4qKvbWtyhF0I7o7oSEd+cqWwvTQWlakGKtX4fSMfqe7BiJLkGob/O5OL/Msgq1uhr3N
+	1nsAqV8fOO4QSXSluoqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj2yz-00075V-FX; Wed, 10 Jun 2020 15:49:41 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jj31q-0001kY-Sf; Wed, 10 Jun 2020 15:52:38 +0000
+Received: from mail-lj1-f193.google.com ([209.85.208.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj2yr-00074q-Di; Wed, 10 Jun 2020 15:49:34 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 3BCFCAD7D;
- Wed, 10 Jun 2020 15:49:35 +0000 (UTC)
-Message-ID: <1f486fc41030df8c74bf021b02e59f007bf9d14e.camel@suse.de>
-Subject: Re: [PATCH v2 5/9] usb: xhci-pci: Add support for reset controllers
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, gregkh@linuxfoundation.org, 
- wahrenst@gmx.net, p.zabel@pengutronix.de, linux-kernel@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>
-Date: Wed, 10 Jun 2020 17:49:28 +0200
-In-Reply-To: <d452ddb8-cd30-1bfc-7b72-af3412e22ed4@gmail.com>
-References: <20200609175003.19793-1-nsaenzjulienne@suse.de>
- <20200609175003.19793-6-nsaenzjulienne@suse.de>
- <d452ddb8-cd30-1bfc-7b72-af3412e22ed4@gmail.com>
-User-Agent: Evolution 3.36.2 
+ id 1jj31i-0001k9-7v
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 15:52:31 +0000
+Received: by mail-lj1-f193.google.com with SMTP id 9so3116344ljv.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jun 2020 08:52:29 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:reply-to:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=11ALgSq9gv/d3zitAChNViLeQS5L5+FuUfOqP20opAs=;
+ b=aJHn0pPHa+Li0iGowTWguLM3t3WP+enwiKeB7zzaHzDoW2QJokM5uvlirv2mwesvQO
+ I86T2ge/DkbJKyY+PdpddhFX68R4hRkrLYPz+U8Qq7NZniQL3e+bFA1GKks006Mkzp3m
+ tjQhn9rM00xqW2kSvivS3Y84rL88vV7ZLuO3J2tL1EpXWjYX5zjcAejw+4T9JobTTMkm
+ 6Bqpp/jyCOEkRxPNOd2wD5SwIXqR3S0ceEs4YTnDBVu2ZWeN7R5+rXwLbz6DIfqugLqe
+ v2jnYqZksWoLSNIfIoquUg/w3GiHPtaeGkN0us1QZN+qLkvVIh7Id0mcQ/AeL+5KmPJl
+ bOcg==
+X-Gm-Message-State: AOAM533jo7tiD4BLhpt/4LaEQwRdHtbCl0/G5wdFWp6+6gn7QDcLj1Si
+ FZ26CKF1E462XFtdc7P1OUA=
+X-Google-Smtp-Source: ABdhPJxOf6x8h9JgbevXiRilQVr0KtvSmXKyYKWZvP/YIghJt7szxiaNzNcR6ibSpZohdi77kgx7cw==
+X-Received: by 2002:a2e:9a4d:: with SMTP id k13mr2102395ljj.43.1591804348403; 
+ Wed, 10 Jun 2020 08:52:28 -0700 (PDT)
+Received: from [192.168.42.234] ([213.87.161.124])
+ by smtp.gmail.com with ESMTPSA id z15sm29065ljo.102.2020.06.10.08.52.14
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 10 Jun 2020 08:52:27 -0700 (PDT)
+Subject: Re: [PATCH 3/5] gcc-plugins/stackleak: Add 'verbose' plugin parameter
+To: Kees Cook <keescook@chromium.org>
+References: <20200604134957.505389-1-alex.popov@linux.com>
+ <20200604134957.505389-4-alex.popov@linux.com>
+ <202006091147.193047096C@keescook>
+From: Alexander Popov <alex.popov@linux.com>
+Autocrypt: addr=alex.popov@linux.com; prefer-encrypt=mutual; keydata=
+ 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
+ j3lCqPk=
+Message-ID: <fb051386-4913-9442-f051-23ed25802c9e@linux.com>
+Date: Wed, 10 Jun 2020 18:52:10 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
+In-Reply-To: <202006091147.193047096C@keescook>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_084933_756256_A7C8C105 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200610_085230_282635_270EF8BB 
+X-CRM114-Status: GOOD (  11.97  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.193 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [a13xp0p0v88[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [a13xp0p0v88[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.193 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,124 +137,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, mathias.nyman@linux.intel.com,
- linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- andy.shevchenko@gmail.com, tim.gover@raspberrypi.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- helgaas@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3444579043939962083=="
+Reply-To: alex.popov@linux.com
+Cc: kernel-hardening@lists.openwall.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Naohiro Aota <naohiro.aota@wdc.com>, Sven Schnelle <svens@stackframe.org>,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Emese Revfy <re.emese@gmail.com>, Iurii Zaikin <yzaikin@google.com>,
+ PaX Team <pageexec@freemail.hu>, Laura Abbott <labbott@redhat.com>,
+ Mathias Krause <minipli@googlemail.com>, linux-kbuild@vger.kernel.org,
+ Alexander Monakov <amonakov@ispras.ru>, Michal Marek <michal.lkml@markovi.net>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, notify@kernel.org,
+ Florian Weimer <fweimer@redhat.com>, gcc@gcc.gnu.org,
+ Brad Spengler <spender@grsecurity.net>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Luis Chamberlain <mcgrof@kernel.org>, Jessica Yu <jeyu@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Thiago Jung Bauermann <bauerman@linux.ibm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 09.06.2020 21:47, Kees Cook wrote:
+> On Thu, Jun 04, 2020 at 04:49:55PM +0300, Alexander Popov wrote:
+>> Add 'verbose' plugin parameter for stackleak gcc plugin.
+>> It can be used for printing additional info about the kernel code
+>> instrumentation.
+>>
+>> For using it add the following to scripts/Makefile.gcc-plugins:
+>>   gcc-plugin-cflags-$(CONFIG_GCC_PLUGIN_STACKLEAK) \
+>>     += -fplugin-arg-stackleak_plugin-verbose
+>>
+>> Signed-off-by: Alexander Popov <alex.popov@linux.com>
+> 
+> Acked-by: Kees Cook <keescook@chromium.org>
 
---===============3444579043939962083==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-p+TvsQpoIbGXnKb+ob9S"
+I see that I will change this patch after leaving alloca() support.
+I'm going to add debug printing about functions that call alloca().
+I have to omit your 'acked-by' for the changed patch, right?
 
-
---=-p+TvsQpoIbGXnKb+ob9S
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi Florian,
-
-On Tue, 2020-06-09 at 11:13 -0700, Florian Fainelli wrote:
->=20
-> On 6/9/2020 10:49 AM, Nicolas Saenz Julienne wrote:
-> > Some atypical users of xhci-pci might need to manually reset their xHCI
-> > controller before starting the HCD setup. Check if a reset controller
-> > device is available to the PCI bus and trigger a reset.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> >=20
-> > ---
-> >=20
-> > Changes since v1:
-> >  - Use proper reset API
-> >  - Make code simpler
-> >=20
-> >  drivers/usb/host/xhci-pci.c | 7 +++++++
-> >  1 file changed, 7 insertions(+)
-> >=20
-> > diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
-> > index ef513c2fb843..6e96affa4ceb 100644
-> > --- a/drivers/usb/host/xhci-pci.c
-> > +++ b/drivers/usb/host/xhci-pci.c
-> > @@ -12,6 +12,7 @@
-> >  #include <linux/slab.h>
-> >  #include <linux/module.h>
-> >  #include <linux/acpi.h>
-> > +#include <linux/reset.h>
-> > =20
-> >  #include "xhci.h"
-> >  #include "xhci-trace.h"
-> > @@ -339,6 +340,7 @@ static int xhci_pci_probe(struct pci_dev *dev, cons=
-t
-> > struct pci_device_id *id)
-> >  	struct xhci_hcd *xhci;
-> >  	struct usb_hcd *hcd;
-> >  	struct xhci_driver_data *driver_data;
-> > +	struct reset_control *reset;
-> > =20
-> >  	driver_data =3D (struct xhci_driver_data *)id->driver_data;
-> >  	if (driver_data && driver_data->quirks & XHCI_RENESAS_FW_QUIRK) {
-> > @@ -347,6 +349,11 @@ static int xhci_pci_probe(struct pci_dev *dev, con=
-st
-> > struct pci_device_id *id)
-> >  			return retval;
-> >  	}
-> > =20
-> > +	reset =3D devm_reset_control_get_optional_exclusive(&dev->bus->dev, N=
-ULL);
-> > +	if (IS_ERR(reset))
-> > +		return PTR_ERR(reset);
-> > +	reset_control_reset(reset);
->=20
-> Sorry for not catching this earlier, since this is a generic integration
-> with the reset controller API, should not you also add a
-> reset_control_reset() to hcd_pci_resume() for symmetry?
-
-Agreed, if the RPi4 supported suspend/resume, which AFAIK doesn't, an extra
-reset would be needed as pcie-brcmstb performs a fundamental reset on resum=
-e
-forcing us to reinitialize vl805.
-
-Thanks!
-Nicolas
-
-
---=-p+TvsQpoIbGXnKb+ob9S
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7hAQgACgkQlfZmHno8
-x/6Fzgf8CkpRsxb++ft8vkQZu512oFbwoacT+zoJ74u+pVjwyS77fNOhO2Guu5/b
-LFcIThixpQXCsNbhbJ7ioJ+S/+ZLgITbcd9DpBFqsyWeoPGJUQU+uLpViwauaRTJ
-7spzpPtmApUR5s3zC5zTT2w3DKdHyMSnco9nX1URRO6HMD1iVbm2WOzDOI/MC4w/
-y8j3XjcaaFvusXOYe5J0JzFNvvLr8oqVj7gQSJQOaLbPg9nfvCQT/gjWiz/G9tqS
-000fU5+zSJ1wCMw22lWR6WOppHi4/w8YIswcVeat+d6RwA/oCs1soywj1XvApDBh
-6blr3s73GBC82xV02R8fcfG+AaroUQ==
-=DneD
------END PGP SIGNATURE-----
-
---=-p+TvsQpoIbGXnKb+ob9S--
-
-
-
---===============3444579043939962083==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+Alexander
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3444579043939962083==--
-
-
