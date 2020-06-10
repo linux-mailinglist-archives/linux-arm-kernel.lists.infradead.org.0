@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B38D11F4B8A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 04:42:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F34A1F4B93
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 04:43:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WTKz9Et6G6OMTiRVzcL2n46PBrGtrLomx2QSXM/KBrE=; b=szVKAXAFEo6MGB
-	QtL/4xffLxVCW7xQHd6hAkq/Uqq/0EnFuaTVzx/OIB0o3wnt5yqn9F9dc4ceUfh8oEsKsuPAxGSyR
-	UqD0zzfNvKYr20VhfWZitw9Xaxfnxx0N1UjZBQ9l3zJmMBkrOpJZbh5iNEQqfrA4DgM0vskXUxUcG
-	MJTHEYWPN16ECVIgoK8K+ynG7fEwWCJdB/29Rwez1MEVZl4k9OrIqXgLzZWAPogkLD1UGCrjzEJL5
-	dDBEAfOPKZimuA1nvWQp1OyFr6DVFasIDwpUpBiJjtlQOM80+IUnRnBApAtmAdYud2u5oZi2+phJY
-	i4YAv7gzjLOgd3EslnZw==;
+	List-Owner; bh=0SlSz18wUDAsQfSb5mMb84K8gyodtDWqt6U0Migzwpc=; b=jVD64DwnydOlqo
+	+F//zxL8lnf8jonoMy2ISANoMUSI/gpTUGzeaQ/hGbAo0P3wfCfSY831QcM4f5ZGZH7J/g3JId73K
+	H2vYKMC9hNGiJ3/ejvF8AinK7T2hjZcTHSRJ78soLYclROrl5QPa++Zgpwy+i8taTdXddFt9VyjgH
+	TtYAS/1nysD3zkZ97uVQoNOfpJNy/uPHABE+IkI1AfbcmoiwYvgdwvuRG00qY5BVt2vzORD8ACSu8
+	W4l/NqIGh4iyzXRsfcZMvEzy6kpJRDiuT4PmLaiMDHF43LrgLMLFqwNHvn6zTsYJfd/An2kLRc6jO
+	VRxq7lP9NFoZdLOeR9Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiqgp-0005LA-Po; Wed, 10 Jun 2020 02:42:07 +0000
+	id 1jiqiL-0006Mp-Du; Wed, 10 Jun 2020 02:43:41 +0000
 Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiqgi-0005Jt-Gq
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 02:42:01 +0000
+ id 1jiqiB-0006MS-Gm
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 02:43:32 +0000
 Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05A2aQ53156139;
- Wed, 10 Jun 2020 02:41:26 GMT
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05A2aPQF156121;
+ Wed, 10 Jun 2020 02:43:27 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding; s=corp-2020-01-29;
- bh=jsoQcyzfrxL4t8e+aWIRBwCpl33orrtek8y501RHyXY=;
- b=ac++HWFR3PniNo+ib7ObhN2pXkU5X3ONXn9a+sCR9kaE/S/jfXkgciDuaEbHn7A2Rem3
- n6jFTQ7JrrC8TPsJjf97NH+t+bEUCKuW9b6qmQ467e6Henc0gjZTUg8ei2wE9XpwTi59
- gG4nqAi9nAKc7FUlgSFDuJqcZsQtg8D1YuexnXRlWa0inqB9hN7nRoPvYmznfFeR58/X
- 8EvObtt3v4XzM9ScrKqgnxXPd2OM8VEmc7A6YsitMMocvkEVLHUzTHZxPCVAJe/G2EfF
- RlejOJXRwDWmBCBazBIgYuXuPYb/qRbA57AxZuArqW+tNUtw0zu0bpBrwgk7Wl787/f1 UQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 31g3smytkq-1
+ bh=C9Es8C2+h/s3EAvw1L4stcE5EvLdFlxZ20/jsvWY5DU=;
+ b=sjrwwITlQXByBBbx98warsAzGtPWel0pBdnisKkVYISzNmlCjPMf7ZjRCcwqVAZzFpJy
+ OUfVbfumm5qI0Q4Oqg0JY3S1MQxERw69kn/gInW2vhMvzzNU5T+nbEtVu8B/xys6X8sE
+ k3B05EjkSam695t4p7elssl+BcZP0wEzv57LFDXxuyYbNna4cTydMUFLBU55asr8mlnv
+ rDSWrcbLiWJRQqO7DN6MXWsvb/IOUdjP8EbkGLJJlHvzL5mAge4L1AqyDieBXpGTZXjM
+ y+bkE/70i70N+8Ky7qI3U/yDYxKseUEg4i+X6Z/T8/AxiNWfrPMoLUq5T+LpwQWFA8zp yA== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 31g3smytrc-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 10 Jun 2020 02:41:26 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05A2cQsU168143;
+ Wed, 10 Jun 2020 02:43:27 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05A2YOmZ155677;
  Wed, 10 Jun 2020 02:41:26 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3020.oracle.com with ESMTP id 31gmwsd3dm-1
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3020.oracle.com with ESMTP id 31gn27jug6-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
  Wed, 10 Jun 2020 02:41:26 +0000
-Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 05A2fMSp000824;
- Wed, 10 Jun 2020 02:41:22 GMT
+Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 05A2fNeE021432;
+ Wed, 10 Jun 2020 02:41:23 GMT
 Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 09 Jun 2020 19:41:22 -0700
+ with ESMTP ; Tue, 09 Jun 2020 19:41:23 -0700
 From: "Martin K. Petersen" <martin.petersen@oracle.com>
 To: jejb@linux.ibm.com, linux@armlinux.org.uk,
  Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Subject: Re: [PATCH] scsi: acornscsi: Fix an error handling path in
- 'acornscsi_probe()'
-Date: Tue,  9 Jun 2020 22:41:19 -0400
-Message-Id: <159175686975.7062.3916571088976504463.b4-ty@oracle.com>
+Subject: Re: [PATCH] scsi: eesox: Fix different dev_id between 'request_irq()'
+ and 'free_irq()'
+Date: Tue,  9 Jun 2020 22:41:20 -0400
+Message-Id: <159175686975.7062.16533438955437978870.b4-ty@oracle.com>
 X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200530081622.577888-1-christophe.jaillet@wanadoo.fr>
-References: <20200530081622.577888-1-christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20200530073418.577210-1-christophe.jaillet@wanadoo.fr>
+References: <20200530073418.577210-1-christophe.jaillet@wanadoo.fr>
 MIME-Version: 1.0
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9647
  signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- spamscore=0 adultscore=0
- mlxscore=0 mlxlogscore=971 bulkscore=0 malwarescore=0 phishscore=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ suspectscore=0 mlxscore=0
+ phishscore=0 adultscore=0 bulkscore=0 malwarescore=0 mlxlogscore=885
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
  definitions=main-2006100019
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9647
@@ -77,11 +77,11 @@ X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
  priorityscore=1501
  lowpriorityscore=0 impostorscore=0 cotscore=-2147483648 suspectscore=0
  spamscore=0 bulkscore=0 malwarescore=0 phishscore=0 mlxscore=0
- mlxlogscore=999 clxscore=1011 classifier=spam adjust=0 reason=mlx
+ mlxlogscore=937 clxscore=1015 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.12.0-2004280000 definitions=main-2006100019
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_194200_645318_605CB3FF 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20200609_194331_689858_3A4E151F 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -114,23 +114,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>, linux-scsi@vger.kernel.org
+Cc: linux-scsi@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 30 May 2020 10:16:22 +0200, Christophe JAILLET wrote:
+On Sat, 30 May 2020 09:34:18 +0200, Christophe JAILLET wrote:
 
-> 'ret' is known to be 0 at this point.
-> So, explicitly return -ENOMEM if one of the 'ecardm_iomap()' calls fail.
+> The dev_id used in 'request_irq()' and 'free_irq()' should match.
+> So use 'host' in both cases.
 
 Applied to 5.8/scsi-queue, thanks!
 
-[1/1] scsi: acornscsi: Fix an error handling path in acornscsi_probe()
-      https://git.kernel.org/mkp/scsi/c/7960c0b29626
+[1/1] scsi: eesox: Fix different dev_id between request_irq() and free_irq()
+      https://git.kernel.org/mkp/scsi/c/3bab76807d95
 
 -- 
 Martin K. Petersen	Oracle Linux Engineering
