@@ -2,95 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA5D51F4B8B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 04:42:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6D4B1F4B98
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 04:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jnSiQBWZhleoGZbwhb6ZjN4KgrjhHK4p8U9DXCA+tmI=; b=XXEGqN7FEh4Bsg
-	0LuIeaxbeCncNG2b2EJ0vKYjvxqjFVBp8fGDlp1iUXMHX0C+/GlwkmBLxDl0Yz6/A4yQEkRtj9x6m
-	yDPxGJvzQJ//YisVayJipZtLPoo5ELVXKAJGkQnDLxuFbZrSZfo5MJwt3gk8K2RHUTttRuUWLnmi3
-	0qhcOHM1CI8Y++4e6Avq8h+3+PPm9ofd/Q5gFPdtZ05TwkOQLqdHTTo49foHyUe4r6FASwXSaAdlY
-	wIwUbQQ/pVC2LoMEu9QzIc72qRtF9ndHdjV6UIqO+DrVIJfxt6xW4l9YUsFjDT/v0BwxICXHHpuoj
-	v3oVIAUZx+oA2zTpIZRQ==;
+	List-Owner; bh=ScmgvEdF43FzvBEbGxGV0Ou6pThPu8rqONbuWw9fg8w=; b=U10TrXIQgy3W0m
+	ZeF7o9uBu2d4Ft2zPcPUTuZk2alDBjQcbCMFC4ujv2O/R2C8h6HTTx19Wn0AX7uLNnSx/KpLRteQv
+	BrlBwg/0vBp1KK8lIbbgskmQuMwnt1nwhGuKcXL8VSTA/FaWuwZb0q1wLmUmCNYRLE5HLI4EagWVe
+	Z7jeTQtrDCFMP4DfI5wdrI3eJpoADI1MrpT6yzWJ81Y7+7/zyZoT3pkhAtuDr1yC2GxsotI0xwgX+
+	6HgBVcBy2hquhwrKL9rexF4hAmuz+7pjlSQG4dmAo5liNmR7Wu9pF4WBAHVW9y3QQqJbdvW759XTb
+	QzBTkeZ3i0UbIgjroVWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiqh3-0005RM-CY; Wed, 10 Jun 2020 02:42:21 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jiqmb-0000yn-RM; Wed, 10 Jun 2020 02:48:05 +0000
+Received: from mail-eopbgr40050.outbound.protection.outlook.com ([40.107.4.50]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiqgi-0005Js-Kj
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 02:42:02 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05A2aard156161;
- Wed, 10 Jun 2020 02:41:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2020-01-29;
- bh=FPiVafim4lK5nnNGYMQvhqTi3L7FWo/K8vEdhh1owm0=;
- b=yHJ7XuU3p62wQ0Vh/EGuugsppsdispGcei/+2hjDBt/te7iQcg/nabb0VPUHkNLEePjc
- ktUxdFA5Cu4ljmtC4ODb+WZFy70jh5fK/eZnK9fnnLq8E3EMYzpDvPzc3Fa9+64hqC3J
- wKIjQsR7dbxd295ZJbN+SrlAbys1zrgwqEs/r09DZCkqCFkO7SylASFixWC6Nm3dW6xO
- ZoG9cv0LiBY4UKQgEQziuEvUP3R2MOUNgUQFwswANqSvGwSMsJqzKViS8M92RbX5W8Hw
- lIbeanxHtqP+aWLEvMp2Bu7xDAbbHMY6z3Hktr7YuEZZpIX67TEk87/a1MCdfC0CnBaV Fw== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 31g3smytkr-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 10 Jun 2020 02:41:27 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05A2bu9L183400;
- Wed, 10 Jun 2020 02:41:26 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 31gmqpgp3g-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 10 Jun 2020 02:41:26 +0000
-Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 05A2fO2c005804;
- Wed, 10 Jun 2020 02:41:24 GMT
-Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 09 Jun 2020 19:41:24 -0700
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-To: jejb@linux.ibm.com, linux@armlinux.org.uk,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Subject: Re: [PATCH] scsi: powertec: Fix different dev_id between
- 'request_irq()' and 'free_irq()'
-Date: Tue,  9 Jun 2020 22:41:21 -0400
-Message-Id: <159175686974.7062.8526082970785072740.b4-ty@oracle.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200530072933.576851-1-christophe.jaillet@wanadoo.fr>
-References: <20200530072933.576851-1-christophe.jaillet@wanadoo.fr>
+ id 1jiqmT-0000yM-Ql
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 02:47:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Djp+brF9cl3PeOlLtERLQf8etjjOSPDVvYvlrHHj8bZ955lqdeseietW9zGfgMQcvOQWrz2yz+aH+1AzjVfEsDmXrgNCkRA8V9vPSGxgRI9FlLvbbHOfK4P+BZP3Mn+fwGZKs4PLDtB8Rb9PaszrIBOrziIFWc4fseufwn0OTnkyWiF52SvrMFLPQA6vnFHWwZO/6JSAhTnRNUnP8TtUOw/eN9ZrFJgwAJziP+kymtW9Qg3qd7b2at4Y/MyuXhmm5kZ/RfNnaXPejKa5w52gtVWUuKxUj3NNbyHCs+FxkO0f6PSYrJxuE7FD+BNneNq6w3WbOKGCFqRXQQufXW8now==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TZhxXPgPT0lHOapgh72QgeABSuI8bfXnK5XzS/7l7A8=;
+ b=cNZaeM+GfLooctvCsHSv06DCv4hbGyB4iTfxGu7MQxr4MT7Asu3V0ApF2bdbJ9/MCqxDD+siUZnM/qCJDImFWTpZr0XrVjofRFfM5RhVgZtbk296DuafX/xs3aXkqS1Ov/Gj493VAunSnxQpt2MHyAoPsl9NRBmhI1nrleHg4d9izGyh/61Dic79WEgHaHTlwOgJH9goJjb1GgR4Ni5RH7fw8uX8/rV5W2SsQ/xxjORO6EsXvt4YhNMJ3qmvkn/kiOaHY9KL6xAC1PwWEC98XpDq9h1jSd/dI+a97qh32qmJ/SzLhEmlGwf4wS8doA4/D3zv+wL4HAroAlpefcwM7Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TZhxXPgPT0lHOapgh72QgeABSuI8bfXnK5XzS/7l7A8=;
+ b=g51snoeyb7F2YEIp3Y03AlyNGuZ91oRkosVsddLNOvEPW+464sOzvPRZCxK1uV/zrRM6ugryVYJHsIcQpNQ++dcihdRKVDA9jmmzBwANePL037tCpaYkRbCSpp0pfVJQ/+grR/WEzT+phoYr8FC+GFMTTDCn80IjPKR1Fet/+uY=
+Received: from AM7PR04MB7157.eurprd04.prod.outlook.com (2603:10a6:20b:118::20)
+ by AM7PR04MB6837.eurprd04.prod.outlook.com (2603:10a6:20b:10b::8)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Wed, 10 Jun
+ 2020 02:47:52 +0000
+Received: from AM7PR04MB7157.eurprd04.prod.outlook.com
+ ([fe80::1101:adaa:ee89:af2a]) by AM7PR04MB7157.eurprd04.prod.outlook.com
+ ([fe80::1101:adaa:ee89:af2a%3]) with mapi id 15.20.3066.023; Wed, 10 Jun 2020
+ 02:47:52 +0000
+From: Peter Chen <peter.chen@nxp.com>
+To: Jun Li <jun.li@nxp.com>
+Subject: Re: [PATCH 1/6] dt-bindings: usb: dwc3: add property to disable xhci
+ 64bit support
+Thread-Topic: [PATCH 1/6] dt-bindings: usb: dwc3: add property to disable xhci
+ 64bit support
+Thread-Index: AQHWPlBrTuom4kZ7OUyC2lNKvwm9kKjRJo0A
+Date: Wed, 10 Jun 2020 02:47:52 +0000
+Message-ID: <20200610024816.GA18494@b29397-desktop>
+References: <1591701165-12872-1-git-send-email-jun.li@nxp.com>
+ <1591701165-12872-2-git-send-email-jun.li@nxp.com>
+In-Reply-To: <1591701165-12872-2-git-send-email-jun.li@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 63e69d50-a95c-433b-76c1-08d80ce8abbb
+x-ms-traffictypediagnostic: AM7PR04MB6837:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM7PR04MB6837E9B050B541624BBBD5548B830@AM7PR04MB6837.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0430FA5CB7
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: f24a9HS/LH0jbscaA/BBhO6APECiA6OTs7szkGgq2pf0AjbP+5BiytPzGLQDpAzYLTnGXtd2HcO3a2f4ZftaPxFwfwsHUKYNMAT40RnBk7VDuYBnsaRnFxs/ASHND4ZtS1q47Qd6wgg4OLIXtQ2mJVCGsJF/1LBf6lxcy/VclbiTFi6lklpByzQHMj3pgDR8Q3sd/VvMzZFoHUhUUp2mJ17l28wUQXRQGVo63TDn/Bkz70d7gimfEr8rVo6PBP3xx3jhxkRFzf9gakGdgmeA96gVbHCpCXMthKuVoh+l5TeLmtZR35kexD9x2A9Xo9gZ2XOf1mHQFivmiVOgRuUcXg==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM7PR04MB7157.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(7916004)(39860400002)(136003)(346002)(366004)(396003)(376002)(6486002)(6512007)(5660300002)(26005)(64756008)(86362001)(2906002)(66946007)(91956017)(66476007)(66446008)(186003)(1076003)(71200400001)(9686003)(4326008)(66556008)(76116006)(8676002)(8936002)(54906003)(33656002)(478600001)(33716001)(6506007)(316002)(6862004)(6636002)(44832011)(53546011);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: RU0Lek9CmdzYeY1KpqJbvlhNEkqNnJ1z3ImfJsuPwfmaaqwfLUFXoCUwqAr/KlXzWifyN7YNTWx22NtpEy33JPV9XHwhFG/OdXpe3+HvnSTpLkapOiZMRqrT+UHqjzDwSoQhHizbIVZWIupnZgAf671Ab6rBUV9BQVmhPyV/3EyUhIX7I/+oKhftOfC2xDvMA/fVADSdDjTQ8VkHgbIASH1171ybjmndZRZVuG7MphSywPXTdRHtsiBXUkM5tUqdq8fiEGbO9fkFCg3AEzImntN1J7qsnSuPYfNSi+Et1H9NPqnXEJHUJ0Xsl7NiC1Tw3AkD06tOY0VYHAnoXr1pYF9cWLoVXq2DuUH6g+h7r0lJiBcAvJCN9qDCLHKZsj655Ih4fpJgchyZfPkSbBq7KXd8rnDZ4LO8+P0gyZ8WYmeId2xQlxEHDTH20NJOT1I/JdAlWaVk0g+Huuxkh+bkuvdc+otN+F1eHInP2KhMfM4CNkhl2MJtxqrGWPeKwYpl
+Content-ID: <389AA3A11EE6EF4FA6D80A13C7B414F4@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9647
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
- bulkscore=0 mlxscore=0
- mlxlogscore=885 adultscore=0 spamscore=0 suspectscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2006100019
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9647
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- priorityscore=1501
- lowpriorityscore=0 impostorscore=0 cotscore=-2147483648 suspectscore=0
- spamscore=0 bulkscore=0 malwarescore=0 phishscore=0 mlxscore=0
- mlxlogscore=937 clxscore=1015 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2006100019
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 63e69d50-a95c-433b-76c1-08d80ce8abbb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2020 02:47:52.4875 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: frybLx72RoXriYmwfcoPw5gj2EVWh+6lVw3KwMzyfirhncBSJ2AeJTOYypp0EDFesEuIGY49xArHlMVryYwFBA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6837
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_194200_763928_42E6198D 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200609_194757_871126_29F4F0A4 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.4.50 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
+ [40.107.4.50 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,9 +114,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,27 +125,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>, linux-scsi@vger.kernel.org
+Cc: "balbi@kernel.org" <balbi@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 30 May 2020 09:29:33 +0200, Christophe JAILLET wrote:
+On 20-06-09 19:12:40, Li Jun wrote:
+> Add a property "snps,xhci-dis-64bit-support-quirk" to disable xhci 64bit
+> address support, this is due to SoC integration can't support it but
+> the AC64 bit (bit 0) of HCCPARAMS1 is set to be 1.
+> 
+> Signed-off-by: Li Jun <jun.li@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/usb/dwc3.txt | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/dwc3.txt b/Documentation/devicetree/bindings/usb/dwc3.txt
+> index d03edf9..d16cba7 100644
+> --- a/Documentation/devicetree/bindings/usb/dwc3.txt
+> +++ b/Documentation/devicetree/bindings/usb/dwc3.txt
+> @@ -109,6 +109,9 @@ Optional properties:
+>  			When just one value, which means INCRX burst mode enabled. When
+>  			more than one value, which means undefined length INCR burst type
+>  			enabled. The values can be 1, 4, 8, 16, 32, 64, 128 and 256.
+> + - snps,xhci-dis-64bit-support-quirk: set if the AC64 bit (bit 0) of HCCPARAMS1 is set
+> +			to be 1, but the controller actually can't handle 64-bit address
+> +			due to SoC integration.
+>  
+>   - in addition all properties from usb-xhci.txt from the current directory are
+>     supported as well
 
-> The dev_id used in 'request_irq()' and 'free_irq()' should match.
-> So use 'host' in both cases.
-
-Applied to 5.8/scsi-queue, thanks!
-
-[1/1] scsi: powertec: Fix different dev_id between request_irq() and free_irq()
-      https://git.kernel.org/mkp/scsi/c/af7b415a1ebf
+Why not adding it at usb-xhci.txt directly? It is more like general
+property, I see Renesas rcar platforms also have this quirk.
 
 -- 
-Martin K. Petersen	Oracle Linux Engineering
 
+Thanks,
+Peter Chen
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
