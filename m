@@ -2,100 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 606F21F4AC2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 03:15:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF8AB1F4AE1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jun 2020 03:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mbwDRJ6qi2q1NXLlMqwblThQ6blyWkExmnvgCwOezgY=; b=hp5nWlD2XVG0RM9jewB4MAVJma
-	S0nWXFqKibyewDDHcctRrr3Dfeae3H5ZvdyttMorrlR2AAFaezhgBJWCLA2A9pSRqvUP/eH1cpUW1
-	19IAJD1+sH0u59wdJWX80TQUg+UycvRemKuZylEeeJ9aOIIbNBnkBYaZEtKedJE8oRpABZaYKQukk
-	I3XMAVUR+FOfQ1mgR266+tFQgb44emnZizDlxt8Kr5dsLe4i+XWxDIQeNX3uMcRU3N/wvKbYrvAc/
-	zMtVsrgrcE1qjlWjI74ooC9CcI9YdEphC+qH6FR0Wosl6yy8noCZkqRmUf7mWNg6VqFy5bk2e7cgV
-	cxrV4wWw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IkX9XnagjxtmbFoo5mA/5MfZ8k8LdudYmXxklYYyAxc=; b=FJd9tK+R8X9Jvp
+	anvg9Wd8ke2e3OUEpVSBfNy23QtSwY/XhJH1KI2AaL18WJhZ6FFkjvXKv4KAVU6ydPJ92ErXdwT9c
+	K+BL4Guc6P4/IymPxqpWpfKnRvu4XfP2k/DPu6/iJLWhgdwub1+JRqgdL8273HvdN/29CYWak5nIN
+	G53VDu3vOVDFShAEFAHOFpun3ALvKONEXaQ8UOXRPdHSlEnCiiXXGyUYq//dEdBe9M9mhUc00Bi26
+	rIfzcuwpTgY/8eWT0fNA0K8i2HiVmtK+geqrGMl9ubYREnmwZqMEzn7ByoPlTmX7ofswjfm1jJ7zC
+	o9cdKLjB7tNDxaluj5Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jipLI-0003zh-AK; Wed, 10 Jun 2020 01:15:48 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jipXZ-0001O2-8Q; Wed, 10 Jun 2020 01:28:29 +0000
+Received: from rere.qmqm.pl ([91.227.64.183])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jipL9-0003xD-Fw
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 01:15:40 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id d6so167123pjs.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jun 2020 18:15:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=oyato65N6RhbhXQIpX0Ba1w0djuilKUjyr0ebq1Bq+g=;
- b=XAD197r7c9G2ON3v9ggHzGURpIIX5fCie1iMJMy2/tvb3a6pMJUm1LRwaalwCdjSo1
- bRWQ62AzU7nw2m1RSWHyug2jEmqSPBTU+253TuIu9NSAB40I8rBOStnwx9SFd/Kz7aBf
- AFXpVGbRdQpDkfqjeM0EGEFmiA9VT6OLygXfKKm6ZxIapAfh8ea00MQ+x/2REbNxQFaj
- LTe/89pCIwQgENpdU12qpAam0ryG6tcv1pom0dxVU5v+hej4205SpZ322QqVJm8bc+JC
- uzHZZ9zc2gnh0Kir/2qbTZYMO1PrSmvhw5lck5EKvImBFD7EeoUk6vIoyYXQBgx85XP+
- FRog==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=oyato65N6RhbhXQIpX0Ba1w0djuilKUjyr0ebq1Bq+g=;
- b=K+BFM42uxrQOyg4Io2AZWKwOt1c6TYt5MksbsfH4gMs04/7p4MqgOJG/4mKGP/eXci
- gYN/4Su5HRWwMcgDCgyphgYpOXGFOwj10lN9D8j2+vLmwH0jW3LjMiHX7sLU9kAyynh5
- phM9aF6WoYNQxHNvOegQYEP3/n/s+No55s2ho2MeMQBoWwJhdwgdmz9IHPfTtJkpU1Sg
- HvR51yfMsaR3pBnOypvlAPHZyfhxB1CS3EZUj1bm0WKLj2U1PLHJtnEszamiGMNWtL5i
- HnlvHmcRAgy3z8DlVg302X+PK7E1rSd4qbopulAShvvdBVZ+urFUOqQMd8iH5X5jSGn8
- 1/2A==
-X-Gm-Message-State: AOAM532V40eqXBLMvpW5Gwj19g1KesUhnXlGWF94UZjrAbDP2mUdzjID
- psGgIi4awfwKa8EoHB49xgGiT3WW
-X-Google-Smtp-Source: ABdhPJw4WPqJ6jPJGhBvMYVHRL0Ltxuo05ja1OqxCvgSxGd+SkQ2jtPG1jINATFQyZH3XnEavHuDcQ==
-X-Received: by 2002:a17:90a:b90:: with SMTP id 16mr548953pjr.85.1591751738313; 
- Tue, 09 Jun 2020 18:15:38 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id o1sm11595856pfu.70.2020.06.09.18.15.36
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Jun 2020 18:15:37 -0700 (PDT)
-Subject: Re: [PATCH 1/4] dt-bindings: soc: brcm: add BCM63xx power domain
- binding
-To: =?UTF-8?Q?=c3=81lvaro_Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>,
- hauke@hauke-m.de, zajec5@gmail.com, tsbogend@alpha.franken.de,
- robh+dt@kernel.org, f.fainelli@gmail.com, jonas.gorski@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linux-mips@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20200609105244.4014823-1-noltari@gmail.com>
- <20200609105244.4014823-2-noltari@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <f6cbb9bb-15df-6283-a509-ea8a8b9bdaab@gmail.com>
-Date: Tue, 9 Jun 2020 18:15:35 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.9.0
+ id 1jipXN-0001Mu-NI
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jun 2020 01:28:19 +0000
+Received: from remote.user (localhost [127.0.0.1])
+ by rere.qmqm.pl (Postfix) with ESMTPSA id 49hTrh691xz8r;
+ Wed, 10 Jun 2020 03:28:04 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
+ t=1591752489; bh=GKakFZj7r0PwB6e2LKfOoZiiZ9swBqGVdyd905VRjjc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JcyUlr+WvHTHmVp9QAURy3vHUtHVVvuUk1Xc6U+oronaswAv4sPlpbwXkVXPI8OAh
+ +ZCIKP6b32XkKvBIkcDKfm7t5TkDfmLGkNf74ukWIjaGqoW7qPfkxtWoih0Eomc4q/
+ w2zgsXY6Ruhf8XUqJzx4KoGN+dBRlxxN21IxsSv4ms6v4OXw8WDPGKcSmtcRlDrzu+
+ SXD6KNjcaDfhF9rBu5rWcpoycCx3SX/hJ8Ihse3BcYOPhIiNqNAicuPBIwHgj3I9AF
+ SpBhhg7k+AJoi+ZsRdKBumYPce06a6uaA4FP/36CK0TBm0UvejlWb02cPOjzHiUszs
+ CUzBf4na9/iZw==
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.102.2 at mail
+Date: Wed, 10 Jun 2020 03:28:01 +0200
+From: =?iso-8859-2?Q?Micha=B3_Miros=B3aw?= <mirq-linux@rere.qmqm.pl>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH v4 5/7] iio: adc: exynos: Use input_device_enabled()
+Message-ID: <20200610012801.GA11530@qmqm.qmqm.pl>
+References: <2336e15d-ff4b-bbb6-c701-dbf3aa110fcd@redhat.com>
+ <20200608112211.12125-1-andrzej.p@collabora.com>
+ <20200608112211.12125-6-andrzej.p@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20200609105244.4014823-2-noltari@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200608112211.12125-6-andrzej.p@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_181539_538320_65AF73A5 
-X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-CacheID: sfid-20200609_182818_082952_18311468 
+X-CRM114-Status: UNSURE (   7.70  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -110,23 +76,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
+ linux-iio@vger.kernel.org, platform-driver-x86@vger.kernel.org,
+ ibm-acpi-devel@lists.sourceforge.net, Laxman Dewangan <ldewangan@nvidia.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-acpi@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-input@vger.kernel.org, Len Brown <lenb@kernel.org>,
+ Michael Hennerich <michael.hennerich@analog.com>, linux-pm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
+ Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, linux-tegra@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Barry Song <baohua@kernel.org>,
+ Ferruh Yigit <fery@cypress.com>, patches@opensource.cirrus.com,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>
+Content-Type: text/plain; charset="iso-8859-2"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA2LzkvMjAyMCAzOjUyIEFNLCDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgd3JvdGU6Cj4g
-QkNNNjMxOCwgQkNNNjMyOCwgQkNNNjM2MiBhbmQgQkNNNjMyNjggU29DcyBoYXZlIGEgcG93ZXIg
-ZG9tYWluIGNvbnRyb2xsZXIKPiB0byBlbmFibGUvZGlzYWJsZSBjZXJ0YWluIGNvbXBvbmVudHMg
-aW4gb3JkZXIgdG8gc2F2ZSBwb3dlci4KPiAKPiBTaWduZWQtb2ZmLWJ5OiDDgWx2YXJvIEZlcm7D
-oW5kZXogUm9qYXMgPG5vbHRhcmlAZ21haWwuY29tPgo+IC0tLQo+ICAuLi4vZGV2aWNldHJlZS9i
-aW5kaW5ncy9taXBzL2JyY20vc29jLnR4dCAgICAgICB8IDE3ICsrKysrKysrKysrKysrKysrCgpZ
-b3Ugc2hvdWxkIHByb2JhYmx5IGNyZWF0ZSBhIFlBTUwgYmluZGluZyBmcm9tIHRoZSBiZWdpbm5p
-bmcgdGhhdCB3YXkKeW91IGdldCB2YWxpZGF0aW9uIGZvciBmcmVlLiBUaGlzIGZpbGUgc2hvdWxk
-IHVsdGltYXRlbHkgYmUgYnJva2VuIGRvd24KaW50byBzZXBhcmF0ZSBZQU1MIGJpbmRpbmdzLCBi
-dXQgSSBIYXZlIG5vdCBoYWQgdGhlIHRpbWUgdG8gZG8gdGhhdCB5ZXQKKHlvdSBhcmUgd2VsY29t
-ZSB0byBpZiB5b3UgZmVlbCBsaWtlIGl0KS4KCk90aGVyIHRoYW4gdGhhdCwgdGhlIGJpbmRpbmcg
-ZGVmaW5pdGlvbiBsb29rcyBnb29kIHRvIG1lLgotLSAKRmxvcmlhbgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, Jun 08, 2020 at 01:22:09PM +0200, Andrzej Pietrasiewicz wrote:
+> A new helper is available, so use it. Inspecting 'users' member of
+> input_dev requires taking device's mutex.
+[...]
+> --- a/drivers/iio/adc/exynos_adc.c
+> +++ b/drivers/iio/adc/exynos_adc.c
+> @@ -633,7 +633,9 @@ static irqreturn_t exynos_ts_isr(int irq, void *dev_i=
+d)
+>  	bool pressed;
+>  	int ret;
+>  =
+
+> -	while (info->input->users) {
+> +	mutex_lock(&info->input->mutex);
+> +	while (input_device_enabled(info->input)) {
+> +		mutex_unlock(&info->input->mutex);
+>  		ret =3D exynos_read_s3c64xx_ts(dev, &x, &y);
+>  		if (ret =3D=3D -ETIMEDOUT)
+>  			break;
+> @@ -651,6 +653,8 @@ static irqreturn_t exynos_ts_isr(int irq, void *dev_i=
+d)
+>  		input_sync(info->input);
+>  =
+
+>  		usleep_range(1000, 1100);
+> +
+> +		mutex_lock(&info->input->mutex);
+>  	}
+
+Missed an mutex_unlock() here.
+
+>  =
+
+>  	writel(0, ADC_V1_CLRINTPNDNUP(info->regs));
+
+Best Regards,
+Micha=B3=A0Miros=B3aw
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
