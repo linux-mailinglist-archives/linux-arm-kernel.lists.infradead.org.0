@@ -2,102 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A2621F6C70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 18:53:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FD8E1F6C77
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 18:55:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kgznwWIkIBBuFW3EkQ9TAd+cu8NwP5aZLTPWg9VB6iA=; b=NWVg6WR1bxhiLY
-	tj/bsv0T9VPw//KbhRSVOxHCZRN4UXR7r88rJJsqfdBT1Mk1+oNQJf0Sx7nGuHSQw3S8DeOMbrqNY
-	m5o3SssO0YYmPuAYtXtljDrYpaTp+6rE7TkDKZmcJnCvyxE4wJwNf8dHt7Q3NabqEDZLgyJtXteqc
-	FyEQLz721TwogbexEcPKd5jTGvp+usLOVRbcmCkgdxbykdg25z/1YWxfvniwM550DH4/nUciECSRU
-	TLkvmDIspJW4mi/AdbOqSzVAbt0k0bHRSpWAANLWwAQniyTYh3Ga5kGb6UYKZj6a+BUrm2RGG/LZd
-	pbUhZDzAXifxYjiVKZ5g==;
+	List-Owner; bh=d/v88njKOo9aDPr0elstfJ4nEP4A3oqKFePsu6QlvFI=; b=RG47hQN5PJvHjw
+	OXxunrES/m/v5FutLazx9dL4Y7tWD+I2ouGHYL0iJ5yF4dQALnTnULeFGzovfBCWj2be42Um1HXGr
+	OmnWL9LqT6UqneRzCcY0lvf9rm390HRsDej6s8JgGv5yqsw5ttc4p0Ky2FQLkJwOPZlG1SbOKimlo
+	279Uou3cR7wRZkKiNe+cGmu1rmol8+miTH0k7pi8PACYNGzqfZuImuALHwA07rCscQRATJG5SXyKO
+	wBJVvMlXgh0pYpezk6KAhsmuQCPr/Z/PSCxnBF5DJUzpJzwL1iMfDjPcv1gGCvEoq/7i2iIUE+26P
+	8yS+Houja2js5GHiDyDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjQRl-00012i-1d; Thu, 11 Jun 2020 16:52:57 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1jjQU7-0003vj-1o; Thu, 11 Jun 2020 16:55:23 +0000
+Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjQRd-00011k-Bq; Thu, 11 Jun 2020 16:52:51 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 039A258020E;
- Thu, 11 Jun 2020 12:52:44 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 11 Jun 2020 12:52:44 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:content-transfer-encoding:in-reply-to; s=fm3; bh=g
- F0btmld4U26k5IsFwX2l44MfY0Gg3/saFgkLyH4blE=; b=LDLIbuQxI36aNk5ga
- ggJ7wdX9TM3II8gptiBPX+McLxBtUVosZzwYVq8kPs0Hi/trZJFyMRbHEVChTNiR
- daUcnRePipy7Q4ESJhkDNtAiz0wMUeWo2pHPuaSthP26W3tt/eaFjdvt3ZWY8FBl
- Ugh4Ko2+Azl7gV2x9a8LRjYysMeSikKFpJGESQp1yVSfNjef/9PDq+XMSGX8mz/l
- xNl63aMV1gevwytHYVTRUmEeRf8GOV8cAZZd/W6fJc9PVZJpUj6+Jr5ve/CJbZtR
- hpu0fAie5o6HXGXyUNS6WaPQByhpSgaXGyZ7MaJcLg27S2R81r6jlmESFh/CCXCN
- n320A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm3; bh=gF0btmld4U26k5IsFwX2l44MfY0Gg3/saFgkLyH4b
- lE=; b=u293WYbh5c64oJUtk1LeO+ED1Pe7Xl/BQoVYeuU+7y2yGw+R4goF3Xrqo
- HtACc02exwfB4ydHwPiDTmFQBZho7CFe37VZYGtZPpqhRsD0ZL7uwR+6AXAl0max
- tvgxaIRYazyf0Pad5aH0NxqOWHAxdmv0v58Fy70l38NCQNKbhVAZUu0CRTAi9Pt7
- 0lABEHfykR5p/jrCZfKfb+P6yo0s8muMwokSft+QL4TmAdGFYqBpENPOUzxS6qE6
- PCuRMVxFTY3r8jXWPS0Pey5qLN4vY15OqJzLC1MPfv4UJWCvHRDd+k5rLzDsheWV
- IwO2YcHH3IAI2Iao2odyjTAArHuEg==
-X-ME-Sender: <xms:VGHiXnovudi9KX_Z41tX43XfOTSiyZ6dysIo16MD-SO50Y6AtONFcQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehledgkeduucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtugfgjgesthhqredttddtvdenucfhrhhomhepofgrgihi
- mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
- htthgvrhhnpefgjeettdejgffgffdvteeutdehtdehgeehueetkeefgefhtdetjeekledu
- gedvudenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtne
- curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:VGHiXhrv7n_qPG6Dg1JvMoP7SJb1mZefOlGqbCFM72uJiyER836R5w>
- <xmx:VGHiXkOC5RJ2JJjnPXteLYQpqlJLckZltIQH7nGDuHwcHMt2tg29Vw>
- <xmx:VGHiXq4UaLPK5R8-UjFbo1GZiVHVg3fPSkUw9HraS2P6CP8778LOWw>
- <xmx:W2HiXug5u6IraGY0iHPbmC28CpzjCiorQafylCKk933PPBd7cDdzPw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id C30193280060;
- Thu, 11 Jun 2020 12:52:35 -0400 (EDT)
-Date: Thu, 11 Jun 2020 18:52:33 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Stefan Wahren <stefan.wahren@i2se.com>
-Subject: Re: [PATCH v4 2/3] clk: bcm: Add BCM2711 DVP driver
-Message-ID: <20200611165233.dmwxuz5lhxxbh7fb@gilmour.lan>
-References: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
- <bb60d97fc76b61c2eabef5a02ebd664c0f57ede0.1591867332.git-series.maxime@cerno.tech>
- <e9e83c60-ef4c-8806-bcdb-a09702bf7559@i2se.com>
+ id 1jjQTv-0003dx-00
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 16:55:12 +0000
+Received: from unknown (HELO ironmsg04-sd.qualcomm.com) ([10.53.140.144])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 11 Jun 2020 09:55:08 -0700
+Received: from gurus-linux.qualcomm.com ([10.46.162.81])
+ by ironmsg04-sd.qualcomm.com with ESMTP; 11 Jun 2020 09:55:06 -0700
+Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
+ id BF5071B52; Thu, 11 Jun 2020 09:55:05 -0700 (PDT)
+Date: Thu, 11 Jun 2020 09:55:05 -0700
+From: Guru Das Srinagesh <gurus@codeaurora.org>
+To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH v16 00/11] Convert PWM period and duty cycle to u64
+Message-ID: <20200611165505.GA9335@codeaurora.org>
+References: <cover.1591136989.git.gurus@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e9e83c60-ef4c-8806-bcdb-a09702bf7559@i2se.com>
+In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_095249_767563_4DB0B722 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200611_095511_072715_660115AC 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [66.111.4.224 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [199.106.114.39 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,48 +63,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.com>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-clk@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: linux-arm-kernel@lists.infradead.org,
+ Daniel Thompson <daniel.thompson@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ David Collins <collinsd@codeaurora.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan,
-
-On Thu, Jun 11, 2020 at 05:50:30PM +0200, Stefan Wahren wrote:
-> > diff --git a/drivers/clk/bcm/clk-bcm2711-dvp.c b/drivers/clk/bcm/clk-bcm2711-dvp.c
-> > new file mode 100644
-> > index 000000000000..84dbc886e303
-> > --- /dev/null
-> > +++ b/drivers/clk/bcm/clk-bcm2711-dvp.c
-> > @@ -0,0 +1,120 @@
-> > +// SPDX-License-Identifier: GPL-2.0-or-later
-> > +// Copyright 2020 Cerno
-> > +
-> > +#include <linux/clk-provider.h>
-> > +#include <linux/module.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/reset-controller.h>
-> > +#include <linux/reset/reset-simple.h>
-> > +
-> > +#define DVP_HT_RPI_SW_INIT	0x04
-> > +#define DVP_HT_RPI_MISC_CONFIG	0x08
+On Tue, Jun 02, 2020 at 03:31:04PM -0700, Guru Das Srinagesh wrote:
+> Because period and duty cycle are defined in the PWM framework structs as ints
+> with units of nanoseconds, the maximum time duration that can be set is limited
+> to ~2.147 seconds. Consequently, applications desiring to set greater time
+> periods via the PWM framework are not be able to do so - like, for instance,
+> causing an LED to blink at an interval of 5 seconds.
 > 
-> sorry for not noticing this before. Are these defines specific to the
-> Raspberry Pi, because of RPI?
+> Redefining the period and duty cycle struct members in the core PWM framework
+> structs as u64 values will enable larger time durations to be set and solve
+> this problem. Such a change to the framework mandates that drivers using these
+> struct members (and corresponding helper functions) also be modified correctly
+> in order to prevent compilation errors.
+> 
+> This patch series introduces the changes to all the drivers first, followed by
+> the framework change at the very end so that when the latter is applied, all
+> the drivers are in good shape and there are no compilation errors.
+> 
+> Changes from v15:
+>   -  Rebased to tip of for-next.
+> 
+> Changes from v14:
+>   - Collected Uwe's Acked-by for the pwm core patch.
+>   - Addressed comments in pwm-clps711x.c.
+> 
+> Changes from v13:
+>   - Pruned cc-list and added same (reduced) set of reviewers to all patches.
+>   - Added Lee Jones' Acked-by to the pwm_bl.c patch.
+>   - Added Jani Nikula's Acked-by to intel-panel.c patch.
+>   - Added Stephen Boyd's Acked-by to pwm-clk.c patch.
+>   - Addressed Geert's review comments in clps711x.c patch.
+> 
+> Changes from v12:
+>   - Rebased to tip of for-next
+>   - Collected Acked-by for sun4i
+>   - Reworked patch for intel-panel.c due to rebase, dropped Jani's Acked-by as
+>     a result
+> 
+> Changes from v11:
+>   - Rebased to tip of for-next.
+>   - Collected "Acked-by:" for v7 (unchanged) of pwm: sifive: [4]
+>   - Squished stm32-lp.c change with final patch in series
+>   - sun4i: Used nsecs_to_jiffies()
+>   - imx27: Added overflow handling logic
+>   - clps711x: Corrected the if condition for skipping the division
+>   - clk: pwm: Reverted to v8 version, added check to prevent division-by-zero
+> 
+> Changes from v10:
+>   - Carefully added back all the "Reviewed-by: " and "Acked-by: " tags received
+>     so far that had gotten missed in v9. No other changes.
+> 
+> Changes from v9:
+>   - Gathered the received "Reviewed-by: " tag
+>   - Added back the clk-pwm.c patch because kbuild test robot complained [3]
+>     and addressed received review comments.
+>   - clps711x: Addressed review comments.
+> 
+> Changes from v8:
+>   - Gathered all received "Acked-by: " and "Reviewed-by: " tags
+>   - Dropped patch to clk-pwm.c for reasons mentiond in [2]
+>   - Expanded audience of unreviewed patches
+> 
+> Changes from v7:
+>   - Changed commit messages of all patches to be brief and to the point.
+>   - Added explanation of change in cover letter.
+>   - Dropped change to pwm-sti.c as upon review it was unnecessary as struct
+>     pwm_capture is not being modified in the PWM core.
+> 
+> Changes from v6:
+>   - Split out the driver changes out into separate patches, one patch per file
+>     for ease of reviewing.
+> 
+> Changes from v5:
+>   - Dropped the conversion of struct pwm_capture to u64 for reasons mentioned
+>     in https://www.spinics.net/lists/linux-pwm/msg11541.html
+> 
+> Changes from v4:
+>   - Split the patch into two: one for changes to the drivers, and the actual
+>     switch to u64 for ease of reverting should the need arise.
+>   - Re-examined the patch and made the following corrections:
+>       * intel_panel.c:
+> 	DIV64_U64_ROUND_UP -> DIV_ROUND_UP_ULL (as only the numerator would be
+> 	64-bit in this case).
+>       * pwm-sti.c:
+> 	do_div -> div_u64 (do_div is optimized only for x86 architectures, and
+> 	div_u64's comment block suggests to use this as much as possible).
+> 
+> Changes from v3:
+>   - Rebased to current tip of for-next.
+> 
+> Changes from v2:
+>   - Fixed %u -> %llu in a dev_dbg in pwm-stm32-lp.c, thanks to kbuild test robot
+>   - Added a couple of fixes to pwm-imx-tpm.c and pwm-sifive.c
+> 
+> Changes from v1:
+>   - Fixed compilation errors seen when compiling for different archs.
+> 
+> v1:
+>   - Reworked the change pushed upstream earlier [1] so as to not add an
+>     extension to an obsolete API. With this change, pwm_ops->apply() can be
+>     used to set pwm_state parameters as usual.
+> 
+> [1] https://lore.kernel.org/lkml/20190916140048.GB7488@ulmo/
+> [2] https://lore.kernel.org/lkml/20200312190859.GA19605@xxxxxxxxxxxxxx/
+> [3] https://www.spinics.net/lists/linux-pwm/msg11906.html
+> [4] https://www.spinics.net/lists/linux-pwm/msg11986.html
+> 
+> Guru Das Srinagesh (11):
+>   drm/i915: Use 64-bit division macro
+>   hwmon: pwm-fan: Use 64-bit division macro
+>   ir-rx51: Use 64-bit division macro
+>   pwm: clps711x: Use 64-bit division macro
+>   pwm: pwm-imx-tpm: Use 64-bit division macro
+>   pwm: imx27: Use 64-bit division macro and function
+>   pwm: sifive: Use 64-bit division macro
+>   pwm: sun4i: Use nsecs_to_jiffies to avoid a division
+>   backlight: pwm_bl: Use 64-bit division function
+>   clk: pwm: Use 64-bit division function
+>   pwm: core: Convert period and duty cycle to u64
+> 
+>  drivers/clk/clk-pwm.c                      |  7 ++++-
+>  drivers/gpu/drm/i915/display/intel_panel.c |  2 +-
+>  drivers/hwmon/pwm-fan.c                    |  2 +-
+>  drivers/media/rc/ir-rx51.c                 |  3 +-
+>  drivers/pwm/core.c                         | 14 ++++-----
+>  drivers/pwm/pwm-clps711x.c                 |  2 +-
+>  drivers/pwm/pwm-imx-tpm.c                  |  2 +-
+>  drivers/pwm/pwm-imx27.c                    | 48 ++++++++++++++++++++++++++----
+>  drivers/pwm/pwm-sifive.c                   |  2 +-
+>  drivers/pwm/pwm-stm32-lp.c                 |  2 +-
+>  drivers/pwm/pwm-sun4i.c                    |  2 +-
+>  drivers/pwm/sysfs.c                        |  8 ++---
+>  drivers/video/backlight/pwm_bl.c           |  3 +-
+>  include/linux/pwm.h                        | 12 ++++----
+>  14 files changed, 77 insertions(+), 32 deletions(-)
+> 
+> -- 
 
-I'm not entirely sure to be honest. It's the names that the register
-have, but it's not clear to me if it's something specific to the RPi
-itself, or it just means something else entirely.
+Hello Thierry, Uwe, Lee,
 
-Maxime
+Gentle reminder for this patch series :) Earlier discussions on next
+steps were as per [1] and [2].
+
+[1] https://lore.kernel.org/lkml/20200522125028.GG2163848@ulmo/
+[2] https://lore.kernel.org/lkml/20200526065935.GA3628@dell/
+
+Thank you.
+
+Guru Das.
 
 _______________________________________________
 linux-arm-kernel mailing list
