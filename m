@@ -2,84 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B32501F6C65
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 18:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A2621F6C70
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 18:53:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ihx3tXcKMnbj1ro6bn35OXQfVUp9ECn6JII8OJu7QKo=; b=mkFLR7iUtgdPAr
-	rRt27ea2CfZjXBgglCQBUZFHeaASHoe3l8b4EUQfGLQjHnNVYSLy+rl3IdHUm/gkKsJ+zYlzfOJAR
-	jfbT0d4sJcWZKu0rBjFd5LS3cgnn+qea2q0Q05T12GRprsEW42z+9sPzu56FABW9jyMZ/IMil1A4a
-	2xcYK36U8zLcYrmVcs9Jet/ev2KsXTY/PHEDpAfGanVt30f0SNDOd7Td3Q6sMEk9TgYCSTQgJYJai
-	FD26efcukRTcBN0icWnel5DzLWNtRglLE9e7/2s4rdGdh3qWKsFoTmfqudgYPyKeA3u9tRNz6bv9+
-	5NMJvizDTlHCcNTXQbqQ==;
+	List-Owner; bh=kgznwWIkIBBuFW3EkQ9TAd+cu8NwP5aZLTPWg9VB6iA=; b=NWVg6WR1bxhiLY
+	tj/bsv0T9VPw//KbhRSVOxHCZRN4UXR7r88rJJsqfdBT1Mk1+oNQJf0Sx7nGuHSQw3S8DeOMbrqNY
+	m5o3SssO0YYmPuAYtXtljDrYpaTp+6rE7TkDKZmcJnCvyxE4wJwNf8dHt7Q3NabqEDZLgyJtXteqc
+	FyEQLz721TwogbexEcPKd5jTGvp+usLOVRbcmCkgdxbykdg25z/1YWxfvniwM550DH4/nUciECSRU
+	TLkvmDIspJW4mi/AdbOqSzVAbt0k0bHRSpWAANLWwAQniyTYh3Ga5kGb6UYKZj6a+BUrm2RGG/LZd
+	pbUhZDzAXifxYjiVKZ5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjQPQ-0000eK-I7; Thu, 11 Jun 2020 16:50:32 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jjQRl-00012i-1d; Thu, 11 Jun 2020 16:52:57 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjQPE-0000dV-QM
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 16:50:22 +0000
-Received: by mail-wr1-x441.google.com with SMTP id h5so6908861wrc.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 09:50:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=6515e9EWm5jt/wBgz8o5nKQ9DvkrHHIupbzxxJRVBVw=;
- b=AcM0ENgyTIkG6prNtB2Wvpox2sVZ27dEKDUc422WU4R+XKKKmjv+AK8dJhbyjr5f0E
- Gqk2J2yjUjkwphycoKSuVZLv640rr5CniCwIDWJ9MBayJjfeZDpqDifwk7iSMLH0tjG3
- RT1Lg4t5OrAWguqWn/SzEdsA8mHG5KKaMJ2Ag=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=6515e9EWm5jt/wBgz8o5nKQ9DvkrHHIupbzxxJRVBVw=;
- b=fdcsUbeSLDvCloSTPI3Bjgb8heQOicPf26d8jdNazNKyRWrVr/BHXPl+131GCEj2Bx
- urCGVodUtvykq+1xRVLCNHazyky/hkUlMg/vLZtY2BJjSHnoy9wpFqsoSZbB0f4RC6LL
- Mf6D7RQ/wEdYmesfsG2rMOFJN8yy10wS3KY1QhYDR79M9C42by2yyTlPpgn8YrwZGwGa
- DElA3sUMYR5ks4hZAs02QAP+zZf9nLhG6M4ewBJIoTA/0VLTNPEjuuy9eL33+yQvo/IZ
- lez/8OQG8yzeeUq1iBc2Vl8Xop5KLXPbjrGDI7F7Upr74d3oy6oPdMPuKzC1Nprns3v0
- sMOg==
-X-Gm-Message-State: AOAM533vN6O62H8s0fVhrU1ej0hhiNyHs0/ZEr7QUKa6b2WEKNDrRi0L
- MRZoQ3666sj6x4gEn1VvALXqjg==
-X-Google-Smtp-Source: ABdhPJwsVmMDI0pm3cj4yymPaJuKLgVFy93RQHQ3urhSAFwhD7NTFT5tUA1Bg2Gwg0wQixixd9PrjQ==
-X-Received: by 2002:a05:6000:18c:: with SMTP id
- p12mr11124576wrx.66.1591894219582; 
- Thu, 11 Jun 2020 09:50:19 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id d17sm6217221wrg.75.2020.06.11.09.50.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 11 Jun 2020 09:50:19 -0700 (PDT)
-Date: Thu, 11 Jun 2020 16:50:17 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Xia Jiang <xia.jiang@mediatek.com>
-Subject: Re: [PATCH RESEND v9 13/18] media: platform: Delete redundant code
- and add annotation for an enum
-Message-ID: <20200611165017.GB8694@chromium.org>
-References: <20200604090553.10861-1-xia.jiang@mediatek.com>
- <20200604090553.10861-15-xia.jiang@mediatek.com>
+ id 1jjQRd-00011k-Bq; Thu, 11 Jun 2020 16:52:51 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 039A258020E;
+ Thu, 11 Jun 2020 12:52:44 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Thu, 11 Jun 2020 12:52:44 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:content-transfer-encoding:in-reply-to; s=fm3; bh=g
+ F0btmld4U26k5IsFwX2l44MfY0Gg3/saFgkLyH4blE=; b=LDLIbuQxI36aNk5ga
+ ggJ7wdX9TM3II8gptiBPX+McLxBtUVosZzwYVq8kPs0Hi/trZJFyMRbHEVChTNiR
+ daUcnRePipy7Q4ESJhkDNtAiz0wMUeWo2pHPuaSthP26W3tt/eaFjdvt3ZWY8FBl
+ Ugh4Ko2+Azl7gV2x9a8LRjYysMeSikKFpJGESQp1yVSfNjef/9PDq+XMSGX8mz/l
+ xNl63aMV1gevwytHYVTRUmEeRf8GOV8cAZZd/W6fJc9PVZJpUj6+Jr5ve/CJbZtR
+ hpu0fAie5o6HXGXyUNS6WaPQByhpSgaXGyZ7MaJcLg27S2R81r6jlmESFh/CCXCN
+ n320A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm3; bh=gF0btmld4U26k5IsFwX2l44MfY0Gg3/saFgkLyH4b
+ lE=; b=u293WYbh5c64oJUtk1LeO+ED1Pe7Xl/BQoVYeuU+7y2yGw+R4goF3Xrqo
+ HtACc02exwfB4ydHwPiDTmFQBZho7CFe37VZYGtZPpqhRsD0ZL7uwR+6AXAl0max
+ tvgxaIRYazyf0Pad5aH0NxqOWHAxdmv0v58Fy70l38NCQNKbhVAZUu0CRTAi9Pt7
+ 0lABEHfykR5p/jrCZfKfb+P6yo0s8muMwokSft+QL4TmAdGFYqBpENPOUzxS6qE6
+ PCuRMVxFTY3r8jXWPS0Pey5qLN4vY15OqJzLC1MPfv4UJWCvHRDd+k5rLzDsheWV
+ IwO2YcHH3IAI2Iao2odyjTAArHuEg==
+X-ME-Sender: <xms:VGHiXnovudi9KX_Z41tX43XfOTSiyZ6dysIo16MD-SO50Y6AtONFcQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehledgkeduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtugfgjgesthhqredttddtvdenucfhrhhomhepofgrgihi
+ mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
+ htthgvrhhnpefgjeettdejgffgffdvteeutdehtdehgeehueetkeefgefhtdetjeekledu
+ gedvudenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtne
+ curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:VGHiXhrv7n_qPG6Dg1JvMoP7SJb1mZefOlGqbCFM72uJiyER836R5w>
+ <xmx:VGHiXkOC5RJ2JJjnPXteLYQpqlJLckZltIQH7nGDuHwcHMt2tg29Vw>
+ <xmx:VGHiXq4UaLPK5R8-UjFbo1GZiVHVg3fPSkUw9HraS2P6CP8778LOWw>
+ <xmx:W2HiXug5u6IraGY0iHPbmC28CpzjCiorQafylCKk933PPBd7cDdzPw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id C30193280060;
+ Thu, 11 Jun 2020 12:52:35 -0400 (EDT)
+Date: Thu, 11 Jun 2020 18:52:33 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Stefan Wahren <stefan.wahren@i2se.com>
+Subject: Re: [PATCH v4 2/3] clk: bcm: Add BCM2711 DVP driver
+Message-ID: <20200611165233.dmwxuz5lhxxbh7fb@gilmour.lan>
+References: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
+ <bb60d97fc76b61c2eabef5a02ebd664c0f57ede0.1591867332.git-series.maxime@cerno.tech>
+ <e9e83c60-ef4c-8806-bcdb-a09702bf7559@i2se.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200604090553.10861-15-xia.jiang@mediatek.com>
+In-Reply-To: <e9e83c60-ef4c-8806-bcdb-a09702bf7559@i2se.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_095020_853565_E9C3AAD1 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200611_095249_767563_4DB0B722 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [66.111.4.224 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,7 +97,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,41 +109,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
- srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
- senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
- maoguang.meng@mediatek.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-mediatek@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.com>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-clk@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Xia,
+Hi Stefan,
 
-On Thu, Jun 04, 2020 at 05:05:48PM +0800, Xia Jiang wrote:
-> Delete unused member variables annotation.
-> Delete unused variable definition.
-> Delete redundant log print, because V4L2 debug logs already print it.
-> Add annotation for enum mtk_jpeg_ctx_state.
+On Thu, Jun 11, 2020 at 05:50:30PM +0200, Stefan Wahren wrote:
+> > diff --git a/drivers/clk/bcm/clk-bcm2711-dvp.c b/drivers/clk/bcm/clk-bcm2711-dvp.c
+> > new file mode 100644
+> > index 000000000000..84dbc886e303
+> > --- /dev/null
+> > +++ b/drivers/clk/bcm/clk-bcm2711-dvp.c
+> > @@ -0,0 +1,120 @@
+> > +// SPDX-License-Identifier: GPL-2.0-or-later
+> > +// Copyright 2020 Cerno
+> > +
+> > +#include <linux/clk-provider.h>
+> > +#include <linux/module.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/reset-controller.h>
+> > +#include <linux/reset/reset-simple.h>
+> > +
+> > +#define DVP_HT_RPI_SW_INIT	0x04
+> > +#define DVP_HT_RPI_MISC_CONFIG	0x08
 > 
-> Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
-> ---
-> v9: add annotation for enum mtk_jpeg_ctx_state
-> ---
->  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 15 ++-------------
->  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h |  8 ++++++--
->  2 files changed, 8 insertions(+), 15 deletions(-)
-> 
+> sorry for not noticing this before. Are these defines specific to the
+> Raspberry Pi, because of RPI?
 
-Reviewed-by: Tomasz Figa <tfiga@chromium.org>
+I'm not entirely sure to be honest. It's the names that the register
+have, but it's not clear to me if it's something specific to the RPi
+itself, or it just means something else entirely.
 
-Best regards,
-Tomasz
+Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
