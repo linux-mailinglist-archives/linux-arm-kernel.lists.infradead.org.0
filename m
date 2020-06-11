@@ -2,72 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B3C21F69E0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 16:26:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 045631F69E6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 16:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3f1uJG26/rgtpEWS/+T1jBPn3rJJKxVYQhPgJTpUEY4=; b=ZD7/6KpFANVxpC
-	v4M5Nzp+nwtcWFnomV+xTY3qj/GMKCPn3X4eBKuiD+nloM770nLWiMkn42bJPyPUuJclrlhA5trWu
-	KeZqTFLii2gh72YMQo1KPKXTxvFp2ChXRjtu3SZfWZWIvU/XYTy5QJUoUoko9GqNjhkh3NmWSVZbJ
-	g8/WmtbqJNjLBNrsCE3CQxJqV67UJz9FIRScFZYSlO5qcKyC6GnPuPMXpKRUW+Xdm8iOT3PJFwV6O
-	5nwY6KMOCFQYN3V4H/ZlbOwwS4rBNyD7l7FZiE5qRdF3jt49yDVgmiXmmIoAO3nKSSNLOqE8dParT
-	SKjEnL5jPrZS+AELWb+w==;
+	List-Owner; bh=njtRwDbyWSvbLd8o+7KIrVV7qeT9p4IRMf2clXDIdMU=; b=ShO1ddlFe/V/xL
+	6/YY+mVWSdciSIse7t76eqnH2yGXreSnQNGIW3Uc9PK/idx40ZSvyxchIG8TqGSmiMkg0mKxnNZaT
+	yRUh4pQQf9W4EyCY3jzTyyKrikAktwLOL3Lr0N5wvJRlja2W5a0zsyU87C26adLsMgsAeMTscZAtU
+	NylxVRcpb75TURFmO+va8tcqokd5/bFk2cX2pGAQcc/Ll1Hb6N+PiTRH4Adj+AcAdsmLR9SBq0NSM
+	xTmXv/qCFz2uaZPx6+7TbIdZIXWmnmlBx1l+1C0qGiTKMIEdZUafhgoC+CgVodsn8wwNmXSl0oXN3
+	NT0+lTyt8MlNmMF7GcPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjO9a-0005Zj-HW; Thu, 11 Jun 2020 14:26:02 +0000
+	id 1jjOAt-0005uF-18; Thu, 11 Jun 2020 14:27:23 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjO9O-0005YS-Um
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 14:25:52 +0000
-Received: by mail-wm1-x341.google.com with SMTP id d128so5254859wmc.1
+ id 1jjOAl-0005tj-RN
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 14:27:17 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d128so5259607wmc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 07:25:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=4Wl9FPjQM/OmioKsKPEd8aDegLYWZmFx0p2ql/A57hk=;
- b=l28f8UvDUpME1nIHWAzTfBskecEhX50JaBZhgjJEeNEemNi2o5jq6jzfPAXaUlfCc0
- Tsgd8VVnkXoyX74/1DMaTTXjBT2cVYaVJLtAnFt53WEJI1amkTsQZ6pe40TWM7f+u8tf
- gAFiVIgbp/zn78MwZ11YBE5DZge2oKlRtDmMU=
+ Thu, 11 Jun 2020 07:27:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=9PTMI4AzXbLxjyyfz+xfdpQHe4hbBWsXmsCFiQIKN4U=;
+ b=FwBN+sIO4TrTpP0kISN3kEu0krnuRDrBMvQaELuZn2dafIWWIy3mCsH4FnnW14hbhE
+ mQZvr+O1MMO1HbLLkF3esMZtzen5E4PSL/AFedMg9N7ZvIJHmtFJqWaEOL1D+FWBJpdk
+ ++BzE/BZLtUb84uvG5wlSGRetmJXlxgLzcf6Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=4Wl9FPjQM/OmioKsKPEd8aDegLYWZmFx0p2ql/A57hk=;
- b=ewv2mGhdg+F+5PtNzshYVEbal06G8BMH0cwRn077h29cEg3C7wu+gTGtWdMju+lZDa
- uTYvrSD3un/EmVKwQ/pv0H0kIUJH4vtm6mHyIKWqLO7Fnoh1p7ZxJydSIGNbk3d38VpG
- Y3YHK1HA5xb6cnXKbi/JeheNp6HJ6XNsrVASO9OVr6pcjvMSFC+JNDz7Ls85TvqIiGeB
- VtkRiu4Hl7aHfRasTK1B7fkW75yJpdPDGwacw9+rzfpn39id+nmqAGbh4hBhOc1pjuyE
- kgX/8aC71N7Gp76VLE3RwsalxLvhbqY+JgOCb/AltwiRfyp1HuqA+udXVmboctCAHAeR
- W7Ng==
-X-Gm-Message-State: AOAM530YYtB52VLFJCbfQhyBX8un895pC5ZhjpOQcB32d1udxhOQyyAF
- 7d/ENKdMXRcD5JVl8CX32sjXXmtNEr5Fkw==
-X-Google-Smtp-Source: ABdhPJwq/eOqXtITLK+kyOLCk4mNDfVsqXIZV2F3yV+6GfhTdR4AaBB6cuDCKN+FCMKfYALtIfLtaA==
-X-Received: by 2002:a1c:1d16:: with SMTP id d22mr8733030wmd.174.1591885548499; 
- Thu, 11 Jun 2020 07:25:48 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id b14sm4310840wmj.47.2020.06.11.07.25.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 11 Jun 2020 07:25:47 -0700 (PDT)
-Date: Thu, 11 Jun 2020 14:25:46 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Xia Jiang <xia.jiang@mediatek.com>
-Subject: Re: [PATCH RESEND v9 08/18] media: platform: Cancel the last frame
- handling flow
-Message-ID: <20200611142546.GB158633@chromium.org>
-References: <20200604090553.10861-1-xia.jiang@mediatek.com>
- <20200604090553.10861-10-xia.jiang@mediatek.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=9PTMI4AzXbLxjyyfz+xfdpQHe4hbBWsXmsCFiQIKN4U=;
+ b=qpLuSIBuXl5ww0q+NlK6KtWGMZUJdAInGGx0UOl3gG9vFWAL1pz78Eh6VA2DWGujkY
+ 9knDw64aN2gqLs+iP5/L892qyILLaijb08L6QakSEiYqpX9YXJUHIb0iIZxQ0VGlzbgk
+ eZGdG5MLGleSDiN7mmEZURpbXn/IdEt1FMOWuKt3Qo6UivTTmqHvDnmuMOlJIJDykv9x
+ jOtoG4ANk4zN9+aepJroFwPUemgsQt3SyQjHaPZmC5kwBf7JVbfhKjGu5TG1250h5pWg
+ S+7G4yXpNnRtPVGoMtryU2odqF1vcdQ2kMCpLME60L6AI9Yzs0uWwKVHDLi0R+O61boW
+ sXWA==
+X-Gm-Message-State: AOAM530/OlF4WfiN+NPegteoB2HJwMvsJY7w7CfoLXxLQ6gWYRsO13vd
+ 3c4rblzS4v3/4dshPIkyjtLdHTcoVgFOAR1zbNxSeg==
+X-Google-Smtp-Source: ABdhPJxFx37GGZrR7mx+bOeh2G0xHw4CjeDEUlLUymRGmdGvuYyynBKWPZnPWwH+zKli3nFcFwjcLZAVrfDcfzhzaPA=
+X-Received: by 2002:a1c:7206:: with SMTP id n6mr8751619wmc.4.1591885634606;
+ Thu, 11 Jun 2020 07:27:14 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200604090553.10861-10-xia.jiang@mediatek.com>
+References: <20191014061617.10296-2-daniel@0x0f.com>
+ <20200610090421.3428945-5-daniel@0x0f.com>
+ <42aa9e03-3fcc-a602-40db-cfbddef36b34@suse.de>
+In-Reply-To: <42aa9e03-3fcc-a602-40db-cfbddef36b34@suse.de>
+From: Daniel Palmer <daniel@0x0f.com>
+Date: Thu, 11 Jun 2020 23:26:59 +0900
+Message-ID: <CAFr9PXkFqhivokPzP3ZyHMKaT52nRuJHE=DKd9V5BnC=pV+JWg@mail.gmail.com>
+Subject: Re: [PATCH v2 4/5] ARM: mstar: Add dts for msc313(e) based BreadBee
+ boards
+To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_072550_984458_7F300794 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200611_072715_889157_C47E538F 
+X-CRM114-Status: GOOD (  16.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -85,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,40 +91,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
- srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
- senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
- maoguang.meng@mediatek.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-mediatek@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Daniel Palmer <daniel@thingy.jp>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Ard Biesheuvel <ardb@kernel.org>,
+ Stephan Gerhold <stephan@gerhold.net>, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Nathan Huckleberry <nhuck15@gmail.com>, devicetree@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, allen <allen.chen@ite.com.tw>,
+ tim.bird@sony.com, Maxime Ripard <mripard@kernel.org>,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ Gregory Fong <gregory.0xf0@gmail.com>, Doug Anderson <armlinux@m.disordat.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, Krzysztof Adamski <k@japko.eu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>, Mike Rapoport <rppt@kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Xia,
-
-On Thu, Jun 04, 2020 at 05:05:43PM +0800, Xia Jiang wrote:
-> There is no need to queue an empty buffer for signaling a last frame,
-> because all frames are separate from each other in JPEG.
-> 
-> Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
-> ---
-> v9: new patch
-> ---
->  .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 21 +------------------
->  1 file changed, 1 insertion(+), 20 deletions(-)
-> 
-
-Reviewed-by: Tomasz Figa <tfiga@chromium.org>
-
-Best regards,
-Tomasz
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW5kcmVhcywKCk9uIFRodSwgMTEgSnVuIDIwMjAgYXQgMjI6NDUsIEFuZHJlYXMgRsOkcmJl
+ciA8YWZhZXJiZXJAc3VzZS5kZT4gd3JvdGU6Cgo+ID4gKyAgICAgY29tcGF0aWJsZSA9ICJ0aGlu
+Z3lqcCxicmVhZGJlZS1jcnVzdCIsICJtc3RhcixpbmZpbml0eSI7Cj4gPiArCj4gPiArICAgICBh
+bGlhc2VzIHsKPiA+ICsgICAgICAgICAgICAgc2VyaWFsMCA9ICZwbV91YXJ0Owo+ID4gKyAgICAg
+fTsKPiA+ICsKPiA+ICsgICAgIGNob3NlbiB7Cj4gPiArICAgICAgICAgICAgIHN0ZG91dC1wYXRo
+ID0gInNlcmlhbDA6MTE1MjAwbjgiOwo+ID4gKyAgICAgfTsKPiA+ICt9Owo+ID4gKwo+ID4gKyZw
+bV91YXJ0IHsKPiA+ICsgICAgIHN0YXR1cyA9ICJva2F5IjsKPgo+IE1pZ2h0IHRoaXMgYmUgYSBt
+b3JlIHN1aXRlZCBwbGFjZSBmb3IgdGVtcG9yYXJ5IGNsb2NrLWZyZXF1ZW5jeT8gRm9yCj4gbGFj
+ayBvZiBjbGsgZHJpdmVyIGl0IHdvdWxkIHNlZW0gdG8gZGVwZW5kIG9uIHRoZSBib2FyZCdzIGJv
+b3Rsb2FkZXIKPiBwcmUtY29uZmlndXJpbmcgaXQgcmF0aGVyIHRoYW4gYmVpbmcgYSBkZWZhdWx0
+IG9mIHRoZSBTb0MuCgpGb3IgYWxsIG9mIHRoZSBjaGlwcyBzbyBmYXIgdGhlaXIgc2Vjb25kIHN0
+YWdlIGJvb3Rsb2FkZXIgYWx3YXlzIHR1cm5zCm9uIGEgUExMIGFuZApyZWNvbmZpZ3VyZXMgdGhl
+IHBtX3VhcnQgY2xvY2sgdG8gdXNlIGEgMTcyTUh6IHRhcCBmcm9tIHRoYXQgUExMIHJpZ2h0CmF0
+IHRoZSBzdGFydApvZiB0aGUgYm9vdCBwcm9jZXNzIGJlZm9yZSB1LWJvb3QgaXMgc3RhcnRlZC4g
+VGhlIG5ldyB1LWJvb3QgU1BMIEknbQp3b3JraW5nIG9uIHRvIHJlcGxhY2UKdGhhdCBsb2FkZXIg
+Zm9sbG93cyB0aGF0IGNvbnZlbnRpb24uCk9uY2UgdGhlIGNsayBwYXJ0cyBhcmUgaW4gaXQgc2hv
+dWxkIGJlIHBvc3NpYmxlIHRvIHB1bGwgb3V0IHRoZSBmaXhlZApmcmVxdWVuY3kgYW5kCnJlcGxh
+Y2UgaXQgd2l0aCBhIHByb3BlciBoYW5kbGUgdG8gdGhhdCBQTEwgdGFwLgpCYXNpY2FsbHkgaXQn
+cyBub3QgZG9jdW1lbnRlZCBhbnl3aGVyZSBleGNlcHQgdGhlIGFzc2VtYmx5IGJ1dCB0aGUKY29u
+dmVudGlvbiBmb3IKdGhlc2UgY2hpcHMgaXMgdG8gdXNlIHRoZSAxNzJNSHogY2xvY2sgZm9yIHRo
+ZSB1YXJ0IHByZXR0eSBzb29uIGFmdGVyCnBvd2VyIG9uIHNvIGl0Cm1hZGUgc2Vuc2UgdG8gaGF2
+ZSBpdCBpbiBvbmUgcGxhY2UuCgpUaGFua3MsCgpEYW5pZWwKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
