@@ -2,77 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68A4D1F64A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 11:24:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA8B41F64A7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 11:24:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TEiIA4z5UCi0SwiX+AuLKm/8al7xQrbq2bjGzuYwXI8=; b=Ww0HsV04/wuC4J
-	Pf5XAJjGUHZbHofzr3Njg2shB/bZ640H0V3f2mGcnMZMdGr57h70Bur1/IovTIMzRbH5wDYQc5Qk0
-	mZb+QkTK70JNOs876+IPzCCmYEnXhU15vOBrp6LmukT8yRuFaR7uhotI7aQBXeciW7XlATqHGerM6
-	+nDiGzv9zPZUFfkw3yEndobxSQ9hFWOs9FSxoMsNLuenlYDRG0MgWoo/naodxh56jeiG/vzrHQtsn
-	WA3By5R9gKsOex3WX5m71leBehpCqK98X5i1LbiOlpIm3fPvbVF9KrvMjlc/qMXUpXBJtPNqm51j2
-	qvvA/AvmJMBEzDJhRkwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LhPmL81Lv5hm3svIKnso3SY3t9cUiVE4YybOnxLdq0c=; b=sFEsgSVcIqw3O0
+	HZyEX4aIB7i2r2e+yI3F+76tdHcPFyBwQfoM61ZNP70gBdVtGemSxxMvd2jRdI41laxlxTYGjNHMt
+	IpUbMe0gHr3pmpzhc6rSy2aVbTh13KZLlMd+8XIS6SeysZSKhwHOcFS4h6J++QuSTJFixXhFYAfAo
+	xVJFtwuC5SUK2cuCGMqeEdZ3csewzL/1LHvtiikbd1Em2jfqn0YuUH/2bYuG5E2HrTguY3CgaBRYN
+	YWflwV5pMw1bJxvEikK2lFA/0+Ldww1NaCKGtqwJb2XbneIJe6Ncz9zKNlIa3xE4qiuvIkUt1ufie
+	o0OxI5EteubOmIqrFZQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjJRY-0006We-9I; Thu, 11 Jun 2020 09:24:16 +0000
+	id 1jjJRI-0006Co-9R; Thu, 11 Jun 2020 09:24:00 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjJQq-00061J-7E; Thu, 11 Jun 2020 09:23:34 +0000
+ id 1jjJQq-00061K-7F; Thu, 11 Jun 2020 09:23:33 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 08248580189;
+ by mailnew.nyi.internal (Postfix) with ESMTP id 0E13658018B;
  Thu, 11 Jun 2020 05:23:23 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
+Received: from mailfrontend2 ([10.202.2.163])
  by compute4.internal (MEProxy); Thu, 11 Jun 2020 05:23:23 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm3; bh=KT8aImVSVqlrbrlR88jQFQocoP
- NuLOplGRWjjaiH9wg=; b=kfDiEnlEf+G08a7sPegVXiHu9QVSPpUp/oqWZSYkB3
- XgCDvBS9Ah03kQ3SOirbB0YIfvrJFEuszUidvSGwWnOS6Graez0Kc7V3tmhYKqRg
- NpbupVKRZNsLvivgRqqYA39I41qME9baTSNN1tb/cJKDDinRs1cJawZGqjjs1Bjg
- oEP+oK4pt4dkJK2do0oqKjCx/vhH3OD0OzgiFL9xSvAh5qwDlwCaGVdjQcYTVCQx
- eDEqmXRoFeiVnUHG83Hw0rTPednG0wSF2nTjOI4s0K7oGWLPXsHrYEDygbQY+hDE
- PJGNf7NHReSBCOH6sDD+I02HNINnmnBsGG7nNrfT5zYQ==
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm3; bh=YRaDkEkTklAX2
+ SkiwK41JMnq4nzpTHlfRqzovGYPSFo=; b=gCJgwzgReJcjeSezMp6lCOFFkSgif
+ 56B94ecjo4XbepYjypGnZ8w5Uz/Oiwx737se7ypowozSjvavJ9Q3V0eU/PqIIUzr
+ qea+Yo4NWOW24KJPEpv69ojIgKXGaki7zQ4IzR/6LiPRrejyvmqn9nWxSfAoDl3D
+ 37Dyisb0rgCg5Xdp62ukxebfxOf0HkE0/PXwQwzDOdmA2/nOsHHhRMBfxkspILv6
+ OGYGoYK+wQ9BVAh7odqx/vREs8I/VA3mJ2/y1uP0RV1Wi9IDy7NGms8SYh9w0KEd
+ KTWcAFOrI3DOmIUFDgemmCftuB93/95j6wK4biLR0oZzxBO7cKnNNseMQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=KT8aImVSVqlrbrlR8
- 8jQFQocoPNuLOplGRWjjaiH9wg=; b=GuviQ1dt2l1NP/edva45O9ZAXRMqVqSTF
- DdeiAYMkfB4axltL9nLaNRFsWfW7g47bDvtri4Prg0qLCYGxdgzwkD+DcgrCgs7E
- XilueAE7JIFXd+0CvhIfbhnFjSWOfF/+Qx7SJR7HnaFezuVrP8jVO9YvlsS8ZWDz
- HlCK4kT9tHKIfHkW1iYvSwP79Ugu39U6AVHsZl5F8TQtNGfqahTq6YJ/6spVnKbk
- EUC9yUGt/vwr6UVYB6fWq00NsJlOnVYcRiSNsLLianG6FkbF1e3xCH7MghlkkUBl
- Zaoj/ZlOgGW3tyKS+A+6APw2UfbWrbD0gxs2vvJbw5iyE80EaPdRg==
-X-ME-Sender: <xms:CPjhXnj1n0_WFUb2hKy_YfCounKQEIlI0bty8P2uQ1MKfEFRm-2kUQ>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm3; bh=YRaDkEkTklAX2SkiwK41JMnq4nzpTHlfRqzovGYPSFo=; b=IOGmyAUC
+ 79QJB8dGCVwcKS4tFZZejjobok/DKNYctiVTEdXppMbAGNr1+DmK0QzfLS0qbKT3
+ avazsFI+kSnNPvpqxy6buCvHqHM/BWlT64p/nAoPT7ryK8PZ8ieKg3laH4AEPndd
+ 4yYFkbkdmWxT5O3kfhK9PlIkt/8ideyAlJ5bcyeRTfiv7TOACRK2RTlkH4ntBkSO
+ x7qv3c4zW1/NrTfQaZ8+XdbmpbvIfcQ4yYJyFswnEWv5My1TCAXfqwexvjozpgTT
+ H7oDbFSCZQCxHPWRRev7JZZCKLaY+CoxwAshODYFlVYeRHz1qHRtl+soKGFUXmAf
+ 1MwtiFlAyYY5sg==
+X-ME-Sender: <xms:CvjhXnwOfCqhl4z4rdqgopybZFTV4Q9DTxhahlekBQDIWqqwcd6zGA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehkedgudeiucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcu
- tfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrthhtvg
- hrnhepjeffheduvddvvdelhfegleelfffgieejvdehgfeijedtieeuteejteefueekjeeg
- necukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrg
- hrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:CPjhXkBwO0DKloQYmKnZFW0_ov58slXXLPWgqXtH9Yx8_g7vL-idTA>
- <xmx:CPjhXnGjiLKiAOjXyKq4Zy39d4OeGvKrKuz_uzTL6lAsiOnI0YFzhw>
- <xmx:CPjhXkSJFLboPzj8AkUxZ1OBRVW9MLg4qR7-MoG894JUNj0WXnn1qg>
- <xmx:CvjhXgeDLjT4ZlC-J4u3CP6HGd7hgu8MYJ1u-RsQq8u_A0S4yQj77w>
+ govehorghsthgrlhdqhfeguddvqddtvdculdduhedtmdenucfjughrpefhvffufffkofgj
+ fhgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucftihhprghrugcuoehmrg
+ igihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrhhnpeevjeeijedtvefg
+ fffgjeeugffguedtleetkeegteeufedtuddttdfgfffhgfeuffenucffohhmrghinhepug
+ gvvhhitggvthhrvggvrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhs
+ thgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvg
+ hrnhhordhtvggthh
+X-ME-Proxy: <xmx:CvjhXvSuG7YsmB1g4d_pc8E8T1p5Yio9TwKYA3bhGU1rS2zRKLHMnQ>
+ <xmx:CvjhXhUOSUFsE3TfAtawomo0bXeSB7IRpshkiBySU0Z8T1DMqM_VGw>
+ <xmx:CvjhXhhJAeVgt1HBjsL5oQe_3HTHAqsGjGWFRasVhKOu1nPN6cIfLg>
+ <xmx:C_jhXuKvlSf07wYWwXPCMNrqdN6r3_qYKau5wxXE_xftfd8jCUBC0g>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 910E63280059;
- Thu, 11 Jun 2020 05:23:20 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 9EBD930618C1;
+ Thu, 11 Jun 2020 05:23:22 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v4 0/3] clk: bcm: Add BCM2711 DVP driver
-Date: Thu, 11 Jun 2020 11:23:14 +0200
-Message-Id: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
+Subject: [PATCH v4 1/3] dt-bindings: clock: Add BCM2711 DVP binding
+Date: Thu, 11 Jun 2020 11:23:15 +0200
+Message-Id: <0b8f09baff1ff3c471631e6f523e2b2cd773ec47.1591867332.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
+References: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_022332_406471_2831E10D 
-X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-CacheID: sfid-20200611_022332_414162_0A33FD29 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -101,48 +106,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>,
  Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>, Phil Elwell <phil@raspberrypi.com>,
- linux-arm-kernel@lists.infradead.org, Maxime Ripard <maxime@cerno.tech>
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The BCM2711 has a unit controlling the HDMI0 and HDMI1 clock and reset
+signals. Let's add a binding for it.
 
-Here is yet another smaller patches series that got stripped out of the
-huge HDMI one.
-
-Since it depends at build time on patches already queued by Philipp in
-reset/next, maybe we should merge the clock driver in the reset tree with
-the Acks of Stephen and Mike?
-
-Maxime
-
-Changes from v3:
-  - Switch to devm_platform_get_and_ioremap_resource and devm_reset_controller_register
-  - Actually use the Kconfig symbol in the Makefile
-
-Maxime Ripard (3):
-  dt-bindings: clock: Add BCM2711 DVP binding
-  clk: bcm: Add BCM2711 DVP driver
-  ARM: dts: bcm2711: Add HDMI DVP
-
- Documentation/devicetree/bindings/clock/brcm,bcm2711-dvp.yaml |  47 +++-
- arch/arm/boot/dts/bcm2711.dtsi                                |  15 +-
- drivers/clk/bcm/Kconfig                                       |  11 +-
- drivers/clk/bcm/Makefile                                      |   1 +-
- drivers/clk/bcm/clk-bcm2711-dvp.c                             | 120 +++++++-
- 5 files changed, 194 insertions(+)
+Cc: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: devicetree@vger.kernel.org
+Reviewed-by: Rob Herring <robh+dt@kernel.org>
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+ Documentation/devicetree/bindings/clock/brcm,bcm2711-dvp.yaml | 47 +++++++-
+ 1 file changed, 47 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/clock/brcm,bcm2711-dvp.yaml
- create mode 100644 drivers/clk/bcm/clk-bcm2711-dvp.c
 
-base-commit: 192e08e14e37b78e83cc2f5b9eb5a15a7d71c4e2
+diff --git a/Documentation/devicetree/bindings/clock/brcm,bcm2711-dvp.yaml b/Documentation/devicetree/bindings/clock/brcm,bcm2711-dvp.yaml
+new file mode 100644
+index 000000000000..08543ecbe35b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/clock/brcm,bcm2711-dvp.yaml
+@@ -0,0 +1,47 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/clock/brcm,bcm2711-dvp.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom BCM2711 HDMI DVP Device Tree Bindings
++
++maintainers:
++  - Maxime Ripard <mripard@kernel.org>
++
++properties:
++  "#clock-cells":
++    const: 1
++
++  "#reset-cells":
++    const: 1
++
++  compatible:
++    const: brcm,brcm2711-dvp
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++required:
++  - "#clock-cells"
++  - "#reset-cells"
++  - compatible
++  - reg
++  - clocks
++
++additionalProperties: false
++
++examples:
++  - |
++    dvp: clock@7ef00000 {
++        compatible = "brcm,brcm2711-dvp";
++        reg = <0x7ef00000 0x10>;
++        clocks = <&clk_108MHz>;
++        #clock-cells = <1>;
++        #reset-cells = <1>;
++    };
++
++...
 -- 
 git-series 0.9.1
 
