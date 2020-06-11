@@ -2,84 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE8D91F602E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 04:55:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BD121F60C1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 06:11:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=d0rPOdWEiAilHVMB4Rzr53Q0lnBzj6TccW1K3MIKm7I=; b=AaDZbhltsk0Hma6v5i/Pu1wyi
-	iXq5PWIKa+GJlDYo4dpWqnBF3B6JyY3r4bC7fvvoVg4WuV8nidOi7HcnPNmb/0rNvHoKFvlSBGTsA
-	vopcunNaPOT6LZAjegSKWAUJ40qeyrE3Yn+NAodEMMYukpM1EPW9ZiHuqpvhxPgYqxpZNlXCW7ghc
-	SKuwIfrTtbVFBjrbZ34Br7AONpR9oUir3CzboA0J2qqbzOpDDxXNecpy+WXLkt3ztyEmq7Gq7BOjn
-	W278vAt6il3howGQBAwtLzZqsy8Ln4SsnZNQsHv9dUQvax4LkgeHjM9LmtXOqZriKJ9Eud31Jul6w
-	GtsODnyRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QPN3gDMbG3i5dSSUK+wlUyvPuxRK27Ydgy3Rrm21jKc=; b=D8BBMMpARJl3m5
+	70X5+/3yy+106C0ZuMtuFpK1UGS6NooBKgpEK/0kqV/f0eqQiEMyQcmIaK7PLLkye/tXSJ7BQIR/t
+	hKsuse+sH3Sa5gZOEa1s2q5Ng8qqtDyVAuwEiPc1xytzHnZJjXmDJ9oYx7zOkRJNf7YhMgzme85z4
+	gJbkf+/M8Tbxcg7Y2XTdPSJhWP3QAJKk2/YaC1djsmq24BjlSYhDOCSJxxyg9ptdTcG1PKWNBUaPc
+	hJa8PvixVIks7sxaGaJFyJf2dG5Fw5DcdFL/bnnl9NcIDjVrl7lsoPqscq/rNqSSFJJE9Lv1RkMnO
+	cSqOXQ4eivahUoFe9BIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjDN7-0004Kz-B6; Thu, 11 Jun 2020 02:55:17 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jjEYd-00065L-PT; Thu, 11 Jun 2020 04:11:15 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjDMr-0002qY-Tz
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 02:55:06 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id jz3so1651133pjb.0
+ id 1jjEYW-00061k-3v
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 04:11:10 +0000
+Received: by mail-io1-xd43.google.com with SMTP id i25so4851101iog.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jun 2020 19:55:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=j30R0UZzrDd+0W4T3mjyr9hSWvrdW6CBf5sEGoGyfXI=;
- b=YbaZTSS93EP7PjECnua8oQ5ab7vBqk+ABuJX3e/qK8iuRB9AZboQWcjN9nOMr3LEbO
- Ic3FExHwmXhD8IBQDuvf7PFai5iqbX30bSunhs2TMSctm3jwu2Uzv76XGLvxka7YiNwP
- bq+7hOvVNy4n3/9jtpUQgXYOsSMEVQBHAJrUYqakK406cocI/KCCzcSLB4+ueA0JzKqs
- Buiehe3CYrBtuZdIAg4nRXYalSDn4FcRin/SU3b538yPpBy/RMKVFtRfxjP1BOW3HND4
- /VPgwJwonI+rVPBxtz/j8jsZ6O4mcvc2fzPJnUW6EshfwLCtM9V+VFfrn06vgaptR/YO
- 6ORQ==
+ Wed, 10 Jun 2020 21:11:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=d94BWwXDVPdkXtU6jwE/up8ZwLrJjD6cxsvZtbmlMGA=;
+ b=jODk7oB9+jT79zvz+Muy8CLOWUjh/0ShkPTXQ0l8PJuG0J+VHWmWrAXpwSVVp7Ya+S
+ suNSTLMTDYXbhGIkz2UxPMr8PQb3ryOT7X/oF1VP0ubb8TRkvgz8CdiyS7J/BSwRT2jx
+ ziE5681SqyhplUiYbYVrK9Tg8rOIV0hHMWINVn6wt1jY+um07eJi9e8gyDKaO28r9oT5
+ 1Guek3IdTW2sGVbQuUckmWFAMFbjzB4XvOY9zXXa9RjZrat386NkUgeJU6qCI2u+C0+z
+ 9wGisS9V84+dQMAro2bPUoLXVEOXftvOWJyH/eU+htbnHdzYpl3oFB1uq579lO/GBor8
+ CxmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=j30R0UZzrDd+0W4T3mjyr9hSWvrdW6CBf5sEGoGyfXI=;
- b=OxEt3r+yCYa7OCcNP3XGfWlrxfjnZVr7CX7EOpNQmozw0QW+cdUzrQ1yId2NmEz273
- 1HhhlVD1Ou4mUWqDoEJ84j6jBrTXRbx2zPEPIPKtWY3zuT99AfgYRJ59TXDbdws/LMKY
- z51Lt/bIT8U8fcJ1EYzj6HBFMIsC1LDeQu+mVZNmjOpCSkQkJgs1uJmxNO/Do8fxPqUv
- xF7C7f3oCgwa72WjVMfgEoj/IHW2s5XVX7MjTNiY8Jfv9TvtqOAkGRX+lLYAS34UjtLD
- UNF7BE0gSfhGzNQrDm52GgDIgv/Gz7kssZX8xFxE3iw4AmlmKGW1uGL3EvoZduZWXVnY
- DGZg==
-X-Gm-Message-State: AOAM530vR27xYu2cNQd8bBsoaNNSaIh2e1oKhDKDZnZ5Tlt/Rzyc2a2n
- BiV4fzMi/qkrdghgTmr0qRK9bw==
-X-Google-Smtp-Source: ABdhPJy13QPXB7ndCJTCJUZMyAvmhnKxmSP60f1ha+1dPVVCf9spfvGWBTpxKJ0hiwq4FFMTSLSh6Q==
-X-Received: by 2002:a17:90a:c717:: with SMTP id
- o23mr5951320pjt.195.1591844100426; 
- Wed, 10 Jun 2020 19:55:00 -0700 (PDT)
-Received: from [10.80.1.206] ([45.135.186.73])
- by smtp.gmail.com with ESMTPSA id 6sm1259143pfi.170.2020.06.10.19.54.48
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 10 Jun 2020 19:54:59 -0700 (PDT)
-Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
-To: Bjorn Helgaas <helgaas@kernel.org>, Arnd Bergmann <arnd@arndb.de>
-References: <20200609164926.GA1452092@bjorn-Precision-5520>
-From: Zhangfei Gao <zhangfei.gao@linaro.org>
-Message-ID: <1d8a7ec4-b578-a97a-7835-453806f4e3ef@linaro.org>
-Date: Thu, 11 Jun 2020 10:54:45 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=d94BWwXDVPdkXtU6jwE/up8ZwLrJjD6cxsvZtbmlMGA=;
+ b=UxdjomPyJaiuuwHk4v6JvNxTOmqoKASN+WqZq07j0BKnr2EKfis6WO7uKE6GlxGfxz
+ Y896zYGPWjiGhWa/DL1CDvKBzSzjupecZOD80c2vRMQq6B/MxQbWleiGLqs565QWhPfm
+ I7m2Ct3M39gC71yh4HpPn7EwQ3SEjYEb7+DTQWi9vtXCXYxPjSTqakMl98HKLgzcI0ig
+ UPaOxBiwPUGqLuqlpXkxjRFYp7oxqL+Ez3BCMUixCxsCkz2Pk4k5qZGgSILXDoawAaFi
+ hrJJlattt+IvGNKFp5yDhffUKgSXfm1QZ9gXrcKGN+1mPUFTlESDtL1OzcM7BVWj3ZU3
+ sMpQ==
+X-Gm-Message-State: AOAM532LRHS0IyuXVDN6fZjjQiiAlDFF6VChyvnPpEetiAs2RwyNNkCV
+ EZnSWbqlV/MtV9Brtq8/T/eLLfakl96IVRul0yGcNgib
+X-Google-Smtp-Source: ABdhPJxSTl0sf4Ad32FLL6dubPqSVn1efkHEeZGVTRot6sWQ7Tkxma+Vi8eBmWS6YGM3IHnPk7obmnpYQpQo+8o9RQU=
+X-Received: by 2002:a05:6602:13c6:: with SMTP id
+ o6mr6440972iov.84.1591848666969; 
+ Wed, 10 Jun 2020 21:11:06 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200609164926.GA1452092@bjorn-Precision-5520>
-Content-Language: en-US
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Wed, 10 Jun 2020 23:10:56 -0500
+Message-ID: <CABb+yY1q3fTJkF0zOBJ6y8u-707-tVax9Vn_TR=vgq35=7j83Q@mail.gmail.com>
+Subject: [GIT PULL] Mailbox changes for v5.8
+To: Linus Torvalds <torvalds@linux-foundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_195502_072998_7FC1CBCD 
-X-CRM114-Status: GOOD (  22.44  )
+X-CRM114-CacheID: sfid-20200610_211108_177361_0F50C2F9 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jassisinghbrar[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,100 +90,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thanu Rangarajan <Thanu.Rangarajan@arm.com>,
- jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Souvik Chakravarty <Souvik.Chakravarty@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- linux-pci <linux-pci@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Wangzhou <wangzhou1@hisilicon.com>,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, kenneth-lee-2012@foxmail.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDIwLzYvMTAg5LiK5Y2IMTI6NDksIEJqb3JuIEhlbGdhYXMgd3JvdGU6Cj4gT24gVHVl
-LCBKdW4gMDksIDIwMjAgYXQgMTE6MTU6MDZBTSArMDIwMCwgQXJuZCBCZXJnbWFubiB3cm90ZToK
-Pj4gT24gVHVlLCBKdW4gOSwgMjAyMCBhdCA2OjAyIEFNIFpoYW5nZmVpIEdhbyA8emhhbmdmZWku
-Z2FvQGxpbmFyby5vcmc+IHdyb3RlOgo+Pj4gT24gMjAyMC82Lzkg5LiK5Y2IMTI6NDEsIEJqb3Ju
-IEhlbGdhYXMgd3JvdGU6Cj4+Pj4gT24gTW9uLCBKdW4gMDgsIDIwMjAgYXQgMTA6NTQ6MTVBTSAr
-MDgwMCwgWmhhbmdmZWkgR2FvIHdyb3RlOgo+Pj4+PiBPbiAyMDIwLzYvNiDkuIrljYg3OjE5LCBC
-am9ybiBIZWxnYWFzIHdyb3RlOgo+Pj4+Pj4+ICsrKyBiL2RyaXZlcnMvaW9tbXUvaW9tbXUuYwo+
-Pj4+Pj4+IEBAIC0yNDE4LDYgKzI0MTgsMTAgQEAgaW50IGlvbW11X2Z3c3BlY19pbml0KHN0cnVj
-dCBkZXZpY2UgKmRldiwgc3RydWN0Cj4+Pj4+Pj4gZndub2RlX2hhbmRsZSAqaW9tbXVfZndub2Rl
-LAo+Pj4+Pj4+ICAgICAgICAgICAgZndzcGVjLT5pb21tdV9md25vZGUgPSBpb21tdV9md25vZGU7
-Cj4+Pj4+Pj4gICAgICAgICAgICBmd3NwZWMtPm9wcyA9IG9wczsKPj4+Pj4+PiAgICAgICAgICAg
-IGRldl9pb21tdV9md3NwZWNfc2V0KGRldiwgZndzcGVjKTsKPj4+Pj4+PiArCj4+Pj4+Pj4gKyAg
-ICAgICBpZiAoZGV2X2lzX3BjaShkZXYpKQo+Pj4+Pj4+ICsgICAgICAgICAgICAgICBwY2lfZml4
-dXBfZGV2aWNlKHBjaV9maXh1cF9maW5hbCwgdG9fcGNpX2RldihkZXYpKTsKPj4+Pj4+PiArCj4+
-Pj4+Pj4KPj4+Pj4+PiBUaGVuIHBjaV9maXh1cF9maW5hbCB3aWxsIGJlIGNhbGxlZCB0d2ljZSwg
-dGhlIGZpcnN0IGluIHBjaV9idXNfYWRkX2RldmljZS4KPj4+Pj4+PiBIZXJlIGluIGlvbW11X2Z3
-c3BlY19pbml0IGlzIHRoZSBzZWNvbmQgdGltZSwgc3BlY2lmaWNhbGx5IGZvciBpb21tdV9md3Nw
-ZWMuCj4+Pj4+Pj4gV2lsbCBzZW5kIHRoaXMgd2hlbiA1LjgtcmMxIGlzIG9wZW4uCj4+Pj4+PiBX
-YWl0LCB0aGlzIHdob2xlIGZpeHVwIGFwcHJvYWNoIHNlZW1zIHdyb25nIHRvIG1lLiAgTm8gbWF0
-dGVyIGhvdyB5b3UKPj4+Pj4+IGRvIHRoZSBmaXh1cCwgaXQncyBzdGlsbCBhIGZpeHVwLCB3aGlj
-aCBtZWFucyBpdCByZXF1aXJlcyBvbmdvaW5nCj4+Pj4+PiBtYWludGVuYW5jZS4gIFN1cmVseSB3
-ZSBkb24ndCB3YW50IHRvIGhhdmUgdG8gYWRkIHRoZSBWZW5kb3IvRGV2aWNlIElECj4+Pj4+PiBm
-b3IgZXZlcnkgbmV3IEFNQkEgZGV2aWNlIHRoYXQgY29tZXMgYWxvbmcsIGRvIHdlPwo+Pj4+Pj4K
-Pj4+Pj4gSGVyZSB0aGUgZmFrZSBwY2kgZGV2aWNlIGhhcyBzdGFuZGFyZCBQQ0kgY2ZnIHNwYWNl
-LCBidXQgcGh5c2ljYWwKPj4+Pj4gaW1wbGVtZW50YXRpb24gaXMgYmFzZSBvbiBBTUJBCj4+Pj4+
-IFRoZXkgY2FuIHByb3ZpZGUgcGFzaWQgZmVhdHVyZS4KPj4+Pj4gSG93ZXZlciwKPj4+Pj4gMSwg
-ZG9lcyBub3Qgc3VwcG9ydCB0bHAgc2luY2UgdGhleSBhcmUgbm90IHJlYWwgcGNpIGRldmljZXMu
-Cj4+Pj4+IDIuIGRvZXMgbm90IHN1cHBvcnQgcHJpLCBpbnN0ZWFkIHN1cHBvcnQgc3RhbGwgKHBy
-b3ZpZGVkIGJ5IHNtbXUpCj4+Pj4+IEFuZCBzdGFsbCBpcyBub3QgYSBwY2kgZmVhdHVyZSwgc28g
-aXQgaXMgbm90IGRlc2NyaWJlZCBpbiBzdHJ1Y3QgcGNpX2RldiwKPj4+Pj4gYnV0IGluIHN0cnVj
-dCBpb21tdV9md3NwZWMuCj4+Pj4+IFNvIHdlIHVzZSB0aGlzIGZpeHVwIHRvIHRlbGwgcGNpIHN5
-c3RlbSB0aGF0IHRoZSBkZXZpY2VzIGNhbiBzdXBwb3J0IHN0YWxsLAo+Pj4+PiBhbmQgaGVyZWJ5
-IHN1cHBvcnQgcGFzaWQuCj4+Pj4gVGhpcyBkaWQgbm90IGFuc3dlciBteSBxdWVzdGlvbi4gIEFy
-ZSB5b3UgcHJvcG9zaW5nIHRoYXQgd2UgdXBkYXRlIGEKPj4+PiBxdWlyayBldmVyeSB0aW1lIGEg
-bmV3IEFNQkEgZGV2aWNlIGlzIHJlbGVhc2VkPyAgSSBkb24ndCB0aGluayB0aGF0Cj4+Pj4gd291
-bGQgYmUgYSBnb29kIG1vZGVsLgo+Pj4gWWVzLCB5b3UgYXJlIHJpZ2h0LCBidXQgd2UgZG8gbm90
-IGhhdmUgYW55IGJldHRlciBpZGVhIHlldC4KPj4+IEN1cnJlbnRseSB3ZSBoYXZlIHRocmVlIGZh
-a2UgcGNpIGRldmljZXMsIHdoaWNoIHN1cHBvcnQgc3RhbGwgYW5kIHBhc2lkLgo+Pj4gV2UgaGF2
-ZSB0byBsZXQgcGNpIHN5c3RlbSBrbm93IHRoZSBkZXZpY2UgY2FuIHN1cHBvcnQgcGFzaWQsIGJl
-Y2F1c2Ugb2YKPj4+IHN0YWxsIGZlYXR1cmUsIHRob3VnaCBub3Qgc3VwcG9ydCBwcmkuCj4+PiBE
-byB5b3UgaGF2ZSBhbnkgb3RoZXIgaWRlYXM/Cj4+IEl0IHNvdW5kcyBsaWtlIHRoZSBiZXN0IHdh
-eSB3b3VsZCBiZSB0byBhbGxvY2F0ZSBhIFBDSSBjYXBhYmlsaXR5IGZvciBpdCwgc28KPj4gZGV0
-ZWN0aW9uIGNhbiBiZSBkb25lIHRocm91Z2ggY29uZmlnIHNwYWNlLCBhdCBsZWFzdCBpbiBmdXR1
-cmUgZGV2aWNlcywKPj4gb3IgcG9zc2libHkgYWZ0ZXIgYSBmaXJtd2FyZSB1cGRhdGUgaWYgdGhl
-IGNvbmZpZyBzcGFjZSBpbiB5b3VyIHN5c3RlbQo+PiBpcyBjb250cm9sbGVkIGJ5IGZpcm13YXJl
-IHNvbWV3aGVyZS4gIE9uY2UgdGhlcmUgaXMgYSBwcm9wZXIgbWVjaGFuaXNtCj4+IHRvIGRvIHRo
-aXMsIHVzaW5nIGZpeHVwcyB0byBkZXRlY3QgdGhlIGVhcmx5IGRldmljZXMgdGhhdCBkb24ndCB1
-c2UgdGhhdAo+PiBzaG91bGQgYmUgdW5jb250cm92ZXJzaWFsLiBJIGhhdmUgbm8gaWRlYSB3aGF0
-IHRoZSBwcm9jZXNzIG9yIHRpbWVsaW5lCj4+IGlzIHRvIGFkZCBuZXcgY2FwYWJpbGl0aWVzIGlu
-dG8gdGhlIFBDSWUgc3BlY2lmaWNhdGlvbiwgb3IgaWYgdGhpcyBvbmUKPj4gd291bGQgYmUgYWNj
-ZXB0YWJsZSB0byB0aGUgUENJIFNJRyBhdCBhbGwuCj4gVGhhdCBzb3VuZHMgbGlrZSBhIHBvc3Np
-YmlsaXR5LiAgVGhlIHNwZWMgYWxyZWFkeSBkZWZpbmVzIGEKPiBWZW5kb3ItU3BlY2lmaWMgRXh0
-ZW5kZWQgQ2FwYWJpbGl0eSAoUENJZSByNS4wLCBzZWMgNy45LjUpIHRoYXQgbWlnaHQKPiBiZSBh
-IGNhbmRpZGF0ZS4KV2lsbCBpbnZlc3RpZ2F0ZSB0aGlzLCB0aGFua3MgQmpvcm4KPgo+PiBJZiBk
-ZXRlY3Rpb24gY2Fubm90IGJlIGRvbmUgdGhyb3VnaCBQQ0kgY29uZmlnIHNwYWNlLCB0aGUgbmV4
-dCBiZXN0Cj4+IGFsdGVybmF0aXZlIGlzIHRvIHBhc3MgYXV4aWxpYXJ5IGRhdGEgdGhyb3VnaCBm
-aXJtd2FyZS4gT24gRFQgYmFzZWQKPj4gbWFjaGluZXMsIHlvdSBjYW4gbGlzdCBub24taG90cGx1
-Z2dhYmxlIFBDSWUgZGV2aWNlcyBhbmQgYWRkIGN1c3RvbQo+PiBwcm9wZXJ0aWVzIHRoYXQgY291
-bGQgYmUgcmVhZCBkdXJpbmcgZGV2aWNlIGVudW1lcmF0aW9uLiBJIGFzc3VtZQo+PiBBQ1BJIGhh
-cyBzb21ldGhpbmcgc2ltaWxhciwgYnV0IEkgaGF2ZSBub3QgZG9uZSB0aGF0LgpZZXMsIHRoYW5r
-cyBBcm5kCj4gQUNQSSBoYXMgX0RTTSAoQUNQSSB2Ni4zLCBzZWMgOS4xLjEpLCB3aGljaCBtaWdo
-dCBiZSBhIGNhbmRpZGF0ZS4gIEkKPiBsaWtlIHRoaXMgYmV0dGVyIHRoYW4gYSBQQ0kgY2FwYWJp
-bGl0eSBiZWNhdXNlIHRoZSBwcm9wZXJ0eSB5b3UgbmVlZAo+IHRvIGV4cG9zZSBpcyBub3QgYSBQ
-Q0kgcHJvcGVydHkuCl9EU00gbWF5IG5vdCB3b3JrYWJsZSwgc2luY2UgaXQgaXMgd29ya2luZyBp
-biBydW50aW1lLgpXZSBuZWVkIHN0YWxsIGluZm9ybWF0aW9uIGluIGluaXQgc3RhZ2UsIG5laXRo
-ZXIgdG9vIGVhcmx5IChhZnRlciAKYWxsb2NhdGlvbiBvZiBpb21tdV9md3NwZWMpCm5vciB0b28g
-bGF0ZSAoYmVmb3JlIGFybV9zbW11X2FkZF9kZXZpY2UgKS4KCkJ5IHRoZSB3YXksCkl0IHdvdWxk
-IGJlIGEgbG9uZyB0aW1lIGlmIHdlIG5lZWQgbW9kaWZ5IGVpdGhlciBwY2llIHNwZWMgb3IgYWNw
-aSBzcGVjLgpDYW4gd2UgdXNlIHBjaV9maXh1cF9kZXZpY2UgaW4gaW9tbXVfZndzcGVjX2luaXQg
-Zmlyc3QsIGl0IGlzIHJlbGF0aXZlbHkgCnNpbXBsZQphbmQgbWVldCB0aGUgcmVxdWlyZW1lbnQg
-b2YgcGxhdGZvcm0gZGV2aWNlIHVzaW5nIHBhc2lkLCBhbmQgdGhleSBhcmUgCmFscmVhZHkgaW4g
-cHJvZHVjdC4KClRoYW5rcwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Linus,
+
+The following changes since commit ffeb595d84811dde16a28b33d8a7cf26d51d51b3:
+
+  Merge tag 'powerpc-5.7-6' of
+git://git.kernel.org/pub/scm/linux/kernel/git/powerpc/linux
+(2020-05-30 12:28:44 -0700)
+
+are available in the Git repository at:
+
+  git://git.linaro.org/landing-teams/working/fujitsu/integration.git
+tags/mailbox-v5.8
+
+for you to fetch changes up to e9f901dc05c09c4f89183cadcb2d93177f3100cb:
+
+  mailbox: qcom: Add ipq6018 apcs compatible (2020-06-10 22:43:57 -0500)
+
+----------------------------------------------------------------
+- qcom :
+     new controller driver for IPCC
+     reorg the of_device data
+     add support for ipq6018 platform
+- spreadtrum:
+     new sprd controller driver
+- imx:
+     implement suspend/resume PM support
+- Misc :
+     make pcc driver struct as static
+     fix return value in imx_mu_scu
+     disable clock before bailout in imx probe
+     remove duplicate error mssg in zynqmp probe
+     fix header size in imx.scu
+     check for null instead of is-err in zynqmp
+
+----------------------------------------------------------------
+Anson Huang (3):
+      mailbox: imx: Support runtime PM
+      mailbox: imx: Add runtime PM callback to handle MU clocks
+      mailbox: imx: ONLY IPC MU needs IRQF_NO_SUSPEND flag
+
+Baolin Wang (2):
+      dt-bindings: mailbox: Add the Spreadtrum mailbox documentation
+      mailbox: sprd: Add Spreadtrum mailbox driver
+
+Dan Carpenter (1):
+      mailbox: imx: Fix return in imx_mu_scu_xlate()
+
+Dong Aisheng (1):
+      mailbox: imx: Add context save/restore for suspend/resume
+
+Fabio Estevam (1):
+      mailbox: imx: Disable the clock on devm_mbox_controller_register() failure
+
+Jason Yan (1):
+      mailbox: pcc: make pcc_mbox_driver static
+
+Manivannan Sadhasivam (3):
+      dt-bindings: mailbox: Add devicetree binding for Qcom IPCC
+      mailbox: Add support for Qualcomm IPCC
+      MAINTAINERS: Add entry for Qualcomm IPCC driver
+
+Markus Elfring (1):
+      mailbox: ZynqMP IPI: Delete an error message in zynqmp_ipi_probe()
+
+Peng Fan (1):
+      mailbox: imx-mailbox: fix scu msg header size check
+
+Sivaprakash Murugesan (3):
+      dt-bindings: mailbox: Add YAML schemas for QCOM APCS global block
+      mailbox: qcom: Add clock driver name in apcs mailbox driver data
+      mailbox: qcom: Add ipq6018 apcs compatible
+
+Wei Yongjun (1):
+      mailbox: zynqmp-ipi: Fix NULL vs IS_ERR() check in zynqmp_ipi_mbox_probe()
+
+ .../bindings/mailbox/qcom,apcs-kpss-global.txt     |  88 -----
+ .../bindings/mailbox/qcom,apcs-kpss-global.yaml    |  86 +++++
+ .../devicetree/bindings/mailbox/qcom-ipcc.yaml     |  80 +++++
+ .../devicetree/bindings/mailbox/sprd-mailbox.yaml  |  60 ++++
+ MAINTAINERS                                        |   8 +
+ drivers/mailbox/Kconfig                            |  18 +
+ drivers/mailbox/Makefile                           |   4 +
+ drivers/mailbox/imx-mailbox.c                      | 117 ++++++-
+ drivers/mailbox/pcc.c                              |   2 +-
+ drivers/mailbox/qcom-apcs-ipc-mailbox.c            |  61 +++-
+ drivers/mailbox/qcom-ipcc.c                        | 286 ++++++++++++++++
+ drivers/mailbox/sprd-mailbox.c                     | 361 +++++++++++++++++++++
+ drivers/mailbox/zynqmp-ipi-mailbox.c               |  25 +-
+ include/dt-bindings/mailbox/qcom-ipcc.h            |  33 ++
+ 14 files changed, 1097 insertions(+), 132 deletions(-)
+ delete mode 100644
+Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.txt
+ create mode 100644
+Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.yaml
+ create mode 100644 Documentation/devicetree/bindings/mailbox/qcom-ipcc.yaml
+ create mode 100644 Documentation/devicetree/bindings/mailbox/sprd-mailbox.yaml
+ create mode 100644 drivers/mailbox/qcom-ipcc.c
+ create mode 100644 drivers/mailbox/sprd-mailbox.c
+ create mode 100644 include/dt-bindings/mailbox/qcom-ipcc.h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
