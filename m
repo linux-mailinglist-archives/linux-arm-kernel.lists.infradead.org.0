@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B9AB1F6272
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:34:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AF0C1F6294
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:34:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uh9NRutie0IvfE4U1VdSSzkKxy/0s5HPza6ONqRO8/Q=; b=oO/0maktOywURI
-	Mgan1uKDKBp+sS5t5kLEISFC7OaiSvsK5SgLqX6P7yc+QUD+vf9y8AT4hZYPKXi8zmNfXy/eFpn86
-	utj9jptu9pSYoyNadr0ujQ7WUjxFlagbtkSjRCkWCSjEMEYdqda1gOgURQeedPqj2PLyYC4W27jiw
-	hlKRS583YsBqTskAjvxzPuINCN1DqV76/ccYz4I9Q83XWOnFjyF5Cc3Zy+aHfR1uhvvHnoga+OfFS
-	Tfb/+dWK638AAH/ODJ2aM1qWQ6U9GsrKcHPiKg5ZGw2lZhJuqG+NpFxY0FtlG2Cr9hVzGhwpo/dqt
-	QZjeykI/asj8dAqr7O0A==;
+	List-Owner; bh=Yz4vDhns3pj8ATd9nOXiq4LlHGOnZVfiOuvanGUOV4w=; b=P9KS8Y/Mhrdyfi
+	W31P1fdrXPNyPeohTaMv1ThY3+N1wLSDTKGEsE73z7C1d6AtmIvaBqzGuqeTOnKIjHTgDwhUpMKKl
+	VhnHcgEjscto9T2Y5pM8hnJJkfAJ6vRBsB/Pcm0tFXxwxSnEa/G9elZCL4Tfr5eXMtlUGp2UEytxJ
+	Wq6pXzaIvfyJxCzbDKmV0HXHcVyf+Ati/fSpnoLBzcy3jbrMqnLy2ikIwyiJxHbDRFLnd0Gib00sL
+	CyNf4COGx8QxBL3klV5uvCtqyx8pHT5wDPsxVlowAIkexKb3d6SrA19Su2XNgKx54VKZaxezPOQvB
+	00UjrRcfE6+/NKO8pe9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjHj3-0002XU-Ho; Thu, 11 Jun 2020 07:34:13 +0000
+	id 1jjHjW-0002sw-La; Thu, 11 Jun 2020 07:34:42 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjHhM-0001MJ-3f; Thu, 11 Jun 2020 07:32:30 +0000
+ id 1jjHhN-0001My-Lv; Thu, 11 Jun 2020 07:32:31 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 8AC175800D6;
- Thu, 11 Jun 2020 03:32:27 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 11 Jun 2020 03:32:27 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 1D81D5800D2;
+ Thu, 11 Jun 2020 03:32:29 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Thu, 11 Jun 2020 03:32:29 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=2KEeQUey4Uvc6
- vI4lXhnkR1jmG2xvi254iS/VtTevMQ=; b=W6ej7ZBXXhhn86aW0p5UgM01rClpG
- 7Pmvu0Emz2awKZsouNBPirDdnEDo/Dcao0hl28wEN72RKBillEOf7Yb4z5EzrZPR
- ev4VJK3+AxOM3A0wJW6tfVIQFgyWPxuBMjrlIWwVhWhjv8bKPhCAXIN0Tj+aWoyC
- UdLyzgPxKKopkZZN9DQplKxijA2qNZNXtAYqccITMZMbaTt9z24DN8bdUKY5+xJy
- GRKZCBqUrjQH/MZoUDo7n/BDJ7xwPNPna3MnLBjd/nA+HLOuwNefJTUwLXpur4ZF
- oPD1SnTyjbrWHkZsAEyjVkq2fhaC2XcNzGgJxt0e5qj5lEDy4heLPs5iA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=LSIsfiNq5IpAS
+ JINyuaxA/q7xkNPFUcq7XPKpT78W2w=; b=FHUNabk68335jcXzDJE1L2bS6ShRv
+ XYjvSIHvVZCYSi1mkhX95aoB/NGC2N5WPxOwzwQYQ7YgsPeZ4xXUVWbcb0WWztek
+ fOnt+b0HsYCp7vu6s+6KNd2k9rmcQfR5NOVD1tFvkk5vuRNxgXr4i66mcDGq4Bz4
+ rzKP9V7MEdlmHy7zmoM6txVS7TGnIS0pViPdEVQRcBj3HwE2wj8i5N0e9JqO8DsO
+ oNUrogLTKCWh35/1+0cYkPJqSnRJ/yCrxtfvF1bonDnjvfbINWvCHkJZsoxNp3jF
+ fdVm5+GzzOnfU789hKyZu1/jT84DpkR3n8MBeXPAkvzLVzAiFzyLnfhfA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=2KEeQUey4Uvc6vI4lXhnkR1jmG2xvi254iS/VtTevMQ=; b=scYJUCeg
- bnFRoCjJY7i0OK/JFXsP8ASMzyhJWczLdbxS4Rrig0ryJCYVNWyuksaU2PnB84am
- qipAnGf1CSEtUctu7fRlTCnt804hE5htOORlj809thnhnovIJLzy/6bNSSfYfrBu
- 7S5xvr+aHR3WqpMZkDHE823KM2mzlFe+HjrkvK0oRYvo4Bj5iuToayNHHPnhQOyO
- qc16CWr4HmBUgQX45T62zerVIYemHJI60AkK2K3ifVYGUIuD/6z8nIZDr2wyhfUM
- K9NxdSZh1mogo1U1T+kkczvG42Y3GulWevCUZiw5HWTqBrqCLdqpEwidwSqTNXkp
- jmyF0Y8PN63N+A==
-X-ME-Sender: <xms:C97hXnWIqZ6JrcZlIB0iTEYzyvV7r5DoSlJAgdsx_P_5deKqNrdDXw>
+ fm3; bh=LSIsfiNq5IpASJINyuaxA/q7xkNPFUcq7XPKpT78W2w=; b=K3BBOHqb
+ N5urRueOgQ6R94yUQCugBINgwQa9WPCnngdU9BWGMiCq09rmtowSaSs0cIa3sv2v
+ ZkOEtbTNoic7qc9wmz1i7nTwk44t20TM+mz5eHOjhqR2AIYurrCb8SduHszldOoM
+ ba4AjHa9GwUgsPi9HPOjaJiXSLqJjtH/WAJ5sPuI4Qx7mvMrKHKXR+YFPM/HOm19
+ TSkxSO/SUhMV2BpLqakpgD9KqzN/+NuT3Z8F6q5tFdC5a4ooRy+aByInka7zHvXH
+ 38M+lIeVTVgR4VxflI/8CQrTmt0+LiyZqdv6fhsxCATN3d0CX4micJHB+3tfr1iV
+ iA979Zg3tsgg1Q==
+X-ME-Sender: <xms:DN7hXkBaV3ANVIQki0vLn30UTGCCgh4L01-i5Sd5LLzVedoy01fs8g>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehjedguddvvdcutefuodetggdotefrod
  ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
  necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
@@ -56,26 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehjedguddvvdcutefuodetgg
  htthgvrhhnpedvkeelveefffekjefhffeuleetleefudeifeehuddugffghffhffehveev
  heehvdenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedune
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:C97hXvlTmmhmmcWHHiEwjozPANE_418y3x0C32WkegreVqQGQEfaog>
- <xmx:C97hXjbPE4Dl5iI1ScoZi78Ct6CauUga6arnQJxg8NP6w-wappmMZg>
- <xmx:C97hXiUqRXMcca-EA3YzAFS-6O7rXcMP0xAQXhkHp_NcJxsV6uuE-g>
- <xmx:C97hXj7xzAiCy1QBH7eVOE-OGUURgbaovsq97HCVjS51BIJvFHWx5w>
+X-ME-Proxy: <xmx:Dd7hXmgJPUvpzSxxBudwjmvYfpoAmEtI5z73SpZIA1xSq3_bj2rtNQ>
+ <xmx:Dd7hXnnJsLLf-nbcOsK0M62_wTEeKTzThngNEXOqXfrxSce9k-RLqA>
+ <xmx:Dd7hXqzqt9inWLNmD-uh7brLnS9kHfnUyASPI1WAdptmPynAlKK3Zw>
+ <xmx:Dd7hXkEC-aIVq1ipRUkm_mes6iEtkd4lJ0laIzzCRSl0ly0LSvXAug>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 26DD7328005E;
- Thu, 11 Jun 2020 03:32:27 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id B30DA30618B7;
+ Thu, 11 Jun 2020 03:32:28 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v4 04/27] clk: bcm: rpi: Allow the driver to be probed by DT
-Date: Thu, 11 Jun 2020 09:31:53 +0200
-Message-Id: <87eb71e5ef76c9f434156b20aed3ec31f9726762.1591860665.git-series.maxime@cerno.tech>
+Subject: [PATCH v4 05/27] clk: bcm: rpi: Statically init clk_init_data
+Date: Thu, 11 Jun 2020 09:31:54 +0200
+Message-Id: <d38be655274084b74c29030acffd9b83d1be2a29.1591860665.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
 References: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_003228_280983_3301D7BE 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20200611_003229_889768_12BC1F9C 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -115,66 +115,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current firmware clock driver for the RaspberryPi can only be probed by
-manually registering an associated platform_device.
-
-While this works fine for cpufreq where the device gets attached a clkdev
-lookup, it would be tedious to maintain a table of all the devices using
-one of the clocks exposed by the firmware.
-
-Since the DT on the other hand is the perfect place to store those
-associations, make the firmware clocks driver probe-able through the device
-tree so that we can represent it as a node.
+Instead of declaring the clk_init_data and then calling memset on it, just
+initialise properly.
 
 Cc: Michael Turquette <mturquette@baylibre.com>
+Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: linux-clk@vger.kernel.org
-Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 19 +++++++++++++++++--
- 1 file changed, 17 insertions(+), 2 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 1654fd0eedc9..8610355bda47 100644
+index 8610355bda47..ddc72207212e 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -255,8 +255,16 @@ static int raspberrypi_clk_probe(struct platform_device *pdev)
- 	struct raspberrypi_clk *rpi;
+@@ -175,11 +175,10 @@ static const struct clk_ops raspberrypi_firmware_pll_clk_ops = {
+ 
+ static int raspberrypi_register_pllb(struct raspberrypi_clk *rpi)
+ {
++	struct clk_init_data init = {};
+ 	u32 min_rate = 0, max_rate = 0;
+-	struct clk_init_data init;
  	int ret;
  
--	firmware_node = of_find_compatible_node(NULL, NULL,
--					"raspberrypi,bcm2835-firmware");
-+	/*
-+	 * We can be probed either through the an old-fashioned
-+	 * platform device registration or through a DT node that is a
-+	 * child of the firmware node. Handle both cases.
-+	 */
-+	if (dev->of_node)
-+		firmware_node = of_get_parent(dev->of_node);
-+	else
-+		firmware_node = of_find_compatible_node(NULL, NULL,
-+							"raspberrypi,bcm2835-firmware");
- 	if (!firmware_node) {
- 		dev_err(dev, "Missing firmware node\n");
- 		return -ENOENT;
-@@ -300,9 +308,16 @@ static int raspberrypi_clk_remove(struct platform_device *pdev)
- 	return 0;
- }
+-	memset(&init, 0, sizeof(init));
  
-+static const struct of_device_id raspberrypi_clk_match[] = {
-+	{ .compatible = "raspberrypi,firmware-clocks" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, raspberrypi_clk_match);
-+
- static struct platform_driver raspberrypi_clk_driver = {
- 	.driver = {
- 		.name = "raspberrypi-clk",
-+		.of_match_table = raspberrypi_clk_match,
- 	},
- 	.probe          = raspberrypi_clk_probe,
- 	.remove		= raspberrypi_clk_remove,
+ 	/* All of the PLLs derive from the external oscillator. */
+ 	init.parent_names = (const char *[]){ "osc" };
 -- 
 git-series 0.9.1
 
