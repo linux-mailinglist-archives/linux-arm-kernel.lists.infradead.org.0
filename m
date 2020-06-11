@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD5831F66EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 13:38:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA7A81F6735
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 13:52:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yIx0mcqK0sa8k2ZyItaNLXtDWOV2XN9Y2EPiGbhK228=; b=Vka/DWzlDdW+oTDhiXQZcgWhw
-	6lRS535wQzgFeMd1Kh5GbpoX+2mKY84TadRZeV5whKeeWURx3rrHhXgSUggpLfDtxelTjKO24GXb6
-	xybGftrksZD1QxDPInFP1b8a6rxLpCstGryh4+LcPD47cBcWdyHJ+Dd/IlAYfOxbwzPMLMxAZxmFa
-	7WG3P4DeAwTZ7C0iUf9zcQeu3aWe/v41oRvlyL1E+i4RugcFLVXmISopYhj3P3MBQezvyUAZ5iT71
-	3MQ73LsUUhQWR7G49ngLUyOhwHvE8CVtwMYiyVSmeBv4w15mNchOAGXANnnAJdIL6en+MtQUfz9C+
-	trfH9V4XQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m4cI6MhPehY9jGLqUfd7dOBvtPdfSL3z5NDti/+PKzw=; b=mw720Q5V3VY40K
+	KQsgLFx9j6LuOxPVfenx2XDH4D13q6NyfHrKJq6rkvecwaIrJ6gLsAFtnS4818qn1VB8cN4imBB2e
+	ab7394iNQHqLklXdZXGxLolh6eXPkS1nyfdNaoOzEfckbRcJl/ZrOYqq/Zsbjxs7rdVXauU8EXWX9
+	HY4iawpiLbATDSh6VRi0vgt9Dl5DaQX25KTtec9fMMxHKZJg4r8U+31XLe9k72fbLkQbMELminI12
+	nvZyjdRKnKfJfbfag8AHjTu66OZL3OQ16FYvxwr4gpgc5jV+JlvsEs77aq2Wg/I1YBw0+r5qNkL/P
+	ZxMj7t73frshs1gu69yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjLXr-00019U-5s; Thu, 11 Jun 2020 11:38:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjLXk-00018f-Ca
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 11:38:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9B891F1;
- Thu, 11 Jun 2020 04:38:45 -0700 (PDT)
-Received: from [10.57.9.128] (unknown [10.57.9.128])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 54B153F66F;
- Thu, 11 Jun 2020 04:38:45 -0700 (PDT)
-Subject: Re: arm64: el1_error when copy rawdata to a partition
-To: Chris Ruehl <chris.ruehl@gtsys.com.hk>
-References: <27a86dfd-e565-bbe0-423f-a9485d51ef43@gtsys.com.hk>
- <601da1b5-4137-4a5d-0d42-0d46af1045dd@arm.com>
- <75d4f767-7af2-dee1-a1a8-e9467651a4e3@gtsys.com.hk>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <83b058a6-9552-67ae-2994-1ca04519521f@arm.com>
-Date: Thu, 11 Jun 2020 12:38:43 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+	id 1jjLkU-0003Jj-C0; Thu, 11 Jun 2020 11:51:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jjLkL-0003JG-Sw
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 11:51:51 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 380A22078D;
+ Thu, 11 Jun 2020 11:51:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591876309;
+ bh=hUZmjSIobC8gBA5LV9Q11++dATnUKfOjWjFSzhnOpDc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=cejDfBVcnvOUBvpSThXQiLM7LU5Ct2juS/6RBermPlLhiAWwaaxS/APLylHb7ztfy
+ x5yEnPbq6+SIFYHIkfAh3gIfM4kLvcP1wKdNFFn/mrudGRj4fxFgiOv9O5e/pNmxQH
+ Ha99KSZU6exmWbZV6Q2gxCEV6tH4ODKhB/AMBFA4=
+Date: Thu, 11 Jun 2020 12:51:44 +0100
+From: Will Deacon <will@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm64: warn on incorrect placement of the kernel by the
+ bootloader
+Message-ID: <20200611115144.GA5057@willie-the-truck>
+References: <20200610174601.159853-1-ardb@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <75d4f767-7af2-dee1-a1a8-e9467651a4e3@gtsys.com.hk>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200610174601.159853-1-ardb@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_043848_468401_DEC7D127 
-X-CRM114-Status: GOOD (  20.24  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200611_045149_975508_B78F5F70 
+X-CRM114-Status: GOOD (  18.68  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,54 +77,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, maz@kernel.org, jonathan@marek.ca,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNi0xMSAwMzoyMSwgQ2hyaXMgUnVlaGwgd3JvdGU6Cj4gSGkgUm9iaW4sCj4gCj4g
-T24gMTAvNi8yMDIwIDc6NTggcG0sIFJvYmluIE11cnBoeSB3cm90ZToKPj4gSGkgQ2hyaXMsCj4+
-Cj4+IE9uIDIwMjAtMDYtMTAgMDQ6NDksIENocmlzIFJ1ZWhsIHdyb3RlOgo+Pj4gSGksCj4+Pgo+
-Pj4ganVzdCBoaXQgYSBwYW5pYyBvbiBteSByazMzOTktb3JhbmdlcGkgd2hpbGUgcnVubmluZwo+
-Pj4KPj4+IHh6IC1kIC1jIGltYWdlLnh6IHwgZGQgb2Y9L2Rldi9tbWNibGsycDIgYnM9MU0KPj4+
-Cj4+PiBUaGlzIGNhbiByZXByb2R1Y2UuCj4+Cj4+IFdoYXQncyB5b3VyIGZpcm13YXJlIHNldHVw
-PyBUaGVyZSdzIGEga25vd24gc25hZyB3aGVuIG1peGluZyBtYWlubGluZSAKPj4gVS1Cb290IHdp
-dGggUm9ja2NoaXAncyBUcnVzdGVkIEZpcm13YXJlIGJpbmFyaWVzIC0gdGhlICJ0cnVzdC5pbWci
-IAo+PiBibG9icyB0ZW5kIHRvIGluY2x1ZGUgYW4gT1AtVEVFIHBheWxvYWQgdGhhdCBjYXJ2ZXMg
-b3V0IHNvbWUgRFJBTSBmb3IgCj4+IHRoZSBTZWN1cmUgd29ybGQsIGFuZCB0aGUgQlNQIFUtQm9v
-dCBoYXMgc29tZSBoYXJkLWNvZGVkIGhhbmRsaW5nIGZvciAKPj4gdGhhdCB3aGVyZWFzIG1haW5s
-aW5lIGRvZXNuJ3QuIEFzIGEgcmVzdWx0LCBpbiB0aGF0IGNvbmZpZ3VyYXRpb24gCj4+IExpbnV4
-IGVuZHMgdXAgdW5hd2FyZSB0aGF0IHNvbWUgb2YgdGhlIG1lbW9yeSBpdCdzIGJlZW4gdG9sZCBh
-Ym91dCAKPj4gaXNuJ3QgYWN0dWFsbHkgYWNjZXNzaWJsZSBhbmQgd2lsbCB0cmlnZ2VyIGFuIGV4
-dGVybmFsIGFib3J0IGlmIAo+PiB0b3VjaGVkICh3aGljaCBkdWUgdG8gdGhlIG5hdHVyZSBvZiB0
-aGUgcGFnZSBhbGxvY2F0b3IgdHlwaWNhbGx5IG9ubHkgCj4+IHNlZW1zIHRvIGhhcHBlbiB1bmRl
-ciBtZW1vcnkgcHJlc3N1cmUsIGxpa2UgYSBsYXJnZSBjb3B5IG9wZXJhdGlvbiAKPj4gdGhhdCBj
-aHVybnMgYSBsb3Qgb2YgZGF0YSB0aHJvdWdoIHRoZSBwYWdlIGNhY2hlKS4KPj4KPj4gUm9iaW4u
-Cj4gWWVzLCBJJ20gdXNpbmcgdGhlIG1pbmktbG9hZGVyIGZyb20gUm9ja2NoaXAgYW5kIHRoZSB0
-cnVzdGVkLmltZyB3aXRoIAo+IHRoZSBtYWlubGluZSB1Ym9vdCAyMDIwLjQKPiBhbmQgd2hhdCB5
-b3UgdGVsbCBtZSBtYWtlcyBzZW5zZSEKPiAKPiBJIHRyaWVkIHRvIHVzZSB0aGUgb3Blbi1zb3Vy
-Y2Ugb25seSBidXQgZmFpbGVkIGVuZCB1cCB3aXRoOgo+ICJUcnkgYm9vdGluZyBmcm9tIE1NQzEi
-Cj4gYW5kIHRoZW4gdGltZW91dCBvbiB0aGUgU0QgJiBlTU1DLCBJIHRoaW5rIHRoZSBjbG9jayBu
-b3QgY29tZSB1cAo+IG9yIGlzbid0IGluaXRpYWxpemVkIGluIHRoZSBTUEwuCj4gCj4gVUJPT1Qg
-Y29uZmlnOgo+ICDCoExpc3Qgb2YgZGV2aWNlIHRyZWUgcHJvcGVydGllcyB0byBkcm9wIGZvciBT
-UEw6Cj4gLi4uIGNsb2NrLW5hbWVzIC4uIGFzc2lnbmVkLWNsb2NrcyBhc3NpZ25lZC1jbG9jay1y
-YXRlcyAKPiBhc3NpZ25lZC1jbG9jay1wYXJlbnRzCj4gCj4gd2hpbGUgSSB3cml0ZSB0aGlzLCBJ
-IHJlYWQgYWJvdXQgdGhlICJ1LWJvb3QsZG0tcHJlLXJlbG9jIiBpbiB0aGUgaGVscCAKPiB0ZXh0
-IC0gaG1tCj4gbGV0IG1lIGFkZCB0aGlzIHRvIHRoZSByazMzOTktb3JhbmdlcGkuZHRzIGFuZCBn
-aXZlIHRoZSBwdXJlIG9wZW4tc291cmNlIAo+IHNvbHV0aW9uCj4gb25lIG1vcmUgdHJ5LgoKSSBk
-byByZWNhbGwgaGF2aW5nIHRvIGRvIHNvbWUgZmlkZGxpbmcgdG8gZ2V0IFRQTC9TUEwgdG8gYm9v
-dCBmcm9tIGVNTUMgCnJlbGlhYmx5IG9uIG15IE5hbm9QQy1UNCAtIHRoZSBvbmx5IGNoYW5nZSBJ
-IGhhdmUgY29tbWl0dGVkIGxvY2FsbHkgaXMgCmFkZGluZyBhICJ1LWJvb3Qsc3BsLWJvb3Qtb3Jk
-ZXIiIHByb3BlcnR5LCBidXQgSSBjYW4ndCBub3cgcmVtZW1iZXIgCndoZXRoZXIgdGhlIGltYWdl
-IEknbSBjdXJyZW50bHkgdXNpbmcgaGFkIGFueSBmdXJ0aGVyIHRlbXBvcmFyeSBoYWNrcyBvbiAK
-dG9wIG9mIHRoYXQuCgpBbiBhbHRlcm5hdGl2ZSB3b3JrYXJvdW5kIGlzIGp1c3QgdG8gaGFjayB0
-aGUga2VybmVsIERUIHRvIGV4cGxpY2l0bHkgCnJlc2VydmUgdGhlIG9mZmVuZGluZyByZWdpb24g
-LSB1bnRpbCBJIGdvdCBtYWlubGluZSBUUEwvU1BMIGFuZCBUcnVzdGVkIApGaXJtd2FyZSB3b3Jr
-aW5nLCB0aGlzIGlzIHdoYXQgSSBoYWQ6CgoJcmVzZXJ2ZWQtbWVtb3J5IHsKCQkjYWRkcmVzcy1j
-ZWxscyA9IDwyPjsKCQkjc2l6ZS1jZWxscyA9IDwyPjsKCQlyYW5nZXM7CgoJCWV4dGVybmFsLWFi
-b3J0QDg0MDAwMDAgewoJCQlyZWcgPSA8MCAweDg0MDAwMDAgMCAweDEyMDAwMDA+OwoJCQluby1t
-YXA7CgkJfTsKCX07CgpSb2Jpbi4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Jun 10, 2020 at 07:46:01PM +0200, Ard Biesheuvel wrote:
+> Commit cfa7ede20f133c ("arm64: set TEXT_OFFSET to 0x0 in preparation for
+> removing it entirely") results in boot failures when booting kernels that
+> are built without KASLR support on broken bootloaders that ignore the
+> TEXT_OFFSET value passed via the header, and use the default of 0x80000
+> instead.
+> 
+> To work around this, turn CONFIG_RELOCATABLE on by default, even if KASLR
+> itself (CONFIG_RANDOMIZE_BASE) is turned off, and require CONFIG_EXPERT
+> to be enabled to deviate from this. Then, emit a warning into the kernel
+> log if we are not booting via the EFI stub (which is permitted to deviate
+> from the placement restrictions) and the kernel base address is not placed
+> according to the rules as laid out in Documentation/arm64/booting.rst.
+> 
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>  arch/arm64/Kconfig        | 3 ++-
+>  arch/arm64/kernel/setup.c | 3 +++
+>  2 files changed, 5 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 7f9d38444d6d..16c3f158c80e 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1740,8 +1740,9 @@ config ARM64_DEBUG_PRIORITY_MASKING
+>  endif
+>  
+>  config RELOCATABLE
+> -	bool
+> +	bool "Build a relocatable kernel image" if EXPERT
+>  	select ARCH_HAS_RELR
+> +	default y
+>  	help
+>  	  This builds the kernel as a Position Independent Executable (PIE),
+>  	  which retains all relocation metadata required to relocate the
+> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+> index 3fd2c11c09fc..bfeeeea833dd 100644
+> --- a/arch/arm64/kernel/setup.c
+> +++ b/arch/arm64/kernel/setup.c
+> @@ -319,6 +319,9 @@ void __init setup_arch(char **cmdline_p)
+>  
+>  	xen_early_init();
+>  	efi_init();
+> +	WARN(!efi_enabled(EFI_BOOT) && ((u64)_text % MIN_KIMG_ALIGN) != 0,
+> +	     FW_BUG "Kernel image misaligned at boot, please fix your bootloader");
+
+I think pr_warn is probably sufficient here, as the backtrace isn't really
+helping anybody:
+
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] [Firmware Bug]: Kernel image misaligned at boot, please fix your bootloader
+[    0.000000] WARNING: CPU: 0 PID: 0 at arch/arm64/kernel/setup.c:323 setup_arch+0x208/0x214
+[    0.000000] Modules linked in:
+[    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-rc3-00162-g16d1072f6b69 #1
+[    0.000000] Hardware name: linux,dummy-virt (DT)
+[    0.000000] pstate: 60000085 (nZCv daIf -PAN -UAO BTYPE=--)
+[    0.000000] pc : setup_arch+0x208/0x214
+[    0.000000] lr : setup_arch+0x208/0x214
+[    0.000000] sp : ffff800011b03f90
+[    0.000000] x29: ffff800011b03f90 x28: 0000000081580018 
+[    0.000000] x27: 0000000000000000 x26: 0000000000000000 
+[    0.000000] x25: 0000000000000000 x24: 0000000000000000 
+[    0.000000] x23: 0000000000080000 x22: 0000000000000000 
+[    0.000000] x21: 000000008fe00000 x20: ffff800011b09000 
+[    0.000000] x19: ffff800010080000 x18: 000000000001fdd8 
+[    0.000000] x17: 000000000000004a x16: ffff800011b03bf1 
+[    0.000000] x15: 0000000000000000 x14: 6564616f6c746f6f 
+[    0.000000] x13: 0000000000000000 x12: 0000000000000000 
+[    0.000000] x11: 0000000000000000 x10: 00000000ffffffff 
+[    0.000000] x9 : 0000000000000000 x8 : 0000000000000000 
+[    0.000000] x7 : 000000000000004b x6 : ffff800011d41093 
+[    0.000000] x5 : 000000000000004b x4 : 000000000000000c 
+[    0.000000] x3 : 0000000000000072 x2 : 000000000000003f 
+[    0.000000] x1 : ffff800011d3e75f x0 : 000000000000004b 
+[    0.000000] Call trace:
+[    0.000000]  setup_arch+0x208/0x214
+[    0.000000]  start_kernel+0x70/0x3ec
+[    0.000000] random: get_random_bytes called from __warn+0xe4/0x178 with crng_init=0
+[    0.000000] ---[ end trace 0000000000000000 ]---
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
