@@ -2,69 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F171F6B4E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 17:44:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AA641F6B65
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 17:46:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Pf6198TBA0lB89ulHLpddsrrkeJfCtlTYkZjOt7/YM=; b=Vubay+CyQ2AVQK
-	P02cWWmQ4o3INvLQZZhJ9zoe6/0ZrV1bzJhWY5wXpVYBJGcbJVZuBWjK+r0D4AFjvuBYy4aAAZrDD
-	kuBepvDWJe6UwJ9sPUbzUQ+Br0xsXLF/UKFHou+l7Y7GShEEwcQ/C2ATeUPobd6dXb3nTJMS1uPf0
-	J/qFS55va8r1gzbOOf0XdNLnTo1F6kOP5+RWJxftu26RE/+IXnXDaKhVgqD1v4s75yOnxVWQgRmyq
-	EQKvMciu25krJUkfIWWmhMFCX0hXyCNYGw7JFjWmjwgXTICTb0zHwL5zpLEGMYMNKy556jYyGR5yT
-	rhWEVWmn0RKZ3a8SwTdA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rc9rW/LATRNlg490RLXudJlft30vINRw3Lmk8DiF0/k=; b=ogXzYsNGkMI7bA
+	4iyqe9fDZHNUbV8xLQDy2+33fx3j0oZnzZkrcyZHmjh7FmE8NCpF7pNUNJq1aoer0gnMIgwkiOFYK
+	ArWSsANxaHuywn1apbY787mLDsWTMm4fls8xfaVg5a3Ne5tZK7v6VWSoX79prBZFydwjqlVVPrABJ
+	SqD3vD9viGebFRXTd/tYVEdkrN3bW0ge1KMP4f65DvbJqErQ9oY7DuOQKQ+zz0sPl6hZ17OWUrDAp
+	7wqnHL1boHywHmySyJ97+8IXnetBQ77zua/rbDLNm18Dqs851pkYd+GsDR/yKmc5/oTLTY3fsU/n5
+	87sTRCht0aayMgxy7cJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjPNB-0005Al-Kn; Thu, 11 Jun 2020 15:44:09 +0000
-Received: from mga02.intel.com ([134.134.136.20])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjPN2-0005A2-Pz
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 15:44:02 +0000
-IronPort-SDR: 7OWX0ayg0dTRQzChIzGPqChHdL4bxoTUa2XibsJkHX36sdN+XYdXbJ3XhGyVrJAr67trWnDge1
- H3lYYnPIu0fg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 11 Jun 2020 08:43:59 -0700
-IronPort-SDR: +Ydw/4Fg05XSUVeVdaVnYwXl169Eie8ePVgfFpQAiQZ2NUmXKZaRvV2IeZsKgMR2pcPAaKpDpn
- +n8lSwG3SLOg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,499,1583222400"; d="scan'208";a="419144435"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.152])
- by orsmga004.jf.intel.com with ESMTP; 11 Jun 2020 08:43:59 -0700
-Date: Thu, 11 Jun 2020 08:43:59 -0700
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 17/21] KVM: arm64: Use common code's approach for
- __GFP_ZERO with memory caches
-Message-ID: <20200611154359.GF29918@linux.intel.com>
-References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-18-sean.j.christopherson@intel.com>
- <6cc08074c289cbea7b9c1deeaf18c63f@kernel.org>
+	id 1jjPP3-0007xy-3L; Thu, 11 Jun 2020 15:46:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jjPOp-0007wu-W9
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 15:45:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0B6E71F1;
+ Thu, 11 Jun 2020 08:45:49 -0700 (PDT)
+Received: from [10.57.43.165] (unknown [10.57.43.165])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B299B3F6CF;
+ Thu, 11 Jun 2020 08:45:45 -0700 (PDT)
+Subject: Re: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
+ support reserved memory
+To: Christoph Hellwig <hch@infradead.org>
+References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
+ <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
+ <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
+ <20200610072444.GA6293@infradead.org>
+ <9c3a7b4e-0190-e9bb-91fe-6d5692559888@arm.com>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <27881ee0-dc40-e8c6-34f6-712f9acc3fbc@arm.com>
+Date: Thu, 11 Jun 2020 16:45:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6cc08074c289cbea7b9c1deeaf18c63f@kernel.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <9c3a7b4e-0190-e9bb-91fe-6d5692559888@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_084400_888807_3BED611D 
-X-CRM114-Status: GOOD (  15.25  )
+X-CRM114-CacheID: sfid-20200611_084552_121148_B6490C25 
+X-CRM114-Status: GOOD (  18.96  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,76 +68,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <christoffer.dall@arm.com>,
- Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, Ben Gardon <bgardon@google.com>,
- Claudio Imbrenda <imbrenda@linux.ibm.com>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Joerg Roedel <joro@8bytes.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Junaid Shahid <junaids@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>, Cornelia Huck <cohuck@redhat.com>,
- Peter Shier <pshier@google.com>, linux-mips@vger.kernel.org,
- James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, Peter Feiner <pfeiner@google.com>
+Cc: kstewart@linuxfoundation.org, devicetree@vger.kernel.org,
+ alexandre.torgue@st.com, dillon.minfei@gmail.com, linux-kernel@vger.kernel.org,
+ linux@armlinux.org.uk, robh+dt@kernel.org, allison@lohutok.net,
+ mcoquelin.stm32@gmail.com, tglx@linutronix.de, info@metux.net,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 08:59:05AM +0100, Marc Zyngier wrote:
-> >diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
-> >index 9398b66f8a87..688213ef34f0 100644
-> >--- a/arch/arm64/kvm/mmu.c
-> >+++ b/arch/arm64/kvm/mmu.c
-> >@@ -131,7 +131,8 @@ static int mmu_topup_memory_cache(struct
-> >kvm_mmu_memory_cache *cache, int min)
-> > 	if (cache->nobjs >= min)
-> > 		return 0;
-> > 	while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
-> >-		page = (void *)__get_free_page(GFP_PGTABLE_USER);
-> >+		page = (void *)__get_free_page(GFP_KERNEL_ACCOUNT |
+On 6/10/20 9:19 AM, Vladimir Murzin wrote:
+> On 6/10/20 8:24 AM, Christoph Hellwig wrote:
+>> Ok, I finally found the original patch from Vladimir.  Comments below:
+>>
+>>> +++ b/kernel/dma/direct.c
+>>> @@ -456,14 +456,14 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+>>>  #else /* CONFIG_MMU */
+>>>  bool dma_direct_can_mmap(struct device *dev)
+>>>  {
+>>> -	return false;
+>>> +	return true;
+>>>  }
+>>>  
+>>>  int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+>>>  		void *cpu_addr, dma_addr_t dma_addr, size_t size,
+>>>  		unsigned long attrs)
+>>>  {
+>>> -	return -ENXIO;
+>>> +	return vm_iomap_memory(vma, vma->vm_start, (vma->vm_end - vma->vm_start));;
+>>
+>> I think we should try to reuse the mmu dma_direct_mmap implementation,
+>> which does about the same.  This version has been compile tested on
+>> arm-nommu only, let me know what you think: (btw, a nommu_defconfig of
+>> some kind for arm would be nice..)
 > 
-> This is definitely a change in the way we account for guest
-> page tables allocation, although I find it bizarre that not
-> all architectures account for it the same way.
-
-It's not intended to be a functional change, i.e. the allocations should
-still be accounted:
-
-  #define GFP_PGTABLE_USER  (GFP_PGTABLE_KERNEL | __GFP_ACCOUNT)
-  |
-  -> #define GFP_PGTABLE_KERNEL        (GFP_KERNEL | __GFP_ZERO)
-
-  == GFP_KERNEL | __GFP_ACCOUNT | __GFP_ZERO
-
-versus 
-
-  #define GFP_KERNEL_ACCOUNT (GFP_KERNEL | __GFP_ACCOUNT)
-
-    with __GFP_ZERO explicitly OR'd in
-
-  == GFP_KERNEL | __GFP_ACCOUNT | __GFP_ZERO
-
-I can put the above in the changelog, unless of course it's wrong and I've
-missed something.
-
-> It seems logical to me that nested page tables would be accounted
-> against userspace, but I'm willing to be educated on the matter.
+> Catch-all nommu_defconfig is not easy for ARM, AFAIK folk carry few hacks
+> for randconfig...
 > 
-> Another possibility is that depending on the context, some allocations
-> should be accounted on either the kernel or userspace (NV on arm64
-> could definitely do something like that). If that was the case,
-> maybe moving most of the GFP_* flags into the per-cache flags,
-> and have the renaming that Ben suggested earlier.
+> Meanwhile, known working NOMMU configs
 > 
-> Thanks,
+> $ git grep "# CONFIG_MMU is not set" arch/arm/configs/
+> arch/arm/configs/efm32_defconfig:# CONFIG_MMU is not set
+> arch/arm/configs/lpc18xx_defconfig:# CONFIG_MMU is not set
+> arch/arm/configs/mps2_defconfig:# CONFIG_MMU is not set
+> arch/arm/configs/stm32_defconfig:# CONFIG_MMU is not set
+> arch/arm/configs/vf610m4_defconfig:# CONFIG_MMU is not set
 > 
->         M.
-> -- 
-> Jazz is not dead. It just smells funny...
+>>
+>> diff --git a/kernel/dma/Kconfig b/kernel/dma/Kconfig
+>> index d006668c0027d2..e0dae570a51530 100644
+>> --- a/kernel/dma/Kconfig
+>> +++ b/kernel/dma/Kconfig
+>> @@ -71,6 +71,7 @@ config SWIOTLB
+>>  # in the pagetables
+>>  #
+>>  config DMA_NONCOHERENT_MMAP
+>> +	default y if !MMU
+>>  	bool
+> 
+> Nit: def_bool !MMU
+> 
+>>  
+>>  config DMA_REMAP
+>> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+>> index 0a4881e59aa7d6..9ec6a5c3fc578c 100644
+>> --- a/kernel/dma/direct.c
+>> +++ b/kernel/dma/direct.c
+>> @@ -459,7 +459,6 @@ int dma_direct_get_sgtable(struct device *dev, struct sg_table *sgt,
+>>  	return ret;
+>>  }
+>>  
+>> -#ifdef CONFIG_MMU
+>>  bool dma_direct_can_mmap(struct device *dev)
+>>  {
+>>  	return dev_is_dma_coherent(dev) ||
+>> @@ -485,19 +484,6 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+>>  	return remap_pfn_range(vma, vma->vm_start, pfn + vma->vm_pgoff,
+>>  			user_count << PAGE_SHIFT, vma->vm_page_prot);
+>>  }
+>> -#else /* CONFIG_MMU */
+>> -bool dma_direct_can_mmap(struct device *dev)
+>> -{
+>> -	return false;
+>> -}
+>> -
+>> -int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+>> -		void *cpu_addr, dma_addr_t dma_addr, size_t size,
+>> -		unsigned long attrs)
+>> -{
+>> -	return -ENXIO;
+>> -}
+>> -#endif /* CONFIG_MMU */
+>>  
+>>  int dma_direct_supported(struct device *dev, u64 mask)
+>>  {
+>>
+> 
+> LGTM. FWIW:
+> 
+> Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+> 
+> 
+
+@dillon, can you give it a try?
+
+I think Christoph would appreciate your Tested-by and that might speed up
+getting fix mainline.
+
+
+Cheers
+Vladimir
+
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
