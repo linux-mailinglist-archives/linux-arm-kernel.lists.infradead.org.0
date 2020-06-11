@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5451B1F63E4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 10:44:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9BA11F63F8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 10:49:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DCEPJtiEKckD45lROw0XKNb2J0sQ3/XoPdRI11ERFdg=; b=JQUo+O4ShR1235
-	ozryebCVsovysdvfOiZDkOxVSK47s3OAuVbrbknBOkLSEhUd1YJymYoAGcsghEZUF1SMdawHSkwKN
-	Aezt/FZnZ+hA5ZVZKeN6gIeOFmX11ef8DzkF0j8ivnI9aIkmoQxbsfbIT7slq32R8LkEvlURscqin
-	gFt1nVBAwfQ2I+EjqQ1ZpU7vssp/OiUXPJ5Egzbj1JiLjIn/RGNsm36xMgQFDJG2rHTCNmWVVud7j
-	lisuIPbVtz/dg977JJ5RPYUwsE3yIRS4++bXAONZ/FyoZD8sLRM9WR/Wga65sxUB76dIsX5hg72ew
-	oNA9jRxTGAQ4s8fZ1rkQ==;
+	List-Owner; bh=SomQVB1fuQLlEKiNhk7Lek2j9YrsB1ZFXWwm4ulmkiY=; b=MtrfULnpXxtj57
+	tVp/HLOMwXxyebGZcQOC4Kxv+j53x5ced7BFFxeraSiMzdzuDRmAXmTtttD7XUlI7N2rahFg+VAQB
+	Gb9Kn0ugjLDa4mVBGhyIoDjbHT592eaoCDP7GM23/mtTUGXBxZGh1r06Sl6b8JHA9cOjHm376E4R9
+	SCVS5HgSFsb0hx73gkuxXZp6VfsY+nHptl1V1Z3N8+mCr16t4vXJkwWqscAwgm0YwJjgZa9yvxUaa
+	kRWMCHcHCmj/aRpLL2wzGJLqcoTATava8cxcg1xgcn0d3utICCYJ33CtLmSMhqLkI067IC2JFztKB
+	RZtwHGJ12xMWU1zFk6DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjIp1-0004nK-Kr; Thu, 11 Jun 2020 08:44:27 +0000
-Received: from mail-eopbgr70071.outbound.protection.outlook.com ([40.107.7.71]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1jjItJ-0007iT-OV; Thu, 11 Jun 2020 08:48:53 +0000
+Received: from mail-db8eur05on2077.outbound.protection.outlook.com
+ ([40.107.20.77] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjIos-0004mY-Fs
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 08:44:19 +0000
+ id 1jjItB-0007hF-14
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 08:48:46 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=gZTpKhK2cqjUOCW7cM97XuaggFPotOXmB+4pu2P5DBy+RWpKBemdSKYtZr2da35IZw2RaRBqrFqwrGxqig4M+dwFHkP6LubyhVKe2ZbgLxpykJWscwTwzlQlg4BJ96e7XJ7cbTTC1F+oIWcgLHkSXJue/fu0NdPG3mhLXzUJHnutUZe4plxw6xogJNoBOgmtCcTw8aRoiJ80e25r20DZAw35H1MVHv18fi2/bQKl99EhRxekQzkgQB45RMeqIxezG52CAprls56e/3zpRo6dYywqZBjgZTyoG/1rCEAicEddIYhwuglSr+igl+R/7AYhEcfow2PyrOkNfwu/nbF68Q==
+ b=occMMgj3v4Hu5Qfh2YSdJwv62DPR4l/wyBhROZZZ05hiHl7vdYkYJwbh5zsX4A3HiTvt04395icUkvBVHylHCioFuu3qVPaA6cJ/NsThrLYcYBV7YtS+rCqZaEhWr389qo0tw3wKOy0IUjh6UUyMRcU6yuwv0xflnMbTT0fe5O/MWzQRLN5ntnjMiRzKxjJy8LeZeqBojgcTBnT2sbuSa9b8/u4rS2FQ/VyCEmh+WMnxjvTuvRi2fg/uaJTJdNYwjnE+lCHzE9c7OouZn2ErrDQS+wTH3zNwAIQJ0BWd90XJxNXn9+UGcOggQkLDPCpu6GUPs+LGVGkfG7CnWMFuow==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hpuXGIoQIUfWNUTvuSh8cn9nwQTlb/eY0iu8ggjLlEk=;
- b=Xa3dpiStHT5q/7AJj6/nr70Ee8JH9gQKxTthmAq6bWTOZJ5t/hIXBWH8edN6tmvzoUtA822Xkm2LE4VtkAg/wPldZ08FBjQdQrmn+W/MzO8KxMx9+ipV0gHJ+X6GzbZS5W2AQydE/lmuyO/xDnh8K171UIIjrAHsOa7yluLmIBwHBCj38pIq4b19XrNd91hZs6B0GYPdd2q2NRX8rHGNp4LSRAtLrGTCxObrA2CDsbwe1H//UWq1/EmbNy72jKuSTcxS6ff5m1soQYgOKzrX0DKq/oIvUdskK5BujQmglSuMiOmDsvF91d1pPA6N5vwHR1qt+nzi+9o9ro25aGlyFw==
+ bh=ne4h7Q4g8TC3dfxiers990ULr3iwfunLrVKpImjF05s=;
+ b=A6ML7rdV1u2KEONofITuuALSe6xv50E31o7sO37l0XsxfSmO5bk+zeYyu+mL8hRjFcTkpnCG6XgU6vMaL3XdoaiVZO3sJTidi/HWMhWIUk0dJAqVWmHOZkbxdyEKd/o8KcODh2sZzy5OI27rUw4C8Wlw7AuhJrnbmTD5fj4xuH4Yo89yRyZHowp/s4alv5pevvX8mCXN2ioRfy51t9sHp7gZpbkfqSfyZYJYBGU6e7Nv6h+l4/aA556WRvAvnM2SZw0fadp8aZulbJiv2bYYMGa6TH8Ag2LcuLsld+p3iWgu7pxjAj61wx/g5ENA1wDGUmREEoei8YMyj2r2FLNM6g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hpuXGIoQIUfWNUTvuSh8cn9nwQTlb/eY0iu8ggjLlEk=;
- b=cm8PkrG1cKdLgCDP48gU02Is26F+MYbU1Eh6lvVr4uNua0uiamuUGzbCFxqcBL13+lrOzNQWHmTgDPMnhrdKtMiPeU/lFe+edbedlLuxUHTnzD9v2xiKVQ436pC6gARbXNJ5r/HaDhFyVIEz1U2lrfF8yImTryEIvEiawx8+u+E=
+ bh=ne4h7Q4g8TC3dfxiers990ULr3iwfunLrVKpImjF05s=;
+ b=MqlAuPzpn6OFy+H4B42vkm4yXB8tiTR1DD8l6TVZ69fmJnYCFw7cTaCGlgHx9K/2a0PrBETt74cfJ0GJnf5zsRzepW/KriVJtJL4rixJcanoXvA2xzUahVF2eXb6tYj4CDNqi7ldM2eLPdFuASTXCAgJLAf/go7puOElkHdfUUc=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
  by DB3PR0402MB3643.eurprd04.prod.outlook.com (2603:10a6:8:5::25) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Thu, 11 Jun
- 2020 08:44:14 +0000
+ 2020 08:48:40 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3088.018; Thu, 11 Jun 2020
- 08:44:14 +0000
+ 08:48:40 +0000
 From: Anson Huang <anson.huang@nxp.com>
 To: Daniel Baluta <daniel.baluta@nxp.com>, Aisheng Dong
  <aisheng.dong@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
@@ -57,14 +57,15 @@ To: Daniel Baluta <daniel.baluta@nxp.com>, Aisheng Dong
  "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH V4 0/9] Support i.MX8 SoCs pinctrl drivers built as module
-Thread-Topic: [PATCH V4 0/9] Support i.MX8 SoCs pinctrl drivers built as module
-Thread-Index: AQHWPv5bWyCCa1jyBkSPB8P41zHbxKjTGD+AgAABMwA=
-Date: Thu, 11 Jun 2020 08:44:14 +0000
-Message-ID: <DB3PR0402MB3916AF541FC5692D00625EECF5800@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Subject: RE: [PATCH V4 4/9] pinctrl: imx8mn: Support building as module
+Thread-Topic: [PATCH V4 4/9] pinctrl: imx8mn: Support building as module
+Thread-Index: AQHWPv5eaFqWaY1epEyUZw+zhd38iajTGmwAgAABCWA=
+Date: Thu, 11 Jun 2020 08:48:40 +0000
+Message-ID: <DB3PR0402MB391645F95B19B2438736B546F5800@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 References: <1591775865-26872-1-git-send-email-Anson.Huang@nxp.com>
- <2dfc7a60-1e96-190b-7385-89a843312d80@nxp.com>
-In-Reply-To: <2dfc7a60-1e96-190b-7385-89a843312d80@nxp.com>
+ <1591775865-26872-5-git-send-email-Anson.Huang@nxp.com>
+ <33292cab-c49d-0878-dd8c-1166258e089b@nxp.com>
+In-Reply-To: <33292cab-c49d-0878-dd8c-1166258e089b@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -74,42 +75,41 @@ authentication-results: nxp.com; dkim=none (message not signed)
 x-originating-ip: [183.192.13.100]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 2e510dce-1831-477c-7c7d-08d80de39ec3
+x-ms-office365-filtering-correlation-id: a8edbe45-0da7-4f09-7f44-08d80de43d73
 x-ms-traffictypediagnostic: DB3PR0402MB3643:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB36436353AF13CD8F03077F4FF5800@DB3PR0402MB3643.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-microsoft-antispam-prvs: <DB3PR0402MB3643EF06D8EBC09338F0D41CF5800@DB3PR0402MB3643.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0431F981D8
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: RYEQW9MJ+pSkKYO24LV7HorQ4dpIQB0X/SXhew2bduwnfrNz6fl08vE1jXw78LjkUZLdoGiSo746AvhokGVwelRAQuvYf9iVsgHytaq6J/KO5v9QR2Ekfv3eaBAtBSlFxTOI0cPeGZJXbube4r/Tkvxhg5WzI4KzBkS1z+Jx+IhyNjx6aCeM17zysraRoU+w8L7SjaSK1F7ySoKTJGrqdIA4VUfZPEpgQ4rHRuaW1jYwlZhSbsQ0FRhzGcok0FCOO8fOrx6C3J8MmEVY6WPHOAjzyBTACAabAmH3bOP2DrQUxe3i1C13hzZzEj1GYZXgkJMhVpSyh1SAc7cBCOCEx5Bp6/1L+9/ttipUdaGl6lYIeUGSHBwymMixnJy0B38h
+x-microsoft-antispam-message-info: /O5czJs+dqBQReN7igZd1VYG9DMXDkU95AXbJ5taAEGbO54K92xh5ZFE49ejwMdssYmue4YhrymOqJSv/puAHV8fvljtLAmPxGihynth07aneZ8uMH7KrqXO27opll2uL30ZSRZrYbaq4GjEM6eed0p7hP7d3nyArv3Liat/7a5YepzNmPbdoNoNom6quO4vFcpdJ3XBD8vvdCD+sn+6O0019oYwfYfVwQI5n9PtFL5WTeNoOvC+ntPshMsH4iKv+dizfiZCRAxIaXtABtVZnTIBfRPzI4yvvF07HtUx6YPnLvhhNqReJt3TSPFthJQvOupB1rsrDgs1BTnkc9Ptz9f0Bfw4CFIlmIjSR/xSxgZPm8Lkm/yWG9ByLD4KzhF9007kGZSwzgViJdZCg8Norg==
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(6029001)(4636009)(136003)(396003)(346002)(39860400002)(376002)(366004)(52536014)(8936002)(2906002)(8676002)(316002)(66556008)(55016002)(4326008)(9686003)(5660300002)(83380400001)(33656002)(66946007)(26005)(76116006)(110136005)(6506007)(86362001)(478600001)(66476007)(44832011)(7696005)(66446008)(71200400001)(186003)(4744005)(64756008)(921003);
+ SFS:(4636009)(366004)(376002)(39860400002)(346002)(396003)(136003)(110136005)(83380400001)(76116006)(33656002)(66946007)(26005)(186003)(7696005)(66446008)(44832011)(4744005)(64756008)(71200400001)(6506007)(86362001)(478600001)(66476007)(8936002)(52536014)(4326008)(5660300002)(9686003)(8676002)(2906002)(316002)(55016002)(66556008)(32563001)(921003);
  DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 0FAuCj5W5O4n4xP1P+XSAFWDxntDmMy+DICrJposQZCNA2TLrDuIeYyWeRhVU4HPyECPAv8e/ZX/3gQkDZM0ZDnefho9gcXsjOvvnkyZV9lPG3SDJs8HVEkwqfMISFOo96fiYJsXRu4DurRYH49/QnbFUbukOXoa8EL8zRH7Am7hYQFX4hNOurmvgNdEylPlgImPAddxYNdUlbFHKvCk9Aj84M1kqVRGezLm0bYeqTtbEuBcJgSJ8Tylbjx2oXgJKwVzDnYtEurpzWuok4Bnm3Xi3cec5tkkqBDi4vS/t88NGW3an8xDoQAEPHNq8Z8/AFU+76Wvz5cIArhhqFAxZMZh/zwGhJTUcJwGe+pROxrRVi6tAHFDa2DamR2pFC48Yc+Uj+EbN/9LeSlxA1IMyQhoPGAo4GmKodJC4L4sXmagtRMksYQ3TPN0HWKs28HMs+xmtZQqS1i3I/qDBRBaCEQMAGxvbL4PjbWonMEscFiZMyxBjlF6fjZgot4pnBqg
+x-ms-exchange-antispam-messagedata: ix/nUQjypFVvvdMFBGDHWrG+ZUrGhMEAcv5Hubnv/E2fQBugGwZfhvnCYibOsyaTA1rdyHJ57Cb2yOIvjlIwpVpBrETs0VsRCp4CZGnLqMq4RcW9tL2hM0MbZO1RBrUngkHLDyRZ0kXUSDEjgPnohfOHhUzdDYGIh1dNkisxf0yb5blOkFRGj6yy9RkLblgE1hA8V6wMfvp84znJzotWfiBIlsZQ0GM7I2SMOvsxxJF86f8XTL0rwBS6MZWsdzMrY+SRkKVY4ms+VBuHmiSul8Bc4jgZ5Ys6I3rNoWnq+HwdC6TGNLJSWVlbAocYVY6d0inwQ2F7KigF51Ow4a2wuGOXJZQtVU2TAsigzJ+zv/9Syn1wxTOkBNoYtvClsn7lYRQQPUxJAfveqtWJRGyao5anTmIfWp7KeNbXsGSQ1Q2P579/eS4Lzz2gU3NjzzYFh7AG5Dgp842Cvg/78isIp7gSu5XJ5JWGo+v2fbjH9D8uotsl0HWBLRFrpTlo85Tj
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2e510dce-1831-477c-7c7d-08d80de39ec3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jun 2020 08:44:14.4154 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a8edbe45-0da7-4f09-7f44-08d80de43d73
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jun 2020 08:48:40.6639 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /Ff4ynEWvXf0xHYtWNfYSQgAimgEynXk+cZibegW5+T1yyjf+wyuEDk1cSVKS+x4KSZQPqHFMv2XYfTU0YOznQ==
+X-MS-Exchange-CrossTenant-userprincipalname: s8cUevcGnlX4d/eu+eI0goUA9ef+ZMlON+EkNzBqVTSGQqh52WRqU7FCzm2VvyQxU3APS8UoRIf5mbtueGSauQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3643
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_014418_529286_8038E44F 
-X-CRM114-Status: GOOD (  13.56  )
+X-CRM114-CacheID: sfid-20200611_014845_074460_C982FBF7 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.7.71 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.7.71 listed in wl.mailspike.net]
+ low trust [40.107.20.77 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -119,6 +119,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.20.77 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,41 +133,26 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
-
-> Subject: Re: [PATCH V4 0/9] Support i.MX8 SoCs pinctrl drivers built as module
-> 
-> Hi Anson,
-> 
-> Patch series mostly looks good to me. I have a comment about adding
-> 
-> the MODULE_LICENSE. This is a pretty important change.
-> 
-> 
-> Can you please add this change in a separate patch with a proper explanation
-> 
-> of why it is needed.
-> 
-> 
-> Most likely it is because it was forgotten in the previous patches.
-
-Yes, it is obviously missed in the previous patches, as previously these pinctrl drivers
-do NOT support module build at all.
-
-And MODULE_LICENSE is a MUST when drivers supporting module build, build will report failure
-if module license missed, so I think it is also part of the module build support patch,
-do you mean it is better to add a separate patch to add the MODULE_LICENSE to all pinctrl drivers missing it?
-Maybe we can get more opinion from maintainer, I am NOT very sure whether it is better to separate
-the module license as a single patch....
-
-thanks,
-Anson
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIERhbmllbA0KDQo+IFN1YmplY3Q6IFJlOiBbUEFUQ0ggVjQgNC85XSBwaW5jdHJsOiBpbXg4
+bW46IFN1cHBvcnQgYnVpbGRpbmcgYXMgbW9kdWxlDQo+IA0KPiBNYXliZSB0aGlzIGlzIG9idmlv
+dXMgYnV0IEkgd291bGQgcmVhbGx5IGxpa2UgdG8gc2VlIGFuIGV4cGxhbmF0aW9uDQo+IA0KPiBv
+ZiB3aHkgd2UgYXJlIHN3aXRjaGluZyBmcm9tIGFyY2hfaW5pdGNhbGwgdG8gcGxhdGZvcm1faW5p
+dC4NCj4gDQo+IENvbW1pdCBtZXNzYWdlIGFjdCBhcyBkb2N1bWVudGF0aW9uwqAgZm9yIHRoZSBy
+ZXZpZXdlcnMuDQoNClllcywgSSBub3RpY2VkIHRoaXMsIGFuZCBpdCBsb29rcyBsaWtlIHVubmVj
+ZXNzYXJ5IGNoYW5nZSwgYW5kIEkganVzdCByZXBsaWVkIGluDQptYWlsIHRoYXQgSSB3aWxsIGNo
+YW5nZSBpdCBiYWNrIHRvIGFyY2hfaW5pdGNhbGwoKSBpbiBvcmRlciB0byBtYWtlIHN1cmUgbm90
+aGluZw0KY2hhbmdlZCBmb3IgYnVpbHQtaW4gY29uZmlnLiBCZWxvdyBpcyB3aGF0IEkgcmVwbGll
+ZCBpbiBjb3Zlci1sZXR0ZXIgbWFpbDoNCg0KIiBJIHdpbGwga2VlcCB0aGUgYXJjaF9pbml0Y2Fs
+bCgpIHRoZXJlIGluIG5leHQgdmVyc2lvbiBwYXRjaCBzZXJpZXMsIGl0IGNhbiBtYWtlIHN1cmUN
+CnRoZSBjaGFuZ2UgZG9lcyBOT1QgaW1wYWN0IGJ1aWx0LWluIGNvbmZpZy4gRm9yIG1vZHVsZSBi
+dWlsZCwgdGhlIGFyY2hfaW5pdGNhbGwoKQ0Kd2lsbCBiZSBzYW1lIGFzIG1vZHVsZV9pbml0KCks
+IHVzZXIgbmVlZHMgdG8gaW5zbW9kIHRoZSAua28gd2l0aCBjb3JyZWN0IHNlcXVlbmNlLiINCg0K
+VGhhbmtzLA0KQW5zb24NCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
