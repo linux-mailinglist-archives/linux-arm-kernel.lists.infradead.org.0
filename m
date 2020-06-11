@@ -2,55 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 863B71F6686
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 13:21:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE2A31F6708
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 13:46:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kpd0lphIbDtuotwoY+y2fEMQQ81CAgz8HmPSch4XNx4=; b=qlNwQ08ZjUXle6gsRWawTY8V7
-	BZ/5kZdiGzzUHj6iIRTCCAm6tiU5xMxJwTVljmae6cG8jD7bCaR4tqnF1LRCDYSvGv8LWx0YSdgId
-	zYRoh222tVXylTdi7u3dPmR89e4GOHTffL/sbpvta++TK+TDIAA8Q0xOZedToHhDDRIQiWelsWRW5
-	9m3kekOp/VQGg3Ss42JsJZB9vt9Nra6tdPiQYH2J2Dd7+XRvARdLs6Ydx6uQzXIkZanhf/mnQ038q
-	Pm7rSFiNxei/yuou3jaqiZToEwoFIzGYehCQqXn6kkF//DwYqGTe+YfSIwwdow/IDnZYhrwpMzGLy
-	x7KPDJhoQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=C8i1Ci3aVN+KKYset010ew9uETXsEIJ5vEPYzXZAIB8=; b=jUT
+	+qcPONvpkUKbEAtHxV5CErmAmPueC1FN2e3w/y6Q1NHYabmA3SKF9Jn9ZTh83AOvBu2zDujW/Qqxu
+	C3on6JcRBKhOjFpt3ipmvgfF9gvc851X9TxpnIAa3YkBh4Rw/AkDOqinOHQOasLSc08ZBICcqau+7
+	/9QgzRL9FYylDXQxUckWEnRAPesN8zgQTxi7y9oMiFe/kjUIsjz9fOeBdWtU1qTpu9ueCdnjHv2+t
+	gxNK3iVMXZSU15Ly3y7qooFzaRD7APBVqydZ9o6qIR2pmpNRY/P451/7yd9YEDkmwfkA1QtdzY9x9
+	8kdkTpq6nmhpurZ1yDmuY++5fpGcpZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjLGp-00009T-M0; Thu, 11 Jun 2020 11:21:19 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jjLeq-0006YU-0Y; Thu, 11 Jun 2020 11:46:08 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjLGh-000091-4E; Thu, 11 Jun 2020 11:21:12 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 12DD4ABE4;
- Thu, 11 Jun 2020 11:21:13 +0000 (UTC)
-Message-ID: <4298d8db6dec26317f591271ee15041e0c12f6fd.camel@suse.de>
-Subject: Re: [PATCH v4 00/27] clk: bcm: rpi: Add support for BCM2711
- firmware clocks
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Maxime Ripard <maxime@cerno.tech>
-Date: Thu, 11 Jun 2020 13:21:07 +0200
-In-Reply-To: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
-References: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
-User-Agent: Evolution 3.36.2 
-MIME-Version: 1.0
+ id 1jjLef-0006WT-5K
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 11:45:59 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2D00A1A070E;
+ Thu, 11 Jun 2020 13:45:54 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A0EFF1A06F6;
+ Thu, 11 Jun 2020 13:45:49 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B8C024028F;
+ Thu, 11 Jun 2020 19:45:43 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
+ stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
+ s.hauer@pengutronix.de, linux-gpio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V5 0/9] Support i.MX8 SoCs pinctrl drivers built as module
+Date: Thu, 11 Jun 2020 19:34:46 +0800
+Message-Id: <1591875295-19427-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_042111_314133_167A2E22 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20200611_044557_340491_05D7068A 
+X-CRM114-Status: UNSURE (   5.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,78 +68,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7578983666220454814=="
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+There are more and mroe requirements that SoC specific modules should be built
+as module in order to support generic kernel image, such as Android GKI concept.
 
---===============7578983666220454814==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-qp5pvNknzd1S2ihuXchJ"
+This patch series supports i.MX8 SoCs pinctrl drivers to be built as module,
+including i.MX8MQ/MM/MN/MP/QXP/QM/DXL SoCs, and it also supports building
+i.MX common pinctrl driver and i.MX SCU common pinctrl driver as module.
 
+Compared to V4, the changes are as below:
+	- remove unnecessary changes of replacing arch_initcall() with
+	  module_platform_driver() in each SoC pinctrl driver, to make
+	  sure no probe sequence change for built-in config.
+	- add module author and description to each module.
 
---=-qp5pvNknzd1S2ihuXchJ
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Anson Huang (9):
+  pinctrl: imx: Support building SCU pinctrl driver as module
+  pinctrl: imx: Support building i.MX pinctrl driver as module
+  pinctrl: imx8mm: Support building as module
+  pinctrl: imx8mn: Support building as module
+  pinctrl: imx8mq: Support building as module
+  pinctrl: imx8mp: Support building as module
+  pinctrl: imx8qxp: Support building as module
+  pinctrl: imx8qm: Support building as module
+  pinctrl: imx8dxl: Support building as module
 
-On Thu, 2020-06-11 at 09:31 +0200, Maxime Ripard wrote:
-> Hi,
->=20
-> Since the whole DRM/HDMI support began to grow fairly big, I've chosen
-> to split away the two discussions between the firmware clocks and the
-> HDMI support.
->=20
-> Let me know what you think,
-> Maxime
->=20
+ drivers/pinctrl/freescale/Kconfig           | 19 +++++-----
+ drivers/pinctrl/freescale/pinctrl-imx.c     | 25 ++++++++-----
+ drivers/pinctrl/freescale/pinctrl-imx.h     | 57 ++++++++++++-----------------
+ drivers/pinctrl/freescale/pinctrl-imx8dxl.c |  8 ++++
+ drivers/pinctrl/freescale/pinctrl-imx8mm.c  |  6 +++
+ drivers/pinctrl/freescale/pinctrl-imx8mn.c  |  6 +++
+ drivers/pinctrl/freescale/pinctrl-imx8mp.c  |  6 +++
+ drivers/pinctrl/freescale/pinctrl-imx8mq.c  |  6 +++
+ drivers/pinctrl/freescale/pinctrl-imx8qm.c  |  8 ++++
+ drivers/pinctrl/freescale/pinctrl-imx8qxp.c |  8 ++++
+ drivers/pinctrl/freescale/pinctrl-scu.c     |  9 +++++
+ 11 files changed, 106 insertions(+), 52 deletions(-)
 
-With patch #25 manually fixed, the series is:
+-- 
+2.7.4
 
-Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-
-Regards,
-Nicolas
-
-
---=-qp5pvNknzd1S2ihuXchJ
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7iE6MACgkQlfZmHno8
-x/79PAgAp182wijp2dGoNNw89NchByhUXSoq3HViFvOMpA7tfknoLrvB2AF6YQXX
-2ve3ki9iwHaWWKFd58GmLurPDR7RcIVFHAtLT2RPwpbbf9RV8KiYp47xtBHZh8yg
-3oK9JGFkqfVh0qzEmbZ8xrOGqoNIRCNtty4tnzz5om+3ZL2xx3qETHIhiKVygxyu
-WS4nja+AQEG9wkqOGE+JXvi0kErid/NBN7dOH+QP2SH5GgpIeOjNTW36TPAkAzEv
-p5e2Ou504Ryah3il9bWZb/5r0O0njK4O8HJxPhw1k7S9vINYC50ucBTa+dZjYeU/
-/bl9Rt12SAtkbpaNEOm7n45tIqGRHA==
-=K1r7
------END PGP SIGNATURE-----
-
---=-qp5pvNknzd1S2ihuXchJ--
-
-
-
---===============7578983666220454814==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7578983666220454814==--
-
-
