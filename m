@@ -2,81 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28B3D1F631D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:59:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BBF91F6323
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 10:00:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qo9snNpqec5Hhfki0CPrcIktryethqtvJr0CnQ4mUuI=; b=Jmq4OYgbHH6qHa22RRNkd5+PK
-	qdQM+1lRvZ+cKuPMBP/JWs6jW1BDHJJe9C4f4l0o1jrhXfVqNYASH1VMLJD5jeC1tkdFTjnCEf4ri
-	0GZwX78+ql1iapSD95Hiq2IU3TKQ6dpCIa90SfcQEW51bzaizOr83YWk8xNWOHIMwPx/TLSz3Qi4b
-	hu5nJnB7Mj0PrfXeG1ujIDuo0p8gm8uCFQ5VFh0KWro7vLXZQxxX/crirF0tDGH5nypffJzpmhCB4
-	fOPMFdDQI4kd36wLXOqHSpEruIP+kp9Bb97uDJY/RnL/BcJOE22Pz6jTQyeFajkwYsR2mluP5VYjB
-	ADV908qUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4E57TWIrrb4iPccf4zLvnsVeqCX5fy0xbV0s3r0tqfk=; b=UVhpFMaIcHIO9z
+	NgxwIupI2BoM1E4kJrAn9+UX75X608yGBUbAuRLB0biASdwjRVQEN1sF4+uJxJxGUB7KhoeC0NSV+
+	wzG9IGSwcG/+7q2zxPpAiHOuecXlfAGuGWYmOtYxjEtipZdNEvOrzLqRhRK+MfBk7y+TscAK0eMZS
+	alXJBE3dYAnfOdGgFJF9xfvqA4MB+SDtii3PB5mJQbijU8MQL1hSd+OfwrUWrN+Pe+Xz9exOOXM8Y
+	WncZzSlrpu0oeqnbr2yw9STfl8OwHJrZJhB78texZJUVWovykadtbvMgho3J8j8ld4BGQ/+UZuFMq
+	V8lyR72NZ07SQJXAjUuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjI7J-0007OD-B8; Thu, 11 Jun 2020 07:59:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jjI8g-0001rp-49; Thu, 11 Jun 2020 08:00:42 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjI79-0007Nr-69
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 07:59:09 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A277B204EA;
- Thu, 11 Jun 2020 07:59:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591862346;
- bh=OosHKHNgy/JfsuiXlWm6kqNlEzxuPgPk1Y8ZZaJeWD0=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=xdnE9ijSYCm2ieKcA6MjTtuO04MHTQe1Et0EXVKYQCTKFPlQEVb9Yfj8kMl8AR13w
- Qa+QrSTirgnpvN11t74TOELy0TkE+PQGhIX4EOiSYHH4YRZ7TbRRaDjLYoA1zHsodf
- +Qk2xXT4keuJXovgH5hLfKz2s8TnNRSdO4NRUwV4=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jjI77-0021Wl-9L; Thu, 11 Jun 2020 08:59:05 +0100
+ id 1jjI8X-0001rF-Fb; Thu, 11 Jun 2020 08:00:35 +0000
+X-UUID: ec3bea5c96074b0c985b96a5ecae4d0c-20200611
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=ymFyA3aRkGFQ0hwS3c5JqbCS9zGTSs9AXR5E+TUVjRw=; 
+ b=IMcY6+ndne/pmzJYoDIvoKGGLZDsmRyLtkaBoT9f9k3kS042rQr2UNfVVjFsMNaU0TIrg1vDpeIFOhntx/+VzslwpHRyXvmBu/Aw5OmqYguvwR5+02g/yR/n8LERFqQ/VcTlDVb05mwkpoo8Ar5MVDjfgePkYsYuOZW1mxMvjLM=;
+X-UUID: ec3bea5c96074b0c985b96a5ecae4d0c-20200611
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <eastl.lee@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1554295; Thu, 11 Jun 2020 00:00:01 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 11 Jun 2020 01:00:12 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 11 Jun 2020 16:00:10 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 11 Jun 2020 16:00:10 +0800
+Message-ID: <1591862411.23595.5.camel@mtkswgap22>
+Subject: Re: [PATCH v4 1/4] dt-bindings: dmaengine: Add MediaTek
+ Command-Queue DMA controller bindings
+From: EastL <EastL.Lee@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Thu, 11 Jun 2020 16:00:11 +0800
+In-Reply-To: <20200529192443.GA2785767@bogus>
+References: <1590659832-31476-1-git-send-email-EastL.Lee@mediatek.com>
+ <1590659832-31476-2-git-send-email-EastL.Lee@mediatek.com>
+ <20200529192443.GA2785767@bogus>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Date: Thu, 11 Jun 2020 08:59:05 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH 17/21] KVM: arm64: Use common code's approach for
- __GFP_ZERO with memory caches
-In-Reply-To: <20200605213853.14959-18-sean.j.christopherson@intel.com>
-References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
- <20200605213853.14959-18-sean.j.christopherson@intel.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <6cc08074c289cbea7b9c1deeaf18c63f@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: sean.j.christopherson@intel.com, paulus@ozlabs.org,
- borntraeger@de.ibm.com, frankja@linux.ibm.com, pbonzini@redhat.com,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- david@redhat.com, cohuck@redhat.com, imbrenda@linux.ibm.com,
- vkuznets@redhat.com, wanpengli@tencent.com, jmattson@google.com,
- joro@8bytes.org, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-mips@vger.kernel.org, kvm@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org, pfeiner@google.com,
- pshier@google.com, junaids@google.com, bgardon@google.com,
- christoffer.dall@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+X-TM-SNTS-SMTP: E454FB0951BC790B45883925983748159758D5FE3D941C0A086BA0DD8420AA522000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_005907_271227_03993EFE 
-X-CRM114-Status: GOOD (  17.95  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200611_010033_526631_CBFED0D0 
+X-CRM114-Status: GOOD (  19.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,101 +86,184 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <christoffer.dall@arm.com>,
- Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, Ben Gardon <bgardon@google.com>,
- Claudio Imbrenda <imbrenda@linux.ibm.com>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Joerg Roedel <joro@8bytes.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Junaid Shahid <junaids@google.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>, Cornelia Huck <cohuck@redhat.com>,
- Peter Shier <pshier@google.com>, linux-mips@vger.kernel.org,
- James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, Peter Feiner <pfeiner@google.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ dmaengine@vger.kernel.org, vkoul@kernel.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sean,
-
-On 2020-06-05 22:38, Sean Christopherson wrote:
-> Add a "gfp_zero" member to arm64's 'struct kvm_mmu_memory_cache' to 
-> make
-> the struct and its usage compatible with the common 'struct
-> kvm_mmu_memory_cache' in linux/kvm_host.h.  This will minimize code
-> churn when arm64 moves to the common implementation in a future patch, 
-> at
-> the cost of temporarily having somewhat silly code.
+On Fri, 2020-05-29 at 13:24 -0600, Rob Herring wrote:
+> On Thu, May 28, 2020 at 05:57:09PM +0800, EastL wrote:
+> > Document the devicetree bindings for MediaTek Command-Queue DMA controller
+> > which could be found on MT6779 SoC or other similar Mediatek SoCs.
+> > 
+> > Signed-off-by: EastL <EastL.Lee@mediatek.com>
 > 
-> No functional change intended.
-> 
-> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> ---
->  arch/arm64/include/asm/kvm_host.h | 1 +
->  arch/arm64/kvm/arm.c              | 2 ++
->  arch/arm64/kvm/mmu.c              | 5 +++--
->  3 files changed, 6 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/kvm_host.h
-> b/arch/arm64/include/asm/kvm_host.h
-> index abbdf9703e20..2385dede96e0 100644
-> --- a/arch/arm64/include/asm/kvm_host.h
-> +++ b/arch/arm64/include/asm/kvm_host.h
-> @@ -105,6 +105,7 @@ struct kvm_arch {
->   */
->  struct kvm_mmu_memory_cache {
->  	int nobjs;
-> +	gfp_t gfp_zero;
->  	void *objects[KVM_NR_MEM_OBJS];
->  };
-> 
-> diff --git a/arch/arm64/kvm/arm.c b/arch/arm64/kvm/arm.c
-> index 45276ed50dd6..4c98c6b4d850 100644
-> --- a/arch/arm64/kvm/arm.c
-> +++ b/arch/arm64/kvm/arm.c
-> @@ -270,6 +270,8 @@ int kvm_arch_vcpu_create(struct kvm_vcpu *vcpu)
->  	vcpu->arch.target = -1;
->  	bitmap_zero(vcpu->arch.features, KVM_VCPU_MAX_FEATURES);
-> 
-> +	vcpu->arch.mmu_page_cache.gfp_zero = __GFP_ZERO;
-> +
->  	/* Set up the timer */
->  	kvm_timer_vcpu_init(vcpu);
-> 
-> diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
-> index 9398b66f8a87..688213ef34f0 100644
-> --- a/arch/arm64/kvm/mmu.c
-> +++ b/arch/arm64/kvm/mmu.c
-> @@ -131,7 +131,8 @@ static int mmu_topup_memory_cache(struct
-> kvm_mmu_memory_cache *cache, int min)
->  	if (cache->nobjs >= min)
->  		return 0;
->  	while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
-> -		page = (void *)__get_free_page(GFP_PGTABLE_USER);
-> +		page = (void *)__get_free_page(GFP_KERNEL_ACCOUNT |
+> Need a full name
 
-This is definitely a change in the way we account for guest
-page tables allocation, although I find it bizarre that not
-all architectures account for it the same way.
+OK
+> .
+> 
+> > ---
+> >  .../devicetree/bindings/dma/mtk-cqdma.yaml         | 100 +++++++++++++++++++++
+> >  1 file changed, 100 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/dma/mtk-cqdma.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/dma/mtk-cqdma.yaml b/Documentation/devicetree/bindings/dma/mtk-cqdma.yaml
+> > new file mode 100644
+> > index 0000000..045aa0c
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/dma/mtk-cqdma.yaml
+> > @@ -0,0 +1,100 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> 
+> Dual license new bindings:
+> 
+> (GPL-2.0-only OR BSD-2-Clause)
 
-It seems logical to me that nested page tables would be accounted
-against userspace, but I'm willing to be educated on the matter.
+OK
+> 
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/dma/mtk-cqdma.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: MediaTek Command-Queue DMA controller Device Tree Binding
+> > +
+> > +maintainers:
+> > +  - EastL <EastL.Lee@mediatek.com>
+> > +
+> > +description:
+> > +  MediaTek Command-Queue DMA controller (CQDMA) on Mediatek SoC
+> > +  is dedicated to memory-to-memory transfer through queue based
+> > +  descriptor management.
+> > +
+> 
+> Need a $ref to dma-controller.yaml
 
-Another possibility is that depending on the context, some allocations
-should be accounted on either the kernel or userspace (NV on arm64
-could definitely do something like that). If that was the case,
-maybe moving most of the GFP_* flags into the per-cache flags,
-and have the renaming that Ben suggested earlier.
+OK
+> 
+> > +properties:
+> > +  "#dma-cells":
+> > +    minimum: 1
+> > +    # Should be enough
+> > +    maximum: 255
+> > +    description:
+> > +      Used to provide DMA controller specific information.
+> > +
+> > +  compatible:
+> > +    const: mediatek,cqdma
+> 
+> Needs SoC specific compatible string(s).
+OK
+> 
+> > +
+> > +  reg:
+> > +    minItems: 1
+> > +    maxItems: 255
+> 
+> You can have 255 register regions?
+No, I'll fix maxItems to 5
+> 
+> You need to define what each region is if more than 1.
+> 
+> > +
+> > +  interrupts:
+> > +    minItems: 1
+> > +    maxItems: 255
+> 
+> 255 interrupts?
 
-Thanks,
+the same, 5 interripts.
+> 
+> > +
+> > +  clocks:
+> > +    maxItems: 1
+> > +
+> > +  clock-names:
+> > +    const: cqdma
+> > +
+> > +  dma-channel-mask:
+> > +    description:
+> > +      Bitmask of available DMA channels in ascending order that are
+> > +      not reserved by firmware and are available to the
+> > +      kernel. i.e. first channel corresponds to LSB.
+> > +      The first item in the array is for channels 0-31, the second is for
+> > +      channels 32-63, etc.
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +    items:
+> > +      minItems: 1
+> > +      # Should be enough
+> > +      maxItems: 255
+> 
+> This already has a definition in dma-common.yaml. Don't copy-n-paste 
+> it. Just add any constraints you have. Like what is the max number of 
+> channels?
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+OK, the max channel number is 5, I'll fix it on next version.
+> 
+> > +
+> > +  dma-channels:
+> > +    $ref: /schemas/types.yaml#definitions/uint32
+> > +    description:
+> > +      Number of DMA channels supported by the controller.
+> > +
+> > +  dma-requests:
+> > +    $ref: /schemas/types.yaml#definitions/uint32
+> > +    description:
+> > +      Number of DMA request signals supported by the controller.
+> 
+> Same comment on these 2.
+
+OK
+> 
+> > +
+> > +required:
+> > +  - "#dma-cells"
+> > +  - compatible
+> > +  - reg
+> > +  - interrupts
+> > +  - clocks
+> > +  - clock-names
+> > +  - dma-channel-mask
+> > +  - dma-channels
+> > +  - dma-requests
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/interrupt-controller/irq.h>
+> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +    #include <dt-bindings/clock/mt6779-clk.h>
+> > +    cqdma: dma-controller@10212000 {
+> > +        compatible = "mediatek,cqdma";
+> > +        reg = <0 0x10212000 0 0x80>,
+> > +            <0 0x10212080 0 0x80>,
+> > +            <0 0x10212100 0 0x80>;
+> 
+> Examples default to 1 cell each for address and size.
+OK
+> 
+> > +        interrupts = <GIC_SPI 139 IRQ_TYPE_LEVEL_LOW>,
+> > +            <GIC_SPI 140 IRQ_TYPE_LEVEL_LOW>,
+> > +            <GIC_SPI 141 IRQ_TYPE_LEVEL_LOW>;
+> > +        clocks = <&infracfg_ao CLK_INFRA_CQ_DMA>;
+> > +        clock-names = "cqdma";
+> > +        dma-channel-mask = <63>;
+> > +        dma-channels = <3>;
+> > +        dma-requests = <32>;
+> > +        #dma-cells = <1>;
+> > +    };
+> > +
+> > +...
+> > -- 
+> > 1.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
