@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE7AE1F62B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:37:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B5B11F62BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:38:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x+bLiNFqU5dRC2G2+mQVwp5ur9JAuV8c9Oz+adtS2Xk=; b=nYY3f9bgHAzyFi
-	p6eDgHwzpNYerDGvjTeuE3urnzBJOeO9RS37bh3/n84FHJ+3IOO8DkLVSc1qcku/OdFysDj/cCL2N
-	W5m93TdBVo6tbd7FxMcEQUgJVbKA2aES7zvbjC9d02yZL3w4y2mYPBa6qKXGZEYwy0K+Ch3n886CX
-	CHb9EL0RSNDy0ncugfqe2fbW/+0OMUagMi5wZ6fGqW7pKYBtoFYtexZGVqM2qFLYnv46kzkFkMwKx
-	F3CfMHwGA+C733UcWK9B+Y/47sBAnEtAb54+yQnTI1Mtltx7ma3mntKRH6DzT8mdnuSySn6+2en3R
-	/UONoGH8URG2nvrqR3tg==;
+	List-Owner; bh=/9IOxOddHOZOd1UBmVWohvUayPWitw/DnHVsWKYcFSo=; b=vCjJPvUSoLbj+f
+	Vfp2LuY23ZjIkm42qqU/u81aIa2ez1V9bWhp9kwbVRePaDLbTBGDomBuAogpM4E5F35aJQKju5tjs
+	yam3pIFxaTPQKgNlWatHt+cr68Y/IAISxyEb6uQqhZRN3TqBAUg8nF7eUZ533uZSneR5UDqe7hhIe
+	Q7DtT+KU2RnMweLtuS5rtoXHFnv8yPYhm6jgG1BnIE2sgPqVmP654E0wNYF0VHURU65MRweDLeQ/7
+	cbzrnI54Ee0th/3uqfekkvsmQI3nAarbEkxWRw41XLkv/ET+vd2CDHDC0WlJwf41KvfiK7V7DSKAb
+	DIh54ix7XiydNj8mJnzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjHlg-00079A-N4; Thu, 11 Jun 2020 07:36:56 +0000
+	id 1jjHn7-00006I-7n; Thu, 11 Jun 2020 07:38:25 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjHhf-0001di-RW; Thu, 11 Jun 2020 07:32:49 +0000
+ id 1jjHhh-0001f9-CL; Thu, 11 Jun 2020 07:32:51 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 7AF705800D1;
- Thu, 11 Jun 2020 03:32:46 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 11 Jun 2020 03:32:46 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 113C15800D5;
+ Thu, 11 Jun 2020 03:32:48 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Thu, 11 Jun 2020 03:32:48 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=f/R5tcDXGnC0L
- EgPODfQACCnYjD2fbOepAi73Ul4TFY=; b=mH72VG5vRjan05kTugI47hqrvQg6S
- xZffrse6lBf5R2Ks6DVY5so+XvpBJbQmRIxzEuNWTmJnHKsa8Vg92jAvk1D2HyVn
- S68in8cVDT1lCCVMEvlAunMZpb2bwXg0tfIH/FRdD02RkypmrpyIndAZ+7SMd6Be
- ELL1CXSq2WHWU+a08NpgwoV2KX1ftk2uE6wp63QeKJQPlD2BZWHoJPFo2GDHM5J4
- j2dakACEGi95zfSBo8dP7w0mKWzp1no1qv6olV+X/AazdT66cR/yD+hN9UDMHJ2P
- XNRlpmvo1YWz06b2AzKtjxeEbcFIm85UnK+7EE1wSG8LjGxW04gxD6OtA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=J1lvVl0ko0SYJ
+ ZDwkDxj+ytT5YUsDIPc+jV8ttXsMuo=; b=GFrz3VxX657Gee92PK2qFN1ISkNuS
+ 5mAPsZo/6tWCqTzVbDz1Yc1V/sDMQSY+gVxp73PBfEIPwv80xRZAka6A68btj6Wn
+ bgtp2JeRO3eti3d3bfFqqugWnXqeqoZOaTzp3nYEPXzLF/rJejH+tS9u/y9a/u8A
+ E551X/yjm+dO2PoYSD0J3wslXqXSJJGkyHUKRA0V+rlywhJf3a7bMDHMW60Y9WUS
+ fiOdgCeGSCccTMRz1odBFegRgJy5bIaYA62FpZX1/jkCWYEwg96Uez49/rFLhSGg
+ 4IjI+EHqibdYqEi5+pyjhL0MmehyUbw6SS1WAHYCH/av007JRHMKjVPgw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=f/R5tcDXGnC0LEgPODfQACCnYjD2fbOepAi73Ul4TFY=; b=O6mY2HtE
- Wl+JVDUAl7QNxgAPDvutC1e1m4zWJaH3qh7jSlOKfXQ50ISL9V4X6WgQJGM67Z/U
- EzlJp0dqEqTEgdAJCFw0Jo9RJmAF5WNnPQtXKzM8nnm16AwMdqCUXTShWlRyUNsN
- GpRFKgd/9ALmIhC3BqTKi+sUhrH3Dy98lspW74oy9z5Sv34igbO+RERnlELMB93G
- ur6+7UwDqga5rPQEUVbmsGtByyF4K7XnHn99GuILfNoDbvvNu82H+tgTF1rcIeIp
- /SGdoV1HaJcbOP1N97Yw473/IFAug2QMZUStIvHpVxHNoT+bODx4wgkdn9qulnqI
- l9azrhF0qPTl/A==
-X-ME-Sender: <xms:Ht7hXosKelMR34HtgywOPgy9C6g__ZS8IyJYAWB-8NXI2T0jTxdHsg>
+ fm3; bh=J1lvVl0ko0SYJZDwkDxj+ytT5YUsDIPc+jV8ttXsMuo=; b=mCQWV5Af
+ XwDXFWPEQlsy00F3pAKBwTsBDPxXJgus50WVHl6oeri/W9bEC7yEF1OkSfcnoih1
+ GaIO25SmWhfYfqWHxRVUjr7XjiCxpAWrTtSsUwj9nuKUr2ipL+AN+gD0PFCpexB5
+ bN6KnqrG1CPw4iwsLGolzAfukxdeDg0d9wX+ZjUoAWacTLpEOwOGoQHcweYleN4q
+ +If7FqejaQIV4IoS+frhVIUB4QsQLf5/1CzdxFktL1zPznKpfnLKpb9BWsABDulq
+ LYQz+bAoOAtnUwXNTQqDfy61e0oUDSqxkC0Zm6ZMuYwEtf+2dV8/dPEnfGCjm/t4
+ 3vmspUyTVQHW+g==
+X-ME-Sender: <xms:H97hXky5DEmgUq-dy4A6hqJTOwmow7sGtJpDz83H00mscfRBpQ7rZw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehjedguddvvdcutefuodetggdotefrod
  ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
  necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
@@ -56,26 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehjedguddvvdcutefuodetgg
  htthgvrhhnpedvkeelveefffekjefhffeuleetleefudeifeehuddugffghffhffehveev
  heehvdenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpeduvd
  enucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:Ht7hXld7iboSJwNjJDNTNso-rqgDSyntz0IM5_ynK5YuBkNNXXs12Q>
- <xmx:Ht7hXjwG7g4lu_1HCBi4iw0Ce5_jW7aUB6I18BhUnNae7zsNWrj1YQ>
- <xmx:Ht7hXrP7JUFOtJNrAJscr1iTP_rZ8gnB7wev8X0mb4X4UxK0-2nPTQ>
- <xmx:Ht7hXsT1WjHRunP11b4PHi8Si8TlkV4XS0vwmwJQUveuTCWcAlYYWw>
+X-ME-Proxy: <xmx:H97hXoRJ64rFaja1y0hXg3ZE4VAIWw45RIT6d_T69vO-iPo-MsL76w>
+ <xmx:H97hXmU9S7-J1ACG9h3koHrXS_bI4HIB4LgWr6IxwK5JLNf8SoTw_Q>
+ <xmx:H97hXihOMYC3TzYH99XOu1XHsTavUjTQPWY1T-5LKMp_Pdj8If2RRw>
+ <xmx:IN7hXi1JCBKSgr4SLZibLfngJSHO2YTw0kWfwemmXD_6KKJdzFWDyw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 1808F328005E;
- Thu, 11 Jun 2020 03:32:46 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id A612C30618B7;
+ Thu, 11 Jun 2020 03:32:47 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v4 16/27] clk: bcm: rpi: Rename is_prepared function
-Date: Thu, 11 Jun 2020 09:32:05 +0200
-Message-Id: <1b37336bee890d4f4be67741a2a324b73ec87cfb.1591860665.git-series.maxime@cerno.tech>
+Subject: [PATCH v4 17/27] clk: bcm: rpi: Split pllb clock hooks
+Date: Thu, 11 Jun 2020 09:32:06 +0200
+Message-Id: <38aad3dae9d28bbf5fb7facf05fb818c9150ad1d.1591860665.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
 References: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_003248_248866_3F89350B 
-X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-CacheID: sfid-20200611_003249_587290_1F4370CB 
+X-CRM114-Status: UNSURE (   9.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -116,11 +116,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The raspberrypi_fw_pll_is_on function doesn't only apply to PLL
-registered in the driver, but any clock exposed by the firmware.
-
-Since we also implement the is_prepared hook, make the function
-consistent with the other function names.
+The driver only supports the pllb for now and all the clock framework hooks
+are a mix of the generic firmware interface and the specifics of the pllb.
+Since we will support more clocks in the future let's split the generic and
+specific hooks
 
 Cc: Michael Turquette <mturquette@baylibre.com>
 Cc: linux-clk@vger.kernel.org
@@ -128,31 +127,73 @@ Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 30 ++++++++++++++++++++++--------
+ 1 file changed, 22 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 3fce49a65a79..58ac1b104429 100644
+index 58ac1b104429..19571602ba64 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -85,7 +85,7 @@ static int raspberrypi_clock_property(struct rpi_firmware *firmware,
- 	return 0;
+@@ -102,8 +102,8 @@ static int raspberrypi_fw_is_prepared(struct clk_hw *hw)
  }
  
--static int raspberrypi_fw_pll_is_on(struct clk_hw *hw)
-+static int raspberrypi_fw_is_prepared(struct clk_hw *hw)
+ 
+-static unsigned long raspberrypi_fw_pll_get_rate(struct clk_hw *hw,
+-						 unsigned long parent_rate)
++static unsigned long raspberrypi_fw_get_rate(struct clk_hw *hw,
++					     unsigned long parent_rate)
  {
  	struct raspberrypi_clk_data *data =
  		container_of(hw, struct raspberrypi_clk_data, hw);
-@@ -166,7 +166,7 @@ static int raspberrypi_pll_determine_rate(struct clk_hw *hw,
+@@ -116,21 +116,27 @@ static unsigned long raspberrypi_fw_pll_get_rate(struct clk_hw *hw,
+ 	if (ret)
+ 		return ret;
+ 
+-	return val * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++	return val;
  }
  
- static const struct clk_ops raspberrypi_firmware_pll_clk_ops = {
--	.is_prepared = raspberrypi_fw_pll_is_on,
-+	.is_prepared = raspberrypi_fw_is_prepared,
- 	.recalc_rate = raspberrypi_fw_pll_get_rate,
- 	.set_rate = raspberrypi_fw_pll_set_rate,
- 	.determine_rate = raspberrypi_pll_determine_rate,
+-static int raspberrypi_fw_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+-				       unsigned long parent_rate)
++static unsigned long raspberrypi_fw_pll_get_rate(struct clk_hw *hw,
++						 unsigned long parent_rate)
++{
++	return raspberrypi_fw_get_rate(hw, parent_rate) *
++		RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++}
++
++static int raspberrypi_fw_set_rate(struct clk_hw *hw, unsigned long rate,
++				   unsigned long parent_rate)
+ {
+ 	struct raspberrypi_clk_data *data =
+ 		container_of(hw, struct raspberrypi_clk_data, hw);
+ 	struct raspberrypi_clk *rpi = data->rpi;
+-	u32 new_rate = rate / RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++	u32 _rate = rate;
+ 	int ret;
+ 
+ 	ret = raspberrypi_clock_property(rpi->firmware, data,
+-					 RPI_FIRMWARE_SET_CLOCK_RATE,
+-					 &new_rate);
++					 RPI_FIRMWARE_SET_CLOCK_RATE, &_rate);
+ 	if (ret)
+ 		dev_err_ratelimited(rpi->dev, "Failed to change %s frequency: %d",
+ 				    clk_hw_get_name(hw), ret);
+@@ -138,6 +144,14 @@ static int raspberrypi_fw_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+ 	return ret;
+ }
+ 
++static int raspberrypi_fw_pll_set_rate(struct clk_hw *hw, unsigned long rate,
++				       unsigned long parent_rate)
++{
++	u32 new_rate = rate / RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++
++	return raspberrypi_fw_set_rate(hw, new_rate, parent_rate);
++}
++
+ /*
+  * Sadly there is no firmware rate rounding interface. We borrowed it from
+  * clk-bcm2835.
 -- 
 git-series 0.9.1
 
