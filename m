@@ -2,112 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07A9F1F6124
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 06:59:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A61ED1F6147
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 07:29:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tEbSgcuS3HIf1B7ErEuOKBUZmZH6h3Dg8Xdc3AGC754=; b=a61U4MQT/FCLk2
-	xuqMvJXqlqp+OpK6pSG6BLoeFEyrzHvC/bl7KRhpTyD5KqCyTW2k/dIqwmI7dsSEIUBGmUrF0/QwV
-	HjdqX3nvBq6DSfTLvManxv4Zu3aWQ5gFXS8PZU3L9920thrxXBkMsTu4FrSHbVb9scFEo6lFz2wup
-	F68qqFZ2wQ6UxXPwGSLx4ItsxvKR9HYCZaqJhh5x5D2i8olTJ9Te6hSvFjEfMXWLWozxLWgKHBvR6
-	TzFu+B3usi1+H2pbzdVk0Iw7DuWzdmMv0t4JV5fE6Xd004gMv7DMQ2PvbbFORG2BDBWVu0VMo34w6
-	PRUSkPdr5npZ8o89QDUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rcJMbkvxizxcTIom3c31qcG0/bsPLWwXLysf9D8Nt+A=; b=qU7Hz7OhDnChvX
+	pSGlgQd/KEvr0jJPUFZjyMGxBIns7sXlr+2gNuuyc46wx3dR0EDsWNAOZcatXbNCBX0bZj35b7T9o
+	4fLqbzAdykceU8YCO4xO7NNK69wsUrmv6daIKRgLDl4aN8F9fbMA2lrhGSQCPb5gYyueRHuBUbjt5
+	cQWbI5f2+BpY4bJ5LNiNnkqo4ElpM/hXBW+Q5D2TLQWJJ7vgBaD00pNQ9jqb1sdjEucQ1nE3hBWsG
+	wOnsKCIxmp3rjwfIUhsYKb8vM9wAkmXosLLDSllLIr9sB80OiiN3qcvoVYaJoNC7h4buATsbhRzbu
+	kxLaDu6o1e53SvPXBBxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjFJP-0007TI-Ix; Thu, 11 Jun 2020 04:59:35 +0000
-Received: from mail-vi1eur05on2065.outbound.protection.outlook.com
- ([40.107.21.65] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jjFmX-0000xH-TN; Thu, 11 Jun 2020 05:29:41 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjFIh-0006wz-7F
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 04:58:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ff8ObD5/JLMM4A/Vn1A6oXx3oP7WTsbgk99LRGK0V0lIy2onz2FD+hiIAkeRnhZ4a8UDB4zWT2s3Tj3SJoz1gODOFhp+bLUFkpfUUbDrcsedIhhr90GjqKVpi6WUR2y1u4udgtc02D0fDeT0mgTQWptSyrNfr9TBPExva7dMXG090HIT0DE4fkTPmYV/iTAf0A3Traw+8wGjS0qMJoBlxuK94FNi0BciYtvLLeqGuDFd9zekIfGaUinAyqXAWRlW9nQYFGMzPGQcWTxORFnsk72LaEBXxrQ1IvY/9dYYhw5poXr4lRIgA7K4nnnJSI6kZpUUf6Kvv9VbvP2JLGoiNw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HT66pU2Ld/sBMXoloOT/I5elczXNNTyfPnONQW7MvCU=;
- b=JW5pd7eV5esQUIGXoceq71L2LHxNhTMtnPIyAIg82bqdAIxc8tjX7GpJl+ln7/p+WJKjkc2mpsM00NW5V8hNqaQ+DozVzgvBhjlBJqSXdD7ZZM4aNHrVGPL9L0rsmogzJPratwp/g1ev6/GcFJLaRImI8hZfohS1nvz2gp70z4+BZDilOAKSSKwoYFMpjF9rr2H4+sX3pgqMj0x30i6rC+xVeHHDuc30IxrV77Sglw3K1eYujCy0PQzDZ6xL1bPxrB5SIfq9tFJlcRDvGcJnUNwKJNSQm5X7u2kiMLRRcQT/XprqCZfj35h+rMUPwrQhj6oma7p3QsI65nNVwJPHcQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HT66pU2Ld/sBMXoloOT/I5elczXNNTyfPnONQW7MvCU=;
- b=BBr7fQYYOEvZb0Ib6/2Qa9a+/lrMsRHejxXb/g0chX8txwSYc13geKv+QV+1OHdHgDvVzQ5Z//RC6YSgsLK8EBuAJ5a+beoklo6sSbnTwNejrPdbvU14Yo3OwBJFqnUiZJKv1K0Oo1VlPs+EZtSpeA6lSxIBf5hkj8Ai2XKud/E=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6750.eurprd04.prod.outlook.com (2603:10a6:803:123::25)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.22; Thu, 11 Jun
- 2020 04:58:50 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.023; Thu, 11 Jun 2020
- 04:58:50 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: broonie@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- festevam@gmail.com, robin.murphy@arm.com, matthias.schiffer@ew.tq-group.com
-Subject: [PATCH v1 RFC 2/2] spi: spi-imx: add fallback feature
-Date: Thu, 11 Jun 2020 20:58:30 +0800
-Message-Id: <1591880310-1813-3-git-send-email-yibin.gong@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591880310-1813-1-git-send-email-yibin.gong@nxp.com>
-References: <1591880310-1813-1-git-send-email-yibin.gong@nxp.com>
-X-ClientProxiedBy: SG2PR04CA0171.apcprd04.prod.outlook.com (2603:1096:4::33)
- To VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ id 1jjFmQ-0000wg-QF; Thu, 11 Jun 2020 05:29:36 +0000
+X-UUID: e35137679caa4ed89bc005927b969447-20200610
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=1ILMwubnJQNPNAjEKJe3Og6tiFfzI6Q6shWaNu3nPh8=; 
+ b=OigtWWGO4cCp1tK5BSPHrT/5XYGMOAJlqXwLjX4JX68TjxpOAtkRWyITFcjuSPaGgniR/cM62wNPz3VMa8sIUvc37/W1J6f2e+jLCAKrpuXy5ejfsxIUNarNEYuBzaRS6brb4g0kQGgjVNFvuMTW7K0pcmpMfk5MzFZbO2OBszI=;
+X-UUID: e35137679caa4ed89bc005927b969447-20200610
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 601360220; Wed, 10 Jun 2020 21:29:23 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 10 Jun 2020 22:21:11 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 11 Jun 2020 13:21:11 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Thu, 11 Jun 2020 13:21:09 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
+ <asutoshd@codeaurora.org>
+Subject: [PATCH v4] scsi: ufs: Fix imprecise load calculation in devfreq window
+Date: Thu, 11 Jun 2020 13:21:09 +0800
+Message-ID: <20200611052109.22700-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
- SG2PR04CA0171.apcprd04.prod.outlook.com (2603:1096:4::33) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3066.23 via Frontend Transport; Thu, 11 Jun 2020 04:58:44 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 2df7363a-d707-4ba2-a954-08d80dc42174
-X-MS-TrafficTypeDiagnostic: VE1PR04MB6750:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB6750CD626706AE0A9FE72C0589800@VE1PR04MB6750.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:597;
-X-Forefront-PRVS: 0431F981D8
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: TvcbK4Gs9w8PVDQFsGJDZcPdybqOSsQvKPYipUCU4iCIvo1l/Mg0BHgTje68x2G9wGXMOOZr/vzg0taFG6ihW10qYvsaHOmexVsF4tsBebpwQCObChQMeEPzradYNF8CRs4D7ncRHjY2nEX7Xsvm4e17nZhtVtvQsdBvCFpWmuSBR5l+CTRU6omTrrrh8Va8XIXYuKEypudnQ1+NryMGEMLCu3ZK+tj7Ha4C5LDtf4C4POOIB6b7+tewrzv8y+ER5T4Eh/XxUxJvcegAMaER8DQonYnbdRTeMCy8qemZWmYE2vyz+witqpfa2Qjq5587SVXchDfoIFEyP60qNYZxpQ==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(136003)(376002)(346002)(39860400002)(366004)(396003)(478600001)(66476007)(8936002)(316002)(2616005)(7416002)(956004)(36756003)(86362001)(6486002)(66946007)(8676002)(2906002)(4326008)(6512007)(66556008)(6506007)(83380400001)(16526019)(186003)(5660300002)(6666004)(26005)(52116002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: BN9hOjFr2QcrxjV3PTxYs/E1ZlDgUJqBglej9retEDd75nYydcDFhzMq0qKuHhvz4I3mW22c8hiVEyTNg2zjFO2PabdghcGWN0i8a69XvyUmHXCHIKvFeUoSxcbB2/lIyVCwQhSoQZ6aldme/HmHMUxdb/Ay9eoBsfWSkl1ZQHRWPBljIa1LcUiSHcZWTIxvAGc5DM2HEbgAPUvp50uCt6UYYT/DNb7CPByZKoH8Gk+mlv1uIFYyTdyy0Vw/ZDsHjtnz+Vs/Ug5GJXaafjN7juwxd1XQFkt/+qkgQpEQsPkvtAo66zye/nPjQHQIvzx8824GvGD+B2tK2REVuVWYqI4MPWt5NVxwX3yzOVHXRQ0Ks+dc6j2VIxhh+6R47IA8V84M7r1R5+MrNrPwl/9q6i24ePsH4TQ1/PxOlTOAQLYvOMjQuoVot+Qf0+RmhNs5+Z+IrAI5WUwPvNsmaf3bsnKbq0rI7la5QNOm567CKl8=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2df7363a-d707-4ba2-a954-08d80dc42174
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2020 04:58:50.1378 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: QWh8QYD6S+kCV11XWEW1ywZPkPG5zkxB/w6tCK0CX0DHIY8TnTUtstzXZq/1QHXemGk3VghSjkZg2GtN+bEHrA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6750
+X-TM-SNTS-SMTP: 15808926AE20E5473D36ADD8ADA4232D6CE1F132A283B18C20BE289C9826830A2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_215851_272564_25C26ADC 
-X-CRM114-Status: GOOD (  11.95  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200610_222935_053533_089ACEA9 
+X-CRM114-Status: GOOD (  10.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.65 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.65 listed in wl.mailspike.net]
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -115,7 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,82 +85,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, linux-spi@vger.kernel.org
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, cc.chou@mediatek.com,
+ chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
+ chaotian.jing@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add fallback pio feature for dma transfer failed. Since another whole
-pio transfer including setup_transfer will be issued by spi core, no
-need to restore jobs like commit bcd8e7761ec9 ("spi: imx: fallback to PIO
-if dma setup failure").
+The UFS load calculation is based on "total_time" and "busy_time" in a
+devfreq window. However, the source of time is different for both
+parameters: "busy_time" is assigned from "jiffies" thus has different
+accuracy from "total_time" which is assigned from ktime_get().
 
-Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+Besides, the time of window boundary is not exactly the same as
+the starting busy time in this window if UFS is actually busy
+in the beginning of the window. A similar accuracy error may also
+happen for the end of busy time in current window.
+
+To guarantee the precision of load calculation, we need to
+
+1. Align time accuracy of both devfreq_dev_status.total_time and
+   devfreq_dev_status.busy_time. For example, use "ktime_get()"
+   directly.
+
+2. Align below timelines,
+   - The beginning time of devfreq windows
+   - The beginning of busy time in a new window
+   - The end of busy time in the current window
+
+Fixes: a3cd5ec55f6c ("scsi: ufs: add load based scaling of UFS gear")
+Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 ---
- drivers/spi/spi-imx.c | 23 +++++------------------
- 1 file changed, 5 insertions(+), 18 deletions(-)
+ drivers/scsi/ufs/ufshcd.c | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c
-index b7a85e3..afd31d7 100644
---- a/drivers/spi/spi-imx.c
-+++ b/drivers/spi/spi-imx.c
-@@ -224,7 +224,7 @@ static bool spi_imx_can_dma(struct spi_master *master, struct spi_device *spi,
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index ad4fc829cbb2..bf5aaf334ccd 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -1314,6 +1314,7 @@ static int ufshcd_devfreq_get_dev_status(struct device *dev,
+ 	unsigned long flags;
+ 	struct list_head *clk_list = &hba->clk_list_head;
+ 	struct ufs_clk_info *clki;
++	ktime_t curr_t;
+ 
+ 	if (!ufshcd_is_clkscaling_supported(hba))
+ 		return -EINVAL;
+@@ -1321,6 +1322,7 @@ static int ufshcd_devfreq_get_dev_status(struct device *dev,
+ 	memset(stat, 0, sizeof(*stat));
+ 
+ 	spin_lock_irqsave(hba->host->host_lock, flags);
++	curr_t = ktime_get();
+ 	if (!scaling->window_start_t)
+ 		goto start_window;
+ 
+@@ -1332,18 +1334,17 @@ static int ufshcd_devfreq_get_dev_status(struct device *dev,
+ 	 */
+ 	stat->current_frequency = clki->curr_freq;
+ 	if (scaling->is_busy_started)
+-		scaling->tot_busy_t += ktime_to_us(ktime_sub(ktime_get(),
++		scaling->tot_busy_t += ktime_to_us(ktime_sub(curr_t,
+ 					scaling->busy_start_t));
+ 
+-	stat->total_time = jiffies_to_usecs((long)jiffies -
+-				(long)scaling->window_start_t);
++	stat->total_time = ktime_to_us(curr_t) - scaling->window_start_t;
+ 	stat->busy_time = scaling->tot_busy_t;
+ start_window:
+-	scaling->window_start_t = jiffies;
++	scaling->window_start_t = ktime_to_us(curr_t);
+ 	scaling->tot_busy_t = 0;
+ 
+ 	if (hba->outstanding_reqs) {
+-		scaling->busy_start_t = ktime_get();
++		scaling->busy_start_t = curr_t;
+ 		scaling->is_busy_started = true;
+ 	} else {
+ 		scaling->busy_start_t = 0;
+@@ -1877,6 +1878,7 @@ static void ufshcd_exit_clk_gating(struct ufs_hba *hba)
+ static void ufshcd_clk_scaling_start_busy(struct ufs_hba *hba)
  {
- 	struct spi_imx_data *spi_imx = spi_master_get_devdata(master);
+ 	bool queue_resume_work = false;
++	ktime_t curr_t = ktime_get();
  
--	if (!use_dma)
-+	if (!use_dma || master->fallback)
- 		return false;
+ 	if (!ufshcd_is_clkscaling_supported(hba))
+ 		return;
+@@ -1892,13 +1894,13 @@ static void ufshcd_clk_scaling_start_busy(struct ufs_hba *hba)
+ 			   &hba->clk_scaling.resume_work);
  
- 	if (!master->dma_rx)
-@@ -1302,7 +1302,8 @@ static int spi_imx_sdma_init(struct device *dev, struct spi_imx_data *spi_imx,
- 	master->can_dma = spi_imx_can_dma;
- 	master->max_dma_len = MAX_SDMA_BD_BYTES;
- 	spi_imx->bitbang.master->flags = SPI_MASTER_MUST_RX |
--					 SPI_MASTER_MUST_TX;
-+					 SPI_MASTER_MUST_TX |
-+					 SPI_MASTER_FALLBACK;
+ 	if (!hba->clk_scaling.window_start_t) {
+-		hba->clk_scaling.window_start_t = jiffies;
++		hba->clk_scaling.window_start_t = ktime_to_us(curr_t);
+ 		hba->clk_scaling.tot_busy_t = 0;
+ 		hba->clk_scaling.is_busy_started = false;
+ 	}
  
- 	return 0;
- err:
-@@ -1507,7 +1508,6 @@ static int spi_imx_transfer(struct spi_device *spi,
- 				struct spi_transfer *transfer)
- {
- 	struct spi_imx_data *spi_imx = spi_master_get_devdata(spi->master);
--	int ret;
- 
- 	/* flush rxfifo before transfer */
- 	while (spi_imx->devtype_data->rx_available(spi_imx))
-@@ -1516,21 +1516,8 @@ static int spi_imx_transfer(struct spi_device *spi,
- 	if (spi_imx->slave_mode)
- 		return spi_imx_pio_transfer_slave(spi, transfer);
- 
--	/*
--	 * fallback PIO mode if dma setup error happen, for example sdma
--	 * firmware may not be updated as ERR009165 required.
--	 */
--	if (spi_imx->usedma) {
--		ret = spi_imx_dma_transfer(spi_imx, transfer);
--		if (ret != -EINVAL)
--			return ret;
--
--		spi_imx->devtype_data->disable_dma(spi_imx);
--
--		spi_imx->usedma = false;
--		spi_imx->dynamic_burst = spi_imx->devtype_data->dynamic_burst;
--		dev_dbg(&spi->dev, "Fallback to PIO mode\n");
--	}
-+	if (spi_imx->usedma)
-+		return spi_imx_dma_transfer(spi_imx, transfer);
- 
- 	return spi_imx_pio_transfer(spi, transfer);
+ 	if (!hba->clk_scaling.is_busy_started) {
+-		hba->clk_scaling.busy_start_t = ktime_get();
++		hba->clk_scaling.busy_start_t = curr_t;
+ 		hba->clk_scaling.is_busy_started = true;
+ 	}
  }
 -- 
-2.7.4
-
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
