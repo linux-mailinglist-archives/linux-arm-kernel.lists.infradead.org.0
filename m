@@ -2,56 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 442E31F6960
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 15:51:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 427321F6973
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 15:55:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P/jXSE9L5mhH+lbvweGm5g4U4aSdjaFZlMwTBpLzBoM=; b=r+rbrXgdRLAsZE
-	twxQa8+GS2jAtT+x8m7L98WmHwvG49epeJFuLMiiC7DpWbUCAhQpOeALAMWuWDhSHgIBiLb61Epo4
-	wS5X0ta7dpJ/191Az7+n+jVni5XaYg0a5StAnM7EwqEQF3ImphQ9mfE0QW+oE1yS0hGtEisE49lLn
-	DfI82LW4xsJIb/5y9fEr3ega2QuRhSbERR0eGh36gQ8uzOl8tG8hbcy9i6pmxNcrCWD/Hj7oS+Tlx
-	Ztqzu9y7zgTZsjeOuKDTqTwfh5bFZyDO8aSua9tQ0fSPe/3JG9dh6iVlPWWyrSjSsxBDbCvevJoC3
-	qvBEghfgubglHxyldCXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yL44pwUdfScebc/VkL/VLt93PaTijnvR6Y/kRiWXW1g=; b=Lsh8jixX4DiC91k0dKloPQYUi
+	pFSr6vWlXPDiFSOmSb6ouiJezMWl+bBhwSgtE1DjQdMguELYicC8Qi6mcspG+O6hc8E0iCQA2d5Zd
+	fj1xp2AHexFudO+hbX7NWw9c2P3QO4PKlfPiBPheU5T4RBJyTA+/Rhek1Ta+2FcEM2U50qh2uiV6O
+	HvU7+hIWV7wFX3I7fZTgCpTnwZjBbIZuS/7fHabR6NbF//fJJ5/dGBDe2FJgMG3Z0Uj8LCTT6dtbB
+	OTTpkHdojIu52j7Dju3D5RCc4j4dt3EdvmsvU9P4mrffmiqWOEt/0cfFmkiiBs06KrnI7NVB0rQHB
+	PRIc9rc4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjNbZ-0006mJ-Fq; Thu, 11 Jun 2020 13:50:53 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jjNfU-0007yg-Ro; Thu, 11 Jun 2020 13:54:56 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjNaJ-0003UU-53
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 13:49:37 +0000
-X-Originating-IP: 91.175.115.186
-Received: from localhost (91-175-115-186.subs.proxad.net [91.175.115.186])
- (Authenticated sender: gregory.clement@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 7C99F2000C;
- Thu, 11 Jun 2020 13:49:33 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Russell King <linux@armlinux.org.uk>,
-	Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH v2 6/6] ARM: Add 64K page support at MMU level
-Date: Thu, 11 Jun 2020 15:49:14 +0200
-Message-Id: <20200611134914.765827-7-gregory.clement@bootlin.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200611134914.765827-1-gregory.clement@bootlin.com>
-References: <20200611134914.765827-1-gregory.clement@bootlin.com>
+ id 1jjNfM-0007xA-8y
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 13:54:49 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 6D067AB76;
+ Thu, 11 Jun 2020 13:54:44 +0000 (UTC)
+Subject: Re: [PATCH v2 5/5] ARM: mstar: Add dts for 70mai midrive d08
+To: Daniel Palmer <daniel@0x0f.com>
+References: <20191014061617.10296-2-daniel@0x0f.com>
+ <20200610090421.3428945-6-daniel@0x0f.com>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <a626d8a5-16c2-8f0a-b131-c124c06b0317@suse.de>
+Date: Thu, 11 Jun 2020 15:54:38 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <20200610090421.3428945-6-daniel@0x0f.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_064935_468861_3B696239 
-X-CRM114-Status: GOOD (  14.35  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200611_065448_609651_8D44EDDB 
+X-CRM114-Status: GOOD (  22.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.200 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,308 +66,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gregory CLEMENT <gregory.clement@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Daniel Palmer <daniel@thingy.jp>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Ard Biesheuvel <ardb@kernel.org>,
+ Stephan Gerhold <stephan@gerhold.net>, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, Nathan Huckleberry <nhuck15@gmail.com>,
+ devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ allen <allen.chen@ite.com.tw>, tim.bird@sony.com,
+ Will Deacon <will@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ Gregory Fong <gregory.0xf0@gmail.com>, Doug Anderson <armlinux@m.disordat.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, k@japko.eu,
+ Christian Lamparter <chunkeey@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While 8K, 16K or 32K pages are not supported by ARM, it is possible to
-use large page with a 64K size.
-
-Compared to the large page support based on software, by using real
-64K page the tlb flush can be done on a single page instead of a range
-of pages.
-
-This is inspired from fa0ca2726ea9 ("DSMP 64K support") and
-4ef803e12baf ("mmu: large-page: Added support for multiple kernel page
-sizes") from
-https://github.com/MarvellEmbeddedProcessors/linux-marvell.git
-
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
----
- arch/arm/include/asm/page.h                 |  2 ++
- arch/arm/include/asm/pgtable-2level-hwdef.h |  8 ++++++
- arch/arm/include/asm/tlbflush.h             | 14 +++++------
- arch/arm/mm/Kconfig                         | 23 +++++++++++++++--
- arch/arm/mm/proc-v7-2level.S                | 28 +++++++++++++++++++++
- arch/arm/mm/tlb-v7.S                        |  8 +++---
- 6 files changed, 70 insertions(+), 13 deletions(-)
-
-diff --git a/arch/arm/include/asm/page.h b/arch/arm/include/asm/page.h
-index 42784fed8834..8d6b16e73b06 100644
---- a/arch/arm/include/asm/page.h
-+++ b/arch/arm/include/asm/page.h
-@@ -16,6 +16,8 @@
- #define PAGE_SHIFT		15
- #elif defined(CONFIG_ARM_64KB_SW_PAGE_SIZE_SUPPORT)
- #define PAGE_SHIFT		16
-+#elif defined(CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT)
-+#define PAGE_SHIFT		16
- #else
- #define PAGE_SHIFT		12
- #endif
-diff --git a/arch/arm/include/asm/pgtable-2level-hwdef.h b/arch/arm/include/asm/pgtable-2level-hwdef.h
-index 556937e1790e..37503789c6d6 100644
---- a/arch/arm/include/asm/pgtable-2level-hwdef.h
-+++ b/arch/arm/include/asm/pgtable-2level-hwdef.h
-@@ -66,7 +66,11 @@
- /*
-  *   - extended small page/tiny page
-  */
-+#ifdef CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+#define PTE_EXT_XN		(_AT(pteval_t, 1) << 15)	/* v6 */
-+#else
- #define PTE_EXT_XN		(_AT(pteval_t, 1) << 0)		/* v6 */
-+#endif
- #define PTE_EXT_AP_MASK		(_AT(pteval_t, 3) << 4)
- #define PTE_EXT_AP0		(_AT(pteval_t, 1) << 4)
- #define PTE_EXT_AP1		(_AT(pteval_t, 2) << 4)
-@@ -74,7 +78,11 @@
- #define PTE_EXT_AP_UNO_SRW	(PTE_EXT_AP0)
- #define PTE_EXT_AP_URO_SRW	(PTE_EXT_AP1)
- #define PTE_EXT_AP_URW_SRW	(PTE_EXT_AP1|PTE_EXT_AP0)
-+#ifdef CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+#define PTE_EXT_TEX(x)		(_AT(pteval_t, (x)) << 12)	/* Large Page */
-+#else
- #define PTE_EXT_TEX(x)		(_AT(pteval_t, (x)) << 6)	/* v5 */
-+#endif
- #define PTE_EXT_APX		(_AT(pteval_t, 1) << 9)		/* v6 */
- #define PTE_EXT_COHERENT	(_AT(pteval_t, 1) << 9)		/* XScale3 */
- #define PTE_EXT_SHARED		(_AT(pteval_t, 1) << 10)	/* v6 */
-diff --git a/arch/arm/include/asm/tlbflush.h b/arch/arm/include/asm/tlbflush.h
-index d8ad4021a4da..1d2b17a9b6ee 100644
---- a/arch/arm/include/asm/tlbflush.h
-+++ b/arch/arm/include/asm/tlbflush.h
-@@ -420,7 +420,7 @@ static inline void
- __local_flush_tlb_page(struct vm_area_struct *vma, unsigned long uaddr)
- {
- 	const unsigned int __tlb_flag = __cpu_tlb_flags;
--#if defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	if (tlb_flag(TLB_WB))
- 		dsb();
- 
-@@ -444,7 +444,7 @@ __local_flush_tlb_page(struct vm_area_struct *vma, unsigned long uaddr)
- 	tlb_op(TLB_V6_U_PAGE, "c8, c7, 1", uaddr);
- 	tlb_op(TLB_V6_D_PAGE, "c8, c6, 1", uaddr);
- 	tlb_op(TLB_V6_I_PAGE, "c8, c5, 1", uaddr);
--#endif /* CONFIG_ARM_LARGE_PAGE_SUPPORT */
-+#endif /* CONFIG_SW_ARM_LARGE_PAGE_SUPPORT */
- }
- 
- static inline void
-@@ -458,7 +458,7 @@ local_flush_tlb_page(struct vm_area_struct *vma, unsigned long uaddr)
- 		dsb(nshst);
- 
- 	__local_flush_tlb_page(vma, uaddr);
--#if !defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if !defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	tlb_op(TLB_V7_UIS_PAGE, "c8, c7, 1", uaddr);
- #endif
- 
-@@ -489,7 +489,7 @@ __flush_tlb_page(struct vm_area_struct *vma, unsigned long uaddr)
- 
- static inline void __local_flush_tlb_kernel_page(unsigned long kaddr)
- {
--#if defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	__cpu_flush_kern_tlb_range(kaddr, kaddr + PAGE_SIZE);
- #else
- 	const int zero = 0;
-@@ -504,7 +504,7 @@ static inline void __local_flush_tlb_kernel_page(unsigned long kaddr)
- 	tlb_op(TLB_V6_U_PAGE, "c8, c7, 1", kaddr);
- 	tlb_op(TLB_V6_D_PAGE, "c8, c6, 1", kaddr);
- 	tlb_op(TLB_V6_I_PAGE, "c8, c5, 1", kaddr);
--#endif /* CONFIG_ARM_LARGE_PAGE_SUPPORT */
-+#endif /* CONFIG_SW_ARM_LARGE_PAGE_SUPPORT */
- }
- 
- static inline void local_flush_tlb_kernel_page(unsigned long kaddr)
-@@ -517,7 +517,7 @@ static inline void local_flush_tlb_kernel_page(unsigned long kaddr)
- 		dsb(nshst);
- 
- 	__local_flush_tlb_kernel_page(kaddr);
--#if !defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if !defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	tlb_op(TLB_V7_UIS_PAGE, "c8, c7, 1", kaddr);
- #endif
- 
-@@ -537,7 +537,7 @@ static inline void __flush_tlb_kernel_page(unsigned long kaddr)
- 		dsb(ishst);
- 
- 	__local_flush_tlb_kernel_page(kaddr);
--#if !defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if !defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	tlb_op(TLB_V7_UIS_PAGE, "c8, c3, 1", kaddr);
- #endif
- 
-diff --git a/arch/arm/mm/Kconfig b/arch/arm/mm/Kconfig
-index 6266caa93520..b566708af0bf 100644
---- a/arch/arm/mm/Kconfig
-+++ b/arch/arm/mm/Kconfig
-@@ -978,13 +978,16 @@ config MIGHT_HAVE_CACHE_L2X0
- config ARM_LARGE_PAGE_SUPPORT
- 	bool
- 
-+config ARM_SW_LARGE_PAGE_SUPPORT
-+	bool
-+
- choice
- 	prompt "Kernel Large Page Support"
- 	depends on CPU_V7 && !ARM_LPAE
- 	default ARM_NO_LARGE_PAGE_SUPPORT
- 	help
--	  Support kennel large pages (> 4KB) by software emulation of
--	  large pages (using 4KB MMU pages).  Select one of the page
-+	  Support kennel large pages (> 4KB), this includes MMU large pages
-+	  (64KB) and software emulation of large pages (using 4KB MMU pages).
- 	  sizes below.
- 
- config ARM_NO_LARGE_PAGE_SUPPORT
-@@ -998,6 +1001,7 @@ config ARM_NO_LARGE_PAGE_SUPPORT
- config ARM_8KB_SW_PAGE_SIZE_SUPPORT
- 	bool "8KB software page size support"
- 	select ARM_LARGE_PAGE_SUPPORT
-+	select ARM_SW_LARGE_PAGE_SUPPORT
- 	help
- 	  The kernel uses 8KB pages, MMU page table will still use 4KB pages.
- 	  This feature enables support for large storage volumes up to 32TB
-@@ -1006,6 +1010,7 @@ config ARM_8KB_SW_PAGE_SIZE_SUPPORT
- config ARM_16KB_SW_PAGE_SIZE_SUPPORT
- 	bool "16KB software page size support"
- 	select ARM_LARGE_PAGE_SUPPORT
-+	select ARM_SW_LARGE_PAGE_SUPPORT
- 	help
- 	  The kernel uses 16KB pages, MMU page table will still use 4KB pages.
- 	  This feature enables support for large storage volumes up to 64TB.
-@@ -1014,6 +1019,7 @@ config ARM_16KB_SW_PAGE_SIZE_SUPPORT
- config ARM_32KB_SW_PAGE_SIZE_SUPPORT
- 	bool "32KB software page size support"
- 	select ARM_LARGE_PAGE_SUPPORT
-+	select ARM_SW_LARGE_PAGE_SUPPORT
- 	help
- 	  The kernel uses 32KB pages, MMU page table will still use 4KB pages.
- 	  This feature enables support for large storage volumes up to 128TB.
-@@ -1022,10 +1028,23 @@ config ARM_32KB_SW_PAGE_SIZE_SUPPORT
- config ARM_64KB_SW_PAGE_SIZE_SUPPORT
- 	bool "64KB software page size support"
- 	select ARM_LARGE_PAGE_SUPPORT
-+	select ARM_SW_LARGE_PAGE_SUPPORT
- 	help
- 	  The kernel uses 64KB pages, MMU page table will still use 4KB pages.
- 	  This feature enables support for large storage volumes up to 256TB.
- 	  at the expense of higher memory fragmentation.
-+	  If you need 64KB pages, consider using the ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+	  option.
-+
-+config ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+	bool "64KB MMU page size support"
-+	select ARM_LARGE_PAGE_SUPPORT
-+	help
-+	  The kernel uses 64KB pages. The page-table will use large-pages (64KB)
-+	  as well.
-+	  This feature enables support for large storage volumes up to 256TB.
-+	  at the expense of higher memory fragmentation.
-+
- endchoice
- 
- config CACHE_L2X0
-diff --git a/arch/arm/mm/proc-v7-2level.S b/arch/arm/mm/proc-v7-2level.S
-index 7e34b421c8b8..67401f859c2d 100644
---- a/arch/arm/mm/proc-v7-2level.S
-+++ b/arch/arm/mm/proc-v7-2level.S
-@@ -92,9 +92,16 @@ ENTRY(cpu_v7_set_pte_ext)
- #endif /* CONFIG_ARM_LARGE_PAGE_SUPPORT */
- 
- 	bic	r3, r1, #0x000003f0
-+#ifdef CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+	bic	r3, r3, #0x00000F000
-+#endif
- 	bic	r3, r3, #PTE_TYPE_MASK
- 	orr	r3, r3, r2
-+#ifdef CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+	orr	r3, r3, #PTE_EXT_AP0 | 1
-+#else
- 	orr	r3, r3, #PTE_EXT_AP0 | 2
-+#endif
- 
- 	tst	r1, #1 << 4
- 	orrne	r3, r3, #PTE_EXT_TEX(1)
-@@ -119,6 +126,26 @@ ENTRY(cpu_v7_set_pte_ext)
-  THUMB(	add	r0, r0, #2048 )
-  THUMB(	str	r3, [r0] )
- #ifdef CONFIG_ARM_LARGE_PAGE_SUPPORT
-+#ifdef CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT
-+	@ Need to duplicate the entry 16 times because of overlapping in PTE index bits.
-+	str	r3, [r0, #4]
-+	str	r3, [r0, #8]
-+	str	r3, [r0, #12]
-+	str	r3, [r0, #16]
-+	str	r3, [r0, #20]
-+	str	r3, [r0, #24]
-+	str	r3, [r0, #28]
-+	flush_pte r0
-+	add	r0, r0, #32
-+	str	r3, [r0]
-+	str	r3, [r0, #4]
-+	str	r3, [r0, #8]
-+	str	r3, [r0, #12]
-+	str	r3, [r0, #16]
-+	str	r3, [r0, #20]
-+	str	r3, [r0, #24]
-+	str	r3, [r0, #28]
-+#else
- #define PTE_OFFSET ((1 << (PAGE_SHIFT - 12)) * 4)
- 	mov	r1, #PTE_OFFSET
- 	mov	r2, #4
-@@ -137,6 +164,7 @@ ENTRY(cpu_v7_set_pte_ext)
- #endif /* PAGE_SHIFT > 15 */
- 2:	cmp	r2, r1
- 	bne	1b
-+#endif /* CONFIG_ARM_64KB_MMU_PAGE_SIZE_SUPPORT */
- #endif /* CONFIG_ARM_LARGE_PAGE_SUPPORT */
- 3:	flush_pte r0
- #endif /* CONFIG_MMU */
-diff --git a/arch/arm/mm/tlb-v7.S b/arch/arm/mm/tlb-v7.S
-index 8e68218e53d3..c90dbbd6aa5e 100644
---- a/arch/arm/mm/tlb-v7.S
-+++ b/arch/arm/mm/tlb-v7.S
-@@ -50,11 +50,11 @@ ENTRY(v7wbi_flush_user_tlb_range)
- #endif
- 	ALT_UP(mcr	p15, 0, r0, c8, c7, 1)	@ TLB invalidate U MVA
- 
--#if defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	add	r0, r0, #0x1000
- #else
-         add	r0, r0, #PAGE_SZ
--#endif  /* CONFIG_ARM_LARGE_PAGE_SUPPORT */
-+#endif  /* CONFIG_SW_ARM_LARGE_PAGE_SUPPORT */
-         cmp	r0, r1
- 	blo	1b
- 	dsb	ish
-@@ -82,11 +82,11 @@ ENTRY(v7wbi_flush_kern_tlb_range)
- 	ALT_SMP(mcr	p15, 0, r0, c8, c3, 1)	@ TLB invalidate U MVA (shareable)
- #endif
- 	ALT_UP(mcr	p15, 0, r0, c8, c7, 1)	@ TLB invalidate U MVA
--#if defined(CONFIG_ARM_LARGE_PAGE_SUPPORT)
-+#if defined(CONFIG_SW_ARM_LARGE_PAGE_SUPPORT)
- 	add	r0, r0, #0x1000
- #else
-         add	r0, r0, #PAGE_SZ
--#endif /* CONFIG_ARM_LARGE_PAGE_SUPPORT */
-+#endif /* CONFIG_SW_ARM_LARGE_PAGE_SUPPORT */
- 	cmp	r0, r1
- 	blo	1b
- 	dsb	ish
--- 
-2.26.2
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QlRXIEkgdGhpbmsgdGhlIHN1YmplY3QgY29udmVudGlvbiBoYXMgYmVlbiAiQVJNOiBkdHM6IC4u
+LiIsIHdpdGggIkFSTTogCm1zdGFyOiAuLi4iIG1vcmUgZm9yIG1hY2gtbXN0YXIuCgpBbSAxMC4w
+Ni4yMCB1bSAxMTowNCBzY2hyaWViIERhbmllbCBQYWxtZXI6Cj4gQWRkcyBpbml0YWwgc3VwcG9y
+dCBmb3IgdGhlIDcwbWFpIG1pZHJpdmUgZDA4IGRhc2ggY2FtZXJhLgo+IAo+IFNpZ25lZC1vZmYt
+Ynk6IERhbmllbCBQYWxtZXIgPGRhbmllbEAweDBmLmNvbT4KPiAtLS0KPiAgIGFyY2gvYXJtL2Jv
+b3QvZHRzL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICB8ICAzICsrLQo+ICAgLi4uL2Jvb3Qv
+ZHRzL21lcmN1cnk1LXNzYzgzMzZuLW1pZHJpdmUwOC5kdHMgIHwgMjUgKysrKysrKysrKysrKysr
+KysrKwo+ICAgMiBmaWxlcyBjaGFuZ2VkLCAyNyBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0p
+Cj4gICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vYm9vdC9kdHMvbWVyY3VyeTUtc3NjODMz
+Nm4tbWlkcml2ZTA4LmR0cwo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9NYWtl
+ZmlsZSBiL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCj4gaW5kZXggNGE1ZjgwNzVhNGY2Li4z
+NWM3ZWNjNTJjNjAgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUKPiAr
+KysgYi9hcmNoL2FybS9ib290L2R0cy9NYWtlZmlsZQo+IEBAIC0xMzQ0LDcgKzEzNDQsOCBAQCBk
+dGItJChDT05GSUdfQVJDSF9NRURJQVRFSykgKz0gXAo+ICAgZHRiLSQoQ09ORklHX0FSQ0hfTUlM
+QkVBVVQpICs9IG1pbGJlYXV0LW0xMHYtZXZiLmR0Ygo+ICAgZHRiLSQoQ09ORklHX0FSQ0hfTVNU
+QVJWNykgKz0gXAo+ICAgCWluZmluaXR5LW1zYzMxMy1icmVhZGJlZV9jcnVzdC5kdGIgXAo+IC0J
+aW5maW5pdHkzLW1zYzMxM2UtYnJlYWRiZWUuZHRiCj4gKwlpbmZpbml0eTMtbXNjMzEzZS1icmVh
+ZGJlZS5kdGIgXAo+ICsJbWVyY3VyeTUtc3NjODMzNm4tbWlkcml2ZTA4LmR0Ygo+ICAgZHRiLSQo
+Q09ORklHX0FSQ0hfWlgpICs9IHp4Mjk2NzAyLWFkMS5kdGIKPiAgIGR0Yi0kKENPTkZJR19BUkNI
+X0FTUEVFRCkgKz0gXAo+ICAgCWFzcGVlZC1hc3QyNTAwLWV2Yi5kdGIgXAo+IGRpZmYgLS1naXQg
+YS9hcmNoL2FybS9ib290L2R0cy9tZXJjdXJ5NS1zc2M4MzM2bi1taWRyaXZlMDguZHRzIGIvYXJj
+aC9hcm0vYm9vdC9kdHMvbWVyY3VyeTUtc3NjODMzNm4tbWlkcml2ZTA4LmR0cwo+IG5ldyBmaWxl
+IG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwLi40ZWU1MGVjZjZhYjEKPiAtLS0gL2Rl
+di9udWxsCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvbWVyY3VyeTUtc3NjODMzNm4tbWlkcml2
+ZTA4LmR0cwo+IEBAIC0wLDAgKzEsMjUgQEAKPiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6
+IEdQTC0yLjAKPiArLyoKPiArICogQ29weXJpZ2h0IChjKSAyMDE5IHRoaW5neS5qcC4KPiArICog
+QXV0aG9yOiBEYW5pZWwgUGFsbWVyIDxkYW5pZWxAdGhpbmd5LmpwPgo+ICsgKi8KPiArCj4gKy9k
+dHMtdjEvOwo+ICsjaW5jbHVkZSAibWVyY3VyeTUtc3NjODMzNm4uZHRzaSIKPiArCj4gKy8gewo+
+ICsJbW9kZWwgPSAibWlkcml2ZSBkMDgiOwoKQ291bGRuJ3QgZmluZCB0aGlzIG9uIHRoZWlyIHdl
+YnNpdGUuIFNob3VsZCB0aGlzIGJlICI3MG1haSBtaWRyaXZlIC4uLiIgCm9yIGlzICJtaWRyaXZl
+IiBhIGRpZmZlcmVudCBicmFuZD8KCj4gKwljb21wYXRpYmxlID0gIjcwbWFpLG1pZHJpdmVkMDgi
+LCAibXN0YXIsbWVyY3VyeTUiOwoKSGF2ZSB5b3UgY29uc2lkZXJlZCBuYW1pbmcgaXQgIjcwbWFp
+LG1pZHJpdmUtZDA4IiBmb3IgYmV0dGVyIApyZWFkYWJpbGl0eT8gKGFmZmVjdHMgMS81KQoKPiAr
+Cj4gKwlhbGlhc2VzIHsKPiArCQlzZXJpYWwwID0gJnBtX3VhcnQ7Cj4gKwl9Owo+ICsKPiArCWNo
+b3NlbiB7Cj4gKwkJc3Rkb3V0LXBhdGggPSAic2VyaWFsMDoxMTUyMDBuOCI7Cj4gKwl9Owo+ICt9
+Owo+ICsKPiArJnBtX3VhcnQgewo+ICsJc3RhdHVzID0gIm9rYXkiOwoKY2xvY2stZnJlcXVlbmN5
+PwoKPiArfTsKClJlZ2FyZHMsCkFuZHJlYXMKCi0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBH
+ZXJtYW55IEdtYkgKTWF4ZmVsZHN0ci4gNSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBG
+ZWxpeCBJbWVuZMO2cmZmZXIKSFJCIDM2ODA5IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
