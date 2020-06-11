@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 560D61F6F3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 23:13:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B5DE1F6F3C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 23:12:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xfOT6KsbqV4D+RE/r37uFQ1DCml5ibDHRDS/IzT89qI=; b=VXVFFPD7MS1n5s
-	4pjLEyNzIVBUct/qfDQdVE99UPLG0bfKsDlBXeZNepMk47/nnV7Z7jjkgDwn0sKPUgmZvdNT0J6Vr
-	52WAFYzfZpGhqiSs6CO9KaY0Rs3cYlPj/PGs4Yum08UZp0pHdGElIMBnOqQdIdOmLEB3X0QS3dJ2Z
-	cXeqBNlvdtjh8LfJGcVNlH4tSbXkwgiLJitLfwYJrKZmE233O/37kAEuYjxVV41EkTlrxq4yiyJPj
-	yB8qvyVgvuFwvRH2njre4SqpOdH2xRWrS8rnsWGMsQP/djlRByZi4WTKrhqhZEzTQbDI/8Jmm6Vmx
-	dZAn5IvcpKrxHzsLrxUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sHFmSRi6xL8UM+ZFiDQs2XM2ZGRgYOF9wvcuXmeDfXE=; b=JpVzkfiICXe9VK
+	ZS2xWz+Ma2a+KMMlLgSt9EcaPk6DW+2ET/irKKh+O4htlQYJUCv3WcxnueRdx/ihn+t8AufLpuvpk
+	O6060Iqzuy2O/Y8r8mCNXkxkba5r48b3fLiDG6h6PMivqBB3t9el0Dg/mvR2GZImb0V47jwq7DrEm
+	kglFURw15Tuhedi3jqy1Kwh3jksjcTiPgvEOx79HCroTbFECs+O1JEBpYOmn11szD0MkDJUa4giZM
+	Jj2WFpIGDM+qOCvfgLU+JlZuZAbxlT9PakodlmLpihB0CwTok2AIaQkxpdlcnWkyUHX73MeBiffZh
+	PJczr4hqAY79fBgDV7yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjUVd-00013T-7h; Thu, 11 Jun 2020 21:13:13 +0000
+	id 1jjUVC-0000Zc-WE; Thu, 11 Jun 2020 21:12:47 +0000
 Received: from hostingweb31-40.netsons.net ([89.40.174.40])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjUUb-00009v-BL
+ id 1jjUUb-00009y-BU
  for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 21:12:12 +0000
 Received: from [78.134.85.74] (port=40536 helo=melee.dev.aim)
  by hostingweb31.netsons.net with esmtpa (Exim 4.93)
  (envelope-from <luca@lucaceresoli.net>)
- id 1jjUUN-000C9m-S7; Thu, 11 Jun 2020 23:11:55 +0200
+ id 1jjUUO-000C9m-8M; Thu, 11 Jun 2020 23:11:56 +0200
 From: Luca Ceresoli <luca@lucaceresoli.net>
 To: linux-fpga@vger.kernel.org
-Subject: [PATCH 1/5] dt-bindings: fpga: xilinx-slave-serial: valid for the 7
- Series too
-Date: Thu, 11 Jun 2020 23:11:40 +0200
-Message-Id: <20200611211144.9421-1-luca@lucaceresoli.net>
+Subject: [PATCH 2/5] fpga manager: xilinx-spi: valid for the 7 Series too
+Date: Thu, 11 Jun 2020 23:11:41 +0200
+Message-Id: <20200611211144.9421-2-luca@lucaceresoli.net>
 X-Mailer: git-send-email 2.27.0
+In-Reply-To: <20200611211144.9421-1-luca@lucaceresoli.net>
+References: <20200611211144.9421-1-luca@lucaceresoli.net>
 MIME-Version: 1.0
 X-AntiAbuse: This header was added to track abuse,
  please include it with any abuse report
@@ -48,8 +49,8 @@ X-Source:
 X-Source-Args: 
 X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_141209_570113_3070F106 
-X-CRM114-Status: UNSURE (   4.93  )
+X-CRM114-CacheID: sfid-20200611_141209_564912_CFB17F45 
+X-CRM114-Status: UNSURE (   5.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -84,31 +85,21 @@ The Xilinx 7-series uses the same protocol, mention that.
 
 Signed-off-by: Luca Ceresoli <luca@lucaceresoli.net>
 ---
- .../devicetree/bindings/fpga/xilinx-slave-serial.txt     | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+ drivers/fpga/xilinx-spi.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/fpga/xilinx-slave-serial.txt b/Documentation/devicetree/bindings/fpga/xilinx-slave-serial.txt
-index cfa4ed42b62f..9f103f3872e8 100644
---- a/Documentation/devicetree/bindings/fpga/xilinx-slave-serial.txt
-+++ b/Documentation/devicetree/bindings/fpga/xilinx-slave-serial.txt
-@@ -1,11 +1,14 @@
- Xilinx Slave Serial SPI FPGA Manager
- 
--Xilinx Spartan-6 FPGAs support a method of loading the bitstream over
--what is referred to as "slave serial" interface.
-+Xilinx Spartan-6 and 7 Series FPGAs support a method of loading the
-+bitstream over what is referred to as "slave serial" interface.
- The slave serial link is not technically SPI, and might require extra
- circuits in order to play nicely with other SPI slaves on the same bus.
- 
--See https://www.xilinx.com/support/documentation/user_guides/ug380.pdf
-+See:
-+- https://www.xilinx.com/support/documentation/user_guides/ug380.pdf
-+- https://www.xilinx.com/support/documentation/user_guides/ug470_7Series_Config.pdf
-+- https://www.xilinx.com/support/documentation/application_notes/xapp583-fpga-configuration.pdf
- 
- Required properties:
- - compatible: should contain "xlnx,fpga-slave-serial"
+diff --git a/drivers/fpga/xilinx-spi.c b/drivers/fpga/xilinx-spi.c
+index 272ee0c22822..79106626c3f8 100644
+--- a/drivers/fpga/xilinx-spi.c
++++ b/drivers/fpga/xilinx-spi.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * Xilinx Spartan6 Slave Serial SPI Driver
++ * Xilinx Spartan6 and 7 Series Slave Serial SPI Driver
+  *
+  * Copyright (C) 2017 DENX Software Engineering
+  *
 -- 
 2.27.0
 
