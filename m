@@ -2,70 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 629E21F654F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 12:03:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9C061F6562
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 12:08:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Io7M37SYbGHvhGCDs8TkbeaaGAWL1BJwlgqmCaDd5xI=; b=HgBCxkXXsKLhfJ
-	+eSPuEa3sNFe+9WGa9jMFuaIhvINbIjsMi6XBub1+Vw5puie1uXz3XdMJOUCj1Mfu18zeKk73v1C3
-	yv1gAGcPSPaDD4pLQwE5jzYcFG7himUy2TKls/0S/560FnrGWn5A/KTKdFpFiy26o5qN9PSVBGHLL
-	SHigX4nQRFWr/H2//X8hCmCZFI2ciZh6Ba5dFpaiGGPN/4//GvJys0SI0XOMjvPK6CxHmaz02aNRR
-	simPulpOjR0JLjyMNJLrBi56bWCpesoohHQojAJ0Y+U4qEgtj/vDcIkT5Kg3Q9p24NN1MIB7G3Atb
-	GKPtv5n0nrFd34bav5yg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JVO/VXMFYwdFq0QUyPhJv7I+vBsRGRgwJKmbLdHesmk=; b=qhQhcCEioy0dEw9bYDo130+ZM
+	A3d5ttww3KqRH2H3T/0e0GICbFMQfb+U7N1lcCZ0vD2eMMh0FTmXgwwT+5zI1f9+IwFTLcNde0ON/
+	on+AmEMA34RwK4ACy0lBcJ6655yr8/4SVKYifgKjo3Tbs4lSBLZKxhvoFhbh0eP7/W39ZgTwkvYJQ
+	ti/ATdGjnWV0xNIOKkcx9Cu9wb07I+xgv61TN5knKfmEIRZQ50AGyF2yIcwCwF111beBwEaTQiL1f
+	piWiqfdzIR0H5l33W0A0pOqOFExV1i6wD4BXwV9+bexLNa+K4kfZ+I1uShiKY478Fry7UmPI+8MJB
+	+KcQX/wlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjK3m-000636-Rx; Thu, 11 Jun 2020 10:03:46 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jjK8F-0001GH-Sb; Thu, 11 Jun 2020 10:08:23 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjK3W-0005z1-MF; Thu, 11 Jun 2020 10:03:32 +0000
-IronPort-SDR: 3fKCufSo77Nx+gIBTAjFWRkf74PwFdKHG7tTFf8SL72rFlbFbjrY+z8VJQr1ZbHXMSja8J5ovy
- jx2lbpXXFbOQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 11 Jun 2020 03:03:30 -0700
-IronPort-SDR: Pn15RnbO6jIDhtSwfC1dpWA2jynSfJXqvEvOYQg42lVNOehGHk53YpEDtcsPI9Se0S/k2dok6n
- ZpkT0LhhwrMw==
-X-IronPort-AV: E=Sophos;i="5.73,499,1583222400"; d="scan'208";a="260660099"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 11 Jun 2020 03:03:25 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id A935D20680; Thu, 11 Jun 2020 13:03:22 +0300 (EEST)
-Date: Thu, 11 Jun 2020 13:03:22 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Subject: Re: [V9, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
-Message-ID: <20200611100322.GL16711@paasikivi.fi.intel.com>
-References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
- <20200523084103.31276-3-dongchun.zhu@mediatek.com>
- <20200610194455.GK201868@chromium.org>
- <20200611095333.GK16711@paasikivi.fi.intel.com>
- <CAAFQd5BBxBEs=gCohOzOGzkTDNkL1yyu7dtEY26K52=CmFAWnA@mail.gmail.com>
+ id 1jjK86-0001F6-Na
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 10:08:17 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 6F41B2222E;
+ Thu, 11 Jun 2020 12:07:56 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1591870078;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ZCQUBi6ypMxBqglR1fnRfbGMwQLt+HASUD4QC1pSDSk=;
+ b=Ymq1hWSCweXP1ixDA//UJIP2Nvtx8GRDtj019BTia8Bdod6exqNfY9IuiL55kK7IZoHeaw
+ /v/GQjx9szg/ETpIP333mwO9ZAYSnBkGtDCyrPX0hCucsjmizP8ntdOABRU2IB9GpTp5eZ
+ heG2IkRu1U6PJMKqD4jXIcsLH+wnrLA=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAAFQd5BBxBEs=gCohOzOGzkTDNkL1yyu7dtEY26K52=CmFAWnA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Thu, 11 Jun 2020 12:07:56 +0200
+From: Michael Walle <michael@walle.cc>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [SPAM] [PATCH 1/1] mfd: Make a best effort attempt to match
+ devices with the correct of_nodes
+In-Reply-To: <20200611085617.2071167-1-lee.jones@linaro.org>
+References: <20200611085617.2071167-1-lee.jones@linaro.org>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <79ec43b375e075cde0ed33b9dd902e75@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_030330_738373_946068A7 
-X-CRM114-Status: GOOD (  29.87  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200611_030815_139229_90F41DFA 
+X-CRM114-Status: GOOD (  34.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,174 +82,477 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Shengnan Wang =?utf-8?B?KOeOi+Wco+eUtyk=?= <shengnan.wang@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, gregkh@linuxfoundation.org, broonie@kernel.org,
+ linux-kernel@vger.kernel.org, andy.shevchenko@gmail.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, andriy.shevchenko@linux.intel.com,
+ robin.murphy@arm.com, linus.walleij@linaro.org, linux@roeck-us.net
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 11:57:43AM +0200, Tomasz Figa wrote:
-> On Thu, Jun 11, 2020 at 11:53 AM Sakari Ailus
-> <sakari.ailus@linux.intel.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > On Wed, Jun 10, 2020 at 07:44:55PM +0000, Tomasz Figa wrote:
-> > > Hi Dongchun,
-> > >
-> > > On Sat, May 23, 2020 at 04:41:03PM +0800, Dongchun Zhu wrote:
-> > > > Add a V4L2 sub-device driver for OV02A10 image sensor.
-> > > >
-> > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > ---
-> > > >  MAINTAINERS                 |    1 +
-> > > >  drivers/media/i2c/Kconfig   |   13 +
-> > > >  drivers/media/i2c/Makefile  |    1 +
-> > > >  drivers/media/i2c/ov02a10.c | 1025 +++++++++++++++++++++++++++++++++++++++++++
-> > > >  4 files changed, 1040 insertions(+)
-> > > >  create mode 100644 drivers/media/i2c/ov02a10.c
-> > > >
-> > >
-> > > Thank you for the patch. Please see my comments inline.
-> > >
-> > > [snip]
-> > > > diff --git a/drivers/media/i2c/ov02a10.c b/drivers/media/i2c/ov02a10.c
-> > > > new file mode 100644
-> > > > index 0000000..160a0b5
-> > > > --- /dev/null
-> > > > +++ b/drivers/media/i2c/ov02a10.c
-> > > [snip]
-> > > > +static const char * const ov02a10_test_pattern_menu[] = {
-> > > > +   "Disabled",
-> > > > +   "Color Bar",
-> > >
-> > > nit: We should normalize this to one of the standard names. What is the
-> > > pattern on this sensor? Is it perhaps "Eight Vertical Colour Bars"?
-> > >
-> > > > +};
-> > > [snip]
-> > > > +static int ov02a10_set_fmt(struct v4l2_subdev *sd,
-> > > > +                      struct v4l2_subdev_pad_config *cfg,
-> > > > +                      struct v4l2_subdev_format *fmt)
-> > > > +{
-> > > > +   struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > > > +   struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
-> > > > +
-> > > > +   mutex_lock(&ov02a10->mutex);
-> > > > +
-> > >
-> > >
-> > > Don't we need to handle the case when fmt->which is V4L2_SUBDEV_FORMAT_TRY,
-> > > which is used for trying the format, but not applying it to the hardware?
-> >
-> > Yes.
-> >
-> > >
-> > > > +   if (ov02a10->streaming) {
-> > > > +           mutex_unlock(&ov02a10->mutex);
-> > > > +           return -EBUSY;
-> > > > +   }
-> > > > +
-> > > > +   /* Only one sensor mode supported */
-> > > > +   mbus_fmt->code = ov02a10->fmt.code;
-> > > > +   ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
-> > > > +   ov02a10->fmt = fmt->format;
-> > > > +
-> > > > +   mutex_unlock(&ov02a10->mutex);
-> > > > +
-> > > > +   return 0;
-> > > > +}
-> > > > +
-> > > > +static int ov02a10_get_fmt(struct v4l2_subdev *sd,
-> > > > +                      struct v4l2_subdev_pad_config *cfg,
-> > > > +                      struct v4l2_subdev_format *fmt)
-> > > > +{
-> > > > +   struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > > > +   struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
-> > > > +
-> > > > +   mutex_lock(&ov02a10->mutex);
-> > > > +
-> > > > +   fmt->format = ov02a10->fmt;
-> > >
-> > > Ditto.
-> > >
-> > > > +   mbus_fmt->code = ov02a10->fmt.code;
-> > > > +   ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
-> > > > +
-> > > > +   mutex_unlock(&ov02a10->mutex);
-> > > > +
-> > > > +   return 0;
-> > > > +}
-> > > > +
-> > > > +static int ov02a10_enum_mbus_code(struct v4l2_subdev *sd,
-> > > > +                             struct v4l2_subdev_pad_config *cfg,
-> > > > +                             struct v4l2_subdev_mbus_code_enum *code)
-> > > > +{
-> > > > +   struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > > > +
-> > > > +   if (code->index >= ARRAY_SIZE(supported_modes))
-> > > > +           return -EINVAL;
-> > >
-> > > Hmm, supported_modes[] doesn't seem to hold the information about mbus
-> > > codes. Should this just perhaps be "!= 0"?
-> > >
-> > > > +
-> > > > +   code->code = ov02a10->fmt.code;
-> > > > +
-> > > > +   return 0;
-> > > > +}
-> > > [snip]
-> > > > +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
-> > > > +                              struct v4l2_subdev_pad_config *cfg)
-> > > > +{
-> > > > +   struct v4l2_subdev_format fmt = {
-> > > > +           .which = cfg ? V4L2_SUBDEV_FORMAT_TRY : V4L2_SUBDEV_FORMAT_ACTIVE,
-> > > > +           .format = {
-> > > > +                   .width = 1600,
-> > > > +                   .height = 1200,
-> > > > +           }
-> > > > +   };
-> > > > +
-> > > > +   ov02a10_set_fmt(sd, cfg, &fmt);
-> > > > +
-> > > > +   return 0;
-> > > > +}
-> > > > +
-> > >
-> > > I'm not familiar with this init_cfg operation and the documentation is very
-> > > sparse about it. Sakari, is this a correct implementation?
-> >
-> > The purpose is to initialise a pad configuration (format and selection
-> > rectangles) to the device defaults. As there seem to be no selection
-> > rectangles, this seems fine to me.
+Am 2020-06-11 10:56, schrieb Lee Jones:
+> Currently, when a child platform device (sometimes referred to as a
+> sub-device) is registered via the Multi-Functional Device (MFD) API,
+> the framework attempts to match the newly registered platform device
+> with its associated Device Tree (OF) node.  Until now, the device has
+> been allocated the first node found with an identical OF compatible
+> string.  Unfortunately, if there are, say for example '3' devices
+> which are to be handled by the same driver and therefore have the same
+> compatible string, each of them will be allocated a pointer to the
+> *first* node.
 > 
-> Thanks. I traced the code and could only see one place where the
-> callback is being called and that was with cfg != NULL. Still, the
-> code above uses "cfg ?" as a check to determine whether TRY or ACTIVE
-> should be passed to which. Is that also correct?
+> An example Device Tree entry might look like this:
+> 
+>   mfd_of_test {
+>           compatible = "mfd,of-test-parent";
+>           #address-cells = <0x02>;
+>           #size-cells = <0x02>;
+> 
+>           child@aaaaaaaaaaaaaaaa {
+>                   compatible = "mfd,of-test-child";
+>                   reg = <0xaaaaaaaa 0xaaaaaaaa 0 0x11>,
+>                         <0xbbbbbbbb 0xbbbbbbbb 0 0x22>;
+>           };
+> 
+>           child@cccccccc {
+>                   compatible = "mfd,of-test-child";
+>                   reg = <0x00000000 0xcccccccc 0 0x33>;
+>           };
+> 
+>           child@dddddddd00000000 {
+>                   compatible = "mfd,of-test-child";
+>                   reg = <0xdddddddd 0x00000000 0 0x44>;
+>           };
+>   };
+> 
+> When used with example sub-device registration like this:
+> 
+>   static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 0, 
+> "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 1, 
+> "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 2, 
+> "mfd,of-test-child")
+>   };
+> 
+> ... the current implementation will result in all devices being 
+> allocated
+> the first OF node found containing a matching compatible string:
+> 
+>   [0.712511] mfd-of-test-child mfd-of-test-child.0: Probing platform 
+> device: 0
+>   [0.712710] mfd-of-test-child mfd-of-test-child.0: Using OF node:
+> child@aaaaaaaaaaaaaaaa
+>   [0.713033] mfd-of-test-child mfd-of-test-child.1: Probing platform 
+> device: 1
+>   [0.713381] mfd-of-test-child mfd-of-test-child.1: Using OF node:
+> child@aaaaaaaaaaaaaaaa
+>   [0.713691] mfd-of-test-child mfd-of-test-child.2: Probing platform 
+> device: 2
+>   [0.713889] mfd-of-test-child mfd-of-test-child.2: Using OF node:
+> child@aaaaaaaaaaaaaaaa
+> 
+> After this patch each device will be allocated a unique OF node:
+> 
+>   [0.712511] mfd-of-test-child mfd-of-test-child.0: Probing platform 
+> device: 0
+>   [0.712710] mfd-of-test-child mfd-of-test-child.0: Using OF node:
+> child@aaaaaaaaaaaaaaaa
+>   [0.713033] mfd-of-test-child mfd-of-test-child.1: Probing platform 
+> device: 1
+>   [0.713381] mfd-of-test-child mfd-of-test-child.1: Using OF node:
+> child@cccccccc
+>   [0.713691] mfd-of-test-child mfd-of-test-child.2: Probing platform 
+> device: 2
+>   [0.713889] mfd-of-test-child mfd-of-test-child.2: Using OF node:
+> child@dddddddd00000000
+> 
+> Which is fine if all OF nodes are identical.  However if we wish to
+> apply an attribute to particular device, we really need to ensure the
+> correct OF node will be associated with the device containing the
+> correct address.  We accomplish this by matching the device's address
+> expressed in DT with one provided during sub-device registration.
+> Like this:
+> 
+>   static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 1,
+> "mfd,of-test-child", 0xdddddddd00000000),
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 2,
+> "mfd,of-test-child", 0xaaaaaaaaaaaaaaaa),
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 3,
+> "mfd,of-test-child", 0x00000000cccccccc)
+>   };
+> 
+> This will ensure a specific device (designated here using the
+> platform_ids; 1, 2 and 3) is matched with a particular OF node:
+> 
+>   [0.712511] mfd-of-test-child mfd-of-test-child.0: Probing platform 
+> device: 0
+>   [0.712710] mfd-of-test-child mfd-of-test-child.0: Using OF node:
+> child@dddddddd00000000
+>   [0.713033] mfd-of-test-child mfd-of-test-child.1: Probing platform 
+> device: 1
+>   [0.713381] mfd-of-test-child mfd-of-test-child.1: Using OF node:
+> child@aaaaaaaaaaaaaaaa
+>   [0.713691] mfd-of-test-child mfd-of-test-child.2: Probing platform 
+> device: 2
+>   [0.713889] mfd-of-test-child mfd-of-test-child.2: Using OF node:
+> child@cccccccc
+> 
+> This implementation is still not infallible, hence the mention of
+> "best effort" in the commit subject.  Since we have not *insisted* on
+> the existence of 'reg' properties (in some scenarios they just do not
+> make sense) and no device currently uses the new 'of_reg' attribute,
+> we have to make an on-the-fly judgement call whether to associate the
+> OF node anyway.  Which we do in cases where parent drivers haven't
+> specified a particular OF node to match to.  So there is a *slight*
+> possibility of the following result (note: the implementation here is
+> convoluted, but it shows you one means by which this process can
+> still break):
+> 
+>   /*
+>    * First entry will match to the first OF node with matching 
+> compatible
+>    * Second will fail, since the first took its OF node and is no
+> longer available
+>    * Third will succeed
+>    */
+>   static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 1, 
+> "mfd,of-test-child"),
+> 	OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 2,
+> "mfd,of-test-child", 0xaaaaaaaaaaaaaaaa),
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 3,
+> "mfd,of-test-child", 0x00000000cccccccc)
 
-It could be used in setting the active format in probe. That would probably
-be cleaner than what it currently does.
+Why would anyone do that? Mix and match OF_MFD_CELL() and 
+OF_MFD_CELL_REG()
+on the same compatible string? Wouldn't it be easier to check that there 
+is
+no OF_MFD_CELL() when OF_MFD_CELL_REG() is used, instead of keeping a 
+global
+list?
 
-But apart from that, the framework always calls init_cfg with cfg non-NULL.
 
--- 
-Sakari Ailus
+>   };
+> 
+> The result:
+> 
+>   [0.753869] mfd-of-test-parent mfd_of_test: Registering 3 devices
+>   [0.756597] mfd-of-test-child: Failed to locate of_node [id: 2]
+>   [0.759999] mfd-of-test-child mfd-of-test-child.1: Probing platform 
+> device: 1
+>   [0.760314] mfd-of-test-child mfd-of-test-child.1: Using OF node:
+> child@aaaaaaaaaaaaaaaa
+>   [0.760908] mfd-of-test-child mfd-of-test-child.2: Probing platform 
+> device: 2
+>   [0.761183] mfd-of-test-child mfd-of-test-child.2: No OF node
+> associated with this device
+>   [0.761621] mfd-of-test-child mfd-of-test-child.3: Probing platform 
+> device: 3
+>   [0.761899] mfd-of-test-child mfd-of-test-child.3: Using OF node:
+> child@cccccccc
+> 
+> We could code around this with some pre-parsing semantics, but the
+> added complexity required to cover each and every corner-case is not
+> justified.  Merely patching the current failing (via this patch) is
+> already working with some pretty small corner-cases.  Other issues
+> should be patched in the parent drivers which can be achieved simply
+> by implementing OF_MFD_CELL_REG().
+> 
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>  drivers/mfd/mfd-core.c   | 102 ++++++++++++++++++++++++++++++++++-----
+>  include/linux/mfd/core.h |  33 ++++++++-----
+>  2 files changed, 113 insertions(+), 22 deletions(-)
+> 
+> diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+> index f5a73af60dd40..ecd5494c84747 100644
+> --- a/drivers/mfd/mfd-core.c
+> +++ b/drivers/mfd/mfd-core.c
+> @@ -10,6 +10,7 @@
+>  #include <linux/kernel.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/acpi.h>
+> +#include <linux/list.h>
+>  #include <linux/property.h>
+>  #include <linux/mfd/core.h>
+>  #include <linux/pm_runtime.h>
+> @@ -17,8 +18,17 @@
+>  #include <linux/module.h>
+>  #include <linux/irqdomain.h>
+>  #include <linux/of.h>
+> +#include <linux/of_address.h>
+>  #include <linux/regulator/consumer.h>
+> 
+> +static LIST_HEAD(mfd_of_node_list);
+> +
+> +struct mfd_of_node_entry {
+> +	struct list_head list;
+> +	struct device *dev;
+> +	struct device_node *np;
+> +};
+> +
+>  static struct device_type mfd_dev_type = {
+>  	.name	= "mfd_device",
+>  };
+> @@ -107,6 +117,59 @@ static inline void mfd_acpi_add_device(const
+> struct mfd_cell *cell,
+>  }
+>  #endif
+> 
+> +static int mfd_match_of_node_to_dev(struct platform_device *pdev,
+> +				    struct device_node *np,
+> +				    const struct mfd_cell *cell)
+> +{
+> +	struct mfd_of_node_entry *of_entry;
+> +	const __be32 *reg;
+> +	u64 of_node_addr;
+> +	bool of_node_used;
+> +
+> +	/* Skip devices 'disabled' by Device Tree */
+> +	if (!of_device_is_available(np))
+> +		return -ENODEV;
+> +
+> +	/* Skip if OF node has previously been allocated to a device */
+> +	of_node_used = false;
+> +	list_for_each_entry(of_entry, &mfd_of_node_list, list)
+> +		if (of_entry->np == np)
+just return -EAGAIN here?
+
+> +			of_node_used = true;
+> +
+> +	if (of_node_used)
+> +		return -EAGAIN;
+> +
+> +	if (!cell->of_reg)
+
+This doesn't work if the address is actually 0. My original patch used a
+flag to detect if of_reg is actually set/used.
+
+> +		/* No match defined - allocate the first free matching node */
+> +		goto allocate_of_node;
+> +
+> +	/* We only care about each node's first defined address */
+> +	reg = of_get_address(np, 0, NULL, NULL);
+
+Does of_get_address() work with any (internal) addresses?
+
+-michael
+
+> +	if (!reg)
+> +		/* OF node does not contatin a 'reg' property to match to */
+> +		return -EAGAIN;
+> +
+> +	of_node_addr = of_read_number(reg, of_n_addr_cells(np));
+> +
+> +	if (cell->of_reg != of_node_addr)
+> +		/* No match */
+> +		return -EAGAIN;
+> +
+> +allocate_of_node:
+> +	of_entry = kzalloc(sizeof(*of_entry), GFP_KERNEL);
+> +	if (!of_entry)
+> +		return -ENOMEM;
+> +
+> +	of_entry->dev = &pdev->dev;
+> +	of_entry->np = np;
+> +	list_add_tail(&of_entry->list, &mfd_of_node_list);
+> +
+> +	pdev->dev.of_node = np;
+> +	pdev->dev.fwnode = &np->fwnode;
+> +
+> +	return 0;
+> +}
+> +
+>  static int mfd_add_device(struct device *parent, int id,
+>  			  const struct mfd_cell *cell,
+>  			  struct resource *mem_base,
+> @@ -115,6 +178,7 @@ static int mfd_add_device(struct device *parent, 
+> int id,
+>  	struct resource *res;
+>  	struct platform_device *pdev;
+>  	struct device_node *np = NULL;
+> +	struct mfd_of_node_entry *of_entry, *tmp;
+>  	int ret = -ENOMEM;
+>  	int platform_id;
+>  	int r;
+> @@ -152,16 +216,19 @@ static int mfd_add_device(struct device *parent, 
+> int id,
+>  	if (parent->of_node && cell->of_compatible) {
+>  		for_each_child_of_node(parent->of_node, np) {
+>  			if (of_device_is_compatible(np, cell->of_compatible)) {
+> -				if (!of_device_is_available(np)) {
+> -					/* Ignore disabled devices error free */
+> -					ret = 0;
+> +				ret = mfd_match_of_node_to_dev(pdev, np, cell);
+> +				if (ret == -EAGAIN)
+> +					continue;
+> +				if (ret)
+>  					goto fail_alias;
+> -				}
+> -				pdev->dev.of_node = np;
+> -				pdev->dev.fwnode = &np->fwnode;
+> +
+>  				break;
+>  			}
+>  		}
+> +
+> +		if (!pdev->dev.of_node)
+> +			pr_warn("%s: Failed to locate of_node [id: %d]\n",
+> +				cell->name, platform_id);
+>  	}
+> 
+>  	mfd_acpi_add_device(cell, pdev);
+> @@ -170,13 +237,13 @@ static int mfd_add_device(struct device *parent, 
+> int id,
+>  		ret = platform_device_add_data(pdev,
+>  					cell->platform_data, cell->pdata_size);
+>  		if (ret)
+> -			goto fail_alias;
+> +			goto fail_of_entry;
+>  	}
+> 
+>  	if (cell->properties) {
+>  		ret = platform_device_add_properties(pdev, cell->properties);
+>  		if (ret)
+> -			goto fail_alias;
+> +			goto fail_of_entry;
+>  	}
+> 
+>  	for (r = 0; r < cell->num_resources; r++) {
+> @@ -213,18 +280,18 @@ static int mfd_add_device(struct device *parent, 
+> int id,
+>  			if (has_acpi_companion(&pdev->dev)) {
+>  				ret = acpi_check_resource_conflict(&res[r]);
+>  				if (ret)
+> -					goto fail_alias;
+> +					goto fail_of_entry;
+>  			}
+>  		}
+>  	}
+> 
+>  	ret = platform_device_add_resources(pdev, res, cell->num_resources);
+>  	if (ret)
+> -		goto fail_alias;
+> +		goto fail_of_entry;
+> 
+>  	ret = platform_device_add(pdev);
+>  	if (ret)
+> -		goto fail_alias;
+> +		goto fail_of_entry;
+> 
+>  	if (cell->pm_runtime_no_callbacks)
+>  		pm_runtime_no_callbacks(&pdev->dev);
+> @@ -233,6 +300,12 @@ static int mfd_add_device(struct device *parent, 
+> int id,
+> 
+>  	return 0;
+> 
+> +fail_of_entry:
+> +	list_for_each_entry_safe(of_entry, tmp, &mfd_of_node_list, list)
+> +		if (of_entry->dev == &pdev->dev) {
+> +			list_del(&of_entry->list);
+> +			kfree(of_entry);
+> +		}
+>  fail_alias:
+>  	regulator_bulk_unregister_supply_alias(&pdev->dev,
+>  					       cell->parent_supplies,
+> @@ -287,6 +360,7 @@ static int mfd_remove_devices_fn(struct device
+> *dev, void *data)
+>  {
+>  	struct platform_device *pdev;
+>  	const struct mfd_cell *cell;
+> +	struct mfd_of_node_entry *of_entry, *tmp;
+> 
+>  	if (dev->type != &mfd_dev_type)
+>  		return 0;
+> @@ -297,6 +371,12 @@ static int mfd_remove_devices_fn(struct device
+> *dev, void *data)
+>  	regulator_bulk_unregister_supply_alias(dev, cell->parent_supplies,
+>  					       cell->num_parent_supplies);
+> 
+> +	list_for_each_entry_safe(of_entry, tmp, &mfd_of_node_list, list)
+> +		if (of_entry->dev == dev) {
+> +			list_del(&of_entry->list);
+> +			kfree(of_entry);
+> +		}
+> +
+>  	platform_device_unregister(pdev);
+>  	return 0;
+>  }
+> diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
+> index d01d1299e49dc..cab307e41a327 100644
+> --- a/include/linux/mfd/core.h
+> +++ b/include/linux/mfd/core.h
+> @@ -14,7 +14,7 @@
+> 
+>  #define MFD_RES_SIZE(arr) (sizeof(arr) / sizeof(struct resource))
+> 
+> -#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, 
+> _match)\
+> +#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,
+> _of_reg, _match) \
+>  	{								\
+>  		.name = (_name),					\
+>  		.resources = (_res),					\
+> @@ -22,24 +22,28 @@
+>  		.platform_data = (_pdata),				\
+>  		.pdata_size = (_pdsize),				\
+>  		.of_compatible = (_compat),				\
+> +		.of_reg = (_of_reg),					\
+>  		.acpi_match = (_match),					\
+>  		.id = (_id),						\
+>  	}
+> 
+> -#define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat)		\
+> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, NULL)	\
+> +#define OF_MFD_CELL_REG(_name, _res, _pdata, _pdsize,_id, _compat, 
+> _of_reg) \
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, _of_reg, 
+> NULL)
+> 
+> -#define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match)	\
+> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, _match)	\
+> +#define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat) \
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, 0, NULL)
+> 
+> -#define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id)		\
+> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, NULL)	\
+> +#define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match) \
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0, _match)
+> 
+> -#define MFD_CELL_RES(_name, _res)					\
+> -	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, NULL)		\
+> +#define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id) \
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0, NULL)
+> 
+> -#define MFD_CELL_NAME(_name)						\
+> -	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, NULL)		\
+> +#define MFD_CELL_RES(_name, _res) \
+> +	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, 0, NULL)
+> +
+> +#define MFD_CELL_NAME(_name) \
+> +	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, 0, NULL)
+> 
+>  struct irq_domain;
+>  struct property_entry;
+> @@ -78,6 +82,13 @@ struct mfd_cell {
+>  	 */
+>  	const char		*of_compatible;
+> 
+> +	/*
+> +	 * Address as defined in Device Tree.  Used to compement 
+> 'of_compatible'
+> +	 * (above) when matching OF nodes with devices that have identical
+> +	 * compatible strings
+> +	 */
+> +	const u64 of_reg;
+> +
+>  	/* Matches ACPI */
+>  	const struct mfd_cell_acpi_match	*acpi_match;
 
 _______________________________________________
 linux-arm-kernel mailing list
