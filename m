@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2CAE1F6669
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 13:18:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97C6D1F6677
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 13:19:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2P2thI4Oar4tuz8KJUVuiFke2m1htt7tZSkkLCyiJ2Q=; b=LaN8blvTDpvGuw3IZbJImUeiH
-	ei8qZleVFDgxMg4XkC2b6U5nsnU01cayaU838AcShPLl3peAm8RKO48bLnYsMIRXhqxxvgvvCVPLS
-	6SSu0YSPCATuBfP+rK8GJFqLYfdxDLsM+fzPd6yRgNVYuLXpRzgKmG3Vql51AZazEXHDmGeiXxATz
-	KzMCUgOU92WyZxvmMAIfJegaYXHpEXzNY/Zga2E8IBzIQKbX3HCt/rw6U9dqL1IdjC++iju7ofsE4
-	kHbi2W9UZcoeIF2K4mKwJZy+MApdj2VcH8e7kag43TZWJ/4q5yQVPQ+ov4rSJcbIB19mjlUA+C7+r
-	vRqOIGlSA==;
+	 bh=cQcmdwRd36oJUL90+xbM6YK/on7mtfJ2C7p61gVrUmI=; b=Be4wU/2L+RVZ4GjlB8v1ooGSJ
+	8Esw2pL/wIZcIc4YVXWYncXhKBEtD80fExHe25QKLN8k4un/oOdWPb452PUvOFnJ9QkEEoLDHujkc
+	CCK8BEzrl7RShJWFE0ZtzHotQRrnaZybz2MjOpkFxzBojOXnqX38kr6dDP7Gwz7NQ2xAUKHWj+MJQ
+	DDx/vuof87mOmuyDnOkyGaA1TYPV6rB+nx932b2KDMuQCp0GZOmP0iYXfDNaRuhVGlORFxeagU5qy
+	blrcZdWMFAkzzox9cenu8lajveNYQ95jsBmtHWP97cT8fHkvVeRhwdq03gF4QF1ijHV26m4j8xJl0
+	27tao3pPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjLDX-0005Kg-FI; Thu, 11 Jun 2020 11:17:55 +0000
+	id 1jjLEb-0005cg-C1; Thu, 11 Jun 2020 11:19:01 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjLDQ-0005KI-8S; Thu, 11 Jun 2020 11:17:49 +0000
+ id 1jjLET-0005c9-8m; Thu, 11 Jun 2020 11:18:54 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 5D151AC20;
- Thu, 11 Jun 2020 11:17:50 +0000 (UTC)
-Message-ID: <ce0901dd4b9046b67ada36b0a18c36c8def811d9.camel@suse.de>
-Subject: Re: [PATCH v4 26/27] clk: bcm2835: Don't cache the PLLB rate
+ by mx2.suse.de (Postfix) with ESMTP id 62155AD12;
+ Thu, 11 Jun 2020 11:18:55 +0000 (UTC)
+Message-ID: <333956e7b6b186f751baf7f1b69be3c2cf4d077f.camel@suse.de>
+Subject: Re: [PATCH v4 27/27] clk: bcm: rpi: Remove the quirks for the CPU
+ clock
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: Maxime Ripard <maxime@cerno.tech>
-Date: Thu, 11 Jun 2020 13:17:45 +0200
-In-Reply-To: <264ad21afaae4a7098c3da59970d6cb9da1a8b0e.1591860665.git-series.maxime@cerno.tech>
+Date: Thu, 11 Jun 2020 13:18:50 +0200
+In-Reply-To: <a636a413f26014901ff1acb8df046049a79c4c6d.1591860665.git-series.maxime@cerno.tech>
 References: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
- <264ad21afaae4a7098c3da59970d6cb9da1a8b0e.1591860665.git-series.maxime@cerno.tech>
+ <a636a413f26014901ff1acb8df046049a79c4c6d.1591860665.git-series.maxime@cerno.tech>
 User-Agent: Evolution 3.36.2 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_041748_443595_83B89298 
-X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-CacheID: sfid-20200611_041853_462528_5B79D94D 
+X-CRM114-Status: UNSURE (   9.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -69,29 +70,27 @@ Cc: Tim Gover <tim.gover@raspberrypi.com>,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2044586099760288694=="
+Content-Type: multipart/mixed; boundary="===============7361321053258958502=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2044586099760288694==
+--===============7361321053258958502==
 Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-X1xORuuAQB8Hb0to6LkD"
+	protocol="application/pgp-signature"; boundary="=-U285mDlmyFSu1bffEK5R"
 
 
---=-X1xORuuAQB8Hb0to6LkD
+--=-U285mDlmyFSu1bffEK5R
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
 On Thu, 2020-06-11 at 09:32 +0200, Maxime Ripard wrote:
-> The PLLB rate will be changed through the firmware clocks drivers and wil=
-l
-> change behind this drivers' back, so we don't want to cache the rate.
+> The CPU clock has had so far a bunch of quirks to expose the clock tree
+> properly, but since we reverted to exposing them through the MMIO driver,
+> we can remove that code from the firmware driver.
 >=20
 > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 > ---
-
-Thanks!
 
 Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
@@ -99,28 +98,28 @@ Regards,
 Nicolas
 
 
---=-X1xORuuAQB8Hb0to6LkD
+--=-U285mDlmyFSu1bffEK5R
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7iEtkACgkQlfZmHno8
-x/4H7gf9H/VIGYTrqw7T7k4J9ZsElmbeuIbyHgbrPS8t8lDUMX6tzdqrGwqQX5wX
-SjR19NEMVS/B7NPHZ2D87lRCpoS2+PP4reZjEEBS1aeaQxEEgZ3mEslvJIWaPYo3
-S9136B45/0RvqkOM3ymgy2XohcTmuu8qt1X3ToaEtmyzVTz05mf/EWBNS19Y+5cA
-TvXy48mDNNY+j5tEQgFljALEapV4DJ3PmVyxCKiJ9et8j4W5fenTA1cFHjqJGu36
-XvvfB5j8cQiIw4skAwvv3WVaBmh7wm211bT8HrgNI0Zw1KFvDQTrwIBgiOukY4V6
-3mBGM6Qc7py38NVB3B/B1VpEz+onzQ==
-=SDXg
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7iExoACgkQlfZmHno8
+x/7NEwgAmtZn8c3AHDT++MR4B7LhujoGQ8LYybQXxK3GT42QsGrQC1gJTHb37q1h
+GFFMOJA+WL4dEvVOWujZe88cnZkIgoneF3a/y+6x9ZBDYRb15rljvJXxWDDEpDNq
+I4pzHw2RldYDTbe+bM8qy4c5LN+uPrtvujT9ZWXKBDjE2ixTwrVqWNBMMtiNacYu
+xEGJrr4Bwi11Gng1qmRD+MwNrwhIfQDMAqvhV865eqfWnri3+xws2Xa1wfcNYUaf
+oyX8gzx/LV8LbpdXLQpddhiPxKzDXWqXTHcnpZXyPPXAgRDUDLGy0I/Irxqnw5tk
+zOPDY89bcrKowlAUqAM5uDFIBI9btQ==
+=Cn2+
 -----END PGP SIGNATURE-----
 
---=-X1xORuuAQB8Hb0to6LkD--
+--=-U285mDlmyFSu1bffEK5R--
 
 
 
---===============2044586099760288694==
+--===============7361321053258958502==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -131,6 +130,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2044586099760288694==--
+--===============7361321053258958502==--
 
 
