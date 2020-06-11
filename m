@@ -2,91 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A85E71F6AC8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 17:19:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7051B1F6B11
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 17:32:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mIdvzKFlAeimRbiqYIwe7mFA7QNysWwcI4k/MJFPozk=; b=Afl8Ia4//FDGZ2
-	2IH9xMjgqs0XwFFCyrvh9DUgIBn2mQpP8xWfLTAkMkQEbv7rGTktiB1VrBEg9X4HKCElPnlTJ8tpw
-	Cj70vSvtc+DSAJrFQvqnNHxHG90cmGi3pW0l/xGBKR8bhm+UG0XiqmJaEaNVI9NjRWX482JmX0ERk
-	Ifx+KKWrPPy0hqjqAzKscGNc9TLFBy4tFZ7Fx0RegrTeeOKxh32/3a9I3sXg7SkYpTNjV2As1u+Hr
-	yvRiwZW973jsMG3R2DHb65h0Nwr24gsCd8tjOP9o/ghlOHX+IaiidZEWHs3X/RP1GjsgSQQEvFnd5
-	6N8rs1MlAGKgkq5KzTMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ujKa+nX26Q9U3O2giXrZgXMTR/TZ1vvDFRLk0u/jPgA=; b=N1cMLf2R79ciE3
+	4bFHgFBv5LcAvpYtd1f18T+DD0XspLGrSmHDBzWwHYqK1sSsTRXV+hmm416lA43ASxeAXZwZU1jS/
+	0wn+LdBkr1UfMX82b8MaCuGDJY1KSAhcr6Sarw67GkQ5CrQNhYEKiUvrD3+zoAY7Rcl1uTKfiEDJC
+	iLXsuiLfkDIXCBIBdl5sWvKFY80VQtYw6wiF6VZYyR9uIIn7i0VwQxCwwyKMjIMkIt8CAIDbvjFm+
+	K/2mMZwuzFtSaG/aAwgfQwBdszVKE9x0CD5ZQDtIFm9Qpo5IJKIKMHOgT0TfxDAMME+UVKxp/fWkP
+	ZSn/QdYnSpm+EUbAoi+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjOzP-0005BY-8D; Thu, 11 Jun 2020 15:19:35 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjOzE-0005Ai-OF
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 15:19:26 +0000
-Received: by mail-il1-x144.google.com with SMTP id i1so5724960ils.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 08:19:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1rqRniaTsYfE1typF6ugiU1ENkgUw21RTQiS6OA21zs=;
- b=lOcRhH308zGRYFzFWmmb6TOqkdNuqKJvRMJ431kDJUm7qRp0Nez4Bw33YJcr0ga+HZ
- Jwio0ovnSmDre48IBWO2c3Kev+NTZXRyKEH38lBRcz1zxNptVAD1WckLjHqTWFujDLIt
- ZbQH70Tb2cHCouT/hjjrB2LduSa70dfVTp4bS8VTStMooDF71Yofpe1NkG/4QYCzi2WV
- JatuZD7fYWFpNkxLyxO7xb99Qiulot2jh30CwHn1li5RJji6ui9r1dhx6rq0SH93hZPA
- 6D6CUR8pa3AcydhcQK7z5J3PKH9qQQ3TLIV+RYSk6ShzfD2s3gzIin2pkXodGmaUsHcr
- Dapw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1rqRniaTsYfE1typF6ugiU1ENkgUw21RTQiS6OA21zs=;
- b=KexqRLpLIhNfytBH6dx57rN5o9/DdCJ9f1Y2A5gfhm4rUdAF0gcTSh8mlsT6U6bJTr
- xx6+m2hM5/Z5e4NOZm/AfZr6/2apivlOs+6qjpS9b6xWwPQ5nylf1aAgUo6lpVUxa5Q8
- GShpRuR2YfwjQsFEqrWNKvbmryaB8NNiDicpWtwiDRAeD0Mo5EzIwBEIvQ4p9zdzYgjt
- KPF293LH4vgxLbBx6KIvSSrDywJ1GbRNSptPVSVhFXcdYAJB/ZZohQISus/P789TZDuZ
- Y6cP6PMK1sTAjW08BL3csXRwgoTsIC7M21ZTuDe4wF/SXHJyrTNQpVYGRMVGJD5T9peP
- d7LQ==
-X-Gm-Message-State: AOAM531mcmZ0ipTUkIFL1Q27sp/OYlNGKM9VCZzsf0UO4rhtKRPBgnUo
- YwqJsFA5WthNFBSqz01HJC2nIyg/xeMGxoe58Dk=
-X-Google-Smtp-Source: ABdhPJzxPGRhXjT0I+vY4SOwb4jOqI2irsf9TnegwJsDXW6Wni9r4nNaEClfyd1Nmkjmg3gvsNxbwr5jqWF2z17aQ6E=
-X-Received: by 2002:a05:6e02:ef2:: with SMTP id
- j18mr8604138ilk.69.1591888763752; 
- Thu, 11 Jun 2020 08:19:23 -0700 (PDT)
+	id 1jjPBY-0006Qx-NB; Thu, 11 Jun 2020 15:32:08 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jjPBS-0006Qc-7e
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 15:32:03 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 6A8848102;
+ Thu, 11 Jun 2020 15:32:53 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: soc@kernel.org
+Subject: [GIT PULL] Fixes for omaps for v5.8
+Date: Thu, 11 Jun 2020 08:31:47 -0700
+Message-Id: <pull-1591889257-410830@atomide.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-References: <20200607193023.52344-1-jassisinghbrar@gmail.com>
- <20200610082315.GB2689@bogus>
- <CABb+yY1T03YLwiFvBykxsAHQ9Kpu=r1nRTuaP3Emf5dP=Upm0g@mail.gmail.com>
- <20200610155629.GA7357@bogus>
- <CABb+yY0pQYD7DTf=MNpVPB7F2PESiWyTYj=ftRHDPkKMOobRVQ@mail.gmail.com>
- <20200611084014.GB7357@bogus>
-In-Reply-To: <20200611084014.GB7357@bogus>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Thu, 11 Jun 2020 10:19:12 -0500
-Message-ID: <CABb+yY1K7fxEsujxwVMjJfLqVtg-p+5btteGtpUwEtUSsoWPtQ@mail.gmail.com>
-Subject: Re: [PATCH] firmware: arm_scmi: fix timeout value for send_message
-To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_081924_786422_7187C187 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200611_083202_313467_155CABA4 
+X-CRM114-Status: GOOD (  15.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jassisinghbrar[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,53 +56,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, "arnd@arndb.de" <arnd@arndb.de>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
+ arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 3:40 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+From: "Tony Lindgren" <tony@atomide.com>
 
-> >
-> > > > > >       if (xfer->hdr.poll_completion) {
-> > > > > > -             ktime_t stop = ktime_add_ns(ktime_get(), SCMI_MAX_POLL_TO_NS);
-> > > > > > +             ktime_t stop = ktime_add_ns(ktime_get(), 500 * 1000 * NSEC_PER_USEC);
-> > > > > >
-> > > > >
-> > > > > This is unacceptable delay for schedutil fast_switch. So no for this one.
-> > > > >
-> > > > Increasing timeout does not increase latency.
-> > >
-> > > Agreed, but worst case you may be stuck here for 500ms which is not
-> > > acceptable.
-> > >
-> > Not acceptable to who, you or the kernel? :)    Now that you said you
-> > are fixing the scmi's fast_switch implementation.
-> >
-> Sorry, I meant to disable it for single channel implementation.
->
-The single-channel platform may have only cpufreq as the user, or only
-users that respond quickly ~3us. So maybe we leave the decision, to
-enable fast_switch, totally to the platform. But of course, this
-discussion is for another thread.
+The following changes since commit 3d77e6a8804abcc0504c904bd6e5cdf3a5cf8162:
 
+  Linux 5.7 (2020-05-31 16:49:15 -0700)
 
-> > Even though I don't think 500ms would ruin our lives, but ok, I will
-> > make it 30ms - same as you did in the 'else' block. And drop the other
-> > change.
->
-> I am fine if cpufreq maintainers allow that in the fast switch path that
-> happens in the fast path.
->
-Thanks, let me respin the patch and include some cpufreq folks.
+are available in the Git repository at:
 
-Cheers!
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.8/fixes-merge-window-signed
+
+for you to fetch changes up to e4a8fc054340f4df761f6a73335f8fdc0b7ac4fd:
+
+  Revert "bus: ti-sysc: Increase max softreset wait" (2020-06-10 15:31:54 -0700)
+
+Note that there are no changes to am5729-beagleboneai.dts, but I could
+not make that go away from the stats withtout merging in more branches
+already upstream. The i2c2 softreset timeout I had to revert as it does
+not seem to be a proper fix.
+
+----------------------------------------------------------------
+Fixes for omaps for v5.8
+
+The recent display subsystem (DSS) related platform data changes caused
+display related regressions for suspend and resume. Looks like I only
+tested suspend and resume before dropping the legacy platform data, and
+forgot to test it after dropping it. Turns out the main issue was that
+we no longer have platform code calling pm_runtime_suspend for DSS like
+we did for the legacy platform data case, and that fix is still being
+discussed on the dri-devel list and will get merged separately. The DSS
+related testing exposed a pile other other display related issues that
+also need fixing though:
+
+- Fix ti-sysc optional clock handling and reset status checks
+  for devices that reset automatically in idle like DSS
+
+- Ignore ti-sysc clockactivity bit unless separately requested
+  to avoid unexpected performance issues
+
+- Init ti-sysc framedonetv_irq to true and disable for am4
+
+- Avoid duplicate DSS reset for legacy mode with dts data
+
+- Remove LCD timings for am4 as they cause warnings now that we're
+  using generic panels
+
+Then there is a pile of other fixes not related to the DSS:
+
+- Fix omap_prm reset deassert as we still have drivers setting the
+  pm_runtime_irq_safe() flag
+
+- Flush posted write for ti-sysc enable and disable
+
+- Fix droid4 spi related errors with spi flags
+
+- Fix am335x USB range and a typo for softreset
+
+- Fix dra7 timer nodes for clocks for IPU and DSP
+
+- Drop duplicate mailboxes after mismerge for dra7
+
+----------------------------------------------------------------
+Jason Kridner (1):
+      ARM: dts: am5729: beaglebone-ai: adding device tree
+
+Oskar Holmlund (2):
+      ARM: dts: Fix am33xx.dtsi USB ranges length
+      ARM: dts: Fix am33xx.dtsi ti,sysc-mask wrong softreset flag
+
+Suman Anna (2):
+      ARM: dts: dra7: Fix timer nodes properly for timer_sys_ck clocks
+      ARM: dts: dra7-evm-common: Fix duplicate mailbox nodes
+
+Tero Kristo (2):
+      ARM: dts: dra7: add timer_sys_ck entries for IPU/DSP timers
+      soc: ti: omap-prm: use atomic iopoll instead of sleeping one
+
+Tomi Valkeinen (4):
+      ARM: dts: am57xx-idk-common: add tc358778 bridge
+      ARM: dts: am437x-sk-evm: remove lcd timings
+      ARM: dts: am437x-gp-evm: remove lcd timings
+      ARM: dts: am437x-epos-evm: remove lcd timings
+
+Tony Lindgren (11):
+      Merge branch 'omap-for-v5.8/dt-timer' into omap-for-v5.8/dt
+      bus: ti-sysc: Flush posted write on enable and disable
+      ARM: dts: omap4-droid4: Fix spi configuration and increase rate
+      bus: ti-sysc: Use optional clocks on for enable and wait for softreset bit
+      bus: ti-sysc: Ignore clockactivity unless specified as a quirk
+      bus: ti-sysc: Fix uninitialized framedonetv_irq
+      ARM: OMAP2+: Fix legacy mode dss_reset
+      bus: ti-sysc: Increase max softreset wait
+      Merge commit '5390130f3b288db7d67de5e6c29d0de70d327ff0' into fixes-v5.7
+      Merge branch 'fixes-v5.7' into fixes
+      Revert "bus: ti-sysc: Increase max softreset wait"
+
+ arch/arm/boot/dts/Makefile                       |   1 +
+ arch/arm/boot/dts/am335x-guardian.dts            |   1 +
+ arch/arm/boot/dts/am33xx.dtsi                    |   4 +-
+ arch/arm/boot/dts/am3517-evm.dts                 |   1 +
+ arch/arm/boot/dts/am437x-gp-evm.dts              |  16 -
+ arch/arm/boot/dts/am437x-sk-evm.dts              |  16 -
+ arch/arm/boot/dts/am43x-epos-evm.dts             |  16 -
+ arch/arm/boot/dts/am5729-beagleboneai.dts        | 731 +++++++++++++++++++++++
+ arch/arm/boot/dts/am57xx-idk-common.dtsi         |  58 ++
+ arch/arm/boot/dts/dra7-evm-common.dtsi           |  20 -
+ arch/arm/boot/dts/dra7-l4.dtsi                   |  56 +-
+ arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi |   1 +
+ arch/arm/boot/dts/motorola-cpcap-mapphone.dtsi   |   4 +-
+ arch/arm/boot/dts/omap3-gta04.dtsi               |   1 +
+ arch/arm/mach-omap2/omap_hwmod.c                 |   2 +-
+ drivers/bus/ti-sysc.c                            |  98 ++-
+ drivers/soc/ti/omap_prm.c                        |   8 +-
+ 17 files changed, 906 insertions(+), 128 deletions(-)
+ create mode 100644 arch/arm/boot/dts/am5729-beagleboneai.dts
 
 _______________________________________________
 linux-arm-kernel mailing list
