@@ -2,90 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D2631F64A5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 11:23:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A14BE1F64B6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 11:26:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C6SNCNaEcXy8dvLqq3eNMeZwiujpUP1okPEYFYyyE0I=; b=X80IJY10bSX7+b
-	9GVGRExRCWbynkB7ynHakSnReNk/lvmLmYiYYsOXL/1iOwKvb9ez1JJzgQvJAwkK5767zvBC5KCBI
-	9jQXKK2fFM8Blc/Smu7jCn32ydYimGGmEVgheuY9osb6WReisvMyCUhH7s1IoYT9kNebUCW/CIqQJ
-	zlhY1DuMMkn+N3ftNMxyO7NvzV706j+QVeDzGMrgVk8MsM/q6/h8ttDtXWX2HZRSX7X7tMgB03qD8
-	6lKeDK9D0XOM12IJKTysq5SSH7lcgSX7jhTzK0AiZZ+Bc0fOe6Z7M1+tyAld8BgV8U/FwROTjLkFZ
-	qapc7wUBeXkHbd0P6MqQ==;
+	List-Owner; bh=GLQP+B4Cg2GyLIX3wJIYKLqMrGXE1wOT7O0KrWwXpyM=; b=jhCQkWKw8HOmJo
+	W3AtGwkPkCw+3+97rp0ENn60jb8U4LmBcxEqWK/1JiAiulQqC5Z1xOjg+7Q4LIqxc/OJmT/Vt7Gfd
+	pa3NZYgzKzwsFPCuKQ1vKNa7N3vBIQnuaNOMgst/dUlzU4Lk67uWoLkHElgWLWbvrYvDhGGZ+MgKg
+	Yf4xiqDnP0+PgKvWHR1Uikbx3ow4oVBkQN6rP14LbQUjbymFBgZsv//5ayVMry6Pvt2pkFxweIt37
+	m80OLYPP9ZzrZ6pDenaZniRdEFWqLuJEXoTWtp+V9mZWAj93DQHRzdAfbk0zJA7yWQeyKneuuRWUG
+	uR/7kwPK/T1sqIlYJJRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjJQz-000647-9Y; Thu, 11 Jun 2020 09:23:41 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1jjJTb-0001Se-Dk; Thu, 11 Jun 2020 09:26:23 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjJQq-00061L-7E; Thu, 11 Jun 2020 09:23:33 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 3651558018F;
- Thu, 11 Jun 2020 05:23:26 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Thu, 11 Jun 2020 05:23:26 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=2w0cp3nEr88sP
- +MV7TWqwyUO3pJl2Co6QHKEM/4+4iE=; b=D9KYtJnso0yLpN7LL06zlKNHpB3WR
- jObt6Zw/A6GW6r6tVON5GXSx4imn66XIWNtSx93DoKkt+hjCio97Cixn4t0DngV9
- sRF9pfMX1LAEsNlMRf7D2kRqAI7TY9X+FVZvlg9b5Lx/KjEColzYX10XEZXabjRL
- RsNNDpuDb8KmBM1k5wm5N3ePCqF4VRPw+Vk0OcNcLrDWt07QYoQqFCqv7yKEBHkm
- /+ESJBtp3ItTM7V17faw/mcXLvA2RT2lPYOMG5LtKt/czc8tYBmWDq8mB805G5Ir
- SGUVCUDA7m04L6hhXS+ja7IvPYS9Q0ctchWOmjFN+SvjaTmj93z+l3iew==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=2w0cp3nEr88sP+MV7TWqwyUO3pJl2Co6QHKEM/4+4iE=; b=u9FoXXIY
- PUqL/VJbaHBLnYn124cS0+7UrZg/saefEqDDe4AIYCG/3/U97yRfR47VYk2i4/k2
- S+WwE4l07yjNZuvL/58W0r7NkAH9rQpKU7HibRjJ3uVklbiuq4E+pkxiYhZLHFDI
- WnCsQoDVxttRrqEIa/Ftk6GtB7IGcNu2xwJQLXkzk80CTjUidLaCepEgOpWmD99G
- WvVd4qGvvFiATQMaK/lrlnTKQ1gjrzRXSttd993PWuFWY0wDJslNFqNog8mbyjKL
- GfGrBFUI7FAhijxh/N8aIC4mK0B1Eu67B6F/4DIt+0Ab50tN1QJTJ992bxzQmj/Z
- RFslTXRhxqh0pw==
-X-ME-Sender: <xms:DvjhXtRg8_O_-RUGFzjFKAzrvS6ZPZHJWoDrNS5_ooXyptTipi9fWQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehkedgudeiucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
- hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
- frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:DvjhXmzOBOsC4-63dg5pyuGuzBh09ZAmR76RtoBcL-UaBGdSJoD3Ag>
- <xmx:DvjhXi1EcU2hn3f0tuVa7xlXShP_AhPoa6f38sPYghzt1g8Dpj5CqA>
- <xmx:DvjhXlDh2eC0d7GSgh3d-PLlx0JM30qJtNOB8voukjJOe853XCKjOg>
- <xmx:DvjhXhP2aQDt09Qt-FK04VqpzIaRQJLHuWdUShyqyPrJgWrCPhtgxw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id C72E73060FE7;
- Thu, 11 Jun 2020 05:23:25 -0400 (EDT)
-From: Maxime Ripard <maxime@cerno.tech>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v4 3/3] ARM: dts: bcm2711: Add HDMI DVP
-Date: Thu, 11 Jun 2020 11:23:17 +0200
-Message-Id: <e22222ca7f41b960e9bb1a31e0dd2de95b8c0cd1.1591867332.git-series.maxime@cerno.tech>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
-References: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
+ id 1jjJTR-0001QL-2G; Thu, 11 Jun 2020 09:26:14 +0000
+X-UUID: 94624fa3ead5447aa6539b5f782fc22d-20200611
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=arPIeFMQZ1+NZeZaAa8iqxicI65qOT2Z+fn97VHkHyg=; 
+ b=sd7V/kvTL+bcexp3YLpxV/isLcX1pmju0wE7zCKMn1elCqftHm0oQC5Z2cT7/pIQL7bykmG0vP8ncVbo7WL1l6kipwHEW80r4NExv45dHkGT8aFrXWLqyxajPg+RTsOBxg91H98cVlz57JiRTWqXR5dV3RuxoIIr3lxeqyIUlcc=;
+X-UUID: 94624fa3ead5447aa6539b5f782fc22d-20200611
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 30019533; Thu, 11 Jun 2020 01:25:48 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 11 Jun 2020 02:26:02 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 11 Jun 2020 17:26:01 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 11 Jun 2020 17:26:01 +0800
+Message-ID: <1591867563.27949.9.camel@mtkswgap22>
+Subject: Re: [PATCH 2/2] soc: mediatek: devapc: add devapc-mt6873 driver
+From: Neal Liu <neal.liu@mediatek.com>
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Thu, 11 Jun 2020 17:26:03 +0800
+In-Reply-To: <CAAOTY__g3Fnwsoqx=x_tgdMii5K_L9TmF_9048XbAOSJwb-Cxg@mail.gmail.com>
+References: <1591698261-22639-1-git-send-email-neal.liu@mediatek.com>
+ <1591698261-22639-3-git-send-email-neal.liu@mediatek.com>
+ <CAAOTY__g3Fnwsoqx=x_tgdMii5K_L9TmF_9048XbAOSJwb-Cxg@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_022332_401063_C01C980E 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200611_022613_117205_F827DFCD 
+X-CRM114-Status: GOOD (  13.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,60 +84,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>, Phil Elwell <phil@raspberrypi.com>,
- linux-arm-kernel@lists.infradead.org, Maxime Ripard <maxime@cerno.tech>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have a driver for the DVP, let's add its DT node.
+On Wed, 2020-06-10 at 00:01 +0800, Chun-Kuang Hu wrote:
+Hi Chun-Kuang,
 
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- arch/arm/boot/dts/bcm2711.dtsi | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+[snip]
 
-diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
-index a91cf68e3c4c..00bcaed1be32 100644
---- a/arch/arm/boot/dts/bcm2711.dtsi
-+++ b/arch/arm/boot/dts/bcm2711.dtsi
-@@ -12,6 +12,13 @@
- 
- 	interrupt-parent = <&gicv2>;
- 
-+	clk_108MHz: clk-108M {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <108000000>;
-+		clock-output-names = "108MHz-clock";
-+	};
-+
- 	soc {
- 		/*
- 		 * Defined ranges:
-@@ -244,6 +251,14 @@
- 		hvs@7e400000 {
- 			interrupts = <GIC_SPI 97 IRQ_TYPE_LEVEL_HIGH>;
- 		};
-+
-+		dvp: clock@7ef00000 {
-+			compatible = "brcm,brcm2711-dvp";
-+			reg = <0x7ef00000 0x10>;
-+			clocks = <&clk_108MHz>;
-+			#clock-cells = <1>;
-+			#reset-cells = <1>;
-+		};
- 	};
- 
- 	/*
--- 
-git-series 0.9.1
+> > +
+> > +/*
+> > + * mtk_devapc_pd_get - get devapc pd_types of register address.
+> > + *
+> > + * Returns the value of reg addr
+> > + */
+> > +static void __iomem *mtk_devapc_pd_get(int slave_type,
+> > +                                      enum DEVAPC_PD_REG_TYPE pd_reg_type,
+> > +                                      u32 index)
+> > +{
+> > +       struct mtk_devapc_vio_info *vio_info = mtk_devapc_ctx->soc->vio_info;
+> > +       u32 slave_type_num = mtk_devapc_ctx->soc->slave_type_num;
+> > +       const u32 *devapc_pds = mtk_devapc_ctx->soc->devapc_pds;
+> > +       void __iomem *reg;
+> > +
+> > +       if (!devapc_pds)
+> > +               return NULL;
+> > +
+> > +       if ((slave_type < slave_type_num &&
+> > +            index < vio_info->vio_mask_sta_num[slave_type]) &&
+> > +           pd_reg_type < PD_REG_TYPE_NUM) {
+> > +               reg = mtk_devapc_ctx->devapc_pd_base[slave_type] +
+> > +                       devapc_pds[pd_reg_type];
+> > +
+> > +               if (pd_reg_type == VIO_MASK || pd_reg_type == VIO_STA)
+> > +                       reg += 0x4 * index;
+> > +
+> > +       } else {
+> > +               pr_err(PFX "%s:0x%x or %s:0x%x or %s:0x%x is out of boundary\n",
+> > +                      "slave_type", slave_type,
+> 
+> Move "slave_type" into format string.
+
+Why is this necessary? Is there any benefit for moving this?
+Since the line length is almost over 80 chars.
+
+> 
+> > +                      "pd_reg_type", pd_reg_type,
+> > +                      "index", index);
+> > +               return NULL;
+> > +       }
+> > +
+> > +       return reg;
+> > +}
+> > +
+> 
+
+[snip]
+
+> 
+> > +
+> > +/*
+> > + * devapc_violation_irq - the devapc Interrupt Service Routine (ISR) will dump
+> > + *                       violation information including which master violates
+> > + *                       access slave.
+> > + */
+> > +static irqreturn_t devapc_violation_irq(int irq_number, void *dev_id)
+> > +{
+> > +       u32 slave_type_num = mtk_devapc_ctx->soc->slave_type_num;
+> > +       const struct mtk_device_info **device_info;
+> > +       struct mtk_devapc_vio_info *vio_info;
+> > +       int slave_type, vio_idx, index;
+> > +       const char *vio_master;
+> > +       unsigned long flags;
+> > +       bool normal;
+> > +       u8 perm;
+> > +
+> > +       spin_lock_irqsave(&devapc_lock, flags);
+> > +
+> > +       device_info = mtk_devapc_ctx->soc->device_info;
+> > +       vio_info = mtk_devapc_ctx->soc->vio_info;
+> > +       normal = false;
+> > +       vio_idx = -1;
+> > +       index = -1;
+> > +
+> > +       /* There are multiple DEVAPC_PD */
+> > +       for (slave_type = 0; slave_type < slave_type_num; slave_type++) {
+> > +               if (!check_type2_vio_status(slave_type, &vio_idx, &index))
+> > +                       if (!mtk_devapc_dump_vio_dbg(slave_type, &vio_idx,
+> > +                                                    &index))
+> > +                               continue;
+> > +
+> > +               /* Ensure that violation info are written before
+> > +                * further operations
+> > +                */
+> > +               smp_mb();
+> > +               normal = true;
+> > +
+> > +               mask_module_irq(slave_type, vio_idx, true);
+> > +
+> > +               if (clear_vio_status(slave_type, vio_idx))
+> > +                       pr_warn(PFX "%s, %s:0x%x, %s:0x%x\n",
+> > +                               "clear vio status failed",
+> > +                               "slave_type", slave_type,
+> > +                               "vio_index", vio_idx);
+> > +
+> > +               perm = get_permission(slave_type, index, vio_info->domain_id);
+> > +
+> > +               vio_master = mtk_devapc_ctx->soc->master_get
+> > +                       (vio_info->master_id,
+> > +                        vio_info->vio_addr,
+> > +                        slave_type,
+> > +                        vio_info->shift_sta_bit,
+> > +                        vio_info->domain_id);
+> 
+> Call mt6873_bus_id_to_master() directly. For first patch, make things
+> as simple as possible.
+
+In devapc_violation_irq() function, we use common flow to handle each
+devapc violation on different platforms. The master_get() has different
+implementation on different platforms, that why it called indirectly.
+
+Once we have new platform, we only have to update devapc-mtxxxx.c
+instead of common handler flow.
+
+> 
+> > +
+> > +               if (!vio_master) {
+> > +                       pr_warn(PFX "master_get failed\n");
+> > +                       vio_master = "UNKNOWN_MASTER";
+> > +               }
+> > +
+> > +               pr_info(PFX "%s - %s:0x%x, %s:0x%x, %s:0x%x, %s:0x%x\n",
+> > +                       "Violation", "slave_type", slave_type,
+> > +                       "sys_index",
+> > +                       device_info[slave_type][index].sys_index,
+> > +                       "ctrl_index",
+> > +                       device_info[slave_type][index].ctrl_index,
+> > +                       "vio_index",
+> > +                       device_info[slave_type][index].vio_index);
+> > +
+> > +               pr_info(PFX "%s %s %s %s\n",
+> > +                       "Violation - master:", vio_master,
+> > +                       "access violation slave:",
+> > +                       device_info[slave_type][index].device);
+> > +
+> > +               devapc_vio_reason(perm);
+> > +
+> > +               devapc_extra_handler(slave_type, vio_master, vio_idx,
+> > +                                    vio_info->vio_addr);
+> > +
+> > +               mask_module_irq(slave_type, vio_idx, false);
+> > +       }
+> > +
+> > +       if (normal) {
+> > +               spin_unlock_irqrestore(&devapc_lock, flags);
+> > +               return IRQ_HANDLED;
+> > +       }
+> > +
+> > +       spin_unlock_irqrestore(&devapc_lock, flags);
+> > +       return IRQ_HANDLED;
+> > +}
+> > +
+
+[snip]
+
 
 _______________________________________________
 linux-arm-kernel mailing list
