@@ -2,90 +2,206 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE4A11F6D96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 20:47:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 409391F6DB0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 21:02:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A7qZOM77HeKNvwzg/r02pA481uOF6lVKwqkm+7NOGxM=; b=jStixy7qhthL6M
-	yjGBWsBttbbkWmdNQSieegl7yItOyNHhGQ/5fMgabI6wPc3f7UTMPYgn5MqgnR1s+eD/EocBTd8jQ
-	jZibszYqbnFvAFS7YoYO/Z8xD9SWgqczKKCc6XZr7erjDtD2bQF/mcTroedxOs48/v+Q54DfQgwQm
-	xnrRJzJ7AtP3Nbh2QOnKH+IHGDGaYeq7x+hDB0BZbjHRP/MPFz/RWOG5hJZMzU1frnuG9ZpaJ+ARO
-	XAm6F199dzsgVEQBSrErURVjsYH2H7swac3u2WpqSXrBTGiRcn2LWoZfVxI4nrDko3fReZhdCoOpw
-	fc6oEbzj0V4o3xBCb6Kg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FGslFLVhFD3FfMpg/DnIY5gM31qX25arHQmIShwtFsA=; b=Q3OwLIXcC6TdOv
+	WIbEwYJ1To2Mco9nbdJuGVpKw7Bm3WoUnSWFtbchBrlfm+7gTi2Y3mhVb4HqgyYOjpdWGYMhwPa96
+	dfzkghU8BPV2FSIMZMD22Lb3jOubD9lle2/zXpcLfYaIo0JbevvH1dvAQAPgYwhqsI13mHTyDUDea
+	TxHMeTuFuurBsWfCg4jg5hEu+mV27eqasFbsHW5lNp6HIarDDiup2YfTwGV3OlGx1MR5pzaeE/bHi
+	p+/HrjYT23NasGvILMSCcZQf2k5n1TGK0scNLp2+H8T/b4au+nzhAaCUWq04JWek6ZXkaT6fQc4Wq
+	RGbhUgt4qow7JC6k7gkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjSE7-0004xJ-Nc; Thu, 11 Jun 2020 18:46:59 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jjSST-0005Z7-Vb; Thu, 11 Jun 2020 19:01:49 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjSDt-0004vs-6T
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jun 2020 18:46:49 +0000
-Received: by mail-wr1-x443.google.com with SMTP id x13so7238296wrv.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 11:46:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=kId5WHOOyajpKS2gdMHVkK4eDVViFzUKEwCw7ZXXrgs=;
- b=I8HSzHpppGnzQEEgV4WDS3/Y/3/BqXpNJC0p6po8PlDS8598pqi3sIX5fYFmPunx3f
- AxHZ4TdWdsixFflnMg9n6bomyDFpOp+weQqbNUfmosqA72JWSRJBEpRknWJytNHg2YzI
- wkGtrD9CJjkO+L4OYAxWCRnq5mBHRuFOB0Prc=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=kId5WHOOyajpKS2gdMHVkK4eDVViFzUKEwCw7ZXXrgs=;
- b=TcEndAkKUZCiidhTXTevULrjbth67lw6Gqtmu1xyxZZVILJebqKAhgy2BeJXzzKYGy
- iX/I3xjAhUqrk6svIz8JUEEDoPW2KXjg5U44NnFe0ddgSbzlHTQlHoaQoSqU1DxlNK3a
- IWfk5BqGsbHgvFwoyb2O3SA9qcjzEaiZ65Ahhf8uZBa5Et4MZpMyJu8exuvaITOnjlvX
- Pl9fFhY8U2f+ptIAjzaYePjK3Jw4CZmzQDcaaOn6A+aK3vzsH+Lo5LN1G7OetffnPlUU
- OpYQpa0eTrdX52KOmSTzB0gVD7ljMcq8SqNvrBiLqYDu3hh8C7DpVMmQQAX3vcfIoNYz
- lz1w==
-X-Gm-Message-State: AOAM531x2fxm1OIiRvTlddyshxzF/ILHwB69fcRyvM5WL47vQK+CUuk4
- YEk82uobbFnoG3LXsLQ0LLoHkQ==
-X-Google-Smtp-Source: ABdhPJzq2Z4/wfqSM1Vi8RdIuKsojoIeUeRVtVQ8JJpuupMWm80lA9DoaLvvtitZ3IRwIawC4+H4qg==
-X-Received: by 2002:a5d:4385:: with SMTP id i5mr10641852wrq.420.1591901202824; 
- Thu, 11 Jun 2020 11:46:42 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id e15sm5430890wme.9.2020.06.11.11.46.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 11 Jun 2020 11:46:41 -0700 (PDT)
-Date: Thu, 11 Jun 2020 18:46:40 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Xia Jiang <xia.jiang@mediatek.com>
-Subject: Re: [PATCH RESEND v9 18/18] media: platform: Add jpeg enc feature
-Message-ID: <20200611184640.GC8694@chromium.org>
-References: <20200604090553.10861-1-xia.jiang@mediatek.com>
- <20200604090553.10861-20-xia.jiang@mediatek.com>
+ id 1jjSSL-0005Yb-ST; Thu, 11 Jun 2020 19:01:43 +0000
+Received: from [192.168.1.167] ([37.4.249.202]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MzQPe-1ix71t2Ltw-00vQQp; Thu, 11 Jun 2020 21:01:29 +0200
+Subject: Re: [PATCH v4 2/3] clk: bcm: Add BCM2711 DVP driver
+To: Florian Fainelli <f.fainelli@gmail.com>, Maxime Ripard <maxime@cerno.tech>
+References: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
+ <bb60d97fc76b61c2eabef5a02ebd664c0f57ede0.1591867332.git-series.maxime@cerno.tech>
+ <e9e83c60-ef4c-8806-bcdb-a09702bf7559@i2se.com>
+ <20200611165233.dmwxuz5lhxxbh7fb@gilmour.lan>
+ <c05ef3b1-ee1a-e4f4-c6de-a23cbe6d8670@gmail.com>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ LS0tLS1CRUdJTiBQR1AgUFVCTElDIEtFWSBCTE9DSy0tLS0tClZlcnNpb246IEdudVBHIHYy
+ CgptUUlOQkZ0NmdCTUJFQUN1Yi9wQmV2SHhidkplZnlaRzMySklObW4yYnNFUFgyNVY2ZmVq
+ bXlZd21DR0tqRnRMCi9Eb1VNRVZIRHhDSjQ3Qk1YbzM0NGZIVjFDM0FudWRnTjFCZWhMb0J0
+ TEh4bW5lQ3pnSDNLY1B0V1c3cHRqNEcKdEp2OUNRRFp5MjdTS29FUHh5YUk4Q0YweWdSeEpj
+ NzJNOUk5d21zUFo1YlVIc0x1WVdNcVE3SmNSbVBzNkQ4ZwpCa2srOC95bmdFeU5FeHd4SnBS
+ MXlsajVianhXREh5WVF2dUo1THpaS3VPOUxCM2xYVnNjNGJxWEVqYzZWRnVaCkZDQ2svc3lp
+ by9ZaHNlOE4rUXN4N01RYWd6NHdLVWtRUWJmWGcxVnFrVG5BaXZYczQyVm5Ja211NWd6SXcv
+ MHQKUkp2NTBGUmhIaHhweUtBSThCOG5oTjhRdng3TVZrUGM1dkRmZDN1R1lXNDdKUGhWUUJj
+ VXdKd05rLzQ5RjllQQp2ZzJtdE1QRm5GT1JrV1VSdlArRzZGSmZtNitDdk92N1lmUDF1ZXdB
+ aTRsbitKTzFnK2dqVklXbC9XSnB5MG5UCmlwZGZlSDlkSGtnU2lmUXVuWWN1Y2lzTXlvUmJG
+ OTU1dENna0VZOUVNRWRZMXQ4aUdEaUNnWDZzNTBMSGJpM2sKNDUzdWFjcHhmUVhTYUF3UGtz
+ bDhNa0NPc3YyZUVyNElOQ0hZUUR5WmljbEJ1dUNnOEVOYlI2QUdWdFpTUGNRYgplbnpTektS
+ Wm9POUNhcUlEK2ZhdkxpQi9kaHptSEErOWJnSWhtWGZ2WFJMRFp6ZThwbzFkeXQzRTFzaFhp
+ ZGRaClBBOE51SlZ6RUl0MmxtSTZWOHBaRHBuMjIxcmZLaml2UlFpYW9zNTRUZ1pqak1ZSTdu
+ bko3ZTZ4endBUkFRQUIKdENCVGRHVm1ZVzRnVjJGb2NtVnVJRHgzWVdoeVpXNXpkRUJuYlhn
+ dWJtVjBQb2tDTndRVEFRZ0FJUVVDWElkYwo0Z0liQXdVTENRZ0hBZ1lWQ0FrS0N3SUVGZ0lE
+ QVFJZUFRSVhnQUFLQ1JDVWdld1BFWkR5MjFPVEQvOUdpWkxkCnRSWWNteVJKZ2x0aVFRekFp
+ UWRjSUQ3OGxHb1dwL3grci92Y1U2YjZqdVl1ZVR3Z1Iwclc3djdsMklSQnlEN24KSEp4YSt0
+ SVNvUVpCZ2hvbE1JZmI5TXRoR09KTENZNzdrL1FoQWhuMzJOR1prZWp3OXR6a3MvNDBtclpT
+ VVQ4NApaeWJzUVhyTE0vSFI2VElJL0RlUEIwbktEM0ppcHBzMlVIUUQ5cUQySWpFd1NRUGxI
+ akNPckVaaDQ1UFo3bTkrClo5M0x6aVRlc1dabFlRdUxpSndzNHJLcHRIVzFkL3dSZWxzaG1t
+ NlFxY0wybDRDL2U0MGVEQjlncTRkU1poOVgKUEVZbGxpeU5RaDdhMkxTZHVtRTFyK2NTd0lq
+ RS91ZHRSdmRPOWFLb0psT2JVSzVkTmpTUEg3d0tUYndkWGRZRApHUHdEaFhkNThOQXdyK1BY
+ QmxQajB0STFMQ3ErTEJ4ZUt6aFdYK0dWcTlEb2pWanlVREV4Rk5Ga1h1b0M3ZzhtClY5VDB0
+ ZUJpdVpSbm91WEt3VjJGcHRaT0hIN0JVRVd0a0t0aGgxZXRmT1dwaWdCemtVN2JQc2ZJWVQr
+ cnk5dGIKMW9KK3Y0MVBOYXFaRW1QVXBKeHZmek5UN3Ayd01lRDdaajlmMHJ1YlJQdExBSjJR
+ R2pyRkhzdVh3QU9xcHl6ZQoxOEVidHNZazBOMHp1SEVoY2orUEJJQmZoMFlJWWQ1MW9mNkdJ
+ aU95UjlxMFhYdHBsVUo3VDIvSDF1UXFrWGxwCitnVzRWa2lmc2NJckl1eWZueFpXMTJlSXZq
+ NnlicVdMN2FZS0dZbVQ2aUxDUGJIWXlZY2F5bDRFa0ZjckNGN0UKZTBXVC9zY1ZNaE8vNVgv
+ SGFOQTVIQngvcjUycGdMY3Y0aTlNeExRbVUzUmxabUZ1SUZkaGFISmxiaUE4YzNSbApabUZ1
+ TG5kaGFISmxia0JwTW5ObExtTnZiVDZKQWpnRUV3RUNBQ0lGQWx0NmdCTUNHd01HQ3drSUJ3
+ TUNCaFVJCkFna0tDd1FXQWdNQkFoNEJBaGVBQUFvSkVKU0I3QThSa1BMYmpic1AvamdqYVNz
+ NUh0bGtBSXZXUytGcm15N2MKaG5jT0F4TFRWL0Q2UkV3SU95R0poRkt3d29pck55UTJnOXZV
+ YTNZQ1lDZjFmSjh3RWhhS09COWQwTHBNUm5MNApkRVQ4ZDgyMzhFL3BLK0hxTktpSXNKaHM2
+ SnNLOFpnalZRR3JtbWZua0dyWisxdjBIQnV4ZGljZ0duUC9XdHVBClVsOGw2Mi9BTGJheXlq
+ KzYxQ2xyc0V0UklhcU82N0xJWXdQaVBEUkkrWGlNek5pR3pIRi8xUTZHUjAyUkg2YTMKRjg5
+ ejhhUHhjSGkxWnZDdDJ5a3o2VUVjaHpQMHI1Z3FGSisvTC9VcHU4ME1YaVk0djVlSWFCNTJn
+ VlBnaXlNQQpsTDJkRHMxbUladm5yUkxSWTJ0YjNtQVlOa1Y1QjVJRFQzcGtXeTZrS281T0Nn
+ SytZZFlPUjhGTloyb04ydDhPCnJLK1ZudGFLN01NU0tIbG1ZL3NPd3RSbEVoMU9CbXJjQ3dH
+ d21wLzA1R2tSNDZmL0lzaFJWZUZPUmF3K0dBcXQKUDIrQ0ZhMkNOQS9JSG5aTm95aWtsRHpQ
+ UUhVVUdzck5wcERyaFg5Sm1oQm1nMXYyeXdIMU5YdTFpRGZQMUJBdwpLZ29rdDVmNVVhUkY5
+ c0FBNTN2V0V2YlVVTjllZXNGR0x6UFdkSkdRNWhwZC9WSDVJUXk5U0JyaC93SWNla3E1Cm4w
+ a042cGJUSHhHRTUyU2kvTVZJa05UdURaM2FwbjJqbERaNHBPdHBCWEkydlAzYlBPK05pcUJa
+ anNVM3R4TGkKV2R2MkZqeXp6NlhMUndlV1JZVkw1SGE2TER0eG9yMnZ1NlVQMDdwOXh6MXhS
+ WmFPRFczb1lsSEZ6WXBhNFc1ZwpMSGIybEVrSXVVZlNjaWNHYmpqQXRDbFRkR1ZtWVc0Z1Yy
+ Rm9jbVZ1SUR4emRHVm1ZVzR1ZDJGb2NtVnVRR2x1CkxYUmxZMmd1WTI5dFBva0NOd1FUQVFn
+ QUlRVUNYSWRlaHdJYkF3VUxDUWdIQWdZVkNBa0tDd0lFRmdJREFRSWUKQVFJWGdBQUtDUkNV
+ Z2V3UEVaRHkyeUhURC85VUY3UWxEa0d4elE3QWFDSTZOOTVpUWY4LzFvU1VhRE51Mlk2SQpL
+ K0R6UXBiMVRiVE9yM1ZKd3dZOGEzT1d6NU5MU09MTVdlVnh0K29zTW1sUUlHdWJEM09EWko4
+ aXpQbEcvSnJOCnQ1elNkbU41SUE1ZjNlc1dXUVZLdmdoWkFnVERxZHB2K1pIVzJFbXhuQUox
+ dUxGWFhlUWQzVVpjQzVyMy9nL3YKU2FNbzl4ZWszSjVtTnVEbTcxbEVXc0FzL0JBY0ZjK3lu
+ TGh4d0JXQld3c3Z3UjhiSHRKNURPTVd2YUt1RHNrcApJR0ZVZS9LYjJCK2pyYXZRM1RuNnMv
+ SHFKTTBjZXhTSHo1cGUrMHNHdlArdDlKNzIzNEJGUXdlRkV4cmlleThVCkl4T3I0WEFiYWFi
+ U3J5WW5VL3pWSDlVMWkyQUlRWk1XSkFldkN2VmdRL1UrTmVSaFh1ZGU5WVVtRE1EbzJzQjIK
+ VkFGRUFxaUYyUVVIUEEybThhN0VPM3lmTDRyTWswaUh6TElLdmg2L3JIOFFDWThpM1h4VE5M
+ OWlDTHpCV3UvTgpPbkNBYlMremx2TFphaVNNaDVFZnV4VHR2NFBsVmRFamY2MlArWkhJRDE2
+ Z1VEd0VtYXpMQU1yeDY2NmpINWt1ClVDVFZ5bWJMMFR2Qis2TDZBUmw4QU55TTRBRG1rV2tw
+ eU0yMmtDdUlTWUFFZlFSM3VXWFo5WWd4YVBNcWJWK3cKQnJoSmc0SGFONkM2eFRxR3YzcjRC
+ MmFxYjc3L0NWb1JKMVo5Y3BIQ3dpT3pJYUFtdnl6UFU2TXhDRFhaOEZnWQpsVDR2MjNHNWlt
+ SlAyemdYNXMrRjZBQ1VKOVVRUEQwdVRmK0o5RGEycitza2gvc1dPbloreWNvSE5CUXZvY1pF
+ Ck5BSFFmN2tDRFFSYmVvQVRBUkFBMkhkMGZzRFZLNzJSTFNESGJ5ME9oZ0RjRGxWQk0yTSto
+ WVlwTzNmWDFyKysKc2hpcVBLQ0hWQXNRNWJ4ZTdIbUppbUhhNEtLWXMya3YvbWx0L0NhdUNK
+ Ly9wbWN5Y0JNN0d2d25Lem11WHp1QQpHbVZUWkM2V1I1TGtha0ZydEhPelZtc0VHcE52NVJj
+ OWw2SFlGcExrYlNrVmk1U1BRWkp5K0VNZ01DRmdqclpmClZGNnlvdHdFMWFmN0hOdE1oTlBh
+ TEROMW9VS0Y1aitSeVJnNWl3SnVDRGtuSGp3QlFWNHBndzIvNXZTOEE3WlEKdjJNYlcvVExF
+ eXBLWGlmNzhJaGdBelh0RTJYck0xbi9vNlpINzFvUkZGS096NDJsRmR6ZHJTWDBZc3FYZ0hD
+ WAo1Z0l0TGZxemoxcHNNYTlvMWVpTlRFbTFkVlFyVHFueXMwbDE4b2FsUk5zd1lsUW1uWUJ3
+ cHdDa2FUSExNSHdLCmZHQmJvNWRMUEVzaHRWb3dJNm5zZ3FMVHlRSG1xSFlxVVpZSXBpZ21t
+ QzNTd0JXWTFWNmZmVUVta3FwQUFDRW4KTDQvZ1Vnbjd5US81ZDBzZXFuQXEycFNCSE1VVW9D
+ Y1R6RVFVV1ZraUR2M1JrN2hURm1oVHNNcTc4eHYyWFJzWApNUjZ5UWhTVFBGWkNZRFVFeEVs
+ RXNTbzlGV0hXcjZ6SHlZY2M4cURMRnZHOUZQaG1RdVQyczlCbHg2Z0kzMjNHCm5FcTFsd1dQ
+ SlZ6UDRqUWtKS0lBWHdGcHYrVzhDV0xxekRXT3ZkbHJEYVRhVk1zY0ZUZUg1VzZVcHJsNjVq
+ cUYKUUdNcGNSR0NzOEdDVVcxM0gwSXlPdFF0d1dYQTRueStTTDgxcHZpQW1hU1hVOGxhS2FS
+ dTkxVk9WYUY5ZjRzQQpFUUVBQVlrQ0h3UVlBUUlBQ1FVQ1czcUFFd0liREFBS0NSQ1VnZXdQ
+ RVpEeTIrb1hELzljSEhSa0JaT2ZrbVNxCjE0U3Z4MDYyUHRVMEtWNDcwVFNucC9qV29ZSm5L
+ SXczRzBtWElSZ3J0SDJkUHdwSWdWanNZeVJTVk1LbVNwdDUKWnJEZjlOdFRiTldnazhWb0xl
+ WnpZRW8rSjNvUHFGclRNczNhWVl2N2U0K0pLNjk1WW5tUSttT0Q5bmlhOTE1dApyNUFaajk1
+ VWZTVGx5VW15aWMxZDhvdnNmMWZQN1hDVVZSRmNSamZOZkRGMW9ML3BEZ01QNUdaMk93YVRl
+ am15CkN1SGpNOElSMUNpYXZCcFlEbUJuVFlrN1B0aHk2YXRXdllsMGZ5L0NxYWpUS3N4Nytw
+ OXh6aXU4WmZWWCtpS0IKQ2MrSGUrRURFZEdJRGh2TlovSVFIZk9CMlBVWFdHUytzOUZOVHhy
+ L0E2bkxHWG5BOVk2dzkzaVBkWUl3eFM3SwpYTG9LSmVlMTBEamx6c1lzUmZsRk9XMFpPaVNp
+ aElDWGlRVjF1cU02dHpGRzlndFJjaXVzNVVBdGhXYU8xT3dVClNDUW1mQ09tNGZ2TUlKSUE5
+ cnh0b1M2T3FSUWNpRjNjcm1vMHJKQ3ROMmF3WmZnaThYRWlmN2Q2aGp2MEVLTTkKWFpvaUFa
+ WVpEKy9pTG01VGFLV042b0dJdGkwVmpKdjhaWk9aT2ZDYjZ2cUZJa0pXK2FPdTRvclRMRk16
+ MjhhbwpVM1F5V3BOQzhGRm1kWXNWdWE4czZnTjFOSWE2eTNxYS9aQjhiQS9pa3k1OUFFejRp
+ RElScmdVek1FZzhBazdUCmZtMUtpWWVpVHRCRENvMjVCdlhqYnFzeXhrUUQxbmtSbTZGQVZ6
+ RXVPUEllOEp1cVcyeEQ5aXhHWXZqVTVoa1IKZ0pwM2dQNWIrY25HM0xQcXF1UTJFNmdvS1VN
+ TEFia0NEUVJiZmw5REFSQUFzRExjYStMbFAydm5mdEVHaHBjQQpCR1ZOUUVGbkdQckNhdVU2
+ SGhOODA1V3RQVHRtc1JPdUp6cWdVVDBtcHFXSWZacTZzTXd5dkhLOVRzL0tIM0paClVWYlJD
+ M3oyaDNLZmhIL0RhZjk1cGQ2bVBjL2g5dkYvT3kzK2VUV2hnR25QNmNBNWtsUitmTzFXaEc4
+ VnJpWHYKck5lUkcyMHN6emplSG9jblNJY1Q1WHVaUjB1REhPaUd4T2l6MXNNUkZUR3h6R095
+ MTlSOXJ2dTYzdGlJM2Q3dgpnYzc1T0NBZGtlQi9TZUNFbGFSdzBUZjdMWmJQampzRjI2M0JZ
+ bk1mNGtrTkVLdnFXY1UyaWNNcCtxZXpqeW5CCnB2ZXVlMHJDVFFCWUFRbG9GQ1ZUR0hyV1dB
+ NkQ0VzVPMkFmSWRJYzF1MUpDWnAyZjVMV1ZvVUZUVklyUW5RUVUKU0hDaWZyOU1aeExUdFBK
+ ZFU1Mm9TUHczZGs0aExQOGlKSUx1dnYvYXZhakNzUVlIRXR3WXNiZUZaeGl1TGdscApBN1lj
+ Sk5ObXBnQ3BNRDR3VWh2bEN0QUtOQlFXeXIyOTc2OThFUVRuNDZlQmVVNkttMkNpaFhrZ3dD
+ eWY4ZXlLCkxFM3NYZXdhcTVrZ1pXdk5xNml1NXFZSVJCOXl3K2NYYzYwZE9aRE9scTkzWDVT
+ QVJZemFvZXBrSHo0cmtMa1AKUG8rdENIeUhRUHNHblBYYzlXVDgwREM5Tm5KR2R2VWx5NXJk
+ TUk0eHBaeWdlb2tqd293VlFsUFV1Y1M2TXluNwpmOHc4Y2dmQjdDMklBSWNEeDJwUC9IendY
+ dmtDT1FOQTdtVjFsTTA4bitnVmtUcnpweGlwNURicTRDSW9ZeDJNCkpaVDhiR1JINlhqY1VE
+ S2EwOVFoeVpzQUVRRUFBWWtFUkFRWUFRZ0FEd1VDVzM1ZlF3SWJBZ1VKQThKbkFBSXAKQ1JD
+ VWdld1BFWkR5MjhGZElBUVpBUWdBQmdVQ1czNWZRd0FLQ1JCVnhETFBjVk1NamNkc0QvMFJo
+ QXN1UVlPeQpyMTNCbDNOaFhrWUFaR3AyWkZER3VrZTdPU2tWOG9qT09UZFR5ei9jT1JHQ2J5
+ ZEQrRGd2cUZ5VmRuT1hLZ08wCmxKbUd3ckdlTGRnZ0F2aDBpaHJwNU8wWVVKOWJCU1htR01t
+ UVRZSC9BbUxUR2FkYnVqQ1dqNWZGVWtDeXd4aW0KSHV5MFBiMjRwelR2UzUwR1k1WStxSDBG
+ SE5haWdka2tpV04zcnVnN0haRXUvQ3lsUFpqT1h6K0QxUVBNckV4dwo3ZC9NS2FiVis5YU5i
+ UVlabGRJajk4UXd2VUYxS1N6YThqbFVJdnBoUnEyN0FUOGZER1lHUGZERU1nMmNCT2FlCkty
+ N29uUXM0YjdhV082aWZEbHhRVHB6c3pvK0FuODA3Tk1TdFZFRmYrczNBaFZEM2U3bmY4SkJh
+ dmJWckFlMGsKb20yNm96elBubnh6K2xxVlZ0dzZVazRYTUl6dGl4L0h3SFl3dUNuY1VYWndL
+ MEkzeUFKd2pZd29vck9DaEozUwpFVWJKUVB0R3NneFJERXhWQkZlNk5MUC82MnhQOU82dGFj
+ d09kYjBNbVAxYjM5cFJBVEM3YmdkMWxkVUxpNzVaCmxKckowL1NpVkVyb3FOWXk3OXRmbWdB
+ WjJVeFptczlTckV5Nm85UVNmc24xYVh2K01QTDlKYUNHbWtQNnpiTFEKTm5kajBKY2FRbmtD
+ MHZneWRPMUJtNk11OTZQOXVmbEtaY0FTNndtTE01SWRIT3lqTDg4d0h3anVjakFPQnRjdwpw
+ MG9HVG5WT25Sc05ZU084VzhZWi9LZGJ1Nzg1ZGF6TXFKMmlOakFEdUJiZG02TjRqNUVkTW5r
+ TG4wQklmUEpwCmRnbTR2bDJVcExqd1JHci9NM3dtbTVwdnMrNnVCN2hrL0ZKaUQvNGxsRU5Q
+ NGVNMWg3U200aitWcTZOMSt6VEIKSVhKQWViSXFhc0RwNXlaUzdYcnk0STM2bjg1WEVZZkcw
+ MWx0QXlob05WMkRPOFNJUlFwdWkydHErOVJQM1JLMQpKREJ4eEVKWTJFTzVKWjhNeGFQSFEw
+ RFQwNWxSRmpLMkFsaGRFSXRqTGpwSjNmVW05c3FMeE1XeHpQNlV6M2lpCjJ1YTR1bnJ0Nk9D
+ VHFRd2lqRi8zYlRXaXd2VkFBSG5NRlVpb1hzaEhhb2hWRGNWZm5lSU1mVjBiUUNYWWkzTnAK
+ WTB2MFp3Y2lGSCtnU0M3cUQ2WE51aHBWR1NMNElpbGlGeS9TemNhSkV6QUhlTERTaFpQMkNX
+ ZG5DNHZnbDM3dApocHg4aDU1WWhKbjZIU3VVelBnaGFLdFZCMmsrajdaZXlaK1NGeHA3SXVi
+ SEN3TEhsUWhUNzVSd1EzaUF4S242CjBxajUxY1lUbnF4ZFpYVzZmSDNQa3VNellVNUdwcVIv
+ MU9sNWMvd2ZJNmc2QW04eUtXLzBFVUx0K0tuNExGc1MKbTdZM201SDV2MTJVNkpCWXZWK3Ix
+ M2paaW9zNEVFREU5M0Q1c05IMk1JeVJ6Q0RxMXpkZHQ0WHV5S0ZqUEtXMQo5aWJaRGZGVjdL
+ dUNzdnVMMjNzQmMxc0NNb3ArRTFtVC9ReE9JQTZvRFQxTVFzdHdPVnVReURDdi9PdktTZ2Z6
+ CjhGWEdMNkFQY2xqQ3FqOEFKaHhReXN4ZG9pUVA4bS92dStialdHR3Z4dzVzMWxncGlSRFRS
+ VVBnY0pKTmFHWTIKVklEclpRaTROU2lOUTBOSWkrZGp1NGZOTW1DcFFxZzh0YkMzY0FhNnl3
+ bTZvUUIxU0JobURYMmUxMWdSbGx1SQpPblRHUEUwSFRvM2w3MmxoYmc9PQo9cVpNVgotLS0t
+ LUVORCBQR1AgUFVCTElDIEtFWSBCTE9DSy0tLS0tCg==
+Message-ID: <72cfe4f2-86bd-c07d-fe68-ac7474edbb7d@i2se.com>
+Date: Thu, 11 Jun 2020 21:01:28 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200604090553.10861-20-xia.jiang@mediatek.com>
+In-Reply-To: <c05ef3b1-ee1a-e4f4-c6de-a23cbe6d8670@gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:6B3GUv00LA5mtKWhIONP+8LQfV5rQEwYL5uRuFMukfMRsQLsrtk
+ Qs2FH+l13Z4uHc19zllRFRpI/SdUlFV0/kOCbC2cd3cEi5LJ9BtxM9xTf0H0PG3gFrkUTNt
+ s0qXOq/vRBS6VIQzwaE/wSi2nP9xLuTPo0QUK0qVt+PMxymXEIWDU37ryaZYOL7MNfIDyhO
+ zH/dY13FQqncnBh+CO+vQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BXuCy5uIBUU=:dgFG3gcFYCJpqvrLr/gWi3
+ ysIeAOs8tm6x5mNZrnZK7B3ZmI3XB+pT70Td2niwnt/TRezVQR/ZuqNmL07do7m6L/Gg4z2wY
+ NDbNlUnlwa4Vdr9KctTHlaiv6e6mE4lWXmyMyd4y2yuQPgT2diGNi4AsTaJPwzM2svFGrTh7Y
+ aEv7liuCsOcMrd5a57592o9tYBKyXhyq5ACYvFC8uY6oO6wl6iEMJEIqmyNwq6fK8pMZmIxm7
+ bcyHm8zC87C+P9vV3gTeUrWXvpq65R06adpfKE5r2BaIh8mpm73oAEle7L8HCde29AtbgkZm6
+ c8yJ70I4Ud2SLTiq3AFUHW08RECTqz7lI94bQEcjmxcZCTbDgls0BpVoWBYbKehztSrdLMkEX
+ eLOWnSSfOlewwy7QIAj2jAd4EJ1761IOXirFPn21T3hjQK6UV5uZzdohpUGFGpzqx1QrnwFeF
+ cwThzt9AHg2x/xmYTS9UZ0E/jWsH44AzKnDBHTndaaxkfCxN2P5UoVDHa1nzZ+TPPYwt2rPmq
+ EdHcg8QaI0BHPi+z569rSUF+xyfYmfau//Q46WuYLeseYkz+ot3eJtDqIbha8sjXvaMhvn12Q
+ 2/M7fXmOVelvyhJZUufMsjOxOMjXW2tY7jQhge8oJfXSAxI8hSL6TYforbOWwSNnUWCM7eOEn
+ mTQVjtGFk8CjaLviXTf2fM8WlAWvVU5aG/2SIjG7bKFwqADKUFlzSj7upNJHtZadueX0ohjp1
+ j3mjAvK1gob7A9Avme4VhMEQrjoHW7myVWfgB0bsO5OFsAiKWWR/nYMncH/LgTCUubyq37Vko
+ tL9d+WJRfLUI3V/BY09vVRWlAqYlfkCCkJqu6qc2i9aKFJSwWwcOv5Do/rmimLuVHamomAG
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_114645_275995_F4DBD06E 
-X-CRM114-Status: GOOD (  27.13  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20200611_120142_218861_DFF9DD98 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org] 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
- [URI: r.top (top)]
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.13 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,1462 +213,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
- srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
- senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
- maoguang.meng@mediatek.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-mediatek@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Xia,
+Am 11.06.20 um 19:06 schrieb Florian Fainelli:
+>
+> On 6/11/2020 9:52 AM, Maxime Ripard wrote:
+>> Hi Stefan,
+>>
+>> On Thu, Jun 11, 2020 at 05:50:30PM +0200, Stefan Wahren wrote:
+>>>> diff --git a/drivers/clk/bcm/clk-bcm2711-dvp.c b/drivers/clk/bcm/clk-bcm2711-dvp.c
+>>>> new file mode 100644
+>>>> index 000000000000..84dbc886e303
+>>>> --- /dev/null
+>>>> +++ b/drivers/clk/bcm/clk-bcm2711-dvp.c
+>>>> @@ -0,0 +1,120 @@
+>>>> +// SPDX-License-Identifier: GPL-2.0-or-later
+>>>> +// Copyright 2020 Cerno
+>>>> +
+>>>> +#include <linux/clk-provider.h>
+>>>> +#include <linux/module.h>
+>>>> +#include <linux/platform_device.h>
+>>>> +#include <linux/reset-controller.h>
+>>>> +#include <linux/reset/reset-simple.h>
+>>>> +
+>>>> +#define DVP_HT_RPI_SW_INIT	0x04
+>>>> +#define DVP_HT_RPI_MISC_CONFIG	0x08
+>>> sorry for not noticing this before. Are these defines specific to the
+>>> Raspberry Pi, because of RPI?
+>> I'm not entirely sure to be honest. It's the names that the register
+>> have, but it's not clear to me if it's something specific to the RPi
+>> itself, or it just means something else entirely.
+> My understanding is that this is a wrapper that was done specifically
+> for the Raspberry Pi usage of that IP block, which is why it has PI in
+> the name, so this looks good correct, and this does match the internal
+> register database name.
+
+Okay, i'm fine with that and the whole series.
+
+Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
 
-On Thu, Jun 04, 2020 at 05:05:53PM +0800, Xia Jiang wrote:
-> Add mtk jpeg encode v4l2 driver based on jpeg decode, because that jpeg
-> decode and encode have great similarities with function operation.
-> 
-> Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
-> ---
-> v9: add member variable(struct v4l2_rect) in out_q structure for storing
->     the active crop information.
->     move the renaming exsting functions/defines/variables to a separate patch.
-> ---
->  drivers/media/platform/mtk-jpeg/Makefile      |   5 +-
->  .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 845 +++++++++++++++---
->  .../media/platform/mtk-jpeg/mtk_jpeg_core.h   |  44 +-
->  .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c | 193 ++++
->  .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h | 123 +++
->  5 files changed, 1084 insertions(+), 126 deletions(-)
->  create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
->  create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-> 
-
-Thank you for the patch. Please see my comments inline.
-
-[snip]
-> +static int mtk_jpeg_enc_querycap(struct file *file, void *priv,
-> +				 struct v4l2_capability *cap)
-> +{
-> +	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
-> +
-> +	strscpy(cap->driver, MTK_JPEG_NAME, sizeof(cap->driver));
-> +	strscpy(cap->card, MTK_JPEG_NAME " encoder", sizeof(cap->card));
-> +	snprintf(cap->bus_info, sizeof(cap->bus_info), "platform:%s",
-> +		 dev_name(jpeg->dev));
-> +
-> +	return 0;
-> +}
-
-I can see that this function differs from mtk_jpeg_dec_querycap() only with
-the " encoder" string. Perhaps they could be merged?
-
-> +
->  static int mtk_jpeg_dec_querycap(struct file *file, void *priv,
->  				 struct v4l2_capability *cap)
->  {
-> @@ -88,6 +157,54 @@ static int mtk_jpeg_dec_querycap(struct file *file, void *priv,
->  	return 0;
->  }
->  
-> +static int vidioc_jpeg_enc_s_ctrl(struct v4l2_ctrl *ctrl)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = ctrl_to_ctx(ctrl);
-> +
-> +	switch (ctrl->id) {
-> +	case V4L2_CID_JPEG_RESTART_INTERVAL:
-> +		ctx->restart_interval = ctrl->val;
-> +		break;
-> +	case V4L2_CID_JPEG_COMPRESSION_QUALITY:
-> +		ctx->enc_quality = ctrl->val;
-> +		break;
-> +	case V4L2_CID_JPEG_ACTIVE_MARKER:
-> +		ctx->enable_exif = ctrl->val & V4L2_JPEG_ACTIVE_MARKER_APP1 ?
-> +				   true : false;
-
-nit: If ctx->enable_exif is of the bool type, the ternary operator could be
-removed, because any non-zero value is implicitly turned into 1, as per [1].
-
-[1] https://www.kernel.org/doc/html/v5.6/process/coding-style.html#using-bool
-
-[snip]
-> +static int mtk_jpeg_enc_enum_fmt_vid_cap(struct file *file, void *priv,
-> +					 struct v4l2_fmtdesc *f)
-> +{
-> +	return mtk_jpeg_enum_fmt(mtk_jpeg_enc_formats,
-> +				 MTK_JPEG_ENC_NUM_FORMATS, f,
-> +				 MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-> +}
-> +
->  static int mtk_jpeg_dec_enum_fmt_vid_cap(struct file *file, void *priv,
->  					 struct v4l2_fmtdesc *f)
->  {
-> @@ -117,6 +242,14 @@ static int mtk_jpeg_dec_enum_fmt_vid_cap(struct file *file, void *priv,
->  				 MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
->  }
->  
-> +static int mtk_jpeg_enc_enum_fmt_vid_out(struct file *file, void *priv,
-> +					 struct v4l2_fmtdesc *f)
-> +{
-> +	return mtk_jpeg_enum_fmt(mtk_jpeg_enc_formats,
-> +				 MTK_JPEG_ENC_NUM_FORMATS, f,
-> +				 MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-
-Do we need separate implementations of these? "formats" and "num_formats"
-could be specified by the match data struct and used in a generic function.
-
-Also, do we need separate flags for ENC_OUTPUT/CAPTURE and
-DEC_OUTPUT/CAPTURE?
-
-> +}
-> +
->  static int mtk_jpeg_dec_enum_fmt_vid_out(struct file *file, void *priv,
->  					 struct v4l2_fmtdesc *f)
->  {
-> @@ -132,93 +265,66 @@ mtk_jpeg_get_q_data(struct mtk_jpeg_ctx *ctx, enum v4l2_buf_type type)
->  	return &ctx->cap_q;
->  }
->  
-> -static struct mtk_jpeg_fmt *mtk_jpeg_find_format(struct mtk_jpeg_ctx *ctx,
-> -						 u32 pixelformat,
-> +static struct mtk_jpeg_fmt *mtk_jpeg_find_format(u32 pixelformat,
->  						 unsigned int fmt_type)
->  {
-> -	unsigned int k, fmt_flag;
-> +	unsigned int k;
-> +	struct mtk_jpeg_fmt *fmt;
->  
-> -	fmt_flag = (fmt_type == MTK_JPEG_FMT_TYPE_OUTPUT) ?
-> -		   MTK_JPEG_FMT_FLAG_DEC_OUTPUT :
-> -		   MTK_JPEG_FMT_FLAG_DEC_CAPTURE;
-> +	for (k = 0; k < MTK_JPEG_ENC_NUM_FORMATS; k++) {
-> +		fmt = &mtk_jpeg_enc_formats[k];
-> +
-> +		if (fmt->fourcc == pixelformat && fmt->flags & fmt_type)
-> +			return fmt;
-> +	}
->  
->  	for (k = 0; k < MTK_JPEG_DEC_NUM_FORMATS; k++) {
-> -		struct mtk_jpeg_fmt *fmt = &mtk_jpeg_dec_formats[k];
-> +		fmt = &mtk_jpeg_dec_formats[k];
->  
-> -		if (fmt->fourcc == pixelformat && fmt->flags & fmt_flag)
-> +		if (fmt->fourcc == pixelformat && fmt->flags & fmt_type)
->  			return fmt;
->  	}
-
-We should only need to iterate through one of the arrays. My suggestion
-above about making "formats" and "num_formats" a member of the match data
-should take care of this one too.
-
->  
->  	return NULL;
->  }
->  
-> -static void mtk_jpeg_adjust_fmt_mplane(struct mtk_jpeg_ctx *ctx,
-> -				       struct v4l2_format *f)
-> -{
-> -	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
-> -	struct mtk_jpeg_q_data *q_data;
-> -	int i;
-> -
-> -	q_data = mtk_jpeg_get_q_data(ctx, f->type);
-> -
-> -	pix_mp->width = q_data->w;
-> -	pix_mp->height = q_data->h;
-> -	pix_mp->pixelformat = q_data->fmt->fourcc;
-> -	pix_mp->num_planes = q_data->fmt->colplanes;
-> -
-> -	for (i = 0; i < pix_mp->num_planes; i++) {
-> -		pix_mp->plane_fmt[i].bytesperline = q_data->bytesperline[i];
-> -		pix_mp->plane_fmt[i].sizeimage = q_data->sizeimage[i];
-> -	}
-> -}
-> -
-> -static int mtk_jpeg_try_fmt_mplane(struct v4l2_format *f,
-> -				   struct mtk_jpeg_fmt *fmt,
-> -				   struct mtk_jpeg_ctx *ctx, int q_type)
-> +static int vidioc_try_fmt(struct v4l2_format *f, struct mtk_jpeg_fmt *fmt)
-
-The name is a bit misleading, because it's suggesting that it's the
-vidioc_try_fmt callback, but it's just an internal helper. I think the
-original name was fine.
-
->  {
->  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
->  	int i;
->  
->  	pix_mp->field = V4L2_FIELD_NONE;
-> -
-> -	if (ctx->state != MTK_JPEG_INIT) {
-> -		mtk_jpeg_adjust_fmt_mplane(ctx, f);
-> -		return 0;
-> -	}
-
-Is it okay to remove this? My understanding is that it prevented changing
-the format while streaming, which should is as expected.
-
-> -
->  	pix_mp->num_planes = fmt->colplanes;
->  	pix_mp->pixelformat = fmt->fourcc;
->  
-> -	if (q_type == MTK_JPEG_FMT_TYPE_OUTPUT) {
-> -		struct v4l2_plane_pix_format *pfmt = &pix_mp->plane_fmt[0];
-> -
-> +	if (fmt->fourcc == V4L2_PIX_FMT_JPEG) {
->  		pix_mp->height = clamp(pix_mp->height, MTK_JPEG_MIN_HEIGHT,
->  				       MTK_JPEG_MAX_HEIGHT);
->  		pix_mp->width = clamp(pix_mp->width, MTK_JPEG_MIN_WIDTH,
->  				      MTK_JPEG_MAX_WIDTH);
-> -
-> -		pfmt->bytesperline = 0;
-> -		/* Source size must be aligned to 128 */
-> -		pfmt->sizeimage = round_up(pfmt->sizeimage, 128);
-> -		if (pfmt->sizeimage == 0)
-> -			pfmt->sizeimage = MTK_JPEG_DEFAULT_SIZEIMAGE;
-> -		return 0;
-> +		pix_mp->plane_fmt[0].bytesperline = 0;
-> +		pix_mp->plane_fmt[0].sizeimage =
-> +				round_up(pix_mp->plane_fmt[0].sizeimage, 128);
-> +		if (pix_mp->plane_fmt[0].sizeimage == 0)
-> +			pix_mp->plane_fmt[0].sizeimage =
-> +				MTK_JPEG_DEFAULT_SIZEIMAGE;
-> +	} else {
-> +		pix_mp->height = clamp(round_up(pix_mp->height, fmt->v_align),
-> +				       MTK_JPEG_MIN_HEIGHT,
-> +				       MTK_JPEG_MAX_HEIGHT);
-> +		pix_mp->width = clamp(round_up(pix_mp->width, fmt->h_align),
-> +				      MTK_JPEG_MIN_WIDTH, MTK_JPEG_MAX_WIDTH);
-> +		for (i = 0; i < pix_mp->num_planes; i++) {
-> +			struct v4l2_plane_pix_format *pfmt =
-> +							&pix_mp->plane_fmt[i];
-> +			u32 stride = pix_mp->width * fmt->h_sample[i] / 4;
-> +			u32 h = pix_mp->height * fmt->v_sample[i] / 4;
-> +
-> +			pfmt->bytesperline = stride;
-> +			pfmt->sizeimage = stride * h;
-> +		}
->  	}
->  
-> -	/* type is MTK_JPEG_FMT_TYPE_CAPTURE */
-> -	pix_mp->height = clamp(round_up(pix_mp->height, fmt->v_align),
-> -			       MTK_JPEG_MIN_HEIGHT, MTK_JPEG_MAX_HEIGHT);
-> -	pix_mp->width = clamp(round_up(pix_mp->width, fmt->h_align),
-> -			      MTK_JPEG_MIN_WIDTH, MTK_JPEG_MAX_WIDTH);
-> -
-> -	for (i = 0; i < fmt->colplanes; i++) {
-> -		struct v4l2_plane_pix_format *pfmt = &pix_mp->plane_fmt[i];
-> -		u32 stride = pix_mp->width * fmt->h_sample[i] / 4;
-> -		u32 h = pix_mp->height * fmt->v_sample[i] / 4;
-> -
-> -		pfmt->bytesperline = stride;
-> -		pfmt->sizeimage = stride * h;
-> -	}
->  	return 0;
-
-Are all the changes above needed for the encoder? If I'm looking correctly,
-they're mostly refactoring and should be done in a separate patch. However,
-I don't see any big issue with the existing coding style in this function,
-so perhaps the refactoring could be avoided.
-
->  }
->  
-> @@ -271,14 +377,35 @@ static int mtk_jpeg_g_fmt_vid_mplane(struct file *file, void *priv,
->  	return 0;
->  }
->  
-> +static int mtk_jpeg_enc_try_fmt_vid_cap_mplane(struct file *file, void *priv,
-> +					       struct v4l2_format *f)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +	struct mtk_jpeg_fmt *fmt;
-> +
-> +	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-> +				   MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-> +	if (!fmt)
-> +		fmt = ctx->cap_q.fmt;
-> +
-> +	v4l2_dbg(2, debug, &ctx->jpeg->v4l2_dev, "(%d) try_fmt:%c%c%c%c\n",
-> +		 f->type,
-> +		 (fmt->fourcc & 0xff),
-> +		 (fmt->fourcc >>  8 & 0xff),
-> +		 (fmt->fourcc >> 16 & 0xff),
-> +		 (fmt->fourcc >> 24 & 0xff));
-> +
-> +	return vidioc_try_fmt(f, fmt);
-> +}
-
-Is there really anything encoder-specific in this function? Could the same
-function as the decoder be used instead?
-
-> +
->  static int mtk_jpeg_dec_try_fmt_vid_cap_mplane(struct file *file, void *priv,
->  					       struct v4l2_format *f)
->  {
->  	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
->  	struct mtk_jpeg_fmt *fmt;
->  
-> -	fmt = mtk_jpeg_find_format(ctx, f->fmt.pix_mp.pixelformat,
-> -				   MTK_JPEG_FMT_TYPE_CAPTURE);
-> +	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-> +				   MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
->  	if (!fmt)
->  		fmt = ctx->cap_q.fmt;
->  
-> @@ -289,7 +416,33 @@ static int mtk_jpeg_dec_try_fmt_vid_cap_mplane(struct file *file, void *priv,
->  		 (fmt->fourcc >> 16 & 0xff),
->  		 (fmt->fourcc >> 24 & 0xff));
->  
-> -	return mtk_jpeg_try_fmt_mplane(f, fmt, ctx, MTK_JPEG_FMT_TYPE_CAPTURE);
-> +	if (ctx->state != MTK_JPEG_INIT) {
-> +		mtk_jpeg_g_fmt_vid_mplane(file, priv, f);
-> +		return 0;
-> +	}
-
-Is this really limited to the decoder? In general currently we don't
-support changing the resolution from the userspace when streaming is
-started and it applies to both encoder and decoder.
-
-> +
-> +	return vidioc_try_fmt(f, fmt);
-> +}
-> +
-> +static int mtk_jpeg_enc_try_fmt_vid_out_mplane(struct file *file, void *priv,
-> +					       struct v4l2_format *f)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +	struct mtk_jpeg_fmt *fmt;
-> +
-> +	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-> +				   MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-> +	if (!fmt)
-> +		fmt = ctx->out_q.fmt;
-> +
-> +	v4l2_dbg(2, debug, &ctx->jpeg->v4l2_dev, "(%d) try_fmt:%c%c%c%c\n",
-> +		 f->type,
-> +		 (fmt->fourcc & 0xff),
-> +		 (fmt->fourcc >>  8 & 0xff),
-> +		 (fmt->fourcc >> 16 & 0xff),
-> +		 (fmt->fourcc >> 24 & 0xff));
-> +
-> +	return vidioc_try_fmt(f, fmt);
->  }
-
-Ditto.
-
->  
->  static int mtk_jpeg_dec_try_fmt_vid_out_mplane(struct file *file, void *priv,
-> @@ -298,8 +451,8 @@ static int mtk_jpeg_dec_try_fmt_vid_out_mplane(struct file *file, void *priv,
->  	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
->  	struct mtk_jpeg_fmt *fmt;
->  
-> -	fmt = mtk_jpeg_find_format(ctx, f->fmt.pix_mp.pixelformat,
-> -				   MTK_JPEG_FMT_TYPE_OUTPUT);
-> +	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-> +				   MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
->  	if (!fmt)
->  		fmt = ctx->out_q.fmt;
->  
-> @@ -310,17 +463,21 @@ static int mtk_jpeg_dec_try_fmt_vid_out_mplane(struct file *file, void *priv,
->  		 (fmt->fourcc >> 16 & 0xff),
->  		 (fmt->fourcc >> 24 & 0xff));
->  
-> -	return mtk_jpeg_try_fmt_mplane(f, fmt, ctx, MTK_JPEG_FMT_TYPE_OUTPUT);
-> +	if (ctx->state != MTK_JPEG_INIT) {
-> +		mtk_jpeg_g_fmt_vid_mplane(file, priv, f);
-> +		return 0;
-> +	}
-
-Ditto.
-
-> +
-> +	return vidioc_try_fmt(f, fmt);
->  }
->  
->  static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
-> -				 struct v4l2_format *f)
-> +				 struct v4l2_format *f, unsigned int fmt_type)
->  {
->  	struct vb2_queue *vq;
->  	struct mtk_jpeg_q_data *q_data = NULL;
->  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
->  	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-> -	unsigned int f_type;
->  	int i;
->  
->  	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-> @@ -334,12 +491,11 @@ static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
->  		return -EBUSY;
->  	}
->  
-> -	f_type = V4L2_TYPE_IS_OUTPUT(f->type) ?
-> -			 MTK_JPEG_FMT_TYPE_OUTPUT : MTK_JPEG_FMT_TYPE_CAPTURE;
-> -
-> -	q_data->fmt = mtk_jpeg_find_format(ctx, pix_mp->pixelformat, f_type);
-> +	q_data->fmt = mtk_jpeg_find_format(pix_mp->pixelformat, fmt_type);
->  	q_data->w = pix_mp->width;
->  	q_data->h = pix_mp->height;
-> +	q_data->crop_rect.width = pix_mp->width;
-> +	q_data->crop_rect.height = pix_mp->height;
->  	ctx->colorspace = pix_mp->colorspace;
->  	ctx->ycbcr_enc = pix_mp->ycbcr_enc;
->  	ctx->xfer_func = pix_mp->xfer_func;
-> @@ -365,6 +521,19 @@ static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
->  	return 0;
->  }
->  
-> +static int mtk_jpeg_enc_s_fmt_vid_out_mplane(struct file *file, void *priv,
-> +					     struct v4l2_format *f)
-> +{
-> +	int ret;
-> +
-> +	ret = mtk_jpeg_enc_try_fmt_vid_out_mplane(file, priv, f);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-> +				     MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-> +}
-> +
->  static int mtk_jpeg_dec_s_fmt_vid_out_mplane(struct file *file, void *priv,
->  					     struct v4l2_format *f)
->  {
-> @@ -374,7 +543,21 @@ static int mtk_jpeg_dec_s_fmt_vid_out_mplane(struct file *file, void *priv,
->  	if (ret)
->  		return ret;
->  
-> -	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f);
-> +	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-> +				     MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
-> +}
-> +
-> +static int mtk_jpeg_enc_s_fmt_vid_cap_mplane(struct file *file, void *priv,
-> +					     struct v4l2_format *f)
-> +{
-> +	int ret;
-> +
-> +	ret = mtk_jpeg_enc_try_fmt_vid_cap_mplane(file, priv, f);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-> +				     MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
->  }
->  
->  static int mtk_jpeg_dec_s_fmt_vid_cap_mplane(struct file *file, void *priv,
-> @@ -386,7 +569,8 @@ static int mtk_jpeg_dec_s_fmt_vid_cap_mplane(struct file *file, void *priv,
->  	if (ret)
->  		return ret;
->  
-> -	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f);
-> +	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-> +				     MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
->  }
-
-Is it really necessary to have separate variants of the above functions for
-decoder and encoder?
-
->  
->  static void mtk_jpeg_queue_src_chg_event(struct mtk_jpeg_ctx *ctx)
-> @@ -411,6 +595,29 @@ static int mtk_jpeg_subscribe_event(struct v4l2_fh *fh,
->  	return v4l2_ctrl_subscribe_event(fh, sub);
->  }
->  
-> +static int mtk_jpeg_enc_g_selection(struct file *file, void *priv,
-> +				    struct v4l2_selection *s)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +
-> +	if (s->type != V4L2_BUF_TYPE_VIDEO_OUTPUT)
-> +		return -EINVAL;
-> +
-> +	switch (s->target) {
-> +	case V4L2_SEL_TGT_CROP:
-> +	case V4L2_SEL_TGT_CROP_BOUNDS:
-> +	case V4L2_SEL_TGT_CROP_DEFAULT:
-> +		s->r.width = ctx->out_q.w;
-> +		s->r.height = ctx->out_q.h;
-> +		s->r.left = 0;
-> +		s->r.top = 0;
-
-Is this really correct? The function seems to be returning the full frame
-size regardless of the selection target. For BOUNDS and DEFAULTS this would
-be the correct behavior indeed, but CROP should return the active crop
-rectangle, as set by S_SELECTION.
-
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +	return 0;
-> +}
-> +
->  static int mtk_jpeg_dec_g_selection(struct file *file, void *priv,
->  				    struct v4l2_selection *s)
->  {
-> @@ -440,6 +647,29 @@ static int mtk_jpeg_dec_g_selection(struct file *file, void *priv,
->  	return 0;
->  }
->  
-> +static int mtk_jpeg_enc_s_selection(struct file *file, void *priv,
-> +				    struct v4l2_selection *s)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +
-> +	if (s->type != V4L2_BUF_TYPE_VIDEO_OUTPUT)
-> +		return -EINVAL;
-> +
-> +	switch (s->target) {
-> +	case V4L2_SEL_TGT_CROP:
-> +		s->r.left = 0;
-> +		s->r.top = 0;
-> +		s->r.width = min(s->r.width, ctx->out_q.w);
-> +		s->r.height = min(s->r.height, ctx->out_q.h);
-> +		ctx->out_q.crop_rect = s->r;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static int mtk_jpeg_dec_s_selection(struct file *file, void *priv,
->  				    struct v4l2_selection *s)
->  {
-> @@ -484,6 +714,33 @@ static int mtk_jpeg_qbuf(struct file *file, void *priv, struct v4l2_buffer *buf)
->  	return v4l2_m2m_qbuf(file, fh->m2m_ctx, buf);
->  }
->  
-> +static const struct v4l2_ioctl_ops mtk_jpeg_enc_ioctl_ops = {
-> +	.vidioc_querycap                = mtk_jpeg_enc_querycap,
-> +	.vidioc_enum_fmt_vid_cap	= mtk_jpeg_enc_enum_fmt_vid_cap,
-> +	.vidioc_enum_fmt_vid_out	= mtk_jpeg_enc_enum_fmt_vid_out,
-> +	.vidioc_try_fmt_vid_cap_mplane	= mtk_jpeg_enc_try_fmt_vid_cap_mplane,
-> +	.vidioc_try_fmt_vid_out_mplane	= mtk_jpeg_enc_try_fmt_vid_out_mplane,
-> +	.vidioc_g_fmt_vid_cap_mplane    = mtk_jpeg_g_fmt_vid_mplane,
-> +	.vidioc_g_fmt_vid_out_mplane    = mtk_jpeg_g_fmt_vid_mplane,
-> +	.vidioc_s_fmt_vid_cap_mplane    = mtk_jpeg_enc_s_fmt_vid_cap_mplane,
-> +	.vidioc_s_fmt_vid_out_mplane    = mtk_jpeg_enc_s_fmt_vid_out_mplane,
-> +	.vidioc_qbuf                    = mtk_jpeg_qbuf,
-
-Not directly a comment for this patch, but since the previous patch removed
-the LAST_FRAME handling, wouldn't it be enough to just use v4l2_m2m_qbuf()
-as this callback?
-
-[snip]
-> +static void mtk_jpeg_enc_buf_queue(struct vb2_buffer *vb)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(vb->vb2_queue);
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-> +
-> +	v4l2_dbg(2, debug, &jpeg->v4l2_dev, "(%d) buf_q id=%d, vb=%p\n",
-> +		 vb->vb2_queue->type, vb->index, vb);
-> +
-> +	v4l2_m2m_buf_queue(ctx->fh.m2m_ctx, to_vb2_v4l2_buffer(vb));
-> +}
-> +
->  static void mtk_jpeg_dec_buf_queue(struct vb2_buffer *vb)
->  {
->  	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(vb->vb2_queue);
-> @@ -664,6 +932,15 @@ static struct vb2_v4l2_buffer *mtk_jpeg_buf_remove(struct mtk_jpeg_ctx *ctx,
->  		return v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
->  }
->  
-> +static void mtk_jpeg_enc_stop_streaming(struct vb2_queue *q)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-> +	struct vb2_v4l2_buffer *vb;
-> +
-> +	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
-> +		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> +}
-> +
->  static void mtk_jpeg_dec_stop_streaming(struct vb2_queue *q)
->  {
->  	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-> @@ -699,6 +976,15 @@ static const struct vb2_ops mtk_jpeg_dec_qops = {
->  	.stop_streaming     = mtk_jpeg_dec_stop_streaming,
->  };
->  
-> +static const struct vb2_ops mtk_jpeg_enc_qops = {
-> +	.queue_setup        = mtk_jpeg_queue_setup,
-> +	.buf_prepare        = mtk_jpeg_buf_prepare,
-> +	.buf_queue          = mtk_jpeg_enc_buf_queue,
-> +	.wait_prepare       = vb2_ops_wait_prepare,
-> +	.wait_finish        = vb2_ops_wait_finish,
-> +	.stop_streaming     = mtk_jpeg_enc_stop_streaming,
-> +};
-> +
->  static void mtk_jpeg_set_dec_src(struct mtk_jpeg_ctx *ctx,
->  				 struct vb2_buffer *src_buf,
->  				 struct mtk_jpeg_bs *bs)
-> @@ -736,6 +1022,85 @@ static int mtk_jpeg_set_dec_dst(struct mtk_jpeg_ctx *ctx,
->  	return 0;
->  }
->  
-> +static void mtk_jpeg_set_enc_dst(struct mtk_jpeg_ctx *ctx, void __iomem *base,
-> +				 struct vb2_buffer *dst_buf,
-> +				 struct mtk_jpeg_enc_bs *bs)
-> +{
-> +	bs->dma_addr = vb2_dma_contig_plane_dma_addr(dst_buf, 0);
-> +	bs->dma_addr_offset = ctx->enable_exif ? MTK_JPEG_MAX_EXIF_SIZE : 0;
-> +	bs->dma_addr_offsetmask = bs->dma_addr & JPEG_ENC_DST_ADDR_OFFSET_MASK;
-> +	bs->size = vb2_plane_size(dst_buf, 0);
-
-We're computing these values and then writing to the hardware straightaway.
-Do we need to save these values to the bs struct? If no, do we need the bs
-struct at all?
-
-> +
-> +	mtk_jpeg_enc_set_dst_addr(base, bs->dma_addr, bs->size,
-> +				  bs->dma_addr_offset,
-> +				  bs->dma_addr_offsetmask);
-> +}
-> +
-> +static void mtk_jpeg_set_enc_src(struct mtk_jpeg_ctx *ctx, void __iomem *base,
-> +				 struct vb2_buffer *src_buf)
-> +{
-> +	int i;
-> +	dma_addr_t	dma_addr;
-
-nit: Only one space should be between variable type and name.
-
-> +
-> +	mtk_jpeg_enc_set_img_size(base, ctx->out_q.crop_rect.width,
-> +				  ctx->out_q.crop_rect.height);
-> +	mtk_jpeg_enc_set_blk_num(base, ctx->out_q.fmt->fourcc,
-> +				 ctx->out_q.crop_rect.width,
-> +				 ctx->out_q.crop_rect.height);
-> +	mtk_jpeg_enc_set_stride(base, ctx->out_q.fmt->fourcc, ctx->out_q.w,
-> +				ctx->out_q.h, ctx->out_q.bytesperline[0]);
-> +
-> +	for (i = 0; i < src_buf->num_planes; i++) {
-> +		dma_addr = vb2_dma_contig_plane_dma_addr(src_buf, i) +
-> +			   src_buf->planes[i].data_offset;
-> +		mtk_jpeg_enc_set_src_addr(base, dma_addr, i);
-> +	}
-> +}
-> +
-> +static void mtk_jpeg_enc_device_run(void *priv)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = priv;
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-> +	struct vb2_v4l2_buffer *src_buf, *dst_buf;
-> +	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
-> +	unsigned long flags;
-> +	struct mtk_jpeg_src_buf *jpeg_src_buf;
-> +	struct mtk_jpeg_enc_bs enc_bs;
-> +	int ret;
-> +
-> +	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
-> +	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> +	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
-> +
-> +	ret = pm_runtime_get_sync(jpeg->dev);
-> +	if (ret < 0)
-> +		goto enc_end;
-> +
-> +	spin_lock_irqsave(&jpeg->hw_lock, flags);
-> +
-> +	/*
-> +	 * Resetting the hardware every frame is to ensure that all the
-> +	 * registers are cleared. This is a hardware requirement.
-> +	 */
-> +	mtk_jpeg_enc_reset(jpeg->reg_base);
-> +
-> +	mtk_jpeg_set_enc_dst(ctx, jpeg->reg_base, &dst_buf->vb2_buf, &enc_bs);
-> +	mtk_jpeg_set_enc_src(ctx, jpeg->reg_base, &src_buf->vb2_buf);
-> +	mtk_jpeg_enc_set_config(jpeg->reg_base, ctx->out_q.fmt->hw_format,
-> +				ctx->enable_exif, ctx->enc_quality,
-> +				ctx->restart_interval);
-> +	mtk_jpeg_enc_start(jpeg->reg_base);
-
-Could we just move the above 5 functions into one function inside
-mtk_jpeg_enc_hw.c that takes mtk_jpeg_dev pointer as its argument, let's
-say mtk_jpeg_enc_hw_run() and simply program all the data to the registers
-directly, without the extra level of abstractions?
-
-> +	spin_unlock_irqrestore(&jpeg->hw_lock, flags);
-> +	return;
-> +
-> +enc_end:
-> +	v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
-> +	v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> +	v4l2_m2m_buf_done(src_buf, buf_state);
-> +	v4l2_m2m_buf_done(dst_buf, buf_state);
-> +	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-> +}
-> +
->  static void mtk_jpeg_dec_device_run(void *priv)
->  {
->  	struct mtk_jpeg_ctx *ctx = priv;
-> @@ -785,6 +1150,11 @@ static void mtk_jpeg_dec_device_run(void *priv)
->  	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
->  }
->  
-> +static int mtk_jpeg_enc_job_ready(void *priv)
-> +{
-> +		return 1;
-> +}
-> +
-
-The callback is optional, so can be just removed if it always returns 1.
-
->  static int mtk_jpeg_dec_job_ready(void *priv)
->  {
->  	struct mtk_jpeg_ctx *ctx = priv;
-> @@ -792,6 +1162,11 @@ static int mtk_jpeg_dec_job_ready(void *priv)
->  	return (ctx->state == MTK_JPEG_RUNNING) ? 1 : 0;
->  }
->  
-> +static const struct v4l2_m2m_ops mtk_jpeg_enc_m2m_ops = {
-> +	.device_run = mtk_jpeg_enc_device_run,
-> +	.job_ready  = mtk_jpeg_enc_job_ready,
-> +};
-> +
->  static const struct v4l2_m2m_ops mtk_jpeg_dec_m2m_ops = {
->  	.device_run = mtk_jpeg_dec_device_run,
->  	.job_ready  = mtk_jpeg_dec_job_ready,
-> @@ -830,24 +1205,109 @@ static int mtk_jpeg_dec_queue_init(void *priv, struct vb2_queue *src_vq,
->  	return ret;
->  }
->  
-> -static void mtk_jpeg_clk_on(struct mtk_jpeg_dev *jpeg)
-> +static int mtk_jpeg_enc_queue_init(void *priv, struct vb2_queue *src_vq,
-> +				   struct vb2_queue *dst_vq)
->  {
-> +	struct mtk_jpeg_ctx *ctx = priv;
->  	int ret;
->  
-> +	src_vq->type = V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE;
-> +	src_vq->io_modes = VB2_DMABUF | VB2_MMAP;
-> +	src_vq->drv_priv = ctx;
-> +	src_vq->buf_struct_size = sizeof(struct mtk_jpeg_src_buf);
-> +	src_vq->ops = &mtk_jpeg_enc_qops;
-> +	src_vq->mem_ops = &vb2_dma_contig_memops;
-> +	src_vq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_COPY;
-> +	src_vq->lock = &ctx->jpeg->lock;
-> +	src_vq->dev = ctx->jpeg->dev;
-> +	ret = vb2_queue_init(src_vq);
-> +	if (ret)
-> +		return ret;
-> +
-> +	dst_vq->type = V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE;
-> +	dst_vq->io_modes = VB2_DMABUF | VB2_MMAP;
-> +	dst_vq->drv_priv = ctx;
-> +	dst_vq->buf_struct_size = sizeof(struct v4l2_m2m_buffer);
-> +	dst_vq->ops = &mtk_jpeg_enc_qops;
-> +	dst_vq->mem_ops = &vb2_dma_contig_memops;
-> +	dst_vq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_COPY;
-> +	dst_vq->lock = &ctx->jpeg->lock;
-> +	dst_vq->dev = ctx->jpeg->dev;
-> +	ret = vb2_queue_init(dst_vq);
-> +
-> +	return ret;
-> +}
-
-This only differs in "ops" from the decoder implementation. Perhaps
-both functions could be merged?
-
-> +
-> +static void mtk_jpeg_clk_on(struct mtk_jpeg_dev *jpeg)
-> +{
-> +	int ret, i;
-> +
->  	ret = mtk_smi_larb_get(jpeg->larb);
->  	if (ret)
->  		dev_err(jpeg->dev, "mtk_smi_larb_get larbvdec fail %d\n", ret);
-> -	clk_prepare_enable(jpeg->clk_jdec_smi);
-> -	clk_prepare_enable(jpeg->clk_jdec);
-> +
-> +	for (i = 0; i < jpeg->variant->num_clocks; i++) {
-> +		ret = clk_prepare_enable(jpeg->clocks[i]);
-
-Instead of an open coded loop, could the clk_bulk_*() helpers be used
-instead? (Look for devm_clk_bulk_get() and devm_clk_bulk_prepare_enable().)
-
-> +		if (ret) {
-> +			while (--i >= 0)
-> +				clk_disable_unprepare(jpeg->clocks[i]);
-
-nit: The typical convention is to do error handling in an error path on the
-bottom of the function.
-
-Also, it would be nice to print an error message.
-
-> +		}
-> +	}
->  }
->  
->  static void mtk_jpeg_clk_off(struct mtk_jpeg_dev *jpeg)
->  {
-> -	clk_disable_unprepare(jpeg->clk_jdec);
-> -	clk_disable_unprepare(jpeg->clk_jdec_smi);
-> +	int i;
-> +
-> +	for (i = jpeg->variant->num_clocks - 1; i >= 0; i--)
-> +		clk_disable_unprepare(jpeg->clocks[i]);
-
-Ditto.
-
->  	mtk_smi_larb_put(jpeg->larb);
->  }
->  
-> +static irqreturn_t mtk_jpeg_enc_irq(int irq, void *priv)
-> +{
-> +	struct mtk_jpeg_dev *jpeg = priv;
-> +	struct mtk_jpeg_ctx *ctx;
-> +	struct vb2_v4l2_buffer *src_buf, *dst_buf;
-> +	struct mtk_jpeg_src_buf *jpeg_src_buf;
-> +	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
-> +	u32 enc_irq_ret;
-> +	u32 enc_ret, result_size;
-> +
-> +	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
-> +	if (!ctx) {
-> +		v4l2_err(&jpeg->v4l2_dev, "Context is NULL\n");
-> +		return IRQ_HANDLED;
-> +	}
-> +
-> +	src_buf = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
-> +	dst_buf = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> +	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
-> +
-> +	enc_ret = mtk_jpeg_enc_get_and_clear_int_status(jpeg->reg_base);
-
-We should check the interrupt status at the beginning of the function and
-return IRQ_NONE if there wasn't any flag set.
-
-> +	enc_irq_ret = mtk_jpeg_enc_enum_result(jpeg->reg_base, enc_ret);
-> +
-> +	if (enc_irq_ret >= MTK_JPEG_ENC_RESULT_STALL)
-> +		mtk_jpeg_enc_reset(jpeg->reg_base);
-> +
-> +	if (enc_irq_ret != MTK_JPEG_ENC_RESULT_DONE) {
-> +		dev_err(jpeg->dev, "encode failed\n");
-> +		goto enc_end;
-> +	}
-
-As I suggested before, it would have been much more clear if the interrupt
-status bits were just directly read and checked in this function, without
-introducing the additional abstraction.
-
-> +
-> +	result_size = mtk_jpeg_enc_get_file_size(jpeg->reg_base);
-> +	vb2_set_plane_payload(&dst_buf->vb2_buf, 0, result_size);
-> +
-> +	buf_state = VB2_BUF_STATE_DONE;
-> +
-> +enc_end:
-> +	v4l2_m2m_buf_done(src_buf, buf_state);
-> +	v4l2_m2m_buf_done(dst_buf, buf_state);
-> +	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-> +	pm_runtime_put(ctx->jpeg->dev);
-> +	return IRQ_HANDLED;
-> +}
-> +
->  static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
->  {
->  	struct mtk_jpeg_dev *jpeg = priv;
-> @@ -893,36 +1353,130 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
->  	return IRQ_HANDLED;
->  }
->  
-> +static void mtk_jpeg_set_enc_default_params(struct mtk_jpeg_ctx *ctx)
-> +{
-> +	struct mtk_jpeg_q_data *q = &ctx->out_q;
-> +	struct v4l2_pix_format_mplane *pix_mp;
-> +
-> +	pix_mp = kmalloc(sizeof(*pix_mp), GFP_KERNEL);
-
-Do we need to allocate this pix_mp? Could we instead just embed it inside
-ctx?
-
-Also, this is actually a memory leak, because I don't see this structure
-saved anywhere or freed.
-
-> +
-> +	ctx->fh.ctrl_handler = &ctx->ctrl_hdl;
-> +	ctx->colorspace = V4L2_COLORSPACE_JPEG,
-> +	ctx->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
-> +	ctx->quantization = V4L2_QUANTIZATION_DEFAULT;
-> +	ctx->xfer_func = V4L2_XFER_FUNC_DEFAULT;
-
-Since we already have a v4l2_pix_format_mplane struct which has fields for
-the above 4 values, could we just store them there?
-
-Also, I don't see this driver handling the colorspaces in any way, but it
-seems to allow changing them from the userspace. This is incorrect, because
-the userspace has no way to know that the colorspace is not handled.
-Instead, the try_fmt implementation should always override the
-userspace-provided colorspace configuration with the ones that the driver
-assumes.
-
-> +	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-> +	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-> +
-> +	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_YUYV,
-> +				      MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-> +	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-> +				    fmt.pix_mp), q->fmt);
-> +	q->w = pix_mp->width;
-> +	q->h = pix_mp->height;
-> +	q->crop_rect.width = pix_mp->width;
-> +	q->crop_rect.height = pix_mp->height;
-> +	q->sizeimage[0] = pix_mp->plane_fmt[0].sizeimage;
-> +	q->bytesperline[0] = pix_mp->plane_fmt[0].bytesperline;
-
-Actually, do we need this custom mtk_jpeg_q_data struct? Why couldn't we
-just keep the same values inside the standard v4l2_pix_format_mplane
-struct?
-
-In general it's preferred to use the standard kernel structures as much as
-possible and only introduce local driver structures for data that can't be
-stored in generic ones.
-
-> +
-> +	q = &ctx->cap_q;
-> +	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_JPEG,
-> +				      MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-> +	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-> +	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-> +	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-> +				    fmt.pix_mp), q->fmt);
-> +	q->w = pix_mp->width;
-> +	q->h = pix_mp->height;
-> +	q->sizeimage[0] = pix_mp->plane_fmt[0].sizeimage;
-> +	q->bytesperline[0] = pix_mp->plane_fmt[0].bytesperline;
-
-Ditto.
-
-> +}
-> +
->  static void mtk_jpeg_set_dec_default_params(struct mtk_jpeg_ctx *ctx)
->  {
->  	struct mtk_jpeg_q_data *q = &ctx->out_q;
-> +	struct v4l2_pix_format_mplane *pix_mp;
->  	int i;
->  
-> +	pix_mp = kmalloc(sizeof(*pix_mp), GFP_KERNEL);
-> +
-> +	ctx->fh.ctrl_handler = &ctx->ctrl_hdl;
->  	ctx->colorspace = V4L2_COLORSPACE_JPEG,
->  	ctx->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
->  	ctx->quantization = V4L2_QUANTIZATION_DEFAULT;
->  	ctx->xfer_func = V4L2_XFER_FUNC_DEFAULT;
-> -
-> -	q->fmt = mtk_jpeg_find_format(ctx, V4L2_PIX_FMT_JPEG,
-> -					      MTK_JPEG_FMT_TYPE_OUTPUT);
-> -	q->w = MTK_JPEG_MIN_WIDTH;
-> -	q->h = MTK_JPEG_MIN_HEIGHT;
-> -	q->bytesperline[0] = 0;
-> -	q->sizeimage[0] = MTK_JPEG_DEFAULT_SIZEIMAGE;
-> +	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-> +	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-> +
-> +	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_JPEG,
-> +				      MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
-> +	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-> +				    fmt.pix_mp), q->fmt);
-> +	q->w = pix_mp->width;
-> +	q->h = pix_mp->height;
-> +	q->sizeimage[0] = pix_mp->plane_fmt[0].sizeimage;
-> +	q->bytesperline[0] = pix_mp->plane_fmt[0].bytesperline;
->  
->  	q = &ctx->cap_q;
-> -	q->fmt = mtk_jpeg_find_format(ctx, V4L2_PIX_FMT_YUV420M,
-> -					      MTK_JPEG_FMT_TYPE_CAPTURE);
-> -	q->w = MTK_JPEG_MIN_WIDTH;
-> -	q->h = MTK_JPEG_MIN_HEIGHT;
-> -
-> +	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_YUV420M,
-> +				      MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
-> +	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-> +	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-> +	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-> +				    fmt.pix_mp), q->fmt);
-> +	q->w = pix_mp->width;
-> +	q->h = pix_mp->height;
->  	for (i = 0; i < q->fmt->colplanes; i++) {
-> -		u32 stride = q->w * q->fmt->h_sample[i] / 4;
-> -		u32 h = q->h * q->fmt->v_sample[i] / 4;
-> +		q->sizeimage[i] = pix_mp->plane_fmt[i].sizeimage;
-> +		q->bytesperline[i] = pix_mp->plane_fmt[i].bytesperline;
-> +	}
-> +}
->  
-
-Same comments as for the encoder version.
-
-On top of that, both functions are almost identical and it should be
-possible to merge them.
-
-> -		q->bytesperline[i] = stride;
-> -		q->sizeimage[i] = stride * h;
-> +static int mtk_jpeg_enc_open(struct file *file)
-> +{
-> +	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
-> +	struct video_device *vfd = video_devdata(file);
-> +	struct mtk_jpeg_ctx *ctx;
-> +	int ret = 0;
-> +
-> +	ctx = kzalloc(sizeof(*ctx), GFP_KERNEL);
-> +	if (!ctx)
-> +		return -ENOMEM;
-> +
-> +	if (mutex_lock_interruptible(&jpeg->lock)) {
-> +		ret = -ERESTARTSYS;
-> +		goto free;
-> +	}
-> +
-> +	v4l2_fh_init(&ctx->fh, vfd);
-> +	file->private_data = &ctx->fh;
-> +	v4l2_fh_add(&ctx->fh);
-> +
-> +	ctx->jpeg = jpeg;
-> +	ctx->fh.m2m_ctx = v4l2_m2m_ctx_init(jpeg->m2m_dev, ctx,
-> +					    mtk_jpeg_enc_queue_init);
-> +	if (IS_ERR(ctx->fh.m2m_ctx)) {
-> +		ret = PTR_ERR(ctx->fh.m2m_ctx);
-> +		goto error;
->  	}
-> +
-> +	ret = mtk_jpeg_enc_ctrls_setup(ctx);
-> +	if (ret) {
-> +		v4l2_err(&jpeg->v4l2_dev, "Failed to setup jpeg enc controls\n");
-> +		goto error;
-> +	}
-> +	mtk_jpeg_set_enc_default_params(ctx);
-> +
-> +	mutex_unlock(&jpeg->lock);
-> +	return 0;
-> +
-> +error:
-> +	v4l2_fh_del(&ctx->fh);
-> +	v4l2_fh_exit(&ctx->fh);
-> +	mutex_unlock(&jpeg->lock);
-> +free:
-> +	kfree(ctx);
-> +	return ret;
->  }
-
-It looks like the queue_init argument to v4l2_m2m_ctx_init() and control
-handling would be the only differences from the decoder version. Perhaps
-the functions can be merged?
-
->  
->  static int mtk_jpeg_dec_open(struct file *file)
-> @@ -953,6 +1507,12 @@ static int mtk_jpeg_dec_open(struct file *file)
->  		goto error;
->  	}
->  
-> +	v4l2_ctrl_handler_init(&ctx->ctrl_hdl, 0);
-> +	ret = v4l2_ctrl_handler_setup(&ctx->ctrl_hdl);
-> +	if (ret) {
-> +		v4l2_err(&jpeg->v4l2_dev, "Failed to setup jpeg dec controls\n");
-> +		goto error;
-> +	}
-
-There are no controls for the decoder, so there should be no need to set up
-a control handler.
-
->  	mtk_jpeg_set_dec_default_params(ctx);
->  	mutex_unlock(&jpeg->lock);
->  	return 0;
-> @@ -973,6 +1533,7 @@ static int mtk_jpeg_release(struct file *file)
->  
->  	mutex_lock(&jpeg->lock);
->  	v4l2_m2m_ctx_release(ctx->fh.m2m_ctx);
-> +	v4l2_ctrl_handler_free(&ctx->ctrl_hdl);
->  	v4l2_fh_del(&ctx->fh);
->  	v4l2_fh_exit(&ctx->fh);
->  	kfree(ctx);
-> @@ -980,6 +1541,15 @@ static int mtk_jpeg_release(struct file *file)
->  	return 0;
->  }
->  
-> +static const struct v4l2_file_operations mtk_jpeg_enc_fops = {
-> +	.owner          = THIS_MODULE,
-> +	.open           = mtk_jpeg_enc_open,
-> +	.release        = mtk_jpeg_release,
-> +	.poll           = v4l2_m2m_fop_poll,
-> +	.unlocked_ioctl = video_ioctl2,
-> +	.mmap           = v4l2_m2m_fop_mmap,
-> +};
-> +
-
-If we merge the .open() implementation, the same struct could be used for
-both decoder and encoder.
-
-[snip]
-> @@ -1042,8 +1619,12 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
->  		return jpeg_irq;
->  	}
->  
-> -	ret = devm_request_irq(&pdev->dev, jpeg_irq, mtk_jpeg_dec_irq, 0,
-> -			       pdev->name, jpeg);
-> +	if (jpeg->variant->is_encoder)
-> +		ret = devm_request_irq(&pdev->dev, jpeg_irq, mtk_jpeg_enc_irq,
-> +				       0, pdev->name, jpeg);
-> +	else
-> +		ret = devm_request_irq(&pdev->dev, jpeg_irq, mtk_jpeg_dec_irq,
-> +				       0, pdev->name, jpeg);
-
-Rather than having "is_encoder" in the variant struct, would it make more
-sense to have "irq_handler" instead? That would avoid the explicit if.
-
->  	if (ret) {
->  		dev_err(&pdev->dev, "Failed to request jpeg_irq %d (%d)\n",
->  			jpeg_irq, ret);
-> @@ -1063,7 +1644,10 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
->  		goto err_dev_register;
->  	}
->  
-> -	jpeg->m2m_dev = v4l2_m2m_init(&mtk_jpeg_dec_m2m_ops);
-> +	if (jpeg->variant->is_encoder)
-> +		jpeg->m2m_dev = v4l2_m2m_init(&mtk_jpeg_enc_m2m_ops);
-> +	else
-> +		jpeg->m2m_dev = v4l2_m2m_init(&mtk_jpeg_dec_m2m_ops);
-
-Same here. The variant struct could have a "m2m_ops" pointer.
-
->  	if (IS_ERR(jpeg->m2m_dev)) {
->  		v4l2_err(&jpeg->v4l2_dev, "Failed to init mem2mem device\n");
->  		ret = PTR_ERR(jpeg->m2m_dev);
-> @@ -1076,9 +1660,15 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
->  		goto err_vfd_jpeg_alloc;
->  	}
->  	snprintf(jpeg->vdev->name, sizeof(jpeg->vdev->name),
-> -		 "%s-dec", MTK_JPEG_NAME);
-> -	jpeg->vdev->fops = &mtk_jpeg_dec_fops;
-> -	jpeg->vdev->ioctl_ops = &mtk_jpeg_dec_ioctl_ops;
-> +		 "%s-%s", MTK_JPEG_NAME,
-> +		 jpeg->variant->is_encoder ? "enc" : "dec");
-> +	if (jpeg->variant->is_encoder) {
-> +		jpeg->vdev->fops = &mtk_jpeg_enc_fops;
-> +		jpeg->vdev->ioctl_ops = &mtk_jpeg_enc_ioctl_ops;
-> +	} else {
-> +		jpeg->vdev->fops = &mtk_jpeg_dec_fops;
-> +		jpeg->vdev->ioctl_ops = &mtk_jpeg_dec_ioctl_ops;
-> +	}
-
-Similarly here.
-
-[snip]
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-> index 0b59e48495d5..9ec2c3350a16 100644
-> --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-> @@ -3,6 +3,7 @@
->   * Copyright (c) 2016 MediaTek Inc.
->   * Author: Ming Hsiu Tsai <minghsiu.tsai@mediatek.com>
->   *         Rick Chang <rick.chang@mediatek.com>
-> + *         Xia Jiang <xia.jiang@mediatek.com>
->   */
->  
->  #ifndef _MTK_JPEG_CORE_H
-> @@ -16,19 +17,21 @@
->  #define MTK_JPEG_NAME		"mtk-jpeg"
->  
->  #define MTK_JPEG_COMP_MAX		3
-> +#define MTK_JPEG_MAX_CLOCKS		2
-> +
->  
-
-Duplicate blank line.
-
->  #define MTK_JPEG_FMT_FLAG_DEC_OUTPUT	BIT(0)
->  #define MTK_JPEG_FMT_FLAG_DEC_CAPTURE	BIT(1)
-> -
-> -#define MTK_JPEG_FMT_TYPE_OUTPUT	1
-> -#define MTK_JPEG_FMT_TYPE_CAPTURE	2
-> +#define MTK_JPEG_FMT_FLAG_ENC_OUTPUT	BIT(2)
-> +#define MTK_JPEG_FMT_FLAG_ENC_CAPTURE	BIT(3)
-
-Do we need separate bits for decoder and encoder?
-
->  
->  #define MTK_JPEG_MIN_WIDTH	32U
->  #define MTK_JPEG_MIN_HEIGHT	32U
-> -#define MTK_JPEG_MAX_WIDTH	8192U
-> -#define MTK_JPEG_MAX_HEIGHT	8192U
-> +#define MTK_JPEG_MAX_WIDTH	65535U
-> +#define MTK_JPEG_MAX_HEIGHT	65535U
-
-If this is a change valid for the decoder too, it should be a separate
-patch.
-
->  
->  #define MTK_JPEG_DEFAULT_SIZEIMAGE	(1 * 1024 * 1024)
-> +#define MTK_JPEG_MAX_EXIF_SIZE	(64 * 1024)
-
-There is one thing that I realized now. If the EXIF mode is enabled, the
-driver needs to ensure that the buffer is big enough to hold the EXIF data.
-The vb2 .buf_prepare callback would be the right place to do that.
-
->  
->  /**
->   * enum mtk_jpeg_ctx_state - states of the context state machine
-> @@ -42,6 +45,18 @@ enum mtk_jpeg_ctx_state {
->  	MTK_JPEG_SOURCE_CHANGE,
->  };
->  
-> +/**
-> + * mtk_jpeg_variant - mtk jpeg driver variant
-> + * @is_encoder:		driver mode is jpeg encoder
-> + * @clk_names:		clock names
-> + * @num_clocks:		numbers of clock
-> + */
-> +struct mtk_jpeg_variant {
-> +	bool is_encoder;
-> +	const char		*clk_names[MTK_JPEG_MAX_CLOCKS];
-> +	int			num_clocks;
-
-hint: Please avoid tabs between types and names, as it makes it difficult
-to add new fields later (the number of tabs might need to change for all
-members).
-
-[snip]
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-> new file mode 100644
-> index 000000000000..7fc1de920a75
-> --- /dev/null
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-> @@ -0,0 +1,193 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Xia Jiang <xia.jiang@mediatek.com>
-> + *
-> + */
-> +
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <media/videobuf2-core.h>
-> +
-> +#include "mtk_jpeg_enc_hw.h"
-> +
-> +static const struct mtk_jpeg_enc_qlt mtk_jpeg_enc_quality[] = {
-> +	{.quality_param = 34, .hardware_value = JPEG_ENC_QUALITY_Q34},
-> +	{.quality_param = 39, .hardware_value = JPEG_ENC_QUALITY_Q39},
-> +	{.quality_param = 48, .hardware_value = JPEG_ENC_QUALITY_Q48},
-> +	{.quality_param = 60, .hardware_value = JPEG_ENC_QUALITY_Q60},
-> +	{.quality_param = 64, .hardware_value = JPEG_ENC_QUALITY_Q64},
-> +	{.quality_param = 68, .hardware_value = JPEG_ENC_QUALITY_Q68},
-> +	{.quality_param = 74, .hardware_value = JPEG_ENC_QUALITY_Q74},
-> +	{.quality_param = 80, .hardware_value = JPEG_ENC_QUALITY_Q80},
-> +	{.quality_param = 82, .hardware_value = JPEG_ENC_QUALITY_Q82},
-> +	{.quality_param = 84, .hardware_value = JPEG_ENC_QUALITY_Q84},
-> +	{.quality_param = 87, .hardware_value = JPEG_ENC_QUALITY_Q87},
-> +	{.quality_param = 90, .hardware_value = JPEG_ENC_QUALITY_Q90},
-> +	{.quality_param = 92, .hardware_value = JPEG_ENC_QUALITY_Q92},
-> +	{.quality_param = 95, .hardware_value = JPEG_ENC_QUALITY_Q95},
-> +	{.quality_param = 97, .hardware_value = JPEG_ENC_QUALITY_Q97},
-> +};
-> +
-> +void mtk_jpeg_enc_reset(void __iomem *base)
-
-I'd suggest passing struct mtk_jpeg_dev pointer to all these functions, in
-case more data about the hardware is needed in the future.
-
-> +{
-> +	writel(0x00, base + JPEG_ENC_RSTB);
-
-nit: Just 0 is enough.
-
-> +	writel(JPEG_ENC_RESET_BIT, base + JPEG_ENC_RSTB);
-> +	writel(0x00, base + JPEG_ENC_CODEC_SEL);
-
-Ditto.
-
-> +}
-> +
-> +u32 mtk_jpeg_enc_get_and_clear_int_status(void __iomem *base)
-> +{
-> +	u32 ret;
-> +
-> +	ret = readl(base + JPEG_ENC_INT_STS) &
-> +		    JPEG_ENC_INT_STATUS_MASK_ALLIRQ;
-> +	if (ret)
-> +		writel(0, base + JPEG_ENC_INT_STS);
-> +
-> +	return ret;
-> +}
-> +
-> +u32 mtk_jpeg_enc_get_file_size(void __iomem *base)
-> +{
-> +	return readl(base + JPEG_ENC_DMA_ADDR0) -
-> +	       readl(base + JPEG_ENC_DST_ADDR0);
-> +}
-> +
-> +u32 mtk_jpeg_enc_enum_result(void __iomem *base, u32 irq_status)
-> +{
-> +	if (irq_status & JPEG_ENC_INT_STATUS_DONE)
-> +		return MTK_JPEG_ENC_RESULT_DONE;
-> +	else if (irq_status & JPEG_ENC_INT_STATUS_STALL)
-> +		return MTK_JPEG_ENC_RESULT_STALL;
-> +	else
-> +		return MTK_JPEG_ENC_RESULT_VCODEC_IRQ;
-> +}
-
-It looks like the driver only cares about 2 cases: DONE and anything else.
-Actually it also cares about a case where no bits are set in irq_status,
-which could be an interrupt controller misconfiguration or an interrupt
-generated by another device on the same shared IRQ line, which should be
-handled by returning IRQ_NONE. Since interrupt handling is a low level
-hardware operation, I'd suggest another design:
-- put the irq_handler_t function here in this file and have it directly
-  access the hardware registers and check the interrupt bits,
-- add an mtk_jpeg_enc_done(..., enum vb2_buffer_state state, size_t
-  payload), which would be called from this low level interrupt handler and
-  do the V4L2 buffer and M2M job handling.
-
-WDYT?
-
-> +
-> +void mtk_jpeg_enc_set_img_size(void __iomem *base, u32 width, u32 height)
-
-If we pass struct mtk_jpeg_dev to this function, the width and height
-arguments wouldn't be necessary, as they could be directly retrieved from
-the driver state.
-
-Similar advice applies to the other functions in this file.
-
-> +{
-> +	u32 value;
-> +
-> +	value = width << 16 | height;
-> +	writel(value, base + JPEG_ENC_IMG_SIZE);
-> +}
-> +
-> +void mtk_jpeg_enc_set_blk_num(void __iomem *base, u32 enc_format, u32 width,
-> +			      u32 height)
-> +{
-> +	u32 blk_num;
-> +	u32 is_420;
-> +	u32 padding_width;
-> +	u32 padding_height;
-> +	u32 luma_blocks;
-> +	u32 chroma_blocks;
-> +
-> +	is_420 = (enc_format == V4L2_PIX_FMT_NV12M ||
-> +		  enc_format == V4L2_PIX_FMT_NV21M) ? 1 : 0;
-> +	padding_width = round_up(width, 16);
-> +	padding_height = round_up(height, is_420 ? 16 : 8);
-> +
-> +	luma_blocks = padding_width / 8 * padding_height / 8;
-> +	if (is_420)
-> +		chroma_blocks = luma_blocks / 4;
-> +	else
-> +		chroma_blocks = luma_blocks / 2;
-> +
-> +	blk_num = luma_blocks + 2 * chroma_blocks - 1;
-> +
-> +	writel(blk_num, base + JPEG_ENC_BLK_NUM);
-> +}
-
-My comments for this function from v7 haven't been addressed.
-
-> +
-> +void mtk_jpeg_enc_set_stride(void __iomem *base, u32 enc_format, u32 width,
-> +			     u32 height, u32 bytesperline)
-> +{
-> +	u32 img_stride;
-> +	u32 mem_stride;
-> +
-> +	if (enc_format == V4L2_PIX_FMT_NV12M ||
-> +	    enc_format == V4L2_PIX_FMT_NV21M) {
-> +		img_stride = round_up(width, 16);
-> +		mem_stride = bytesperline;
-> +	} else {
-> +		img_stride = round_up(width * 2, 32);
-> +		mem_stride = img_stride;
-> +	}
-> +
-> +	writel(img_stride, base + JPEG_ENC_IMG_STRIDE);
-> +	writel(mem_stride, base + JPEG_ENC_STRIDE);
-> +}
-> +
-
-My comments for this function from v7 haven't been addressed.
-
-> +void mtk_jpeg_enc_set_src_addr(void __iomem *base, u32 src_addr,
-> +			       u32 plane_index)
-> +{
-> +	if (!plane_index)
-> +		writel(src_addr, base + JPEG_ENC_SRC_LUMA_ADDR);
-> +	else
-> +		writel(src_addr, base + JPEG_ENC_SRC_CHROMA_ADDR);
-
-Do we need this plane_index if we only have 2 planes? Also, for interleaved
-formats, like YUYV, what should the LUMA and CHROMA registers be set to?
-
-> +}
-> +
-> +void mtk_jpeg_enc_set_dst_addr(void __iomem *base, u32 dst_addr,
-> +			       u32 stall_size, u32 init_offset,
-> +			       u32 offset_mask)
-> +{
-> +	writel(init_offset & ~0xf, base + JPEG_ENC_OFFSET_ADDR);
-> +	writel(offset_mask & 0xf, base + JPEG_ENC_BYTE_OFFSET_MASK);
-> +	writel(dst_addr & ~0xf, base + JPEG_ENC_DST_ADDR0);
-> +	writel((dst_addr + stall_size) & ~0xf, base + JPEG_ENC_STALL_ADDR0);
-> +}
-> +
-> +static void mtk_jpeg_enc_set_quality(void __iomem *base, u32 quality)
-> +{
-> +	u32 value;
-> +	u32 i, enc_quality;
-> +
-> +	enc_quality = mtk_jpeg_enc_quality[0].hardware_value;
-> +	for (i = 0; i < ARRAY_SIZE(mtk_jpeg_enc_quality); i++) {
-> +		if (quality <= mtk_jpeg_enc_quality[i].quality_param) {
-> +			enc_quality = mtk_jpeg_enc_quality[i].hardware_value;
-> +			break;
-> +		}
-> +	}
-> +
-> +	value = readl(base + JPEG_ENC_QUALITY);
-
-nit: Is it still necessary to read the register here? Typically the reserved
-bits would be defined as SBZ (should be zero) and it should be safe to just
-write 0 to them.
-
-> +	value = (value & JPEG_ENC_QUALITY_MASK) | enc_quality;
-> +	writel(value, base + JPEG_ENC_QUALITY);
-> +}
-> +
-> +static void mtk_jpeg_enc_set_ctrl(void __iomem *base, u32 enc_format,
-> +				  bool exif_en, u32 restart_interval)
-> +{
-> +	u32 value;
-> +
-> +	value = readl(base + JPEG_ENC_CTRL);
-
-nit: Is it still necessary to read the register here?
-
-> +	value &= ~JPEG_ENC_CTRL_YUV_FORMAT_MASK;
-> +	value |= (enc_format & 3) << 3;
-> +	if (exif_en)
-> +		value |= JPEG_ENC_CTRL_FILE_FORMAT_BIT;
-> +	else
-> +		value &= ~JPEG_ENC_CTRL_FILE_FORMAT_BIT;
-> +	if (restart_interval)
-> +		value |= JPEG_ENC_CTRL_RESTART_EN_BIT;
-> +	else
-> +		value &= ~JPEG_ENC_CTRL_RESTART_EN_BIT;
-> +	writel(value, base + JPEG_ENC_CTRL);
-> +}
-> +
-
-Best regards,
-Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
