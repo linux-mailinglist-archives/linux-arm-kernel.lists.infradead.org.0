@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6A2C1F62A5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:36:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5DFF1F62A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jun 2020 09:36:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XGyIPLvPf9ojaf7stMBG2AkcZcRgFt3OTNmdWbi3GKM=; b=QKQfcRfkeZ28tZ
-	41/YYdAuxU+o6Fx+qJLN4lfB5mQoo093RjYCyexWFO7KLfsitQlPm0eEeU+eKIyCLfdtM4/hyYoye
-	P3bIZDCjtWu7ycNrHztVO70I9HhmlGptS3AQYoycCRoklAmAiJJHCyQcmHdxs5Uug3Qt9SoW8fzDj
-	nRbiJsDymmQuETdzqkIFLso4ZTkdAnqzvL0cc25R+v0Kj5y15JpsK1ZrQVP6H05oUDa1PmZig3LTo
-	QT6hRxDs5Q5WTrbbwHFOA3vLivEZN3HwW0S0cSQNwzXANsddLhmIAlWqWpzH4bqzJ91fXvs/Q2Ddm
-	rvG3PrpFkQ1AcpWpHNDw==;
+	List-Owner; bh=MGi2tKxyQbyUDve+bwtAezWF6DFiyNpsI1Z0nj9Nqrc=; b=FEzwqzVeBz00bP
+	IJXIoG8kaxWTBJ7IhQpSGqUKNbm7TWzvVKc7fyY7Qv7cwlsliBIdTaadxHFoq0WPcwNPD3MXbtXBv
+	1jlZhla3qrC6cDN8GOZomPtGyJL0h/ysxze0EedBdbhJh9YU7QK7yamTknC2Q6S5iKfibjSFrzaTj
+	4H3ULDRr4jWHEF7U3/r/9IV8lMcv0suUSEWAuozNuSHmfPia6Yw1ZnGjfCsgbUPkG+vQG29eLPLzE
+	aDQha2NfI6xGTvn/ui/olNlskWvvbSZ8o8NaArQR5A3I0A1BW2oxrikGvVrmfgEsLNSIHS6M8pT5Q
+	4ubga3MYZ5s81QiN2+fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjHlP-0006tk-Aw; Thu, 11 Jun 2020 07:36:39 +0000
+	id 1jjHl7-0006f0-Gr; Thu, 11 Jun 2020 07:36:21 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjHhW-0001Vy-3a; Thu, 11 Jun 2020 07:32:39 +0000
+ id 1jjHhX-0001Xl-Is; Thu, 11 Jun 2020 07:32:41 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 0C9D15800D3;
- Thu, 11 Jun 2020 03:32:37 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 11 Jun 2020 03:32:37 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 937E15800D2;
+ Thu, 11 Jun 2020 03:32:38 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Thu, 11 Jun 2020 03:32:38 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=n0QSF+s7WNrvA
- CQUMag7Hrl5LkSGFMi3zaAhmTrJUaw=; b=nUFoXCqqR1D6lTHhAjTSN+tV0z+o0
- TpFsQ3bTKQbI1hcxSCFW52AISuTQMLk9X1er8DiK3V6jxF5GANA+2KhxjatsrQMn
- dzrUuUvnRRnvbQF8utpo/RYR4tnv/0EQNt/TbIguwShF9jR1eMpU9uJMivsYw4Kr
- e8ndDN8PmC6I5rb22MvWGlZh0Vm1F4JpA4eW6sp0FruQ+tNoO2TxsD/5zq5jt1YS
- nLGM7y2C1tG3DAv87T8xby9remxlqRPjJsv2cqdQDmH1Ne96PZ5Beg+rallN/BWX
- HHzJao4e5WyMsDMgPGoSgEYm3EbgeWG/d2sLNENaB5GumGOeXfdXUktnQ==
+ :mime-version:content-transfer-encoding; s=fm3; bh=6iQKMxJg9h0BJ
+ TznOS0hTu6hgQnCXnqNYbjoQGsXtMs=; b=RSNUXe6Z5hXdoG7ozgDPevY4uUueH
+ j9V7d2X95My7PRpXSAv148LoNCXmlVRubb/275JWi2109uPfwrU6NwzjZ/mLc1Ug
+ 7ve/LOsoohRIcQzD1bAH8DGOjQg+yYMRonl25HmQwO5vMJNuX+vJnXAQpW4+qZ0g
+ 5VM4iKL//Eec4yuXxLcc28PzJWgRBF+1guXEh0uuqKiWh00WmECOyeIz+C15Vyxd
+ Sr+FY23gY0Sg79cS8XJY5cpi7tmAftftNibKRCmFg1Cpvf6ghEANGd9WriTKZOng
+ yUvhalpJKH7+vlSTUbEm2h3rfUVDPO3QsY4oYdIiVB8Uo+EunTPWwMfDQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=n0QSF+s7WNrvACQUMag7Hrl5LkSGFMi3zaAhmTrJUaw=; b=W5dccl1G
- e2xxNKAcFMQPHlthSWc0nx7a3+MsqVeiR1EDXbxOG1ABvzdOBR+TVmvaSuwW+/yj
- 0lVgGyQY4SdOtai5iQZJoV8v8Y5wdIjrR9C2vwuZy+qRPIbvVKZ13uXm/EJySa2h
- UIMvMe0nGSUr8Ra9edqw0F8dm0Ex9PCaKHjwkGmEVlPPceC9AkTlkqIG8joBm0g+
- ZdXdhZHy67lw+MsCaCnwh2EvNm3F//oqItjWz6am9gE6nhJmIRkrWIa0KOo1kZZo
- JLlJQmb/Leu1Ts/FiHgbwaKtsYgUrO2MVM8XBKyaW9/RhGlGhdH5eEBTapNdcEvj
- kPs7svunQl3J8w==
-X-ME-Sender: <xms:FN7hXpSJ7enCUXb73YMN9X7Cgo49piUs3Ds_C2qm8BAbBMAf0QaH3w>
+ fm3; bh=6iQKMxJg9h0BJTznOS0hTu6hgQnCXnqNYbjoQGsXtMs=; b=uZhjdtJ4
+ rmXo0qfgXVaqM5YEH5qofXlyZZGCta6VJFWICi+ZkaUBrKU6+RbqTOoZunZFZyRz
+ F4vEkpcbECZmzVZlejJ+JDi8lgPSWOenrc9phEV8Azon00nt/ZB3PfuxX/R0JoNG
+ giilLlVyTr428OPc9tTGBReKg6rmSO/v+71fFrblCPWO3byglutRpqIVcN9Q2Stf
+ z8agfX6b+MMZuvw+Obvsdlz162xR2ESs3uEWDPdBzQ0kj5uGcRTFtlW/GrwCZRMi
+ tu5Wg4xHJy8hpZ4fMU6cDoshSQ8YWrvU3BCN+1+Fre6R0Bs267QJyd3tIxp23Gr5
+ xsFRWLWUJQhYfQ==
+X-ME-Sender: <xms:Ft7hXk84i5aLq4J0EklFQNznsrgiqHxKbBBeMndTWhaGgUKH-eyEVg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehjedguddvvdcutefuodetggdotefrod
  ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
  necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
  enucfjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepofgrgihi
  mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
  htthgvrhhnpedvkeelveefffekjefhffeuleetleefudeifeehuddugffghffhffehveev
- heehvdenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpeehne
+ heehvdenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpeelne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:FN7hXiyoJHj8pAr_xFq5_EIc-fM8gFRPDWftU-TyxJQUle_tNqsPcw>
- <xmx:FN7hXu16oz4QpvwIW5dc0Icb9dNizhCPpciYmb9fKWcpbtv4eaFoyQ>
- <xmx:FN7hXhCxa6lcNq6NNL-P0-w1uK7jnBrUpR172WWdLNNtucD3zBhaaA>
- <xmx:Fd7hXrX4ivkbo0pgAt5JTQAN-rhr8ER-51dzn3U52rpEjszufM66FQ>
+X-ME-Proxy: <xmx:Ft7hXssPqOBToQf_nZVZ2XqCTBb7muU-NSI-crUXMqqk57qZ0tAYOA>
+ <xmx:Ft7hXqBzQzZP8YF-H9ZWYGYzkis1q1okzP4eUbQceOjDtbFw4BaqSQ>
+ <xmx:Ft7hXkdn_VAud1tygQQNWGJhx9cajhPi5N0alqKBSZhvVpMtqFoaLw>
+ <xmx:Ft7hXiiENurgw0kPfs-w1ZOGzRjue9gfrg9Q2LOz6O2v6DfGZ_LGZw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 992FB3280059;
- Thu, 11 Jun 2020 03:32:36 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 32DDD3061856;
+ Thu, 11 Jun 2020 03:32:38 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v4 10/27] clk: bcm: rpi: Switch to clk_hw_register_clkdev
-Date: Thu, 11 Jun 2020 09:31:59 +0200
-Message-Id: <d575374b56fb53c70bc9dbacb290d44a716f7474.1591860665.git-series.maxime@cerno.tech>
+Subject: [PATCH v4 11/27] clk: bcm: rpi: Make sure the clkdev lookup is removed
+Date: Thu, 11 Jun 2020 09:32:00 +0200
+Message-Id: <8952eb653583c4c944a753837d2a5cdffe399667.1591860665.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
 References: <cover.58c6e44891ff5bf61052b5804f7da9b5ba074840.1591860665.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_003238_291820_1F626E4B 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20200611_003239_930810_69FDB376 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -115,9 +116,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we don't care about retrieving the clk_lookup structure pointer
-returned by clkdev_hw_create, we can just use the clk_hw_register_clkdev
-function.
+The clkdev lookup created for the cpufreq device is never removed if
+there's an issue later in probe or at module removal time.
+
+Let's convert to the managed variant of the clk_hw_register_clkdev function
+to make sure it happens.
 
 Cc: Michael Turquette <mturquette@baylibre.com>
 Cc: linux-clk@vger.kernel.org
@@ -125,38 +128,25 @@ Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 5a06c4991c7f..23f06618a356 100644
+index 23f06618a356..a20492fade6a 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -237,7 +237,6 @@ static struct clk_fixed_factor raspberrypi_clk_pllb_arm = {
- 
- static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
- {
--	struct clk_lookup *pllb_arm_lookup;
- 	int ret;
- 
- 	ret = devm_clk_hw_register(rpi->dev, &raspberrypi_clk_pllb_arm.hw);
-@@ -246,11 +245,11 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
+@@ -245,8 +245,9 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
  		return ret;
  	}
  
--	pllb_arm_lookup = clkdev_hw_create(&raspberrypi_clk_pllb_arm.hw,
--					   NULL, "cpu0");
--	if (!pllb_arm_lookup) {
--		dev_err(rpi->dev, "Failed to initialize pllb_arm_lookup\n");
--		return -ENOMEM;
-+	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
-+				     NULL, "cpu0");
-+	if (ret) {
-+		dev_err(rpi->dev, "Failed to initialize clkdev\n");
-+		return ret;
- 	}
- 
- 	return 0;
+-	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
+-				     NULL, "cpu0");
++	ret = devm_clk_hw_register_clkdev(rpi->dev,
++					  &raspberrypi_clk_pllb_arm.hw,
++					  NULL, "cpu0");
+ 	if (ret) {
+ 		dev_err(rpi->dev, "Failed to initialize clkdev\n");
+ 		return ret;
 -- 
 git-series 0.9.1
 
