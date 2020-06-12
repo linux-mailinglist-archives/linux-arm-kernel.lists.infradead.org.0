@@ -2,81 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 744F61F7929
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:57:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0BA21F792A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:58:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=D2y1Np60bXQdt/twQMmjxntJPUTL54LS1FncJmfUI1c=; b=QWJQOqj7i2u1J64A6PvcqLIMTT
-	6fyr/XlFIfe13KZEUMbnupHzkIrkSc3fFJHjYkL61r011pOLlCAL1m+27iHB5JuiSrrg4gptGyP2a
-	2X19J2dVxiQNQqSKq/q1352JwbVmjw44MS9pREUakOF+o8fIHo+RuOe7ReCWIckRjL7PMM/I3I1Rk
-	DCR/Q/+TehOMk4DL5/E9S75QRdYSqanc52Eu1Kl0NnQ1jKpYsEK2TYwY27pKCEVU5TYiKvsh3B9NW
-	SSQ7IfbNnTC9S8m+3mRNPp5skD/PQ9kXPih9sqgiazOZGW6ipV1GVjiqQg59Ltm/v70aESBrw1dpM
-	wItp9rpA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NPJjoumOkU6EMk0h7s26qgPGDXwiknW7GoOs/6iOL5Y=; b=KZIVlb1Ek5YNCR
+	3dhJP+bfgxIL+DBHmssBB0hDsOHLU+BJE04Gb/Rpfy3zAvftIWwcpqbHF+LWtl1XWBHfXbh9SQYw2
+	emhe6+BJ+ehGgnc+5Me3HlbtEjzMpqOkjYokYAHR7QCCCgxefk8rCvL2eyA2WILDTdpm6ls46mQIe
+	/wFFtuokEO3ZNhqemOJy45YA0UmBSi8seHh2nTlPegCPDnypcupsZiT902gx/jC/LNhG44SbuCgz2
+	Tf2P7IvOe+Qzv+ztxolDLkoNT8MhLho0NZcIq59czNO3+l3uEz1wN2qcLjv0HIiMFHmskrQAySOm9
+	AGa4eLoQI4fCKV38K7aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjkBq-0007Tp-L5; Fri, 12 Jun 2020 13:57:50 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jjkC5-0007jB-Sa; Fri, 12 Jun 2020 13:58:05 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjk8v-0002u3-5t
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:54:51 +0000
-Received: by mail-lj1-x244.google.com with SMTP id 9so11159137ljv.5
+ id 1jjk9q-00062M-IE
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:55:48 +0000
+Received: by mail-pg1-x542.google.com with SMTP id t7so4168186pgt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 06:54:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=dfWTJRln/wUkUezGYMWTWyc7bZ4R2M6yJEVL+/18MoU=;
- b=YKUm5+MXtyoghi4Yx87JKWrhK8cqKD7Pbsn3qttgdfSTtHv9XJDTFN6NgT4uvktIZ4
- uoW5GEgLbTnrIKjiPQH6wahznKsDQ5arq9tYg0nV3URIhCV9lEdy9f9oGwW4Y1W1y9u9
- w9/5i2Een1oXqRDGaVhEBRV7FFxMTbNX43qg0J+qjrXwn2xDKJ/ytgQrOnogGLijj0/T
- 9Jlw5TytVFnb97n2RZU8Et8Hf57kDLGSF0BPJ8W4BWtNgD3Z+dTD755+KLZnXI2WcLwl
- IqqKciv1se3OjH7IzAN57JRVq66HbgvpNjVFwb1TDU5vjEHitTUcjc1F7oeh2JdCwLLz
- xlyw==
+ Fri, 12 Jun 2020 06:55:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=jjd0AuUqDMS+kg7RMfFuNDT5WMCpvxZwxODMYSMGb1M=;
+ b=AGm49oXOJa5zvbGQSmCtPupmqX/vK0ZW8yO+FtbKQdYZhs/qHaUS/YrDhFOr2Ohk2C
+ vmm3wEH/np8fZhGqc4XNfrMnILSw+UvGZdh/wynEj63vaoMLII/YBTTwfnYG1oMkd4yi
+ mTsaj9JZb9qzBuD1CwqYPNRWvT82p5TKFWey09Jyp+fc0NjpoYrOH9XkEmy19ojS8tJB
+ bcm/JOqSpb+/aYnPpOBvKGsvTRzsD7FLRL86I+HhWCdtQgLN/F4Jn6yCLgjwWIuUGWh6
+ EpgBun44z05r0/yWcQIBB+1WyCZrI2OfsoCxeHxH3rFDK+tZWE1El3KgmYVY7xldognU
+ KF0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=dfWTJRln/wUkUezGYMWTWyc7bZ4R2M6yJEVL+/18MoU=;
- b=jOZKOKIf9BRojzD19CRSThmeVn3CVojUTAHUC18joj1Gxo+sVCwKquX4qENdtwfIUL
- cG6VYmPRTbFovr24qJVg65Ry2hVAYs4bYnwE/rixkNwC9Cv3Oa6IcqhldUIX1KqA2+Lz
- L68COdo+ipUP6skaBzop7BJP6AW+3C7Da9GT91bHspJPrdfF3CnM9oX/ip74nk6CVFdJ
- y8QQhX7lSEMXsg2bwk/oOAw21oLibyabF6FwIwt++H1wwT4P97g3jzIY//aw0+TMlePq
- 68mODk+NL+YHNCUMdpxbw1Clv2p1nItg8z94LioEvbXSz7Qrl9gRj/GYxEtjglQ1U/AE
- S4DA==
-X-Gm-Message-State: AOAM530YxhBOyGKQONZOWYnWovHcWUJIq0u3+gOvQIlQDRnde3wwjBns
- /H7RjEe24+7y/Q77wpXB3wPOLA==
-X-Google-Smtp-Source: ABdhPJzkvrMx8Yl1wKGOV7GyTAN+Yk3rUFpSNV9AQJqPXtZtgFKoZ6hefDkjfeWUdm8RijLAnD9lYQ==
-X-Received: by 2002:a2e:81c5:: with SMTP id s5mr6643701ljg.372.1591970087696; 
- Fri, 12 Jun 2020 06:54:47 -0700 (PDT)
-Received: from localhost.localdomain (37-144-159-139.broadband.corbina.ru.
- [37.144.159.139])
- by smtp.googlemail.com with ESMTPSA id a1sm2414415lfi.36.2020.06.12.06.54.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 06:54:47 -0700 (PDT)
-From: Andrey Konovalov <andrey.konovalov@linaro.org>
-To: mchehab@kernel.org, sakari.ailus@iki.fi, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v5 10/10] media: i2c: imx290: set bus_type before calling
- v4l2_fwnode_endpoint_alloc_parse()
-Date: Fri, 12 Jun 2020 16:53:55 +0300
-Message-Id: <20200612135355.30286-11-andrey.konovalov@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200612135355.30286-1-andrey.konovalov@linaro.org>
-References: <20200612135355.30286-1-andrey.konovalov@linaro.org>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=jjd0AuUqDMS+kg7RMfFuNDT5WMCpvxZwxODMYSMGb1M=;
+ b=H+pzZ9/jnEdM8YrYvR57Qz+dmV/hwOGMILuW+H4TDi6R62H+9Nwddm4gb9y19/QDgF
+ q17e0EHGCW3aLYSV7y1i9wEZu6JdP6R/TnWKcKdHfMofqNSvpWjY6DRwG6p6Qk7OWMBT
+ 8rih2XnHZ7QTXI/AOf5Emio2QTypb58YiuxRL+f81beW9k1zXMO2KWtUXwOfZAJ7x6xi
+ gwkPWVs7qyNq3QpqdVyB7Nk5OJtBrCtMZLOE5jIgGR2R//EctO/rRJNFH70uKm8Jlr2o
+ adhf9AfnTv3/3G3Srf0sp1Jh7QTUYakn5Kw4sJmtSNxgL00+fCV27QAFdSQXUmaWgLCS
+ fPQQ==
+X-Gm-Message-State: AOAM531AlB3BF+Ib01c3WxMuoQdfCQCc4NIaGLtuVPWpN70Fq4Jv9tcK
+ T3ouxWvIVTxYA2+Cmj2OQxc=
+X-Google-Smtp-Source: ABdhPJxZsluvfDXjcLYcixbYMCGaCMI0iW8Tje9KJtl2C3rbqpPHE3nY5bBWjfZrbopCFK5js/mV7w==
+X-Received: by 2002:a63:7707:: with SMTP id s7mr10832085pgc.295.1591970145638; 
+ Fri, 12 Jun 2020 06:55:45 -0700 (PDT)
+Received: from localhost ([49.207.50.185])
+ by smtp.gmail.com with ESMTPSA id e127sm6617854pfe.45.2020.06.12.06.55.44
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 12 Jun 2020 06:55:44 -0700 (PDT)
+Date: Fri, 12 Jun 2020 19:25:38 +0530
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
+Message-ID: <20200612135538.GA13399@afzalpc>
+References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
+ <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
+ <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
+User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_065449_240938_E269B422 
-X-CRM114-Status: GOOD (  18.89  )
+X-CRM114-CacheID: sfid-20200612_065546_678354_438C0F34 
+X-CRM114-Status: GOOD (  23.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [afzal.mohd.ma[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,148 +101,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- Andrey Konovalov <andrey.konovalov@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: Nicolas Pitre <nico@fluxnic.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The bus_type field of v4l2_fwnode_endpoint structure passed as the argument
-to v4l2_fwnode_endpoint_alloc_parse() function must be initiaized.
-Set it to V4L2_MBUS_CSI2_DPHY, and check for -ENXIO which is returned
-when the requested media bus type doesn't match the fwnode.
+Hi,
 
-Also remove v4l2_fwnode_endpoint field from struct imx290 as it is only
-needed in the probe function: use the local variable for this purpose.
+On Fri, Jun 12, 2020 at 02:02:13PM +0200, Arnd Bergmann wrote:
+> On Fri, Jun 12, 2020 at 12:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
 
-Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
----
- drivers/media/i2c/imx290.c | 38 +++++++++++++++++++-------------------
- 1 file changed, 19 insertions(+), 19 deletions(-)
+> > Roughly a one-third drop in performance. Disabling highmem improves
+> > performance only slightly.
 
-diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-index 02001c1b0dfc..9c97830164e9 100644
---- a/drivers/media/i2c/imx290.c
-+++ b/drivers/media/i2c/imx290.c
-@@ -70,7 +70,6 @@ struct imx290 {
- 	u8 bpp;
- 
- 	struct v4l2_subdev sd;
--	struct v4l2_fwnode_endpoint ep;
- 	struct media_pad pad;
- 	struct v4l2_mbus_framefmt current_format;
- 	const struct imx290_mode *current_mode;
-@@ -914,17 +913,18 @@ static const struct media_entity_operations imx290_subdev_entity_ops = {
-  * of MIPI data lanes are mentioned in the device tree, or the value of the
-  * first missing frequency otherwise.
-  */
--static s64 imx290_check_link_freqs(const struct imx290 *imx290)
-+static s64 imx290_check_link_freqs(const struct imx290 *imx290,
-+				   const struct v4l2_fwnode_endpoint *ep)
- {
- 	int i, j;
- 	const s64 *freqs = imx290_link_freqs_ptr(imx290);
- 	int freqs_count = imx290_link_freqs_num(imx290);
- 
- 	for (i = 0; i < freqs_count; i++) {
--		for (j = 0; j < imx290->ep.nr_of_link_frequencies; j++)
--			if (freqs[i] == imx290->ep.link_frequencies[j])
-+		for (j = 0; j < ep->nr_of_link_frequencies; j++)
-+			if (freqs[i] == ep->link_frequencies[j])
- 				break;
--		if (j == imx290->ep.nr_of_link_frequencies)
-+		if (j == ep->nr_of_link_frequencies)
- 			return freqs[i];
- 	}
- 	return 0;
-@@ -934,6 +934,10 @@ static int imx290_probe(struct i2c_client *client)
- {
- 	struct device *dev = &client->dev;
- 	struct fwnode_handle *endpoint;
-+	/* Only CSI2 is supported for now: */
-+	struct v4l2_fwnode_endpoint ep = {
-+		.bus_type = V4L2_MBUS_CSI2_DPHY
-+	};
- 	struct imx290 *imx290;
- 	u32 xclk_freq;
- 	s64 fq;
-@@ -956,15 +960,18 @@ static int imx290_probe(struct i2c_client *client)
- 		return -EINVAL;
- 	}
- 
--	ret = v4l2_fwnode_endpoint_alloc_parse(endpoint, &imx290->ep);
-+	ret = v4l2_fwnode_endpoint_alloc_parse(endpoint, &ep);
- 	fwnode_handle_put(endpoint);
--	if (ret) {
-+	if (ret == -ENXIO) {
-+		dev_err(dev, "Unsupported bus type, should be CSI2\n");
-+		goto free_err;
-+	} else if (ret) {
- 		dev_err(dev, "Parsing endpoint node failed\n");
- 		goto free_err;
- 	}
- 
- 	/* Get number of data lanes */
--	imx290->nlanes = imx290->ep.bus.mipi_csi2.num_data_lanes;
-+	imx290->nlanes = ep.bus.mipi_csi2.num_data_lanes;
- 	if (imx290->nlanes != 2 && imx290->nlanes != 4) {
- 		dev_err(dev, "Invalid data lanes: %d\n", imx290->nlanes);
- 		ret = -EINVAL;
-@@ -973,27 +980,20 @@ static int imx290_probe(struct i2c_client *client)
- 
- 	dev_dbg(dev, "Using %u data lanes\n", imx290->nlanes);
- 
--	if (!imx290->ep.nr_of_link_frequencies) {
-+	if (!ep.nr_of_link_frequencies) {
- 		dev_err(dev, "link-frequency property not found in DT\n");
- 		ret = -EINVAL;
- 		goto free_err;
- 	}
- 
- 	/* Check that link frequences for all the modes are in device tree */
--	fq = imx290_check_link_freqs(imx290);
-+	fq = imx290_check_link_freqs(imx290, &ep);
- 	if (fq) {
- 		dev_err(dev, "Link frequency of %lld is not supported\n", fq);
- 		ret = -EINVAL;
- 		goto free_err;
- 	}
- 
--	/* Only CSI2 is supported for now */
--	if (imx290->ep.bus_type != V4L2_MBUS_CSI2_DPHY) {
--		dev_err(dev, "Unsupported bus type, should be CSI2\n");
--		ret = -EINVAL;
--		goto free_err;
--	}
--
- 	/* get system clock (xclk) */
- 	imx290->xclk = devm_clk_get(dev, "xclk");
- 	if (IS_ERR(imx290->xclk)) {
-@@ -1108,7 +1108,7 @@ static int imx290_probe(struct i2c_client *client)
- 	pm_runtime_enable(dev);
- 	pm_runtime_idle(dev);
- 
--	v4l2_fwnode_endpoint_free(&imx290->ep);
-+	v4l2_fwnode_endpoint_free(&ep);
- 
- 	return 0;
- 
-@@ -1118,7 +1118,7 @@ static int imx290_probe(struct i2c_client *client)
- 	v4l2_ctrl_handler_free(&imx290->ctrls);
- 	mutex_destroy(&imx290->lock);
- free_err:
--	v4l2_fwnode_endpoint_free(&imx290->ep);
-+	v4l2_fwnode_endpoint_free(&ep);
- 
- 	return ret;
- }
--- 
-2.17.1
+> There are probably some things that can be done to optimize it,
+> but I guess most of the overhead is from the page table operations
+> and cannot be avoided.
 
+Ingo's series did a follow_page() first, then as a fallback did it
+invoke get_user_pages(), i will try that way as well.
+
+Yes, i too feel get_user_pages_fast() path is the most time consuming,
+will instrument & check.
+
+> What was the exact 'dd' command you used, in particular the block size?
+> Note that by default, 'dd' will request 512 bytes at a time, so you usually
+> only access a single page. It would be interesting to see the overhead with
+> other typical or extreme block sizes, e.g. '1', '64', '4K', '64K' or '1M'.
+
+It was the default(512), more test results follows (in MB/s),
+
+                512     1K      4K      16K     32K     64K     1M
+
+w/o series      30      46      89      95      90      85      65
+
+w/ series       22      36      72      79      78      75      61
+
+perf drop       26%     21%     19%     16%     13%     12%    6%
+
+Hmm, results ain't that bad :)
+
+> If you want to drill down into where exactly the overhead is (i.e.
+> get_user_pages or kmap_atomic, or something different), using
+> 'perf record dd ..', and 'perf report' may be helpful.
+
+Let me dig deeper & try to find out where the major overhead and try
+to figure out ways to reduce it.
+
+One reason to disable highmem & test (results mentioned earlier) was
+to make kmap_atomic() very lightweight, that was not making much
+difference, around 3% only.
+
+> > +static int copy_chunk_from_user(unsigned long from, int len, void *arg)
+> > +{
+> > +       unsigned long *to_ptr = arg, to = *to_ptr;
+> > +
+> > +       memcpy((void *) to, (void *) from, len);
+> > +       *to_ptr += len;
+> > +       return 0;
+> > +}
+> > +
+> > +static int copy_chunk_to_user(unsigned long to, int len, void *arg)
+> > +{
+> > +       unsigned long *from_ptr = arg, from = *from_ptr;
+> > +
+> > +       memcpy((void *) to, (void *) from, len);
+> > +       *from_ptr += len;
+> > +       return 0;
+> > +}
+> 
+> Will gcc optimize away the indirect function call and inline everything?
+> If not, that would be a small part of the overhead.
+
+i think not, based on objdump, i will make these & wherever other
+places possible inline & see the difference.
+
+> > +       num_pages = DIV_ROUND_UP((unsigned long)from + n, PAGE_SIZE) -
+> > +                                (unsigned long)from / PAGE_SIZE;
+> 
+> Make sure this doesn't turn into actual division operations but uses shifts.
+> It might even be clearer here to open-code the shift operation so readers
+> can see what this is meant to compile into.
+
+Okay
+
+> 
+> > +       pages = kmalloc_array(num_pages, sizeof(*pages), GFP_KERNEL | __GFP_ZERO);
+> > +       if (!pages)
+> > +               goto end;
+> 
+> Another micro-optimization may be to avoid the kmalloc for the common case,
+> e.g. anything with "num_pages <= 64", using an array on the stack.
+
+Okay
+
+> > +       ret = get_user_pages_fast((unsigned long)from, num_pages, 0, pages);
+> > +       if (ret < 0)
+> > +               goto free_pages;
+> > +
+> > +       if (ret != num_pages) {
+> > +               num_pages = ret;
+> > +               goto put_pages;
+> > +       }
+> 
+> I think this is technically incorrect: if get_user_pages_fast() only
+> gets some of the
+> pages, you should continue with the short buffer and return the number
+> of remaining
+> bytes rather than not copying anything. I think you did that correctly
+> for a failed
+> kmap_atomic(), but this has to use the same logic.
+
+yes, will fix that.
+
+
+Regards
+afzal
 
 _______________________________________________
 linux-arm-kernel mailing list
