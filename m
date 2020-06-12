@@ -2,52 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D34D1F764A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 11:56:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F99D1F7650
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 11:58:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hx9GEHO8jOwMq2XCkDZJe2uy9ja5C0pRlrpEsS+aTaQ=; b=eO1BJxMQgEQ3R9JwOgRWCSLFF
-	06El03laAWTzLxFeSo2srhdHr2bEBu5X6hIUwgRNce59gRc51btPbiunCn/Y/BkbRAEbcK4hUfdw8
-	buzfoJsWoI0nD4YlOLSeSZIAINj8f3SSb6U4aN3UO+jCnyIcjjilCixSTSRJ4Zl9GB5xHfFIXWHk+
-	5pIMLEfaDy6IwRJ2GcTAkqJcAxdDCtAfzUArF55MwNGWrTEbDkzMBjK6u2fATvivSQzkKfW0zwD87
-	IVutUT4v9XLIf4QHAGobcqPe6zAiX/sBRKfeopXMPHAvOVvDVz5H9aB+q9ish54xdyg7LKzrCi62j
-	Rt3NiCQCQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Vx5Ke2IMlJstTemjY921ls9Jsxw6Df3X60ECR6jpTqY=; b=m/wVSqVlunuY/R
+	sC/FqFL7ZzILLfWaPW4qRNDlBycm5T/CuQeO8+k8JQM/mPW5bbAcpOM53GqOVErjfDFcfQq+x0vGs
+	ZVxzoQx+XwEuFlKqGVg0P3a3l3PVHp9VvM7gR0t584kuA4J5Z1+LT9tac8StH/LaE2wa0dRtSBCP1
+	Cb/yb+BCPtfMZk7ERkSdf/Mu4sn1P2athkpddBHI63xD7VRtdCJxKCG2W+9IhduJoY7dO6GYcyg8t
+	qyhbSD/8zBq9v2NVkNyJ+jcw0QmLdfdewijle4W+E+zSnw3j0/dsB5Pv7x+/aWjSB+MJncprmTYHI
+	WcHGHS8DySvhSQXQB6tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjgQ3-0007Nu-88; Fri, 12 Jun 2020 09:56:15 +0000
+	id 1jjgS6-0007ha-6A; Fri, 12 Jun 2020 09:58:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjgPv-0007NZ-AG
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 09:56:08 +0000
-Received: from localhost (p54b33104.dip0.t-ipconnect.de [84.179.49.4])
+ id 1jjgRx-0007h5-Gm
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 09:58:14 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5A9FB2081A;
- Fri, 12 Jun 2020 09:56:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A36C2081A;
+ Fri, 12 Jun 2020 09:58:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591955767;
- bh=vpHTuwUDM9a5LcIHJu50XcaJieuFQe7fiS+Dk2mMIpM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2UEHK2tVpciOsv09SaQXib8V2ByKV+2ALo5gw8FS5anC2j7Tgy3jxXHPBhEomd90v
- YYxI1o+AFsEg9pGS4MB1Yq+QFS0Lc6M1xgapxTGgqjSEmPY8z/xi7//huR020ol5Li
- +7ubHZAWSfrptdS+gfVO3wyHzmZMeKaB+cWeBQvc=
-Date: Fri, 12 Jun 2020 11:56:04 +0200
-From: Wolfram Sang <wsa@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
-Message-ID: <20200612095604.GA17763@ninjato>
-References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
- <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
+ s=default; t=1591955892;
+ bh=zB8nnD4dSrmu1H8yiyDof1V2xaA4bkUPyZgJNCeNi5A=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=xyn5hOGMz68FhQ9lPv4Mm106ducViZZ9wAT4x1JFbGpIRYMhJF015PrfnXV70jetq
+ 8VqZPrm3vfT0X7/6j9X5y9JWozYLdV2zqjxBlShwOsECiJ8iH8RR/9evZ36u3LhUqp
+ cFv5nrXZE9lDokCwApcqHkmowhUOybkli233G3Vo=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jjgRu-002MB1-9C; Fri, 12 Jun 2020 10:58:10 +0100
+Date: Fri, 12 Jun 2020 10:58:09 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [PATCH 01/11] genirq: Add fasteoi IPI flow
+Message-ID: <20200612105809.535ea250@why>
+In-Reply-To: <jhj8shnr28o.mognet@arm.com>
+References: <20200519161755.209565-1-maz@kernel.org>
+ <20200519161755.209565-2-maz@kernel.org>
+ <jhj8shnr28o.mognet@arm.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200612092941.GA25990@pi3>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: valentin.schneider@arm.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ will@kernel.org, catalin.marinas@arm.com, linux@arm.linux.org.uk,
+ tglx@linutronix.de, jason@lakedaemon.net, sumit.garg@linaro.org,
+ kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_025607_373980_AB777B6C 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20200612_025813_597930_DCACBA32 
+X-CRM114-Status: GOOD (  23.53  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,78 +93,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fugang Duan <B38611@freescale.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Gao Pan <b54642@freescale.com>, Oleksij Rempel <linux@rempel-privat.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, stable@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============0091219071169520299=="
+Cc: Sumit Garg <sumit.garg@linaro.org>, kernel-team@android.com,
+ Russell King <linux@arm.linux.org.uk>, Jason Cooper <jason@lakedaemon.net>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 19 May 2020 23:25:43 +0100
+Valentin Schneider <valentin.schneider@arm.com> wrote:
 
---===============0091219071169520299==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="RnlQjJ0d97Da+TV1"
-Content-Disposition: inline
+> On 19/05/20 17:17, Marc Zyngier wrote:
+> > For irqchips using the fasteoi flow, IPIs are a bit special.
+> >
+> > They need to be EOId early (before calling the handler), as
+> > funny things may happen in the handler (they do not necessarily
+> > behave like a normal interrupt), and that the arch code is
+> > already handling the stats.
+> >
+> > Signed-off-by: Marc Zyngier <maz@kernel.org>
+> > ---
+> >  include/linux/irq.h |  1 +
+> >  kernel/irq/chip.c   | 26 ++++++++++++++++++++++++++
+> >  2 files changed, 27 insertions(+)
+> >
+> > diff --git a/include/linux/irq.h b/include/linux/irq.h
+> > index 8d5bc2c237d7..726f94d8b8cc 100644
+> > --- a/include/linux/irq.h
+> > +++ b/include/linux/irq.h
+> > @@ -621,6 +621,7 @@ static inline int irq_set_parent(int irq, int parent_irq)
+> >   */
+> >  extern void handle_level_irq(struct irq_desc *desc);
+> >  extern void handle_fasteoi_irq(struct irq_desc *desc);
+> > +extern void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc);
+> >  extern void handle_edge_irq(struct irq_desc *desc);
+> >  extern void handle_edge_eoi_irq(struct irq_desc *desc);
+> >  extern void handle_simple_irq(struct irq_desc *desc);
+> > diff --git a/kernel/irq/chip.c b/kernel/irq/chip.c
+> > index 41e7e37a0928..7b0b789cfed4 100644
+> > --- a/kernel/irq/chip.c
+> > +++ b/kernel/irq/chip.c
+> > @@ -955,6 +955,32 @@ void handle_percpu_devid_irq(struct irq_desc *desc)
+> >               chip->irq_eoi(&desc->irq_data);
+> >  }
+> >
+> > +/**
+> > + * handle_percpu_devid_fasteoi_ipi - Per CPU local IPI handler with per cpu
+> > + *				     dev ids
+> > + * @desc:	the interrupt description structure for this irq
+> > + *
+> > + * The biggest differences with the IRQ version are that:
+> > + * - the interrupt is EOIed early, as the IPI could result in a context
+> > + *   switch, and we need to make sure the IPI can fire again
+> > + * - Stats are usually handled at the architecture level, so we ignore them
+> > + *   here
+> > + */
+> > +void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc)
+> > +{
+> > +	struct irq_chip *chip = irq_desc_get_chip(desc);
+> > +	struct irqaction *action = desc->action;
+> > +	unsigned int irq = irq_desc_get_irq(desc);
+> > +	irqreturn_t res;
+> > +  
+> 
+> Tied to the following patch, does that want something like
+> 
+> +	if (!irq_settings_is_no_accounting(desc))
+> +		__kstat_incr_irqs_this_cpu(desc);
+> +
+> 
+> While I'm at it, now that we would have IPIs as 'normal' interrupts, what
+> prevents us from getting rid of the arch-side accounting? Is it just that
+> we are keeping it as long as handle_IPI() lives, or are there more hurdles
+> hidden around?
 
+See my reply to Florian. I need to mop the rest of the 32bit irqchips
+without having the HW (hip04 is almost a copy of the GIC driver, and
+the Marvell horror is very RPi like).
 
---RnlQjJ0d97Da+TV1
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Once this is done, we can kill the home-brewed stuff and rely on core
+infrastructure.
 
-On Fri, Jun 12, 2020 at 11:29:41AM +0200, Krzysztof Kozlowski wrote:
-> On Fri, Jun 12, 2020 at 11:05:17AM +0200, Wolfram Sang wrote:
-> > On Wed, Jun 10, 2020 at 03:46:42PM +0200, Krzysztof Kozlowski wrote:
-> > > If interrupt comes early (could be triggered with CONFIG_DEBUG_SHIRQ),
-> >=20
-> > That code is disabled since 2011 (6d83f94db95c ("genirq: Disable the
-> > SHIRQ_DEBUG call in request_threaded_irq for now"))? So, you had this
-> > without fake injection, I assume?
->=20
-> No, I observed it only after enabling DEBUG_SHIRQ (to a kernel with
-> some debugging options already).
+Thanks,
 
-Interesting. Maybe probe was deferred and you got the extra irq when
-deregistering?
-
-
---RnlQjJ0d97Da+TV1
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7jUTAACgkQFA3kzBSg
-KbbntA//dAQo2Vc4X+lVKV4pApi36lY7bZa0XTJB1+2aZfBti0Twy0cQrN3vvaaQ
-rc4sYXRkK/d1N5z95dj3eWcnmsUtel2Ac5neRuCCFY62y27uI24JJT7HKKXwXPkT
-oFAxksVZ4cDnjrrtpeFSq5vWtqilA8s7m1bapaNS2B5kv7AtRD733NDXHNwec0Io
-nCgN4hKMEY+JZFBhnQG3VfR+i/kuvg4zPd47bb+gc3eGHuXs4jGMb06EXuKmBbK/
-VdjUuwqiO/gGhcFAqdsA1JA9eSbvFfEJndS9uAz9WfXQBtIO//is6jFp5e9kU8Gx
-pmKCiiVUnO5BTLPreLSEqNDJeLAj17ksGj7nSAdxujjXeXLM68j6FZJRytOZLFdG
-o6KSO2QSbPEBGJiArJQj6s7i7GOP5pjPaEb+6x8ldV9hBkeAmsscFD92OiWHSgM6
-rs1NX9s3/64cN0yWl2R0UActscJTQWMntBLiwBXoOU+Pjjh2dZU0ju0+diUjfgA4
-/i714f+DaPkgC+HcTpzpmV9xmDCEGhLV6DJyJkbUHKknDLQ5e5rXxkGAeRWn1cCV
-1UcrBB8YZR/YSJj5FO7T340Fg5kXAAtzZF5qIOSSjmD0cdadtHZNezhbL6jJfiJ2
-seyWQ80gCrbSGVW3DH4sgm+CUDnVvCN33gMa50NmsZ0gPC2F3HA=
-=r8jc
------END PGP SIGNATURE-----
-
---RnlQjJ0d97Da+TV1--
-
-
---===============0091219071169520299==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0091219071169520299==--
-
