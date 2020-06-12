@@ -2,57 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3F281F7566
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:39:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D93F21F756C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:46:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sT7AUtpDENFaSwV3XrTZudY2p/DA17JjuIJYe/t/Bic=; b=KjoPKReBvDFqGR
-	ms91YNVG/60nTw3ZTFHwzJm55z58H4lFbluh7TtrLaq6EvjeUZlLr1cWrC8xLLRaPSWAuqNoqG/iZ
-	Kohwp6QXO4g8mGzXj0qOtvSgufUeTXnclNsinwPIT8kIYbpnGVkpO3nar4fs1+3KCMeOc6MGauBK/
-	zTsnxovuaN20S/OiKBqdrqLSgjt9FGZJsRen9phO6g3F/6YQfgXfYfErrUrTmnL85rcOv2KWLHkDe
-	i8j4zzajk3YgGhuZPHmz7uAn1crI0YTVgjfQRSQX62CRRmD9mUAVJIlbccLjfZFAs7xuWypMs6/KL
-	GcLnISACobfiZHvdDYPw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=85g+Pk8GlUabN1D7Mlt9tD07Hak7sO3oe4yZGgjOAj0=; b=fbeTzTzAYE7wDB
+	nVUeLjWVDdlLh0MYVeM9AztPL1L2nWcjuUBsKGk7cw4mmLI7MGVtQluzKXMSlsljn8mvmJluxC1pQ
+	YidLRQVhMjAx/teAwxExaKwPJrZF+l/X2YBdHNErbe7YHQgPEzbPpigTyt5KWv9gfqVgSsLecYsw6
+	HG6w5c9MzBBS6PbAkoxCankvwGjCxvN/2EGlqG9IGDYBxk3qyhRzv5JLKr9Fivn87O+VbAZNvmpTl
+	dIIAMx1AudKd2yaMF8X/MvETt4MQvGBFgo6qflZuHGUSmkEmikM67K15+lpJHGzKF6BcwY7xd/5w9
+	8CFm3IBIgHSVtcM+Jptg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjfDP-00011w-Ch; Fri, 12 Jun 2020 08:39:07 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jjfKq-0006ZP-D8; Fri, 12 Jun 2020 08:46:48 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjfDH-00010z-Mb
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 08:39:01 +0000
-Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jjfDD-0001VK-4z; Fri, 12 Jun 2020 10:38:55 +0200
-Received: from sha by dude.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jjfDC-0007nf-8W; Fri, 12 Jun 2020 10:38:54 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: netdev@vger.kernel.org
-Subject: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
-Date: Fri, 12 Jun 2020 10:38:47 +0200
-Message-Id: <20200612083847.29942-1-s.hauer@pengutronix.de>
-X-Mailer: git-send-email 2.27.0
+ id 1jjfKg-0006Yr-Tv
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 08:46:40 +0000
+Received: from mail-qt1-f175.google.com ([209.85.160.175]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1N49d1-1ijtjH2hU1-0105C3 for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 12 Jun 2020 10:46:34 +0200
+Received: by mail-qt1-f175.google.com with SMTP id y1so6539891qtv.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 12 Jun 2020 01:46:34 -0700 (PDT)
+X-Gm-Message-State: AOAM5306qLpFXTUkSrD1Dvua7jEGuFyCHyW0Cx6IH9LBAyVZM+YpUaT+
+ Zhc1po3pbwFGDSYC5h5X1QTYYC7QEyoOeXIk9xw=
+X-Google-Smtp-Source: ABdhPJxKqzRLSO4fMRoy+D9AoIyVuflqbMy8wTI1zNSuYYHVNq3qpoLgEFps1G23pz8GebJwdhyh2Ig7jDkhxGkyh+I=
+X-Received: by 2002:ac8:4742:: with SMTP id k2mr1981341qtp.304.1591951593211; 
+ Fri, 12 Jun 2020 01:46:33 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20200611134914.765827-1-gregory.clement@bootlin.com>
+ <20200611134914.765827-2-gregory.clement@bootlin.com>
+ <CAK8P3a0Rc6qd0Cb2yMNupbCP2NWRQAsEKtvEr5sZV4ANw6xfNQ@mail.gmail.com>
+ <20200612083510.GB1551@shell.armlinux.org.uk>
+In-Reply-To: <20200612083510.GB1551@shell.armlinux.org.uk>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 12 Jun 2020 10:46:17 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2BpNVSE86zEYSGd7x+OF-7spjGmU331TbQX=DRAkpMoQ@mail.gmail.com>
+Message-ID: <CAK8P3a2BpNVSE86zEYSGd7x+OF-7spjGmU331TbQX=DRAkpMoQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/6] ARM: Use PAGE_SIZE for ELF_EXEC_PAGESIZE
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+X-Provags-ID: V03:K1:Cps1Otgm2aljUgYQr5fUfT+KN0pWEsi4Z8bzFVsnav+RiUwjrPX
+ /eus3OfSTov/XBX2slFWOByx7+q+O/nYcy/unPTph8S14/d+q+00YWMfYVzUVkX0qIFpYmK
+ Fd+5/k1og1fUIxTZwwC5zmFotq3cZewV2/dAqSMU6BDzdqiZRc+FRaYr/hy6H7RiLvliIXW
+ HE4HQtRhTzs078B1BMPcg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:mq4DW8GvFoo=:6FI5SXfMCNaejA+gCBDZLW
+ zzeUZU2/zRm6KsVWsih0mKNIkDYnHiVhuB2cxPB60OyoCVci14BvfhX7AblGGTJk97fVUtQl9
+ CkNSEQ/ouE4//IJqWqY44rNOhGT0PGqn70QD2nEszfrApOodEnH+/K+Q+C3whabmmSN+8GdLJ
+ 3gkY7iRQXeS9ZRRZIxsS9bCNblIdwvoGVCERtuF2s66iN9Q7nJyiNZlHdKtHEESw8XHaekXE0
+ voiMKMDzfnfwS9cqjyi8m6Iz4tVMAI/UnU/WfyHIfw3neHUk+njJj1N1PZ5C7rpEuo0lEMCqN
+ F/vh5Koc7BnlWz6isIt02iTYZ/LKzGEoAKANJNvskEiJM00VB/uL29zt9gzB61y1A7573Mp0X
+ dLsDTyfTUH924uTLylBJ5cKDjleGQ5+JtKXvV0bHTf4jFcQgc2EnpQz/uomdpmmPr//8w8pPM
+ 3rJ9PYmvdVFlcGc/MfYh2HupHfJOJU1MT3du3u4Cj9w6HA+Hci1cKmcaZ3/8//o0dCi8vBGwp
+ hvgDQTu15AyQcxcAB92ki6XL8qsnK5Is+yDh+U6iR66K3KXGTdsrVh7trz5GPZCuEvuMjDGre
+ 1QtGJ93GN+Hj1UX26G8JfjgFfVpPMzWTkGcZkA1EU3l7BMmPZHuRY5jYVemeuoGxxY/6+cAPt
+ Qcdtlcib9NtmzKkn1EXlAbKGsX4r+pH24uSHcJ1twmQ9B3JMMo+Z8yOh7xDdaO4tC2d+Nheo1
+ 51arQqPedk5EIqA/VN8o/Iu91YRJmuO9Zt1CNp5zpzFTh7OE5WSsvj7vU6NJs5PiZZJ5Rrb4b
+ 4G5KEmKBJZHwLReiJUcokEEuXUSDDzTxZd1G0s4Ce5zcOx4tdQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_013859_735094_4F8E8399 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20200612_014639_257470_6E7005AC 
+X-CRM114-Status: GOOD (  15.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,65 +90,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
+Cc: Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Marvell MVNETA Ethernet controller supports a 2.5Gbps SGMII mode
-called DRSGMII. Depending on the Port MAC Control Register0 PortType
-setting this seems to be either an overclocked SGMII mode or 2500BaseX.
+On Fri, Jun 12, 2020 at 10:35 AM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+> On Fri, Jun 12, 2020 at 10:22:17AM +0200, Arnd Bergmann wrote:
+> > On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
+> > <gregory.clement@bootlin.com> wrote:
+> > >
+> > > Currently ELF_EXEC_PAGESIZE is 4096 which is also the page size. In
+> > > order to be able to use other size of page than 4K, use PAGE_SIZE
+> > > instead of the hardcoded value.
+> > >
+> > > The use of PAGE_SIZE will be also aligned with what we find in other
+> > > architectures such as arm64.
+> > >
+> > > This is inspired from fa0ca2726ea9 ("DSMP 64K support") and
+> > > 4ef803e12baf ("mmu: large-page: Added support for multiple kernel page
+> > > sizes") from
+> > > https://github.com/MarvellEmbeddedProcessors/linux-marvell.git
+> > >
+> > > Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+> >
+> > IIRC using page sizes above 16KB here also requires using a
+> > non-ancient linker in user space that places sections on
+> > ELF_EXEC_PAGESIZE boundaries, right?
 
-This patch adds the necessary Serdes Configuration setting for the
-2.5Gbps modes. There is no phy interface mode define for overclocked
-SGMII, so only 2500BaseX is handled for now.
+Correction: I was thinking of SHMLBA, not ELF_EXEC_PAGESIZE.
+SHMLBA is defined to 16KB in arch/arm/ at the moment (based on 4K
+page size), or (4 * PAGE_SIZE) on arm64, which can blow up to 256KB.
 
-As phy_interface_mode_is_8023z() returns true for both
-PHY_INTERFACE_MODE_1000BASEX and PHY_INTERFACE_MODE_2500BASEX we
-explicitly test for 1000BaseX instead of using
-phy_interface_mode_is_8023z() to differentiate the different
-possibilities.
+AFAICT, SHMLBA should now be defined as "min(16384, PAGE_SIZE)".
 
-Fixes: da58a931f248f ("net: mvneta: Add support for 2500Mbps SGMII")
-Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
----
+> Doesn't that mean that this change breaks all existing userspace when
+> ELF_EXEC_PAGESIZE is not 4k?
 
-Changes since v1:
-  - Add Fixes: tag
+I think a lot of older user space would be broken with page sizes larger
+than 16KB, but would still work with 8KB or 16KB. Larger page sizes
+would only work with user space that was linked in the last five years
+or so, using a toolchain that has the workarounds for running on arm64
+with 64KB page size.
 
- drivers/net/ethernet/marvell/mvneta.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/marvell/mvneta.c b/drivers/net/ethernet/marvell/mvneta.c
-index 51889770958d8..3b13048931412 100644
---- a/drivers/net/ethernet/marvell/mvneta.c
-+++ b/drivers/net/ethernet/marvell/mvneta.c
-@@ -109,6 +109,7 @@
- #define MVNETA_SERDES_CFG			 0x24A0
- #define      MVNETA_SGMII_SERDES_PROTO		 0x0cc7
- #define      MVNETA_QSGMII_SERDES_PROTO		 0x0667
-+#define      MVNETA_DRSGMII_SERDES_PROTO	 0x1107
- #define MVNETA_TYPE_PRIO                         0x24bc
- #define      MVNETA_FORCE_UNI                    BIT(21)
- #define MVNETA_TXQ_CMD_1                         0x24e4
-@@ -4966,8 +4967,10 @@ static int mvneta_port_power_up(struct mvneta_port *pp, int phy_mode)
- 	if (phy_mode == PHY_INTERFACE_MODE_QSGMII)
- 		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_QSGMII_SERDES_PROTO);
- 	else if (phy_mode == PHY_INTERFACE_MODE_SGMII ||
--		 phy_interface_mode_is_8023z(phy_mode))
-+		 phy_mode == PHY_INTERFACE_MODE_1000BASEX)
- 		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_SGMII_SERDES_PROTO);
-+	else if (phy_mode == PHY_INTERFACE_MODE_2500BASEX)
-+		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_DRSGMII_SERDES_PROTO);
- 	else if (!phy_interface_mode_is_rgmii(phy_mode))
- 		return -EINVAL;
- 
--- 
-2.27.0
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
