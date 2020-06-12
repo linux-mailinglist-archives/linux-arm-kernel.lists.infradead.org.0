@@ -2,87 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26D511F76D0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:39:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E04A1F76D4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:40:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=srXNb15BWQzq+G45u8uoEk7KAQn3O8VIvqpbhHs6t/Y=; b=o8kRMYRvDxMlCb
-	k+i/mdoDogYICIV0FwR693K/GnBOQEcR30wqAu0ZCIc/+ZEAdBf/I5qbmAchPKf78dt02Tq0dODB/
-	284gXkU0lrxbifJYx/Ivf6BsbMeTEmkhiftv2Nd4JB+EIyuWNpmp9Ed5QdIlbGeCFJUtPefUfkbDd
-	3yTCmb/6ZVcubCleK8pX7y60c6liBDhpDIfHkxo5CTfoZvxLuAn3LjgOkt1hLPlmSdmmgJN6GUKL8
-	Vlp9rny/vCc5AjZPIWXaVjbv1aNfCJU36x1sG5B3w2d22PDE6YQYES58Trr5Oi2g/KN0J/vzbJdlM
-	K+mKdOxkePMnzvJtJhBg==;
+	List-Owner; bh=aBH/7t4dc2zU7XLGwN/Q+uRj80kHCTfNsdvHIDlKm3E=; b=g00QpfMGWepmQ0
+	DpivgOfBqfDjesq4SZLjEu7f1Gnrz6oaXUfGQeUhBqtvkl5Mnc4PZyAtzdvJGrv51lt6KW44L9AFt
+	xzMdd77cCx9JkJ3IYsjjc80Ma1bXEnZ57lINGDU/XoHcjbs9/zDXoRtz4PEIK8YPI5hv+yEvMrCTV
+	Khux75MxNfbIWC296Heg6B4f8FEHxe/pm4ufVm/HqL/zGVDMyuu2qv2YhdPthdA8i5PtSmq7BLTQQ
+	osRiu4mShrbpiKUdjL2pHeQgGw6ZFe7s0TZ4tVlbSkn9+fiURDc47ewMMR+bSG7ljWSZ0AkvzQAZM
+	gzC33VHvNOuObx9VBgjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjh5c-00071t-Uy; Fri, 12 Jun 2020 10:39:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jjh6g-0007JM-QI; Fri, 12 Jun 2020 10:40:18 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjh5U-00071U-Oq
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:39:06 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2F5B420792;
- Fri, 12 Jun 2020 10:39:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591958344;
- bh=Ic5qw5oifdLSTHOeMZf7Yti20T61ZRmCTHxVz++OVmY=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=iqQTcCa0+IVkdpWesoiLrhyjZMFk6VVnbhjwKh1SfzhXm9EGnMkRZpYqvsJQCG1V0
- pMz6sgPbHiFBHpmxIks72Ct6ZjFzb6U8kB40mc5e917uIJjeH4VmS6z+Ya0yXAhbGP
- 9mD1RhvKVUF4iyR+SiFAiKDvHYi1MSx+5ED0ikew=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jjh5S-002MhN-Bj; Fri, 12 Jun 2020 11:39:02 +0100
-Date: Fri, 12 Jun 2020 11:39:00 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH 06/11] irqchip/gic-v3: Configure SGIs as standard
- interrupts
-Message-ID: <20200612113900.09d53bd0@why>
-In-Reply-To: <jhjimgpxu2h.mognet@arm.com>
-References: <20200519161755.209565-1-maz@kernel.org>
- <20200519161755.209565-7-maz@kernel.org>
- <jhjimgpxu2h.mognet@arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jjh6I-0007Iu-6R
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:39:57 +0000
+Received: by mail-ed1-f65.google.com with SMTP id m32so6074737ede.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 12 Jun 2020 03:39:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=bBguARwUO/wHNwoTqDLDR0r7qkZEicJBKW50tLs1qxM=;
+ b=W6FC9GwRWFTv+0JqjpSagLfUzvyRBRTNrt5tEE7AIDsXAXSNfkj3zdawZHJuvKX2+m
+ d6c43g5lDm2zlLlKZYph4GQYL3rkH3mde1WSs77M+CUW2Xgqr++mJ2/oSBeNCoueHIcZ
+ 1x+AEPmb3KP8GT7j1M3gJEc9T8FVgX+LhavdvbhdM0JdOiNtDaN/hXnkDxwSImS7PPQa
+ 77SeGCdjjkG0K7GoXbp2LVbK79NHMJUJRhxoODTTt2PnfhV3fC34Ka3dDCv9KZHsAWfV
+ EG9xNRKLHnZBHdjU2QBBI2Fk+GdBxZy/qJydNQk1VufHrsfMISr8Zznc91sqDrPgtlhV
+ +pcQ==
+X-Gm-Message-State: AOAM530MLJuEoCXBcwbJGQbXlQTPbTD46xsyl2gXVGrwMBG/P9TN22EA
+ WLiIsU0VmOQ6cTVHkszFbG3wepj2
+X-Google-Smtp-Source: ABdhPJxUutltGtDoTvlpjvOa5B+zbRtPHYPgbVfuqRWP8igjMXRPh0MsA09sbMQFUVf8LtHUBKErmw==
+X-Received: by 2002:a50:fd19:: with SMTP id i25mr10916965eds.248.1591958392580; 
+ Fri, 12 Jun 2020 03:39:52 -0700 (PDT)
+Received: from pi3 ([194.230.155.184])
+ by smtp.googlemail.com with ESMTPSA id qp15sm3379298ejb.69.2020.06.12.03.39.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 12 Jun 2020 03:39:51 -0700 (PDT)
+Date: Fri, 12 Jun 2020 12:39:49 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Oleksij Rempel <o.rempel@pengutronix.de>
+Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
+Message-ID: <20200612103949.GB26056@pi3>
+References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
+ <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
+ <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
+ <20200612103149.2onoflu5qgwaooli@pengutronix.de>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: valentin.schneider@arm.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- will@kernel.org, catalin.marinas@arm.com, linux@arm.linux.org.uk,
- tglx@linutronix.de, jason@lakedaemon.net, sumit.garg@linaro.org,
- kernel-team@android.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200612103149.2onoflu5qgwaooli@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_033904_842702_3753FAE6 
-X-CRM114-Status: GOOD (  25.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200612_033955_740945_B72C33ED 
+X-CRM114-Status: GOOD (  17.08  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,112 +89,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Garg <sumit.garg@linaro.org>, kernel-team@android.com,
- Russell King <linux@arm.linux.org.uk>, Jason Cooper <jason@lakedaemon.net>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Oleksij Rempel <linux@rempel-privat.de>, Wolfram Sang <wsa@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Valentin,
-
-On Thu, 21 May 2020 15:04:54 +0100
-Valentin Schneider <valentin.schneider@arm.com> wrote:
-
-> On 19/05/20 17:17, Marc Zyngier wrote:
-> > Change the way we deal with GICv3 SGIs by turning them into proper
-> > IRQs, and calling into the arch code to register the interrupt range
-> > instead of a callback.
-> >
-> > Signed-off-by: Marc Zyngier <maz@kernel.org>
-> > ---
-> >  drivers/irqchip/irq-gic-v3.c | 91 +++++++++++++++++++++---------------
-> >  1 file changed, 53 insertions(+), 38 deletions(-)
-> >
-> > diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-> > index 23d7c87da407..d57289057b75 100644
-> > --- a/drivers/irqchip/irq-gic-v3.c
-> > +++ b/drivers/irqchip/irq-gic-v3.c
-> > @@ -1163,10 +1142,36 @@ static void gic_raise_softirq(const struct cpumask *mask, unsigned int irq)
-> >
-> >  static void gic_smp_init(void)
-> >  {
-> > -	set_smp_cross_call(gic_raise_softirq);
-> > +	struct irq_fwspec sgi_fwspec = {
-> > +		.fwnode		= gic_data.fwnode,
-> > +	};
-> > +	int base_sgi;
-> > +
-> >       cpuhp_setup_state_nocalls(CPUHP_AP_IRQ_GIC_STARTING,
-> >                                 "irqchip/arm/gicv3:starting",
-> >                                 gic_starting_cpu, NULL);
-> > +
-> > +	if (is_of_node(gic_data.fwnode)) {
-> > +		/* DT */
-> > +		sgi_fwspec.param_count = 3;
-> > +		sgi_fwspec.param[0] = GIC_IRQ_TYPE_SGI;
-> > +		sgi_fwspec.param[1] = 0;
-> > +		sgi_fwspec.param[2] = IRQ_TYPE_EDGE_RISING;
-> > +	} else {
-> > +		/* ACPI */
-> > +		sgi_fwspec.param_count = 2;
-> > +		sgi_fwspec.param[0] = 0;
-> > +		sgi_fwspec.param[1] = IRQ_TYPE_EDGE_RISING;
-> > +	}
-> > +
-> > +	/* Register all 8 non-secure SGIs */
-> > +	base_sgi = __irq_domain_alloc_irqs(gic_data.domain, -1, 8,
-> > +					   NUMA_NO_NODE, &sgi_fwspec,
-> > +					   false, NULL);  
+On Fri, Jun 12, 2020 at 12:31:49PM +0200, Oleksij Rempel wrote:
+> On Fri, Jun 12, 2020 at 12:21:13PM +0200, Krzysztof Kozlowski wrote:
+> > On Fri, Jun 12, 2020 at 11:56:04AM +0200, Wolfram Sang wrote:
+> > > On Fri, Jun 12, 2020 at 11:29:41AM +0200, Krzysztof Kozlowski wrote:
+> > > > On Fri, Jun 12, 2020 at 11:05:17AM +0200, Wolfram Sang wrote:
+> > > > > On Wed, Jun 10, 2020 at 03:46:42PM +0200, Krzysztof Kozlowski wrote:
+> > > > > > If interrupt comes early (could be triggered with CONFIG_DEBUG_SHIRQ),
+> > > > > 
+> > > > > That code is disabled since 2011 (6d83f94db95c ("genirq: Disable the
+> > > > > SHIRQ_DEBUG call in request_threaded_irq for now"))? So, you had this
+> > > > > without fake injection, I assume?
+> > > > 
+> > > > No, I observed it only after enabling DEBUG_SHIRQ (to a kernel with
+> > > > some debugging options already).
+> > > 
+> > > Interesting. Maybe probe was deferred and you got the extra irq when
+> > > deregistering?
+> > 
+> > Yes, good catch. The abort happens right after deferred probe exit.  It
+> > could be then different reason than I thought - the interrupt is freed
+> > through devm infrastructure quite late.  At this time, the clock might
+> > be indeed disabled (error path of probe()).
 > 
-> So IIUC using irq_reserve_ipi() would require us to have a separate IPI
-> domain, so instead here we can use a fwspec + the 'regular' GIC domain.
-
-Indeed. Using an IPI domain wouldn't bring much. But the major point
-against the current state of the IPI domain is that it sucks a bit for
-our use case. We want interrupts to be contiguous in the Linux IRQ
-space, and the IPI allocator prevents this.
-
-But maybe I should just bite the bullet and hack that as well.
-
-> One thing I see is that by not going through irq_reserve_ipi(), we don't set
-> data->common->ipi_offset. I think this is all kzalloc'd, and we want an
-> offset of 0 so it all works out, but this feels somewhat fragile.
-
-So far, nothing is using this field on the limited piece of code we
-use. But I agree, not the nicest behaviour.
-
-> > +	if (WARN_ON(base_sgi <= 0))
-> > +		return;
-> > +
-> > +	set_smp_ipi_range(base_sgi, 8);
-> >  }
-> >
-> >  static int gic_set_affinity(struct irq_data *d, const struct cpumask *mask_val,
-> > @@ -1289,6 +1296,13 @@ static int gic_irq_domain_map(struct irq_domain *d, unsigned int irq,
-> >
-> >       switch (__get_intid_range(hw)) {
-> >       case SGI_RANGE:
-> > +		irq_set_percpu_devid(irq);
-> > +		irq_domain_set_info(d, irq, hw, chip, d->host_data,
-> > +				    handle_percpu_devid_fasteoi_ipi,
-> > +				    NULL, NULL);
-> > +		irq_set_status_flags(irq, IRQ_NOAUTOEN);  
+> This line looks suspicious to me:
+>  Unhandled fault: external abort on non-linefetch (0x1008) at 0x8882d003
 > 
-> FWIW IRQ_NOAUTOEN is already set by irq_set_percpu_devid_flags(), so that's
-> not required. I know we do that for (E)PPIs, I think I already have a small
-> patch stashed somewhere regarding that.
+> 0x8882d003 looks like not initialized pointer.
+> The only not initialized value at devm_request_irq stage is i2c_imx->queue.
 
-Already merged! ;-)
+The queue should be good at this time because it is part of i2c_imx
+which is allocated before interrupt (so freed after interrupt).
 
-Thanks,
+Like Wolfram suggested, the interrupt comes because of deferred probe.
+The only solution would be to free the IRQ in error path... and in
+driver remove.
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+This basically kills the concept of devm for interrupts. Some other
+drivers experience exactly the same pattern. I now reproduced it on
+unbind of dspi driver of VF5xx:
+
+echo 4002d000.spi > /sys/devices/platform/soc/40000000.bus/4002d000.spi/driver/unbind
+[  218.391867] Unhandled fault: external abort on non-linefetch (0x1008) at 0x8887f02c
+...
+[  218.754493] [<806185c4>] (regmap_mmio_read32le) from [<8061885c>] (regmap_mmio_read+0x48/0x68)
+[  218.820049] [<80678c64>] (dspi_interrupt) from [<8017acec>] (free_irq+0x26c/0x3cc)
+[  218.827853]  r5:86312200 r4:85a71d40
+[  218.831602] [<8017aa80>] (free_irq) from [<8017dcec>] (devm_irq_release+0x1c/0x20)
+[  218.839420]  r10:805f91fc r9:8630dac8 r8:8630dac8 r7:805f9214 r6:8630d810 r5:85a54780
+[  218.847468]  r4:85a54800
+[  218.850152] [<8017dcd0>] (devm_irq_release) from [<805f98ec>] (release_nodes+0x1e4/0x298)
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
