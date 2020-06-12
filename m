@@ -2,87 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF2541F716E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 02:34:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FB1B1F7194
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 03:06:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/qaX3eaXZT5z5DvWPAK3D2dzui0QmRhhlak5sKz9WXc=; b=l/TSlANA3MXun+
-	LlrCy6scs5MxRu8mDs/kUqv4R184FZ1ag9juhAH7xMlc9ksYV+PHqCiRy+NGtPYsSpqHTfvjA5ZIB
-	p1SeExoEKJTg/9oEPc57xXb/An9Wai+jBtxp5dvs7FfPnQbXAqYTSynNz6VByWzcdrTA5b8GEdcVM
-	+O+VBc9yCHBSnLT+n43crn+mWerdDvvNR+0I0lo6u1DEJZLg8Qa8EH+5NDCHWUCXAJd/+9N0fMfRc
-	2oPkcF6jNc/iZULHmlgPj6H5h5aQQuW2T3G6EweQ+IcEW4U2wGdu5xRLBmmBYfqQdvMaLwv9yCrtV
-	el37K+RUsohY0kaa/YjQ==;
+	List-Owner; bh=KAF7UePdsMASqWOLrPYMSq7Ip/GehADnrbdgJHnZzHQ=; b=N59qAnQp2H4p27
+	wm3QD918D8sGncIfDftbuPxNvMBLBfh6WP0f+Uv74D0/8T6Kdx5nKJy75RltGTVkdKP9sVD0iJfyT
+	Jhe/QjSOfi59i7vGYq0fV7Nt2YQz8qw7xf3SBKhO8dXgWgqwsdN2iWWoEsc1Zz0lT/KXO9eamqDoi
+	j1ylD/HAeHG9zV4Q4Cx3NSxSUy2CQlvSuZI8XLAwNqpkZMXjNuXhRjrTVT1GwAH/IH/mL5nMAJcS2
+	twZ+oaJ7sRmgIUsNRcpKyrn5uls4JJ9R0cvfljQFMu7KPAWjpK+EJw0pjedEbkAYUxCZFOa4QBmCI
+	8bZgL2uXN7jUBY+y87wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjXeb-0002RZ-NE; Fri, 12 Jun 2020 00:34:41 +0000
-Received: from mail-io1-xd2e.google.com ([2607:f8b0:4864:20::d2e])
+	id 1jjY9S-0005VT-9e; Fri, 12 Jun 2020 01:06:34 +0000
+Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjXeT-0002R0-1N
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 00:34:34 +0000
-Received: by mail-io1-xd2e.google.com with SMTP id t9so8444792ioj.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 17:34:32 -0700 (PDT)
+ id 1jjY9H-0005UN-Tt; Fri, 12 Jun 2020 01:06:25 +0000
+Received: by mail-ej1-x642.google.com with SMTP id w16so7846954ejj.5;
+ Thu, 11 Jun 2020 18:06:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zqAXLZX8TTyfYw2OboHQenLiZ8rdFnWo4aB6MdUN6iU=;
- b=F61cC8UcxjV48CcghdFLkde51ipu99aJTlc097t1fSE8p9YHX9CB8jpC64s1W+ps4V
- HT8GjqcHyIvGaiHE7H6rjSxWNZyQdKqJnBQHearjAtI4yogdfPzQjsAVE/kMULDQtb/G
- 4NV9gcn47T2J70hJoC+em/Dv9VqPmCP7EFjTFGuvI14wziI298U9Rw+W17Zx1Oyp7UeK
- NcfhlKKRYeoDSnNfiJDFdQf/H2FbqB8F69bZRNU5GW02RlXd7Dckj4KdYBc1udCHUXLt
- 1duD8AY3vBNRKGoyEryJOgGoLtpWYSb32p24H+FwUP6SjsdmM0msoxg7tZz31di2J5Ud
- tppQ==
+ :cc; bh=xWMqM4EWUTN/tZ1PSJ29RPSc7m9eyjQgLenvkceVjOU=;
+ b=mNx6536r715NBnskOPn1bdL5xCLTV9aec/WpZqRnZrhvWlD+kxiMUC9R+o/sQtOPK1
+ m2ldqoyMAEgUFiwM2DFUto+MuvVzSYlnys5Gwx99yKzZhRVmtm6FI19U8PDeV+0oKHIf
+ 4qtt5+hz0BWxGpHxFEakWLwDW+m/zs76ThXZ1XMjIyEk5CRBaHHDtzj11Eo3Q3AFYzAl
+ Y/SD6ODdt/SSDEo+kliR/bCL7fe9qra4GEEHjAaxEVAiiqWgp+XJyXHBjWRhUkO2MkzE
+ JyLgiLlc82/T3yfRmqXBMnPXlTzqI0OaJ0WbFqHQMkBBw73fJCszzV0zQsePLAMWCgpS
+ XF0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=zqAXLZX8TTyfYw2OboHQenLiZ8rdFnWo4aB6MdUN6iU=;
- b=BcjsVvMd4RKX6qzjuveqy3ESEM9jm11RHhamUICUgJ5/t8NIH27fpNYB1s6udEpHcQ
- DHwrfDUN4BCazyQzf4gwnFnDeiYKtJOs4sKqh19rWSKxPGRPi7TcybslFMCPVgMRJaQD
- DLxF34njPoz30EHuakcBqz+RLLHXb3QjcZwdos1EWDd5OmoaNEfczW+fMch9FNLPEKD3
- EU9Kg/yDLvxi1em+g5QIRspildBR18v9I28ydbT9kkFfUzw253RAkUmaEEQJmbse+Vpq
- 5qp7sKO8GXJBMinO3nhijCR4xCTrJevTYdBt8qAA32kve2pjEylJZc7G/7VcxxzFkLk4
- Ar8g==
-X-Gm-Message-State: AOAM530tidad/mL8dG64UnCqwyRz10ux2BFg5Fl9gXzDYyi+tKJ/Wlmo
- Q8OkaMSFg9Yn67uuwzr/kRHYGty3xMjOigZneiao3jFu
-X-Google-Smtp-Source: ABdhPJxnE06UePPNmfs3VQ+1tcmElRjZgtBMF5m6+O2osNGMQK9HxZMo05YiqzSr/fTz95+5ChTNvLuenG4Fv4EN0WU=
-X-Received: by 2002:a6b:b515:: with SMTP id e21mr11198076iof.53.1591922071349; 
- Thu, 11 Jun 2020 17:34:31 -0700 (PDT)
+ bh=xWMqM4EWUTN/tZ1PSJ29RPSc7m9eyjQgLenvkceVjOU=;
+ b=Jz63sq/++7KxrQCKOVGmLROoBjqR7mgjY/zzXVHjKyw7MAlPVwA+UgpDB4RhfXe2mD
+ fLvQLugYPMbgwr6v5BDjJ0spqOsvHvLlkfp2w7uU4Tm4iTIG4FyBk3s2sC5i5sZUkJUV
+ R6PxyUHSF8k8hITr7qlJos1ga9CUyPFCsZbzknMfqKQBIZtZe8riTNO1KhjH7J2NeMHe
+ 3/nBJ1ST+GbjLUoWvr+cVdwLzIoWrKup8o5vYoKcVxtqe7yPhsDhLAXt+pxPMpdADvOA
+ YGqRstHpMnt/mRKMuVy63FRwAvKnownoT7z/vbhk+MUu59LWpZru8+zvlVOql1Xc6FHy
+ s/yQ==
+X-Gm-Message-State: AOAM531psRH3pK574kDQVM8fAX/ARLR2sDGXSv4oi3fqvSeov0zA0n9r
+ 11VMCbUbUEULO9cuqLqj+QHyYa5mFqbZiNHblrM=
+X-Google-Smtp-Source: ABdhPJyZ5DVMliAOduWmg47LdIrQ4yp92mfh3e85UoCZsPM9fdn/2djYt+DceiV9URZ9A6OY+OcY2ks7Bhv9wyUHhhI=
+X-Received: by 2002:a17:906:5595:: with SMTP id
+ y21mr11305629ejp.61.1591923979560; 
+ Thu, 11 Jun 2020 18:06:19 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
- <20200603180435.GB23722@bogus>
- <CABb+yY0cW1GZHVmwEr19JRdJTmsAxw9uq83QV_aq-tdPJO5_Fg@mail.gmail.com>
- <20200604092052.GD8814@bogus>
- <CABb+yY27Ngb0C-onkU2qyt=uKgG4iVrcv8hGkC+anypQbTRA1w@mail.gmail.com>
- <20200605045645.GD12397@bogus>
- <CABb+yY2YZ99NjHYNi0=KLGFDsVUeJmqiJD3E25Chwk-THJV4iw@mail.gmail.com>
- <20200605085830.GA32372@bogus>
- <CABb+yY2TR7tuMx6u8yah6mO2GwZ5SWYOO80EQRL-i=ybgn=Wog@mail.gmail.com>
- <20200610093334.yznxl2esv5ht27ns@vireshk-i7> <20200611100027.GB18781@bogus>
-In-Reply-To: <20200611100027.GB18781@bogus>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Thu, 11 Jun 2020 19:34:20 -0500
-Message-ID: <CABb+yY1OwVB+uk+0w+D-4Xy46iYn8tPZYBZ0qjrzQFLA6SaTvw@mail.gmail.com>
-Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
-To: Sudeep Holla <sudeep.holla@arm.com>
+References: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+In-Reply-To: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Thu, 11 Jun 2020 21:06:07 -0400
+Message-ID: <CAMdYzYr+NF7L3KKzcGano=j9V844Gy8gH03hD++CoPe8Ao1QxQ@mail.gmail.com>
+Subject: Re: [PATCH v2 0/13] Patches to improve transfer efficiency for
+ Rockchip SoCs.
+To: Sugar Zhang <sugar.zhang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_173433_079493_6EC40F7F 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20200611_180623_981650_175D2C05 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d2e listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jassisinghbrar[at]gmail.com]
+ provider [pgwipeout[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,55 +92,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Devicetree List <devicetree@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Carlos de Paula <me@carlosedp.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "Leonidas P. Papadakos" <papadakospan@gmail.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, dmaengine@vger.kernel.org,
+ Andy Yan <andy.yan@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Robin Murphy <robin.murphy@arm.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 5:00 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+Good Evening,
 
-> >
-> > > Interesting logs !  The time taken to complete _successful_ requests
-> > > are arguably better in bad_trace ... there are many <10usec responses
-> > > in bad_trace, while the fastest response in good_trace is  53usec.
-> >
-> > Indeed this is interesting. It may be worth looking (separately) into
-> > why don't we see those 3 us long requests anymore, or maybe they were
-> > just not there in the logs.
-> >
+I am currently testing this on the rk3399-rockpro64, and it appears to
+fully fix the gmac problem without using txpbl.
+PCIe also seems to be more stable at high load.
+I need to conduct long term testing, but it seems to be doing very well.
+
+Unfortunately it doesn't fix the rk3328 gmac controller.
+
+Tested-by: Peter Geis <pgwipeout@gmail.com>
+
+On Mon, Jun 8, 2020 at 9:15 PM Sugar Zhang <sugar.zhang@rock-chips.com> wrote:
 >
-> As I mentioned in another thread that non-dvfs requests may be prioritised
-> lower when there are parallel request to the remote. The so called bad
-> trace doesn't have such scenario with single channel and all requests
-> from OS being serialised. The good trace has 2 channels and requests to
-> remote happen in parallel and hence it is fair to see slightly higher
-> latencies for lower priority requests.
 >
-In the first post in this thread, Viresh lamented that mailbox
-introduces "a few ms" delay in the scheduler path.
-Your own tests show that is certainly not the case -- average is the
-same as proposed virtual channels 50-100us, the best case is 3us vs
-53us for virtual channels.
-
--#define SCMI_MAX_POLL_TO_NS (100 * NSEC_PER_USEC)
-+#define SCMI_MAX_POLL_TO_NS (30 * 1000 * NSEC_PER_USEC)
-
-The above simple fix (not a hack or workaround) avoids the need of
-virtual channels' implementation, as per tests you conducted.
-
-It might have been silly to not implement virtual channels originally,
-but it would be just as silly now to implement if we can reuse the
-code.
-So I welcome new tests.
-
-thanks.
+>
+> Changes in v2:
+> - fix FATAL ERROR: Unable to parse input tree
+>
+> Sugar Zhang (13):
+>   dmaengine: pl330: Remove the burst limit for quirk 'NO-FLUSHP'
+>   dmaengine: pl330: Add quirk 'arm,pl330-periph-burst'
+>   dt-bindings: dma: pl330: Document the quirk 'arm,pl330-periph-burst'
+>   ARM: dts: rk3036: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rk322x: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rk3288: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rk3xxx: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rv1108: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: px30: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3308: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3328: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3368: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3399: Add 'arm,pl330-periph-burst' for dmac
+>
+>  .../devicetree/bindings/dma/arm-pl330.txt          |  1 +
+>  arch/arm/boot/dts/rk3036.dtsi                      |  1 +
+>  arch/arm/boot/dts/rk322x.dtsi                      |  1 +
+>  arch/arm/boot/dts/rk3288.dtsi                      |  3 ++
+>  arch/arm/boot/dts/rk3xxx.dtsi                      |  3 ++
+>  arch/arm/boot/dts/rv1108.dtsi                      |  1 +
+>  arch/arm64/boot/dts/rockchip/px30.dtsi             |  1 +
+>  arch/arm64/boot/dts/rockchip/rk3308.dtsi           |  2 +
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi           |  1 +
+>  arch/arm64/boot/dts/rockchip/rk3368.dtsi           |  2 +
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi           |  2 +
+>  drivers/dma/pl330.c                                | 44 +++++++++++++++-------
+>  12 files changed, 49 insertions(+), 13 deletions(-)
+>
+> --
+> 2.7.4
+>
+>
+>
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 linux-arm-kernel mailing list
