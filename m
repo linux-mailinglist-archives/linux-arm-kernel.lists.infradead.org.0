@@ -2,81 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E340E1F7562
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:37:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3F281F7566
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:39:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BaVoOp2oNFw/HeCmk1JvK4xEzQmT/6gX54LgkbHM/GQ=; b=LPYkHMP4rd0Zuv
-	6BOMVBAMZpQq7kl69zhUdBsnehtZSQe6dwChmn12ylT2C1kuHg1aFR9knArMzHGYym9VMSG3U++zC
-	P8CDrzCLii/Oxctf51M/5GcRx6rOUjm/5Fwz45zFjsy2MCJj8nBia00jrzj5PnOekv/qqEl1jC1GJ
-	qOxVROaPZY1oXGEE834XEl3QM/sC9rrcU9IRFJrXbCXO2xL4Ig6bWz/TDPBSRyinInZv3tEeF7lIu
-	QywJyrisnblODjWoJGqsM2X8+Tj9Tg0S3inPSspOBWfYTLBQel7ptYb7NE60GRWwaQxm3r5Zyyv8E
-	4VCz04PaY9OOHAWrnSKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sT7AUtpDENFaSwV3XrTZudY2p/DA17JjuIJYe/t/Bic=; b=KjoPKReBvDFqGR
+	ms91YNVG/60nTw3ZTFHwzJm55z58H4lFbluh7TtrLaq6EvjeUZlLr1cWrC8xLLRaPSWAuqNoqG/iZ
+	Kohwp6QXO4g8mGzXj0qOtvSgufUeTXnclNsinwPIT8kIYbpnGVkpO3nar4fs1+3KCMeOc6MGauBK/
+	zTsnxovuaN20S/OiKBqdrqLSgjt9FGZJsRen9phO6g3F/6YQfgXfYfErrUrTmnL85rcOv2KWLHkDe
+	i8j4zzajk3YgGhuZPHmz7uAn1crI0YTVgjfQRSQX62CRRmD9mUAVJIlbccLjfZFAs7xuWypMs6/KL
+	GcLnISACobfiZHvdDYPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjfC2-0000jh-53; Fri, 12 Jun 2020 08:37:42 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jjfDP-00011w-Ch; Fri, 12 Jun 2020 08:39:07 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjfBu-0000jJ-Bt
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 08:37:35 +0000
-Received: from mail-qt1-f174.google.com ([209.85.160.174]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1N1x6X-1im9iv14G1-012EEV for <linux-arm-kernel@lists.infradead.org>; Fri,
- 12 Jun 2020 10:37:32 +0200
-Received: by mail-qt1-f174.google.com with SMTP id k22so6547675qtm.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 01:37:32 -0700 (PDT)
-X-Gm-Message-State: AOAM533T5x+/McY2Amp8XW/h+lXtf4CAiaabcz5XedpBWHdG8OQY1Ie3
- RnaLJK7G8ynN+Fei/jqknZEwxc7eKmQQpuMOG5k=
-X-Google-Smtp-Source: ABdhPJzpoXxW6Z0NfjtoQzo5GFJYTWZv+yMIGsZ7RjZiMY5YWvpmSTJFK5bE+wsmWAXE11IBuzSVNtMEq2a4UJ6xXq4=
-X-Received: by 2002:ac8:1844:: with SMTP id n4mr1905206qtk.142.1591951051193; 
- Fri, 12 Jun 2020 01:37:31 -0700 (PDT)
+ id 1jjfDH-00010z-Mb
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 08:39:01 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jjfDD-0001VK-4z; Fri, 12 Jun 2020 10:38:55 +0200
+Received: from sha by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jjfDC-0007nf-8W; Fri, 12 Jun 2020 10:38:54 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: netdev@vger.kernel.org
+Subject: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
+Date: Fri, 12 Jun 2020 10:38:47 +0200
+Message-Id: <20200612083847.29942-1-s.hauer@pengutronix.de>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-References: <20200611134914.765827-1-gregory.clement@bootlin.com>
- <20200611134914.765827-5-gregory.clement@bootlin.com>
-In-Reply-To: <20200611134914.765827-5-gregory.clement@bootlin.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 12 Jun 2020 10:37:15 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2-g9ZmFiWJ_i4-0C6=WwzC1UjHGzY07w4y=0O1pHSX5Q@mail.gmail.com>
-Message-ID: <CAK8P3a2-g9ZmFiWJ_i4-0C6=WwzC1UjHGzY07w4y=0O1pHSX5Q@mail.gmail.com>
-Subject: Re: [PATCH v2 4/6] ARM: mm: Aligned pte allocation to one page
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-X-Provags-ID: V03:K1:hQH/UmtPuFBosj5RpXTParjLdNI/K1XhjDbb5vlr+qwZeFwIRbK
- m4HQOlWH7ng3L9TLwETZvGP2kz9Q72hRZx6tWkt7ptwHDWOpEOqVzfcDKiBstsmo86Cery+
- LuYSsz5zez5/Au0d0k6IpFGR1DsOh8cD5IUYguYxFI1djj3bWkVQEdm1uw5oK9QWMy5SQif
- PmCRboYttSKVqfpDViDqg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:bCyjDq6jgdQ=:QlM73N5RZL4+ZGQjGKxiFF
- rBEDAnSe2RLF1IiHNSBUYlEa1PR95KAfIBWMEytwpfgjF35HLJsXlWApxOU5raM0yBeTv69EI
- zukJrUPOMHfMbQWNa+xVOMHh+blklgsVE4E8YDhJWA8LiG+4SbsoU2XScxqG7tp/+3Lv4aQuh
- NWdhj5SDhuIMhR+cTnL2VmQfO7J+uECugT3hWDF5hvXDVTehUhMSrjjfJOAQTuTLJ1RlHUuSk
- GusxRL3NrvqCS8Ol8mNTzzydTMNeJW7I5a14GKxjJSt0SKTwZK/IEpQzy7stxL+NVme0gl5+f
- WbFq4VikTrcumMw7OokOgqUks/HDUsiEIGUJvqw8nmg2ygQn6t0/R4qJIbVFVTljBNExoZwoj
- 6WlLfnmNjpik2QjZZx0MDDygOUWI6L3wdJea0jNQptlIBmXG+t3TGNEbTpqZA5h+v7tCPOGPa
- UiJcY4XroWbhN/vGBi7USCbXB1h+fu6WleOv1JCOJafNv49ZfS1nS698MDTjoWqTwEKdugiLq
- 6dw/tarlSZcadtrnzlPjABt2437oyZ7LRjy1chWKFpb3WoSYFgOSl9So55bk+AdQgxNIdFpzt
- y+7yfNDUXKYrthp6qBowmJNjCYfIX7rbU1rcK9uxJxyBZVnD3Z4Al7/An+ZJzPteqeryIVCjM
- xGGo23qb5mBwOqYrL6vdBHzyDnWdfSlQAVtF9XMpqbFefiLRlXttTif7S2bPSb3FsMF2H7du+
- 5nsWBgOGWFhsb1vKPhPbyIfhO3X3fyAS+CbomEcLyIWHwLaHk1ptV4Q+iZ//KUs+dYEC2/Jeq
- Dz5X5+i5MZu5OSgB20fe74P9QIQgTV69R1VZ0Y8VJ2JhsMlLeI=
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_013734_704853_850B8149 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20200612_013859_735094_4F8E8399 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.133 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,34 +65,64 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
-<gregory.clement@bootlin.com> wrote:
->
-> In pte_offset_kernel() the pte_index macro is used. This macro makes
-> the assumption that the address is aligned to a page size.
->
-> In arm_pte_allocation, the size allocated is the size needed for 512
-> entries. Actually this size was calculated to fit in a 4K page. When
-> using larger page, the size of the table allocated is no more
-> aligned which end to give a wrong physical address.
->
-> The solution is to round up the allocation to a page size instead of
-> the exact size of the tables (which is 4KB). It allows to comply with
-> the assumption of pte_index() but the drawback is a waste of memory
-> for the early allocation if page size is bigger than 4KB.
+The Marvell MVNETA Ethernet controller supports a 2.5Gbps SGMII mode
+called DRSGMII. Depending on the Port MAC Control Register0 PortType
+setting this seems to be either an overclocked SGMII mode or 2500BaseX.
 
-Have you considered increasing PTRS_PER_PTE instead to fill up
-a logical page instead? If that doesn't work, can you explain here
-why not?
+This patch adds the necessary Serdes Configuration setting for the
+2.5Gbps modes. There is no phy interface mode define for overclocked
+SGMII, so only 2500BaseX is handled for now.
 
-       Arnd
+As phy_interface_mode_is_8023z() returns true for both
+PHY_INTERFACE_MODE_1000BASEX and PHY_INTERFACE_MODE_2500BASEX we
+explicitly test for 1000BaseX instead of using
+phy_interface_mode_is_8023z() to differentiate the different
+possibilities.
+
+Fixes: da58a931f248f ("net: mvneta: Add support for 2500Mbps SGMII")
+Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
+---
+
+Changes since v1:
+  - Add Fixes: tag
+
+ drivers/net/ethernet/marvell/mvneta.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/ethernet/marvell/mvneta.c b/drivers/net/ethernet/marvell/mvneta.c
+index 51889770958d8..3b13048931412 100644
+--- a/drivers/net/ethernet/marvell/mvneta.c
++++ b/drivers/net/ethernet/marvell/mvneta.c
+@@ -109,6 +109,7 @@
+ #define MVNETA_SERDES_CFG			 0x24A0
+ #define      MVNETA_SGMII_SERDES_PROTO		 0x0cc7
+ #define      MVNETA_QSGMII_SERDES_PROTO		 0x0667
++#define      MVNETA_DRSGMII_SERDES_PROTO	 0x1107
+ #define MVNETA_TYPE_PRIO                         0x24bc
+ #define      MVNETA_FORCE_UNI                    BIT(21)
+ #define MVNETA_TXQ_CMD_1                         0x24e4
+@@ -4966,8 +4967,10 @@ static int mvneta_port_power_up(struct mvneta_port *pp, int phy_mode)
+ 	if (phy_mode == PHY_INTERFACE_MODE_QSGMII)
+ 		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_QSGMII_SERDES_PROTO);
+ 	else if (phy_mode == PHY_INTERFACE_MODE_SGMII ||
+-		 phy_interface_mode_is_8023z(phy_mode))
++		 phy_mode == PHY_INTERFACE_MODE_1000BASEX)
+ 		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_SGMII_SERDES_PROTO);
++	else if (phy_mode == PHY_INTERFACE_MODE_2500BASEX)
++		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_DRSGMII_SERDES_PROTO);
+ 	else if (!phy_interface_mode_is_rgmii(phy_mode))
+ 		return -EINVAL;
+ 
+-- 
+2.27.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
