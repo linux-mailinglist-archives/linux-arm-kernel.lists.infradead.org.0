@@ -2,80 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFCC41F77BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:12:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCA5F1F77CF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDkX0EISYrX1BjZiEMbG4QxJOEo6tjF2l18Tg9UlpFk=; b=I+DtLHcKB7wmM3
-	fi+Icld1iFPfcU1n+8nS8B//LyuLsjWVzjV7bPAM2yi0ROaAJyT4rx/59k07Wk57IEyf32QLggY2u
-	Ykhzu97PUfGS3/nMvrUkNaDzVmy4Ywb0uTQLQDyi4CqSTXL/lmlXTXLia6iCUUkNtn09xXMT2JAEW
-	2opbXYlBFbxngJMEBm0YRL+AnbimLsN4rYMY55qYIUcAeA8ER6MmVa7wi8efg4QjOzQBQPVL+8RIv
-	Etvglt468+fuvfKaXu3qru6I7rAMktpUwwoWAyx0pIJaEnUacbp+PSeevYDQ8dctNKpNEe0l8rsBc
-	chyTJ0xSFmADp2uSjc9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2mh5H3I2XdpBJYxerwCkMOYSeGFoOFYj6zsPc0COQ2A=; b=WT6mFWaITzfVOL
+	vVzN1OlQI+nijo3yEBdANDCjDPOzkoSlzNfUvggFNdxMSx8tk343y/V8/1aFsybt1VR/ThEqHn0/8
+	gqvhXfxK9BUxgevvSNlXBM8n9FPchFLRrcNmTKirq2pVFVGE8w+OV/g3u9j9h8ZpmR6E1/aFHGz4m
+	DmuW5vWQCmjPcu8leVG39T/gv09wBjV0/GIof7/AMDrlOLI6lq0bGA666/SJA8wu5rrxXE8MzAYn4
+	Kyvw+s7A3MZWFFGtfb44SD1EYKQhybYz8xDehh51GPDb45pSOy2jLUtgYGW0boaXdOcYVSl7/CDMC
+	kxFDg22+GJZL2GsbD7jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjiYJ-0007eJ-I4; Fri, 12 Jun 2020 12:12:55 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:32c8:214:fdff:fe10:1be6])
+	id 1jjidb-0002LE-MX; Fri, 12 Jun 2020 12:18:23 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjiYC-0007dR-4l
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:12:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yK0/1c9HKj2vF/aVFuOZ5pmsjzwvYf0jnH1dHlUlTaU=; b=Cx7RuQ86PB3ddeJ2xmouu/uKH
- 0xZPWb+ognvv1FUceCJLBroZnRKagl9MUwZtLcQp8ifCoKSPaAwBSg4qyIg59XcxrGEzZ1WpyLaEk
- nZkhKYaSi41JVrdTtOpk1kAa8Xu+KrKX4mGgpSu43l7w0/ltuajXq80uObZcLGWovVTnzm4LMdwJu
- OWqfGyzdRtsPRxXmhNB/TADT39c2G+V63xY3xMmen/TWEoCLRDExipNWDvbGZaCmnebG5czbGfhXb
- jTrEsyyS9XksQmjs06sI57lA/Y4zG5RqGVuRMxKa3hEg04XGdwd9B+35wJaHd79bY8WzLTHMLyRV0
- Ycld0pp5w==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44620)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jjiY4-0002oG-A5; Fri, 12 Jun 2020 13:12:40 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jjiY3-0006G9-Lp; Fri, 12 Jun 2020 13:12:39 +0100
-Date: Fri, 12 Jun 2020 13:12:39 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: Re: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
-Message-ID: <20200612121239.GJ1551@shell.armlinux.org.uk>
-References: <20200612083847.29942-1-s.hauer@pengutronix.de>
- <20200612084710.GC1551@shell.armlinux.org.uk>
- <20200612100114.GE1551@shell.armlinux.org.uk>
- <20200612101820.GF1551@shell.armlinux.org.uk>
- <20200612120604.GT11869@pengutronix.de>
+ id 1jjidT-0002KV-8a
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:18:16 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1jjidP-00049v-Bx; Fri, 12 Jun 2020 14:18:11 +0200
+Received: from [IPv6:2a03:f580:87bc:d400:b44d:6713:e0e9:e23c] (unknown
+ [IPv6:2a03:f580:87bc:d400:b44d:6713:e0e9:e23c])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits))
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 4B9D3515194;
+ Fri, 12 Jun 2020 12:18:08 +0000 (UTC)
+Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
+To: Wolfram Sang <wsa@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>
+References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
+ <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
+ <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
+ <20200612103149.2onoflu5qgwaooli@pengutronix.de> <20200612103949.GB26056@pi3>
+ <20200612115116.GA18557@ninjato>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
+ zu8T6kZP2wEIpM9RjEL3jdBjZNCsjSS6x1qzpc2+2ivjdiJsqeaagIgvy2JWy7vUa4/PyGfx
+ QyUeXOxdj59DvLwAx8I6hOgeHx2X/ntKAMUxwawYfPZpP3gwTNKc27dJWSomOLgp+gbmOmgc
+ 6U5KwhAxPTEb3CsT5RicsC+uQQFumdl5I6XS+pbeXZndXwnj5t84M+HEj7RN6bUfV2WZO/AB
+ Xt5+qFkC/AVUcj/dcHvZwQJlGeZxoi4veCoOT2MYqfR0ax1MmN+LVRvKm29oSyD4Ts/97cbs
+ XsZDRxnEG3z/7Winiv0ZanclA7v7CQwrzsbpCv+oj+zokGuKasofzKdpywkjAfSE1zTyF+8K
+ nxBAmzwEqeQ3iKqBc3AcCseqSPX53mPqmwvNVS2GqBpnOfY7Mxr1AEmxdEcRYbhG6Xdn+ACq
+ Dq0Db3A++3PhMSaOu125uIAIwMXRJIzCXYSqXo8NIeo9tobk0C/9w3fUfMTrBDtSviLHqlp8
+ eQEP8+TDSmRP/CwmFHv36jd+XGmBHzW5I7qw0OORRwNFYBeEuiOIgxAfjjbLGHh9SRwEqXAL
+ kw+WVTwh0MN1k7I9/CDVlGvc3yIKS0sA+wudYiselXzgLuP5cQARAQABtCZNYXJjIEtsZWlu
+ ZS1CdWRkZSA8bWtsQHBlbmd1dHJvbml4LmRlPokCVAQTAQoAPgIbAwIeAQIXgAULCQgHAwUV
+ CgkICwUWAgMBABYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUsSbBQkM366zAAoJECte4hHF
+ iupUgkAP/2RdxKPZ3GMqag33jKwKAbn/fRqAFWqUH9TCsRH3h6+/uEPnZdzhkL4a9p/6OeJn
+ Z6NXqgsyRAOTZsSFcwlfxLNHVxBWm8pMwrBecdt4lzrjSt/3ws2GqxPsmza1Gs61lEdYvLST
+ Ix2vPbB4FAfE0kizKAjRZzlwOyuHOr2ilujDsKTpFtd8lV1nBNNn6HBIBR5ShvJnwyUdzuby
+ tOsSt7qJEvF1x3y49bHCy3uy+MmYuoEyG6zo9udUzhVsKe3hHYC2kfB16ZOBjFC3lH2U5An+
+ yQYIIPZrSWXUeKjeMaKGvbg6W9Oi4XEtrwpzUGhbewxCZZCIrzAH2hz0dUhacxB201Y/faY6
+ BdTS75SPs+zjTYo8yE9Y9eG7x/lB60nQjJiZVNvZ88QDfVuLl/heuIq+fyNajBbqbtBT5CWf
+ mOP4Dh4xjm3Vwlz8imWW/drEVJZJrPYqv0HdPbY8jVMpqoe5jDloyVn3prfLdXSbKPexlJaW
+ 5tnPd4lj8rqOFShRnLFCibpeHWIumqrIqIkiRA9kFW3XMgtU6JkIrQzhJb6Tc6mZg2wuYW0d
+ Wo2qvdziMgPkMFiWJpsxM9xPk9BBVwR+uojNq5LzdCsXQ2seG0dhaOTaaIDWVS8U/V8Nqjrl
+ 6bGG2quo5YzJuXKjtKjZ4R6k762pHJ3tnzI/jnlc1sXz
+Message-ID: <859e8211-2c56-8dd5-d6fb-33e4358e4128@pengutronix.de>
+Date: Fri, 12 Jun 2020 14:18:06 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200612120604.GT11869@pengutronix.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200612115116.GA18557@ninjato>
+Content-Language: en-GB
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_051248_187103_206CFAD2 
-X-CRM114-Status: GOOD (  14.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_051815_298612_877B2974 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,60 +103,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- kernel@pengutronix.de
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Oleksij Rempel <linux@rempel-privat.de>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 02:06:04PM +0200, Sascha Hauer wrote:
-> And here is the same patch which applies on master and the net tree.
-> It works as expected on my Armada XP in 2.5Gbps mode. Provided you are
-> happy with the patch I can send it as a formal patch on monday if by
-> then you haven't done that already.
+On 6/12/20 1:51 PM, Wolfram Sang wrote:
+> 
+>> This basically kills the concept of devm for interrupts. Some other
+> 
+> It only works when you can ensure you have all interrupts disabled (and
+> none pending) in remove() or the error paths of probe() etc.
 
-As mentioned in one of my replies, there's a bug the patch I sent...
+But when requesting the interrupt as shared the interrupt handler can get called
+any time, even if you have disabled the IRQ source in your IP core....The shared
+IRQ debug code tests this.
 
-> @@ -3533,9 +3535,6 @@ static int mvneta_comphy_init(struct mvneta_port *pp)
->  {
->  	int ret;
->  
-> -	if (!pp->comphy)
-> -		return 0;
-> -
->  	ret = phy_set_mode_ext(pp->comphy, PHY_MODE_ETHERNET,
->  			       pp->phy_interface);
-
-mvneta_comphy_init() needs to be passed the interface mode, and pass it
-thrugh to phy_set_mode_ext().
-
->  	if (ret)
-> @@ -3544,11 +3543,49 @@ static int mvneta_comphy_init(struct mvneta_port *pp)
->  	return phy_power_on(pp->comphy);
->  }
->  
-> +static int mvneta_config_interface(struct mvneta_port *pp,
-> +				   phy_interface_t interface)
-> +{
-> +	int ret = 0;
-> +
-> +	if (pp->comphy) {
-> +		if (interface == PHY_INTERFACE_MODE_SGMII ||
-> +		    interface == PHY_INTERFACE_MODE_1000BASEX ||
-> +		    interface == PHY_INTERFACE_MODE_2500BASEX) {
-> +			ret = mvneta_comphy_init(pp);
-
-and this needs to be:
-			ret = mvneta_comphy_init(pp, interface);
-
-Otherwise, the comphy uses the _old_ interface mode each time this
-function is called.
+Marc
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
