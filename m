@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28DED1F76DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:44:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B279B1F76E8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AGugflLtOpt/8s0w5oP5xHLc41iaYLHOuQPPUWmS3Fw=; b=a57MrVGd7VONJ8
-	LISTDijSLRoyMVKhV25DRXuXBeK0bkSn397zk4yJkU2ik89j4QJSqijAVV2so1aD4WVPHEVE8kJ/w
-	EFhLRfDeg0Y59Gfv29r3HAO9CFahKLdoPxeNPXkHsXsUdSdLkR2Ed6x40juMXedJWQjtEZdUwkZBe
-	Ytk83k8avYhT8Os8DMivtALIH8hK7rYA7WzF+Q3G/J2gWZ+ePVcCLzm3DYQBWlVxGyPidNReL+zq4
-	KepJBYz8PyTECkvnRUiwFteH0BJlDK6jyg91zeV0gnSaOlEhw9ifLqMQynwQh+HjStdUxqN+BvuMc
-	PfmP4owskXKBjDm9bP4A==;
+	List-Owner; bh=i8rfdc73qGMHhaVCaYiglWeYBpqYIfTs/EiJnMf2h7g=; b=jF+LiO4hmByN/6
+	QXYVhljkVIWCqLzm5Uwib5QNOeRUvzOfuYcKKpzxP+2uIy3URMoO8f7SEE2vdIiwfTwaDHFHGnPmn
+	nLDgnoypWbZLLaYzOiUpngF21Ijdua5XVqt0HhMXMYqOBrL7Iimf5r/D6d9WdmO4Meu8LrBF2EmP7
+	Xs15LaJPA3A7kepDCk8Ntj0grZPzE29ihx0tcW7xhl5/V1wRR6S62RvMZ8WQrxJkSLTIY3gPkoUlK
+	ZiuA3Kz6Xw3OAaewO8vNIDmGsSDcN2iViAgSoyPj+xpCOaLwX6r0WubHSxgFqIwRUdFcHzCh2LaE4
+	O73Qo1c2baul67Re3qtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjhAj-0002md-Lc; Fri, 12 Jun 2020 10:44:29 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1jjhFS-0005iT-Tk; Fri, 12 Jun 2020 10:49:22 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjhAY-0002mE-LV
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:44:19 +0000
-Received: by mail-ed1-f67.google.com with SMTP id e12so6098185eds.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 03:44:18 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=SOdvZcfgq0T/N/xg8rXOaGi/fRghIZcBnPCYUJJXVXo=;
- b=H/VNdSEynh5u674wnkJvhzowUAxuTN1iclWbRdxbucc9IYPMZoi3/jh9b/h5EMTZp5
- qyLQ5Wo4U3XmL3o8/R4iDN54h3Ygd7KT8ClWMwZCVglimDajTQTta4/KFhSGrVAtDz0H
- yWTmMbCbTAyZ3UpuGg59pBgPYcdNrbjJ+lKadCJx0l/5JIGm7beE7BJEgxoWRFrIiD6z
- vvc+Rm9znLQASRhLZlMJhPWL2mdyyg/Me/dsC6Fd8QpIdTRjaxx86vP2IXFBcL4OzaLQ
- FeayTe80GOShG1Ksju4hmdsPVQcKGYG07WdAVA5RNYttoMnf4T/6fyF5xerdkw0XpT1T
- Nb7A==
-X-Gm-Message-State: AOAM5338+NmIgDbS73eFexyiXeuCu/sPMDEQo7RnVqLbD+APGIQfLqZO
- CIcCu+Nvs9M0ZFNNBLHhB94=
-X-Google-Smtp-Source: ABdhPJyw3kA/fGMFrQUC6hcemwafnWF3BI1uel/lQVb1PPosuNiApnhc+TX5NqRonlyy8zcCJJHFfQ==
-X-Received: by 2002:a05:6402:1285:: with SMTP id
- w5mr11232244edv.73.1591958657053; 
- Fri, 12 Jun 2020 03:44:17 -0700 (PDT)
-Received: from pi3 ([194.230.155.184])
- by smtp.googlemail.com with ESMTPSA id oq28sm3429888ejb.12.2020.06.12.03.44.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 03:44:16 -0700 (PDT)
-Date: Fri, 12 Jun 2020 12:44:13 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Marc Kleine-Budde <mkl@pengutronix.de>
-Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
-Message-ID: <20200612104413.GC26056@pi3>
-References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
- <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
- <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
- <20200612103149.2onoflu5qgwaooli@pengutronix.de>
- <2bc70a44-8b98-0da5-9408-15d6fa0c20fe@pengutronix.de>
+ id 1jjhFG-0005gv-1D; Fri, 12 Jun 2020 10:49:11 +0000
+X-UUID: 10fb0c88711841498051ee63350ed78f-20200612
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=TpVWyGTnlu5KQ1bLwhmMEtCgBHatHCR86J3sG18+1ro=; 
+ b=dXdcdZjV4l04zAUJl990F6csVmdi6DOXav/hW5FUPP9zEBf7vgAbvA92tdGUm2xyDCtaf9ZstwmUA51y3KcPvdPJpJ9ClhaSPIxexVNDLDAhbM4kD8GNoATk0E7UvIca8Y7bR2qKjBiRQOt6XqAgEZIJCkbzexEMxYl+905iDYg=;
+X-UUID: 10fb0c88711841498051ee63350ed78f-20200612
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1074978896; Fri, 12 Jun 2020 02:48:55 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 12 Jun 2020 03:48:59 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 12 Jun 2020 18:48:57 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 12 Jun 2020 18:48:55 +0800
+Message-ID: <1591958798.8804.660.camel@mhfsdcap03>
+Subject: Re: [V9, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Fri, 12 Jun 2020 18:46:38 +0800
+In-Reply-To: <20200610194455.GK201868@chromium.org>
+References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
+ <20200523084103.31276-3-dongchun.zhu@mediatek.com>
+ <20200610194455.GK201868@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2bc70a44-8b98-0da5-9408-15d6fa0c20fe@pengutronix.de>
+X-TM-SNTS-SMTP: F9B070F852F4BB7A908158EEA1657918D95D6AE037CA2AD2A6675516E8D3B9A92000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_034418_703441_96C1B849 
-X-CRM114-Status: GOOD (  13.13  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200612_034910_083628_DE9A8D33 
+X-CRM114-Status: GOOD (  30.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,58 +85,302 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Oleksij Rempel <linux@rempel-privat.de>, Wolfram Sang <wsa@kernel.org>,
- Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, louis.kuo@mediatek.com, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ dongchun.zhu@mediatek.com, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 12:34:47PM +0200, Marc Kleine-Budde wrote:
-> On 6/12/20 12:31 PM, Oleksij Rempel wrote:
-> > On Fri, Jun 12, 2020 at 12:21:13PM +0200, Krzysztof Kozlowski wrote:
-> >> On Fri, Jun 12, 2020 at 11:56:04AM +0200, Wolfram Sang wrote:
-> >>> On Fri, Jun 12, 2020 at 11:29:41AM +0200, Krzysztof Kozlowski wrote:
-> >>>> On Fri, Jun 12, 2020 at 11:05:17AM +0200, Wolfram Sang wrote:
-> >>>>> On Wed, Jun 10, 2020 at 03:46:42PM +0200, Krzysztof Kozlowski wrote:
-> >>>>>> If interrupt comes early (could be triggered with CONFIG_DEBUG_SHIRQ),
-> >>>>>
-> >>>>> That code is disabled since 2011 (6d83f94db95c ("genirq: Disable the
-> >>>>> SHIRQ_DEBUG call in request_threaded_irq for now"))? So, you had this
-> >>>>> without fake injection, I assume?
-> >>>>
-> >>>> No, I observed it only after enabling DEBUG_SHIRQ (to a kernel with
-> >>>> some debugging options already).
-> >>>
-> >>> Interesting. Maybe probe was deferred and you got the extra irq when
-> >>> deregistering?
-> >>
-> >> Yes, good catch. The abort happens right after deferred probe exit.  It
-> >> could be then different reason than I thought - the interrupt is freed
-> >> through devm infrastructure quite late.  At this time, the clock might
-> >> be indeed disabled (error path of probe()).
+Hi Tomasz,
+
+On Wed, 2020-06-10 at 19:44 +0000, Tomasz Figa wrote:
+> Hi Dongchun,
 > 
-> From my point of view, the clocks are disabled as Oleksij pointed out, due to
-> RUNTIME_PM at the end of probe():
+> On Sat, May 23, 2020 at 04:41:03PM +0800, Dongchun Zhu wrote:
+> > Add a V4L2 sub-device driver for OV02A10 image sensor.
+> > 
+> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > ---
+> >  MAINTAINERS                 |    1 +
+> >  drivers/media/i2c/Kconfig   |   13 +
+> >  drivers/media/i2c/Makefile  |    1 +
+> >  drivers/media/i2c/ov02a10.c | 1025 +++++++++++++++++++++++++++++++++++++++++++
+> >  4 files changed, 1040 insertions(+)
+> >  create mode 100644 drivers/media/i2c/ov02a10.c
+> > 
 > 
-> > 	pm_runtime_mark_last_busy(&pdev->dev);
-> > 	pm_runtime_put_autosuspend(&pdev->dev);
+> Thank you for the patch. Please see my comments inline.
+> 
+> [snip]
+> > diff --git a/drivers/media/i2c/ov02a10.c b/drivers/media/i2c/ov02a10.c
+> > new file mode 100644
+> > index 0000000..160a0b5
+> > --- /dev/null
+> > +++ b/drivers/media/i2c/ov02a10.c
+> [snip]
+> > +static const char * const ov02a10_test_pattern_menu[] = {
+> > +	"Disabled",
+> > +	"Color Bar",
+> 
+> nit: We should normalize this to one of the standard names. What is the
+> pattern on this sensor? Is it perhaps "Eight Vertical Colour Bars"?
+> 
 
-These lines come from regular successful probe path, not deferred error path.
+Yes. It is one kind of 'Eight Vertical Colour Bars'.
+This pattern is called as 'MIPI color bar' per the datasheet.
+Can we here use 'Vertical Color Bar' or 'MIPI Color Bar'?
 
-The clock is indeed disabled but not because of runtime PM, but:
-clk_disable:
-	clk_disable_unprepare(i2c_imx->clk);
+> > +};
+> [snip]
+> > +static int ov02a10_set_fmt(struct v4l2_subdev *sd,
+> > +			   struct v4l2_subdev_pad_config *cfg,
+> > +			   struct v4l2_subdev_format *fmt)
+> > +{
+> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
+> > +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
+> > +
+> > +	mutex_lock(&ov02a10->mutex);
+> > +
+> 
+> 
+> Don't we need to handle the case when fmt->which is V4L2_SUBDEV_FORMAT_TRY,
+> which is used for trying the format, but not applying it to the hardware?
+> 
 
+Got it :-)
 
-Best regards,
-Krzysztof
+> > +	if (ov02a10->streaming) {
+> > +		mutex_unlock(&ov02a10->mutex);
+> > +		return -EBUSY;
+> > +	}
+> > +
+> > +	/* Only one sensor mode supported */
+> > +	mbus_fmt->code = ov02a10->fmt.code;
+> > +	ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
+> > +	ov02a10->fmt = fmt->format;
+> > +
+> > +	mutex_unlock(&ov02a10->mutex);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int ov02a10_get_fmt(struct v4l2_subdev *sd,
+> > +			   struct v4l2_subdev_pad_config *cfg,
+> > +			   struct v4l2_subdev_format *fmt)
+> > +{
+> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
+> > +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
+> > +
+> > +	mutex_lock(&ov02a10->mutex);
+> > +
+> > +	fmt->format = ov02a10->fmt;
+> 
+> Ditto.
+> 
+> > +	mbus_fmt->code = ov02a10->fmt.code;
+> > +	ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
+> > +
+> > +	mutex_unlock(&ov02a10->mutex);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int ov02a10_enum_mbus_code(struct v4l2_subdev *sd,
+> > +				  struct v4l2_subdev_pad_config *cfg,
+> > +				  struct v4l2_subdev_mbus_code_enum *code)
+> > +{
+> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
+> > +
+> > +	if (code->index >= ARRAY_SIZE(supported_modes))
+> > +		return -EINVAL;
+> 
+> Hmm, supported_modes[] doesn't seem to hold the information about mbus
+> codes. Should this just perhaps be "!= 0"?
+> 
 
+Understood.
+
+> > +
+> > +	code->code = ov02a10->fmt.code;
+> > +
+> > +	return 0;
+> > +}
+> [snip]
+> > +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
+> > +				   struct v4l2_subdev_pad_config *cfg)
+> > +{
+> > +	struct v4l2_subdev_format fmt = {
+> > +		.which = cfg ? V4L2_SUBDEV_FORMAT_TRY : V4L2_SUBDEV_FORMAT_ACTIVE,
+> > +		.format = {
+> > +			.width = 1600,
+> > +			.height = 1200,
+> > +		}
+> > +	};
+> > +
+> > +	ov02a10_set_fmt(sd, cfg, &fmt);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> 
+> I'm not familiar with this init_cfg operation and the documentation is very
+> sparse about it. Sakari, is this a correct implementation?
+> 
+> [snip]
+> > +static int ov02a10_set_test_pattern(struct ov02a10 *ov02a10, int pattern)
+> > +{
+> > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
+> > +	int ret;
+> > +
+> > +	ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
+> > +	if (ret < 0)
+> > +		return ret;
+> > +
+> > +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_TEST_PATTERN,
+> > +					pattern);
+> > +	if (ret < 0)
+> > +		return ret;
+> > +
+> > +	ret = i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
+> > +					REG_ENABLE);
+> > +	if (ret < 0)
+> > +		return ret;
+> > +
+> > +	return i2c_smbus_write_byte_data(client, REG_SC_CTRL_MODE,
+> > +					 SC_CTRL_MODE_STREAMING);
+> 
+> Why is this needed? Does writing the test pattern register stop streaming?
+> 
+
+Looking back to the setting history, I found it was suggested by OV.
+I would leave your question to OV, and update their feedback.
+
+> [snip]
+> > +static int ov02a10_initialize_controls(struct ov02a10 *ov02a10)
+> > +{
+> > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
+> > +	const struct ov02a10_mode *mode;
+> > +	struct v4l2_ctrl_handler *handler;
+> > +	struct v4l2_ctrl *ctrl;
+> > +	u64 exposure_max;
+> > +	u32 pixel_rate;
+> > +	int ret;
+> > +
+> > +	handler = &ov02a10->ctrl_handler;
+> > +	mode = ov02a10->cur_mode;
+> > +	ret = v4l2_ctrl_handler_init(handler, 7);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	handler->lock = &ov02a10->mutex;
+> > +
+> > +	ctrl = v4l2_ctrl_new_int_menu(handler, NULL, V4L2_CID_LINK_FREQ, 0, 0,
+> > +				      link_freq_menu_items);
+> > +	if (ctrl)
+> > +		ctrl->flags |= V4L2_CTRL_FLAG_READ_ONLY;
+> > +
+> > +	pixel_rate = to_pixel_rate(0);
+> > +	v4l2_ctrl_new_std(handler, NULL, V4L2_CID_PIXEL_RATE, 0, pixel_rate, 1,
+> > +			  pixel_rate);
+> > +
+> > +	exposure_max = mode->vts_def - 4;
+> > +	ov02a10->exposure = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
+> > +					      V4L2_CID_EXPOSURE,
+> > +					      OV02A10_EXPOSURE_MIN,
+> > +					      exposure_max,
+> > +					      OV02A10_EXPOSURE_STEP,
+> > +					      mode->exp_def);
+> > +
+> > +	v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
+> > +			  V4L2_CID_ANALOGUE_GAIN,
+> > +			  OV02A10_GAIN_MIN,
+> > +			  OV02A10_GAIN_MAX,
+> > +			  OV02A10_GAIN_STEP,
+> > +			  OV02A10_GAIN_DEFAULT);
+> > +
+> > +	v4l2_ctrl_new_std_menu_items(handler, &ov02a10_ctrl_ops,
+> > +				     V4L2_CID_TEST_PATTERN,
+> > +				     ARRAY_SIZE(ov02a10_test_pattern_menu) - 1,
+> > +				     0, 0, ov02a10_test_pattern_menu);
+> > +
+> 
+> I can see that we're missing some controls here now, VBLANK and HBLANK if I
+> remember correctly. Even though read-only, some userspace need those to
+> get information about how the sensor operates.
+> 
+
+Yes. I made a mistake.
+
+> > +	if (handler->error) {
+> > +		ret = handler->error;
+> > +		dev_err(&client->dev, "failed to init controls(%d)\n", ret);
+> > +		goto err_free_handler;
+> > +	}
+> > +
+> > +	ov02a10->subdev.ctrl_handler = handler;
+> > +
+> > +	return 0;
+> > +
+> > +err_free_handler:
+> > +	v4l2_ctrl_handler_free(handler);
+> > +
+> > +	return ret;
+> > +}
+> [snip]
+> > +	pm_runtime_enable(dev);
+> > +	if (!pm_runtime_enabled(dev)) {
+> > +		ret = ov02a10_power_on(dev);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to power on: %d\n", ret);
+> > +			goto err_free_handler;
+> > +		}
+> > +	}
+> > +
+> > +	ret = v4l2_async_register_subdev(&ov02a10->subdev);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+> > +		if (!pm_runtime_enabled(dev))
+> > +			ov02a10_power_off(dev);
+> 
+> Please don't mix inline and error-path error handling, as it makes it
+> difficult to tell if it's correct. Please move this below the appropriate
+> err label instead.
+> 
+
+Fixed in next release.
+
+> > +		goto err_clean_entity;
+> > +	}
+> > +
+> > +	return 0;
+> > +
+> > +err_clean_entity:
+> 
+> If one calls pm_runtime_enable() in the probe path, one needs to call
+> pm_runtime_disable() on the error and remove paths.
+> 
+
+Yes, fixed in next release.
+
+> > +	media_entity_cleanup(&ov02a10->subdev.entity);
+> > +err_free_handler:
+> > +	v4l2_ctrl_handler_free(ov02a10->subdev.ctrl_handler);
+> > +err_destroy_mutex:
+> > +	mutex_destroy(&ov02a10->mutex);
+> > +
+> > +	return ret;
+> > +}
+> > +
+> 
+> Best regards,
+> Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
