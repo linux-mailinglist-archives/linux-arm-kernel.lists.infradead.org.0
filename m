@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97B361F71B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 03:26:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08AB71F71B2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 03:27:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HI0u+NJGFGX3zdR+sCETQ5mlVNTHDffpJK7UxJNKwFU=; b=DyZUGi5ZQp4NHB
-	BtkOYl7HIdE0TS6UtQvMj/g701Pas+epzwRv3vJ310jGN2LY+tCurkQ7xX2oKbEZVJsnrxkRLOVpe
-	4oV6j5I9JQ5y/L1t8MwO5EZNlKrqRG/4vnJqvZRXUF3KidMpBsGkXawugLa2Wa8QzhKBh3Y4S1ogn
-	3lqstgfW2tcc67BzWbzrQGHwKISfvNyfkAFS2MWcAoyHowPhIKZExHkZgiOR/QTQn/ao1EnUYm7o0
-	GdvUFYm941YYr8/hJAuoB4xJ/+gYSeHz7qvNAC1FxPHzFJsEJLWpDi5LfpaUK3EXwg/OxlLj/KWDM
-	R2OE+bZGEcQ0YLpvrf6w==;
+	List-Owner; bh=U0rAHtMl8bdsdEzfa5W0Ezb3t5uwrHbHf3xmdpCIRHY=; b=S9e1ZfPfoFpsHR
+	GFD7pUiLMyqVsdecoYrFLfoZQsYKf/TFGhtDRrcfCeVc8dvCYr4AklMTobV2j1Miilhkcq3U5vB35
+	cFoZEMntn7MKtrqfhrmzivL4X3DWq2/hsYY90Ub9LdRy6WLb7DvTBnWCUqPdk9BGM/Q6XVeYngBxU
+	FhETecTZs8I8nYAx2p/yaGjGeauyA//zbmCKBpfQtzVRM9YU25uWBDGRK8HvBg8dTGbfPGAdAJ/d8
+	rZti0/5vnv9954c2gwMz89MXV2XdjE9OvddjimJuTfVUT3O/wOPQXjXyGY+Gi/w0oVKWN8TTcqdNn
+	be/ZwVrO9s7Me0AnchHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjYSw-0000M5-S3; Fri, 12 Jun 2020 01:26:42 +0000
+	id 1jjYTE-0000Uk-DE; Fri, 12 Jun 2020 01:27:00 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjYSm-0000LA-Sn; Fri, 12 Jun 2020 01:26:34 +0000
-X-UUID: bf056a8013914699accaae6425f072b6-20200611
+ id 1jjYSm-0000LD-Sm; Fri, 12 Jun 2020 01:26:34 +0000
+X-UUID: b58034fc879b49d7879452e84a651e69-20200611
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=chdWJagP7sFnCMbLa8Ygxax7Z0fAuS2FRIQGn6asrbo=; 
- b=jzt5PSbJekaX2+NEqmLwVn1imY6nqYuj4IyGj1It2d+DGZsvQTUKLYZeEy+evQ5ut93Iue+2ZcMFEkE47n0CoYmA/YKx5wjDPtMYS6DqQF8mj5+wAwK7r1U0vwybYsnJa2NUZe2J+hMYTYldLrChCan3PdF5qCLQqgEMDxyT10g=;
-X-UUID: bf056a8013914699accaae6425f072b6-20200611
+ bh=TyNotqRzhDuLovK50I1nRQ2Gr24GvWjdCq+YG5zKk4w=; 
+ b=Wvc8xVa7xhd0QL4FONMSFmBabbAcIpl5uWTuS/wAtvXb6MyglwlkGs5jFTKbIB1HuCGLMEEJDiIHKTRJ7VkoNSiqIUyecZ41Zr4aZZjFRscy/9mq/U7uLb4MLImhGADGMyB2FgbokhDVNDGz2KK0Ez/PkNbmZ9RMQDmiimLs1KQ=;
+X-UUID: b58034fc879b49d7879452e84a651e69-20200611
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 700676409; Thu, 11 Jun 2020 17:26:31 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 1009256973; Thu, 11 Jun 2020 17:26:31 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 11 Jun 2020 18:26:24 -0700
+ 15.0.1497.2; Thu, 11 Jun 2020 18:26:23 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 12 Jun 2020 09:26:27 +0800
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 12 Jun 2020 09:26:22 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
  Frontend Transport; Fri, 12 Jun 2020 09:26:22 +0800
@@ -46,23 +46,22 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v2 1/2] scsi: ufs: Add DELAY_BEFORE_LPM quirk for Micron
- devices
-Date: Fri, 12 Jun 2020 09:26:24 +0800
-Message-ID: <20200612012625.6615-2-stanley.chu@mediatek.com>
+Subject: [PATCH v2 2/2] scsi: ufs: Cleanup device vendor name and device quirk
+ table
+Date: Fri, 12 Jun 2020 09:26:25 +0800
+Message-ID: <20200612012625.6615-3-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200612012625.6615-1-stanley.chu@mediatek.com>
 References: <20200612012625.6615-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F78C9267483483DD74F7F7ED2B4990B681C978EDFF9E8AEABBC186969D7858082000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_182632_939878_4CA1EFFD 
-X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-CacheID: sfid-20200611_182632_939821_2639C9F9 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -78,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,42 +101,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It is confirmed that Micron device needs DELAY_BEFORE_LPM
-quirk to have a delay before VCC is powered off. So add Micron
-vendor ID and this quirk for Micron devices.
+Cleanup below items,
+- Sort vendor name in alphabetical order
+- Squash device quirks as compact as possible in device quirk table
+  to enhance performance of the lookup
+- Sort device quirks in alphabetical order
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Bean Huo <beanhuo@micron.com>
 ---
- drivers/scsi/ufs/ufs_quirks.h | 1 +
- drivers/scsi/ufs/ufshcd.c     | 2 ++
- 2 files changed, 3 insertions(+)
+ drivers/scsi/ufs/ufs_quirks.h |  2 +-
+ drivers/scsi/ufs/ufshcd.c     | 15 ++++++---------
+ 2 files changed, 7 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufs_quirks.h b/drivers/scsi/ufs/ufs_quirks.h
-index e3175a63c676..e80d5f26a442 100644
+index e80d5f26a442..2a0041493e30 100644
 --- a/drivers/scsi/ufs/ufs_quirks.h
 +++ b/drivers/scsi/ufs/ufs_quirks.h
-@@ -12,6 +12,7 @@
- #define UFS_ANY_VENDOR 0xFFFF
+@@ -13,9 +13,9 @@
  #define UFS_ANY_MODEL  "ANY_MODEL"
  
-+#define UFS_VENDOR_MICRON      0x12C
- #define UFS_VENDOR_TOSHIBA     0x198
+ #define UFS_VENDOR_MICRON      0x12C
+-#define UFS_VENDOR_TOSHIBA     0x198
  #define UFS_VENDOR_SAMSUNG     0x1CE
  #define UFS_VENDOR_SKHYNIX     0x1AD
++#define UFS_VENDOR_TOSHIBA     0x198
+ #define UFS_VENDOR_WDC         0x145
+ 
+ /**
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index ad4fc829cbb2..1da1df6ea47e 100644
+index 1da1df6ea47e..c197a3315d21 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -216,6 +216,8 @@ ufs_get_desired_pm_lvl_for_dev_link_state(enum ufs_dev_pwr_mode dev_state,
- 
- static struct ufs_dev_fix ufs_fixups[] = {
- 	/* UFS cards deviations table */
-+	UFS_FIX(UFS_VENDOR_MICRON, UFS_ANY_MODEL,
-+		UFS_DEVICE_QUIRK_DELAY_BEFORE_LPM),
- 	UFS_FIX(UFS_VENDOR_SAMSUNG, UFS_ANY_MODEL,
+@@ -219,22 +219,19 @@ static struct ufs_dev_fix ufs_fixups[] = {
+ 	UFS_FIX(UFS_VENDOR_MICRON, UFS_ANY_MODEL,
  		UFS_DEVICE_QUIRK_DELAY_BEFORE_LPM),
  	UFS_FIX(UFS_VENDOR_SAMSUNG, UFS_ANY_MODEL,
+-		UFS_DEVICE_QUIRK_DELAY_BEFORE_LPM),
+-	UFS_FIX(UFS_VENDOR_SAMSUNG, UFS_ANY_MODEL,
++		UFS_DEVICE_QUIRK_DELAY_BEFORE_LPM |
++		UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE |
+ 		UFS_DEVICE_QUIRK_RECOVERY_FROM_DL_NAC_ERRORS),
+-	UFS_FIX(UFS_VENDOR_SAMSUNG, UFS_ANY_MODEL,
+-		UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE),
++	UFS_FIX(UFS_VENDOR_SKHYNIX, UFS_ANY_MODEL,
++		UFS_DEVICE_QUIRK_HOST_PA_SAVECONFIGTIME),
++	UFS_FIX(UFS_VENDOR_SKHYNIX, "hB8aL1" /*H28U62301AMR*/,
++		UFS_DEVICE_QUIRK_HOST_VS_DEBUGSAVECONFIGTIME),
+ 	UFS_FIX(UFS_VENDOR_TOSHIBA, UFS_ANY_MODEL,
+ 		UFS_DEVICE_QUIRK_DELAY_BEFORE_LPM),
+ 	UFS_FIX(UFS_VENDOR_TOSHIBA, "THGLF2G9C8KBADG",
+ 		UFS_DEVICE_QUIRK_PA_TACTIVATE),
+ 	UFS_FIX(UFS_VENDOR_TOSHIBA, "THGLF2G9D8KBADG",
+ 		UFS_DEVICE_QUIRK_PA_TACTIVATE),
+-	UFS_FIX(UFS_VENDOR_SKHYNIX, UFS_ANY_MODEL,
+-		UFS_DEVICE_QUIRK_HOST_PA_SAVECONFIGTIME),
+-	UFS_FIX(UFS_VENDOR_SKHYNIX, "hB8aL1" /*H28U62301AMR*/,
+-		UFS_DEVICE_QUIRK_HOST_VS_DEBUGSAVECONFIGTIME),
+-
+ 	END_FIX
+ };
+ 
 -- 
 2.18.0
 _______________________________________________
