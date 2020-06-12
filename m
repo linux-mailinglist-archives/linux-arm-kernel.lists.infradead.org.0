@@ -2,88 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C6F71F7C77
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:24:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F5F81F7C97
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:44:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l3TLWo5KXjkid3SAOrgrrzVBPDTL95/8Mo1vQ5XQAjs=; b=LI5Zkidvfnsdfm
-	FyQffX4ch4txM2cEK8HmX1lWNr3XuG8lLfdUZJhHFDoofhjl7DYkpCmMeEoDXvcpoTF+kKSGyLZW7
-	jCOSIEXd4sN+sBWdDnmDMs3wS6tvXldHz+vSaNBbXuTj7qStJxajD2M+ob2G7giGIQTiiMKtB1/bD
-	Os8PLusDet0C73gIq14wCm81HR4pGetqtbO3NdrddjMe7n7YLC3SN6bVitWcPFEMaFwFEXjh3O9WE
-	IeMTOqRmEHCvREAMLs8XfHxQz7Ik/C29bjfrD73J9IgPHtN+SkZtQORq+1R6LlA+gcE9NA6bZ/+fn
-	a4d6jM4RlloUY0uXJgAQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=liqpfYcQMdEXMItWDEg05pGj23RM37yC5OakmrsFTQw=; b=f2eXITNVBSwFMy
+	uQpp6m70+rqLVzrB1PFv1pUptjfF9TBektM8Jap6/r8rH1Y3weUgdPB15yD3NHw+kvHcIyFmUcnYs
+	jpRCr28RLbJRP0o+QAK/448WW/xvbQoDp4MAp2vM002gWgqVk1pF1Y0IdKPb8NrXi1Zm0gHdilGHf
+	ro8dw4i6Qwr1u8bfXQy2WUzmHvDkT8pS68dFsXT0Z/YSt+/W0ETu34U2ENZQjvMs0Lp/Yk+NUocCE
+	3MS8arV+w3e3t2MA9gjJcjT3M2c8YCQnrHQFxRFaPI8N07axuYwe2+r1npNAresGfoUobpaGJqhjv
+	lhdGDU07tDnd0ay0mF/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjnPq-0001n0-Lz; Fri, 12 Jun 2020 17:24:30 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jjnim-0005ap-B9; Fri, 12 Jun 2020 17:44:04 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjnPj-0001mH-AM; Fri, 12 Jun 2020 17:24:25 +0000
-Received: by mail-pg1-x542.google.com with SMTP id p21so4408399pgm.13;
- Fri, 12 Jun 2020 10:24:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=yyx3aGH1IHsk8WwCSPgIF039LEqkrtOiEcxMrYeLSY4=;
- b=A+ATlkXI9Yn9pkdpGFh7hZhvaRHi4S8bNSQAlaaQ25dacfgjH5T3vn4K3ZTQv2urqZ
- 30YuNP+iY2a8FZ89Z3Rfbsufy3rP9Hf7xO3DKkdSv4E35poG0rdTBUm1LNoUpfERvBmd
- yXzC2VrZhxFcWaCMCHpWEhUKnUDYl8KwnlSBxWv0gzxYdm7ZfU2fdi3FuwpQGPHLBSvV
- HvWUYmgpf6oE/Ehnfvzbf/zsCwK44SNy4J+ALNiq9APSP10xOmH2KWjmAW7G3jXPmxCU
- 2WfYxMmx0rSleKywVZCoPOVBvixlE0cf4xDXI10MD9luPNDRH+rBiUvTqKeY0tmJeeYk
- 6kYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=yyx3aGH1IHsk8WwCSPgIF039LEqkrtOiEcxMrYeLSY4=;
- b=ocijhlhPqHWnnM21KRbjOWY/ZLT33ZJfcDLPkudbdxKB3XoIz7uhAKocFcd0bqpGQX
- f2dpAXEtBw6bmqdlZMuhIcm4640FQjTpjfZfE60v9S/8aKaq4dA3IONvwHBFoc6iXVkj
- 3kyazdm72xx0B/mMJEakvPScwTjC34cKTtEAeaN/yt1mugsfT3eJS50eC1PaO482t+B/
- ZvkGpCHF/IcgZVCHx0XW8f55Jq9cxrtZMuFvy4kR9S9MnTbwryXJMjOp2KOjGF7swxoG
- nfDVP78dJZB88zJ6+S7fWBUyJhfP1OYf5rIeVkdQ0hp0KKriDLsbivzLWlNZczGrdZ94
- wg/w==
-X-Gm-Message-State: AOAM531He/C9WzWo4bSzoahF06hAyDMSgalRTdCjePr+VEGoENmIB90W
- s8TtXqsQ6RZpGzFCcmhVscQ=
-X-Google-Smtp-Source: ABdhPJzcMXRAo4TANZWsgs8un+/4P47C64drTFdnZEtpz2AR5bK8rHPpQQZyegMFr8iPbXvYl6TNwg==
-X-Received: by 2002:a63:461c:: with SMTP id t28mr12227620pga.316.1591982662374; 
- Fri, 12 Jun 2020 10:24:22 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id h7sm5903409pgg.17.2020.06.12.10.24.19
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 12 Jun 2020 10:24:21 -0700 (PDT)
-Subject: Re: [PATCH v3 5/9] usb: xhci-pci: Add support for reset controllers
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- gregkh@linuxfoundation.org, wahrenst@gmx.net, p.zabel@pengutronix.de,
- linux-kernel@vger.kernel.org, Mathias Nyman <mathias.nyman@intel.com>
-References: <20200612171334.26385-1-nsaenzjulienne@suse.de>
- <20200612171334.26385-6-nsaenzjulienne@suse.de>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <4ef2d78f-64ea-b56e-7971-a60190a05a92@gmail.com>
-Date: Fri, 12 Jun 2020 10:24:17 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.9.0
+ id 1jjniZ-0005a6-7t
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 17:43:52 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05CHh9hb020476;
+ Fri, 12 Jun 2020 17:43:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=sDXzqeSxZKG8oEBI8F3mco5PsGVz1ZSzi3GmCkClRpM=;
+ b=dLaoF70Ho+GVFZ+vOzknqvVG7qIkq9hVDWyW9ONL3/v5dj3g3fENcu4GYiCbGw1vUpKH
+ t2swAKm2sSFIPp2WiVj2hzLY092JfOMMw+odVzo5mUga+aoYThxeIpAYhYFgc81i0DTZ
+ 6qcNMH1k2Peu8NmEetS8w8yWaoEgQtk/OtcDe+hy3EtqPMDvVXViI4FOQZGqpGI2/IDC
+ tzfzVFqDAhfHsf8w8PsWktkSu08S/IUrdx6Xow9G+e5W+imuYIa6Xayf4sHQ80/6cpL/
+ HtRKoOPWb7Q/TPaX/5MiSYS/lqRn+atHx+We53N3nT2RRG6onwl9n7felGhcUjSMebF3 oA== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by aserp2120.oracle.com with ESMTP id 31jepp7xvg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 12 Jun 2020 17:43:35 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05CHgkrC132293;
+ Fri, 12 Jun 2020 17:43:34 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3030.oracle.com with ESMTP id 31mebng8pe-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 12 Jun 2020 17:43:34 +0000
+Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 05CHcjqF028407;
+ Fri, 12 Jun 2020 17:38:46 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 12 Jun 2020 10:38:45 -0700
+Date: Fri, 12 Jun 2020 20:38:38 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Walter Harms <wharms@bfs.de>
+Subject: Re: [PATCH] coresight: cti: Fix error handling in probe
+Message-ID: <20200612173838.GH4282@kadam>
+References: <20200612121047.GF4282@kadam> <20200612121133.GA1139533@mwanda>
+ <6c59bdbc15714b089d256ad50aee58cb@bfs.de>
 MIME-Version: 1.0
-In-Reply-To: <20200612171334.26385-6-nsaenzjulienne@suse.de>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <6c59bdbc15714b089d256ad50aee58cb@bfs.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9650
+ signatures=668680
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
+ phishscore=0 malwarescore=0
+ spamscore=0 mlxlogscore=999 bulkscore=0 suspectscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2006120128
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9650
+ signatures=668680
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ lowpriorityscore=0 suspectscore=0
+ priorityscore=1501 bulkscore=0 clxscore=1015 phishscore=0 impostorscore=0
+ malwarescore=0 mlxscore=0 cotscore=-2147483648 adultscore=0 spamscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2004280000 definitions=main-2006120128
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_102423_373913_2613A9F5 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_104351_362756_9804FA21 
+X-CRM114-Status: GOOD (  13.49  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [141.146.126.78 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -92,6 +99,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,28 +113,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tim.gover@raspberrypi.org, mathias.nyman@linux.intel.com,
- linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- andy.shevchenko@gmail.com, lorenzo.pieralisi@arm.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- helgaas@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 6/12/2020 10:13 AM, Nicolas Saenz Julienne wrote:
-> Some atypical users of xhci-pci might need to manually reset their xHCI
-> controller before starting the HCD setup. Check if a reset controller
-> device is available to the PCI bus and trigger a reset.
+On Fri, Jun 12, 2020 at 02:11:16PM +0000, Walter Harms wrote:
+> Hi Dan,
 > 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> nit picking in cti_pm_release()
+> 
+> IMHO this should be done in 2 steps:
+>       if (--nr_cti_cpu == 0)
+> ->
+>   --nr_cti_cpu ;
+>  if ( nr_cti_cpu == 0)
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
--- 
-Florian
+The first way is sort of the more canonical way to write it...  By far.
+
+regards,
+carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
