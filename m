@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 592881F755C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E340E1F7562
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:37:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vTPurL+eY2bURHJmu+2VlVGKiz5+MxH9+LR0vB62Dak=; b=lhL6lx+7Go9VVn
-	z4AlLoMOXsJA5o2y8Jep+xyCIPH2d82P2qffD+7J5yXzLcI6r3DCt/V50d62oBAaDH4LFqJ+hmohK
-	t9udrLStULb+zxH5iwpi3jNRs/7fWQnjPtC0i9P97zMWe8262JFgxA5yCsdsL4XbsYlB05HmcuSQj
-	wYLDnKrFjdEUowPgC9NgKVEKqi3YJeX/9+W/NwB4hO3CMv6S7cafOI7xDgBmpVN+ImLx9cl2OFrjc
-	BEPgrj5vWnw23toX5/SHrJuRzUfRVbpGXwMx0N+f0qQUxkaU+gPIoCxFtWf37Ns9BszH+morU4O6b
-	m+HEMMai9dhw68CrRWzA==;
+	List-Owner; bh=BaVoOp2oNFw/HeCmk1JvK4xEzQmT/6gX54LgkbHM/GQ=; b=LPYkHMP4rd0Zuv
+	6BOMVBAMZpQq7kl69zhUdBsnehtZSQe6dwChmn12ylT2C1kuHg1aFR9knArMzHGYym9VMSG3U++zC
+	P8CDrzCLii/Oxctf51M/5GcRx6rOUjm/5Fwz45zFjsy2MCJj8nBia00jrzj5PnOekv/qqEl1jC1GJ
+	qOxVROaPZY1oXGEE834XEl3QM/sC9rrcU9IRFJrXbCXO2xL4Ig6bWz/TDPBSRyinInZv3tEeF7lIu
+	QywJyrisnblODjWoJGqsM2X8+Tj9Tg0S3inPSspOBWfYTLBQel7ptYb7NE60GRWwaQxm3r5Zyyv8E
+	4VCz04PaY9OOHAWrnSKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjf9o-00008x-8a; Fri, 12 Jun 2020 08:35:24 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:32c8:214:fdff:fe10:1be6])
+	id 1jjfC2-0000jh-53; Fri, 12 Jun 2020 08:37:42 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjf9h-00008G-L4
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 08:35:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=s5CyZqxyUSKzVuGcQHMpOJ2NKF07NBK2ViI2M1PMZpg=; b=tuldhl7N3+wkH8oA5Yws2t715
- iqbXiWZCXnWZ2V/rKvpArM66ua8yWZnlI7QYPvLO3xJo3VzKQnhGTgCUqUsqh8doT6VJLPpTivpLr
- 6S0Od7SNzzRaWbci9q9MoiNr3dQBzqNGsYMqvDfNF2nrnB0/kPhk8iseT0ehfEMFsjM6WI71DXvpw
- jE4I54pbZDjmRfLsV2DsySZa6D7eldA4n/KrzvqQABpnVKG/uSpLsWY/r5Jo/YfOiHp/OSLjmZC0l
- zi0jOGTxOaJPu1axb21FxHHjmFBPgS7jWajP1vTeTX8JCYO6B/2ULudEno+/nQrVIwOXqZbOjiCFx
- RosF7tXnw==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44540)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jjf9b-0002OC-MK; Fri, 12 Jun 2020 09:35:11 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jjf9a-00066D-TL; Fri, 12 Jun 2020 09:35:10 +0100
-Date: Fri, 12 Jun 2020 09:35:10 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v2 1/6] ARM: Use PAGE_SIZE for ELF_EXEC_PAGESIZE
-Message-ID: <20200612083510.GB1551@shell.armlinux.org.uk>
-References: <20200611134914.765827-1-gregory.clement@bootlin.com>
- <20200611134914.765827-2-gregory.clement@bootlin.com>
- <CAK8P3a0Rc6qd0Cb2yMNupbCP2NWRQAsEKtvEr5sZV4ANw6xfNQ@mail.gmail.com>
+ id 1jjfBu-0000jJ-Bt
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 08:37:35 +0000
+Received: from mail-qt1-f174.google.com ([209.85.160.174]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1N1x6X-1im9iv14G1-012EEV for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 12 Jun 2020 10:37:32 +0200
+Received: by mail-qt1-f174.google.com with SMTP id k22so6547675qtm.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 12 Jun 2020 01:37:32 -0700 (PDT)
+X-Gm-Message-State: AOAM533T5x+/McY2Amp8XW/h+lXtf4CAiaabcz5XedpBWHdG8OQY1Ie3
+ RnaLJK7G8ynN+Fei/jqknZEwxc7eKmQQpuMOG5k=
+X-Google-Smtp-Source: ABdhPJzpoXxW6Z0NfjtoQzo5GFJYTWZv+yMIGsZ7RjZiMY5YWvpmSTJFK5bE+wsmWAXE11IBuzSVNtMEq2a4UJ6xXq4=
+X-Received: by 2002:ac8:1844:: with SMTP id n4mr1905206qtk.142.1591951051193; 
+ Fri, 12 Jun 2020 01:37:31 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a0Rc6qd0Cb2yMNupbCP2NWRQAsEKtvEr5sZV4ANw6xfNQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200611134914.765827-1-gregory.clement@bootlin.com>
+ <20200611134914.765827-5-gregory.clement@bootlin.com>
+In-Reply-To: <20200611134914.765827-5-gregory.clement@bootlin.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 12 Jun 2020 10:37:15 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2-g9ZmFiWJ_i4-0C6=WwzC1UjHGzY07w4y=0O1pHSX5Q@mail.gmail.com>
+Message-ID: <CAK8P3a2-g9ZmFiWJ_i4-0C6=WwzC1UjHGzY07w4y=0O1pHSX5Q@mail.gmail.com>
+Subject: Re: [PATCH v2 4/6] ARM: mm: Aligned pte allocation to one page
+To: Gregory CLEMENT <gregory.clement@bootlin.com>
+X-Provags-ID: V03:K1:hQH/UmtPuFBosj5RpXTParjLdNI/K1XhjDbb5vlr+qwZeFwIRbK
+ m4HQOlWH7ng3L9TLwETZvGP2kz9Q72hRZx6tWkt7ptwHDWOpEOqVzfcDKiBstsmo86Cery+
+ LuYSsz5zez5/Au0d0k6IpFGR1DsOh8cD5IUYguYxFI1djj3bWkVQEdm1uw5oK9QWMy5SQif
+ PmCRboYttSKVqfpDViDqg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:bCyjDq6jgdQ=:QlM73N5RZL4+ZGQjGKxiFF
+ rBEDAnSe2RLF1IiHNSBUYlEa1PR95KAfIBWMEytwpfgjF35HLJsXlWApxOU5raM0yBeTv69EI
+ zukJrUPOMHfMbQWNa+xVOMHh+blklgsVE4E8YDhJWA8LiG+4SbsoU2XScxqG7tp/+3Lv4aQuh
+ NWdhj5SDhuIMhR+cTnL2VmQfO7J+uECugT3hWDF5hvXDVTehUhMSrjjfJOAQTuTLJ1RlHUuSk
+ GusxRL3NrvqCS8Ol8mNTzzydTMNeJW7I5a14GKxjJSt0SKTwZK/IEpQzy7stxL+NVme0gl5+f
+ WbFq4VikTrcumMw7OokOgqUks/HDUsiEIGUJvqw8nmg2ygQn6t0/R4qJIbVFVTljBNExoZwoj
+ 6WlLfnmNjpik2QjZZx0MDDygOUWI6L3wdJea0jNQptlIBmXG+t3TGNEbTpqZA5h+v7tCPOGPa
+ UiJcY4XroWbhN/vGBi7USCbXB1h+fu6WleOv1JCOJafNv49ZfS1nS698MDTjoWqTwEKdugiLq
+ 6dw/tarlSZcadtrnzlPjABt2437oyZ7LRjy1chWKFpb3WoSYFgOSl9So55bk+AdQgxNIdFpzt
+ y+7yfNDUXKYrthp6qBowmJNjCYfIX7rbU1rcK9uxJxyBZVnD3Z4Al7/An+ZJzPteqeryIVCjM
+ xGGo23qb5mBwOqYrL6vdBHzyDnWdfSlQAVtF9XMpqbFefiLRlXttTif7S2bPSb3FsMF2H7du+
+ 5nsWBgOGWFhsb1vKPhPbyIfhO3X3fyAS+CbomEcLyIWHwLaHk1ptV4Q+iZ//KUs+dYEC2/Jeq
+ Dz5X5+i5MZu5OSgB20fe74P9QIQgTV69R1VZ0Y8VJ2JhsMlLeI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_013517_689496_4502F7A8 
-X-CRM114-Status: GOOD (  13.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_013734_704853_850B8149 
+X-CRM114-Status: GOOD (  12.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,42 +88,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gregory CLEMENT <gregory.clement@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 10:22:17AM +0200, Arnd Bergmann wrote:
-> On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
-> <gregory.clement@bootlin.com> wrote:
-> >
-> > Currently ELF_EXEC_PAGESIZE is 4096 which is also the page size. In
-> > order to be able to use other size of page than 4K, use PAGE_SIZE
-> > instead of the hardcoded value.
-> >
-> > The use of PAGE_SIZE will be also aligned with what we find in other
-> > architectures such as arm64.
-> >
-> > This is inspired from fa0ca2726ea9 ("DSMP 64K support") and
-> > 4ef803e12baf ("mmu: large-page: Added support for multiple kernel page
-> > sizes") from
-> > https://github.com/MarvellEmbeddedProcessors/linux-marvell.git
-> >
-> > Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-> 
-> IIRC using page sizes above 16KB here also requires using a
-> non-ancient linker in user space that places sections on
-> ELF_EXEC_PAGESIZE boundaries, right?
+On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
+<gregory.clement@bootlin.com> wrote:
+>
+> In pte_offset_kernel() the pte_index macro is used. This macro makes
+> the assumption that the address is aligned to a page size.
+>
+> In arm_pte_allocation, the size allocated is the size needed for 512
+> entries. Actually this size was calculated to fit in a 4K page. When
+> using larger page, the size of the table allocated is no more
+> aligned which end to give a wrong physical address.
+>
+> The solution is to round up the allocation to a page size instead of
+> the exact size of the tables (which is 4KB). It allows to comply with
+> the assumption of pte_index() but the drawback is a waste of memory
+> for the early allocation if page size is bigger than 4KB.
 
-Doesn't that mean that this change breaks all existing userspace when
-ELF_EXEC_PAGESIZE is not 4k?
+Have you considered increasing PTRS_PER_PTE instead to fill up
+a logical page instead? If that doesn't work, can you explain here
+why not?
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
