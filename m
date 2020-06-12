@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF6EB1F7781
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:51:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 821A71F7786
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:53:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hzDnicSZfEo5RgoVIXRqHLFetn6RSyvNfCn4DmAhRuA=; b=MjjFm3QEaVKRmdaHMVKnghUB5
-	3cqQMf65XaUizkxwiVSvrfSvu4Bp8f0sicdDxU/wrfdMC8TSqCU2ZZqBY7BFEUcNtr+6kzm4zrMmI
-	5YwDQndNr91i8cV+gLefiijayjv2kNa5/2SylWKqUptfygCg8iPGEFjHmMfpU+Hgn/IuLwGJ98yfh
-	NHN5TdSVse6ZaO8cZ+HneYA9Lvhtkew9s2ElDyF2YYAgJaaVeuVHLMRRxgn6i+6nxo/toeVq4Mxwx
-	7c05XxnL3zNpKqUJJZc+UAeON9N1HV9OkyYJhGAmZKMu9q3NBt58PvLj/Zld6Nn2xRgITg+gmMAhq
-	b0brnslmg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qe81C2U2hf4IREwCKE4Db1gVe+n5ycuLuLf2N0TN6vI=; b=WaKrFz/rVBms8v
+	cUuyCzC33drBwmtxDZajL9Or2xvMUaCoGsEo8Utt7KEirusnnJDbzUmTnUlhIKQ7lLkP8DJT7Ekdn
+	PjXG5ExmRaigZK4DNqhXi5GzNiVlDExGdrISKzEw289logCFs4kipyEvjRwJJ1k+hJepV9dHwNK6j
+	tJV5AFfE5t47zCwAUS4Ff5Vi3CD778UAffZ0bXBoV5MekMuQ2iUEZyQ7Wyhg1zIuBEFu5/tMcfeYK
+	3jLGGBhS1yteaCa8CM6FbcywOpBm7vmiJ/huOc9C3lE0J1Q6jFMkp5okEHp/OIwb0rNwSpbFPHi1y
+	lwKWKy0DOjG2Jagwyy7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjiDY-0003fQ-Rl; Fri, 12 Jun 2020 11:51:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jjiF4-0003xN-Aw; Fri, 12 Jun 2020 11:53:02 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjiDQ-0003f9-1M
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:51:21 +0000
-Received: from localhost (p54b33104.dip0.t-ipconnect.de [84.179.49.4])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED897207D8;
- Fri, 12 Jun 2020 11:51:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591962679;
- bh=4SU7cE5K1zuUDgcSqNx4a6863ycbWxNzjj6+RY5JyS4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BkdqVphjX1fv36AiWfuo2mhxrD9X8RnCZZRgbLw6LVw7pofACnD2PF9cW8ZQXuUEo
- vF6eZ+/C5O4ujSsMH+4vPZfQgQb1EOa7TQ/ofyezZIhqzglD8/VdscYUTZSnV+tk/4
- V6wgTeI0gGoYt77aXLKX+10YRZe/Ece1AJjYAedk=
-Date: Fri, 12 Jun 2020 13:51:16 +0200
-From: Wolfram Sang <wsa@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
-Message-ID: <20200612115116.GA18557@ninjato>
-References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
- <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
- <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
- <20200612103149.2onoflu5qgwaooli@pengutronix.de>
- <20200612103949.GB26056@pi3>
+ id 1jjiEw-0003wu-Bm
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:52:56 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jjiEt-0001TX-HX; Fri, 12 Jun 2020 13:52:51 +0200
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jjiEs-0008JZ-6d; Fri, 12 Jun 2020 13:52:50 +0200
+Date: Fri, 12 Jun 2020 13:52:50 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
+Message-ID: <20200612115250.GS11869@pengutronix.de>
+References: <20200612083847.29942-1-s.hauer@pengutronix.de>
+ <20200612084710.GC1551@shell.armlinux.org.uk>
+ <20200612100114.GE1551@shell.armlinux.org.uk>
+ <20200612101820.GF1551@shell.armlinux.org.uk>
+ <20200612104208.GG1551@shell.armlinux.org.uk>
+ <20200612112213.GH1551@shell.armlinux.org.uk>
+ <20200612113031.GI1551@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200612103949.GB26056@pi3>
+Content-Disposition: inline
+In-Reply-To: <20200612113031.GI1551@shell.armlinux.org.uk>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 13:42:38 up 113 days, 19:13, 128 users,  load average: 0.04, 0.14,
+ 0.15
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_045120_102017_BF34A8CD 
-X-CRM114-Status: UNSURE (   6.07  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200612_045254_402811_9DB06F0B 
+X-CRM114-Status: GOOD (  15.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,68 +80,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Oleksij Rempel <linux@rempel-privat.de>,
- Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============4680881878999719373=="
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Jun 12, 2020 at 12:30:31PM +0100, Russell King - ARM Linux admin wrote:
+> On Fri, Jun 12, 2020 at 12:22:13PM +0100, Russell King - ARM Linux admin wrote:
+> > On Fri, Jun 12, 2020 at 11:42:08AM +0100, Russell King - ARM Linux admin wrote:
+> > > With the obvious mistakes fixed (extraneous 'i' and lack of default
+> > > case), it seems to still work on Armada 388 Clearfog Pro with 2.5G
+> > > modules.
+> > 
+> > ... and the other bug fixed - mvneta_comphy_init() needs to be passed
+> > the interface mode.
+> 
+> Unrelated to the patch, has anyone noticed that mvneta's performance
+> seems to have reduced?  I've only just noticed it (which makes 2.5Gbps
+> rather pointless).  This is iperf between two clearfogs with a 2.5G
+> fibre link:
+> 
+> root@clearfog21:~# iperf -V -c fe80::250:43ff:fe02:303%eno2
+> ------------------------------------------------------------
+> Client connecting to fe80::250:43ff:fe02:303%eno2, TCP port 5001
+> TCP window size: 43.8 KByte (default)
+> ------------------------------------------------------------
+> [  3] local fe80::250:43ff:fe21:203 port 48928 connected with fe80::250:43ff:fe02:303 port 5001
+> [ ID] Interval       Transfer     Bandwidth
+> [  3]  0.0-10.0 sec   553 MBytes   464 Mbits/sec
+> 
+> I checked with Jon Nettleton, and he confirms my recollection that
+> mvneta on Armada 388 used to be able to fill a 2.5Gbps link.
+> 
+> If Armada 388 can't manage, then I suspect Armada XP will have worse
+> performance being an earlier revision SoC.
 
---===============4680881878999719373==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="BXVAT5kNtrzKuDFl"
-Content-Disposition: inline
+I only have one board with a Armada XP here which has a loopback cable
+between two ports. It gives me:
 
+[  3] local 172.16.1.4 port 47002 connected with 172.16.1.0 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-10.0 sec  1.27 GBytes  1.09 Gbits/sec
 
---BXVAT5kNtrzKuDFl
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Still not 2.5Gbps, but at least twice the data rate you get, plus my
+board has to handle both ends of the link.
 
+Sascha
 
-> This basically kills the concept of devm for interrupts. Some other
-
-It only works when you can ensure you have all interrupts disabled (and
-none pending) in remove() or the error paths of probe() etc.
-
-
---BXVAT5kNtrzKuDFl
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7jbDAACgkQFA3kzBSg
-KbYmdg//RW9DluIKVfF71z6Q72EfwO+kHdqZsli+39eCQGi+J2lBHJpJXsWzim+B
-FXD88zlC2PC0Jg/svBtzq9t4FfmxA/YJH/rwUrr/2f6HYR7dXLfxFJDc+o2j5hFX
-mgHPY9Ol+5l8R8jBDMO87i5Z/Dk8CRcEoiIMnfpnbFjhRdlR3hNxfwQV0u+yLQ5A
-bHfcm3trfqSZooJtfAwoxY0LsrgAcStKVuNKqCS9676Vr5ah11BFGKaklQYNEWRG
-0t5Xnkf6QSVbIHfVj20h70nvTPK4YP+quTs2GDcl/pYXESIduY1qxsbjfSXigi3H
-27Dbu+Vzu1gLaoem3zFgxefBl6JdYsBmoQYPPGiOmayseWg2VTDJrHpgTs7eu2uM
-6o8d3MA4g56sQJocsGSOMvStqu8xEVJ/V5kt6lDR0j7Ue9rhtXZRiDw6/DW3Gmro
-s1BiEX3UwvwXqdGK9z1j+q/skFd3noXVY/goYsxqwwoyO+uMnhy6tW7HCJvse8e+
-ojfwLkXX2Lu4+12+MnDhWEsa/jCEL2ozQC0tU594l5FLU5VYQCetAM7XnUfbDqDF
-B17Ro5HH5+WhaAWwUkWUO5jaVtRe6w0e9P2ChQocQjktjoLNzVPXX8x2vzGGQUrl
-CaGs+J26V4mod0xqhOZkACLpdBUJwb0Ji2/C1ewgBxXkcLofM+4=
-=6fqc
------END PGP SIGNATURE-----
-
---BXVAT5kNtrzKuDFl--
-
-
---===============4680881878999719373==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4680881878999719373==--
-
