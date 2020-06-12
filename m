@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5264A1F7802
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:40:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5506A1F7809
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:41:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=7Cev94/LNTKtquxAbs8AlxkIjeqkAZUbPFWvwnML+9M=; b=PnQ
-	AMViLq/LdcqG0wXQU8BbE0ILbpcIDLi9TwEKW1gaujdbRVX4+CaGT0ZpvI8j94axP+z/grwup5Csv
-	puSyEF9695yTpTTi5e6xBKedTMP7yTag1cra8LJJBd45cGu0qgyNagQNJQqLvz1P9w5yomzAEmnKV
-	9JgmgJs26ZC7/ty8IAmACtTltKbcUWo1lKtNvTNFEXvHJBZs0OjLnIPy+yytrE2rO/3Ps2XpvKHlV
-	WWW0uECJLL5fpTFA3mminbP5xkAj0QhN7fVSV50a7sZp45U/fbbiejQV/pml8oA0oFyNgRshN2bUF
-	oc417vjC5PHv0nUNCfg3rfxBk1PUhMQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tG/S8PfOFbLxrSNa+8HumqWGr798r+X+9tk5Cc4bwTU=; b=SMVieU1lGhgAbf
+	IJmmJgOTJyR7/HMqmmkIdZbE5EcuBb08s8zQVx641epGiIJrsVF2bITak6gCP8a0VIAaL3nRXGock
+	dZjfCQWqvNQiYyzijK0EG8YlfCwh+pa6fTCmEZt869afe6Jle5U7czPDL66V7sgiNzU4wvqT85X2G
+	N/NROmzRbAbBsP3YpInwJgvWOcgr3Qqxmtq96cp4/e9tIzKqNhuERMIXjV3vDNTonoW4BRAQN34Z8
+	3YD44RdzlBlYQGbuF4Qoulr47N5cRLl1sjLfb1jGL7jpyEvsVhSHZdJOkHAFWovpevXfm8UnfILJx
+	Fu4N8ryN8VSLINo5OO5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjiyz-0000Vw-OH; Fri, 12 Jun 2020 12:40:29 +0000
-Received: from m17617.mail.qiye.163.com ([59.111.176.17])
+	id 1jjizX-0000ng-Oq; Fri, 12 Jun 2020 12:41:03 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjiyr-0000Uh-Q1
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:40:24 +0000
-Received: from njvxl5505.vivo.xyz (unknown [157.0.31.125])
- by m17617.mail.qiye.163.com (Hmail) with ESMTPA id B7F9426177A;
- Fri, 12 Jun 2020 20:40:13 +0800 (CST)
-From: Bernard Zhao <bernard@vivo.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] drm/mediatek: remove unnecessary conversion to bool
-Date: Fri, 12 Jun 2020 20:40:06 +0800
-Message-Id: <20200612124007.4990-1-bernard@vivo.com>
-X-Mailer: git-send-email 2.17.1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgYFAkeWUFZS1VLWVdZKFlBSE83V1ktWUFJV1kPCR
- oVCBIfWUFZQx5LTBoeH0JCHhodVkpOQkpCTU5NSkhCTEJVEwETFhoSFyQUDg9ZV1kWGg8SFR0UWU
- FZT0tIVUpKS0hKTFVKS0tZBg++
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PAg6PSo*GDg5Mws9Dw8LMxYz
- SS5PFApVSlVKTkJKQk1OTUpPSExLVTMWGhIXVRkeCRUaCR87DRINFFUYFBZFWVdZEgtZQVlKTkxV
- S1VISlVKSU5ZV1kIAVlBSUtPSzcG
-X-HM-Tid: 0a72a88b7f4c9375kuwsb7f9426177a
+ id 1jjizP-0000nK-Kv
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:40:57 +0000
+IronPort-SDR: rHi+7zrIcKnC0/2d/ZYDAfvP2JPediI3C5nfqMX6ZB/E8v4yZPnxN7pz0eWlEfjgCcxxwd7bEh
+ 9qLbG00xBgHA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 12 Jun 2020 05:40:54 -0700
+IronPort-SDR: dbq+MThCaK6fC8yMtZnmpkCURF5F8y8eSyAuDAu5LZ9fldwt84yuw3cw3bnvC4UFwmnEYbK2Q5
+ O4CqYIcQyWSQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,503,1583222400"; d="scan'208";a="289862274"
+Received: from pl-dbox.sh.intel.com (HELO intel.com) ([10.239.159.39])
+ by orsmga002.jf.intel.com with ESMTP; 12 Jun 2020 05:40:51 -0700
+Date: Fri, 12 Jun 2020 20:40:17 +0800
+From: Philip Li <philip.li@intel.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [kbuild-all] Re: [PATCH 4/4] drm: pl111: Update documentation
+Message-ID: <20200612124017.GD7636@intel.com>
+References: <20200609200446.153209-4-linus.walleij@linaro.org>
+ <202006101538.mV5c2loX%lkp@intel.com>
+ <CACRpkda+GJpHQjvfjcFfhher+Vfr66DRgf6my2Fx7qg9=-5ATQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CACRpkda+GJpHQjvfjcFfhher+Vfr66DRgf6my2Fx7qg9=-5ATQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_054022_049632_DB562E1C 
-X-CRM114-Status: UNSURE (   8.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200612_054055_693976_7E109A31 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.17 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [59.111.176.17 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,37 +71,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com, Bernard Zhao <bernard@vivo.com>
-MIME-Version: 1.0
+Cc: kbuild-all@lists.01.org, kernel test robot <lkp@intel.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Russell King <linux@armlinux.org.uk>, Maxime Ripard <mripard@kernel.org>,
+ Eric Anholt <eric@anholt.net>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Sean Paul <sean@poorly.run>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In function mtk_dsi_clk_hs_state, remove unnecessary conversion
-to bool return, this change is to make the code a bit readable.
+On Fri, Jun 12, 2020 at 01:04:02PM +0200, Linus Walleij wrote:
+> On Wed, Jun 10, 2020 at 9:38 AM kernel test robot <lkp@intel.com> wrote:
+> 
+> > I love your patch! Perhaps something to improve:
+> >
+> > [auto build test WARNING on drm-exynos/exynos-drm-next]
+> > [also build test WARNING on drm-intel/for-linux-next tegra-drm/drm/tegra/for-next linus/master v5.7 next-20200609]
+> > [cannot apply to drm-tip/drm-tip drm/drm-next]
+> > [if your patch is applied to the wrong git tree, please drop us a note to help
+> > improve the system. BTW, we also suggest to use '--base' option to specify the
+> > base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+> >
+> > url:    https://github.com/0day-ci/linux/commits/Linus-Walleij/drm-pl111-Credit-where-credit-is-due/20200610-041025
+> > base:   https://git.kernel.org/pub/scm/linux/kernel/git/daeinki/drm-exynos.git exynos-drm-next
+> > reproduce: make htmldocs
+> >
+> > If you fix the issue, kindly add following tag as appropriate
+> > Reported-by: kernel test robot <lkp@intel.com>
+> 
+> What on earth was that. The robot reports on a patch only adding a few lines
+> of comments as breaking the whole universe, and none of these systems
+> even use the PL111.
+Thanks for feedback, this is supposed to check make htmldocs. We will double
+check this to fix issue. Sorry for noise.
 
-Signed-off-by: Bernard Zhao <bernard@vivo.com>
----
- drivers/gpu/drm/mediatek/mtk_dsi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index 270bf22c98fe..4491e64b3f06 100644
---- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -319,7 +319,7 @@ static bool mtk_dsi_clk_hs_state(struct mtk_dsi *dsi)
- 	u32 tmp_reg1;
- 
- 	tmp_reg1 = readl(dsi->regs + DSI_PHY_LCCON);
--	return ((tmp_reg1 & LC_HS_TX_EN) == 1) ? true : false;
-+	return ((tmp_reg1 & LC_HS_TX_EN) == 1);
- }
- 
- static void mtk_dsi_clk_hs_mode(struct mtk_dsi *dsi, bool enter)
--- 
-2.17.1
-
+> 
+> Yours,
+> Linus Walleij
+> _______________________________________________
+> kbuild-all mailing list -- kbuild-all@lists.01.org
+> To unsubscribe send an email to kbuild-all-leave@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
