@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 918661F7528
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:15:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47D221F751B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 10:14:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mQb5WHAmTJdsgqY9Pcei/rR2+upPZ7RFxYd8LyoNOjU=; b=F7mSlsX3a0nknd
-	g0iyZKzy5v9ldulN2/HaKSKcZnR/ETR2wHXisvnPTwlEppNwEc2V7Ltg5ARcz/6DBHON2wcUsBuJ5
-	+YD8eM6PdowRzTTK/RbQseeoVMgQ1KFJfjRTt9gWDCWRup8OQaFTjq/h5wQO21/TOkBeyU6TYpAvj
-	ZSNu5vPxdzzp2CMu4zWDX7MkuoxHBud0RBA+FT0Og/wwSl1AdiIo5hOoCxuAXKIgOslK5qW0lw6sK
-	gx2r/uMvEwS4cvkasy0FIOAWB2cmVTPdHHNK6fTAqinYSf8vdU9zobirITRtc5gB6pk/sm384s0mh
-	OsprTGn7x/tFKv9CRKQA==;
+	List-Owner; bh=WWsuJtM/v6fMW+cQrTbABQLu/7Vok9EWNNAhtRZ40qQ=; b=Np6dTlZNB9j3/P
+	4xDR3JE8Y3GH84g/iihmVHQhsls1ZFyvdd1cIugZ6wBI6UDzGGr+PD1LzbFhMVqvimEbuXQ9VeeK4
+	TO1VgYb1oB9yZZohBfaEboiPmAzPAi2EOcyM1kmBmDYLpSk/i2rQdvTBHRKkvDdsrdr7zNIPVsPw5
+	d9n6nxwaBHVGzIrVjO0AVfmii7/FRBxaVrocLIwhmvErh24vjP7OAMVPX+NJvYCP8+0I2caYNK/ZN
+	qh6XMPjj0F+21y/vhLTcCy5KKbvf4t+IeopB96Dqor2Y0HAsKwu1AsZ2QHjMMSFF0jmC0WDGuX51e
+	b74rBnyBpuDu1bAis0+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjeqZ-0004uD-6N; Fri, 12 Jun 2020 08:15:31 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jjepI-0001xw-7H; Fri, 12 Jun 2020 08:14:12 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjeqO-0004so-9h; Fri, 12 Jun 2020 08:15:23 +0000
-X-UUID: 4db2162223dd42808ecd5adce96d9bc0-20200612
+ id 1jjepB-0001x6-7o; Fri, 12 Jun 2020 08:14:06 +0000
+X-UUID: 819cc0c09c9948d4884a6de2e721a687-20200612
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=UMgcVfDJy2DNtueEsKv2oMpjTkk90WFRphgVGkekQiE=; 
- b=fL52jjGyd7Q36ByJ4RxJqGCLiDVVn81WhjD37xSdQanH9IBsmmG8C8+ZaFwkMo5a7AcQNr+fsJijJH2decJIMcXqYHKTuhvNoCt5mMEa6P4CzMsF8Es+qIdRHxEDpqIdOP/oeEkG47GBDqriRl644Su+XLUT6w00FyFqvTVPOQc=;
-X-UUID: 4db2162223dd42808ecd5adce96d9bc0-20200612
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=0GUyHvRF9VSyT75UO1lemvQzocW+/xKvL/7X1JD+e3c=; 
+ b=kyvH0EUBv92HPX2ACqV0iGmIsriy/5p9EwSAR3r4T1xcSU5vwKwEtzt9COkq0ShUR8M9thPr/QQ9I5d26rbTQtS7gHAh7GNGONyzcGjpBUtQ/Hluusz7r4KZYYDlIFvp1q+oJolP3loCoYOKwriwq0zoG8DWbE7y64Jmbkg3FZg=;
+X-UUID: 819cc0c09c9948d4884a6de2e721a687-20200612
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <eastl.lee@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1660008849; Fri, 12 Jun 2020 00:15:11 -0800
+ with ESMTP id 1315875167; Fri, 12 Jun 2020 00:13:54 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 12 Jun 2020 01:12:58 -0700
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 12 Jun 2020 01:13:55 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 12 Jun 2020 16:12:57 +0800
+ 15.0.1497.2; Fri, 12 Jun 2020 16:13:54 +0800
 Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 12 Jun 2020 16:12:56 +0800
-Message-ID: <1591949578.23595.8.camel@mtkswgap22>
-Subject: Re: [PATCH v4 3/4] dmaengine: mediatek-cqdma: fix compatible
+ Transport; Fri, 12 Jun 2020 16:13:53 +0800
+Message-ID: <1591949635.23595.9.camel@mtkswgap22>
+Subject: Re: [PATCH v4 4/4] dmaengine: mediatek-cqdma: add dma mask for
+ capability
 From: EastL <EastL.Lee@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Fri, 12 Jun 2020 16:12:58 +0800
-In-Reply-To: <b96e9b4d-880d-885e-fc2e-56e5618eb014@gmail.com>
+Date: Fri, 12 Jun 2020 16:13:55 +0800
+In-Reply-To: <ea26fb2c-aec0-c031-ac30-9e5099943d9c@gmail.com>
 References: <1590659832-31476-1-git-send-email-EastL.Lee@mediatek.com>
- <1590659832-31476-4-git-send-email-EastL.Lee@mediatek.com>
- <b96e9b4d-880d-885e-fc2e-56e5618eb014@gmail.com>
+ <1590659832-31476-5-git-send-email-EastL.Lee@mediatek.com>
+ <ea26fb2c-aec0-c031-ac30-9e5099943d9c@gmail.com>
 X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_011521_847961_C7EE71DF 
-X-CRM114-Status: GOOD (  16.68  )
+X-CRM114-CacheID: sfid-20200612_011405_283552_D067F96E 
+X-CRM114-Status: GOOD (  17.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,53 +94,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-05-28 at 15:39 +0200, Matthias Brugger wrote:
+On Thu, 2020-05-28 at 16:10 +0200, Matthias Brugger wrote:
 > 
 > On 28/05/2020 11:57, EastL wrote:
-> > This patch fixes mediatek-cqdma compatible to common.
+> > This patch add dma mask for capability.
 > > 
+> > Change-Id: I31f4622f9541d769702029532e5f5f185815dda2
+> 
+> No Change-Id in the commit message please.
+> 
 > > Signed-off-by: EastL <EastL.Lee@mediatek.com>
 > > ---
-> >  drivers/dma/mediatek/mtk-cqdma.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >  drivers/dma/mediatek/mtk-cqdma.c | 13 +++++++++++++
+> >  1 file changed, 13 insertions(+)
 > > 
 > > diff --git a/drivers/dma/mediatek/mtk-cqdma.c b/drivers/dma/mediatek/mtk-cqdma.c
-> > index 905bbcb..bca7118 100644
+> > index bca7118..1805a76 100644
 > > --- a/drivers/dma/mediatek/mtk-cqdma.c
 > > +++ b/drivers/dma/mediatek/mtk-cqdma.c
-> > @@ -544,7 +544,7 @@ static void mtk_cqdma_hw_deinit(struct mtk_cqdma_device *cqdma)
-> >  }
+> > @@ -117,6 +117,7 @@ struct mtk_cqdma_vchan {
+> >   * @clk:                    The clock that device internal is using
+> >   * @dma_requests:           The number of VCs the device supports to
+> >   * @dma_channels:           The number of PCs the device supports to
+> > + * @dma_mask:               A mask for DMA capability
+> >   * @vc:                     The pointer to all available VCs
+> >   * @pc:                     The pointer to all the underlying PCs
+> >   */
+> > @@ -126,6 +127,7 @@ struct mtk_cqdma_device {
 > >  
-> >  static const struct of_device_id mtk_cqdma_match[] = {
-> > -	{ .compatible = "mediatek,mt6765-cqdma" },
-> > +	{ .compatible = "mediatek,cqdma" },
-> 
-> We can't just delete and old compatible. If other cqdma IP blocks are the same
-> as mt6795, we should instead add entries in the binding description with
-> fallback compatible. For example for mt6779 the DTS would look like this:
-> compatible = "mediatek,mt6779-cqdma", "mediatek,mt6765-cqdma";
-> 
-> This way we the kernel will take care to bind the device against the driver with
-> mt7665-cqdma, but leaves us the posibillity to add any changes to the driver in
-> the future if we find some bugs/features for mt6779 that are not present in mt6765.
-> 
-> Regards,
-> Matthias
-> 
-> >  	{ /* sentinel */ }
+> >  	u32 dma_requests;
+> >  	u32 dma_channels;
+> > +	u32 dma_mask;
+> >  	struct mtk_cqdma_vchan *vc;
+> >  	struct mtk_cqdma_pchan **pc;
+> >  };
+> > @@ -549,6 +551,7 @@ static void mtk_cqdma_hw_deinit(struct mtk_cqdma_device *cqdma)
 > >  };
 > >  MODULE_DEVICE_TABLE(of, mtk_cqdma_match);
+> >  
+> > +static u64 cqdma_dmamask;
+> >  static int mtk_cqdma_probe(struct platform_device *pdev)
+> >  {
+> >  	struct mtk_cqdma_device *cqdma;
+> > @@ -607,6 +610,16 @@ static int mtk_cqdma_probe(struct platform_device *pdev)
+> >  		cqdma->dma_channels = MTK_CQDMA_NR_PCHANS;
+> >  	}
+> >  
+> > +	if (pdev->dev.of_node && of_property_read_u32(pdev->dev.of_node,
+> > +						      "dma-channel-mask",
+> > +						      &cqdma->dma_mask)) {
+> 
+> I'd prefer:
+> 
+> if (pdev->dev.of_node)
+>     ret = of_property_read_u32(pdev->dev.of_node,
+>                                "dma-channel-mask",
+>                                &cqdma->dma_mask))
+> if (ret) {
+>     dev_warn(&pdev->dev,
+>              "Using 0 as missing dma-channel-mask
+>               property\n");
+>     cqdma->dma_mask = 0;
+> }
+> 
+> > +		dev_info(&pdev->dev,
+> > +			 "Using 0 as missing dma-channel-mask property\n");
+> 
+> dev_warn should be OK.
+> 
+> > +	} else {
+> > +		cqdma_dmamask = DMA_BIT_MASK(cqdma->dma_mask);
+> > +		pdev->dev.dma_mask = &cqdma_dmamask;
+> 
+> if (dma_set_mask(&pdev->dev,
+>     DMA_BIT_MASK(cqdma->dma_mask)) {
+>          /* error out */
+> }
+> 
+OK, I'll fix it on next version.
+
+> > +	}
+> > +
+> >  	cqdma->pc = devm_kcalloc(&pdev->dev, cqdma->dma_channels,
+> >  				 sizeof(*cqdma->pc), GFP_KERNEL);
+> >  	if (!cqdma->pc)
 > > 
 
-OK, Can I add a common compatible? Like this
-
-static const struct of_device_id mtk_cqdma_match[] = {
-{ .compatible = "mediatek,mt6765-cqdma" },
-{ .compatible = "mediatek,common-cqdma" },
-
-
-Regards,
-EastL
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
