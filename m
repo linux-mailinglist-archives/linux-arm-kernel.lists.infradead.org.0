@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 345141F7872
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:07:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57FAC1F7875
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:07:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8LoRaAwn81ZBgoqAXntBEUZG1wVm1D9w4FnCgxCOzXw=; b=IFGkXy4+Q4fG13
-	JLTICSHqw40zkYmdU+c5y86XG/ylh6p4PM7dx4UKuIaUdhsWqVARJZCRyshEot7xGWC9vfLjVNGSn
-	xkE3oJZFKIXKiOonXrZv/T+Yk7iK2AQ4LAB4xfaPvS/oKYrkVtDnCHzGmB0CMIjWPP3Lg66lvw3f2
-	JdwQk4TV0LJSPrajU2/hrBxXEiCJtlVmdHHckCsxEM7BvgpMG03X/0K77Nqo7s2eWR211eS0//TPh
-	Plz4LnjuJF/85u1BBr84n4OA/GkayURtWog6xzELq64tjt0aEPXDSGg+ZeJSWRzeSlT+jriiBjZ4i
-	Jdr5iUOtAVIiAPovVK9Q==;
+	List-Owner; bh=LX8hWaBBdtsQffjTW2n7A8I2MvzNFLqjnvOBriE8M7o=; b=hsb7tMrR4IMsMz
+	kIOWMADmMkJ3/E6HpFdJiQlyCvcMiexXEz43U0lS4zVWcs492njvntZNVeCGczlWAsyUdCggCDdB6
+	cSItKZUyW+MO+jcI+Iq2s/mfdNBPk19wbf3yRn2CPn3+WQS/xwMp/oaMdCDfAk5cDI3VylvPMrOll
+	2zbQQLa68rJNiecV/iF7G6M2GMDDdh1Ea7/kDFuS+ssUQzK1gGtX9Kfkyzqe2vn5PoKZp8aQKZcHc
+	bDv8cuknxdJMYN6/thZ4yVOapU/3lGBUDAJts5fhLOW/y/8YDK3+KUEKuX0J/cmpViVo4nSInRZRp
+	cGbootzr6zbG3WheHnEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjjOj-0000aa-Mi; Fri, 12 Jun 2020 13:07:05 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jjjP0-0000ps-JU; Fri, 12 Jun 2020 13:07:22 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjjNe-0000C6-7B
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:06:00 +0000
-Received: by mail-pf1-x444.google.com with SMTP id d66so4274488pfd.6
+ id 1jjjO4-0000Sv-Cq
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:06:35 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id b7so4225631pju.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 06:05:56 -0700 (PDT)
+ Fri, 12 Jun 2020 06:06:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=WPc9wn7ciRL1/w7YcmkKxstKF3mhNYu9SS7UDFpaIkA=;
- b=nUjvkzZrPNUxwZXt4rddj1k8k11Ut+O8vNlUvODyzPA5TRw+69KGcqYsPZ2G62F8Y+
- jzeH5qlPBMohmEll60co1xTFxhjueauzIrYC6s43YQZvhTZLQrKMj6I11sfQ294FeN7o
- 1Cu8BgHXOYm6//LunIaFVzyeszvlCLlSWTqTQ=
+ bh=OBJpojzWa8rMbNI3idlTZnZIA1I0XUKCQMwrfCA78NU=;
+ b=IIkWzmttsga5v2115g7pfjC/IASZwG0DDViVKQz3ldmeLjYgO3t0qUF7d5QwBdZhF2
+ RrfvD2+ncX1S00enk1vKMaBq/5Tm+liawo4WXlCAGcLgDEr/ewPBqCxUc1g/4/OiSfet
+ 6VEQqhiC/X9/+m5oeZHh4i/ImxIKa8MHBT4Bs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=WPc9wn7ciRL1/w7YcmkKxstKF3mhNYu9SS7UDFpaIkA=;
- b=HdVpah4cYr5Qjee9hZDGHMQy43nEbqQedqcsYS5ErD+aopPIZxDbueM2916wmB9A6E
- x9/fezkDz0rHNAD6CiDMg7xngX7cyN0IraLY2XoDFBMMMZkmWNkbZlLSsXvzdmdpce+h
- zHr4LYYZ2lKeRyzkDy2LtDnzw2miqTteoeEBWjJNsgeDpiV9/RlhI30sLn2z3E6Gc99g
- RNfycHJdCez81UZNkHTAYwNPReii9CG5Yq4A7dgyUPJhBraZWl+VTakc2MmdHCHhWudS
- uI3JvgDf7vC3AHLvxFXXYknQQ1ZmCwDJkLC1Iu9QUGfBEzUX3mo7VW13N1Ng0ojFzH/2
- TiXQ==
-X-Gm-Message-State: AOAM531CzPsvEJcnRG/ZPqEyF7J5R+Hs2E77ZRrk9NVlz0tFdAjJvm2v
- vzYm4N1o68yEtdoDrx8qQQaEwg==
-X-Google-Smtp-Source: ABdhPJz1wFdIUTrlUYxHra18zo59hPt+Ljqw4iZ1xFCh8+Ip1RV9JHwrv4UOCHYaJcYh4KYJzR2RpA==
-X-Received: by 2002:a63:a119:: with SMTP id b25mr10659528pgf.10.1591967156245; 
- Fri, 12 Jun 2020 06:05:56 -0700 (PDT)
+ bh=OBJpojzWa8rMbNI3idlTZnZIA1I0XUKCQMwrfCA78NU=;
+ b=ndXntpVR4pLoN8TSN3i4MGYiGrkLaly4zrRjU6F/vD/Wge50fFKDTKILgKmnxFeSVH
+ Dom0m3op05HaJDnxfop4fLKcrm0X/1NHF8lKhX/gegAzMU5T4249amJmH3G0001kCxhi
+ /mpXQxjtWpnVJA337ft6puI/etDh9TxDyUlZlUTHlGw3H95Rzt4vBKcZ2o2svlpvyJ99
+ aSy6+pCZxoaa4AaUC7zY+wfSdfeJcC8QbkuYE521QXHIuQUVSoeObOFeBGMocto1qPhi
+ NhCR1miFJDIfTfMSb46tmqDSEjqU+jtyy9XJ9xIn/oPgCPzjyU/wlAg9XCxievYMe1DW
+ KJig==
+X-Gm-Message-State: AOAM533uO/i1Nymu7HMy5c7Lcrqo1FkfYAqewcuj6jzvQ4Hv/2gyKre3
+ G28CMnTtuY3mSOesdpVTjr+GGw==
+X-Google-Smtp-Source: ABdhPJxsPFgFdtlCk9FEq8VhKA+qHcaSMdlbm0B+OKzgab0W2kgZssyjPZg+Ctuuk/hdM52zBy5ltA==
+X-Received: by 2002:a17:902:207:: with SMTP id
+ 7mr11883773plc.169.1591967183355; 
+ Fri, 12 Jun 2020 06:06:23 -0700 (PDT)
 Received: from shiro.work (p1285116-ipngn200805sizuokaden.shizuoka.ocn.ne.jp.
  [114.171.61.116])
- by smtp.googlemail.com with ESMTPSA id k12sm5481939pgm.11.2020.06.12.06.05.47
+ by smtp.googlemail.com with ESMTPSA id k12sm5481939pgm.11.2020.06.12.06.06.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 06:05:55 -0700 (PDT)
+ Fri, 12 Jun 2020 06:06:22 -0700 (PDT)
 From: Daniel Palmer <daniel@0x0f.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 07/12] ARM: mstar: Add binding details for mstar,l3bridge
-Date: Fri, 12 Jun 2020 22:00:07 +0900
-Message-Id: <20200612130032.3905240-8-daniel@0x0f.com>
+Subject: [PATCH v3 08/12] ARM: mstar: Add Armv7 base dtsi
+Date: Fri, 12 Jun 2020 22:00:08 +0900
+Message-Id: <20200612130032.3905240-9-daniel@0x0f.com>
 X-Mailer: git-send-email 2.27.0.rc0
 In-Reply-To: <20200612130032.3905240-1-daniel@0x0f.com>
 References: <20200610090421.3428945-1-daniel@0x0f.com>
  <20200612130032.3905240-1-daniel@0x0f.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_060558_314924_0D913F4C 
-X-CRM114-Status: GOOD (  15.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_060624_500674_DD890C2A 
+X-CRM114-Status: GOOD (  14.71  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.7 URIBL_BLACK            Contains an URL listed in the URIBL blacklist
+ [URIs: linux-chenxing.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,82 +107,135 @@ Cc: Linus Walleij <linus.walleij@linaro.org>,
  Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
  Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, daniel@0x0f.com,
  Russell King <linux@armlinux.org.uk>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
  Nathan Huckleberry <nhuck15@gmail.com>, devicetree@vger.kernel.org,
  Arnd Bergmann <arnd@arndb.de>, allen <allen.chen@ite.com.tw>,
- Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
- Gregory Fong <gregory.0xf0@gmail.com>, Doug Anderson <armlinux@m.disordat.com>,
+ Will Deacon <will@kernel.org>, Lubomir Rintel <lkundrak@v3.sk>,
+ Rob Herring <robh+dt@kernel.org>, Gregory Fong <gregory.0xf0@gmail.com>,
+ Doug Anderson <armlinux@m.disordat.com>,
  Nathan Chancellor <natechancellor@gmail.com>,
  linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nick Desaulniers <ndesaulniers@google.com>, afaerber@suse.de,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, afaerber@suse.de,
  Mark Brown <broonie@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
  "David S. Miller" <davem@davemloft.net>, Mike Rapoport <rppt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a YAML description of the l3bridge node needed by the
-platform code for the MStar/SigmaStar Armv7 SoCs.
+Adds initial dtsi for the base MStar/Sigmastar Armv7 SoCs.
+
+These SoCs have very similar memory maps and this will avoid
+duplicating nodes across multiple dtsis.
 
 Signed-off-by: Daniel Palmer <daniel@0x0f.com>
 ---
- .../bindings/misc/mstar,l3bridge.yaml         | 44 +++++++++++++++++++
- 1 file changed, 44 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/misc/mstar,l3bridge.yaml
+ MAINTAINERS                     |  1 +
+ arch/arm/boot/dts/mstar-v7.dtsi | 83 +++++++++++++++++++++++++++++++++
+ 2 files changed, 84 insertions(+)
+ create mode 100644 arch/arm/boot/dts/mstar-v7.dtsi
 
-diff --git a/Documentation/devicetree/bindings/misc/mstar,l3bridge.yaml b/Documentation/devicetree/bindings/misc/mstar,l3bridge.yaml
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 4bd57bbdddb0..00de66458e53 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2116,6 +2116,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ W:	http://linux-chenxing.org/
+ F:	Documentation/devicetree/bindings/arm/mstar.yaml
++F:	arch/arm/boot/dts/mstar-v7.dtsi
+ F:	arch/arm/mach-mstar/
+ 
+ ARM/NEC MOBILEPRO 900/c MACHINE SUPPORT
+diff --git a/arch/arm/boot/dts/mstar-v7.dtsi b/arch/arm/boot/dts/mstar-v7.dtsi
 new file mode 100644
-index 000000000000..cb7fd1cdfb1a
+index 000000000000..3b99bb435bb5
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/misc/mstar,l3bridge.yaml
-@@ -0,0 +1,44 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+# Copyright 2020 thingy.jp.
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/misc/mstar,l3bridge.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++++ b/arch/arm/boot/dts/mstar-v7.dtsi
+@@ -0,0 +1,83 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright (c) 2020 thingy.jp.
++ * Author: Daniel Palmer <daniel@thingy.jp>
++ */
 +
-+title: MStar/SigmaStar Armv7 SoC l3bridge
++#include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
 +
-+maintainers:
-+  - Daniel Palmer <daniel@thingy.jp>
++/ {
++	#address-cells = <1>;
++	#size-cells = <1>;
++	interrupt-parent = <&gic>;
 +
-+description: |
-+  MStar/SigmaStar's Armv7 SoCs have a pipeline in the interface
-+  between the CPU and memory. This means that before DMA capable
-+  devices are allowed to run the pipeline must be flushed to ensure
-+  everything is in memory.
++	cpus {
++		#address-cells = <1>;
++		#size-cells = <0>;
 +
-+  The l3bridge region contains registers that allow such a flush
-+  to be triggered.
++		cpu0: cpu@0 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a7";
++			reg = <0x0>;
++		};
++	};
 +
-+  This node is used by the platform code to find where the registers
-+  are and install a barrier that triggers the required pipeline flush.
++	arch_timer {
++		compatible = "arm,armv7-timer";
++		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2)
++				| IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(2)
++				| IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(2)
++				| IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(2)
++				| IRQ_TYPE_LEVEL_LOW)>;
++		/*
++		 * we shouldn't need this but the vendor
++		 * u-boot is broken
++		 */
++		clock-frequency = <6000000>;
++	};
 +
-+properties:
-+  compatible:
-+    items:
-+      - const: mstar,l3bridge
++	soc: soc {
++		compatible = "simple-bus";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0x16001000 0x16001000 0x00007000>,
++			 <0x1f000000 0x1f000000 0x00400000>;
 +
-+  reg:
-+    maxItems: 1
++		gic: interrupt-controller@16001000 {
++			compatible = "arm,cortex-a7-gic";
++			reg = <0x16001000 0x1000>,
++			      <0x16002000 0x2000>,
++			      <0x16004000 0x2000>,
++			      <0x16006000 0x2000>;
++			#interrupt-cells = <3>;
++			interrupt-controller;
++			interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(2)
++					| IRQ_TYPE_LEVEL_LOW)>;
++		};
 +
-+required:
-+  - compatible
-+  - reg
++		riu: bus@1f000000 {
++			compatible = "simple-bus";
++			reg = <0x1f000000 0x00400000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0x0 0x1f000000 0x00400000>;
 +
-+additionalProperties: false
++			l3bridge: l3bridge@204400 {
++				compatible = "mstar,l3bridge";
++				reg = <0x204400 0x200>;
++			};
 +
-+examples:
-+  - |
-+    l3bridge: l3bridge@1f204400 {
-+        compatible = "mstar,l3bridge";
-+        reg = <0x1f204400 0x200>;
-+    };
++			pm_uart: uart@221000 {
++				compatible = "ns16550a";
++				reg = <0x221000 0x100>;
++				reg-shift = <3>;
++				clock-frequency = <172000000>;
++				status = "disabled";
++			};
++		};
++	};
++};
 -- 
 2.27.0.rc0
 
