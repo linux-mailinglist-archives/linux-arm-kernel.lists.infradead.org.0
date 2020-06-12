@@ -2,87 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C5A31F774D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:28:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 451A71F7752
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:30:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Qylh0atk6AJYPXmjPMQ44jtRYKp3noZnr6JwZ7saLgQ=; b=iVkR5Qt5yhlhKN
-	3j/aiNtClWIP6lAWWbi5dGGAf0XfliON9YJcyG1IBHTWLipxGN0r+F48kPuVi0/2c519y6de/+Hrn
-	zNosFEAk/vpyQmu1neyL6uaQ7AdDyuuwvbmWoen89ORoiz1cj5n9MH355QvqolJFYb7but837dXY3
-	K6k7slWLl0K51BLDqR/vH1BDVKJfv2ew61TzFsAncczx/Jx9BxxFmq46kwkSKNx2JXnEX1r34Uq0Q
-	pfFyGluSWDNLdQSnru8LwWbDmFZ8BqCcQdXzXyA685tqWHEvKxxxSN2WBhS9C+VXyGCjFDrs76Oko
-	4Y44YZn+8uX2CIE80ymQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rnHLT8xORaulL4wvv91S33RKWnsSDjLAWAtB3nnxygY=; b=TRHbRYhpR7zXfQ
+	KDrueCW1PfxCvDnmULQNqvLO7DMt8xNscAQv/C9Cxc5BvG4BHBigd0z9kb7A4OnB6NWLReidR0GxO
+	DJIphym/R0p2h7UbqMH0U6q+F82uZl+zkM399Zbt+PmA8blTErqe7dfR0Aroa2/Be6em3YCVMcz4z
+	fiAHVzgDvFYjxB9bUIeJvK5hW9PsZWlFWYrWP1PmsNZ2ucStSrZNfX8bwe8jq5UmMC+qijwyko1FF
+	eo/8v8hNJ7ZrBdweeBTDlEQ/hPYVZz4X+6/13FC6WlrGxQybO4sY81GuCkhI/JV+t2fH/mxOVn1xW
+	ypZCRyeR2NVqNCSV+r+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjhr1-0005yc-Ai; Fri, 12 Jun 2020 11:28:11 +0000
-Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
+	id 1jjhtV-0000X4-8B; Fri, 12 Jun 2020 11:30:45 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:32c8:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjhqu-0005xl-1y
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:28:05 +0000
-Received: by mail-ej1-x643.google.com with SMTP id l12so9708326ejn.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 04:28:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beagleboard-org.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
- bh=x+EzCa13oBkDmmedkJhpOdOSq/9OAyMQhRjI6L6Gk/o=;
- b=S9sT7t5ZIpfYCDAbMcB8jwtLa9MGKk4nqPnImEddN0kepR2Z2qESMoSN67etrUmroP
- 5QE5GwFi7YDu7pm2Eqp1OZ7LmU+DXSlFqm3Js6tHBg6u2TDbxzqtQu940+Cgd+XtqYhl
- //2bmHmnG6qgnSQSqHZ/epqvSiZ1jb8gbfaJX0fko6dCVNmJs4BFRpdReRJ9d76Ui4vY
- qgwSALEkjxQjQiiTAhpqu1t/sst2pzjGpuSjiz+7iL5YL6q9Yf4rqQBCxWyw1U2TplfR
- ou4iHSigiIisVr6BInNL7yCRKp2Uz+nkp1juM7ujUqL0KImK8i0aA00J+oiEpe6FJLet
- V0Yg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition;
- bh=x+EzCa13oBkDmmedkJhpOdOSq/9OAyMQhRjI6L6Gk/o=;
- b=hggxPegovszsIaGUh1F0BCrdbS6M18XknBOl4Ds+e7GTUh4/VU48wTgM4ZmRqz4SNi
- 85pKdoeQqd4IBcJaN4IwIp9Z/l79MGzOmY7dbOgNSLZWllUcSeXBZxy08Eq/xjCTw2M5
- PMhwIr74rQovgp33mPwKaJ8ZkiZ8QQVgjfpseZh+c2n+ejaCJA83dOEOBOdS1iOGuSHA
- cW+gfRExFoYr2OU3r2sdhyI6nlhPemOlU+h66yMcu7zADtNu3NSy+ynYTEgTTsrlbeXR
- WKM8TkwN2Iie59eM5kjZe4m31EOn79PX9q/uZSdcjTHQ5iW8NIZZ1tpq+C7c/s9+tBtx
- UaWg==
-X-Gm-Message-State: AOAM531qH2mU3DmXgAeq+SZCgljhA42EYCt09/2lavRYL2gkMw4LIen3
- F6W55sm60pLh3NhGfbVr7+R1dA==
-X-Google-Smtp-Source: ABdhPJz41qD396e8oQ3tm1hW5XAIn/LJUid1p+0iAEYyEf4Y0r8td0r8b0A9+lQuL6oaAsmx37Tuzg==
-X-Received: by 2002:a17:906:3548:: with SMTP id
- s8mr12279231eja.202.1591961281224; 
- Fri, 12 Jun 2020 04:28:01 -0700 (PDT)
-Received: from x1 (i59F66838.versanet.de. [89.246.104.56])
- by smtp.gmail.com with ESMTPSA id y62sm2957534edy.61.2020.06.12.04.28.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 04:28:00 -0700 (PDT)
-Date: Fri, 12 Jun 2020 13:27:58 +0200
-From: Drew Fustini <drew@beagleboard.org>
-To: Tony Lindgren <tony@atomide.com>,
- Haojian Zhuang <haojian.zhuang@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] pinctrl: single: fix function name in documentation
-Message-ID: <20200612112758.GA3407886@x1>
+ id 1jjhtN-0000WU-FC
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:30:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=etPHGVYvPw7yw2ygbiMI5MNxWS/RjHHBmbLSJinvfLQ=; b=BPPJPbvODmjIQrnUW1eLG3MI8
+ MmiCthfkt1Hdtyn/HSY9hCKkDpas84Fqt+nvsYXWDKexRAJBWEinHZKdspRfDwE7Ig5eFUfrFAZNP
+ bauAmpNpZMXsNcOqJQljGkcypGA86h/mqpjRBiwgMfehzxmQqfhnB5Yjed2maatQ59ghRdxsMjsLO
+ 6yGON/9In+kv6jrt8fAP5TOaq3LQ+8g+WUYZPYAeN77Rr1nU6bEUWW/EmtR5UllksU4OXAJwM9Sr6
+ 46OimonqgIi2TUGEAyr6ZdgVgDM5S8n3flbzOok+2Xr+sXSRn8NOVOcpvpPaPHSdiJSsQcnofxVT9
+ IbazVLegA==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44598)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jjhtI-0002jO-3N; Fri, 12 Jun 2020 12:30:32 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jjhtH-0006Dh-Eb; Fri, 12 Jun 2020 12:30:31 +0100
+Date: Fri, 12 Jun 2020 12:30:31 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Subject: Re: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
+Message-ID: <20200612113031.GI1551@shell.armlinux.org.uk>
+References: <20200612083847.29942-1-s.hauer@pengutronix.de>
+ <20200612084710.GC1551@shell.armlinux.org.uk>
+ <20200612100114.GE1551@shell.armlinux.org.uk>
+ <20200612101820.GF1551@shell.armlinux.org.uk>
+ <20200612104208.GG1551@shell.armlinux.org.uk>
+ <20200612112213.GH1551@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20200612112213.GH1551@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_042804_277538_8CC376DE 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: 4.2 (++++)
+X-CRM114-CacheID: sfid-20200612_043037_504249_94BF1A13 
+X-CRM114-Status: GOOD (  10.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (4.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [89.246.104.56 listed in zen.spamhaus.org]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,41 +88,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Kridner <jkridner@beagleboard.org>,
- Robert Nelson <robertcnelson@gmail.com>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the correct the function name in the documentation for
-"pcs_parse_one_pinctrl_entry()".
+On Fri, Jun 12, 2020 at 12:22:13PM +0100, Russell King - ARM Linux admin wrote:
+> On Fri, Jun 12, 2020 at 11:42:08AM +0100, Russell King - ARM Linux admin wrote:
+> > With the obvious mistakes fixed (extraneous 'i' and lack of default
+> > case), it seems to still work on Armada 388 Clearfog Pro with 2.5G
+> > modules.
+> 
+> ... and the other bug fixed - mvneta_comphy_init() needs to be passed
+> the interface mode.
 
-"smux_parse_one_pinctrl_entry()" appears to be an artifact from the
-development of a prior patch series ("simple pinmux driver") which
-transformed into pinctrl-single.
+Unrelated to the patch, has anyone noticed that mvneta's performance
+seems to have reduced?  I've only just noticed it (which makes 2.5Gbps
+rather pointless).  This is iperf between two clearfogs with a 2.5G
+fibre link:
 
-Signed-off-by: Drew Fustini <drew@beagleboard.org>
----
- drivers/pinctrl/pinctrl-single.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+root@clearfog21:~# iperf -V -c fe80::250:43ff:fe02:303%eno2
+------------------------------------------------------------
+Client connecting to fe80::250:43ff:fe02:303%eno2, TCP port 5001
+TCP window size: 43.8 KByte (default)
+------------------------------------------------------------
+[  3] local fe80::250:43ff:fe21:203 port 48928 connected with fe80::250:43ff:fe02:303 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-10.0 sec   553 MBytes   464 Mbits/sec
 
-diff --git a/drivers/pinctrl/pinctrl-single.c b/drivers/pinctrl/pinctrl-single.c
-index a9d511982780..02f677eb1d53 100644
---- a/drivers/pinctrl/pinctrl-single.c
-+++ b/drivers/pinctrl/pinctrl-single.c
-@@ -958,7 +958,7 @@ static int pcs_parse_pinconf(struct pcs_device *pcs, struct device_node *np,
- }
- 
- /**
-- * smux_parse_one_pinctrl_entry() - parses a device tree mux entry
-+ * pcs_parse_one_pinctrl_entry() - parses a device tree mux entry
-  * @pctldev: pin controller device
-  * @pcs: pinctrl driver instance
-  * @np: device node of the mux entry
+I checked with Jon Nettleton, and he confirms my recollection that
+mvneta on Armada 388 used to be able to fill a 2.5Gbps link.
+
+If Armada 388 can't manage, then I suspect Armada XP will have worse
+performance being an earlier revision SoC.
+
 -- 
-2.25.1
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 _______________________________________________
 linux-arm-kernel mailing list
