@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F94A1F72B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 06:07:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1EE01F72BD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 06:11:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,54 +11,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fEbTBaFjdha9Zh54iNlzhw7D8kJJLZ4OfIXm7mYPOcs=; b=ufs2zFDjh80YT3N0FMiS8twxhf
-	wVDPobWWCurp/OI2ViSYbwbSukFfVdQorMCLbb02JAw9PhZSOVTY2t22h0MLy47uwkvLvodT7iGeU
-	tjNR6/bC212uWJkztGVZ2Zpe4KZPZ/RpDXOdq1V3u/VEnCfVyZZugF3kIsyYNENOjstPlwT1RSg8Z
-	ABIe/zrhUmUqHmBqx7hPhwzlcWIG9AnGRM2u01k4k+tvWqdhBEtsggaGON2KrL1ixYzOk0tInOmt9
-	SNMb5c/7VnGtcsZl3MYzq5BHb+RF81Go5/M3FLDraZiHvpuOsnVsqy5/rqJ67H/7w+3broq1c7gyp
-	hZfeNPIg==;
+	bh=3r4+bwmns1xVvIe+ghimTx4KZFH2h7/o8wDECAWTtUE=; b=Li7CDbXsc7jv7t5mnJjdsC3Nye
+	2vP/jKG4is50OfDSL050PHnNVZQrc9L4dEl82T7Mun0N0efyw48eiuVXmI9KOlDx+aGdtjtJtG/fl
+	3o+gGRSd3QPaECBvkdouKnuU5Hc1Ly6hfmNUS8GQimKHTSHnRUlJSLJ+kDh+TAEFq0yx8fpf+sfz9
+	eS/uqd+c2GkTvstwE2ANKcYCZVoiYfbv37bWQdWEeNRuNKs1umKq7T92w1t45X5q49baZ3ajY3IG9
+	e+hptZVyOQMgwxuZfJ1uRKVa3bmBwcMT5XgrwPTFXL+yXAuoRDZx3eXhF/HzVnapKebqOiGeKC/Fo
+	6GDjcZrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjayo-0000bW-9u; Fri, 12 Jun 2020 04:07:46 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1jjb1r-0003ZN-HG; Fri, 12 Jun 2020 04:10:55 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjayf-0000aj-Dl
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 04:07:38 +0000
-Received: by mail-qt1-x844.google.com with SMTP id z1so6244468qtn.2
+ id 1jjb1h-0003VQ-PD
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 04:10:47 +0000
+Received: by mail-qk1-x741.google.com with SMTP id n11so7828613qkn.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 21:07:35 -0700 (PDT)
+ Thu, 11 Jun 2020 21:10:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:references:from:message-id:date:user-agent:mime-version
  :in-reply-to:content-language:content-transfer-encoding;
- bh=W9N0HI/VJRXYdn3DxBbsnmWiEpklzY4+CMZBCSjxVLI=;
- b=MmowBu5g/zlVcPTy3ZBmy5iY8SG0VMb2dSPwH5MLFgedHfF8GKgeUxCK3uT+YrmbGS
- RacRhfM+AeWoO2epbNIPBsWgS5T7UE4jGevyuf6ruVakGyJdMgmeTUrQOZaKHQU97ykb
- tanSneGEeRFWtndHd69u5NxH6sVd1mGwvJqHyK16AXgLmttUQgiZz3sXLu88bIq3KxFi
- RLTeKXpvVyTpibyZiGdxDP7/R+g8uS4KoCGADEFB6XmAuYfCBY6vY3tiVXCGTenBkf/F
- Qx+3549AhBVymIp5SXL4UtYDx/fkunNCkaX+1XAmaX/eNojPWWSTsIkSMMaZCLdqboxN
- 2/dQ==
+ bh=BX3C143A3POrmkr1aq3BVs/jgbxYgT9lNfcL1LZXEKE=;
+ b=Ce6EyEcTASg05aRX64tIzLPc0Ldl21nX0gdkk7dHj5SV1ezpc5m8hh8vHOtsH+JToW
+ DaMp+mFWljKSMJfR95OV3iaLOcY+6gLvacrCc7XVU0JEWHF4jXaFQHcbj9FHACzbe0gX
+ frbOcTqf7xCByEeC82GrKS9avdSmtjvD8vL38WnBxHX1Jfksx0fkrXl21IEQknqWyQpe
+ m8KUNAagjP4eYoGxp5RbJswUTD0/Z9O9u37+BXOVF2mwXzGOz9+SH+/lOYyZB9L7zCbO
+ WCFs/Q48TOpToI6F737FBKW91eE3+JqcsDuW+RceVONtXQcS0O2B6mYlxqO4DWSYtqcT
+ TXhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=W9N0HI/VJRXYdn3DxBbsnmWiEpklzY4+CMZBCSjxVLI=;
- b=TiA7gNlLSE0YBFKApP1w+tjulhN1FjoYzAIGALZz6qsJBihaMPNMFB+GwNs01dS5LI
- 65pmxUbDCiy5zKlS5bq5eLxOGRNRt9/B0Do6m5EZWN2udOHTvKssgeWt0Go/UNH8Jl+/
- syMfl2VLKh5gxqZPK1sv64z7RiiAkQ0Kv7x76bADUZKz6lIfhsN4bB7WNS1HHzWFp9Mq
- 649cnbvQCh19v1ukXPdIZMkg/GMMAW4NSq603VjFKv7J5h7zWQRNspQxNXH1z1Q/YBu/
- K6eyZ5bYgxcOhDYd/33lZRbHiOEII9uZF5TZr0jvdfYMCsZ+c5cst9+sSLa6qL691rjf
- VOsA==
-X-Gm-Message-State: AOAM533XmjjoLgRWbJHg2wiOkAI7uKj5xUwbYs/5EDDrrVkSBPc4e/EL
- BqgpQvQJ/Gql3Z5PiFDUMgE=
-X-Google-Smtp-Source: ABdhPJxQuukhtwanmQJb52xJH/9PJDz7QPdp/qzb+qaQvTRo3KgSQnfSIXB3TMpsb+uFZnWTDW6TxA==
-X-Received: by 2002:aed:358c:: with SMTP id c12mr1177305qte.214.1591934854411; 
- Thu, 11 Jun 2020 21:07:34 -0700 (PDT)
+ bh=BX3C143A3POrmkr1aq3BVs/jgbxYgT9lNfcL1LZXEKE=;
+ b=h9frB5A0p56TJlFELeyGWlNoukIYW5FUEtlmzgCa1n2n6yNOd8UtjDnluxi0w3c57/
+ tyRL2ppTMlZt4v4qnu8QPmPy20h5V5Egaq+GL+2TZ55QE8gv5jaJ6GO6OUxlN2jfRHTq
+ l8bBNR00IErisj9eBl3G0EOwBiEh7cfmDedLtugjo2miWijMoIA8LovuAo4Tb94Y0s9b
+ ZMNLkjuCWzczXp09GKk7WwY96frqHQFvxAvvn7aIsyu4HMyUqX9kfZsHvXsZMu4e4AZe
+ ka7fNRfvxuAidyVcjE+Q6+F7QhMmjo9ZWAR/LsDZcebWiArfrQ4tVwKf7tFACTm6AHgb
+ kmqw==
+X-Gm-Message-State: AOAM530k8av+I0E4JDj+zxDdGfovUy74fXHKvaTyW4cDT+RxzUsKyqAX
+ NrOEcKmvSBj6BCaFOqZiLA6wyEAAZrw=
+X-Google-Smtp-Source: ABdhPJwPPjDV9+Z/ZHy7CT2YOLdbfu1LEYgQSgWOVIRxMfBZM1OtC+Y6K34t5asj2+iAPjCWpVnH1w==
+X-Received: by 2002:a05:620a:4fa:: with SMTP id
+ b26mr1201057qkh.63.1591935040214; 
+ Thu, 11 Jun 2020 21:10:40 -0700 (PDT)
 Received: from [192.168.1.46] (c-73-88-245-53.hsd1.tn.comcast.net.
  [73.88.245.53])
- by smtp.gmail.com with ESMTPSA id c6sm3609080qkg.93.2020.06.11.21.07.33
+ by smtp.gmail.com with ESMTPSA id t188sm3820131qka.27.2020.06.11.21.10.39
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 11 Jun 2020 21:07:33 -0700 (PDT)
+ Thu, 11 Jun 2020 21:10:39 -0700 (PDT)
 Subject: Re: [RFC] MFD's relationship with Device Tree (OF)
 To: Lee Jones <lee.jones@linaro.org>,
  Andy Shevchenko <andy.shevchenko@gmail.com>, Michael Walle
@@ -72,28 +73,28 @@ To: Lee Jones <lee.jones@linaro.org>,
  GregKroah-Hartmangregkh@linuxfoundation.org
 References: <20200609110136.GJ4106@dell>
 From: Frank Rowand <frowand.list@gmail.com>
-Message-ID: <7cf94809-7346-31bc-877c-679ecc4d9710@gmail.com>
-Date: Thu, 11 Jun 2020 23:07:32 -0500
+Message-ID: <fba8c972-b96c-74ae-b858-c47f2765028f@gmail.com>
+Date: Thu, 11 Jun 2020 23:10:38 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
 In-Reply-To: <20200609110136.GJ4106@dell>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_210737_480364_4610E6A9 
-X-CRM114-Status: GOOD (  31.97  )
+X-CRM114-CacheID: sfid-20200611_211045_817256_CC8C29A4 
+X-CRM114-Status: GOOD (  32.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [frowand.list[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -118,10 +119,6 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Hi Lee,
-
-Please add me to the distribution list for future versions of this.
-
--Frank
 
 On 2020-06-09 06:01, Lee Jones wrote:
 > Good morning,
@@ -242,6 +239,13 @@ On 2020-06-09 06:01, Lee Jones wrote:
 > seek an alternative procedure.
 > 
 > It should be possible to match based on order.  However, the developer
+
+You can not count on order.  There are no guarantees of node ordering in
+compilation, modification by bootloader, and within Linux kernel data
+structures.
+
+-Frank
+
 > would have to guarantee that the order in which the child devices are
 > presented to the MFD API are in exactly the same order as they are
 > represented in the Device Tree.  The obvious draw-back to this
