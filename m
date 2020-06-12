@@ -2,103 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A2DC1F76B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:26:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCE4A1F76C6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:32:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+LX1o+fM6Yk4GRF8O7PCEjgs2ziopS5kYm7CuxaoGME=; b=pqm3uSvB8KjKcS
-	53yxig6P54BgEEqp8IsyOsqX/f/ZLcQK08YWHbUjjyrMfD3MWT3Oo7dwJGBNZtI6TC0PxJeVLn3Yc
-	TMYxw7JzQuEXePh+djUPD6c67212QAsmK4bMxzhDQzLm2OJC2Kb9OxyefAJZ69YEtPHhWh7kUuviA
-	SgvPEltVJU56kvAG4dGbDKY7MQP1GdRLBxRvSpbAVbE05y3f9cj8dWQ/KGl/rIitG2vcfW7beUjp1
-	cdiro+eskAkCeKR2gskqF4q7kRpRT1gvd7W8nl6Uce/FR9/od95c42881TOkK9Qrqih/tnZEwaIIa
-	lnBAV7tgY6GP75DhkJdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EDoYtm/qT18/KyONLVzEolzz4YTNbVH1Z1a6xV7hFHg=; b=NTZ7fxzu/Wg1pNu+MCIE7hEa7
+	/ppf7yw1JFgdvdfwy5WdXzy8z6JfQYT7c3fTEPwLjYAtuziNbJSrZwuIIM6NOYMjxhdTZ1ChKcGcE
+	allB18dEeovyqL8y3W+WR1GuHKlA35WMNEEyDcGWImbIbx0jJpUbsbtrU3wDFXeNjckCbdgFRrkLn
+	eZcfoDI55KOMWUU89fZQ1ZpVK3tIunAY0XOB+2/4s+fbiccfbaKTcSLeCF6HKj7eXxLwwlM4fw/Dx
+	t8NNk7ywCzHCDIyKLwadglPEIg8QWJC04xrMgW3VsCCxjKQf9FJCcQGCHmBmOhjTFh+ZrGLgEp4tp
+	JmlbGm4oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjgsx-0000QL-1d; Fri, 12 Jun 2020 10:26:07 +0000
-Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
+	id 1jjgyj-0003M4-RY; Fri, 12 Jun 2020 10:32:05 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjgsk-0000P3-Fi
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:25:56 +0000
-Received: by mail-pj1-x1031.google.com with SMTP id h22so298503pjf.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 03:25:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=cUX8I3zbQvQLr1JtDLu8cxMFi8HBUB/7MciF2bMGdXA=;
- b=Xm8r5tnsMoGuSi4xpAI9+p+TAX+EGw+C+Bue1QyTIMG0CVcJ9jRKmmIQxK/wnkpKbc
- 7nrAjHjR87jnCXJtSLUFuKFm8t1Ukhq9UleBP4oTnjOyi1e3KODNkQ76Zl4p/jjC2EVb
- nvby513WQsjxYOWwsX961qlEo67QxJpVx0VbsnG+mTmtxHntGmXDANcbX4bVNkx7T4cl
- Y6yb2hI1yDphLwpBYlkoLmM/9BlN/wAnLgWEdQt7iOW8PcbSRhoqcuP5iJMz8hpHPJsf
- cXLICpttu05Pg/MMeRnlZxEg0OEn9eI2zvYAJbs72qRf9Uzy2WZNqfX9LrSZFK2eHaIC
- 1B3A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=cUX8I3zbQvQLr1JtDLu8cxMFi8HBUB/7MciF2bMGdXA=;
- b=T/GylPHHcI5fVaVPF2YzEJuK4lbDfRHA+/EXZH2IBH/woqdVBawNzfm+RRnjb3aqcI
- NsHjb4oWkGxkoWsuZ8MSeKIY+M9YMA7YvJGstA6+zee8a+DZE6ZfaL+qoojtv+Q/OzZb
- SXl73L+Rn/lMPsDvg/kZ5nnZ406Zh9x9CCSavi74R6YI672XfRmpP5L7OBEZKoXk6MKt
- kQh0hFKNfnBLfK2YXKNvVodoaqqypT53EGEaE6HiKUvfjYh1O6oMnHQV1gpvnqFjCe6W
- k6+cH5YI/fDjpt8X27eR3Yhyg28Ty+huxG5LbOj/G2gja81HupkaVzQzwv94X8KCNxfD
- Ymmw==
-X-Gm-Message-State: AOAM530YzyU2oM6/zR67E5yGL7hsokPlUj/LdNgRHFs6glq79BxDWjOP
- KizmUo01a3DnpvPYVVWDd/s=
-X-Google-Smtp-Source: ABdhPJyDf0t7pZ2FhXW0i0j+FfjSrBnypvQDMT+Lriq057tGe/P55czkaQp9gxDfqZGw9iHCNuzHJg==
-X-Received: by 2002:a17:902:9346:: with SMTP id
- g6mr10732696plp.19.1591957553757; 
- Fri, 12 Jun 2020 03:25:53 -0700 (PDT)
-Received: from localhost ([49.205.222.116])
- by smtp.gmail.com with ESMTPSA id x18sm5750238pfr.106.2020.06.12.03.25.52
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 12 Jun 2020 03:25:53 -0700 (PDT)
-Date: Fri, 12 Jun 2020 15:55:51 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: ARM: vmsplit 4g/4g
-Message-ID: <20200612102551.GA5377@afzalpc>
-References: <20200514111755.GA4997@afzalpc>
- <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
- <20200514133545.GA5020@afzalpc>
- <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
- <20200516060624.GA6371@afzalpc>
- <CAK8P3a01FYoWY9sZKU1q=UQ3ut4srwXXUeGRzW6APi+GpoKo1w@mail.gmail.com>
- <20200607125932.GA4576@afzalpc>
- <20200607161116.GN1551@shell.armlinux.org.uk>
- <20200608110902.GA5736@afzalpc>
- <CACRpkdboPBGBdHaRtZ=OAFvikYZVh=BVu192uyiB8T=yeHHEbA@mail.gmail.com>
+ id 1jjgyb-0003LN-3c
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:31:59 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jjgyU-0006sD-8S; Fri, 12 Jun 2020 12:31:50 +0200
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jjgyT-0007v1-Fk; Fri, 12 Jun 2020 12:31:49 +0200
+Date: Fri, 12 Jun 2020 12:31:49 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
+Message-ID: <20200612103149.2onoflu5qgwaooli@pengutronix.de>
+References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
+ <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
+ <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdboPBGBdHaRtZ=OAFvikYZVh=BVu192uyiB8T=yeHHEbA@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <20200612102113.GA26056@pi3>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 12:25:27 up 210 days,  1:44, 208 users,  load average: 0.19, 0.11,
+ 0.10
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_032555_019407_20D0346F 
-X-CRM114-Status: GOOD (  19.45  )
-X-Spam-Score: 2.3 (++)
+X-CRM114-CacheID: sfid-20200612_033157_148541_5A466A2E 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1031 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,79 +75,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Oleksij Rempel <linux@rempel-privat.de>, Wolfram Sang <wsa@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4388694288014096114=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On Wed, Jun 10, 2020 at 12:10:21PM +0200, Linus Walleij wrote:
-> On Mon, Jun 8, 2020 at 1:09 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+--===============4388694288014096114==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ih5p7jdiwpepz4ji"
+Content-Disposition: inline
 
-> > Not yet. Yes, i will do the performance evaluation.
-> >
-> > i am also worried about the impact on performance as these
-> > [ get_user_pages() or friends, kmap_atomic() ] are additionally
-> > invoked in the copy_{from,to}_user() path now.
-> 
-> I am happy to help!
 
-Thanks Linus
+--ih5p7jdiwpepz4ji
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> I am anyway working on MMU-related code (KASan) so I need to be on
-> top of this stuff.
+On Fri, Jun 12, 2020 at 12:21:13PM +0200, Krzysztof Kozlowski wrote:
+> On Fri, Jun 12, 2020 at 11:56:04AM +0200, Wolfram Sang wrote:
+> > On Fri, Jun 12, 2020 at 11:29:41AM +0200, Krzysztof Kozlowski wrote:
+> > > On Fri, Jun 12, 2020 at 11:05:17AM +0200, Wolfram Sang wrote:
+> > > > On Wed, Jun 10, 2020 at 03:46:42PM +0200, Krzysztof Kozlowski wrote:
+> > > > > If interrupt comes early (could be triggered with CONFIG_DEBUG_SH=
+IRQ),
+> > > >=20
+> > > > That code is disabled since 2011 (6d83f94db95c ("genirq: Disable the
+> > > > SHIRQ_DEBUG call in request_threaded_irq for now"))? So, you had th=
+is
+> > > > without fake injection, I assume?
+> > >=20
+> > > No, I observed it only after enabling DEBUG_SHIRQ (to a kernel with
+> > > some debugging options already).
+> >=20
+> > Interesting. Maybe probe was deferred and you got the extra irq when
+> > deregistering?
+>=20
+> Yes, good catch. The abort happens right after deferred probe exit.  It
+> could be then different reason than I thought - the interrupt is freed
+> through devm infrastructure quite late.  At this time, the clock might
+> be indeed disabled (error path of probe()).
 
-i earlier went thr' KASAN series secretly & did learn a thing or two
-from that!
+This line looks suspicious to me:
+ Unhandled fault: external abort on non-linefetch (0x1008) at 0x8882d003
 
-> What test is appropriate for this? I would intuitively think hackbench?
+0x8882d003 looks like not initialized pointer.
+The only not initialized value at devm_request_irq stage is i2c_imx->queue.
 
-'dd', i think, as you mentioned 'hackbench' i will use that as well.
 
-> > Note that this was done on a topic branch for user copy. Changes for
-> > kernel static mapping to vmalloc has not been merged with these.
-> > Also having kernel lowmem w/ a separate asid & switching at kernel
-> > entry/exit b/n user & kernel lowmem by changing ttbr0 is yet to be
-> > done. Quite a few things remaining to be done to achieve vmsplit 4g/4g
-> 
-> I will be very excited to look at patches or a git branch once you have
-> something you want to show. Also to just understand how you go about
-> this.
+--=20
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
-Don't put too much expectation on me, this is more of a learning for
-me. For user copy, the baby steps has been posted (To'ed you). On the
-static kernel mapping on vmalloc front, i do not want to post the
-patches in the current shape, though git-ized, will result in me
-getting mercilessly thrashed in public :). Many of the other platforms
-would fail and is not multi-platform friendly. i do not yet have a
-public git branch, i can send you the (ugly) patches separately, just
-let me know.
+--ih5p7jdiwpepz4ji
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> I have several elder systems under my roof
+-----BEGIN PGP SIGNATURE-----
 
-i have only a few low RAM & CPU systems, so that is certainly helpful.
+iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl7jWZEACgkQ4omh9DUa
+UbMz+RAAwthmvYid3GV24DtJKEJYoXymSfUbkZWCcEaFFrlus3duYL2tm5N6lHTm
+KhM0BxARTVJo8kMoCN88mg5f+cJR1qC8dFmMvUseU1tyeb8UhFiAliVeXBIB60+U
+7C5BdpptLFc/VOtBY5xfogZ3ZiFoe808iX1bI8gNYA5Ut9c8j+6mG2eTPnKghxNJ
+906Efve2mCRFgvvZ29rxgKMmvHwcjGumrkpfpD/9XpP2dvCwkIfW8jKp00ws9Wrq
+pnlVQFhOxVzd3dU4jmZd33zq3Mntjbez2FzjCwOEYdBYKLL3omtV/BsfsBEWm7j5
+jCJXJntfPEYf8R6DNTgqAD9vSE0tOUwL7ddeCzOd6MJhC2Xp0/mNAWMcSSUlr+XR
+GNb2ZlkNewGsrQUnfINdGD9otKTO9VwbogfHHz0zafVk1bEnSM842a/9rhFRzjQI
+/3HQdZ1bTANbIr9jLBKxFM5kANoSr0AGEyct80rRokFV4BhmkaTlmlvrX7F7NMqZ
+boG4W6JNgwyrFKcZWYVE4I1TyaBh3P/JQza1yKHVAKqT7FuPDmwzW5ssX5+GU8Tc
+E7q/WQkjCePUYMG4JEOotlFIc5p+tBjFgDihuzP9/u7Jad/kkbaD8gXllvZziTFP
+Uh1m1pQ0WmXJEi4bUgXU4lKbD5N2yQDU17CSSe8jVgw4+yyorOY=
+=szJB
+-----END PGP SIGNATURE-----
 
-> so my contribution could hopefully be to help and debug any issues
+--ih5p7jdiwpepz4ji--
 
-If you would like, we can work together, at the same time keep in mind
-that me spending time on it would be intermittent & erratic (though i
-am trying to keep a consistent, but slow pace) perhaps making it
-difficult to coordinate. Or else i will continue the same way & request
-your help when required.
 
-For the next 3 weeks, right now, i cannot say whether i would be able
-to spend time on it, perhaps might be possible, but only during that
-time i will know.
-
-Regards
-afzal
+--===============4388694288014096114==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4388694288014096114==--
+
