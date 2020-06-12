@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E0201F7F3B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 00:51:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 175091F7F37
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 00:50:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e/vUGQxH9cC/RaDyD70PlTZ0TN+xya5IvwKCbabpNdk=; b=WFpQI9EgzKRemf
-	pt37WECf45XSIBpCTI1vP6sMVLloZZ6k+LlxVzis17kJbcfMIrTf2BB1lESWNs9y82DC+T7QK1IBG
-	I/G+7dt3ackUnNvukaUi3DX0dOOdp6ZFM3oWmqK9zPxcCXfRHK6wpV0VvaOXSZt8lZXCbx83LMMhu
-	F+HvQ46N+0LW96N2IwEjRu46iU49x7uCDpZEQhYhSFTvmQaMR3y/+cQL6wrBiIib2lHZMHcesHWbY
-	gDL3oEhvhHMsHKfKvLp8aStwi8AAmn6vS2qDdrskkrlbKejlgiLD542MYTvHV5QqEy8QgYf3hH9XC
-	kwYKAMIHjbA87PFQ57Hw==;
+	List-Owner; bh=2XXJpATBeFH5FjopAyDWdIH7R5dQEqnQViPMcA8vrOA=; b=JjAL7VtUUrlE0H
+	cwThuL1T8a7VA3fj0VtOkCKJZvQA05mPDFvL5UAjIm0gKKq7/T1Ktm9qY6OwIKFuTucTH4+Pv9lFs
+	hWmiwvlCeLM31uZqQCwGXH+CrDQIp3XvSWRUbpotmIlNQDc5997yKUYo3nS2pDyUS0lXXhBCf+dVX
+	cgt9p+RY2rM7lQhyltF20BdBEvh9ELEaaVJ7Nw62qxhBpm1FmPcftlg6kMr9vLlg7QTNkSDg718UG
+	PU65FF3LMyBwzaenhV3bhST2ZwAaAuK7EGMnZzssvA3SFrtIo2974OZp5MrZBreW/s6k39Cq63q0K
+	ihpojCrFGh/kRe/JMVVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjsVp-0004w7-V7; Fri, 12 Jun 2020 22:51:01 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jjsVK-0003ot-Vx; Fri, 12 Jun 2020 22:50:30 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjsUO-0001bn-SI
+ id 1jjsUO-0001br-R8
  for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 22:49:35 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnT39103481;
- Fri, 12 Jun 2020 17:49:29 -0500
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnUbT121066;
+ Fri, 12 Jun 2020 17:49:30 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1592002169;
- bh=GP4LvDpiiVb2/sG8nBRXMGkNlpoMDKmbI3o4CyswfyQ=;
+ s=ti-com-17Q1; t=1592002170;
+ bh=bNsry0vaH4LJP2i3TLuNDpE56+9ye4tE5chXV1/nxh0=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Z0J5WdW3C4QYbSEilG73sOj0fwHpVWVXR7q5t9wRMEzqU7mC1GIWFrEWEX7mqT2Hp
- GgAIIk/XlUmpta5gICaCajK1+hRYLKQG80SD03PluA6hyDMMEXzuD3hg/D6oNMR6R5
- eFPgur8/L6YCGBzAgrzztqJZShkJU+eHNVFk4CUA=
-Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 05CMnTVt058565
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 12 Jun 2020 17:49:29 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ b=JNzY4WDoBVWJQ7w6WsbuN70cg0DpIsHxWcnV9K7+pPicXuCzI6q16PEH3kDgqRt89
+ oatV8csvpcgUV5N2B3gT2Gtf0pf4/1N7u35AQOTewe9sJToivT0ZJJ6hqo8DA4Dbex
+ YnvhiilXphRrOjjSG05BLshAIix96NxgSGwT3xKo=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnUiW046039;
+ Fri, 12 Jun 2020 17:49:30 -0500
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 12
  Jun 2020 17:49:29 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 12 Jun 2020 17:49:28 -0500
+ Frontend Transport; Fri, 12 Jun 2020 17:49:29 -0500
 Received: from fllv0103.dal.design.ti.com (fllv0103.dal.design.ti.com
  [10.247.120.73])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnSlx089805;
- Fri, 12 Jun 2020 17:49:28 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnTl2112276;
+ Fri, 12 Jun 2020 17:49:29 -0500
 Received: from localhost ([10.250.48.148])
- by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 05CMnSlF062169;
- Fri, 12 Jun 2020 17:49:28 -0500
+ by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 05CMnTMi062177;
+ Fri, 12 Jun 2020 17:49:29 -0500
 From: Suman Anna <s-anna@ti.com>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH v3 2/6] remoteproc: k3: Add TI-SCI processor control helper
- functions
-Date: Fri, 12 Jun 2020 17:49:10 -0500
-Message-ID: <20200612224914.7634-3-s-anna@ti.com>
+Subject: [PATCH v3 3/6] dt-bindings: remoteproc: Add common TI SCI rproc
+ bindings
+Date: Fri, 12 Jun 2020 17:49:11 -0500
+Message-ID: <20200612224914.7634-4-s-anna@ti.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200612224914.7634-1-s-anna@ti.com>
 References: <20200612224914.7634-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_154933_004530_9C9EE04A 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20200612_154932_959735_27810DF5 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [198.47.19.142 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,7 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -105,143 +106,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Texas Instruments' K3 generation SoCs have specific modules/register
-spaces used for configuring the various aspects of a remote processor.
-These include power, reset, boot vector and other configuration features
-specific to each compute processor present on the SoC. These registers
-are managed by the System Controller such as DMSC on K3 AM65x SoCs.
-
-The Texas Instrument's System Control Interface (TI-SCI) Message Protocol
-is used to communicate to the System Controller from various compute
-processors to invoke specific services provided by the firmware running
-on the System Controller.
-
-Add a common processor control interface header file that can be used by
-multiple remoteproc drivers. The helper functions within this header file
-abstract the various TI SCI protocol ops for the remoteproc drivers, and
-allow them to request the System Controller to be able to program and
-manage various remote processors on the SoC. The remoteproc drivers are
-expected to manage the life-cycle of their ti_sci_proc_dev local
-structures.
+Add a bindings document that lists the common TI SCI properties
+used by the K3 R5F and DSP remoteproc devices.
 
 Signed-off-by: Suman Anna <s-anna@ti.com>
 ---
-v3: New to this series, but the patch is identical to the one from the
-    K3 R5F series posted previously, with patch title adjusted
-    https://patchwork.kernel.org/patch/11456379/
+v3: New Patch refactoring out the common ti-sci-proc properties
 
- drivers/remoteproc/ti_sci_proc.h | 102 +++++++++++++++++++++++++++++++
- 1 file changed, 102 insertions(+)
- create mode 100644 drivers/remoteproc/ti_sci_proc.h
+ .../bindings/remoteproc/ti,k3-sci-proc.yaml   | 51 +++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-sci-proc.yaml
 
-diff --git a/drivers/remoteproc/ti_sci_proc.h b/drivers/remoteproc/ti_sci_proc.h
+diff --git a/Documentation/devicetree/bindings/remoteproc/ti,k3-sci-proc.yaml b/Documentation/devicetree/bindings/remoteproc/ti,k3-sci-proc.yaml
 new file mode 100644
-index 000000000000..e42d8015b8e7
+index 000000000000..883b6e9b5282
 --- /dev/null
-+++ b/drivers/remoteproc/ti_sci_proc.h
-@@ -0,0 +1,102 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Texas Instruments TI-SCI Processor Controller Helper Functions
-+ *
-+ * Copyright (C) 2018-2020 Texas Instruments Incorporated - http://www.ti.com/
-+ *	Suman Anna
-+ */
++++ b/Documentation/devicetree/bindings/remoteproc/ti,k3-sci-proc.yaml
+@@ -0,0 +1,51 @@
++# SPDX-License-Identifier: (GPL-2.0-only or BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/remoteproc/ti,k3-sci-proc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+#ifndef REMOTEPROC_TI_SCI_PROC_H
-+#define REMOTEPROC_TI_SCI_PROC_H
++title: Common TI K3 remote processor device bindings
 +
-+/**
-+ * struct ti_sci_proc - structure representing a processor control client
-+ * @sci: cached TI-SCI protocol handle
-+ * @ops: cached TI-SCI proc ops
-+ * @dev: cached client device pointer
-+ * @proc_id: processor id for the consumer remoteproc device
-+ * @host_id: host id to pass the control over for this consumer remoteproc
-+ *	     device
-+ */
-+struct ti_sci_proc {
-+	const struct ti_sci_handle *sci;
-+	const struct ti_sci_proc_ops *ops;
-+	struct device *dev;
-+	u8 proc_id;
-+	u8 host_id;
-+};
++maintainers:
++  - Suman Anna <s-anna@ti.com>
 +
-+static inline int ti_sci_proc_request(struct ti_sci_proc *tsp)
-+{
-+	int ret;
++description: |
++  The TI K3 family of SoCs usually have one or more remote processor sub-systems
++  like the dual-core R5F sub-system or a C66x or C71x DSP processor subsystem.
++  The device management of these remote processors is managed by a dedicated
++  System Processor, and the communication with that processor is managed through
++  the TI-SCI protocol.
 +
-+	ret = tsp->ops->request(tsp->sci, tsp->proc_id);
-+	if (ret)
-+		dev_err(tsp->dev, "ti-sci processor request failed: %d\n",
-+			ret);
-+	return ret;
-+}
++  Each remote processor device node should define a common set of properties
++  that allows the System Processor firmware to perform the device management
++  such as powering the IPs, asserting/deasserting the resets for each of these
++  processors.
 +
-+static inline int ti_sci_proc_release(struct ti_sci_proc *tsp)
-+{
-+	int ret;
++properties:
++  ti,sci:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Should be a phandle to the TI-SCI System Controller node
 +
-+	ret = tsp->ops->release(tsp->sci, tsp->proc_id);
-+	if (ret)
-+		dev_err(tsp->dev, "ti-sci processor release failed: %d\n",
-+			ret);
-+	return ret;
-+}
++  ti,sci-dev-id:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description: |
++      Should contain the TI-SCI device id corresponding to the remote processor
++      core. Please refer to the corresponding System Controller documentation
++      for valid values.
 +
-+static inline int ti_sci_proc_handover(struct ti_sci_proc *tsp)
-+{
-+	int ret;
++  ti,sci-proc-ids:
++    description: Should contain a single tuple of <proc_id host_id>.
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32-array
++      - maxItems: 1
++        items:
++          items:
++            - description: TI-SCI processor id for the remote processor device
++            - description: TI-SCI host id to which processor control
++                           ownership should be transferred to
 +
-+	ret = tsp->ops->handover(tsp->sci, tsp->proc_id, tsp->host_id);
-+	if (ret)
-+		dev_err(tsp->dev, "ti-sci processor handover of %d to %d failed: %d\n",
-+			tsp->proc_id, tsp->host_id, ret);
-+	return ret;
-+}
-+
-+static inline int ti_sci_proc_set_config(struct ti_sci_proc *tsp,
-+					 u64 boot_vector,
-+					 u32 cfg_set, u32 cfg_clr)
-+{
-+	int ret;
-+
-+	ret = tsp->ops->set_config(tsp->sci, tsp->proc_id, boot_vector,
-+				   cfg_set, cfg_clr);
-+	if (ret)
-+		dev_err(tsp->dev, "ti-sci processor set_config failed: %d\n",
-+			ret);
-+	return ret;
-+}
-+
-+static inline int ti_sci_proc_set_control(struct ti_sci_proc *tsp,
-+					  u32 ctrl_set, u32 ctrl_clr)
-+{
-+	int ret;
-+
-+	ret = tsp->ops->set_control(tsp->sci, tsp->proc_id, ctrl_set, ctrl_clr);
-+	if (ret)
-+		dev_err(tsp->dev, "ti-sci processor set_control failed: %d\n",
-+			ret);
-+	return ret;
-+}
-+
-+static inline int ti_sci_proc_get_status(struct ti_sci_proc *tsp,
-+					 u64 *boot_vector, u32 *cfg_flags,
-+					 u32 *ctrl_flags, u32 *status_flags)
-+{
-+	int ret;
-+
-+	ret = tsp->ops->get_status(tsp->sci, tsp->proc_id, boot_vector,
-+				   cfg_flags, ctrl_flags, status_flags);
-+	if (ret)
-+		dev_err(tsp->dev, "ti-sci processor get_status failed: %d\n",
-+			ret);
-+	return ret;
-+}
-+
-+#endif /* REMOTEPROC_TI_SCI_PROC_H */
++required:
++  - ti,sci
++  - ti,sci-dev-id
++  - ti,sci-proc-ids
 -- 
 2.26.0
 
