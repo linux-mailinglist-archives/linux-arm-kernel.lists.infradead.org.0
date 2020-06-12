@@ -2,88 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0FAE1F76D5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:40:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D50511F76D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 12:42:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XKYRd30jWb944vpOVZW3MBtF1cERktABOmphrh3z3KY=; b=duHLUprA8sglEb
-	ceh5YlL4VfMGcK8ykK3LznyvTaFPTb3oaGalMRpjMjQhZ2NMpw1PngKddXyI0riIZRMQKNEK17Ivp
-	j1gQWuPqWkWNS/p9om0eosBMLebLbN4kWaxCWzvVxMb6fH4BdICv98P4Y7NRdFkcS7wXScDX1FuHX
-	F6EkHzr+ssil2hlalyFXjvGxeTadxeIJ7OhmJx9+DWUtGOQoggRu5CTjJR2RZ/5ofjdUdcjDUXj+c
-	XrhJJo2Xzaghr64vyTo8cYKAW9E6TSJxIuNOO6OdAK4FxdCDyqrYD7JNWNGQJ63ax4qNrKvZviApU
-	qrXVIKgCeO7lqMnlZQ8w==;
+	List-Owner; bh=u5pLLCp9iqcXfgPlZl3E3jFhm1gYBV8Q/uYShAdDUFk=; b=ioXHzFCCD6wq+S
+	rkstMe7OyHwH3PbPfdSABRvTfMpQxB86SOurUW3wx4zOexyyRPSL81eigNMtLddEXBr7Cp/0ccmle
+	umFFKkSJRuzDz2305JsNi1W/NiWxCzajxqa7SYMoW6VfX1n1vCMLA6BQ8goKMNsYZG53PjNgKxkmT
+	W09OTMGmJmdMIkCfoPg6d2O70nE0eNgEZmp8A7707ukSTEnvrvJ5RNUqZQBeL1D5XoY/hWrs5RDKn
+	ZXmeO6Cr3B8Cs2dXVvZTyh3Y0xUtIdJJX1/CpoQYMQ0LMPI3V+qIwdqkYRO0lA2PlXHf8p9/GVc4v
+	aOtCLlJetNpj435SYicg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjh6u-0001es-9N; Fri, 12 Jun 2020 10:40:32 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jjh8j-00020f-Dz; Fri, 12 Jun 2020 10:42:25 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:32c8:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjh6k-0001dR-TV
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:40:24 +0000
-Received: by mail-pl1-x641.google.com with SMTP id j4so340376plk.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 03:40:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=qCuPhVvyW7/N75yK2omAqCcinhPEGmyITYXGt/JuhIQ=;
- b=cM/sKa2G3Nj+bjaWWtQcwQ8pREadjJMrHIuOx/ZYu7GK5BC+dkQLKkXp2KPzEz2B0A
- 6Mb/m6RBUT0vKXzIRuomiAOsaoRaAwAFvf11wTo7BfnbZr6z2LT8ZiFMXGmDGyA+aeZf
- SN0rPfFZJhty24vrEzHfMroqEkLXs/Xvd0uX2VJlbVHbUkDwAcCRuuP6SCaSxQ/tHFLS
- baAbQZVhfyVCqwL6cezdN0Gk45oAiM/jENvdwvy2bQte1AJ5pCskn2YKT8mB6v6HL5Ig
- 2Di+6W+jrOEx0RTlOJGJUEJTS3y4V+dOtF1eJryLAy3XKg8nkB5/Je0e5tWsUCVC2seD
- cA9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qCuPhVvyW7/N75yK2omAqCcinhPEGmyITYXGt/JuhIQ=;
- b=VD/y8bx3JMFBRIvslg3gSJm1gM5u20Chiigg2/RgOf5MDjg3loEmfPcPFA4MEfsiga
- 97vBEzed4jsANh1dqBjuzp22ikTnRczkEIa518gsnA6IM3UaP5nD9JxIwicTbymegEPa
- uZeDvobH7uv/oQgFJcSWM3sz9z8z3GwUKY+wv0tw24EnyjFHqgDrcclYfYCh2JwYIJa9
- WT5cHfw0UxnTwZm8YK/hWKYOIWbXtB1mcuYVGVxW0b3LuHrW/B1dAWVvkODrZA+jhoh2
- LzIquhIPt1SaTE8We0D4uQft+4K5QAs4V5U3YrqxswbFvHIeudR6GmGfWf/5EVcjVISc
- aT7g==
-X-Gm-Message-State: AOAM5300eZkVkbYptPB3LFNGJ45C9oSHpXmoK426OStYGbjAuFBnxY9N
- M5K0XZoXozwiUkTyt1WlmgL9uUQt
-X-Google-Smtp-Source: ABdhPJzRmwyTWInw1zzKZqu+hhgKkeyHC77mmA92Za2bRTbYO/l4yQCdJgWPz4sxH8Q6BuKZVtqRKQ==
-X-Received: by 2002:a17:90b:4c91:: with SMTP id
- my17mr11309748pjb.81.1591958421822; 
- Fri, 12 Jun 2020 03:40:21 -0700 (PDT)
-Received: from localhost ([49.205.222.116])
- by smtp.gmail.com with ESMTPSA id c2sm4636302pgk.77.2020.06.12.03.40.21
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 12 Jun 2020 03:40:21 -0700 (PDT)
-Date: Fri, 12 Jun 2020 16:10:19 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH 2/3] ARM: uaccess: let UACCESS_GUP_KMAP_MEMCPY enabling
-Message-ID: <cdbc3ca8921c88c9e31df0664fe1ea7269e9c59d.1591885760.git.afzal.mohd.ma@gmail.com>
-References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
+ id 1jjh8Z-0001zx-7x
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 10:42:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=+/zVZ4xSc6zf51pb/iTgXAxueiSidaaop3BzA6MhzUQ=; b=hiBvsAJIBYZ8ZZDa+zJ29MUiv
+ Zv0DcEwn8VQsQ3JAalW80R/pMSSRvxDen5ptzjZzCLyDHaPx7rMUy9ITaby4wNmfdDOcCvqLPpCSN
+ V8P1ZyPoibCU0dR/eF1lCvhR0oD4N4XQfs+nHOPaYk86r+lqZjjPtCbQ9qVbGgeHMn27NKLtbF5W+
+ FFxZXnibXRPasTZV61Te5zfYGmJ9GNo4NAqUMzTihS7+ZwImTJhJOsu+xX+6kOwCF+mgfgxZVw/HV
+ I0WV+6YILRg2ePxEGlKBSbvF75cAIyVZukTHtwfkUSKPR5IBWoD6CN8x8m1GwBPH9jnA/HiLz31i9
+ yhamC4eNg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:52644)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jjh8T-0002du-HW; Fri, 12 Jun 2020 11:42:09 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jjh8S-0006CC-RA; Fri, 12 Jun 2020 11:42:08 +0100
+Date: Fri, 12 Jun 2020 11:42:08 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Subject: Re: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
+Message-ID: <20200612104208.GG1551@shell.armlinux.org.uk>
+References: <20200612083847.29942-1-s.hauer@pengutronix.de>
+ <20200612084710.GC1551@shell.armlinux.org.uk>
+ <20200612100114.GE1551@shell.armlinux.org.uk>
+ <20200612101820.GF1551@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <20200612101820.GF1551@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_034022_964777_68283BA6 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200612_034215_435104_A1D1301B 
+X-CRM114-Status: GOOD (  35.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,114 +86,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Turn off existing raw_copy_{from,to}_user() using
-arm_copy_{from,to}_user() when CONFIG_UACCESS_GUP_KMAP_MEMCPY is
-enabled.
+On Fri, Jun 12, 2020 at 11:18:20AM +0100, Russell King - ARM Linux admin wrote:
+> On Fri, Jun 12, 2020 at 11:01:15AM +0100, Russell King - ARM Linux admin wrote:
+> > On Fri, Jun 12, 2020 at 09:47:10AM +0100, Russell King - ARM Linux admin wrote:
+> > > On Fri, Jun 12, 2020 at 10:38:47AM +0200, Sascha Hauer wrote:
+> > > > The Marvell MVNETA Ethernet controller supports a 2.5Gbps SGMII mode
+> > > > called DRSGMII. Depending on the Port MAC Control Register0 PortType
+> > > > setting this seems to be either an overclocked SGMII mode or 2500BaseX.
+> > > > 
+> > > > This patch adds the necessary Serdes Configuration setting for the
+> > > > 2.5Gbps modes. There is no phy interface mode define for overclocked
+> > > > SGMII, so only 2500BaseX is handled for now.
+> > > > 
+> > > > As phy_interface_mode_is_8023z() returns true for both
+> > > > PHY_INTERFACE_MODE_1000BASEX and PHY_INTERFACE_MODE_2500BASEX we
+> > > > explicitly test for 1000BaseX instead of using
+> > > > phy_interface_mode_is_8023z() to differentiate the different
+> > > > possibilities.
+> > > > 
+> > > > Fixes: da58a931f248f ("net: mvneta: Add support for 2500Mbps SGMII")
+> > > > Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
+> > > 
+> > > 2500base-X is used today on Armada 388 and Armada 3720 platforms and
+> > > works - it is known to interoperate with Marvell PP2.2 hardware, as
+> > > well was various SFPs such as the Huawei MA5671A at 2.5Gbps.  The way
+> > > it is handled on these platforms is via the COMPHY, requesting that
+> > > the serdes is upclocked from 1.25Gbps to 3.125Gbps.
+> > > 
+> > > This "DRSGMII" mode is not mentioned in the functional specs for either
+> > > the Armada 388 or Armada 3720, the value you poke into the register is
+> > > not mentioned either.  As I've already requested, some information on
+> > > exactly what this "DRSGMII" is would be very useful, it can't be
+> > > "double-rate SGMII" because that would give you 2Gbps instead of 1Gbps.
+> > > 
+> > > So, I suspect this breaks the platforms that are known to work.
+> > > 
+> > > We need a proper description of what DRSGMII is before we can consider
+> > > taking any patches for it.
+> > 
+> > Okay, having dug through the Armada XP, 370, 388, 3720 specs, I think
+> > this is fine after all - but something that will help for the future
+> > would be to document that this register does not exist on the 388 and
+> > 3720 devices (which brings up the question whether we should be writing
+> > it there.)  The field was moved into the comphy on those devices.
+> > 
+> > So, it looks like if we have a comphy, we should not be writing this
+> > register.
+> > 
+> > What's more, the write to MVNETA_SERDES_CFG should not be in
+> > mvneta_port_power_up(); it's likely that XP and 370 will not work
+> > properly with phylink.  It needs to be done in a similar location to
+> > mvneta_comphy_init(), so that phylink can switch between 1G and 2.5G
+> > speeds.
+> > 
+> > As you have an Armada XP system, you are best placed to test moving
+> > that write.
+> 
+> Here's my suggestion - it won't apply to mainline or net* trees, but
+> gives you the idea I'm proposing:
+> 
+> diff --git a/drivers/net/ethernet/marvell/mvneta.c b/drivers/net/ethernet/marvell/mvneta.c
+> index 9e25d608d856..17db74d61bc2 100644
+> --- a/drivers/net/ethernet/marvell/mvneta.c
+> +++ b/drivers/net/ethernet/marvell/mvneta.c
+> @@ -107,9 +107,11 @@
+>  #define      MVNETA_TX_IN_PRGRS                  BIT(1)
+>  #define      MVNETA_TX_FIFO_EMPTY                BIT(8)
+>  #define MVNETA_RX_MIN_FRAME_SIZE                 0x247c
+> +/* Only exists on Armada XP and Armada 370 */
+>  #define MVNETA_SERDES_CFG			 0x24A0
+> -#define      MVNETA_SGMII_SERDES_PROTO		 0x0cc7
+>  #define      MVNETA_QSGMII_SERDES_PROTO		 0x0667
+> +#define      MVNETA_SGMII_SERDES_PROTO		 0x0cc7
+> +#define      MVNETA_HSGMII_SERDES_PROTO		 0x1107
+>  #define MVNETA_TYPE_PRIO                         0x24bc
+>  #define      MVNETA_FORCE_UNI                    BIT(21)
+>  #define MVNETA_TXQ_CMD_1                         0x24e4
+> @@ -3457,9 +3459,6 @@ static int mvneta_comphy_init(struct mvneta_port *pp)
+>  {
+>  	int ret;
+>  
+> -	if (!pp->comphy)
+> -		return 0;
+> -
+>  	ret = phy_set_mode_ext(pp->comphy, PHY_MODE_ETHERNET,
+>  			       pp->phy_interface);
+>  	if (ret)
+> @@ -3468,11 +3467,47 @@ static int mvneta_comphy_init(struct mvneta_port *pp)
+>  	return phy_power_on(pp->comphy);
+>  }
+>  
+> +static int mvneta_config_interface(struct mvneta_port *pp,i
+> +				   phy_interface_t interface)
+> +{
+> +	int ret = 0;
+> +
+> +	if (pp->comphy) {
+> +		if (interface == PHY_INTERFACE_MODE_SGMII ||
+> +		    interface == PHY_INTERFACE_MODE_1000BASEX ||
+> +		    interface == PHY_INTERFACE_MODE_2500BASEX) {
+> +			ret = mvneta_comphy_init(pp);
+> +		}
+> +	} else {
+> +		switch (interface) {
+> +		case PHY_INTERFACE_MODE_QSGMII:
+> +			mvreg_write(pp, MVNETA_SERDES_CFG,
+> +				    MVNETA_QSGMII_SERDES_PROTO);
+> +			break;
+> +
+> +		case PHY_INTERFACE_MODE_SGMII:
+> +		case PHY_INTERFACE_MODE_1000BASEX:
+> +			mvreg_write(pp, MVNETA_SERDES_CFG,
+> +				    MVNETA_SGMII_SERDES_PROTO);
+> +			break;
+> +
+> +		case PHY_INTERFACE_MODE_2500BASEX:
+> +			mvreg_write(pp, MVNETA_SERDES_CFG,
+> +				    MVNETA_HSGMII_SERDES_PROTO);
+> +			break;
+> +		}
+> +	}
+> +
+> +	pp->phy_interface = interface;
+> +
+> +	return ret;
+> +}
+> +
+>  static void mvneta_start_dev(struct mvneta_port *pp)
+>  {
+>  	int cpu;
+>  
+> -	WARN_ON(mvneta_comphy_init(pp));
+> +	WARN_ON(mvneta_config_interface(pp, pp->phy_interface));
+>  
+>  	mvgmac_set_max_rx_size(&pp->gmac, pp->pkt_size);
+>  	mvneta_txq_max_tx_size_set(pp, pp->pkt_size);
+> @@ -3702,14 +3737,9 @@ static int mvneta_pcs_config(struct phylink_config *config,
+>  	/* We should never see Asym_Pause set */
+>  	WARN_ON(phylink_test(advertising, Asym_Pause));
+>  
+> -	if (pp->comphy && pp->phy_interface != interface &&
+> -	    (interface == PHY_INTERFACE_MODE_SGMII ||
+> -	     interface == PHY_INTERFACE_MODE_1000BASEX ||
+> -	     interface == PHY_INTERFACE_MODE_2500BASEX)) {
+> -		pp->phy_interface = interface;
+> -
+> +	if (pp->phy_interface != interface) {
+>  		WARN_ON(phy_power_off(pp->comphy));
+> -		WARN_ON(mvneta_comphy_init(pp));
+> +		mvneta_config_interface(pp, interface);
+>  	}
+>  
+>  	if (want_1ms_clock) {
+> @@ -4794,12 +4824,10 @@ static int mvneta_port_power_up(struct mvneta_port *pp, int phy_mode)
+>  	/* MAC Cause register should be cleared */
+>  	mvreg_write(pp, MVNETA_UNIT_INTR_CAUSE, 0);
+>  
+> -	if (phy_mode == PHY_INTERFACE_MODE_QSGMII)
+> -		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_QSGMII_SERDES_PROTO);
+> -	else if (phy_mode == PHY_INTERFACE_MODE_SGMII ||
+> -		 phy_interface_mode_is_8023z(phy_mode))
+> -		mvreg_write(pp, MVNETA_SERDES_CFG, MVNETA_SGMII_SERDES_PROTO);
+> -	else if (!phy_interface_mode_is_rgmii(phy_mode))
+> +	if (phy_mode != PHY_INTERFACE_MODE_QSGMII &&
+> +	    phy_mode != PHY_INTERFACE_MODE_SGMII &&
+> +	    !phy_interface_mode_is_8023z(phy_mode) &&
+> +	    !phy_interface_mode_is_rgmii(phy_mode))
+>  		return -EINVAL;
+>  
+>  	return 0;
 
-Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
----
+With the obvious mistakes fixed (extraneous 'i' and lack of default
+case), it seems to still work on Armada 388 Clearfog Pro with 2.5G
+modules.
 
-Resending to linux-arm-kernel ml(only), as received a mail that it is
-waiting for moderator approval, trying the resend by adding 'PATCH' in
-subject after 'RFC', in the hope it will hit ml with this manipulation
-
- arch/arm/include/asm/uaccess.h | 20 ++++++++++++++++++++
- arch/arm/kernel/armksyms.c     |  2 ++
- arch/arm/lib/Makefile          |  7 +++++--
- 3 files changed, 27 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
-index 98c6b91be4a8a..4a16ae52d4978 100644
---- a/arch/arm/include/asm/uaccess.h
-+++ b/arch/arm/include/asm/uaccess.h
-@@ -512,6 +512,15 @@ do {									\
- extern unsigned long __must_check
- arm_copy_from_user(void *to, const void __user *from, unsigned long n);
- 
-+#ifdef CONFIG_UACCESS_GUP_KMAP_MEMCPY
-+extern unsigned long __must_check
-+gup_kmap_copy_from_user(void *to, const void __user *from, unsigned long n);
-+static inline __must_check unsigned long
-+raw_copy_from_user(void *to, const void __user *from, unsigned long n)
-+{
-+	return gup_kmap_copy_from_user(to, from, n);
-+}
-+#else
- static inline unsigned long __must_check
- raw_copy_from_user(void *to, const void __user *from, unsigned long n)
- {
-@@ -522,12 +531,22 @@ raw_copy_from_user(void *to, const void __user *from, unsigned long n)
- 	uaccess_restore(__ua_flags);
- 	return n;
- }
-+#endif
- 
- extern unsigned long __must_check
- arm_copy_to_user(void __user *to, const void *from, unsigned long n);
- extern unsigned long __must_check
- __copy_to_user_std(void __user *to, const void *from, unsigned long n);
- 
-+#ifdef CONFIG_UACCESS_GUP_KMAP_MEMCPY
-+extern unsigned long __must_check
-+gup_kmap_copy_to_user(void __user *to, const void *from, unsigned long n);
-+static inline __must_check unsigned long
-+raw_copy_to_user(void __user *to, const void *from, unsigned long n)
-+{
-+	return gup_kmap_copy_to_user(to, from, n);
-+}
-+#else
- static inline unsigned long __must_check
- raw_copy_to_user(void __user *to, const void *from, unsigned long n)
- {
-@@ -541,6 +560,7 @@ raw_copy_to_user(void __user *to, const void *from, unsigned long n)
- 	return arm_copy_to_user(to, from, n);
- #endif
- }
-+#endif
- 
- extern unsigned long __must_check
- arm_clear_user(void __user *addr, unsigned long n);
-diff --git a/arch/arm/kernel/armksyms.c b/arch/arm/kernel/armksyms.c
-index 98bdea51089d5..8c92fe30d1559 100644
---- a/arch/arm/kernel/armksyms.c
-+++ b/arch/arm/kernel/armksyms.c
-@@ -96,8 +96,10 @@ EXPORT_SYMBOL(mmiocpy);
- #ifdef CONFIG_MMU
- EXPORT_SYMBOL(copy_page);
- 
-+#ifndef CONFIG_UACCESS_GUP_KMAP_MEMCPY
- EXPORT_SYMBOL(arm_copy_from_user);
- EXPORT_SYMBOL(arm_copy_to_user);
-+#endif
- EXPORT_SYMBOL(arm_clear_user);
- 
- EXPORT_SYMBOL(__get_user_1);
-diff --git a/arch/arm/lib/Makefile b/arch/arm/lib/Makefile
-index 6d2ba454f25b6..1aeff2cd7b4b3 100644
---- a/arch/arm/lib/Makefile
-+++ b/arch/arm/lib/Makefile
-@@ -16,8 +16,11 @@ lib-y		:= changebit.o csumipv6.o csumpartial.o               \
- 		   io-readsb.o io-writesb.o io-readsl.o io-writesl.o  \
- 		   call_with_stack.o bswapsdi2.o
- 
--mmu-y		:= clear_user.o copy_page.o getuser.o putuser.o       \
--		   copy_from_user.o copy_to_user.o
-+mmu-y		:= clear_user.o copy_page.o getuser.o putuser.o
-+
-+ifndef CONFIG_UACCESS_GUP_KMAP_MEMCPY
-+  mmu-y		+= copy_from_user.o copy_to_user.o
-+endif
- 
- ifdef CONFIG_CC_IS_CLANG
-   lib-y	+= backtrace-clang.o
 -- 
-2.26.2
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 _______________________________________________
 linux-arm-kernel mailing list
