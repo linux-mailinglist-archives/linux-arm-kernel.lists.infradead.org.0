@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D8481F7F1E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 00:49:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 983441F7F39
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 00:50:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z0LUu0ncFrN3YZuf6sGoh8c8l9xhy97bTnbvC4Uw+Go=; b=N1xqg2FTgKtco2
-	lWugE4xD3PFZdi7jJLd/NLIgWmJkWoJcwP0VDL1HadxQ6Nv6rzFBOQBOCHEch40nVkCTvajDKCVba
-	xX1TkzgcLJHP5uPrDvwxFc4PjITACij0GkntJ1mv/3tzs9hFahtqofnj3doeT3ajdZ3VmzyFdbtuG
-	q3xtb615z6zEFdmmigmxhrM0268yHtGL3wgVHbEfqqGjqEzsu9bjg7YVxNH4Ds+WtMUrI6dqNoWp0
-	QRwAOE4MxWY7TsqqwTsnzBRyAgnDMSAScW7C0OUSe0fCf27Epy9f7svLDIhSg7YTfGpY59FuFdHOz
-	XURajSQUPX0pi4kjWLfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xAucmDskfujOlLawlhVVDX6HPnQWsy5wiSNy4nk72Hk=; b=VIgE9m2f9CIkbo
+	cBBZbTLSuQsC9hR6VBtwFbnp15zM7L+7rvz8udwAptS5dW2FFJ38kj9xcYNA8pTUFK2ZiHymRM59o
+	bE5S5GpUNA94S4gn4kftkLnmyN0CQMB28flBPsEP5ysLZCu12sWzqv4TH2OUQra5C/m1cF/88dsPp
+	wkmFJKeq/OASxqHUhjG4l1iviZlSD8078LM/JQ21VGI56qBpLJ17UOWOmo3jJHsbsmC3vWccevzbq
+	+Esmf06JMAbWP8IE92AXHkCSkC75CUFHz0IfMNIejiugacF5HkIc2DVvoxe71B4Pi0jE9toPUflHo
+	CJ6HwjILuedjt6YYf/6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjsUX-0001eB-6K; Fri, 12 Jun 2020 22:49:41 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jjsVX-0004ff-6Y; Fri, 12 Jun 2020 22:50:43 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjsUO-0001bj-4v
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 22:49:33 +0000
+ id 1jjsUP-0001bp-6J
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 22:49:35 +0000
 Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnOqZ121046;
- Fri, 12 Jun 2020 17:49:24 -0500
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnR5N108675;
+ Fri, 12 Jun 2020 17:49:27 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1592002164;
- bh=r3KC4WGjMUHhMPU0T9d+Aev6nWaRVfp+MljfOUVI+nY=;
- h=From:To:CC:Subject:Date;
- b=lYywnfImUv/KyQ0kWp4EKnDSpBIQ6xu2IhWLIaIJCohmQL8hQ0tx0PpJTR7tGO/zX
- EbwP1oMbCsRLyOxSuYE4ucM3oxy8fBspQB8zcB5ACmUVbU+s78iIQKWxUVgIMszlzS
- 8oDZyUtPnZZ4yH4m3vwiBuOs9riK4hUUOmX22bq8=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 05CMnO1S119570
+ s=ti-com-17Q1; t=1592002167;
+ bh=8Gnvm0Dx2536XFDw8g4fMAwYldxTRJioYlmw6qTiNyU=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=IZ+OBQjCYEQlRXwwwuQeubiFpoK6lIjs1zyRreTcB9G0cOCphVhz/b7qNHvgboo2b
+ i41YmpBI1L6bzM7Jz+3PFuNyo35QoSLjRdbfj0+O/wQllpuptzOCVggK9v36ZQsbRM
+ rI6yKV8H6xVa6qlSIHS2EOnQKUrR3c6XVilDeOgg=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 05CMnRE2119604
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 12 Jun 2020 17:49:24 -0500
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 12 Jun 2020 17:49:27 -0500
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 12
- Jun 2020 17:49:24 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ Jun 2020 17:49:26 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 12 Jun 2020 17:49:24 -0500
+ Frontend Transport; Fri, 12 Jun 2020 17:49:26 -0500
 Received: from fllv0103.dal.design.ti.com (fllv0103.dal.design.ti.com
  [10.247.120.73])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnOgK112149;
- Fri, 12 Jun 2020 17:49:24 -0500
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05CMnRbR071954;
+ Fri, 12 Jun 2020 17:49:27 -0500
 Received: from localhost ([10.250.48.148])
- by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 05CMnOTZ062157;
- Fri, 12 Jun 2020 17:49:24 -0500
+ by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 05CMnQLW062163;
+ Fri, 12 Jun 2020 17:49:26 -0500
 From: Suman Anna <s-anna@ti.com>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH v3 0/6] TI K3 DSP remoteproc driver for C66x DSPs
-Date: Fri, 12 Jun 2020 17:49:08 -0500
-Message-ID: <20200612224914.7634-1-s-anna@ti.com>
+Subject: [PATCH v3 1/6] remoteproc: Introduce rproc_of_parse_firmware() helper
+Date: Fri, 12 Jun 2020 17:49:09 -0500
+Message-ID: <20200612224914.7634-2-s-anna@ti.com>
 X-Mailer: git-send-email 2.26.0
+In-Reply-To: <20200612224914.7634-1-s-anna@ti.com>
+References: <20200612224914.7634-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_154932_313153_FA7EA666 
-X-CRM114-Status: GOOD (  12.26  )
+X-CRM114-CacheID: sfid-20200612_154933_312064_FF6FBB56 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [198.47.23.249 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,9 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [198.47.19.142 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -104,54 +106,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+Add a new helper function rproc_of_parse_firmware() to the remoteproc
+core that can be used by various remoteproc drivers to look up the
+the "firmware-name" property from a rproc device node. This property
+is already being used by multiple drivers, so this helper can avoid
+repeating equivalent code in remoteproc drivers.
 
-The following is v3 of the K3 DSP remoteproc driver supporting the C66x DSPs
-on the TI K3 J721E SoCs. The patches are based on the latest commit on the
-master branch 44ebe016df3a.
+Signed-off-by: Suman Anna <s-anna@ti.com>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
+v3: No changes, picked up review tags
+v2: https://patchwork.kernel.org/patch/11561791/
 
-The main changes in v3 are mostly around the bindings to address various
-comments from Rob. The bindings patch is the only patch without an Ack on
-v2.
+ drivers/remoteproc/remoteproc_core.c     | 23 +++++++++++++++++++++++
+ drivers/remoteproc/remoteproc_internal.h |  2 ++
+ 2 files changed, 25 insertions(+)
 
-Main changes in v3:
- - Introduced a new common ti-sci-proc bindings yaml file (Patch #3)
-   that can be used by both K3 DSP and R5F
- - Updated dt-bindings to address most comments (Patch #4)
- - Moved the common ti-sci-helper patch (Patch #2) between R5 and DSP drivers
-   from the R5F series to this series, so that this series is standalone and
-   can be merged by itself.
-
-Please see the individual patches for further delta differences.
-
-v2: https://patchwork.kernel.org/cover/11561787/
-v1: https://patchwork.kernel.org/cover/11458573/
-
-regards
-Suman
-
-Suman Anna (6):
-  remoteproc: Introduce rproc_of_parse_firmware() helper
-  remoteproc: k3: Add TI-SCI processor control helper functions
-  dt-bindings: remoteproc: Add common TI SCI rproc bindings
-  dt-bindings: remoteproc: Add bindings for C66x DSPs on TI K3 SoCs
-  remoteproc: k3-dsp: Add a remoteproc driver of K3 C66x DSPs
-  remoteproc: k3-dsp: Add support for L2RAM loading on C66x DSPs
-
- .../bindings/remoteproc/ti,k3-dsp-rproc.yaml  | 139 ++++
- .../bindings/remoteproc/ti,k3-sci-proc.yaml   |  51 ++
- drivers/remoteproc/Kconfig                    |  13 +
- drivers/remoteproc/Makefile                   |   1 +
- drivers/remoteproc/remoteproc_core.c          |  23 +
- drivers/remoteproc/remoteproc_internal.h      |   2 +
- drivers/remoteproc/ti_k3_dsp_remoteproc.c     | 774 ++++++++++++++++++
- drivers/remoteproc/ti_sci_proc.h              | 102 +++
- 8 files changed, 1105 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
- create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-sci-proc.yaml
- create mode 100644 drivers/remoteproc/ti_k3_dsp_remoteproc.c
- create mode 100644 drivers/remoteproc/ti_sci_proc.h
-
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index 9f04c30c4aaf..c458b218d524 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -1034,6 +1034,29 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
+ }
+ EXPORT_SYMBOL(rproc_of_resm_mem_entry_init);
+ 
++/**
++ * rproc_of_parse_firmware() - parse and return the firmware-name
++ * @dev: pointer on device struct representing a rproc
++ * @index: index to use for the firmware-name retrieval
++ * @fw_name: pointer to a character string, in which the firmware
++ *           name is returned on success and unmodified otherwise.
++ *
++ * This is an OF helper function that parses a device's DT node for
++ * the "firmware-name" property and returns the firmware name pointer
++ * in @fw_name on success.
++ *
++ * Return: 0 on success, or an appropriate failure.
++ */
++int rproc_of_parse_firmware(struct device *dev, int index, const char **fw_name)
++{
++	int ret;
++
++	ret = of_property_read_string_index(dev->of_node, "firmware-name",
++					    index, fw_name);
++	return ret ? ret : 0;
++}
++EXPORT_SYMBOL(rproc_of_parse_firmware);
++
+ /*
+  * A lookup table for resource handlers. The indices are defined in
+  * enum fw_resource_type.
+diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+index 4ba7cb59d3e8..e5341e91d2fc 100644
+--- a/drivers/remoteproc/remoteproc_internal.h
++++ b/drivers/remoteproc/remoteproc_internal.h
+@@ -28,6 +28,8 @@ struct rproc_debug_trace {
+ void rproc_release(struct kref *kref);
+ irqreturn_t rproc_vq_interrupt(struct rproc *rproc, int vq_id);
+ void rproc_vdev_release(struct kref *ref);
++int rproc_of_parse_firmware(struct device *dev, int index,
++			    const char **fw_name);
+ 
+ /* from remoteproc_virtio.c */
+ int rproc_add_virtio_dev(struct rproc_vdev *rvdev, int id);
 -- 
 2.26.0
 
