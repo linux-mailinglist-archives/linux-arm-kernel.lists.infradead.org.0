@@ -2,89 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 390741F7954
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 16:11:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 105E41F7960
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 16:16:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Nd9Td3bDV38wOlMPv8uZ0LYXR5XP4Dpaz08Hsskc8M=; b=pP/ZzUir4Ub35r
-	YwTZV/r9kzfS4mpAt3U8r0jNOsclNN5TKGi+ugbQNdax0qJBFk3unU0+70MmaGz8tQhuBT7/nGeVe
-	x61ZN1ZYhi2qoCfLlMwWBvmX/CqewaLHcQ/KIN1senSvTNQdFbsCi7Dx2ZQBCwDLQsgAjT7ntsPNh
-	hUKIuYYYLNMVuivMV+Jt8GTDPbJEaDt6gmE0FzlI3/S8BExbR79QvVHo/nJeSptmeMWj6A4Xc4lEZ
-	FZ/GhWec07aSt+fTL55a5Usju+/v3LrEt1G9nnd4/14jDTeAmZONMKm7L3G/pFE+e6OqdNePFhDdl
-	pApUUvfsG3XRBlxIyXaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=o0avDofe+hRcodWtSwlwnFg5jxJWkJPiLTN2KOUkbcI=; b=MPd8kL35CTU2GEjv6x+r0LVjM
+	OU58IMmBdyvzqWbxESJmZE0ryP8P3nndVn3sekP5EhzVHDD8ywfVJtFXdVQ0xHcFnoT6B+4FpJ6F7
+	nioANTI+132iNN0YHR7c9om6B4i1piIKnl98Ke4jRySv8rlvzExu3qHg+3VkFcjSz62CJIzgcC189
+	Zx4GiQRDS1Er7/iR4rMqGYz9VsiSPUd+gn76Zl1eWY51Pd0kZJN1MTak+JeqOhFM8eLoqy91PhDwa
+	ciACcZ1Sjw11HVE3SZ9XbX+PDYpmohhvNJecOrTlHCi5bieKHjJbBHdzXCQQbCn/SrVtdgc45egBW
+	SNRHIcqrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjkPE-0000YR-6S; Fri, 12 Jun 2020 14:11:40 +0000
-Received: from mx01-sz.bfs.de ([194.94.69.67])
+	id 1jjkTo-0003NQ-3H; Fri, 12 Jun 2020 14:16:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjkP3-0000XE-RA
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 14:11:33 +0000
-Received: from SRVEX01-SZ.bfs.intern (exchange-sz.bfs.de [10.129.90.31])
- by mx01-sz.bfs.de (Postfix) with ESMTPS id 35DE4202F0;
- Fri, 12 Jun 2020 16:11:17 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bfs.de; s=dkim201901; 
- t=1591971077;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=rCt+zPHuTM/eBgI+6Wbu3vlbltRttVGV2Uwnv+yEG1Y=;
- b=lspbOloZqL6u0qm35FR4cpXwIxvjaTbA9WeHGq1aJcyucsCvtNmBYhM2ofH3b2fgpZrget
- YVHzFyJtnVIewtpf3gXokjF4lsx6vcdAniwJvrijMp8AZmT/leUVdkUQB8BgJ1HMQXQ+Gs
- I2BVfj12UONhuU/JI8WKZxbjBPIGkusv1sjrra8HRy/00+9Jz4Un9K3Ss7rSbKNALDoPKA
- 9CSeXAachkec1csCm8ljiKz4gQZY/qIzBZ0cdtCr2NTpbQcHXyX4hm0cXqWvJoIE1fXXtc
- QVddZfTSSOUaQJE04von+c3C6OWkjm2Vn7RjMmEfvfBbrfKnOmSa4k/HYedQEQ==
-Received: from SRVEX01-SZ.bfs.intern (10.129.90.31) by SRVEX01-SZ.bfs.intern
- (10.129.90.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.1.1913.5; Fri, 12 Jun
- 2020 16:11:16 +0200
-Received: from SRVEX01-SZ.bfs.intern ([fe80::7d2d:f9cb:2761:d24a]) by
- SRVEX01-SZ.bfs.intern ([fe80::7d2d:f9cb:2761:d24a%6]) with mapi id
- 15.01.1913.005; Fri, 12 Jun 2020 16:11:16 +0200
-From: Walter Harms <wharms@bfs.de>
-To: Dan Carpenter <dan.carpenter@oracle.com>, Mike Leach
- <mike.leach@linaro.org>
-Subject: AW: [PATCH] coresight: cti: Fix error handling in probe
-Thread-Topic: [PATCH] coresight: cti: Fix error handling in probe
-Thread-Index: AQHWQL/uFacPuxfT5k+bfPO1tVl2Q6jVA0Va
-Date: Fri, 12 Jun 2020 14:11:16 +0000
-Message-ID: <6c59bdbc15714b089d256ad50aee58cb@bfs.de>
-References: <20200612121047.GF4282@kadam>,<20200612121133.GA1139533@mwanda>
-In-Reply-To: <20200612121133.GA1139533@mwanda>
-Accept-Language: de-DE, en-US
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.137.16.40]
+ id 1jjkTf-0003N7-I5
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 14:16:16 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2DA442067B;
+ Fri, 12 Jun 2020 14:16:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591971375;
+ bh=rjTKmlfjn2R4qsN7ijSXQ0sc9veNt5Fvq/im3PhhshA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=r4CwAbYngJblvQB3nesA7U2qZLkgHIjF/NVj67Y8cU/ccol3A9zUALDHSHcgU0Mu5
+ 4L13AmJ32q78+eIY3XXZNuC9GIK+6RCHg7sB80cV9wDyJDhMhkG4tgcNAzeym3RDlB
+ zT8D0EvsorW8ymFq4Gj9DgEP4tCvNcnXvBpnLQFg=
+Date: Fri, 12 Jun 2020 15:16:11 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
+Message-ID: <20200612141611.GI5396@sirena.org.uk>
+References: <1591880310-1813-1-git-send-email-yibin.gong@nxp.com>
+ <1591880310-1813-2-git-send-email-yibin.gong@nxp.com>
+ <20200611134042.GG4671@sirena.org.uk>
+ <VE1PR04MB66383245FAD2AE33CFEA76F789810@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200612101357.GA5396@sirena.org.uk>
+ <VE1PR04MB66384013797FE6B01943F2A889810@VE1PR04MB6638.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Spam-Status: No, score=-2.65
-Authentication-Results: mx01-sz.bfs.de;
-	none
-X-Spamd-Result: default: False [-2.65 / 7.00]; ARC_NA(0.00)[];
- TO_DN_EQ_ADDR_SOME(0.00)[]; HAS_XOIP(0.00)[];
- FROM_HAS_DN(0.00)[]; TO_DN_SOME(0.00)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; MIME_GOOD(-0.10)[text/plain];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_SEVEN(0.00)[9];
- NEURAL_HAM(-0.00)[-1.034]; RCVD_NO_TLS_LAST(0.10)[];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- RCVD_COUNT_TWO(0.00)[2]; MID_RHS_MATCH_FROM(0.00)[];
- BAYES_HAM(-2.65)[98.44%]
+In-Reply-To: <VE1PR04MB66384013797FE6B01943F2A889810@VE1PR04MB6638.eurprd04.prod.outlook.com>
+X-Cookie: As seen on TV.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_071130_199597_D5B1BA58 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_071615_636356_018C16DE 
+X-CRM114-Status: GOOD (  22.70  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [194.94.69.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [194.94.69.67 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,7 +68,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,231 +81,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0629599078980604355=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dan,
 
-nit picking in cti_pm_release()
+--===============0629599078980604355==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="y96v7rNg6HAoELs5"
+Content-Disposition: inline
 
-IMHO this should be done in 2 steps:
-      if (--nr_cti_cpu == 0)
-->
-  --nr_cti_cpu ;
- if ( nr_cti_cpu == 0)
 
-the decrement is easy to miss (what i did first).
+--y96v7rNg6HAoELs5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-yes, i noticed that it is also in the original code and
-it is not that important but while you are here ...
+On Fri, Jun 12, 2020 at 01:48:41PM +0000, Robin Gong wrote:
+> On 2020/06/12 18:14 Mark Brown <broonie@kernel.org> wrote:=20
 
-jm2c,
-re,
- wh
-________________________________________
-Von: kernel-janitors-owner@vger.kernel.org <kernel-janitors-owner@vger.kernel.org> im Auftrag von Dan Carpenter <dan.carpenter@oracle.com>
-Gesendet: Freitag, 12. Juni 2020 14:11:33
-An: Mike Leach
-Cc: Mathieu Poirier; Suzuki K Poulose; Alexander Shishkin; Greg Kroah-Hartman; linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; kernel-janitors@vger.kernel.org
-Betreff: [PATCH] coresight: cti: Fix error handling in probe
+> > Please look at the formatting of your e-mails - they're really hard to =
+read.  The
+> > line length is over 80 columns and there's no breaks between paragraphs.
 
-There were a couple problems with error handling in the probe function:
-1)  If the "drvdata" allocation failed then it lead to a NULL
-    dereference.
-2)  On several error paths we decremented "nr_cti_cpu" before it was
-    incremented which lead to a reference counting bug.
+> Sorry for that, seems my outlook format issue, hope it's ok now this time=
+ :)
 
-There were also some parts of the error handling which were not bugs but
-were messy.  The error handling was confusing to read.  It printed some
-unnecessary error messages.
+Yes, looks good thanks!
 
-The simplest way to fix these problems was to create a cti_pm_setup()
-function that did all the power management setup in one go.  That way
-when we call cti_pm_release() we don't have to deal with the
-complications of a partially configured power management config.
+> > Client could enable this feature by choosing SPI_MASTER_FALLBACK freely
+> > without any impact on others.
 
-I reversed the "if (drvdata->ctidev.cpu >= 0)" condition in cti_pm_release()
-so that it mirros the new cti_pm_setup() function.
+> > SPI_MASTER_FALLBACK.  If this works why would any driver not enable the
+> > flag?
 
-Fixes: 6a0953ce7de9 ("coresight: cti: Add CPU idle pm notifer to CTI devices")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
----
-Please note!!!  I cannot compile this patch.  Mike can you review it?
+> Just make sure little impact if it's not good enough and potential issue =
+may
+> come out after it's merged into mainline. TBH, I'm not sure if it has tak=
+en
+> care all in spi core. Besides, I don't know if other spi client need this=
+ feature.
 
- drivers/hwtracing/coresight/coresight-cti.c | 96 ++++++++++++---------
- 1 file changed, 54 insertions(+), 42 deletions(-)
+It's not something that's going to come up a lot for most devices, it'd
+be a mapping failure due to running out of memory or something, but your
+point about that being possible is valid.
 
-diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-index 40387d58c8e7..d2da5bf9f552 100644
---- a/drivers/hwtracing/coresight/coresight-cti.c
-+++ b/drivers/hwtracing/coresight/coresight-cti.c
-@@ -747,17 +747,50 @@ static int cti_dying_cpu(unsigned int cpu)
-        return 0;
- }
+> > > Any error happen in DMA could fallback to PIO , seems a nice to have,
+> > because it could
+> > > give chance to run in PIO which is more reliable. But if there is als=
+o error in
 
-+static int cti_pm_setup(struct cti_drvdata *drvdata)
-+{
-+       int ret;
-+
-+       if (drvdata->ctidev.cpu == -1)
-+               return 0;
-+
-+       if (nr_cti_cpu)
-+               goto done;
-+
-+       cpus_read_lock();
-+       ret = cpuhp_setup_state_nocalls_cpuslocked(
-+                       CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
-+                       "arm/coresight_cti:starting",
-+                       cti_starting_cpu, cti_dying_cpu);
-+       if (ret) {
-+               cpus_read_unlock();
-+               return ret;
-+       }
-+
-+       ret = cpu_pm_register_notifier(&cti_cpu_pm_nb);
-+       cpus_read_unlock();
-+       if (ret) {
-+               cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
-+               return ret;
-+       }
-+
-+done:
-+       nr_cti_cpu++;
-+       cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
-+
-+       return 0;
-+}
-+
- /* release PM registrations */
- static void cti_pm_release(struct cti_drvdata *drvdata)
- {
--       if (drvdata->ctidev.cpu >= 0) {
--               if (--nr_cti_cpu == 0) {
--                       cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
-+       if (drvdata->ctidev.cpu == -1)
-+               return;
+> > PIO, thus may loop here, it's better adding limit try times here?
 
--                       cpuhp_remove_state_nocalls(
--                               CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
--               }
--               cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
-+       cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
-+       if (--nr_cti_cpu == 0) {
-+               cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
-+               cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
-        }
- }
+> > An error doesn't mean nothing happened on the bus, an error could for
+> > example also be something like a FIFO overrun which corrupts data.
 
-@@ -823,19 +856,14 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+> Do you mean fallback to PIO may cause FIFO overrun since some latency
+> involved so that this patch seems not useful as expected?
 
-        /* driver data*/
-        drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
--       if (!drvdata) {
--               ret = -ENOMEM;
--               dev_info(dev, "%s, mem err\n", __func__);
--               goto err_out;
--       }
-+       if (!drvdata)
-+               return -ENOMEM;
+No, I mean that the reason the DMA transfer fails may be something that
+happens after we've started putting things on the bus - the bit about
+FIFOs is just a random example of an error that could happen.
 
-        /* Validity for the resource is already checked by the AMBA core */
-        base = devm_ioremap_resource(dev, res);
--       if (IS_ERR(base)) {
--               ret = PTR_ERR(base);
--               dev_err(dev, "%s, remap err\n", __func__);
--               goto err_out;
--       }
-+       if (IS_ERR(base))
-+               return PTR_ERR(base);
-+
-        drvdata->base = base;
+> > It *could* but only in extreme situations, and again this isn't just ha=
+ndling
+> > errors from failure to prepare the hardware but also anything that happ=
+ens
+> > after it.
 
-        dev_set_drvdata(dev, drvdata);
-@@ -854,8 +882,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
-        pdata = coresight_cti_get_platform_data(dev);
-        if (IS_ERR(pdata)) {
-                dev_err(dev, "coresight_cti_get_platform_data err\n");
--               ret =  PTR_ERR(pdata);
--               goto err_out;
-+               return  PTR_ERR(pdata);
-        }
+> Okay, understood your point. You prefer to some interface provided by dma
+> engine before dmaengine_prep_slave_sg so that can_dma() can know if
+> this dma channel is ready indeed. But unfortunately, seems there is no on=
+e....
 
-        /* default to powered - could change on PM notifications */
-@@ -867,35 +894,20 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
-                                               drvdata->ctidev.cpu);
-        else
-                cti_desc.name = coresight_alloc_device_name(&cti_sys_devs, dev);
--       if (!cti_desc.name) {
--               ret = -ENOMEM;
--               goto err_out;
--       }
-+       if (!cti_desc.name)
-+               return -ENOMEM;
+Well, this is free software and everything can be modified!  The other
+option would be framework changes in SPI that allowed us to indicate
+=66rom the driver that an error occured before we started doing anything
+to the hardware (like happens here) through something like a special
+error code or splitting up the API.
 
-        /* setup CPU power management handling for CPU bound CTI devices. */
--       if (drvdata->ctidev.cpu >= 0) {
--               cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
--               if (!nr_cti_cpu++) {
--                       cpus_read_lock();
--                       ret = cpuhp_setup_state_nocalls_cpuslocked(
--                               CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
--                               "arm/coresight_cti:starting",
--                               cti_starting_cpu, cti_dying_cpu);
--
--                       if (!ret)
--                               ret = cpu_pm_register_notifier(&cti_cpu_pm_nb);
--                       cpus_read_unlock();
--                       if (ret)
--                               goto err_out;
--               }
--       }
-+       ret = cti_pm_setup(drvdata);
-+       if (ret)
-+               return ret;
+--y96v7rNg6HAoELs5
+Content-Type: application/pgp-signature; name="signature.asc"
 
-        /* create dynamic attributes for connections */
-        ret = cti_create_cons_sysfs(dev, drvdata);
-        if (ret) {
-                dev_err(dev, "%s: create dynamic sysfs entries failed\n",
-                        cti_desc.name);
--               goto err_out;
-+               goto pm_release;
-        }
+-----BEGIN PGP SIGNATURE-----
 
-        /* set up coresight component description */
-@@ -908,7 +920,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
-        drvdata->csdev = coresight_register(&cti_desc);
-        if (IS_ERR(drvdata->csdev)) {
-                ret = PTR_ERR(drvdata->csdev);
--               goto err_out;
-+               goto pm_release;
-        }
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7jjisACgkQJNaLcl1U
+h9Bhxgf/f3T8+uesnT6I1A7PkdLyqPQzcvBKKuMxmr6a6gei+O6Z2E2DXrkgZnBH
+egPtk0PkWozxvGSFKHjn0bWeN/cUS6YmM2T9LoXLP3aVYzsY6u1IutoUU6RabAij
+AoWbBzfvClylFsQeOyo1FcdDXSRCqAN0nZy8ui8v9etgiQ6fjLSk0GNmmxPZ7eAG
+FOwpDRyqmKCXqL66n+XROqHIz9og7wZm7GKJd7TewrCwDaT/MOoqpBN0vwHd7lYj
+Ay0dT138sTtsmSXL2ujVLanOV1rwtx8uFSP+8kBapWjpZ5uko6QNs9XJoq1JFKDd
+OwnndBidkU1L4Hl3h5BJ/hD59UsqCw==
+=3+JR
+-----END PGP SIGNATURE-----
 
-        /* add to list of CTI devices */
-@@ -927,7 +939,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
-        dev_info(&drvdata->csdev->dev, "CTI initialized\n");
-        return 0;
+--y96v7rNg6HAoELs5--
 
--err_out:
-+pm_release:
-        cti_pm_release(drvdata);
-        return ret;
- }
---
-2.27.0
 
+--===============0629599078980604355==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0629599078980604355==--
+
