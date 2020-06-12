@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAAFF1F7A6F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 17:11:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 443601F7A9A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 17:19:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8eJcbxD8NfCDPEVbNhc26OGAdsB01tFurBV8I5bYRKQ=; b=Me2s/lD+pw6AQT
-	aHTssiCOuGNAMbA910zAtP6Izw5DHjJ2d6D5v9b18+21RZGJ5DRlNExCdwBJcaMfow1KyduzlWlXf
-	ueul4FtFQcMITb+WQ0QdPMrIdZd25S5+58YTvl+xUoRh3vnuO0anY7YXKN101GbHJYJlmTCLX9RvH
-	/6WsBR2tNSwKsTIV49h+8oEHhfd1Ujn+AEXlbkWxoqMZj01J6lYiaTUqzAGaej2/Lq+NE1jNV95nH
-	i6JbGl3g3NlswpGfdiQqfdFjLA0nfYd8w0T+y1crIIFYam2by2E6enZPP72vuBcVidjuc6zbQM2Zg
-	UmZTiTCqmekCM5z5k8fg==;
+	List-Owner; bh=RJcdIzhlMfSNSMFnQu9rZfyVOmU7sMMZoejz2Jftk3Q=; b=QT1DUxNoBEvXWi
+	/+ZhmklgxHLKfNRSa6FoR+x6OJCh7WG3zMXTJhnoqC9hrgUaNcp+Az1vU7K+DRmTkm1Ut+6EpEE/I
+	cj3nO/NzCOArJwe0RKrBPdoqoR4Lm0Pa2MbnCVD++mpSHfxJW0YteIzD8ZXCuw3CnlQHP0+SnINHl
+	SBKVTCyxBP1WCWdqBk1ow4xPSnXnswIRWQLNOfm5cZ/dmevSlIlejnIBdftqPbwen6Hb03+3T2vTq
+	qXxBsBhU9FcdASLO5Zt8C/qtsgylH0Sgus8T0qL34eXpjf7yweusA7aISbfU0+RkGiTON8aJzR4cS
+	kYNpcMEHa8QGjQjffUUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjlKq-00036q-9U; Fri, 12 Jun 2020 15:11:12 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jjlT3-00070u-MM; Fri, 12 Jun 2020 15:19:41 +0000
+Received: from pb-smtp20.pobox.com ([173.228.157.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjlJy-0001ZH-Oz; Fri, 12 Jun 2020 15:10:21 +0000
-X-UUID: 8f356d6555984c1488f17e2b486b0d39-20200612
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=+0KA0dOhmw5UB0xe1wGnzSeL3/LIui1ay1wP2Ey5MGg=; 
- b=eaID3cTvZCfa59n34eaUV9pwbbuVl/oZfmdU8lesH8Q0YYxMvpcppJJSc/FeyrVNCZXNyBVJKYgC2vxLXgG3y5P+17R08PXpdQ7u5OZM5bwCIp95xqptRHSXskb1WSy8cSaRsnqSRebpZieZIzZDvl7FX3nWHW/8tkEGa0MvruA=;
-X-UUID: 8f356d6555984c1488f17e2b486b0d39-20200612
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1102410366; Fri, 12 Jun 2020 07:09:51 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 12 Jun 2020 08:10:10 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 12 Jun 2020 23:10:02 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Fri, 12 Jun 2020 23:10:01 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
- <asutoshd@codeaurora.org>
-Subject: [PATCH v1 2/2] scsi: ufs: Add trace event for UIC commands
-Date: Fri, 12 Jun 2020 23:10:00 +0800
-Message-ID: <20200612151000.27639-3-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200612151000.27639-1-stanley.chu@mediatek.com>
-References: <20200612151000.27639-1-stanley.chu@mediatek.com>
+ id 1jjlSw-0006zl-2j
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 15:19:35 +0000
+Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
+ by pb-smtp20.pobox.com (Postfix) with ESMTP id 1ED59E4CC8;
+ Fri, 12 Jun 2020 11:19:30 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=22t9Ut8LGNPQZcuwBoygY9sFDBQ=; b=ch+G5F
+ f+rL9Y26JkM0TLDTfVupXzFMDulMjp1sMBUdGKFMmjp1modPgIygeyoZTyVOuRw+
+ fAuBoAQA+HW7pEcZbxOFf4Dghu2GwFStiVqRRRR3Q8O6UK3MSddf8ZTSVi45wdPK
+ /tknsJa6jpntcZs4/0B54vnBDPDs0lG8k5Qso=
+Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp20.pobox.com (Postfix) with ESMTP id 1609AE4CC7;
+ Fri, 12 Jun 2020 11:19:30 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=+j2zvxY3yyACYmz62lMN5mkK3euzNoR2JXP7LPUWCaA=;
+ b=v5jS8qjxtE91zh+Qiqg4lLx/8UpHSwhsar4xdmNNdFLRGtCwuesR9hp4v2lgfr+ll9ZTtCwf8AN6/HgHuXA2zK9L8ITkZ6F2455mW1BwgExJK+QV1xJsoYm/cGlhr4iSM6jEV/K36ENBr7MQ3cqJMoLFd3dgAtYHEZXMvAR3AN4=
+Received: from yoda.home (unknown [24.203.50.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp20.pobox.com (Postfix) with ESMTPSA id DCCC5E4CC3;
+ Fri, 12 Jun 2020 11:19:25 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id 011CC2DA0AF0;
+ Fri, 12 Jun 2020 11:19:23 -0400 (EDT)
+Date: Fri, 12 Jun 2020 11:19:23 -0400 (EDT)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+Subject: Re: [RFC 0/3] ARM: copy_{from,to}_user() for vmsplit 4g/4g
+In-Reply-To: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
+Message-ID: <nycvar.YSQ.7.77.849.2006121117250.3341460@knanqh.ubzr>
+References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 59D9D01AB4EC54D1F10C739C554AC979AC81CEAF602D64FA508FA0139328F5D72000:8
-X-MTK: N
+X-Pobox-Relay-ID: 1A10A78E-ACC0-11EA-AF12-B0405B776F7B-78420484!pb-smtp20.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_081018_810842_31B8064B 
-X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-CacheID: sfid-20200612_081934_173733_34027C47 
+X-CRM114-Status: UNSURE (   8.79  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [173.228.157.52 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,148 +86,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, cc.chou@mediatek.com,
- chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- chaotian.jing@mediatek.com, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the ftrace infrastructure to conditionally trace UFS UIC command
-events.
+On Fri, 12 Jun 2020, afzal mohammed wrote:
 
-New trace event "ufshcd_uic_command" is created, which samples the
-following UFS UIC command data:
-- Device name
-- Optional identification string
-- UIC command opcode
-- UIC command argument1
-- UIC command argument2
-- UIC command argement3
-- UIC command execution result
+> Performance wise, results are not encouraging, 'dd' on tmpfs results,
+> 
+> ARM Cortex-A8, BeagleBone White (256MiB RAM):
+> w/o series - ~29.5 MB/s
+> w/ series - ~20.5 MB/s
+> w/ series & highmem disabled - ~21.2 MB/s
+> 
+> On Cortex-A15(2GiB RAM) in QEMU:
+> w/o series - ~4 MB/s
+> w/ series - ~2.6 MB/s
+> 
+> Roughly a one-third drop in performance. Disabling highmem improves
+> performance only slightly.
 
-Usage:
-	echo 1 > /sys/kernel/debug/tracing/events/ufs/enable
-	cat /sys/kernel/debug/tracing/trace_pipe
+Could you compare with CONFIG_UACCESS_WITH_MEMCPY as well?
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufshcd.c  | 29 +++++++++++++++++++++++++++++
- include/trace/events/ufs.h | 33 +++++++++++++++++++++++++++++++++
- 2 files changed, 62 insertions(+)
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index c197a3315d21..181617966658 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -339,6 +339,27 @@ static void ufshcd_add_tm_upiu_trace(struct ufs_hba *hba, unsigned int tag,
- 			&descp->input_param1);
- }
- 
-+static void ufshcd_add_uic_command_trace(struct ufs_hba *hba,
-+					 struct uic_command *ucmd,
-+					 const char *str)
-+{
-+	u32 cmd;
-+
-+	if (!trace_ufshcd_uic_command_enabled())
-+		return;
-+
-+	if (!strcmp(str, "uic_send"))
-+		cmd = ucmd->command;
-+	else
-+		cmd = ufshcd_readl(hba, REG_UIC_COMMAND);
-+
-+	trace_ufshcd_uic_command(dev_name(hba->dev), str, cmd,
-+				 ucmd->result,
-+				 ufshcd_readl(hba, REG_UIC_COMMAND_ARG_1),
-+				 ufshcd_readl(hba, REG_UIC_COMMAND_ARG_2),
-+				 ufshcd_readl(hba, REG_UIC_COMMAND_ARG_3));
-+}
-+
- static void ufshcd_add_command_trace(struct ufs_hba *hba,
- 		unsigned int tag, const char *str)
- {
-@@ -2054,6 +2075,8 @@ ufshcd_dispatch_uic_cmd(struct ufs_hba *hba, struct uic_command *uic_cmd)
- 	/* Write UIC Cmd */
- 	ufshcd_writel(hba, uic_cmd->command & COMMAND_OPCODE_MASK,
- 		      REG_UIC_COMMAND);
-+
-+	ufshcd_add_uic_command_trace(hba, uic_cmd, "uic_send");
- }
- 
- /**
-@@ -2080,6 +2103,9 @@ ufshcd_wait_for_uic_cmd(struct ufs_hba *hba, struct uic_command *uic_cmd)
- 	hba->active_uic_cmd = NULL;
- 	spin_unlock_irqrestore(hba->host->host_lock, flags);
- 
-+	uic_cmd->result = ret;
-+	ufshcd_add_uic_command_trace(hba, uic_cmd, "uic_complete");
-+
- 	return ret;
- }
- 
-@@ -3760,6 +3786,9 @@ static int ufshcd_uic_pwr_ctrl(struct ufs_hba *hba, struct uic_command *cmd)
- 		ret = (status != PWR_OK) ? status : -1;
- 	}
- out:
-+	cmd->result = ret;
-+	ufshcd_add_uic_command_trace(hba, cmd, "uic_complete");
-+
- 	if (ret) {
- 		ufshcd_print_host_state(hba);
- 		ufshcd_print_pwr_info(hba);
-diff --git a/include/trace/events/ufs.h b/include/trace/events/ufs.h
-index 5f300739240d..cf8d568d5a13 100644
---- a/include/trace/events/ufs.h
-+++ b/include/trace/events/ufs.h
-@@ -249,6 +249,39 @@ TRACE_EVENT(ufshcd_command,
- 	)
- );
- 
-+TRACE_EVENT(ufshcd_uic_command,
-+	TP_PROTO(const char *dev_name, const char *str, u32 cmd, int result,
-+		 u32 arg1, u32 arg2, u32 arg3),
-+
-+	TP_ARGS(dev_name, str, cmd, result, arg1, arg2, arg3),
-+
-+	TP_STRUCT__entry(
-+		__string(dev_name, dev_name)
-+		__string(str, str)
-+		__field(u32, cmd)
-+		__field(int, result)
-+		__field(u32, arg1)
-+		__field(u32, arg2)
-+		__field(u32, arg3)
-+	),
-+
-+	TP_fast_assign(
-+		__assign_str(dev_name, dev_name);
-+		__assign_str(str, str);
-+		__entry->cmd = cmd;
-+		__entry->result = result;
-+		__entry->arg1 = arg1;
-+		__entry->arg2 = arg2;
-+		__entry->arg3 = arg3;
-+	),
-+
-+	TP_printk(
-+		"%s: %s: cmd: 0x%x, arg1: 0x%x, arg2: 0x%x, arg3: 0x%x, result: %d",
-+		__get_str(str), __get_str(dev_name), __entry->cmd,
-+		__entry->arg1, __entry->arg2, __entry->arg3, __entry->result
-+	)
-+);
-+
- TRACE_EVENT(ufshcd_upiu,
- 	TP_PROTO(const char *dev_name, const char *str, void *hdr, void *tsf),
- 
--- 
-2.18.0
+Nicolas
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
