@@ -2,81 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 451A71F7752
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:30:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B0331F777B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:50:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rnHLT8xORaulL4wvv91S33RKWnsSDjLAWAtB3nnxygY=; b=TRHbRYhpR7zXfQ
-	KDrueCW1PfxCvDnmULQNqvLO7DMt8xNscAQv/C9Cxc5BvG4BHBigd0z9kb7A4OnB6NWLReidR0GxO
-	DJIphym/R0p2h7UbqMH0U6q+F82uZl+zkM399Zbt+PmA8blTErqe7dfR0Aroa2/Be6em3YCVMcz4z
-	fiAHVzgDvFYjxB9bUIeJvK5hW9PsZWlFWYrWP1PmsNZ2ucStSrZNfX8bwe8jq5UmMC+qijwyko1FF
-	eo/8v8hNJ7ZrBdweeBTDlEQ/hPYVZz4X+6/13FC6WlrGxQybO4sY81GuCkhI/JV+t2fH/mxOVn1xW
-	ypZCRyeR2NVqNCSV+r+g==;
+	List-Owner; bh=g6qX5guTHuyZRRpfRyi7MdwiKpWAMDdBUVqJt7NfomM=; b=RzICvHYMAb1ILw
+	VyxXpE8+yB1a+yJT72Y3B1Uo0MRjvXfbYDCX/nyGvCrisvuUHKhaKhe72EVFQQ4PQynWXuZ8NmoHy
+	wM5i0iQYBGxzHm35zR/bFbKFLbe+3lrSQD9+tKM7RGxRLKDSjpVP4kusehebUzMrWYbRizqiRzNyU
+	WwQXTPMnewVirDCmDazBt9O+X4ybpbvni+pvMRB/CNBXAagmxu259sb5mOWesZ2m2Gf/yqypToxS/
+	R+rx7VnaVz+rl0aDTOJD/fFiQE4Fl9ZpJtvRUphtJTpTT34b1lkOZcAGPzdySgufU6kschH/MrItQ
+	JvgcsHwF9y6yAldu37cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjhtV-0000X4-8B; Fri, 12 Jun 2020 11:30:45 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:32c8:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjhtN-0000WU-FC
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:30:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=etPHGVYvPw7yw2ygbiMI5MNxWS/RjHHBmbLSJinvfLQ=; b=BPPJPbvODmjIQrnUW1eLG3MI8
- MmiCthfkt1Hdtyn/HSY9hCKkDpas84Fqt+nvsYXWDKexRAJBWEinHZKdspRfDwE7Ig5eFUfrFAZNP
- bauAmpNpZMXsNcOqJQljGkcypGA86h/mqpjRBiwgMfehzxmQqfhnB5Yjed2maatQ59ghRdxsMjsLO
- 6yGON/9In+kv6jrt8fAP5TOaq3LQ+8g+WUYZPYAeN77Rr1nU6bEUWW/EmtR5UllksU4OXAJwM9Sr6
- 46OimonqgIi2TUGEAyr6ZdgVgDM5S8n3flbzOok+2Xr+sXSRn8NOVOcpvpPaPHSdiJSsQcnofxVT9
- IbazVLegA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44598)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jjhtI-0002jO-3N; Fri, 12 Jun 2020 12:30:32 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jjhtH-0006Dh-Eb; Fri, 12 Jun 2020 12:30:31 +0100
-Date: Fri, 12 Jun 2020 12:30:31 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: Re: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
-Message-ID: <20200612113031.GI1551@shell.armlinux.org.uk>
-References: <20200612083847.29942-1-s.hauer@pengutronix.de>
- <20200612084710.GC1551@shell.armlinux.org.uk>
- <20200612100114.GE1551@shell.armlinux.org.uk>
- <20200612101820.GF1551@shell.armlinux.org.uk>
- <20200612104208.GG1551@shell.armlinux.org.uk>
- <20200612112213.GH1551@shell.armlinux.org.uk>
+	id 1jjiCU-0003AP-21; Fri, 12 Jun 2020 11:50:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jjiCL-00039q-2r
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:50:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3232431B;
+ Fri, 12 Jun 2020 04:50:11 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5CD363F6CF;
+ Fri, 12 Jun 2020 04:50:10 -0700 (PDT)
+Date: Fri, 12 Jun 2020 12:50:08 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v2 1/6] ARM: Use PAGE_SIZE for ELF_EXEC_PAGESIZE
+Message-ID: <20200612115007.GB19739@gaia>
+References: <20200611134914.765827-1-gregory.clement@bootlin.com>
+ <20200611134914.765827-2-gregory.clement@bootlin.com>
+ <CAK8P3a0Rc6qd0Cb2yMNupbCP2NWRQAsEKtvEr5sZV4ANw6xfNQ@mail.gmail.com>
+ <20200612083510.GB1551@shell.armlinux.org.uk>
+ <CAK8P3a2BpNVSE86zEYSGd7x+OF-7spjGmU331TbQX=DRAkpMoQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200612112213.GH1551@shell.armlinux.org.uk>
+In-Reply-To: <CAK8P3a2BpNVSE86zEYSGd7x+OF-7spjGmU331TbQX=DRAkpMoQ@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_043037_504249_94BF1A13 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_045013_171639_EA65710B 
+X-CRM114-Status: GOOD (  21.28  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,46 +66,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel@pengutronix.de
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 12:22:13PM +0100, Russell King - ARM Linux admin wrote:
-> On Fri, Jun 12, 2020 at 11:42:08AM +0100, Russell King - ARM Linux admin wrote:
-> > With the obvious mistakes fixed (extraneous 'i' and lack of default
-> > case), it seems to still work on Armada 388 Clearfog Pro with 2.5G
-> > modules.
+On Fri, Jun 12, 2020 at 10:46:17AM +0200, Arnd Bergmann wrote:
+> On Fri, Jun 12, 2020 at 10:35 AM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> > On Fri, Jun 12, 2020 at 10:22:17AM +0200, Arnd Bergmann wrote:
+> > > On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
+> > > <gregory.clement@bootlin.com> wrote:
+> > > >
+> > > > Currently ELF_EXEC_PAGESIZE is 4096 which is also the page size. In
+> > > > order to be able to use other size of page than 4K, use PAGE_SIZE
+> > > > instead of the hardcoded value.
+> > > >
+> > > > The use of PAGE_SIZE will be also aligned with what we find in other
+> > > > architectures such as arm64.
+> > > >
+> > > > This is inspired from fa0ca2726ea9 ("DSMP 64K support") and
+> > > > 4ef803e12baf ("mmu: large-page: Added support for multiple kernel page
+> > > > sizes") from
+> > > > https://github.com/MarvellEmbeddedProcessors/linux-marvell.git
+> > > >
+> > > > Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+> > >
+> > > IIRC using page sizes above 16KB here also requires using a
+> > > non-ancient linker in user space that places sections on
+> > > ELF_EXEC_PAGESIZE boundaries, right?
 > 
-> ... and the other bug fixed - mvneta_comphy_init() needs to be passed
-> the interface mode.
+> Correction: I was thinking of SHMLBA, not ELF_EXEC_PAGESIZE.
+> SHMLBA is defined to 16KB in arch/arm/ at the moment (based on 4K
+> page size), or (4 * PAGE_SIZE) on arm64, which can blow up to 256KB.
+> 
+> AFAICT, SHMLBA should now be defined as "min(16384, PAGE_SIZE)".
 
-Unrelated to the patch, has anyone noticed that mvneta's performance
-seems to have reduced?  I've only just noticed it (which makes 2.5Gbps
-rather pointless).  This is iperf between two clearfogs with a 2.5G
-fibre link:
+Good point. We should do this with the COMPAT_SHMLBA on arm64 (we didn't
+bother since COMPAT had a dependency on 4K but you can override it with
+EXPERT).
 
-root@clearfog21:~# iperf -V -c fe80::250:43ff:fe02:303%eno2
-------------------------------------------------------------
-Client connecting to fe80::250:43ff:fe02:303%eno2, TCP port 5001
-TCP window size: 43.8 KByte (default)
-------------------------------------------------------------
-[  3] local fe80::250:43ff:fe21:203 port 48928 connected with fe80::250:43ff:fe02:303 port 5001
-[ ID] Interval       Transfer     Bandwidth
-[  3]  0.0-10.0 sec   553 MBytes   464 Mbits/sec
+> > Doesn't that mean that this change breaks all existing userspace when
+> > ELF_EXEC_PAGESIZE is not 4k?
+> 
+> I think a lot of older user space would be broken with page sizes larger
+> than 16KB, but would still work with 8KB or 16KB. Larger page sizes
+> would only work with user space that was linked in the last five years
+> or so, using a toolchain that has the workarounds for running on arm64
+> with 64KB page size.
 
-I checked with Jon Nettleton, and he confirms my recollection that
-mvneta on Armada 388 used to be able to fill a 2.5Gbps link.
-
-If Armada 388 can't manage, then I suspect Armada XP will have worse
-performance being an earlier revision SoC.
+FWIW, Debian armhf now boots fine on an arm64 kernel with 64K pages (it
+wasn't the case some years ago).
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
