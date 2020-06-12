@@ -2,68 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1ACC71F7296
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 05:42:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F94A1F72B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 06:07:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fXX4/alUxpK5G3nPHI5tJzmFV6eBPptzGGuBLEjdLwY=; b=mTQSjfe9dNOCCZOyfb5CqBT4Yb
-	w3wH0xhjW84xurl9UQEYNIsrrnLOJTgwAIIrlrtMume1f0qAa4W45dgHQeoHIPN9LeaGLmqWdb3E0
-	qx0V/A/tbAmYc/uFNV79pr5iGn7YtR54j3hMJ6AVm1EDCfXIWHGhU5RbCJie+ETiGTc4NIZyUeZO+
-	DmOyrjHKRoYloY4BLOeDAVld6jXD4knH9ec8ZHI7HpiiXDGw5/XrrlybeRsAXQM3qtSlL0KKVDjp+
-	r84JWyHo14gnFkrYmiprApM1Pvdd6GvbN7aM3ZO4EKxEq8U/zBu0shAm/DE1Em6xOtD3LqkX0C1e+
-	sKGADmqg==;
+	bh=fEbTBaFjdha9Zh54iNlzhw7D8kJJLZ4OfIXm7mYPOcs=; b=ufs2zFDjh80YT3N0FMiS8twxhf
+	wVDPobWWCurp/OI2ViSYbwbSukFfVdQorMCLbb02JAw9PhZSOVTY2t22h0MLy47uwkvLvodT7iGeU
+	tjNR6/bC212uWJkztGVZ2Zpe4KZPZ/RpDXOdq1V3u/VEnCfVyZZugF3kIsyYNENOjstPlwT1RSg8Z
+	ABIe/zrhUmUqHmBqx7hPhwzlcWIG9AnGRM2u01k4k+tvWqdhBEtsggaGON2KrL1ixYzOk0tInOmt9
+	SNMb5c/7VnGtcsZl3MYzq5BHb+RF81Go5/M3FLDraZiHvpuOsnVsqy5/rqJ67H/7w+3broq1c7gyp
+	hZfeNPIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjaaf-0002dR-IX; Fri, 12 Jun 2020 03:42:49 +0000
-Received: from out4436.biz.mail.alibaba.com ([47.88.44.36])
+	id 1jjayo-0000bW-9u; Fri, 12 Jun 2020 04:07:46 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjaaH-0002Q4-Oa
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 03:42:27 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R151e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04427;
- MF=baolin.wang@linux.alibaba.com; NM=1; PH=DS; RN=21; SR=0;
- TI=SMTPD_---0U.K0.DD_1591933215; 
-Received: from localhost(mailfrom:baolin.wang@linux.alibaba.com
- fp:SMTPD_---0U.K0.DD_1591933215) by smtp.aliyun-inc.com(127.0.0.1);
- Fri, 12 Jun 2020 11:40:15 +0800
-From: Baolin Wang <baolin.wang@linux.alibaba.com>
-To: joro@8bytes.org, will@kernel.org, robin.murphy@arm.com, agross@kernel.org,
- bjorn.andersson@linaro.org, matthias.bgg@gmail.com, robdclark@gmail.com,
- robh@kernel.org, tomeu.vizoso@collabora.com, steven.price@arm.com,
- alyssa.rosenzweig@collabora.com, airlied@linux.ie, daniel@ffwll.ch
-Subject: [PATCH v2 2/2] iommu: Add gfp parameter to io_pgtable_ops->map()
-Date: Fri, 12 Jun 2020 11:39:55 +0800
-Message-Id: <3093df4cb95497aaf713fca623ce4ecebb197c2e.1591930156.git.baolin.wang@linux.alibaba.com>
-X-Mailer: git-send-email 1.8.3.1
-In-Reply-To: <cover.1591930156.git.baolin.wang@linux.alibaba.com>
-References: <cover.1591930156.git.baolin.wang@linux.alibaba.com>
-In-Reply-To: <cover.1591930156.git.baolin.wang@linux.alibaba.com>
-References: <cover.1591930156.git.baolin.wang@linux.alibaba.com>
+ id 1jjayf-0000aj-Dl
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 04:07:38 +0000
+Received: by mail-qt1-x844.google.com with SMTP id z1so6244468qtn.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 11 Jun 2020 21:07:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=W9N0HI/VJRXYdn3DxBbsnmWiEpklzY4+CMZBCSjxVLI=;
+ b=MmowBu5g/zlVcPTy3ZBmy5iY8SG0VMb2dSPwH5MLFgedHfF8GKgeUxCK3uT+YrmbGS
+ RacRhfM+AeWoO2epbNIPBsWgS5T7UE4jGevyuf6ruVakGyJdMgmeTUrQOZaKHQU97ykb
+ tanSneGEeRFWtndHd69u5NxH6sVd1mGwvJqHyK16AXgLmttUQgiZz3sXLu88bIq3KxFi
+ RLTeKXpvVyTpibyZiGdxDP7/R+g8uS4KoCGADEFB6XmAuYfCBY6vY3tiVXCGTenBkf/F
+ Qx+3549AhBVymIp5SXL4UtYDx/fkunNCkaX+1XAmaX/eNojPWWSTsIkSMMaZCLdqboxN
+ 2/dQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=W9N0HI/VJRXYdn3DxBbsnmWiEpklzY4+CMZBCSjxVLI=;
+ b=TiA7gNlLSE0YBFKApP1w+tjulhN1FjoYzAIGALZz6qsJBihaMPNMFB+GwNs01dS5LI
+ 65pmxUbDCiy5zKlS5bq5eLxOGRNRt9/B0Do6m5EZWN2udOHTvKssgeWt0Go/UNH8Jl+/
+ syMfl2VLKh5gxqZPK1sv64z7RiiAkQ0Kv7x76bADUZKz6lIfhsN4bB7WNS1HHzWFp9Mq
+ 649cnbvQCh19v1ukXPdIZMkg/GMMAW4NSq603VjFKv7J5h7zWQRNspQxNXH1z1Q/YBu/
+ K6eyZ5bYgxcOhDYd/33lZRbHiOEII9uZF5TZr0jvdfYMCsZ+c5cst9+sSLa6qL691rjf
+ VOsA==
+X-Gm-Message-State: AOAM533XmjjoLgRWbJHg2wiOkAI7uKj5xUwbYs/5EDDrrVkSBPc4e/EL
+ BqgpQvQJ/Gql3Z5PiFDUMgE=
+X-Google-Smtp-Source: ABdhPJxQuukhtwanmQJb52xJH/9PJDz7QPdp/qzb+qaQvTRo3KgSQnfSIXB3TMpsb+uFZnWTDW6TxA==
+X-Received: by 2002:aed:358c:: with SMTP id c12mr1177305qte.214.1591934854411; 
+ Thu, 11 Jun 2020 21:07:34 -0700 (PDT)
+Received: from [192.168.1.46] (c-73-88-245-53.hsd1.tn.comcast.net.
+ [73.88.245.53])
+ by smtp.gmail.com with ESMTPSA id c6sm3609080qkg.93.2020.06.11.21.07.33
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 11 Jun 2020 21:07:33 -0700 (PDT)
+Subject: Re: [RFC] MFD's relationship with Device Tree (OF)
+To: Lee Jones <lee.jones@linaro.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Michael Walle
+ <michael@walle.cc>, Rob Herring <robh+dt@kernel.org>,
+ Mark Brown <broonie@kernel.org>, devicetree <devicetree@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Guenter Roeck
+ <linux@roeck-us.net>, Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ GregKroah-Hartmangregkh@linuxfoundation.org
+References: <20200609110136.GJ4106@dell>
+From: Frank Rowand <frowand.list@gmail.com>
+Message-ID: <7cf94809-7346-31bc-877c-679ecc4d9710@gmail.com>
+Date: Thu, 11 Jun 2020 23:07:32 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+MIME-Version: 1.0
+In-Reply-To: <20200609110136.GJ4106@dell>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_204225_952015_1D70D311 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -8.7 (--------)
+X-CRM114-CacheID: sfid-20200611_210737_480364_4610E6A9 
+X-CRM114-Status: GOOD (  31.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [47.88.44.36 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [47.88.44.36 listed in wl.mailspike.net]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [frowand.list[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,303 +112,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, baolin.wang@linux.alibaba.com,
- baolin.wang7@gmail.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now the ARM page tables are always allocated by GFP_ATOMIC parameter,
-but the iommu_ops->map() function has been added a gfp_t parameter by
-commit 781ca2de89ba ("iommu: Add gfp parameter to iommu_ops::map"),
-thus io_pgtable_ops->map() should use the gfp parameter passed from
-iommu_ops->map() to allocate page pages, which can avoid wasting the
-memory allocators atomic pools for some non-atomic contexts.
+Hi Lee,
 
-Signed-off-by: Baolin Wang <baolin.wang@linux.alibaba.com>
----
- drivers/gpu/drm/panfrost/panfrost_mmu.c |  2 +-
- drivers/iommu/arm-smmu-v3.c             |  2 +-
- drivers/iommu/arm-smmu.c                |  2 +-
- drivers/iommu/io-pgtable-arm-v7s.c      | 18 +++++++++---------
- drivers/iommu/io-pgtable-arm.c          | 18 +++++++++---------
- drivers/iommu/ipmmu-vmsa.c              |  2 +-
- drivers/iommu/msm_iommu.c               |  2 +-
- drivers/iommu/mtk_iommu.c               |  2 +-
- drivers/iommu/qcom_iommu.c              |  2 +-
- include/linux/io-pgtable.h              |  2 +-
- 10 files changed, 26 insertions(+), 26 deletions(-)
+Please add me to the distribution list for future versions of this.
 
-diff --git a/drivers/gpu/drm/panfrost/panfrost_mmu.c b/drivers/gpu/drm/panfrost/panfrost_mmu.c
-index ed28aeb..5a39eee 100644
---- a/drivers/gpu/drm/panfrost/panfrost_mmu.c
-+++ b/drivers/gpu/drm/panfrost/panfrost_mmu.c
-@@ -262,7 +262,7 @@ static int mmu_map_sg(struct panfrost_device *pfdev, struct panfrost_mmu *mmu,
- 		while (len) {
- 			size_t pgsize = get_pgsize(iova | paddr, len);
- 
--			ops->map(ops, iova, paddr, pgsize, prot);
-+			ops->map(ops, iova, paddr, pgsize, prot, GFP_KERNEL);
- 			iova += pgsize;
- 			paddr += pgsize;
- 			len -= pgsize;
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index f578677..7b59f06 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -2850,7 +2850,7 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
- 	if (!ops)
- 		return -ENODEV;
- 
--	return ops->map(ops, iova, paddr, size, prot);
-+	return ops->map(ops, iova, paddr, size, prot, gfp);
- }
- 
- static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 243bc4c..dc1d253 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -1227,7 +1227,7 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
- 		return -ENODEV;
- 
- 	arm_smmu_rpm_get(smmu);
--	ret = ops->map(ops, iova, paddr, size, prot);
-+	ret = ops->map(ops, iova, paddr, size, prot, gfp);
- 	arm_smmu_rpm_put(smmu);
- 
- 	return ret;
-diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
-index 4272fe4..a688f22 100644
---- a/drivers/iommu/io-pgtable-arm-v7s.c
-+++ b/drivers/iommu/io-pgtable-arm-v7s.c
-@@ -470,7 +470,7 @@ static arm_v7s_iopte arm_v7s_install_table(arm_v7s_iopte *table,
- 
- static int __arm_v7s_map(struct arm_v7s_io_pgtable *data, unsigned long iova,
- 			 phys_addr_t paddr, size_t size, int prot,
--			 int lvl, arm_v7s_iopte *ptep)
-+			 int lvl, arm_v7s_iopte *ptep, gfp_t gfp)
- {
- 	struct io_pgtable_cfg *cfg = &data->iop.cfg;
- 	arm_v7s_iopte pte, *cptep;
-@@ -491,7 +491,7 @@ static int __arm_v7s_map(struct arm_v7s_io_pgtable *data, unsigned long iova,
- 	/* Grab a pointer to the next level */
- 	pte = READ_ONCE(*ptep);
- 	if (!pte) {
--		cptep = __arm_v7s_alloc_table(lvl + 1, GFP_ATOMIC, data);
-+		cptep = __arm_v7s_alloc_table(lvl + 1, gfp, data);
- 		if (!cptep)
- 			return -ENOMEM;
- 
-@@ -512,11 +512,11 @@ static int __arm_v7s_map(struct arm_v7s_io_pgtable *data, unsigned long iova,
- 	}
- 
- 	/* Rinse, repeat */
--	return __arm_v7s_map(data, iova, paddr, size, prot, lvl + 1, cptep);
-+	return __arm_v7s_map(data, iova, paddr, size, prot, lvl + 1, cptep, gfp);
- }
- 
- static int arm_v7s_map(struct io_pgtable_ops *ops, unsigned long iova,
--			phys_addr_t paddr, size_t size, int prot)
-+			phys_addr_t paddr, size_t size, int prot, gfp_t gfp)
- {
- 	struct arm_v7s_io_pgtable *data = io_pgtable_ops_to_data(ops);
- 	struct io_pgtable *iop = &data->iop;
-@@ -530,7 +530,7 @@ static int arm_v7s_map(struct io_pgtable_ops *ops, unsigned long iova,
- 		    paddr >= (1ULL << data->iop.cfg.oas)))
- 		return -ERANGE;
- 
--	ret = __arm_v7s_map(data, iova, paddr, size, prot, 1, data->pgd);
-+	ret = __arm_v7s_map(data, iova, paddr, size, prot, 1, data->pgd, gfp);
- 	/*
- 	 * Synchronise all PTE updates for the new mapping before there's
- 	 * a chance for anything to kick off a table walk for the new iova.
-@@ -922,12 +922,12 @@ static int __init arm_v7s_do_selftests(void)
- 		if (ops->map(ops, iova, iova, size, IOMMU_READ |
- 						    IOMMU_WRITE |
- 						    IOMMU_NOEXEC |
--						    IOMMU_CACHE))
-+						    IOMMU_CACHE, GFP_KERNEL))
- 			return __FAIL(ops);
- 
- 		/* Overlapping mappings */
- 		if (!ops->map(ops, iova, iova + size, size,
--			      IOMMU_READ | IOMMU_NOEXEC))
-+			      IOMMU_READ | IOMMU_NOEXEC, GFP_KERNEL))
- 			return __FAIL(ops);
- 
- 		if (ops->iova_to_phys(ops, iova + 42) != (iova + 42))
-@@ -946,7 +946,7 @@ static int __init arm_v7s_do_selftests(void)
- 			return __FAIL(ops);
- 
- 		/* Remap of partial unmap */
--		if (ops->map(ops, iova_start + size, size, size, IOMMU_READ))
-+		if (ops->map(ops, iova_start + size, size, size, IOMMU_READ, GFP_KERNEL))
- 			return __FAIL(ops);
- 
- 		if (ops->iova_to_phys(ops, iova_start + size + 42)
-@@ -967,7 +967,7 @@ static int __init arm_v7s_do_selftests(void)
- 			return __FAIL(ops);
- 
- 		/* Remap full block */
--		if (ops->map(ops, iova, iova, size, IOMMU_WRITE))
-+		if (ops->map(ops, iova, iova, size, IOMMU_WRITE, GFP_KERNEL))
- 			return __FAIL(ops);
- 
- 		if (ops->iova_to_phys(ops, iova + 42) != (iova + 42))
-diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-index 04fbd4b..4a5a7b0 100644
---- a/drivers/iommu/io-pgtable-arm.c
-+++ b/drivers/iommu/io-pgtable-arm.c
-@@ -355,7 +355,7 @@ static arm_lpae_iopte arm_lpae_install_table(arm_lpae_iopte *table,
- 
- static int __arm_lpae_map(struct arm_lpae_io_pgtable *data, unsigned long iova,
- 			  phys_addr_t paddr, size_t size, arm_lpae_iopte prot,
--			  int lvl, arm_lpae_iopte *ptep)
-+			  int lvl, arm_lpae_iopte *ptep, gfp_t gfp)
- {
- 	arm_lpae_iopte *cptep, pte;
- 	size_t block_size = ARM_LPAE_BLOCK_SIZE(lvl, data);
-@@ -376,7 +376,7 @@ static int __arm_lpae_map(struct arm_lpae_io_pgtable *data, unsigned long iova,
- 	/* Grab a pointer to the next level */
- 	pte = READ_ONCE(*ptep);
- 	if (!pte) {
--		cptep = __arm_lpae_alloc_pages(tblsz, GFP_ATOMIC, cfg);
-+		cptep = __arm_lpae_alloc_pages(tblsz, gfp, cfg);
- 		if (!cptep)
- 			return -ENOMEM;
- 
-@@ -396,7 +396,7 @@ static int __arm_lpae_map(struct arm_lpae_io_pgtable *data, unsigned long iova,
- 	}
- 
- 	/* Rinse, repeat */
--	return __arm_lpae_map(data, iova, paddr, size, prot, lvl + 1, cptep);
-+	return __arm_lpae_map(data, iova, paddr, size, prot, lvl + 1, cptep, gfp);
- }
- 
- static arm_lpae_iopte arm_lpae_prot_to_pte(struct arm_lpae_io_pgtable *data,
-@@ -461,7 +461,7 @@ static arm_lpae_iopte arm_lpae_prot_to_pte(struct arm_lpae_io_pgtable *data,
- }
- 
- static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
--			phys_addr_t paddr, size_t size, int iommu_prot)
-+			phys_addr_t paddr, size_t size, int iommu_prot, gfp_t gfp)
- {
- 	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
- 	struct io_pgtable_cfg *cfg = &data->iop.cfg;
-@@ -483,7 +483,7 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
- 		return -ERANGE;
- 
- 	prot = arm_lpae_prot_to_pte(data, iommu_prot);
--	ret = __arm_lpae_map(data, iova, paddr, size, prot, lvl, ptep);
-+	ret = __arm_lpae_map(data, iova, paddr, size, prot, lvl, ptep, gfp);
- 	/*
- 	 * Synchronise all PTE updates for the new mapping before there's
- 	 * a chance for anything to kick off a table walk for the new iova.
-@@ -1178,12 +1178,12 @@ static int __init arm_lpae_run_tests(struct io_pgtable_cfg *cfg)
- 			if (ops->map(ops, iova, iova, size, IOMMU_READ |
- 							    IOMMU_WRITE |
- 							    IOMMU_NOEXEC |
--							    IOMMU_CACHE))
-+							    IOMMU_CACHE, GFP_KERNEL))
- 				return __FAIL(ops, i);
- 
- 			/* Overlapping mappings */
- 			if (!ops->map(ops, iova, iova + size, size,
--				      IOMMU_READ | IOMMU_NOEXEC))
-+				      IOMMU_READ | IOMMU_NOEXEC, GFP_KERNEL))
- 				return __FAIL(ops, i);
- 
- 			if (ops->iova_to_phys(ops, iova + 42) != (iova + 42))
-@@ -1198,7 +1198,7 @@ static int __init arm_lpae_run_tests(struct io_pgtable_cfg *cfg)
- 			return __FAIL(ops, i);
- 
- 		/* Remap of partial unmap */
--		if (ops->map(ops, SZ_1G + size, size, size, IOMMU_READ))
-+		if (ops->map(ops, SZ_1G + size, size, size, IOMMU_READ, GFP_KERNEL))
- 			return __FAIL(ops, i);
- 
- 		if (ops->iova_to_phys(ops, SZ_1G + size + 42) != (size + 42))
-@@ -1216,7 +1216,7 @@ static int __init arm_lpae_run_tests(struct io_pgtable_cfg *cfg)
- 				return __FAIL(ops, i);
- 
- 			/* Remap full block */
--			if (ops->map(ops, iova, iova, size, IOMMU_WRITE))
-+			if (ops->map(ops, iova, iova, size, IOMMU_WRITE, GFP_KERNEL))
- 				return __FAIL(ops, i);
- 
- 			if (ops->iova_to_phys(ops, iova + 42) != (iova + 42))
-diff --git a/drivers/iommu/ipmmu-vmsa.c b/drivers/iommu/ipmmu-vmsa.c
-index 4c2972f..87475b2 100644
---- a/drivers/iommu/ipmmu-vmsa.c
-+++ b/drivers/iommu/ipmmu-vmsa.c
-@@ -687,7 +687,7 @@ static int ipmmu_map(struct iommu_domain *io_domain, unsigned long iova,
- 	if (!domain)
- 		return -ENODEV;
- 
--	return domain->iop->map(domain->iop, iova, paddr, size, prot);
-+	return domain->iop->map(domain->iop, iova, paddr, size, prot, gfp);
- }
- 
- static size_t ipmmu_unmap(struct iommu_domain *io_domain, unsigned long iova,
-diff --git a/drivers/iommu/msm_iommu.c b/drivers/iommu/msm_iommu.c
-index 3d8a635..12ce685 100644
---- a/drivers/iommu/msm_iommu.c
-+++ b/drivers/iommu/msm_iommu.c
-@@ -491,7 +491,7 @@ static int msm_iommu_map(struct iommu_domain *domain, unsigned long iova,
- 	int ret;
- 
- 	spin_lock_irqsave(&priv->pgtlock, flags);
--	ret = priv->iop->map(priv->iop, iova, pa, len, prot);
-+	ret = priv->iop->map(priv->iop, iova, pa, len, prot, GFP_ATOMIC);
- 	spin_unlock_irqrestore(&priv->pgtlock, flags);
- 
- 	return ret;
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 2be96f1..b7b1641 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -397,7 +397,7 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
- 		paddr |= BIT_ULL(32);
- 
- 	/* Synchronize with the tlb_lock */
--	return dom->iop->map(dom->iop, iova, paddr, size, prot);
-+	return dom->iop->map(dom->iop, iova, paddr, size, prot, gfp);
- }
- 
- static size_t mtk_iommu_unmap(struct iommu_domain *domain,
-diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
-index c3e1fbd..cfcfd75 100644
---- a/drivers/iommu/qcom_iommu.c
-+++ b/drivers/iommu/qcom_iommu.c
-@@ -441,7 +441,7 @@ static int qcom_iommu_map(struct iommu_domain *domain, unsigned long iova,
- 		return -ENODEV;
- 
- 	spin_lock_irqsave(&qcom_domain->pgtbl_lock, flags);
--	ret = ops->map(ops, iova, paddr, size, prot);
-+	ret = ops->map(ops, iova, paddr, size, prot, GFP_ATOMIC);
- 	spin_unlock_irqrestore(&qcom_domain->pgtbl_lock, flags);
- 	return ret;
- }
-diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
-index 53d53c6..23285ba 100644
---- a/include/linux/io-pgtable.h
-+++ b/include/linux/io-pgtable.h
-@@ -155,7 +155,7 @@ struct io_pgtable_cfg {
-  */
- struct io_pgtable_ops {
- 	int (*map)(struct io_pgtable_ops *ops, unsigned long iova,
--		   phys_addr_t paddr, size_t size, int prot);
-+		   phys_addr_t paddr, size_t size, int prot, gfp_t gfp);
- 	size_t (*unmap)(struct io_pgtable_ops *ops, unsigned long iova,
- 			size_t size, struct iommu_iotlb_gather *gather);
- 	phys_addr_t (*iova_to_phys)(struct io_pgtable_ops *ops,
--- 
-1.8.3.1
+-Frank
+
+On 2020-06-09 06:01, Lee Jones wrote:
+> Good morning,
+> 
+> After a number of reports/queries surrounding a known long-term issue
+> in the MFD core, including the submission of a couple of attempted
+> solutions, I've decided to finally tackle this one myself.
+> 
+> Currently, when a child platform device (sometimes referred to as a
+> sub-device) is registered via the Multi-Functional Device (MFD) API,
+> the framework attempts to match the newly registered platform device
+> with its associated Device Tree (OF) node.  Until now, the device has
+> been allocated the first node found with an identical OF compatible
+> string.  Unfortunately, if there are, say for example '3' devices
+> which are to be handled by the same driver and therefore have the same
+> compatible string, each of them will be allocated a pointer to the
+> *first* node.
+> 
+> Let me give you an example.
+> 
+> I have knocked up an example 'parent' and 'child' device driver.  The
+> parent utilises the MFD API to register 3 identical children, each
+> controlled by the same driver.  This happens a lot.  Fortunately, in
+> the majority of cases, the OF nodes are also totally identical, but
+> what if you wish to configure one of the child devices with different
+> attributes or resources supplied via Device Tree, like a clock?  This
+> is currently impossible.
+> 
+> Here is the Device Tree representation for the 1 parent and the 3
+> child (sub) devices described above:
+> 
+>         parent {
+>                 compatible = "mfd,of-test-parent";
+> 
+>                 child@0 {
+>                         compatible = "mfd,of-test-child";
+> 			clocks = <&clock 0>;
+>                 };
+> 
+>                 child@1 {
+>                         compatible = "mfd,of-test-child";
+> 			clocks = <&clock 1>;
+> 		};
+> 
+> 	        child@2 {
+>                         compatible = "mfd,of-test-child";
+> 			clocks = <&clock 2>;
+>                 };
+>         };
+> 
+> This is how we register those devices from MFD:
+> 
+> static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL("mfd_of_test_child", NULL, NULL, 0, 0, "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd_of_test_child", NULL, NULL, 0, 1, "mfd,of-test-child"),
+> 	OF_MFD_CELL("mfd_of_test_child", NULL, NULL, 0, 2, "mfd,of-test-child")
+> };
+> 
+> ... which we pass into mfd_add_devices() for processing.
+> 
+> In an ideal world.  The devices with the platform_id; 0, 1 and 2 would
+> be matched up to Device Tree nodes; child@0, child@1 and child@2
+> respectively.  Instead all 3 devices will be allocated a pointer to
+> child@0's OF node, which is obviously not correct.
+> 
+> This is how it looks when each of the child devices are probed:
+> 
+>  [0.708287] mfd-of-test-parent mfd_of_test: Registering 3 devices
+>  [...]
+>  [0.712511] mfd-of-test-child mfd_of_test_child.0: Probing platform device: 0
+>  [0.712710] mfd-of-test-child mfd_of_test_child.0: Using OF node: child@0
+>  [0.713033] mfd-of-test-child mfd_of_test_child.1: Probing platform device: 1
+>  [0.713381] mfd-of-test-child mfd_of_test_child.1: Using OF node: child@0
+>  [0.713691] mfd-of-test-child mfd_of_test_child.2: Probing platform device: 2
+>  [0.713889] mfd-of-test-child mfd_of_test_child.2: Using OF node: child@0
+> 
+> "Why is it when I change child 2's clock rate, it also changes 0's?"
+> 
+> Whoops!
+> 
+> So in order to fix this, we need to make MFD more-cleverer!
+> 
+> However, this is not so simple.  There are some rules we should abide
+> by (I use "should" intentionally here, as something might just have to
+> give):
+> 
+>  a) Since Device Tree is designed to describe hardware, inserting
+>     arbitrary properties into DT is forbidden.  This precludes things
+>     we would ordinarily be able to match on, like 'id' or 'name'.
+>  b) As an extension to a) DTs should also be OS agnostic, so
+>     properties like 'mfd-device', 'mfd-order' etc are also not
+>     not suitable for inclusion.
+>  c) The final solution should ideally be capable of supporting both
+>     newly defined and current trees (without retroactive edits)
+>     alike.
+>  d) Existing properties could be used, but not abused.  For example,
+>     one of my suggestions (see below) is to use the 'reg' property.
+>     This is fine in principle but loading 'reg' with arbitrary values
+>     (such as; 0, 1, 2 ... x) which 1) clearly do not have anything to
+>     do with registers and 2) would be meaningless in other OSes/
+>     implementations, just to serve our purpose, is to be interpreted
+>     as an abuse.
+> 
+> Proposal 1:
+> 
+> As mentioned above, my initial thoughts were to use the 'reg' property
+> to match an MFD cell entry with the correct DT node.  However, not
+> all Device Tree nodes have 'reg' properties.  Particularly true in the
+> case of MFD, where memory resources are usually shared with the parent
+> via Regmap, or (as in the case of the ab8500) the MFD handles all
+> register transactions via its own API. 
+> 
+> Proposal 2:
+> 
+> If we can't guarantee that all DT nodes will have at least one
+> property in common to be used for matching and we're prevented from
+> supplying additional, potentially bespoke properties, then we must
+> seek an alternative procedure.
+> 
+> It should be possible to match based on order.  However, the developer
+> would have to guarantee that the order in which the child devices are
+> presented to the MFD API are in exactly the same order as they are
+> represented in the Device Tree.  The obvious draw-back to this
+> strategy is that it's potentially very fragile.
+> 
+> Current Proposal:
+> 
+> How about a collection of Proposal 1 and Proposal 2?  First we could
+> attempt a match on the 'reg' property.  Then, if that fails, we would
+> use the fragile-but-its-all-we-have Proposal 2 as the fall-back.
+> 
+> Thoughts?
+> 
 
 
 _______________________________________________
