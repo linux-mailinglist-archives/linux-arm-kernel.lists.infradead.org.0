@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EC8E1F7C56
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:15:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 328D81F7C5C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:16:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jpzSnBX7634YGLn0sxRLot68AbtB33HndNHtb6vcleY=; b=kZt8rfmB3QMbv5
-	ZYr3892XLmHZR5dBf1UKb4aX625riBNPQ77akSO3BAQmRxskqqtOYw+V7qI4+LCpHuqIfXcC30hrZ
-	wkWzEy/KyKPG111wHmth1MMRcFixvjfXWTv+YIE7i+GyoyfpHf8UXHNXpqyYqSxwDDpmiIzcKxNRi
-	2T5FlNgtJltZGrJEBF9axc3Khk5gpMG3wEm94xiWI6rHhH/by4slL4pVIkaPe8pfxi5B4RUSy96VN
-	aD47B7JR9wA+ElNkeSQspmyWVzhPzTYhct6TeDdl1TVMhCazJhvXy+ZyEwCcNWUnlAfrg7d+u784s
-	fx0fq5mT4I7n1ZR4mNAA==;
+	List-Owner; bh=F85UDALKdcgmb3OvxTXtrDI8xnjsoA9SeQ8s1wp6MVI=; b=mBPbN8LE10Ygdv
+	2fzEC1q9964snb1z45gGwFFWG8Lou2qaL8vxv8UwrY96VSJ6WYJmNlhI7XwsRPyDtUE7rmdDR1/in
+	8nBjPpe5onURWTmEkLLYgOwk7TUeZn3ad+3dqp3YsQn56JqNFH9pFbPZAcxpCIau760dqdNr1wrE+
+	2By9w5KstnlZRHQTKHpe1iONcU9UA3HZrANfiJdrrHDWAsbedJmQdgUd3QruBNpOoH2X5Y9wc3n8+
+	Rnyndh4l575aDk8qx55jp5WY5+mIvkS4XbSGJnsapjpN0fL5mXtJbXf5ey6KUmOG01DOPpty2ug4k
+	fr7ygqSwFQc2ccKx2RKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjnGq-0002AR-LU; Fri, 12 Jun 2020 17:15:12 +0000
+	id 1jjnHe-0005IZ-H3; Fri, 12 Jun 2020 17:16:02 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjnFW-0001GB-EI; Fri, 12 Jun 2020 17:13:52 +0000
+ id 1jjnFY-0001IE-PE; Fri, 12 Jun 2020 17:13:54 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id E31FFAF24;
- Fri, 12 Jun 2020 17:13:50 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id B58D5AEF8;
+ Fri, 12 Jun 2020 17:13:52 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  p.zabel@pengutronix.de, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v3 4/9] ARM: dts: bcm2711: Add reset controller to xHCI node
-Date: Fri, 12 Jun 2020 19:13:28 +0200
-Message-Id: <20200612171334.26385-5-nsaenzjulienne@suse.de>
+ Mathias Nyman <mathias.nyman@intel.com>
+Subject: [PATCH v3 5/9] usb: xhci-pci: Add support for reset controllers
+Date: Fri, 12 Jun 2020 19:13:29 +0200
+Message-Id: <20200612171334.26385-6-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200612171334.26385-1-nsaenzjulienne@suse.de>
 References: <20200612171334.26385-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_101350_618762_0450E483 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20200612_101353_141813_FC668C1D 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,9 +63,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, tim.gover@raspberrypi.org,
- mathias.nyman@linux.intel.com, linux-pci@vger.kernel.org,
- linux-usb@vger.kernel.org, andy.shevchenko@gmail.com,
+Cc: tim.gover@raspberrypi.org, mathias.nyman@linux.intel.com,
+ linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, andy.shevchenko@gmail.com,
  lorenzo.pieralisi@arm.com, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, helgaas@kernel.org,
  linux-arm-kernel@lists.infradead.org
@@ -75,52 +74,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The chip is hardwired to the board's PCIe bus and needs to be properly
-setup trough a firmware routine after a PCI fundamental reset. Pass the
-reset controller phandle that takes care of triggering the
-initialization to the relevant PCI device.
+Some atypical users of xhci-pci might need to manually reset their xHCI
+controller before starting the HCD setup. Check if a reset controller
+device is available to the PCI bus and trigger a reset.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 
 ---
 
 Changes since v2:
- - Use dt-bindings to access IDs
+ - Also reset on resume
 
 Changes since v1:
- - Update to match new binding
+ - Use proper reset API
+ - Make code simpler
 
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/usb/host/xhci-pci.c | 10 ++++++++++
+ drivers/usb/host/xhci.h     |  2 ++
+ 2 files changed, 12 insertions(+)
 
-diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-index 0cef95058fb0..e20979013414 100644
---- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-+++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-@@ -4,6 +4,8 @@
- #include "bcm2835-rpi.dtsi"
- #include "bcm283x-rpi-usb-peripheral.dtsi"
+diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
+index ef513c2fb843..e76b9283faa3 100644
+--- a/drivers/usb/host/xhci-pci.c
++++ b/drivers/usb/host/xhci-pci.c
+@@ -12,6 +12,7 @@
+ #include <linux/slab.h>
+ #include <linux/module.h>
+ #include <linux/acpi.h>
++#include <linux/reset.h>
  
-+#include <dt-bindings/reset/raspberrypi,firmware-reset.h>
-+
- / {
- 	compatible = "raspberrypi,4-model-b", "brcm,bcm2711";
- 	model = "Raspberry Pi 4 Model B";
-@@ -207,6 +209,13 @@ phy1: ethernet-phy@1 {
- 	};
- };
+ #include "xhci.h"
+ #include "xhci-trace.h"
+@@ -339,6 +340,7 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
+ 	struct xhci_hcd *xhci;
+ 	struct usb_hcd *hcd;
+ 	struct xhci_driver_data *driver_data;
++	struct reset_control *reset;
  
-+&pcie0 {
-+	usb@1,0 {
-+		reg = <0 0 0 0 0>;
-+		resets = <&reset RASPBERRYPI_FIRMWARE_RESET_ID_USB>;
-+	};
-+};
+ 	driver_data = (struct xhci_driver_data *)id->driver_data;
+ 	if (driver_data && driver_data->quirks & XHCI_RENESAS_FW_QUIRK) {
+@@ -347,6 +349,11 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
+ 			return retval;
+ 	}
+ 
++	reset = devm_reset_control_get_optional_exclusive(&dev->bus->dev, NULL);
++	if (IS_ERR(reset))
++		return PTR_ERR(reset);
++	reset_control_reset(reset);
 +
- /* uart0 communicates with the BT module */
- &uart0 {
- 	pinctrl-names = "default";
+ 	/* Prevent runtime suspending between USB-2 and USB-3 initialization */
+ 	pm_runtime_get_noresume(&dev->dev);
+ 
+@@ -364,6 +371,7 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
+ 	/* USB 2.0 roothub is stored in the PCI device now. */
+ 	hcd = dev_get_drvdata(&dev->dev);
+ 	xhci = hcd_to_xhci(hcd);
++	xhci->reset = reset;
+ 	xhci->shared_hcd = usb_create_shared_hcd(&xhci_pci_hc_driver, &dev->dev,
+ 						 pci_name(dev), hcd);
+ 	if (!xhci->shared_hcd) {
+@@ -515,6 +523,8 @@ static int xhci_pci_resume(struct usb_hcd *hcd, bool hibernated)
+ 	struct pci_dev		*pdev = to_pci_dev(hcd->self.controller);
+ 	int			retval = 0;
+ 
++	reset_control_reset(xhci->reset);
++
+ 	/* The BIOS on systems with the Intel Panther Point chipset may or may
+ 	 * not support xHCI natively.  That means that during system resume, it
+ 	 * may switch the ports back to EHCI so that users can use their
+diff --git a/drivers/usb/host/xhci.h b/drivers/usb/host/xhci.h
+index 2c6c4f8d1ee1..379ffa24877d 100644
+--- a/drivers/usb/host/xhci.h
++++ b/drivers/usb/host/xhci.h
+@@ -1770,6 +1770,8 @@ struct xhci_hcd {
+ 	/* optional clocks */
+ 	struct clk		*clk;
+ 	struct clk		*reg_clk;
++	/* optional reset controller */
++	struct reset_control *reset;
+ 	/* data structures */
+ 	struct xhci_device_context_array *dcbaa;
+ 	struct xhci_ring	*cmd_ring;
 -- 
 2.26.2
 
