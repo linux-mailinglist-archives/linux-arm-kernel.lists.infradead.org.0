@@ -2,66 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 470611F739F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 07:51:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 796131F73DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 08:23:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mXSiPL5Rsfjv9TGgHokOhHsRaeC0HdeArZ9wMpg1vL4=; b=ihOvkjbRdAq9h+6tzoFMM2Q4D
-	1Y0JQRqvv7snGaM6kJe3av1SSBCmP1uozNgjlaHw1N3bN/ccHcxeP+z4c/bGVfjpWobtAZqnhHE95
-	7TOARTpkUeeO0hWYLoOfuqGpfo+qJcQ9nvKf90mBxoZKWav/VpHiNO7pX/XTbFzaCYrudgJNQVXUy
-	D2yjGUVuk7T7PEY8TQEr8KYHaymh2a8cwTCXhkNRmxmC2tHJmySbbsGRoNbUgPaFAH2FI52DsdOrK
-	YIJX99XdKqYBAZf65hFPUje5XkuityKq2qH0gRZEl4H3hLHT+y7ZvKid68xunQwwnjvY0loo1x5Df
-	r881Jam0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V+ytWZHfapNlTnJzsdFbYlOdn0Gy0tHealD0cFBFc84=; b=nNBJOGHMeEJ/Pw
+	nWfI2opBt5kw6vmJkjYGo4BYqvHs0zEIeNeduGUaA8fQeojpnqIBVdEz5ANTKAJaH1NTkVWk58+Kd
+	7fVO1v0Jq93QgWjP49FIKm8WOYl+h4P7DjsBX35GTULTTCPu0l8kJ4N6PGHtT23O4nM/pHRNUw/hA
+	JRw9XPS6WTeXqfewIuLBGCOLq78yjgL6+x92HzhhDM+tZhnYoigHmDJytU8yP63p9/h3uQHLR7bqe
+	eAjFAkmMZuqYSAkTPUZ7brtrwfi2jHuVGBm1N1twQm7PCVttgMFgVW20x5npGfDi5IQSjPUSqB78S
+	WU55QjCVajfVClpAbNkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjcbB-0001MG-N2; Fri, 12 Jun 2020 05:51:29 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jjd5d-00013D-Br; Fri, 12 Jun 2020 06:22:57 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjcb3-0001LP-Sc
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 05:51:23 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jjcax-0001At-1g; Fri, 12 Jun 2020 07:51:15 +0200
-Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ore@pengutronix.de>)
- id 1jjcaw-0004hA-6g; Fri, 12 Jun 2020 07:51:14 +0200
-Date: Fri, 12 Jun 2020 07:51:14 +0200
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
-Message-ID: <20200612055114.alhm2uakoze6epvf@pengutronix.de>
-References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
+ id 1jjd5V-00012H-5q
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 06:22:50 +0000
+Received: by mail-wm1-x342.google.com with SMTP id r15so7149282wmh.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 11 Jun 2020 23:22:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=r35/raZrWclZAQmDzK4QKGB4/ZtwPhHpA9L2VMxUYi0=;
+ b=sHazt5Fwsvd+Og9/lqG/YprtOJYONjtaj7z08uneab2SJkRHMzqRUKn1v8POaYQOA2
+ zHz0/+OMQvZIb8YYNsYmjNXYUPUgVEQT26KXtNg8vm/T9C8pQuO9BtKyHsEy+A0nfCFf
+ wcB+W0Qpecva9B3Iw2Q3MHF53Vo3pji+WvOfnoyK5bsRzoQ/74XU/u706hSAF+KHHN4+
+ 2vvw63H0YZgUE0sNPAYF30qLixeRfwKACybBvfwfqwsCE1D2H1NN0c9+Ki/Uf/qcJ8oF
+ 9KvaznHC8ARcXKlWngB5c+c6s0RxHKD9RZQp5zggoTFa6q0yiNODbR3fdxPaP2CtgGDT
+ yiSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=r35/raZrWclZAQmDzK4QKGB4/ZtwPhHpA9L2VMxUYi0=;
+ b=CwbAOmhatP4923vR43Ryb8IT1pIfVEgWyW3Xp+S8bJS6oD9/URzfAqr8X7izqz3obP
+ bbIu6my+Nmz8upllFBO7+MXwkH9/UPOjtfdyv0XIrc4OFAUjbsT2JJM5tnfKHs9Bwnk2
+ 2BSIGXAMwJwpL5VrfT49A79Mwt1A1VySAyexrPOveE95b/h8m9arjnQkgwb8YASPuoWU
+ FTqOOmzc5rs/IMgqClFs/k+1WiQPtuc2JPO56bKAFQOoH5DyLvpKpKCdWGck3WR2vlQu
+ uJOZmaGx8Z50qBQP2YhnycIj5Xvsqjldkk4XFB2sHC/fH5PUZZN6xRxFhaNtxE8Q1QiM
+ 1N9A==
+X-Gm-Message-State: AOAM531+P15K7V61QhrQjEshQPnoZ/mqONzZWVy2tSo6sh/Kosg9OWIG
+ MU2fXnxuKtNV49oq7zjsXE2Xhg==
+X-Google-Smtp-Source: ABdhPJyMZ7jdqnrLlGWZOxx1xPXmlGZ65EoGe9atgpeXrfY05P+k4z1xx3SC4VvX1avfKNeZJIy8Ow==
+X-Received: by 2002:a1c:c2c5:: with SMTP id s188mr11700526wmf.18.1591942963832; 
+ Thu, 11 Jun 2020 23:22:43 -0700 (PDT)
+Received: from dell ([2.27.167.101])
+ by smtp.gmail.com with ESMTPSA id o18sm7463231wme.19.2020.06.11.23.22.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 11 Jun 2020 23:22:43 -0700 (PDT)
+Date: Fri, 12 Jun 2020 07:22:40 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Frank Rowand <frowand.list@gmail.com>
+Subject: Re: [RFC] MFD's relationship with Device Tree (OF)
+Message-ID: <20200612062240.GC4106@dell>
+References: <20200609110136.GJ4106@dell>
+ <7cf94809-7346-31bc-877c-679ecc4d9710@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1591796802-23504-1-git-send-email-krzk@kernel.org>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 07:44:14 up 209 days, 21:02, 203 users,  load average: 0.00, 0.03,
- 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <7cf94809-7346-31bc-877c-679ecc4d9710@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_225121_919794_F3A52F45 
-X-CRM114-Status: GOOD (  21.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200611_232249_225951_77FFDC5C 
+X-CRM114-Status: UNSURE (   7.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,187 +99,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fugang Duan <B38611@freescale.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Gao Pan <b54642@freescale.com>, Oleksij Rempel <linux@rempel-privat.de>,
- Wolfram Sang <wsa@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, stable@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============0793559600400836421=="
+Cc: devicetree <devicetree@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Michael Walle <michael@walle.cc>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Guenter Roeck <linux@roeck-us.net>,
+ GregKroah-Hartmangregkh@linuxfoundation.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Robin Murphy <robin.murphy@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============0793559600400836421==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="675fbwrfjanyjbzb"
-Content-Disposition: inline
-
-
---675fbwrfjanyjbzb
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Krzysztof,
-
-thank you for your patch.
-
-On Wed, Jun 10, 2020 at 03:46:42PM +0200, Krzysztof Kozlowski wrote:
-> If interrupt comes early (could be triggered with CONFIG_DEBUG_SHIRQ),
-> the i2c_imx_isr() will access registers before the I2C hardware is
-> initialized.  This leads to external abort on non-linefetch on Toradex
-> Colibri VF50 module (with Vybrid VF5xx):
->=20
->     Unhandled fault: external abort on non-linefetch (0x1008) at 0x8882d0=
-03
->     Internal error: : 1008 [#1] ARM
->     Modules linked in:
->     CPU: 0 PID: 1 Comm: swapper Not tainted 5.7.0 #607
->     Hardware name: Freescale Vybrid VF5xx/VF6xx (Device Tree)
->       (i2c_imx_isr) from [<8017009c>] (free_irq+0x25c/0x3b0)
->       (free_irq) from [<805844ec>] (release_nodes+0x178/0x284)
->       (release_nodes) from [<80580030>] (really_probe+0x10c/0x348)
->       (really_probe) from [<80580380>] (driver_probe_device+0x60/0x170)
->       (driver_probe_device) from [<80580630>] (device_driver_attach+0x58/=
-0x60)
->       (device_driver_attach) from [<805806bc>] (__driver_attach+0x84/0xc0)
->       (__driver_attach) from [<8057e228>] (bus_for_each_dev+0x68/0xb4)
->       (bus_for_each_dev) from [<8057f3ec>] (bus_add_driver+0x144/0x1ec)
->       (bus_add_driver) from [<80581320>] (driver_register+0x78/0x110)
->       (driver_register) from [<8010213c>] (do_one_initcall+0xa8/0x2f4)
->       (do_one_initcall) from [<80c0100c>] (kernel_init_freeable+0x178/0x1=
-dc)
->       (kernel_init_freeable) from [<80807048>] (kernel_init+0x8/0x110)
->       (kernel_init) from [<80100114>] (ret_from_fork+0x14/0x20)
->=20
-> Additionally, the i2c_imx_isr() could wake up the wait queue
-> (imx_i2c_struct->queue) before its initialization happens.
->=20
-> Fixes: 1c4b6c3bcf30 ("i2c: imx: implement bus recovery")
-> Cc: <stable@vger.kernel.org>
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-
-I assume register access is aborted, because the IP core clock is not
-enabled. In this case we have bigger problem then just probe.
-
-Since this driver support runtime power management, the clock will be
-disabled as soon as transfer is done. It means, on shared interrupt, we
-will get in trouble even if there is no active transfer.
-
-So, probably the only way to fix it, is to check in i2c_imx_isr() if the
-HW is expected to be active and register access should be save.
-
-Regards,
-Oleksij
-
-
-> ---
->  drivers/i2c/busses/i2c-imx.c | 20 ++++++++++----------
->  1 file changed, 10 insertions(+), 10 deletions(-)
->=20
-> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-> index 0ab5381aa012..e28a39f4840f 100644
-> --- a/drivers/i2c/busses/i2c-imx.c
-> +++ b/drivers/i2c/busses/i2c-imx.c
-> @@ -1171,14 +1171,6 @@ static int i2c_imx_probe(struct platform_device *p=
-dev)
->  		return ret;
->  	}
-> =20
-> -	/* Request IRQ */
-> -	ret =3D devm_request_irq(&pdev->dev, irq, i2c_imx_isr, IRQF_SHARED,
-> -				pdev->name, i2c_imx);
-> -	if (ret) {
-> -		dev_err(&pdev->dev, "can't claim irq %d\n", irq);
-> -		goto clk_disable;
-> -	}
-> -
->  	/* Init queue */
->  	init_waitqueue_head(&i2c_imx->queue);
-> =20
-> @@ -1223,6 +1215,14 @@ static int i2c_imx_probe(struct platform_device *p=
-dev)
->  	if (ret < 0)
->  		goto clk_notifier_unregister;
-> =20
-> +	/* Request IRQ */
-> +	ret =3D devm_request_irq(&pdev->dev, irq, i2c_imx_isr, IRQF_SHARED,
-> +				pdev->name, i2c_imx);
-> +	if (ret) {
-> +		dev_err(&pdev->dev, "can't claim irq %d\n", irq);
-> +		goto i2c_del_adapter;
-> +	}
-> +
->  	pm_runtime_mark_last_busy(&pdev->dev);
->  	pm_runtime_put_autosuspend(&pdev->dev);
-> =20
-> @@ -1237,6 +1237,8 @@ static int i2c_imx_probe(struct platform_device *pd=
-ev)
-> =20
->  	return 0;   /* Return OK */
-> =20
-> +i2c_del_adapter:
-> +	i2c_del_adapter(&i2c_imx->adapter);
->  clk_notifier_unregister:
->  	clk_notifier_unregister(i2c_imx->clk, &i2c_imx->clk_change_nb);
->  rpm_disable:
-> @@ -1244,8 +1246,6 @@ static int i2c_imx_probe(struct platform_device *pd=
-ev)
->  	pm_runtime_disable(&pdev->dev);
->  	pm_runtime_set_suspended(&pdev->dev);
->  	pm_runtime_dont_use_autosuspend(&pdev->dev);
-> -
-> -clk_disable:
->  	clk_disable_unprepare(i2c_imx->clk);
->  	return ret;
->  }
-> --=20
-> 2.7.4
->=20
->=20
-
---=20
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
---675fbwrfjanyjbzb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl7jF8sACgkQ4omh9DUa
-UbPIFhAAkkATHRnFjVhIiX/k9+AbZ+92VMcAfHzpiv0RrjcQVHWRjtBCEP0U4AAY
-O/LJhpYqxJ270L+pOsQM8P0bTtgOMpNlDhlleLu5Lxnwoe+N0EsPi3n/SxQV8w4h
-QY/15HXdgUE0dVe2Z7dzYwwtRo5E4NaYKf+nY6GL0jCBqXIfREkEz211ND1EeDE9
-YrpAHXDZ4IkjA4pqseL4ztxOiQPIAQcEqH6B6RM4JlKGz08WEcV2huetITQDmOgD
-ETdvVY95WIkTPPxnKTORtbXuweZh6LRvTpwP4uQno4k64cd68rOt/3acxjkMyvMX
-MNDj/ba6MuPqg9nu/cDgYoruc+2MFuGB4bOKJ7Bg+1AZek9ufJw5sx/sRksRegRn
-VYNEaEJ35lIh9malYDso75E4TmZesFq4oTsBpRHa9rJmOJVjPA+ed+fbPx7b6UCj
-ypfnEZeVpggb1+55wQWT5FiFbXL8G8tlhpxXhNnjvfrlPyEIekVPdkrcYV3qZpxY
-Mpd2LB36ZlCHVHt2icFAQs92OKRpL3orHA7XvOtZFMbWtxwQ9LjAQs0tYP5pMPP2
-WcnLFn3iPFD1f3644lMrd+u/R2qLlHxBMTrMCXj4iBoJ5lzr9iVrER4Dr5JwHtXN
-dwhEM8cbASGPG8Yvk0I2nx91p/cfAyJTWVRvOaozUE5xgdWCObk=
-=KCIC
------END PGP SIGNATURE-----
-
---675fbwrfjanyjbzb--
-
-
---===============0793559600400836421==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0793559600400836421==--
-
+T24gVGh1LCAxMSBKdW4gMjAyMCwgRnJhbmsgUm93YW5kIHdyb3RlOgoKPiBQbGVhc2UgYWRkIG1l
+IHRvIHRoZSBkaXN0cmlidXRpb24gbGlzdCBmb3IgZnV0dXJlIHZlcnNpb25zIG9mIHRoaXMuCgpU
+aGUgc29sdXRpb24gcGF0Y2ggaXMgYWxyZWFkeSBvbiB2Mi4KCmh0dHBzOi8vbG9yZS5rZXJuZWwu
+b3JnL2xrbWwvMjAyMDA2MTExOTEwMDIuMjI1NjU3MC0xLWxlZS5qb25lc0BsaW5hcm8ub3JnLwoK
+SSdsbCBib3VuY2UgaXQgdG8geW91LgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpTZW5pb3Ig
+VGVjaG5pY2FsIExlYWQgLSBEZXZlbG9wZXIgU2VydmljZXMKTGluYXJvLm9yZyDilIIgT3BlbiBz
+b3VyY2Ugc29mdHdhcmUgZm9yIEFybSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdp
+dHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
