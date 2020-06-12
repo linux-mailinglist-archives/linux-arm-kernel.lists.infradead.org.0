@@ -2,88 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1E2D1F77E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:27:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34DB41F77F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:28:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+d4sRA6RNzluFrjfuk3wiZcZvcEXoencjeKOR9dKuP4=; b=Y7R+WtgaFIMopG
-	frtOqFbIbfjnJV9pKfOX8WnBw1BxTcugZoM9LHD7Y7H8kpDXeAxsDQbHyjVAmpJEnb3n1x3ibc3Dp
-	IMbW+pIRDKCNsi83BvtoV6simapfmS9CYWHEaBePldJXyrXuojya5gSJ2mOB0f38/QWxIhQ5gM0As
-	nQ4dVrhjKHP9b62V8f7D/OQ/S+70pw/Q6isaGJCGGmCJ3kGDoosN5t9u+QObMqxu+dBPTGqIrZKUV
-	TxDB6wXhZlqZd6TmnJ93a7sghhgZ/3ygqxtm79TnmrVTi3D74RwQ1qJN/501yakDlXAAop9GRTQAG
-	TImEEMpKXBk33KsqHI8A==;
+	List-Owner; bh=cQw+R+D1Vbu9oK9b5As4cM5f2lKJZ3GuiWg6kKEiqKw=; b=q+fQvetkFepGkK
+	8yp5Ks34sUFHy2flf3bOKUf2ZSqGVNrGsZK+4/aspGDkF8kFwr8l44e+ddD2gaQNhXoIabq6vKD90
+	rr3aitJXhMy1rkG4hYhQkgp1X2TrE3ZYgGptFw9wh8OXb6zK2HdUaTjFs+yP1JCIIHaJWdCptlk46
+	/fGw9kjNhTKm5hv140OImStYnhuVVtolvfDw6PkFAuGmwy7McBsuErbo5FKjgnnpHnWuALhNZ9N+s
+	ay+ljC9byQFPMr7RyC0X2yNGKJLJnsQZpuVNct/CKl48mTQ66lAx+hvoVAlRfqkZhjGuCPD+/ctcn
+	9JVNISqu77KwDUN+IjAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjimf-0000DE-Fr; Fri, 12 Jun 2020 12:27:45 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1jjinU-0000Tm-IG; Fri, 12 Jun 2020 12:28:36 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjimX-0000CQ-7L
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:27:38 +0000
-Received: by mail-qk1-x744.google.com with SMTP id b27so8717140qka.4
+ id 1jjinK-0000TR-1M
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:28:27 +0000
+Received: by mail-qk1-x741.google.com with SMTP id q8so8695988qkm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 05:27:35 -0700 (PDT)
+ Fri, 12 Jun 2020 05:28:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=tLsYfW4RvheYw9CTrX8bz1lS4lnmm2tAaCXBCxYWoEQ=;
- b=MH05/iQOWHCHtXEzT/j87+oMOe4Ehszd4i8qMJaU6IlFrgT0hhW5I3HK1PrbLC/Qck
- aAv/hhZ8afPHNSDyMGRD2r88qciFMfDNjbugPS7sBf2RsxvRNjInlBnlVqqqzDIiI7Rh
- 1zXeabBiBZuftgS4wow31QmOGoT1lczlwEtPi0YoYwGZH65tgoGk3nium8hrEtYYrEuj
- RjvWysY3mmxHSxNZ2DOJZLhOhyEJh9MHpIx6OsWIpOUGIi5XY53/miD1Ib714okQUse5
- 0u4n7rfBHd09G/wHg7WdoN42B2qJ9LVpxJDEg2nhv36TDAaS3g+90/f7pZz2cydGNeRu
- tE3A==
+ bh=BwnXafa4LmXGLB71ZYrE45hOUaY6Ry8WpQioJAukJwo=;
+ b=tM3daYK/gAR1iS+T2VTFj1FfUq932KVqnJEu6zoTjeHlBb3JPZ1CcFidzqtl77RZGv
+ BEiKHtBWAXZYgrnE/bhoawU8XshBmXodLQdTEsyzhOsRw3gem8/WD3QneuFyIBUQJph8
+ 8PQ/rpLPXwZGwfULK6sgPoIP8fA6Yedb459rN/Fu1IPFVHhrK6M2L1P22gixOnVNk82f
+ lqle6nhvtl3PF02YIOuXc+wGQ2gLWzRolYHdZSRg3Z8sM7bFU/rj5hSsgF9aAE0wSx0+
+ Qk0nIqtodjqhYYUnriQstY8IUO3KmTjx414v3o9/RfUPWIX/goFbGcVvq7aEjnudcUOH
+ 7XSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=tLsYfW4RvheYw9CTrX8bz1lS4lnmm2tAaCXBCxYWoEQ=;
- b=Ket8+VL15dunFQA0kqA7E2wRnqnyqvB2sWRsjHNO8N2tHFZK8cwwCNm40DTzbIKKTZ
- x6Y0cx3AR/6X52hk/s5EGYOYHqBP7O6S4ATBsE8jg4mB82f0MfRKd8DlUnpcABLpsokY
- Nr+NoFODMvEx/RWzN7rpuj2PV7lMTdN0BRSVIGPIWhIQqYVkeloN/vWAh+40mAZXkNt0
- j29ueByechwwWH8cveCFDIwowSPN01QMpVFX//AGehIs/wStepwAlMGsAXh2aq74aAOv
- KGsJ4I6FZX7YdEpjkWm6PiY3QgDlyKGeBBusHFrvl98z6KgPbZ37/bUxf1b1mVirfcwK
- tEiw==
-X-Gm-Message-State: AOAM533ZGtMp6fGCCcc/cu03mMHqtLafZcCpene+fo/zsUvicY419exT
- Q7QW7ef0JqbLQx7Q74ARoq0=
-X-Google-Smtp-Source: ABdhPJzQrd9/sO1InrMTv8fzLY+uBcD1JYvMHAmp8wEARA5eSwbGqDdAQI7YwopBMXTQ4OfmSLiqtA==
-X-Received: by 2002:a37:be43:: with SMTP id o64mr2658766qkf.322.1591964855029; 
- Fri, 12 Jun 2020 05:27:35 -0700 (PDT)
+ bh=BwnXafa4LmXGLB71ZYrE45hOUaY6Ry8WpQioJAukJwo=;
+ b=fto/HZquRJ2W/BSsnV6DgVkV2NCskpFWfH2Kp69ozG6SCdJ+4S0lzu/6ROP11KAj+h
+ lH3q9WBT1xCDwmCoQQIU6VG1VAMFuwfWGWk+24J13Va3XhYbaBKsn3K1Hl+HnggeFDv2
+ nWucml3QzEyv5QCoHxwgblfq9FKiwQ5YdC511zu7BV/Un4HzajYTwvhReRfSEPdbKL9r
+ 9iJXdfoVr7eIArq78MokPfsWzwPUbPd5wCWXtyo48eM5ovYXu5xbAzsFxuEBsPL8vvm2
+ Y8HXIrdygPc7PTlyQO2TvfuG6yBSsLnRG+IIcP4IeI2dccmxFAO05vT1uSFEn2DVK9sa
+ V3rQ==
+X-Gm-Message-State: AOAM533OI5N3YLTbVzvcZd43Pn+vzHPJFQtNKSlFuuYSbC0bM7montPh
+ Pc1hOsbgQI5rW//GxrSCYX4=
+X-Google-Smtp-Source: ABdhPJwvcSx6JECJEhRXZoRxrBOfrUTYOwVnxOlQVa6Yr+1fad4QCQlU5GdR5k5YIodWz6aXggeRlA==
+X-Received: by 2002:a37:e205:: with SMTP id g5mr2713401qki.451.1591964904689; 
+ Fri, 12 Jun 2020 05:28:24 -0700 (PDT)
 Received: from [192.168.1.46] (c-73-88-245-53.hsd1.tn.comcast.net.
  [73.88.245.53])
- by smtp.gmail.com with ESMTPSA id o66sm4306188qka.60.2020.06.12.05.27.33
+ by smtp.gmail.com with ESMTPSA id m53sm4776290qtb.64.2020.06.12.05.28.23
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 12 Jun 2020 05:27:34 -0700 (PDT)
-Subject: Re: [PATCH v2 2/3] mfd: core: Fix formatting of MFD helpers
+ Fri, 12 Jun 2020 05:28:24 -0700 (PDT)
+Subject: Re: [PATCH v2 3/3] mfd: core: Add OF_MFD_CELL_REG() helper
 To: Lee Jones <lee.jones@linaro.org>, andy.shevchenko@gmail.com,
  michael@walle.cc, robh+dt@kernel.org, broonie@kernel.org,
  devicetree@vger.kernel.org, linus.walleij@linaro.org, linux@roeck-us.net,
  andriy.shevchenko@linux.intel.com, robin.murphy@arm.com,
  gregkh@linuxfoundation.org, Frank Rowand <frowand.list@gmail.com>
 References: <20200611191002.2256570-1-lee.jones@linaro.org>
- <20200611191002.2256570-2-lee.jones@linaro.org>
+ <20200611191002.2256570-3-lee.jones@linaro.org>
 From: Frank Rowand <frowand.list@gmail.com>
-Message-ID: <e46a0d3f-80c4-dc36-8002-96740316b442@gmail.com>
-Date: Fri, 12 Jun 2020 07:27:33 -0500
+Message-ID: <6881d95e-c12b-8133-b27c-82c0a2842fd6@gmail.com>
+Date: Fri, 12 Jun 2020 07:28:23 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200611191002.2256570-2-lee.jones@linaro.org>
+In-Reply-To: <20200611191002.2256570-3-lee.jones@linaro.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_052737_264718_AABA7954 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20200612_052826_082437_0407870B 
+X-CRM114-Status: GOOD (  13.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [frowand.list[at]gmail.com]
@@ -118,50 +118,59 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 +Frank (me)
 
 On 2020-06-11 14:10, Lee Jones wrote:
-> Remove unnecessary '\'s and leading tabs.
-> 
-> This will help to clean-up future diffs when subsequent changes are
-> made.
-> 
-> Hint: The aforementioned changes follow this patch.
+> Extend current list of helpers to provide support for parent drivers
+> wishing to match specific child devices to particular OF nodes.
 > 
 > Signed-off-by: Lee Jones <lee.jones@linaro.org>
 > ---
->  include/linux/mfd/core.h | 20 ++++++++++----------
->  1 file changed, 10 insertions(+), 10 deletions(-)
+>  include/linux/mfd/core.h | 17 +++++++++++------
+>  1 file changed, 11 insertions(+), 6 deletions(-)
 > 
 > diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
-> index a148b907bb7f1..ae1c6f90388ba 100644
+> index ae1c6f90388ba..7ce1de99cd8b8 100644
 > --- a/include/linux/mfd/core.h
 > +++ b/include/linux/mfd/core.h
-> @@ -26,20 +26,20 @@
+> @@ -14,7 +14,7 @@
+>  
+>  #define MFD_RES_SIZE(arr) (sizeof(arr) / sizeof(struct resource))
+>  
+> -#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, _match)\
+> +#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, _of_reg, _use_of_reg,_match) \
+>  	{								\
+>  		.name = (_name),					\
+>  		.resources = (_res),					\
+> @@ -22,24 +22,29 @@
+>  		.platform_data = (_pdata),				\
+>  		.pdata_size = (_pdsize),				\
+>  		.of_compatible = (_compat),				\
+> +		.of_reg = (_of_reg),					\
+> +		.use_of_reg = (_use_of_reg),				\
+>  		.acpi_match = (_match),					\
 >  		.id = (_id),						\
 >  	}
 >  
-> -#define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat)		\
-> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, NULL)	\
-> +#define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat) \
-> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, NULL)
+> +#define OF_MFD_CELL_REG(_name, _res, _pdata, _pdsize,_id, _compat, _of_reg) \
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, _of_reg, true, NULL)
+> +
+>  #define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat) \
+> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, NULL)
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, 0, false, NULL)
 >  
-> -#define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match)	\
-> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, _match)	\
-> +#define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match) \
-> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, _match)
+>  #define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match) \
+> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, _match)
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0, false, _match)
 >  
-> -#define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id)		\
-> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, NULL)	\
-> +#define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id) \
-> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, NULL)
+>  #define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id) \
+> -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, NULL)
+> +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0, false, NULL)
 >  
-> -#define MFD_CELL_RES(_name, _res)					\
-> -	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, NULL)		\
-> +#define MFD_CELL_RES(_name, _res) \
-> +	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, NULL)
+>  #define MFD_CELL_RES(_name, _res) \
+> -	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, NULL)
+> +	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, 0, false, NULL)
 >  
-> -#define MFD_CELL_NAME(_name)						\
-> -	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, NULL)		\
-> +#define MFD_CELL_NAME(_name) \
-> +	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, NULL)
+>  #define MFD_CELL_NAME(_name) \
+> -	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, NULL)
+> +	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, 0, false, NULL)
 >  
 >  struct irq_domain;
 >  struct property_entry;
