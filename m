@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C7201F791E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:56:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9A821F7926
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:57:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qp9YVQWHrJZpy4ubU4h0rfz09hF4XsJWilZ2kprWHLs=; b=GdW1ounU9JWIyTyW9zUBKn2vWZ
-	HZXEhhBK+fLeGu6HPOVHpGagsqVmot19Wp3IOFUUnvWgaKJCvKYcjJyIbBe9GSqHMHKEFrqUx4roV
-	7aVkHnbxr355wN9LhYhjMh5LO5VITG5Mjkk+KfgFMFTVa3ScpOLeOkvgZwlD3dhSYml5E608gJ5fu
-	bEK46sAsADTnTm2h4w2fsRvUIOQ+DBuXX8M9JqIynPeoQUpndQagmv+UuSLb7IRivS2mSfxwfNcLb
-	aeI9lS92ExyVIbWfUu018f9zoXO/w0MEQc/lmVMzA0OKR8EqObSoL81UpKNRSY/OkHYozb9gqIGw8
-	ayqDRvBQ==;
+	bh=NWrl0dhl7dXU+Gr/V/t0+nscbwP5Q9HcZEeetVQHEmM=; b=PQ8WahmuVBiEIYUIms7JEtcx/B
+	VhhtxcSUa9lni1eodtRnOcvSzrsQZReVluJnfas2RZIQbUkD/ObbXabMhq6B0nV7NH75exzgbVUa5
+	MKDDyGDRWWQaithyebeLldmr+LRI3RESZpkLzkteF1he5vUXdnwf5FYOS5dAhpGSZRXZc7cZOLDA4
+	TmFAH0EfPP6A/YjbyYaZbxTzI7kq7/33dfYK5dMk/W6149W0uIoFNfGSnz9kG+fn3pPCYD9KnxkCD
+	1p7+tgSgd9PTusomF3DVqDQ2wfl9xW+2kuj4xImUuWaZjlp2dztRhjr1N3uS3zXTmMOstuERHHYTd
+	x3a1fI+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjkAc-0006QT-RV; Fri, 12 Jun 2020 13:56:34 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jjkB5-0006rr-Ti; Fri, 12 Jun 2020 13:57:03 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjk8m-0002mo-6C
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:54:42 +0000
-Received: by mail-lj1-x242.google.com with SMTP id n24so11120213lji.10
+ id 1jjk8o-0002oB-3m
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:54:44 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 9so11186701ljc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 06:54:39 -0700 (PDT)
+ Fri, 12 Jun 2020 06:54:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=WjXebY5QtcvN7Odp1pbuemzpCVQPCaprQRcJnauls1g=;
- b=peiWVTRCg47yjNrbsYphiBIijTqsAzjWx9osQFgAUKmC+mGepQFCBp5l/aKJvlvkeP
- kEsVlus8op6mYV7IM+SLiQvI/CylTH3wWYDRW3VHtFlWEGJgn/qmmso+Q4Hwh3JhxFwR
- iPP3fLIQFq1EXGOeCp7hQ2nPpp7nOEWMxS7UB1c4ecVUwPbjN43PI9GtMqGKbZVOFuhT
- 6muQJDOeyLcROlONSPImTEc+PR2jvaCL4+5/ZzF7cAmNml9t8zxpXDHWORfCjtyfJqFr
- uOYMFumdUg/x8IDf1z02ly+Fh+XCeHrFVk4rLTy4yzJtVN247opTQVDJRchjzfAbU0gn
- 3Skg==
+ bh=VUUHzTYdCTkEy8qJLKBgOAUld/T0D8KqCFLo4EbK13A=;
+ b=FWhMXcsOEds3+BBPQIYyMZMkkDNYqr8Hvf0Pzpg8tbt+5q0Pae7x3KYplDTTYLnDZf
+ QvTkqvmHw6i/6iRnZ6dnkfHHxnwYw+FzQ1XgGJorSL9W5s03JdN63NTaH2Xu715b8AAO
+ GBaDMKfA/GrwV0MpFVy36NKbRAccos6wcPg+0znIPFcVs2fOJgfF9X97Uc4UsVMbZAPC
+ C0l70vTdL9ANIP0BUF6i6V8lgp4kdQEaigslsXFA2rOwOugGsuVgK8qUVKFO8hawrUWA
+ Hk3RGdrY3ILJaiZ8KSi3IYeU7Zz86SNOZcT+Bb0Cx4hswB9ri17H147UnULxxgNo2oPU
+ W9Dw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=WjXebY5QtcvN7Odp1pbuemzpCVQPCaprQRcJnauls1g=;
- b=AaoyAqYZMDCl91p2pWOhICrTnDoR8n7vyi/+JJcZ6TcSezNS3dule1+FAk7tKEf67q
- A0o1RM3cfTkGiAecRc9gLL1IJ0/JhCHQuwNdWhdL9QKhdwS8kmdAEJ5Hj5w6W5VaUl5U
- QxvraRLrJVaccXVND0qZq2ohxChFFdVUeriwK52ALvdZQFcZO8h7fBG49q0UNWLxpDzZ
- wyS05+fN07kpgIo+RZjrsUK9gPZnQlVPr0YlSy1e7o6ezmMaUtDEpRTmSELgqVjkdku6
- UlKNGeQBLjhIIzt0sigafXOnI7ghM2AcubLgpZkY55F9hG8aEwjdnSyCLkR4atYSunXO
- 0tPA==
-X-Gm-Message-State: AOAM531E0tDRMN+YCvoqvDR6Y/sWQ+saYl3vsQsf+cnWRL8s8bun2/UI
- 7wn42O7fdeu5zvJfy0w95ATxdg==
-X-Google-Smtp-Source: ABdhPJxcv+jl4/HmYNqG8iVDXXsnFmqnNSDaduV7uDXPdrWHcwqkw07kSFpRlzIn/Z3C39XRFY/MOQ==
-X-Received: by 2002:a2e:b8d4:: with SMTP id s20mr7286504ljp.177.1591970078000; 
- Fri, 12 Jun 2020 06:54:38 -0700 (PDT)
+ bh=VUUHzTYdCTkEy8qJLKBgOAUld/T0D8KqCFLo4EbK13A=;
+ b=CTgRxSZkLijkWWdOlyhgaTciEBlne9ratkmxm0JE0cRTVx+ohc5/KF4LtXHrlBpOn5
+ bfqOEHmRowZYc/QuISHJfb4ghsLkRSHaR+xCJ7pMB5KlCXn2EaxsBYuwNNmsHkx7F/5R
+ cl0TkYJjPUsK8y+IrnVZeADGZN1l36j6qbiPsIZ34+doF25YLXew9Cu2pdqsXw2VUmpQ
+ W5iRwPm4RhwiDvrBEziDAaI8M5PHHx8vvVgWVEwGk+BEufTJg4LGEgymx4wkXfaf8etM
+ k8OdmDftc+uF0BGpsVeYsL3ghstvaFZgWykq+guFA7BSefaWNMmr3Az+qxcjxjKepk06
+ Fxkg==
+X-Gm-Message-State: AOAM530V3WkM1VgKEOUW6ylSNl5hnHI2JBxlKuEEQ3NAlal1X1MiCekY
+ iXaNlQUVBMh1/rjAnYAwXUgrtQ==
+X-Google-Smtp-Source: ABdhPJxk6HkegMMq+UhE9X/AYUPY8zX34/yL/MBNoC6KMOLW3w9i0pDCF9KBxHYexkhZH/3Tt6kGjw==
+X-Received: by 2002:a2e:9ac6:: with SMTP id p6mr7249076ljj.417.1591970080042; 
+ Fri, 12 Jun 2020 06:54:40 -0700 (PDT)
 Received: from localhost.localdomain (37-144-159-139.broadband.corbina.ru.
  [37.144.159.139])
- by smtp.googlemail.com with ESMTPSA id a1sm2414415lfi.36.2020.06.12.06.54.35
+ by smtp.googlemail.com with ESMTPSA id a1sm2414415lfi.36.2020.06.12.06.54.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 06:54:37 -0700 (PDT)
+ Fri, 12 Jun 2020 06:54:39 -0700 (PDT)
 From: Andrey Konovalov <andrey.konovalov@linaro.org>
 To: mchehab@kernel.org, sakari.ailus@iki.fi, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v5 06/10] media: i2c: imx290: Add support for test pattern
- generation
-Date: Fri, 12 Jun 2020 16:53:51 +0300
-Message-Id: <20200612135355.30286-7-andrey.konovalov@linaro.org>
+Subject: [PATCH v5 07/10] media: i2c: imx290: Add RAW12 mode support
+Date: Fri, 12 Jun 2020 16:53:52 +0300
+Message-Id: <20200612135355.30286-8-andrey.konovalov@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200612135355.30286-1-andrey.konovalov@linaro.org>
 References: <20200612135355.30286-1-andrey.konovalov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_065440_288924_9C8BB3D8 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20200612_065442_203063_23B4B7A6 
+X-CRM114-Status: GOOD (  13.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,108 +108,108 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-Add support for generating following test patterns by IMX290:
-
-* Sequence Pattern 1
-* Horizontal Color-bar Chart
-* Vertical Color-bar Chart
-* Sequence Pattern 2
-* Gradation Pattern 1
-* Gradation Pattern 2
-* 000/555h Toggle Pattern
+IMX290 is capable of outputting frames in both Raw Bayer (packed) 10 and
+12 bit formats. Since the driver already supports RAW10 mode, let's add
+the missing RAW12 mode as well.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
 ---
- drivers/media/i2c/imx290.c | 41 +++++++++++++++++++++++++++++++++++++-
- 1 file changed, 40 insertions(+), 1 deletion(-)
+ drivers/media/i2c/imx290.c | 36 +++++++++++++++++++++++++++++++++---
+ 1 file changed, 33 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-index 152b65cb7cbc..67725a5aabd3 100644
+index 67725a5aabd3..c654a9a8fb08 100644
 --- a/drivers/media/i2c/imx290.c
 +++ b/drivers/media/i2c/imx290.c
-@@ -26,12 +26,19 @@
- #define IMX290_REGHOLD 0x3001
- #define IMX290_XMSTA 0x3002
- #define IMX290_FR_FDG_SEL 0x3009
-+#define IMX290_BLKLEVEL_LOW 0x300a
-+#define IMX290_BLKLEVEL_HIGH 0x300b
- #define IMX290_GAIN 0x3014
- #define IMX290_HMAX_LOW 0x301c
- #define IMX290_HMAX_HIGH 0x301d
-+#define IMX290_PGCTRL 0x308c
- #define IMX290_PHY_LANE_NUM 0x3407
- #define IMX290_CSI_LANE_MODE 0x3443
+@@ -67,6 +67,7 @@ struct imx290 {
+ 	struct clk *xclk;
+ 	struct regmap *regmap;
+ 	u8 nlanes;
++	u8 bpp;
  
-+#define IMX290_PGCTRL_REGEN BIT(0)
-+#define IMX290_PGCTRL_THRU BIT(1)
-+#define IMX290_PGCTRL_MODE(n) ((n) << 4)
-+
- static const char * const imx290_supply_name[] = {
- 	"vdda",
- 	"vddd",
-@@ -91,6 +98,17 @@ static const struct regmap_config imx290_regmap_config = {
- 	.cache_type = REGCACHE_RBTREE,
+ 	struct v4l2_subdev sd;
+ 	struct v4l2_fwnode_endpoint ep;
+@@ -86,10 +87,12 @@ struct imx290 {
+ 
+ struct imx290_pixfmt {
+ 	u32 code;
++	u8 bpp;
  };
  
-+static const char * const imx290_test_pattern_menu[] = {
-+	"Disabled",
-+	"Sequence Pattern 1",
-+	"Horizontal Color-bar Chart",
-+	"Vertical Color-bar Chart",
-+	"Sequence Pattern 2",
-+	"Gradation Pattern 1",
-+	"Gradation Pattern 2",
-+	"000/555h Toggle Pattern",
+ static const struct imx290_pixfmt imx290_formats[] = {
+-	{ MEDIA_BUS_FMT_SRGGB10_1X10 },
++	{ MEDIA_BUS_FMT_SRGGB10_1X10, 10 },
++	{ MEDIA_BUS_FMT_SRGGB12_1X12, 12 },
+ };
+ 
+ static const struct regmap_config imx290_regmap_config = {
+@@ -257,6 +260,18 @@ static const struct imx290_regval imx290_10bit_settings[] = {
+ 	{ 0x300b, 0x00},
+ };
+ 
++static const struct imx290_regval imx290_12bit_settings[] = {
++	{ 0x3005, 0x01 },
++	{ 0x3046, 0x01 },
++	{ 0x3129, 0x00 },
++	{ 0x317c, 0x00 },
++	{ 0x31ec, 0x0e },
++	{ 0x3441, 0x0c },
++	{ 0x3442, 0x0c },
++	{ 0x300a, 0xf0 },
++	{ 0x300b, 0x00 },
 +};
 +
- static const struct imx290_regval imx290_global_init_settings[] = {
- 	{ 0x3007, 0x00 },
- 	{ 0x3018, 0x65 },
-@@ -448,6 +466,22 @@ static int imx290_set_ctrl(struct v4l2_ctrl *ctrl)
- 	case V4L2_CID_GAIN:
- 		ret = imx290_set_gain(imx290, ctrl->val);
+ /* supported link frequencies */
+ #define FREQ_INDEX_1080P	0
+ #define FREQ_INDEX_720P		1
+@@ -478,7 +493,12 @@ static int imx290_set_ctrl(struct v4l2_ctrl *ctrl)
+ 		} else {
+ 			imx290_write_reg(imx290, IMX290_PGCTRL, 0x00);
+ 			msleep(10);
+-			imx290_write_reg(imx290, IMX290_BLKLEVEL_LOW, 0x3c);
++			if (imx290->bpp == 10)
++				imx290_write_reg(imx290, IMX290_BLKLEVEL_LOW,
++						 0x3c);
++			else /* 12 bits per pixel */
++				imx290_write_reg(imx290, IMX290_BLKLEVEL_LOW,
++						 0xf0);
+ 			imx290_write_reg(imx290, IMX290_BLKLEVEL_HIGH, 0x00);
+ 		}
  		break;
-+	case V4L2_CID_TEST_PATTERN:
-+		if (ctrl->val) {
-+			imx290_write_reg(imx290, IMX290_BLKLEVEL_LOW, 0x00);
-+			imx290_write_reg(imx290, IMX290_BLKLEVEL_HIGH, 0x00);
-+			msleep(10);
-+			imx290_write_reg(imx290, IMX290_PGCTRL,
-+					 (u8)(IMX290_PGCTRL_REGEN |
-+					 IMX290_PGCTRL_THRU |
-+					 IMX290_PGCTRL_MODE(ctrl->val)));
-+		} else {
-+			imx290_write_reg(imx290, IMX290_PGCTRL, 0x00);
-+			msleep(10);
-+			imx290_write_reg(imx290, IMX290_BLKLEVEL_LOW, 0x3c);
-+			imx290_write_reg(imx290, IMX290_BLKLEVEL_HIGH, 0x00);
+@@ -550,7 +570,7 @@ static u64 imx290_calc_pixel_rate(struct imx290 *imx290)
+ 
+ 	/* pixel rate = link_freq * 2 * nr_of_lanes / bits_per_sample */
+ 	pixel_rate = link_freq * 2 * nlanes;
+-	do_div(pixel_rate, 10);
++	do_div(pixel_rate, imx290->bpp);
+ 	return pixel_rate;
+ }
+ 
+@@ -587,6 +607,7 @@ static int imx290_set_fmt(struct v4l2_subdev *sd,
+ 	} else {
+ 		format = &imx290->current_format;
+ 		imx290->current_mode = mode;
++		imx290->bpp = imx290_formats[i].bpp;
+ 
+ 		if (imx290->link_freq)
+ 			__v4l2_ctrl_s_ctrl(imx290->link_freq,
+@@ -631,6 +652,15 @@ static int imx290_write_current_format(struct imx290 *imx290)
+ 			return ret;
+ 		}
+ 		break;
++	case MEDIA_BUS_FMT_SRGGB12_1X12:
++		ret = imx290_set_register_array(imx290, imx290_12bit_settings,
++						ARRAY_SIZE(
++							imx290_12bit_settings));
++		if (ret < 0) {
++			dev_err(imx290->dev, "Could not set format registers\n");
++			return ret;
 +		}
 +		break;
  	default:
- 		ret = -EINVAL;
- 		break;
-@@ -959,7 +993,7 @@ static int imx290_probe(struct i2c_client *client)
- 	 */
- 	imx290_entity_init_cfg(&imx290->sd, NULL);
- 
--	v4l2_ctrl_handler_init(&imx290->ctrls, 3);
-+	v4l2_ctrl_handler_init(&imx290->ctrls, 4);
- 
- 	v4l2_ctrl_new_std(&imx290->ctrls, &imx290_ctrl_ops,
- 			  V4L2_CID_GAIN, 0, 72, 1, 0);
-@@ -977,6 +1011,11 @@ static int imx290_probe(struct i2c_client *client)
- 					       1, INT_MAX, 1,
- 					       imx290_calc_pixel_rate(imx290));
- 
-+	v4l2_ctrl_new_std_menu_items(&imx290->ctrls, &imx290_ctrl_ops,
-+				     V4L2_CID_TEST_PATTERN,
-+				     ARRAY_SIZE(imx290_test_pattern_menu) - 1,
-+				     0, 0, imx290_test_pattern_menu);
-+
- 	imx290->sd.ctrl_handler = &imx290->ctrls;
- 
- 	if (imx290->ctrls.error) {
+ 		dev_err(imx290->dev, "Unknown pixel format\n");
+ 		return -EINVAL;
 -- 
 2.17.1
 
