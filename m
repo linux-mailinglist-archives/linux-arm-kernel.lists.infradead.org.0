@@ -2,116 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F15C1F7226
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 04:18:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1327C1F7248
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 04:44:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NPRqc9Fmav9BsYhPXBTtyJh/hSivHsVg4NoyucZiWn0=; b=mFYEFe0Tmi3X1k
-	EYabckSUc2O/CPJO79MeIKuoySXM24wjvB1I6FOrcHV/ukEePZf9JM9an4sYS/W0WHXA2sHbhjTaK
-	uDdJGV5Po0+dPwwK2eOkJuuEStNBluDZ8qxlyXhRMeaCHpSmjZlwFJKQFR7fGb3jzTabEYnfJ63L5
-	xVy44eLPvIUk7Agoh1wL5wgTh+rguHSup2D7zckSgZ53bEGAPTpk9Eza3q5xq9TWIqiLcSWvKtIy4
-	JCpVRhsx7RL47jAACkWTZpiLkI30OXf0LJYArhqQ6S16AIpGPwN57RorWG8ts7eDTBElXpEVqNir+
-	OHslULmaGPrpRTT/GfHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KU0ctGm+DaCz8tXczwCbBHvOi8VvhD9Xok+xXLEvXMk=; b=r0vw4ey2iGW0h06venVfBo48J
+	OL12nt8uwFbiqMUU98uJGcLvLob0TV9i8/V8/ZN19k5CrSLpz4033p5noccyTDaZ+sjoCFDHVh6HL
+	nRqoKzC1XGOJzIzOB34CKi88tXNcyFr1jjLW8hu738t4Q59iuRv3G0050jen8oe5K3sOlNeOgKBmU
+	/NY8JpQHq57tQyrG9XQNmPhK7pP4bjWHo3/Dpr7aGWeltoTgkrpwKxgb3UO42GMWjAvZ1ty2D7Q/4
+	oGGtiggjlfUeSJIuesCrdcJCdfFzb/4i5gfekJnWviBtMG92u1X7PICszyVSYzUsB0a+kV7eppyLb
+	Fc9KhmLMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjZHL-0004PI-3G; Fri, 12 Jun 2020 02:18:47 +0000
-Received: from mail-eopbgr140052.outbound.protection.outlook.com
- ([40.107.14.52] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1jjZfk-0001c7-JE; Fri, 12 Jun 2020 02:44:00 +0000
+Received: from [27.111.83.178] (helo=mail.gtsys.com.hk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjZHD-0004Ol-37
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 02:18:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BlfcDQzOwnw8/G9zxETWMpGuZ9LBV9O/zoF4T9dqoKxoU29mhhepI9Befkq6nEQyS03KuG7b2CvG5ACSwGUgIux1a2caIzuyRfmOSC9qPOtl0zIttT9o9XZ4VyoM402eho6EvIBmQrlqXPcts8/n+QvGBTyp03fXaPQ18ewa2ImXmLSgZrx+2yanQLe23SR+ha4UvZ66byOxiqxhmIlWXo4AW4WDiJuBi2o49/DgMFGzaJMhD7iJ7T2to/UINgPaBEoiiKtm5Ir593U/v/itZ5UUYPg61fCO6s2dPL17LobpIdRLsmgH5oOf1drWza00r0mzg+TaR30FtEHhqumnmQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dHOoT8na1ffMKrVbK2XadykwDl7QE51+OUO8aCLZYI4=;
- b=nOfIA/iqe9wuuDWm6ej89VD9Cq6h6wnFRCDlweYBPzl2FlwPdbCp14smz7JF4I3WbsDtlBwnWuEt0OxCQHw2aLy04MOvnR6fW/G109p0VnlSMS8LkfzBUdBPuAnra+ln7pJIt9k/zo3uxGAijlncArD2AVGZZsURVxkIk2J/d+OTMqm1wWgPXebEWtSqkN460tS+oPe6pMNdUOL7XLkxWm+tVItwRkAqiGn+x+CDlas7y6Q9zXZNNsikHEt9wz9CUD7QOVpyqbqdpK6rtWNOkBRZCZ0T86X2iMvMjTOc2nB2gHJklj/XtUhzxPmhu3bKZ12QdgO1Vlq+HHyBLRu5pg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dHOoT8na1ffMKrVbK2XadykwDl7QE51+OUO8aCLZYI4=;
- b=bFZo8Wo8+cVDZcGtYtmHWLaMDeHpuXn13IGKg6YzonqdF3Ya/rsYe/aueU09TA3ip3izGnl2TQXxjwkZHqb8MaZZtKzC3REKoyFA1OBXepvFRLh89oB25ohJ+tmEZfYIWbCbQP+ru9Ff4Le5qG3XEwf71HU+xDmZbvRxBIfRMKQ=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6352.eurprd04.prod.outlook.com (2603:10a6:803:129::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Fri, 12 Jun
- 2020 02:18:32 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.023; Fri, 12 Jun 2020
- 02:18:32 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: RE: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Thread-Topic: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Thread-Index: AQHWP6z7CX2etPvPnk+oddH8JEW5FKjTbHIAgADDYUA=
-Date: Fri, 12 Jun 2020 02:18:32 +0000
-Message-ID: <VE1PR04MB66383245FAD2AE33CFEA76F789810@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1591880310-1813-1-git-send-email-yibin.gong@nxp.com>
- <1591880310-1813-2-git-send-email-yibin.gong@nxp.com>
- <20200611134042.GG4671@sirena.org.uk>
-In-Reply-To: <20200611134042.GG4671@sirena.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 61648114-780b-475a-539d-08d80e76e7b3
-x-ms-traffictypediagnostic: VE1PR04MB6352:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB63520D161E338E4F8C9BE9EE89810@VE1PR04MB6352.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0432A04947
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: DEiW76s4wzi1S5XdKXAgF3akdk+z1jF9TMofHYZwidLFnYXML+TEL2FHyHM351GENSXmqwTraVpRddcikCIMakwS+18CIF/nbXlUexmyOiHYQL8bqpcPA7NON56YCaWiyDl5Mr5tMMwo1NIvdyjD93hReqhMXGmVKXHYCtgPKwAsJVNa5KTdmrxBma1I0B64GqiJwD0Lr5e+TNpZCE0V2pkaBF2Dt8EOEkrKM2z0D9S8lilCJne0XPzqQXaxfgUTnx0mmsiXkujUmvKvoOXV9K72ZMHL60znNWsBj7wTKgU1JoYLNQzAFsNfvFdtIZCcjelEd4vX6TZV7qTA7JrmgA==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(39860400002)(366004)(136003)(396003)(376002)(186003)(26005)(4326008)(83380400001)(86362001)(8936002)(7416002)(52536014)(8676002)(478600001)(66556008)(5660300002)(316002)(6916009)(2906002)(66446008)(66946007)(55016002)(54906003)(76116006)(33656002)(7696005)(71200400001)(6506007)(64756008)(66476007)(9686003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: DV59bNnfLvJaTSGCQGmq+4gxb76h8zDXrr5V8GfMvWgWdpBsNLICs80/lnseTph8A+9FImLorC/R20JIbiuRdVRMlkotuA9tjn6LzJwoBgV3mUtzki4W56DvLJN6/yTdJs3LjTGfv3tP1RJoCaHTQmpNqV6vqpg3qDO35LuAYoAKC8RaplP1vv2R4OlGRyfkcZ7PZLQ+PqTG6L2sIodxO+ZsLHqjbUr38PCc+uqoa5uj+SCHqS9LXHLPsbDy7eQ+DoAFzIkWbgI9Vh9wcVFc2AS96fuLQe+KGoUuuYHY+B/I9TzurXwI6R9hP5Z899v8sLcof/rvwH+TAHMPmsiucQ46gQIbBrqm+b3shV7CwZXIC1CCyOSy7/72TxtE+5EnDT9PGpJzCuSW6wtU7Q1FL+WmVrnK9YgOLwIYwDk4iOTf5hdjBvmlYMJRPqtwr3sEFhLZf7fSyUbGO17ptLDBCI5nMy2Advaa4+0iH3/VrUU=
+ id 1jjZfb-0001bh-D1
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 02:43:53 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.gtsys.com.hk (Postfix) with ESMTP id 13C4C20076FA;
+ Fri, 12 Jun 2020 10:43:45 +0800 (HKT)
+X-Virus-Scanned: Debian amavisd-new at gtsys.com.hk
+Received: from mail.gtsys.com.hk ([127.0.0.1])
+ by localhost (mail.gtsys.com.hk [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id UjGXRXNLMy65; Fri, 12 Jun 2020 10:43:44 +0800 (HKT)
+Received: from s01.gtsys.com.hk (unknown [10.128.4.2])
+ by mail.gtsys.com.hk (Postfix) with ESMTP id E6B0D2004675;
+ Fri, 12 Jun 2020 10:43:44 +0800 (HKT)
+Received: from [10.128.2.32] (unknown [124.217.189.183])
+ by s01.gtsys.com.hk (Postfix) with ESMTPSA id 9E950C019F9;
+ Fri, 12 Jun 2020 10:43:44 +0800 (HKT)
+Subject: Re: arm64: el1_error when copy rawdata to a partition
+To: linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>
+References: <27a86dfd-e565-bbe0-423f-a9485d51ef43@gtsys.com.hk>
+ <601da1b5-4137-4a5d-0d42-0d46af1045dd@arm.com>
+ <75d4f767-7af2-dee1-a1a8-e9467651a4e3@gtsys.com.hk>
+ <83b058a6-9552-67ae-2994-1ca04519521f@arm.com>
+From: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+Message-ID: <e3d2a5e3-6a8c-5280-38d9-b5d6c746efeb@gtsys.com.hk>
+Date: Fri, 12 Jun 2020 10:43:43 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 61648114-780b-475a-539d-08d80e76e7b3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jun 2020 02:18:32.7785 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 9M6VJuoOCLXgwbt5zVjDPCaxBJG5y80jtihGJ8PM6XnMIu4pJpyftBeu9KG47Pb1NahhhiK24+W0kzNseJpqdw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6352
+In-Reply-To: <83b058a6-9552-67ae-2994-1ca04519521f@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_191839_202838_23E5076A 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200611_194351_749304_9551FDC2 
+X-CRM114-Status: GOOD (  19.99  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.14.52 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.14.52 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,57 +72,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/06/11 21: 41 Mark Brown <broonie@kernel.org> wrote:
-> On Thu, Jun 11, 2020 at 08:58:29PM +0800, Robin Gong wrote:
-> > Add SPI_CONTROLLER_FALLBACK to fallback to pio mode in case dma
-> > transfer failed.
-> > If spi client driver want to enable this feature please set
-> > master->flags with SPI_MASTER_FALLBACK and add master->fallback
-> > checking in its can_dma() as spi-imx.c
-> 
-> If we were going to do this I don't see why we'd have a flag for this rather than
-> just doing it unconditionally but...
-What do you mean flag here, 'master->flags' or SPI_MASTER_FALLBACK? 'master->flags'
-could let client fallback to PIO finally and spi core clear this flag once this transfer done,
-so that DMA could be tried again in the next transfer. Client could enable this feature by choosing SPI_MASTER_FALLBACK freely without any impact on others.
-> 
-> >  			ret = ctlr->transfer_one(ctlr, msg->spi, xfer);
-> >  			if (ret < 0) {
-> > +				if (ctlr->cur_msg_mapped &&
-> > +				   (ctlr->flags & SPI_CONTROLLER_FALLBACK)) {
-> > +					__spi_unmap_msg(ctlr, msg);
-> > +					ctlr->fallback = true;
-> > +					goto fallback_pio;
-> > +				}
-> 
-> ...I don't think this can work sensibly - this is going to try PIO if there's *any*
-> error.  We might have had some sort of issue during the transfer for example
-> so have some noise on the bus.  Like I said on a prior version of this I really
-Any error happen in DMA could fallback to PIO , seems a nice to have, because it could
-give chance to run in PIO which is more reliable. But if there is also error in PIO, thus may loop here, it's better adding limit try times here?    
-> think that we need to be figuring out if the DMA controller can support the
-> transaction before we even map the buffer for it, having the controller just
-> randomly fail underneath the consumer just does not sound robust.
-But dmaengine_prep_slave_sg still may return failure even if anything about
-DMA is ok before spi transfer start, such as dma description malloc failure. This
-patch seems could make spi a bit robust...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTEvNi8yMDIwIDc6MzggcG0sIFJvYmluIE11cnBoeSB3cm90ZToKPiBPbiAyMDIwLTA2LTEx
+IDAzOjIxLCBDaHJpcyBSdWVobCB3cm90ZToKPj4gSGkgUm9iaW4sCj4+Cj4+IE9uIDEwLzYvMjAy
+MCA3OjU4IHBtLCBSb2JpbiBNdXJwaHkgd3JvdGU6Cj4+PiBIaSBDaHJpcywKPj4+Cj4+PiBPbiAy
+MDIwLTA2LTEwIDA0OjQ5LCBDaHJpcyBSdWVobCB3cm90ZToKPj4+PiBIaSwKPj4+Pgo+Pj4+IGp1
+c3QgaGl0IGEgcGFuaWMgb24gbXkgcmszMzk5LW9yYW5nZXBpIHdoaWxlIHJ1bm5pbmcKPj4+Pgo+
+Pj4+IHh6IC1kIC1jIGltYWdlLnh6IHwgZGQgb2Y9L2Rldi9tbWNibGsycDIgYnM9MU0KPj4+Pgo+
+Pj4+IFRoaXMgY2FuIHJlcHJvZHVjZS4KPj4+Cj4+PiBXaGF0J3MgeW91ciBmaXJtd2FyZSBzZXR1
+cD8gVGhlcmUncyBhIGtub3duIHNuYWcgd2hlbiBtaXhpbmcgbWFpbmxpbmUgVS1Cb290IAo+Pj4g
+d2l0aCBSb2NrY2hpcCdzIFRydXN0ZWQgRmlybXdhcmUgYmluYXJpZXMgLSB0aGUgInRydXN0Lmlt
+ZyIgYmxvYnMgdGVuZCB0byAKPj4+IGluY2x1ZGUgYW4gT1AtVEVFIHBheWxvYWQgdGhhdCBjYXJ2
+ZXMgb3V0IHNvbWUgRFJBTSBmb3IgdGhlIFNlY3VyZSB3b3JsZCwgCj4+PiBhbmQgdGhlIEJTUCBV
+LUJvb3QgaGFzIHNvbWUgaGFyZC1jb2RlZCBoYW5kbGluZyBmb3IgdGhhdCB3aGVyZWFzIG1haW5s
+aW5lIAo+Pj4gZG9lc24ndC4gQXMgYSByZXN1bHQsIGluIHRoYXQgY29uZmlndXJhdGlvbiBMaW51
+eCBlbmRzIHVwIHVuYXdhcmUgdGhhdCBzb21lIAo+Pj4gb2YgdGhlIG1lbW9yeSBpdCdzIGJlZW4g
+dG9sZCBhYm91dCBpc24ndCBhY3R1YWxseSBhY2Nlc3NpYmxlIGFuZCB3aWxsIAo+Pj4gdHJpZ2dl
+ciBhbiBleHRlcm5hbCBhYm9ydCBpZiB0b3VjaGVkICh3aGljaCBkdWUgdG8gdGhlIG5hdHVyZSBv
+ZiB0aGUgcGFnZSAKPj4+IGFsbG9jYXRvciB0eXBpY2FsbHkgb25seSBzZWVtcyB0byBoYXBwZW4g
+dW5kZXIgbWVtb3J5IHByZXNzdXJlLCBsaWtlIGEgbGFyZ2UgCj4+PiBjb3B5IG9wZXJhdGlvbiB0
+aGF0IGNodXJucyBhIGxvdCBvZiBkYXRhIHRocm91Z2ggdGhlIHBhZ2UgY2FjaGUpLgo+Pj4KPj4+
+IFJvYmluLgo+PiBZZXMsIEknbSB1c2luZyB0aGUgbWluaS1sb2FkZXIgZnJvbSBSb2NrY2hpcCBh
+bmQgdGhlIHRydXN0ZWQuaW1nIHdpdGggdGhlIAo+PiBtYWlubGluZSB1Ym9vdCAyMDIwLjQKPj4g
+YW5kIHdoYXQgeW91IHRlbGwgbWUgbWFrZXMgc2Vuc2UhCj4+Cj4+IEkgdHJpZWQgdG8gdXNlIHRo
+ZSBvcGVuLXNvdXJjZSBvbmx5IGJ1dCBmYWlsZWQgZW5kIHVwIHdpdGg6Cj4+ICJUcnkgYm9vdGlu
+ZyBmcm9tIE1NQzEiCj4+IGFuZCB0aGVuIHRpbWVvdXQgb24gdGhlIFNEICYgZU1NQywgSSB0aGlu
+ayB0aGUgY2xvY2sgbm90IGNvbWUgdXAKPj4gb3IgaXNuJ3QgaW5pdGlhbGl6ZWQgaW4gdGhlIFNQ
+TC4KPj4KPj4gVUJPT1QgY29uZmlnOgo+PiDCoMKgTGlzdCBvZiBkZXZpY2UgdHJlZSBwcm9wZXJ0
+aWVzIHRvIGRyb3AgZm9yIFNQTDoKPj4gLi4uIGNsb2NrLW5hbWVzIC4uIGFzc2lnbmVkLWNsb2Nr
+cyBhc3NpZ25lZC1jbG9jay1yYXRlcyBhc3NpZ25lZC1jbG9jay1wYXJlbnRzCj4+Cj4+IHdoaWxl
+IEkgd3JpdGUgdGhpcywgSSByZWFkIGFib3V0IHRoZSAidS1ib290LGRtLXByZS1yZWxvYyIgaW4g
+dGhlIGhlbHAgdGV4dCAtIAo+PiBobW0KPj4gbGV0IG1lIGFkZCB0aGlzIHRvIHRoZSByazMzOTkt
+b3JhbmdlcGkuZHRzIGFuZCBnaXZlIHRoZSBwdXJlIG9wZW4tc291cmNlIAo+PiBzb2x1dGlvbgo+
+PiBvbmUgbW9yZSB0cnkuCj4KPiBJIGRvIHJlY2FsbCBoYXZpbmcgdG8gZG8gc29tZSBmaWRkbGlu
+ZyB0byBnZXQgVFBML1NQTCB0byBib290IGZyb20gZU1NQyAKPiByZWxpYWJseSBvbiBteSBOYW5v
+UEMtVDQgLSB0aGUgb25seSBjaGFuZ2UgSSBoYXZlIGNvbW1pdHRlZCBsb2NhbGx5IGlzIGFkZGlu
+ZyAKPiBhICJ1LWJvb3Qsc3BsLWJvb3Qtb3JkZXIiIHByb3BlcnR5LCBidXQgSSBjYW4ndCBub3cg
+cmVtZW1iZXIgd2hldGhlciB0aGUgaW1hZ2UgCj4gSSdtIGN1cnJlbnRseSB1c2luZyBoYWQgYW55
+IGZ1cnRoZXIgdGVtcG9yYXJ5IGhhY2tzIG9uIHRvcCBvZiB0aGF0Lgo+Cj4gQW4gYWx0ZXJuYXRp
+dmUgd29ya2Fyb3VuZCBpcyBqdXN0IHRvIGhhY2sgdGhlIGtlcm5lbCBEVCB0byBleHBsaWNpdGx5
+IHJlc2VydmUgCj4gdGhlIG9mZmVuZGluZyByZWdpb24gLSB1bnRpbCBJIGdvdCBtYWlubGluZSBU
+UEwvU1BMIGFuZCBUcnVzdGVkIEZpcm13YXJlIAo+IHdvcmtpbmcsIHRoaXMgaXMgd2hhdCBJIGhh
+ZDoKPgo+IMKgwqDCoMKgcmVzZXJ2ZWQtbWVtb3J5IHsKPiDCoMKgwqDCoMKgwqDCoCAjYWRkcmVz
+cy1jZWxscyA9IDwyPjsKPiDCoMKgwqDCoMKgwqDCoCAjc2l6ZS1jZWxscyA9IDwyPjsKPiDCoMKg
+wqDCoMKgwqDCoCByYW5nZXM7Cj4KPiDCoMKgwqDCoMKgwqDCoCBleHRlcm5hbC1hYm9ydEA4NDAw
+MDAwIHsKPiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlZyA9IDwwIDB4ODQwMDAwMCAwIDB4MTIw
+MDAwMD47Cj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBuby1tYXA7Cj4gwqDCoMKgwqDCoMKgwqAg
+fTsKPiDCoMKgwqDCoH07Cj4KPiBSb2Jpbi4gClRoYXQncyBhIGdvb2Qgd29ya2Fyb3VuZCwgYW5k
+IGJ1eSBtZSBzb21lIHRpbWUgdW50aWwgSSBmb3VuZCBhIHByb3BlciBzb2x1dGlvbi4KSSdkIHNh
+dyB0aGUgInUtYm9vdCxzcGwtYm9vdC1vcmRlciIgaW4gdGhlIG90aGVyICotdS1ib290LmR0c2kg
+ZmlsZXMgYW5kIGFkZCBpdCAKdG8gbXkKc29sdXRpb24uIEJ1dCBhbGwgSSBnb3QgaXMKVHJ5IHRv
+IGJvb3QgZnJvbSBNTUMyCmFuZCB0aGVuIGEgbW1jX2luaXQgZXJyb3IgLTk1IChubyByZXNwb25z
+ZSBmcm9tIHRoZSBzZC9lbW1jKQoKSSB3YWl0IGZvciBteSBuZXcgcHJvdG90eXBlcywgcmszMzk5
+ICsgTFBERFI0IC4uIGxldHMgaG9wZSB0aGF0IGl0IHdpbGwgYmUgYm9vdCAKYmV0dGVyIHRoZW4g
+dGhlIE9yYW5nZS1waS4KClRoYW5rIHlvdSBmb3IgeW91ciBoZWxwLgoKQ2hyaXMKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
