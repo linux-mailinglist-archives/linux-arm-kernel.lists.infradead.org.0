@@ -2,94 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCA5F1F77CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:18:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 355CC1F77DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 14:21:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2mh5H3I2XdpBJYxerwCkMOYSeGFoOFYj6zsPc0COQ2A=; b=WT6mFWaITzfVOL
-	vVzN1OlQI+nijo3yEBdANDCjDPOzkoSlzNfUvggFNdxMSx8tk343y/V8/1aFsybt1VR/ThEqHn0/8
-	gqvhXfxK9BUxgevvSNlXBM8n9FPchFLRrcNmTKirq2pVFVGE8w+OV/g3u9j9h8ZpmR6E1/aFHGz4m
-	DmuW5vWQCmjPcu8leVG39T/gv09wBjV0/GIof7/AMDrlOLI6lq0bGA666/SJA8wu5rrxXE8MzAYn4
-	Kyvw+s7A3MZWFFGtfb44SD1EYKQhybYz8xDehh51GPDb45pSOy2jLUtgYGW0boaXdOcYVSl7/CDMC
-	kxFDg22+GJZL2GsbD7jA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3xV/OHANjketFa1KqrC35e6pKMrAhyguYR9Sk4ek0p4=; b=IGJ7CfwM4XfbUR
+	Wgjd0r5MZ1wbdUx1dGXvYquWdvn+apuN2eoenP3Wfvzb5C0xiPolrlJ9cu9F1wu1uE+MFlA2UWj6d
+	5nZ6nmjlLo4nnkroZXsLWUVQQIuC/dtC84YtmRujxNlqDQRJZ6wnoJMgHqQN2b34wDY/5n5QLtOIb
+	YZlyp6uCbetOtjDtvr8+xH5Z+y+owaZsmf+z4Xk//yJwY2Hrcl/TYPEVkVqMyiBgQx95pT3a+ZVyh
+	pgK6G2YmM9GfPVM+G8TPyzZMO9jR3xoE71pOMNaGJBUPIz/7PGf75KdnlzB3SrC7WqGjP1rk8sxuZ
+	BcQXNWHOv3nF9RYe3BVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjidb-0002LE-MX; Fri, 12 Jun 2020 12:18:23 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjidT-0002KV-8a
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:18:16 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mkl@pengutronix.de>)
- id 1jjidP-00049v-Bx; Fri, 12 Jun 2020 14:18:11 +0200
-Received: from [IPv6:2a03:f580:87bc:d400:b44d:6713:e0e9:e23c] (unknown
- [IPv6:2a03:f580:87bc:d400:b44d:6713:e0e9:e23c])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
- client-signature RSA-PSS (4096 bits))
- (Client CN "mkl@blackshift.org",
- Issuer "StartCom Class 1 Client CA" (not verified))
- (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id 4B9D3515194;
- Fri, 12 Jun 2020 12:18:08 +0000 (UTC)
-Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
-To: Wolfram Sang <wsa@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>
-References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
- <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
- <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
- <20200612103149.2onoflu5qgwaooli@pengutronix.de> <20200612103949.GB26056@pi3>
- <20200612115116.GA18557@ninjato>
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
- mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
- zu8T6kZP2wEIpM9RjEL3jdBjZNCsjSS6x1qzpc2+2ivjdiJsqeaagIgvy2JWy7vUa4/PyGfx
- QyUeXOxdj59DvLwAx8I6hOgeHx2X/ntKAMUxwawYfPZpP3gwTNKc27dJWSomOLgp+gbmOmgc
- 6U5KwhAxPTEb3CsT5RicsC+uQQFumdl5I6XS+pbeXZndXwnj5t84M+HEj7RN6bUfV2WZO/AB
- Xt5+qFkC/AVUcj/dcHvZwQJlGeZxoi4veCoOT2MYqfR0ax1MmN+LVRvKm29oSyD4Ts/97cbs
- XsZDRxnEG3z/7Winiv0ZanclA7v7CQwrzsbpCv+oj+zokGuKasofzKdpywkjAfSE1zTyF+8K
- nxBAmzwEqeQ3iKqBc3AcCseqSPX53mPqmwvNVS2GqBpnOfY7Mxr1AEmxdEcRYbhG6Xdn+ACq
- Dq0Db3A++3PhMSaOu125uIAIwMXRJIzCXYSqXo8NIeo9tobk0C/9w3fUfMTrBDtSviLHqlp8
- eQEP8+TDSmRP/CwmFHv36jd+XGmBHzW5I7qw0OORRwNFYBeEuiOIgxAfjjbLGHh9SRwEqXAL
- kw+WVTwh0MN1k7I9/CDVlGvc3yIKS0sA+wudYiselXzgLuP5cQARAQABtCZNYXJjIEtsZWlu
- ZS1CdWRkZSA8bWtsQHBlbmd1dHJvbml4LmRlPokCVAQTAQoAPgIbAwIeAQIXgAULCQgHAwUV
- CgkICwUWAgMBABYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUsSbBQkM366zAAoJECte4hHF
- iupUgkAP/2RdxKPZ3GMqag33jKwKAbn/fRqAFWqUH9TCsRH3h6+/uEPnZdzhkL4a9p/6OeJn
- Z6NXqgsyRAOTZsSFcwlfxLNHVxBWm8pMwrBecdt4lzrjSt/3ws2GqxPsmza1Gs61lEdYvLST
- Ix2vPbB4FAfE0kizKAjRZzlwOyuHOr2ilujDsKTpFtd8lV1nBNNn6HBIBR5ShvJnwyUdzuby
- tOsSt7qJEvF1x3y49bHCy3uy+MmYuoEyG6zo9udUzhVsKe3hHYC2kfB16ZOBjFC3lH2U5An+
- yQYIIPZrSWXUeKjeMaKGvbg6W9Oi4XEtrwpzUGhbewxCZZCIrzAH2hz0dUhacxB201Y/faY6
- BdTS75SPs+zjTYo8yE9Y9eG7x/lB60nQjJiZVNvZ88QDfVuLl/heuIq+fyNajBbqbtBT5CWf
- mOP4Dh4xjm3Vwlz8imWW/drEVJZJrPYqv0HdPbY8jVMpqoe5jDloyVn3prfLdXSbKPexlJaW
- 5tnPd4lj8rqOFShRnLFCibpeHWIumqrIqIkiRA9kFW3XMgtU6JkIrQzhJb6Tc6mZg2wuYW0d
- Wo2qvdziMgPkMFiWJpsxM9xPk9BBVwR+uojNq5LzdCsXQ2seG0dhaOTaaIDWVS8U/V8Nqjrl
- 6bGG2quo5YzJuXKjtKjZ4R6k762pHJ3tnzI/jnlc1sXz
-Message-ID: <859e8211-2c56-8dd5-d6fb-33e4358e4128@pengutronix.de>
-Date: Fri, 12 Jun 2020 14:18:06 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+	id 1jjigl-0005KE-Hh; Fri, 12 Jun 2020 12:21:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jjigd-0005JX-SA
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 12:21:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 283F91F1;
+ Fri, 12 Jun 2020 05:21:30 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50C153F6CF;
+ Fri, 12 Jun 2020 05:21:29 -0700 (PDT)
+Date: Fri, 12 Jun 2020 13:21:27 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v2 0/6] ARM: Add support for large kernel page (from 8K
+ to 64K)
+Message-ID: <20200612122126.GC19739@gaia>
+References: <20200611134914.765827-1-gregory.clement@bootlin.com>
+ <20200611162117.GY1551@shell.armlinux.org.uk>
+ <CAK8P3a0KZzR0_8HWXYZRgq8Cg83M0s9GZa5wV+yz9KhvaSWEDw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200612115116.GA18557@ninjato>
-Content-Language: en-GB
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a0KZzR0_8HWXYZRgq8Cg83M0s9GZa5wV+yz9KhvaSWEDw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_051815_298612_877B2974 
-X-CRM114-Status: GOOD (  10.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200612_052131_951246_C6B63423 
+X-CRM114-Status: GOOD (  19.54  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,36 +65,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Oleksij Rempel <linux@rempel-privat.de>,
- Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/12/20 1:51 PM, Wolfram Sang wrote:
+On Fri, Jun 12, 2020 at 11:23:11AM +0200, Arnd Bergmann wrote:
+> On Thu, Jun 11, 2020 at 6:21 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
 > 
->> This basically kills the concept of devm for interrupts. Some other
+> > If you increase the page size, then you need to increase the number
+> > of tables in a page, or suffer a huge amount of wasted memory taken
+> > for the page tables - going to an 8k page size means that the upper
+> > 4k of each page will not be used.  Going to 16k means the upper 12k
+> > won't be used.  And so on - as your software page size increases,
+> > the amount of memory wasted for each PTE table will increase
+> > unless you also increase the number of hardware 1st level entries
+> > pointing to each PTE page.  With 64k pages, 60k of each PTE page
+> > will remain unused.
+> >
+> > That isn't very efficient use of memory.
 > 
-> It only works when you can ensure you have all interrupts disabled (and
-> none pending) in remove() or the error paths of probe() etc.
+> I think this could be addressed by using the full page to contain
+> PTEs by making PTRS_PER_PTE larger and PTRS_PER_PGD
+> smaller, but there is an even bigger problem in the added memory
+> usage and I/O overhead for basically everything else: in any
+> sparsely populated memory mapped file or anonymous mapping,
+> the memory usage grows with the page size as well.
+> 
+> I think Synology's vendor kernels for their NAS boxes have a
+> different hack to make large file systems work, by extending
+> the internal data types (I forgot which ones) to 64 bit. That is
+> probably more invasive to the generic kernel code, but should
+> be much more efficient and less invasive to ARM architecture
+> specific code.
 
-But when requesting the interrupt as shared the interrupt handler can get called
-any time, even if you have disabled the IRQ source in your IP core....The shared
-IRQ debug code tests this.
-
-Marc
+IIUC from Gregory's cover letter, the problem is page->index which is a
+pgoff_t, unsigned long. This limits us to a 32-bit page offsets, so a
+44-bit actual file offset (16TB). It may be worth exploring this than
+hacking the page tables to pretend we have bigger page sizes.
 
 -- 
-Pengutronix e.K.                 | Marc Kleine-Budde           |
-Embedded Linux                   | https://www.pengutronix.de  |
-Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
