@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 939331F7B58
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 18:02:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 639661F7B5E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 18:03:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1QbQbBEQblgfQ0551+1Qhek53V1AYejH1MzarC6KrVE=; b=TFp+1VUHg2E7ab
-	kZMn8+LxGh5f6cpwKQM2at+4VRCLN1AHREi/+uucTc1Evh0xmhjo+SEzxYXvDoxAUnwHYthy5u8de
-	Hlu+ToDfGY8D3udWbmCft6gOPTHdyUdImVNAFf6eKh8jXaMIvnAE05RhOjVyC/ZIZzxaooOWL5cEx
-	46CJZu/gN5C4HfNeWGmBwKOHoT0ZVuJoejraUCVOS2SSHh3WCa8y4Nrs81U9M9w5otMFq3LydIxGS
-	sggW35eQa3UJ16Ud2dzXhk4XJzm3aq7zQ3HttMerByjmvNO+trFekEn0jh07GaY6b7hLxHws1FXSr
-	ZoLDx9q/Sdon0md/3bOg==;
+	List-Owner; bh=3H+vSTNTJkLHBF7UQv9i2wyxQ1WaEmbVVxt6C9dDFgQ=; b=U1s5wSP5sggcUh
+	wo5fWjKT+MZw2lYSlbf0zuyctUDfsjFs/OM7tYfFowd99edJlgyH/FSy1f6UKMYH6xKqolghNa0l0
+	Cn0RKniXCnc1XInyN+YPtlClpJTJReS8EKKBmoUKcv4lwwAFv7GT0cz0rlPzs2fYIDGBy+HMx6S4i
+	INE77kLROkHjpHpcRVclQv+15HFNrwgVHD7HABM2JydKJK3CK8u8fFr2tTUSD6ov1CgAxZ1X8PtPA
+	lXiGULNbGNNsi3kbpT1goMdwr9cmm5/4sT+4BKu+JtsgEBHF7k7+wyIdvyzzvT27i4PywDa3Z6MVX
+	f8sDMZv106rgDX2b3cog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjm80-00024r-9h; Fri, 12 Jun 2020 16:02:00 +0000
-Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
+	id 1jjm9l-0002aD-5y; Fri, 12 Jun 2020 16:03:49 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjm7I-0001VA-GJ
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 16:01:17 +0000
-Received: by mail-pl1-x630.google.com with SMTP id x11so3909774plv.9
+ id 1jjm9e-0002Zj-3z
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 16:03:43 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id d6so4034456pjs.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 09:01:16 -0700 (PDT)
+ Fri, 12 Jun 2020 09:03:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=8arUOApLiXDRUGCMIRF3WITWesa059DBqowSaJoP3kg=;
- b=my5eY2ycooXFvDMr0LtDM+kEGSVSJON/nRXck6cJWtWaIvr79zLH9d5AaK9o2wxpjG
- R0+znBSCLwP73h9oARXj0WqD2Z2JyPWOUqIuW2K67Dx0xEFL40Nq3/cTS2U6leGwAVeS
- wg3TtmCvTNn84lFYU1JH7E8HUps+G7lLxw93BgFo9DY9xpTdQLS6HWpbhY2Dahe8xFvG
- uFIvsGL0xoAGUzG8/xpt/1dUj/W8qYiCfz/kZaqv77dkNoBIeuIoRj4H+4iLL87M/X/Z
- 8T8BwdULYyr3fhtNVYHMhLbOJ5II+7xWeUK7ESCoRhhPs2r+lEFAaX+HLvY+vne1WGDA
- JKjQ==
+ bh=2PKPk7BQfppfNr7O5EBp2nwpc5uqRbW/+JPiDE2SzHo=;
+ b=gzTXSx88SmeQROG5/rGF7+StSAeA8oieFghvZiWRXbsX0YrIDy6ZLYFtzpEQtqm7QT
+ j9lg6c7oS2UP0q7Iw3M6MOt2bmEB004fbzsC58/BqPpUmVDLElY/NOHMhrQHLjbI11Ju
+ jGCwCQUrcu2XqrbsIx3BMvnm4sJBsZI6iRFVvEiFdcgkcHFleXct5bJ3C7hTuw6/07ZV
+ vcluFltq1gR7/RtS5iW5InpEDUPnHaGihu6oe3MzewquFXcGwB/RBBWmtXXwmjz8iKud
+ 8b7zcMHKQUxRudHvmMtf6PKgmIz4Kv0MVxY9dhZSvQm7AWFAJu20+uDM3OtaRdHSECQQ
+ Lc/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8arUOApLiXDRUGCMIRF3WITWesa059DBqowSaJoP3kg=;
- b=KyKlWeglHuKgc5PDI3VxDAWHYhrz3ZY/6I6D3FyV8RAKh5mSQEHdo8fylaRQ+UmEhm
- a7aYM9rqomGDOwTewOvAjTsB52xXzwfNovHsNPEr10ZMGsCl8A4C8H6vXGeCDHpamZts
- j7WCGF7DtKvyemgno3pNDb5Lis/Maa4mHF4cwkcEdyes1FprSB5jy8D2UgEgeBzRPo7U
- dz6LrPee7NTv7xQpq82ZlebbrNRYr79LhsA7zz4v3e3Vh+/v6FBehbLrj1UhE1MMPwzp
- X04dbipSa0vQVjx/QZl9ivwgeq96giaT48z1q4Y1SAm14iwbgH9g3MNeAe0jBKG+WcXI
- IXqA==
-X-Gm-Message-State: AOAM531xvRt69Zi5byWA6kzDLVhA2Oq37qLb6YdrS5OL2Up9KEK+06GA
- WCEcSz2bv06BEAxvo9Ac/xQ=
-X-Google-Smtp-Source: ABdhPJwP1eHttivf0/PWqEs9M6GPvKgYt8tIyp75MZaGCIFg/3sT6iI0wPkeT3MKAFbjn+gEQjSAVA==
-X-Received: by 2002:a17:90a:266f:: with SMTP id
- l102mr14542976pje.190.1591977675395; 
- Fri, 12 Jun 2020 09:01:15 -0700 (PDT)
+ bh=2PKPk7BQfppfNr7O5EBp2nwpc5uqRbW/+JPiDE2SzHo=;
+ b=AHQqp9tlVQZSjyEtuL01oGl0qxu7SIOhZv9834ci/aNQOZpb29/fSavVvue+HjkUv3
+ NTM2WsB4YLsTgo2yTZNVNNUipcUu1uU7h8rjEe6CYyrYMUdDtYJMe6aqwDbz57N4njwy
+ h5DnwONH2GXF8+pb6Q7TzlBHaKZ0xm/Yni1sZ1omMfQOpSfax9yWXHI+twoGyrIONkxY
+ aMUt1X1T0G1d+nR+ihHm7z5efF8hm0Z8J0qhPoyOSWdSOYOsX4IgYv+o9MyKZ25xj/vu
+ Gim1bu5v9Pk/rYV3/qJwhIGaaUWpH1DFTQ0w80rlGnb4w8XfXM9l/1MbtNZUYaR62a0s
+ f01g==
+X-Gm-Message-State: AOAM530EL1hauensz1z3mV7jhxuCaq8ecL7cSDYxQ6fgDiRA8f25bA0Q
+ Bg/1XKAQXrZJ7qw0jogmI8I=
+X-Google-Smtp-Source: ABdhPJwG6QKhN5cTOdTvAF2ijD+ToA4XjdemGeBA1Y9qXvZuwAPSipLJGT8MuHp8NJ/Dd0Udn0cN+A==
+X-Received: by 2002:a17:90a:e08f:: with SMTP id
+ q15mr14574510pjy.178.1591977821425; 
+ Fri, 12 Jun 2020 09:03:41 -0700 (PDT)
 Received: from localhost ([49.205.221.68])
- by smtp.gmail.com with ESMTPSA id u4sm6473576pfl.102.2020.06.12.09.01.14
+ by smtp.gmail.com with ESMTPSA id h8sm10524409pjb.1.2020.06.12.09.03.40
  (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 12 Jun 2020 09:01:14 -0700 (PDT)
-Date: Fri, 12 Jun 2020 21:31:12 +0530
+ Fri, 12 Jun 2020 09:03:40 -0700 (PDT)
+Date: Fri, 12 Jun 2020 21:33:38 +0530
 From: afzal mohammed <afzal.mohd.ma@gmail.com>
 To: Nicolas Pitre <nico@fluxnic.net>
 Subject: Re: [RFC 0/3] ARM: copy_{from,to}_user() for vmsplit 4g/4g
-Message-ID: <20200612160112.GA27659@afzalpc>
+Message-ID: <20200612160338.GA31501@afzalpc>
 References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
  <nycvar.YSQ.7.77.849.2006121117250.3341460@knanqh.ubzr>
+ <20200612160112.GA27659@afzalpc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <nycvar.YSQ.7.77.849.2006121117250.3341460@knanqh.ubzr>
+In-Reply-To: <20200612160112.GA27659@afzalpc>
 User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_090116_655847_2AAF32F5 
-X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-CacheID: sfid-20200612_090342_161424_B6459C6D 
+X-CRM114-Status: UNSURE (   8.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:630 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:102e listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [afzal.mohd.ma[at]gmail.com]
@@ -114,23 +115,17 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-On Fri, Jun 12, 2020 at 11:19:23AM -0400, Nicolas Pitre wrote:
-> On Fri, 12 Jun 2020, afzal mohammed wrote:
+On Fri, Jun 12, 2020 at 09:31:12PM +0530, afzal mohammed wrote:
 
-> > Performance wise, results are not encouraging, 'dd' on tmpfs results,
+>                  512     1K      4K     16K     32K     64K     1M
+>  
+> normal           30      46      89     95      90      85      65
+> 
+> uaccess_w_memcpy 28.5    45      85     92      91      85      65
+> 
+> w/ series        22      36      72     79      78      75      61
 
-> Could you compare with CONFIG_UACCESS_WITH_MEMCPY as well?
-
-                 512     1K      4K     16K     32K     64K     1M
- 
-normal           30      46      89     95      90      85      65
-
-uaccess_w_memcpy 28.5    45      85     92      91      85      65
-
-w/ series        22      36      72     79      78      75      61
-
-There are variations in the range +/-2 in some readings when repeated,
-not put above, to keep comparison simple.
+For the sake of completeness all in MB/s, w/ various 'dd' 'bs' sizes.
 
 Regards
 afzal
