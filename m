@@ -2,59 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B0331F777B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:50:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF6EB1F7781
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:51:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g6qX5guTHuyZRRpfRyi7MdwiKpWAMDdBUVqJt7NfomM=; b=RzICvHYMAb1ILw
-	VyxXpE8+yB1a+yJT72Y3B1Uo0MRjvXfbYDCX/nyGvCrisvuUHKhaKhe72EVFQQ4PQynWXuZ8NmoHy
-	wM5i0iQYBGxzHm35zR/bFbKFLbe+3lrSQD9+tKM7RGxRLKDSjpVP4kusehebUzMrWYbRizqiRzNyU
-	WwQXTPMnewVirDCmDazBt9O+X4ybpbvni+pvMRB/CNBXAagmxu259sb5mOWesZ2m2Gf/yqypToxS/
-	R+rx7VnaVz+rl0aDTOJD/fFiQE4Fl9ZpJtvRUphtJTpTT34b1lkOZcAGPzdySgufU6kschH/MrItQ
-	JvgcsHwF9y6yAldu37cw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hzDnicSZfEo5RgoVIXRqHLFetn6RSyvNfCn4DmAhRuA=; b=MjjFm3QEaVKRmdaHMVKnghUB5
+	3cqQMf65XaUizkxwiVSvrfSvu4Bp8f0sicdDxU/wrfdMC8TSqCU2ZZqBY7BFEUcNtr+6kzm4zrMmI
+	5YwDQndNr91i8cV+gLefiijayjv2kNa5/2SylWKqUptfygCg8iPGEFjHmMfpU+Hgn/IuLwGJ98yfh
+	NHN5TdSVse6ZaO8cZ+HneYA9Lvhtkew9s2ElDyF2YYAgJaaVeuVHLMRRxgn6i+6nxo/toeVq4Mxwx
+	7c05XxnL3zNpKqUJJZc+UAeON9N1HV9OkyYJhGAmZKMu9q3NBt58PvLj/Zld6Nn2xRgITg+gmMAhq
+	b0brnslmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjiCU-0003AP-21; Fri, 12 Jun 2020 11:50:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjiCL-00039q-2r
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:50:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3232431B;
- Fri, 12 Jun 2020 04:50:11 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5CD363F6CF;
- Fri, 12 Jun 2020 04:50:10 -0700 (PDT)
-Date: Fri, 12 Jun 2020 12:50:08 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v2 1/6] ARM: Use PAGE_SIZE for ELF_EXEC_PAGESIZE
-Message-ID: <20200612115007.GB19739@gaia>
-References: <20200611134914.765827-1-gregory.clement@bootlin.com>
- <20200611134914.765827-2-gregory.clement@bootlin.com>
- <CAK8P3a0Rc6qd0Cb2yMNupbCP2NWRQAsEKtvEr5sZV4ANw6xfNQ@mail.gmail.com>
- <20200612083510.GB1551@shell.armlinux.org.uk>
- <CAK8P3a2BpNVSE86zEYSGd7x+OF-7spjGmU331TbQX=DRAkpMoQ@mail.gmail.com>
+	id 1jjiDY-0003fQ-Rl; Fri, 12 Jun 2020 11:51:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jjiDQ-0003f9-1M
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:51:21 +0000
+Received: from localhost (p54b33104.dip0.t-ipconnect.de [84.179.49.4])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ED897207D8;
+ Fri, 12 Jun 2020 11:51:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591962679;
+ bh=4SU7cE5K1zuUDgcSqNx4a6863ycbWxNzjj6+RY5JyS4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BkdqVphjX1fv36AiWfuo2mhxrD9X8RnCZZRgbLw6LVw7pofACnD2PF9cW8ZQXuUEo
+ vF6eZ+/C5O4ujSsMH+4vPZfQgQb1EOa7TQ/ofyezZIhqzglD8/VdscYUTZSnV+tk/4
+ V6wgTeI0gGoYt77aXLKX+10YRZe/Ece1AJjYAedk=
+Date: Fri, 12 Jun 2020 13:51:16 +0200
+From: Wolfram Sang <wsa@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] i2c: imx: Fix external abort on early interrupt
+Message-ID: <20200612115116.GA18557@ninjato>
+References: <1591796802-23504-1-git-send-email-krzk@kernel.org>
+ <20200612090517.GA3030@ninjato> <20200612092941.GA25990@pi3>
+ <20200612095604.GA17763@ninjato> <20200612102113.GA26056@pi3>
+ <20200612103149.2onoflu5qgwaooli@pengutronix.de>
+ <20200612103949.GB26056@pi3>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2BpNVSE86zEYSGd7x+OF-7spjGmU331TbQX=DRAkpMoQ@mail.gmail.com>
+In-Reply-To: <20200612103949.GB26056@pi3>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_045013_171639_EA65710B 
-X-CRM114-Status: GOOD (  21.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200612_045120_102017_BF34A8CD 
+X-CRM114-Status: UNSURE (   6.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,66 +80,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Oleksij Rempel <linux@rempel-privat.de>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4680881878999719373=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 10:46:17AM +0200, Arnd Bergmann wrote:
-> On Fri, Jun 12, 2020 at 10:35 AM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> > On Fri, Jun 12, 2020 at 10:22:17AM +0200, Arnd Bergmann wrote:
-> > > On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
-> > > <gregory.clement@bootlin.com> wrote:
-> > > >
-> > > > Currently ELF_EXEC_PAGESIZE is 4096 which is also the page size. In
-> > > > order to be able to use other size of page than 4K, use PAGE_SIZE
-> > > > instead of the hardcoded value.
-> > > >
-> > > > The use of PAGE_SIZE will be also aligned with what we find in other
-> > > > architectures such as arm64.
-> > > >
-> > > > This is inspired from fa0ca2726ea9 ("DSMP 64K support") and
-> > > > 4ef803e12baf ("mmu: large-page: Added support for multiple kernel page
-> > > > sizes") from
-> > > > https://github.com/MarvellEmbeddedProcessors/linux-marvell.git
-> > > >
-> > > > Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-> > >
-> > > IIRC using page sizes above 16KB here also requires using a
-> > > non-ancient linker in user space that places sections on
-> > > ELF_EXEC_PAGESIZE boundaries, right?
-> 
-> Correction: I was thinking of SHMLBA, not ELF_EXEC_PAGESIZE.
-> SHMLBA is defined to 16KB in arch/arm/ at the moment (based on 4K
-> page size), or (4 * PAGE_SIZE) on arm64, which can blow up to 256KB.
-> 
-> AFAICT, SHMLBA should now be defined as "min(16384, PAGE_SIZE)".
 
-Good point. We should do this with the COMPAT_SHMLBA on arm64 (we didn't
-bother since COMPAT had a dependency on 4K but you can override it with
-EXPERT).
+--===============4680881878999719373==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="BXVAT5kNtrzKuDFl"
+Content-Disposition: inline
 
-> > Doesn't that mean that this change breaks all existing userspace when
-> > ELF_EXEC_PAGESIZE is not 4k?
-> 
-> I think a lot of older user space would be broken with page sizes larger
-> than 16KB, but would still work with 8KB or 16KB. Larger page sizes
-> would only work with user space that was linked in the last five years
-> or so, using a toolchain that has the workarounds for running on arm64
-> with 64KB page size.
 
-FWIW, Debian armhf now boots fine on an arm64 kernel with 64K pages (it
-wasn't the case some years ago).
+--BXVAT5kNtrzKuDFl
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
--- 
-Catalin
+
+> This basically kills the concept of devm for interrupts. Some other
+
+It only works when you can ensure you have all interrupts disabled (and
+none pending) in remove() or the error paths of probe() etc.
+
+
+--BXVAT5kNtrzKuDFl
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7jbDAACgkQFA3kzBSg
+KbYmdg//RW9DluIKVfF71z6Q72EfwO+kHdqZsli+39eCQGi+J2lBHJpJXsWzim+B
+FXD88zlC2PC0Jg/svBtzq9t4FfmxA/YJH/rwUrr/2f6HYR7dXLfxFJDc+o2j5hFX
+mgHPY9Ol+5l8R8jBDMO87i5Z/Dk8CRcEoiIMnfpnbFjhRdlR3hNxfwQV0u+yLQ5A
+bHfcm3trfqSZooJtfAwoxY0LsrgAcStKVuNKqCS9676Vr5ah11BFGKaklQYNEWRG
+0t5Xnkf6QSVbIHfVj20h70nvTPK4YP+quTs2GDcl/pYXESIduY1qxsbjfSXigi3H
+27Dbu+Vzu1gLaoem3zFgxefBl6JdYsBmoQYPPGiOmayseWg2VTDJrHpgTs7eu2uM
+6o8d3MA4g56sQJocsGSOMvStqu8xEVJ/V5kt6lDR0j7Ue9rhtXZRiDw6/DW3Gmro
+s1BiEX3UwvwXqdGK9z1j+q/skFd3noXVY/goYsxqwwoyO+uMnhy6tW7HCJvse8e+
+ojfwLkXX2Lu4+12+MnDhWEsa/jCEL2ozQC0tU594l5FLU5VYQCetAM7XnUfbDqDF
+B17Ro5HH5+WhaAWwUkWUO5jaVtRe6w0e9P2ChQocQjktjoLNzVPXX8x2vzGGQUrl
+CaGs+J26V4mod0xqhOZkACLpdBUJwb0Ji2/C1ewgBxXkcLofM+4=
+=6fqc
+-----END PGP SIGNATURE-----
+
+--BXVAT5kNtrzKuDFl--
+
+
+--===============4680881878999719373==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4680881878999719373==--
+
