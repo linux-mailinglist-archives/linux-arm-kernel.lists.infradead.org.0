@@ -2,131 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5B5F1F7B93
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 18:23:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C5001F7BDB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 18:57:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=expwuusjcbbKTCUGn4jC3WjooNM1Tsvic3gw2x9fi04=; b=nvNk6Ak756wGX7
-	S8HKaljPMg1C0O6ugcn8QVgR2LKhsZyH345triiYLYKIAimReB8tO/frhHdbNCE4grTmDaxr484DY
-	4VSK8NAAeKWu1CK3yaFvvIVE8gPUpsJVjoB1ihCM1WHMKvxamO5whNjnEEmagvwIPkEDxPfvviJwO
-	b8YslJf7D2nST5iteVm7RoRAA4zy7NKBL/80vBDP3rUec47J2bfKIdlhpb4nO7N9dQAI/Y7Y+CTBU
-	J1wQO5Ia8sXO2dQ22D5PWHPqkZ7UIt8wtTfQ08y1syWQSJap+cnMxNkTrtOWq7EOYYN7oAXiaODxI
-	vP82vjTRsatdnAcCwnKw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u3smLkeO4dbbIxmCXh/ze6uaCC9TZjhf34Xta3XvHSQ=; b=a2vVpKpZgS+Nl/
+	ZfnQwFsguarVkyhuIUcVgJjQE+m3uptnOFpBUtyfwm9oY6OQgNF8rhJVZ07lt5s0KQV4taBnWN7Nm
+	9hd/xiUx28ywHNnUCMhcYxxgYOwKhWJo4F3AQmLn3BBL+aI5VPnuuO68cwQZBb5c0iEbkvfnqlPq6
+	4fGh2EytBPUX++NlInE+S7PPiOrs25a+lAsQSc9f/SuL4L2SdncpDHz+GafmmCP02IUHI1GWbfh/T
+	pcF0OEiDU1tktPNfDiqfAQCI2DVEnfGbqEgWYLBCjeSoLs/KuVgTejwKKkCU2ateXZ/i/rwhUC5V/
+	4u4CpSKWKkQMDbJxnBbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjmSP-00061k-Py; Fri, 12 Jun 2020 16:23:05 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1jjmzl-0000yJ-71; Fri, 12 Jun 2020 16:57:33 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjmSG-0005zr-HV
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 16:22:58 +0000
-Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
- by mailout1.samsung.com (KnoxPortal) with ESMTP id
- 20200612162253epoutp01617da10436811452af3aa828a42973bf~X2HD5x3uj1984719847epoutp01d
+ id 1jjmza-0000xq-Ij
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 16:57:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id q11so10446296wrp.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 16:22:53 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
- 20200612162253epoutp01617da10436811452af3aa828a42973bf~X2HD5x3uj1984719847epoutp01d
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1591978973;
- bh=odVw2pPAyWLK5Z88W0uV7CR8eVQ6niomkBGBqsSTZqA=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=GtDn19y6HmsaNaNrT/PC+2WFlvr6GtJ5LdncDqtRLqicTWEZVBPLFFCtdPAmzId9D
- +LpUTBjz9qukVI+USpEvBsGnglzVlYPmLyax066zqC+8MpNjyw3T4xFGTqg+EbqNAO
- 4DNILR68AQgBWguFGMmP8ZqhqOQRiq3h2dUTZz7s=
-Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTP id
- 20200612162252epcas5p4a0b01a59989e95ff9002b927bdbecb7e~X2HDOVABo3159931599epcas5p4q;
- Fri, 12 Jun 2020 16:22:52 +0000 (GMT)
-Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
- epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 3E.93.09475.CDBA3EE5; Sat, 13 Jun 2020 01:22:52 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200612162251epcas5p17799db495a306a323dc0e1740c8397d0~X2HCYsCZi1956119561epcas5p17;
- Fri, 12 Jun 2020 16:22:51 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200612162251epsmtrp1c4f39db4ff9e0fc924aa272f813a0dac~X2HCXzRRN1965319653epsmtrp1g;
- Fri, 12 Jun 2020 16:22:51 +0000 (GMT)
-X-AuditID: b6c32a4b-389ff70000002503-84-5ee3abdc2a6a
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 76.E4.08382.BDBA3EE5; Sat, 13 Jun 2020 01:22:51 +0900 (KST)
-Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200612162246epsmtip1cef97bb576d7a094db111ff37787dfcb~X2G_Pyzcr3056430564epsmtip1G;
- Fri, 12 Jun 2020 16:22:46 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Stanley Chu'" <stanley.chu@mediatek.com>,
- <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <jejb@linux.ibm.com>, <asutoshd@codeaurora.org>
-In-Reply-To: <20200612151000.27639-2-stanley.chu@mediatek.com>
-Subject: RE: [PATCH v1 1/2] scsi: ufs: Remove unused field in struct
- uic_command
-Date: Fri, 12 Jun 2020 21:52:45 +0530
-Message-ID: <002801d640d5$b7ba7430$272f5c90$@samsung.com>
+ Fri, 12 Jun 2020 09:57:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=hdftdNmWNoYmI9KOCEdF8TYF1SQt9boCMGPOgmJ5aMc=;
+ b=dX91GOcMpW17ERW/nwCFP38SsYVXilVSIcTeNTtYN2smr2Rcg4eXcMZvw1rl62ZyBc
+ rTFpJX1DqOFgImEcxpGnYl+l+ssxPce1MlL3+MAyPh3qGz2hxrSW+XYBIf/idOhlp1SS
+ VAv992HGJjQOtLagc1cesdCgFGhNue5vvBsPVlu3N9TjW3Gvtfn1/MtAW39ZZYNSHJCc
+ J02akL1SvACXIS0D2bTdYVe+HdY+Z/0W2CkCSmCbfPqyfPafKf5R+YKgGOYZ4t2f9vNB
+ FsLda7913vY5QR0YdtdnaPeaoMSf3ao7GZ8zXVeqIOE69heJeBx7NlDWVfFWzMzjTxfb
+ wZnA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=hdftdNmWNoYmI9KOCEdF8TYF1SQt9boCMGPOgmJ5aMc=;
+ b=Byc2TkeKzUggSpNrRG1O8en2J4nSeFkyIY39UzYr0Wd8jwzqOlZYkrAPlNYuR+dqnL
+ gK5TTTUnvvH8YFMhik4/k1ZTH/puLMGAqLckkO5D1LXAxdGbR+4yLQTTgtw0LYHYYL1w
+ gpENQQhQfk42AJUE76dqH9h4ArVjtsKt2fxbiqvNusU4Co3+5JHnc5OH/wmn3+yMFrez
+ /UdSLL+x9OxKoCnt2xLy4nNnnjwpEIBDWK04GnD2y9UsoXf8Fuz0KoepT+7w5SHVuY0Y
+ byzz7blb7hPuqYXTcb+oEnVMbcDPqXhGxCfPl9h5W44xGE/a7aKV+7cF916xBe44onQa
+ qLug==
+X-Gm-Message-State: AOAM533ng1Do9rSVqmM7o8dQ4J3ecznyij22tKMfFE7gHMlDffUefZPs
+ 1mLUpFv/0DbkfONNP8l8328=
+X-Google-Smtp-Source: ABdhPJyNmXM4qc3epdwtYo7bfs1VS3PSIkiDLC+pYnmFfKcklyuurpjoWjZQBuTaqU080fJh/c4sqQ==
+X-Received: by 2002:adf:c391:: with SMTP id p17mr15094247wrf.243.1591981040526; 
+ Fri, 12 Jun 2020 09:57:20 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ b201sm9481064wmb.36.2020.06.12.09.57.18
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 12 Jun 2020 09:57:19 -0700 (PDT)
+Subject: Re: [PATCH 00/11] arm/arm64: Turning IPIs into normal interrupts
+To: Marc Zyngier <maz@kernel.org>
+References: <20200519161755.209565-1-maz@kernel.org>
+ <d1ac7873-0f02-dbe0-dd3c-4fd14a87cf03@gmail.com>
+ <20200612104918.3829bb26@why>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <0acfca3f-38fb-774c-aaab-53bc8cdbd13b@gmail.com>
+Date: Fri, 12 Jun 2020 09:57:16 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQDXcguafoUh6qhsLNKe8uQEpk41JwIvpsOBAO+mpQSqucyfkA==
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrPKsWRmVeSWpSXmKPExsWy7bCmhu6d1Y/jDHr281icnneV2WJv2wl2
- i5c/r7JZHHzYyWIx7cNPZotP65exWvw//5vd4tqt+WwWq97sYLNYdGMbk0Xr/1fMFpseX2O1
- uLxrDpvF5eaLjBbd14Gyy4//Y7JoajG22PrpN6vF0q03GR2EPS5f8fa43NfL5LFz1l12jwmL
- DjB6bF5S79Fycj+Lx/f1HWweH5/eYvH4vEnOo/1AN1MAVxSXTUpqTmZZapG+XQJXxvF30QUb
- eCsWt29ga2Cczt3FyMkhIWAi8frCb8YuRi4OIYHdjBIrv/WwQDifGCU2bN4D5XxjlHj3+TU7
- TMuT5ROgWvYySvz9cRHKecMoMXnPRjaQKjYBXYkdi9vAbBGBbYwSR975ghQxC/xhktjRPAFo
- LgcHp4CdxOeHSSA1wgJBEm9Pf2IFsVkEVCX6Z7SA9fIKWEpM/nGHCcIWlDg58wkLiM0sIC+x
- /e0cZoiLFCR+Pl3GCjJSRMBJYlGnCESJuMTRnz3MIGslBKZzSsxpPcICUe8iseTvFlYIW1ji
- 1fEtUJ9JSbzsb2MHmSMhkC3Rs8sYIlwjsXTeMahWe4kDV+aAXc8soCmxfpc+xCo+id7fT5gg
- OnklOtqEIKpVJZrfXYXqlJaY2N0NtdRDov/ZOrYJjIqzkPw1C8lfs5A8MAth2QJGllWMkqkF
- xbnpqcWmBcZ5qeV6xYm5xaV56XrJ+bmbGMFpUst7B+OjBx/0DjEycTAeYpTgYFYS4RUUfxgn
- xJuSWFmVWpQfX1Sak1p8iFGag0VJnFfpx5k4IYH0xJLU7NTUgtQimCwTB6dUA1Ni4M4W3hfL
- JwjHyj+4tu4E99QZN66veePXVRdrLMXyVGexRq9m9/Q9925PuHemQil3tvnWs5fW7z+jqF+z
- tyfdeFPklEfS5Y/e337sllZnP7Xu/0aTNmH+o44ntWTipbee9LDabzW1RXzD0Tohxk6Dsx4e
- jldF7/X6rNpbspprgRgHX9Xkyr6rYQ8MO3o2zpC96nrsI/eeYsat+/e0b+ednX3nypX3jVbu
- XaG3r8T2umXpF+pPbDFl/mMYvfDKHs5TawuDv3Uc5ew2sJwsethL1k287+h06U3uNz0utvEZ
- bT+QuF1mWdL+T8s+7eo0DH9ilLNt6czpmntsThj2VWkbX5TKkTjiLmk9a12j0RUlluKMREMt
- 5qLiRAAM0mXoAgQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrMIsWRmVeSWpSXmKPExsWy7bCSnO7t1Y/jDD5s5bM4Pe8qs8XethPs
- Fi9/XmWzOPiwk8Vi2oefzBaf1i9jtfh//je7xbVb89ksVr3ZwWax6MY2JovW/6+YLTY9vsZq
- cXnXHDaLy80XGS26rwNllx//x2TR1GJssfXTb1aLpVtvMjoIe1y+4u1xua+XyWPnrLvsHhMW
- HWD02Lyk3qPl5H4Wj+/rO9g8Pj69xeLxeZOcR/uBbqYArigum5TUnMyy1CJ9uwSujOPvogs2
- 8FYsbt/A1sA4nbuLkZNDQsBE4snyCYxdjFwcQgK7GSWOnl7FCJGQlri+cQI7hC0ssfLfc3aI
- oleMEisebWIGSbAJ6ErsWNzGBpIQEdjDKPF92X2wKmaBLmaJrwf/sEG0HGSUmNB9F2guBwen
- gJ3E54dJIN3CAgES83bOAVvHIqAq0T+jhQ3E5hWwlJj84w4ThC0ocXLmExaQVmYBPYm2jWDl
- zALyEtvfzmGGuE5B4ufTZawgJSICThKLOkUgSsQljv7sYZ7AKDwLyaBZCINmIRk0C0nHAkaW
- VYySqQXFuem5xYYFhnmp5XrFibnFpXnpesn5uZsYwfGupbmDcfuqD3qHGJk4GA8xSnAwK4nw
- Coo/jBPiTUmsrEotyo8vKs1JLT7EKM3BoiTOe6NwYZyQQHpiSWp2ampBahFMlomDU6qB6drM
- MKXSj0euuiocrhfYNlH1Q/2amTPcjZ3T/af0ri1XXOMSOetNUeY0kWWFvh9SWAq8Zj8UNlra
- NtPWqCNq2bQWG/aJtw77H2w3e+iknXn5cnlt+cMjq3eknHXW1z+mHxTfu3G3DMO6+IlbfxlU
- 3G09oHj2604/rSD3Wn/u20cYTkUV9LBEXdsnf9VVT+ol8/nZx+XtFA5sv7XBO+z5nZXLN7Q2
- 3rx5r8s7hutmYri1+j//k7t/26zTWNrpXnxF/SPTh7yerRvu9//dNP9dzpW1UbO3rbryRC0o
- uCBjVtSkM2+WJ+959iuQ91LeiQ2Sj/KaRG6fORLgvk/yxd69T+60HZglvWzT6eNRMapBYRxK
- LMUZiYZazEXFiQDOPU4uZgMAAA==
-X-CMS-MailID: 20200612162251epcas5p17799db495a306a323dc0e1740c8397d0
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200612151010epcas5p3f667305eeef2d3ce5c05e0e87482ae7c
-References: <20200612151000.27639-1-stanley.chu@mediatek.com>
- <CGME20200612151010epcas5p3f667305eeef2d3ce5c05e0e87482ae7c@epcas5p3.samsung.com>
- <20200612151000.27639-2-stanley.chu@mediatek.com>
+In-Reply-To: <20200612104918.3829bb26@why>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_092256_998292_B7970413 
-X-CRM114-Status: GOOD (  14.50  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200612_095722_671058_126CA129 
+X-CRM114-Status: GOOD (  21.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.24 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.24 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -134,8 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,67 +104,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, cc.chou@mediatek.com,
- chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, chaotian.jing@mediatek.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Sumit Garg <sumit.garg@linaro.org>, Russell King <linux@arm.linux.org.uk>,
+ Jason Cooper <jason@lakedaemon.net>, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, kernel-team@android.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stanley
 
-> -----Original Message-----
-> From: Stanley Chu <stanley.chu@mediatek.com>
-> Sent: 12 June 2020 20:40
-> To: linux-scsi@vger.kernel.org; martin.petersen@oracle.com;
-> avri.altman@wdc.com; alim.akhtar@samsung.com; jejb@linux.ibm.com;
-> asutoshd@codeaurora.org
-> Cc: beanhuo@micron.com; cang@codeaurora.org; matthias.bgg@gmail.com;
-> bvanassche@acm.org; linux-mediatek@lists.infradead.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
-> kuohong.wang@mediatek.com; peter.wang@mediatek.com; chun-
-> hung.wu@mediatek.com; andy.teng@mediatek.com;
-> chaotian.jing@mediatek.com; cc.chou@mediatek.com; Stanley Chu
-> <stanley.chu@mediatek.com>
-> Subject: [PATCH v1 1/2] scsi: ufs: Remove unused field in struct
-uic_command
-> 
-> Remove unused field "cmd_active" in struct ufs_command.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
 
->  drivers/scsi/ufs/ufshcd.h | 2 --
->  1 file changed, 2 deletions(-)
+On 6/12/2020 2:49 AM, Marc Zyngier wrote:
+> Hi Florian,
 > 
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h index
-> bf97d616e597..814e44871ff0 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -88,7 +88,6 @@ enum dev_cmd_type {
->   * @argument1: UIC command argument 1
->   * @argument2: UIC command argument 2
->   * @argument3: UIC command argument 3
-> - * @cmd_active: Indicate if UIC command is outstanding
->   * @result: UIC command result
->   * @done: UIC command completion
->   */
-> @@ -97,7 +96,6 @@ struct uic_command {
->  	u32 argument1;
->  	u32 argument2;
->  	u32 argument3;
-> -	int cmd_active;
->  	int result;
->  	struct completion done;
->  };
-> --
-> 2.18.0
+> On Tue, 19 May 2020 10:50:46 -0700
+> Florian Fainelli <f.fainelli@gmail.com> wrote:
+> 
+>> On 5/19/2020 9:17 AM, Marc Zyngier wrote:
+>>> For as long as SMP ARM has existed, IPIs have been handled as
+>>> something special. The arch code and the interrupt controller exchange
+>>> a couple of hooks (one to generate an IPI, another to handle it).
+>>>
+>>> Although this is perfectly manageable, it prevents the use of features
+>>> that we could use if IPIs were Linux IRQs (such as pseudo-NMIs). It
+>>> also means that each interrupt controller driver has to follow an
+>>> architecture-specific interface instead of just implementing the base
+>>> irqchip functionnalities. The arch code also duplicates a number of
+>>> things that the core irq code already does (such as calling
+>>> set_irq_regs(), irq_enter()...).
+>>>
+>>> This series tries to remedy this on arm/arm64 by offering a new
+>>> registration interface where the irqchip gives the arch code a range
+>>> of interrupts to use for IPIs. The arch code requests these as normal
+>>> interrupts.
+>>>
+>>> The bulk of the work is at the interrupt controller level, where all 3
+>>> irqchips used on arm64 get converted.
+>>>
+>>> Finally, the arm64 code drops the legacy registration interface. The
+>>> same thing could be done on 32bit as well once the two remaining
+>>> irqchips using that interface get converted.
+>>>
+>>> There is probably more that could be done: statistics are still
+>>> architecture-private code, for example, and no attempt is made to
+>>> solve that (apart from hidding the IRQs from /proc/interrupt).
+>>>
+>>> This has been tested on a bunch of 32 and 64bit guests.  
+>>
+>> Does this patch series change your position on this patch series
+>>
+>> https://lore.kernel.org/linux-arm-kernel/20191023000547.7831-3-f.fainelli@gmail.com/T/
+>>
+>> or is this still a no-no?
+> 
+> I don't think this series changes anything. There is no easy way to
+> reserve SGIs in a way that would work for all combination of OS and FW,
+> and the prospect of sending SGIs between S and NS has already been
+> dubious (yes, the GIC architecture allows it, but it has been written
+> by people who have never designed any large piece of SW).
 
+That is fair enough, we have transitioned since then to using SPIs and
+that appears to work nicely for what we want to do without requiring
+your patch series.
+
+In premise it is still possible for someone to specify 0x561 as the
+first interrupt cell specifier  in the Device Tree in order to specify a
+SGI interrupt and this will happily be parsed as a valid interrupt.
+
+It would most likely fail some time later while trying to set the
+interrupt type though. I do not think you can do better than this, as
+there is no way for you to know the caller of gic_irq_domain_translate()
+and reject them.
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
