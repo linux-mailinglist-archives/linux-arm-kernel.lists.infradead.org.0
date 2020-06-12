@@ -2,97 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C5001F7BDB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 18:57:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A495B1F7C3C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:14:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u3smLkeO4dbbIxmCXh/ze6uaCC9TZjhf34Xta3XvHSQ=; b=a2vVpKpZgS+Nl/
-	ZfnQwFsguarVkyhuIUcVgJjQE+m3uptnOFpBUtyfwm9oY6OQgNF8rhJVZ07lt5s0KQV4taBnWN7Nm
-	9hd/xiUx28ywHNnUCMhcYxxgYOwKhWJo4F3AQmLn3BBL+aI5VPnuuO68cwQZBb5c0iEbkvfnqlPq6
-	4fGh2EytBPUX++NlInE+S7PPiOrs25a+lAsQSc9f/SuL4L2SdncpDHz+GafmmCP02IUHI1GWbfh/T
-	pcF0OEiDU1tktPNfDiqfAQCI2DVEnfGbqEgWYLBCjeSoLs/KuVgTejwKKkCU2ateXZ/i/rwhUC5V/
-	4u4CpSKWKkQMDbJxnBbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2jl0YFfLA90j2YEBHhFbEHNBj2hySMepdvRpW73PzV8=; b=WUqKtASCpEjBor
+	uOirqxQuPYYi+ewRwWzLmO6IMlTZ3NgHtaAzAy0YMUF09fmbbDZuXG4uYF/pQHe2Bra0x7ZHMIFYe
+	o4clHeTkW4Yme/M1VhZwk4zB+tyPqP9OfPJ3oi32ZU5jbmwi5i+SjMnu+zye0O3nV4aX73EXENKuI
+	2QeC7VVLWR2Of/MqfM7ehgSm8FFrOEYYDvVOX7hWnbHMRFVYBOGni0+QLFnBUVK6jvBkxI9/ISYSq
+	P5fF7XtBD2m9UVIWtAeuwzIbZ+0U4WOLDmi0MYwAkukSw9X+t7hOPxrUMfMDL7yx4UGgvUp3QEc+5
+	d+d5A67DJG2hjm0ayAaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjmzl-0000yJ-71; Fri, 12 Jun 2020 16:57:33 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jjnG5-0001TC-Lh; Fri, 12 Jun 2020 17:14:25 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjmza-0000xq-Ij
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 16:57:24 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q11so10446296wrp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 09:57:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=hdftdNmWNoYmI9KOCEdF8TYF1SQt9boCMGPOgmJ5aMc=;
- b=dX91GOcMpW17ERW/nwCFP38SsYVXilVSIcTeNTtYN2smr2Rcg4eXcMZvw1rl62ZyBc
- rTFpJX1DqOFgImEcxpGnYl+l+ssxPce1MlL3+MAyPh3qGz2hxrSW+XYBIf/idOhlp1SS
- VAv992HGJjQOtLagc1cesdCgFGhNue5vvBsPVlu3N9TjW3Gvtfn1/MtAW39ZZYNSHJCc
- J02akL1SvACXIS0D2bTdYVe+HdY+Z/0W2CkCSmCbfPqyfPafKf5R+YKgGOYZ4t2f9vNB
- FsLda7913vY5QR0YdtdnaPeaoMSf3ao7GZ8zXVeqIOE69heJeBx7NlDWVfFWzMzjTxfb
- wZnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=hdftdNmWNoYmI9KOCEdF8TYF1SQt9boCMGPOgmJ5aMc=;
- b=Byc2TkeKzUggSpNrRG1O8en2J4nSeFkyIY39UzYr0Wd8jwzqOlZYkrAPlNYuR+dqnL
- gK5TTTUnvvH8YFMhik4/k1ZTH/puLMGAqLckkO5D1LXAxdGbR+4yLQTTgtw0LYHYYL1w
- gpENQQhQfk42AJUE76dqH9h4ArVjtsKt2fxbiqvNusU4Co3+5JHnc5OH/wmn3+yMFrez
- /UdSLL+x9OxKoCnt2xLy4nNnnjwpEIBDWK04GnD2y9UsoXf8Fuz0KoepT+7w5SHVuY0Y
- byzz7blb7hPuqYXTcb+oEnVMbcDPqXhGxCfPl9h5W44xGE/a7aKV+7cF916xBe44onQa
- qLug==
-X-Gm-Message-State: AOAM533ng1Do9rSVqmM7o8dQ4J3ecznyij22tKMfFE7gHMlDffUefZPs
- 1mLUpFv/0DbkfONNP8l8328=
-X-Google-Smtp-Source: ABdhPJyNmXM4qc3epdwtYo7bfs1VS3PSIkiDLC+pYnmFfKcklyuurpjoWjZQBuTaqU080fJh/c4sqQ==
-X-Received: by 2002:adf:c391:: with SMTP id p17mr15094247wrf.243.1591981040526; 
- Fri, 12 Jun 2020 09:57:20 -0700 (PDT)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- b201sm9481064wmb.36.2020.06.12.09.57.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 12 Jun 2020 09:57:19 -0700 (PDT)
-Subject: Re: [PATCH 00/11] arm/arm64: Turning IPIs into normal interrupts
-To: Marc Zyngier <maz@kernel.org>
-References: <20200519161755.209565-1-maz@kernel.org>
- <d1ac7873-0f02-dbe0-dd3c-4fd14a87cf03@gmail.com>
- <20200612104918.3829bb26@why>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <0acfca3f-38fb-774c-aaab-53bc8cdbd13b@gmail.com>
-Date: Fri, 12 Jun 2020 09:57:16 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.9.0
+ id 1jjnFV-0001Fq-SD; Fri, 12 Jun 2020 17:13:51 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id A2947AED9;
+ Fri, 12 Jun 2020 17:13:46 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
+ p.zabel@pengutronix.de, linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/9] Raspberry Pi 4 USB firmware initialization rework
+Date: Fri, 12 Jun 2020 19:13:24 +0200
+Message-Id: <20200612171334.26385-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <20200612104918.3829bb26@why>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_095722_671058_126CA129 
-X-CRM114-Status: GOOD (  21.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_101350_072372_BC49A204 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,81 +60,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Garg <sumit.garg@linaro.org>, Russell King <linux@arm.linux.org.uk>,
- Jason Cooper <jason@lakedaemon.net>, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, kernel-team@android.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, tim.gover@raspberrypi.org,
+ mathias.nyman@linux.intel.com, Eric Anholt <eric@anholt.net>,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-usb@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ andy.shevchenko@gmail.com, lorenzo.pieralisi@arm.com,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ helgaas@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+loaded directly from an EEPROM or, if not present, by the SoC's
+co-processor, VideoCore. This series reworks how we handle this.
 
+The previous solution makes use of PCI quirks and exporting platform
+specific functions. Albeit functional it feels pretty shoehorned. This
+proposes an alternative way of handling the triggering of the xHCI chip
+initialization trough means of a reset controller.
 
-On 6/12/2020 2:49 AM, Marc Zyngier wrote:
-> Hi Florian,
-> 
-> On Tue, 19 May 2020 10:50:46 -0700
-> Florian Fainelli <f.fainelli@gmail.com> wrote:
-> 
->> On 5/19/2020 9:17 AM, Marc Zyngier wrote:
->>> For as long as SMP ARM has existed, IPIs have been handled as
->>> something special. The arch code and the interrupt controller exchange
->>> a couple of hooks (one to generate an IPI, another to handle it).
->>>
->>> Although this is perfectly manageable, it prevents the use of features
->>> that we could use if IPIs were Linux IRQs (such as pseudo-NMIs). It
->>> also means that each interrupt controller driver has to follow an
->>> architecture-specific interface instead of just implementing the base
->>> irqchip functionnalities. The arch code also duplicates a number of
->>> things that the core irq code already does (such as calling
->>> set_irq_regs(), irq_enter()...).
->>>
->>> This series tries to remedy this on arm/arm64 by offering a new
->>> registration interface where the irqchip gives the arch code a range
->>> of interrupts to use for IPIs. The arch code requests these as normal
->>> interrupts.
->>>
->>> The bulk of the work is at the interrupt controller level, where all 3
->>> irqchips used on arm64 get converted.
->>>
->>> Finally, the arm64 code drops the legacy registration interface. The
->>> same thing could be done on 32bit as well once the two remaining
->>> irqchips using that interface get converted.
->>>
->>> There is probably more that could be done: statistics are still
->>> architecture-private code, for example, and no attempt is made to
->>> solve that (apart from hidding the IRQs from /proc/interrupt).
->>>
->>> This has been tested on a bunch of 32 and 64bit guests.  
->>
->> Does this patch series change your position on this patch series
->>
->> https://lore.kernel.org/linux-arm-kernel/20191023000547.7831-3-f.fainelli@gmail.com/T/
->>
->> or is this still a no-no?
-> 
-> I don't think this series changes anything. There is no easy way to
-> reserve SGIs in a way that would work for all combination of OS and FW,
-> and the prospect of sending SGIs between S and NS has already been
-> dubious (yes, the GIC architecture allows it, but it has been written
-> by people who have never designed any large piece of SW).
+The benefits are pretty evident: less platform churn in core xHCI code,
+and no explicit device dependency management in pcie-brcmstb.
 
-That is fair enough, we have transitioned since then to using SPIs and
-that appears to work nicely for what we want to do without requiring
-your patch series.
+Note that patch #1 depends on another series[1].
 
-In premise it is still possible for someone to specify 0x561 as the
-first interrupt cell specifier  in the Device Tree in order to specify a
-SGI interrupt and this will happily be parsed as a valid interrupt.
+The series is based on next-20200611
 
-It would most likely fail some time later while trying to set the
-interrupt type though. I do not think you can do better than this, as
-there is no way for you to know the caller of gic_irq_domain_translate()
-and reject them.
+v2: https://lkml.org/lkml/2020/6/9/875
+v1: https://lore.kernel.org/linux-usb/20200608192701.18355-1-nsaenzjulienne@suse.de/T/#t
+
+[1] https://lwn.net/ml/linux-kernel/cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech/
+
+---
+
+Changes since v2:
+ - Add reset to resume routine in xhci-pci
+ - Correct of refcount in pci-quirks
+ - Correct typos
+ - Use include file to define firmware reset IDs
+
+Changes since v1:
+ - Rework reset controller so it's less USB centric.
+ - Use correct reset controller API in xhci-pci
+ - Correct typos
+
+Nicolas Saenz Julienne (9):
+  dt-bindings: reset: Add a binding for the RPi Firmware reset
+    controller
+  reset: Add Raspberry Pi 4 firmware reset controller
+  ARM: dts: bcm2711: Add firmware usb reset node
+  ARM: dts: bcm2711: Add reset controller to xHCI node
+  usb: xhci-pci: Add support for reset controllers
+  Revert "USB: pci-quirks: Add Raspberry Pi 4 quirk"
+  usb: host: pci-quirks: Bypass xHCI quirks for Raspberry Pi 4
+  Revert "firmware: raspberrypi: Introduce vl805 init routine"
+  Revert "PCI: brcmstb: Wait for Raspberry Pi's firmware when present"
+
+ .../arm/bcm/raspberrypi,bcm2835-firmware.yaml |  21 +++
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts         |  14 ++
+ drivers/firmware/Kconfig                      |   3 +-
+ drivers/firmware/raspberrypi.c                |  61 ---------
+ drivers/pci/controller/pcie-brcmstb.c         |  17 ---
+ drivers/reset/Kconfig                         |  11 ++
+ drivers/reset/Makefile                        |   1 +
+ drivers/reset/reset-raspberrypi.c             | 122 ++++++++++++++++++
+ drivers/usb/host/pci-quirks.c                 |  22 ++--
+ drivers/usb/host/xhci-pci.c                   |  10 ++
+ drivers/usb/host/xhci.h                       |   2 +
+ .../reset/raspberrypi,firmware-reset.h        |  13 ++
+ include/soc/bcm2835/raspberrypi-firmware.h    |   7 -
+ 13 files changed, 207 insertions(+), 97 deletions(-)
+ create mode 100644 drivers/reset/reset-raspberrypi.c
+ create mode 100644 include/dt-bindings/reset/raspberrypi,firmware-reset.h
+
 -- 
-Florian
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
