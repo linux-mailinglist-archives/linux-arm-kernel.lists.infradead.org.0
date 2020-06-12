@@ -2,73 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 821A71F7786
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:53:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571D31F7790
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 13:56:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qe81C2U2hf4IREwCKE4Db1gVe+n5ycuLuLf2N0TN6vI=; b=WaKrFz/rVBms8v
-	cUuyCzC33drBwmtxDZajL9Or2xvMUaCoGsEo8Utt7KEirusnnJDbzUmTnUlhIKQ7lLkP8DJT7Ekdn
-	PjXG5ExmRaigZK4DNqhXi5GzNiVlDExGdrISKzEw289logCFs4kipyEvjRwJJ1k+hJepV9dHwNK6j
-	tJV5AFfE5t47zCwAUS4Ff5Vi3CD778UAffZ0bXBoV5MekMuQ2iUEZyQ7Wyhg1zIuBEFu5/tMcfeYK
-	3jLGGBhS1yteaCa8CM6FbcywOpBm7vmiJ/huOc9C3lE0J1Q6jFMkp5okEHp/OIwb0rNwSpbFPHi1y
-	lwKWKy0DOjG2Jagwyy7w==;
+	List-Owner; bh=mo6EpFw8SiC2QNu9ujJOgLyx+ymwdK/b+obdawdluBA=; b=u8WG4P2+jtfyY1
+	x3QcS76vgWUYKExnskBjkRqltc4D4lZB1BAtev4MQsDtfoyx+lf+xdFqoU2gvnrURmJO54eO8qu7C
+	KHM1/7LAhg2ISCcLRALSbG+2IHzZuPR0fi5wMil6u0bz/KVJVQ5I0ebrrEenhnWA/VDCgzM1SLQGZ
+	rCTUY3gUQtztWwcDVHsbe7cozYJi27SE0MvAHQwct9kNCTDoDmN3oqdwO+EHAx7hj4wakK5xetVJ1
+	i2fvduEzccxal6Y55RpFhb3x2T/nMN7tHtvOVAaFvMvC0Em3hPqIuax97t75Opn9jJfjlKH+jRp6t
+	SYpP23Lhqc3GWjS9qYwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjiF4-0003xN-Aw; Fri, 12 Jun 2020 11:53:02 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jjiIf-0006pv-BE; Fri, 12 Jun 2020 11:56:45 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjiEw-0003wu-Bm
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:52:56 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jjiEt-0001TX-HX; Fri, 12 Jun 2020 13:52:51 +0200
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jjiEs-0008JZ-6d; Fri, 12 Jun 2020 13:52:50 +0200
-Date: Fri, 12 Jun 2020 13:52:50 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2] net: mvneta: Fix Serdes configuration for 2.5Gbps modes
-Message-ID: <20200612115250.GS11869@pengutronix.de>
-References: <20200612083847.29942-1-s.hauer@pengutronix.de>
- <20200612084710.GC1551@shell.armlinux.org.uk>
- <20200612100114.GE1551@shell.armlinux.org.uk>
- <20200612101820.GF1551@shell.armlinux.org.uk>
- <20200612104208.GG1551@shell.armlinux.org.uk>
- <20200612112213.GH1551@shell.armlinux.org.uk>
- <20200612113031.GI1551@shell.armlinux.org.uk>
+ id 1jjiIY-0006pa-1Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 11:56:39 +0000
+X-Originating-IP: 91.175.115.186
+Received: from localhost (91-175-115-186.subs.proxad.net [91.175.115.186])
+ (Authenticated sender: gregory.clement@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 0D6DC240004;
+ Fri, 12 Jun 2020 11:56:34 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v2 4/6] ARM: mm: Aligned pte allocation to one page
+In-Reply-To: <CAK8P3a2-g9ZmFiWJ_i4-0C6=WwzC1UjHGzY07w4y=0O1pHSX5Q@mail.gmail.com>
+References: <20200611134914.765827-1-gregory.clement@bootlin.com>
+ <20200611134914.765827-5-gregory.clement@bootlin.com>
+ <CAK8P3a2-g9ZmFiWJ_i4-0C6=WwzC1UjHGzY07w4y=0O1pHSX5Q@mail.gmail.com>
+Date: Fri, 12 Jun 2020 13:56:34 +0200
+Message-ID: <877dwc8pl9.fsf@FE-laptop>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200612113031.GI1551@shell.armlinux.org.uk>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 13:42:38 up 113 days, 19:13, 128 users,  load average: 0.04, 0.14,
- 0.15
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_045254_402811_9DB06F0B 
-X-CRM114-Status: GOOD (  15.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200612_045638_219736_60D3A992 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,61 +65,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel@pengutronix.de
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 12:30:31PM +0100, Russell King - ARM Linux admin wrote:
-> On Fri, Jun 12, 2020 at 12:22:13PM +0100, Russell King - ARM Linux admin wrote:
-> > On Fri, Jun 12, 2020 at 11:42:08AM +0100, Russell King - ARM Linux admin wrote:
-> > > With the obvious mistakes fixed (extraneous 'i' and lack of default
-> > > case), it seems to still work on Armada 388 Clearfog Pro with 2.5G
-> > > modules.
-> > 
-> > ... and the other bug fixed - mvneta_comphy_init() needs to be passed
-> > the interface mode.
-> 
-> Unrelated to the patch, has anyone noticed that mvneta's performance
-> seems to have reduced?  I've only just noticed it (which makes 2.5Gbps
-> rather pointless).  This is iperf between two clearfogs with a 2.5G
-> fibre link:
-> 
-> root@clearfog21:~# iperf -V -c fe80::250:43ff:fe02:303%eno2
-> ------------------------------------------------------------
-> Client connecting to fe80::250:43ff:fe02:303%eno2, TCP port 5001
-> TCP window size: 43.8 KByte (default)
-> ------------------------------------------------------------
-> [  3] local fe80::250:43ff:fe21:203 port 48928 connected with fe80::250:43ff:fe02:303 port 5001
-> [ ID] Interval       Transfer     Bandwidth
-> [  3]  0.0-10.0 sec   553 MBytes   464 Mbits/sec
-> 
-> I checked with Jon Nettleton, and he confirms my recollection that
-> mvneta on Armada 388 used to be able to fill a 2.5Gbps link.
-> 
-> If Armada 388 can't manage, then I suspect Armada XP will have worse
-> performance being an earlier revision SoC.
+Arnd Bergmann <arnd@arndb.de> writes:
 
-I only have one board with a Armada XP here which has a loopback cable
-between two ports. It gives me:
+> On Thu, Jun 11, 2020 at 3:49 PM Gregory CLEMENT
+> <gregory.clement@bootlin.com> wrote:
+>>
+>> In pte_offset_kernel() the pte_index macro is used. This macro makes
+>> the assumption that the address is aligned to a page size.
+>>
+>> In arm_pte_allocation, the size allocated is the size needed for 512
+>> entries. Actually this size was calculated to fit in a 4K page. When
+>> using larger page, the size of the table allocated is no more
+>> aligned which end to give a wrong physical address.
+>>
+>> The solution is to round up the allocation to a page size instead of
+>> the exact size of the tables (which is 4KB). It allows to comply with
+>> the assumption of pte_index() but the drawback is a waste of memory
+>> for the early allocation if page size is bigger than 4KB.
+>
+> Have you considered increasing PTRS_PER_PTE instead to fill up
+> a logical page instead? If that doesn't work, can you explain here
+> why not?
 
-[  3] local 172.16.1.4 port 47002 connected with 172.16.1.0 port 5001
-[ ID] Interval       Transfer     Bandwidth
-[  3]  0.0-10.0 sec  1.27 GBytes  1.09 Gbits/sec
+Actually for this situation I didn't try to do better but it is only
+used very early during the boot. Then I'm expecting that the allocation
+is done though slab so with object at the exact size we need.
 
-Still not 2.5Gbps, but at least twice the data rate you get, plus my
-board has to handle both ends of the link.
+However you also pointed modifying PTRS_PER_PTE for the overall memory
+consumption in the cover letter and in this case, it could worth
+modifying it.
 
-Sascha
+Gregory
+
+>
+>        Arnd
 
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
