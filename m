@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 328D81F7C5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:16:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5238D1F7C59
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 19:15:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F85UDALKdcgmb3OvxTXtrDI8xnjsoA9SeQ8s1wp6MVI=; b=mBPbN8LE10Ygdv
-	2fzEC1q9964snb1z45gGwFFWG8Lou2qaL8vxv8UwrY96VSJ6WYJmNlhI7XwsRPyDtUE7rmdDR1/in
-	8nBjPpe5onURWTmEkLLYgOwk7TUeZn3ad+3dqp3YsQn56JqNFH9pFbPZAcxpCIau760dqdNr1wrE+
-	2By9w5KstnlZRHQTKHpe1iONcU9UA3HZrANfiJdrrHDWAsbedJmQdgUd3QruBNpOoH2X5Y9wc3n8+
-	Rnyndh4l575aDk8qx55jp5WY5+mIvkS4XbSGJnsapjpN0fL5mXtJbXf5ey6KUmOG01DOPpty2ug4k
-	fr7ygqSwFQc2ccKx2RKg==;
+	List-Owner; bh=VR92ct0VgUON0aYbUoGpXfDMGBGFYjHna+LWRYTz+Uo=; b=WOricRqz3kf+S1
+	7Mtw9COygxRGh2h20AEM4MHkgtyw8bRCY1lWhhovaKjIUDg1lytcrbj6OXfZVgFbTY8iVp9lvZAqp
+	IMgfAPOBfKrc4sVmTN45NuKleypkvSZoaZmsHe/D+bTjmLFgbgK2mE8ziw6iF34TcQuSAkiCiulvf
+	1NUE0okScxVh5wAStR5w19G70T4M6wC8JxyUlDcqsklE0kSbhy+K0peLqfTFnUSmmSmmXaR6yPkBs
+	+LYiR7szW/MRXzYe6ynppJrWifzjNYFAQoyIwyvsao6fepSu5ogqqKN+cKmAexXe7LytWY9x2E6VW
+	MAoGelWsPSyVkrNwydVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjnHe-0005IZ-H3; Fri, 12 Jun 2020 17:16:02 +0000
+	id 1jjnHN-00055g-A3; Fri, 12 Jun 2020 17:15:45 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjnFY-0001IE-PE; Fri, 12 Jun 2020 17:13:54 +0000
+ id 1jjnFY-0001II-PH; Fri, 12 Jun 2020 17:13:54 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id B58D5AEF8;
- Fri, 12 Jun 2020 17:13:52 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id C8207AAD0;
+ Fri, 12 Jun 2020 17:13:54 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  p.zabel@pengutronix.de, linux-kernel@vger.kernel.org,
  Mathias Nyman <mathias.nyman@intel.com>
-Subject: [PATCH v3 5/9] usb: xhci-pci: Add support for reset controllers
-Date: Fri, 12 Jun 2020 19:13:29 +0200
-Message-Id: <20200612171334.26385-6-nsaenzjulienne@suse.de>
+Subject: [PATCH v3 6/9] Revert "USB: pci-quirks: Add Raspberry Pi 4 quirk"
+Date: Fri, 12 Jun 2020 19:13:30 +0200
+Message-Id: <20200612171334.26385-7-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200612171334.26385-1-nsaenzjulienne@suse.de>
 References: <20200612171334.26385-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_101353_141813_FC668C1D 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20200612_101352_967014_CA3DB921 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,87 +74,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some atypical users of xhci-pci might need to manually reset their xHCI
-controller before starting the HCD setup. Check if a reset controller
-device is available to the PCI bus and trigger a reset.
+This reverts commit c65822fef4adc0ba40c37a47337376ce75f7a7bc.
+
+The initialization of Raspberry Pi 4's USB chip is now handled through a
+reset controller. No need to directly call the firmware routine trough a
+pci quirk.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
+ drivers/firmware/Kconfig      |  3 +--
+ drivers/usb/host/pci-quirks.c | 16 ----------------
+ 2 files changed, 1 insertion(+), 18 deletions(-)
 
-Changes since v2:
- - Also reset on resume
-
-Changes since v1:
- - Use proper reset API
- - Make code simpler
-
- drivers/usb/host/xhci-pci.c | 10 ++++++++++
- drivers/usb/host/xhci.h     |  2 ++
- 2 files changed, 12 insertions(+)
-
-diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
-index ef513c2fb843..e76b9283faa3 100644
---- a/drivers/usb/host/xhci-pci.c
-+++ b/drivers/usb/host/xhci-pci.c
-@@ -12,6 +12,7 @@
- #include <linux/slab.h>
- #include <linux/module.h>
+diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
+index fbd785dd0513..4843e94713a4 100644
+--- a/drivers/firmware/Kconfig
++++ b/drivers/firmware/Kconfig
+@@ -178,9 +178,8 @@ config ISCSI_IBFT
+ 	  Otherwise, say N.
+ 
+ config RASPBERRYPI_FIRMWARE
+-	bool "Raspberry Pi Firmware Driver"
++	tristate "Raspberry Pi Firmware Driver"
+ 	depends on BCM2835_MBOX
+-	default USB_PCI
+ 	help
+ 	  This option enables support for communicating with the firmware on the
+ 	  Raspberry Pi.
+diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
+index 0b949acfa258..92150ecdb036 100644
+--- a/drivers/usb/host/pci-quirks.c
++++ b/drivers/usb/host/pci-quirks.c
+@@ -16,9 +16,6 @@
+ #include <linux/export.h>
  #include <linux/acpi.h>
-+#include <linux/reset.h>
+ #include <linux/dmi.h>
+-
+-#include <soc/bcm2835/raspberrypi-firmware.h>
+-
+ #include "pci-quirks.h"
+ #include "xhci-ext-caps.h"
  
- #include "xhci.h"
- #include "xhci-trace.h"
-@@ -339,6 +340,7 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
- 	struct xhci_hcd *xhci;
- 	struct usb_hcd *hcd;
- 	struct xhci_driver_data *driver_data;
-+	struct reset_control *reset;
+@@ -1246,24 +1243,11 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
  
- 	driver_data = (struct xhci_driver_data *)id->driver_data;
- 	if (driver_data && driver_data->quirks & XHCI_RENESAS_FW_QUIRK) {
-@@ -347,6 +349,11 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
- 			return retval;
- 	}
- 
-+	reset = devm_reset_control_get_optional_exclusive(&dev->bus->dev, NULL);
-+	if (IS_ERR(reset))
-+		return PTR_ERR(reset);
-+	reset_control_reset(reset);
-+
- 	/* Prevent runtime suspending between USB-2 and USB-3 initialization */
- 	pm_runtime_get_noresume(&dev->dev);
- 
-@@ -364,6 +371,7 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
- 	/* USB 2.0 roothub is stored in the PCI device now. */
- 	hcd = dev_get_drvdata(&dev->dev);
- 	xhci = hcd_to_xhci(hcd);
-+	xhci->reset = reset;
- 	xhci->shared_hcd = usb_create_shared_hcd(&xhci_pci_hc_driver, &dev->dev,
- 						 pci_name(dev), hcd);
- 	if (!xhci->shared_hcd) {
-@@ -515,6 +523,8 @@ static int xhci_pci_resume(struct usb_hcd *hcd, bool hibernated)
- 	struct pci_dev		*pdev = to_pci_dev(hcd->self.controller);
- 	int			retval = 0;
- 
-+	reset_control_reset(xhci->reset);
-+
- 	/* The BIOS on systems with the Intel Panther Point chipset may or may
- 	 * not support xHCI natively.  That means that during system resume, it
- 	 * may switch the ports back to EHCI so that users can use their
-diff --git a/drivers/usb/host/xhci.h b/drivers/usb/host/xhci.h
-index 2c6c4f8d1ee1..379ffa24877d 100644
---- a/drivers/usb/host/xhci.h
-+++ b/drivers/usb/host/xhci.h
-@@ -1770,6 +1770,8 @@ struct xhci_hcd {
- 	/* optional clocks */
- 	struct clk		*clk;
- 	struct clk		*reg_clk;
-+	/* optional reset controller */
-+	struct reset_control *reset;
- 	/* data structures */
- 	struct xhci_device_context_array *dcbaa;
- 	struct xhci_ring	*cmd_ring;
+ static void quirk_usb_early_handoff(struct pci_dev *pdev)
+ {
+-	int ret;
+-
+ 	/* Skip Netlogic mips SoC's internal PCI USB controller.
+ 	 * This device does not need/support EHCI/OHCI handoff
+ 	 */
+ 	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
+ 		return;
+-
+-	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
+-		ret = rpi_firmware_init_vl805(pdev);
+-		if (ret) {
+-			/* Firmware might be outdated, or something failed */
+-			dev_warn(&pdev->dev,
+-				 "Failed to load VL805's firmware: %d. Will continue to attempt to work, but bad things might happen. You should fix this...\n",
+-				 ret);
+-		}
+-	}
+-
+ 	if (pdev->class != PCI_CLASS_SERIAL_USB_UHCI &&
+ 			pdev->class != PCI_CLASS_SERIAL_USB_OHCI &&
+ 			pdev->class != PCI_CLASS_SERIAL_USB_EHCI &&
 -- 
 2.26.2
 
