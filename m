@@ -2,91 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0BA21F792A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:58:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6262F1F792B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 15:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NPJjoumOkU6EMk0h7s26qgPGDXwiknW7GoOs/6iOL5Y=; b=KZIVlb1Ek5YNCR
-	3dhJP+bfgxIL+DBHmssBB0hDsOHLU+BJE04Gb/Rpfy3zAvftIWwcpqbHF+LWtl1XWBHfXbh9SQYw2
-	emhe6+BJ+ehGgnc+5Me3HlbtEjzMpqOkjYokYAHR7QCCCgxefk8rCvL2eyA2WILDTdpm6ls46mQIe
-	/wFFtuokEO3ZNhqemOJy45YA0UmBSi8seHh2nTlPegCPDnypcupsZiT902gx/jC/LNhG44SbuCgz2
-	Tf2P7IvOe+Qzv+ztxolDLkoNT8MhLho0NZcIq59czNO3+l3uEz1wN2qcLjv0HIiMFHmskrQAySOm9
-	AGa4eLoQI4fCKV38K7aA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MdwwJ8V6LWT8IT59/EtscgZWTah0AESXYQKExF9Efc4=; b=jzawRSvsPqDpvC5Z7QwCqoU3b
+	uUBSloBcYCPQAYkuwKXrK3+Fu6mpnLqYntuNZwXT5XCJf8cRITGmP1FJ3X8DMkrfSUikXQErkyD81
+	UdicUowE6SHuAdo4ENadGW7ZPUqavBqCAwg4DYZALHzhW9VBBOKc7vbN5ufRNrVXv8O/mC2GvwoH9
+	WFbPMZS2cNB6KxLR/04Mwq3033wIEpn4UIP/OEbjQdyepmshO0tLjAUP/3u6hY3bzAwk59ETDh3M/
+	iE+fuZRKM2W8sVKdyXSs6gNhoFnvWof+fTF4N2k/d0gudaEJFnOFbQoT2oDoV2Umkki+cjbVWUSEn
+	SQf2BoI6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjkC5-0007jB-Sa; Fri, 12 Jun 2020 13:58:05 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jjkCO-0007wj-Qf; Fri, 12 Jun 2020 13:58:24 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjk9q-00062M-IE
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:55:48 +0000
-Received: by mail-pg1-x542.google.com with SMTP id t7so4168186pgt.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 06:55:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=jjd0AuUqDMS+kg7RMfFuNDT5WMCpvxZwxODMYSMGb1M=;
- b=AGm49oXOJa5zvbGQSmCtPupmqX/vK0ZW8yO+FtbKQdYZhs/qHaUS/YrDhFOr2Ohk2C
- vmm3wEH/np8fZhGqc4XNfrMnILSw+UvGZdh/wynEj63vaoMLII/YBTTwfnYG1oMkd4yi
- mTsaj9JZb9qzBuD1CwqYPNRWvT82p5TKFWey09Jyp+fc0NjpoYrOH9XkEmy19ojS8tJB
- bcm/JOqSpb+/aYnPpOBvKGsvTRzsD7FLRL86I+HhWCdtQgLN/F4Jn6yCLgjwWIuUGWh6
- EpgBun44z05r0/yWcQIBB+1WyCZrI2OfsoCxeHxH3rFDK+tZWE1El3KgmYVY7xldognU
- KF0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=jjd0AuUqDMS+kg7RMfFuNDT5WMCpvxZwxODMYSMGb1M=;
- b=H+pzZ9/jnEdM8YrYvR57Qz+dmV/hwOGMILuW+H4TDi6R62H+9Nwddm4gb9y19/QDgF
- q17e0EHGCW3aLYSV7y1i9wEZu6JdP6R/TnWKcKdHfMofqNSvpWjY6DRwG6p6Qk7OWMBT
- 8rih2XnHZ7QTXI/AOf5Emio2QTypb58YiuxRL+f81beW9k1zXMO2KWtUXwOfZAJ7x6xi
- gwkPWVs7qyNq3QpqdVyB7Nk5OJtBrCtMZLOE5jIgGR2R//EctO/rRJNFH70uKm8Jlr2o
- adhf9AfnTv3/3G3Srf0sp1Jh7QTUYakn5Kw4sJmtSNxgL00+fCV27QAFdSQXUmaWgLCS
- fPQQ==
-X-Gm-Message-State: AOAM531AlB3BF+Ib01c3WxMuoQdfCQCc4NIaGLtuVPWpN70Fq4Jv9tcK
- T3ouxWvIVTxYA2+Cmj2OQxc=
-X-Google-Smtp-Source: ABdhPJxZsluvfDXjcLYcixbYMCGaCMI0iW8Tje9KJtl2C3rbqpPHE3nY5bBWjfZrbopCFK5js/mV7w==
-X-Received: by 2002:a63:7707:: with SMTP id s7mr10832085pgc.295.1591970145638; 
- Fri, 12 Jun 2020 06:55:45 -0700 (PDT)
-Received: from localhost ([49.207.50.185])
- by smtp.gmail.com with ESMTPSA id e127sm6617854pfe.45.2020.06.12.06.55.44
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 12 Jun 2020 06:55:44 -0700 (PDT)
-Date: Fri, 12 Jun 2020 19:25:38 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-Message-ID: <20200612135538.GA13399@afzalpc>
-References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
- <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
- <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
+ id 1jjkBb-0007WK-J0
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 13:57:41 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1591970256; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=Nnwzt7zuQMOUqUoSvTtGqjQ2ZaQh545isYVqaS3gMII=;
+ b=NnsvIN6VO2Mo44u4Ka5MeOS9QV5egFH/BYnXHwBydMvBixmOCo3FvYtMd3mNFx3mZqA6ZCnk
+ CQPsWi4esqCUumVKdzJk7WlUCAA98NijnAE8P2aer8MsL9tjM8qe1wc6txl+s2AhCd2Hmd5C
+ juYUvy70kW2N+ubhR+y9PNDrP0I=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n06.prod.us-east-1.postgun.com with SMTP id
+ 5ee389cba3d8a4474390599f (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Fri, 12 Jun 2020 13:57:31
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id C4A06C43391; Fri, 12 Jun 2020 13:57:30 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [10.213.44.202] (unknown [202.46.22.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: sthombre)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 97A90C433CB;
+ Fri, 12 Jun 2020 13:57:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 97A90C433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=sthombre@codeaurora.org
+Subject: Re: [PATCH] arm64: mm: reset address tag set by kasan sw tagging
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1591787384-5823-1-git-send-email-sthombre@codeaurora.org>
+ <20200610113626.GI26099@gaia>
+From: Shyam Thombre <sthombre@codeaurora.org>
+Message-ID: <809f4dc3-cba1-25b9-36cf-492e3b434530@codeaurora.org>
+Date: Fri, 12 Jun 2020 19:27:14 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <20200610113626.GI26099@gaia>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_065546_678354_438C0F34 
-X-CRM114-Status: GOOD (  23.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_065736_151199_D19A9FD0 
+X-CRM114-Status: GOOD (  18.87  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
+ no trust [104.130.122.27 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.27 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,128 +96,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Pitre <nico@fluxnic.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, sashal@kernel.org, anshuman.khandual@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, jcrouse@codeaurora.org,
+ ard.biesheuvel@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Catalin,
 
-On Fri, Jun 12, 2020 at 02:02:13PM +0200, Arnd Bergmann wrote:
-> On Fri, Jun 12, 2020 at 12:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
 
-> > Roughly a one-third drop in performance. Disabling highmem improves
-> > performance only slightly.
-
-> There are probably some things that can be done to optimize it,
-> but I guess most of the overhead is from the page table operations
-> and cannot be avoided.
-
-Ingo's series did a follow_page() first, then as a fallback did it
-invoke get_user_pages(), i will try that way as well.
-
-Yes, i too feel get_user_pages_fast() path is the most time consuming,
-will instrument & check.
-
-> What was the exact 'dd' command you used, in particular the block size?
-> Note that by default, 'dd' will request 512 bytes at a time, so you usually
-> only access a single page. It would be interesting to see the overhead with
-> other typical or extreme block sizes, e.g. '1', '64', '4K', '64K' or '1M'.
-
-It was the default(512), more test results follows (in MB/s),
-
-                512     1K      4K      16K     32K     64K     1M
-
-w/o series      30      46      89      95      90      85      65
-
-w/ series       22      36      72      79      78      75      61
-
-perf drop       26%     21%     19%     16%     13%     12%    6%
-
-Hmm, results ain't that bad :)
-
-> If you want to drill down into where exactly the overhead is (i.e.
-> get_user_pages or kmap_atomic, or something different), using
-> 'perf record dd ..', and 'perf report' may be helpful.
-
-Let me dig deeper & try to find out where the major overhead and try
-to figure out ways to reduce it.
-
-One reason to disable highmem & test (results mentioned earlier) was
-to make kmap_atomic() very lightweight, that was not making much
-difference, around 3% only.
-
-> > +static int copy_chunk_from_user(unsigned long from, int len, void *arg)
-> > +{
-> > +       unsigned long *to_ptr = arg, to = *to_ptr;
-> > +
-> > +       memcpy((void *) to, (void *) from, len);
-> > +       *to_ptr += len;
-> > +       return 0;
-> > +}
-> > +
-> > +static int copy_chunk_to_user(unsigned long to, int len, void *arg)
-> > +{
-> > +       unsigned long *from_ptr = arg, from = *from_ptr;
-> > +
-> > +       memcpy((void *) to, (void *) from, len);
-> > +       *from_ptr += len;
-> > +       return 0;
-> > +}
+On 6/10/2020 5:06 PM, Catalin Marinas wrote:
+> On Wed, Jun 10, 2020 at 04:39:44PM +0530, Shyam Thombre wrote:
+>> KASAN sw tagging sets a random tag of 8 bits in the top byte of the pointer
+>> returned by the memory allocating functions. So for the functions unaware
+>> of this change, the top 8 bits of the address must be reset which is done
+>> by the function arch_kasan_reset_tag().
+>>
+>> Signed-off-by: Shyam Thombre <sthombre@codeaurora.org>
+>> ---
+>>   arch/arm64/mm/mmu.c | 1 +
+>>   1 file changed, 1 insertion(+)
+>>
+>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>> index e7fbc62..eae7655 100644
+>> --- a/arch/arm64/mm/mmu.c
+>> +++ b/arch/arm64/mm/mmu.c
+>> @@ -723,6 +723,7 @@ int kern_addr_valid(unsigned long addr)
+>>   	pmd_t *pmdp, pmd;
+>>   	pte_t *ptep, pte;
+>>   
+>> +	addr = arch_kasan_reset_tag(addr);
+>>   	if ((((long)addr) >> VA_BITS) != -1UL)
+>>   		return 0;
 > 
-> Will gcc optimize away the indirect function call and inline everything?
-> If not, that would be a small part of the overhead.
-
-i think not, based on objdump, i will make these & wherever other
-places possible inline & see the difference.
-
-> > +       num_pages = DIV_ROUND_UP((unsigned long)from + n, PAGE_SIZE) -
-> > +                                (unsigned long)from / PAGE_SIZE;
+> It would be interesting to know what fails without this patch. The only
+> user seems to be read_kcore() and, at a quick look, I don't see how it
+> can generate tagged addresses.
 > 
-> Make sure this doesn't turn into actual division operations but uses shifts.
-> It might even be clearer here to open-code the shift operation so readers
-> can see what this is meant to compile into.
 
-Okay
-
-> 
-> > +       pages = kmalloc_array(num_pages, sizeof(*pages), GFP_KERNEL | __GFP_ZERO);
-> > +       if (!pages)
-> > +               goto end;
-> 
-> Another micro-optimization may be to avoid the kmalloc for the common case,
-> e.g. anything with "num_pages <= 64", using an array on the stack.
-
-Okay
-
-> > +       ret = get_user_pages_fast((unsigned long)from, num_pages, 0, pages);
-> > +       if (ret < 0)
-> > +               goto free_pages;
-> > +
-> > +       if (ret != num_pages) {
-> > +               num_pages = ret;
-> > +               goto put_pages;
-> > +       }
-> 
-> I think this is technically incorrect: if get_user_pages_fast() only
-> gets some of the
-> pages, you should continue with the short buffer and return the number
-> of remaining
-> bytes rather than not copying anything. I think you did that correctly
-> for a failed
-> kmap_atomic(), but this has to use the same logic.
-
-yes, will fix that.
+This issue is seen in downstream GPU drivers. It currently doesn't look 
+to impact any upstream users.
 
 
-Regards
-afzal
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
