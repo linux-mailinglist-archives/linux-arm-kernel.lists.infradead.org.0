@@ -2,86 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C7A51F7D24
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 20:49:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AA691F7DEE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 22:03:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EqlIzTGqrHKY9OUSAYiIe0L5mi5g0ARfi7gmZZ5d5MU=; b=SteaiSpNUne5+p
-	dMd3mT3mqmX+ge+tUoJI5M2jRVCWIFKOWxBpcNVLPCVxx2T0OJz88kCJQTRMZQriCeblqv7WlML2m
-	nNK0EEAVAVx7tiHdOaG0wkafZwXHnXOV5J8lFUpnIPdCU/IvyBMDYJYGg8nVwE9iKLhMjdHe0nVHX
-	AgXBhkYCDIqQ1+X9WBci6Ch2SyBu5ZlCApCO9l3vpkV+OTVYRq74rEInCKIuvrzjh6gR9U/AdomSR
-	iuU1D/FMO1uGICM+haI/XuDvvV6oqIGDsGKrsz1bDjzEj+1fbeBBpSBb2HnXNEQx8gp4s71ZHeSHE
-	56mXbedoWo1i8mK82YXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qjDOM1I9tjk76ORVx6JIBoChZ6vtH0Nh+vMixugvXCE=; b=FeZTIDdTeuZU8g
+	E+LgZCu0rjmZC64QQcJ1eDpczCAiXcckRRg0gG96IHbrMDTVJldJBbXcvY881lCz4QSsVHmoMsIgI
+	sBUka2fKZT/QrNs2Ibt+Orla0hTkJR6e+9zcSi1mDKH25I9OtR0YcFZ7kSWKZj2CET7fSfUsBcM3k
+	JmffW8gKu5Ie1aLyCpHmPoMFR2PqFZiPPZgMOhaKwux8ljsj3V6FVPOBy5mVWINNyD8YdFW/kkiVv
+	EV4OMP88/pTBgpbLXfjCDBE/4bCThO9pImkiOA/hK6VpDHBUaN5Vdo2sxEuz1ly7VMH0/GBQFRb3P
+	mJWELW8aGMzsfTh2kcJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjok2-0003YZ-Aa; Fri, 12 Jun 2020 18:49:26 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1jjptL-0004zE-Cf; Fri, 12 Jun 2020 20:03:07 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjojt-0003Xe-6p
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 18:49:18 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id e12so7156626eds.2
+ id 1jjptA-0004xs-5m
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 20:02:57 +0000
+Received: by mail-pg1-x541.google.com with SMTP id b5so3654339pgm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 11:49:16 -0700 (PDT)
+ Fri, 12 Jun 2020 13:02:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nRDVrwu4nmGYq+4H/l+Rfcgr3AzgWNw91u+JyocBvfM=;
- b=m2KD82ivlXUUePVUWot71c6WcaxeJlCXcnih6WkWsEDIJ2gD3qUd/7EVIU4njM4fLA
- MTs+s5Qv/pTww8Rd4mWtfwyDe9R3f17Zg1HzZGaeKrK/Nmx6HPYjlQAKmNhms7lmkWiJ
- raCqRd6ECYIDOUN6A2CwJIAex+onNYl/jvZXg=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6uGSExpyps+wiw7uOwP+l2H0cv+SpFFWTmb8dRKkt6U=;
+ b=h7u6dR4B19jQUlPQPyqjXka9J3KhpwDNlIcPUaI2++siCsOQzCELypYC05rGhkBGfK
+ g6A0zotR7FceCE016nrOeQktoGXFoxfPsVMkwkGm2ZK8vzxnm9PHYfuf86mrONiRQW2Z
+ Zw4dDBZtjL34Gk9sshcTJuMJRBFPMalZqIERo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=nRDVrwu4nmGYq+4H/l+Rfcgr3AzgWNw91u+JyocBvfM=;
- b=taaoO84b5j0Y9/tv6FI4uaKVVgn6YzkLtqAGQ8lGzb8TNf0u3aRAoOpFBvfSBEJUHe
- S0c71XzUXtTQP6W5SBR14wF/pnKzY449GS9OCRXbM4ADjqo56W8sOGT4CjyBF5+7EcMc
- ZDgoYZnhttla3YiNCiQFkWw9G4XYapIrLuskqJpesjqI4b1X5Jmq7UzL/O0Sj+B56PJM
- VJMfYq1Sr9pIOZv4LzKDwwfOa3HZ9mY/QfcTsMrYTWyXAVxtH6EpTXbUvG8ijDUnDEVk
- X9pZgrnVwbcmqx2N8MlGPMJ3OiZbP5fvZko8/q3ylzjc9M9HIVUIG8ZD/4T0D93ui5xe
- 1NCQ==
-X-Gm-Message-State: AOAM532dfswfsCKNqAM3YPIeivrezkeLG01OlFSWr4MUoQpudryCgyyH
- jYptJq1V4L/7LDnRo9YUAPGUF9ddNlFjMw==
-X-Google-Smtp-Source: ABdhPJwC5X40CZ5mvpx7M+V7cOXSQt1FqIwSvyThduNw+B27vAqnZpsq1uqHfLm6duszURAedS4qeQ==
-X-Received: by 2002:aa7:d7cc:: with SMTP id e12mr12619484eds.70.1591987755222; 
- Fri, 12 Jun 2020 11:49:15 -0700 (PDT)
-Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com.
- [209.85.221.53])
- by smtp.gmail.com with ESMTPSA id q25sm3927468ejz.93.2020.06.12.11.49.14
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 12 Jun 2020 11:49:14 -0700 (PDT)
-Received: by mail-wr1-f53.google.com with SMTP id e1so10755831wrt.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 11:49:14 -0700 (PDT)
-X-Received: by 2002:adf:9c12:: with SMTP id f18mr17605374wrc.105.1591987753743; 
- Fri, 12 Jun 2020 11:49:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6uGSExpyps+wiw7uOwP+l2H0cv+SpFFWTmb8dRKkt6U=;
+ b=DHiWkO1X9pJ6JYLc9EHJp3jmsJpOwhnOaJ05LbWgPaKcrC13XPN+JLc+ey5XAKKLfS
+ HYNvGR6kMu6gVZ/iz1HYIhoUh07Dbp0On+V8JrD+z5RTvDbOPOydmUz8nO7ilnK/5TnW
+ 2jKAoayqcbynMhOyMtQe0k+lWCgDXII1v8D8hy61UKsNajesPvuLhCIKQVqIk3VcLaNj
+ t3jxGyJx0S4gYdquLG3OnYJmmvWcoHD7K2rt7vFd/Mj+ZCN0pyLTHmD3IN0b2/DLwVwo
+ Dem9HYmGCwvsPhTn0bwccDMYkRjY9XiT2oxQxMkc+QZrFhphGo88UStNqhdmpuI5zqlt
+ vsHA==
+X-Gm-Message-State: AOAM533I6DLHZ93J0TvH1/Kdkic21GMVweOiyANnvM2GbLqxYL04TE/o
+ RACMieUWxfqDpDrQScelVE8KXw==
+X-Google-Smtp-Source: ABdhPJz0sMFDiDA11ABe5kT1o/km+Y+ock0L+fTuGu64VLLvv2xzyZOb5s8slfiJArkBbrcCb8SSjA==
+X-Received: by 2002:a63:1617:: with SMTP id w23mr12597286pgl.248.1591992175014; 
+ Fri, 12 Jun 2020 13:02:55 -0700 (PDT)
+Received: from apsdesk.mtv.corp.google.com
+ ([2620:15c:202:1:e09a:8d06:a338:aafb])
+ by smtp.gmail.com with ESMTPSA id f7sm6544851pje.1.2020.06.12.13.02.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 12 Jun 2020 13:02:54 -0700 (PDT)
+From: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
+To: heiko@sntech.de,
+	linux-rockchip@lists.infradead.org
+Subject: [PATCH v2] ARM: dts: rockchip: Add marvell BT irq config
+Date: Fri, 12 Jun 2020 13:02:48 -0700
+Message-Id: <20200612130219.v2.1.I66864be898aa835ccb66b6cd5220d0b082338a81@changeid>
+X-Mailer: git-send-email 2.27.0.290.gba653c62da-goog
 MIME-Version: 1.0
-References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
- <20200509080627.23222-3-dongchun.zhu@mediatek.com>
- <20200521193204.GA14214@chromium.org>
- <1590209415.8804.431.camel@mhfsdcap03> <20200610183600.GI201868@chromium.org>
- <1591954266.8804.646.camel@mhfsdcap03>
-In-Reply-To: <1591954266.8804.646.camel@mhfsdcap03>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Fri, 12 Jun 2020 20:49:01 +0200
-X-Gmail-Original-Message-ID: <CAAFQd5CboZ9aFhUyKPES_2oO_AKAOh3Pg8D+9YpfmzJ8v-yFHw@mail.gmail.com>
-Message-ID: <CAAFQd5CboZ9aFhUyKPES_2oO_AKAOh3Pg8D+9YpfmzJ8v-yFHw@mail.gmail.com>
-Subject: Re: [V8, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_114917_249375_CFAE5BD3 
-X-CRM114-Status: GOOD (  24.96  )
+X-CRM114-CacheID: sfid-20200612_130256_238531_A13F48C1 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:52d listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,115 +94,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- =?UTF-8?B?U2hlbmduYW4gV2FuZyAo546L5Zyj55S3KQ==?= <shengnan.wang@mediatek.com>,
- Louis Kuo <louis.kuo@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, chromeos-bluetooth-upstreaming@chromium.org,
+ dianders@chromium.org, Rob Herring <robh+dt@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+ mka@chromium.org, Abhishek Pandit-Subedi <abhishekpandit@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 11:33 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
->
-> Hi Tomasz,
->
-> On Wed, 2020-06-10 at 18:36 +0000, Tomasz Figa wrote:
-> > On Sat, May 23, 2020 at 12:50:15PM +0800, Dongchun Zhu wrote:
-> > > Hi Tomasz,
-> > >
-> > > Thanks for the review. My replies are as below.
-> > >
-> > > On Thu, 2020-05-21 at 19:32 +0000, Tomasz Figa wrote:
-> > > > Hi Dongchun,
-> > > >
-> > > > On Sat, May 09, 2020 at 04:06:27PM +0800, Dongchun Zhu wrote:
-> > [snip]
-> > > > > +{
-> > > > > +       struct i2c_client *client = to_i2c_client(dev);
-> > > > > +       struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > > > > +       struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > > > > +       int ret;
-> > > > > +
-> > > > > +       gpiod_set_value_cansleep(ov02a10->n_rst_gpio, 0);
-> > > > > +       gpiod_set_value_cansleep(ov02a10->pd_gpio, 0);
-> > > > > +
-> > > > > +       ret = clk_prepare_enable(ov02a10->eclk);
-> > > > > +       if (ret < 0) {
-> > > > > +               dev_err(dev, "failed to enable eclk\n");
-> > > > > +               return ret;
-> > > > > +       }
-> > > > > +
-> > > > > +       ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
-> > > > > +       if (ret < 0) {
-> > > > > +               dev_err(dev, "failed to enable regulators\n");
-> > > > > +               goto disable_clk;
-> > > > > +       }
-> > > > > +       usleep_range(5000, 6000);
-> > > > > +
-> > > > > +       gpiod_set_value_cansleep(ov02a10->pd_gpio, 1);
-> > > >
-> > > > This is a "powerdown" GPIO. It must be set to 0 if the sensor is to be
-> > > > powered on.
-> > > >
-> > >
-> > > The value set by gpiod_set_value_cansleep() API actually depends upon
-> > > GPIO polarity defined in DT.
-> > > Since I set GPIO_ACTIVE_LOW to powerdown,
-> > > gpiod_set_value_cansleep(gpio_desc, value) would set !value to
-> > > gpio_desc.
-> > > Thus here powerdown would be low-state when sensor is powered on.
-> > > For GPIO polarity, I also post a comment to the binding patch.
-> > >
-> >
-> > That's true. However, this makes the driver really confusing. If someone
-> > reads this code and compares with the datasheet, it looks incorrect,
-> > because in the datasheet the powerdown GPIO needs to be configured low
-> > for the sensor to operate.
-> >
-> > I'd recommend defining the binding in a way that makes it clear in the driver code
-> > that it implementes the power sequencing as per the datasheet.
-> >
->
-> Uh-huh...
-> But it all depends on how we look at the powerdown GPIO.
-> Or where should we define the active low or active high, the driver or
-> DT?
->
-> My initial idea is using DT GPIO polarity to describe sensor active
-> polarity according to the datasheet.
-> As an active low shutdown signal is equivalent to an active high enable
-> signal.
->
+Veyron Jaq and Mighty both use the Marvel 8897 WiFi+BT chip. Add wakeup
+and pinctrl block to devicetree so the btmrvl driver can correctly
+configure the wakeup interrupt.
 
-Okay, I discussed this offline with Laurent and Sakari and we also
-found the guidelines of the Linux GPIO subsystem on this [1].
+Signed-off-by: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
+Reviewed-by: Reviewed-by: Douglas Anderson <dianders@chromium.org>
+---
+The Veyron Mighty Chromebook (rk3288 based board) is missing the wake
+configuration for Bluetooth. Without this change, the wake irq was not
+configurable and wake on Bluetooth was broken.
 
-The conclusion is that the pin names in the driver or DT must not
-contain any negation prefixes and the driver needs to care only about
-the logical function of the pin, such as "powerdown" or "reset". In
-case of this driver, we should call the pins "rst" and "pd" and
-setting them to 1 would trigger the reset and power down respectively.
-The physical signal polarity must be configured in DT using the
-polarity flags.
+I verified this change with additional changes in the Bluetooth driver
+(the series is at https://patchwork.kernel.org/cover/11599101/). The
+driver changes are not necessary for this dts change and shouldn't block
+it.
 
-[1] https://www.kernel.org/doc/html/latest/driver-api/gpio/consumer.html#the-active-low-and-open-drain-semantics
 
-Best regards,
-Tomasz
+Changes in v2:
+- Move sdio0 ahead of sdmmc
+
+ arch/arm/boot/dts/rk3288-veyron-jaq.dts | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+index 171ba6185b6d39..c15d6865f5a390 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+@@ -44,6 +44,21 @@ regulator-state-mem {
+ 	};
+ };
+ 
++&sdio0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++
++	btmrvl: btmrvl@2 {
++		compatible = "marvell,sd8897-bt";
++		reg = <2>;
++		interrupt-parent = <&gpio4>;
++		interrupts = <RK_PD7 IRQ_TYPE_LEVEL_LOW>;
++		marvell,wakeup-pin = /bits/ 16 <13>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&bt_host_wake_l>;
++	};
++};
++
+ &sdmmc {
+ 	disable-wp;
+ 	pinctrl-names = "default";
+-- 
+2.27.0.290.gba653c62da-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
