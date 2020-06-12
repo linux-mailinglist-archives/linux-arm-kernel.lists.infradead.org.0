@@ -2,80 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC5751F724B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 04:54:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B38F51F725E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 05:05:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=syi/sfEOo2527hOUdB9QMnHmuBkqFaXzi3r8DpLgUHU=; b=JCLhWnVITDcnzJ
-	eY1RoPMgLWArhwfLSWj9cDFs0lZbYWo01aqlhxZkSTK8PKkLrxv0ReAv3g/0qwmkemELLV05rUNmJ
-	yvwlW+K+bdM4EG9LrINI/+UX3o/fh1DfEcr1ZlUDj1gEImuDobZHBzCJ9fyJrlbomsNYh2dasXMO4
-	dJqIYZCI1rcaX9Z42z6U9o3GGLx3F71qfECTx8GQARj5nn0JbSEgrFjsVhobYxbs8gnZbSahRbYoq
-	fHhW5k68b9s5gKjy5wvcrP264RzeV8th/p59S+5LPkeD0+0sTbjBgkWkVNZaR2TtF7QZTLcP4QLkP
-	blv9G1G6GZc6LTb18jfQ==;
+	List-Owner; bh=Xq5PEOKS7UigJSVJbsClHMCpnrpplHt+L5bSTXRt3W4=; b=txR6H0iUgCA8ed
+	QNiCBsezDCyILQvczMp5y05BYHaYRV49jn9jOKPWsj33aTSBcBwmS6Fod0UVt+wd1XPdMKjngekp/
+	t2h3niFUC8F4xz1qKLqJzdM+fOZ32/XgXbRndeykzrxeiwgz0VF3ztT9e2xFhy+FAjW3MFFPkSQxh
+	PQ/1fyUwW0E03tS0sUCI0a7xryGCdn+SkC0ozd+E9hDiLPnINQ2ZFO9hDQwcnuDoFgUEKqGCVEdxr
+	TNskuIHsap9xG6O/78cF9DZ3TpEZUh2mdi/SJwP+Y6cVfT1KOcoxoCjxWaJFZb0LbbFvHnB9zjV2L
+	2eVAwFoDDZAPh1Zivfmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjZpU-0007A4-IA; Fri, 12 Jun 2020 02:54:04 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jja02-0004xw-Vt; Fri, 12 Jun 2020 03:04:58 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjZpM-00079E-4h
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 02:53:57 +0000
-Received: by mail-io1-xd42.google.com with SMTP id r77so8750102ior.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jun 2020 19:53:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=K+UQMn4XLII3jpSziiawVVEOaVhY6ZIjWCrSiiLtkb8=;
- b=ksh5jdaLWv3tU1z6o8SmQ2FRLeupUM1iLsVEhLWN3SRppEV6EVw/ruPj1af5oZtxA4
- yRk0OGXzz1ACoYiBxdHg+syA0oS/JEbNKRgE9RfXraHSMX/WBkhhrS4hPJ72cnbO2br9
- XWqaVe8kGm9gET4UWTlEVpXO1/wbwrkzpL/ptJwSH/rzPa0cJfUwFo4u1OsM2wSwiLsU
- BQD6a1M2Bg+nLZt4ZdibQWaVPi1GlCXOEzWCMzhmEtP10kYu1b3KRSR6pqZizyI5tyV4
- PT5XewTRALSmynnUGK+vJkNYm6G82Mphg4y7iD+hs9pOGrfh8AoI14mpO57AzZ7H3og0
- SfrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=K+UQMn4XLII3jpSziiawVVEOaVhY6ZIjWCrSiiLtkb8=;
- b=CdCDPBSQusMcWZ447bvlGywuqGVyED3VCN6QeHgz4Xcd4Hp3QD8pHhwf+lP/mW8Ods
- gGdC9pbQuFJ1ivL7ho9o8h2Fh+Rb7u1TZNcIKb5690I9O7MmEqKFngJXU5FHQvK7U6cy
- L1USezq+nyCo1kbf2W+PLD5LMhVf6ORaG21YiTR9pRtCCOwMuVE0aSyTxdSO4MGeoM0T
- VlQUNk0y+MRhifjhHaaUx+ECTVAME6ghJCO/Uws3U3HlFmBfVIycMtJ1CtrmVouUxQcs
- pANAX7CV9T/vmIFYu+hYykFEoZC/ijY+tf9ym1ojNT2sJ7kZt6LX0//VOlN8x0nI+ehw
- eFeQ==
-X-Gm-Message-State: AOAM530L+keRTDLP5jTq445fjkikOTZ0jpC8whNnjNS86g44/rCOLjIF
- vaAXVVe4fBBFRbo0CmVfomPJLkq8VaQQ0gwbt0d6+cmH
-X-Google-Smtp-Source: ABdhPJzDJ5YO0GeuPgNkVBf5BRbJ4IfyKy6YkMhLhLbz0X61LU8WDhIaNQmOqmY9oyYbXwP+kccz3OQQgOwzXm9VpIk=
-X-Received: by 2002:a05:6638:a0a:: with SMTP id
- 10mr6117323jan.30.1591930431883; 
- Thu, 11 Jun 2020 19:53:51 -0700 (PDT)
+ id 1jjZzs-0004we-Rf; Fri, 12 Jun 2020 03:04:50 +0000
+X-UUID: a0a94743c2d247fb80686d977340cd5d-20200611
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=4ugaD47iUL4BuPnMM1qrVPvyuTBGu1L6KG0vHWf0DCc=; 
+ b=rPRWkJxBR1yYN75ni+N1ZK1CPz2zpQccPkSTbyJiJnKOxG70PpMbuijmNTC8y+u6jg1G3EIW+SH4WLGoqXH3Vk7qjuorjhVF2dbkojBksaEo27rYn5B7vLbRjFxzUsEOmY9rYpXNWjFgFsEREo8/K5C6e3Ga12x3psZCiO7VNzU=;
+X-UUID: a0a94743c2d247fb80686d977340cd5d-20200611
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 99498391; Thu, 11 Jun 2020 19:04:39 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 11 Jun 2020 20:03:58 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 12 Jun 2020 11:03:56 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 12 Jun 2020 11:03:56 +0800
+Message-ID: <1591931042.32738.26.camel@mtkswgap22>
+Subject: Re: [PATCH 2/2] soc: mediatek: devapc: add devapc-mt6873 driver
+From: Neal Liu <neal.liu@mediatek.com>
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Fri, 12 Jun 2020 11:04:02 +0800
+In-Reply-To: <CAAOTY_8gOjr9nBUVA6oNu0v+D0Rc0AbhJ41wBCvDpMme+kuHmA@mail.gmail.com>
+References: <1591698261-22639-1-git-send-email-neal.liu@mediatek.com>
+ <1591698261-22639-3-git-send-email-neal.liu@mediatek.com>
+ <CAAOTY__g3Fnwsoqx=x_tgdMii5K_L9TmF_9048XbAOSJwb-Cxg@mail.gmail.com>
+ <1591867563.27949.9.camel@mtkswgap22>
+ <CAAOTY_8gOjr9nBUVA6oNu0v+D0Rc0AbhJ41wBCvDpMme+kuHmA@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <CANAwSgQv9BKV4QfZAgSfFQvO7ftcFyCGXEo+g4pgQA4mgK52iQ@mail.gmail.com>
- <20200611064556.GA5056@kozik-lap>
- <CANAwSgQqW6+W2=QcrAx8DsafK_0eMtQthQWcZWy9NDWxN3WkbQ@mail.gmail.com>
- <19d94eb3-d08c-e436-ccc0-cca56291eed2@arm.com>
-In-Reply-To: <19d94eb3-d08c-e436-ccc0-cca56291eed2@arm.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Fri, 12 Jun 2020 08:23:41 +0530
-Message-ID: <CANAwSgSFPbnAh2VbiPuhvPOve3Y44hXZGnjpc_7e27K=xdBo8A@mail.gmail.com>
-Subject: Re: ARM: warning: relocation out of range on Exynos XU4 and U3+
-To: Robin Murphy <robin.murphy@arm.com>
+X-TM-SNTS-SMTP: 005BB3DA2D65FC5B57A0519DAAFE8FDBD2C12F6D6217733C280C03F26BF6CFFA2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_195356_200405_0959F4DB 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20200611_200448_900891_00621757 
+X-CRM114-Status: GOOD (  16.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [linux.amoon[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,6 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,62 +87,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Neal Liu <neal.liu@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+Hi Chun-Kuang,
 
-On Thu, 11 Jun 2020 at 16:29, Robin Murphy <robin.murphy@arm.com> wrote:
->
-> On 2020-06-11 08:51, Anand Moon wrote:
-> > Hi Krzysztof,
+[snip]
+> > > > +/*
+> > > > + * devapc_violation_irq - the devapc Interrupt Service Routine (ISR) will dump
+> > > > + *                       violation information including which master violates
+> > > > + *                       access slave.
+> > > > + */
+> > > > +static irqreturn_t devapc_violation_irq(int irq_number, void *dev_id)
+> > > > +{
+> > > > +       u32 slave_type_num = mtk_devapc_ctx->soc->slave_type_num;
+> > > > +       const struct mtk_device_info **device_info;
+> > > > +       struct mtk_devapc_vio_info *vio_info;
+> > > > +       int slave_type, vio_idx, index;
+> > > > +       const char *vio_master;
+> > > > +       unsigned long flags;
+> > > > +       bool normal;
+> > > > +       u8 perm;
+> > > > +
+> > > > +       spin_lock_irqsave(&devapc_lock, flags);
+> > > > +
+> > > > +       device_info = mtk_devapc_ctx->soc->device_info;
+> > > > +       vio_info = mtk_devapc_ctx->soc->vio_info;
+> > > > +       normal = false;
+> > > > +       vio_idx = -1;
+> > > > +       index = -1;
+> > > > +
+> > > > +       /* There are multiple DEVAPC_PD */
+> > > > +       for (slave_type = 0; slave_type < slave_type_num; slave_type++) {
+> > > > +               if (!check_type2_vio_status(slave_type, &vio_idx, &index))
+> > > > +                       if (!mtk_devapc_dump_vio_dbg(slave_type, &vio_idx,
+> > > > +                                                    &index))
+> > > > +                               continue;
+> > > > +
+> > > > +               /* Ensure that violation info are written before
+> > > > +                * further operations
+> > > > +                */
+> > > > +               smp_mb();
+> > > > +               normal = true;
+> > > > +
+> > > > +               mask_module_irq(slave_type, vio_idx, true);
+> > > > +
+> > > > +               if (clear_vio_status(slave_type, vio_idx))
+> > > > +                       pr_warn(PFX "%s, %s:0x%x, %s:0x%x\n",
+> > > > +                               "clear vio status failed",
+> > > > +                               "slave_type", slave_type,
+> > > > +                               "vio_index", vio_idx);
+> > > > +
+> > > > +               perm = get_permission(slave_type, index, vio_info->domain_id);
+> > > > +
+> > > > +               vio_master = mtk_devapc_ctx->soc->master_get
+> > > > +                       (vio_info->master_id,
+> > > > +                        vio_info->vio_addr,
+> > > > +                        slave_type,
+> > > > +                        vio_info->shift_sta_bit,
+> > > > +                        vio_info->domain_id);
+> > >
+> > > Call mt6873_bus_id_to_master() directly. For first patch, make things
+> > > as simple as possible.
 > >
-> > On Thu, 11 Jun 2020 at 12:15, Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> >>
-> >> On Thu, Jun 11, 2020 at 11:13:57AM +0530, Anand Moon wrote:
-> >>> Hi All,
-> >>>
-> >>> I would like to report some warnings I observed on pre-compiled kernel
-> >>> image (5.7.1-1-ARCH) from Archlinux.
-> >>> Sometimes ethernet would not come up and get connected, so in order to
-> >>> investigate.
-> >>> I found below warnings, So I am sharing the logs at my end.
-> >>>
-> >>> Are these warnings related to in-consistency in locking, How can we
-> >>> Investigate more to fix this issue.
-> >>
-> >> These rather look like some address space randomization or some compiler
-> >> (LLVM?) feature. Not Exynos-specific anyway.
-> >>
-> >> You should report it to Arch folks because they know how they compiled
-> >> the kernel and what config they used (althogh config you can find in
-> >> /proc/config.gz).
+> > In devapc_violation_irq() function, we use common flow to handle each
+> > devapc violation on different platforms. The master_get() has different
+> > implementation on different platforms, that why it called indirectly.
 > >
-> > Thanks for your inputs.
-> > Ok I will do more checks at my end, before reporting further to Archlinux.
->
-> Looks like the relocations fail when loading modules, and PLTs are not
-> enbabled[1], so chances are the kernel image has simply grown too big to
-> keep everything within direct branch range of everything else.
->
-> Robin.
->
-> [1]
-> https://github.com/archlinuxarm/PKGBUILDs/blob/master/core/linux-odroid-xu3/config#L619
+> > Once we have new platform, we only have to update devapc-mtxxxx.c
+> > instead of common handler flow.
+> 
+> You just upstream one SoC now, so I have no information of 2nd SoC.
+> Without the 2nd SoC, how do we know what is common and what is SoC special?
+> So the first patch should not consider the things which does not exist yet.
+> 
+> Regards,
+> Chun-Kuang.
+> 
 
-Thanks for your input CONFIG_ARM_MODULE_PLTS is being enable on
-(5.7.2-1-ARCH) config
-and this issue seems to have resolved.
+It has lots of refactoring work need to do if you really want make it
+"simple". Could I explain more details and let you judge it is simple
+enough?
+For most MediaTek DEVAPC hw, the violation interrupt handling sequence
+is shown below.
 
-Best Regards
--Anand
+1. Domain processor receives a interrupt issued by DEVAPC.
+2. Software read the violation status and identify it.
+3. Software read the debug information which are stored in hw register.
+	a. debug information includes master ID, domain ID, violation
+address, ...
+4. Transfer debug information to human readable strings.
+5. Extra handler to dispatch owner directly.
+
+What we really care is which master violates the rules, and which slave
+had been accessed unexpectedly.
+
+Here are platform specific information:
+1. Slaves layout (platform devices)
+2. hw register layout which are stored violation information
+3. Master ID mapping table
+4. Domain ID mapping table
+
+Hope these steps could help you understand what is common and what is
+SoC specific. If you want to see the 2nd SoC's driver, I can also send
+it for you to take a look.
+
+Thanks,
+Neal
+
+> >
+> > >
+> > > > +
+> > > > +               if (!vio_master) {
+> > > > +                       pr_warn(PFX "master_get failed\n");
+> > > > +                       vio_master = "UNKNOWN_MASTER";
+> > > > +               }
+> > > > +
+> > > > +               pr_info(PFX "%s - %s:0x%x, %s:0x%x, %s:0x%x, %s:0x%x\n",
+> > > > +                       "Violation", "slave_type", slave_type,
+> > > > +                       "sys_index",
+> > > > +                       device_info[slave_type][index].sys_index,
+> > > > +                       "ctrl_index",
+> > > > +                       device_info[slave_type][index].ctrl_index,
+> > > > +                       "vio_index",
+> > > > +                       device_info[slave_type][index].vio_index);
+> > > > +
+> > > > +               pr_info(PFX "%s %s %s %s\n",
+> > > > +                       "Violation - master:", vio_master,
+> > > > +                       "access violation slave:",
+> > > > +                       device_info[slave_type][index].device);
+> > > > +
+> > > > +               devapc_vio_reason(perm);
+> > > > +
+> > > > +               devapc_extra_handler(slave_type, vio_master, vio_idx,
+> > > > +                                    vio_info->vio_addr);
+> > > > +
+> > > > +               mask_module_irq(slave_type, vio_idx, false);
+> > > > +       }
+> > > > +
+> > > > +       if (normal) {
+> > > > +               spin_unlock_irqrestore(&devapc_lock, flags);
+> > > > +               return IRQ_HANDLED;
+> > > > +       }
+> > > > +
+> > > > +       spin_unlock_irqrestore(&devapc_lock, flags);
+> > > > +       return IRQ_HANDLED;
+> > > > +}
+> > > > +
+> >
+> > [snip]
+> >
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
