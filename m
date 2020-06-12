@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD4551F7DF8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 22:08:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3817F1F7E52
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 23:11:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q4CO/lGeS5kT+WuMjPolE5PbRxqctsz9X2ZeQHEjges=; b=kB5M0bCCWtPcr4
-	NhbA8sKjsUca0zTtn6acDVIF6Dk5HMatVl/LYyn6qN/oTc8z1lp4C9lj7Qd+XJw3EFKQNU6BDh2Fv
-	iopyKwUJUye7uff60NFD3czYflVC3StNLEPnbX6HfdMiqcyGqvsz0ArM2OxYw3yIZvE8RN91mxWyh
-	Ybbch2JOk1f2BGTzSRj6rO9e2TOCNjmKSAY4ADDAtrUFWohnV7sLS4VmOXkaLh8PVBMqC2DnvuJka
-	6PSzMqc2LHy9MBmm7+X9nKBUzIYgcuR4GAVqAHz9mN83lidq6UF90fFUWoBGdRbixHEq3HLVsizMt
-	6X/CojlpGgum/X9VKeMw==;
+	List-Owner; bh=VNbbJHXboxFbmI96+9m5kZfIORbc63QbQocBMx4zRh8=; b=kxtCy1qqsK8dh0
+	mvD8eOZGlVMKryG+g7a3swveEAZBJiBA9Z8UvfJSW3G0UvFQXACcbpRybxKk+ctuJnpDCdVK7JL+J
+	FcdG/4HmoGfqMmnyHVcifZ73N4a7yfmF5pgsLv7KJcTrU3Hr1HZc0vP5JC1iiQpBARlNmWHtV6+aC
+	WNat+wXPe6dJnHVO8/Hlzxcx8MQpHjQ6CrIRIGDl97ud8FjIaPx1ls8lVG7Vr/QtwZpa+YQbLXFff
+	631DYuR8VDkEXx3GQoTYTCDa1LZ0UBGmeWNl43imKntJtwyiEWnPRMom536jXuwU7sZsnTkT3Qrun
+	v4CYJ6vhW4gaVbE2/YoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjpy2-00089Y-PT; Fri, 12 Jun 2020 20:07:58 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1jjqxF-0005a1-Sr; Fri, 12 Jun 2020 21:11:13 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjpxv-00088O-85
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 20:07:52 +0000
-Received: from mail-qk1-f171.google.com ([209.85.222.171]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MysBI-1iwheK02Nu-00vyUP for <linux-arm-kernel@lists.infradead.org>; Fri,
- 12 Jun 2020 22:07:46 +0200
-Received: by mail-qk1-f171.google.com with SMTP id g28so10242125qkl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 13:07:45 -0700 (PDT)
-X-Gm-Message-State: AOAM530sv7h5JFSFbeDGt3jxr8h+h4r+9/M4NwOTMuxm6coKNpVv8KhN
- rOwThvMYg2oRETOJnZTSOjSz7k/n7vx6+HsE0Jg=
-X-Google-Smtp-Source: ABdhPJxZJreofZ36189crpVnTyu17fqhOg6nCgeQSutwsT65QiKE0mUuYvNz0bxVS7IwDeSIM7UEmHDrtH4eO16x54Y=
-X-Received: by 2002:ae9:de85:: with SMTP id s127mr5067153qkf.352.1591992464544; 
- Fri, 12 Jun 2020 13:07:44 -0700 (PDT)
+ id 1jjqx8-0005Za-4M; Fri, 12 Jun 2020 21:11:08 +0000
+Received: by mail-io1-f66.google.com with SMTP id q8so11739784iow.7;
+ Fri, 12 Jun 2020 14:11:04 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=LdO+yABvrQyODTNWEnFCNLq5SRWaCDFSeyJReNxOrN4=;
+ b=UFQgidd8hXbN617MbuDurBEVSDaNdhQjCBYalDKPlOOExJ7QD72rWN+8G1sqy0+cG1
+ jO1b9U5L1buMBCVqviU1JpvqXAjKUglvJ/pNfezOfL/lPp4nw7nsGXvQh8hge5qqRQfu
+ 9pct+Qi339kD98+8zBF/29NK/aVpwSaQGF5f9GLVIAPFHdsJSwjjBLo86A8Pt8GtnUsg
+ mUC+wmDDm/B9bGhktqp2+NHuUFOVMYZN0+ye3rGFINOjG/PphoSoCBQhKBv47oLZsfwv
+ uvKRJJuNRngu4o5ukDqXw19lgB7cjRvY0zNxf6P9TclBrDa0sXwyz1ekNHpZQzTcDLUl
+ JiwA==
+X-Gm-Message-State: AOAM530wGwvQCfOnA4AQBhye4E83daj0Ilivhtwk1TsQ+ZZ8DpacCDfC
+ +fmPXzVU7PC2IYExn1c82A==
+X-Google-Smtp-Source: ABdhPJyTLPwHiCPMWBDlg3TIAXPWsywr4DNWk8QAGkvpv7/LiQJCR/XEW/hsc3A/ByLjKLXUmh/i0w==
+X-Received: by 2002:a05:6638:406:: with SMTP id
+ q6mr10161463jap.125.1591996263990; 
+ Fri, 12 Jun 2020 14:11:03 -0700 (PDT)
+Received: from xps15 ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id d66sm3628624iof.27.2020.06.12.14.11.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 12 Jun 2020 14:11:02 -0700 (PDT)
+Received: (nullmailer pid 3820221 invoked by uid 1000);
+ Fri, 12 Jun 2020 21:11:01 -0000
+Date: Fri, 12 Jun 2020 15:11:01 -0600
+From: Rob Herring <robh@kernel.org>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v9 05/11] dt-bindings: display: add i.MX6 MIPI DSI host
+ controller doc
+Message-ID: <20200612211101.GA3808755@bogus>
+References: <20200609174959.955926-1-adrian.ratiu@collabora.com>
+ <20200609174959.955926-6-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
-References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
- <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
- <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
- <20200612135538.GA13399@afzalpc>
-In-Reply-To: <20200612135538.GA13399@afzalpc>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 12 Jun 2020 22:07:28 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
-Message-ID: <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
-Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-X-Provags-ID: V03:K1:xW8yFwwrFBEa9JoZbUVuZFK60hzpaq2Gi2aInooxcfAcddvuhc8
- HSkjVHECKS+KdPeUNKBM8+ssYwQz+ku4y62Mkr7C8SqnKYSQMxpgoGyPCXlqh7CpaYUUl66
- y8C4KNMwrVLxglDtLmObbDpQug4vjVDMF6Xfe4TJbL3MZxOMEdgLttg7rVQu9zjBRwzn/iz
- m5cKcfIQf9z4ElfvXZAYw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:gf1B4h4Rqrc=:1vTEWvM1EJjluSUMmGWJ/c
- Xgb9JjmRDqyTrxqhqEAk8z2geD5uSIamYOgTAgNO5/cOg+7ZSLbN6y5pqIx4gCm3h3S0ybPEW
- Ap9HWGIAKYh4Xy2u0uwgeKliMxrietyhFG18no2MoXDsUy6SHDFdCIv2PBBkzhIkLXQHe09De
- Y/TzXBgKm13yFnCGnMwUJVXiROpYxycxXE2gPHgl5yzxhlTwH/U5ZQl3vh1BAoBY+PdLWvdwU
- VtrOQ/LRKpANBXpy2ba/tVYYH7+y6JIb9JL1ZXBgbuZ5WGi6Wg1D9E378aGwDuiEniML0MpKg
- hn3ONlrVBjZlZ7TzRZBW3yjzlEf3gBw9kfCMvzXD+g6zDAXiGAQNiRM/qg3xZIDxbMvoe2cOi
- 2IOF9PyggDtpt9Fo/X+6Wpaw3bUHGcec5Kg03gE2I3+FYBrxxchPOE8nko1C2lr0WcNMkzo8n
- aIZw7FFcH3UJU3LlC/DUOGzWbP71pYR7aYfrhh3oI7vUl6SFPTXxZIdtSdIqB03XG8gjJ2G1+
- VHhAD3xfMnFwTpNfcaA00jdE68Yc0TUpJxGNbZt9T+r7d6FtYvPV+ST60SKf80mPnt9ptL/uy
- xTNFMnHfAbafOWkpbQ2pib6rsMDKCuI+cwZKVwL6b9uuJCUuNo1G20+6rUj4kU7pggXM9yKPJ
- 8PT+RoAMCHPXAsKSvkt+mRsK8/1BxffA0Wxz35C5Qg5lGwWbnFOUWtIVQz/QJQlOFa5HZJqQP
- lfKvDN3c59cstVlxjl/vWyIdlDpaK5iUSad1v0PpcW0ku9q6nbdT7ZPgqkrV2/4hV73RaB0ql
- g/dy6iiFxe7jQaXZFNhNwmJSAvRMLQRjvnHXqGc3qsAB4FFvog=
+Content-Disposition: inline
+In-Reply-To: <20200609174959.955926-6-adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_130751_579856_B6235E53 
-X-CRM114-Status: GOOD (  16.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200612_141106_171170_D380198E 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.72.192.74 listed in wl.mailspike.net]
+ [209.85.166.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,67 +91,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Pitre <nico@fluxnic.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Martyn Welch <martyn.welch@collabora.com>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
+ linux-rockchip@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 12, 2020 at 3:55 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
-> On Fri, Jun 12, 2020 at 02:02:13PM +0200, Arnd Bergmann wrote:
-> > On Fri, Jun 12, 2020 at 12:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
->
-> > > Roughly a one-third drop in performance. Disabling highmem improves
-> > > performance only slightly.
->
-> > There are probably some things that can be done to optimize it,
-> > but I guess most of the overhead is from the page table operations
-> > and cannot be avoided.
->
-> Ingo's series did a follow_page() first, then as a fallback did it
-> invoke get_user_pages(), i will try that way as well.
+On Tue, Jun 09, 2020 at 08:49:53PM +0300, Adrian Ratiu wrote:
+> This provides an example DT binding for the MIPI DSI host controller
 
-Right, that could help, in particular for the small copies. I think a lot
-of usercopy calls are only for a few bytes, though this is of course
-highly workload dependent and you might only care about the large
-ones.
+It's not an example. It defines the exact binding for this peripheral.
 
-> Yes, i too feel get_user_pages_fast() path is the most time consuming,
-> will instrument & check.
->
-> > What was the exact 'dd' command you used, in particular the block size?
-> > Note that by default, 'dd' will request 512 bytes at a time, so you usually
-> > only access a single page. It would be interesting to see the overhead with
-> > other typical or extreme block sizes, e.g. '1', '64', '4K', '64K' or '1M'.
->
-> It was the default(512), more test results follows (in MB/s),
->
->                 512     1K      4K      16K     32K     64K     1M
->
-> w/o series      30      46      89      95      90      85      65
->
-> w/ series       22      36      72      79      78      75      61
->
-> perf drop       26%     21%     19%     16%     13%     12%    6%
->
-> Hmm, results ain't that bad :)
+> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
+> 
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> Cc: devicetree@vger.kernel.org
+> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
+> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> Changes since v8:
+>   - Fixed small compatible string typo caught by checkpatch
+>   - Added custom select for 'fsl,imx6-mipi-dsi' (Rob)
+>   - Replaced additionalProperties -> unevaluatedProperties (Rob)
+>   - Dropped all nodes not adding any new constraints apart from
+>   the recently upstreamed snps,dw-mipi-dsi.yaml (Rob)
+> 
+> Changes since v7:
+>   - Clarified port@0,1 descriptions, marked them as required and
+>   added missing port@0 in example (Laurent)
+> 
+> Changes since v6:
+>   - Added ref to the newly created snps,dw-mipi-dsi.yaml (Laurent)
+>   - Moved *-cells properties outside patternProperties (Laurent)
+>   - Removed the panel port documentation (Laurent)
+>   - Wrapped lines at 80 chars, typo fixes, sort includes (Laurent)
+> 
+> Changes since v5:
+>   - Fixed missing reg warning (Fabio)
+>   - Updated dt-schema and fixed warnings (Rob)
+> 
+> Changes since v4:
+>   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
+>   and addressed received binding feedback (Rob)
+> 
+> Changes since v3:
+>   - Added commit message (Neil)
+>   - Converted to yaml format (Neil)
+>   - Minor dt node + driver fixes (Rob)
+>   - Added small panel example to the host controller binding
+> 
+> Changes since v2:
+>   - Fixed commit tags (Emil)
+> ---
+>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 112 ++++++++++++++++++
+>  1 file changed, 112 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> new file mode 100644
+> index 0000000000000..86093729fd5f9
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> @@ -0,0 +1,112 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX6 DW MIPI DSI Host Controller
+> +
+> +maintainers:
+> +  - Adrian Ratiu <adrian.ratiu@collabora.com>
+> +
+> +description: |
+> +  The i.MX6 DSI host controller is a Synopsys DesignWare MIPI DSI v1.01
+> +  IP block with a companion PHY IP.
+> +
+> +  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
+> +  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
+> +  the following device-specific properties.
+> +
+> +allOf:
+> +  - $ref: ../bridge/snps,dw-mipi-dsi.yaml#
+> +
+> +# Need a custom select here or 'snps,dw-mipi-dsi' will match lots of nodes
+> +select:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        enum:
+> +          - fsl,imx6-mipi-dsi
+> +  required:
+> +    - compatible
+> +
+> +properties:
 
-There is also still hope of optimizing small aligned copies like
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
 
-set_ttbr0(user_ttbr);
-ldm();
-set_ttbr0(kernel_ttbr);
-stm();
+These 2 are covered by dsi-controller.yaml, so you can drop them.
 
-which could do e.g. 32 bytes at a time, but with more overhead
-if you have to loop around it.
+Otherwise,
 
-        Arnd
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
