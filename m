@@ -2,130 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 355611F721B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 04:13:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C0711F7220
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jun 2020 04:16:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D3m90gNlGUbDHiC05w/Ndb+dcrMeFQeaC0N+gL23Uzo=; b=depDWtFe8nOm+F
-	igOo/ZBGnHvvQDl9qFkX8dxgfWIAx7SFDpWNKLX2pOvT5vsI4Y9CNQlQU4kUXuJ0P92Mx2cEFoEzI
-	FdcZApeoi3GP/6dxF3nmskjhheRscLeRwKZQkU6iL+ZrtohNfrSYyvp1q88Xi2udlCueC46aXr3dq
-	FbzaPTUaYZh9hHh8af3AYLG9PIwXXHnx76BAKkkIu1YbJuxGRtcnPp3W6pLEQbJT9dVKHSGdmgLbQ
-	CVk98tvFwzCrfz4Pz5BNcopHAiV6a+nwl9ru+YbN1g/of6DhFXAEf70uXpe3FxrtwwqaNhpIhMWj2
-	qzXhWTpYVq4COWI9ofqw==;
+	List-Owner; bh=ayWYBFu6naFUGX2lH8j0jjqvG/jaOVfOkLCJBRyPNoo=; b=KKkBfCv6qVqylt
+	9Xg+y7snr03EUR34PEs2JimbBNMEGWyvHv9py3G+/xhTEAlDYMF8UkRHQGByZK6DgbZpXtyVBPtwN
+	wiP2x+So1XyNVlT7clGDeAeen5/dYW3L+fSgqtk7g4vXbR+LKTQ908ezL2G8k5w+/2HC6o8YWTVgP
+	OjZ1czSNJViTBmfQXMskXjJFLAUXGG9EoAoNVXZeI+poYWHCxH9vC/LzV0HBKJYLAXOtgXyHN1XaT
+	ulU0d0JI3EYDJo4aton+qRsFqSKjEdflnznq6zf1r0kD4FhkLBN1HtWg+IxIp12r3MWZdz4BhHe8v
+	jU16Oz03xAR0JbQP9s9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjZC7-0001EM-3P; Fri, 12 Jun 2020 02:13:23 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1jjZEa-00043q-JW; Fri, 12 Jun 2020 02:15:56 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjZC0-0001D0-66
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 02:13:18 +0000
-Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200612021311epoutp04226f4af996f914fbf6064cfe7657e018~XqhLR-asv3169231692epoutp04D
+ id 1jjZER-00043E-On
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jun 2020 02:15:49 +0000
+Received: by mail-io1-xd44.google.com with SMTP id t9so8652593ioj.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jun 2020 02:13:11 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200612021311epoutp04226f4af996f914fbf6064cfe7657e018~XqhLR-asv3169231692epoutp04D
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1591927991;
- bh=IMm3UciE8kL2Kn8TlcoT7lncpAsQ1WriwftzJHtNstQ=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=ldh4D0m07rMpuVKHm/wWLHKuSPSsSFoYdycuN8dcisEkPEmW+f8LvW8puXWuANx/f
- KuVzojnUgfHVuKStEhzNogb93KgDLCi3P477VA9dymcijejFPWGbg1Hp92lNKYhFTQ
- P+m1VYzAlOjDGB62Bn6S2XG6GPKsr8+Wm07L6zJA=
-Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTP id
- 20200612021310epcas5p2f828da073106a9bb8a98e05403d1aedb~XqhKSx_ln0765407654epcas5p2Q;
- Fri, 12 Jun 2020 02:13:10 +0000 (GMT)
-Received: from epcas5p1.samsung.com ( [182.195.41.39]) by
- epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
- AF.E6.09475.5B4E2EE5; Fri, 12 Jun 2020 11:13:09 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
- 20200612021309epcas5p3b5b53df83cfb0996262016c604f75827~XqhJvtpMa0071200712epcas5p32;
- Fri, 12 Jun 2020 02:13:09 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200612021309epsmtrp10df7a1a278195f61c3483eb21c0e3739~XqhJun6gZ0247002470epsmtrp1t;
- Fri, 12 Jun 2020 02:13:09 +0000 (GMT)
-X-AuditID: b6c32a4b-39fff70000002503-6b-5ee2e4b588ea
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- B8.CA.08382.5B4E2EE5; Fri, 12 Jun 2020 11:13:09 +0900 (KST)
-Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200612021304epsmtip28a028945a5d0bf1f216c435873410757~XqhEuvhCj0664906649epsmtip2B;
- Fri, 12 Jun 2020 02:13:03 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Stanley Chu'" <stanley.chu@mediatek.com>,
- <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <jejb@linux.ibm.com>, <asutoshd@codeaurora.org>
-In-Reply-To: <20200612012625.6615-1-stanley.chu@mediatek.com>
-Subject: RE: [PATCH v2 0/2] scsi: ufs: Fix and cleanup device quirks
-Date: Fri, 12 Jun 2020 07:43:01 +0530
-Message-ID: <00aa01d6405f$041df030$0c59d090$@samsung.com>
+ Thu, 11 Jun 2020 19:15:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NBuImNZJUOHAcMdNirnqNdfxcsQ2t26UAs7QUyiyLrA=;
+ b=CSvZe25C2fwv4G8CtuJ5LGADD7XH1+hw3iXV3UPdybI2Wn5uesXsz6c2ZXa8XqBuNu
+ 9MUqBYO00T1Dlka13KaqXswvqCfxqtdF14PATYtXoQkymTy4LobTZZujA+y65BQXu6Vt
+ IyFvDgL+E97bi2woUM6AIIy6coqRYOvjJnLFKXvWNREnlN0DiowuGK87YtfmPgB5ibRK
+ /thKJEo3PcrmOyiF6jn3hMYxeLEiAJLnNc2XKn5suQGDqeR7nKzoLqk3Xntbh3ERpFNN
+ 7ytP9nTB8B4Q3ZYCpDFA8HEzYAmQ46D6slN1tB+7XqzPPcbzTFrGTDuamjgrj7UG8qCp
+ WMrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NBuImNZJUOHAcMdNirnqNdfxcsQ2t26UAs7QUyiyLrA=;
+ b=Qm2qttS/dipVR2Y5oCIcxpKDf1dOLRxYEuU1gBPYOrWSoX2szF1j5UhOcVG/CYV6A2
+ iqLbA4Y8HOjIb5KXY/ZuJ5lAB0Xi1WHq++2hd2L0KA5PfixoDgjuyvF14An2ZzK08DSV
+ lhslegti+VRhVUvGklwjYpz060bYAlqWCaPxJCVF92xaeFk3YI33pHxuuT7TL2oOcrxQ
+ 0bBAUZt3CdQd2qkn5GSUZP9z8a/p6T8h/yZcaA91eH4JSSeXHZJM3TDun2eWydPfZAUQ
+ zxSNfOX4lDalfVyNiU2eb7XwHPPtWEW1Gq4DMy9szA/EpYuRyHQt3jW9eMCZTzGnX4Ne
+ nHaQ==
+X-Gm-Message-State: AOAM532mFmcL1M6FzvnyPMalMvLGPqsISIjCiukvLEEMQMLe7CrklMou
+ F4W3VDpHp/NDP5x3Mzd5dQdtN2e8lA3WwRZLrpU=
+X-Google-Smtp-Source: ABdhPJxMBOHc52GKXGY4KZd1zNrgtQTD0ozbXNYiuxbWME1ZaP5hoURzRjxVunisuqPjhbSGemzXmgIgilN6zmmjmP0=
+X-Received: by 2002:a05:6602:2ac9:: with SMTP id
+ m9mr11505755iov.68.1591928145464; 
+ Thu, 11 Jun 2020 19:15:45 -0700 (PDT)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQL8S8fLu5o7xRiXwOWFaEK+6gqKwQElXUrGpn77JBA=
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0xTdxTmd+/tvZdqzbW48JMm6qqGQUbdAtOfoEAMmzchmmUkyx4MVvEO
- Gl61V8QZs9nhKlCE7oHDSup4yAxzBcurwBwIaukwJaQUlISER00AgQEGpek25vVqxn/fOd/3
- ne+c5NC4fFESQmtyTnK6HHWWkpQSrb1hoREt3smUt/wD0ajf4sHRLUMfhWZ8HhLdnigi0KVF
- H46WG+okaG3AT6Hh0askqp+zk6j6QSuGvl2bxZFtaliC3B2VJHIXDAJkHHnO/uL4F0PfnI9E
- Lct+CbrW8hDEB7HuoUTWXXoRY9vNYxRrqu4GbFPt1+x5ZxfBPmsoJNmlR6ME+8S2jb3QbcTe
- l34iPXCcy9Kc4nR7Yj+XZlj7ZiTaOunpyz/eo86BIboYBNKQiYKW2n6iGEhpOdMJ4I3GFlIs
- lgG8u1L2knkKoP2+HntlcblqKJG4BeDgyhgQizkA59qacUFFMhHQXmMgBbyFaQXwzsIRQYQz
- f2PQXmAiBCKQOQi9+i4g4CAmAU5X/EUJmGB2w6pev6QY0LSM2Q9XSz8V2jJmM3Re9r6w4sx2
- 2DZfiYsb7YC+R3USMSsaXi90YqImGN71leBCLmSuBMLvf9cDYSZ8nlXRrBK9QXDW0UyJOATO
- lBkoUZIJSzoixfZZeM1yjxBxHOweqiQECc6EwYaOPWLSJnjR78VEpwwWGuSiejcsWPC8dCrg
- d0ajRMQs9I/cpEzgdfO6u8zr7jKv29/8f9jPgKgHWzktn53O8e9oI3O4fBWvzubzctJVabnZ
- NvDiKcMT7WByfFHVAzAa9ABI48otss3BEyly2XH1l2c4XW6qLi+L43uAgiaUwTLl6v0UOZOu
- PsllcpyW071iMTow5BxWNH16l8RT/sbqvoDtGudN7cYQ/nCaovO1sMafplnvYV2cvnSgyqx4
- M2Ay6ei7qpGk+n3JdXqyqftCY4x7l7VhljhTw2qOIE+fhjXpE36rUf+xFVjZ1LIxqymUnzDW
- bpp3TIUX/pM7mOEw6PizXc8cH//51THqujPWZkgeLXp4sG2xKj7Sx8SMu5dstzuv7j3V+2Dg
- BLZDHqO948zXtB/K+6j915KdEVFpl7ZlVtii85zh+3Njay0BTV8kFCk2zPW4rL1L5cXvVS1Z
- 46Zaj11hk12Wgih2YS2f2dj/gxRztWXHy6tvHCVDP1z5IDVx+PH8Z5U7x5MOLHjKH6dvOGRV
- EnyG+u1wXMer/wNEYt84AwQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrKIsWRmVeSWpSXmKPExsWy7bCSvO7WJ4/iDA48F7I4Pe8qs8XethPs
- Fi9/XmWzOPiwk8Vi2oefzBaf1i9jtfh//je7xbVb89ksVr3ZwWax6MY2JovW/6+YLTY9vsZq
- cXnXHDaLy80XGS26rwNllx//x2TR1GJssfXTb1aLpVtvMjoIe1y+4u1xua+XyWPnrLvsHhMW
- HWD02Lyk3qPl5H4Wj+/rO9g8Pj69xeLxeZOcR/uBbqYArigum5TUnMyy1CJ9uwSujHUnXrIW
- LOOqmDnlGHsD4xWOLkZODgkBE4lz5xazdzFycQgJ7GaUmLilhRkiIS1xfeMEdghbWGLlv+dQ
- Ra8YJc5d3MoGkmAT0JXYsbiNDSQhIrCHUeL7svtgVcwCXcwSXw/+YYNo6WOU2H9vIVgLp4Ct
- xJPG/YwgtrCAi8SLGe/BdrAIqEosPPybtYuRg4NXwFLiR180SJhXQFDi5MwnLCBhZgE9ibaN
- YJ3MAvIS29/OgbpUQeLn02WsILaIgJXEio6TTBA14hJHf/YwT2AUnoVk0iyESbOQTJqFpGMB
- I8sqRsnUguLc9NxiwwLDvNRyveLE3OLSvHS95PzcTYzgmNfS3MG4fdUHvUOMTByMhxglOJiV
- RHgFxR/GCfGmJFZWpRblxxeV5qQWH2KU5mBREue9UbgwTkggPbEkNTs1tSC1CCbLxMEp1cB0
- cnpL/gS1xnsr3bbOyL06yTi+5tf86ImJSTvzFizf6PJva9jnpu+nrjxfpePM4f7udOG7xe3p
- macnzzNa8EldnJUpqnTm5EiNnCQbR6s/d+zP/1KWUL94Q8bDfMGHZzkXrjoefO3Dd/mZxiuJ
- syvXXXfbY1lqOq/qLRf/JaEjqtIf/eMXPg//sOGF8GHtQpv1MzTvz5y7YPkyC5MFreY3hRY6
- 7dxaKaV9sDOx6UeyTJM+e1+q8SUn7acb10kv/qGUl7nU7uaCIzqfZpdMUD6g6dAUsOpc1K3H
- P/nCVsxgepM6MeHf7zYtCR/lu/tt1od9ep82c8KrGH//+1eTXnyXm+O84fia72sOXVjqM3uN
- 0xElluKMREMt5qLiRACiPhYwaAMAAA==
-X-CMS-MailID: 20200612021309epcas5p3b5b53df83cfb0996262016c604f75827
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200612012633epcas5p30882af0f4cd7f7dd4a820f3fdbb9b1be
-References: <CGME20200612012633epcas5p30882af0f4cd7f7dd4a820f3fdbb9b1be@epcas5p3.samsung.com>
- <20200612012625.6615-1-stanley.chu@mediatek.com>
+References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
+ <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
+ <90df5646-e0c4-fcac-d934-4cc922230dd2@arm.com>
+ <20200610072444.GA6293@infradead.org>
+ <9c3a7b4e-0190-e9bb-91fe-6d5692559888@arm.com>
+ <27881ee0-dc40-e8c6-34f6-712f9acc3fbc@arm.com>
+In-Reply-To: <27881ee0-dc40-e8c6-34f6-712f9acc3fbc@arm.com>
+From: dillon min <dillon.minfei@gmail.com>
+Date: Fri, 12 Jun 2020 10:15:08 +0800
+Message-ID: <CAL9mu0+ZfW-DoO-DvhvGO-KeGMA+vuHga3FOxN_Ce7uStGPoqg@mail.gmail.com>
+Subject: Re: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
+ support reserved memory
+To: Vladimir Murzin <vladimir.murzin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_191316_752964_E2CA0A7B 
-X-CRM114-Status: GOOD (  10.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200611_191547_806566_1EF3E95D 
+X-CRM114-Status: GOOD (  19.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dillon.minfei[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -133,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -146,55 +99,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, cc.chou@mediatek.com,
- chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, chaotian.jing@mediatek.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux@armlinux.org.uk,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Rob Herring <robh+dt@kernel.org>,
+ allison@lohutok.net, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ tglx@linutronix.de, info@metux.net, linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stanley,
+On Thu, Jun 11, 2020 at 11:45 PM Vladimir Murzin
+<vladimir.murzin@arm.com> wrote:
+>
+> On 6/10/20 9:19 AM, Vladimir Murzin wrote:
+> > On 6/10/20 8:24 AM, Christoph Hellwig wrote:
+> >> Ok, I finally found the original patch from Vladimir.  Comments below:
+> >>
+> >>> +++ b/kernel/dma/direct.c
+> >>> @@ -456,14 +456,14 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+> >>>  #else /* CONFIG_MMU */
+> >>>  bool dma_direct_can_mmap(struct device *dev)
+> >>>  {
+> >>> -   return false;
+> >>> +   return true;
+> >>>  }
+> >>>
+> >>>  int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+> >>>             void *cpu_addr, dma_addr_t dma_addr, size_t size,
+> >>>             unsigned long attrs)
+> >>>  {
+> >>> -   return -ENXIO;
+> >>> +   return vm_iomap_memory(vma, vma->vm_start, (vma->vm_end - vma->vm_start));;
+> >>
+> >> I think we should try to reuse the mmu dma_direct_mmap implementation,
+> >> which does about the same.  This version has been compile tested on
+> >> arm-nommu only, let me know what you think: (btw, a nommu_defconfig of
+> >> some kind for arm would be nice..)
+> >
+> > Catch-all nommu_defconfig is not easy for ARM, AFAIK folk carry few hacks
+> > for randconfig...
+> >
+> > Meanwhile, known working NOMMU configs
+> >
+> > $ git grep "# CONFIG_MMU is not set" arch/arm/configs/
+> > arch/arm/configs/efm32_defconfig:# CONFIG_MMU is not set
+> > arch/arm/configs/lpc18xx_defconfig:# CONFIG_MMU is not set
+> > arch/arm/configs/mps2_defconfig:# CONFIG_MMU is not set
+> > arch/arm/configs/stm32_defconfig:# CONFIG_MMU is not set
+> > arch/arm/configs/vf610m4_defconfig:# CONFIG_MMU is not set
+> >
+> >>
+> >> diff --git a/kernel/dma/Kconfig b/kernel/dma/Kconfig
+> >> index d006668c0027d2..e0dae570a51530 100644
+> >> --- a/kernel/dma/Kconfig
+> >> +++ b/kernel/dma/Kconfig
+> >> @@ -71,6 +71,7 @@ config SWIOTLB
+> >>  # in the pagetables
+> >>  #
+> >>  config DMA_NONCOHERENT_MMAP
+> >> +    default y if !MMU
+> >>      bool
+> >
+> > Nit: def_bool !MMU
+> >
+> >>
+> >>  config DMA_REMAP
+> >> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+> >> index 0a4881e59aa7d6..9ec6a5c3fc578c 100644
+> >> --- a/kernel/dma/direct.c
+> >> +++ b/kernel/dma/direct.c
+> >> @@ -459,7 +459,6 @@ int dma_direct_get_sgtable(struct device *dev, struct sg_table *sgt,
+> >>      return ret;
+> >>  }
+> >>
+> >> -#ifdef CONFIG_MMU
+> >>  bool dma_direct_can_mmap(struct device *dev)
+> >>  {
+> >>      return dev_is_dma_coherent(dev) ||
+> >> @@ -485,19 +484,6 @@ int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+> >>      return remap_pfn_range(vma, vma->vm_start, pfn + vma->vm_pgoff,
+> >>                      user_count << PAGE_SHIFT, vma->vm_page_prot);
+> >>  }
+> >> -#else /* CONFIG_MMU */
+> >> -bool dma_direct_can_mmap(struct device *dev)
+> >> -{
+> >> -    return false;
+> >> -}
+> >> -
+> >> -int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+> >> -            void *cpu_addr, dma_addr_t dma_addr, size_t size,
+> >> -            unsigned long attrs)
+> >> -{
+> >> -    return -ENXIO;
+> >> -}
+> >> -#endif /* CONFIG_MMU */
+> >>
+> >>  int dma_direct_supported(struct device *dev, u64 mask)
+> >>  {
+> >>
+> >
+> > LGTM. FWIW:
+> >
+> > Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+> >
+> >
+>
+> @dillon, can you give it a try?
+>
+> I think Christoph would appreciate your Tested-by and that might speed up
+> getting fix mainline.
+>
+sorry for the late response. Yes, it's working
 
-> -----Original Message-----
-> From: Stanley Chu <stanley.chu@mediatek.com>
-> Sent: 12 June 2020 06:56
-> To: linux-scsi@vger.kernel.org; martin.petersen@oracle.com;
-> avri.altman@wdc.com; alim.akhtar@samsung.com; jejb@linux.ibm.com;
-> asutoshd@codeaurora.org
-> Cc: beanhuo@micron.com; cang@codeaurora.org; matthias.bgg@gmail.com;
-> bvanassche@acm.org; linux-mediatek@lists.infradead.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
-> kuohong.wang@mediatek.com; peter.wang@mediatek.com; chun-
-> hung.wu@mediatek.com; andy.teng@mediatek.com;
-> chaotian.jing@mediatek.com; cc.chou@mediatek.com; Stanley Chu
-> <stanley.chu@mediatek.com>
-> Subject: [PATCH v2 0/2] scsi: ufs: Fix and cleanup device quirks
-> 
-> Hi,
-> this series provides some device quirk fixes and cleanups.
-> 
-> v1 -> v2:
->   - Sort device quirks in alphabetical order (Alim Akhtar)
-> 
-> Stanley Chu (2):
->   scsi: ufs: Add DELAY_BEFORE_LPM quirk for Micron devices
->   scsi: ufs: Cleanup device vendor name and device quirk table
-> 
->  drivers/scsi/ufs/ufs_quirks.h |  3 ++-
->  drivers/scsi/ufs/ufshcd.c     | 15 +++++++--------
->  2 files changed, 9 insertions(+), 9 deletions(-)
-> 
-For this series
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-Thanks! 
+Thanks Christoph
 
-> --
-> 2.18.0
+index 8f4bbdaf965e..3e0ecf0b5fb3 100644
+--- a/kernel/dma/direct.c
++++ b/kernel/dma/direct.c
+@@ -427,7 +427,6 @@ int dma_direct_get_sgtable(struct device *dev,
+struct sg_table *sgt,
+        return ret;
+ }
 
+-#ifdef CONFIG_MMU
+ bool dma_direct_can_mmap(struct device *dev)
+ {
+        return dev_is_dma_coherent(dev) ||
+@@ -453,19 +452,6 @@ int dma_direct_mmap(struct device *dev, struct
+vm_area_struct *vma,
+        return remap_pfn_range(vma, vma->vm_start, pfn + vma->vm_pgoff,
+                        user_count << PAGE_SHIFT, vma->vm_page_prot);
+ }
+-#else /* CONFIG_MMU */
+-bool dma_direct_can_mmap(struct device *dev)
+-{
+-       return false;
+-}
+-
+-int dma_direct_mmap(struct device *dev, struct vm_area_struct *vma,
+-               void *cpu_addr, dma_addr_t dma_addr, size_t size,
+-               unsigned long attrs)
+-{
+-       return -ENXIO;
+-}
+-#endif /* CONFIG_MMU */
+
+Tested-by:  dillon min <dillon.minfei@gmail.com>
+
+>
+> Cheers
+> Vladimir
+>
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> >
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
