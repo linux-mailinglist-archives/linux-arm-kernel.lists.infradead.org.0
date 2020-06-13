@@ -2,90 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AE091F81EE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 10:24:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C67841F821A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 10:43:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lIdgFQGMu2vzYTMHgrcMyluv+TlyHr7Lf8QTH3N67Lw=; b=o8fVzZ/MC1gAxe
-	Oujz0wqVu4HaGbkhf+JyLew6r6lqJPYU0grYcbMVkMsLUX1IjHgtpGwDrP4vafkydE1yxJM+hB3by
-	MenPrz26VmGpxRuIYE+JO96mAsw0kHE9fb56VvEH7Ow6EfORKi9ZKjlsCOaUxd0dOJaYOP6P1ueG7
-	tMXdWrRIOO8bEIhLgK1St/2FOoBuVq/mOFGuWCYUKOsdbi2+cqPcCDEQ9c66HGefV+59OAyJ+pmGa
-	sh5xF5s4ulu49VLwoCs3gG5+ffSXKbOEpxJSwg+TmsLOus84HPpYmYcCF/Laq+WBLzwywAKBaHKo8
-	rnhd/kDMEYREXXHyhWXw==;
+	List-Owner; bh=lY3HyRe56Q7INukq94Vd2fERcBkINMeEenCz/0jXhJ4=; b=IZmCrgqX1B+ErX
+	K/Q13lhNg5V+/hFIg/T6T6Yg3T4oVfUXl98DPsoki2BaeJVOQHImtezMqmDUV8ngPwBQ0W7aVw391
+	0MEFYqYTQF1ZJIixZKPMvTARoNdZbJz4sC3xy8S44aaJj2q/39EIO1DDec5sG1/aP8JKpIJ7bFHc1
+	7ghl1ZnmBf0ylxNZeEoWhXG2jCyHHpH2xwFt9reLh3vFg7Pexz7PaWrrmWrOsbkVwhPQtgnY3XtWh
+	GhLtY21iB2swUh8NocAYrPjLqId7NhHPnAN3vqcOQC/Tzd6bS5uvS+lqJMSgX4/7CWEeCt0UKqQkG
+	XGMnP1B/cVky6j4lV3BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jk1Sz-0007xP-EX; Sat, 13 Jun 2020 08:24:41 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jk1lI-0002VG-4P; Sat, 13 Jun 2020 08:43:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jk1QI-0005j5-NJ
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 08:21:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id l17so9923119wmj.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 01:21:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=EiM8JpBzJJPkdg1XS1Ms7nThi6XK6NYvjUfMDMV3we4=;
- b=vGekoVrdkknxL8dRxqLO9M769KZhGeENyVytXE4MdSCxVG90FHVhTJs0zWpAk3Dk/i
- glp0jkI/u+3bwmUmk2kPwwO/w/y9yUTpQJuMbJ1lbdrMi1I2ZDT6KcuFvBStQ/uPUCzD
- ncqPmXpL1HwjSxHdSsr09HnLxkcPsCkYavEmcnPYo5rFaaBpkfx+CUtVErIfR4gIQEZw
- 2Y1bj0PD5owcrIT9REVuICinG0Z5b3I0PvlUbka4lbDvg3b7CLGkkiu4i+kcwCnXGXPa
- ZbPwF3f23GHp78le3WniqLI+bAHCrx1z7GTORORgfW34QC4HgaKHWMGTkBeMPB/0SQCh
- Ib2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=EiM8JpBzJJPkdg1XS1Ms7nThi6XK6NYvjUfMDMV3we4=;
- b=a+vcpekq795VCT/umeJkurW7AmVf2OTZtDl22CU1EspnBkoxYZsJ6TiP46OfZPob2M
- 6HbU+FZ/l8BTfiZ4zA5luZo8bxOoA0t/QeN2hT+R5tCWizwE5WqxdKjUq2sPAz9p7+4l
- vq8SGRWh8WWYsiIHGGnkfXEZfOendWjS0IdDbKUQusqd7oU3po08mt8DY9X+BFeKpmDW
- U8sFXnR40R/tC4oPkXGtbksqj1p4UgdT4Udf8wPYO4ixJbRqYjUBJa08UcqtuCnz6v7x
- rZTK0LhJYiD6lFXbVBdHM1vy06XlIbwKM9p6+kV3MWeVT3XEPX3wdP+qL2gdYGObXTYe
- 5W+g==
-X-Gm-Message-State: AOAM5330evu6HRmDhKIHCrRLl1DU/F54eERADtMGOLl+v97cxlyCl0zt
- 31wT7gLm3gADBzgo4YGb3pw=
-X-Google-Smtp-Source: ABdhPJx8NpCRU70fRrfcT1DYEFGz9YToPBJNwlMmqUtS8GbcC1QgtcjhWzF2HxqlwqnORWtkAlb4KQ==
-X-Received: by 2002:a05:600c:2317:: with SMTP id
- 23mr2933559wmo.139.1592036513089; 
- Sat, 13 Jun 2020 01:21:53 -0700 (PDT)
-Received: from skynet.lan (168.red-88-20-188.staticip.rima-tde.net.
- [88.20.188.168])
- by smtp.gmail.com with ESMTPSA id n189sm12243603wmb.43.2020.06.13.01.21.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 13 Jun 2020 01:21:52 -0700 (PDT)
-From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-To: hauke@hauke-m.de, zajec5@gmail.com, tsbogend@alpha.franken.de,
- robh+dt@kernel.org, f.fainelli@gmail.com, jonas.gorski@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linux-mips@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 9/9] mips: bmips: dts: add BCM63268 power domain support
-Date: Sat, 13 Jun 2020 10:21:40 +0200
-Message-Id: <20200613082140.2009461-10-noltari@gmail.com>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20200613082140.2009461-1-noltari@gmail.com>
-References: <20200610171630.465579-1-noltari@gmail.com>
- <20200613082140.2009461-1-noltari@gmail.com>
+ id 1jk1l9-0002Uo-1X; Sat, 13 Jun 2020 08:43:28 +0000
+Received: from mail-lj1-f178.google.com (mail-lj1-f178.google.com
+ [209.85.208.178])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7C8E920882;
+ Sat, 13 Jun 2020 08:43:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592037805;
+ bh=SyRgaHUOm/RP8zZ90+MyAGaRN4cSsWrzzNGHyfuBnCk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=BgrzEr0T3JoHmKZPf5JHHJjvygSMZGF5NKn+13GG7QHtIS/IBZ7akYkLuc0TbufY0
+ IdI3tEBicGVpmTrhCjhPNSbLdEFx6l03HXU1AMn8ObSGPs2e5kB+GmV2Rt/rdkNQLA
+ gC00pV5XYzyrAQW5/CPir6q3bWaJ154iM+O+UJ14=
+Received: by mail-lj1-f178.google.com with SMTP id a9so13698113ljn.6;
+ Sat, 13 Jun 2020 01:43:25 -0700 (PDT)
+X-Gm-Message-State: AOAM53155bsBvM23yD0wMag+BbKOIo0jySC9c18JfJw90bV8ShhxyYBk
+ GnDWuVID5hobQbQfZSQ5ZpmL9uFzWWoNpbfxMFg=
+X-Google-Smtp-Source: ABdhPJwZ1ylOrBsd6XVZmYSQ3sLMGYqoTKujz2SwyQaUfONmAEP2kaw8s4sWs89ZwT6ZjZ3AWnilqqgnG/azc96C0bc=
+X-Received: by 2002:a2e:2a42:: with SMTP id q63mr9000358ljq.265.1592037803689; 
+ Sat, 13 Jun 2020 01:43:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200611095804.22026-1-f.suligoi@asem.it>
+In-Reply-To: <20200611095804.22026-1-f.suligoi@asem.it>
+From: Guo Ren <guoren@kernel.org>
+Date: Sat, 13 Jun 2020 16:43:11 +0800
+X-Gmail-Original-Message-ID: <CAJF2gTTojGRnshstFwqu4xM_txeBOY=uFiWPTpXZPWv2uS6QqQ@mail.gmail.com>
+Message-ID: <CAJF2gTTojGRnshstFwqu4xM_txeBOY=uFiWPTpXZPWv2uS6QqQ@mail.gmail.com>
+Subject: Re: [PATCH] doc: devicetree: bindings: fix spelling mistake
+To: Flavio Suligoi <f.suligoi@asem.it>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_012154_764180_3027E53A 
-X-CRM114-Status: UNSURE (   8.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200613_014327_130240_777AC30D 
+X-CRM114-Status: GOOD (  15.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [noltari[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,6 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,30 +82,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ linux-gpio@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-csky@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QkNNNjMyNjggU29DcyBoYXZlIGEgcG93ZXIgZG9tYWluIGNvbnRyb2xsZXIgdG8gZW5hYmxlL2Rp
-c2FibGUgY2VydGFpbgpjb21wb25lbnRzIGluIG9yZGVyIHRvIHNhdmUgcG93ZXIuCgpTaWduZWQt
-b2ZmLWJ5OiDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgPG5vbHRhcmlAZ21haWwuY29tPgotLS0K
-IHY0OiBubyBjaGFuZ2VzLgogdjM6IFNlcGFyYXRlIGR0LWJpbmRpbmdzIGRlZmluaXRpb25zIGZy
-b20gcG93ZXIgZG9tYWluIC5kdHNpIHN1cHBvcnQuCiB2MjogQWRkIGR0LWJpbmRpbmdzIGhlYWRl
-ciBmaWxlcy4KCiBhcmNoL21pcHMvYm9vdC9kdHMvYnJjbS9iY202MzI2OC5kdHNpIHwgNiArKysr
-KysKIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9hcmNoL21p
-cHMvYm9vdC9kdHMvYnJjbS9iY202MzI2OC5kdHNpIGIvYXJjaC9taXBzL2Jvb3QvZHRzL2JyY20v
-YmNtNjMyNjguZHRzaQppbmRleCBiZWVjMjQxNDVhZjcuLjVhY2I0OWI2MTg2NyAxMDA2NDQKLS0t
-IGEvYXJjaC9taXBzL2Jvb3QvZHRzL2JyY20vYmNtNjMyNjguZHRzaQorKysgYi9hcmNoL21pcHMv
-Ym9vdC9kdHMvYnJjbS9iY202MzI2OC5kdHNpCkBAIC0xMTcsNiArMTE3LDEyIEBAIGxlZHMwOiBs
-ZWQtY29udHJvbGxlckAxMDAwMTkwMCB7CiAJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwogCQl9Owog
-CisJCXBlcmlwaF9wd3I6IHBvd2VyLWNvbnRyb2xsZXJAMTAwMDE4NGMgeworCQkJY29tcGF0aWJs
-ZSA9ICJicmNtLGJjbTYzMjgtcG93ZXItY29udHJvbGxlciI7CisJCQlyZWcgPSA8MHgxMDAwMTg0
-YyAweDQ+OworCQkJI3Bvd2VyLWRvbWFpbi1jZWxscyA9IDwxPjsKKwkJfTsKKwogCQllaGNpOiB1
-c2JAMTAwMDI1MDAgewogCQkJY29tcGF0aWJsZSA9ICJicmNtLGJjbTYzMjY4LWVoY2kiLCAiZ2Vu
-ZXJpYy1laGNpIjsKIAkJCXJlZyA9IDwweDEwMDAyNTAwIDB4MTAwPjsKLS0gCjIuMjcuMAoKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+Acked-by: Guo Ren <guoren@kernel.org>
+
+On Thu, Jun 11, 2020 at 5:58 PM Flavio Suligoi <f.suligoi@asem.it> wrote:
+>
+> Fix typo: "triger" --> "trigger"
+>
+> Signed-off-by: Flavio Suligoi <f.suligoi@asem.it>
+> ---
+>  Documentation/devicetree/bindings/gpio/mediatek,mt7621-gpio.txt | 2 +-
+>  .../devicetree/bindings/interrupt-controller/csky,mpintc.txt    | 2 +-
+>  Documentation/devicetree/bindings/timer/csky,mptimer.txt        | 2 +-
+>  3 files changed, 3 insertions(+), 3 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/gpio/mediatek,mt7621-gpio.txt b/Documentation/devicetree/bindings/gpio/mediatek,mt7621-gpio.txt
+> index ba455589f869..e1c49b660d3a 100644
+> --- a/Documentation/devicetree/bindings/gpio/mediatek,mt7621-gpio.txt
+> +++ b/Documentation/devicetree/bindings/gpio/mediatek,mt7621-gpio.txt
+> @@ -12,7 +12,7 @@ Required properties for the top level node:
+>     Only the GPIO_ACTIVE_HIGH and GPIO_ACTIVE_LOW flags are supported.
+>  - #interrupt-cells : Specifies the number of cells needed to encode an
+>     interrupt. Should be 2. The first cell defines the interrupt number,
+> -   the second encodes the triger flags encoded as described in
+> +   the second encodes the trigger flags encoded as described in
+>     Documentation/devicetree/bindings/interrupt-controller/interrupts.txt
+>  - compatible:
+>    - "mediatek,mt7621-gpio" for Mediatek controllers
+> diff --git a/Documentation/devicetree/bindings/interrupt-controller/csky,mpintc.txt b/Documentation/devicetree/bindings/interrupt-controller/csky,mpintc.txt
+> index e13405355166..e6bbcae4d07f 100644
+> --- a/Documentation/devicetree/bindings/interrupt-controller/csky,mpintc.txt
+> +++ b/Documentation/devicetree/bindings/interrupt-controller/csky,mpintc.txt
+> @@ -10,7 +10,7 @@ Interrupt number definition:
+>   16-31  : private  irq, and we use 16 as the co-processor timer.
+>   31-1024: common irq for soc ip.
+>
+> -Interrupt triger mode: (Defined in dt-bindings/interrupt-controller/irq.h)
+> +Interrupt trigger mode: (Defined in dt-bindings/interrupt-controller/irq.h)
+>   IRQ_TYPE_LEVEL_HIGH (default)
+>   IRQ_TYPE_LEVEL_LOW
+>   IRQ_TYPE_EDGE_RISING
+> diff --git a/Documentation/devicetree/bindings/timer/csky,mptimer.txt b/Documentation/devicetree/bindings/timer/csky,mptimer.txt
+> index 15cfec08fbb8..f5c7e99cf52b 100644
+> --- a/Documentation/devicetree/bindings/timer/csky,mptimer.txt
+> +++ b/Documentation/devicetree/bindings/timer/csky,mptimer.txt
+> @@ -8,7 +8,7 @@ regs is accessed by cpu co-processor 4 registers with mtcr/mfcr.
+>   - PTIM_CTLR "cr<0, 14>" Control reg to start reset timer.
+>   - PTIM_TSR  "cr<1, 14>" Interrupt cleanup status reg.
+>   - PTIM_CCVR "cr<3, 14>" Current counter value reg.
+> - - PTIM_LVR  "cr<6, 14>" Window value reg to triger next event.
+> + - PTIM_LVR  "cr<6, 14>" Window value reg to trigger next event.
+>
+>  ==============================
+>  timer node bindings definition
+> --
+> 2.17.1
+>
+
+
+-- 
+Best Regards
+ Guo Ren
+
+ML: https://lore.kernel.org/linux-csky/
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
