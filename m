@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CADE81F83F0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 17:31:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA1BA1F83FC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 17:41:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W7RkcwWgFOfOYxwfEGyuLI2y/fUkjbzKCT9bMK7Z5yc=; b=Uk3FOl6L8T3weM
-	tmAptZeYEt+VDMpi/zI2x4RAQCECEPiAC9VHs7EbwYhWkquXLBNJHGLBFkHfg1sfR6Bqzac5CO+pd
-	3UtlxWtQV6TgK3tyMjCKg1S1ZoJaY9Am9U8rNM4qcCFZSfOa+OLK2qF/LTIUpknri5g+zMv+a9Kwe
-	t+Kljaf7cKRPqTXzCKVE8HbhDW9SmlcwqUxVe21NDJxTOuutdzj6Qm15wirj7VcziN7taHB9kA5gB
-	koKbGbkGcfmc7Gp9khsJ+jmHQ3doZrygYJr4jDmN6bXCZTXXQXh8paKwYw79DVCv8+LHrtfVC1BwE
-	+isHC59O+URxg1wSPLDw==;
+	List-Owner; bh=xUV6wyAwkC7T9UR5fcJ6sVIFuaWvwbrFil5PfCScMbQ=; b=OvibEaW+rxWuZ4
+	8FHw9N9Abdcua9NY+qMg9UNWsCz4p/Jym1J8qX5yJ5WshEPyihv0e7trJ77+GYk2rsPliRdb14BGY
+	vCDsXwP81NI390JOs1EidDdS0WV4FxmF+o0aya1TLvXymBEfBlxGY5nItniXzrmSO6L66r7jbI3OF
+	+tm6d1fnhW4dSC6+xgFQQuFB0N5UZWYIrylIRJ/S5fE4QX8w8nJP2bMj+XuGROzKHMUDoNISPIUET
+	BWpnr95fey1p6QdbnzxAmQeFhpq3UfHSNKjpLoU+KJQlDyAXnJDjcDkTxS7zsjRlSH69pgXDVidrF
+	ixDb3PuZ1GCRcc8E2RjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jk87w-0006km-In; Sat, 13 Jun 2020 15:31:24 +0000
+	id 1jk8Hp-00040l-Pc; Sat, 13 Jun 2020 15:41:37 +0000
 Received: from [2002:c35c:fd02::1] (helo=ZenIV.linux.org.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jk87n-0006kA-QF
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 15:31:16 +0000
+ id 1jk8Hi-000406-1g
+ for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 15:41:31 +0000
 Received: from viro by ZenIV.linux.org.uk with local (Exim 4.93 #3 (Red Hat
- Linux)) id 1jk87a-008E71-Sq; Sat, 13 Jun 2020 15:31:03 +0000
-Date: Sat, 13 Jun 2020 16:31:02 +0100
+ Linux)) id 1jk8HW-008ELI-J8; Sat, 13 Jun 2020 15:41:18 +0000
+Date: Sat, 13 Jun 2020 16:41:18 +0100
 From: Al Viro <viro@zeniv.linux.org.uk>
 To: afzal mohammed <afzal.mohd.ma@gmail.com>
 Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-Message-ID: <20200613153102.GG23230@ZenIV.linux.org.uk>
+Message-ID: <20200613154118.GH23230@ZenIV.linux.org.uk>
 References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
  <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
  <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
@@ -39,13 +39,13 @@ References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
  <20200613125126.GE23230@ZenIV.linux.org.uk>
  <20200613125615.GF23230@ZenIV.linux.org.uk>
  <20200613134236.GA4086@afzalpc>
+ <20200613153102.GG23230@ZenIV.linux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200613134236.GA4086@afzalpc>
+In-Reply-To: <20200613153102.GG23230@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_083115_850828_C6095F08 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200613_084130_087501_555DFF16 
+X-CRM114-Status: GOOD (  11.56  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -80,22 +80,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 13, 2020 at 07:12:36PM +0530, afzal mohammed wrote:
-> Hi,
+On Sat, Jun 13, 2020 at 04:31:02PM +0100, Al Viro wrote:
+> On Sat, Jun 13, 2020 at 07:12:36PM +0530, afzal mohammed wrote:
+> > Hi,
+> > 
+> > On Sat, Jun 13, 2020 at 01:56:15PM +0100, Al Viro wrote:
+> > 
+> > > Incidentally, what about get_user()/put_user()?  _That_ is where it's
+> > > going to really hurt...
+> > 
+> > All other uaccess routines are also planned to be added, posting only
+> > copy_{from,to}_user() was to get early feedback (mentioned in the
+> > cover letter)
 > 
-> On Sat, Jun 13, 2020 at 01:56:15PM +0100, Al Viro wrote:
-> 
-> > Incidentally, what about get_user()/put_user()?  _That_ is where it's
-> > going to really hurt...
-> 
-> All other uaccess routines are also planned to be added, posting only
-> copy_{from,to}_user() was to get early feedback (mentioned in the
-> cover letter)
+> Sure, but what I mean is that I'd expect the performance loss to be
+> dominated by that, not by copy_from_user/copy_to_user on large amounts
+> of data.  Especially on the loads like kernel builds - a lot of stat()
+> and getdents() calls there.
 
-Sure, but what I mean is that I'd expect the performance loss to be
-dominated by that, not by copy_from_user/copy_to_user on large amounts
-of data.  Especially on the loads like kernel builds - a lot of stat()
-and getdents() calls there.
+To clarify: stat() means small copy_to_user(), getdents() - a mix of
+put_user() and small copy_to_user().  I would be very surprised if it
+does not hurt a lot.
 
 _______________________________________________
 linux-arm-kernel mailing list
