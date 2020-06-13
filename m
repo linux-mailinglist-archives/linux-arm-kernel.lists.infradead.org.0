@@ -2,40 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF21E1F8599
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 00:17:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21EEB1F85AA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 00:31:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1NM96h8WcceT6EtAds5K4q4NL8Upjv5Z4g9GF6qcRy0=; b=RE1j6vAdD+HHO7
-	ssDF6mGQEwMbMefh/DkqWokhxxuJnOY91QOM7zbaow/Qq0wvfWfYdqrU6Re4KQfxT/CwNuAEfWLgh
-	+jZqIsg/6ojcmlpUWoJFnrj1e7310Rf5vM+lqj8LZkzG6HOXuXoxi21AsnyUraa2pWO84ugsKtymR
-	7tTAmnRcCmt9f4pnyooQx4dtLNphvGazfTm1/UPxO5Se+3y7WjxgVmxdRZEDeYfYZy3m4jj64C/ak
-	GVHSs4JGtH06lJ9nV/RuvfLf+SSWHQ014pI9auhEYSzPJZEzKLZoKDa5CwjmhbbyuMPtQRDF1icpr
-	pedbcSjcCOHkGrAFf+Fw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OU3fWBno6FrDyDeHfhrz6CSys57nvwGvenadvu/B0KM=; b=qN6yoY3F56JzBi
+	WQHCeNcDam4Q0nKY7CPnQJTQhmEQOekKTZWAN/XMUE/A6pxKKGFNrUFDTVRCCvt9KMWUuvkF3q9mz
+	guWgHvuFelGkuduTtbKMOSwIl4UVo/ZU52Ksj/ejCFP+Hs+JRMfu4FNfvoY6thcdC1Cu0FXKLE07I
+	ByogWammgw+YurgOKlsHu6sdu4eOr7+dVwbtWO5w4VoQp9+AMjAml+anEp1XeN30+rGt3od4bhVDh
+	t9NwbDulj97gKHmyZM6bSFUSZzuFfAUUpIo/5Cg5z7tUXOXEGv+8Z9XcwPCty55m1cr+J8b6D1qmH
+	HgOl47zdEL72Q906/OdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkESU-00066L-Gv; Sat, 13 Jun 2020 22:17:02 +0000
-Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jkESM-000668-Rm; Sat, 13 Jun 2020 22:16:54 +0000
-Date: Sat, 13 Jun 2020 15:16:54 -0700
-From: Matthew Wilcox <willy@infradead.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-Message-ID: <20200613221654.GO8681@bombadil.infradead.org>
-References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
- <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
- <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
- <20200612135538.GA13399@afzalpc>
- <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
- <20200613120432.GA5319@afzalpc>
- <CAK8P3a2g6a=V4BmPAOM0vNYUfJqm_aZziQhCxfF8MT_fbHMMLg@mail.gmail.com>
+	id 1jkEfk-0005s0-D1; Sat, 13 Jun 2020 22:30:44 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkEfc-0005rI-SO
+ for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 22:30:38 +0000
+Received: by mail-lj1-x241.google.com with SMTP id e4so15003076ljn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 13 Jun 2020 15:30:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZVmpYpdcLJwl2DSPAje1OikSpkykl0PP+kQhQUL22OQ=;
+ b=k4TzTSdw7lly8trfcqMwra4DmSkI4MQ/iTmYv7KHHtfai16TeRlOPF0uSFdmNbyi5g
+ rtMMuGe5pWYw3pEYqvgHDJJfaHO3EgQG33NxwnAwZhNthAMjXOEFPcIIyZDNFYUo93UB
+ At4lNZq/62wBKTh/QCAbpRGNFHu5ckD/ijsF1ujB2kzVl65vavcGYKg7UXiAx7dbdSZ/
+ brjIHKxQC2Owfa4xg0gYWccVr6JzZVTlLjFvzG3BRKNx/bkV0ZwBSIu42MKCALiS0VP9
+ 17EGLm6OfpU92sJx+VPd9qbH7pQtSBgwy6gd+1uW3HsMvqwtV/ETGb08aLScAncpot7Y
+ jBcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZVmpYpdcLJwl2DSPAje1OikSpkykl0PP+kQhQUL22OQ=;
+ b=i1zSZycsATLLuTvwqURtbLV3OkM8mCwkgcDP8L5HZGmAXeJVCnssCUHqVJX6AV7r2w
+ gKhlc0IIyCuXfOsv9X72FDjv7i2Y+Uj4g62Q6e4Ycpii9gekWbx0x0SjxYeKmVWnOCi8
+ C8pMiyZIGJGxoGAo/a9T3lUm1FeZEP+khP1DmOe3wZuF0N74tVYw56ghDVJ524p6g1iG
+ WM5hk2RjT5y5aYHXXjcjUaszkcSOBx1oha7DrinzYOw+4BocFwDc28FtT+ypm0+ZnI44
+ FEK3LID1+LmI+f6xTArAaBjcChnIp+kBd9ol/yaWGoLaGCzI+ZW0hATBMS/qTckumttg
+ YMjw==
+X-Gm-Message-State: AOAM532NaU4BMcEQBhPfe5VB9A11gCw4Tg0gWsyY0c9lFYLRqs3tidsa
+ lLb1hJHuekq8coZapDvFFXCMGA==
+X-Google-Smtp-Source: ABdhPJyUf7EfwBdgX4MbsmqireeqO0m6LckflQVhSKKESBt72onjFwr5HHppP0IHQAqEb2dZF9/h2Q==
+X-Received: by 2002:a2e:818f:: with SMTP id e15mr9433758ljg.376.1592087434532; 
+ Sat, 13 Jun 2020 15:30:34 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-92d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.146])
+ by smtp.gmail.com with ESMTPSA id 15sm2888027ljw.46.2020.06.13.15.30.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 13 Jun 2020 15:30:33 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Sean Paul <sean@poorly.run>
+Subject: [PATCH 1/2] drm: mcde: Fix display initialization problem
+Date: Sun, 14 Jun 2020 00:30:26 +0200
+Message-Id: <20200613223027.4189309-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2g6a=V4BmPAOM0vNYUfJqm_aZziQhCxfF8MT_fbHMMLg@mail.gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200613_153036_952229_F1662415 
+X-CRM114-Status: GOOD (  11.99  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,52 +97,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, afzal mohammed <afzal.mohd.ma@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 13, 2020 at 10:45:33PM +0200, Arnd Bergmann wrote:
-> On Sat, Jun 13, 2020 at 2:04 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
-> > Observation is that max. pages reaching copy_{from,to}_user() is 2,
-> > observed maximum of n (number of bytes) being 1 page size. i think C
-> > library cuts any size read, write to page size (if it exceeds) &
-> > invokes the system call. Max. pages reaching 2, happens when 'n'
-> > crosses page boundary, this has been observed w/ small size request
-> > as well w/ ones of exact page size (but not page aligned).
-> 
-> Right, this is apparently because tmpfs uses shmem_file_read_iter() to
-> copy the file pages one at a time. generic_file_buffered_read() seems
-> similar, to copying between an aligned kernel page and address in
-> user space that is not page aligned would be an important case to
-> optimize for.
+The following bug appeared in the MCDE driver/display
+initialization during the recent merge window.
 
-This is kind of the nature of the page cache.  The kernel doesn't
-necessarily have contiguous memory in the page cache, so it's going to
-be split on page boundaries.  This is going to change with my THP series
-(I haven't actually changed generic_file_buffered_read(), but it'll
-come later).
+First the place we call drm_fbdev_generic_setup() in the
+wrong place: this needs to be called AFTER calling
+drm_dev_register() else we get this splat:
 
-> > Quickly comparing boot-time on Beagle Bone White, boot time increases
-> > by only 4%, perhaps this worry is irrelevant, but just thought will
-> > put it across.
-> 
-> 4% boot time increase sounds like a lot, especially if that is only for
-> copy_from_user/copy_to_user. In the end it really depends on how well
-> get_user()/put_user() and small copies can be optimized in the end.
+ ------------[ cut here ]------------
+WARNING: CPU: 0 PID: 1 at ../drivers/gpu/drm/drm_fb_helper.c:2198 drm_fbdev_generic_setup+0x164/0x1a8
+mcde a0350000.mcde: Device has not been registered.
+Modules linked in:
+Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
+[<c010e704>] (unwind_backtrace) from [<c010a86c>] (show_stack+0x10/0x14)
+[<c010a86c>] (show_stack) from [<c0414f38>] (dump_stack+0x9c/0xb0)
+[<c0414f38>] (dump_stack) from [<c0121c8c>] (__warn+0xb8/0xd0)
+[<c0121c8c>] (__warn) from [<c0121d18>] (warn_slowpath_fmt+0x74/0xb8)
+[<c0121d18>] (warn_slowpath_fmt) from [<c04b154c>] (drm_fbdev_generic_setup+0x164/0x1a8)
+[<c04b154c>] (drm_fbdev_generic_setup) from [<c04ed278>] (mcde_drm_bind+0xc4/0x160)
+[<c04ed278>] (mcde_drm_bind) from [<c04f06b8>] (try_to_bring_up_master+0x15c/0x1a4)
+(...)
 
-The write path should also be paid attention to.  Look at
-generic_perform_write() which first calls iov_iter_fault_in_readable()
-(for the entire length of the write) and then actually does the copy
-later with iov_iter_copy_from_user_atomic().  So you're going to want
-to optimise the case where you access the same pages multiple times.
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ drivers/gpu/drm/mcde/mcde_drv.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/mcde/mcde_drv.c b/drivers/gpu/drm/mcde/mcde_drv.c
+index 84f3e2dbd77b..80082d6dce3a 100644
+--- a/drivers/gpu/drm/mcde/mcde_drv.c
++++ b/drivers/gpu/drm/mcde/mcde_drv.c
+@@ -209,7 +209,6 @@ static int mcde_modeset_init(struct drm_device *drm)
+ 
+ 	drm_mode_config_reset(drm);
+ 	drm_kms_helper_poll_init(drm);
+-	drm_fbdev_generic_setup(drm, 32);
+ 
+ 	return 0;
+ }
+@@ -264,6 +263,8 @@ static int mcde_drm_bind(struct device *dev)
+ 	if (ret < 0)
+ 		goto unbind;
+ 
++	drm_fbdev_generic_setup(drm, 32);
++
+ 	return 0;
+ 
+ unbind:
+-- 
+2.26.2
 
 
 _______________________________________________
