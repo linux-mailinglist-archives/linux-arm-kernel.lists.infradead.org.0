@@ -2,117 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A221F84C2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 20:47:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 701971F84C9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 20:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WHM/YgOcxbETpJzcIlVvsvACLUz9fRT76uXLUqRCcvs=; b=gDCn+CgIFjLwtB
-	g8hJFW/HfWO4lMGtfdysZgpqNsapwBwz2FZXzmnQwErLpQZUHpH2DELnOOjXV05bTgQrRo4AqRNtH
-	7QXSmZizmyPvbTdjN0mAz83fmbANnBon67gTqq8VEvu7EZPeDrBIVkVR9TaVt9D92jYXGQuVb8hi7
-	Li7OgV0VH6D0ziDO5uZmFeLSZ5W93su2SLHH1psr9KL6TfQ5k4ZJgS5lEZpx5LBxeIvNXEjnnbqEA
-	DrIQzqu3iNaS1hdyLUfdJdaHGV6677CgZqjqQxecyq+gmWiEx5Bwjn5EUT7hU38oLfRSMhMIg8Mmu
-	5k3rrPfrsRnEpTXFK5Gg==;
+	List-Owner; bh=5K6oB13y5tzINRKe8M77ehXzkT49q7J0TgOnFc4dP2o=; b=fanXOBQ0UFSBMZ
+	VG8N9yvN+R8uOg5ebVP1IPtjrIFQmmDwxlRnhACtJDhwMelaa97odCAmamPl794/YAFWjhlGNeS/h
+	WCjdEBjeIM3/Pqw1mxZ/WlsIJ3FSCvzhaIqgBi9vjaBxdS5//+NlO1DLKQXuxEE9sdOskhjqRe7pz
+	XuPWoQdfY/vJvXcYgOCREEgEpZORiPOkqr7vL0DqtWMXm4zwN4XoZs9MivDeBNji+3vwixCnCKEhU
+	7AG9fYWi+ddqfwFQcKVWpxWzQ0o5IOzHlowPK3zo1HkdiqvG86H8ucbf1eoPnaDJ24juzAtp6cZXr
+	+23dTZGNr3Eu7Y//0fOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkBBA-0006sH-Pn; Sat, 13 Jun 2020 18:46:56 +0000
-Received: from mail-oln040092004047.outbound.protection.outlook.com
- ([40.92.4.47] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1jkBJa-0004Ko-SJ; Sat, 13 Jun 2020 18:55:38 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkB9Y-0005Jp-K5
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 18:45:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=P507bCeM8Yn7Yn2v2otVQ7FwETBcyw9KJJwCKYF1oS/9II7Ds1giodur8KjVvSoSNXEcwIs47KHZWOaVf5jeMMym033en2pjgpURP0/HBaIc2lDsRsCRbU5LQHPsRt84wNuBPKn/vmNa9sazBH5SlehnsO4jlWxlhHOwzK6KQT3quiTv8mpykvPQNV7u1twVtdoI3RLqKAgvu40Al4P+p3BC0FcdnLHAxlqx29cBfo4Blh4SvFwCg32r1Meb6Ktg4PZy3Tll+G45xQopXZZvpB0N+CkC2JjWjRTCk1sAVVhxkOdnQQphkfMHXb3y/QFXnB6ebct34jpoU35Z3zK84A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bhgaG2itpjVJj2U6Sm2JnF3Q3J1Hcik19w9S1eepDcQ=;
- b=MNgJ4yr2Goyvk5bVRPa5fDtZhCrrL3ylz0EH96Lp2LTgmB+1j5uirqnQkg18yV/wrltP9yYn9z7m5O52arZDwWOzjPpU+bz4nBlwOgOwqCURnQ7vPP+hHxHeYxOAaVLVpYptAYUOjo6kaflijjlaabdQCJCmYlzsmLhIFyPkXKSirmU2ze4Hn3JvA484f7ed+JOZMF0kzFh3KfPG2mNPBAClcQP6DTUC3GLMO/EYyIfNUHLt+I/WshOkklomecRD2BCwaXIRnWQWfyL2meJJzPlfV5X+odJwKHX6K6c3BqmFnRW/NNmOdWTTjzEpCdRO6f7drHnfFUIzQVOm49w/yg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from BL2NAM02FT048.eop-nam02.prod.protection.outlook.com
- (10.152.76.53) by BL2NAM02HT181.eop-nam02.prod.protection.outlook.com
- (10.152.77.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18; Sat, 13 Jun
- 2020 18:45:13 +0000
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- (2a01:111:e400:7e46::4a) by BL2NAM02FT048.mail.protection.outlook.com
- (2a01:111:e400:7e46::109) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
- Transport; Sat, 13 Jun 2020 18:45:13 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:E8ED144F710C56955811B6AE5F20D011D162CCBB8A386BAD1C88BDF5BF958619;
- UpperCasedChecksum:9CCC785411FF0208F99FA5FE3D52CA827EDE11E2563E5AE8365DF47952D2EEF5;
- SizeAsReceived:7757; Count:49
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::b9c3:9bff:541d:f383]) by BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::b9c3:9bff:541d:f383%9]) with mapi id 15.20.3088.026; Sat, 13 Jun 2020
- 18:45:13 +0000
-From: Jonathan Bakker <xc-racer2@live.ca>
-To: kgene@kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 5/5] ARM: dts: s5pv210: Correct BCM4329 bluetooth node
-Date: Sat, 13 Jun 2020 11:44:27 -0700
-Message-ID: <BN6PR04MB0660B2069DE8F1C81D894C75A39E0@BN6PR04MB0660.namprd04.prod.outlook.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200613184427.23394-1-xc-racer2@live.ca>
-References: <20200613184427.23394-1-xc-racer2@live.ca>
-X-ClientProxiedBy: MWHPR07CA0022.namprd07.prod.outlook.com
- (2603:10b6:300:116::32) To BN6PR04MB0660.namprd04.prod.outlook.com
- (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <20200613184427.23394-6-xc-racer2@live.ca>
+ id 1jkBJT-0004KN-9g
+ for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 18:55:33 +0000
+Received: from mail-qt1-f170.google.com ([209.85.160.170]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MCbZL-1jbcju41oZ-009iaK for <linux-arm-kernel@lists.infradead.org>; Sat,
+ 13 Jun 2020 20:55:26 +0200
+Received: by mail-qt1-f170.google.com with SMTP id z1so9695335qtn.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 13 Jun 2020 11:55:25 -0700 (PDT)
+X-Gm-Message-State: AOAM533sBGjfTb7NokAr0eSYyng+GfFSFYjN8xhVJJKTFA4avcyFFQSo
+ XU9OlBajOMXWmtWE/AHE5PWG1YLCJ4GclqqXAKg=
+X-Google-Smtp-Source: ABdhPJyuxw4tUYCzfqYU9Qk2nyGDIv212AgyB/v6klMsDa80OnzI1YzehoJDFzRkxl5xXtHUS44S4533nKMvd4MIeK8=
+X-Received: by 2002:ac8:4742:: with SMTP id k2mr8988128qtp.304.1592074524733; 
+ Sat, 13 Jun 2020 11:55:24 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from jon-hp-6570b.telus (2001:569:fb68:9c00:8067:f823:1e15:7520) by
- MWHPR07CA0022.namprd07.prod.outlook.com (2603:10b6:300:116::32) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
- Transport; Sat, 13 Jun 2020 18:45:12 +0000
-X-Mailer: git-send-email 2.20.1
-X-Microsoft-Original-Message-ID: <20200613184427.23394-6-xc-racer2@live.ca>
-X-TMN: [LYFzZFzZ4n/LJPyPcdS/qrkZLlAEZ1yIXF0/6owonAWsM0nRd3y2WN3nODK8Eowh]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 49
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: 5d50a82d-92fc-4006-9140-08d80fc9e845
-X-MS-TrafficTypeDiagnostic: BL2NAM02HT181:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: /778A9UKMUFV9BDpn0rmzsqcrCDau5/J5P6vnu6yqSvGby0Ini/T30inqDkQgUg01R+RXgQmQIVtpyEFA9YvrNMK4aGYxyyHaUNY1FrLzvEhlMyQNQFj15cV2+iOFjeSW8ndGgC1nSU4gUUG4QXpEk0tLqQOx6c8skqKU70UOiugn0YIKkBaWqn6I+xDmslo4abIATXopvvqvJVakJuE5A==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: h5d6o1pTkuW96zcrHKmflqPOz0LlyWxJmTysKjbjP1x8t+NVh6Qd6p9yl802w+/38ci7lHwP/hDGdt3oFldZSFXvZBJSv58U9e7m75HUL9EEqzcBZ8+6o+JVQ1UE0wk+9lMaHxI6yAhMRE+eWAExfBOZc32aytjLFTy+7BeFbgkDjZgJiwfVmeIz9Ox+6HIZQWcksSYiApCIJgbpRQxo9g==
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5d50a82d-92fc-4006-9140-08d80fc9e845
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2020 18:45:13.6290 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL2NAM02HT181
+References: <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
+ <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
+ <20200612135538.GA13399@afzalpc>
+ <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
+ <20200613120432.GA5319@afzalpc> <20200613125126.GE23230@ZenIV.linux.org.uk>
+ <20200613125615.GF23230@ZenIV.linux.org.uk> <20200613134236.GA4086@afzalpc>
+ <20200613153102.GG23230@ZenIV.linux.org.uk>
+ <20200613154118.GH23230@ZenIV.linux.org.uk>
+ <20200613160040.GI23230@ZenIV.linux.org.uk>
+In-Reply-To: <20200613160040.GI23230@ZenIV.linux.org.uk>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sat, 13 Jun 2020 20:55:08 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3MEu=00h1HKzpPw5d5Owu7NiYjoDWDUM5DdgLaCtaR8w@mail.gmail.com>
+Message-ID: <CAK8P3a3MEu=00h1HKzpPw5d5Owu7NiYjoDWDUM5DdgLaCtaR8w@mail.gmail.com>
+Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
+To: Al Viro <viro@zeniv.linux.org.uk>
+X-Provags-ID: V03:K1:/7y6lG+e0HlpNv/AzA15aCHVtykAG1o2Tj8DM8b+ydtmykjgY6p
+ ysfNq3sThYJ++qt/ljHyDK8eqQ/eKNcVgRIWxWRyjVapgtw6J18Zjp8Pf8an/kBQl6vu18z
+ Lr9cQ/bqXJ5Uc7/prpVjfiT48uD9+y1vWiEeXrHZVZ11tdl5WaO14Ux3ubYfCYj6+Ugd1nO
+ PhM9yiYcWPAXxsgzs9/MA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:eK1TUTRixQ8=:9loAlfoQ67s8kG+eZ6tO+/
+ PDDG+ZKoLuWo9HxL4FQqdiPkZ1N1QmUdJhlzVXRJXYxGyyBnyjMeTt8vPbM3DO/WcUJm3j13L
+ 16Gx45qzkMvaUoK4G2FJLxud/RIlUQ8MLcwZCifs0I0U4reZVZcqZMvg6FWRSoyxg1mVVY36T
+ w5ucK6FKGDqk+RdF0JbuwMyCCCQL/1MeNkNnQzG8oe9Z/HFYN+LzFnMakNQp7VVD6bkqYw090
+ /sBiAq6a1y4VNFpzTatqHNkUj4m33CIgo5Zo5QLdhH5Si0SBxiuS+Ino0mNciHQYjfRUq5aNs
+ /BOFMxufZdVfUDCj2+dSxI741mx11UtR0NTjYmwJfTyUgTS9JcfTeraufa5ohvK8qV01eSdhG
+ YE/I8qe0IPvt4DfWZnstvrwT1lfoYqFL8kAd1MqMrXKwg2MftO4j3OVvtcHv6elF9xiJTwvCh
+ +dI8FQZetcWSqripUM5qN9Wv9vMYR4expmKAx5+MYPxY77QocKd+8vK41WVI+Cy/E8jfqHXH+
+ XwgAlF53ObDk3WXQPHO3SmvLUKuqU9iCAfh7/nG/Q72FVzfgaBF133aHTDSLoWF36Q8KGemVh
+ cDylPzSOsmJMqs8cm9z+T2yde2/xa+BtwfR/ILn3SFntG1uA+CAD22A7HDBm4WdQx/mHwutcM
+ 6GbPq0x6bFAWXIXGAfTBJ6wGzpebPbLZJG2dm7srZiK+1Yva9L9hDOBGbqPu/eWfVowDLVP2Z
+ krMw/gkDZtFTugfOKUmr287vqULxiEHaqPU8NTHmJ3AVjk5/BLx9CwpF6qZb/Dne+lV3emH7d
+ HhwSY19GSTZul9a4h3Wjicfdap1anhM+6r0t+aBTmYNDSZ6U0o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_114516_712694_A5F17222 
-X-CRM114-Status: UNSURE (   8.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200613_115531_630093_B7413AC7 
+X-CRM114-Status: GOOD (  22.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.4.47 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.4.47 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [xc-racer2[at]live.ca]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [xc-racer2[at]live.ca]
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,90 +95,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Bakker <xc-racer2@live.ca>
+Cc: "Paul E. McKenney" <paulmck@kernel.org>, Will Deacon <will@kernel.org>,
+ Nicolas Pitre <nico@fluxnic.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are several issues with the bluetooth node - the wrong
-compatible was used (because the bcm4329 compatible didn't exist
-when the node was added), the max rate was incorrect (due to
-limitations in the samsung TTY driver which have now been fixed),
-the clocks were not assigned properly so some rates didn't work,
-and the some pinctrl settings weren't explicitly set.  Fix all
-of the above issues.
+On Sat, Jun 13, 2020 at 6:00 PM Al Viro <viro@zeniv.linux.org.uk> wrote:
+> On Sat, Jun 13, 2020 at 04:41:18PM +0100, Al Viro wrote:
+> > On Sat, Jun 13, 2020 at 04:31:02PM +0100, Al Viro wrote:
+> > > On Sat, Jun 13, 2020 at 07:12:36PM +0530, afzal mohammed wrote:
+> > > > Hi,
+> > > >
+> > > > On Sat, Jun 13, 2020 at 01:56:15PM +0100, Al Viro wrote:
+> > > >
+> > > > > Incidentally, what about get_user()/put_user()?  _That_ is where it's
+> > > > > going to really hurt...
+> > > >
+> > > > All other uaccess routines are also planned to be added, posting only
+> > > > copy_{from,to}_user() was to get early feedback (mentioned in the
+> > > > cover letter)
+> > >
+> > > Sure, but what I mean is that I'd expect the performance loss to be
+> > > dominated by that, not by copy_from_user/copy_to_user on large amounts
+> > > of data.  Especially on the loads like kernel builds - a lot of stat()
+> > > and getdents() calls there.
+> >
+> > To clarify: stat() means small copy_to_user(), getdents() - a mix of
+> > put_user() and small copy_to_user().  I would be very surprised if it
+> > does not hurt a lot.
+>
+> PS: there's another fun issue here:
+>
+> fill a file with zeroes
+> mmap that file in two areas, MAP_SHARED
+> thread 1:
+> munmap() the first area
+> fill the second one with 'X'
+> thread 2:
+> write() from the first area into pipe
+>
+> One could expect that nothing by zeroes gets written into
+> pipe - it might be a short write() (or -EFAULT), but finding
+> any 'X' there would be a bug.
+>
+> Your patches allow for a possibility of write() doing
+> get_user_pages_fast(), getting the first page just as
+> munmap() is about to remove it from page tables and bugger
+> off.  Then thread 1 proceeds with the store (via the
+> second area).  And then thread 2 does memcpy() from that
+> thing via a kmap_atomic()-created alias, observing the
+> effect of the store.
+>
+> That might or might not be a POSIX violation, but it does
+> look like a QoI issue...
 
-While we're at it, update from the deprecated host-wakeup-gpios
-property to the host-wake interrupt.
+I assume this problem exists in arch/um/kernel/skas/uaccess.c
+and in Ingo's old x86 VMSPLIT_4G_4G patch as well, right?
 
-Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
----
- arch/arm/boot/dts/s5pv210-aries.dtsi | 28 ++++++++++++++++++++++++----
- 1 file changed, 24 insertions(+), 4 deletions(-)
+I guess holding mmap_read_lock() would prevent it but make
+it even more expensive.
 
-diff --git a/arch/arm/boot/dts/s5pv210-aries.dtsi b/arch/arm/boot/dts/s5pv210-aries.dtsi
-index 92ec0e133b25..822207f63ee0 100644
---- a/arch/arm/boot/dts/s5pv210-aries.dtsi
-+++ b/arch/arm/boot/dts/s5pv210-aries.dtsi
-@@ -629,6 +629,13 @@
- };
- 
- &pinctrl0 {
-+	bt_reset: bt-reset {
-+		samsung,pins = "gpb-3";
-+		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
-+		samsung,pin-pud = <S3C64XX_PIN_PULL_NONE>;
-+		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
-+	};
-+
- 	wlan_bt_en: wlan-bt-en {
- 		samsung,pins = "gpb-5";
- 		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
-@@ -654,6 +661,12 @@
- 		samsung,pin-pud = <S3C64XX_PIN_PULL_NONE>;
- 	};
- 
-+	bt_wake: bt-wake {
-+		samsung,pins = "gpg3-4";
-+		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
-+		samsung,pin-pud = <S3C64XX_PIN_PULL_NONE>;
-+	};
-+
- 	gp2a_irq: gp2a-irq {
- 		samsung,pins = "gph0-2";
- 		samsung,pin-function = <EXYNOS_PIN_FUNC_F>;
-@@ -845,16 +858,23 @@
- };
- 
- &uart0 {
-+	assigned-clocks = <&clocks MOUT_UART0>, <&clocks SCLK_UART0>;
-+	assigned-clock-rates = <0>, <111166667>;
-+	assigned-clock-parents = <&clocks MOUT_MPLL>;
-+
- 	status = "okay";
- 
- 	bluetooth {
--		compatible = "brcm,bcm43438-bt";
--		max-speed = <115200>;
-+		compatible = "brcm,bcm4329-bt";
-+		max-speed = <3000000>;
- 		pinctrl-names = "default";
--		pinctrl-0 = <&uart0_data &uart0_fctl &bt_host_wake>;
-+		pinctrl-0 = <&uart0_data &uart0_fctl &bt_host_wake
-+			     &bt_reset &bt_wake>;
- 		shutdown-gpios = <&gpb 3 GPIO_ACTIVE_HIGH>;
- 		device-wakeup-gpios = <&gpg3 4 GPIO_ACTIVE_HIGH>;
--		host-wakeup-gpios = <&gph2 5 GPIO_ACTIVE_HIGH>;
-+		interrupt-parent = <&gph2>;
-+		interrupts = <5 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "host-wake";
- 	};
- };
- 
--- 
-2.20.1
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
