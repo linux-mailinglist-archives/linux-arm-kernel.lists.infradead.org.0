@@ -2,81 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06C4D1F847B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 19:54:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E2C01F84B3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 20:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BTIdhhmRWTJJ3rhx7pGtEjP/sLKgmxHhIly2yZeslxw=; b=oCryR4e2BAsZ3G
-	g0CQ1nlvKBSwfTG1cTBICbExp2K+43C5ZMIKud/JDiO8rO3HFWPzJOeGCmPiDjjMAHkaRLtFcxsmv
-	2gYRegXQa1wTdyNqDlCktvrK5CHSiiOacC7blaGQgfsoxmvM7wxERQAqDvA1XHkkOsaXtyO/OFrRt
-	6C4rgc50OeNc+ElsNFar8aB6wsZFV7pTm2rN6uNs/iK84iODIc9BabNFMsX6Os7rcYq4xK2y6y/Fb
-	+WwWavkZs6Nw3MCxIzXBVwVlD6JaxHOQ3kmVHoP95bh2Am0x3Q3UiHgKJq4tUhY/J364mgLwl0aud
-	2INwIjGHKwFkiam6FsSA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YGgfwS0N16x+fdJh1AedAE7q4OC7gNAK/S0V0r5YL+0=; b=RJhRHJ1NBvWUkD
+	/6m9BPIUvUCveojevGieQurBKJGBkUtwqw2vfoZL3GbEp3E+HrEXtqA2XiG68c+osaKCFb64/MyrN
+	pBt3H5rfQ8/LOO1FJAFr8rJt4amUAZ2B5BPwwfXnYE82F87wx5LZQ1J8gKAi6nLolHJprmc5x6Add
+	IIh1jXPW6Jpvk7GkzSDoip09U4YjzDa9ivNk0BepLaO0DUOqBqhWESrB+fSpGxDHr4uxkQFdDYBhZ
+	W5FkaL/k8RHw5SIFt2hd8WFkNvs/FmizqnHfD5ZXdP1Ty67kQlbTUFoA/Y4gR/76SwY1mP28zXOkl
+	C2VM45kwCP46xWl3IjBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkALS-0002bt-Sq; Sat, 13 Jun 2020 17:53:30 +0000
-Received: from mail-ej1-f67.google.com ([209.85.218.67])
+	id 1jkB9e-0005dT-Hv; Sat, 13 Jun 2020 18:45:22 +0000
+Received: from mail-oln040092004013.outbound.protection.outlook.com
+ ([40.92.4.13] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkALL-0002az-5h
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 17:53:24 +0000
-Received: by mail-ej1-f67.google.com with SMTP id n24so13265431ejd.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 10:53:20 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=3JeOvtc/eAFvXr156ydRZZGyosX/Qqp3aRK+SICpX5s=;
- b=SixH3An6ZFl863+4FuHZHf2LMiMP/Wa319RO0CGUipcMz7f4/7v/MRx+L9EG7MOTau
- LqacfASUDofR5KvrogfdtUQ3wOPiH4pztlDJ9Usj/fD8RfgjeRHEFQvBl4TfGiQPU+x8
- aqUg8C2mSCGiU6Y2mXNKaAtKgzC22H9ZUMdydTGz/Ivp4HwN0OJZ3Qy3GRcyckRr1zrt
- Z2x8HLT1uGTzdWJtcDPZ1xKZoCSMbKcWM70tI9zzVTyWHvPRSisLAwnBh3KQGCqLzwHK
- oBdBlbWA4zQBkF58Rv1wSECR7seJAzZfOQ+LiI00zaJBYgoSjMrWT6xcq/3rJ2CmD/lA
- 8bNg==
-X-Gm-Message-State: AOAM532cl6LLLf6zfIofKrXEAQCYow/LVLuZpRqGEC/4t9D8dGFaFoLu
- /s/Pd9msGPK68IiSGEsIg7CwyIeMJNO3PCsnwag=
-X-Google-Smtp-Source: ABdhPJxBidEPydvBx4KSo0FSYx8i1Uqr0G7Qz/qzjO76L9wCItTl6v+val9pjKo6XeFlXTpivudQHulBPZcm4eDaPxQ=
-X-Received: by 2002:a17:906:27c5:: with SMTP id
- k5mr18340389ejc.251.1592070799112; 
- Sat, 13 Jun 2020 10:53:19 -0700 (PDT)
+ id 1jkB9S-0004YK-6L
+ for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 18:45:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=mf5M2UphQE0ZQ9FYFQXrrBOBvxG+U+ZKCokTRa1pKt8dBZkW46k9Uu7qNUYZdGYurrQwQkSAttz9PQ+iyK466Jgxm76xqrlEUfuS2KOMykoD0Nfh2sfVFIHOOkugMkKw/OMqsLKfRNOflKXKsVmTrKEYrUba5zh6BWinSxbFWP1f3ixe9IOhwb0Ghlbd1/6Ca6eRzekjX44chMoIFmtXi3mrKc6OQmAlCqlVhKwFgmBstuke/oXOyEA7PtGHRfneSUF6yAu5rUOwWF7OqCCgOjx2B/Tus+QXofeunLybEm9gqLNScXWU57niIil2yCyuvLMJyUQPQxVhzadrMeTSVA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CYTahL2jMwRCksVY8UcLQ3wvb9NY/xCM8WvhbK1A2AU=;
+ b=AW9cTqkhrBWeROWzGa6/wSie4uRp1W3KFKkjI+2fGmJWk8Ud9h6ufkXJuXHmZU8xuCJxfB+YuTZ4Ck9HkviJvneJL9Tvy+uN2GlRMTCKHtCZjS/gjLBGXMCOOoIa/sFamFlW28cAP8ypans2DdoD3ti7FAzvGIUFtpx/n48AyXb6y35/aUiafxYZqM+NNX3nE/H37pYvUB9nnGclGh+oRXLKXv/yJjN0ry5yorviXhkBuapS1laqiV2t5BvDvHDlFGBT2122aOCOzeOdWcFOW0SVoRIE2XSMJUnCAJXQChQhwW/63+A1u07MmS1Muwio/RNbdQO8aOeWiqeeqFnStw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from BL2NAM02FT048.eop-nam02.prod.protection.outlook.com
+ (10.152.76.54) by BL2NAM02HT059.eop-nam02.prod.protection.outlook.com
+ (10.152.76.211) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18; Sat, 13 Jun
+ 2020 18:45:06 +0000
+Received: from BN6PR04MB0660.namprd04.prod.outlook.com
+ (2a01:111:e400:7e46::4a) by BL2NAM02FT048.mail.protection.outlook.com
+ (2a01:111:e400:7e46::109) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
+ Transport; Sat, 13 Jun 2020 18:45:06 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:9BA1354240F8A7182780AAED1235D5697C636BB2075F896CE049DC9275FD93D1;
+ UpperCasedChecksum:80DEF31A8F7157FA928DEB766E86D5E42919D83FB768F3DFF3612B76BDCF1B88;
+ SizeAsReceived:7657; Count:47
+Received: from BN6PR04MB0660.namprd04.prod.outlook.com
+ ([fe80::b9c3:9bff:541d:f383]) by BN6PR04MB0660.namprd04.prod.outlook.com
+ ([fe80::b9c3:9bff:541d:f383%9]) with mapi id 15.20.3088.026; Sat, 13 Jun 2020
+ 18:45:06 +0000
+From: Jonathan Bakker <xc-racer2@live.ca>
+To: kgene@kernel.org, krzk@kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 0/5] ARM: dts: s5pv210: Improvements for Aries boards
+Date: Sat, 13 Jun 2020 11:44:22 -0700
+Message-ID: <BN6PR04MB0660787FD651F80CD0C22C2BA39E0@BN6PR04MB0660.namprd04.prod.outlook.com>
+X-Mailer: git-send-email 2.20.1
+X-ClientProxiedBy: MWHPR07CA0022.namprd07.prod.outlook.com
+ (2603:10b6:300:116::32) To BN6PR04MB0660.namprd04.prod.outlook.com
+ (2603:10b6:404:d9::21)
+X-Microsoft-Original-Message-ID: <20200613184427.23394-1-xc-racer2@live.ca>
 MIME-Version: 1.0
-References: <20200609113049.4035426-1-noltari@gmail.com>
- <20200609113049.4035426-3-noltari@gmail.com>
- <1367fcf3-24ed-9106-a329-da5f8e168e17@gmail.com>
- <3E897527-55EB-47DB-99ED-C737725F0F9E@gmail.com>
- <CAAdtpL7dUZ2RqkrqSxiZxDbp4qY-KdtSc7CyuR+rbnRRA2Yvrw@mail.gmail.com>
- <93c429b1-31f4-95c2-1bd9-b3756b396f3a@gmail.com>
-In-Reply-To: <93c429b1-31f4-95c2-1bd9-b3756b396f3a@gmail.com>
-From: =?UTF-8?Q?Philippe_Mathieu=2DDaud=C3=A9?= <f4bug@amsat.org>
-Date: Sat, 13 Jun 2020 19:53:07 +0200
-Message-ID: <CAAdtpL6OXziD9Q0dBZzkcq0jPF04rmNd6o_hi7Frm5DejG29mA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] clk: bcm63xx-gate: add BCM6318 support
-To: Florian Fainelli <f.fainelli@gmail.com>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from jon-hp-6570b.telus (2001:569:fb68:9c00:8067:f823:1e15:7520) by
+ MWHPR07CA0022.namprd07.prod.outlook.com (2603:10b6:300:116::32) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
+ Transport; Sat, 13 Jun 2020 18:45:04 +0000
+X-Mailer: git-send-email 2.20.1
+X-Microsoft-Original-Message-ID: <20200613184427.23394-1-xc-racer2@live.ca>
+X-TMN: [dTSGaNHextpa+M8IcfaXs8MkgS7i4q1wmVa3srMNVRsCeG6lT12QraK26x7BronK]
+X-MS-PublicTrafficType: Email
+X-IncomingHeaderCount: 47
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-Correlation-Id: 85a1dd37-e8fb-4155-8ff2-08d80fc9e3ac
+X-MS-TrafficTypeDiagnostic: BL2NAM02HT059:
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 2Jfu9KN6RCYhA0TMRIgUsNorxHYIhHBiUrxBq/Xsr0zVSFUAmBO6CFSnt81lIYxUtQZq1H0sIBH3YgNhREZwdLY6SWojCp1aMLQbmnp3pCaVNKKbD7dLvXYRi1sHC6/jZrCRY9TH5C4o9ljY2tN87bm8KqEax1v05RvMaoC+hH4+4v1RhuX0gUEZuF0j8c6MyYYoxb3zi7EtVwgZvJTd8Q==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:; SFS:; DIR:OUT; SFP:1901; 
+X-MS-Exchange-AntiSpam-MessageData: j4qwSlhBO8SIwAeJctjXvxvWppQbIj5Jn4NcJ3UtxSCLqUb1mLf0c0P7W08oBiZVn9stG9245pwy4KC3CeMm90hx2QXFkzTogufF5D304wAsgUSXLyxxbssZEiih8W243ghXNdDB8jQYjk5VSkspjiD3HU1IBaDFKurLeq6zViUZJHogSRIqFhuPfL2oHoMtL3yRhK6nycynDMyokAexdQ==
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 85a1dd37-e8fb-4155-8ff2-08d80fc9e3ac
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2020 18:45:06.2412 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL2NAM02HT059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_105323_213892_3AB276CB 
-X-CRM114-Status: GOOD (  13.68  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200613_114510_250229_D587E51F 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [philippe.mathieu.daude[at]gmail.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.218.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.218.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ no trust [40.92.4.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.92.4.13 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xc-racer2[at]live.ca]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [xc-racer2[at]live.ca]
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,57 +122,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- =?UTF-8?B?w4FsdmFybyBGZXJuw6FuZGV6IFJvamFz?= <noltari@gmail.com>,
- kbuild test robot <lkp@intel.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- open list <linux-kernel@vger.kernel.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Jonas Gorski <jonas.gorski@gmail.com>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jonathan Bakker <xc-racer2@live.ca>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBKdW4gMTAsIDIwMjAgYXQgNTozMiBQTSBGbG9yaWFuIEZhaW5lbGxpIDxmLmZhaW5l
-bGxpQGdtYWlsLmNvbT4gd3JvdGU6Cj4gT24gNi8xMC8yMDIwIDE6MjkgQU0sIFBoaWxpcHBlIE1h
-dGhpZXUtRGF1ZMOpIHdyb3RlOgo+ID4gSGksCj4gPgo+ID4gT24gV2VkLCBKdW4gMTAsIDIwMjAg
-YXQgODoxMyBBTSDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMKPiA+IDxub2x0YXJpQGdtYWlsLmNv
-bT4gd3JvdGU6Cj4gPj4KPiA+PiBIaSBGbG9yaWFuLAo+ID4+Cj4gPj4+IEVsIDEwIGp1biAyMDIw
-LCBhIGxhcyA0OjI3LCBGbG9yaWFuIEZhaW5lbGxpIDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4gZXNj
-cmliacOzOgo+ID4+Pgo+ID4+Pgo+ID4+Pgo+ID4+PiBPbiA2LzkvMjAyMCA0OjMwIEFNLCDDgWx2
-YXJvIEZlcm7DoW5kZXogUm9qYXMgd3JvdGU6Cj4gPj4+PiArc3RhdGljIGNvbnN0IHN0cnVjdCBj
-bGtfYmNtNjN4eF90YWJsZV9lbnRyeSBiY202MzE4X2Nsb2Nrc1tdID0gewo+ID4+Pj4gKyAgICB7
-IC5uYW1lID0gImFkc2xfYXNiIiwgLmJpdCA9IDAsIH0sCj4gPj4+PiArICAgIHsgLm5hbWUgPSAi
-dXNiX2FzYiIsIC5iaXQgPSAxLCB9LAo+ID4+Pj4gKyAgICB7IC5uYW1lID0gIm1pcHNfYXNiIiwg
-LmJpdCA9IDIsIH0sCj4gPj4+PiArICAgIHsgLm5hbWUgPSAicGNpZV9hc2IiLCAuYml0ID0gMywg
-fSwKPiA+Pj4+ICsgICAgeyAubmFtZSA9ICJwaHltaXBzX2FzYiIsIC5iaXQgPSA0LCB9LAo+ID4+
-Pj4gKyAgICB7IC5uYW1lID0gInJvYm9zd19hc2IiLCAuYml0ID0gNSwgfSwKPiA+Pj4+ICsgICAg
-eyAubmFtZSA9ICJzYXJfYXNiIiwgLmJpdCA9IDYsIH0sCj4gPj4+PiArICAgIHsgLm5hbWUgPSAi
-c2RyX2FzYiIsIC5iaXQgPSA3LCB9LAo+ID4+Pj4gKyAgICB7IC5uYW1lID0gInN3cmVnX2FzYiIs
-IC5iaXQgPSA4LCB9LAo+ID4+Pj4gKyAgICB7IC5uYW1lID0gInBlcmlwaF9hc2IiLCAuYml0ID0g
-OSwgfSwKPiA+Pj4+ICsgICAgeyAubmFtZSA9ICJjcHVidXMxNjAiLCAuYml0ID0gMTAsIH0sCj4g
-Pj4+PiArICAgIHsgLm5hbWUgPSAiYWRzbCIsIC5iaXQgPSAxMSwgfSwKPiA+Pj4+ICsgICAgeyAu
-bmFtZSA9ICJzYXIxMjQiLCAuYml0ID0gMTIsIH0sCj4gPj4+Cj4gPj4+IE5pdDogdGhpcyBzaG91
-bGQgYmUgc2FyMTI1Cj4gPj4KPiA+PiBOaWNlIGNhdGNoLCBJIHdpbGwgZml4IHRoaXMgaW4gdjIu
-Cj4gPj4KPiA+Pj4KPiA+Pj4+ICsgICAgeyAubmFtZSA9ICJtaXBzIiwgLmJpdCA9IDEzLCAuZmxh
-Z3MgPSBDTEtfSVNfQ1JJVElDQUwsIH0sCj4gPj4+PiArICAgIHsgLm5hbWUgPSAicGNpZSIsIC5i
-aXQgPSAxNCwgfSwKPiA+Pj4+ICsgICAgeyAubmFtZSA9ICJyb2Jvc3cyNTAiLCAuYml0ID0gMTYs
-IH0sCj4gPj4+PiArICAgIHsgLm5hbWUgPSAicm9ib3N3MDI1IiwgLmJpdCA9IDE3LCB9LAo+ID4+
-Pj4gKyAgICB7IC5uYW1lID0gInNkciIsIC5iaXQgPSAxOSwgLmZsYWdzID0gQ0xLX0lTX0NSSVRJ
-Q0FMLCB9LAo+ID4+Pj4gKyAgICB7IC5uYW1lID0gInVzYiIsIC5iaXQgPSAyMCwgfSwKPiA+Pj4K
-PiA+Pj4gVGhpcyBzaG91bGQgcHJvYmFibHkgYmUgInVzYmQiIHRvIGluZGljYXRlIHRoaXMgaXMg
-dGhlIFVTQiBkZXZpY2UgY2xvY2sKPiA+Pj4gKG5vdCBob3N0KQo+ID4+Cj4gPj4gT2ssIEkgd2ls
-bCBjaGFuZ2UgaXQuIEkgZ290IGNvbmZ1c2VkIGJ5IHRoZSBmYWN0IHRoYXQgYm90aCAodXNiZCBh
-bmQgdXNiaCkgd2VyZSBwcmVzZW50IG9uIDYzMThfbWFwX3BhcnQuaDoKPiA+PiAjZGVmaW5lIFVT
-QkRfQ0xLX0VOICAgICAgICAgKDEgPDwgMjApCj4gPj4gI2RlZmluZSBVU0JIX0NMS19FTiAgICAg
-ICAgICgxIDw8IDIwKQo+ID4KPiA+IElzIHRoZXJlIGEgZGF0YXNoZWV0IHRvIHZlcmlmeSB0aGF0
-Pwo+Cj4gTm90IGEgcHVibGljIG9uZSwgYnV0IEkgY2FuIGNvbmZpcm0gdGhpcyBpcyBjb3JyZWN0
-IGdpdmVuIHRoZSBpbnRlcm5hbAo+IGRhdGFzaGVldC4KCk9LIHRoYW5rIHlvdSBGbG9yaWFuLgoK
-PiAtLQo+IEZsb3JpYW4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+A couple of new drivers have now been added, so we can add support for
+them in the device tree for Aries.  These are the accelerometer (bma023)
+and the light/proximity sensor (gp2a).
+
+Additionally, the fuelgauge definition was wrong as there is no interrupt
+support on the galaxys.  The bluetooth definition also had some issues
+with it.
+
+There is one change to the common s5pv210 dtsi and that is that the gph3
+bank was missing the interrupt-controller property.
+
+Jonathan Bakker (5):
+  ARM: dts: s5pv210: Add interrupt-controller property to gph3
+  ARM: dts: s5pv210: Correct fuelgauge definition on Aries
+  ARM: dts: s5pv210: Add support for GP2A light sensor on Aries
+  ARM: dts: s5pv210: Add BMA023 accelerometer support to Aries
+  ARM: dts: s5pv210: Correct BCM4329 bluetooth node
+
+ arch/arm/boot/dts/s5pv210-aries.dtsi      | 90 ++++++++++++++++++++---
+ arch/arm/boot/dts/s5pv210-fascinate4g.dts | 17 +++++
+ arch/arm/boot/dts/s5pv210-pinctrl.dtsi    |  2 +
+ 3 files changed, 98 insertions(+), 11 deletions(-)
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
