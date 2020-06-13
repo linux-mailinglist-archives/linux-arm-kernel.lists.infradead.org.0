@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C95F1F8453
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 18:44:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3D001F8456
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jun 2020 18:44:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8r0tp/z7rxkRrSWNhOfb2qkpOMMhcECoWmJ16PCvu3E=; b=XeZiBLa9zOzhOY
-	D4r8yLZHqgwDZpvO3UyYzfPoMEQ0ujhbSN2Dxn91IfjYkOGN9vkdaqdUu80tDVt0guxzKGQ3DspR3
-	S9JjOCKfSPTew9Su0d6A1/N5muKiTBlO2AZaXw90yhWgENlhq+FBk4LnTAksNDcvrL/IgcL7lXBNy
-	vaE0xGu5iDNt1arNKFhlluDJDtl42fktxCWw2GpNY+BL9CkiAongtTbrdZbnfspEXOMEWwTmMF1Kj
-	b+aT+j4XQgEu+CW9uJmNQQIHPMJtO2bqOwVqepRpOqle3SXOib8kQefxzkI3x89QOPMkjgqR1vXZW
-	3M1lBTmtTWqsuTuaC8dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tBHUpauQNDYYLqtgQts6fC+XkkcqOt9MSfUeD30YNbw=; b=c+WB43zdc0lA8E
+	AxStwC1543Q6t7Qq+q9cQzm7MpfuaHS5a1/HSL6rjWNlNLVI36wZknvfmsXbIDbSVUW8Kl8NTJlLi
+	ylFW192lv55zHoIltVH7vrevxxMM4CV+RLYv+b6LStF9lirKXJ647ffO8gaNf+DwZSKUYVgJMhj1y
+	hXM/Ov/jb9ieNoz8CQkMn94+/ETz1N1g4pY1pC1XXc9V3kuSctsuz/5zRVa52M0MwWLe5AvxqQy7o
+	6ISaKIiAnJLBkzbHu0SP4dvYCrMMHvhW9GFDnd4Gvoctz9lmwgbTkfkRA4xx3NtTg2/oqrOxoVt7w
+	UUQpSbc6T3xyuqYUiwjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jk9GI-0005Tq-58; Sat, 13 Jun 2020 16:44:06 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jk9H0-0005zL-Ou; Sat, 13 Jun 2020 16:44:50 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jk9GA-0005Sy-Tb
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 16:44:00 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05DGhswF111003;
- Sat, 13 Jun 2020 11:43:54 -0500
+ id 1jk9GM-0005T0-Jh
+ for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 16:44:11 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05DGhtiw094259;
+ Sat, 13 Jun 2020 11:43:55 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1592066634;
- bh=lIvsGsW24nMTEz/eeWE5udB3Am8ZqohzsFmx7ykBBfM=;
- h=From:To:CC:Subject:Date;
- b=j5rXsjk99QrwOQHbsXfuTArVNWlL4PG2gplFB1oi9M8bbr7GzQ6NZZJzHBZJb2Qvf
- c651v43dsZhZwndY+AcygOcXCt7MPKE2/S1gBoBki1P8WZxMykbL4JWt7w062uoDB6
- LINBwWU6h8BuPf58FvLVG4rj+GpS53Jf/Vif/Wl0=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 05DGhsxJ085854
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sat, 13 Jun 2020 11:43:54 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1592066635;
+ bh=bcIOWBCD+ochF/uUQZlJLY18qWtv6RQIJeaX/jm2CVo=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=V8pyPdFW2b2uVMUAH8u1KidLXHUFqguxHZsSENT3Kk9MuB4p2vxJ7LqYyRgqV0NBV
+ PMQcka2MPGlOsHkLFeoXo3GYu1U6TXK7XlPvQz5ZDXU8y0bhOOfvc8lKKZ5m+Y9xCF
+ /706kd4f/Tm83LcfMVuzwoPZR4EaCcKDNExZ9PvA=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05DGhtEc109329;
+ Sat, 13 Jun 2020 11:43:55 -0500
+Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Sat, 13
- Jun 2020 11:43:53 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Jun 2020 11:43:55 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Sat, 13 Jun 2020 11:43:53 -0500
+ Frontend Transport; Sat, 13 Jun 2020 11:43:55 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05DGhqWe096439;
- Sat, 13 Jun 2020 11:43:53 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05DGhsws026664;
+ Sat, 13 Jun 2020 11:43:54 -0500
 From: Grygorii Strashko <grygorii.strashko@ti.com>
 To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
-Subject: [PATCH 0/2] arm64: dts: ti: k3: add platforms chipid module nodes
-Date: Sat, 13 Jun 2020 19:43:44 +0300
-Message-ID: <20200613164346.28852-1-grygorii.strashko@ti.com>
+Subject: [PATCH 1/2] arm64: dts: ti: k3-am65-wakeup: add k3 platforms chipid
+ module node
+Date: Sat, 13 Jun 2020 19:43:45 +0300
+Message-ID: <20200613164346.28852-2-grygorii.strashko@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200613164346.28852-1-grygorii.strashko@ti.com>
+References: <20200613164346.28852-1-grygorii.strashko@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_094359_056547_E8395EFD 
-X-CRM114-Status: UNSURE (   7.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200613_094410_697497_B07EBD13 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [198.47.19.142 listed in wl.mailspike.net]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,7 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -100,21 +98,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tero,
+Add DT node for the Texas Instruments K3 Multicore AM65x SoC platforms
+chipid module.
 
-Hence k3 platforms chipid module driver was merged, there is follow up series
-to add corresponding DT chipid nodes. 
+Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
+---
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-[1] https://lkml.org/lkml/2020/5/29/979
-
-Grygorii Strashko (2):
-  arm64: dts: ti: k3-am65-wakeup: add k3 platforms chipid module node
-  arm64: dts: ti: k3-j721e-mcu-wakeup: add k3 platforms chipid module node
-
- arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi      | 5 +++++
- arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 5 +++++
- 2 files changed, 10 insertions(+)
-
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+index 54a133fa1bf2..f7b9bc562e00 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+@@ -34,6 +34,11 @@
+ 		};
+ 	};
+ 
++	chipid@43000014 {
++		compatible = "ti,am654-chipid";
++		reg = <0x43000014 0x4>;
++	};
++
+ 	wkup_pmx0: pinmux@4301c000 {
+ 		compatible = "pinctrl-single";
+ 		reg = <0x4301c000 0x118>;
 -- 
 2.17.1
 
