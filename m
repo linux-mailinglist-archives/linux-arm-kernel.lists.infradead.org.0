@@ -2,104 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A180A1F8593
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 00:12:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF21E1F8599
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 00:17:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ih2PnfH8xa30lsYQIoRK0zrWpVF1ckzeBlHqxKfbP1M=; b=bgE
-	oArXCSB3JBuU4QHNfmqZ4wCY1gnidZ/naXZRyEBHAW6nByUnKhOV4UrYW/mk9d02QanMTkzkNatrU
-	L8Z2I8VTtHc2ge/VtkhgGQiLSbGVGebV0kG4/WWrs4DZPFLYEbUV9KzhxNnmaHQ/gW389yYAI/XJE
-	JEjWEgd5RmrIo3FSxuQ5WPXHPw5lo99/Xwv9LeTRVEmFTkXuMnnER/rnZIDXfOLQ2mvUWjv1W0k+r
-	lMHoGyLQx8eFQU9YOOvSpkRzoNRa6z8IqllZl1rEuKRCDfOOP+YrR3oZ/PZ2xvv7f4x42qgKGksaC
-	caML9nHQIAhAkw4euOc8ODTfrlLQVTg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1NM96h8WcceT6EtAds5K4q4NL8Upjv5Z4g9GF6qcRy0=; b=RE1j6vAdD+HHO7
+	ssDF6mGQEwMbMefh/DkqWokhxxuJnOY91QOM7zbaow/Qq0wvfWfYdqrU6Re4KQfxT/CwNuAEfWLgh
+	+jZqIsg/6ojcmlpUWoJFnrj1e7310Rf5vM+lqj8LZkzG6HOXuXoxi21AsnyUraa2pWO84ugsKtymR
+	7tTAmnRcCmt9f4pnyooQx4dtLNphvGazfTm1/UPxO5Se+3y7WjxgVmxdRZEDeYfYZy3m4jj64C/ak
+	GVHSs4JGtH06lJ9nV/RuvfLf+SSWHQ014pI9auhEYSzPJZEzKLZoKDa5CwjmhbbyuMPtQRDF1icpr
+	pedbcSjcCOHkGrAFf+Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkEO6-0003EV-25; Sat, 13 Jun 2020 22:12:30 +0000
-Received: from mta-p6.oit.umn.edu ([134.84.196.206])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkENz-0003EA-Kv
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 22:12:24 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-p6.oit.umn.edu (Postfix) with ESMTP id 49ksK31T86z9v904
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 22:12:23 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at umn.edu
-Received: from mta-p6.oit.umn.edu ([127.0.0.1])
- by localhost (mta-p6.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id b3V_GDJkzfRC for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 17:12:23 -0500 (CDT)
-Received: from mail-io1-f69.google.com (mail-io1-f69.google.com
- [209.85.166.69])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mta-p6.oit.umn.edu (Postfix) with ESMTPS id 49ksK26zBtz9vK1X
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 17:12:22 -0500 (CDT)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p6.oit.umn.edu 49ksK26zBtz9vK1X
-DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p6.oit.umn.edu 49ksK26zBtz9vK1X
-Received: by mail-io1-f69.google.com with SMTP id l22so8627033iob.23
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 15:12:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umn.edu; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=FdXdjmHedAXj/hlk7x8D2COLWhxBtrcFuL19bnCoiAA=;
- b=E+lWkEXd4WicprOc2RqreVpZnplmVN2LIbRmnw0No49QtjaK96rI3bD/sfAfaYS4m/
- KVTt1ccYZ2tDof2dsHIgQ5BCKtyzmllzHExtOb5KeuxHWDtFW5xI69p/wxVKJ3CJr+mU
- 2d621AZC8T2S4HD+mCdQY8pl2gjCz1IlEdF5I7AQDld3NcfscE1ALkezWGTW/1Q74EM4
- 3Cf+L+L2arREVxDsHWURivEC/qCHCPVw8yiPHf1Uczs7sbgrXHh+6zDAM7LoXgjoRDo5
- W1ofsXjPal3aVEOCaDn5D6+BmbZBFdyEbOXOPgRVnRrzMxaiRM0+HYk+m7N6/yMzef87
- u2tQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=FdXdjmHedAXj/hlk7x8D2COLWhxBtrcFuL19bnCoiAA=;
- b=huv/DicRjdselVHqtblXFlNAkkrVu8/D+he+dJjGG4cnGn7A/9b8XGeBphLTZywISV
- PEqjBTQe1XUwoRyPmsTB0hFl1SxE4kxmSrIxEAVS3sQR+TewJK0jMpynzhZ6hG4dzdr9
- 68KCM4AlVoGP0+VGPzVH574hK18mPUDgUaRcmI/9AiNelAaE5TB5Ges97T32KgTECDxE
- 23NzWp7WwZuzeFb5WdD3U4YLUgOeawWNf6KY79Q7YztIw21EYO3UXH/6YIZ2j5P9JkEe
- SiQJX1NiosRf3QXmEfkf/vjdwgDNfDeXU6PDmgPrP6xpLTCkOxGYbnF0bkWxPxJJ+8mF
- rDyw==
-X-Gm-Message-State: AOAM5322BPCxU73EHK43QQTFywZPCuD4pUMLyZ4Z9EMBgwwv/JM95H/J
- agC9BeORnU8uizfNcNK3EKx2jZ51AJFejyQ7FKxROETKqYf5LndyZAw7eqY1X3xkpisLBbty63T
- Bd48/ZtzpoO0xaxrpLHKIhIONyFYcg7u2ohUoeLs=
-X-Received: by 2002:a92:7704:: with SMTP id s4mr19994861ilc.290.1592086341100; 
- Sat, 13 Jun 2020 15:12:21 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJx+//kWNb9V2Ow5xh8TBnmfbyli85orS09mQYbNbn0QSH892okmXW7q54bX3ExekcIPhamNng==
-X-Received: by 2002:a92:7704:: with SMTP id s4mr19994833ilc.290.1592086340807; 
- Sat, 13 Jun 2020 15:12:20 -0700 (PDT)
-Received: from qiushi.cs.umn.edu ([2607:ea00:101:3c74:4874:45:bcb4:df60])
- by smtp.gmail.com with ESMTPSA id z12sm5285868iol.15.2020.06.13.15.12.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 13 Jun 2020 15:12:19 -0700 (PDT)
-From: wu000273@umn.edu
-To: kjlu@umn.edu
-Subject: [PATCH] i2c: busses: Fix a reference count leak.
-Date: Sat, 13 Jun 2020 17:12:13 -0500
-Message-Id: <20200613221213.6679-1-wu000273@umn.edu>
-X-Mailer: git-send-email 2.17.1
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_151223_771548_39B87A24 
-X-CRM114-Status: GOOD (  12.24  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.84.196.206 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+	id 1jkESU-00066L-Gv; Sat, 13 Jun 2020 22:17:02 +0000
+Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
+ Hat Linux)) id 1jkESM-000668-Rm; Sat, 13 Jun 2020 22:16:54 +0000
+Date: Sat, 13 Jun 2020 15:16:54 -0700
+From: Matthew Wilcox <willy@infradead.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
+Message-ID: <20200613221654.GO8681@bombadil.infradead.org>
+References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
+ <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
+ <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
+ <20200612135538.GA13399@afzalpc>
+ <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
+ <20200613120432.GA5319@afzalpc>
+ <CAK8P3a2g6a=V4BmPAOM0vNYUfJqm_aZziQhCxfF8MT_fbHMMLg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a2g6a=V4BmPAOM0vNYUfJqm_aZziQhCxfF8MT_fbHMMLg@mail.gmail.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,49 +47,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Fugang Duan <fugang.duan@nxp.com>,
- wu000273@umn.edu, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Wolfram Sang <wsa@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-MIME-Version: 1.0
+Cc: Will Deacon <will@kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Qiushi Wu <wu000273@umn.edu>
+On Sat, Jun 13, 2020 at 10:45:33PM +0200, Arnd Bergmann wrote:
+> On Sat, Jun 13, 2020 at 2:04 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+> > Observation is that max. pages reaching copy_{from,to}_user() is 2,
+> > observed maximum of n (number of bytes) being 1 page size. i think C
+> > library cuts any size read, write to page size (if it exceeds) &
+> > invokes the system call. Max. pages reaching 2, happens when 'n'
+> > crosses page boundary, this has been observed w/ small size request
+> > as well w/ ones of exact page size (but not page aligned).
+> 
+> Right, this is apparently because tmpfs uses shmem_file_read_iter() to
+> copy the file pages one at a time. generic_file_buffered_read() seems
+> similar, to copying between an aligned kernel page and address in
+> user space that is not page aligned would be an important case to
+> optimize for.
 
-pm_runtime_get_sync() increments the runtime PM usage counter even
-when it returns an error code. Thus call pm_runtime_put_noidle()
-if pm_runtime_get_sync() fails.
+This is kind of the nature of the page cache.  The kernel doesn't
+necessarily have contiguous memory in the page cache, so it's going to
+be split on page boundaries.  This is going to change with my THP series
+(I haven't actually changed generic_file_buffered_read(), but it'll
+come later).
 
-Fixes: 13d6eb20fc79 ("i2c: imx-lpi2c: add runtime pm support")
-Signed-off-by: Qiushi Wu <wu000273@umn.edu>
----
- drivers/i2c/busses/i2c-imx-lpi2c.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+> > Quickly comparing boot-time on Beagle Bone White, boot time increases
+> > by only 4%, perhaps this worry is irrelevant, but just thought will
+> > put it across.
+> 
+> 4% boot time increase sounds like a lot, especially if that is only for
+> copy_from_user/copy_to_user. In the end it really depends on how well
+> get_user()/put_user() and small copies can be optimized in the end.
 
-diff --git a/drivers/i2c/busses/i2c-imx-lpi2c.c b/drivers/i2c/busses/i2c-imx-lpi2c.c
-index 9db6ccded5e9..85b9c1fc7681 100644
---- a/drivers/i2c/busses/i2c-imx-lpi2c.c
-+++ b/drivers/i2c/busses/i2c-imx-lpi2c.c
-@@ -260,8 +260,10 @@ static int lpi2c_imx_master_enable(struct lpi2c_imx_struct *lpi2c_imx)
- 	int ret;
- 
- 	ret = pm_runtime_get_sync(lpi2c_imx->adapter.dev.parent);
--	if (ret < 0)
-+	if (ret < 0) {
-+		pm_runtime_put_noidle(lpi2c_imx->adapter.dev.parent);
- 		return ret;
-+	}
- 
- 	temp = MCR_RST;
- 	writel(temp, lpi2c_imx->base + LPI2C_MCR);
--- 
-2.17.1
+The write path should also be paid attention to.  Look at
+generic_perform_write() which first calls iov_iter_fault_in_readable()
+(for the entire length of the write) and then actually does the copy
+later with iov_iter_copy_from_user_atomic().  So you're going to want
+to optimise the case where you access the same pages multiple times.
 
 
 _______________________________________________
