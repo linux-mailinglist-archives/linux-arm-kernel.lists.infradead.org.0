@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC1841F8AF3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 23:48:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAA481F8B18
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 00:16:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yEaA6JBdYSVBcpUdWg0vBrx2wVQqb48uIPf/x+hTv1A=; b=b+h3c0LmH4qyH+
-	0FHLUuX9NBYFRYJG2SxTlHWTxa5KZx9Gzhg0Sc5GM2n/E2jpI2nmeoiSdDBiP1lE40fBCFXPO7SGZ
-	Gdn+GFXQXSEMP3Pxwx9BSWAgMVb2YOTtCK7xVdcW8Pfjcv3p6uKFqap+fgYEdufbjZtsuqaJircAU
-	cgfbCmUwi06UfDJAhpOZpgcXM5dAf3y6txswuLF2bu8oYC9+N525KAdnyhZD7DIUxlVPrdkJHaXh3
-	FaNBLfQZB5sIIBJk2pm5MzbWoyE41F0ctnkv4k5ZQf2B51PT+P52hRicaLW5LulQDlNDdVFKxoHSj
-	ZptjAJeqvpLRhcaz8clw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X06JcpQcJ3HDVkEZUjXg9FLHPKiPuozE/HrQ6CuIr10=; b=AWNuYz5EW05LnY
+	Wjt6Q2eHLgTRgzFCiGBhpOMVyi4NExtkcuukSEjd+bGaAZl7pYrVfVAB8moDYOMwNinxoM4UPTPfA
+	mRN9kG6GQulC8eYJvecsouITWJEhq7RTT55Bx+HIWQh2aHzVP/iaDa8vhmcjLXd/AXbbnhhuilzOp
+	CqBfSiwM8o3kzHqQbQqtbx2MpG9a8txbLT84CG+MCE6LXZKd5K7FPJKiZs5Sw4c3nbzLuGbWRSR3t
+	ZuYrw52RZyHLI7YEjL1bzEAlkqerLzx++XCgkDi6VvYWJwTeR9RmruzHqJKuImzkvweaTOi39G+Ig
+	21fxbPwgD8P8HBOFg9EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkaUk-0005DR-6J; Sun, 14 Jun 2020 21:48:50 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jkav0-0005S3-P9; Sun, 14 Jun 2020 22:15:58 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkaUa-0005Cj-Jj
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 21:48:41 +0000
-Received: by mail-wr1-x441.google.com with SMTP id c3so15067021wru.12
+ id 1jkaur-0005Rh-Bq
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 22:15:50 +0000
+Received: by mail-wm1-x341.google.com with SMTP id l17so12786746wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 14 Jun 2020 14:48:38 -0700 (PDT)
+ Sun, 14 Jun 2020 15:15:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version:in-reply-to
- :references:content-transfer-encoding;
- bh=4ll9gTuODUcXr9og5Q/LYBsrUScj9jVDgcQv5m7nbJo=;
- b=DmJj8SwVD5uqc+UUxRlfxuFaDInpyxLCjNdqfcW165X4ug0IM54TosjxgUKZFvvdo/
- esDIawd2eCh0xhyOW1MPEpoF9C2ZVaXrtn1drJLxxIr6I3gZ+L3NzuJySFFDgDJJNhzK
- ShCjIAVYhHATULAVKlA6oR6ODZ5Vh70z7ffE5kB0LYs5q4yuxWS5MQeQ2dsoVI4sfFcr
- 4zDX0MVPFet2xl2IlFcNzbmo+O8AxZwwizwi+RK/QAIlKEth3EfojEKRfG07tJtIXu+K
- Vo+Y8ARoSKQ1S0DM+7pYmDfLsG5ps6O7JXc02GxnNrt4dEUb8d9iclnIkizfoKiuPkF7
- mn4Q==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=C44Nsc/2DIW6Metz8grkN1P5aC9GoqP/aiWhLmCWYm0=;
+ b=ZvVIckVhIsLKFTkOdk8RwO5CnasQlO23IOxj1tFZ/GCrjFMATbMHnpsKuq6FmZJ7IM
+ TY5lCBMaAX+XYtP5NSEy6h62B+jrQkEAvw/YVeYEcC/YjuYZnF8G48ptZ1qvya+DJJZS
+ rL71UWwt8ZwZlBug1cGctc76z45SwkWVWGIdeBGqAXOac9qvUDDx/KkbhRUUQwxo9LIf
+ MBIqQgXyUKKsAshQxT8jtXkvW10w5WdgSE811e9FZ3Dgl8BAjtFazh1AckbkjrJWifYt
+ MLJtmO/ltwz4nI/2u6sgKBZcgnun4GjTPsyF3I/nlN525SFq8Jh91mx4BK0Voj6tJb4J
+ 3vmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :in-reply-to:references:content-transfer-encoding;
- bh=4ll9gTuODUcXr9og5Q/LYBsrUScj9jVDgcQv5m7nbJo=;
- b=e4hRt7S73iGuL6pyvsiWsFRjnRGznquLlE7spUPD9Q17CqIGOddxOL2aHgU5XX8eZA
- fwhGyr9lFBcOmbdrrofKc/oPWFCf3ANz3HL3r9zGCQW3fM94DybSrB4gPJUsZ/cfEkqU
- pJ8Vl8WBFgTZkcyudbAntdKvJSIMyexARjw0o3Yl4Gr05wLemn0pkj0LzYbEBx0F9dzA
- nUrb3erFSTuMHFaUeOrQM1nSM7MW4CmYZjuLJ6HWP0N9v7H/kdsw8QL5ssUmZmXIL4YI
- b+kgRon8w/9u322wo1nSIPmXtiCcMXXKkql552swJQMYedbortLd9dDaXo8Ob2R8IZaB
- UBFQ==
-X-Gm-Message-State: AOAM530zkRtTSv7wgaJYjVp5LjCsU+5CjoiBlNkKY/Q2xuFXOMU57Tid
- yic3HmPge816DIapAoiibIQ=
-X-Google-Smtp-Source: ABdhPJzU1SD8JhC/ognD7wZXeGPkdP6oOq0br353b4io8XeY127h11sdWBtOFr9I6YAjX3Yl2PD81g==
-X-Received: by 2002:adf:ce02:: with SMTP id p2mr27444569wrn.152.1592171317733; 
- Sun, 14 Jun 2020 14:48:37 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id z16sm21560948wrm.70.2020.06.14.14.48.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 14 Jun 2020 14:48:36 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=C44Nsc/2DIW6Metz8grkN1P5aC9GoqP/aiWhLmCWYm0=;
+ b=cUqhbZZB+hg4C+DWB5hY7ZivQn7Tx5EXC1nQ2MHtndHDK8klh5HLeXuPyW+iq+ri68
+ VoA5lJLAGGuoFa0L1sZgBYVlSf+fHtvPn0Pj8wgCF07g0MpxTft3TfDhVWcLhDfOl3zH
+ wXLYcssZY19IFaBYB8Ovpm3e55fJ4T4c/x/o+dcF7w4VCVg84xVU7yz7kyk7GXPO5mia
+ UuKyxDVelz9RiOvca2GU2dvT4plpidFgroDmwe625RrNgBygvX6uZKrdbnHQ2z6gXAPg
+ PEiw/Elb9rsB3I2Vo/XffOgNZibEvJEvDgzo1G15+jw1egOpk6MA3iqEV91hbhlKiyCo
+ kyFQ==
+X-Gm-Message-State: AOAM532yM1g3K1Wzevil9GpYoejOAuaGMmJvzn5hHjTwgKCtsiTzD0Wc
+ nnE7d0FDsamwrowfzUsYWY2MM/Hg
+X-Google-Smtp-Source: ABdhPJyzkFjstWBKqkNeC9D/EqTSECbYtWtK8eK6FyzOzcNjrjI9Yvnp4KlsK1Vh4JOKaoROr+NLAQ==
+X-Received: by 2002:a1c:c302:: with SMTP id t2mr9619055wmf.72.1592172944411;
+ Sun, 14 Jun 2020 15:15:44 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ a7sm20718527wmh.14.2020.06.14.15.15.41
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 14 Jun 2020 15:15:43 -0700 (PDT)
+Subject: Re: [PATCH 3/3] ARM: bcm: Select ARM_TIMER_SP804 for ARCH_BCM_NSP
+To: Matthew Hagan <mnhagan88@gmail.com>
+References: <c19be985a3e7abc8ac05fc30678475aeadb73c50.1591719237.git.mnhagan88@gmail.com>
+ <afd290238d7a7b392aa477590f3d05f3ebb2f9b9.1591719237.git.mnhagan88@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com,
- =?iso-8859-2?q?Rafa=B3_Mi=B3ecki?= <zajec5@gmail.com>
-Subject: Re: [PATCH] ARM: dts: BCM5301X: Add missing memory "device_type" for
- Luxul XWC-2000
-Date: Sun, 14 Jun 2020 14:48:33 -0700
-Message-Id: <20200614214833.1261-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Message-ID: <6e506d16-3147-d18d-c7e3-603bdc93892f@gmail.com>
+Date: Sun, 14 Jun 2020 15:15:37 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200608163341.1743-1-zajec5@gmail.com>
-References: <20200608163341.1743-1-zajec5@gmail.com>
+In-Reply-To: <afd290238d7a7b392aa477590f3d05f3ebb2f9b9.1591719237.git.mnhagan88@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_144840_644697_B5F968CD 
-X-CRM114-Status: UNSURE (   9.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200614_151549_406576_AC1B135E 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -101,23 +103,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?iso-8859-2?q?Rafa=B3_Mi=B3ecki?= <rafal@milecki.pl>,
- Hauke Mehrtens <hauke@hauke-m.de>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ Russell King <linux@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAgOCBKdW4gMjAyMCAxODozMzo0MSArMDIwMCwgUmFmYcWCIE1pxYJlY2tpIDx6YWpl
-YzVAZ21haWwuY29tPiB3cm90ZToKPiBGcm9tOiBSYWZhxYIgTWnFgmVja2kgPHJhZmFsQG1pbGVj
-a2kucGw+Cj4gCj4gVGhpcyBwcm9wZXJ0eSBpcyBuZWVkZWQgc2luY2UgY29tbWl0IGFiZTYwYTNh
-N2FmYiAoIkFSTTogZHRzOiBLaWxsIG9mZgo+IHNrZWxldG9uezY0fS5kdHNpIikuIFdpdGhvdXQg
-aXQgYm9vdGluZyBzaWxlbnRseSBoYW5ncyBhdDoKPiBbICAgIDAuMDAwMDAwXSBNZW1vcnkgcG9s
-aWN5OiBEYXRhIGNhY2hlIHdyaXRlYWxsb2MKPiAKPiBGaXhlczogOTg0ODI5ZTJkMzliICgiQVJN
-OiBkdHM6IEJDTTUzMDFYOiBBZGQgRFQgZm9yIEx1eHVsIFhXQy0yMDAwIikKPiBTaWduZWQtb2Zm
-LWJ5OiBSYWZhxYIgTWnFgmVja2kgPHJhZmFsQG1pbGVja2kucGw+Cj4gLS0tCgpBcHBsaWVkIHRv
-IGRldmljZXRyZWUvZml4ZXMsIHRoYW5rcyEKLS0KRmxvcmlhbgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+
+On 6/9/2020 9:58 AM, Matthew Hagan wrote:
+> The NSP SoC includes an SP804 timer so should be enabled here.
+> 
+> Signed-off-by: Matthew Hagan <mnhagan88@gmail.com>
+
+Applied to soc/fixes with:
+
+Fixes: a0efb0d28b77 ("ARM: dts: NSP: Add SP804 Support to DT")
+
+Thanks
+-- 
+Florian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
