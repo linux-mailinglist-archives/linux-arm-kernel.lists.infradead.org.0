@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57F6A1F861A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 03:11:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 364D51F861B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 03:11:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxiQjoWzc79u/1ehyJ6piIPYCAK2o+RU1fMhknugbtw=; b=pqwOivwq9Uo/fh
-	M6Mfo95iSqzB824x7F4tWwU07pl/KnIEP4lqGxdj1CvzWqH3U6fGO+StoHvDucatWjTIAdL0TWY9e
-	H5fQeXWAax/5aiPoj5AafEf4FGOa20YO2vVg0kkI6H4qckwNok4Pl4lFoQWe5kQnYrep7yLdKcTqu
-	orMkHTQAZjhTPa1qw1K9MGqq0vUDX6ZK36CNGMaqxdKGKkpuNTI9srXEF5Iygq6OW6741FQrm+amE
-	Vj20y6LTQko9YipdESNzABBUHygwIDsEEV5axBrgSjfdMnL0a12qJoaEhA0JVev7DMB70wt9htfc4
-	gU1jUzdt4rXHy+w63cyQ==;
+	List-Owner; bh=xYBvLq71V2ZlSvvUxqhQfmuBim8JMe39DWDSv6yTJbs=; b=KywbFt24D/q0SY
+	EfqPSgYJ8m7xsP5J3mh2PpmkPZXM3nEgrrX7XyQ+U91G6IT2T6AlaV21vMKzG7+AsRE5z8lgv+0Na
+	JhkkfPRPZ0oNkNAgAydfwLQjE98v94z7lFGRX5Yq9rEtegvDA+h2DUYAWKSV090fbdZTv8pUPT2Nb
+	Bbp6um5sRZlTa/WpkjYEzS3eCPNExAnI2QaFFV+zMijwoIFKeW2LJPbayiU8jmCcNza5noFmirM/9
+	xItNd3E9aNMk6SqoI17LuRRrjaqILJnzUaQstxidBObanYReT2m4v56xBP7WRbnAZfoKZgjhbIhZw
+	oRFKbJQVGMPBraZN2nMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkHAx-0000yK-UE; Sun, 14 Jun 2020 01:11:07 +0000
+	id 1jkHBF-0001DV-Rl; Sun, 14 Jun 2020 01:11:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkHAJ-0000ZE-DM
+ id 1jkHAK-0000Zn-HU
  for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 01:10:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8958AD6E;
- Sat, 13 Jun 2020 18:10:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB1451042;
+ Sat, 13 Jun 2020 18:10:27 -0700 (PDT)
 Received: from e113632-lin.cambridge.arm.com (e113632-lin.cambridge.arm.com
  [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A62A73F73C;
- Sat, 13 Jun 2020 18:10:23 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C01193F73C;
+ Sat, 13 Jun 2020 18:10:25 -0700 (PDT)
 From: Valentin Schneider <valentin.schneider@arm.com>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH 2/3] sched: Cleanup SCHED_THERMAL_PRESSURE setup
-Date: Sun, 14 Jun 2020 02:07:54 +0100
-Message-Id: <20200614010755.9129-3-valentin.schneider@arm.com>
+Subject: [PATCH 3/3] arm, arm64: Select CONFIG_SCHED_THERMAL_PRESSURE
+Date: Sun, 14 Jun 2020 02:07:55 +0100
+Message-Id: <20200614010755.9129-4-valentin.schneider@arm.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200614010755.9129-1-valentin.schneider@arm.com>
 References: <20200614010755.9129-1-valentin.schneider@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_181027_498458_F4E6C785 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200613_181028_632832_C304D741 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,47 +77,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As Russell pointed out [1], this option is severely lacking in the
-documentation department, and figuring out if one has the required
-dependencies to benefit from turning it on is not straightforward.
-
-Make it non user-visible, and add a bit of help to it. While at it, make it
-depend on CPU_FREQ_THERMAL.
-
-[1]: https://lkml.kernel.org/r/20200603173150.GB1551@shell.armlinux.org.uk
+This option now correctly depends on CPU_FREQ_THERMAL, so select it on the
+architectures that implement the required functions,
+arch_set_thermal_pressure() and arch_get_thermal_pressure().
 
 Signed-off-by: Valentin Schneider <valentin.schneider@arm.com>
 ---
- init/Kconfig | 15 ++++++++++++++-
- 1 file changed, 14 insertions(+), 1 deletion(-)
+ arch/arm/Kconfig   | 1 +
+ arch/arm64/Kconfig | 1 +
+ 2 files changed, 2 insertions(+)
 
-diff --git a/init/Kconfig b/init/Kconfig
-index 74a5ac65644f..052c9f4531c2 100644
---- a/init/Kconfig
-+++ b/init/Kconfig
-@@ -439,8 +439,21 @@ config HAVE_SCHED_AVG_IRQ
- 	depends on SMP
- 
- config SCHED_THERMAL_PRESSURE
--	bool "Enable periodic averaging of thermal pressure"
-+	bool
- 	depends on SMP
-+	depends on CPU_FREQ_THERMAL
-+	help
-+	  Select this option to enable thermal pressure accounting in the
-+	  scheduler. Thermal pressure is the value conveyed to the scheduler
-+	  that reflects the reduction in CPU compute capacity resulted from
-+	  thermal throttling. Thermal throttling occurs when the performance of
-+	  a CPU is capped due to high operating temperatures.
-+
-+	  If selected, the scheduler will be able to balance tasks accordingly,
-+	  i.e. put less load on throttled CPUs than on non/less throttled ones.
-+
-+	  This requires the architecture to implement
-+	  arch_set_thermal_pressure() and arch_get_thermal_pressure().
- 
- config BSD_PROCESS_ACCT
- 	bool "BSD Process Accounting"
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index c77c93c485a0..f80bc12dabed 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -46,6 +46,7 @@ config ARM
+ 	select EDAC_ATOMIC_SCRUB
+ 	select GENERIC_ALLOCATOR
+ 	select GENERIC_ARCH_TOPOLOGY if ARM_CPU_TOPOLOGY
++	select SCHED_THERMAL_PRESSURE if GENERIC_ARCH_TOPOLOGY
+ 	select GENERIC_ATOMIC64 if CPU_V7M || CPU_V6 || !CPU_32v6K || !AEABI
+ 	select GENERIC_CLOCKEVENTS_BROADCAST if SMP
+ 	select GENERIC_CPU_AUTOPROBE
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 5d513f461957..8bfe9221309f 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -93,6 +93,7 @@ config ARM64
+ 	select FRAME_POINTER
+ 	select GENERIC_ALLOCATOR
+ 	select GENERIC_ARCH_TOPOLOGY
++	select SCHED_THERMAL_PRESSURE
+ 	select GENERIC_CLOCKEVENTS
+ 	select GENERIC_CLOCKEVENTS_BROADCAST
+ 	select GENERIC_CPU_AUTOPROBE
 -- 
 2.27.0
 
