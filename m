@@ -2,84 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D7851F873C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 08:19:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 805EB1F873F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 08:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=r2taXgGBNgRjzOXR9JU/au6I2KzQjmkx5B1tGf8Y3iQ=; b=oHe
-	Deai7ePLdNC7/LAODg5I54xzy4LG57tsL1Tz0HlWw2Sh6bCu9fwz3kAQeKkpmz+C+MhqVAIGeOTLI
-	eUaIrs1N3/yK+4Wf4A5sbRJO3aynxdqbqGH++q26CMWJW5oD7kxZqP5xFKlV7lLg4smcpMmUGxCPG
-	gR2AvE0Ln7mQrdPSS0iLavfWyMUvHBrno7BbbicVl0bp1jomXx1T2kCHSGFuHUeRcDMr5oPWfRzuG
-	tAx6OVbo/EZSLvbmau/DvLzp7MVxJjKeBQUp4d0T62rv9FLasG/7RvzYx0nYxOCn4RYjmmxclWjAn
-	xY3wAxg7Bao0saPO3vRHqIdu2/z6tiQ==;
+	References:List-Owner; bh=jCZBqzVObqxMVf8WA3ZOQamVemFAQaqY6H7B1+8MHLg=; b=Hfc
+	QlhOzEwFv7SxlHgyRMHIwPKRYKR2Zepak7phSKuvRBxIkiFCyRQMQQ+Y2rXBunVUc6AJ/7/ZrhQsY
+	zyjoeiy5n3bGqP+nVWStQHB8HqhqngrpLxqRb2CNRokQtEZzaO4D5xqMg3igaV1R08vQsbnI9Jufc
+	HEk1ld4tF2h5aaMCt46F0mjjE7VoL/Z8BIg6qA6g6F76hjNHVJJoUFg2rgAJMP3FtaunWP2Qfr/KB
+	3rMYDzDsVk/Q7F5I8t5QKU8gA5snWrDbLBHK1Y6Rgs191L+PgTDMsoImHJ/Zwpfu9v5ccUXcb46sK
+	ZKz+IEPSfXTJnRwx5h+DkmrEtjOWtCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkLzD-0006yv-9S; Sun, 14 Jun 2020 06:19:19 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1jkM3f-0001d0-Q6; Sun, 14 Jun 2020 06:23:55 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkLz4-0006y5-To
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 06:19:12 +0000
-Received: by mail-il1-x141.google.com with SMTP id g3so12410477ilq.10
+ id 1jkM3X-0001ce-1u
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 06:23:48 +0000
+Received: by mail-io1-xd44.google.com with SMTP id c8so14516596iob.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 23:19:07 -0700 (PDT)
+ Sat, 13 Jun 2020 23:23:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=9KK+F0d4mciiuo9VaW5QFXWP2Ch9Rbbv4U0+fODdYfw=;
- b=HDUWrCkggu0J1UgH7dQO1nYEXZBkr5iknhM0hWr8Cxnps2IFyJvHAbm6BhL5HSHOiL
- WX37C60DJVxnU40AE6VWz63fnS75SQgC69ZoK7b/4wqZFHl/156yjZLfXFBhaqHKs106
- KoJLVkVbIXH+4J8MHF1Z175hMrrlHTeDtn62CqD6mnQ54WNqw5M/VJREluvKXfAxAfP/
- 0U+8b0JwdnROS3sjXzFelRhMmBiRdzI5LyeP2gNsQCUhskCB/SuMwoUdzPb24surrQ99
- 1kQ2hnm8DG3Wc39OJrUbpKTLvfNB5vzFrmr+MyV+IExRyF84+5aA59fAIPji1X7t4f2A
- RAaQ==
+ bh=YKS8gM347vC6eBkm4Z/mHFPXutm1BnydR4TUyYY4ZoQ=;
+ b=ngmPHhrWqQ3IcGsjjFder735SJJuYeAncWRBp/l/geamiltraOXzmr5I2ygABHqPaw
+ FCx/qRrWsG8kJ+wAS60YzXYnZPLpwUWX5YL3ZSb7Xb8AkTNNPJtjzEffwD/PmNusCi6j
+ NvKOGSNetOYvZUUZzTIZCP9wthuanXxWPbsqSLqKpa8yI8YuyUWdMA6YQxLNxoD1aasJ
+ tmJSG7WRPfu1EyA61NMn+ShfVLfEmDZedCidaN+UkVW7FfpVsnlW3jT/iiROzEvUVItY
+ lPGs+TPmmsRCzYnIebL8WJOTdw3pD+0CKoNBdmmInli3cU+s7x5vQnq9bMYla/TgW/Wt
+ xadw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=9KK+F0d4mciiuo9VaW5QFXWP2Ch9Rbbv4U0+fODdYfw=;
- b=R1RnISFQ6/VZ2PgMW0B6IDnfLQpyMQnIF3rfG6Ly8y3yJHPNH6l31Z4XPWWckKNfP0
- P4HeAFT9x6k0CmbkFKMtRh6lOJFCcxu4eTYcJDwJ0L+tf9NT7XApCHn4C4bmpiZIaLUe
- 9jBHOUoFZ5Tz2NBQLVGCtbWheYJsORb1RW6r2WCGmp40TuM5btPYE8O10HGlmGDJrQaU
- LtaR/PKmudir98+eoC+MXPE6Oz5RrXw54caJu4Rlz3YgkpE9IIYPOdVY0WaqJwRzZdI4
- sPFhz+c4jt80McYJXWQ10+IbYfx2MkA0jyHJkcEdJNRdjJwEqvm/N6SzfJTFp4E1ylRQ
- /UNg==
-X-Gm-Message-State: AOAM533q2hLYsGYHRTpzRrM9ociD2+bdOhXOnsHsnQMYJ4oR15e75XpY
- AW8xD5efEQbYwj65EZxx6b4=
-X-Google-Smtp-Source: ABdhPJx+RHJDlWRBydGsMDNESumPn7fohMgnWm/IsMUtg/EAwn/mNh1mHSYHhLadFHOzD269hdoBBw==
-X-Received: by 2002:a92:d1d0:: with SMTP id u16mr20748595ilg.7.1592115547052; 
- Sat, 13 Jun 2020 23:19:07 -0700 (PDT)
+ bh=YKS8gM347vC6eBkm4Z/mHFPXutm1BnydR4TUyYY4ZoQ=;
+ b=fGXgtZGe89nPCgeXowR5JQP19ux25zIPIH5FB3r7y6UswFBL5LaxfQgsw/JXtspxhl
+ O2xA8N8RHphrMrzqx8mCDWaLU9MnNw751YP+jw2IO6ObsGqc1PzreJU8zysvzr6bP1Rb
+ UBuHeK0uCEZrOAhOezhtfO6ao8Tz4v3rpwS+lG67rWVHuKR72hyZyPKgdIQmz6dQmXUo
+ GOTkz3Ya/AU5k/aDwbY4cP8IKXRg3HtOxbQyYDtcxHsfxUfbahVD+k275+KUbL1gGKGG
+ ttj/VRj9mQ01YAn4bhWM8g0o2fVXNTWvqxvqhwQ8nBkHxVj3T0kz4MMP2HM5Dradt5qR
+ 0Zyw==
+X-Gm-Message-State: AOAM533utJaz7H5wmZsNJYZtr0ylnDrNOJq9dd1z9hqp0GeRqVNhECtz
+ UNktc3eVvWaSijyhjuwh+xs=
+X-Google-Smtp-Source: ABdhPJx5u7CZ+5KI8e9/YmR10s/Tdybn2EupE69+Yp3Ek+4luj4xENHKzjVMeL78OQ0UrI1sFa0k8w==
+X-Received: by 2002:a05:6602:2583:: with SMTP id
+ p3mr9781842ioo.179.1592115825136; 
+ Sat, 13 Jun 2020 23:23:45 -0700 (PDT)
 Received: from cs-u-kase.dtc.umn.edu (cs-u-kase.cs.umn.edu. [160.94.64.2])
- by smtp.googlemail.com with ESMTPSA id c3sm5798908ilr.45.2020.06.13.23.19.06
+ by smtp.googlemail.com with ESMTPSA id r17sm5944048ilc.33.2020.06.13.23.23.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 13 Jun 2020 23:19:06 -0700 (PDT)
+ Sat, 13 Jun 2020 23:23:44 -0700 (PDT)
 From: Navid Emamdoost <navid.emamdoost@gmail.com>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Navid Emamdoost <navid.emamdoost@gmail.com>, linux-input@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] Input: stmfts: fix ref count leak in stmfts_input_open
-Date: Sun, 14 Jun 2020 01:18:59 -0500
-Message-Id: <20200614061900.75253-1-navid.emamdoost@gmail.com>
+To: Inki Dae <inki.dae@samsung.com>, Joonyoung Shim <jy0922.shim@samsung.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] drm/exynos: fix ref count leak in mic_pre_enable
+Date: Sun, 14 Jun 2020 01:23:39 -0500
+Message-Id: <20200614062339.87374-1-navid.emamdoost@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_231910_983824_DC54CE2B 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20200613_232347_097315_40A7D578 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [navid.emamdoost[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,50 +100,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: emamd001@umn.edu, kjlu@umn.edu, wu000273@umn.edu, smccaman@umn.edu
+Cc: Navid Emamdoost <navid.emamdoost@gmail.com>, emamd001@umn.edu, kjlu@umn.edu,
+ wu000273@umn.edu, smccaman@umn.edu
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-in stmfts_input_open, pm_runtime_get_sync is called which
+in mic_pre_enable, pm_runtime_get_sync is called which
 increments the counter even in case of failure, leading to incorrect
 ref count. In case of failure, decrement the ref count before returning.
 
 Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
 ---
- drivers/input/touchscreen/stmfts.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/exynos/exynos_drm_mic.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/input/touchscreen/stmfts.c b/drivers/input/touchscreen/stmfts.c
-index b6f95f20f924..1ef282d7cc14 100644
---- a/drivers/input/touchscreen/stmfts.c
-+++ b/drivers/input/touchscreen/stmfts.c
-@@ -339,11 +339,11 @@ static int stmfts_input_open(struct input_dev *dev)
+diff --git a/drivers/gpu/drm/exynos/exynos_drm_mic.c b/drivers/gpu/drm/exynos/exynos_drm_mic.c
+index a86abc173605..69ff74c2ceb5 100644
+--- a/drivers/gpu/drm/exynos/exynos_drm_mic.c
++++ b/drivers/gpu/drm/exynos/exynos_drm_mic.c
+@@ -270,7 +270,7 @@ static void mic_pre_enable(struct drm_bridge *bridge)
  
- 	err = pm_runtime_get_sync(&sdata->client->dev);
- 	if (err < 0)
--		return err;
-+		goto out;
+ 	ret = pm_runtime_get_sync(mic->dev);
+ 	if (ret < 0)
+-		goto unlock;
++		goto turn_off;
  
- 	err = i2c_smbus_write_byte(sdata->client, STMFTS_MS_MT_SENSE_ON);
- 	if (err)
--		return err;
-+		goto out;
+ 	mic_set_path(mic, 1);
  
- 	mutex_lock(&sdata->mutex);
- 	sdata->running = true;
-@@ -367,6 +367,9 @@ static int stmfts_input_open(struct input_dev *dev)
- 	}
- 
- 	return 0;
-+out:
-+	pm_runtime_put(&sdata->client->dev);
-+	return err;
- }
- 
- static void stmfts_input_close(struct input_dev *dev)
 -- 
 2.17.1
 
