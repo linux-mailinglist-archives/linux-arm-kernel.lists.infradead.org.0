@@ -2,95 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA1061F863C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 04:37:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65BF81F8647
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 05:01:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=gXWRXuHyf0l8D/UkSYDWoe2MAIT/fGvFDVcG9H5RBXk=; b=nQT
-	y8yuCE+2DH3mndxshai6v0J/niMSUTFhzFjqcth2s33jwf/tgdAHLjCg5+NuXQeBlazQCVFxZ/+VU
-	zGOE7y9b4z5nXPQzSrpYhSD9dv3aYClz80cX7x+pbUYx1DdT7vDeE32WmPHRyMDyysQe3T9BuLwnH
-	mZL4689uwOaINvi5I/eNIicM9kseM/tENTVPJkdPBaqu4+UBkjoTMSmD5FBbtdmOVBQDYJIsMcdR6
-	IQCu3e2TzU6SPlZLy7x9tq5o0HUzOMaawDGb4Fxh7P27TSr0BxO7Thba7LYX+m+O0Z+4VLb/Z2GHu
-	YjbgfRPQ/XB+RWTSl1DRK8bIqhyxLsg==;
+	References:List-Owner; bh=DxCeHvIHafqaYj5+rOtG2PmUBg05Ij0k2JNE1sEn1yQ=; b=Rf7
+	krFqC6V1T/5gt3fSLOdqPyPJdIlhhm7RPhE99ml9K60Owwkc2SlFcr1OvVPvzpnLpqBrRecV6ucVs
+	KvTAzA4D7NsGRAYKprGXTBRWqU1D/KRwlFfESd4qKqEApYa1mrkz7kqMyx/+vT1OcWDj7jN2LBWgY
+	AsyzyCQgQwq09QL3jyOAs6/WiHsP6b+zkpZvDF1sKfqHhduffb7QHmx/N12ZEPBp5UZEP8T8o+dne
+	a/knPpdjOtTFEK4MIHVEI49XYN+9mZeze+aDTO7z5E54J02C/zBwevcFv3EONi5djq68Wjq/LwgD1
+	x4v2d8uoNvFH2WZzwDTvLrhGQ9Oni8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkIWN-0004bM-62; Sun, 14 Jun 2020 02:37:19 +0000
-Received: from mta-p5.oit.umn.edu ([134.84.196.205])
+	id 1jkIth-0001RJ-VM; Sun, 14 Jun 2020 03:01:25 +0000
+Received: from mta-p8.oit.umn.edu ([134.84.196.208])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkIWE-0004b0-4w
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 02:37:11 +0000
+ id 1jkItb-0001Qq-FG
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 03:01:20 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mta-p5.oit.umn.edu (Postfix) with ESMTP id 49kzBW0LCxz9vZ2C
+ by mta-p8.oit.umn.edu (Postfix) with ESMTP id 49kzkQ5ZCzz9vZx8
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 14 Jun 2020 02:37:07 +0000 (UTC)
+ Sun, 14 Jun 2020 03:01:18 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at umn.edu
-Received: from mta-p5.oit.umn.edu ([127.0.0.1])
- by localhost (mta-p5.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id pupTnnxsP7Yo for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 21:37:06 -0500 (CDT)
-Received: from mail-io1-f70.google.com (mail-io1-f70.google.com
- [209.85.166.70])
+Received: from mta-p8.oit.umn.edu ([127.0.0.1])
+ by localhost (mta-p8.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id Tv-GXWHld09y for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 13 Jun 2020 22:01:18 -0500 (CDT)
+Received: from mail-io1-f72.google.com (mail-io1-f72.google.com
+ [209.85.166.72])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mta-p5.oit.umn.edu (Postfix) with ESMTPS id 49kzBV5mWfz9vZ27
+ by mta-p8.oit.umn.edu (Postfix) with ESMTPS id 49kzkQ3jNsz9vZw4
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 21:37:06 -0500 (CDT)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p5.oit.umn.edu 49kzBV5mWfz9vZ27
-DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p5.oit.umn.edu 49kzBV5mWfz9vZ27
-Received: by mail-io1-f70.google.com with SMTP id t23so8933219iog.21
+ Sat, 13 Jun 2020 22:01:18 -0500 (CDT)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p8.oit.umn.edu 49kzkQ3jNsz9vZw4
+DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p8.oit.umn.edu 49kzkQ3jNsz9vZw4
+Received: by mail-io1-f72.google.com with SMTP id a16so8985691iow.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 19:37:06 -0700 (PDT)
+ Sat, 13 Jun 2020 20:01:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umn.edu; s=google;
  h=from:to:cc:subject:date:message-id;
- bh=RQEF7X2he2CIvCAF0xeze50vGbmiUj8obcSj3YpGnsc=;
- b=Hj+qKjLqwxKZdFHcqhGL4RCVKHV6fP3Oer7rzrgPPWYbv35lGkAst5QgPc8y3nLRCp
- vKVaxl7tk1u8PZMNFAetQYQ6NwzqplGIsXILrLiVUysqIKuvbFEb3y0fL7NeZDA6eBqI
- pO96/Au+eO/frA1E4LLC+lPvS8hR2UvICjeKU9R3le1ae4tglEaeUVDybiZKisk2cU69
- JZ8sbETmJsW/DFxNKzIkJXdJ9tsV1lNSfpS/+4EkCHBrpLSK44iXq7e4QFYuFza1Hz8M
- Zi+3fmlSvQPyovl/+DtnyRguBKLN0yPRjqYUnqP4JoEqzyj84WdoVHPHGf9oZzOLGrVX
- 3bdQ==
+ bh=cOgHpCEAAAGqQDbbixnX7uhIWd2KMk0lv565gUU7esU=;
+ b=khudvC7kbksJLnNR3xG6AAZ5VFW/9CNcXYYV/ulZ976gfAAaipmqB15w7jO76lIoMJ
+ YB9I982kBR9w2M2joRO5CDUZTExYtrIB+V0LlC2Clx8qohj4QgvSR4xKCR1+jz+K5P50
+ iRItj7gd4U5cgYXpFEh+c3c7xRYl7BDUXe9DZOV0IrWnVv0ODucjWYIR8kkFp+dMI3Bu
+ lvJssg30dL9Ac1IdAuA+cU0zeb5i61gOVz4dwY/txEbznKi7gXL0wmZKFE9PDWid04Jf
+ oeIBsk5tqxN5gI3+uj7e2wd8txqTd7SolqocLPy6eZg/QKXgxQ7oqulCFVCuO/Xp4QM3
+ FP6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=RQEF7X2he2CIvCAF0xeze50vGbmiUj8obcSj3YpGnsc=;
- b=p3PUmHknwx7W6j8cSpv7524BuabAjKPPM4un9PILM/IKQNwvapgoo9rclHnVlGUPEt
- oAF5W6Mcv3E/YHp2kbk3UiplXpHDvlRHE1bVHWPFm6RA6xiLtS2rTOp7PM5HaY0yKXpR
- +PFMR03DkFmyM+Xn5n1Tc+iLqGwbEVGM523XlP9LU1Nicl+rusgf/tTR0sCeRHdjYBYa
- gbDtnlAlI57gmuhaBxsQDOcJDi3xfzk44yKMX8WN5y4eQIm/R0XfY178XiHQc6XSGVyO
- C2piqXncWNUz4h0c8F1L4GYXSROTbtmc4iBTjgkCv9ge1ADxy1CVNEPHDWOJ4Nz8P/fF
- QNIw==
-X-Gm-Message-State: AOAM53009qznLuN41OCS9x/zfogtV1wj51OxER2pvK/oZkbx3XeK7bKh
- 3Cq2z2WPD6Z2CD6gCXXBQWRdfMCW1oj8xrBkTouFSS1gI0sEdoI5lQagSmw5c5SJ0nLgMx6D/k0
- FBbeAc6Kunvbz0KOeNVCJ/hkLuHvoyl3a3lhJSsA=
-X-Received: by 2002:a92:cf09:: with SMTP id c9mr19732356ilo.143.1592102226322; 
- Sat, 13 Jun 2020 19:37:06 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJxZ86ckYqx5vk+JKvHiE51xf49YXvXEFvQYRO/7UldKAKo+GnZzsRu2IiSnX8jxysU/4zFyPw==
-X-Received: by 2002:a92:cf09:: with SMTP id c9mr19732342ilo.143.1592102226008; 
- Sat, 13 Jun 2020 19:37:06 -0700 (PDT)
+ bh=cOgHpCEAAAGqQDbbixnX7uhIWd2KMk0lv565gUU7esU=;
+ b=o+y4LH87MA6oIOEo9BTvWRMjbip1qLOGyYt7rFkPN17gQBcfnFtNNNdIXWWqGCXohE
+ zdxIM0bP4d3UasoXn1Ird07m1PgGtWBigVMgz5ScZVNkjK0nku/KGUebyJCFt1XTPFKP
+ QqAd9AzJZbVPDZBFu0E8D8zBdzHTf77Yooh+HqRCmHaOCZ7afm13m0pNwCFD4fzkm2H6
+ G3LWrYtspJYtN/91Zvhsp7GfqX1j+Xma0916g1r5xzeOMc57hzS2S+eYVKDhswyGCV+k
+ 5saKZHWiiok6YxFzcb9IwJv1w7Qz3NiUXhWAFABnW0ha4Zo5v6JFuTWzeLBR69qo50PP
+ fEXw==
+X-Gm-Message-State: AOAM533/Q3KqbuOdGMBkWVlC4TWZLoVyc2y4jHDCIGcN5wCpX92XZ4RX
+ M3k9CRFnd5NxKQvivsbUB/bhFopdOApWlQnsreDrHuVJyXwejsfzdyxSsLE0FT/0oK51EY0asJA
+ we0DaXH46sSUw1cPr5AmIex+058l+ch7Hs89WxT8=
+X-Received: by 2002:a92:d112:: with SMTP id a18mr19876654ilb.3.1592103678098; 
+ Sat, 13 Jun 2020 20:01:18 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwTFVu29soAQKwJchdpgwjpKebLlBpdEM/Z/hVt5TRB+tZ1yqGgKWvSgKXVBGcdcozs35SC4w==
+X-Received: by 2002:a92:d112:: with SMTP id a18mr19876632ilb.3.1592103677826; 
+ Sat, 13 Jun 2020 20:01:17 -0700 (PDT)
 Received: from qiushi.cs.umn.edu ([2607:ea00:101:3c74:4874:45:bcb4:df60])
- by smtp.gmail.com with ESMTPSA id 18sm5499967ion.17.2020.06.13.19.37.04
+ by smtp.gmail.com with ESMTPSA id q5sm5656947ile.37.2020.06.13.20.01.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 13 Jun 2020 19:37:05 -0700 (PDT)
+ Sat, 13 Jun 2020 20:01:17 -0700 (PDT)
 From: wu000273@umn.edu
 To: kjlu@umn.edu
-Subject: [PATCH] media: stm32-dcmi: Fix a reference count leak
-Date: Sat, 13 Jun 2020 21:36:59 -0500
-Message-Id: <20200614023659.25979-1-wu000273@umn.edu>
+Subject: [PATCH] media: exynos4-is: Fix a reference count leak
+Date: Sat, 13 Jun 2020 22:01:11 -0500
+Message-Id: <20200614030111.28843-1-wu000273@umn.edu>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_193710_277866_39AD8F4A 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200613_200119_596402_50C790D3 
+X-CRM114-Status: GOOD (  13.15  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.84.196.205 listed in list.dnswl.org]
+ medium trust [134.84.196.208 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -111,13 +111,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wu000273@umn.edu, linux-media@vger.kernel.org, linux-kernel@vger.kernel.org,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Hugues Fruchet <hugues.fruchet@st.com>,
+Cc: linux-samsung-soc@vger.kernel.org, wu000273@umn.edu,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -126,39 +125,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Qiushi Wu <wu000273@umn.edu>
 
-Calling pm_runtime_get_sync increments the counter even in case of
-failure, causing incorrect ref count if pm_runtime_put is not
-called in error handling paths. Thus replace the jump target
-"err_release_buffers" by "err_pm_putw".
+pm_runtime_get_sync() increments the runtime PM usage counter even
+when it returns an error code, causing incorrect ref count if
+pm_runtime_put_noidle() is not called in error handling paths.
+Thus call pm_runtime_put_noidle() if pm_runtime_get_sync() fails.
 
-Fixes: 152e0bf60219 ("media: stm32-dcmi: add power saving support")
 Signed-off-by: Qiushi Wu <wu000273@umn.edu>
 ---
- drivers/media/platform/stm32/stm32-dcmi.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/media/platform/exynos4-is/mipi-csis.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-index b8931490b83b..fd1c41cba52f 100644
---- a/drivers/media/platform/stm32/stm32-dcmi.c
-+++ b/drivers/media/platform/stm32/stm32-dcmi.c
-@@ -733,7 +733,7 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 	if (ret < 0) {
- 		dev_err(dcmi->dev, "%s: Failed to start streaming, cannot get sync (%d)\n",
- 			__func__, ret);
--		goto err_release_buffers;
-+		goto err_pm_put;
+diff --git a/drivers/media/platform/exynos4-is/mipi-csis.c b/drivers/media/platform/exynos4-is/mipi-csis.c
+index 540151bbf58f..1aac167abb17 100644
+--- a/drivers/media/platform/exynos4-is/mipi-csis.c
++++ b/drivers/media/platform/exynos4-is/mipi-csis.c
+@@ -510,8 +510,10 @@ static int s5pcsis_s_stream(struct v4l2_subdev *sd, int enable)
+ 	if (enable) {
+ 		s5pcsis_clear_counters(state);
+ 		ret = pm_runtime_get_sync(&state->pdev->dev);
+-		if (ret && ret != 1)
++		if (ret && ret != 1) {
++			pm_runtime_put_noidle(&state->pdev->dev);
+ 			return ret;
++		}
  	}
  
- 	ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
-@@ -837,8 +837,6 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 
- err_pm_put:
- 	pm_runtime_put(dcmi->dev);
--
--err_release_buffers:
- 	spin_lock_irq(&dcmi->irqlock);
- 	/*
- 	 * Return all buffers to vb2 in QUEUED state.
+ 	mutex_lock(&state->lock);
 -- 
 2.17.1
 
