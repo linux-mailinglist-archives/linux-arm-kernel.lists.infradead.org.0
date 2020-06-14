@@ -2,73 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D8571F8ABC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 22:42:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 761811F8AD3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 23:04:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MINDhispbtrYY7dv9Nq2B+J2dZNRSM3MP5WBCn7604k=; b=D+akse41LTqgw9
-	QQZZONphOuSgrQALNV1uQCCIj8gSvdDW43qyPljPxaouyGYadLlDEELbTPdWNNJvlgUByllQu5dS4
-	vx5LrS7aLrs351kLBcbUhaKQGhhJLXG5bTFOhW8mE9lbHRqDhnGAeIiU4mADNISDX1sYDTycdZNzh
-	fLTz5bawJw/trUXqowt/weskGehjmZm7sYAOsXmTt3/k0GJDMGWrIDwsAybsGfcqwzf2qTp/2178n
-	sVZ0K9q1+2dceCPZeyC/0NJrT7+O3VbGEMwLGtPZCCX/SdaYNFM8yCA+ninLPAum6nayx7s7FqWgA
-	HATerqrcf1/+x0lYEsGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=DEP6/PM6MMDf6f8TyiTnry+YH7X9zevBBY4O7A7iWPo=; b=APO1vkjtQDyPQlTaa4/oYxgZaN
+	56lQRm3QJMajcLRuezZLR9NxRABxNNOHtbsn8aVfvrhoteUjlaFUJaxXIhDpT6MF0LWmntnO425zf
+	x9ys92FWkI/H0rH67KdoLgRebMkSH46Yl3JxsO0j1QWcKHAhgHYWU3yNAoyqttDhnCbL7ER+4MVDl
+	d8eiqfwBoA7BAJUECHzfr8SyTMaMzHj1esQZpsiTi3QpPNKMGwERwH0MgcD3BwArEEXMVcS8vn3/Q
+	j3Zkw7SXHGpt8wqwviCOQF4H/G8xQ9YU/H67hXRnIczUX6Jmn+4XTHWo2Rjh1lRIGJxTI+OcufxSo
+	RiaRf9KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkZS4-0002JA-M9; Sun, 14 Jun 2020 20:42:00 +0000
-Received: from smtprelay0068.hostedemail.com ([216.40.44.68]
- helo=smtprelay.hostedemail.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkZRw-0002IT-Cn; Sun, 14 Jun 2020 20:41:53 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay02.hostedemail.com (Postfix) with ESMTP id 79E4F15E7;
- Sun, 14 Jun 2020 20:41:44 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
- RULES_HIT:41:355:379:599:968:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1540:1593:1594:1711:1730:1747:1777:1792:2393:2559:2562:2828:3138:3139:3140:3141:3142:3352:3622:3865:3867:3870:3871:4321:4605:5007:9121:10004:10400:10848:11026:11232:11233:11473:11657:11658:11914:12043:12048:12296:12297:12438:12679:12740:12760:12895:13069:13311:13357:13439:14659:14721:21080:21433:21451:21627:21990:30012:30054:30070:30091,
- 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
- DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
- LFtime:1, LUA_SUMMARY:none
-X-HE-Tag: error76_4e1659226df0
-X-Filterd-Recvd-Size: 1906
-Received: from XPS-9350.home (unknown [47.151.136.130])
- (Authenticated sender: joe@perches.com)
- by omf09.hostedemail.com (Postfix) with ESMTPA;
- Sun, 14 Jun 2020 20:41:42 +0000 (UTC)
-Message-ID: <48891eaf60c5e0c449e573a906894db2c3a7b72c.camel@perches.com>
-Subject: Re: [PATCH] drm/mediatek: remove unnecessary conversion to bool
-From: Joe Perches <joe@perches.com>
-To: Bernard Zhao <bernard@vivo.com>, Chun-Kuang Hu
- <chunkuang.hu@kernel.org>,  Philipp Zabel <p.zabel@pengutronix.de>, David
- Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,  Matthias
- Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org,  linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Date: Sun, 14 Jun 2020 13:41:41 -0700
-In-Reply-To: <20200612124007.4990-1-bernard@vivo.com>
-References: <20200612124007.4990-1-bernard@vivo.com>
-User-Agent: Evolution 3.36.2-0ubuntu1 
+	id 1jkZo4-0005eL-M5; Sun, 14 Jun 2020 21:04:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkZnv-0005dI-Or
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 21:04:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 79B911F1;
+ Sun, 14 Jun 2020 14:04:32 -0700 (PDT)
+Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CD24A3F71F;
+ Sun, 14 Jun 2020 14:04:30 -0700 (PDT)
+References: <20200614010755.9129-2-valentin.schneider@arm.com>
+ <202006141541.YN3AhUnc%lkp@intel.com>
+User-agent: mu4e 0.9.17; emacs 26.3
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: kernel test robot <lkp@intel.com>
+Subject: Re: [PATCH 1/3] thermal/cpu-cooling,
+ sched/core: Cleanup thermal pressure definition
+In-reply-to: <202006141541.YN3AhUnc%lkp@intel.com>
+Date: Sun, 14 Jun 2020 22:04:23 +0100
+Message-ID: <jhjlfkp1hrc.mognet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_134152_495063_0060FB34 
-X-CRM114-Status: UNSURE (   7.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200614_140435_900861_A370743B 
+X-CRM114-Status: GOOD (  15.63  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [216.40.44.68 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,41 +64,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com
+Cc: kbuild-all@lists.01.org, linux-pm@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Thara Gopinath <thara.gopinath@linaro.org>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Sudeep Holla <sudeep.holla@arm.com>,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-06-12 at 20:40 +0800, Bernard Zhao wrote:
-> In function mtk_dsi_clk_hs_state, remove unnecessary conversion
-> to bool return, this change is to make the code a bit readable.
-[]
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-[]
-> @@ -319,7 +319,7 @@ static bool mtk_dsi_clk_hs_state(struct mtk_dsi *dsi)
->  	u32 tmp_reg1;
->  
->  	tmp_reg1 = readl(dsi->regs + DSI_PHY_LCCON);
-> -	return ((tmp_reg1 & LC_HS_TX_EN) == 1) ? true : false;
-> +	return ((tmp_reg1 & LC_HS_TX_EN) == 1);
 
-Given:
+On 14/06/20 08:39, kernel test robot wrote:
+> Hi Valentin,
+>
+> Thank you for the patch! Perhaps something to improve:
+>
+> [auto build test WARNING on tip/auto-latest]
+> [also build test WARNING on driver-core/driver-core-testing tip/sched/core arm/for-next arm64/for-next/core soc/for-next linus/master v5.7 next-20200613]
+> [cannot apply to linux/master]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+>
+> url:    https://github.com/0day-ci/linux/commits/Valentin-Schneider/sched-arch_topology-Thermal-pressure-configuration-cleanup/20200614-091051
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git 8dc697d75c13ee2901d1a40f1d7d58163048c204
+> config: arm64-randconfig-r013-20200614 (attached as .config)
+> compiler: clang version 11.0.0 (https://github.com/llvm/llvm-project cb5072d1877b38c972f95092db2cedbcddb81da6)
+> reproduce (this is a W=1 build):
 
-drivers/gpu/drm/mediatek/mtk_dsi.c:#define LC_HS_TX_EN                  BIT(0)
+Ah, W=1! I thought I was going nuts.
 
-This is likely clearer as
+If desired, I can add a declaration in cpu_cooling.h, similar to what we
+have for the arch_set_freq_scale() stub.
 
-	return tmp_reg1 & LC_HS_TX_EN;
-
-or even
-
-static bool mtk_dsi_clk_hs_state(struct mtk_dsi *dsi)
-{
-	return readl(dsi->regs + DSI_PHY_LCCON) & LC_HS_TX_EN;
-}
-
-
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # install arm64 cross compiling tool for clang build
+>         # apt-get install binutils-aarch64-linux-gnu
+>         # save the attached .config to linux build tree
+>         COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross ARCH=arm64
+>
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kernel test robot <lkp@intel.com>
+>
+> All warnings (new ones prefixed by >>, old ones prefixed by <<):
+>
+>>> drivers/base/arch_topology.c:59:6: warning: no previous prototype for function 'arch_set_thermal_pressure' [-Wmissing-prototypes]
+> void arch_set_thermal_pressure(const struct cpumask *cpus,
+> ^
+> drivers/base/arch_topology.c:59:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+> void arch_set_thermal_pressure(const struct cpumask *cpus,
+> ^
+> static
+> 1 warning generated.
+>
+> vim +/arch_set_thermal_pressure +59 drivers/base/arch_topology.c
+>
+>     58
+>   > 59	void arch_set_thermal_pressure(const struct cpumask *cpus,
+>     60				       unsigned long th_pressure)
+>     61	{
+>     62		int cpu;
+>     63
+>     64		for_each_cpu(cpu, cpus)
+>     65			WRITE_ONCE(per_cpu(thermal_pressure, cpu), th_pressure);
+>     66	}
+>     67
+>
+> ---
+> 0-DAY CI Kernel Test Service, Intel Corporation
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
