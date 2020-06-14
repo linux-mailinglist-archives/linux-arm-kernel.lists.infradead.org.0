@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C53431F8619
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 03:11:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA94A1F8618
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 03:10:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CVvmFcQoeDcZGrSNVMr4AVKYXYNc9Ch+ruoV/sGhp9U=; b=NPbsEZiidvjXah
-	NnaC3X8fOW7wApPTI7d9CTOc7CtOqA2OkN6PiCaUvaqclEl6u2cCLLlLNqJymd9blCyB2kpwoiDIi
-	IJS6cvTP8bOSa+Wm6gCY0BLoOH/DemAVXknLZ+HLUVKl4cUKQCTGmfIjECv1Ly3wrHhya7wFguCjH
-	6gIciXDM0XFONskkuxO4QsEIdvfxq4tGKDSTiqZ4rMbpnDMTusTBCS/7pjUMHxWXyvm0xcjDEOdYJ
-	dRrbmg4RoytjJDsgMpGZG+uiM4zUIJJJsBBDNsM1kFaUWvaJsfMibqN9yPUgBGS9Z/y9KnDXm7uAa
-	dkO81nXfM26fSZHHqkDQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S3Y/A/5/hAM1D5nNi0tHxSIALNahNEf8RuKMgCJORJQ=; b=g32NdBZOSGKGDF
+	zuv1h9jfpIIWvUcWPNjtluPh4tWOVEZfIbo0fl2qGRuwiR0GSlMgpHqYG558tFxz0Xz+GOLGblfdW
+	j7AfcOipkG7ARaIVRWq2Qfbi1OnVLPqrOe7cyYMDv1uxCuMCjVmW6ixXbkdftxhG9SHfO7Q+5Sgkv
+	btRTpjpV0Ok0SHiicW3+gPUPmxzgyciG49ZQp6OvK95OAFfwSUrnLs/6tIRM3GAKSAtppjdBmgx9P
+	dQ0T8XGkEXZ0PKEPyUA+fhDG2ZdUb0EueNcClZe0fk1BQ40RDcvhoab0lh9qBMkctqr3Op0EkLgmd
+	ZAiOFSAlTO0tRr7XkUSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkHAh-0000fv-QG; Sun, 14 Jun 2020 01:10:51 +0000
+	id 1jkHAP-0000Zo-GR; Sun, 14 Jun 2020 01:10:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkHAI-0000YM-D6
+ id 1jkHAI-0000YR-JR
  for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 01:10:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 544221FB;
- Sat, 13 Jun 2020 18:10:21 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 70A9CC0A;
+ Sat, 13 Jun 2020 18:10:23 -0700 (PDT)
 Received: from e113632-lin.cambridge.arm.com (e113632-lin.cambridge.arm.com
  [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 621943F73C;
- Sat, 13 Jun 2020 18:10:19 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8AB853F73C;
+ Sat, 13 Jun 2020 18:10:21 -0700 (PDT)
 From: Valentin Schneider <valentin.schneider@arm.com>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH 0/3] sched,
- arch_topology: Thermal pressure configuration cleanup
-Date: Sun, 14 Jun 2020 02:07:52 +0100
-Message-Id: <20200614010755.9129-1-valentin.schneider@arm.com>
+Subject: [PATCH 1/3] thermal/cpu-cooling,
+ sched/core: Cleanup thermal pressure definition
+Date: Sun, 14 Jun 2020 02:07:53 +0100
+Message-Id: <20200614010755.9129-2-valentin.schneider@arm.com>
 X-Mailer: git-send-email 2.27.0
+In-Reply-To: <20200614010755.9129-1-valentin.schneider@arm.com>
+References: <20200614010755.9129-1-valentin.schneider@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_181026_488570_672F1A52 
-X-CRM114-Status: UNSURE (   8.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200613_181026_724831_1A45A101 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,37 +77,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi folks,
+The following commit:
 
-This stems from this thread [1] on the list. TL;DR: the thermal pressure config
-has no helpful documentation, and figuring out if the right dependencies are in
-place is not easy for a regular user. 
+  14533a16c46d ("thermal/cpu-cooling, sched/core: Move the arch_set_thermal_pressure() API to generic scheduler code")
 
-The current landscape also paints an odd picture: arch_set_thermal_pressure() is
-hardcoded in sched/core.c, and is *not* architecture-definable, while
-arch_get_thermal_pressure() is. Patch 1 is tackling this, the rest is Kconfig
-stuff.
+moved the definition of arch_set_thermal_pressure() to sched/core.c, but
+kept its declaration in linux/arch_topology.h. When building e.g. an x86
+kernel with CONFIG_SCHED_THERMAL_PRESSURE=y, cpufreq_cooling.c ends up
+getting the declaration of arch_set_thermal_pressure() from
+include/linux/arch_topology.h, which is somewhat awkward.
 
-Cheers,
-Valentin
+On top of this, the public setter, arch_set_thermal_pressure(), is defined
+unconditionally in sched/core.c while the public getter,
+arch_scale_thermal_pressure(), is hardcoded to return 0 unless it has been
+redefined by the architecture. arch_*() functions are meant to be defined
+by architectures, so revert the aforementioned commit and re-implement it
+in a way that keeps arch_set_thermal_pressure() architecture-definable.
 
-[1]: https://lkml.kernel.org/r/20200603173150.GB1551@shell.armlinux.org.uk
-
-Valentin Schneider (3):
-  thermal/cpu-cooling, sched/core: Cleanup thermal pressure definition
-  sched: Cleanup SCHED_THERMAL_PRESSURE setup
-  arm, arm64: Select CONFIG_SCHED_THERMAL_PRESSURE
-
- arch/arm/Kconfig                  |  1 +
- arch/arm64/Kconfig                |  1 +
+Signed-off-by: Valentin Schneider <valentin.schneider@arm.com>
+---
  drivers/base/arch_topology.c      | 11 +++++++++++
  drivers/thermal/cpufreq_cooling.c |  5 +++++
  include/linux/arch_topology.h     |  3 ---
- init/Kconfig                      | 15 ++++++++++++++-
  kernel/sched/core.c               | 11 -----------
- 7 files changed, 32 insertions(+), 15 deletions(-)
+ 4 files changed, 16 insertions(+), 14 deletions(-)
 
---
+diff --git a/drivers/base/arch_topology.c b/drivers/base/arch_topology.c
+index 4d0a0038b476..d14cab7dfa3c 100644
+--- a/drivers/base/arch_topology.c
++++ b/drivers/base/arch_topology.c
+@@ -54,6 +54,17 @@ void topology_set_cpu_scale(unsigned int cpu, unsigned long capacity)
+ 	per_cpu(cpu_scale, cpu) = capacity;
+ }
+ 
++DEFINE_PER_CPU(unsigned long, thermal_pressure);
++
++void arch_set_thermal_pressure(const struct cpumask *cpus,
++			       unsigned long th_pressure)
++{
++	int cpu;
++
++	for_each_cpu(cpu, cpus)
++		WRITE_ONCE(per_cpu(thermal_pressure, cpu), th_pressure);
++}
++
+ static ssize_t cpu_capacity_show(struct device *dev,
+ 				 struct device_attribute *attr,
+ 				 char *buf)
+diff --git a/drivers/thermal/cpufreq_cooling.c b/drivers/thermal/cpufreq_cooling.c
+index e297e135c031..a1efd379b683 100644
+--- a/drivers/thermal/cpufreq_cooling.c
++++ b/drivers/thermal/cpufreq_cooling.c
+@@ -417,6 +417,11 @@ static int cpufreq_get_cur_state(struct thermal_cooling_device *cdev,
+ 	return 0;
+ }
+ 
++__weak void
++arch_set_thermal_pressure(const struct cpumask *cpus, unsigned long th_pressure)
++{
++}
++
+ /**
+  * cpufreq_set_cur_state - callback function to set the current cooling state.
+  * @cdev: thermal cooling device pointer.
+diff --git a/include/linux/arch_topology.h b/include/linux/arch_topology.h
+index 0566cb3314ef..81bd1c627195 100644
+--- a/include/linux/arch_topology.h
++++ b/include/linux/arch_topology.h
+@@ -39,9 +39,6 @@ static inline unsigned long topology_get_thermal_pressure(int cpu)
+ 	return per_cpu(thermal_pressure, cpu);
+ }
+ 
+-void arch_set_thermal_pressure(struct cpumask *cpus,
+-			       unsigned long th_pressure);
+-
+ struct cpu_topology {
+ 	int thread_id;
+ 	int core_id;
+diff --git a/kernel/sched/core.c b/kernel/sched/core.c
+index 43ba2d4a8eca..7861d21f3c2b 100644
+--- a/kernel/sched/core.c
++++ b/kernel/sched/core.c
+@@ -3628,17 +3628,6 @@ unsigned long long task_sched_runtime(struct task_struct *p)
+ 	return ns;
+ }
+ 
+-DEFINE_PER_CPU(unsigned long, thermal_pressure);
+-
+-void arch_set_thermal_pressure(struct cpumask *cpus,
+-			       unsigned long th_pressure)
+-{
+-	int cpu;
+-
+-	for_each_cpu(cpu, cpus)
+-		WRITE_ONCE(per_cpu(thermal_pressure, cpu), th_pressure);
+-}
+-
+ /*
+  * This function gets called by the timer code, with HZ frequency.
+  * We call it with interrupts disabled.
+-- 
 2.27.0
 
 
