@@ -2,106 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 766881F85D7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 01:14:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C53431F8619
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 03:11:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=saflZPi+gwzN6nzNPLA+ZG1iAQJJ//21IFRXjc0STo4=; b=SKR
-	b5D+qz6RF1IjvKHqBPwgkndfdOiFopk6L6pL9M8IDMKaWZeAsfD36/Zw4o7jZDRqHend79VkwlYf5
-	Ad8eBrgGKnztIfGNDn7lHWVrYwvl8M3Dn4KgZvITlDe0LT4Y7CPiCboiR7BqPP/GEROonsq3mVcCV
-	QPBBvuVD3N6PN5ELlwyOymoMtDkKBw+oqTzGqbL8lQGGHe3smUfiOQ1JC0E9kHrW007D4kvdD3bjL
-	HaBSocSnwxxN7Ghs3Si3tO8ZYvu3ZX9WSfPodsLZ8JVs72KiE4X8hNXg3kmV8vGh7h6uTMgb6HmDU
-	pV07DVU+mtEXJGgMn9UOZ+/nonkQ87w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CVvmFcQoeDcZGrSNVMr4AVKYXYNc9Ch+ruoV/sGhp9U=; b=NPbsEZiidvjXah
+	NnaC3X8fOW7wApPTI7d9CTOc7CtOqA2OkN6PiCaUvaqclEl6u2cCLLlLNqJymd9blCyB2kpwoiDIi
+	IJS6cvTP8bOSa+Wm6gCY0BLoOH/DemAVXknLZ+HLUVKl4cUKQCTGmfIjECv1Ly3wrHhya7wFguCjH
+	6gIciXDM0XFONskkuxO4QsEIdvfxq4tGKDSTiqZ4rMbpnDMTusTBCS/7pjUMHxWXyvm0xcjDEOdYJ
+	dRrbmg4RoytjJDsgMpGZG+uiM4zUIJJJsBBDNsM1kFaUWvaJsfMibqN9yPUgBGS9Z/y9KnDXm7uAa
+	dkO81nXfM26fSZHHqkDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkFLi-0003AC-JS; Sat, 13 Jun 2020 23:14:06 +0000
-Received: from mta-p8.oit.umn.edu ([134.84.196.208])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkFLZ-00039Y-G1
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jun 2020 23:13:58 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-p8.oit.umn.edu (Postfix) with ESMTP id 49kth50ydhz9vbsj
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 23:13:57 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at umn.edu
-Received: from mta-p8.oit.umn.edu ([127.0.0.1])
- by localhost (mta-p8.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id vmks9J-oI4u9 for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 18:13:57 -0500 (CDT)
-Received: from mail-io1-f69.google.com (mail-io1-f69.google.com
- [209.85.166.69])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mta-p8.oit.umn.edu (Postfix) with ESMTPS id 49kth46JFXz9vbsc
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 18:13:56 -0500 (CDT)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p8.oit.umn.edu 49kth46JFXz9vbsc
-DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p8.oit.umn.edu 49kth46JFXz9vbsc
-Received: by mail-io1-f69.google.com with SMTP id x2so3325615iof.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 16:13:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umn.edu; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=Lp/57Kv3gzuXj/K9oQ77nASFzku70Zj4jK0Z7RozDsE=;
- b=lfurDX56hYBZrhdFYqEBnv2irvi2WRAzXzjIzOMzTNHuv42xHT5JVvBul2r6yRZfSr
- Cedk/u4yLdw8aRqEc/y4ItmczY/Wy46YSJdJrRMiyu6axMe091p2oVRathwkVLAjctph
- O1ryAN6KCqcJBCUYQiS5rpomqGicoXiT0GBMpThSYx8h/WfcepNjKEwEdueyxHsiT/QC
- QuMW8qQhASGbepJxBMeb2/E+/u9MHhAnP4kSZh7r1eGnqZTnwEm5ywzhNHk5NVpJQ75p
- aeacfU6DR3UAp/DccV5MCqEE1fH4GmLxOcOkkO/DPszNBMyGWO8UrRz2Jk+okWcCDdSo
- lqPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Lp/57Kv3gzuXj/K9oQ77nASFzku70Zj4jK0Z7RozDsE=;
- b=B1/PcgdBBw87IJnVP1uUJuOF0V0gnGmECENETnH1jAbINS67j/IrJJh28Y54Yq0CVl
- +dbhBe8t8Kh/a9WXKWJhddBPNAMMTfAdksn0bepWBbGTDMAWpzgKzTjMhwWAYJhlAjdX
- oqbuvEodjlKagQEfCAIYaoDLJ6+TZgpWvHxsjAD5nJQ/t/xMAHFobb8v77wwH1bLFwVW
- F4f+zzON4By7NQ4vsFb0hn7eZu3bjZew+v9PKcLL97XxyP60cMPSx3YdeTPybQOvdSyh
- UQnozi2Vl010w9/GyJrlNwrh6dnaloyvfaMcxGIQeHA3q445UGrnodYTDW5s05HXugof
- sWvA==
-X-Gm-Message-State: AOAM531bagpKdhSP0wdE7d0+lSS9L/h6//mifaEtrJ8vbp3Hrcy4R/8Y
- mTISvqGYGXIHfP0n5vXIK1Jmoq59bMCC+6wdOonWhmOAyB9+BMrAW4Ee3i6PHKOYF1ge3eM2FSQ
- SYQhTH2Ngf+7F0A5Lmyf3sVdmqjmd5H6TnixUYqg=
-X-Received: by 2002:a05:6e02:ef2:: with SMTP id
- j18mr19983906ilk.69.1592090036463; 
- Sat, 13 Jun 2020 16:13:56 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJztT1frvvFPpkKu648hyiONgeEYkHge5KRR8FaxCVSOS07PFim7J0gL5UIgkxz52VKBRrECXA==
-X-Received: by 2002:a05:6e02:ef2:: with SMTP id
- j18mr19983882ilk.69.1592090036227; 
- Sat, 13 Jun 2020 16:13:56 -0700 (PDT)
-Received: from qiushi.cs.umn.edu ([2607:ea00:101:3c74:4874:45:bcb4:df60])
- by smtp.gmail.com with ESMTPSA id b8sm5368985ior.35.2020.06.13.16.13.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 13 Jun 2020 16:13:55 -0700 (PDT)
-From: wu000273@umn.edu
-To: kjlu@umn.edu
-Subject: [PATCH] media: rockchip/rga: Fix a reference count leak.
-Date: Sat, 13 Jun 2020 18:13:49 -0500
-Message-Id: <20200613231350.15504-1-wu000273@umn.edu>
-X-Mailer: git-send-email 2.17.1
+	id 1jkHAh-0000fv-QG; Sun, 14 Jun 2020 01:10:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkHAI-0000YM-D6
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 01:10:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 544221FB;
+ Sat, 13 Jun 2020 18:10:21 -0700 (PDT)
+Received: from e113632-lin.cambridge.arm.com (e113632-lin.cambridge.arm.com
+ [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 621943F73C;
+ Sat, 13 Jun 2020 18:10:19 -0700 (PDT)
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+Subject: [PATCH 0/3] sched,
+ arch_topology: Thermal pressure configuration cleanup
+Date: Sun, 14 Jun 2020 02:07:52 +0100
+Message-Id: <20200614010755.9129-1-valentin.schneider@arm.com>
+X-Mailer: git-send-email 2.27.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_161357_620748_A0C4B48F 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200613_181026_488570_672F1A52 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.84.196.208 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,44 +63,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Hans Verkuil <hansverk@cisco.com>, linux-rockchip@lists.infradead.org,
- Jacob Chen <jacob-chen@iotwrt.com>, wu000273@umn.edu,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: Juri Lelli <juri.lelli@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Thara Gopinath <thara.gopinath@linaro.org>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Ingo Molnar <mingo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Qiushi Wu <wu000273@umn.edu>
+Hi folks,
 
-pm_runtime_get_sync() increments the runtime PM usage counter even
-when it returns an error code. Thus call pm_runtime_put_noidle()
-if pm_runtime_get_sync() fails.
+This stems from this thread [1] on the list. TL;DR: the thermal pressure config
+has no helpful documentation, and figuring out if the right dependencies are in
+place is not easy for a regular user. 
 
-Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
-Signed-off-by: Qiushi Wu <wu000273@umn.edu>
----
- drivers/media/platform/rockchip/rga/rga-buf.c | 1 +
- 1 file changed, 1 insertion(+)
+The current landscape also paints an odd picture: arch_set_thermal_pressure() is
+hardcoded in sched/core.c, and is *not* architecture-definable, while
+arch_get_thermal_pressure() is. Patch 1 is tackling this, the rest is Kconfig
+stuff.
 
-diff --git a/drivers/media/platform/rockchip/rga/rga-buf.c b/drivers/media/platform/rockchip/rga/rga-buf.c
-index 36b821ccc1db..bf9a75b75083 100644
---- a/drivers/media/platform/rockchip/rga/rga-buf.c
-+++ b/drivers/media/platform/rockchip/rga/rga-buf.c
-@@ -81,6 +81,7 @@ static int rga_buf_start_streaming(struct vb2_queue *q, unsigned int count)
- 
- 	ret = pm_runtime_get_sync(rga->dev);
- 	if (ret < 0) {
-+		pm_runtime_put_noidle(rga->dev);
- 		rga_buf_return_buffers(q, VB2_BUF_STATE_QUEUED);
- 		return ret;
- 	}
--- 
-2.17.1
+Cheers,
+Valentin
+
+[1]: https://lkml.kernel.org/r/20200603173150.GB1551@shell.armlinux.org.uk
+
+Valentin Schneider (3):
+  thermal/cpu-cooling, sched/core: Cleanup thermal pressure definition
+  sched: Cleanup SCHED_THERMAL_PRESSURE setup
+  arm, arm64: Select CONFIG_SCHED_THERMAL_PRESSURE
+
+ arch/arm/Kconfig                  |  1 +
+ arch/arm64/Kconfig                |  1 +
+ drivers/base/arch_topology.c      | 11 +++++++++++
+ drivers/thermal/cpufreq_cooling.c |  5 +++++
+ include/linux/arch_topology.h     |  3 ---
+ init/Kconfig                      | 15 ++++++++++++++-
+ kernel/sched/core.c               | 11 -----------
+ 7 files changed, 32 insertions(+), 15 deletions(-)
+
+--
+2.27.0
 
 
 _______________________________________________
