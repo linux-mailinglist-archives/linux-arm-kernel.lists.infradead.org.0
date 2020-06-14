@@ -2,100 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC5C1F88EB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 15:22:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE13B1F895F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 16:45:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bu2kZB8MkFDcPd4+rFOePVwfrjLWfqexjfzwKCs4R7Q=; b=RDucjL8bTgiZrD
-	YucfqzAowTREZvmaSqkI+rkOELsHJxNbLhzY0M8BRw2IA/vt4XMkCIVojE8yVt19JcvkI9l3dLghC
-	rw0gUROxqO/IVTtTe4zlOk5n8wjLTEd1AuHd6fGY/7mgGuRAkwcfMt8QDd1dwAw+llvFg0F3JqxuH
-	z6xNklih6++7i9bKE0CL71sP2FV38heQOE76qylJbjLxDZvew30QGGy6pnIB52pDBEorxwJEXHF1L
-	wr9o4DdD8nBM6heRu71HFUzJi27kXLTpJVnrDPRUso2Sqs7PvKhsT/qUc592Ojjpct9HMBHZoAJ61
-	kUJZbNRfMFjYKcuhWubw==;
+	List-Owner; bh=c8ZOYA4aRxtyeglesJFwSl9vhWDc3uEIyzB/CtMqoVM=; b=G4347HCAxy0QVP
+	pYZdyOrcV4kb6sDjQmbHsI6arekr9sOc1umobMJIz/ePWHgDqPLI+oKcnEY43ktqmpDDEf7KRrwua
+	XG3/V0XED71+rYiNxSHcMQPG56EFQUn0w+hWdnlxfc9WO2pGkE7Zpseu5UgkLwjGSicWUOeJ+FwHN
+	7c7R9JrXuSfc+MkIia/7IdurjPafEy7fhDnd0XHsI8OEAEyOrlYxbUvBrPPenQmeocyP8nIKSSTqa
+	bgWavbEfgYLQ6Q2K138bdZz+1y3cqpEMqhCnyRt/wHUfcPfWwsWis7xVww3lc3Nzs6fP4iUYmpcFC
+	6cR49Sbg16kCli8w1muA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkSa9-00070H-MU; Sun, 14 Jun 2020 13:21:53 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jkTsQ-0000cJ-Gz; Sun, 14 Jun 2020 14:44:50 +0000
+Received: from conuserg-11.nifty.com ([210.131.2.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkSa2-0006zb-Mc
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 13:21:48 +0000
-Received: by mail-pl1-x644.google.com with SMTP id j4so2427906plk.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 14 Jun 2020 06:21:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=7cP+mQI0zQhwvMzCwzM1g6my9t24Zv77a3K2bh1EtiQ=;
- b=j2fAIXnY31BJIK/Ksr6sAZdLsdL3/LaYUdn/acBEVQ4zcC2z06yKrYQlvbFJWZS4S9
- eiReDtqSO96Hrm/W+k/l9StZi5Htbp/JWOIAWmyr5AH4jKW92uBRlISV6IAuHOspIZDE
- v1fwN3089NBrHQJsM5sTaKnKmIerNZLfCS+8d/ok6BeMnCWC8m0PKdcOcfJXuycwhFq+
- XRpbfeHl3YbTKtJq9mDs3EAvhoeoKLlsKF+DGB6kOjAqnF7ZFDzUSETcFvY/ISEH5Aun
- nyl0lsAgfr2nvdZaqG0/+NRqRv2WNQpIHQ0iQKs344JCSIpwBC04/TCms5OAXaxxLVaC
- aETg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=7cP+mQI0zQhwvMzCwzM1g6my9t24Zv77a3K2bh1EtiQ=;
- b=Aa8ZyINBF70TSdvb849p8blWDk3c9WKDOKm4s215SmtzXUZV674JjEldXWTR8WEPtJ
- YH5VnNF4rooldIdkB1IrfnzgPBqcfy8WIZ2Ts0EjB8XIz09Meepmg6uwQIUmAz7aCTkh
- OnbndfMlLJumpq55W0r1siCP5tqh+6mfJBWjpQJFRe4jlVCXQpaYE4VpiBCIkLPVw71S
- 01HWNSMqcqq/P+58dxweeZCgYIzpfbouM60EXtvRNpGts6cqwOzxXEeVycM0v+Z/XFNS
- zkZHuZ8PgrukMHhFs9wNT1IOQkDjMC08/xu1XMpOkULvrBbt4Pwu/URJoWV62iMmnbfi
- tsAA==
-X-Gm-Message-State: AOAM530IuyHd/q21YOyMxhfGTY4duOB7Hbe21DqrfdPtw3Wn7x17cztG
- 53Ywgx06Ta4Ew7Q7Mvnfp4k=
-X-Google-Smtp-Source: ABdhPJymbPMR9I+mWmNb9K2IXVZ9Xzx6fiqm4hLsTe6OUYPlBvObLcCmI+3Mf5QIm90Q+6b74FnFkQ==
-X-Received: by 2002:a17:90a:e288:: with SMTP id
- d8mr7936307pjz.173.1592140905737; 
- Sun, 14 Jun 2020 06:21:45 -0700 (PDT)
-Received: from localhost ([49.207.199.244])
- by smtp.gmail.com with ESMTPSA id y9sm11333111pfr.184.2020.06.14.06.21.44
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 14 Jun 2020 06:21:45 -0700 (PDT)
-Date: Sun, 14 Jun 2020 18:51:43 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-Message-ID: <20200614132143.GA599@afzalpc>
-References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
- <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
- <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
- <20200612135538.GA13399@afzalpc>
- <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
- <20200613120432.GA5319@afzalpc>
- <CAK8P3a2g6a=V4BmPAOM0vNYUfJqm_aZziQhCxfF8MT_fbHMMLg@mail.gmail.com>
+ id 1jkTsJ-0000bE-Kz
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 14:44:45 +0000
+Received: from oscar.flets-west.jp (softbank126090202047.bbtec.net
+ [126.90.202.47]) (authenticated)
+ by conuserg-11.nifty.com with ESMTP id 05EEhjq1024323;
+ Sun, 14 Jun 2020 23:43:46 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com 05EEhjq1024323
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1592145827;
+ bh=2tNBTLIrpjvalARV+ZKm1wYdYtOnuZzF6U2fUm+curc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=0MkqVwFcLmqBEkbwbyIVa3kclqsXzYF/ckTbUtRz6QfEd/JnCZ9JnDydoLKUEFQ7s
+ mpvI5rUGsxigQs2ynVeFgVee8i8Jqm3Azb2xyMBa7JHkrDi9zLimnrzziIm1xQXikg
+ S63ZoDQwP5Omql9Wmz9guRCQKIxj3Eywm8Mbe4qE3BrW8zvcqNLn1jrQGP9IJZuzwR
+ mT7SrcbjxR8uIERzDPERllhaV+/l//g3ktsutBTeKTACqI3HG69bjeKgumT3WgL6q5
+ YUsXnYSBSXvNUQ6KkMAqtLZBoNuQ5DamQq5igzLXy2TXUd4xftlBGSADXsLfJDdSWk
+ f+Nri5Ra+LB1w==
+X-Nifty-SrcIP: [126.90.202.47]
+From: Masahiro Yamada <masahiroy@kernel.org>
+To: linux-kbuild@vger.kernel.org
+Subject: [PATCH 2/2] kconfig: unify cc-option and as-option
+Date: Sun, 14 Jun 2020 23:43:41 +0900
+Message-Id: <20200614144341.1077495-2-masahiroy@kernel.org>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200614144341.1077495-1-masahiroy@kernel.org>
+References: <20200614144341.1077495-1-masahiroy@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2g6a=V4BmPAOM0vNYUfJqm_aZziQhCxfF8MT_fbHMMLg@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_062146_759502_73AD93BF 
-X-CRM114-Status: GOOD (  16.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200614_074443_913183_B2DC92ED 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
+ no trust [210.131.2.78 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,67 +74,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Pitre <nico@fluxnic.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Al Viro <viro@zeniv.linux.org.uk>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, Randy Dunlap <rdunlap@infradead.org>,
+ Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Changbin Du <changbin.du@intel.com>,
+ Arvind Sankar <nivedita@alum.mit.edu>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+cc-option and as-option are almost the same; both pass the flag to
+$(CC). The main difference is the cc-option stops before the assemble
+stage (-S option) whereas as-option stops after it (-c option).
 
-On Sat, Jun 13, 2020 at 10:45:33PM +0200, Arnd Bergmann wrote:
+I chose -S because it is slightly faster, but $(cc-option,-gz=zlib)
+returns a wrong result (https://lkml.org/lkml/2020/6/9/1529).
+It has been fixed by a separate patch, but using -c is more robust.
 
-> 4% boot time increase sounds like a lot, especially if that is only for
-> copy_from_user/copy_to_user. In the end it really depends on how well
-> get_user()/put_user() and small copies can be optimized in the end.
+However, you cannot simply replace -S with -c because the following
+code would break:
 
-i mentioned the worst case(happened only once), normally it was in
-the range 2-3%
+    depends on $(cc-option,-gsplit-dwarf)
 
-> From the numbers you
-> measured, it seems the beaglebone currently needs an extra ~6=B5s or
-> 3=B5s per copy_to/from_user() call with your patch, depending on what
-> your benchmark was (MB/s for just reading or writing vs MB/s for
-> copying from one file to another through a user space buffer).
+The combination of -c and -gsplit-dwarf does not accept /dev/null as
+output.
 
-It is MB/s for copying one file to another via user space buffer, i.e.
-the value coreutils 'dd' shows w/ status=3Dprogress (here it was busybox
-'dd', so instead it was enabling a compile time option)
+  $ cat /dev/null | gcc -gsplit-dwarf -S -x c - -o /dev/null
+  $ echo $?
+  0
 
-> but if you want to test what the overhead is, you could try changing
-> /dev/zero (or a different chardev like it) to use a series of
-> put_user(0, u32uptr++) in place of whatever it has, and then replace the
-> 'str' instruction with dummy writes to ttbr0 using the value it already
-> has, like:
-> =
+  $ cat /dev/null | gcc -gsplit-dwarf -c -x c - -o /dev/null
+  objcopy: Warning: '/dev/null' is not an ordinary file
+  $ echo $?
+  1
 
->       mcr     p15, 0, %0, c2, c0, 0  /* set_ttbr0() */
->       isb  /* prevent speculative access to kernel table */
->       str    %1, [%2],0 /* write 32 bit to user space */
->       mcr     p15, 0, %0, c2, c0, 0  /* set_ttbr0() */
->       isb  /* prevent speculative access to user table */
+  $ cat /dev/null | gcc -gsplit-dwarf -c -x c - -o tmp.o
+  $ echo $?
+  0
 
-> It would be interesting to compare it to the overhead of a
-> get_user_page_fast() based implementation.
+There is another flag that creates an separate file based on the
+object file path:
 
-i have to relocate & be on quarantine couple of weeks, so i will
-temporarily stop here, otherwise might end up in roadside.
+  $ cat /dev/null | gcc -ftest-coverage -c -x c - -o /dev/null
+  <stdin>:1: error: cannot open /dev/null.gcno
 
-Reading feedbacks from everyone, some of it i could grasp only bits &
-pieces, familiarizing more w/ mm & vfs would help me add value better
-to the goal/discussion. Linus Walleij, if you wish to explore things,
-feel free, right now don't know how my connectivity would be for next
-3 weeks.
+So, we cannot use /dev/null to sink the output.
 
-Regards
-afzal
+Align the cc-option implementation with scripts/Kbuild.include.
+
+With -c option used in cc-option, as-option is unneeded.
+
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+---
+
+ arch/arm64/Kconfig      | 2 +-
+ lib/Kconfig.debug       | 1 -
+ scripts/Kconfig.include | 8 +-------
+ 3 files changed, 2 insertions(+), 9 deletions(-)
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 31380da53689..6eb18f45258e 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1564,7 +1564,7 @@ config CC_HAS_SIGN_RETURN_ADDRESS
+ 	def_bool $(cc-option,-msign-return-address=all)
+ 
+ config AS_HAS_PAC
+-	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
++	def_bool $(cc-option,-Wa$(comma)-march=armv8.3-a)
+ 
+ config AS_HAS_CFI_NEGATE_RA_STATE
+ 	def_bool $(as-instr,.cfi_startproc\n.cfi_negate_ra_state\n.cfi_endproc\n)
+diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+index 96999d4d2dda..9ad9210d70a1 100644
+--- a/lib/Kconfig.debug
++++ b/lib/Kconfig.debug
+@@ -229,7 +229,6 @@ config DEBUG_INFO_COMPRESSED
+ 	bool "Compressed debugging information"
+ 	depends on DEBUG_INFO
+ 	depends on $(cc-option,-gz=zlib)
+-	depends on $(as-option,-gz=zlib)
+ 	depends on $(ld-option,--compress-debug-sections=zlib)
+ 	help
+ 	  Compress the debug information using zlib.  Requires GCC 5.0+ or Clang
+diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
+index c264da2b9b30..a5fe72c504ff 100644
+--- a/scripts/Kconfig.include
++++ b/scripts/Kconfig.include
+@@ -25,18 +25,12 @@ failure = $(if-success,$(1),n,y)
+ 
+ # $(cc-option,<flag>)
+ # Return y if the compiler supports <flag>, n otherwise
+-cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -S -x c /dev/null -o /dev/null)
++cc-option = $(success,mkdir .tmp_$$$$; trap "rm -rf .tmp_$$$$" EXIT; $(CC) -Werror $(CLANG_FLAGS) $(1) -c -x c /dev/null -o .tmp_$$$$/tmp.o)
+ 
+ # $(ld-option,<flag>)
+ # Return y if the linker supports <flag>, n otherwise
+ ld-option = $(success,$(LD) -v $(1))
+ 
+-# $(as-option,<flag>)
+-# /dev/zero is used as output instead of /dev/null as some assembler cribs when
+-# both input and output are same. Also both of them have same write behaviour so
+-# can be easily substituted.
+-as-option = $(success, $(CC) $(CLANG_FLAGS) $(1) -c -x assembler /dev/null -o /dev/zero)
+-
+ # $(as-instr,<instr>)
+ # Return y if the assembler supports <instr>, n otherwise
+ as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
