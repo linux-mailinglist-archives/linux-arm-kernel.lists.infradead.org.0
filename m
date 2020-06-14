@@ -2,96 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E9B01F8653
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 05:11:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 570381F865A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jun 2020 05:18:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=USQfoGlcy8XPBKlyx4U6ebeeyvdUceaOzghqZcUggtI=; b=HTZ
-	ZFynUDEPQ7wMeTYpW4FpJCmifeeggvDwRPc8w/k8GaJwp4engXtPFb8JUX88bwGId/tHtlyEAgLj5
-	v+s5ak3ChO5uEhpdzGCyW3QZ8DVMjyVIbCsgTotzzg7zsOXI6GpIU7vhs7Kz2015d5nzUT4/6ejMH
-	b05l70VEBO/I8Dt1Gi5MuuwSt65oZTQNKjgcMkt6wXZQzI0mbyl26AeOSjEi8AKbNVMYx6CSsm+uo
-	+m3xXt9txUeddxWlClm4bBiyB0uKcL0+81w9ksZnmb0y6ZY+9+YfnW5yU+nviSnr4Qhy3T3Ro0FFq
-	UQF+i+ZDvEek2wZQCH4K3GQyPPl662A==;
+	References:List-Owner; bh=GYy8cqD6XtYpdqXu4kWkFUdUXk+PiZ0YeG6RwN3gYeM=; b=toN
+	RWXGtgeXpvtc54Etwqyu7/x768I++5XAhWtmwcaY5qjITefJm951vxFJ6UXm53tPNJmcqaGxtaY03
+	MOEnVB82R2OkfniBKMAlyM5ADHk45m/p467ceVGMoGvFRgdxGDy5jNZDDuNE+xbq7CROHidqsVIhS
+	ooHRJ0hwVp/DnhH6B7b9NvGKYsOudCaAowNdTDm43uW/zqLQWEg3IbWwIRRUKMysWv6c+BwN1Dc6+
+	D+d25xbMyjlqiiwfSjY3G5Siho2rb00G4XKAEAiLRmR37RG5XjcVxZhme+HdTIIyuP46sJEl653eA
+	S3vgdbbqXyRAeYbExu9q9NEpxd4/2tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkJ3A-00075U-LK; Sun, 14 Jun 2020 03:11:12 +0000
-Received: from mta-p5.oit.umn.edu ([134.84.196.205])
+	id 1jkJAW-0001lu-W6; Sun, 14 Jun 2020 03:18:49 +0000
+Received: from mta-p7.oit.umn.edu ([134.84.196.207])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkJ33-00075A-Hr
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 03:11:06 +0000
+ id 1jkJAO-0001kt-M5
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jun 2020 03:18:42 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mta-p5.oit.umn.edu (Postfix) with ESMTP id 49kzxj0Jmlz9vHdR
+ by mta-p7.oit.umn.edu (Postfix) with ESMTP id 49l06P1L2Hz9vYf9
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 14 Jun 2020 03:11:05 +0000 (UTC)
+ Sun, 14 Jun 2020 03:18:37 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at umn.edu
-Received: from mta-p5.oit.umn.edu ([127.0.0.1])
- by localhost (mta-p5.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id Vqq5uPVBNX0w for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 22:11:04 -0500 (CDT)
-Received: from mail-io1-f71.google.com (mail-io1-f71.google.com
- [209.85.166.71])
+Received: from mta-p7.oit.umn.edu ([127.0.0.1])
+ by localhost (mta-p7.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id DiTSeQmMTJEa for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 13 Jun 2020 22:18:37 -0500 (CDT)
+Received: from mail-il1-f199.google.com (mail-il1-f199.google.com
+ [209.85.166.199])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mta-p5.oit.umn.edu (Postfix) with ESMTPS id 49kzxh5hwFz9vHdB
+ by mta-p7.oit.umn.edu (Postfix) with ESMTPS id 49l06N6nr9z9vYdM
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 22:11:04 -0500 (CDT)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p5.oit.umn.edu 49kzxh5hwFz9vHdB
-DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p5.oit.umn.edu 49kzxh5hwFz9vHdB
-Received: by mail-io1-f71.google.com with SMTP id x2so3537380iof.0
+ Sat, 13 Jun 2020 22:18:36 -0500 (CDT)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p7.oit.umn.edu 49l06N6nr9z9vYdM
+DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p7.oit.umn.edu 49l06N6nr9z9vYdM
+Received: by mail-il1-f199.google.com with SMTP id l11so9548813ils.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jun 2020 20:11:04 -0700 (PDT)
+ Sat, 13 Jun 2020 20:18:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umn.edu; s=google;
  h=from:to:cc:subject:date:message-id;
- bh=Tvzr1gexpz+XRT9cgNKtj6wgeM1vIvcw44KBepZR6D4=;
- b=dY/qYHxSJdD8wAPz5h0FzAjVdWnVxvU72g1FCz0rJabbboMQPb4mkbyhXsW3/U4OSd
- tG2GxLxvsYxVLnaDmrBSXbveACEyS381htloR096Mv2VmnZieGOW6NKYkZ7fWrV2iVFk
- ax3PGuCq8fIkqEk843jjTIsJ4uPPnzUNyn6t6ba2w1u0gGl4RmuUKDXBMpwPCLXMCWh+
- N6oaBSFszaA35qXd8F4iEDmVlLuXUaCgV9poTt2R1spjs+/ORhl5sK88oF3W7oNshyca
- 4x61BV8RjdvWh4c0DA1qre73dHxLnFLqeAI/J9rO+n3zIU3l8b9sM3TSvclk+yocs9kT
- KvTA==
+ bh=HH/45wVNp4vPlnv8y138sW8x+ALttRXOB4XcVO5Zkvs=;
+ b=Mr2pHGWcj5Ed4kB6qg+LD4UU7Fdh03ef8xenaEHX4IejelTQRSts1ZUsupl/mg59zB
+ XF9CR2+v+hbbLsa1MjbFoPtRr5YYVmZ27DlWKM8xPwZf7yGIv0FbMEznM/ntiMvxZUeG
+ i5BHFjA9b7vZXBMhyB/BGgjvsZwwqzLf+OoaQy/+UrP9Kl8BLPEDI2/kbo/YI05R6nGr
+ sHBOTRnMNGIaesLVyR5fQUrz5uwTzAf4si+Y7RZ1cpuY/nTd50V/NwKm9C51Cpc69kZQ
+ 3c/3kaNY/lEordibuKx0qfVo1GwM/l4Loihba7JhTR2rN81SPmcctJMdzUi2yL4uzpdF
+ R9Qg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Tvzr1gexpz+XRT9cgNKtj6wgeM1vIvcw44KBepZR6D4=;
- b=AAAIkKNow/hg+UE3spEykF87rLKp7Y+y1JXv9FtI/tqq8XoFDiT3v0fSVcBsy0i1f/
- olaHmdZVGRmZnOmRhEBj5GFJyqzvc+TZ+HwirLU3d0bjzBvX3C3eROzKUhVpES1e7PX2
- 86jg+B4OArgMwuq+5DJWuos4Hu+Bz8cDqvqY9WpoZ29bnrieRxlnowviaFQAmjWBIfpH
- oY+FuQbg2xpEnlaWCMAkyV6SMLqXGl8WbbBLRYHvDcX7oVRjW5xKNsSH/2JyzvSL3gjt
- AjOJbfejshSdCz3La7coN8y9Q8aub+cOQIfm2YiHhNZimlZyWSageTenp8DKZ9Cbwvfo
- CeIg==
-X-Gm-Message-State: AOAM531xhA5oQE3QrKXNB/V0y4zeCvnDKuyG5mLYrK+wHgXzV1f1cZQD
- //ZJlGagC3N2w8oaY3bWzCIWwO3RDlZH+d/fK6VegpctDoy2VqcG4Myi5b/6WSKnHBekMGdaIfq
- Ep+/hiXLObaDZx2ME014zlCtJo6KH5BKii7ejui8=
-X-Received: by 2002:a92:2906:: with SMTP id l6mr20963400ilg.105.1592104264294; 
- Sat, 13 Jun 2020 20:11:04 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJwfPqC77rIfEaxFBW9gjDsioh8PzhonurOjVS/5EVI+YZOFekhI0LDWSnL9wCyzLaBMx6s77Q==
-X-Received: by 2002:a92:2906:: with SMTP id l6mr20963390ilg.105.1592104264017; 
- Sat, 13 Jun 2020 20:11:04 -0700 (PDT)
+ bh=HH/45wVNp4vPlnv8y138sW8x+ALttRXOB4XcVO5Zkvs=;
+ b=rsD+tP29UVHey9zmCwgv8Vx33pmp98UjrAYZva1xigDV2592LMUmuKk5icCBZUe5Cs
+ 7Tl8rXZGlFRLfxPldHuaaniSilV0gIarh8aPGMdzVvpkGyHhASUNqOxv47FKMWoeRXZs
+ Lqqtg23VDnRt03C2VCS2zmueKYJYV3s+EmIIi4iQgMBcFZMuv+9shUV9h2aJunPnZ63C
+ KCJlZWb6W47hALabHIHx2Lxky7qjfQX+iot0+8IhAHbFToay+eZ4S0mF7iyeVvlye0aE
+ Mt913l0SflAvNAx+ysHA8PGJo/0o5VnlcxLEwndhKjU8N/NrEccT2kd5OF+unjuwp8u4
+ g9gg==
+X-Gm-Message-State: AOAM532HohpctdbXYYTkRrRKEgOVpNrXwSYvWl81+DeF4DF22+1Da9PO
+ K1L+NUOlDRgnolQFDsN4s4J26vjlQhlsN89RDb2yzJfk82RmPDmW5cBGkkRX+ZdcSJPM27ga/c4
+ ViNIu9NPHeLy1iohgfp6H+verylCSdAtg+fANZDI=
+X-Received: by 2002:a02:707:: with SMTP id f7mr14751046jaf.119.1592104716481; 
+ Sat, 13 Jun 2020 20:18:36 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwvhSbDmYnmF5WV63TX3Cq9IgWRZ8Hr8otgBrXO+ItUH+Xf51d8C1dlXHo+xujD8MZenFDLig==
+X-Received: by 2002:a02:707:: with SMTP id f7mr14751022jaf.119.1592104716193; 
+ Sat, 13 Jun 2020 20:18:36 -0700 (PDT)
 Received: from qiushi.cs.umn.edu ([2607:ea00:101:3c74:4874:45:bcb4:df60])
- by smtp.gmail.com with ESMTPSA id x12sm5667765ilm.48.2020.06.13.20.11.03
+ by smtp.gmail.com with ESMTPSA id b9sm5559725ils.84.2020.06.13.20.18.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 13 Jun 2020 20:11:03 -0700 (PDT)
+ Sat, 13 Jun 2020 20:18:35 -0700 (PDT)
 From: wu000273@umn.edu
 To: kjlu@umn.edu
-Subject: [PATCH] media: exynos4-is: Fix a reference count leak due to
+Subject: [PATCH] media: exynos4-is: Fix several reference count leaks due to
  pm_runtime_get_sync
-Date: Sat, 13 Jun 2020 22:10:58 -0500
-Message-Id: <20200614031058.30161-1-wu000273@umn.edu>
+Date: Sat, 13 Jun 2020 22:18:29 -0500
+Message-Id: <20200614031829.31570-1-wu000273@umn.edu>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200613_201105_677750_C62824BA 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20200613_201840_805931_6D6703CC 
+X-CRM114-Status: GOOD (  14.46  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.84.196.205 listed in list.dnswl.org]
+ medium trust [134.84.196.207 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -132,25 +132,39 @@ reference count before returning the error.
 
 Signed-off-by: Qiushi Wu <wu000273@umn.edu>
 ---
- drivers/media/platform/exynos4-is/media-dev.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/media/platform/exynos4-is/fimc-isp.c  | 4 +++-
+ drivers/media/platform/exynos4-is/fimc-lite.c | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
-index 9aaf3b8060d5..cfb6891180b0 100644
---- a/drivers/media/platform/exynos4-is/media-dev.c
-+++ b/drivers/media/platform/exynos4-is/media-dev.c
-@@ -484,8 +484,10 @@ static int fimc_md_register_sensor_entities(struct fimc_md *fmd)
- 		return -ENXIO;
+diff --git a/drivers/media/platform/exynos4-is/fimc-isp.c b/drivers/media/platform/exynos4-is/fimc-isp.c
+index cde0d254ec1c..a77c49b18511 100644
+--- a/drivers/media/platform/exynos4-is/fimc-isp.c
++++ b/drivers/media/platform/exynos4-is/fimc-isp.c
+@@ -305,8 +305,10 @@ static int fimc_isp_subdev_s_power(struct v4l2_subdev *sd, int on)
  
- 	ret = pm_runtime_get_sync(fmd->pmf);
--	if (ret < 0)
-+	if (ret < 0) {
-+		pm_runtime_put(fmd->pmf);
- 		return ret;
-+	}
+ 	if (on) {
+ 		ret = pm_runtime_get_sync(&is->pdev->dev);
+-		if (ret < 0)
++		if (ret < 0) {
++			pm_runtime_put(&is->pdev->dev);
+ 			return ret;
++		}
+ 		set_bit(IS_ST_PWR_ON, &is->state);
  
- 	fmd->num_sensors = 0;
+ 		ret = fimc_is_start_firmware(is);
+diff --git a/drivers/media/platform/exynos4-is/fimc-lite.c b/drivers/media/platform/exynos4-is/fimc-lite.c
+index 394e0818f2d5..92130d779137 100644
+--- a/drivers/media/platform/exynos4-is/fimc-lite.c
++++ b/drivers/media/platform/exynos4-is/fimc-lite.c
+@@ -470,7 +470,7 @@ static int fimc_lite_open(struct file *file)
+ 	set_bit(ST_FLITE_IN_USE, &fimc->state);
+ 	ret = pm_runtime_get_sync(&fimc->pdev->dev);
+ 	if (ret < 0)
+-		goto unlock;
++		goto err_pm;
  
+ 	ret = v4l2_fh_open(file);
+ 	if (ret < 0)
 -- 
 2.17.1
 
