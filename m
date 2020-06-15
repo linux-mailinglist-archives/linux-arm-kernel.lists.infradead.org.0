@@ -2,87 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14CEE1F8E7B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 08:50:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDDBE1F8E82
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 08:50:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3ga3YYOEYpMK3Q3fqfWNmykSPFDjG2QjLH4KAk0czsw=; b=qTKWzF3j/8YVOt
-	APss3f+NQ2RXU4dnTMWbgwUk9AzCTqLHpQMRi7OCqg5ACJimlKehO1ofJKV9SUCPs68Ujp2wG3oso
-	Dnak1225fRlWrY5h5U8Dx7ifTBvHUvkJkTnrS+UhVWdfFmuUZSKDjUxu+RmMP2oXonwBQ6LY4Pp8Z
-	Wgc4mFaeQ4LcJVKj5rST81W6lP9JHHr2wJFVqWx0AUBB8SsuQwvOo4R6si/NEK2Ih8lPgCWQgZrPf
-	MRSS37pQeQtJkWTrXE0JsSF/2CLox2sIaKIjwKByvW2kZrsZfaGhm7AU/f5JTZSMREX82gZ1vrJJb
-	A7/NHtqL0WaGUdBUEbIw==;
+	List-Owner; bh=1MbO3QzCwKKpPnptAxwboiMOJE4Wts4h3tepzQRhdyM=; b=dFNvvcmNt6AbMO
+	vOe734LpTiSitvH23WvmV4WExNVOW6HZ7lAoTGfqBiSdR5vNGUMT1fH7MJ/38t8DvFiXzHB1p6Slx
+	XDG9CeYM+W6p/eO9S537Pp9PvJDxY4VVyknhreXjrS6/JHB8q9zkL7nQu+NoWbPBdm5YIyvpfhOtQ
+	AKiGz/7xx/TsrhzXDYmceLPBImKL4n41kywoRRp+78ioYo3+ipZ2rg+ivXXmUMns7TuwuyzTQ2pBe
+	IfnTCcwnxkbGpZ3WDgEvEg4cFzAlU98qU/f/RKvGG6ZPUoEkSzOyWzlASl3sym/A+TqUiFgQdSwzA
+	m3QXqSGzsWBqqx1G4KIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkiwm-0004oN-My; Mon, 15 Jun 2020 06:50:20 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1jkixB-0006IL-Vz; Mon, 15 Jun 2020 06:50:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkiwW-0003yJ-WD
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 06:50:06 +0000
-Received: by mail-ed1-f68.google.com with SMTP id t21so10634358edr.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 14 Jun 2020 23:50:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=vKJpOmM9DH/2UhmBwmYAEHUF6KlZyjtAnBjFXv+lhg8=;
- b=J3yTZadSmc7/qiEDHDeQ6cLDJ9P1wIUPLSYX3tsu6+hdQQVymSIhnwl2Zn2Zk6FlL4
- MneZmHMbwKQyrTI1bS3hygs8galxGnr3aG3HkXL1xG+mazvLbzofAYr2m6tWjvhYgCdt
- UeUvoCXB10k5us6Nd4EFYyBgdT/kceXO0Bpr3cpFPd04l0hib6rnHCfBWYtUNKYY0ymS
- dCs4Pb0X6jSljOZSv/UX9JmRbJoM/GBCA4AGejt6dDE2MzmjvmxufsGT1CpMs0onsTpp
- /GF6kvTUz+IS2rJZIljtuOlnRzEbNkn84F/yxumlus1dlyOzXXsIG/o47Ub8LdfAV6fI
- inOg==
-X-Gm-Message-State: AOAM531KksPKba4d3j6MaFg0beAMt+KK2aAoUnQr68IFpehkmlNQaTcy
- TDyt+fULqFu+b68ZR1eDknA=
-X-Google-Smtp-Source: ABdhPJxD5/50BDSpXBl1ldUdAkvys7Ip8mS9MB2im+cSgFQh8Vj0lNC/SZV7F9XvmjbinVMlk37bfQ==
-X-Received: by 2002:aa7:d388:: with SMTP id x8mr23084385edq.380.1592203803200; 
- Sun, 14 Jun 2020 23:50:03 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.184])
- by smtp.googlemail.com with ESMTPSA id q14sm7801859edj.47.2020.06.14.23.50.01
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 14 Jun 2020 23:50:02 -0700 (PDT)
-Date: Mon, 15 Jun 2020 08:50:00 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Oleksij Rempel <linux@rempel-privat.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Wolfram Sang <wsa@kernel.org>,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] i2c: imx: Fix PM runtime inbalance in probe error
- path
-Message-ID: <20200615065000.GA7728@kozik-lap>
-References: <1592130544-19759-1-git-send-email-krzk@kernel.org>
+ id 1jkiwy-0006G9-Qv
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 06:50:36 +0000
+Received: from mail.kernel.org (ip5f5ad5c5.dynamic.kabel-deutschland.de
+ [95.90.213.197])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5B3C1208C3;
+ Mon, 15 Jun 2020 06:50:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592203832;
+ bh=+YB9j5KRX8bJJCciec3l9jzw9TCQBre/YEU3QDQFNpg=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ShdKLzigIfIbQS+JnF76g0mB3+PWJaxlGDJvW6pQ7OekuOFAg+haB+1QYQCgST/4M
+ xuuvYjxaDg0xgmx/Epi34L56/PQilUjlCnY4o4pQSDnNxKiKkAiMl5/EaRfBKFB2qQ
+ Pbl9X9FN7yRPUk6tsRN51IW+Pux8DgzgVFTBg6L0=
+Received: from mchehab by mail.kernel.org with local (Exim 4.93)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jkiww-009o6T-Et; Mon, 15 Jun 2020 08:50:30 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH 14/22] docs: arm64: convert perf.txt to ReST format
+Date: Mon, 15 Jun 2020 08:50:19 +0200
+Message-Id: <c99bebf166559e9098a9eb78fb2eab2847fffb05.1592203650.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.26.2
+In-Reply-To: <cover.1592203650.git.mchehab+huawei@kernel.org>
+References: <cover.1592203650.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1592130544-19759-1-git-send-email-krzk@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_235005_045941_B9C7A1CA 
-X-CRM114-Status: GOOD (  11.38  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200614_235033_411586_F2C9D203 
+X-CRM114-Status: GOOD (  10.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,34 +79,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Oleksij Rempel <o.rempel@pengutronix.de>,
- Marc Kleine-Budde <mkl@pengutronix.de>, stable@vger.kernel.org
+Cc: Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 14, 2020 at 12:29:03PM +0200, Krzysztof Kozlowski wrote:
-> When pm_runtime_get_sync() fails in probe(), the error path should not
-> call pm_runtime_put_noidle().  This would lead to inbalance in
-> usage_count.
-> 
-> Fixes: 588eb93ea49f ("i2c: imx: add runtime pm support to improve the performance")
-> Cc: <stable@vger.kernel.org>
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> 
-> ---
-> 
-> Changes since v1:
-> 1. New patch
+This file is almost in ReST. All it needs is a rename and
+adding a :field: for the two fields at the beginning
+(author and date).
 
-This patch is not correct because the runtime usage counter is increased
-always, also on failures.
+While here, add a proper SPDX header, and use the standard
+markup for document titles, just for consistency.
 
-It can be dropped.
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+---
+ Documentation/arm64/index.rst              | 1 +
+ Documentation/arm64/{perf.txt => perf.rst} | 7 +++++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+ rename Documentation/arm64/{perf.txt => perf.rst} (95%)
 
-Best regards,
-Krzysztof
+diff --git a/Documentation/arm64/index.rst b/Documentation/arm64/index.rst
+index 09cbb4ed2237..d9665d83c53a 100644
+--- a/Documentation/arm64/index.rst
++++ b/Documentation/arm64/index.rst
+@@ -14,6 +14,7 @@ ARM64 Architecture
+     hugetlbpage
+     legacy_instructions
+     memory
++    perf
+     pointer-authentication
+     silicon-errata
+     sve
+diff --git a/Documentation/arm64/perf.txt b/Documentation/arm64/perf.rst
+similarity index 95%
+rename from Documentation/arm64/perf.txt
+rename to Documentation/arm64/perf.rst
+index 0d6a7d87d49e..9c76a97baf28 100644
+--- a/Documentation/arm64/perf.txt
++++ b/Documentation/arm64/perf.rst
+@@ -1,8 +1,11 @@
++.. SPDX-License-Identifier: GPL-2.0
++
++=====================
+ Perf Event Attributes
+ =====================
+ 
+-Author: Andrew Murray <andrew.murray@arm.com>
+-Date: 2019-03-06
++:Author: Andrew Murray <andrew.murray@arm.com>
++:Date: 2019-03-06
+ 
+ exclude_user
+ ------------
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
