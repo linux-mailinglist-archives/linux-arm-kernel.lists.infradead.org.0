@@ -2,99 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 518CB1F911C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:13:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11FFF1F9121
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:13:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=O9Dx5+SUXlxcfwGLgQ90VR+FVPzXODYHAT2gYNIiSRA=; b=Cxr73ALcYKFhLtSKnCRtlTs2r
-	/eItvZWrLl79GVqVOpfiygk1b5+iQ7m/Yu/j+25mqgowe/5l2Bz1sgIwwQFoHs1csQ59lAi+VYAl6
-	WKde+Ap81Bpe6djzf4XSLsEqkUuf0fAVMIixUjXQSkn2JIQuKEIqAiWi5faGJyiBRVFHYSXVxsb5s
-	RHsJf0lg+3ca5/BDuRR2d8oumpO+cgteqtTFNgeULlXtXKiBP8U5j6FvbaTyAYB0WOeLrqZZ9ZL6L
-	5NR6CrcucIWCNhSbN/yH2DTI+ma5U3M3dyetsmiSFt0O62ySNmRHu/vsCTfDcP+BT+BYmlKaa45VU
-	06VBrgRDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4k4g1P4/xVgIP09vYo5+cFmjfnEwsVArnvt4u4Gjysg=; b=K6g/+BORil9Q1i
+	+vA8ufi5ZUQO0ewmUyzr/OH71AiTbFp01ru1X7WpvY0zkT7l6lL7/4ba9YgPGe9NN6ELNxYoVQrw/
+	TkxILBe6KZXiwrZj83U6YY0G3D45ilzxeuBPKWvwgaUdWSv/kdwYJ9YYyU5JNLdcWbMOD/ZulJKN1
+	Mf+FLtwahkRwwF3ZUT7c7cd0U9dXhpGobMakytZdR9PMTl9WQD5fRvKXqNTIsppXDbGZ4xaq5vXpn
+	ZMXUMCoVU5zllBxu0+baiMEndXqDn6qpQXa7yPK66W2HeaaU4etWwjh08wo45pRKb1ykXfukH/i3E
+	SdT0bRXpM/d2Ef9up2Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkkEt-0006VL-Mt; Mon, 15 Jun 2020 08:13:07 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1jkkF9-0006cb-P8; Mon, 15 Jun 2020 08:13:23 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkEl-0006U2-JB
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:13:01 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id CB05F5C00A7;
- Mon, 15 Jun 2020 04:12:51 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 15 Jun 2020 04:12:51 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=sAfu4p+QiVeNnuEcI3dCQR633pL
- v27vuwHggq/8UNPk=; b=c6TQB5IO+se7UhdTaUAAm4AbOCSU6oH94xlzR17ZRJb
- xRk/LYcxyMqmX31VFketon1w65JvTnh1QmJgvNYGgc3JZf/civgef/BhH6F6ssgC
- yyYEwB2zOgcJWLdOOcBCjd9TgjtoCzuKMe6ulDs6VaKR7h14G54ZYfPp9nHxZDxt
- Xlu2xiIq3P7DTkUnoksJMoVP6g/xspJz/9z1oR1KBoGC6Arg3fENLqOlP5lzt8c+
- ssCii8sXngs57wOfyieDj6h8jpKEWeSEO7mmcg1IZd4Wivscwv8OjrlCwzmreM7c
- mGIcMf33UDWXKPGmvmVEoilZBCA6XbcOmCo+qTa1QNQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=sAfu4p
- +QiVeNnuEcI3dCQR633pLv27vuwHggq/8UNPk=; b=nzprzlOTjayaOK/LwLkSb5
- FSgNJVEawb7PUpqqIFw7UxZGT7jbuTX1kNgoU7+atS0elw71SRYxtxMPdcbChBxi
- uQBdzSLAwbEKrdjMAW/BujZETNnj44U31L3DmKVO3fZAMHH6+gg3VCPaOWXmTUsH
- KcLAZYSXS0lTCitesZDGH2NF4HhUHvATpO/Gz3xtVbPLKUnwR5EyruEcVrrcbcyG
- 4EcAu9kt2hDwBcuVLLc2N2+H9Mg1DeokOS3QPfthUX0Lfq+O9dyGVUsywqva7/d7
- P/0ublXIRqEK7v5zgZEo5B2bApv86qbJ7HFjnC/9bjhkUabpgbAMfiLL3yQy6pXg
- ==
-X-ME-Sender: <xms:gy3nXrNPwdpt83ykIxo4DVy-YXFVhIf4yaOFm5bTsV7rrXHMc_az0Q>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeikecutefuodetggdotefrodftvfcurf
- hrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecuuegr
- ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
- hrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgvucft
- ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrh
- hnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeguden
- ucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrh
- grmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:gy3nXl_d48xf74ugtZHDOi92LxftFaHPR_ruLHOHLvVDeiQPsRkgBg>
- <xmx:gy3nXqTz3GKvwThxRh_Z-TY8Nag74qeO70zgmnVhUC_dsWefUyAqRg>
- <xmx:gy3nXvuADLO1-9us_vHUwf8292XL9qxGp6ycUHTIdysiI-aIH-5NLw>
- <xmx:gy3nXv4ap4YyrLEtJUG8liu0zAs1Cop1-vz1Hj9WzdT9KfJ0V3-Xvg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id E7D923280059;
- Mon, 15 Jun 2020 04:12:50 -0400 (EDT)
-Date: Mon, 15 Jun 2020 10:12:49 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Diego Rondini <diego.rondini@kynetics.com>
-Subject: Re: [PATCH 1/2] ARM: dts: orange-pi-zero-plus2: enable USB OTG port
-Message-ID: <20200615081249.zx6caiirp72jywui@gilmour.lan>
-References: <20200528204712.552964-1-diego.rondini@kynetics.com>
+ id 1jkkEq-0006VW-3M
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:13:05 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jkkEl-00012a-JS; Mon, 15 Jun 2020 10:12:59 +0200
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jkkEj-0004Fe-Rl; Mon, 15 Jun 2020 10:12:57 +0200
+Message-ID: <141ae52bdd22079ae5f88dd50c31cac2cc150676.camel@pengutronix.de>
+Subject: Re: [PATCH 1/4] spi: bcm63xx-spi: add reset support
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: =?ISO-8859-1?Q?=C1lvaro_Fern=E1ndez?= Rojas <noltari@gmail.com>, 
+ broonie@kernel.org, f.fainelli@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com,  linux-spi@vger.kernel.org,
+ linux-kernel@vger.kernel.org,  linux-arm-kernel@lists.infradead.org
+Date: Mon, 15 Jun 2020 10:12:57 +0200
+In-Reply-To: <20200615080309.2897694-2-noltari@gmail.com>
+References: <20200615080309.2897694-1-noltari@gmail.com>
+ <20200615080309.2897694-2-noltari@gmail.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <20200528204712.552964-1-diego.rondini@kynetics.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_011259_769078_53513516 
-X-CRM114-Status: GOOD (  16.33  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_011304_162942_BFB15B15 
+X-CRM114-Status: GOOD (  11.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.26 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,140 +71,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6820257067212069898=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============6820257067212069898==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tpgcvphjqdudnw7t"
-Content-Disposition: inline
-
-
---tpgcvphjqdudnw7t
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Diego,
-
-On Thu, May 28, 2020 at 10:47:11PM +0200, Diego Rondini wrote:
-> Enable support for USB OTG port on Orange Pi Zero Plus 2 (both H3 and H5
-> variants). As, according to the board schematics, the USB OTG port cannot
-> provide power to external devices, we set dr_mode to peripheral.
->=20
-> Signed-off-by: Diego Rondini <diego.rondini@kynetics.com>
-
-Sorry for the time it took to review it. I initially thought it was ok
-and wanted to wait until -rc1 was out to apply it, but...
-
-> ---
->  .../boot/dts/sun8i-h3-orangepi-zero-plus2.dts | 23 +++++++++++++++++++
->  .../sun50i-h5-orangepi-zero-plus2.dts         | 23 +++++++++++++++++++
->  2 files changed, 46 insertions(+)
->=20
-> diff --git a/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts b/arch/ar=
-m/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
-> index b8f46e2802fd3..4376767699a47 100644
-> --- a/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
-> +++ b/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
-> @@ -137,3 +137,26 @@ &uart0 {
->  	pinctrl-0 =3D <&uart0_pa_pins>;
->  	status =3D "okay";
->  };
-> +
-> +&usbphy {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb_otg {
-> +	/*
-> +	 * According to schematics CN1 MicroUSB port can be used to take
-> +	 * external 5V to power up the board VBUS. On the contrary CN1 MicroUSB
-> +	 * port cannot provide power externally even if the board is powered
-> +	 * via GPIO pins. It thus makes sense to force peripheral mode.
-> +	 */
-> +	dr_mode =3D "peripheral";
-> +	status =3D "okay";
-> +};
-> +
-> +&ehci0 {
-> +	status =3D "okay";
-> +};
-> +
-> +&ohci0 {
-> +	status =3D "okay";
-> +};
-
-Nodes should be ordered alphabetically here.
-
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.=
-dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
-> index c95a68541309c..d8192a7483e9e 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
-> @@ -103,3 +103,26 @@ &uart1 {
->  	pinctrl-0 =3D <&uart1_pins>, <&uart1_rts_cts_pins>;
->  	status =3D "okay";
->  };
-> +
-> +&usbphy {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb_otg {
-> +	/*
-> +	 * According to schematics CN1 MicroUSB port can be used to take
-> +	 * external 5V to power up the board VBUS. On the contrary CN1 MicroUSB
-> +	 * port cannot provide power externally even if the board is powered
-> +	 * via GPIO pins. It thus makes sense to force peripheral mode.
-> +	 */
-> +	dr_mode =3D "peripheral";
-> +	status =3D "okay";
-> +};
-> +
-> +&ehci0 {
-> +	status =3D "okay";
-> +};
-> +
-> +&ohci0 {
-> +	status =3D "okay";
-> +};
-
-And here too.
-
-Sorry for not spotting this earlier.
-
-Maxime
-
---tpgcvphjqdudnw7t
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXuctgQAKCRDj7w1vZxhR
-xWnzAQCSvSidJmcewISQiPCQTATc2AKJsvFQJCKjT31JrlJGjQEAqor0s+oGJb62
-aUklO6rMf2UikngeBjD1cdXEn04sEw8=
-=RVYf
------END PGP SIGNATURE-----
-
---tpgcvphjqdudnw7t--
-
-
---===============6820257067212069898==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6820257067212069898==--
-
+SGkgw4FsdmFybywKCk9uIE1vbiwgMjAyMC0wNi0xNSBhdCAxMDowMyArMDIwMCwgw4FsdmFybyBG
+ZXJuw6FuZGV6IFJvamFzIHdyb3RlOgo+IGJjbTYzeHggYXJjaCByZXNldHMgdGhlIFNQSSBjb250
+cm9sbGVyIGF0IGVhcmx5IGJvb3QuIEhvd2V2ZXIsIGJtaXBzIGFyY2gKPiBuZWVkcyB0byBwZXJm
+b3JtIGEgcmVzZXQgd2hlbiBwcm9iaW5nIHRoZSBkcml2ZXIuCj4gCj4gU2lnbmVkLW9mZi1ieTog
+w4FsdmFybyBGZXJuw6FuZGV6IFJvamFzIDxub2x0YXJpQGdtYWlsLmNvbT4KPiAtLS0KPiAgZHJp
+dmVycy9zcGkvc3BpLWJjbTYzeHguYyB8IDE3ICsrKysrKysrKysrKysrKysrCj4gIDEgZmlsZSBj
+aGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc3BpL3Nw
+aS1iY202M3h4LmMgYi9kcml2ZXJzL3NwaS9zcGktYmNtNjN4eC5jCj4gaW5kZXggMGYxYjEwYTRl
+ZjBjLi44YWIwNGFmZmFmN2IgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9zcGkvc3BpLWJjbTYzeHgu
+Ywo+ICsrKyBiL2RyaXZlcnMvc3BpL3NwaS1iY202M3h4LmMKPiBAQCAtMTgsNiArMTgsNyBAQAo+
+ICAjaW5jbHVkZSA8bGludXgvZXJyLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9wbV9ydW50aW1lLmg+
+Cj4gICNpbmNsdWRlIDxsaW51eC9vZi5oPgo+ICsjaW5jbHVkZSA8bGludXgvcmVzZXQuaD4KPiAg
+Cj4gIC8qIEJDTSA2MzM4LzYzNDggU1BJIGNvcmUgKi8KPiAgI2RlZmluZSBTUElfNjM0OF9SU0VU
+X1NJWkUJCTY0Cj4gQEAgLTQ5Myw2ICs0OTQsNyBAQCBzdGF0aWMgaW50IGJjbTYzeHhfc3BpX3By
+b2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAlzdHJ1Y3QgYmNtNjN4eF9zcGkg
+KmJzOwo+ICAJaW50IHJldDsKPiAgCXUzMiBudW1fY3MgPSBCQ002M1hYX1NQSV9NQVhfQ1M7Cj4g
+KwlzdHJ1Y3QgcmVzZXRfY29udHJvbCAqcmVzZXQ7Cj4gIAo+ICAJaWYgKGRldi0+b2Zfbm9kZSkg
+ewo+ICAJCWNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgKm1hdGNoOwo+IEBAIC01MjksNiArNTMx
+LDE1IEBAIHN0YXRpYyBpbnQgYmNtNjN4eF9zcGlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rldmlj
+ZSAqcGRldikKPiAgCQlyZXR1cm4gUFRSX0VSUihjbGspOwo+ICAJfQo+ICAKPiArCXJlc2V0ID0g
+ZGV2bV9yZXNldF9jb250cm9sX2dldChkZXYsIE5VTEwpOwoKUGxlYXNlIHVzZSBkZXZtX3Jlc2V0
+X2NvbnRyb2xfZ2V0X2V4Y2x1c2l2ZSgpLCBzYW1lIGZvciBwYXRjaCAzLgpXaXRoIHRoYXQgY2hh
+bmdlZCwKClJldmlld2VkLWJ5OiBQaGlsaXBwIFphYmVsIDxwLnphYmVsQHBlbmd1dHJvbml4LmRl
+PgoKcmVnYXJkcwpQaGlsaXBwCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
