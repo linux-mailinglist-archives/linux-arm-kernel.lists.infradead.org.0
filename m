@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C98C1F98A5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:32:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C0C81F98B3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:33:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7W62Z/LnuUiLy9bbaf90nVy3Gc3SqQzXwU9Ip0TO8o=; b=o+82pdj1/yE6MD
-	GAx5PAZzRjWrrnND9e7kljcK1oIVf3KR230Md5l24HB+c8i7KiEnIup3N/dK5C1IyOzVUtsI/5QF+
-	ywoRIzYooWMYPRKyXZdv3Qx3JfprzLtY3+sGphiG63mxc7vtAlfYqYsADenMe8APGN3rFXjtZE7DR
-	agkD7AGtiCnON0voDHCcL4SGlZJeBFrdl3JhYGvKCiwg83h5oQHRxdwP+0eHtPYiVk9jC+SGPZO0k
-	2HCSkBU8JaklGkidxiOl+x0/9ZYPLcC33vDQHSuHNjh39Uis4A91hiRLmlNIet3wMECOSKgqIS11Q
-	ULtXhB5xlHO0zRRRSrBg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+kH+vogYQ2IfG5Sn919klVhq3o1svhrdTmM37RxizP0=; b=tBpdZIqSiMVnYp
+	WKRhlTWdw+YGC/BDCAlfQtWS5akiNUUev1UZcPb3AF8Xa55heeOgnuMj0Dcz0XQU31lAnOJskPX5t
+	5tmoqYIGBkHP+MQGJyRIKHDnud8AOAKhi7soa9/wK5Igvlpkdz8LJ/VtnKoWFiWZ8+RdpenjvfnIM
+	3vnNAiKkh4xyFUo0zPrOk985QqtrNTKHyZxsjaaH6DOmtW22zdlnjfbmGL2eHwdy52dTEoM7Ld9Qb
+	K/9DZoYuqhAgIPStpyXtQ+pw7s5Q5s4MIThOEZMtBA1uuNoMSH0sLUmzKzejjDaqn0dNXEEhi68Rb
+	aKGjRVNxV0rc/mjFVA9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkpDd-00072E-Ky; Mon, 15 Jun 2020 13:32:09 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jkpEn-0007PC-21; Mon, 15 Jun 2020 13:33:21 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkpDR-000718-T9
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:31:59 +0000
-Received: from mail-qv1-f46.google.com ([209.85.219.46]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1N6Kl7-1irZ0j3qgL-016dBZ for <linux-arm-kernel@lists.infradead.org>; Mon,
- 15 Jun 2020 15:31:53 +0200
-Received: by mail-qv1-f46.google.com with SMTP id g7so7707411qvx.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 06:31:52 -0700 (PDT)
-X-Gm-Message-State: AOAM533/ReO+UA3hJT6xV8kLnu0yoPImaACCliIInbkfqVS3NzreSNLX
- tZtyfFlJxciQXZ7vzGy7UrIpdwpps2yGx2prXxs=
-X-Google-Smtp-Source: ABdhPJyz/mDGs74yzNIwblWPhWFapqdfcdEr4Un1uVSJ/plIiN/A4CId8Axns/qweYspANUjYrgyMPVOZOnIui2BnnA=
-X-Received: by 2002:a05:6214:846:: with SMTP id
- dg6mr23541266qvb.210.1592227911673; 
- Mon, 15 Jun 2020 06:31:51 -0700 (PDT)
+ id 1jkpES-0007OA-4W
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:33:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1592227981; x=1623763981;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=Ka+s5d03Y8BmBXuXW4GOaBZbM0ynu9V+7sDJ77Fp4Ds=;
+ b=ixYJjvxgTL4xq7j+VYcC4WxEVt2J0oLdjUO5aTNbzDYBBbiHpBGNrNfF
+ Q8nAmvFN9XXSjwBD00LtBnVlZdGmt5VEuhRDoqGzDrEmimEQs7lriMdRt
+ u32r7eptldRhLl9ZGQDJRruo+43AeDPp9Ac/REb47u+9OW2Da4N7zPPHJ
+ 3yFbxprTAOhHVmiPzXLJlSFin1FaPvu5RuRmr3cFjaOfsE5OyWiwXP9Ug
+ aIVx+0aoKUFCBUHW/sWNTfGIpNZewv1hSehkGRVYOd+31J3Wu3JZGr9qd
+ cmfbCpTlfwUk+IRzWEojAAv+oodNilAgpiZqaMKtfkjSvfyQ5RREqJy2Y Q==;
+IronPort-SDR: e3CBdppFgGp3sAbe6qxq3NDLY2a4SufAqblFvDA1LXWZSAwHkvaejWSXgfY3wGb4TXWFc57Nrd
+ kTBhMXtyzz+pgGvqwRwGLb2diKIaYRtr0o8Cbeh3aCPOXQa0+8vI242STIgfIz1eBYNOdlQhWc
+ RLyh9ha+QGzNYASV3uazfyKnc2+GY4hhqQHZ8EjqFeel1hulvHStCIxV1QTphHHadKy3db+RG4
+ LQIK7gdnGdSNumistunz2AvjWJX9DR0scAS/eBz020xxawkS7rLAPPkwPi2LJGdlP4aBbG/p/Z
+ zY0=
+X-IronPort-AV: E=Sophos;i="5.73,514,1583218800"; d="scan'208";a="79480447"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 Jun 2020 06:32:59 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1979.3; Mon, 15 Jun 2020 06:32:57 -0700
+Received: from soft-dev15.microsemi.net (10.10.115.15) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
+ 15.1.1979.3 via Frontend Transport; Mon, 15 Jun 2020 06:32:54 -0700
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: SoC Team <soc@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Stephen Boyd
+ <sboyd@kernel.org>, Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH v3 00/10] Adding support for Microchip Sparx5 SoC
+Date: Mon, 15 Jun 2020 15:32:32 +0200
+Message-ID: <20200615133242.24911-1-lars.povlsen@microchip.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-References: <20200615130032.931285-1-hch@lst.de>
- <20200615130032.931285-3-hch@lst.de>
-In-Reply-To: <20200615130032.931285-3-hch@lst.de>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 15 Jun 2020 15:31:35 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
-Message-ID: <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
-Subject: Re: [PATCH 2/6] exec: simplify the compat syscall handling
-To: Christoph Hellwig <hch@lst.de>
-X-Provags-ID: V03:K1:pkOidMqRelTNUUmWVt5hodroXHRTFRuwjHWrZxxpJ1k6zq6T1Y3
- 9K4XcbbJdaqy5RljLJ39+8oP5deztuh9OWwRP9rbsMU5UY27p/gOW2BeC91PUyVpszQXcVz
- IAD3P7glAFUvdp//gqoKqJirHeiKFQyr8aQIk93FI1/+vgwaYp9rHCXbsTQsMrUD/eGBycF
- uOrgS0aTMOTiC+D3MMRDQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:JdbnQqVDW+A=:fUWO7kliEJHhjOB5NMjgTY
- U98N2Z4qKFz44erGdUe0prxapMAS0YQWIDWRTW1q29pBgdUsqaCNRNtBIWfIiY+CHoft2Y25l
- Swl8+GYIxa1XFkZOm1q+NYflrDmot6pExRUrZX2gBFrMUxoa3bk9jEdnxVbUmwX3gJtc7FAYa
- bCmdsE+Q7f0VBlrGbEVz3pXzsyeTFyDSofk/lAtpV1xaVftmNgnb3MSAoSXTMIbRYaXUK1T2B
- 0xUZ5snE+1mJ/ssqHbW3+EbHdTNqbMBTaqrvYvIPXWTxF4JakAQ6ZssQPjsdAkrKvHFwnE6al
- +AqfYmT5j17B/rc4UbsdKa7zKMDPlzSeLg0DfuJfxAmqxZW/wBTcKPir8ikP/cnHM/74q3HGx
- k9zTTX3mIIulxydMXvNbD+f+To4VIHCyA9LRKCwaM7ZUGEM7sSNxNDvEoOZcCUnuM1+1txKCL
- orwtCXKBYEL6rD8jpekv9GQC1k0nUYUlr8XHfEU0VvDVDqvtt2FjCnzFdx5Atw5czX8bRwskS
- 61j1McdwQl2mBHOwtO8RgOaNogLhYnSJnRXIfWfelRDPgU8AU3kYmS9p6yvz9HvlMK5GiAM/K
- yj9ca95oLX6z6NGvfF6FTDiA5FSFAne0oUAhM3BVzqe8IeUMGup7FauVEmwb1DgSfdwKdcTM8
- wnd+dtiDYLFo3tAvg2J0tJy1nFpp2cwQ+QxiG/4fBs7c79AUiU0hPVKmbnpf4BbK++iQwkv47
- Gpgj0iCI4mptmM1xD7nDoaqBNfDqgbNV0/X1r+uP55rgG1ayO0sxDdEmNaU1Nt96rQPswBYTl
- i4JpFOIIC3qDSl8I3R04Mqd0UTfg3JAWP1sgSIWLm3ajtULy38=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_063158_234202_83FE2B48 
-X-CRM114-Status: GOOD (  19.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200615_063300_218388_80381B57 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.134 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.71.150.166 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,107 +93,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- Parisc List <linux-parisc@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Al Viro <viro@zeniv.linux.org.uk>,
- sparclinux <sparclinux@vger.kernel.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Steen Hegelund <Steen.Hegelund@microchip.com>, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Olof Johansson <olof@lixom.net>, Michael
+ Turquette <mturquette@baylibre.com>, Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 3:00 PM Christoph Hellwig <hch@lst.de> wrote:
->
-> The only differenence betweeen the compat exec* syscalls and their
-> native versions is that compat_ptr sign extension, and the fact that
-> the pointer arithmetics for the two dimensional arrays needs to use
-> the compat pointer size.  Instead of the compat wrappers and the
-> struct user_arg_ptr machinery just use in_compat_syscall() to do the
-> right thing for the compat case deep inside get_user_arg_ptr().
->
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+This patch series adds support for Microchip Sparx5 SoC, the CPU
+system of a advanced, TSN capable gigabit switch. The CPU is an armv8
+x 2 CPU core (A53).
 
-Nice!
+Although this is an ARM core, it shares some peripherals with the
+Microsemi Ocelot MIPS SoC.
 
-I have an older patch doing the same for sys_mount() somewhere,
-but never got around to send that. One day we should see if we
-can just do this for all of them.
+Changes in v3:
+- a "gpio-restart" node has been added to the pcb134/pcb135 DT files.
+- pinctrl-ocelot.c: ENOTSUPP replaced by EOPNOTSUPP. Fixed non-static
+  ocelot_pinconf_set(), Fixed ocelot_hw_get_value() not returning proper
+  read value.
+- Rebased on v5.8-rc1
 
-> -
-> -static const char __user *get_user_arg_ptr(struct user_arg_ptr argv, int nr)
-> +static const char __user *
-> +get_user_arg_ptr(const char __user *const __user *argv, int nr)
->  {
->         const char __user *native;
->
->  #ifdef CONFIG_COMPAT
-> -       if (unlikely(argv.is_compat)) {
-> +       if (in_compat_syscall()) {
-> +               const compat_uptr_t __user *compat_argv =
-> +                       compat_ptr((unsigned long)argv);
->                 compat_uptr_t compat;
->
-> -               if (get_user(compat, argv.ptr.compat + nr))
-> +               if (get_user(compat, compat_argv + nr))
->                         return ERR_PTR(-EFAULT);
->
->                 return compat_ptr(compat);
->         }
->  #endif
+Changes in v2:
+- Misc fixes to bindings/arm/microchip,sparx5.yaml
+- Changed clock driver to platform driver, using bitfields, recalc
+  properly implented, using proper clock parent.
+- arch/arm64/boot/dts/microchip/sparx5.dtsi:
+ - Added pmu and psci node, using PSCI
+ - Updates to GICv3 register spaces (GICV/GICH)
+ - Updated timer interrupt specifiers
+- pinctrl: ocelot: Fixed symbol clashes from powerpc
 
-I would expect that the "#ifdef CONFIG_COMPAT" can be removed
-now, since compat_ptr() and in_compat_syscall() are now defined
-unconditionally. I have not tried that though.
+Lars Povlsen (10):
+  dt-bindings: arm: sparx5: Add documentation for Microchip Sparx5 SoC
+  arm64: sparx5: Add support for Microchip 2xA53 SoC
+  arm64: dts: sparx5: Add basic cpu support
+  arm64: dts: sparx5: Add pinctrl support
+  pinctrl: ocelot: Add Sparx5 SoC support
+  dt-bindings: clock: sparx5: Add Sparx5 SoC DPLL clock
+  dt-bindings: clock: sparx5: Add bindings include file
+  clk: sparx5: Add Sparx5 SoC DPLL clock driver
+  arm64: dts: sparx5: Add Sparx5 SoC DPLL clock
+  arm64: dts: sparx5: Add i2c devices, i2c muxes
 
-> +/*
-> + * x32 syscalls are listed in the same table as x86_64 ones, so we need to
-> + * define compat syscalls that are exactly the same as the native version for
-> + * the syscall table machinery to work.  Sigh..
-> + */
-> +#ifdef CONFIG_X86_X32
->  COMPAT_SYSCALL_DEFINE3(execve, const char __user *, filename,
-> -       const compat_uptr_t __user *, argv,
-> -       const compat_uptr_t __user *, envp)
-> +                      const char __user *const __user *, argv,
-> +                      const char __user *const __user *, envp)
->  {
-> -       return do_compat_execve(AT_FDCWD, getname(filename), argv, envp, 0);
-> +       return do_execveat(AT_FDCWD, getname(filename), argv, envp, 0, NULL);
->  }
+ .../bindings/arm/microchip,sparx5.yaml        |  65 +++
+ .../bindings/clock/microchip,sparx5-dpll.yaml |  52 +++
+ .../devicetree/bindings/mfd/syscon.yaml       |   1 +
+ MAINTAINERS                                   |   9 +
+ arch/arm64/Kconfig.platforms                  |  14 +
+ arch/arm64/boot/dts/Makefile                  |   1 +
+ arch/arm64/boot/dts/microchip/Makefile        |   4 +
+ arch/arm64/boot/dts/microchip/sparx5.dtsi     | 213 +++++++++
+ .../boot/dts/microchip/sparx5_pcb125.dts      |  21 +
+ .../boot/dts/microchip/sparx5_pcb134.dts      |  17 +
+ .../dts/microchip/sparx5_pcb134_board.dtsi    | 252 ++++++++++
+ .../boot/dts/microchip/sparx5_pcb134_emmc.dts |  17 +
+ .../boot/dts/microchip/sparx5_pcb135.dts      |  17 +
+ .../dts/microchip/sparx5_pcb135_board.dtsi    |  92 ++++
+ .../boot/dts/microchip/sparx5_pcb135_emmc.dts |  17 +
+ .../boot/dts/microchip/sparx5_pcb_common.dtsi |  19 +
+ drivers/clk/Makefile                          |   1 +
+ drivers/clk/clk-sparx5.c                      | 312 +++++++++++++
+ drivers/pinctrl/pinctrl-ocelot.c              | 430 +++++++++++++++++-
+ include/dt-bindings/clock/microchip,sparx5.h  |  23 +
+ 20 files changed, 1576 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/microchip,sparx5.yaml
+ create mode 100644 Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
+ create mode 100644 arch/arm64/boot/dts/microchip/Makefile
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5.dtsi
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb125.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134_board.dtsi
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134_emmc.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135_board.dtsi
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135_emmc.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb_common.dtsi
+ create mode 100644 drivers/clk/clk-sparx5.c
+ create mode 100644 include/dt-bindings/clock/microchip,sparx5.h
 
-Maybe move it to arch/x86/kernel/process_64.c or arch/x86/entry/syscall_x32.c
-to keep it out of the common code if this is needed. I don't really understand
-the comment, why can't this just use this?
+-- 
+2.27.0
 
---- a/arch/x86/entry/syscalls/syscall_64.tbl
-+++ b/arch/x86/entry/syscalls/syscall_64.tbl
-@@ -379,7 +379,7 @@
- 517    x32     recvfrom                compat_sys_recvfrom
- 518    x32     sendmsg                 compat_sys_sendmsg
- 519    x32     recvmsg                 compat_sys_recvmsg
--520    x32     execve                  compat_sys_execve
-+520    x32     execve                  sys_execve
- 521    x32     ptrace                  compat_sys_ptrace
- 522    x32     rt_sigpending           compat_sys_rt_sigpending
- 523    x32     rt_sigtimedwait         compat_sys_rt_sigtimedwait_time64
-@@ -404,7 +404,7 @@
- 542    x32     getsockopt              compat_sys_getsockopt
- 543    x32     io_setup                compat_sys_io_setup
- 544    x32     io_submit               compat_sys_io_submit
--545    x32     execveat                compat_sys_execveat
-+545    x32     execveat                sys_execveat
- 546    x32     preadv2                 compat_sys_preadv64v2
- 547    x32     pwritev2                compat_sys_pwritev64v2
- 548    x32     process_madvise         compat_sys_process_madvise
-
-       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
