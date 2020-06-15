@@ -2,71 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AE271F8FF9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 09:34:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8A181F8FEB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 09:32:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8LH1NHU69NYwid4r6SKjWag096btxeOQLvymwGofyc4=; b=C51Gn8mp3Lmdj0
-	zLSSvJhhSX8mgJCZtEgjg83gFQb6i+X67g3V0uLswPZN3FHdVf9jB6YiO86ZShu/rSDsYPyIbjffb
-	IHFxXTnC/zjmJEa+/QiKM4D9TaJ27rjIPxEX1UlP0DFSJTTi4K1MTUQTGvuc21RvC0vmmLS/UUP5R
-	Q2hKza/+kdPlkb+SuCZqUBqaaNdXFaG44INAikAdmoBMI9PVRqvlvvCypQMoKz+y75KmDviZzDtB3
-	onAYuuBosG67Jk1pa6u8yAoPJkrph38XF3bKNQog0kbnynCjcqdUwAmzBv8c5qwVQcQtpnyTmQ1Wp
-	4xm7Eijs2aN2GBBYJHbg==;
+	List-Owner; bh=8++HdBn9X9QdW64FMbxHUNMfuctiji2GMSv0TWPu2Hs=; b=EkGjxUM9nfEXQx
+	Ssut+EOIBWgNP1TahLrrTpMQztxtiUwndzaDu6zXcrJRhNvx0VlPUNgZ3mWfiArSh6cp+jOldINmO
+	m0KvGKIVwJycbBPIuknPJ5TfgZuf9SVbAr/oLCbL8RhKC/irJQ3ui8I4DmQH5t5TE8HSnsIJ38niu
+	QI3tigZX89PYZmHjUO+6LsR1HxNMWMdVR8iWHiyEKZLqqmv41wRjG1TUYUw0RY0MFejkOyws1Pxym
+	DE6CiL3RtFJ9HeuCTdX+YQoSgrpVQ693kkg8LRjV44Lp5VaN4zfv7SKrw/DD5H8EIRDl+4tkR0HEf
+	AsfyKbU8XzPjZqDm25Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkjdH-00049v-11; Mon, 15 Jun 2020 07:34:15 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jkjbA-00034h-RI; Mon, 15 Jun 2020 07:32:04 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkjci-0003ur-AU; Mon, 15 Jun 2020 07:33:43 +0000
-X-UUID: baae1b70d2864cdc926d620cce5e4866-20200614
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=m/v3E4p1m/OZyPE8uUXIhT+TD6yH0vQGAescG6WMe18=; 
- b=VDzHNQANysP2lm1uqeHrNCXAMrNx1iRwrz1r3Nifz8sJF0aDiq3Vo95JosXHEj+QhIUDCH0BA08KtfqjSYRdN8/P7XKjSnNqIUCPhwZqXDKFwXQGWOiKgl+cqmWbiv14cWWFnSaSNrF44U7gN1H64t1S7ypneqVcsjHOCUAt4M8=;
-X-UUID: baae1b70d2864cdc926d620cce5e4866-20200614
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 843906623; Sun, 14 Jun 2020 23:33:36 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 15 Jun 2020 00:26:59 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Mon, 15 Jun 2020 15:26:50 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 15 Jun 2020 15:26:49 +0800
-Message-ID: <1592205866.8804.686.camel@mhfsdcap03>
-Subject: Re: [V8, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Mon, 15 Jun 2020 15:24:26 +0800
-In-Reply-To: <CAAFQd5CboZ9aFhUyKPES_2oO_AKAOh3Pg8D+9YpfmzJ8v-yFHw@mail.gmail.com>
-References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
- <20200509080627.23222-3-dongchun.zhu@mediatek.com>
- <20200521193204.GA14214@chromium.org>
- <1590209415.8804.431.camel@mhfsdcap03>
- <20200610183600.GI201868@chromium.org>
- <1591954266.8804.646.camel@mhfsdcap03>
- <CAAFQd5CboZ9aFhUyKPES_2oO_AKAOh3Pg8D+9YpfmzJ8v-yFHw@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jkjan-0002sS-UK
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 07:31:43 +0000
+Received: by mail-pg1-x541.google.com with SMTP id w20so7245780pga.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 00:31:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=LrJ4JAo2vjzpAGyvhcbFA7qISNQsytIItEN02iswbAY=;
+ b=xIDTWFM2aEF9G48Tte+2/OhzJEH4zIX8UuUvaXknN7D4I4cmnaZPllbbgOZ2Qk+1bY
+ xbc+h154cHHO0epDGK216n3MwNuTQp8fqNoImvPxYEWwYNbpZlJyWIj2LFILlM6wvgH+
+ PrrwqgyDhhXP7IQ8oGaTW5/tJ5HPe94oZv9gZMHEzR71J+0zMmRMINshTnnEMwgOVaAR
+ riY+A1J2/TsZ/dTasy+1g79Vmc0d1usNeEDBgt0+HWb+bXb9RnVRGlHffL4L/ugZBF2w
+ Dud6PN5w+IJx6AeU9QRAZD329d15LkFad4bKzdPv8fewOwdQekgvuC7XPd0gsL3i8Aa0
+ VR1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=LrJ4JAo2vjzpAGyvhcbFA7qISNQsytIItEN02iswbAY=;
+ b=gU47Ny6NLaZRpOhQLkIeJNOgKR6onJ/XX9VugX/c11ocoOf9KPACR01N4DT0jLg8O3
+ VMqt3OVTaYmGxxBHwlWVpkZAO1PauQOYgXS6j9nfnI+YNpungIlG+ksCebYeP70kQ9ce
+ lJwYSrgjvC7jWtXwAE+q9yNExLkhRCk5GHxVVdVLYRha8qJ51SlVvQyduVrIVbFLCrSZ
+ liAbM2NE/cis3Yvnfwu02uy+KD0/b75gm9rX9Qa+9CItTJizrEx59NkjJjt0AP5AAYWC
+ SXsZoBXORW3iqu/cSPdwVWxcC7umyfckIXeh9b4nn2tymGQT3SD6CwOO1ZihrfGB5+u5
+ htAw==
+X-Gm-Message-State: AOAM530sKXs2OUbPpPx0UOgOH4kksk7MyjAdbko7Y8sx1VxG8BFxNjXc
+ +J/v4kCXcHEzQw2bogXKYGhpKQ==
+X-Google-Smtp-Source: ABdhPJzYVFN3gBHjfNgqZa/g6YU6WbN/APpY56EAa5j7L5CZKm7Xt1592LSNfKcNJdQv1J9FEzZwKg==
+X-Received: by 2002:a63:5f41:: with SMTP id t62mr20785803pgb.252.1592206301079; 
+ Mon, 15 Jun 2020 00:31:41 -0700 (PDT)
+Received: from localhost ([122.172.62.209])
+ by smtp.gmail.com with ESMTPSA id p14sm11774352pjf.32.2020.06.15.00.31.39
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 15 Jun 2020 00:31:40 -0700 (PDT)
+Date: Mon, 15 Jun 2020 13:01:38 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
+Subject: Re: [PATCH 00/12] Add cpufreq and cci devfreq for mt8183, and SVS
+ support
+Message-ID: <20200615073138.2vk5f3kplsz6rgqc@vireshk-i7>
+References: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F48042F2A1F78F21A0AF70589031EBB7AAF552C4E8B9EC0D9A43D09539458DD92000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_003341_655778_3B327014 
-X-CRM114-Status: GOOD (  26.15  )
+X-CRM114-CacheID: sfid-20200615_003142_038947_9CBB7AE9 
+X-CRM114-Status: GOOD (  10.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,8 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,123 +98,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Shengnan
- Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
- <shengnan.wang@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- dongchun.zhu@mediatek.com, Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Mark Brown <broonie@kernel.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
+On 20-05-20, 11:42, Andrew-sh.Cheng wrote:
+> 	- Resend depending patches of Sravana Kannan base on kernel-5.7
 
-On Fri, 2020-06-12 at 20:49 +0200, Tomasz Figa wrote:
-> On Fri, Jun 12, 2020 at 11:33 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > On Wed, 2020-06-10 at 18:36 +0000, Tomasz Figa wrote:
-> > > On Sat, May 23, 2020 at 12:50:15PM +0800, Dongchun Zhu wrote:
-> > > > Hi Tomasz,
-> > > >
-> > > > Thanks for the review. My replies are as below.
-> > > >
-> > > > On Thu, 2020-05-21 at 19:32 +0000, Tomasz Figa wrote:
-> > > > > Hi Dongchun,
-> > > > >
-> > > > > On Sat, May 09, 2020 at 04:06:27PM +0800, Dongchun Zhu wrote:
-> > > [snip]
-> > > > > > +{
-> > > > > > +       struct i2c_client *client = to_i2c_client(dev);
-> > > > > > +       struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > > > > > +       struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > > > > > +       int ret;
-> > > > > > +
-> > > > > > +       gpiod_set_value_cansleep(ov02a10->n_rst_gpio, 0);
-> > > > > > +       gpiod_set_value_cansleep(ov02a10->pd_gpio, 0);
-> > > > > > +
-> > > > > > +       ret = clk_prepare_enable(ov02a10->eclk);
-> > > > > > +       if (ret < 0) {
-> > > > > > +               dev_err(dev, "failed to enable eclk\n");
-> > > > > > +               return ret;
-> > > > > > +       }
-> > > > > > +
-> > > > > > +       ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
-> > > > > > +       if (ret < 0) {
-> > > > > > +               dev_err(dev, "failed to enable regulators\n");
-> > > > > > +               goto disable_clk;
-> > > > > > +       }
-> > > > > > +       usleep_range(5000, 6000);
-> > > > > > +
-> > > > > > +       gpiod_set_value_cansleep(ov02a10->pd_gpio, 1);
-> > > > >
-> > > > > This is a "powerdown" GPIO. It must be set to 0 if the sensor is to be
-> > > > > powered on.
-> > > > >
-> > > >
-> > > > The value set by gpiod_set_value_cansleep() API actually depends upon
-> > > > GPIO polarity defined in DT.
-> > > > Since I set GPIO_ACTIVE_LOW to powerdown,
-> > > > gpiod_set_value_cansleep(gpio_desc, value) would set !value to
-> > > > gpio_desc.
-> > > > Thus here powerdown would be low-state when sensor is powered on.
-> > > > For GPIO polarity, I also post a comment to the binding patch.
-> > > >
-> > >
-> > > That's true. However, this makes the driver really confusing. If someone
-> > > reads this code and compares with the datasheet, it looks incorrect,
-> > > because in the datasheet the powerdown GPIO needs to be configured low
-> > > for the sensor to operate.
-> > >
-> > > I'd recommend defining the binding in a way that makes it clear in the driver code
-> > > that it implementes the power sequencing as per the datasheet.
-> > >
-> >
-> > Uh-huh...
-> > But it all depends on how we look at the powerdown GPIO.
-> > Or where should we define the active low or active high, the driver or
-> > DT?
-> >
-> > My initial idea is using DT GPIO polarity to describe sensor active
-> > polarity according to the datasheet.
-> > As an active low shutdown signal is equivalent to an active high enable
-> > signal.
-> >
-> 
-> Okay, I discussed this offline with Laurent and Sakari and we also
-> found the guidelines of the Linux GPIO subsystem on this [1].
-> 
-> The conclusion is that the pin names in the driver or DT must not
-> contain any negation prefixes and the driver needs to care only about
-> the logical function of the pin, such as "powerdown" or "reset". In
-> case of this driver, we should call the pins "rst" and "pd" and
-> setting them to 1 would trigger the reset and power down respectively.
-> The physical signal polarity must be configured in DT using the
-> polarity flags.
-> 
-> [1] https://www.kernel.org/doc/html/latest/driver-api/gpio/consumer.html#the-active-low-and-open-drain-semantics
-> 
+Saravana's patches were never accepted and I suggested him this which
+he never tested I believe.
 
-Thank you for the sharing.
-If driver only focus on the logical function of GPIO pins,
-'n_rst_gpio' may need to be renamed back to the 1st version 'rst_gpio'.
+https://lore.kernel.org/lkml/20191125112812.26jk5hsdwqfnofc2@vireshk-i7/
 
-> Best regards,
-> Tomasz
+There is no point rebasing your stuff on a series which hasn't
+concluded or is accepted, at least logically.
+
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
