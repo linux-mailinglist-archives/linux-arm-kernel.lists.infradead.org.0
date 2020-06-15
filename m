@@ -2,88 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BE1A1F9ACC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:49:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C5C41F9AE1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:51:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GXzzGHgYSCD+QGthoqq+fPIZQtYWxGVgYm8d8qG0yvE=; b=gdfLR3EP3ECtq4
-	LmlBjq5E6UeLpVY3VfND+f63Mxv+2PubgsnXFPzOqeScXwq1leP1TPdRSlVMk5rq4rsyFGpOlYFI0
-	mUVsuLdydRISlthri0sw8/zpzFWZM1ZTv3Suonz6Gw732xtuEYbD2eGQUid6lJWGhYf54HCapO3m/
-	fyBMivslKKeW1TYYrrC+ferHFKDYOk+opnpJCOYqsP0KELbL07k/Be4xC8x2J9GN5TlgT5lKh4k6D
-	0+lmewM4g3aavCo/co6XR3bUy6F0jSeyLafKfIvdaMC9GffYsUNMwSL0mxZfHl7xCF81dHbM985+L
-	tXO/S0R2Kt2UaQFkrcQA==;
+	List-Owner; bh=PPp6yU+jbu5ii7HZMaRseHnLTAS9Qn9BV86CvdhGmds=; b=isYx6FP5M7PvG4
+	UXH2nuubKKhp3DqNFKyd2s6LjHBcI+OoIilnoscmam7qrWQReQWbKAF48Eu2XKGA65xkDZxPDV8bS
+	Z5s0p/HFCu2RqeSB8lZ2SaJojeyP5JlUJWLlo0A2h7piBXndNAEVrzFVrEZTD3GjdzYqHI4zJS2jm
+	+Nc+uoTXS/x3gUKhy8wKMtoqN8ugZ5qVVSzEOZO4c5erA+7OEQGOg7KrRXIbgw+b4+4YkZ0E35u9P
+	wQ2SXMYLwQ8S+OgJRRqScIu+hTQc6J/WlM5L5zxHaLwFrJZA6n/+mxm0kulCwZLBjDZHhvnAZeEmR
+	lHcU2oBhwXGxIc7SLPzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkqPv-0005EA-Eb; Mon, 15 Jun 2020 14:48:55 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkqPh-00056g-Pf
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:48:43 +0000
-Received: by mail-io1-xd41.google.com with SMTP id r77so18126178ior.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 07:48:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CFYHq9QU1VF3rchooKVX3EvDkFFGgQYVgoX+nSdXTuc=;
- b=PRxkgdzs6hj4NpKjLdU4+mZo+kiLgpl3v8qO3FUtkLItVntqN/v1UtTbvyh1fAkJDQ
- /r/QUNFX0i3kNhar6p3HMQRIc0/hnPpxSyfCSOk/7QGhSriP8dugDYCbD3NVmr3r39T+
- L0RU8h1FEoVzRUIqiHPXWetm4KkkvOZ8sZuPa8pJIZPJbfJz9/qmImf4Haoxykq/U+Wm
- z0McY86vBdXb73lWVCJytm+tusWr8I6JfrKJ++433fcbFQ7IdZZfKn+gl9mRtO93JHfb
- KS+ugwQDy31DiZDXPTjkRurzgAFvHZ4Gbe2s6FFN7LQGjbdA1Klosmt+SwHoidzFhQqC
- XkJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CFYHq9QU1VF3rchooKVX3EvDkFFGgQYVgoX+nSdXTuc=;
- b=QGR2oeNMC8J8KH7iZ4WCz6/20AUBijdga6ROXaUYpPViFhzvOdXWJhPcEgBNeCzaD0
- ArOxCazU96W5FiLAkIj2tWGnQqZuGcYVfDMJHL7MIZr81hZNcBJ9Ko++KHjfqSQWvKRU
- J2bV2NNRfttYk6BfqLEpw775BOMMUokLHluaXBtuvC1cXu21pHLS5pqXEWNXH3nvK/31
- s1sIElWST+lcZaqUBI+SaBMQntUZrnZN5g/BFN0xYZUl7mWPwWsyvAk3tuljMTDWKDmD
- PwY+QV23LdoOm0YH9dk8dly87KLPNlu6azuCQ751uiaTZ9BNQEHHczQCwKq1PBr5/1mF
- afvg==
-X-Gm-Message-State: AOAM532yzLUsv7Nq6miCQ2feUM6hrMZeZ2vPf2Mq5Ybnv6jn2bkt9AKo
- BQTpmr0HtiB3huSlwh6zoO5ib/2a/IZh7EHTvw==
-X-Google-Smtp-Source: ABdhPJyd6RZmdZpxGVu6c3gRb+Y3l0bsTdnHuSOZYnX1P537cI9jfkNEPZLpydEoTLgL6kUKfHIZe+3b9Hy/JybhE4I=
-X-Received: by 2002:a02:3501:: with SMTP id k1mr6072971jaa.133.1592232518583; 
- Mon, 15 Jun 2020 07:48:38 -0700 (PDT)
+	id 1jkqSg-0000D9-BM; Mon, 15 Jun 2020 14:51:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkqSF-0008W2-QD
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:51:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11A7E31B;
+ Mon, 15 Jun 2020 07:51:19 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 11A833F6CF;
+ Mon, 15 Jun 2020 07:51:17 -0700 (PDT)
+Date: Mon, 15 Jun 2020 15:51:16 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [RFC PATCH v2 6/6] prctl.2: Add tagged address ABI control
+ prctls (arm64)
+Message-ID: <20200615145115.GL25945@arm.com>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-7-git-send-email-Dave.Martin@arm.com>
+ <20200609172232.GA63286@C02TF0J2HF1T.local>
+ <20200610100641.GF25945@arm.com> <20200610152634.GJ26099@gaia>
+ <20200610164209.GH25945@arm.com> <20200610174205.GL26099@gaia>
 MIME-Version: 1.0
-References: <20200615130032.931285-1-hch@lst.de>
- <20200615130032.931285-3-hch@lst.de>
- <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
- <20200615141239.GA12951@lst.de>
-In-Reply-To: <20200615141239.GA12951@lst.de>
-From: Brian Gerst <brgerst@gmail.com>
-Date: Mon, 15 Jun 2020 10:48:26 -0400
-Message-ID: <CAMzpN2heSzZzg16ws3yQkd7YZwmPPx_4RFCpb9JYfFWJ9gfPhA@mail.gmail.com>
-Subject: Re: [PATCH 2/6] exec: simplify the compat syscall handling
-To: Christoph Hellwig <hch@lst.de>
+Content-Disposition: inline
+In-Reply-To: <20200610174205.GL26099@gaia>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_074841_862350_D3535886 
-X-CRM114-Status: GOOD (  19.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_075119_933454_7AC7C953 
+X-CRM114-Status: GOOD (  19.66  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [brgerst[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,87 +67,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- Parisc List <linux-parisc@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- the arch/x86 maintainers <x86@kernel.org>,
- "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Al Viro <viro@zeniv.linux.org.uk>,
- sparclinux <sparclinux@vger.kernel.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Michael Kerrisk <mtk.manpages@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 10:13 AM Christoph Hellwig <hch@lst.de> wrote:
->
-> On Mon, Jun 15, 2020 at 03:31:35PM +0200, Arnd Bergmann wrote:
-> > >  #ifdef CONFIG_COMPAT
-> > > -       if (unlikely(argv.is_compat)) {
-> > > +       if (in_compat_syscall()) {
-> > > +               const compat_uptr_t __user *compat_argv =
-> > > +                       compat_ptr((unsigned long)argv);
-> > >                 compat_uptr_t compat;
-> > >
-> > > -               if (get_user(compat, argv.ptr.compat + nr))
-> > > +               if (get_user(compat, compat_argv + nr))
-> > >                         return ERR_PTR(-EFAULT);
-> > >
-> > >                 return compat_ptr(compat);
-> > >         }
-> > >  #endif
-> >
-> > I would expect that the "#ifdef CONFIG_COMPAT" can be removed
-> > now, since compat_ptr() and in_compat_syscall() are now defined
-> > unconditionally. I have not tried that though.
->
-> True, I'll give it a spin.
->
-> > > +/*
-> > > + * x32 syscalls are listed in the same table as x86_64 ones, so we need to
-> > > + * define compat syscalls that are exactly the same as the native version for
-> > > + * the syscall table machinery to work.  Sigh..
-> > > + */
-> > > +#ifdef CONFIG_X86_X32
-> > >  COMPAT_SYSCALL_DEFINE3(execve, const char __user *, filename,
-> > > -       const compat_uptr_t __user *, argv,
-> > > -       const compat_uptr_t __user *, envp)
-> > > +                      const char __user *const __user *, argv,
-> > > +                      const char __user *const __user *, envp)
-> > >  {
-> > > -       return do_compat_execve(AT_FDCWD, getname(filename), argv, envp, 0);
-> > > +       return do_execveat(AT_FDCWD, getname(filename), argv, envp, 0, NULL);
-> > >  }
-> >
-> > Maybe move it to arch/x86/kernel/process_64.c or arch/x86/entry/syscall_x32.c
-> > to keep it out of the common code if this is needed.
->
-> I'd rather keep it in common code as that allows all the low-level
-> exec stuff to be marked static, and avoid us growing new pointless
-> compat variants through copy and paste.
-> smart compiler to d
->
-> > I don't really understand
-> > the comment, why can't this just use this?
->
-> That errors out with:
->
-> ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1040): undefined reference to
-> `__x32_sys_execve'
-> ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1108): undefined reference to
-> `__x32_sys_execveat'
-> make: *** [Makefile:1139: vmlinux] Error 1
+On Wed, Jun 10, 2020 at 06:42:05PM +0100, Catalin Marinas wrote:
+> On Wed, Jun 10, 2020 at 05:42:09PM +0100, Dave P Martin wrote:
+> > On Wed, Jun 10, 2020 at 04:26:34PM +0100, Catalin Marinas wrote:
+> > > On Wed, Jun 10, 2020 at 11:06:42AM +0100, Dave P Martin wrote:
+> > > > On Tue, Jun 09, 2020 at 06:22:32PM +0100, Catalin Marinas wrote:
+> > > > > On Wed, May 27, 2020 at 10:17:38PM +0100, Dave P Martin wrote:
+> > > > > > +.IP
+> > > > > > +The level of support is selected by
+> > > > > > +.IR "(unsigned int) arg2" ,
+> > > > > 
+> > > > > We use (unsigned long) for arg2.
+> > > > 
+> > > > Hmmm, not quite sure how I came up with unsigned int here.  I'll just
+> > > > drop this: the type in the prctl() prototype is unsigned long anyway.
+> > > > 
+> > > > The type is actually moot in this case, since the valid values all fit
+> > > > in an unsigned int.
+> > > 
+> > > Passing an int doesn't require that the top 32-bit of the long are
+> > > zeroed (in case anyone writes the low-level SVC by hand).
+> > 
+> > Fair point, I was forgetting that wrinkle.  Anyway, the convention in
+> > this page seems to be that if the type is unsigned long, we don't
+> > mention it, because the prctl() prototype says that already.
+> > 
+> > Question: the glibc prototype for prctl is variadic, so surely any
+> > calls that don't explicitly cast the args to unsigned long are already
+> > theoretically broken?  The #defines (and 0) are all implicitly int.
+> > This probably affects lots of prctls.
+> > 
+> > We may get away with it because the compiler is almost certainly going
+> > to favour a mov over a ldr for getting small integers into regs, and mov
+> > <Wd> fortunately zeroes the top bits for us anyway.
+> 
+> So does LDR Wd.
+> 
+> Anyway, I think glibc (or my reading of it) has something like like:
+> 
+>   register long _x1 asm ("x1") = _x1tmp;
+> 
+> before invoking the SVC. I assume this would do the right conversion to
+> long. I can't tell about other libraries but I'd say it's their
+> responsibility to convert the args to long before calling the kernel's
+> prctl().
 
-I think I have a fix for this, by modifying the syscall wrappers to
-add an alias for the __x32 variant to the native __x64_sys_foo().
-I'll get back to you with a patch.
+Ignore me.  I was worrying that glibc would propagate junk in the high
+bits of int arguments, due to treating them as longs.  Actually, it
+will, but it doesn't matter where we explicitly cast the argument to int
+inside the kernel (thanks as usual to -fno-strict-overflow).
 
---
-Brian Gerst
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
