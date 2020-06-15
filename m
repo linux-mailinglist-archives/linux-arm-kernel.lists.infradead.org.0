@@ -2,140 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 876BF1F8BF9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 02:47:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA72C1F8C0D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 03:19:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ybbSaTMxJDOmlhdGsGKgIFUqQyIaUGxzviBSOOly3WA=; b=oPULiS7q4PilRs
-	3OhCyO5eadBEVnktA1jR9SBiFGpORXRB+u+gyeQyl8UJjlHQkZlSMRm4Mq5V8IyIV72R30Jd/6QwM
-	0YXFY3Hfgta+pg4rMdLC7Bim0LJ+be7uaFN957vZwoDAlBNnQQqopbzrR1/Lsj7bt8juR4fbEoqfi
-	mERea5gcvB1OsStepHoI3flkMK+VMiicSKV8fsKN5YSG6RsCBqFkVNY5q71gQizGxhq1MK0BJJz3U
-	IUmSpK68UtnJSs2WENnQ0wzteNsz2dR7dPkIGgk+G4UI3KVMzRSevC68b3cxgDF3RxVLweRpcPtLW
-	bmHNXacu0r6BcdN0SUCw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oRwsFJjvn/Gu3IlsDvSSZvgw9YTyNapW6cPcmwnYIpU=; b=nsCwcCDBiZpqAU
+	vUKW61HOOcw8RixIdL7d1hLnUvyHnCXGjfYHvbKEdDcPmWDwdPx2NkcYflE3UD2MVIieTbH4/+Tap
+	1S+PPSWfSJdVMC8Yrqo7/oQzNgMZFxumqwPyXV//EY/tqpvU1aD807hqCixlVIAA7budqPtB1M6eM
+	TMlvt2IJK5GksIdm0jJc7zo/wZS2JTvr0io65KTUeTgIpT1JW1OwjyBzTreY7vrFRG/H8ItHONHoi
+	KeeFgUuHHogxDyrgnr2QIjFB046NaPgPyF5x0Wm13ikXUI1shpTGl+sjxdQgOPpW+vMhISqzOpa/1
+	p3xEdOv95ZBFCcmTEtLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkdHW-0005bF-TD; Mon, 15 Jun 2020 00:47:22 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1jkdmW-000572-ID; Mon, 15 Jun 2020 01:19:24 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkdHP-0005ai-94
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 00:47:17 +0000
-Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200615004710epoutp045236f6e2eae05286fcdd7ae7b7b5e692~YkR7vo3_p2584425844epoutp04J
+ id 1jkdmO-00056K-U6
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 01:19:19 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id p15so7035185qvr.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 00:47:10 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200615004710epoutp045236f6e2eae05286fcdd7ae7b7b5e692~YkR7vo3_p2584425844epoutp04J
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1592182030;
- bh=8yvh7hV29VBPOtwpd8omf9HSfJ9mL6MVoGzHXyVkzKM=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=esH6rqnU5jYdTX5AMWLAWhUhL7EiD6t3Dpgp+lHTSC/obSercnAWweMRF9qGob+kC
- SFhnNY7O+wM80uAAv5ZCYdJucS14BpV+VnTRCyJjShTfL3bPpw40r3LYE781oJTuqH
- b2FL9ZgYsSociYXPV6zUCqRXh3fiyuG/nLxi7VTo=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTP id
- 20200615004709epcas1p365ad9f2a41c4f8ef2c2201f7784524c0~YkR63vdTd3045330453epcas1p3N;
- Mon, 15 Jun 2020 00:47:09 +0000 (GMT)
-Received: from epsmges1p1.samsung.com (unknown [182.195.40.156]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 49lXj770DwzMqYkn; Mon, 15 Jun
- 2020 00:47:07 +0000 (GMT)
-Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
- epsmges1p1.samsung.com (Symantec Messaging Gateway) with SMTP id
- 59.CE.18978.B05C6EE5; Mon, 15 Jun 2020 09:47:07 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTPA id
- 20200615004707epcas1p3f9d0e4367d2a8f333961a05fee14258a~YkR44ko1e3059930599epcas1p37;
- Mon, 15 Jun 2020 00:47:07 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200615004707epsmtrp1f86ef955f5aee69b793717dd0083138a~YkR43o9NU2192121921epsmtrp1c;
- Mon, 15 Jun 2020 00:47:07 +0000 (GMT)
-X-AuditID: b6c32a35-603ff70000004a22-73-5ee6c50b2ab6
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- AE.83.08382.B05C6EE5; Mon, 15 Jun 2020 09:47:07 +0900 (KST)
-Received: from [10.113.221.211] (unknown [10.113.221.211]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200615004707epsmtip1aa43a233efc06f0cb1b7365c311ad051~YkR4qpdgL1601216012epsmtip1G;
- Mon, 15 Jun 2020 00:47:06 +0000 (GMT)
-Subject: Re: [PATCH] drm/exynos: fix ref count leak in mic_pre_enable
-To: Navid Emamdoost <navid.emamdoost@gmail.com>, Joonyoung Shim
- <jy0922.shim@samsung.com>, Seung-Woo Kim <sw0312.kim@samsung.com>, Kyungmin
- Park <kyungmin.park@samsung.com>, David Airlie <airlied@linux.ie>, Daniel
- Vetter <daniel@ffwll.ch>, Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski
- <krzk@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org
-From: Inki Dae <inki.dae@samsung.com>
-Message-ID: <027d9eb5-a1c1-c329-72c3-a555b71f8677@samsung.com>
-Date: Mon, 15 Jun 2020 09:52:43 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Sun, 14 Jun 2020 18:19:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=LHskQ8f2Dmk0xpDNDHCGI6zB+LcQzd4CszN17YA72hY=;
+ b=n/YxUfxvvJxXpzKcG86jLlw8TlsmqMIOxHbW6z8WZNai475DlJEtz12clxlqDVKYDu
+ 3LHwGk43kkQir8OCXkBcNBMxDQ5sLMzUL+YSiYB3KAwVWsiKoSfNow+3Re5Vl5lUc8Fo
+ xgP4RcDuktQKaVWuqVOB68OEvgc1/xyXcu3b5A8fa5mL1ZJWtu/qxWTlmZ0vmS44jfd3
+ /57JkyOWmMI7JOon+FUVZ15vIkJg4FCAzQcmzxtk6sYEJVvZwJ6XSBf7hdLe4EYAhP5F
+ vvL2RGugBp2Ox+M2vEptS+LU/RylzKsvnjt98HvYr6TreYYdTLU7x7ZkvDQAnGAj4KI6
+ Xftw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=LHskQ8f2Dmk0xpDNDHCGI6zB+LcQzd4CszN17YA72hY=;
+ b=ID0sfEbB2JmyZvqIwqmC1ZjRl793huZyajnELQ2XAVI0Xo5GLbz51gOToJKHtRpfhi
+ NupIskTYMOPRe7+KDg/R/JiF057YC93WuQg4KzCFGv4y5iAlR9n0Aw6cgKeatiYyN6oq
+ 8blqPKwWU9gCrvzTNVlEgJScKnVbo5AyGAfjify5Wn6jkw4dKTYdCZzbiDVVdK1djuyh
+ fINdjuHPT8vCuZa7/IDrGE3xJge2y6SUmjw6wrO+peM4G77OfqGt+nsR2C4lqYvEYmmP
+ 4aMMhpYOi5PAH7wmHEmEUnsuJPXmIksmJl2OgteS2AzFexVDivB5VWsW+la9aFdMJPo1
+ Sd1g==
+X-Gm-Message-State: AOAM5333ciGma2CVwB6PGBpeol5h1z710FoySNvE8v9lfolvod1T1AcF
+ IBmM/eB9s89589sj+z5aI3xf9k5whpw=
+X-Google-Smtp-Source: ABdhPJw/xRgeMEzo8Mq6tZJ8JtGVxQMqMSEP7dS5xLV6b7UxttcieO2g3RiF2q15DuPVBN07XRJtnQ==
+X-Received: by 2002:a05:6214:594:: with SMTP id
+ bx20mr22490987qvb.131.1592183953831; 
+ Sun, 14 Jun 2020 18:19:13 -0700 (PDT)
+Received: from [192.168.1.46] (c-73-88-245-53.hsd1.tn.comcast.net.
+ [73.88.245.53])
+ by smtp.gmail.com with ESMTPSA id a82sm10561443qkb.29.2020.06.14.18.19.12
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 14 Jun 2020 18:19:13 -0700 (PDT)
+Subject: Re: [PATCH v2 1/3] mfd: core: Make a best effort attempt to match
+ devices with the correct of_nodes
+To: Lee Jones <lee.jones@linaro.org>, andy.shevchenko@gmail.com,
+ michael@walle.cc, robh+dt@kernel.org, broonie@kernel.org,
+ devicetree@vger.kernel.org, linus.walleij@linaro.org, linux@roeck-us.net,
+ andriy.shevchenko@linux.intel.com, robin.murphy@arm.com,
+ gregkh@linuxfoundation.org
+References: <20200611191002.2256570-1-lee.jones@linaro.org>
+From: Frank Rowand <frowand.list@gmail.com>
+Message-ID: <4b188fb5-6667-720d-46e1-6f103efe8966@gmail.com>
+Date: Sun, 14 Jun 2020 20:19:12 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200614062339.87374-1-navid.emamdoost@gmail.com>
+In-Reply-To: <20200611191002.2256570-1-lee.jones@linaro.org>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrBJsWRmVeSWpSXmKPExsWy7bCmri730WdxBs/mm1v0njvJZPF/20Rm
- iytf37NZPGuczmrx4t5FFov+x6+ZLU7MO8tucf78BnaLs01v2C02Pb7GanF51xw2ixnn9zFZ
- 9J7cwWwx7csidosZk1+yWfQebWRzEPDY+20Bi8fOWXfZPTat6mTz2P7tAavH/e7jTB6bl9R7
- 9G1ZxehxdWETu8fnTXIBnFHZNhmpiSmpRQqpecn5KZl56bZK3sHxzvGmZgaGuoaWFuZKCnmJ
- uam2Si4+AbpumTlAbygplCXmlAKFAhKLi5X07WyK8ktLUhUy8otLbJVSC1JyCiwL9IoTc4tL
- 89L1kvNzrQwNDIxMgQoTsjN2ntvHXLCYo6Lz5hbmBsaHbF2MHBwSAiYSLb9luxi5OIQEdjBK
- PDnyhhXC+cQo0fXlCguE841R4vbdCUAZTrCO7W/eM0Mk9jJKTF7wBqrqPaPE2a3tLCBVwgKu
- Ek9+XgdLiAicYJZYcO4F2EJmATeJJydEQGrYBFQlJq64zwZi8wrYSazd8xWslwUo/qLnLwtI
- uahAhMTpr4kQJYISJ2c+ASvhFLCXaJuxhBnEZhYQl7j1ZD4ThC0v0bx1NthxEgIvOCTudT1g
- h7jaReJhx1aoD4QlXh3fAhWXknjZ38YO0dDMKDFxxmkmCKeDUeLu4+ssEFXGEvuXTmaCeEBT
- Yv0ufYiwosTO33MZITbzSbz72sMKCVReiY42IYgSJYljF28wQtgSEheWTGSDsD0kjvzuZp/A
- qDgLyW+zkPwzC8k/sxAWL2BkWcUollpQnJueWmxYYIgc25sYwUlcy3QH48S3H/QOMTJxMB5i
- lOBgVhLh7U57EifEm5JYWZValB9fVJqTWnyI0RQY2BOZpUST84F5JK8k3tDUyNjY2MLE0MzU
- 0FBJnFdc5kKckEB6YklqdmpqQWoRTB8TB6dUA1N5AZvHKpO96x49DbgS7mxraL3ur2OM6rcv
- fxZEH3Tc29sSdyNkHuvJeX2fZK5YzhRIdzm7Wanx4PtJxmcOHUm6nVytnbjr74+Np6J2TDqR
- kr3XIlQyct2/L3PDT5zXkJnme3zFt7opTksLl/79J8xtNFfUffm/oiz/O/dmL/485UHEo1bD
- TdeurEtuu6brsEH1zGPb9TomL0584P+hZ7/D/MKJXa/v9PUJ8Nfb2GxLZ35X8TKf4b3zCe7C
- it17lq452vqwwPbPvlUsjVO2pk2IP2nSJCB554Tro3lp+ys/LJ4QW6ZqrCpQct10Ss/qfxNN
- OxelNUyMPbk1eVrU47XnOKL8c+YcniWRuu/0qYaVV5RYijMSDbWYi4oTAY0a+iJrBAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrGIsWRmVeSWpSXmKPExsWy7bCSnC730WdxBisfcFv0njvJZPF/20Rm
- iytf37NZPGuczmrx4t5FFov+x6+ZLU7MO8tucf78BnaLs01v2C02Pb7GanF51xw2ixnn9zFZ
- 9J7cwWwx7csidosZk1+yWfQebWRzEPDY+20Bi8fOWXfZPTat6mTz2P7tAavH/e7jTB6bl9R7
- 9G1ZxehxdWETu8fnTXIBnFFcNimpOZllqUX6dglcGTvP7WMuWMxR0XlzC3MD40O2LkZODgkB
- E4ntb94zdzFycQgJ7GaUOLXiPVCCAyghIbFlKweEKSxx+HAxRMlbRokjd3eD9QoLuEo8+Xmd
- BSQhInCKWWLb9idMIA3MAm4ST06IQDRMYpT48LmHBaSBTUBVYuKK+2DNvAJ2Emv3fAWLswDF
- X/T8BbNFBSIknm+/wQhRIyhxcuYTsDingL1E24wlzCA2s4C6xJ95l6BscYlbT+YzQdjyEs1b
- ZzNPYBSahaR9FpKWWUhaZiFpWcDIsopRMrWgODc9t9iwwDAvtVyvODG3uDQvXS85P3cTIzhq
- tTR3MG5f9UHvECMTB+MhRgkOZiUR3u60J3FCvCmJlVWpRfnxRaU5qcWHGKU5WJTEeW8ULowT
- EkhPLEnNTk0tSC2CyTJxcEo1MB1+teTKck+Jo9unX7K+fa+U2bH79N9aG/MDH0z0LniIGgp3
- nQjs3/H/sXaIcYgazwrxzxubRKTPM8V6ndK2mrxB7vmsk7bvXDdwnv3+/na14WOJe7PUa2ev
- nvw4ecelloeqirIPQ/e+CHzQwa2lLbZizowvF5eftpp8+n7+RP6rb1yallSUS3I4Radvjt3x
- T/Yoawif1xbuxW2S/R6sJQtXcEZy1jyOlnmkEWLT6zjXl2+KQubByAOVrumWZtZS/t/mrUxJ
- clvkJTTBvHml9Xfu5hsyXzf2TXm3IHPH1+uepXOdp4g952l7fvyD71W9/Cd7/qyNnBbpPln6
- 1oW+hp2upj/zpPxVa0KnF7mvmqzEUpyRaKjFXFScCAAU6wGESQMAAA==
-X-CMS-MailID: 20200615004707epcas1p3f9d0e4367d2a8f333961a05fee14258a
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20200614062349epcas1p1e285479c1e6483708b62f93e70a453a4
-References: <CGME20200614062349epcas1p1e285479c1e6483708b62f93e70a453a4@epcas1p1.samsung.com>
- <20200614062339.87374-1-navid.emamdoost@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_174715_757384_2B54875C 
-X-CRM114-Status: GOOD (  21.06  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200614_181916_995190_D18A6BC5 
+X-CRM114-Status: GOOD (  39.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [frowand.list[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -143,8 +97,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -156,31 +108,439 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: emamd001@umn.edu, kjlu@umn.edu, wu000273@umn.edu, smccaman@umn.edu
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Frank Rowand <frowand.list@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgoyMC4gNi4gMTQuIOyYpO2bhCAzOjIz7JeQIE5hdmlkIEVtYW1kb29zdCDsnbQo6rCAKSDs
-k7Qg6riAOgo+IGluIG1pY19wcmVfZW5hYmxlLCBwbV9ydW50aW1lX2dldF9zeW5jIGlzIGNhbGxl
-ZCB3aGljaAo+IGluY3JlbWVudHMgdGhlIGNvdW50ZXIgZXZlbiBpbiBjYXNlIG9mIGZhaWx1cmUs
-IGxlYWRpbmcgdG8gaW5jb3JyZWN0Cj4gcmVmIGNvdW50LiBJbiBjYXNlIG9mIGZhaWx1cmUsIGRl
-Y3JlbWVudCB0aGUgcmVmIGNvdW50IGJlZm9yZSByZXR1cm5pbmcuCj4gCj4gU2lnbmVkLW9mZi1i
-eTogTmF2aWQgRW1hbWRvb3N0IDxuYXZpZC5lbWFtZG9vc3RAZ21haWwuY29tPgo+IC0tLQo+ICBk
-cml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fbWljLmMgfCAyICstCj4gIDEgZmlsZSBj
-aGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9k
-cml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fbWljLmMgYi9kcml2ZXJzL2dwdS9kcm0v
-ZXh5bm9zL2V4eW5vc19kcm1fbWljLmMKPiBpbmRleCBhODZhYmMxNzM2MDUuLjY5ZmY3NGMyY2Vi
-NSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fbWljLmMK
-PiArKysgYi9kcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fbWljLmMKPiBAQCAtMjcw
-LDcgKzI3MCw3IEBAIHN0YXRpYyB2b2lkIG1pY19wcmVfZW5hYmxlKHN0cnVjdCBkcm1fYnJpZGdl
-ICpicmlkZ2UpCj4gIAo+ICAJcmV0ID0gcG1fcnVudGltZV9nZXRfc3luYyhtaWMtPmRldik7Cj4g
-IAlpZiAocmV0IDwgMCkKPiAtCQlnb3RvIHVubG9jazsKPiArCQlnb3RvIHR1cm5fb2ZmOwoKSG93
-IGFib3V0IGp1c3QgY2FsbGluZyBwbV9ydW50aW1lX3B1dF9ub2lkbGUoKT8KCmlmIChyZXQgPCAw
-KSB7CglwbV9ydW50aW1lX3B1dF9ub2lkbGUobWljLT5kZXYpOwoJZ290byB1bmxvY2s7Cn0KClRo
-YW5rcywKSW5raSBEYWUKCj4gIAo+ICAJbWljX3NldF9wYXRoKG1pYywgMSk7Cj4gIAo+IAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+Hi Lee,
+
+I'm looking at 5.8-rc1.
+
+The only use of OF_MFD_CELL() where the same compatible is specified
+for multiple elements of a struct mfd_cell array is for compatible
+"stericsson,ab8500-pwm" in drivers/mfd/ab8500-core.c:
+
+        OF_MFD_CELL("ab8500-pwm",
+                    NULL, NULL, 0, 1, "stericsson,ab8500-pwm"),
+        OF_MFD_CELL("ab8500-pwm",
+                    NULL, NULL, 0, 2, "stericsson,ab8500-pwm"),
+        OF_MFD_CELL("ab8500-pwm",
+                    NULL, NULL, 0, 3, "stericsson,ab8500-pwm"),
+
+The only .dts or .dtsi files where I see compatible "stericsson,ab8500-pwm"
+are:
+
+   arch/arm/boot/dts/ste-ab8500.dtsi
+   arch/arm/boot/dts/ste-ab8505.dtsi
+
+These two .dtsi files only have a single node with this compatible.
+Chasing back to .dts and .dtsi files that include these two .dtsi
+files, I see no case where there are multiple nodes with this
+compatible.
+
+So it looks to me like there is no .dts in mainline that is providing
+the three "stericsson,ab8500-pwm" nodes that drivers/mfd/ab8500-core.c
+is expecting.  No case that there are multiple mfd child nodes where
+mfd_add_device() would assign the first of n child nodes with the
+same compatible to multiple devices.
+
+So it appears to me that drivers/mfd/ab8500-core.c is currently broken.
+Am I missing something here?
+
+If I am correct, then either drivers/mfd/ab8500-core.c or
+ste-ab8500.dtsi and ste-ab8505.dtsi need to be fixed.
+
+Moving forward, your proposed OF_MFD_CELL_REG() method seems a good
+approach (I have not completely read the actual code in the patch yet
+though).
+
+
+On 2020-06-11 14:10, Lee Jones wrote:
+> Currently, when a child platform device (sometimes referred to as a
+> sub-device) is registered via the Multi-Functional Device (MFD) API,
+> the framework attempts to match the newly registered platform device
+> with its associated Device Tree (OF) node.  Until now, the device has
+> been allocated the first node found with an identical OF compatible
+> string.  Unfortunately, if there are, say for example '3' devices
+> which are to be handled by the same driver and therefore have the same
+> compatible string, each of them will be allocated a pointer to the
+> *first* node.
+> 
+> An example Device Tree entry might look like this:
+> 
+>   mfd_of_test {
+>           compatible = "mfd,of-test-parent";
+>           #address-cells = <0x02>;
+>           #size-cells = <0x02>;
+> 
+>           child@aaaaaaaaaaaaaaaa {
+>                   compatible = "mfd,of-test-child";
+>                   reg = <0xaaaaaaaa 0xaaaaaaaa 0 0x11>,
+>                         <0xbbbbbbbb 0xbbbbbbbb 0 0x22>;
+>           };
+> 
+>           child@cccccccc {
+>                   compatible = "mfd,of-test-child";
+>                   reg = <0x00000000 0xcccccccc 0 0x33>;
+>           };
+> 
+>           child@dddddddd00000000 {
+>                   compatible = "mfd,of-test-child";
+>                   reg = <0xdddddddd 0x00000000 0 0x44>;
+>           };
+>   };
+> 
+> When used with example sub-device registration like this:
+> 
+>   static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 0, "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 1, "mfd,of-test-child"),
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 2, "mfd,of-test-child")
+>   };
+> 
+> ... the current implementation will result in all devices being allocated
+> the first OF node found containing a matching compatible string:
+> 
+>   [0.712511] mfd-of-test-child mfd-of-test-child.0: Probing platform device: 0
+>   [0.712710] mfd-of-test-child mfd-of-test-child.0: Using OF node: child@aaaaaaaaaaaaaaaa
+>   [0.713033] mfd-of-test-child mfd-of-test-child.1: Probing platform device: 1
+>   [0.713381] mfd-of-test-child mfd-of-test-child.1: Using OF node: child@aaaaaaaaaaaaaaaa
+>   [0.713691] mfd-of-test-child mfd-of-test-child.2: Probing platform device: 2
+>   [0.713889] mfd-of-test-child mfd-of-test-child.2: Using OF node: child@aaaaaaaaaaaaaaaa
+> 
+> After this patch each device will be allocated a unique OF node:
+> 
+>   [0.712511] mfd-of-test-child mfd-of-test-child.0: Probing platform device: 0
+>   [0.712710] mfd-of-test-child mfd-of-test-child.0: Using OF node: child@aaaaaaaaaaaaaaaa
+>   [0.713033] mfd-of-test-child mfd-of-test-child.1: Probing platform device: 1
+>   [0.713381] mfd-of-test-child mfd-of-test-child.1: Using OF node: child@cccccccc
+>   [0.713691] mfd-of-test-child mfd-of-test-child.2: Probing platform device: 2
+>   [0.713889] mfd-of-test-child mfd-of-test-child.2: Using OF node: child@dddddddd00000000
+> 
+> Which is fine if all OF nodes are identical.  However if we wish to
+> apply an attribute to particular device, we really need to ensure the
+> correct OF node will be associated with the device containing the
+> correct address.  We accomplish this by matching the device's address
+> expressed in DT with one provided during sub-device registration.
+> Like this:
+> 
+>   static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 1, "mfd,of-test-child", 0xdddddddd00000000),
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 2, "mfd,of-test-child", 0xaaaaaaaaaaaaaaaa),
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 3, "mfd,of-test-child", 0x00000000cccccccc)
+>   };
+> 
+> This will ensure a specific device (designated here using the
+> platform_ids; 1, 2 and 3) is matched with a particular OF node:
+> 
+>   [0.712511] mfd-of-test-child mfd-of-test-child.0: Probing platform device: 0
+>   [0.712710] mfd-of-test-child mfd-of-test-child.0: Using OF node: child@dddddddd00000000
+>   [0.713033] mfd-of-test-child mfd-of-test-child.1: Probing platform device: 1
+>   [0.713381] mfd-of-test-child mfd-of-test-child.1: Using OF node: child@aaaaaaaaaaaaaaaa
+>   [0.713691] mfd-of-test-child mfd-of-test-child.2: Probing platform device: 2
+>   [0.713889] mfd-of-test-child mfd-of-test-child.2: Using OF node: child@cccccccc
+> 
+> This implementation is still not infallible, hence the mention of
+> "best effort" in the commit subject.  Since we have not *insisted* on
+> the existence of 'reg' properties (in some scenarios they just do not
+> make sense) and no device currently uses the new 'of_reg' attribute,
+> we have to make an on-the-fly judgement call whether to associate the
+> OF node anyway.  Which we do in cases where parent drivers haven't
+> specified a particular OF node to match to.  So there is a *slight*
+> possibility of the following result (note: the implementation here is
+> convoluted, but it shows you one means by which this process can
+> still break):
+> 
+>   /*
+>    * First entry will match to the first OF node with matching compatible
+>    * Second will fail, since the first took its OF node and is no longer available
+>    * Third will succeed
+>    */
+
+The following mfd_of_test_cell[] looks like a bug to me.  For a given
+compatible value, either reg is required or is not allowed.
+
+One could add validation code to mfd_add_devices(), which would scan the
+parameter "cells", checking for multiple array elements with the same
+compatible value where one of the elements does not have .use_of_reg
+set.  This seems to be a pain to program and not needed, because the
+validation process, using the binding definition, would detect the
+problem in the .dts source file, because either the required reg
+property would be missing or the not to be specified reg property exists.
+Whether reg is required or not allowed is based on the compatible value.
+
+
+>   static const struct mfd_cell mfd_of_test_cell[] = {
+>         OF_MFD_CELL("mfd-of-test-child", NULL, NULL, 0, 1, "mfd,of-test-child"),
+> 	OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 2, "mfd,of-test-child", 0xaaaaaaaaaaaaaaaa),
+>         OF_MFD_CELL_REG("mfd-of-test-child", NULL, NULL, 0, 3, "mfd,of-test-child", 0x00000000cccccccc)
+>   };
+> 
+> The result:
+> 
+>   [0.753869] mfd-of-test-parent mfd_of_test: Registering 3 devices
+>   [0.756597] mfd-of-test-child: Failed to locate of_node [id: 2]
+>   [0.759999] mfd-of-test-child mfd-of-test-child.1: Probing platform device: 1
+>   [0.760314] mfd-of-test-child mfd-of-test-child.1: Using OF node: child@aaaaaaaaaaaaaaaa
+>   [0.760908] mfd-of-test-child mfd-of-test-child.2: Probing platform device: 2
+>   [0.761183] mfd-of-test-child mfd-of-test-child.2: No OF node associated with this device
+>   [0.761621] mfd-of-test-child mfd-of-test-child.3: Probing platform device: 3
+>   [0.761899] mfd-of-test-child mfd-of-test-child.3: Using OF node: child@cccccccc
+> 
+> We could code around this with some pre-parsing semantics, but the
+> added complexity required to cover each and every corner-case is not
+
+So this should problem should not occur.
+
+
+> justified.  Merely patching the current failing (via this patch) is
+> already working with some pretty small corner-cases.  Other issues
+
+If there are existing corner cases, I did not search the source tree
+sufficiently.  What are the current corner cases?
+
+-Frank
+
+> should be patched in the parent drivers which can be achieved simply
+> by implementing OF_MFD_CELL_REG().
+> 
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+> 
+> Changelog:
+> 
+> v1 => v2:
+>   * Simply return -EAGAIN if node is already in use
+>   * Allow for valid of_reg=0 by introducing use_of_reg boolean flag
+>   * Split helpers out into separate patch
+> 
+> drivers/mfd/mfd-core.c   | 99 +++++++++++++++++++++++++++++++++++-----
+>  include/linux/mfd/core.h | 10 ++++
+>  2 files changed, 97 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+> index e831e733b38cf..120803717b828 100644
+> --- a/drivers/mfd/mfd-core.c
+> +++ b/drivers/mfd/mfd-core.c
+> @@ -10,6 +10,7 @@
+>  #include <linux/kernel.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/acpi.h>
+> +#include <linux/list.h>
+>  #include <linux/property.h>
+>  #include <linux/mfd/core.h>
+>  #include <linux/pm_runtime.h>
+> @@ -17,8 +18,17 @@
+>  #include <linux/module.h>
+>  #include <linux/irqdomain.h>
+>  #include <linux/of.h>
+> +#include <linux/of_address.h>
+>  #include <linux/regulator/consumer.h>
+>  
+> +static LIST_HEAD(mfd_of_node_list);
+> +
+> +struct mfd_of_node_entry {
+> +	struct list_head list;
+> +	struct device *dev;
+> +	struct device_node *np;
+> +};
+> +
+>  static struct device_type mfd_dev_type = {
+>  	.name	= "mfd_device",
+>  };
+> @@ -107,6 +117,54 @@ static inline void mfd_acpi_add_device(const struct mfd_cell *cell,
+>  }
+>  #endif
+>  
+> +static int mfd_match_of_node_to_dev(struct platform_device *pdev,
+> +				    struct device_node *np,
+> +				    const struct mfd_cell *cell)
+> +{
+> +	struct mfd_of_node_entry *of_entry;
+> +	const __be32 *reg;
+> +	u64 of_node_addr;
+> +
+> +	/* Skip devices 'disabled' by Device Tree */
+> +	if (!of_device_is_available(np))
+> +		return -ENODEV;
+> +
+> +	/* Skip if OF node has previously been allocated to a device */
+> +	list_for_each_entry(of_entry, &mfd_of_node_list, list)
+> +		if (of_entry->np == np)
+> +			return -EAGAIN;
+> +
+> +	if (!cell->use_of_reg)
+> +		/* No of_reg defined - allocate first free compatible match */
+> +		goto allocate_of_node;
+> +
+> +	/* We only care about each node's first defined address */
+> +	reg = of_get_address(np, 0, NULL, NULL);
+> +	if (!reg)
+> +		/* OF node does not contatin a 'reg' property to match to */
+> +		return -EAGAIN;
+> +
+> +	of_node_addr = of_read_number(reg, of_n_addr_cells(np));
+> +
+> +	if (cell->of_reg != of_node_addr)
+> +		/* No match */
+> +		return -EAGAIN;
+> +
+> +allocate_of_node:
+> +	of_entry = kzalloc(sizeof(*of_entry), GFP_KERNEL);
+> +	if (!of_entry)
+> +		return -ENOMEM;
+> +
+> +	of_entry->dev = &pdev->dev;
+> +	of_entry->np = np;
+> +	list_add_tail(&of_entry->list, &mfd_of_node_list);
+> +
+> +	pdev->dev.of_node = np;
+> +	pdev->dev.fwnode = &np->fwnode;
+> +
+> +	return 0;
+> +}
+> +
+>  static int mfd_add_device(struct device *parent, int id,
+>  			  const struct mfd_cell *cell,
+>  			  struct resource *mem_base,
+> @@ -115,6 +173,7 @@ static int mfd_add_device(struct device *parent, int id,
+>  	struct resource *res;
+>  	struct platform_device *pdev;
+>  	struct device_node *np = NULL;
+> +	struct mfd_of_node_entry *of_entry, *tmp;
+>  	int ret = -ENOMEM;
+>  	int platform_id;
+>  	int r;
+> @@ -149,19 +208,22 @@ static int mfd_add_device(struct device *parent, int id,
+>  	if (ret < 0)
+>  		goto fail_res;
+>  
+> -	if (parent->of_node && cell->of_compatible) {
+> +	if (IS_ENABLED(CONFIG_OF) && parent->of_node && cell->of_compatible) {
+>  		for_each_child_of_node(parent->of_node, np) {
+>  			if (of_device_is_compatible(np, cell->of_compatible)) {
+> -				if (!of_device_is_available(np)) {
+> -					/* Ignore disabled devices error free */
+> -					ret = 0;
+> +				ret = mfd_match_of_node_to_dev(pdev, np, cell);
+> +				if (ret == -EAGAIN)
+> +					continue;
+> +				if (ret)
+>  					goto fail_alias;
+> -				}
+> -				pdev->dev.of_node = np;
+> -				pdev->dev.fwnode = &np->fwnode;
+> +
+>  				break;
+>  			}
+>  		}
+> +
+> +		if (!pdev->dev.of_node)
+> +			pr_warn("%s: Failed to locate of_node [id: %d]\n",
+> +				cell->name, platform_id);
+>  	}
+>  
+>  	mfd_acpi_add_device(cell, pdev);
+> @@ -170,13 +232,13 @@ static int mfd_add_device(struct device *parent, int id,
+>  		ret = platform_device_add_data(pdev,
+>  					cell->platform_data, cell->pdata_size);
+>  		if (ret)
+> -			goto fail_alias;
+> +			goto fail_of_entry;
+>  	}
+>  
+>  	if (cell->properties) {
+>  		ret = platform_device_add_properties(pdev, cell->properties);
+>  		if (ret)
+> -			goto fail_alias;
+> +			goto fail_of_entry;
+>  	}
+>  
+>  	for (r = 0; r < cell->num_resources; r++) {
+> @@ -213,18 +275,18 @@ static int mfd_add_device(struct device *parent, int id,
+>  			if (has_acpi_companion(&pdev->dev)) {
+>  				ret = acpi_check_resource_conflict(&res[r]);
+>  				if (ret)
+> -					goto fail_alias;
+> +					goto fail_of_entry;
+>  			}
+>  		}
+>  	}
+>  
+>  	ret = platform_device_add_resources(pdev, res, cell->num_resources);
+>  	if (ret)
+> -		goto fail_alias;
+> +		goto fail_of_entry;
+>  
+>  	ret = platform_device_add(pdev);
+>  	if (ret)
+> -		goto fail_alias;
+> +		goto fail_of_entry;
+>  
+>  	if (cell->pm_runtime_no_callbacks)
+>  		pm_runtime_no_callbacks(&pdev->dev);
+> @@ -233,6 +295,12 @@ static int mfd_add_device(struct device *parent, int id,
+>  
+>  	return 0;
+>  
+> +fail_of_entry:
+> +	list_for_each_entry_safe(of_entry, tmp, &mfd_of_node_list, list)
+> +		if (of_entry->dev == &pdev->dev) {
+> +			list_del(&of_entry->list);
+> +			kfree(of_entry);
+> +		}
+>  fail_alias:
+>  	regulator_bulk_unregister_supply_alias(&pdev->dev,
+>  					       cell->parent_supplies,
+> @@ -287,6 +355,7 @@ static int mfd_remove_devices_fn(struct device *dev, void *data)
+>  {
+>  	struct platform_device *pdev;
+>  	const struct mfd_cell *cell;
+> +	struct mfd_of_node_entry *of_entry, *tmp;
+>  
+>  	if (dev->type != &mfd_dev_type)
+>  		return 0;
+> @@ -297,6 +366,12 @@ static int mfd_remove_devices_fn(struct device *dev, void *data)
+>  	regulator_bulk_unregister_supply_alias(dev, cell->parent_supplies,
+>  					       cell->num_parent_supplies);
+>  
+> +	list_for_each_entry_safe(of_entry, tmp, &mfd_of_node_list, list)
+> +		if (of_entry->dev == dev) {
+> +			list_del(&of_entry->list);
+> +			kfree(of_entry);
+> +		}
+> +
+>  	kfree(cell);
+>  
+>  	platform_device_unregister(pdev);
+> diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
+> index d01d1299e49dc..a148b907bb7f1 100644
+> --- a/include/linux/mfd/core.h
+> +++ b/include/linux/mfd/core.h
+> @@ -78,6 +78,16 @@ struct mfd_cell {
+>  	 */
+>  	const char		*of_compatible;
+>  
+> +	/*
+> +	 * Address as defined in Device Tree.  Used to compement 'of_compatible'
+> +	 * (above) when matching OF nodes with devices that have identical
+> +	 * compatible strings
+> +	 */
+> +	const u64 of_reg;
+> +
+> +	/* Set to 'true' to use 'of_reg' (above) - allows for of_reg=0 */
+> +	bool use_of_reg;
+> +
+>  	/* Matches ACPI */
+>  	const struct mfd_cell_acpi_match	*acpi_match;
+>  
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
