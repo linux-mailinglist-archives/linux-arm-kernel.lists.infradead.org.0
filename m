@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0676E1F9C4C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 17:52:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8BD81F9CAA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:10:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ibnzX8Rc2WLrfIxWmaWpNrttraAjap5S6p4oQ87qsok=; b=ZvFuzon+Wixm4A
-	US8F0DjpyOXZ6P19+K/mVaEl6R4xVwen9rLwoEboNToCAuKNA/u4UnpvHH3lOtKw9JF2FD09cdEgC
-	Cp2k5pWKNR4kQUPJoE7B9bWBJtuOdwzN/slyVkKZPIwE6P7yZf5C7siANNYb3FNHbYw4Tm1IgfLJb
-	goYsIg/C+tKXt/DuZcMfJBahNKeHdDAksOh2R5KWrezZswjo0j7hQYC4NDeaGKfA2tjbd/APkNFmA
-	08GZ8PQdOlViL7N/BY/8SAbtR3gW7J//Xt2WuPzpMbaEqhmc9774CcY+d81VzdUHsepABwTcmThKP
-	4YKasncBxl36fGAr4OtQ==;
+	List-Owner; bh=thGZecogZg+nCIkZ/I7MsORyaZ0AwGPRafL5c4D2JkQ=; b=PYvV1D0bd0vxDU
+	w1orU5NLmTX0k4+Qw/aceduZbruIhoc6dczfeQItt9T2mT1JIbAV/bSpg1PkVrnJUKon88ixy3h3x
+	0LZOXO+d905svZrSRLElaUgPRUSGGpPDUIMJ7jBsxO84tIy5cD6jXQR/+fm7Gqxf04D4cgDOAR4qr
+	25QGWvV8sNIDmZ515t5xXQmpYmLOq2Xc1shFaGGhb8Nzf4hKV14j0bLSQZhIpENSzUqXPvXoBA17f
+	J3KTtxfI1Xyidt4VvSKmgGazsaRGkz6QIyWLY898OMQK1qumlNJTeWYJ7w4CrQtO09gMgtQameg7k
+	XoDWKAlaeFko+uTgym+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkrPB-0008Rz-8P; Mon, 15 Jun 2020 15:52:13 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jkrgh-0002J1-KP; Mon, 15 Jun 2020 16:10:19 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkrOr-0008HR-CW
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 15:51:56 +0000
-Received: by mail-ot1-x341.google.com with SMTP id g7so13449894oti.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 08:51:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bWyoo9JIc02kJrgZwZWDB6M+M+eayvoh4h0JfKlgAOg=;
- b=HZ9TGIHT3a6uTYpAL41ct8BaksKi9jcKD+CTcG4bhh49tCI0spnO7q4fba7ph6J5+u
- LSALdBHwUbHldi9ukvwr9xI0ecx34xxIsv5A9G8nByTcSF/RGMXOvoZAyE1Zivo97yeP
- xMbgtpCvWTGagmJbVQpMNElwruwDinKtRKbuE=
+ id 1jkrgN-00022M-3m; Mon, 15 Jun 2020 16:10:00 +0000
+Received: by mail-io1-f66.google.com with SMTP id i25so18532867iog.0;
+ Mon, 15 Jun 2020 09:09:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bWyoo9JIc02kJrgZwZWDB6M+M+eayvoh4h0JfKlgAOg=;
- b=F9yYwpq9KIpzsMMm+D2wAH7m1GzbajL+ldlRHfqxaqZG/JG7Z0dtQZkYnDFWtefKUJ
- 3IhW4xkWgeHvWaJDukL7Zr0yNf2MCJazRIAl38BL+Zqis4RLRtwefqh1TzJOWzw5XohA
- e9ND+GuQOc4p5V3IVR2/Z2pi2mitJ+dt+IjXHocV7Mv9mQKNDwL2rfCKh+b+KrUERtzg
- PqgBMVr77/K1WfEiWK1hu5dUQHB3YIe0h1NVWjLPdebrV5oRoF5Mzj0jypvrwMOw70k/
- Ivu8xM/MmUirINFNXEYNpnH7b0Knk9uhC4/WwcvZ3YR24g4xnkiz5F137jrdvNLK6qC+
- r64A==
-X-Gm-Message-State: AOAM533n4FMvoZtAUDk+6GKKoR4798EjAQe9oiQ1AgGCFy8sNUSGJj63
- oQG6DI0KPoFWPAQeLNP2IFDzL6NHDfr6ff9lUsOsYA==
-X-Google-Smtp-Source: ABdhPJx6HqrEy7ruwqlLz5F7KsjYacsr6GyNremIHWvMKdV1r9zXlfsXDgmMhd5sUL1E7QvEGvXk/jO3No7vVKicdOY=
-X-Received: by 2002:a05:6830:54:: with SMTP id
- d20mr23204225otp.281.1592236310586; 
- Mon, 15 Jun 2020 08:51:50 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=6pcmdJx4HNdfvoURK0pS/uo9gcQBvUR51Fl9F7RD+2g=;
+ b=qunwOCnxFH2WEkEgHQxWUuQ365jevJDunUfGlXcCI5O/H0rOmZzEU2Skw0rUygWqh8
+ 0ZwUPLnYpxVt5LQQJMeCiFbohgkAh5o2K/yusa0YDDK67CjZE+6iOe/rEYG5YUR/38J+
+ Gm/jpoHi1vPzJwNsw2NhGXJWvvAF2xHP8JxMFdOXKiKKDO3EbVjgEoybORM7xE3eWoW7
+ ybvXRPR8ToYg7xgy+pwCCJh+F6o4bStlqUylW/T2iVbzwYWsqAbLhQm5tShieYRWzhKl
+ uMaUWP8aLtKmt78QXqdfbd/3QqhZd6ULF4vPsen5wJ2gNECA1W79INbWKNyBSAI0w3s0
+ 7OFw==
+X-Gm-Message-State: AOAM533Wj6isBDAL9//t3h8svx1WXxjY31/SdCbfeOEV7Wz2kRurAgna
+ ZKt1FXFvV2EOlxlA5Q10ew==
+X-Google-Smtp-Source: ABdhPJxjLCBX9sKIbflLAfGJFvnKwPQdtJxMytSuki4Cyx5b84o8tX12LEkI1o1hSS+BanuS7tOEZQ==
+X-Received: by 2002:a6b:4413:: with SMTP id r19mr27931825ioa.162.1592237397848; 
+ Mon, 15 Jun 2020 09:09:57 -0700 (PDT)
+Received: from xps15 ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id j63sm8448166ilg.50.2020.06.15.09.09.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 09:09:57 -0700 (PDT)
+Received: (nullmailer pid 1861733 invoked by uid 1000);
+ Mon, 15 Jun 2020 16:09:56 -0000
+Date: Mon, 15 Jun 2020 10:09:56 -0600
+From: Rob Herring <robh@kernel.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [PATCH v16 1/1] dt-bindings: display: mediatek: convert the dpi
+ bindings to yaml
+Message-ID: <20200615160956.GB1861039@bogus>
+References: <20200614073036.63969-1-jitao.shi@mediatek.com>
+ <20200614073036.63969-2-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-References: <20200613223027.4189309-1-linus.walleij@linaro.org>
- <20200614074441.GA220677@ravnborg.org>
- <CACRpkdZNM7+qzbJqyfJfEDO8P9SqpO4W6+t0-t89CXeFk9tSRw@mail.gmail.com>
-In-Reply-To: <CACRpkdZNM7+qzbJqyfJfEDO8P9SqpO4W6+t0-t89CXeFk9tSRw@mail.gmail.com>
-From: Daniel Vetter <daniel@ffwll.ch>
-Date: Mon, 15 Jun 2020 17:51:39 +0200
-Message-ID: <CAKMK7uHmSvGE+qSvxUMGE3CTak1_UOKpD0+NmRZYJDa-xBTgMA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm: mcde: Fix display initialization problem
-To: Linus Walleij <linus.walleij@linaro.org>,
- Thomas Zimmermann <tzimmermann@suse.de>
+Content-Disposition: inline
+In-Reply-To: <20200614073036.63969-2-jitao.shi@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_085153_456327_756A23B5 
-X-CRM114-Status: GOOD (  17.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_090959_153885_C42AD727 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,72 +91,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sean Paul <sean@poorly.run>, Sam Ravnborg <sam@ravnborg.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
+ huijuan.xie@mediatek.com, stonea168@163.com, cawa.cheng@mediatek.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 14, 2020 at 11:29 PM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Sun, Jun 14, 2020 at 9:44 AM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> > Hi Linus.
-> >
-> > On Sun, Jun 14, 2020 at 12:30:26AM +0200, Linus Walleij wrote:
-> > > The following bug appeared in the MCDE driver/display
-> > > initialization during the recent merge window.
-> > >
-> > > First the place we call drm_fbdev_generic_setup() in the
-> > > wrong place: this needs to be called AFTER calling
-> > > drm_dev_register() else we get this splat:
-> > >
-> > >  ------------[ cut here ]------------
-> > > WARNING: CPU: 0 PID: 1 at ../drivers/gpu/drm/drm_fb_helper.c:2198 drm_fbdev_generic_setup+0x164/0x1a8
-> > > mcde a0350000.mcde: Device has not been registered.
-> > > Modules linked in:
-> > > Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
-> > > [<c010e704>] (unwind_backtrace) from [<c010a86c>] (show_stack+0x10/0x14)
-> > > [<c010a86c>] (show_stack) from [<c0414f38>] (dump_stack+0x9c/0xb0)
-> > > [<c0414f38>] (dump_stack) from [<c0121c8c>] (__warn+0xb8/0xd0)
-> > > [<c0121c8c>] (__warn) from [<c0121d18>] (warn_slowpath_fmt+0x74/0xb8)
-> > > [<c0121d18>] (warn_slowpath_fmt) from [<c04b154c>] (drm_fbdev_generic_setup+0x164/0x1a8)
-> > > [<c04b154c>] (drm_fbdev_generic_setup) from [<c04ed278>] (mcde_drm_bind+0xc4/0x160)
-> > > [<c04ed278>] (mcde_drm_bind) from [<c04f06b8>] (try_to_bring_up_master+0x15c/0x1a4)
-> > > (...)
-> > >
-> > > Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> >
-> > Yup, this is the right way to do it.
-> >
-> > Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
->
-> Hm I can't seem to apply these because drm-misc-fixes isn't
-> rebased to v5.8-rc1 or something (wrong ancestor).
->
-> Does anyone know if ther is a special trick for this or do I
-> need to wait for someone else to rebase that branch?
-
-Thomas Zimmermann (added) as current -fixes handler needs to roll the
-branch forward (and make sure nothing got lost).
--Daniel
-
->
-> Yours,
-> Linus Walleij
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+On Sun, 14 Jun 2020 15:30:36 +0800, Jitao Shi wrote:
+> Convert display/mediatek/mediatek,dpi.txt to display/mediatek/mediatek,dpi.yaml
+> and remove the old text bindings.
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  .../display/mediatek/mediatek,dpi.txt         | 42 --------
+>  .../display/mediatek/mediatek,dpi.yaml        | 97 +++++++++++++++++++
+>  2 files changed, 97 insertions(+), 42 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> 
 
 
+My bot found errors running 'make dt_binding_check' on your patch:
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.example.dt.yaml: example-0: dpi@1401d000:reg:0: [0, 335663104, 0, 4096] is too long
+
+
+See https://patchwork.ozlabs.org/patch/1308901
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
+
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
