@@ -2,93 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55BF01FA357
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 00:17:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 200F51FA42A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 01:35:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ts7vABXKev5w9QPkxZUpcG/AXR5pM9ucCsOwPY/FpP8=; b=Gl6FeKDHTERWUR
-	fN93q2C3nhBubf9F5C63rwRvj+nHBrO7aOjglrO4JtAQ9sahT5MKpknzHh93zacvmbRTdlh1JElXU
-	AJqjLUXQSMiXAEOqDelxSLIqasD6hiWD/Y5X7dFFwE9zT0AJxiFm8v1Lw6jbjuE9voZPwEjwqvhxU
-	8zUrP9Sf+kar+dYzbtlCZi2SwhO8g8bnBaOYHiaC7Yh/sxYfqzz9sopvZZGj5yoYTBw2DOA3eP3Oy
-	tynnwMtkAGIOqvSvBJD+sMAsFGSEyHyGiWLsodO0gf2JzQiIbyAeXoscFYv7YOrstw3yBpATRibsh
-	43btEMmcfS3x2rdb0YuA==;
+	List-Owner; bh=LZzraLjoPO5Yggna7OjBhIfFGEOxMq8ATlcPZzEeOX4=; b=OlTyHEO5dWFjFs
+	uX8TyjQGGGNYK+Fm4r9EHJsH/k7xyILQG0jy+sJyw1C8qY7LK/il1XcrR0YbFznIF5AD6Pck/a9PZ
+	NaqCKySB4VdoZ0E54qgTW/YqQDScFIQmFu5V3JteHYYzVMtD5q2ACcmQT+GTLXqqIV9/Vu5WrQEVN
+	hJ5W7HGBsVsQHp5QnvtAsa66MVtLpqgOCqsdjllApVXx5wkITsIDxmeMARgY8dBplLlWxXRrXDp2a
+	/0J0DXFBGqJY17fg2ZgCSfugWwLNct61HY977AmkSjfvdvv0rWw798MtE8IQdRdOAIRhZnHlxDePX
+	u0a+arxm765trHBZETlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkxPQ-0008US-Ro; Mon, 15 Jun 2020 22:16:52 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jkyd0-0002M8-Cc; Mon, 15 Jun 2020 23:34:58 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkxOx-0008G5-E8
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 22:16:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1592259382;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Ls9QmJCLOm68CvolACOW0xbuhdSZty4Jnv9TrFZw+qw=;
- b=jWGBCE26ipHnzPJXDX6JF58tafabZF16DdvFWfyhGEq4gUckbZSX1L5cIUQGp0j6R94OMV
- lWunxxBW6Q080GO3JDVkhvlCqc0O8DUyC/29I5JM+nIJE+yI7KakZ7aLXtDGFsMY+HXm57
- jicUPpUxH67zZbBbPnPjftQmM/XZ9ws=
-Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
- [209.85.219.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-315-gM7EtScfNYyPXqaMHirSVA-1; Mon, 15 Jun 2020 18:16:20 -0400
-X-MC-Unique: gM7EtScfNYyPXqaMHirSVA-1
-Received: by mail-qv1-f69.google.com with SMTP id r4so14080961qvh.10
+ id 1jkyct-0002LN-70
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 23:34:52 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id q2so10399675vsr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 15:16:20 -0700 (PDT)
+ Mon, 15 Jun 2020 16:34:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=v7N0YxSuMH4D9rTnapFHftODF1N2BLDsJbU6TCHO/Qg=;
+ b=XG5eBIPguxRxvrNMnZxci9ZrieN12g/yQUbT1Mq6HVHO+ZXaKPoEskuWdx98rb3Vkg
+ 57cdpQrxf7BXxFaxZPZ5Nth/LfndEbaNqzTN+WiLN1PWzxKJRjPrLUAV93TkYrZZVjK2
+ UgVoH6RJDbrAIZMSWSpRIFw3sTNbTOqySi904Lp0Nw98xl7bKyfjvGXUH9YNrTycHt4D
+ 4g4U19RngVclWtPWvFkDRavpWGkzawf3H6QD7NBNuGzRHsOesEthods1KrkUI5Jr4iRn
+ FYwrjC4KbC/D9URRWvvR4LmwiIH8ZfOKMdHNHUoWNwSl5R2VLLVXAixdOXWpGZ+mf7y7
+ c9jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Ls9QmJCLOm68CvolACOW0xbuhdSZty4Jnv9TrFZw+qw=;
- b=nALQDnfXox3S6fhstnQrLJHDSoKCM0QDEB7SYNFwicI1iluFuRZOjoKHeT22vdu8gf
- Fe8+Pae5Dav2L4UMQ5dYDrWYxz+Ai5hJ/lGCVdudLVJBxLzF/WkYJp6RRR3I+yHhytw1
- FEw5LKfQ423HJ9OWi3IvQjy+E/mD5kXwzZ6En7bPxqiCTYNZCe74G58owTBb4dgswDby
- y2LRo2A/urqVNNN5ljRW6q3oZDOp5p0QRDJHKmp6VMPoE+Lc/SebDsJvxX/4eNlG+s6k
- eV8nThl3QnBoo8HsALMsAn8ARr2BM1wL1CV7LySoBMBB3igCJbsELjTYwG8Y/MhR2+Jw
- GcDw==
-X-Gm-Message-State: AOAM531D7rYKhZ5YeYkNXq6wzJ+esiIV9qO8YV0cgvfCUDe22UaQBXvT
- c0CfKcUQBH2bgt1kQzTBUiX7ZLfjcub09Abu2yJlDpxK+zkgFjlo6Jzmx8Xi6SXjJKfbpgYevrp
- h7E3K6fkYG5j7GtIu3U9Uj+7Wd6BndvBBYgs=
-X-Received: by 2002:a0c:b256:: with SMTP id k22mr4540376qve.115.1592259380199; 
- Mon, 15 Jun 2020 15:16:20 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJyPmau1M6QKWc6GHncKWYMz7eFkgSphlbSZomzioBm+KJn2NkIvBOjAdW7fQwymnkxPP7AAIg==
-X-Received: by 2002:a0c:b256:: with SMTP id k22mr4540360qve.115.1592259380012; 
- Mon, 15 Jun 2020 15:16:20 -0700 (PDT)
-Received: from xz-x1.hitronhub.home ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id w13sm12351509qkb.91.2020.06.15.15.16.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 15:16:19 -0700 (PDT)
-From: Peter Xu <peterx@redhat.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 06/25] mm/arm64: Use mm_fault_accounting()
-Date: Mon, 15 Jun 2020 18:15:48 -0400
-Message-Id: <20200615221607.7764-7-peterx@redhat.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200615221607.7764-1-peterx@redhat.com>
-References: <20200615221607.7764-1-peterx@redhat.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=v7N0YxSuMH4D9rTnapFHftODF1N2BLDsJbU6TCHO/Qg=;
+ b=d41YTsuBlVdqaAqVUr/b+1nTGCPYeUOslYpjK73tEVCthBB9lXd1tdLCgxMZX5lsov
+ RmYl16EtE4Zb+nuCM5Y4FYfAXwUNFewuIl71deHt6V4aoQBh6Jm8TOBw9P9f9N2zwnVG
+ 0YXiyvBtrGPgzR0Qhvlx3Kj0trYsPlw0sbg2wuVVR4oPOswrTTayZxKpQb2mt1NH7hdE
+ cXZKHs+4R/vjSV7OcfSlzHPkpjUFUVZDicF2teLwELSdocWCOx0HW2tu76ehnG4f0grK
+ bQYJBWPumVynHoIIr+tLrQtW5TOO6Ae9hPHvpwhEj1PW6Zbf8QL9FzVE2737nRpi3XU2
+ sYCA==
+X-Gm-Message-State: AOAM531WyM/f1egX3Art2dSkdW4wba31kc8/p0W2N5Pg5eohQv1LYKQg
+ bBKF6z/+FT3JniKOMLtGP5HMVdfKoDP9RPfzcKQ=
+X-Google-Smtp-Source: ABdhPJw3ZPkbX9BjIq7F4jI/Zi2sH+yeC1FgKNWXr8ID5D9/ms1ZrJcfRvnChBn3jQReE0CjUtT07ryK0CknKfdTEhs=
+X-Received: by 2002:a67:c18a:: with SMTP id h10mr115652vsj.186.1592264088189; 
+ Mon, 15 Jun 2020 16:34:48 -0700 (PDT)
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+References: <20200613223027.4189309-1-linus.walleij@linaro.org>
+In-Reply-To: <20200613223027.4189309-1-linus.walleij@linaro.org>
+From: Emil Velikov <emil.l.velikov@gmail.com>
+Date: Tue, 16 Jun 2020 00:31:07 +0100
+Message-ID: <CACvgo520jX2k1GdhLLqYJBOoEQ1ZQo1QCW21-EH5W2J+=KsOFA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] drm: mcde: Fix display initialization problem
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_151623_553062_9F5C6C09 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20200615_163451_261099_5624217A 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [emil.l.velikov[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,8 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,66 +92,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Arcangeli <aarcange@redhat.com>, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, peterx@redhat.com,
- linux-arm-kernel@lists.infradead.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>
+Cc: LAKML <linux-arm-kernel@lists.infradead.org>, Sean Paul <sean@poorly.run>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the new mm_fault_accounting() helper for page fault accounting.
+Hi Linus,
 
-CC: Catalin Marinas <catalin.marinas@arm.com>
-CC: Will Deacon <will@kernel.org>
-CC: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Peter Xu <peterx@redhat.com>
----
- arch/arm64/mm/fault.c | 17 ++---------------
- 1 file changed, 2 insertions(+), 15 deletions(-)
+On Sat, 13 Jun 2020 at 23:30, Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> The following bug appeared in the MCDE driver/display
+> initialization during the recent merge window.
+>
+> First the place we call drm_fbdev_generic_setup() in the
+> wrong place: this needs to be called AFTER calling
+> drm_dev_register() else we get this splat:
+>
+>  ------------[ cut here ]------------
+> WARNING: CPU: 0 PID: 1 at ../drivers/gpu/drm/drm_fb_helper.c:2198 drm_fbdev_generic_setup+0x164/0x1a8
+> mcde a0350000.mcde: Device has not been registered.
+> Modules linked in:
+> Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
+> [<c010e704>] (unwind_backtrace) from [<c010a86c>] (show_stack+0x10/0x14)
+> [<c010a86c>] (show_stack) from [<c0414f38>] (dump_stack+0x9c/0xb0)
+> [<c0414f38>] (dump_stack) from [<c0121c8c>] (__warn+0xb8/0xd0)
+> [<c0121c8c>] (__warn) from [<c0121d18>] (warn_slowpath_fmt+0x74/0xb8)
+> [<c0121d18>] (warn_slowpath_fmt) from [<c04b154c>] (drm_fbdev_generic_setup+0x164/0x1a8)
+> [<c04b154c>] (drm_fbdev_generic_setup) from [<c04ed278>] (mcde_drm_bind+0xc4/0x160)
+> [<c04ed278>] (mcde_drm_bind) from [<c04f06b8>] (try_to_bring_up_master+0x15c/0x1a4)
+> (...)
+>
 
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index c9cedc0432d2..09af7d7a60ec 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -484,8 +484,6 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 					 addr, esr, regs);
- 	}
- 
--	perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS, 1, regs, addr);
--
- 	/*
- 	 * As per x86, we may deadlock here. However, since the kernel only
- 	 * validly references user space from well defined areas of the code,
-@@ -535,20 +533,9 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 			      VM_FAULT_BADACCESS)))) {
- 		/*
- 		 * Major/minor page fault accounting is only done
--		 * once. If we go through a retry, it is extremely
--		 * likely that the page will be found in page cache at
--		 * that point.
-+		 * once.
- 		 */
--		if (major) {
--			current->maj_flt++;
--			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MAJ, 1, regs,
--				      addr);
--		} else {
--			current->min_flt++;
--			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MIN, 1, regs,
--				      addr);
--		}
--
-+		mm_fault_accounting(current, regs, address, major);
- 		return 0;
- 	}
- 
--- 
-2.26.2
+Worth adding Cc: stable or Fixes tag, so this lands in the stable branches?
+If anything I'm slightly worried that w/o such a tag, the AI bot (as
+used by the stable team) might auto-nominate this even where it's not
+applicable.
 
+HTH
+Emil
 
 _______________________________________________
 linux-arm-kernel mailing list
