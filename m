@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36B591F95E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 14:01:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8ECE01F95F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 14:02:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Gg2Bl9hiX/VpaYTctr6k8+7KsRg/o2MgFFmt1m7dDKs=; b=jZXRwE96+P+/9syfP9a9F0V8K
-	hQPuCAoBLAi0/CYEcLE3VTgMh34Xr+FAYpj7Gw3lN8S+nzMYM4o9yzbTqXRahAoOCY+/k7F0gCbSM
-	2LTbz1NjW4X7cyhFiQUkF+wwnRnMsN7jeFA7KRW/yqAc0tjDEbSzXSqGJV7zSA44ErN0lfNM6Hha7
-	rihbkguuuwihAleRXJxpIJLwH6vjt2sqW+TOXi/nH8xLYhdZQaj7CHAzcD7h4gMU8Po9775cxoUza
-	BHr6wdPnGNiKZUDjPeYnZEXm/5TIrtiAvW+9sBdDMooN5rxpeyobYhnPVJAz8kU/R3PI+D1plHPOb
-	Ra5PExTcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ohs6PBq36UAL82/vSyee5kuDNXE1TYNApe+1J5jcM10=; b=Maev9PTX+CHlNV
+	xq+1km2EOXIrJpl2i8FXvkKaaSBSrZXFAu/gAg0KBITopENa4BkzrABKHoCudBIUweM2kWjaPfIZR
+	Zl/ayl6Q4v5jyHdoFmKH8wHBRoT8fW2oM2rUx1hg79Mb8QF0cNZ0xjb/xQ5pMsTTc2JUL0BaJwPVN
+	WPWzehQow5EzZVcuBjiZcNLuAaYU6xSt6LTsnuyFP+/IXcP8AXfXrUMU3Y48bzTkXIBBXq2F/h52C
+	IcZw4jJy4x8pNxNv8Xj5NYNSXZ2Va8+amz+ZJycP3tpEBvkX/jnGsglOuLHj9Jwxm35MGn9/5Rpoj
+	2d4QCfNpWhe6OQxXvf9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkno3-0000GE-8d; Mon, 15 Jun 2020 12:01:39 +0000
+	id 1jknoy-0000jn-GD; Mon, 15 Jun 2020 12:02:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jknns-0000Fd-94; Mon, 15 Jun 2020 12:01:29 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6CB9B20679;
- Mon, 15 Jun 2020 12:01:27 +0000 (UTC)
+ id 1jknoq-0000jS-Ij
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 12:02:29 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DE7A220679;
+ Mon, 15 Jun 2020 12:02:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592222487;
- bh=bckLxMEKq0w5/9SzJe+n69vU2/hXF7ff/hu/a17+8+c=;
+ s=default; t=1592222548;
+ bh=/iFnaDNjDkCvERMFws68NeGc+iYJoUj4sB2FfslTj98=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JYy9uvJD0PYRI2p3DwIotJOPqtgow49a6afHPJvsWcuBY0yjMd4cMirM6pN9r8hnW
- bAuNvqGDTjO1PYNVybPD0JTt0QO17WOahY67f2Xbvv7ksMXm+vjQWpUNkhQeWo72XL
- h9meg4DTVT4OxdC2+kMDmPK4hWvZvLhU3rIlMDWM=
-Date: Mon, 15 Jun 2020 13:01:25 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH 13/29] dt: fix broken links due to txt->yaml renames
-Message-ID: <20200615120125.GJ4447@sirena.org.uk>
-References: <cover.1592203542.git.mchehab+huawei@kernel.org>
- <0e4a7f0b7efcc8109c8a41a2e13c8adde4d9c6b9.1592203542.git.mchehab+huawei@kernel.org>
- <20200615111927.GC4447@sirena.org.uk>
- <20200615135739.798f4489@coco.lan>
+ b=B8ZeL55NRAsTYqUsKeNm14es/w/kyQmRgQgINUppti9fxvpBf6IitMT1F6z/6q3j4
+ Nkzd7ghiaelxB4oHYHuyrNRExHyNAoonKhwf0SgUbBOVO976JJRNPTBwG6qgdUC238
+ IEr2JNODEevSoMMJu+deyc0h4rdxd3swkFni0iRY=
+Date: Mon, 15 Jun 2020 13:02:23 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: Clang miscompiling arm64 kernel with BTI and PAC?
+Message-ID: <20200615120223.GC2694@willie-the-truck>
+References: <20200615105524.GA2694@willie-the-truck>
+ <20200615115337.GG4447@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200615135739.798f4489@coco.lan>
-X-Cookie: Offer may end without notice.
+Content-Disposition: inline
+In-Reply-To: <20200615115337.GG4447@sirena.org.uk>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_050128_339855_FA940289 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20200615_050228_632732_8A19B8B6 
+X-CRM114-Status: GOOD (  13.17  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,80 +77,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org,
- Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- linux-rockchip@lists.infradead.org, Sandy Huang <hjc@rock-chips.com>,
- Jakub Kicinski <kuba@kernel.org>, linux-mips@vger.kernel.org,
- devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, netdev@vger.kernel.org,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-bluetooth@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, "David S. Miller" <davem@davemloft.net>
-Content-Type: multipart/mixed; boundary="===============2432375859883589348=="
+Cc: mark.rutland@arm.com, android-kvm@google.com, catalin.marinas@arm.com,
+ ndesaulniers@google.com, clang-built-linux@googlegroups.com,
+ linux-arm-kernel@lists.infradead.org, daniel.kiss@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 15, 2020 at 12:53:37PM +0100, Mark Brown wrote:
+> On Mon, Jun 15, 2020 at 11:55:24AM +0100, Will Deacon wrote:
+> 
+> > Here, the switch statement has been replaced by a jump table which we *tail
+> > call* into. The register dump shows we're going to 0xffffd68929392e14:
+> 
+> > ffff800010032e14:       d503233f        paciasp
+> > ffff800010032e18:       a9bf7bfd        stp     x29, x30, [sp, #-16]!
+> > ffff800010032e1c:       910003fd        mov     x29, sp
+> > ffff800010032e20:       aa0803e0        mov     x0, x8
+> > ffff800010032e24:       940017c0        bl      ffff800010038d24 <kvm_vm_ioctl_check_extension>
+> > ffff800010032e28:       93407c00        sxtw    x0, w0
+> > ffff800010032e2c:       a8c17bfd        ldp     x29, x30, [sp], #16
+> > ffff800010032e30:       d50323bf        autiasp
+> > ffff800010032e34:       d65f03c0        ret
+> 
+> > The problem is that the paciasp instruction is not BTYPE-compatible with BR;
+> > it expects to be called with a branch-and-link, and so we panic. I think you
+> > need to emit a 'bti j' here prior to the paciasp.
+> 
+> I checked with our internal teams and they actually ran into this
+> recently with some other code, the patch:
+> 
+>    https://reviews.llvm.org/D81746
+> 
+> ([AArch64] Fix BTI instruction emission) should fix this, it's been
+> reviewed so should be merged shortly.
 
---===============2432375859883589348==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="va4/JQ6j8/8uipEp"
-Content-Disposition: inline
+Cheers, that's good to hear. Shall we have a guess at the clang release
+that will get the fix, or just disable in-kernel BTI with clang for now?
 
-
---va4/JQ6j8/8uipEp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Jun 15, 2020 at 01:57:39PM +0200, Mauro Carvalho Chehab wrote:
-> Mark Brown <broonie@kernel.org> escreveu:
-> > On Mon, Jun 15, 2020 at 08:46:52AM +0200, Mauro Carvalho Chehab wrote:
-> > > There are some new broken doc links due to yaml renames
-> > > at DT. Developers should really run: =20
-
-> > I also previously acked this one in 20200504100822.GA5491@sirena.org.uk.
-> > Has anything changed here to cause the ack to be dropped?
-
-> Both patches are the same. I forgot to add your acks on my tree.=20
-
-> My bad!
-
-Ah, no worries - no wonder I couldn't spot the changes!
-
---va4/JQ6j8/8uipEp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7nYxUACgkQJNaLcl1U
-h9AlAAf8D93i17Pj7T800BmwJ3UUHzaiQeRYZFSyfjkXbmviTRnh3rTP+7Rx/Rqe
-83+UeFeMR/Rn18FzLvpCjXuZ1LTbEsOj7/3vkvecKW+LQy/oHwTsTr09Im4vI0h2
-9r3wxGGCXOU+EPu2c9ZT3j+Sp9yhWheTN0ym70YLHDtJuat1Bjw96kBQF8vpo1d9
-AGTB8NOjhstg/4Z+dZYlx5NhdbG4f5qV9zkkVGyZJ1xcdrgs60KfolFrCfTtUG2X
-qRm7RhGf/Rum0bhUG8lvkRaJGz9+Wh9eQA3JUHItfxFEvpM1scwlHJrBTxo7fP9y
-ytZ9j2PBRG+rP5iCMbibBf7cKbhhMg==
-=xi26
------END PGP SIGNATURE-----
-
---va4/JQ6j8/8uipEp--
-
-
---===============2432375859883589348==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2432375859883589348==--
-
