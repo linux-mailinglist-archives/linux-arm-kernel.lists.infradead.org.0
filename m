@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0483B1F97CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:03:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB42C1F97DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:05:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fPCy8DBdrAtUpqs9SIIH8sTZV+QxG0GkrMOKwDoYjc0=; b=EGIkR0nOyI2h3v
-	DX1jdyqInzbuoOqH5sQ9ZMBkX4jOlSWONHgJdj7XWigOzBNLM0/Mzf5JFre0b271x63b0npcd/bxp
-	CnXTt23oZAfNMqFXS1nqv1pJEwL7RmzkKc6DVTh4dUFR6cx0YLhu02ITtVUQgf3y2Nqzw0P+tiq09
-	zXT0VMCB3ognNmlWUyVlMZfHx/+dUkZElLgNYySuTBC7jAQgFxVwX1YbACt9aIbG9mKooBtBAQQel
-	OSaJDYrgCJgrakOmIWVIIWNLYKLhhDMQW5kkuW7xUwy0eE6gGuAmGPnf541j4yiS639gUzC+irW8F
-	+OGzUQAn6qXxyJe2Culw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/5sieGmnR+bfPLZN2xhwRHKZrbA05R2mi/gNiMPJ9t4=; b=W6bTjbaE7nD8wE
+	tZ4vzAmf0VYgVWKJXqAU/NRCYK0Shr50+mrEnsUA5PjwNP3ucNCxwQ56CIz5F/MHpzopOL/tcsVKD
+	5HXyrCj1lo20NkY5631XjaRIPLLLmv2I5ZDvPVG9fbHO4v7RVG8TKdimcK7ZApd3ZDPkTzBE8q/Mr
+	v6LfyQ9PE/u0UR7PDTTcMC9kpZhWHRW7i4vfhWSArfC9XuItRKOWcyViDqVUUk8vZCaSsshucYiXJ
+	6K9tJ2SCScO8Bmy+jSL+i6vQNJxw3pzrxhme227Svi7WXuTyjaeVPIudQN/sGGEdIv8WZ0zOwF4nf
+	cY8m+Iawr3J1PM4BEN3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkolW-0001Mb-QD; Mon, 15 Jun 2020 13:03:06 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jkond-0002E3-Tp; Mon, 15 Jun 2020 13:05:17 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkolL-0001LN-GN
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:02:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id f185so14743587wmf.3
+ id 1jkonI-0002DT-RR
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:04:58 +0000
+Received: by mail-wr1-x435.google.com with SMTP id t18so17058140wru.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 06:02:54 -0700 (PDT)
+ Mon, 15 Jun 2020 06:04:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=kynetics-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=yG4TX0q4STnfakhZj1Jy6LqPd0TuAXoc/J2tzd+XYRw=;
- b=vOlT6DrX6rx075X32KGHYvlAhGW2prqOHQiHu160Jm1Sx7TPbdK5EgFzjZY5ZDNTcz
- nL3jeWVLcxZ33If0/DklPgn7giQIo7U+JsYbTWa7upUdP1mCURZ6tDHN1xXutpLEXZAz
- gyaANYRm+OMChPplA5Q04hueaT4rUERoCh8lL/8e62inXpt8LZBzK4g9E3OgelBx35el
- DOQ8fWw5gtMRlpzAnk8lELnN5+aD+xe3695jvPVuVUpjPJExJi7j+GIVVHdsNOpshKjb
- Yo13cozv2dkpvDc7hvUiXdSwoOkSPOPNgGAcwJQgPe2s7YQTynkpqEt1C+eFEUQpSYEz
- kL0A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=xGnsrUoVOZBXJ5xWuUjcUkSKUeGXoNVTCOwqDvT4FJM=;
+ b=Yz1AY4Xm2PX4fmylnCSynNbDi5nrFVCSdQsIH2aiqiDYSkgiZnecyZpZwQNZpksdV2
+ c7VBDnDUAteERJ7oS6HTSrHQ2GYtuDYSPprHk0TkMEHCkEPid0EUk36Py9M38A1g/SWd
+ 9Aj4d62t2zAtaiVvKqWef28MHtUF3BNC7Mk/fFXRezJ3WBiriFz6+YPH5E54D5CXzJa+
+ DVFXVBmy+swiz9FwBEtPz3ZT3ZpZMysJ5X46nLC2y/ChxSHt8s8FN82Zfms0T0A9yF2T
+ a4b/CKxLv+OtVwNo9RUIqbIZg4jWxP6gLlyv+gdU6a/QH2CZFtQgpchIk+fv36QUJV3X
+ 38NA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=yG4TX0q4STnfakhZj1Jy6LqPd0TuAXoc/J2tzd+XYRw=;
- b=BYNTpeuDHymSUf3zSDtSj3yydnoXIwEwNX6AJVDLBxhN8Ctc1fu+jOe3GmM0CnBDWh
- DWDBBeLv3n7Lmt+GZowUis+kRHhZBSg58OQZ/4K4Purlrd2Nyo45hUoMpbA/oDeHfYEE
- 1Qiiojfm8uwC15wPqc6c7/1/0Y+BFHUp/HmE9zu1o7rKp0QYraWkuOU+i/eWhtKROYAp
- LRCfUqSHHMqtIHyzUILMu7iQlDWi0s3br1in3oyhfKQ35dNhppqJIVfYZK6KN+3M71mA
- Gyo78jB3Q9elgeX7DSC1DXUdIIoz3XXbAWLs3ieSZ6h2xSjSKlhNebvLUrXg5qx9n+kO
- SxBg==
-X-Gm-Message-State: AOAM5338lLMDaYgpKkSo4ljB63Arl+tX1BHOcB36Z+9Efg+xF5tlzds4
- HkrfMC8diu7pIchQy12W6cn9Tg==
-X-Google-Smtp-Source: ABdhPJwmvwGWDdrqCPnEhR7CHzTB8RsOUHLalrL4KmPDN1e5zRjb2fQVCDq6msGiFBDRBvGkmaT+Zg==
-X-Received: by 2002:a1c:e057:: with SMTP id x84mr13695935wmg.160.1592226173500; 
- Mon, 15 Jun 2020 06:02:53 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=xGnsrUoVOZBXJ5xWuUjcUkSKUeGXoNVTCOwqDvT4FJM=;
+ b=sHZq9MP7SA0U/77Aeu9wWRDmq9dwaTPeNFOTFkQzpdWwDqNBJ+E5RJL5Z625T9AKht
+ /Xtdjfes5Fdz3Shw5HMVmbKwpwR8wCe5CaoWwAD6Z+4PhkHP9R9hSxI1AWahARAGTB6F
+ aGOkHe4EgpspfcSjMWJNAQoHXIBrOnpTZjOdfz/5Fk2VdWo7vuMoa1fjhk9wJ5EdNYLA
+ B8vqUoEjndz+raVl+nCu5HnL1xA+I/TyI+87c0Jea/mzpZNHU28KCtO4Ib/pYhPXrDDJ
+ 8H03hutaSZdoei8CabEHX4OVXDXB+LlKoU/uWJLIcWwC05T+i5ziukQpTFRf4Tby+IDZ
+ N5bA==
+X-Gm-Message-State: AOAM530W39JW4EkYPnTO6SKw8R9mx18CkDuCTBwWHpInW6+jzJ0uufgU
+ prm08Npvjlyg0GUSLkWOKjL2rw==
+X-Google-Smtp-Source: ABdhPJyCbA4P7k40uO6mt2bOu07HU/fYBKq+e7S7CG+VE5FlaW3M581dKgwaQOXyEbfX2cDE+gWybA==
+X-Received: by 2002:a5d:6305:: with SMTP id i5mr28032503wru.268.1592226294967; 
+ Mon, 15 Jun 2020 06:04:54 -0700 (PDT)
 Received: from localhost.lan (mob-37-176-61-186.net.vodafone.it.
  [37.176.61.186])
- by smtp.gmail.com with ESMTPSA id s132sm23900345wmf.12.2020.06.15.06.02.52
+ by smtp.gmail.com with ESMTPSA id s132sm23900345wmf.12.2020.06.15.06.04.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 06:02:53 -0700 (PDT)
+ Mon, 15 Jun 2020 06:04:54 -0700 (PDT)
 From: Diego Rondini <diego.rondini@kynetics.com>
 To: Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH v2 1/2] ARM: dts: orange-pi-zero-plus2: enable USB OTG port
-Date: Mon, 15 Jun 2020 15:02:23 +0200
-Message-Id: <20200615130223.34464-1-diego.rondini@kynetics.com>
+Subject: [PATCH v2 2/2] ARM: dts: orange-pi-zero-plus2: add leds configuration
+Date: Mon, 15 Jun 2020 15:02:25 +0200
+Message-Id: <20200615130223.34464-2-diego.rondini@kynetics.com>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200615130223.34464-1-diego.rondini@kynetics.com>
+References: <20200615130223.34464-1-diego.rondini@kynetics.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_060255_600967_53316063 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20200615_060456_892132_2A70D7BE 
+X-CRM114-Status: GOOD (  11.40  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:435 listed in]
  [list.dnswl.org]
  0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,107 +103,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable support for USB OTG port on Orange Pi Zero Plus 2 (both H3 and H5
-variants). As, according to the board schematics, the USB OTG port cannot
-provide power to external devices, we set dr_mode to peripheral.
+Add pwr and status leds configuration and turn on pwr led by default for Orange
+Pi Zero Plus 2 (both H3 and H5 variants).
 
 Signed-off-by: Diego Rondini <diego.rondini@kynetics.com>
 ---
 v2:
-- reordered nodes alphabetically
+- sorted node alphabetically
+- fixed underscore in led names
+- removed extra empty line
 ---
- .../boot/dts/sun8i-h3-orangepi-zero-plus2.dts | 23 +++++++++++++++++++
- .../sun50i-h5-orangepi-zero-plus2.dts         | 23 +++++++++++++++++++
- 2 files changed, 46 insertions(+)
+ .../arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts | 15 +++++++++++++++
+ .../allwinner/sun50i-h5-orangepi-zero-plus2.dts   | 15 +++++++++++++++
+ 2 files changed, 30 insertions(+)
 
 diff --git a/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts b/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
-index b8f46e2802fd3..cbe32b975c5fe 100644
+index cbe32b975c5fe..251bbab7d7073 100644
 --- a/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
-@@ -88,6 +88,10 @@ &de {
- 	status = "okay";
- };
+@@ -70,6 +70,21 @@ hdmi_con_in: endpoint {
+ 		};
+ 	};
  
-+&ehci0 {
-+	status = "okay";
-+};
++	leds {
++		compatible = "gpio-leds";
 +
- &hdmi {
- 	status = "okay";
- };
-@@ -132,8 +136,27 @@ &mmc2 {
- 	status = "okay";
- };
- 
-+&ohci0 {
-+	status = "okay";
-+};
++		pwr {
++			label = "orangepi:green:pwr";
++			gpios = <&r_pio 0 10 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++		};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pa_pins>;
- 	status = "okay";
- };
++		status {
++			label = "orangepi:red:status";
++			gpios = <&pio 0 17 GPIO_ACTIVE_HIGH>;
++		};
++	};
 +
-+&usb_otg {
-+	/*
-+	 * According to schematics CN1 MicroUSB port can be used to take
-+	 * external 5V to power up the board VBUS. On the contrary CN1 MicroUSB
-+	 * port cannot provide power externally even if the board is powered
-+	 * via GPIO pins. It thus makes sense to force peripheral mode.
-+	 */
-+	dr_mode = "peripheral";
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	status = "okay";
-+};
+ 	reg_vcc3v3: vcc3v3 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vcc3v3";
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
-index c95a68541309c..e67733d133bb4 100644
+index e67733d133bb4..de19e68eb84e0 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
-@@ -48,6 +48,10 @@ &de {
- 	status = "okay";
- };
+@@ -30,6 +30,21 @@ hdmi_con_in: endpoint {
+ 		};
+ 	};
  
-+&ehci0 {
-+	status = "okay";
-+};
++	leds {
++		compatible = "gpio-leds";
 +
- &hdmi {
- 	status = "okay";
- };
-@@ -92,6 +96,10 @@ &mmc2 {
- 	status = "okay";
- };
- 
-+&ohci0 {
-+	status = "okay";
-+};
++		pwr {
++			label = "orangepi:green:pwr";
++			gpios = <&r_pio 0 10 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++		};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pa_pins>;
-@@ -103,3 +111,18 @@ &uart1 {
- 	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
- 	status = "okay";
- };
++		status {
++			label = "orangepi:red:status";
++			gpios = <&pio 0 17 GPIO_ACTIVE_HIGH>;
++		};
++	};
 +
-+&usb_otg {
-+	/*
-+	 * According to schematics CN1 MicroUSB port can be used to take
-+	 * external 5V to power up the board VBUS. On the contrary CN1 MicroUSB
-+	 * port cannot provide power externally even if the board is powered
-+	 * via GPIO pins. It thus makes sense to force peripheral mode.
-+	 */
-+	dr_mode = "peripheral";
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	status = "okay";
-+};
+ 	reg_vcc3v3: vcc3v3 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vcc3v3";
 -- 
 2.26.2
 
