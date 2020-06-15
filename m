@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15B841F9146
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:21:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D4C81F9147
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:21:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tKiYvDkT+F/KhC+sXK/ML/qDOS4idxwms7WcOE8VeKk=; b=RSz9Ymwo6asLx2
-	vGWaxWE+qyanAzupWDNyL6I1ZqsrdOVsF9MvGQbrtIRpCJcBAE7y7v0ylbMDR4WvpSYcuh7L4lTua
-	XT84a+ABoFTimuTgh4SL7iITFgFFwxP044o+E0QCGitMHiitKUpnshjvzHEm1AfArO0CKZcFK01rZ
-	jnwHrf4ncK6x2kBOryWi0mteANK1Nl4Hw0cvHirUPKh7rm+6I+P1r8moR11IWziznU0o/EdbsAtqv
-	PgETgAzCv3bTAEiPbIjNWW8UeBFjrdedTQsbpXC9JhHxOSbeG0as0yEHolAh1MSin9WrWfJpy9dm5
-	3osBpu/gKa5JseHgvbLA==;
+	List-Owner; bh=n2BVsWzeF+Azn8xYeHMUjNRZ7AfLZcvVBpH6TUnsDJ4=; b=hAsKPUV8zZ1wLh
+	OkAuoVgZgP/pm/VHT0GjvwDG3DcsDgqg/MaTceZg9QSEmqB9np8R9qoY3eSYZ/yfbGFq6TJ0Asl/R
+	z0HijX0uUFHcG86BdtwyvdU+HiBDRANnRHkDEO/X1fm5m80/dd26fethaJrESEE8SgtOhyEUXKARq
+	dZQ3FWYYDFx0l0ot4PQPPzX6jzVCLrm4cy0+qKkoTrqfYxO4DAWd7L/EUCZAWMnqI51Lvhum5nFCV
+	Iy6XWRwVpC/FUe92R/u1/2XPjJFb3SDAkoEBozKf6nrsOJwuVx3LkuC7/jIWvhAMJPFWCrj+5SiL4
+	UG9UQ+ESjxGwBMZfmgdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkkMg-0005A1-VE; Mon, 15 Jun 2020 08:21:10 +0000
+	id 1jkkN1-0005YK-43; Mon, 15 Jun 2020 08:21:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkLe-0003Ko-PR
+ id 1jkkLf-0003R5-9p
  for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:20:09 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6076620714;
+ by mail.kernel.org (Postfix) with ESMTPSA id D37A620738;
  Mon, 15 Jun 2020 08:20:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592209206;
- bh=teLpAbnj9atb0pVhfPoGLTjUX7m3uxJIO1TyC1h59vY=;
+ s=default; t=1592209207;
+ bh=kSRIgVeQjwY6Yq/b4z+/NCE+twMVVQkJ1QMKnBrChtU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lZuFDXssn8emu7X/tg8N78917FwVRqNDHKQXjkCvvoxpQsRJjQexKxXK61MeK4ODD
- soHkKFhEr2beO4N43BYHW7J2tCp0g8HbhidR4ihWVYGMGxyJTYy0sxvGMpMD4lVR1t
- 2neHDmARfYxvJ6wyi6ZzP7btSdSXoboV7R+TOTVU=
+ b=Ig8owMWzEdzkLSEd9DuWYlU7UvmNk4qCtc0BaK3I/5m3VO5qePQ+LUb7g9MkfLcZt
+ wBgRFQ/Onx+fD6hlaT5KVYNA21P6R0h8TzfONYoxTA4TmMtkDQc3s6IsaSkAcp6FmE
+ ZKvf6yw/iBnW2cjGAxukiMFycucz9G9Vt0oP/xns=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=wait-a-minute.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jkkLc-0031ew-Qn; Mon, 15 Jun 2020 09:20:05 +0100
+ id 1jkkLd-0031ew-EN; Mon, 15 Jun 2020 09:20:05 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  kvmarm@lists.cs.columbia.edu
-Subject: [PATCH 3/4] KVM: arm64: Allow PtrAuth to be enabled from userspace on
- non-VHE systems
-Date: Mon, 15 Jun 2020 09:19:53 +0100
-Message-Id: <20200615081954.6233-4-maz@kernel.org>
+Subject: [PATCH 4/4] KVM: arm64: Check HCR_EL2 instead of shadow copy to swap
+ PtrAuth registers
+Date: Mon, 15 Jun 2020 09:19:54 +0100
+Message-Id: <20200615081954.6233-5-maz@kernel.org>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200615081954.6233-1-maz@kernel.org>
 References: <20200615081954.6233-1-maz@kernel.org>
@@ -60,8 +60,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_012006_854525_EA8D81C1 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20200615_012007_398561_654D1C58 
+X-CRM114-Status: GOOD (  11.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -98,64 +98,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the scene is set for enabling PtrAuth on non-VHE, drop
-the restrictions preventing userspace from enabling it.
+When save/restoring PtrAuth registers between host and guest, it is
+pretty useless to fetch the in-memory state, while we have the right
+state in the HCR_EL2 system register. Use that instead.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/reset.c | 21 ++++++++++-----------
- 1 file changed, 10 insertions(+), 11 deletions(-)
+ arch/arm64/include/asm/kvm_ptrauth.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index d3b209023727..2a929789fe2e 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -42,6 +42,11 @@ static u32 kvm_ipa_limit;
- #define VCPU_RESET_PSTATE_SVC	(PSR_AA32_MODE_SVC | PSR_AA32_A_BIT | \
- 				 PSR_AA32_I_BIT | PSR_AA32_F_BIT)
- 
-+static bool system_has_full_ptr_auth(void)
-+{
-+	return system_supports_address_auth() && system_supports_generic_auth();
-+}
-+
- /**
-  * kvm_arch_vm_ioctl_check_extension
-  *
-@@ -80,8 +85,7 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 		break;
- 	case KVM_CAP_ARM_PTRAUTH_ADDRESS:
- 	case KVM_CAP_ARM_PTRAUTH_GENERIC:
--		r = has_vhe() && system_supports_address_auth() &&
--				 system_supports_generic_auth();
-+		r = system_has_full_ptr_auth();
- 		break;
- 	default:
- 		r = 0;
-@@ -205,19 +209,14 @@ static void kvm_vcpu_reset_sve(struct kvm_vcpu *vcpu)
- 
- static int kvm_vcpu_enable_ptrauth(struct kvm_vcpu *vcpu)
- {
--	/* Support ptrauth only if the system supports these capabilities. */
--	if (!has_vhe())
--		return -EINVAL;
--
--	if (!system_supports_address_auth() ||
--	    !system_supports_generic_auth())
--		return -EINVAL;
- 	/*
- 	 * For now make sure that both address/generic pointer authentication
--	 * features are requested by the userspace together.
-+	 * features are requested by the userspace together and the system
-+	 * supports these capabilities.
- 	 */
- 	if (!test_bit(KVM_ARM_VCPU_PTRAUTH_ADDRESS, vcpu->arch.features) ||
--	    !test_bit(KVM_ARM_VCPU_PTRAUTH_GENERIC, vcpu->arch.features))
-+	    !test_bit(KVM_ARM_VCPU_PTRAUTH_GENERIC, vcpu->arch.features) ||
-+	    !system_has_full_ptr_auth())
- 		return -EINVAL;
- 
- 	vcpu->arch.flags |= KVM_ARM64_GUEST_HAS_PTRAUTH;
+diff --git a/arch/arm64/include/asm/kvm_ptrauth.h b/arch/arm64/include/asm/kvm_ptrauth.h
+index 6301813dcace..f1830173fa9e 100644
+--- a/arch/arm64/include/asm/kvm_ptrauth.h
++++ b/arch/arm64/include/asm/kvm_ptrauth.h
+@@ -74,7 +74,7 @@ alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
+ 	b	1001f
+ alternative_else_nop_endif
+ 1000:
+-	ldr	\reg1, [\g_ctxt, #(VCPU_HCR_EL2 - VCPU_CONTEXT)]
++	mrs	\reg1, hcr_el2
+ 	and	\reg1, \reg1, #(HCR_API | HCR_APK)
+ 	cbz	\reg1, 1001f
+ 	add	\reg1, \g_ctxt, #CPU_APIAKEYLO_EL1
+@@ -90,7 +90,7 @@ alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
+ 	b	2001f
+ alternative_else_nop_endif
+ 2000:
+-	ldr	\reg1, [\g_ctxt, #(VCPU_HCR_EL2 - VCPU_CONTEXT)]
++	mrs	\reg1, hcr_el2
+ 	and	\reg1, \reg1, #(HCR_API | HCR_APK)
+ 	cbz	\reg1, 2001f
+ 	add	\reg1, \g_ctxt, #CPU_APIAKEYLO_EL1
 -- 
 2.27.0
 
