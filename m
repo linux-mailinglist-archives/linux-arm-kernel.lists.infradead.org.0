@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08C451F9BD8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 17:21:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 272A71F9BDC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 17:21:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p04HxjcJOcHbAynhjSniFNGJFtVw+OV1BISOoUi5l6A=; b=QTtfKk1nqJBwCs
-	xgZAf/l6uqqIqRbLMUSTiYopY+1ZttEu16acLmj6bQegOaJ74+MLDjtZQdLwjrw6g1u5PLXVXV09W
-	rikNFgwfrmeXeO4fynTYSFUv67RcG6IlOaHpHAY8pIbGab1bN1lSfnSaXUtNi0LWA3b2OBZ0ykXsI
-	ICpJEzrc5YMW6JKgCg6CpuKbJARgPcFDcjmsUsBYxz4wmPVSSvfAr/RRDYJh9KIDKSrjjt2lG9t0Q
-	IMXqlqz0YtcatbxMCbrQLs0MFLfwxNtna5F1oKwPbC319jromlVL50sanyb3Pw8BbPOI4lF0xMyqQ
-	qOSb5i9vyBS+59T8Z/Eg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nrHqusVMs8ZcGMQ88k3TNET3RAOPmz8ohMfrEKa9M4k=; b=t/F4LozHTWgweJ
+	xdlAGT1pKRAq9Ji9crRheHBNpDdsfYwZWpCYExTzEQwqqA1SYDtmj8LVsxh1TqvNvsIQMcKCpajlh
+	OKguT1bhyzWccff/CA/PeII/EnUsnB2qo0HVZjQnJEUeSspdylCbR27TxpaqsIKlHnD6UjxtD8njA
+	AHcnz/AK8y066ZgGhHwNJ9sjTQb11lAxrKsF0M3vqb9IIpeo7EEdN/A5KspUYSsE3DcM8XLdj1c28
+	9EiZ91tNswCSg67ODN5mlYUAnFChnRmH3AyaZ7HZaKKs+sRuv/1/dYJFI1ZGSJO9YXRIHrT+kjoQ+
+	NnKUiGRUxKejXQLEimPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkqvB-000543-Jn; Mon, 15 Jun 2020 15:21:13 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jkqvR-0005GK-Hd; Mon, 15 Jun 2020 15:21:29 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkqux-00053X-Rt
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 15:21:01 +0000
-Received: by mail-lj1-x243.google.com with SMTP id s1so19701857ljo.0
+ id 1jkqv0-00053o-Hn
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 15:21:04 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 9so19703386ljc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 08:20:59 -0700 (PDT)
+ Mon, 15 Jun 2020 08:21:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5YUAhbASJon5GxhmWno0UoRd7BXd3jntWstkJEM2o8s=;
- b=yNn2ctI1SfK1LU9sjVUCAZM9mhj4YDZuAWmfynbvq85hPMfnCOhaC6oCQBS3Q4um9u
- mv1svS6NviJsqTxaZEffHLdtwWaeLQ3xfQnJgPM2jFVQ93fQ06n1B35N/Vnq4XVvNL+i
- pQSTGwfgG+Ewgxvnps2493sU126aJvkx55UYYaObKtYFBs2Pbm36wyapZiko4NGGs40c
- hJi46M5jehm/uTcc5wQOa2uaYjxg9upPkg5I4HWroA8iBTW/7i+oBk7HRNw7Mep0BYoL
- lPvEOj7HJlpEgxeuVQ2Lc936Wo65dMpvixTd60yjBJE97GplYXkCEebiQ7DLpbn4wu9S
- L0Og==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=zKuQg/V734JQ52Bk2AkHR9NRP89P2pyrqBomz/3R808=;
+ b=pvtc1SZFZTITynG6EAMVZtWwt6lRnyd/IzhXA/GcyT1APmIZRJjKvOFBulO0VpBUZp
+ bvz9hCSRcYaxOsiDD5aSDarY9I0SBwqIkrusZOPH+r0qm7Hk1ixgsqn2Q+moDrS/ab4s
+ /krAWc9u7RQPETLSw2VMzG/aZJnBTZ0qN88eK/MOdk+a8M8S3zUlzZk3maOnFESycdDA
+ cFFcyXPo2frLFTbVPpZgMoDq4FmRJnXp59Ep1jtKuprRcSTFoXUwq0VNevxw4/AAyS1L
+ O6/InAf3ar6Vt2CXzMxDD06ypaHu3Cpn0U4mwr7m2XWS2HUOuNNOx3u6l5+7Iywn7SUh
+ xEfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5YUAhbASJon5GxhmWno0UoRd7BXd3jntWstkJEM2o8s=;
- b=J+BNXUbC+SeALDG0JjG0H4bOEJJeW5otccsu9IG3Jo1bA/10+8wq9d2hhTVflUAQ21
- AFDYiW+jnRKw1JtMQ7d2pmoag4MuApyLKkGQPnTIW7y3sZtQN0GhMrBxVM77PCKeIa5k
- +Qo0FRFnHDHyW46r2Gx6Sv+jy0y3Lp/If+06o0jqEwetrGSNEkEXXVQkd9bZvEc+dahP
- 1m4tZinShTd0oPG6pP3IpNOV8pARxkB9fPb/3l51GlWmhP2yzskvCXNsOXF3UCh5RDH+
- BrkJ2M5UtFldhCyLMEGMBKAV3nx4AV2YKU/fVrgNcxwfUu3MQ6PbiXH9M7fuQPYDnNUO
- //QA==
-X-Gm-Message-State: AOAM530Rp77ue/pxhuJddc7BbblChXo9GPv8+n+OWGlfbe8PhakdulJH
- XLz4G81ihnhlAd/O5ddoOWbbqw==
-X-Google-Smtp-Source: ABdhPJzFxU2e2MXPewL8AqJPAT1Mbo56PQXpiOZD7US0acJ+F2SxlwrrnbD5r4HvBYB8XfHD2pIMHw==
-X-Received: by 2002:a2e:8809:: with SMTP id x9mr11781735ljh.442.1592234457863; 
- Mon, 15 Jun 2020 08:20:57 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=zKuQg/V734JQ52Bk2AkHR9NRP89P2pyrqBomz/3R808=;
+ b=fs8DSCrmgV8InfMVA/q0rsPExoqUwfd5o+mp+OaTfWsAbAasPxYQ7LK6L98ylLt0xl
+ cByPSJTG6e3JrU1Wc4ZyV/G2VNPHGa9PWllAOxY7emyviYSHIAU7enlytfRODNI3fubu
+ a5EBt3VFBAA6WsD8OKFSo/BuzN+5m2cvIfJzY3lblIQF4Zjx1cwJB1/rcsCpp9ma7jdQ
+ ejHM9VBJGzBvKYzhSWvdw0eihPUjhVbGJH8SZ3kFwx3cPJDGU4pzcqGQhRIscx8v2UH6
+ e7swSSLedgXCQHRJdwrUfuvwJmG3KPpAAnRas3J051OaiMIWtV1TH3QvVdvGYWHTfCdW
+ zAjg==
+X-Gm-Message-State: AOAM533PZFEAd+/qIC4jRBoyBShmlOxHDanhzBemnflNPhLJagcqSHuQ
+ dCtgdgh17QmZMKWgn6KfP/FEHw==
+X-Google-Smtp-Source: ABdhPJzk+/msjtPy+gK56odrzaAF+uDCn54CXNp4xuAEJt/Zr3zDNx3DSb7724QQbj0z/HWq04YcBg==
+X-Received: by 2002:a2e:9e86:: with SMTP id f6mr11881801ljk.95.1592234459927; 
+ Mon, 15 Jun 2020 08:20:59 -0700 (PDT)
 Received: from localhost.localdomain (h-98-128-181-7.NA.cust.bahnhof.se.
  [98.128.181.7])
- by smtp.gmail.com with ESMTPSA id r13sm507045lfp.80.2020.06.15.08.20.56
+ by smtp.gmail.com with ESMTPSA id r13sm507045lfp.80.2020.06.15.08.20.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 08:20:56 -0700 (PDT)
+ Mon, 15 Jun 2020 08:20:58 -0700 (PDT)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Saravana Kannan <saravanak@google.com>, linux-pm@vger.kernel.org
-Subject: [PATCH 0/5] cpuidle: psci: Various improvements for PSCI PM domains
-Date: Mon, 15 Jun 2020 17:20:49 +0200
-Message-Id: <20200615152054.6819-1-ulf.hansson@linaro.org>
+Subject: [PATCH 1/5] cpuidle: psci: Fail cpuidle registration if set OSI mode
+ failed
+Date: Mon, 15 Jun 2020 17:20:50 +0200
+Message-Id: <20200615152054.6819-2-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200615152054.6819-1-ulf.hansson@linaro.org>
+References: <20200615152054.6819-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_082059_904629_BF6C1D2D 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200615_082102_594536_76870A0F 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,36 +111,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The main change in this series is done in patch 5/5, which implements support
-to prevent domain idlestates until all PSCI PM domain consumers are ready for
-it. To reach that point the corresponding code for cpuidle-psci and
-cpuidle-psci-domain, needed to be converted into platform drivers, which is
-done by the earlier changes in the series.
+Currently we allow the cpuidle driver registration to succeed, even if we
+failed to enable the OSI mode when the hierarchical DT layout is used. This
+means running in a degraded mode, by using the available idle states per
+CPU, while also preventing the domain idle states.
 
-Additionally, some improvements have been made to the error path, which becomes
-easier when the code gets converted to platform drivers.
+Moving forward, this behaviour looks quite questionable to maintain, as
+complexity seems to grow around it, especially when trying to add support
+for deferred probe, for example.
 
-Deployment for a Qcom SoC, which actually takes full benefit of these changes
-are also in the pipe, but deferring then a bit until $subject series have been
-discussed.
+Therefore, let's make the cpuidle driver registration to fail in this
+situation, thus relying on the default architectural cpuidle backend for
+WFI to be used.
 
-Kind regards
-Ulf Hansson
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+---
+ drivers/cpuidle/cpuidle-psci-domain.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-Ulf Hansson (5):
-  cpuidle: psci: Fail cpuidle registration if set OSI mode failed
-  cpuidle: psci: Fix error path via converting to a platform driver
-  cpuidle: psci: Split into two separate build objects
-  cpuidle: psci: Convert PM domain to platform driver
-  cpuidle: psci: Prevent domain idlestates until consumers are ready
-
- drivers/cpuidle/Kconfig.arm           |  10 ++
- drivers/cpuidle/Makefile              |   5 +-
- drivers/cpuidle/cpuidle-psci-domain.c |  74 +++++++++-----
- drivers/cpuidle/cpuidle-psci.c        | 141 +++++++++++++++-----------
- drivers/cpuidle/cpuidle-psci.h        |  11 +-
- 5 files changed, 150 insertions(+), 91 deletions(-)
-
+diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
+index 423f03bbeb74..f07786aad673 100644
+--- a/drivers/cpuidle/cpuidle-psci-domain.c
++++ b/drivers/cpuidle/cpuidle-psci-domain.c
+@@ -26,7 +26,6 @@ struct psci_pd_provider {
+ };
+ 
+ static LIST_HEAD(psci_pd_providers);
+-static bool osi_mode_enabled __initdata;
+ 
+ static int psci_pd_power_off(struct generic_pm_domain *pd)
+ {
+@@ -272,7 +271,6 @@ static int __init psci_idle_init_domains(void)
+ 		goto remove_pd;
+ 	}
+ 
+-	osi_mode_enabled = true;
+ 	of_node_put(np);
+ 	pr_info("Initialized CPU PM domain topology\n");
+ 	return pd_count;
+@@ -293,9 +291,6 @@ struct device __init *psci_dt_attach_cpu(int cpu)
+ {
+ 	struct device *dev;
+ 
+-	if (!osi_mode_enabled)
+-		return NULL;
+-
+ 	dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
+ 	if (IS_ERR_OR_NULL(dev))
+ 		return dev;
 -- 
 2.20.1
 
