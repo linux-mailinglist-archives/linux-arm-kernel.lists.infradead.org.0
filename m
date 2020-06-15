@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 639D91F9A67
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:36:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C09531F9A6D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:36:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HFVydXVFghBJhKn7hdAmAViqKMP2DkoRO1AE3ZgyEzg=; b=PnrFr2CIkphtpD
-	98VWqyIJthCowiqPrWq9Dza2cC17rNu0htrJe7rKA3wN3EUiIz9O7XZh5e65+Ct/H5qR7Gluk5SlZ
-	HI8z5fj54NmtkiSHe/yNXmSECejZRnUmFc3YnSNj2H5wnPv+CRMKsa1zJiesCPYuHkRaLWsejpxF0
-	PPmu4nePvBw1tOZCG1v9q2Qr6ooq94E3XAJi1Kv62Hk8yXeNHRBr+djcin6aM8Zjgr8KYXgIqUQyp
-	EdUYkvV+cZTYT6zFerLm50I3pc6mTvMBAhqJ9CVRKLRYdIoZuYMRFdE2mMUkeIyddsG6AOYviiHbZ
-	dAyeNbTpzOZgFWmq6Kww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DslrLSdzxo1j6LcM9IRt72d5Ds9MklxKD8zojd7urKw=; b=nuW4vQOBYgeTe06cS3t8pJBJO
+	PUhDKyenuL3OpIffkYYUWzn1RRXpYAvG61ic6jOT94nKE684eyxzW9WFI3OwCFyyiUljdMxBwdKnN
+	t/EFlrG1GlLRVHGK1sXtKfZ+uOiM1p6MgRg9TibgpPt9blz7Zvl2tJj6jpRoE2dIEnKVvHO5uNJw8
+	snxpcvO1dFx0asCmxAOHkW2/3JR3nVxj0QAHdjjBPcFfgvMWQXO45YWIqRrZWrjIRCIfiHpB3H5/U
+	VAQVz7O26mqvSzmT9s6v0cg9q0W/FiwHWyBl79hCCB4QYX/J4vgGak2z5X6U6pvDZqIRAcFn3UWns
+	Hzq+ZYuQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkqDp-0004lb-NA; Mon, 15 Jun 2020 14:36:25 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1jkqE7-0004wD-9C; Mon, 15 Jun 2020 14:36:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkqDh-0004l5-Ud
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:36:19 +0000
-Received: by mail-wm1-f66.google.com with SMTP id c71so14871070wmd.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 07:36:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XkwaeOSmKJDGIXga8arphfOh1iPYQb+mZR0bLebBBbo=;
- b=t+ymQ3uFIqaYFpsdInx51ALM2lGqn3NpsE12E4K4Io7fdKcxAPgew+ePNW01P/cGhT
- U6jsSFcZ/hpta0AVYZbrQdlEB0u5DJGFERsO+ueXtwQIeIqcoorB3EXa9T2Hs6+LcR9n
- r2jz36ovgSCj0cjB90q+F1MSDQAwVyjnhY3ckzuEAky7/TJoDibvnfL715+TB3R/AKOw
- innOePlJX6XQb1nltwfdIkHXzuwbqPoryOY2KCU39YPfm0mTb8Q7uORo5bWyLEPFcZy0
- d5JLkD6n0xpFY+PFBTbaDVBX9Pg60di/lqd97kkpHov+gaDsE3dV0T4j9beHW4oUof/J
- 38Cg==
-X-Gm-Message-State: AOAM530p3OEsCvMYfNU8E5soW7BcpjChQRnOxCTma3iihBvxRQWMg0mk
- yras0D0tJQnpX+AP66w8MvjkU5JJI9NhNt0Qu7I=
-X-Google-Smtp-Source: ABdhPJz1KnxZlRe/DlSHR3s1eKGMHRn31cvBT4BQ9lo5wPG75U5ws387MQhwer7SpZz7g4E9Prvz+P3oOYmgwqf8QKI=
-X-Received: by 2002:a1c:4105:: with SMTP id o5mr13234073wma.168.1592231775481; 
- Mon, 15 Jun 2020 07:36:15 -0700 (PDT)
+ id 1jkqDp-0004rZ-W7
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:36:27 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3C5FE206B7;
+ Mon, 15 Jun 2020 14:36:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592231784;
+ bh=ype2UwsEJQA9RCKVIpGpA9vIFkTyIQOQ4sKP1eAXFbM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=sRnd9myuAlE2K1Nj2iURRl7w9qJ8EkYdNdH+K+1/phMf0kpQoAY1Pxp7TJ1JfE1Bv
+ IS0K9Zxia4mxtl4V1nzuqvNO6G2NXNI+bmmTQPTgW5XKEnO5J9uL2LHNVwhcwBS3Ik
+ ag3vadWejMFiNKgNM8XdbJeap+BU3716MyK6XAPQ=
+Date: Mon, 15 Jun 2020 15:36:22 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
+Message-ID: <20200615143622.GX4447@sirena.org.uk>
+References: <20200611134042.GG4671@sirena.org.uk>
+ <VE1PR04MB66383245FAD2AE33CFEA76F789810@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200612101357.GA5396@sirena.org.uk>
+ <VE1PR04MB66384013797FE6B01943F2A889810@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200612141611.GI5396@sirena.org.uk>
+ <VE1PR04MB6638B43E3AC83286946DABCD899F0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200615123553.GP4447@sirena.org.uk>
+ <VE1PR04MB6638C65257F41072C3D61583899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200615133905.GV4447@sirena.org.uk>
+ <VE1PR04MB6638793C00742D5BA72F8AC2899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <1592214046-32385-1-git-send-email-john.garry@huawei.com>
- <1592214046-32385-2-git-send-email-john.garry@huawei.com>
-In-Reply-To: <1592214046-32385-2-git-send-email-john.garry@huawei.com>
-From: Namhyung Kim <namhyung@kernel.org>
-Date: Mon, 15 Jun 2020 23:36:04 +0900
-Message-ID: <CAM9d7ciRXyEBz+o6Xw1qsEyiTG2SMqmux_8c69Stn0ut69WAZw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] perf pmu: List kernel supplied event aliases for arm64
-To: John Garry <john.garry@huawei.com>
+In-Reply-To: <VE1PR04MB6638793C00742D5BA72F8AC2899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+X-Cookie: Offer may end without notice.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_073617_985226_543FC6C4 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200615_073626_071322_E84A7CD5 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [namhyung[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,65 +85,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ian Rogers <irogers@google.com>,
- Andi Kleen <ak@linux.intel.com>, Peter Zijlstra <peterz@infradead.org>,
- will@kernel.org, linuxarm@huawei.com,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============0761349998802809016=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
 
-On Mon, Jun 15, 2020 at 6:45 PM John Garry <john.garry@huawei.com> wrote:
->
-> In commit dc098b35b56f ("perf list: List kernel supplied event aliases"),
-> the aliases for events are supplied in addition to CPU event in perf list.
->
-> This relies on the name of the core PMU being "cpu", which is not the case
-> for arm64, so arm64 has always missed this. Use generic is_pmu_core()
-> helper which takes account of arm64 to make this feature work for arm64
-> (and possibly other archs).
->
-> Sample, before:
->   armv8_pmuv3_0/br_mis_pred/          [Kernel PMU event]
-> after:
->   br_mis_pred OR armv8_pmuv3_0/br_mis_pred/          [Kernel PMU event]
->
-> Signed-off-by: John Garry <john.garry@huawei.com>
-
-Acked-by: Namhyung Kim <namhyung@kernel.org>
-
-Thanks
-Namhyung
+--===============0761349998802809016==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="6yuPXOSZRpyw7iEV"
+Content-Disposition: inline
 
 
-> ---
->  tools/perf/util/pmu.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-> index 93fe72a9dc0b..a375364537cd 100644
-> --- a/tools/perf/util/pmu.c
-> +++ b/tools/perf/util/pmu.c
-> @@ -1475,7 +1475,7 @@ void print_pmu_events(const char *event_glob, bool name_only, bool quiet_flag,
->                 list_for_each_entry(alias, &pmu->aliases, list) {
->                         char *name = alias->desc ? alias->name :
->                                 format_alias(buf, sizeof(buf), pmu, alias);
-> -                       bool is_cpu = !strcmp(pmu->name, "cpu");
-> +                       bool is_cpu = is_pmu_core(pmu->name);
->
->                         if (alias->deprecated && !deprecated)
->                                 continue;
-> --
-> 2.26.2
->
+--6yuPXOSZRpyw7iEV
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Jun 15, 2020 at 02:18:54PM +0000, Robin Gong wrote:
+> On 2020/06/15 21:39 Mark Brown <broonie@kernel.org> wrote:
+> > On Mon, Jun 15, 2020 at 01:35:01PM +0000, Robin Gong wrote:
+
+> > > Then how about choosing specific error code for such dma not ready
+> > > case where nothing went out on the bus neither?
+
+> > Yes, that's what I suggested.
+
+> Seems not easy to find a suitable error value, how about EBADR which
+> sounds like no any available dma_async_tx_descriptor got by calling dmaen=
+gine_prep_slave_sg?=20
+
+> #define EBADR           53      /* Invalid request descriptor */
+
+We could also pass in a flag that could be set separately to the error
+code to indicate that nothing had happened to the hardware yet.
+
+--6yuPXOSZRpyw7iEV
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7nh2UACgkQJNaLcl1U
+h9CGngf9FJjxiiGTABi3SIsOJXFnGblWLqB3vln9SMDIbAPj/yGiDdpERP2vrY1W
+7k5dVCoCvMS3H85xHNvGXPWcWiAMdr2kvxYtHSOXafk/x18RNkFypSPrJGNH8aFa
+bJAFTdhXBNO1Tzkfyv8jEXenmexA8Zvr98tiCjY6y1KzVIxXUS76Z0m610y3t01m
+tBtsjAkAXoKe7N00fwx6mhZKwOlOmj7xXhETXAWGi7hMipmWTMlBDfijumFNivy0
+ZmZdGZkr7H8rmKS664LAce29F1vBAGJ1DDCR7uZPNz0Tv2hT7gOTadOvuionzbvw
+c1zT5i2KtlUGpSNfABZa0rmrPwY5dg==
+=DUZv
+-----END PGP SIGNATURE-----
+
+--6yuPXOSZRpyw7iEV--
+
+
+--===============0761349998802809016==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0761349998802809016==--
+
