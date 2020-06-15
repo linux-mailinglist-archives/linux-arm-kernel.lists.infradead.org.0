@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3FA71F9998
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:06:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F7AE1F99BB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:12:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nOGD3vr3OMQpaUy2+KKJivPNGRB8738RzyS2PXuKCag=; b=N0T
-	0jw6bqmlNRuJSxtwqud5Rs7PhnYQMOrFphGuyKdkT/EtrFF9IhS58l95e3Eg7WNN0zs3wL+zOcO/L
-	16C/k9LPcJ1dTZJgJemjeegWa4RP2qy1TGmzrd0EtClmf711J+S39QIraC5nHbZOyyoftbJygAgUs
-	gSopr3pRagnAH9pmfapflkd7t+I2Me4osthzRA94oM1ykyaCh526k59yoE2dtxnUuVclPzQnBsx5w
-	Y8ONEVkHz7jmXip8fFMZYCKm1X6mcKB30u8vMiAmfFz37sBB0i2xsFUF5IL2WzRxywQZD5joubAuE
-	mdaD51/+LrOKOCPvdT1BZINH0GVXqXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HYstkGnRpHCAz82PxBvpK+WaNa/GJs79vdzyee5snss=; b=dU50jpvE1YkYUb
+	MJN19Es/ICg/8CN06QtFp6+y9mMz0cWREdJarjTKAmjfeysroj4ktJIcy4uFTyoUBVd2B99HqjwS9
+	Y0QkXchglWnNbSFocObo/S9U3GV2t82uGxu840k9HCT8kZeIt7BuAvfuRzVvGC387DVn9vsEeJB8S
+	O/TLmYoSltx7V8Z9GoDf6PB8SCSq6K6ywup4lCpGVNxgIOngU0iY6/MOKXgQ5mDO5gDujjLEcklRd
+	hFxXG+CA+ebh4ID2bio0pHl55i4FGsXIrrysfD0y4aaa3EmHsrhKo3bVH1WERAk9F/DBnGLy4YY31
+	zqn6dJc/Vw2FkHM1k8kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkpki-00009v-F3; Mon, 15 Jun 2020 14:06:20 +0000
-Received: from jabberwock.ucw.cz ([46.255.230.98])
+	id 1jkpr2-00043S-W9; Mon, 15 Jun 2020 14:12:52 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkpkY-000090-Sh
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:06:13 +0000
-Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
- id CC4281C0BD2; Mon, 15 Jun 2020 16:05:57 +0200 (CEST)
-Date: Mon, 15 Jun 2020 16:05:57 +0200
-From: Pavel Machek <pavel@ucw.cz>
-To: kernel list <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-omap@vger.kernel.org, tony@atomide.com, sre@kernel.org,
- nekit1000@gmail.com, mpartap@gmx.net, merlijn@wizzup.org,
- martin_rysavy@centrum.cz, linux-pm@vger.kernel.org
-Subject: [RFC] Limiting charge current on Droid 4 (and N900)
-Message-ID: <20200615140557.GA22781@duo.ucw.cz>
+ id 1jkpqu-00042V-2V
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:12:45 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 1873468AFE; Mon, 15 Jun 2020 16:12:40 +0200 (CEST)
+Date: Mon, 15 Jun 2020 16:12:39 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 2/6] exec: simplify the compat syscall handling
+Message-ID: <20200615141239.GA12951@lst.de>
+References: <20200615130032.931285-1-hch@lst.de>
+ <20200615130032.931285-3-hch@lst.de>
+ <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
 MIME-Version: 1.0
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_070611_081762_B103110B 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20200615_071244_263099_7FD25ABF 
+X-CRM114-Status: GOOD (  16.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -57,230 +60,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1164869832012135513=="
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ Parisc List <linux-parisc@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Al Viro <viro@zeniv.linux.org.uk>,
+ sparclinux <sparclinux@vger.kernel.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 15, 2020 at 03:31:35PM +0200, Arnd Bergmann wrote:
+> >  #ifdef CONFIG_COMPAT
+> > -       if (unlikely(argv.is_compat)) {
+> > +       if (in_compat_syscall()) {
+> > +               const compat_uptr_t __user *compat_argv =
+> > +                       compat_ptr((unsigned long)argv);
+> >                 compat_uptr_t compat;
+> >
+> > -               if (get_user(compat, argv.ptr.compat + nr))
+> > +               if (get_user(compat, compat_argv + nr))
+> >                         return ERR_PTR(-EFAULT);
+> >
+> >                 return compat_ptr(compat);
+> >         }
+> >  #endif
+> 
+> I would expect that the "#ifdef CONFIG_COMPAT" can be removed
+> now, since compat_ptr() and in_compat_syscall() are now defined
+> unconditionally. I have not tried that though.
 
---===============1164869832012135513==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="17pEHd4RhPHOinZp"
-Content-Disposition: inline
+True, I'll give it a spin.
 
+> > +/*
+> > + * x32 syscalls are listed in the same table as x86_64 ones, so we need to
+> > + * define compat syscalls that are exactly the same as the native version for
+> > + * the syscall table machinery to work.  Sigh..
+> > + */
+> > +#ifdef CONFIG_X86_X32
+> >  COMPAT_SYSCALL_DEFINE3(execve, const char __user *, filename,
+> > -       const compat_uptr_t __user *, argv,
+> > -       const compat_uptr_t __user *, envp)
+> > +                      const char __user *const __user *, argv,
+> > +                      const char __user *const __user *, envp)
+> >  {
+> > -       return do_compat_execve(AT_FDCWD, getname(filename), argv, envp, 0);
+> > +       return do_execveat(AT_FDCWD, getname(filename), argv, envp, 0, NULL);
+> >  }
+> 
+> Maybe move it to arch/x86/kernel/process_64.c or arch/x86/entry/syscall_x32.c
+> to keep it out of the common code if this is needed.
 
---17pEHd4RhPHOinZp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I'd rather keep it in common code as that allows all the low-level
+exec stuff to be marked static, and avoid us growing new pointless
+compat variants through copy and paste.
+smart compiler to d
 
-Hi!
+> I don't really understand
+> the comment, why can't this just use this?
 
-Droid 4 has same problem as N900: it is often neccessary to manually
-tweak current draw from USB, for example when using thin charging cable.
+That errors out with:
 
-N900 creates unique attribute by hand, but I believe
-POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT looks suitable. (Should N900 be
-converted?)
-
-Comments? Would the patch be acceptable after fixing whitespace?
-
-Best regards,
-									Pavel
-
-Signed-off-by: Pavel Machek <pavel@ucw.cz>
-
-diff --git a/drivers/power/supply/cpcap-battery.c b/drivers/power/supply/cp=
-cap-battery.c
-index b16848cfb58c..39a00716372f 100644
---- a/drivers/power/supply/cpcap-battery.c
-+++ b/drivers/power/supply/cpcap-battery.c
-@@ -3,7 +3,7 @@
-  *
-  * Copyright (C) 2017 Tony Lindgren <tony@atomide.com>
-  *
-- * Some parts of the code based on earlie Motorola mapphone Linux kernel
-+ * Some parts of the code based on earlier Motorola mapphone Linux kernel
-  * drivers:
-  *
-  * Copyright (C) 2009-2010 Motorola, Inc.
-diff --git a/drivers/power/supply/cpcap-charger.c b/drivers/power/supply/cp=
-cap-charger.c
-index cf1e05b511d9..292d7a31c663 100644
---- a/drivers/power/supply/cpcap-charger.c
-+++ b/drivers/power/supply/cpcap-charger.c
-@@ -89,6 +89,8 @@
-  * CPCAP_REG_CRM charge currents. These seem to match MC13783UG.pdf
-  * values in "Table 8-3. Charge Path Regulator Current Limit
-  * Characteristics" for the nominal values.
-+ *
-+ * Except 70mA and 1.596A and unlimited, these are simply 88.7mA / step.
-  */
- #define CPCAP_REG_CRM_ICHRG(val)	(((val) & 0xf) << 0)
- #define CPCAP_REG_CRM_ICHRG_0A000	CPCAP_REG_CRM_ICHRG(0x0)
-@@ -147,6 +149,8 @@ struct cpcap_charger_ddata {
- 	int status;
- 	int state;
- 	int voltage;
-+	int limit_current;
-+
- 	int last_current;
- 	int last_current_retries;
- };
-@@ -175,6 +179,7 @@ static enum power_supply_property cpcap_charger_props[]=
- =3D {
- 	POWER_SUPPLY_PROP_STATUS,
- 	POWER_SUPPLY_PROP_ONLINE,
- 	POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE,
-+	POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT,
- 	POWER_SUPPLY_PROP_VOLTAGE_NOW,
- 	POWER_SUPPLY_PROP_CURRENT_NOW,
- };
-@@ -238,6 +243,9 @@ static int cpcap_charger_get_property(struct power_supp=
-ly *psy,
- 	case POWER_SUPPLY_PROP_STATUS:
- 		val->intval =3D ddata->status;
- 		break;
-+  	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
-+		val->intval =3D ddata->limit_current;
-+		break;
- 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
- 		val->intval =3D ddata->voltage;
- 		break;
-@@ -308,6 +316,25 @@ cpcap_charger_get_bat_const_charge_voltage(struct cpca=
-p_charger_ddata *ddata)
- 	return voltage;
- }
-=20
-+static int cpcap_charger_current_to_regval(int microamp)
-+{
-+	int miliamp =3D microamp/1000;
-+	int res;
-+	if (miliamp < 0)
-+		return -EINVAL;
-+	if (miliamp < 70)
-+		return CPCAP_REG_CRM_ICHRG(0x0);
-+	if (miliamp < 177)
-+		return CPCAP_REG_CRM_ICHRG(0x1);
-+	if (miliamp > 1596)
-+		return CPCAP_REG_CRM_ICHRG(0xe);
-+
-+	res =3D microamp / 88666;
-+	if (res > 0xd)
-+		res =3D 0xd;
-+	return CPCAP_REG_CRM_ICHRG(res);
-+}
-+
- static int cpcap_charger_set_property(struct power_supply *psy,
- 				      enum power_supply_property psp,
- 				      const union power_supply_propval *val)
-@@ -316,6 +343,12 @@ static int cpcap_charger_set_property(struct power_sup=
-ply *psy,
- 	int voltage, batvolt;
-=20
- 	switch (psp) {
-+  	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
-+		if (cpcap_charger_current_to_regval(val->intval) < 0)
-+			return -EINVAL;
-+		ddata->limit_current =3D val->intval;
-+		schedule_delayed_work(&ddata->detect_work, 0);
-+		break;
- 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
- 		voltage =3D cpcap_charger_match_voltage(val->intval);
- 		batvolt =3D cpcap_charger_get_bat_const_charge_voltage(ddata);
-@@ -335,6 +368,7 @@ static int cpcap_charger_property_is_writeable(struct p=
-ower_supply *psy,
- 					       enum power_supply_property psp)
- {
- 	switch (psp) {
-+	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
- 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
- 		return 1;
- 	default:
-@@ -657,23 +691,21 @@ static void cpcap_usb_detect(struct work_struct *work)
-=20
- 	if (!ddata->feeding_vbus && cpcap_charger_vbus_valid(ddata) &&
- 	    s.chrgcurr1) {
--		int max_current;
--		int vchrg;
-+		int max_current =3D 532000;
-+		int vchrg, ichrg;
-=20
- 		if (cpcap_charger_battery_found(ddata))
--			max_current =3D CPCAP_REG_CRM_ICHRG_1A596;
--		else
--			max_current =3D CPCAP_REG_CRM_ICHRG_0A532;
-+			max_current =3D 1596000;
-=20
- 		switch (ddata->state) {
- 		case CPCAP_CHARGER_DETECTING:
- 			ddata->last_current_retries =3D 0;
- 			break;
- 		case CPCAP_CHARGER_DISCONNECTED:
--			if (ddata->last_current > CPCAP_REG_CRM_ICHRG_0A532) {
-+			if (ddata->last_current > 532000) {
- 				/* Attempt current 3 times before lowering */
- 				if (ddata->last_current_retries++ >=3D 3) {
--					ddata->last_current--;
-+					ddata->last_current -=3D 100000;
- 					ddata->last_current_retries =3D 0;
- 					/* Wait a bit for voltage to ramp up */
- 					usleep_range(40000, 50000);
-@@ -688,11 +720,16 @@ static void cpcap_usb_detect(struct work_struct *work)
- 			break;
- 		}
-=20
-+		if (max_current > ddata->limit_current)
-+			max_current =3D ddata->limit_current;
-+
- 		ddata->last_current =3D max_current;
-+
-+		ichrg =3D cpcap_charger_current_to_regval(max_current);
- 		vchrg =3D cpcap_charger_voltage_to_regval(ddata->voltage);
- 		error =3D cpcap_charger_set_state(ddata,
- 						CPCAP_REG_CRM_VCHRG(vchrg),
--						max_current, 0);
-+						ichrg, 0);
- 		if (error)
- 			goto out_err;
- 		cpcap_charger_update_state(ddata, CPCAP_CHARGER_CHARGING);
-@@ -864,6 +901,7 @@ static int cpcap_charger_probe(struct platform_device *=
-pdev)
-=20
- 	ddata->dev =3D &pdev->dev;
- 	ddata->voltage =3D 4200000;
-+	ddata->limit_current =3D 532000;
-=20
- 	ddata->reg =3D dev_get_regmap(ddata->dev->parent, NULL);
- 	if (!ddata->reg)
-
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
-
---17pEHd4RhPHOinZp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iF0EABECAB0WIQRPfPO7r0eAhk010v0w5/Bqldv68gUCXueARQAKCRAw5/Bqldv6
-8r/sAJ46iCoAwzi+b8D09i52j6yXo5rYVgCggxr+sue70dpus3LswQUr8Ki7lSM=
-=YnOL
------END PGP SIGNATURE-----
-
---17pEHd4RhPHOinZp--
-
-
---===============1164869832012135513==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1040): undefined reference to
+`__x32_sys_execve'
+ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1108): undefined reference to
+`__x32_sys_execveat'
+make: *** [Makefile:1139: vmlinux] Error 1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1164869832012135513==--
-
