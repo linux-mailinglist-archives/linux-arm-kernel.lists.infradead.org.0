@@ -2,61 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98CE11F94A0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:30:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91B821F94BB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:40:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xm/aqpal/TMAJ7EC5CXpc0DtGsDf2TjspH5Qc95td/4=; b=nvhJkxjB0GCsFe
-	sW9LlmSpDFjAFQfG/3hhbvSwzhPZXLo170XONEmwNLo3dihCg0Z/Rh8Axry7elgTTtG/ZZ/qt9pVN
-	yfsjStGUdI3bsXTReM3GbXp8+ISFl0gRa8Drx0UFXxbZDo2hWMeqFTcbqZu01S39pxydO8BxqIM0g
-	m9qpLlaaeCJ2gpLKTXjko5GttuTdFe5bif25b4byB7Sl/5MbA20hP+xCf1V/isXztXN6cLpXeSFCb
-	/DN+yXmfUanr9n+3bk/NEoo5lDE4o1QkrQ2LXO+tVXoZjjA6kh49pfZDV7VMP8ROfL3kw1HP/G/ia
-	h+q26oMKIyWMQZdMJZMw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3guv3mZiRCeo7LUdmsRC1K9ikIGyz3NbtUR7NK8tMuw=; b=E0j9x28/W6v0HkIhoV4XsfecT
+	5VxiS6iuOu06TzAG6CpqTxJoSLij2DmdTW5WEBM7uILE9pvXno2gMv7XSywdjLKh9v+rWvaEJI64B
+	yNVAwzKhhnXMynwq244DxWDHkm5ZWTSvBuh91xk0BJG9hPIjn3p+0K4411K/33bJUAqu12Yyd8yCB
+	UDWk0xtQ18o0bUJrAU8zvJrFxhrwmjrPeYmnfM1ELIqU3y7SzZRt8aul3VfuAe9eqc5M3/kFMb+DL
+	WOCASBP+DiGiAAS6bOe5+dyXjE4lZbDOD+IJm2X6V/CGBtVLuo9AudehAViTXl9LeGsPcO/PIMuV3
+	Tm3SDv2bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkmO5-0007ZC-7s; Mon, 15 Jun 2020 10:30:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkmNu-0007Y7-Cd
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:30:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 578A91F1;
- Mon, 15 Jun 2020 03:30:32 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 455BB3F71F;
- Mon, 15 Jun 2020 03:30:29 -0700 (PDT)
-Date: Mon, 15 Jun 2020 11:30:27 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH] arm64: fpsimd: Added API to manage fpsimd state inside
- kernel
-Message-ID: <20200615103024.GI25945@arm.com>
-References: <CGME20200605073214epcas2p1576f3f90dbcefaad6180f2559ca5980d@epcas2p1.samsung.com>
- <20200605073052.23044-1-wooy88.kim@samsung.com>
- <20200605103705.GD85498@C02TD0UTHF1T.local>
- <20200608103340.GA31466@arm.com>
- <001401d63fd4$95646690$c02d33b0$@samsung.com>
- <20200611141101.GA31408@gaia>
+	id 1jkmWu-0002pJ-FK; Mon, 15 Jun 2020 10:39:52 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkmWj-0002op-8L
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:39:44 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 05FAWmbh003202; Mon, 15 Jun 2020 12:39:34 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=+F4jY1HeRhewZM8MzbOTtBBvHoX7iWPMn/pDhsYtkiM=;
+ b=uBocQdrSSSMoeRwxrI5NC2KcwfBXV8R+joFckdr9h6lID30OI0WKQ58EuGTsUgLPN+Eb
+ a4RZAyYxPgrZm0PEWmnJZsAwAUX6fRwGmgucsYVJvNuU4azLblG+PZjnSr5jCdtqLRAi
+ UxTcsJPrSQEgn1kdgCqB/MYkhndfq7JMebfav5j5vMDNXndEj5YEjWb5PWB64kwPCbsT
+ 4f+ZAlBJ1ACsDu99IzspOmQOCALzMLQWycO1YQwuXHmak7pbg6sDnVOEkwpBHMowYf9C
+ 5A19as0A0DbrgT9BAJcCUGhrEll+vVMv8+Gnw+MQPj7f1b5wkgLDijIQuuX6/8YLU//+ Ag== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 31mmjvs5c4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 15 Jun 2020 12:39:34 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4DBF210002A;
+ Mon, 15 Jun 2020 12:39:34 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1D8BD20EAA2;
+ Mon, 15 Jun 2020 12:39:34 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun
+ 2020 12:39:33 +0200
+Subject: Re: [PATCH 0/2] STM32 Fix uart nodes in stm32mp15-pinctrl
+To: Erwan Le Ray <erwan.leray@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+References: <20200528074003.24875-1-erwan.leray@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <b0c3a1f8-217c-968d-dfeb-484afd8eefd5@st.com>
+Date: Mon, 15 Jun 2020 12:39:33 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200611141101.GA31408@gaia>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20200528074003.24875-1-erwan.leray@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-15_02:2020-06-15,
+ 2020-06-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_033034_523289_FC29F5CC 
-X-CRM114-Status: GOOD (  22.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200615_033941_738178_C980AF76 
+X-CRM114-Status: GOOD (  12.47  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,95 +98,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Mark Rutland' <mark.rutland@arm.com>,
- 'Bhupesh Sharma' <bhsharma@redhat.com>, 'Julien Grall' <julien.grall@arm.com>,
- 'Vincenzo Frascino' <vincenzo.frascino@arm.com>,
- 'Will Deacon' <will@kernel.org>, yhwan.joo@samsung.com,
- 'Anisse Astier' <aastier@freebox.fr>, 'Marc Zyngier' <maz@kernel.org>,
- 'Allison Randal' <allison@lohutok.net>,
- 'Sanghoon Lee' <shoon114.lee@samsung.com>, jihun.kim@samsung.com,
- 'Kees Cook' <keescook@chromium.org>,
- 'Suzuki K Poulose' <suzuki.poulose@arm.com>,
- 'Wooki Min' <wooki.min@samsung.com>,
- 'Kristina Martsenko' <kristina.martsenko@arm.com>,
- 'Jeongtae Park' <jtp.park@samsung.com>, Wooyeon Kim <wooy88.kim@samsung.com>,
- 'Thomas Gleixner' <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- 'Steve Capper' <steve.capper@arm.com>,
- 'Greg Kroah-Hartman' <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org, 'James Morse' <james.morse@arm.com>,
- 'Sudeep Holla' <sudeep.holla@arm.com>, dh.han@samsung.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 03:11:02PM +0100, Catalin Marinas wrote:
-> On Thu, Jun 11, 2020 at 06:42:12PM +0900, Wooyeon Kim wrote:
-> > I am in charge of camera driver development in Samsung S.LSI division.
-> > 
-> > In order to guarantee real time processing such as Camera 3A algorithm in
-> > current or ongoing projects, prebuilt binary is loaded and used in kernel
-> > space, rather than user space.
+Hi Erwan
+
+On 5/28/20 9:40 AM, Erwan Le Ray wrote:
+> Fix uart nodes ordering and uart7_pins_a comments in stm32mp15-pinctrl.
 > 
-> Thanks for the additional details.
-
-I have to ask: there are other camera drivers in existence already.
-What makes your hardware so different that it requires all this data
-processing to be done inside the kernel?
-
-> If you do such intensive processing in an IRQ context you'd probably
-> introduce additional IRQ latency. Wouldn't offloading such work to a
-> real-time (user) thread help? In a non-preempt-rt kernel, I don't think
-> you can get much in terms of (soft) guarantees for IRQ latency anyway.
+> Erwan Le Ray (2):
+>    ARM: dts: stm32: fix uart nodes ordering in stm32mp15-pinctrl
+>    ARM: dts: stm32: fix uart7_pins_a comments in stm32mp15-pinctrl
 > 
-> > Because the binary is built with other standard library which could use
-> > FPSIMD register, kernel API should keep the original FPSIMD state for other
-> > user tasks.
+>   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 130 +++++++++++------------
+>   1 file changed, 65 insertions(+), 65 deletions(-)
 > 
-> Can you not recompile those libraries not to use FP?
-> 
-> As Mark said, for a kernel API we require at least an in-kernel,
-> upstreamed, user of that functionality.
-> 
-> > In the case of the kernel_neon_begin / kernel_neon_end that you mentioned,
-> > there is a limitation that cannot be used in hardirq context.
-> > Also, if another kernel task switching occurs while kernel API is being
-> > used, fpsimd register corruption may occur.
-> 
-> kernel_neon_begin/end disable preemption, so you can't have a task
-> switch (you can have interrupts though but we don't allow FPSIMD in IRQ
-> context).
-
-Note, the decision not to support kernel_neon_begin / kernel_neon_end in
-hardirq context was deliberate.  hardirq handlers shouldn't usually do
-anything at all except ensure that something responds to the hardware
-event, by waking some other thread or scheduling a workqueue item for
-example.  An IRQ handler that only does that has no need to do any data
-processing, and gains no advantage from using FPSIMD.
-
-Doing additional work in hardirq context will harm interrupt latency for
-the rest of the system.
-
-So, you should move the data processing work out of the hardirq handler.
-Is there a reason why this is not possible?
 
 
-Secondly, there is the question of whether FPSIMD can be used by kernel
-threads.  Currently this is only supported in a limited way.  Again,
-this a deliberate decision, for now.
+Series applied on stm32-next.
 
-Can you split the processing work into small blocks using
-kernel_neon_begin/kernel_neon_end, similarly to the arm64 crypto
-drivers?
-
-This is the current accepted way of doing number crunching inside the
-kernel without harming preemption latency too much.  Even so, it's
-primarily intended for things that affect critical paths inside the
-kernel, such as crypto or checksumming in the filesysem and network
-subsystems.
-
-Cheers
----Dave
+Regards
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
