@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DE831F9D88
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:34:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86F691F9D8B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:34:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yM2/15klDfimNz54fH9OdedDLK6QgpSsVUsPYtZlOFw=; b=ZN6LmruxukKGwJ
-	cx9+0JBZMYMcxz/alJ4K4Kum05l13RXoCAzSE+aw7+wCnzIjDd5QCQan5HtzLmMDokXRTkoeoyH7+
-	edcCLK2esynODMJ61d6h3NyyWv3iFVhxcaFHXTLQck6ISVZeb7doSj8YtunJsS6SKNr5UzaFp6bMq
-	vdYX/xJTHdQ7MUer2o+ZHBO/EZVAHB67y9hazFXJUBzWjK8RpBT4J/Y/UfM39DHDmpEe4fdYJ2/xy
-	P4MH37eQI3Qn5/Qglcq2LVFdjDaOXJp0q+hHDlq0GjSmSoBliq63rAbUnHMfFqFHkAQoDI00NzwWJ
-	DTsTrncqPgVVGsObKmQQ==;
+	List-Owner; bh=mouuFq5OvITwf5NO8iTHc/1mytwGi2WWHxUNOBtgKuk=; b=pb9dNraAd1324s
+	5et1IBnyQ3ipbziTO39nmMS6E7wDpjB6WpCPDUKyrmuWof1/51O7v3JDVfVbgugGGAo3K/oMjtIQW
+	1n9Knt9y00DK+ckGESZkNc9HWD24OOMMdRswX8lcaedymMfA9rKMXN7pNr80MUByqnCh1G23CTdPz
+	RyOWm+3fAkWunk5pzpsI23dhICXPGNQ3s8kMfDG/e9mXN1hO/H8Afhr9DunChqRlKkDs/pSHEAxda
+	T0hNOCD30pWtENohvGD17oNzAeLq8raRHycvVdrhWQep+8OdtUz8hMwa9AnQQOU4kdbywIYW06/4R
+	nc4ci9YeuhOXozCrwXuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jks3w-00066R-1L; Mon, 15 Jun 2020 16:34:20 +0000
+	id 1jks4E-0006GU-43; Mon, 15 Jun 2020 16:34:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jks3n-00065k-5g
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 16:34:12 +0000
+ id 1jks3o-000662-Az
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 16:34:13 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C9C2B207F5;
- Mon, 15 Jun 2020 16:34:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 32C1520810;
+ Mon, 15 Jun 2020 16:34:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592238850;
- bh=thG45A8ntIZN9sP66ir0jrwFj4hQP7RxEFUh34afbsQ=;
+ s=default; t=1592238852;
+ bh=09Pm7pssZKQv5PROblVhAg0GP0UqPpm4OR01g4EIpvY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YuTA92aN1ElaojPW92MEbCUre3bw08ciBXZ+ikn1Lz6cTlaoIfKktfCPlxjQ6140g
- 9hDKS5mI+lZMviQndCK0RpogsJ94l8BBHj1YFxNTr6Jbn8CHeAm9aEccBbq63ZiTGK
- ly9OU+T8agwuj6zaa6Hwkh0jN+PX8v8aTBOOGV5s=
+ b=ux+vmOpzKMn3d6a/+JaCg7SUBoKoLfOF4MstiEGswZ0hoX7o4W+bVZwoWQVUGEPKE
+ jyoVqbcXSJVJc1xtRLJE4VHIbeHCr7hqV+kbpVLc4HjfycY94pz1rRLUWdeXRX1R/Z
+ laO8pUg2jQBEPvzDDLUdrSmoLVlnEIHw2tQ4Lhuw=
 From: Will Deacon <will@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] arm64: remove TEXT_OFFSET randomization
-Date: Mon, 15 Jun 2020 17:34:00 +0100
-Message-Id: <159222305960.98922.8272329670937173495.b4-ty@kernel.org>
+To: linux-arm-kernel@lists.infradead.org,
+	Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH 0/2] arm64/sve: Misc fixes
+Date: Mon, 15 Jun 2020 17:34:01 +0100
+Message-Id: <159222357194.100947.4261034730480572836.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200615101939.634391-1-ardb@kernel.org>
-References: <20200615101939.634391-1-ardb@kernel.org>
+In-Reply-To: <1591808590-20210-1-git-send-email-Dave.Martin@arm.com>
+References: <1591808590-20210-1-git-send-email-Dave.Martin@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_093411_233984_69621763 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200615_093412_393817_C4C8F89B 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,30 +78,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com,
- Will Deacon <will@kernel.org>
+Cc: catalin.marinas@arm.com, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 15 Jun 2020 12:19:39 +0200, Ard Biesheuvel wrote:
-> TEXT_OFFSET was recently changed to 0x0, in preparation for its removal
-> at a later stage, and a warning is emitted into the kernel log when the
-> bootloader appears to have failed to take the TEXT_OFFSET image header
-> value into account.
+On Wed, 10 Jun 2020 18:03:08 +0100, Dave Martin wrote:
+> A couple of unrelated minor fixes: one documentation typo fix, and one
+> fix for a (mostly) theoretical data race.
 > 
-> Ironically, this warning itself fails to take TEXT_OFFSET into account,
-> and compares the kernel image's alignment modulo 2M against a hardcoded
-> value of 0x0, and so the warning will trigger spuriously when TEXT_OFFSET
-> randomization is enabled.
+> Dave Martin (2):
+>   docs/arm64: Fix typo'd #define in sve.rst
+>   arm64/sve: Eliminate data races on sve_default_vl
 > 
 > [...]
 
 Applied to arm64 (for-next/fixes), thanks!
 
-[1/1] arm64: remove TEXT_OFFSET randomization
-      https://git.kernel.org/arm64/c/751c263bb74f
+[1/2] docs/arm64: Fix typo'd #define in sve.rst
+      https://git.kernel.org/arm64/c/9ba6a9efa4a4
+[2/2] arm64/sve: Eliminate data races on sve_default_vl
+      https://git.kernel.org/arm64/c/1e570f512cbd
 
 Cheers,
 -- 
