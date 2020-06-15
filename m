@@ -2,71 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1F1A1F9ED0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 19:49:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FAA41F9ED7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 19:50:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QokmP+s3G+1L9Rs8TNaQg3vPBqgqRgafUYdFq5rKg4E=; b=jcR6JIQWpoi9wc
-	24iFhpDjzcj7gDZRna3OUowIUAGN/d+h2gvnVJipqRZIyGkrsXm9wqae3FJFWpDSg9hkZ1nd51tIW
-	vtixJZXqcQgaThusjsrTSUI9sPLYAkPxx7TrLVcqToa789XlFdRwubedU1fC6TV9KqLF3Uy71x1ps
-	vQWBFXuYG4X0HApVFXLoxyBOs8BngNmNQk5TKAASFc1BPBu2cEfOlX18DLWssUcbdTVIE7XP/dNjU
-	ElbWxd+14t6DCEq0jg1MxMeLqyjGe+f5sUOzn3s9gkVcdNZojkmu0Voc0mj8LNSJJzf/crsGd2/CL
-	CqqRn8ZXwUP7qquvWHow==;
+	List-Owner; bh=Ib/p/4DS++YJJE/WmXHrY1LN5wDEG6tiNaS5zVsBAWo=; b=FJQj1oyKJ/Wbwl
+	G+UHF76UpQENc7NdiA/FW8JthKH/FFu02vNTCNm+zPyAZtWlJyZuYLTYDKEjdCSR02ESD7LiGMY/H
+	PTHeCHTLa8KeqDxHYRz5q3FArIMS+k/UiqVRqPZ2mNtOnUkIC5S+qnSFCR+0Ap5uWKvtVMszxtI20
+	zL1IRpVF8G8IPo8qnP06Aj92aikX9gFn8HzrI/4XZmwxX4ig/iEl3v7ppc5EjoLlKPfLG5wemplLt
+	h7cW2Sq59aokNixFG+mN0ZmjW8tk+hMlUIIDd+Z6+xiOxKb1ojvEMlrNE8mjZClVrnu+g6zzRcLyT
+	vnqO4Cyc2jHMxXhDebrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jktEE-00029c-2r; Mon, 15 Jun 2020 17:49:02 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jktFI-0002RP-G5; Mon, 15 Jun 2020 17:50:08 +0000
+Received: from mail-io1-f44.google.com ([209.85.166.44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jktE4-00027o-0p; Mon, 15 Jun 2020 17:48:53 +0000
-Received: by mail-il1-f195.google.com with SMTP id t8so198419ilm.7;
- Mon, 15 Jun 2020 10:48:50 -0700 (PDT)
+ id 1jktEy-0002Qx-It
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 17:49:49 +0000
+Received: by mail-io1-f44.google.com with SMTP id i25so18909779iog.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 10:49:47 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=7kn635n+A3EnYes4BFXu6QF7YNnmuVI9peNToiemopE=;
- b=oWG4my0nxBjXHx0qhCR/9G1gs/o3MjJurPPj95FmONbQzWvuN7C4VNreJBC512+JSo
- h0BhIaHsQ1A1vbhrvPA96ErhMkXzj/+bajrp5jP9Xql9czpNIConvHenDvSSjgMjuoDs
- YPSEFetRWAsFrsT3GNRJXKeefpVkHesiSM0THowAGg5rkQLfMbGQ/bYCS9kCu39yUCCh
- GC7Z9OcThqCcji2rAhQyHE6Jhcb49c9847J1Y2ehhihtiPjWoX2pSIRBfSsvyScIy8tR
- Co2tvK5W56URrPdqrFC2YoCNzZbmA3q9UyejVyww69SYdqKWQC6m6RsORyYJyIJrRLuY
- YZMA==
-X-Gm-Message-State: AOAM530RGcN3o6N8Dv+eqkwp00Cu0Xa13P5nG/IYTMG2Bea9mzMWpyeR
- yv5FjLZ6+p+ssAb+ReDCFceiYz8=
-X-Google-Smtp-Source: ABdhPJxw8ZUBrSdNoZ0KM84tqgOSaSJTSDg0ljmVjphSbOR1nFj9HkbHbjM55RFjiGVS/wkHkSpA7A==
-X-Received: by 2002:a92:c6cd:: with SMTP id v13mr26329867ilm.150.1592243329646; 
- Mon, 15 Jun 2020 10:48:49 -0700 (PDT)
+ bh=E69M+/HHxmjJy3WjxOHBrpSNM901zCVG7eSXC9OYuK0=;
+ b=bhnOTY+PN8IveS0d7lwcrSPi3M1Gb2+rBVdAZgRHxPR9EolUso76RkFU/iKz/BIWoc
+ mH/w7Nn14pp2wNQQtAcz8udk3cnmr9U798rxNDHZiSEwd3T4TzgNjoGalnw2wpf/kfSU
+ OfCyfpMUU+63GPoGqhGoZTik9NOVasiyymz+nEmyt8POFejcGcdriOHIhE075tFpwd10
+ hEupm6Q9+hDDZp0iRdoNUkHWKFJHiQs3I+ozkZ4k77safnq14Tudu1DbucI1DZd8Rzjl
+ WKX+jQLfYds82QJavb6CECvMAAQJb6CalPl+V0VbglpVbRDRsYSIMPtyw5iO3g5/yrtu
+ fIdg==
+X-Gm-Message-State: AOAM532MPxDAGTUpqVWttj8EB5fO3/dJNZYAFhGZ58c6Vjhs8NBIqiN9
+ Tgyq4QAEBPzxULLg8BvVQQ==
+X-Google-Smtp-Source: ABdhPJxSbp+Dx4S42WakM7ahqNnP4zH6CRsjYOaTpPLDM89io2xDIJzBRgBMzaq+AEa//YCCSaYWMg==
+X-Received: by 2002:a6b:8b12:: with SMTP id n18mr28410717iod.160.1592243387326; 
+ Mon, 15 Jun 2020 10:49:47 -0700 (PDT)
 Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id b13sm8297409ilq.20.2020.06.15.10.48.48
+ by smtp.gmail.com with ESMTPSA id h13sm2334102ile.18.2020.06.15.10.49.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 10:48:49 -0700 (PDT)
-Received: (nullmailer pid 2028876 invoked by uid 1000);
- Mon, 15 Jun 2020 17:48:48 -0000
-Date: Mon, 15 Jun 2020 11:48:48 -0600
+ Mon, 15 Jun 2020 10:49:46 -0700 (PDT)
+Received: (nullmailer pid 2030488 invoked by uid 1000);
+ Mon, 15 Jun 2020 17:49:45 -0000
+Date: Mon, 15 Jun 2020 11:49:45 -0600
 From: Rob Herring <robh@kernel.org>
-To: Jim Quinlan <james.quinlan@broadcom.com>
-Subject: Re: [PATCH v4 03/12] dt-bindings: PCI: Add bindings for more Brcmstb
- chips
-Message-ID: <20200615174848.GA2023599@bogus>
-References: <20200605212706.7361-1-james.quinlan@broadcom.com>
- <20200605212706.7361-4-james.quinlan@broadcom.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Subject: Re: [PATCHv2 1/6] dt-bindings: power: supply: gpio-charger: convert
+ to yaml
+Message-ID: <20200615174945.GA2030383@bogus>
+References: <20200605224403.181015-1-sebastian.reichel@collabora.com>
+ <20200605224403.181015-2-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200605212706.7361-4-james.quinlan@broadcom.com>
+In-Reply-To: <20200605224403.181015-2-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_104852_062641_23493B01 
-X-CRM114-Status: GOOD (  15.99  )
+X-CRM114-CacheID: sfid-20200615_104948_617929_94201FC5 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
+ no trust [209.85.166.44 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -76,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
+ [209.85.166.44 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,111 +93,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- linux-pci@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
- bcm-kernel-feedback-list@broadcom.com,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Sebastian Reichel <sre@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Russell King <linux@armlinux.org.uk>, kernel@collabora.com,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>,
+ Emil Velikov <emil.velikov@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 05:26:43PM -0400, Jim Quinlan wrote:
-> From: Jim Quinlan <jquinlan@broadcom.com>
+On Sat, 06 Jun 2020 00:43:58 +0200, Sebastian Reichel wrote:
+> Convert the gpio-charger bindings from text format to
+> new YAML based representation.
 > 
-> - Add compatible strings for three more Broadcom STB chips: 7278, 7216,
->   7211 (STB version of RPi4).
-> - add new property 'brcm,scb-sizes'
-> - add new property 'resets'
-> - add new property 'reset-names' for 7216 only
-> - allow 'ranges' and 'dma-ranges' to have more than one item and update
->   the example to show this.
-> 
-> Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->  .../bindings/pci/brcm,stb-pcie.yaml           | 58 ++++++++++++++++---
->  1 file changed, 51 insertions(+), 7 deletions(-)
+>  .../bindings/power/supply/gpio-charger.txt    | 31 ----------
+>  .../bindings/power/supply/gpio-charger.yaml   | 58 +++++++++++++++++++
+>  2 files changed, 58 insertions(+), 31 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/power/supply/gpio-charger.txt
+>  create mode 100644 Documentation/devicetree/bindings/power/supply/gpio-charger.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> index 8680a0f86c5a..4a012d77513f 100644
-> --- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> @@ -9,12 +9,15 @@ title: Brcmstb PCIe Host Controller Device Tree Bindings
->  maintainers:
->    - Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->  
-> -allOf:
-> -  - $ref: /schemas/pci/pci-bus.yaml#
-> -
->  properties:
->    compatible:
-> -    const: brcm,bcm2711-pcie # The Raspberry Pi 4
-> +    items:
-> +      - enum:
-> +          - brcm,bcm2711-pcie # The Raspberry Pi 4
-> +          - brcm,bcm7211-pcie # Broadcom STB version of RPi4
-> +          - brcm,bcm7278-pcie # Broadcom 7278 Arm
-> +          - brcm,bcm7216-pcie # Broadcom 7216 Arm
-> +          - brcm,bcm7445-pcie # Broadcom 7445 Arm
->  
->    reg:
->      maxItems: 1
-> @@ -34,10 +37,12 @@ properties:
->        - const: msi
->  
->    ranges:
-> -    maxItems: 1
-> +    minItems: 1
-> +    maxItems: 4
->  
->    dma-ranges:
-> -    maxItems: 1
-> +    minItems: 1
-> +    maxItems: 6
->  
->    clocks:
->      maxItems: 1
-> @@ -58,8 +63,33 @@ properties:
->  
->    aspm-no-l0s: true
->  
-> +  resets:
-> +    description: for "brcm,bcm7216-pcie", must be a valid reset
-> +      phandle pointing to the RESCAL reset controller provider node.
-> +    $ref: "/schemas/types.yaml#/definitions/phandle"
-> +
-> +  reset-names:
-> +    items:
-> +      - const: rescal
-> +
-> +  brcm,scb-sizes:
-> +    description: u64 giving the 64bit PCIe memory
-> +      viewport size of a memory controller.  There may be up to
-> +      three controllers, and each size must be a power of two
-> +      with a size greater or equal to the amount of memory the
-> +      controller supports.  Note that each memory controller
-> +      may have two component regions -- base and extended -- so
-> +      this information cannot be deduced from the dma-ranges.
-> +
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint64-array
-> +      - items:
-> +          minItems: 1
-> +          maxItems: 3
-
-This can be (dropping 'allOf'):
-
-$ref: /schemas/types.yaml#/definitions/uint64-array
-minItems: 1
-maxItems: 3
-
-With that,
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
