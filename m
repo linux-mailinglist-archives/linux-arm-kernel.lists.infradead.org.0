@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 862651F97B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:02:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A82E11F97C8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:02:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7+gOKWEh4ylbdHNUxrO6w5cDy1Y22U5toFIoCgBjIVE=; b=qXTsujb1LAoIdM
-	ldB/dG+0UdDFeBKdBqwIs5afByEDJlYwiVkSlB0J57Es8LeMGiTyKF71ghz+5EwMEc7ryjFJTRKsB
-	fdTqiR06YRB73VUk/Hf+NQkLlflvegnXuETktRFNjL0CaI1+TkZ7dElATYZ+HWUb1T1gkupd7/XBT
-	lMxXLUHjE7h+EngM53prMrgTAlBNJbWPmsdeIHJR2D2QZSQxWtKJpmJdB12UkLRRPUqQhN1KLatS6
-	VuNvxrDDkTR2RUYdYQ5kUrIGdQTGAxa1hRFLhVWofLhEULqyNclYBoJUeR9fB0S7t6pZ+rSD9AMTr
-	XHnTuPevuwYs5ltGWaJg==;
+	List-Owner; bh=txKjYZbULGgIKhTrKhoqRrbH4ptpnwNepG5ybvDmcEM=; b=mmrkWuaVqV/u0g
+	AX7wjZmEe4Zwd6mClBC1P3yWD7+SdZQrPDYqEQ7yWyNvPBCnij9O5kdy/32mKrTsVmgWvLw/BT5d4
+	UfWDE0O/yDhjQTs40mjMuoqqzxIdsRc5Nt/imAf6RBxXZPB0aLhx5oTCAVelVqPyGugb2K1Cv82sN
+	X0QtilrXzpgL+O6euLJ6bIX1cQgavSifmFRm54sPzfUP2fNTAi1vZkaOSMhvU0rOZ1Sh3dp/1gAOx
+	tSUmpEaJwdSkRt8WuzLbYYaePKMhl+98WyVFxYiN3z1CdGJs764oZlNLYLbHqt2+OaY6IYIFu5Pty
+	OxZYjp6zCO9RL8Ycx+Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkokQ-0000S2-89; Mon, 15 Jun 2020 13:01:58 +0000
+	id 1jkoku-0000wK-0z; Mon, 15 Jun 2020 13:02:28 +0000
 Received: from 195-192-102-148.dyn.cablelink.at ([195.192.102.148]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkojH-0007yw-T8; Mon, 15 Jun 2020 13:00:48 +0000
+ id 1jkojK-00081b-G3; Mon, 15 Jun 2020 13:00:51 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: [PATCH 5/6] exec: add a kernel_execveat helper
-Date: Mon, 15 Jun 2020 15:00:31 +0200
-Message-Id: <20200615130032.931285-6-hch@lst.de>
+Subject: [PATCH 6/6] kernel: add a kernel_wait helper
+Date: Mon, 15 Jun 2020 15:00:32 +0200
+Message-Id: <20200615130032.931285-7-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200615130032.931285-1-hch@lst.de>
 References: <20200615130032.931285-1-hch@lst.de>
@@ -54,265 +54,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a kernel_execveat helper to execute a binary with kernel space argv
-and envp pointers.  Switch executing init and user mode helpers to this
-new helper instead of relying on the implicit set_fs(KERNEL_DS) for early
-init code and kernel threads, and move the getname call into the
-do_execve helper.
+Add a helper that waits for a pid and stores the status in the passed
+in kernel pointer.  Use it to fix the usage of kernel_wait4 in
+call_usermodehelper_exec_sync that only happens to work due to the
+implicit set_fs(KERNEL_DS) for kernel threads.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/exec.c               | 116 +++++++++++++++++++++++++++++++---------
- include/linux/binfmts.h |   6 +--
- init/main.c             |   6 +--
- kernel/umh.c            |   8 ++-
- 4 files changed, 97 insertions(+), 39 deletions(-)
+ include/linux/sched/task.h |  1 +
+ kernel/exit.c              | 16 ++++++++++++++++
+ kernel/umh.c               | 29 ++++-------------------------
+ 3 files changed, 21 insertions(+), 25 deletions(-)
 
-diff --git a/fs/exec.c b/fs/exec.c
-index 696b1e8180d7d8..9e16d56aa53e86 100644
---- a/fs/exec.c
-+++ b/fs/exec.c
-@@ -439,6 +439,21 @@ static int count_strings(const char __user *const __user *argv)
- 	return i;
+diff --git a/include/linux/sched/task.h b/include/linux/sched/task.h
+index 38359071236ad7..a80007df396e95 100644
+--- a/include/linux/sched/task.h
++++ b/include/linux/sched/task.h
+@@ -102,6 +102,7 @@ struct task_struct *fork_idle(int);
+ struct mm_struct *copy_init_mm(void);
+ extern pid_t kernel_thread(int (*fn)(void *), void *arg, unsigned long flags);
+ extern long kernel_wait4(pid_t, int __user *, int, struct rusage *);
++int kernel_wait(pid_t pid, int *stat);
+ 
+ extern void free_task(struct task_struct *tsk);
+ 
+diff --git a/kernel/exit.c b/kernel/exit.c
+index 727150f2810338..fd598846df0b17 100644
+--- a/kernel/exit.c
++++ b/kernel/exit.c
+@@ -1626,6 +1626,22 @@ long kernel_wait4(pid_t upid, int __user *stat_addr, int options,
+ 	return ret;
  }
  
-+static int count_kernel_strings(const char *const *argv)
++int kernel_wait(pid_t pid, int *stat)
 +{
-+	int i;
-+
-+	if (!argv)
-+		return 0;
-+
-+	for (i = 0; argv[i]; i++) {
-+		if (i >= MAX_ARG_STRINGS)
-+			return -E2BIG;
-+	}
-+
-+	return i;
-+}
-+
- static int check_arg_limit(struct linux_binprm *bprm)
- {
- 	unsigned long limit, ptr_size;
-@@ -615,6 +630,19 @@ int copy_string_kernel(const char *arg, struct linux_binprm *bprm)
- }
- EXPORT_SYMBOL(copy_string_kernel);
- 
-+static int copy_strings_kernel(int argc, const char *const *argv,
-+		struct linux_binprm *bprm)
-+{
++	struct wait_opts wo = {
++		.wo_type	= PIDTYPE_PID,
++		.wo_pid		= find_get_pid(pid),
++		.wo_flags	= WEXITED,
++	};
 +	int ret;
 +
-+	while (argc-- > 0) {
-+		ret = copy_string_kernel(argv[argc], bprm);
-+		if (ret)
-+			break;
-+	}
++	ret = do_wait(&wo);
++	if (ret > 0 && wo.wo_stat)
++		*stat = wo.wo_stat;
++	put_pid(wo.wo_pid);
 +	return ret;
 +}
 +
- #ifdef CONFIG_MMU
- 
- /*
-@@ -1797,9 +1825,11 @@ static int exec_binprm(struct linux_binprm *bprm)
- 	return 0;
- }
- 
--int do_execveat(int fd, struct filename *filename,
-+static int __do_execveat(int fd, struct filename *filename,
- 		const char __user *const __user *argv,
- 		const char __user *const __user *envp,
-+		const char *const *kernel_argv,
-+		const char *const *kernel_envp,
- 		int flags, struct file *file)
+ SYSCALL_DEFINE4(wait4, pid_t, upid, int __user *, stat_addr,
+ 		int, options, struct rusage __user *, ru)
  {
- 	char *pathbuf = NULL;
-@@ -1880,16 +1910,30 @@ int do_execveat(int fd, struct filename *filename,
- 	if (retval)
- 		goto out_unmark;
- 
--	bprm->argc = count_strings(argv);
--	if (bprm->argc < 0) {
--		retval = bprm->argc;
--		goto out;
--	}
-+	if (unlikely(kernel_argv)) {
-+		bprm->argc = count_kernel_strings(kernel_argv);
-+		if (bprm->argc < 0) {
-+			retval = bprm->argc;
-+			goto out;
-+		}
- 
--	bprm->envc = count_strings(envp);
--	if (bprm->envc < 0) {
--		retval = bprm->envc;
--		goto out;
-+		bprm->envc = count_kernel_strings(kernel_envp);
-+		if (bprm->envc < 0) {
-+			retval = bprm->envc;
-+			goto out;
-+		}
-+	} else {
-+		bprm->argc = count_strings(argv);
-+		if (bprm->argc < 0) {
-+			retval = bprm->argc;
-+			goto out;
-+		}
-+
-+		bprm->envc = count_strings(envp);
-+		if (bprm->envc < 0) {
-+			retval = bprm->envc;
-+			goto out;
-+		}
- 	}
- 
- 	retval = check_arg_limit(bprm);
-@@ -1906,13 +1950,22 @@ int do_execveat(int fd, struct filename *filename,
- 		goto out;
- 
- 	bprm->exec = bprm->p;
--	retval = copy_strings(bprm->envc, envp, bprm);
--	if (retval < 0)
--		goto out;
- 
--	retval = copy_strings(bprm->argc, argv, bprm);
--	if (retval < 0)
--		goto out;
-+	if (unlikely(kernel_argv)) {
-+		retval = copy_strings_kernel(bprm->envc, kernel_envp, bprm);
-+		if (retval < 0)
-+			goto out;
-+		retval = copy_strings_kernel(bprm->argc, kernel_argv, bprm);
-+		if (retval < 0)
-+			goto out;
-+	} else {
-+		retval = copy_strings(bprm->envc, envp, bprm);
-+		if (retval < 0)
-+			goto out;
-+		retval = copy_strings(bprm->argc, argv, bprm);
-+		if (retval < 0)
-+			goto out;
-+	}
- 
- 	retval = exec_binprm(bprm);
- 	if (retval < 0)
-@@ -1963,6 +2016,23 @@ int do_execveat(int fd, struct filename *filename,
- 	return retval;
- }
- 
-+static int do_execveat(int fd, const char *filename,
-+		       const char __user *const __user *argv,
-+		       const char __user *const __user *envp, int flags)
-+{
-+	int lookup_flags = (flags & AT_EMPTY_PATH) ? LOOKUP_EMPTY : 0;
-+	struct filename *name = getname_flags(filename, lookup_flags, NULL);
-+
-+	return __do_execveat(fd, name, argv, envp, NULL, NULL, flags, NULL);
-+}
-+
-+int kernel_execveat(int fd, const char *filename, const char *const *argv,
-+		const char *const *envp, int flags, struct file *file)
-+{
-+	return __do_execveat(fd, getname_kernel(filename), NULL, NULL, argv,
-+			     envp, flags, file);
-+}
-+
- void set_binfmt(struct linux_binfmt *new)
- {
- 	struct mm_struct *mm = current->mm;
-@@ -1992,7 +2062,7 @@ SYSCALL_DEFINE3(execve,
- 		const char __user *const __user *, argv,
- 		const char __user *const __user *, envp)
- {
--	return do_execveat(AT_FDCWD, getname(filename), argv, envp, 0, NULL);
-+	return do_execveat(AT_FDCWD, filename, argv, envp, 0);
- }
- 
- SYSCALL_DEFINE5(execveat,
-@@ -2001,10 +2071,7 @@ SYSCALL_DEFINE5(execveat,
- 		const char __user *const __user *, envp,
- 		int, flags)
- {
--	int lookup_flags = (flags & AT_EMPTY_PATH) ? LOOKUP_EMPTY : 0;
--	struct filename *name = getname_flags(filename, lookup_flags, NULL);
--
--	return do_execveat(fd, name, argv, envp, flags, NULL);
-+	return do_execveat(fd, filename, argv, envp, flags);
- }
- 
- /*
-@@ -2017,7 +2084,7 @@ COMPAT_SYSCALL_DEFINE3(execve, const char __user *, filename,
- 		       const char __user *const __user *, argv,
- 		       const char __user *const __user *, envp)
- {
--	return do_execveat(AT_FDCWD, getname(filename), argv, envp, 0, NULL);
-+	return do_execveat(AT_FDCWD, filename, argv, envp, 0);
- }
- 
- COMPAT_SYSCALL_DEFINE5(execveat, int, fd,
-@@ -2026,9 +2093,6 @@ COMPAT_SYSCALL_DEFINE5(execveat, int, fd,
- 		       const char __user *const __user *, envp,
- 		       int,  flags)
- {
--	int lookup_flags = (flags & AT_EMPTY_PATH) ? LOOKUP_EMPTY : 0;
--	struct filename *name = getname_flags(filename, lookup_flags, NULL);
--
--	return do_execveat(fd, name, argv, envp, flags, NULL);
-+	return do_execveat(fd, filename, argv, envp, flags);
- }
- #endif /* CONFIG_X86_X32 */
-diff --git a/include/linux/binfmts.h b/include/linux/binfmts.h
-index bed702e4b1fbd9..1e61c980c16354 100644
---- a/include/linux/binfmts.h
-+++ b/include/linux/binfmts.h
-@@ -134,9 +134,7 @@ int copy_string_kernel(const char *arg, struct linux_binprm *bprm);
- extern void set_binfmt(struct linux_binfmt *new);
- extern ssize_t read_code(struct file *, unsigned long, loff_t, size_t);
- 
--int do_execveat(int fd, struct filename *filename,
--		const char __user *const __user *__argv,
--		const char __user *const __user *__envp,
--		int flags, struct file *file);
-+int kernel_execveat(int fd, const char *filename, const char *const *argv,
-+		const char *const *envp, int flags, struct file *file);
- 
- #endif /* _LINUX_BINFMTS_H */
-diff --git a/init/main.c b/init/main.c
-index 838950ea7bca22..33de235dc2aa00 100644
---- a/init/main.c
-+++ b/init/main.c
-@@ -1329,10 +1329,8 @@ static int run_init_process(const char *init_filename)
- 	pr_debug("  with environment:\n");
- 	for (p = envp_init; *p; p++)
- 		pr_debug("    %s\n", *p);
--	return do_execveat(AT_FDCWD, getname_kernel(init_filename),
--			(const char __user *const __user *)argv_init,
--			(const char __user *const __user *)envp_init,
--			0, NULL);
-+	return kernel_execveat(AT_FDCWD, init_filename, argv_init, envp_init, 0,
-+			       NULL);
- }
- 
- static int try_to_run_init_process(const char *init_filename)
 diff --git a/kernel/umh.c b/kernel/umh.c
-index 7aa9a5817582ca..1284823dbad338 100644
+index 1284823dbad338..6fd948e478bec4 100644
 --- a/kernel/umh.c
 +++ b/kernel/umh.c
-@@ -103,11 +103,9 @@ static int call_usermodehelper_exec_async(void *data)
- 	commit_creds(new);
+@@ -126,37 +126,16 @@ static void call_usermodehelper_exec_sync(struct subprocess_info *sub_info)
+ {
+ 	pid_t pid;
  
- 	sub_info->pid = task_pid_nr(current);
--	retval = do_execveat(AT_FDCWD,
--			sub_info->path ? getname_kernel(sub_info->path) : NULL,
--			(const char __user *const __user *)sub_info->argv,
--			(const char __user *const __user *)sub_info->envp,
--			0, sub_info->file);
-+	retval = kernel_execveat(AT_FDCWD, sub_info->path,
-+			(const char *const *)sub_info->argv,
-+			(const char *const *)sub_info->envp, 0, sub_info->file);
- 	if (sub_info->file && !retval)
- 		current->flags |= PF_UMH;
- out:
+-	/* If SIGCLD is ignored kernel_wait4 won't populate the status. */
++	/* If SIGCLD is ignored do_wait won't populate the status. */
+ 	kernel_sigaction(SIGCHLD, SIG_DFL);
+ 	pid = kernel_thread(call_usermodehelper_exec_async, sub_info, SIGCHLD);
+-	if (pid < 0) {
++	if (pid < 0)
+ 		sub_info->retval = pid;
+-	} else {
+-		int ret = -ECHILD;
+-		/*
+-		 * Normally it is bogus to call wait4() from in-kernel because
+-		 * wait4() wants to write the exit code to a userspace address.
+-		 * But call_usermodehelper_exec_sync() always runs as kernel
+-		 * thread (workqueue) and put_user() to a kernel address works
+-		 * OK for kernel threads, due to their having an mm_segment_t
+-		 * which spans the entire address space.
+-		 *
+-		 * Thus the __user pointer cast is valid here.
+-		 */
+-		kernel_wait4(pid, (int __user *)&ret, 0, NULL);
+-
+-		/*
+-		 * If ret is 0, either call_usermodehelper_exec_async failed and
+-		 * the real error code is already in sub_info->retval or
+-		 * sub_info->retval is 0 anyway, so don't mess with it then.
+-		 */
+-		if (ret)
+-			sub_info->retval = ret;
+-	}
++	else
++		kernel_wait(pid, &sub_info->retval);
+ 
+ 	/* Restore default kernel sig handler */
+ 	kernel_sigaction(SIGCHLD, SIG_IGN);
+-
+ 	umh_complete(sub_info);
+ }
+ 
 -- 
 2.26.2
 
