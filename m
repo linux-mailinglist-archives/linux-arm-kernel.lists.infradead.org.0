@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 389C01F93C8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:45:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45B8C1F93CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:45:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x7rbE48us7CInoAnYzfEaNWkbbY7PWYER6dysJExZIM=; b=KYhaqWVq+QI56V
-	wevmD7bm1xr3a1FqKcjkP0Jx+83bZGpl/7Ry0Uy5cja8Ikdy2dgKV0UgoUW52WerQeyfjOI5GSCfQ
-	8yC65BUD7kydG+Nlf+cOh8+J1SMFCrQXaYh0Sk3MG0HHREye3A7PUQWjYrRAVGtF2EF77qh06G7ob
-	CZ8c8+/eZFy7FIiTlNeyNPey53DzQIBrzSCh6GIX5hXLwClC7SF5urwuQDfx+09jCDxQjnIbLfrV6
-	Mv92uRBYS8g7/YIOpdA6CJRTtueBO/ALHNjfC2U4YjCvBKkOMoUtguqjd97AYf1K5QOFwNCEaRiAQ
-	BEP4qpFWM7jkKREqEkAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ia6WTD1LS/L+Kgs0DcbsqHz2MQNfXFcYd99pK3G8F5A=; b=KZBjzPIYIZp5hm
+	d67ycT4KupYrg4W8bDu8ET7Mzkgp+UoN0FruRdpdu4VsExVbFAAiDtspCbaqpmGUOstNlE5vjwsN1
+	mOvTZGTWWAsHNeZ8MB9+tS3lGok6nX09vfQVH7ZQo7DvHrfK7RgLEyuXnJrtv+1AaFtavOltBoldx
+	ZJ4AK2lPPDDQJT526CdH4zjGB6q44tHLu4QimP4lKJCr5NaM+pWgLHh5usjiDAiMQ5arUblYnheAK
+	O/M22f5Mx+TJlh4ZdYqEh5AXg3dNQ630g/DP80QwHbRRfu0u6E45gt8AVsLU3o0qgdAeWFKVf3H/g
+	D2cOTQADcaJz/3AAhlbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklg9-00088j-7E; Mon, 15 Jun 2020 09:45:21 +0000
+	id 1jklgO-0000RV-2I; Mon, 15 Jun 2020 09:45:36 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jklfu-0006bK-7p
+ id 1jklfu-0006bM-7q
  for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:45:08 +0000
 Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B50F1395A07ACD0EFFBA;
+ by Forcepoint Email with ESMTP id BD93C695FDDCBBA5761C;
  Mon, 15 Jun 2020 17:45:00 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
@@ -33,17 +33,18 @@ From: John Garry <john.garry@huawei.com>
 To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH 0/2] perf: Improve list for arm64
-Date: Mon, 15 Jun 2020 17:40:44 +0800
-Message-ID: <1592214046-32385-1-git-send-email-john.garry@huawei.com>
+Subject: [PATCH 1/2] perf pmu: List kernel supplied event aliases for arm64
+Date: Mon, 15 Jun 2020 17:40:45 +0800
+Message-ID: <1592214046-32385-2-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
+In-Reply-To: <1592214046-32385-1-git-send-email-john.garry@huawei.com>
+References: <1592214046-32385-1-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_024506_479839_D6453167 
-X-CRM114-Status: UNSURE (   6.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200615_024506_469254_B39732D5 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,17 +75,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This couple of patches provides:
-- aliases for arm64 CPU core events in perf list, like x86
-- ensures that CPU core events are not sparsely listed
+In commit dc098b35b56f ("perf list: List kernel supplied event aliases"),
+the aliases for events are supplied in addition to CPU event in perf list.
 
-John Garry (2):
-  perf pmu: List kernel supplied event aliases for arm64
-  perf pmu: Improve CPU core PMU HW event list ordering
+This relies on the name of the core PMU being "cpu", which is not the case
+for arm64, so arm64 has always missed this. Use generic is_pmu_core()
+helper which takes account of arm64 to make this feature work for arm64
+(and possibly other archs).
 
- tools/perf/util/pmu.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+Sample, before:
+  armv8_pmuv3_0/br_mis_pred/          [Kernel PMU event]
+after:
+  br_mis_pred OR armv8_pmuv3_0/br_mis_pred/          [Kernel PMU event]
 
+Signed-off-by: John Garry <john.garry@huawei.com>
+---
+ tools/perf/util/pmu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
+index 93fe72a9dc0b..a375364537cd 100644
+--- a/tools/perf/util/pmu.c
++++ b/tools/perf/util/pmu.c
+@@ -1475,7 +1475,7 @@ void print_pmu_events(const char *event_glob, bool name_only, bool quiet_flag,
+ 		list_for_each_entry(alias, &pmu->aliases, list) {
+ 			char *name = alias->desc ? alias->name :
+ 				format_alias(buf, sizeof(buf), pmu, alias);
+-			bool is_cpu = !strcmp(pmu->name, "cpu");
++			bool is_cpu = is_pmu_core(pmu->name);
+ 
+ 			if (alias->deprecated && !deprecated)
+ 				continue;
 -- 
 2.26.2
 
