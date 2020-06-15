@@ -2,49 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 030C11FA189
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 22:32:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D349B1FA18E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 22:32:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gYLrToNd356mn2j2jpjIvvxGjLDlsQC1i/VBn/v65Js=; b=RmTS3+cdZjZHfD
-	vBChJ4GyJjxqKB03T5+R4WspWx9rMjudIjzgeA8RFRllq8qz3sSG+fiezG3GpUvlulaeoOqoD5MSN
-	+wHvF+qwU2Ufzzq98mIPPHk3AcBgPlNHfPy8g2gmuBhE4S2NjXFOH0MGsY2eiuqs5kizFF4g/i2KI
-	EnQaqQ610z/AnMqLm55LR4MBNP+ut5ORK7ebj/ip0/CQIG3DTGCI8fQbc5tBB2jEpPIWVVrHGxANd
-	taJfgnLRc4WXREpU7UWpoF+469r1j4gZvYv0WJo2XaqSJ4sSJcCcu2gxUtiIsbE5ZgO0djvVwB4h2
-	lyGdhmKDs1W46n88RQ6Q==;
+	List-Owner; bh=KArSmfHSW56y969N+Uv0uDsmvcQwR41GEdsNPAkSri8=; b=kbebZ1PFCqKQnU
+	9+fKF3CrGUBJovahMlr84wVas10VNq+b7mHemAY4dROZ/C4EHOeCFN2h9mw/Pz9pg0Qa9dfQe0V/u
+	t2bgw+Nu3Knv6+y9fAap4itq2nuwlMsPsjPWue8z63k7UH6/MBYIyl8RTRmdwpJptenXH7QrtZHjb
+	q0+wZTqxMz7eNdRMd+h6viPSpDL0/nKyWHNnz0OMUibjv+4OB49PpzZPKi0+sG1BaUzHcZMRsEQh2
+	5bFugWTnAKxHq8hydrHJ6B+SMg0bsvI5Pcr801rCFQ1a1WEvJn/WcDMeQI6xWbGyekncDDAWYaWMB
+	h1m2G07hlMojAXB4TfeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkvlq-0007hO-CP; Mon, 15 Jun 2020 20:31:54 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jkvm8-00085M-Q5; Mon, 15 Jun 2020 20:32:12 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkvlJ-0007VG-T0; Mon, 15 Jun 2020 20:31:23 +0000
+ id 1jkvlL-0007Vi-JK; Mon, 15 Jun 2020 20:31:25 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id E93AA2A2CFC
+ (Authenticated sender: eballetbo) with ESMTPSA id 0D1F22A2CFD
 From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 To: linux-kernel@vger.kernel.org,
 	Collabora Kernel ML <kernel@collabora.com>
-Subject: [RESEND PATCH v4 3/7] drm/mediatek: mtk_dsi: Rename bridge to
- next_bridge
-Date: Mon, 15 Jun 2020 22:31:04 +0200
-Message-Id: <20200615203108.786083-4-enric.balletbo@collabora.com>
+Subject: [RESEND PATCH v4 4/7] drm/mediatek: mtk_dsi: Convert to bridge driver
+Date: Mon, 15 Jun 2020 22:31:05 +0200
+Message-Id: <20200615203108.786083-5-enric.balletbo@collabora.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200615203108.786083-1-enric.balletbo@collabora.com>
 References: <20200615203108.786083-1-enric.balletbo@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_133122_061417_509A2264 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20200615_133123_891594_0CEFF6EC 
+X-CRM114-Status: GOOD (  16.23  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -71,61 +68,232 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is really a cosmetic change just to make a bit more readable the
-code after convert the driver to drm_bridge. The bridge variable name
-will be used by the encoder drm_bridge, and the chained bridge will be
-named next_bridge.
+Convert mtk_dsi to a bridge driver with built-in encoder support for
+compatibility with existing component drivers.
 
 Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
 ---
 
-Changes in v4: None
+Changes in v4:
+- Remove double call to drm_encoder_init(). (Chun-Kuang Hu)
+- Cleanup the encoder in mtk_dsi_unbind(). (Chun-Kuang Hu)
+
 Changes in v3:
-- Replace s/bridge/next bridge/ for comment. (Laurent Pinchart)
+- Add the bridge.type. (Laurent Pinchart)
 
 Changes in v2: None
 
- drivers/gpu/drm/mediatek/mtk_dsi.c | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_dsi.c | 117 +++++++++++++++++++----------
+ 1 file changed, 79 insertions(+), 38 deletions(-)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index 270bf22c98feb..208f49bf14a01 100644
+index 208f49bf14a01..759a5b37fb4d2 100644
 --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
 +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -183,7 +183,7 @@ struct mtk_dsi {
+@@ -181,6 +181,7 @@ struct mtk_dsi {
+ 	struct device *dev;
+ 	struct mipi_dsi_host host;
  	struct drm_encoder encoder;
++	struct drm_bridge bridge;
  	struct drm_connector conn;
  	struct drm_panel *panel;
--	struct drm_bridge *bridge;
-+	struct drm_bridge *next_bridge;
- 	struct phy *phy;
+ 	struct drm_bridge *next_bridge;
+@@ -206,9 +207,9 @@ struct mtk_dsi {
+ 	const struct mtk_dsi_driver_data *driver_data;
+ };
  
- 	void __iomem *regs;
-@@ -894,9 +894,10 @@ static int mtk_dsi_create_conn_enc(struct drm_device *drm, struct mtk_dsi *dsi)
- 	 */
- 	dsi->encoder.possible_crtcs = 1;
+-static inline struct mtk_dsi *encoder_to_dsi(struct drm_encoder *e)
++static inline struct mtk_dsi *bridge_to_dsi(struct drm_bridge *b)
+ {
+-	return container_of(e, struct mtk_dsi, encoder);
++	return container_of(b, struct mtk_dsi, bridge);
+ }
  
--	/* If there's a bridge, attach to it and let it create the connector */
--	if (dsi->bridge) {
--		ret = drm_bridge_attach(&dsi->encoder, dsi->bridge, NULL, 0);
-+	/* If there's a next bridge, attach to it and let it create the connector */
-+	if (dsi->next_bridge) {
-+		ret = drm_bridge_attach(&dsi->encoder, dsi->next_bridge, NULL,
-+					0);
- 		if (ret) {
- 			DRM_ERROR("Failed to attach bridge to drm\n");
- 			goto err_encoder_cleanup;
-@@ -1177,7 +1178,7 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+ static inline struct mtk_dsi *connector_to_dsi(struct drm_connector *c)
+@@ -788,32 +789,52 @@ static void mtk_output_dsi_disable(struct mtk_dsi *dsi)
+ 	dsi->enabled = false;
+ }
+ 
+-static bool mtk_dsi_encoder_mode_fixup(struct drm_encoder *encoder,
+-				       const struct drm_display_mode *mode,
+-				       struct drm_display_mode *adjusted_mode)
++static void mtk_dsi_encoder_destroy(struct drm_encoder *encoder)
+ {
+-	return true;
++	drm_encoder_cleanup(encoder);
+ }
+ 
+-static void mtk_dsi_encoder_mode_set(struct drm_encoder *encoder,
+-				     struct drm_display_mode *mode,
+-				     struct drm_display_mode *adjusted)
++static const struct drm_encoder_funcs mtk_dsi_encoder_funcs = {
++	.destroy = mtk_dsi_encoder_destroy,
++};
++
++static int mtk_dsi_create_conn_enc(struct drm_device *drm, struct mtk_dsi *dsi);
++static void mtk_dsi_destroy_conn_enc(struct mtk_dsi *dsi);
++
++static int mtk_dsi_bridge_attach(struct drm_bridge *bridge,
++				 enum drm_bridge_attach_flags flags)
++{
++	struct mtk_dsi *dsi = bridge_to_dsi(bridge);
++
++	return mtk_dsi_create_conn_enc(bridge->dev, dsi);
++}
++
++static void mtk_dsi_bridge_detach(struct drm_bridge *bridge)
+ {
+-	struct mtk_dsi *dsi = encoder_to_dsi(encoder);
++	struct mtk_dsi *dsi = bridge_to_dsi(bridge);
++
++	mtk_dsi_destroy_conn_enc(dsi);
++}
++
++static void mtk_dsi_bridge_mode_set(struct drm_bridge *bridge,
++				    const struct drm_display_mode *mode,
++				    const struct drm_display_mode *adjusted)
++{
++	struct mtk_dsi *dsi = bridge_to_dsi(bridge);
+ 
+ 	drm_display_mode_to_videomode(adjusted, &dsi->vm);
+ }
+ 
+-static void mtk_dsi_encoder_disable(struct drm_encoder *encoder)
++static void mtk_dsi_bridge_disable(struct drm_bridge *bridge)
+ {
+-	struct mtk_dsi *dsi = encoder_to_dsi(encoder);
++	struct mtk_dsi *dsi = bridge_to_dsi(bridge);
+ 
+ 	mtk_output_dsi_disable(dsi);
+ }
+ 
+-static void mtk_dsi_encoder_enable(struct drm_encoder *encoder)
++static void mtk_dsi_bridge_enable(struct drm_bridge *bridge)
+ {
+-	struct mtk_dsi *dsi = encoder_to_dsi(encoder);
++	struct mtk_dsi *dsi = bridge_to_dsi(bridge);
+ 
+ 	mtk_output_dsi_enable(dsi);
+ }
+@@ -825,11 +846,12 @@ static int mtk_dsi_connector_get_modes(struct drm_connector *connector)
+ 	return drm_panel_get_modes(dsi->panel, connector);
+ }
+ 
+-static const struct drm_encoder_helper_funcs mtk_dsi_encoder_helper_funcs = {
+-	.mode_fixup = mtk_dsi_encoder_mode_fixup,
+-	.mode_set = mtk_dsi_encoder_mode_set,
+-	.disable = mtk_dsi_encoder_disable,
+-	.enable = mtk_dsi_encoder_enable,
++static const struct drm_bridge_funcs mtk_dsi_bridge_funcs = {
++	.attach = mtk_dsi_bridge_attach,
++	.detach = mtk_dsi_bridge_detach,
++	.disable = mtk_dsi_bridge_disable,
++	.enable = mtk_dsi_bridge_enable,
++	.mode_set = mtk_dsi_bridge_mode_set,
+ };
+ 
+ static const struct drm_connector_funcs mtk_dsi_connector_funcs = {
+@@ -880,20 +902,6 @@ static int mtk_dsi_create_conn_enc(struct drm_device *drm, struct mtk_dsi *dsi)
+ {
+ 	int ret;
+ 
+-	ret = drm_simple_encoder_init(drm, &dsi->encoder,
+-				      DRM_MODE_ENCODER_DSI);
+-	if (ret) {
+-		DRM_ERROR("Failed to encoder init to drm\n");
+-		return ret;
+-	}
+-	drm_encoder_helper_add(&dsi->encoder, &mtk_dsi_encoder_helper_funcs);
+-
+-	/*
+-	 * Currently display data paths are statically assigned to a crtc each.
+-	 * crtc 0 is OVL0 -> COLOR0 -> AAL -> OD -> RDMA0 -> UFOE -> DSI0
+-	 */
+-	dsi->encoder.possible_crtcs = 1;
+-
+ 	/* If there's a next bridge, attach to it and let it create the connector */
+ 	if (dsi->next_bridge) {
+ 		ret = drm_bridge_attach(&dsi->encoder, dsi->next_bridge, NULL,
+@@ -1115,6 +1123,34 @@ static const struct mipi_dsi_host_ops mtk_dsi_ops = {
+ 	.transfer = mtk_dsi_host_transfer,
+ };
+ 
++static int mtk_dsi_encoder_init(struct drm_device *drm, struct mtk_dsi *dsi)
++{
++	int ret;
++
++	ret = drm_encoder_init(drm, &dsi->encoder, &mtk_dsi_encoder_funcs,
++			       DRM_MODE_ENCODER_DSI, NULL);
++	if (ret) {
++		DRM_ERROR("Failed to encoder init to drm\n");
++		return ret;
++	}
++
++	/*
++	 * Currently display data paths are statically assigned to a crtc each.
++	 * crtc 0 is OVL0 -> COLOR0 -> AAL -> OD -> RDMA0 -> UFOE -> DSI0
++	 */
++	dsi->encoder.possible_crtcs = 1;
++
++	ret = drm_bridge_attach(&dsi->encoder, &dsi->bridge, NULL, 0);
++	if (ret)
++		goto err_cleanup_encoder;
++
++	return 0;
++
++err_cleanup_encoder:
++	drm_encoder_cleanup(&dsi->encoder);
++	return ret;
++}
++
+ static int mtk_dsi_bind(struct device *dev, struct device *master, void *data)
+ {
+ 	int ret;
+@@ -1128,11 +1164,9 @@ static int mtk_dsi_bind(struct device *dev, struct device *master, void *data)
+ 		return ret;
  	}
  
- 	ret = drm_of_find_panel_or_bridge(dev->of_node, 0, 0,
--					  &dsi->panel, &dsi->bridge);
-+					  &dsi->panel, &dsi->next_bridge);
- 	if (ret)
- 		goto err_unregister_host;
+-	ret = mtk_dsi_create_conn_enc(drm, dsi);
+-	if (ret) {
+-		DRM_ERROR("Encoder create failed with %d\n", ret);
++	ret = mtk_dsi_encoder_init(drm, dsi);
++	if (ret)
+ 		goto err_unregister;
+-	}
+ 
+ 	return 0;
+ 
+@@ -1147,7 +1181,7 @@ static void mtk_dsi_unbind(struct device *dev, struct device *master,
+ 	struct drm_device *drm = data;
+ 	struct mtk_dsi *dsi = dev_get_drvdata(dev);
+ 
+-	mtk_dsi_destroy_conn_enc(dsi);
++	drm_encoder_cleanup(&dsi->encoder);
+ 	mtk_ddp_comp_unregister(drm, &dsi->ddp_comp);
+ }
+ 
+@@ -1257,6 +1291,12 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+ 
+ 	platform_set_drvdata(pdev, dsi);
+ 
++	dsi->bridge.funcs = &mtk_dsi_bridge_funcs;
++	dsi->bridge.of_node = dev->of_node;
++	dsi->bridge.type = DRM_MODE_CONNECTOR_DSI;
++
++	drm_bridge_add(&dsi->bridge);
++
+ 	ret = component_add(&pdev->dev, &mtk_dsi_component_ops);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "failed to add component: %d\n", ret);
+@@ -1275,6 +1315,7 @@ static int mtk_dsi_remove(struct platform_device *pdev)
+ 	struct mtk_dsi *dsi = platform_get_drvdata(pdev);
+ 
+ 	mtk_output_dsi_disable(dsi);
++	drm_bridge_remove(&dsi->bridge);
+ 	component_del(&pdev->dev, &mtk_dsi_component_ops);
+ 	mipi_dsi_host_unregister(&dsi->host);
  
 -- 
 2.27.0
