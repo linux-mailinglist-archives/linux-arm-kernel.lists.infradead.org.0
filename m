@@ -2,120 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9945F1F94A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:33:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98CE11F94A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:30:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JloPnyVD2VtEalLayLDuaNCbX+ykck1fbHgeJsuBxaE=; b=XKdIFF6soSQGcv
-	c0X+MMjyaaYX5dRvLDTWun2YaD+dY58ZMsfb6P9tg++KbNf5Wha3nynAPEMZoo9hG9yECeWZY1jbt
-	01ve9j2C2gKfdjZWUaCFE9VRB0BhMxkuYIt1lk2iC+Ivv6xzi60hgSsDzBAsQiM/0MYBRjZqUh3s2
-	FynnwbqawWwNZzB17AqxLkS/xMXng7i54dpwm6glqJbUqnyXh2Nb0czbLCuSzT2e7huve4QqvFCnL
-	XMh8qDHCmVC6zSviy+wA37/G0G2ONmO2Yd7lrZobFZdeePKrq4eTHNEmPwZIZiGAXHzh1hVC4by5D
-	o8jkvuRktrxBe9xc2pvA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Xm/aqpal/TMAJ7EC5CXpc0DtGsDf2TjspH5Qc95td/4=; b=nvhJkxjB0GCsFe
+	sW9LlmSpDFjAFQfG/3hhbvSwzhPZXLo170XONEmwNLo3dihCg0Z/Rh8Axry7elgTTtG/ZZ/qt9pVN
+	yfsjStGUdI3bsXTReM3GbXp8+ISFl0gRa8Drx0UFXxbZDo2hWMeqFTcbqZu01S39pxydO8BxqIM0g
+	m9qpLlaaeCJ2gpLKTXjko5GttuTdFe5bif25b4byB7Sl/5MbA20hP+xCf1V/isXztXN6cLpXeSFCb
+	/DN+yXmfUanr9n+3bk/NEoo5lDE4o1QkrQ2LXO+tVXoZjjA6kh49pfZDV7VMP8ROfL3kw1HP/G/ia
+	h+q26oMKIyWMQZdMJZMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkmQD-0007zs-DE; Mon, 15 Jun 2020 10:32:57 +0000
-Received: from mail-vi1eur05on2041.outbound.protection.outlook.com
- ([40.107.21.41] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkmQ3-0007zQ-8A
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:32:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HbdSavLDhFc5ZZ3OnqjEzjGhFefNq1q4YPKkBwifx1DBwVxH2svcplhvlIFDe4+vK5C+Ctei4OSNPt2b0U4yqcyZodjmhlMUTdkBlBY38xu0Q3LPPzppVcbrbYUyiDI2ztr5TIwgfY9P1WrLqxc4xrMTsEFLsDfHqPilxX7edP1Co6KzvpJzxJ100L9wtSKUQcxjr9remZQUISRkYZSqbKItq6m0t8KSqM0DyheXPO6wSN+ydILBJW4o4j4DvHn2NwhKjI7vvyBo8AUGqtTq8AWRJz2/RmU6EBOg/+8KbWa14tQPS3tccbg43wnhv5biBeJy5xSEdmrGy34cmeJ6fw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PB0n1ep6nAbDo/vNnHPUtZ5o88XOFgIodNhgAOioVRs=;
- b=oE/PJjM+q0t/R6h5zmTU25ykorQXwXMYogTS1r2YFDsorvmmvy2mViEyDonUkvJ7nccctmOk540MCxx8FtMKDQ5WFIhTuxBEKFA9dS5juH0g2GsD4TNcVLHxZCpDj0SDqRLyIH2kx7pX5NIJaa/Tg1nCssWudtskVe/tz0v0euBnAaaxuwR7lmU4jNNFP8yM19zYTI8igIe1IbILK7rV4Ep2FQIpmd5ei7KqzKW4oyhS3Gk5ZEn+7I4dCK68TY0qGNbIfAl0WiNGeu4DRv0TUyhkdTT5cQWi0aacDIvVqtRN8+a3TT2MqwSnGvKU+2o2nxe5dWmIG9AxxLKmAi3mpA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PB0n1ep6nAbDo/vNnHPUtZ5o88XOFgIodNhgAOioVRs=;
- b=Uv//z8K2BLAf20oVJP9S4mtn381VF6g35ef43R2qYFuuzcfbU8wye2aIfsF19iLtAuVjJWd199yBkZJR5H3jgymr2rmtLJZkD8ko77PGRG/C+gVu5jIXZq1KlQj54HqQBfeos+FFqM83cbI3/k8V0EdZABqQYlvaw2DnCt8t52w=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
- by DB6PR0402MB2712.eurprd04.prod.outlook.com (2603:10a6:4:99::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.24; Mon, 15 Jun
- 2020 10:32:41 +0000
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::2d36:b569:17c:7701]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::2d36:b569:17c:7701%4]) with mapi id 15.20.3088.028; Mon, 15 Jun 2020
- 10:32:41 +0000
-From: peng.fan@nxp.com
-To: shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	aisheng.dong@nxp.com
-Subject: [PATCH] soc: imx: Kconfig: force using OF when COMPILE_TEST
-Date: Mon, 15 Jun 2020 18:21:25 +0800
-Message-Id: <1592216485-20574-1-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-ClientProxiedBy: SG2PR06CA0102.apcprd06.prod.outlook.com
- (2603:1096:3:14::28) To DB6PR0402MB2760.eurprd04.prod.outlook.com
- (2603:10a6:4:a1::14)
+	id 1jkmO5-0007ZC-7s; Mon, 15 Jun 2020 10:30:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkmNu-0007Y7-Cd
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:30:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 578A91F1;
+ Mon, 15 Jun 2020 03:30:32 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 455BB3F71F;
+ Mon, 15 Jun 2020 03:30:29 -0700 (PDT)
+Date: Mon, 15 Jun 2020 11:30:27 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH] arm64: fpsimd: Added API to manage fpsimd state inside
+ kernel
+Message-ID: <20200615103024.GI25945@arm.com>
+References: <CGME20200605073214epcas2p1576f3f90dbcefaad6180f2559ca5980d@epcas2p1.samsung.com>
+ <20200605073052.23044-1-wooy88.kim@samsung.com>
+ <20200605103705.GD85498@C02TD0UTHF1T.local>
+ <20200608103340.GA31466@arm.com>
+ <001401d63fd4$95646690$c02d33b0$@samsung.com>
+ <20200611141101.GA31408@gaia>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.66) by
- SG2PR06CA0102.apcprd06.prod.outlook.com (2603:1096:3:14::28) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3088.19 via Frontend Transport; Mon, 15 Jun 2020 10:32:38 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 6781f557-18b9-4bf7-c966-08d811176ebf
-X-MS-TrafficTypeDiagnostic: DB6PR0402MB2712:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB6PR0402MB27123A28859A7BC90D4A377D889C0@DB6PR0402MB2712.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:901;
-X-Forefront-PRVS: 04359FAD81
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: rkdhH+YLqtB1oPT7fCo1sYZChOWMmZXXqWWvVYo6W4b3NnIlAS7zVObWhKipkfaLdaMJvFYJ8dEpSLeUIQxokrooomdBi936hzYTQ8itUTd94AZOm9yf0z7Qx4fAMJVpHJeDCslUVaLZRXKlgmUigS7DdezBr0eTuUeBd6T6Z0cfa1wMncEJVhytb8lDto1xh2ChHtBlXGkpIjqCPXPLtfOLUbOq1eG+o8HqfQOgsEl78kCgrJl+VVyo33RXQ50agDXywi577Op4ozst0mwjkJw1nA0N+P9gwTDUx7cX0dy2gX5nOtmmXJyxwShB+Hoh0oSFB3GSCbitLvFStR72K6o04fKTZWdg/A1MV8CtK9hT19iuxSLNXDh+i3nOXgcN
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(366004)(39860400002)(136003)(396003)(346002)(66946007)(2616005)(2906002)(6486002)(8676002)(36756003)(9686003)(8936002)(956004)(6666004)(83380400001)(4744005)(5660300002)(66476007)(66556008)(6512007)(6506007)(69590400007)(316002)(52116002)(4326008)(86362001)(26005)(186003)(478600001)(16526019);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: 4JS0vAloko/103JpaBJLpdmGekXuVeXs+JvFuIJcMidyR+suyFOjs/TObDYMICedH5l2LNU1F2qphNLQBiF0rPLUjv259tVjy3H55ia5mtbUTDji1Sq3/x8mTTb8Rg5q2OQ7cOPAAaQujHHBE5ynEonjXMuTxjCgCg0T+jJsVzUwzOYG8xbSmeV75SYDFFnEl46fk+maTi714h90Kn7miOcHmkp7CfYlYuiZ9tGg4ujeW0HjN3K1ASmcoCf8bYCCUUDzcEEXMPIV3rKO7zV+HnHppAvzWa0davS0XdSMrQZX+9lL7S5KB260HE3usTCH4QPmU/hMP2Z/bCFWdUhXF1OnlpUQ7Ha+cC6uAJsfdKXm37cB1713GDP5K8b1nzREKxuP9AEwmSQCwtk1v1nz+PFXNMqxBaWCVvgj/knoUMZGSq/btwZNxWUcRabax10usY9cqAYvStUWdyFMhnk6rix1XYraaads3WwMC0MZr0rjj/KI9Hl1gSYCKQHQNMUC
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6781f557-18b9-4bf7-c966-08d811176ebf
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Jun 2020 10:32:41.6696 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 4od15o1888hXtIvT9bm7eB0dtZ1PtPyqJO+UHko/Q6wtleWilf3lpVMF20O6cBf/7ElyrkRId3eqc1T8CZO7Zg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2712
+Content-Disposition: inline
+In-Reply-To: <20200611141101.GA31408@gaia>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_033247_368862_7808749B 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_033034_523289_FC29F5CC 
+X-CRM114-Status: GOOD (  22.47  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.41 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.41 listed in wl.mailspike.net]
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,43 +68,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, leonard.crestez@nxp.com,
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de, linux-imx@nxp.com
+Cc: 'Mark Rutland' <mark.rutland@arm.com>,
+ 'Bhupesh Sharma' <bhsharma@redhat.com>, 'Julien Grall' <julien.grall@arm.com>,
+ 'Vincenzo Frascino' <vincenzo.frascino@arm.com>,
+ 'Will Deacon' <will@kernel.org>, yhwan.joo@samsung.com,
+ 'Anisse Astier' <aastier@freebox.fr>, 'Marc Zyngier' <maz@kernel.org>,
+ 'Allison Randal' <allison@lohutok.net>,
+ 'Sanghoon Lee' <shoon114.lee@samsung.com>, jihun.kim@samsung.com,
+ 'Kees Cook' <keescook@chromium.org>,
+ 'Suzuki K Poulose' <suzuki.poulose@arm.com>,
+ 'Wooki Min' <wooki.min@samsung.com>,
+ 'Kristina Martsenko' <kristina.martsenko@arm.com>,
+ 'Jeongtae Park' <jtp.park@samsung.com>, Wooyeon Kim <wooy88.kim@samsung.com>,
+ 'Thomas Gleixner' <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ 'Steve Capper' <steve.capper@arm.com>,
+ 'Greg Kroah-Hartman' <gregkh@linuxfoundation.org>,
+ linux-kernel@vger.kernel.org, 'James Morse' <james.morse@arm.com>,
+ 'Sudeep Holla' <sudeep.holla@arm.com>, dh.han@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+On Thu, Jun 11, 2020 at 03:11:02PM +0100, Catalin Marinas wrote:
+> On Thu, Jun 11, 2020 at 06:42:12PM +0900, Wooyeon Kim wrote:
+> > I am in charge of camera driver development in Samsung S.LSI division.
+> > 
+> > In order to guarantee real time processing such as Camera 3A algorithm in
+> > current or ongoing projects, prebuilt binary is loaded and used in kernel
+> > space, rather than user space.
+> 
+> Thanks for the additional details.
 
-Fix the build warning with x86_64-randconfig
->> drivers/soc/imx/soc-imx8m.c:150:34: warning: unused variable
->> 'imx8_soc_match' [-Wunused-const-variable]
-static const struct of_device_id imx8_soc_match[] = { ^
+I have to ask: there are other camera drivers in existence already.
+What makes your hardware so different that it requires all this data
+processing to be done inside the kernel?
 
-Fixes: fc40200ebf82 ("soc: imx: increase build coverage for imx8m soc driver")
-Reported-by: kernel test robot <lkp@intel.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/soc/imx/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> If you do such intensive processing in an IRQ context you'd probably
+> introduce additional IRQ latency. Wouldn't offloading such work to a
+> real-time (user) thread help? In a non-preempt-rt kernel, I don't think
+> you can get much in terms of (soft) guarantees for IRQ latency anyway.
+> 
+> > Because the binary is built with other standard library which could use
+> > FPSIMD register, kernel API should keep the original FPSIMD state for other
+> > user tasks.
+> 
+> Can you not recompile those libraries not to use FP?
+> 
+> As Mark said, for a kernel API we require at least an in-kernel,
+> upstreamed, user of that functionality.
+> 
+> > In the case of the kernel_neon_begin / kernel_neon_end that you mentioned,
+> > there is a limitation that cannot be used in hardirq context.
+> > Also, if another kernel task switching occurs while kernel API is being
+> > used, fpsimd register corruption may occur.
+> 
+> kernel_neon_begin/end disable preemption, so you can't have a task
+> switch (you can have interrupts though but we don't allow FPSIMD in IRQ
+> context).
 
-diff --git a/drivers/soc/imx/Kconfig b/drivers/soc/imx/Kconfig
-index d515d2cc20ed..aadf13c9d396 100644
---- a/drivers/soc/imx/Kconfig
-+++ b/drivers/soc/imx/Kconfig
-@@ -19,7 +19,7 @@ config IMX_SCU_SOC
- 
- config SOC_IMX8M
- 	bool "i.MX8M SoC family support"
--	depends on ARCH_MXC || COMPILE_TEST
-+	depends on ARCH_MXC || (COMPILE_TEST && OF)
- 	default ARCH_MXC && ARM64
- 	select SOC_BUS
- 	help
--- 
-2.16.4
+Note, the decision not to support kernel_neon_begin / kernel_neon_end in
+hardirq context was deliberate.  hardirq handlers shouldn't usually do
+anything at all except ensure that something responds to the hardware
+event, by waking some other thread or scheduling a workqueue item for
+example.  An IRQ handler that only does that has no need to do any data
+processing, and gains no advantage from using FPSIMD.
 
+Doing additional work in hardirq context will harm interrupt latency for
+the rest of the system.
+
+So, you should move the data processing work out of the hardirq handler.
+Is there a reason why this is not possible?
+
+
+Secondly, there is the question of whether FPSIMD can be used by kernel
+threads.  Currently this is only supported in a limited way.  Again,
+this a deliberate decision, for now.
+
+Can you split the processing work into small blocks using
+kernel_neon_begin/kernel_neon_end, similarly to the arm64 crypto
+drivers?
+
+This is the current accepted way of doing number crunching inside the
+kernel without harming preemption latency too much.  Even so, it's
+primarily intended for things that affect critical paths inside the
+kernel, such as crypto or checksumming in the filesysem and network
+subsystems.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
