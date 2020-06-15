@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65E451F91EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:43:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 482D61F91FC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:43:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FMq/HI3MJX4GCpzu9nKLQrwZw+hAN9W9SdnQIhjhbh0=; b=ohujMJBa9MWfGE
-	kEj7RC1atL8ukw5x+Cdla/9bzSGQ3mqMHumEDM5X8RDGKdEzECCxwkr+t6yp9cbmaSY4UoPJeJbTB
-	u9G7lujyW9i5tUFgeY6R2Wz2Uu2bHXifsWVOdIqIWHMRW97SAaYGaPv8qytU09mFHv7pUmqWUuSmI
-	yO9Wn/+3wktglUfRwlrGyKV6j2BJSl51MUO+hviv6wJRnnuT4l62G8Gwt5vojBl5Zkf07b8qgsc8/
-	SqbB6YkyAUX87ED1gYpDX8KqVs7vSW/yIROdJjfbJUgNrvwpgJwVxzHVUVxM8DN61WNFR5vTeTXE7
-	CMVarsH7WZnRvTVNcfeg==;
+	List-Owner; bh=CNAUffDYfjVejIWama8hIUFwnNEzcA7YK/8yyXafUvU=; b=rTTDzEvOn3+LUR
+	KPuaXdELttLeYRwtTHvWaGLGTmC1IHaGSbFETrj4IjceQF3CtaKLn0+pWCciDN008OTEZEokAPEA7
+	CAwjnVk/56LL7zfm1/QDlLL0H7nkw+9nzyPhUJC0IXgYuSM5MZ8tDKrFyyGXhWSPnCPzscUPuY8Xj
+	gwb77UVBNOHTTaGvywVBUoTQ0AKGhyk7y9WEtalw4pA4Q8FYZPQxhlDpe61OB/EA9YwR0IHJU+MER
+	GGnhIEVA/f77NAd4lub+calzRB4VlDHxA6ygS6J5Vm5lUkTe+BzGJEHxE2fFM0iluYbm+v3FnDIj7
+	McX1QmKkeEW8uSs3TuFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkkiB-0002wM-87; Mon, 15 Jun 2020 08:43:23 +0000
+	id 1jkkiR-0003BR-LF; Mon, 15 Jun 2020 08:43:39 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkgL-0001Y6-2y; Mon, 15 Jun 2020 08:41:30 +0000
+ id 1jkkgM-0001aE-Ot; Mon, 15 Jun 2020 08:41:32 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 7E7F158014E;
- Mon, 15 Jun 2020 04:41:28 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Mon, 15 Jun 2020 04:41:28 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 1284F58014B;
+ Mon, 15 Jun 2020 04:41:30 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 15 Jun 2020 04:41:30 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=kZTi+Ua3AZclE
- VFFt8dvZ6VcmnI6J89SBajyMLNn8es=; b=VOpH3xGVoZk3cZvK1vGk+nGWAPwId
- 6uKbvHVMKawbh0hQuLMuVUCe7RClJfzhZ9OCPAgXgdQHkhB6+v7r4+rYZM35Bbl9
- HehUKfGUjcngWYd5CiwHEVqYlahgME3IeEUDXrTbEiOycRvIuMRUdPE3TbbY5P61
- vQd4RJzvYa+cbMOzpjc8kNgpOdmK9Y2p0rRfcPDewQ6o3ArNhC++TiOMzyjMoBLP
- 20nZtjsa7NTKFNY17BjU+MLJNjw3wZGRARrZPA28NA5eSNrMXKjm4qEbnz3HctzS
- YtL/eFf/gTXJ4VcmmR5HN2JqEeuNFhkQo1ggUGCJgtxsgzk943z7IU7YA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=pYyNDSSuURVGq
+ uva2iiYPS/hBBwj419TwMZtcWAi3tY=; b=MWQ/7w8gM+1+hIj6XYWFc/qs9YDL4
+ 5DgT2qF3IiOdf5H8UU0uKAxQwNQ67xeLU388EshR2hGUG8zyrO8Qaz2wpUFyhY7q
+ 4VdHQrZoTMVEXAtGUyvX/CWPTJANXUXtH45ZxNDBHs4F0PqQj8MFgTq+vyOowo9K
+ 4ZF76K9GCelIKuv9hdURPTrhPqjEIeLExDcv9j6h1e6Al4zRb9jjGVzZ7/0WUn70
+ t3NBfGVpnF6ZpZJQOuN4Jr+oxwoqrEuzdqQ4NDNs2dpoi8ulIV9E3rBXmVw8+dzc
+ AluauCARZM2htyj789SCMtfPJME5I3s2v1gLJ1RRJ9HSUkIH4QFaLWyTw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=kZTi+Ua3AZclEVFFt8dvZ6VcmnI6J89SBajyMLNn8es=; b=oQ9vuA9d
- Q8fwGOO36h2EzhCNNjN3ppRHP2XNv7WnJep8dAWqI8NoTNVhCKz+qIrHiOlf9FYf
- SxlsKs4ccXK0ZQvGTRYHp+MeZWppvo+K8pFmnz9ra+gnRd5GhRCwEiZZOKDLBBbX
- HXaiHshNklpLd3bb/NS2szoRK3mdawRPtD4pX/zZKC148E4fGmxpMELydv+AwScm
- R2t7I0hBC7HkAdzU04QWubgSJUrHCH0QpzXCSNBrptYsHHw2gDXxvZQvTen5eoom
- +bA5BpkE7avgUqEXqQr+F8xcg6ZOLFHbXZ++A7ksVlYMQr3rNw65ja4zJ/Qry5az
- BnLbeLzfiNKiAQ==
-X-ME-Sender: <xms:ODTnXpcOFi138EXK2UV1t-4nuMpAAVbuYeWYNgoTvq0yyCfuXt5Cpw>
+ fm3; bh=pYyNDSSuURVGquva2iiYPS/hBBwj419TwMZtcWAi3tY=; b=tbyC+AiG
+ e4H6ndiVtQ53TRW8j07XyrU3kZ4jc4Lb2FPQxpADpOcj9wgUF3r4LAV12OSDdlwg
+ Ez0Uf8upygG/ewt7yms/xjvMqkkrNKrTncYhreqKnju/AWCzx+ZhaWeXA8iDBt1X
+ ffbIhJo5aImeMQwqjipc2iHB9aXdzlWgnDqxL26wogJDvMmqs3JnsKYKxt+roFWc
+ DDz9hNIe0rjFtKafpbwgSjAL/uEoB3ABgT2ORRG/PoTK7Y8CucCjG36uV9pgcdWt
+ U/G7sMrH5a9tdTMkN5dozFwu/i7CuACXIac5rpd/eGIILE045u2DSn58BztmDzDL
+ a8Co0MvsrJdxRQ==
+X-ME-Sender: <xms:OTTnXkmKkz0p897cBY0KrZ2JPXTBujKmvO-wQKbl2Qq2RJVjoHh2-Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeikedgtdeiucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,26 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeikedgtdeiucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepfeenuc
  frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:ODTnXnP8qbDQMf3H3d_HmTBnv4If7h_gzng_WsXKZ6bedCGGZjEk1w>
- <xmx:ODTnXignlFyNTHGS9kWPMMvSn22B97Ge2vWLS6mrlvPHe9uy54eYpA>
- <xmx:ODTnXi8IBpQuxbpecdLbkaytYEV79OcTixPzLnz41cuhFoY601CQuQ>
- <xmx:ODTnXrKS-ROc1o2DkIlVKfEz_n1u_rmx1i0o7DqTPlYFC7KAFw8ONg>
+X-ME-Proxy: <xmx:OTTnXj2TUdeMLoTIaFsgGJgGKEx86nNGgLsgjj-v1QnvD3l2ybNBGA>
+ <xmx:OTTnXirXoJG1J2AW4u_EE2LXjeQ5qdbVh5rmYew9Wb2hKah_Jqf7sg>
+ <xmx:OTTnXgnFZo7fuaupF1B5Ld0XdT--OTpBwmVGUJZ7cYfipU1cvrXceQ>
+ <xmx:OjTnXgw6y7o3ZHkOrbApKZxkJoTzjFzHp_dNqn2iU0extqHB8f-XaQ>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 1944230614FA;
- Mon, 15 Jun 2020 04:41:28 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id A60573280066;
+ Mon, 15 Jun 2020 04:41:29 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v5 05/27] clk: bcm: rpi: Statically init clk_init_data
-Date: Mon, 15 Jun 2020 10:40:45 +0200
-Message-Id: <0342572daa561dc1bb4c9fd10641b2016493e32b.1592210452.git-series.maxime@cerno.tech>
+Subject: [PATCH v5 06/27] clk: bcm: rpi: Use clk_hw_register for pllb_arm
+Date: Mon, 15 Jun 2020 10:40:46 +0200
+Message-Id: <1146177664999eeda65856d28ce94025021dd85e.1592210452.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
 References: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_014129_302756_52CEA264 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20200615_014130_980993_25835372 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,37 +118,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Instead of declaring the clk_init_data and then calling memset on it, just
-initialise properly.
+The pllb_arm clock is defined as a fixed factor clock with the pllb
+clock as a parent. However, all its configuration is entirely static,
+and thus we don't really need to call clk_hw_register_fixed_factor() but
+can simply call clk_hw_register() with a static clk_fixed_factor
+structure.
 
 Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: linux-clk@vger.kernel.org
 Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 8610355bda47..ddc72207212e 100644
+index ddc72207212e..5f0d4875e145 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -175,11 +175,10 @@ static const struct clk_ops raspberrypi_firmware_pll_clk_ops = {
+@@ -225,16 +225,28 @@ static int raspberrypi_register_pllb(struct raspberrypi_clk *rpi)
+ 	return devm_clk_hw_register(rpi->dev, &rpi->pllb);
+ }
  
- static int raspberrypi_register_pllb(struct raspberrypi_clk *rpi)
++static struct clk_fixed_factor raspberrypi_clk_pllb_arm = {
++	.mult = 1,
++	.div = 2,
++	.hw.init = &(struct clk_init_data) {
++		.name		= "pllb_arm",
++		.parent_names	= (const char *[]){ "pllb" },
++		.num_parents	= 1,
++		.ops		= &clk_fixed_factor_ops,
++		.flags		= CLK_SET_RATE_PARENT | CLK_GET_RATE_NOCACHE,
++	},
++};
++
+ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
  {
-+	struct clk_init_data init = {};
- 	u32 min_rate = 0, max_rate = 0;
--	struct clk_init_data init;
- 	int ret;
+-	rpi->pllb_arm = clk_hw_register_fixed_factor(rpi->dev,
+-				"pllb_arm", "pllb",
+-				CLK_SET_RATE_PARENT | CLK_GET_RATE_NOCACHE,
+-				1, 2);
+-	if (IS_ERR(rpi->pllb_arm)) {
++	int ret;
++
++	ret = clk_hw_register(rpi->dev, &raspberrypi_clk_pllb_arm.hw);
++	if (ret) {
+ 		dev_err(rpi->dev, "Failed to initialize pllb_arm\n");
+-		return PTR_ERR(rpi->pllb_arm);
++		return ret;
+ 	}
++	rpi->pllb_arm = &raspberrypi_clk_pllb_arm.hw;
  
--	memset(&init, 0, sizeof(init));
- 
- 	/* All of the PLLs derive from the external oscillator. */
- 	init.parent_names = (const char *[]){ "osc" };
+ 	rpi->pllb_arm_lookup = clkdev_hw_create(rpi->pllb_arm, NULL, "cpu0");
+ 	if (!rpi->pllb_arm_lookup) {
 -- 
 git-series 0.9.1
 
