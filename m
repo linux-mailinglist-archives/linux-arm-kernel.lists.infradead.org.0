@@ -2,95 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D10C91F9986
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:02:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3FA71F9998
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:06:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uhZvJtlX/wVtInuRpOJXkvV2HEeRqxfkWHw0SBKyXhM=; b=iwElDQjtNjIBZRuFwnqFcX6xT
-	+A4s5G8OBriO9yn7L6JfVdVYbhmwSc2DVNRKO8SbjJz9owg9/cM84JSk7skJRvuWMHEWhuMa8FYEx
-	1kM+Kk8g2/n3y5wbFomYHmwsE0YhosIpNhYvcBcNSNzprS9GfZo1XeOGaNJsT0kQT2Vv8/Vlt4yP0
-	X/xY154bSaDDmJjOe5ZQ6DDXvxV8iPW8cSvkQEjBaXn9vcFaxuzX6S4jGXg/WPUgHCRT48kS3XDXU
-	S8w8UGp7/4FN41JvF9RhHQCCoMUI6hfMwZEA9/RAk9Bk1K7bV7wfaBnF60x0QKgU7q7m5VmHsqQe7
-	uqkIBRH3g==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nOGD3vr3OMQpaUy2+KKJivPNGRB8738RzyS2PXuKCag=; b=N0T
+	0jw6bqmlNRuJSxtwqud5Rs7PhnYQMOrFphGuyKdkT/EtrFF9IhS58l95e3Eg7WNN0zs3wL+zOcO/L
+	16C/k9LPcJ1dTZJgJemjeegWa4RP2qy1TGmzrd0EtClmf711J+S39QIraC5nHbZOyyoftbJygAgUs
+	gSopr3pRagnAH9pmfapflkd7t+I2Me4osthzRA94oM1ykyaCh526k59yoE2dtxnUuVclPzQnBsx5w
+	Y8ONEVkHz7jmXip8fFMZYCKm1X6mcKB30u8vMiAmfFz37sBB0i2xsFUF5IL2WzRxywQZD5joubAuE
+	mdaD51/+LrOKOCPvdT1BZINH0GVXqXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkphE-0005iz-UL; Mon, 15 Jun 2020 14:02:44 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1jkpki-00009v-F3; Mon, 15 Jun 2020 14:06:20 +0000
+Received: from jabberwock.ucw.cz ([46.255.230.98])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkph7-0005iD-Nd
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:02:38 +0000
-Received: by mail-ed1-x533.google.com with SMTP id k8so11611010edq.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 07:02:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=H/I16QzIcgZuuNr7TvHVEb2ZvJ/su1VA0igQPyblFHY=;
- b=pY/CM9zoLr5+Qvi1sPZYDPwjv4WFKkthBSJykclV776GXcBClitnueD+8Tb9otC69Z
- zUeDIWN4pvMShWfGU+SbmtjLSc9VliomZBQc0QwwUuBdzwT0T4Af0rp1UqEUXrk9mI9X
- 2qDX/XowIPk7WKrVLQ+AnOsRi9BQW6SgWRibU7hrkvPhFsJE4ceMj0jMXvN3H3C3RtwY
- OhQwYsrllVlNg3rKB/xBNtqDeXRDaZqMjkuTasat0I4oT0t8c+UCdPyoF/UULXSCWfWD
- YKT8HUmK5F78tGqXIz7L1c3hYtuYhDG2uevuQws2xAMd+qCcFwIXl65/XlvexZgJY/Hm
- Ytsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=H/I16QzIcgZuuNr7TvHVEb2ZvJ/su1VA0igQPyblFHY=;
- b=f0kaRppVIuQfWOA3xshJH4PAtI8HhiADnZRTloX30MIryyvLC6oKAuqqGFi+Uhyesz
- 4Crfx5rqLnGEXtEOkljs+h5oU/pIkITaw0mJEHxqNuyn9bUxAdypjbKnnfuCRYYrhhp5
- 87rmGPdSeZNm+3M5xJikDFN3vYW0gM4fb/5u7Qsv5UoFELAOIWgOxUiCJ1v0/EuL/c6u
- P7bPUcT7FyHIq1teS56IXHmdi+tcUa1pd/1FiZMD511kirIaSDA2iVlcZQHD0j6YgH5P
- +fdx36y/1ohfXzxQHDdNEJa4tLV/KMZuRHYt8pLnPwgk2OliTvoU7HGu91KdkhuTQz89
- jV4A==
-X-Gm-Message-State: AOAM531usiHZgH6drbJUKnB3PZM66kXpBPov+vno3tsK6NPQ0xUq7io7
- qXs/ivkE37qNrQx0WbPlijU=
-X-Google-Smtp-Source: ABdhPJwFy5wyb6mOMFbSozmcKmPQ95hcvYCNNyE1BdDoJwex/WBTFLKDkBSu6K0j7gz9aD9KEWWiGg==
-X-Received: by 2002:aa7:c15a:: with SMTP id r26mr23019460edp.21.1592229755767; 
- Mon, 15 Jun 2020 07:02:35 -0700 (PDT)
-Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id p13sm8489879edx.69.2020.06.15.07.02.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 07:02:33 -0700 (PDT)
-Date: Mon, 15 Jun 2020 16:02:32 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [GIT PULL 07/11] memory: tegra: Changes for v5.8-rc1
-Message-ID: <20200615140232.GA2812318@ulmo>
-References: <20200515145311.1580134-1-thierry.reding@gmail.com>
- <20200515145311.1580134-8-thierry.reding@gmail.com>
- <CAK8P3a0kqjt8UNxe2ruRDOJNedOcqWxP-i5y2uW6YsaMNJgejg@mail.gmail.com>
- <20200526114054.GA2935745@ulmo>
- <159053113019.88029.6264653349405850933@swboyd.mtv.corp.google.com>
+ id 1jkpkY-000090-Sh
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:06:13 +0000
+Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
+ id CC4281C0BD2; Mon, 15 Jun 2020 16:05:57 +0200 (CEST)
+Date: Mon, 15 Jun 2020 16:05:57 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: kernel list <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-omap@vger.kernel.org, tony@atomide.com, sre@kernel.org,
+ nekit1000@gmail.com, mpartap@gmx.net, merlijn@wizzup.org,
+ martin_rysavy@centrum.cz, linux-pm@vger.kernel.org
+Subject: [RFC] Limiting charge current on Droid 4 (and N900)
+Message-ID: <20200615140557.GA22781@duo.ucw.cz>
 MIME-Version: 1.0
-In-Reply-To: <159053113019.88029.6264653349405850933@swboyd.mtv.corp.google.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_070237_791161_6F226C13 
-X-CRM114-Status: GOOD (  12.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_070611_081762_B103110B 
+X-CRM114-Status: GOOD (  12.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:533 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,69 +57,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- soc@kernel.org, arm@kernel.org, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8302365117728617749=="
+Content-Type: multipart/mixed; boundary="===============1164869832012135513=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8302365117728617749==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yrj/dFKFPuw6o+aM"
+--===============1164869832012135513==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="17pEHd4RhPHOinZp"
 Content-Disposition: inline
 
 
---yrj/dFKFPuw6o+aM
+--17pEHd4RhPHOinZp
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, May 26, 2020 at 03:12:10PM -0700, Stephen Boyd wrote:
-> Quoting Thierry Reding (2020-05-26 04:40:54)
-> > On Mon, May 25, 2020 at 11:52:30PM +0200, Arnd Bergmann wrote:
-> >=20
-> > > Waiting for clarification before I can pull this.
-> >=20
-> > Given the above, might be best to hold off on this for a bit until the
-> > clock branch was pulled by Mike or Stephen.
-> >=20
->=20
-> I pulled the clk branch into clk-next now.
+Hi!
 
-Hi Arnd,
+Droid 4 has same problem as N900: it is often neccessary to manually
+tweak current draw from USB, for example when using thin charging cable.
 
-looks like this pull request didn't make it into v5.8-rc1. Was there
-anything left here that you're waiting for me to address?
+N900 creates unique attribute by hand, but I believe
+POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT looks suitable. (Should N900 be
+converted?)
 
-Thierry
+Comments? Would the patch be acceptable after fixing whitespace?
 
---yrj/dFKFPuw6o+aM
+Best regards,
+									Pavel
+
+Signed-off-by: Pavel Machek <pavel@ucw.cz>
+
+diff --git a/drivers/power/supply/cpcap-battery.c b/drivers/power/supply/cp=
+cap-battery.c
+index b16848cfb58c..39a00716372f 100644
+--- a/drivers/power/supply/cpcap-battery.c
++++ b/drivers/power/supply/cpcap-battery.c
+@@ -3,7 +3,7 @@
+  *
+  * Copyright (C) 2017 Tony Lindgren <tony@atomide.com>
+  *
+- * Some parts of the code based on earlie Motorola mapphone Linux kernel
++ * Some parts of the code based on earlier Motorola mapphone Linux kernel
+  * drivers:
+  *
+  * Copyright (C) 2009-2010 Motorola, Inc.
+diff --git a/drivers/power/supply/cpcap-charger.c b/drivers/power/supply/cp=
+cap-charger.c
+index cf1e05b511d9..292d7a31c663 100644
+--- a/drivers/power/supply/cpcap-charger.c
++++ b/drivers/power/supply/cpcap-charger.c
+@@ -89,6 +89,8 @@
+  * CPCAP_REG_CRM charge currents. These seem to match MC13783UG.pdf
+  * values in "Table 8-3. Charge Path Regulator Current Limit
+  * Characteristics" for the nominal values.
++ *
++ * Except 70mA and 1.596A and unlimited, these are simply 88.7mA / step.
+  */
+ #define CPCAP_REG_CRM_ICHRG(val)	(((val) & 0xf) << 0)
+ #define CPCAP_REG_CRM_ICHRG_0A000	CPCAP_REG_CRM_ICHRG(0x0)
+@@ -147,6 +149,8 @@ struct cpcap_charger_ddata {
+ 	int status;
+ 	int state;
+ 	int voltage;
++	int limit_current;
++
+ 	int last_current;
+ 	int last_current_retries;
+ };
+@@ -175,6 +179,7 @@ static enum power_supply_property cpcap_charger_props[]=
+ =3D {
+ 	POWER_SUPPLY_PROP_STATUS,
+ 	POWER_SUPPLY_PROP_ONLINE,
+ 	POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE,
++	POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT,
+ 	POWER_SUPPLY_PROP_VOLTAGE_NOW,
+ 	POWER_SUPPLY_PROP_CURRENT_NOW,
+ };
+@@ -238,6 +243,9 @@ static int cpcap_charger_get_property(struct power_supp=
+ly *psy,
+ 	case POWER_SUPPLY_PROP_STATUS:
+ 		val->intval =3D ddata->status;
+ 		break;
++  	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
++		val->intval =3D ddata->limit_current;
++		break;
+ 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
+ 		val->intval =3D ddata->voltage;
+ 		break;
+@@ -308,6 +316,25 @@ cpcap_charger_get_bat_const_charge_voltage(struct cpca=
+p_charger_ddata *ddata)
+ 	return voltage;
+ }
+=20
++static int cpcap_charger_current_to_regval(int microamp)
++{
++	int miliamp =3D microamp/1000;
++	int res;
++	if (miliamp < 0)
++		return -EINVAL;
++	if (miliamp < 70)
++		return CPCAP_REG_CRM_ICHRG(0x0);
++	if (miliamp < 177)
++		return CPCAP_REG_CRM_ICHRG(0x1);
++	if (miliamp > 1596)
++		return CPCAP_REG_CRM_ICHRG(0xe);
++
++	res =3D microamp / 88666;
++	if (res > 0xd)
++		res =3D 0xd;
++	return CPCAP_REG_CRM_ICHRG(res);
++}
++
+ static int cpcap_charger_set_property(struct power_supply *psy,
+ 				      enum power_supply_property psp,
+ 				      const union power_supply_propval *val)
+@@ -316,6 +343,12 @@ static int cpcap_charger_set_property(struct power_sup=
+ply *psy,
+ 	int voltage, batvolt;
+=20
+ 	switch (psp) {
++  	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
++		if (cpcap_charger_current_to_regval(val->intval) < 0)
++			return -EINVAL;
++		ddata->limit_current =3D val->intval;
++		schedule_delayed_work(&ddata->detect_work, 0);
++		break;
+ 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
+ 		voltage =3D cpcap_charger_match_voltage(val->intval);
+ 		batvolt =3D cpcap_charger_get_bat_const_charge_voltage(ddata);
+@@ -335,6 +368,7 @@ static int cpcap_charger_property_is_writeable(struct p=
+ower_supply *psy,
+ 					       enum power_supply_property psp)
+ {
+ 	switch (psp) {
++	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
+ 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
+ 		return 1;
+ 	default:
+@@ -657,23 +691,21 @@ static void cpcap_usb_detect(struct work_struct *work)
+=20
+ 	if (!ddata->feeding_vbus && cpcap_charger_vbus_valid(ddata) &&
+ 	    s.chrgcurr1) {
+-		int max_current;
+-		int vchrg;
++		int max_current =3D 532000;
++		int vchrg, ichrg;
+=20
+ 		if (cpcap_charger_battery_found(ddata))
+-			max_current =3D CPCAP_REG_CRM_ICHRG_1A596;
+-		else
+-			max_current =3D CPCAP_REG_CRM_ICHRG_0A532;
++			max_current =3D 1596000;
+=20
+ 		switch (ddata->state) {
+ 		case CPCAP_CHARGER_DETECTING:
+ 			ddata->last_current_retries =3D 0;
+ 			break;
+ 		case CPCAP_CHARGER_DISCONNECTED:
+-			if (ddata->last_current > CPCAP_REG_CRM_ICHRG_0A532) {
++			if (ddata->last_current > 532000) {
+ 				/* Attempt current 3 times before lowering */
+ 				if (ddata->last_current_retries++ >=3D 3) {
+-					ddata->last_current--;
++					ddata->last_current -=3D 100000;
+ 					ddata->last_current_retries =3D 0;
+ 					/* Wait a bit for voltage to ramp up */
+ 					usleep_range(40000, 50000);
+@@ -688,11 +720,16 @@ static void cpcap_usb_detect(struct work_struct *work)
+ 			break;
+ 		}
+=20
++		if (max_current > ddata->limit_current)
++			max_current =3D ddata->limit_current;
++
+ 		ddata->last_current =3D max_current;
++
++		ichrg =3D cpcap_charger_current_to_regval(max_current);
+ 		vchrg =3D cpcap_charger_voltage_to_regval(ddata->voltage);
+ 		error =3D cpcap_charger_set_state(ddata,
+ 						CPCAP_REG_CRM_VCHRG(vchrg),
+-						max_current, 0);
++						ichrg, 0);
+ 		if (error)
+ 			goto out_err;
+ 		cpcap_charger_update_state(ddata, CPCAP_CHARGER_CHARGING);
+@@ -864,6 +901,7 @@ static int cpcap_charger_probe(struct platform_device *=
+pdev)
+=20
+ 	ddata->dev =3D &pdev->dev;
+ 	ddata->voltage =3D 4200000;
++	ddata->limit_current =3D 532000;
+=20
+ 	ddata->reg =3D dev_get_regmap(ddata->dev->parent, NULL);
+ 	if (!ddata->reg)
+
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
+
+--17pEHd4RhPHOinZp
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7nf3YACgkQ3SOs138+
-s6FTUBAAuSroJTRcRlre6LWMudEbVF+IX0fsiiFUYRwa9bnlDm6U9pKP9bR7pi9Y
-00g6DRvMP6w6P6h2tEg0PqZun3DYAE0rVWZIwr70QbeJmA6BDf85pKNNXmJD/TeB
-9Y/EOivRxznw/NP7PSuWfmIWAX/5YWsX7l6PS3iMkf0xNIzJDS5XxWRJUA5sx5Sv
-kUiXbgdKrZJTu3JvGDT+3l0HVbZR4wLglBKt7cMJIZGwPaVz28lTiw1PtZzgziVJ
-Y9es9piW8fRiAi9MGDNXKcRtfRIYsfdZA98dHeEljcJBloBlhxpCAbqXEEt8OnHc
-plRWkPBo3g9QAhhPU2NZoIYdKprbf38bfmXq7zDfrNZdutZ0+gC7cNNe0toloyYR
-S/1fEk3Fy+fuIVgiONaRT7HSui9XxDLfMug6NBpOBiJCtv12tU6ODJhoYtCKhIXK
-3gfN9sxxQODCvFDHzjiBc9kfVBkfRrhhM+sLlEksjfe3230NBHMvVju2C4t+Avw6
-bTqYNCZF7H71IBBDHjVNqFBBKhy36SFxqh+J+8e20rzl5tDiyrM+jlmUNR7s2a/H
-9LlB9TA3iQpO0KjnOQeZc11KUmX5di1C+EfIA7unHmB1PhP4HdVBSkRn1Gx4b8JN
-sxLFetx7OPh2c573oEb6IlsHdfbL8HS4L+29b6Vvd8Gak0unXXc=
-=2YI7
+iF0EABECAB0WIQRPfPO7r0eAhk010v0w5/Bqldv68gUCXueARQAKCRAw5/Bqldv6
+8r/sAJ46iCoAwzi+b8D09i52j6yXo5rYVgCggxr+sue70dpus3LswQUr8Ki7lSM=
+=YnOL
 -----END PGP SIGNATURE-----
 
---yrj/dFKFPuw6o+aM--
+--17pEHd4RhPHOinZp--
 
 
---===============8302365117728617749==
+--===============1164869832012135513==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -175,5 +282,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8302365117728617749==--
+--===============1164869832012135513==--
 
