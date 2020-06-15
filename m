@@ -2,89 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE821F93D0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:46:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F02991F93E5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:49:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=J8FiygAWLOwy/HqC4gGlSy5VCMLHODUo/qT6e+T/wyM=; b=Q54jNpu1ahC3Cg2Ntrm4cOCyf
-	tKoQZsDINlQw2rCjADkc73IyfP0zpJiA60lNGxoNOWffB58zDbMADDBNXnDSITMHbDsdeMyFk/wtc
-	THxCowDx9R34Tikjl8tY08RcksVpeHFM8axaRAdpsIXW1SmN2NM9DyfGhVgnvzyCXqwhbSvAbSuDu
-	ET4QmKrUS0lMk44/kbK0E2IV3glZvTYfi6t2cVyFTrAMiBYR8Yf3hOl5BXiOSq/MC4DOYhqhrNHvS
-	NbIodUiD+9s6QfWKTG5WkU9LFCf8t/szGXOO8ml7TsiFuw6XFFgVlS5YbYIDBcZlIHnqGM9PskID/
-	g5HANX9WQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ERACIWGOzFYO/NXGgjx9sN92BNc8pveahY7WNI4W57w=; b=h5TK4jWsYnrpoQ
+	5xsH0OmMUHRv5v8WfnqEYaGB8T9EhAsmG5+WsSYLYhEV5hCO/of4tGGztRwjn8pc05WVao+GawbtX
+	CkMudgkrqfTlNQc0XJzMHpUABQDdyFIzRh+p8WW/L4ve/gfjVowgocdW3bEhWXbEciSzOFrocxSMT
+	jLiTBh0wjLiGW2Zv56L/nc0LfWSQFsY8Ej9PVZJkFFTpXgl0Rpk2X1nxr5ff5EZqUeI2+6ab23oSy
+	CTsklNjPUd6ZykpHlZzGFTvFJdyGM9iIBdzsg/621CnS3+z2r5z3U2euTQ/urw/1xKKlGywkPlRTl
+	jMn5q+UF7a5huXbu7ADg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklgu-00011h-IQ; Mon, 15 Jun 2020 09:46:08 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jklk1-0001XP-Ql; Mon, 15 Jun 2020 09:49:21 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jklgj-000103-JW
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:45:59 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05F9YmAg015035; Mon, 15 Jun 2020 11:45:38 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=HzRMy6iVCZcLIfFdNcJlFmRB2z9fKYZjPMelH03qdYY=;
- b=nOlzI78SZ3BXZsTxqFqoExmXdRONkXi5UKuqpvBc92FLtDOUT9oj+HyLeFTjarNKmxwH
- yO/6GjTPHN7RMfwgh0/kv5U1rUzXgEF2o3ZEJ68+kTo7R+HkRAqEGRAGvOT/p44c7azE
- 8ZGDzljkTLZb8dokG1oa27eTNcQCzjEL9LCX9FjHPQMYBhPa0PdxQkYXyvYgzkUrVGI4
- CXDJPCMmEMMQsah697bvJDTc1OsChq0OhJn4cAf/iMsje5syLv6nRGy8cd1SdFTBhA1Y
- Vl6vgqwoLU1Aw8xGzNpiRgQn1uVKdFOCKIZIODsOkx94i2/l8/9eUFykiSzy6m3273J7 tw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31mmjvrwjd-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 15 Jun 2020 11:45:38 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1B0C710002A;
- Mon, 15 Jun 2020 11:45:38 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E456E2C298D;
- Mon, 15 Jun 2020 11:45:37 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun
- 2020 11:45:36 +0200
-Subject: Re: [PATCH v6 2/9] ARM: dts: stm32: Add pin map for ltdc & spi5 on
- stm32f429-disco board
-To: <dillon.minfei@gmail.com>, <robh+dt@kernel.org>, <p.zabel@pengutronix.de>, 
- <mcoquelin.stm32@gmail.com>, <thierry.reding@gmail.com>,
- <sam@ravnborg.org>, <airlied@linux.ie>, <daniel@ffwll.ch>,
- <mturquette@baylibre.com>, <sboyd@kernel.org>,
- <andy.shevchenko@gmail.com>, <noralf@tronnes.org>,
- <linus.walleij@linaro.org>, <broonie@kernel.org>
-References: <1590564453-24499-1-git-send-email-dillon.minfei@gmail.com>
- <1590564453-24499-3-git-send-email-dillon.minfei@gmail.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <2273a168-7b14-9e28-5904-b9d2c2e2d9d3@st.com>
-Date: Mon, 15 Jun 2020 11:45:36 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jkljr-0001WH-RF; Mon, 15 Jun 2020 09:49:13 +0000
+Received: by mail-io1-xd42.google.com with SMTP id r77so17122138ior.3;
+ Mon, 15 Jun 2020 02:49:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=VXrYkWGJrAVwMKl7EpALp308abGzBC/xarfEjXsxyt8=;
+ b=stNWaVR9mILoXoa35qUlmQKoIfjReV21Ygcw+kmOknzdyAd47EecdwrcHgyRIiCHc1
+ kQCq9ajBuZH0EJcKAEy41F5r1lmg3Xev/NaEqR0jd32aw7B93AXyVciu8HlaioBsrRMa
+ K7pPbZ5Hun7PnTPlPf5NuynGDQOxVE/YVHxIVl0QfCfgsQXN3QkPEgKr16OI3zfTVvXm
+ jpxgMZCcczb2muIjitZvQEWmx8fQMMOFJUYtyfZ8LcgYQiO9lgA8ZWnm1GzkJnvbizYr
+ 568nqQkmYJRdlD94NgsZ4GOm/ePu02U7PzSC2Tb7IfKNchJUi/Aeb/K1M6dPJXfapOmD
+ A7Ww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=VXrYkWGJrAVwMKl7EpALp308abGzBC/xarfEjXsxyt8=;
+ b=anHmUaac0a/8zg6/zzQa4KR/SOu0yYc9jnjbzhMAWY7p8Q4/S7UMqVx4nOQpcvMo9Z
+ CDr4D/1nUjbcIE9aVh+L/k6GsULUxB5JWuW6rK6uxQh/qjM0dNJUoQ1znLZa2pbWUy/T
+ T5HNOoOP30QlatRoa5NcWxRrc4hMUvKh1AWZsO9o9IvB8QzUG0HCNcAXoSkZdSPRgVAL
+ wXxqvtucTUexRPu22LM5s52qfVL5HcPge29YdcgUGtO/Zsw/JL14+LXeRxe6kOcRnghG
+ 5Eys3PWRvmX9iAfRG4rsMuelmAHaHbuAA2L3vXSJiiCMhXw6mzSlkzVRYw86Z+etlAXu
+ pRmA==
+X-Gm-Message-State: AOAM532DU+gwywT54HCYKXOqsBjonqww5jWMVFoMiA+uh6beOlnna7FL
+ uAPLuOeuzqqVUz7xgx8t1TfzFxqYHd33EWSTfsg=
+X-Google-Smtp-Source: ABdhPJxtXsKmf8Rv/T8eBzugDRbZKh4vUmXzvKagG59avK0BfoIYZLDJkcITgkfHBgVawjBi74gfiqsC3RANgxO/XoI=
+X-Received: by 2002:a5e:aa14:: with SMTP id s20mr27326679ioe.58.1592214546938; 
+ Mon, 15 Jun 2020 02:49:06 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1590564453-24499-3-git-send-email-dillon.minfei@gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-15_01:2020-06-15,
- 2020-06-15 signatures=0
+References: <1591254387-10304-1-git-send-email-gene.chen.richtek@gmail.com>
+ <20200604133943.GE6644@sirena.org.uk>
+In-Reply-To: <20200604133943.GE6644@sirena.org.uk>
+From: Gene Chen <gene.chen.richtek@gmail.com>
+Date: Mon, 15 Jun 2020 17:48:55 +0800
+Message-ID: <CAE+NS35ktxq2MiNXNWh7Q-gzdbm7Xoj2tXqrgzjkkv8W_tR3Sw@mail.gmail.com>
+Subject: Re: [PATCH] regulator: mt6360: Add support for MT6360 regulator
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_024558_022160_A517EB64 
-X-CRM114-Status: GOOD (  18.76  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_024911_898523_5098388F 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [gene.chen.richtek[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,117 +92,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, dillonhua@gmail.com, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-spi@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Gene Chen <gene_chen@richtek.com>, Lee Jones <lee.jones@linaro.org>,
+ lgirdwood@gmail.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
+ benjamin.chao@mediatek.com, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, Wilma.Wu@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, shufan_lee@richtek.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dillon
-
-On 5/27/20 9:27 AM, dillon.minfei@gmail.com wrote:
-> From: dillon min <dillon.minfei@gmail.com>
-> 
-> This patch adds the pin configuration for ltdc and spi5 controller
-> on stm32f429-disco board.
-> 
-> Signed-off-by: dillon min <dillon.minfei@gmail.com>
-> ---
->   arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 67 ++++++++++++++++++++++++++++++++++
->   1 file changed, 67 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
-> index 392fa143ce07..0eb107f968cd 100644
-> --- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
-> +++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
-> @@ -316,6 +316,73 @@
->   				};
->   			};
->   
-> +			ltdc_pins_f429_disco: ltdc-1 {
-
-Sorry I missed this issue during review. I changed ltdc_pins_f429_disco 
-by ltdc_pins_b when I applied your patch.
-
-
-Regards
-alex
-
-> +				pins {
-> +					pinmux = <STM32_PINMUX('C', 6,  AF14)>,
-> +						/* LCD_HSYNC */
-> +						 <STM32_PINMUX('A', 4,  AF14)>,
-> +						 /* LCD_VSYNC */
-> +						 <STM32_PINMUX('G', 7,  AF14)>,
-> +						 /* LCD_CLK */
-> +						 <STM32_PINMUX('C', 10, AF14)>,
-> +						 /* LCD_R2 */
-> +						 <STM32_PINMUX('B', 0,  AF9)>,
-> +						 /* LCD_R3 */
-> +						 <STM32_PINMUX('A', 11, AF14)>,
-> +						 /* LCD_R4 */
-> +						 <STM32_PINMUX('A', 12, AF14)>,
-> +						 /* LCD_R5 */
-> +						 <STM32_PINMUX('B', 1,  AF9)>,
-> +						 /* LCD_R6*/
-> +						 <STM32_PINMUX('G', 6,  AF14)>,
-> +						 /* LCD_R7 */
-> +						 <STM32_PINMUX('A', 6,  AF14)>,
-> +						 /* LCD_G2 */
-> +						 <STM32_PINMUX('G', 10, AF9)>,
-> +						 /* LCD_G3 */
-> +						 <STM32_PINMUX('B', 10, AF14)>,
-> +						 /* LCD_G4 */
-> +						 <STM32_PINMUX('D', 6,  AF14)>,
-> +						 /* LCD_B2 */
-> +						 <STM32_PINMUX('G', 11, AF14)>,
-> +						 /* LCD_B3*/
-> +						 <STM32_PINMUX('B', 11, AF14)>,
-> +						 /* LCD_G5 */
-> +						 <STM32_PINMUX('C', 7,  AF14)>,
-> +						 /* LCD_G6 */
-> +						 <STM32_PINMUX('D', 3,  AF14)>,
-> +						 /* LCD_G7 */
-> +						 <STM32_PINMUX('G', 12, AF9)>,
-> +						 /* LCD_B4 */
-> +						 <STM32_PINMUX('A', 3,  AF14)>,
-> +						 /* LCD_B5 */
-> +						 <STM32_PINMUX('B', 8,  AF14)>,
-> +						 /* LCD_B6 */
-> +						 <STM32_PINMUX('B', 9,  AF14)>,
-> +						 /* LCD_B7 */
-> +						 <STM32_PINMUX('F', 10, AF14)>;
-> +						 /* LCD_DE */
-> +					slew-rate = <2>;
-> +				};
-> +			};
-> +
-> +			spi5_pins: spi5-0 {
-> +				pins1 {
-> +					pinmux = <STM32_PINMUX('F', 7, AF5)>,
-> +						/* SPI5_CLK */
-> +						 <STM32_PINMUX('F', 9, AF5)>;
-> +						/* SPI5_MOSI */
-> +					bias-disable;
-> +					drive-push-pull;
-> +					slew-rate = <0>;
-> +				};
-> +				pins2 {
-> +					pinmux = <STM32_PINMUX('F', 8, AF5)>;
-> +						/* SPI5_MISO */
-> +					bias-disable;
-> +				};
-> +			};
-> +
->   			dcmi_pins: dcmi-0 {
->   				pins {
->   					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TG9vcCBNRkQgbWFpbnRhaW5lciwKCk1hcmsgQnJvd24gPGJyb29uaWVAa2VybmVsLm9yZz4g5pa8
+IDIwMjDlubQ25pyINOaXpSDpgLHlm5sg5LiL5Y2IOTozOeWvq+mBk++8mgo+Cj4gT24gVGh1LCBK
+dW4gMDQsIDIwMjAgYXQgMDM6MDY6MjdQTSArMDgwMCwgR2VuZSBDaGVuIHdyb3RlOgo+Cj4gVGhp
+cyBsb29rcyBuaWNlIGFuZCBzaW1wbGUsIGEgZmV3IGZhaXJseSBzbWFsbCBjb21tZW50cyBiZWxv
+dyBidXQgaGlnaAo+IGxldmVsIGl0J3MgYmFzaWNhbGx5IGZpbmUuCj4KPiA+IC0tLSAvZGV2L251
+bGwKPiA+ICsrKyBiL2RyaXZlcnMvcmVndWxhdG9yL210NjM2MC1yZWd1bGF0b3IuYwo+ID4gQEAg
+LTAsMCArMSw1NzEgQEAKPiA+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAo+
+ID4gKy8qCj4gPiArICogQ29weXJpZ2h0IChjKSAyMDIwIE1lZGlhVGVrIEluYy4KPgo+IFBsZWFz
+ZSBtYWtlIHRoZSBlbnRpcmUgY29tbWVudCBhIEMrKyBvbmUgc28gdGhpbmdzIGxvb2sgbW9yZQo+
+IGludGVudGlvbmFsLgo+CgpBQ0sKCj4gPiArICAgICBmb3IgKGkgPSAwOyBpIDwgZGV2ZGF0YS0+
+bnVtX2lycV9kZXNjczsgaSsrKSB7Cj4gPiArICAgICAgICAgICAgIGlycV9kZXNjID0gZGV2ZGF0
+YS0+aXJxX2Rlc2NzICsgaTsKPiA+ICsgICAgICAgICAgICAgaWYgKHVubGlrZWx5KCFpcnFfZGVz
+Yy0+bmFtZSkpCj4gPiArICAgICAgICAgICAgICAgICAgICAgY29udGludWU7Cj4KPiBEbyB3ZSBy
+ZWFsbHkgbmVlZCBhbiB1bmxpa2VseSBoZXJlPyAgVGhpcyBzaG91bGRuJ3QgYmUgYSBob3QgcGF0
+aC4KPgoKQUNLLCB3ZSB3aWxsIHJlbW92ZSBpdAoKPiA+ICtzdGF0aWMgaW50IG10NjM2MF9yZWd1
+bGF0b3Jfc2V0X21vZGUoCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVj
+dCByZWd1bGF0b3JfZGV2ICpyZGV2LCB1bnNpZ25lZCBpbnQgbW9kZSkKPiA+ICt7Cj4KPiA+ICsg
+ICAgIHN3aXRjaCAoMSA8PCAoZmZzKG1vZGUpIC0gMSkpIHsKPiA+ICsgICAgIGNhc2UgUkVHVUxB
+VE9SX01PREVfTk9STUFMOgo+Cj4gSSBkb24ndCB1bmRlcnN0YW5kIHdoeSB0aGlzIGlzbid0IGp1
+c3QgYSBzdHJhaWdodCBzd2l0Y2ggb24gbW9kZT8KPgoKQUNLCgo+ID4gK3N0YXRpYyB1bnNpZ25l
+ZCBpbnQgbXQ2MzYwX3JlZ3VsYXRvcl9nZXRfbW9kZShzdHJ1Y3QgcmVndWxhdG9yX2RldiAqcmRl
+dikKPiA+ICt7Cj4gPiArICAgICBjb25zdCBzdHJ1Y3QgbXQ2MzYwX3JlZ3VsYXRvcl9kZXNjICpk
+ZXNjID0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgKGNvbnN0IHN0cnVjdCBtdDYz
+NjBfcmVndWxhdG9yX2Rlc2MgKilyZGV2LT5kZXNjOwo+ID4gKyAgICAgaW50IHNoaWZ0ID0gZmZz
+KGRlc2MtPm1vZGVfZ2V0X21hc2spIC0gMSwgcmV0Owo+ID4gKyAgICAgdW5zaWduZWQgaW50IHZh
+bCA9IDA7Cj4gPiArCj4gPiArICAgICBkZWZhdWx0Ogo+ID4gKyAgICAgICAgICAgICByZXQgPSAw
+Owo+ID4gKyAgICAgfQo+Cj4gSWYgd2UgY2FuJ3QgcGFyc2UgYSB2YWxpZCB2YWx1ZSBmcm9tIHRo
+ZSBoYXJkd2FyZSB0aGVuIHRoYXQncyBhbiBlcnJvci4KPgoKQUNLCgo+ID4gK3N0YXRpYyBpbnQg
+bXQ2MzYwX3JlZ3VsYXRvcl9yZWdfd3JpdGUodm9pZCAqY29udGV4dCwKPiA+ICsgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIHVuc2lnbmVkIGludCByZWcsIHVuc2lnbmVkIGludCB2
+YWwpCj4gPiArewo+ID4gKyAgICAgc3RydWN0IG10NjM2MF9yZWd1bGF0b3JfZGF0YSAqbXJkID0g
+Y29udGV4dDsKPiA+ICsgICAgIHU4IGNodW5rWzRdID0gezB9Owo+ID4gKwo+ID4gKyAgICAgLyog
+Y2h1bmsgMCAtPmkyYyBhZGRyLCAxIC0+IHJlZ19hZGRyLCAyIC0+IHJlZ192YWwgMy0+IGNyYzgg
+Ki8KPiA+ICsgICAgIGNodW5rWzBdID0gKG1yZC0+aTJjLT5hZGRyICYgMHg3ZikgPDwgMTsKPiA+
+ICsgICAgIGNodW5rWzFdID0gcmVnICYgMHgzZjsKPiA+ICsgICAgIGNodW5rWzJdID0gKHU4KXZh
+bDsKPiA+ICsgICAgIGNodW5rWzNdID0gY3JjOChtcmQtPmNyYzhfdGFibGUsIGNodW5rLCAzLCAw
+KTsKPiA+ICsgICAgIC8qIGFsc28gZHVtbXkgb25lIGJ5dGUgKi8KPiA+ICsgICAgIHJldHVybiBp
+MmNfc21idXNfd3JpdGVfaTJjX2Jsb2NrX2RhdGEobXJkLT5pMmMsIGNodW5rWzFdLCAzLCBjaHVu
+ayArIDIpOwo+ID4gK30KPgo+IE9oLCB3b3cgLSB0aGF0J3MgYSBmdW4gSS9PIGludGVyZmFjZSEK
+Pgo+ID4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIF9fbWF5YmVfdW51c2VkIG10
+NjM2MF9yZWd1bGF0b3Jfb2ZfaWRbXSA9IHsKPiA+ICsgICAgIHsKPiA+ICsgICAgICAgICAgICAg
+LmNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQ2MzYwX3BtaWMiLAo+ID4gKyAgICAgICAgICAgICAu
+ZGF0YSA9ICh2b2lkICopJm10NjM2MF9wbWljX2RldmRhdGEsCj4gPiArICAgICB9LAo+ID4gKyAg
+ICAgewo+ID4gKyAgICAgICAgICAgICAuY29tcGF0aWJsZSA9ICJtZWRpYXRlayxtdDYzNjBfbGRv
+IiwKPiA+ICsgICAgICAgICAgICAgLmRhdGEgPSAodm9pZCAqKSZtdDYzNjBfbGRvX2RldmRhdGEs
+Cj4gPiArICAgICB9LAo+ID4gKyAgICAge30sCj4gPiArfTsKPiA+ICtNT0RVTEVfREVWSUNFX1RB
+QkxFKG9mLCBtdDYzNjBfcmVndWxhdG9yX29mX2lkKTsKPgo+IEkgZG9uJ3Qgc2VlIGFueSBEVCBi
+aW5kaW5ncyBkb2N1bWVudGF0aW9uIGZvciB0aGlzLCBkb2N1bWVudGF0aW9uIGlzCj4gcmVxdWly
+ZWQgZm9yIGFsbCBuZXcgYmluZGluZ3MuCj4KCkFDSywgd2Ugd2lsbCB1cGRhdGUgYmluZGluZyBk
+b2N1bWVudCBsYXRlci4KCj4gPiArICAgICBtcmQtPnJlZ21hcCA9IGRldm1fcmVnbWFwX2luaXQo
+JihtcmQtPmkyYy0+ZGV2KSwKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICBOVUxMLCBtcmQsIGRldmRhdGEtPnJlZ21hcF9jb25maWcpOwo+ID4gKyAgICAgaWYgKElTX0VS
+UihtcmQtPnJlZ21hcCkpIHsKPiA+ICsgICAgICAgICAgICAgZGV2X2VycigmcGRldi0+ZGV2LCAi
+RmFpbGVkIHRvIHJlZ2lzdGVyIHJlZ21hcFxuIik7Cj4gPiArICAgICAgICAgICAgIHJldHVybiBQ
+VFJfRVJSKG1yZC0+cmVnbWFwKTsKPiA+ICsgICAgIH0KPgo+IFRoaXMgbG9va3MgbGlrZSBhIE1G
+RCBzbyBpdCdzIHN1cnByaXNpbmcgdG8gc2VlIHVzIGRlZmluaW5nIGEgcmVnbWFwIGF0Cj4gdGhp
+cyBsZXZlbC4gIFdoeSBhcmUgd2UgZG9pbmcgdGhpcz8KCkJlY2F1c2UgTVQ2MzYwIGluY2x1ZGUg
+UE1VL1BNSUMvTERPL1RZUEVDIHBhcnQsIG9ubHkgUE1JQy9MRE8gaTJjIFIvVwpuZWVkIGNvbnRh
+aW4gQ1JDIGZvcm1hdC4KV2Ugd2lsbCB1cGRhdGUgbmV3IHBhdGNoIHRvIGNvbmNsdWRlIHIvdyBp
+biBtZmQgZHJpdmVyLgpBY2NvcmRpbmcgdG8gZGlmZmVyZW50IHJlZ2lzdGVyIGFkZHJlc3Mgd2l0
+aCBiYW5rIG51bWJlciwgd2UgY2FuCmRpc3Rpbmd1aXNoIGRpZmZlcmVudCBwYXJ0IG9mIG1vZHVs
+ZS4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
