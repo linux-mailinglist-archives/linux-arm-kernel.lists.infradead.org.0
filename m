@@ -2,118 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2570F1F99F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:19:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 786E41F9A31
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CR7604tE1Etwx/LEeR/FvgNJWS5Ke1u6e9rA4SD7Q8o=; b=NhSBW4cqH7+Atr
-	uzRiI6ROklvIfVqh2lhrG8LD6GDF+NHoekxAt5Zfpu53Jfr/Xe6c+BX979eRJNE7ZRUUeT23X1ftq
-	6BSsX/YDK2+KlpkbAaFisO7e0bObebYBHy0UJdBdg0wV9daYEvUmVZ8F6cXZMKClYZRaTzRuwb6CR
-	/cW2K5VzeJTwESUxAORKwKnkBpbJkKZLdqsugy+1VLBxYR2sZrbSui1+trABWcXP2k96y6qk4IE4y
-	7266PZ2LpEAggxKcmO2tMtbtCCoYs4FogD8RsRftoDU3aOGj4CBbFTrSN7BT1b3U1BlZA7Ty0DI9G
-	F12BPSgidkQW8ZBGj+ag==;
+	List-Owner; bh=bHoHierg9A9TG39rd2foUU/ev8GFry0anImgE0Qsh7M=; b=kvgYn+UFdA06ZH
+	XhdN1KcE5TQIEBFtZfIeC1GmAcAsA+16gExvdQGLEjyQZbmYtK2x4pzX6wWPfKtCElOXsaXlLBWT5
+	6xsgzJuYnAnGkF4jljMfmffeiv4xjeBhavRb359y076JXkf1qS/8EYTqkbCIO8yDQ8xRzf2EdbCHY
+	VhKjx97EtlzLRRcT2DDB4DizUB4B2GzUAYQCr2cx65jjMYXQ8hSZX9p4N2UciowQ7rYLHxeUCrcFv
+	+AqmgNzS+sC4tPox4TuTgaefU6lAzsOFdEZpG4PgwPCmHOpU5Gi/H5gJZF7v4uNLffkFR7UQn9L7m
+	ybgMVooXn/MPwarqQtuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkpx6-000832-5M; Mon, 15 Jun 2020 14:19:08 +0000
-Received: from mail-eopbgr130050.outbound.protection.outlook.com
- ([40.107.13.50] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1jkq8t-0000BK-Nq; Mon, 15 Jun 2020 14:31:19 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkpww-00082V-Lq
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:18:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RW6Bu1CIPhPYhfH2iXy1jTWw+SbZP3vx8HkOuJwLr+56jJbHYGOk33zFIZ322LPl9chEmv++J2Q12BLcYgcNxkYdgIoSoFOS8/4QiP3ZxCryeAxhDvFkRycbzWm8nW5qQ+7Hqm1Zbn/HgfmQ+tb92IIimh4er/z1dR4rUKD7nOXbrvv91JEzb3ZrFv02p72tsalVuehjPpMDCftN2ljWCmHJMNclVStADG20DfcmwIp+WosiqfIEX7u8mfcrD/Uh8lAjhTZ4wyUi+UYtx4D57cAsol2J39Pi619RRJQwAZVVE3F172iiGnKAO1ELSnLNUsavgA0xrfzQsU3bqf353g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vefX8XkRnqcJbGrVQlZtX2fCZULbA2dLJI8hKiaWivM=;
- b=Pdi5O8mCKYLPgSOBwvxf5k+9WusKWW5euaGiYwnxQvpAaCtatTG8+O9uOGsLFHp0GTjy7oUQlFc24zliY/1aXC0o9mwtH0amqcFXF1Dm0EHJ3qUxZK/+689nIWTnr/O2aWulU+Vx06UIqcAXhODyGeTJcA6/UkZ00Ri8DZPq4/fY47FL1eeBY2kcvuXT1RyEJE1/HzS0t0dixWqQW6HM4RZC3432z/2JoGePKad6KmRxpNeDmJrTMaPPnxVogF1pMwXYBQhmp4TQCZf6V63mzBaLOVoG15pXS/0YuqDT+FK7FObOqBZ7ZplIe58sy4H5Tu/SSy1c6J064MAHF5D2MQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vefX8XkRnqcJbGrVQlZtX2fCZULbA2dLJI8hKiaWivM=;
- b=jHPyBQTa0We4sNiTapiHcxad3NwmHanbHUCeGsx8fGUR71XizxbzpnHboda9q6Ig5FpJs4eIS72GIiQNcSOMCQbZ7xEdA5dhYqhOdrXc4VEKM3Cdml+FnNRDLvOAd2FbKrgMKJ8JqbSdC5a5cqDjMWX0w3TKy4E8yPAYHRLJD44=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6415.eurprd04.prod.outlook.com (2603:10a6:803:11b::25)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.21; Mon, 15 Jun
- 2020 14:18:54 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3088.028; Mon, 15 Jun 2020
- 14:18:54 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: RE: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Thread-Topic: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Thread-Index: AQHWP6z7CX2etPvPnk+oddH8JEW5FKjTbHIAgADDYUCAAJUwgIAACjoQgAA5dICAAOmA8IADsXmAgAANH1CAAASJgIAACZlA
-Date: Mon, 15 Jun 2020 14:18:54 +0000
-Message-ID: <VE1PR04MB6638793C00742D5BA72F8AC2899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1591880310-1813-1-git-send-email-yibin.gong@nxp.com>
- <1591880310-1813-2-git-send-email-yibin.gong@nxp.com>
- <20200611134042.GG4671@sirena.org.uk>
- <VE1PR04MB66383245FAD2AE33CFEA76F789810@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200612101357.GA5396@sirena.org.uk>
- <VE1PR04MB66384013797FE6B01943F2A889810@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200612141611.GI5396@sirena.org.uk>
- <VE1PR04MB6638B43E3AC83286946DABCD899F0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615123553.GP4447@sirena.org.uk>
- <VE1PR04MB6638C65257F41072C3D61583899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615133905.GV4447@sirena.org.uk>
-In-Reply-To: <20200615133905.GV4447@sirena.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.235.111]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 78c1ec6c-a227-4087-3571-08d8113708f7
-x-ms-traffictypediagnostic: VE1PR04MB6415:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6415ACC0634C21B7794E4E3F899C0@VE1PR04MB6415.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 04359FAD81
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: nvTow8U+q7wxBWkMifneUgsotU9ai3gzHeTDsflteZC343sFITeQdbYOa2XWOoHmBLyWghbaSlg1ZfFImikO+9EYkvxz6Wh3e2hJFzsxwe1GAHSh1l4Rf3xPRjj0DTXbq+duH6RvGZaG6mBaHDLURJIGj8aL1dWioSyiiXYKp9Sy9srj30oY5wORjEeFFRlv9Z0B8BbP/2Lhiz2Dkjj78PlaO5IAia6EeW6FzoQgCYTK9OmoCGoLuH/kZjhtagBDxXh38vbfOO4wpRLZJQez8vndOWXdiPblw3vuipvPQgwPSrQUI555KLr9NRH+6+/i
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(136003)(39860400002)(396003)(366004)(346002)(376002)(54906003)(83380400001)(71200400001)(8936002)(5660300002)(52536014)(186003)(8676002)(26005)(4744005)(316002)(7696005)(478600001)(53546011)(76116006)(66476007)(66556008)(6916009)(64756008)(66446008)(33656002)(6506007)(66946007)(2906002)(86362001)(7416002)(9686003)(4326008)(55016002);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: fnNB4/W0OTi84Rc+Ogok1m+DxaGA+tFek+k2ISGUhcUjBSprkFO2CJ2o/LR0KE9HUwltqGPNJst7OJjHIq83/AJg4UI4rgOPchk4UL7Izorn+wm6pC6KEGwbOpDGBvrvD7zE4naeU/lkr2CnYYORATo0WACaTcF96LPAb5hbDoWXegAjVV0nzsJPoN+SXtN7jTmVGzNivl+utqOuobRdjhFCydDbpRDz36mqaXCr8UKLepNokF47VWKc1CnczwrUZYJo/UrILZFBMp1VJajqQkZrKsGV+ZYPnveju7rVzpkRijJBZ13TXg+cR/AVW6VeYqYaEQ2O+85zsw8FXfVVlFccwnDU6qJLQTYTabSS0yIAqmBDTBcodmItRF32a/aIphsNVQDYXTOxZBCZ51kxs7y7Y4iFCK+XfpVqu2RPo+6XP5DONBBwF32PKLgs4ivWsexs6RuvkphwbBtAo1x6qB74chiImS+Xf5WVqncKdOw1PT+iHhAiHs7eALwyCd+I
+ id 1jkq8k-0000Ah-Ge
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 14:31:12 +0000
+Received: by mail-oi1-x244.google.com with SMTP id t25so16055379oij.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 07:31:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=+KbxPscr0KV67P5oOBM2F5K3yiQmdNXIOhQDoFvyw60=;
+ b=RzJrrFC0os+fExoMx2EOXMQp+8SzrW1/MlUK78Dt6n3wn63/A2NpYLhgYXheTfL/7Y
+ IyhU4QduNTJsrwGpqkynOXca1Pe9rXoBKygt1LGdlGS4JlljOwK8p+fQNbTWOIcRtK4G
+ m7Ei/k1znzImK4cYvXG1+AwD9bas5TGbki0llQX5dS15QgPxkXttZqaKk6gBfJiMGMQ9
+ lIr5QbCyKDDWM9wzDILrgDAbvxrwGiaaXdh3BkWj6YMf5iB57EsLkPmXYx1EQrdlNEOI
+ 8SvDZd8G1U+CH+Sq5FfPcMj3NhbR2pXJO1+8hkOrOnHByPa5xzNdH0gk6cf+uL9Uc4zL
+ 7I8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=+KbxPscr0KV67P5oOBM2F5K3yiQmdNXIOhQDoFvyw60=;
+ b=RHgWwTAgwCv6VyekQuFsH+7kD/DoValROn7Bu/KSfru93CA3+xH0p8E9t8yAzxz0zc
+ 5yEMCEl5Tk54pUiC4/J4kAf1awgOOcbqYi+/RvoNKocRDnEPRE+q7bsUCedLWenqfZvz
+ CBtpuLwcR1GvnoQzxWoUessmmc5i0l3p0s//5bEMp7uVw3S5lPm7XlWNhIHx5Kdsjyb2
+ wM1yONGFTsdfWngGZH26Lc6Frikdz8utBcrqSstqT73wb5dpWGu5f8CkSj3iD/wIfos5
+ rJtt/arftOq70qnHe1swPC2AB/9URpyfbExHrWtPb48QJrOKuzBIYlaVv1JxUeU/ieHI
+ IwAQ==
+X-Gm-Message-State: AOAM533YB8b5QwyfHR66ExBeReiVlE9pJttSUrHXNxnbLdYHxVHbLZXL
+ sOvWAtinQy+tERxJPfg+Fiw=
+X-Google-Smtp-Source: ABdhPJyRhG0lbifOMWO0ZCZoje1gctjqUoI9YY4vLzj7BveJbjHHwXz6w8/pCFNU3RitF7RL8Wdiyw==
+X-Received: by 2002:aca:d612:: with SMTP id n18mr8642166oig.46.1592231468028; 
+ Mon, 15 Jun 2020 07:31:08 -0700 (PDT)
+Received: from ubuntu-n2-xlarge-x86 ([2604:1380:4111:8b00::3])
+ by smtp.gmail.com with ESMTPSA id w127sm880847oiw.39.2020.06.15.07.31.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 07:31:06 -0700 (PDT)
+Date: Mon, 15 Jun 2020 07:31:05 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: Clang miscompiling arm64 kernel with BTI and PAC?
+Message-ID: <20200615143105.GA2283265@ubuntu-n2-xlarge-x86>
+References: <20200615105524.GA2694@willie-the-truck>
+ <20200615115337.GG4447@sirena.org.uk>
+ <20200615120223.GC2694@willie-the-truck>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 78c1ec6c-a227-4087-3571-08d8113708f7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jun 2020 14:18:54.3138 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: uAzgrywaEFfmYboIEKPk3AJosen31bKXzQtNY3lKjuGd9bZ3EBDNWuJhyv90SyhxLKE9l1c47ALPK0OqBmK67w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6415
+Content-Disposition: inline
+In-Reply-To: <20200615120223.GC2694@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_071858_715550_3BF78F92 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_073110_555066_C8EE8CD0 
+X-CRM114-Status: GOOD (  17.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.13.50 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.13.50 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [natechancellor[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -132,30 +100,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, tstellar@redhat.com, android-kvm@google.com,
+ catalin.marinas@arm.com, ndesaulniers@google.com,
+ clang-built-linux@googlegroups.com, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, daniel.kiss@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/06/15 21:39 Mark Brown <broonie@kernel.org> wrote:
-> On Mon, Jun 15, 2020 at 01:35:01PM +0000, Robin Gong wrote:
-> > Then how about choosing specific error code for such dma not ready
-> > case where nothing went out on the bus neither?
+[+ Tom, the clang 10 release manager]
+
+On Mon, Jun 15, 2020 at 01:02:23PM +0100, Will Deacon wrote:
+> On Mon, Jun 15, 2020 at 12:53:37PM +0100, Mark Brown wrote:
+> > On Mon, Jun 15, 2020 at 11:55:24AM +0100, Will Deacon wrote:
+> > 
+> > > Here, the switch statement has been replaced by a jump table which we *tail
+> > > call* into. The register dump shows we're going to 0xffffd68929392e14:
+> > 
+> > > ffff800010032e14:       d503233f        paciasp
+> > > ffff800010032e18:       a9bf7bfd        stp     x29, x30, [sp, #-16]!
+> > > ffff800010032e1c:       910003fd        mov     x29, sp
+> > > ffff800010032e20:       aa0803e0        mov     x0, x8
+> > > ffff800010032e24:       940017c0        bl      ffff800010038d24 <kvm_vm_ioctl_check_extension>
+> > > ffff800010032e28:       93407c00        sxtw    x0, w0
+> > > ffff800010032e2c:       a8c17bfd        ldp     x29, x30, [sp], #16
+> > > ffff800010032e30:       d50323bf        autiasp
+> > > ffff800010032e34:       d65f03c0        ret
+> > 
+> > > The problem is that the paciasp instruction is not BTYPE-compatible with BR;
+> > > it expects to be called with a branch-and-link, and so we panic. I think you
+> > > need to emit a 'bti j' here prior to the paciasp.
+> > 
+> > I checked with our internal teams and they actually ran into this
+> > recently with some other code, the patch:
+> > 
+> >    https://reviews.llvm.org/D81746
+> > 
+> > ([AArch64] Fix BTI instruction emission) should fix this, it's been
+> > reviewed so should be merged shortly.
 > 
-> Yes, that's what I suggested.
-Seems not easy to find a suitable error value, how about EBADR which
-sounds like no any available dma_async_tx_descriptor got by calling dmaengine_prep_slave_sg? 
-#define EBADR           53      /* Invalid request descriptor */
+> Cheers, that's good to hear. Shall we have a guess at the clang release
+> that will get the fix, or just disable in-kernel BTI with clang for now?
+> 
+> Will
+> 
+
+This will be in clang 11 for sure. Tom, would it be too late to get this
+in to clang 10.0.1? If it is not, I can open a PR.
+
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
