@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DFB71F9228
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1B1D1F9225
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:49:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cDfD8TFBMmwws33LipIK7SlnNEMmYYeCsmsm/I6/wUk=; b=Oa/VtlzuWkT1UO
-	CQcvlmPPNYvzeuDU/O1vdZKqc8FHoNEZDE7/ZHbxbRtpkY64UDwqASB9SZkz+td1lpHQyqFXyKLvt
-	Zumn9+6MopH3Y/ndeMbxrFBVyikElL81GZlxB4CPhP9buYtczIfsM1Yy2d9k+sqKvyohqV4g5lLqV
-	n4Uhp4QUaobhKqaSNleFXjO+nU3j0agqJXaIHsdd6Q4AMWQLOrDvSXPvoYPntY9Fn8fzJoItWivdE
-	JnjP69+U27rsmnu1c/sgMuE5j1uAoyiz+G7ytTn5V5Dy1iPS7N9q704OmVUKgmsth34LXe4aNvSpK
-	wJaWMAl4T3j5WN7wbBpQ==;
+	List-Owner; bh=eUXah+BmVET/KrtTdApcsQ7JbepxHpUHUZoXRlQ/jLY=; b=OOgSZeGDo9mrUk
+	G5kz5u+2vvBbO3w4ulNYCYvNqlAF3cT0Di2Yp1Ylu0++f7zb6S0JrIq/l3CldPv+GPrCQMDXSJyx4
+	lnSvygUD6uXtJyphR+2qpiPdUGnP1wzcOpJ3Rq3gOfVLKLyW7VL9tGqZHsbtmn3xHa35MuliaiNiP
+	qMcvnpU+BDNUcMWtWXv/Q966JLQrSYdXRYfTlCmxhKIFEyyPFW+j6Imv59f+IGsIivnsgvcmlEkPI
+	UjA0bkrMGjyLSbIK0Onu1fbBBmRUWP6iKYabdKP6NC9fJIn/NXC4xE+t1y6x0npn3e845B9ru1P+A
+	/zjM6/LwS8WJhTs2DZaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkknk-0001mj-LB; Mon, 15 Jun 2020 08:49:08 +0000
+	id 1jkknZ-0001ZU-1h; Mon, 15 Jun 2020 08:48:57 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkgo-0001zz-Bi; Mon, 15 Jun 2020 08:42:00 +0000
+ id 1jkkgp-00021P-KO; Mon, 15 Jun 2020 08:42:01 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 484F558014F;
- Mon, 15 Jun 2020 04:41:57 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Mon, 15 Jun 2020 04:41:57 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id D75EF58014B;
+ Mon, 15 Jun 2020 04:41:58 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 15 Jun 2020 04:41:58 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=DQpPTJYxXtp+r
- dATG2C/JzFH6pA6g3j8lECnpVhYo0g=; b=b4FeK6IbtHqEoEb6fFPildyK5VRq5
- GtHuaolO/QH6+RZsyovSKT7E7Jhffse8oMelUDeO8enFSfhH6KFsgqowjXpmHnXq
- YawVh39y6mbNlauo+hisQTS3b//83NjN6fuqUoyIrUTDDy9YqbHrwoMfEoA1hVq4
- mPouJOtDgG/84eGz9zlxxQlM7cdk3fhad0lSruGUZdhBBcves4u/dbZOEH4zoLw/
- +vULqoLWwXj5baOkh+yivJzqxAogEevpemnCAfzZeJZLHJbYeVKdxYDGt8bEoTfr
- 92H5tPZExJh8hv3ilernL05QGnr2XwJKsHcJfskm5D3ZqNVdKXIPR8Kuw==
+ :mime-version:content-transfer-encoding; s=fm3; bh=5Q64h3nd5fpXR
+ ewbNUIi82j+4VyFATnX0AmrGckBfgA=; b=nphvUawdr9fQk8Eoidf4kh/P0MIM+
+ ay72WSUni6+nAFO94+uqON8E2w+3hOqEocvaetWdk/mu0HfiIkyE/pDS20IAruHa
+ 6hHt7A0bBTYPdCATqEaMEtsTYN3r5IiiqTutO03l8DKFcoXK4nDIpOfeaVQ737HN
+ Vo/PB9odX0D5GgLBdBdrLowo+QL6BGDYh3uT7FF/mEYGXip9CK1+FSOysnKZHwRi
+ 5JUTdKu3m31OZhdTdubNtolNe7p5qy9n+dxImIf/pGVVAyUEqLyJ80gvU9n8o9nv
+ L7QmI8aF1fXBMg6ge0l79Uc62ynfVwIpn/sTmPzub5e3tisDXMEyiGGVw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=DQpPTJYxXtp+rdATG2C/JzFH6pA6g3j8lECnpVhYo0g=; b=rk/dbtVf
- QHFeUN1u45113xhLXEeF5VIqK2HxXePO+lm/HBJnUyYnWWWFcejz8fx2MiqtcMYJ
- aRxOTKmJ6D8QNwCYXsKmH58R8YrHVjjzt+QBC0c0QjRjse9vEOGJ0KGM8WbcCYfI
- VnATZyWh+KG5VRiad0JIpS6Muq8fe3xbMjsoZq/PLXKni3LolOoPR/10UQcWe9sB
- ohc8v6+qmJ1Xn+kAftOlt6knWoRBKeL4c4VSqbTNNFnl6Yf36QmmRdqYO7LP/kfY
- x6K9Nde6ZE1q1yVvPJ0TuoXyWCaCbp5BKb4SpdM45O1Wh7eg23VMS9GogTWtRaQm
- pAir3l8JSqsQqQ==
-X-ME-Sender: <xms:VTTnXvOsyFUyq9ftS0mXb4k_GEeQl0DR_XtvYicZfPv1UXFKUH3sYA>
+ fm3; bh=5Q64h3nd5fpXRewbNUIi82j+4VyFATnX0AmrGckBfgA=; b=e4+Xotui
+ /LAdlLtyPh4/EExIiOcb7u+iyNum7h3q1TGc8B1o9JU/GczPM/cxwhdJ6Qp70iYX
+ 1v5XYjMcl78cYxYLg3Gf1ZSTcuV+BmoqgtGasXwKpbd9qbNzIZPbpikIeFfamKtZ
+ 9Sg1SuUmsgzgquXXh6IJDwfdbewrQ3aUfS1WjYrJEDUMm4MKFMs2JqITVajoE76a
+ hT5C5Fl7XXRNundbu5S0ygrOo/F6G/Xy893YyQUeK/x1tehcoV7t2WmSHOGpNFtI
+ QgJDx51KcuIK8skYXEJbsyoWTyom5F59LnWtd2WbnzXKMoOd+oteBaqvIpvkpZLG
+ viXO5FUCLHzR4Q==
+X-ME-Sender: <xms:VjTnXlugfohHkjZltC4WHkjNyFeaSSzCE8R7Zxk8wHwXVJ0kYheu1Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeikedgtdeiucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,26 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeikedgtdeiucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepvddune
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:VTTnXp8RzkMIrCJDjKdi7geKZfGrXzr-wn3gN0JIGLsafEkVeGfkuw>
- <xmx:VTTnXuSyhhrepg789uZTllxAV9fRAlcI01rUHCgGe-LRaHmhOrPxmg>
- <xmx:VTTnXjtvJjfz0HToGQaShVfDto4_BFWWEgNAgHbUphDU25BMQqEO7A>
- <xmx:VTTnXr7UcfGOO1i5QfaHojGBTRxYk_nDcxFpW6cOxRAgWZuToJmjuw>
+X-ME-Proxy: <xmx:VjTnXuck1uc4dvkhZRVQvzYuDd5uWGngH3oiRDakWpTC9r-ydaD6SQ>
+ <xmx:VjTnXoyYqWnm-eX1RL70GN0_7jbOy1O3AY7BQ3d9nJkJT6WIu7FerA>
+ <xmx:VjTnXsMnN6qN48iddDVUIV9Zm1V7I-ekCZrYyK8aeFtfDGHhAZJyUQ>
+ <xmx:VjTnXka_wecngaQYHKq8ArXktGiM-3M1ExLG_4c3A23Bxah_A94vwA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id D571B30618B7;
- Mon, 15 Jun 2020 04:41:56 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 6D5D73280064;
+ Mon, 15 Jun 2020 04:41:58 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v5 23/27] Revert "clk: bcm2835: remove pllb"
-Date: Mon, 15 Jun 2020 10:41:03 +0200
-Message-Id: <5d26a4c58248f5be7760a7f2f720a1310baea5dd.1592210452.git-series.maxime@cerno.tech>
+Subject: [PATCH v5 24/27] ARM: dts: bcm2711: Add firmware clocks node
+Date: Mon, 15 Jun 2020 10:41:04 +0200
+Message-Id: <9a6f113140b3115150bfb18ecb248a48d58562cf.1592210452.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
 References: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_014158_636661_A7D8591B 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20200615_014159_839148_EEAAB698 
+X-CRM114-Status: GOOD (  10.26  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,59 +118,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit 2256d89333bd17b8b56b42734a7e1046d52f7fc3. Since we
-will be expanding the firmware clock driver, we'll need to remove the
-quirks to deal with the PLLB. However, we still want to expose the clock
-tree properly, so having that clock in the MMIO driver will allow that.
+Now that we have a clock driver for the clocks exposed by the firmware,
+let's add the device tree nodes for it.
 
-Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Tested-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-bcm2835.c | 30 ++++++++++++++++++++++++++----
- 1 file changed, 26 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
-index 6bb7efa12037..32f5c13be9d1 100644
---- a/drivers/clk/bcm/clk-bcm2835.c
-+++ b/drivers/clk/bcm/clk-bcm2835.c
-@@ -1684,10 +1684,32 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
- 		.fixed_divider = 1,
- 		.flags = CLK_SET_RATE_PARENT),
+diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+index c7f1d97e69bb..222d7825e1ab 100644
+--- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
++++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+@@ -69,6 +69,11 @@
+ };
  
--	/*
--	 * PLLB is used for the ARM's clock. Controlled by firmware, see
--	 * clk-raspberrypi.c.
--	 */
-+	/* PLLB is used for the ARM's clock. */
-+	[BCM2835_PLLB]		= REGISTER_PLL(
-+		SOC_ALL,
-+		.name = "pllb",
-+		.cm_ctrl_reg = CM_PLLB,
-+		.a2w_ctrl_reg = A2W_PLLB_CTRL,
-+		.frac_reg = A2W_PLLB_FRAC,
-+		.ana_reg_base = A2W_PLLB_ANA0,
-+		.reference_enable_mask = A2W_XOSC_CTRL_PLLB_ENABLE,
-+		.lock_mask = CM_LOCK_FLOCKB,
+ &firmware {
++	firmware_clocks: clocks {
++		compatible = "raspberrypi,firmware-clocks";
++		#clock-cells = <1>;
++	};
 +
-+		.ana = &bcm2835_ana_default,
-+
-+		.min_rate = 600000000u,
-+		.max_rate = 3000000000u,
-+		.max_fb_rate = BCM2835_MAX_FB_RATE),
-+	[BCM2835_PLLB_ARM]	= REGISTER_PLL_DIV(
-+		SOC_ALL,
-+		.name = "pllb_arm",
-+		.source_pll = "pllb",
-+		.cm_reg = CM_PLLB,
-+		.a2w_reg = A2W_PLLB_ARM,
-+		.load_mask = CM_PLLB_LOADARM,
-+		.hold_mask = CM_PLLB_HOLDARM,
-+		.fixed_divider = 1,
-+		.flags = CLK_SET_RATE_PARENT),
- 
- 	/*
- 	 * PLLC is the core PLL, used to drive the core VPU clock.
+ 	expgpio: gpio {
+ 		compatible = "raspberrypi,firmware-gpio";
+ 		gpio-controller;
 -- 
 git-series 0.9.1
 
