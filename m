@@ -2,75 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A7061F94D9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:45:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E46491F94DF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:50:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ql1BzGwyeIlVEXwjnOyNT1oRZ4zPqnwtLNi7b7Q659c=; b=szSMp5e+9gRU8RCERiPE7WnYL
-	qKktBxRV8K6Vs6B9CbpPVf7APgCo7jHFmPmP8SVGWlS6zFkPSu6UTFuoB4sjmLvC/PsehFiMlLX85
-	7tR9AluKh+g1eyEcBE7aRIehvPdujtUxREHQvBK8yaLn69ZHVwknHRu/NzmetRbHffZBjRAnejtgo
-	n033/WSgnC/FEpD5ot4Fh7k56PKzxl9qI0OGtJSSUtQkxVtDAwo6QdVgaFCGAN7lGFdqUmjo2NFwQ
-	pLrwNwGizS7WsDBrjveKBmIWeg1uC0RwEhIGIFvbamufX+Dj7ICpTgIulss5kHvYSH+OGapE+KgoH
-	jP2PCkoTw==;
+	 bh=6PUyriyqLyJIfws8qpTmNULpRCuwwEl8DUBV/twfoWo=; b=OHrstQbb5Ab+pKlix37b2SG4A
+	dfKYMSXYRxElZ3X3/p9PZctNgMTSgigMKqEUfwjLveA8Q6X1iOOH0OHZiQzuRWeuHzbD9V39g9Gsi
+	0lHUJpB0jE9nnL8iAqFU5e0sHXpgwvbjukIzA0rAcRQUR8gE+mWFgvdmckVy26YAK+1+kT0crFDx8
+	8L2ePkt0fczewXbO8cunbwQguThl1NV7We5qVwev1SMLqrv0MabI6G78EZ5p5sXuRCrVKjuRblBp+
+	gj79D4R8ZohSARmOitbjs5jJ96TyzPMeOP6ELG5Mi9bnFC9NK89HYsZxGUzfAsGpsf38b2dbnatq5
+	iNNYahHsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkmcB-0000Cr-QR; Mon, 15 Jun 2020 10:45:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jkmh1-0002Tj-Hu; Mon, 15 Jun 2020 10:50:19 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkmc2-0000Bm-PE
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:45:12 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 440DE20679;
- Mon, 15 Jun 2020 10:45:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592217910;
- bh=NQzIZ8HPcQkoHR2c+q1ZkigBSIf8XsDf44QYuMwZ1eI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=1RtG08G/L03qKYK1oCOce5i21jHfrQ3NbZC8zOJcMgDMZ0czTmcyDD4bt7pC2BB3o
- qecG3/VcX504T1V2WOzpEUg5g2RXJmqv2ter5zGq7x6z+iBfsdH0JfYpj/dt2FmqRm
- v2hCvpW4bzXkjj+JNt21eLWPEaZqZnHxFtfGSm14=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jkmc0-0034QJ-RE; Mon, 15 Jun 2020 11:45:08 +0100
+ id 1jkmgp-0001Qa-6S
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:50:09 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 05FAWlLl003188; Mon, 15 Jun 2020 12:50:00 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=6uazfPAhQsttgP5kzZTw92A9LjEqdyZWqPnjXh89SHU=;
+ b=oS6225LDlBacpl1Ddp48BwFpC3AjwYU6WszDnpBmvJyMVLu3A99UsTAMux5ThvFGXLdT
+ EGKbmHBHT1RwwsvWZtGETAqqnfqJUn8hacHEZ8fWeieTN3j3BuFUGFh3AnWEgWcAmSDe
+ 8mEKZpYJa2klMIpGrfOVeHs2OeaCBiemAmW3pJWkC5OABdFKlKbicvxyJiDDzjeVZxCM
+ MJZT7wGb5ubVnMS8az9TEu4JpUCXYdYVzFftMfgQePUKsu7F9mYpB8etX2ZAbDrUEgnW
+ ifHB1d6k5wffirFxYAsBj1HrqL3hw5EirUI4TT0ugMkXEzN1omzOFHoJnSBUSMLSQI21 9w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 31mmjvs6j8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 15 Jun 2020 12:50:00 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6828B10002A;
+ Mon, 15 Jun 2020 12:50:00 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3A0382B8A11;
+ Mon, 15 Jun 2020 12:50:00 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun
+ 2020 12:49:59 +0200
+Subject: Re: [PATCH 1/5] ARM: dts: stm32: add usart2, usart3 and uart7 pins in
+ stm32mp15-pinctrl
+To: Erwan Le Ray <erwan.leray@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+References: <20200528074029.24962-1-erwan.leray@st.com>
+ <20200528074029.24962-2-erwan.leray@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <2ee07ea1-1336-3bc5-d978-c5dc5cd5f04f@st.com>
+Date: Mon, 15 Jun 2020 12:49:59 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Date: Mon, 15 Jun 2020 11:45:08 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Andrew Scull <ascull@google.com>
-Subject: Re: [PATCH 1/4] KVM: arm64: Enable Pointer Authentication at EL2 if
- available
-In-Reply-To: <20200615084857.GD177680@google.com>
-References: <20200615081954.6233-1-maz@kernel.org>
- <20200615081954.6233-2-maz@kernel.org> <20200615084857.GD177680@google.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <8683c038040236e1fefed067649c31d9@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: ascull@google.com, kvm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- kernel-team@android.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200528074029.24962-2-erwan.leray@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-15_02:2020-06-15,
+ 2020-06-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_034510_841160_07DD5CFB 
-X-CRM114-Status: GOOD (  11.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200615_035007_542820_A4C506EE 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,67 +100,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- kernel-team@android.com, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree@vger.kernel.org, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+Hi Erwan
 
-On 2020-06-15 09:48, Andrew Scull wrote:
-> On Mon, Jun 15, 2020 at 09:19:51AM +0100, Marc Zyngier wrote:
->> While initializing EL2, switch Pointer Authentication if detected
+On 5/28/20 9:40 AM, Erwan Le Ray wrote:
+> Adds usart2_pins_c, usart3_pins_b, usart3_pins_c and uart7_pins_c pins
+> configurations in stm32mp15-pinctrl.
+> - usart2_pins_c pins are connected to Bluetooth chip on dk2 board.
+> - usart3_pins_b pins are connected to GPIO expansion connector on evx board.
+> - usart3_pins_c pins are connected to GPIO expansion connector on dkx board.
+> - uart7_pins_c pins are connected to Arduino Uno connector on dkx board.
 > 
->                                 ^ nit: on?
-
-Yes.
-
+> Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 > 
->> from EL1. We use the EL1-provided keys though.
->> 
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>  arch/arm64/kvm/hyp-init.S | 11 +++++++++++
->>  1 file changed, 11 insertions(+)
->> 
->> diff --git a/arch/arm64/kvm/hyp-init.S b/arch/arm64/kvm/hyp-init.S
->> index 6e6ed5581eed..81732177507d 100644
->> --- a/arch/arm64/kvm/hyp-init.S
->> +++ b/arch/arm64/kvm/hyp-init.S
->> @@ -104,6 +104,17 @@ alternative_else_nop_endif
->>  	 */
->>  	mov_q	x4, (SCTLR_EL2_RES1 | (SCTLR_ELx_FLAGS & ~SCTLR_ELx_A))
->>  CPU_BE(	orr	x4, x4, #SCTLR_ELx_EE)
->> +alternative_if ARM64_HAS_ADDRESS_AUTH_ARCH
->> +	b	1f
->> +alternative_else_nop_endif
->> +alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
->> +	b	2f
->> +alternative_else_nop_endif
->> +1:
->> +	orr	x4, x4, #(SCTLR_ELx_ENIA | SCTLR_ELx_ENIB)
->> +	orr	x4, x4, #SCTLR_ELx_ENDA
->> +	orr	x4, x4, #SCTLR_ELx_ENDB
+> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> index fb98a66977fe..99e399e4e4c3 100644
+> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> @@ -1658,6 +1658,36 @@
+>   		};
 > 
-> mm/proc.S builds the mask with ldr and ors it in one go, would be nice
-> to use the same pattern.
 
-Do you actually mean kernel/head.S, or even __ptrauth_keys_init_cpu in 
-asm/asm_pointer_auth.h?
+...
 
-If so, I agree that it'd be good to make it look similar by using the 
-mov_q macro, at the expense of a spare register (which we definitely can 
-afford here).
 
-Thanks,
+> +	usart3_pins_b: usart3-0 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('B', 10, AF7)>, /* USART3_TX */
+> +				 <STM32_PINMUX('G', 8, AF8)>; /* USART3_RTS */
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+On EVx board this line is shared with ETH_CLK. The choice between both 
+is done thanks to SB23 and default choice is "ETH_CLK". So hardware 
+update has to be done to use usart3_rts. some words around that in 
+comment would be great.
+
+Thanks
+alex
+
+> +			bias-disable;
+> +			drive-push-pull;
+> +			slew-rate = <0>;
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('B', 12, AF8)>, /* USART3_RX */
+> +				 <STM32_PINMUX('I', 10, AF8)>; /* USART3_CTS_NSS */
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	usart3_idle_pins_b: usart3-idle-0 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
+> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
+> +				 <STM32_PINMUX('I', 10, ANALOG)>; /* USART3_CTS_NSS */
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('B', 12, AF8)>; /* USART3_RX */
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	usart3_sleep_pins_b: usart3-sleep-0 {
+> +		pins {
+> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
+> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
+> +				 <STM32_PINMUX('I', 10, ANALOG)>, /* USART3_CTS_NSS */
+> +				 <STM32_PINMUX('B', 12, ANALOG)>; /* USART3_RX */
+> +		};
+> +	};
+> +
+> +	usart3_pins_c: usart3-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('B', 10, AF7)>, /* USART3_TX */
+> +				 <STM32_PINMUX('G', 8, AF8)>; /* USART3_RTS */
+> +			bias-disable;
+> +			drive-push-pull;
+> +			slew-rate = <0>;
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('B', 12, AF8)>, /* USART3_RX */
+> +				 <STM32_PINMUX('B', 13, AF7)>; /* USART3_CTS_NSS */
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	usart3_idle_pins_c: usart3-idle-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
+> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
+> +				 <STM32_PINMUX('B', 13, ANALOG)>; /* USART3_CTS_NSS */
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('B', 12, AF8)>; /* USART3_RX */
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	usart3_sleep_pins_c: usart3-sleep-1 {
+> +		pins {
+> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
+> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
+> +				 <STM32_PINMUX('B', 13, ANALOG)>, /* USART3_CTS_NSS */
+> +				 <STM32_PINMUX('B', 12, ANALOG)>; /* USART3_RX */
+> +		};
+> +	};
+> +
+>   	usbotg_hs_pins_a: usbotg-hs-0 {
+>   		pins {
+>   			pinmux = <STM32_PINMUX('A', 10, ANALOG)>; /* OTG_ID */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
