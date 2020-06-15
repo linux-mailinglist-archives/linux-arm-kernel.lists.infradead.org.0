@@ -2,68 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 945401F94F4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:56:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D5921F9526
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:18:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=T3MYpLJ/EgfEPN+UPHm+88yd54PqU51TEj28P5CT7oo=; b=dSVXNrosyDWnnqm4ZSD+hHsge
-	C84umjoEFnXGpDRXwiwL0q3XgrBgwl/dXk/4UDm7k/kpcd0fo0lemutSlBepGbFisJAcehojrmk0e
-	4MJa4cC8mHlwJjPgxHh5GmCGrgxk9gOFNBe0/8obKCSLfqg7WhRN8QKSKAA3oTmNyWorKAHVzpWug
-	Go/EEmlEHEdRXSFVs7/8JpCXYu4tk0nEM1/kEcK/423uZ5TZXMRuEC454YZhNVidwGSLOt44k0H/L
-	ixOYwcLLenthll9DhEWT+ny8lFpYFy5pCyWeZoTeudTgFQs/pLEN/otTcwx2kEC+6UOFFuG5/xcaO
-	5pFgAX8uw==;
+	 bh=CqRCglWo0427A/L4DAGusIt7V1rmzJIN8jVsuQgP9wk=; b=R+wonJbu51vaDk1HAtVG4q0Te
+	lOq/MLgiThvXo/W9RmLXX/VcZbqWe9BR/WveUwGEFN5SSWL/KpvZJ/E5KV62+9V/35l/GOvCcS4n8
+	Ln1j+AAOFFsupf1sNdhO4FcKzeoZnkGYuys6vt0JLbTJdG3knyCVFE8iETOuNCtw7qP25k0967Zgo
+	ofwRxk1pBAIrsUSe7s6MX6vD7x6qmFZsFDlkdnmcyoy2xIUvCgnq+fiq7hA53q7XBlj91FXHTukgn
+	dujRE5pxPsPTjEe5iC0D21tmy7E+ZrCLsO5FEBYXX6epqV3OKEQRI3X5Rg4M15aB5fMREBwDoifY9
+	dslEl5l6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkmme-0006ck-DS; Mon, 15 Jun 2020 10:56:08 +0000
+	id 1jkn8M-0003Bg-Oc; Mon, 15 Jun 2020 11:18:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkmmR-0006bN-SZ
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:55:57 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jkn8F-0003BF-Pp
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:18:28 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 759C82068E;
- Mon, 15 Jun 2020 10:55:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9183620679;
+ Mon, 15 Jun 2020 11:18:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592218555;
- bh=QaBa2U9Geoqv5p35xEZGCPFzj0swu4OiDh55cMIarDQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=uIlbWLp6f1Vl5kwtuO2o8tEhAOPhh8OwsbhlCIUjVE5onhQxrcOt2paYytzhQFZ+S
- ELIHnWlyL61RYWU/C3dTm+2G2hErdEZSbK5DW3FL9qg5z91Ymd4N6jhMqSAN1YD6Je
- HKrDTYLd1K0oZDSgUbNGNojGjlv4ZletzawM1YYY=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jkmmP-0034WH-Vp; Mon, 15 Jun 2020 11:55:54 +0100
+ s=default; t=1592219907;
+ bh=Kc5Uu2zfW16GC/jLDwOItAJ1ZCbBOhlBnC7jl4IzQzw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=CLqA0Otm5iTchqOJNuF5+TEvlduYM9+uHf6vsS1atI8wMe7S/kxYzvwUUWFsse4+8
+ sH1eDw9PbEF9rDtnc2aheYGa9DNhyAWCXgR4cJnGEviEeGugPmWRca0LUDu2E4mP8M
+ PRkjztkO40hmW00EQKRvCSNgeGSBOeUs/BCxQ00k=
+Date: Mon, 15 Jun 2020 12:18:24 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH 14/29] dt: Fix broken references to renamed docs
+Message-ID: <20200615111824.GB4447@sirena.org.uk>
+References: <cover.1592203542.git.mchehab+huawei@kernel.org>
+ <6866c0d6d10ce36bb151c2d3752a20eb5122c532.1592203542.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-Date: Mon, 15 Jun 2020 11:55:53 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 1/4] KVM: arm64: Enable Pointer Authentication at EL2 if
- available
-In-Reply-To: <20200615100318.GA773@C02TD0UTHF1T.local>
-References: <20200615081954.6233-1-maz@kernel.org>
- <20200615081954.6233-2-maz@kernel.org>
- <20200615100318.GA773@C02TD0UTHF1T.local>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <c1ab609a8888d1c67b1946ebbf934dac@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: mark.rutland@arm.com, kvm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kernel-team@android.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <6866c0d6d10ce36bb151c2d3752a20eb5122c532.1592203542.git.mchehab+huawei@kernel.org>
+X-Cookie: Offer may end without notice.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_035555_962304_C811135A 
-X-CRM114-Status: GOOD (  18.13  )
+X-CRM114-CacheID: sfid-20200615_041827_856757_287556FB 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,88 +78,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
- kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ Jonathan Corbet <corbet@lwn.net>, David Airlie <airlied@linux.ie>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
+ linux-spi@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1072381926428894167=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-06-15 11:03, Mark Rutland wrote:
-> On Mon, Jun 15, 2020 at 09:19:51AM +0100, Marc Zyngier wrote:
->> While initializing EL2, switch Pointer Authentication if detected
->> from EL1. We use the EL1-provided keys though.
-> 
-> Perhaps "enable address authentication", to avoid confusion with
-> context-switch, and since generic authentication cannot be disabled
-> locally at EL2.
 
-Ah, fair enough.
+--===============1072381926428894167==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="eAbsdosE1cNLO4uF"
+Content-Disposition: inline
 
->> 
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>  arch/arm64/kvm/hyp-init.S | 11 +++++++++++
->>  1 file changed, 11 insertions(+)
->> 
->> diff --git a/arch/arm64/kvm/hyp-init.S b/arch/arm64/kvm/hyp-init.S
->> index 6e6ed5581eed..81732177507d 100644
->> --- a/arch/arm64/kvm/hyp-init.S
->> +++ b/arch/arm64/kvm/hyp-init.S
->> @@ -104,6 +104,17 @@ alternative_else_nop_endif
->>  	 */
->>  	mov_q	x4, (SCTLR_EL2_RES1 | (SCTLR_ELx_FLAGS & ~SCTLR_ELx_A))
->>  CPU_BE(	orr	x4, x4, #SCTLR_ELx_EE)
->> +alternative_if ARM64_HAS_ADDRESS_AUTH_ARCH
->> +	b	1f
->> +alternative_else_nop_endif
->> +alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
->> +	b	2f
->> +alternative_else_nop_endif
-> 
-> I see this is the same pattern we use in the kvm context switch, but I
-> think we can use the ARM64_HAS_ADDRESS_AUTH cap instead (likewise in 
-> the
-> existing code).
-> 
-> AFAICT that won't permit mismatch given both 
-> ARM64_HAS_ADDRESS_AUTH_ARCH
-> and ARM64_HAS_ADDRESS_AUTH_IMP_DEF are dealt with as
-> ARM64_CPUCAP_BOOT_CPU_FEATURE.
 
-That'd be a nice cleanup, as the two back to back alternatives are a bit 
-hard to read.
+--eAbsdosE1cNLO4uF
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> 
->> +1:
->> +	orr	x4, x4, #(SCTLR_ELx_ENIA | SCTLR_ELx_ENIB)
->> +	orr	x4, x4, #SCTLR_ELx_ENDA
->> +	orr	x4, x4, #SCTLR_ELx_ENDB
-> 
-> Assuming we have a spare register, it would be nice if we could follow 
-> the same
-> pattern as in proc.S, where we do:
-> 
-> | ldr     x2, =SCTLR_ELx_ENIA | SCTLR_ELx_ENIB | \
-> |              SCTLR_ELx_ENDA | SCTLR_ELx_ENDB
-> | orr     x0, x0, x2
-> 
-> ... though we could/should use mov_q rather than a load literal, here 
-> and in
-> proc.S.
+On Mon, Jun 15, 2020 at 08:46:53AM +0200, Mauro Carvalho Chehab wrote:
+> Some files got renamed. Those were all fixed automatically by
+>=20
+> 	./scripts/documentation-file-ref-check --fix
 
-Looks like this code isn't in -rc1 anymore, replaced with a mov_q in 
-__ptrauth_keys_init_cpu.
+Acked-by: Mark Brown <broonie@kernel.org>
 
-I'll switch to that in v2.
+--eAbsdosE1cNLO4uF
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Thanks,
+-----BEGIN PGP SIGNATURE-----
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7nWQAACgkQJNaLcl1U
+h9CxiAgAhDSjkVNSd4C3SSNbhfInIakuxFRySdIdhdj0LEFFiDgpuSzr3Lod/jYy
+mKamyUcBQ6F3CafOHN8nf4MlH9u3CSElXbDvLZlah833W1ak+AWXqFDdqi3XM9Wg
+5enzsfi4JHeKxu/NGAt7YUqXKG2WxM4RL0iC1H/CsGsLII4ixSPSNHJ8BsGs2Ehx
+Dv2I9zYutWdH+3O8bk4vHtJHpZidjuobydynnmMgcHpeDXVSLPZx22W/LXsUAlfE
+HFaK+IberJIeSTebqFLV0fkB5+x9yri0Jg8SLWubAGmqiS/XEvVLx1tF0uU/ukk4
+dBx3qCxD+Vtqo7ZF4IYCIM1u5B64lg==
+=HhUo
+-----END PGP SIGNATURE-----
+
+--eAbsdosE1cNLO4uF--
+
+
+--===============1072381926428894167==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1072381926428894167==--
+
