@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9983B1F9140
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:20:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07EDC1F9141
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:20:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KT8lKJJX8bnbvm/iZ+Mc0SC4i0Z5F2ajmBcuEE4jH8Y=; b=Ku2npM8Y5av6iH
-	EeOuLNxPMSimOm0vk7Bp08lYWssv8EWvHDdJMIdodTNZa9DLqCw6yVWHW2p9wAdoOj3BmSZzpVUw8
-	JdrDpyQe2NjCyr9xw2g0WJx73N+6yLtg6kSnPV7s2g0y+t4HAJutb3EUt55GdWh16+cplZB+Y5Zie
-	HsrdMW1jEQ2xkP0Oq9V1Nrc/6ARzsK/LwpFMxKSFOXbVW3eDiAK069x4xmnxREGHbnEX343Zr8WpS
-	sU01hWJcq9JPB5zUoBrrIpvqLyAGjxkzKnic21d2yp6eeNxlZ1yCAD1vDwC2344ydhxpV2FT3M50J
-	rLOID50IjP3uPF7uz0+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zbbE176x3Dv4AlfZvq3UedAl6re2MexpovYtitjTZw8=; b=qEKCq/wUZhXtnz
+	ecyOzripqAHJbDXDH41ewK4Wa0FUw1Tl25NfUxxQ/LBV7gxNG6LnXU0Q9uxk6jc0T1M79oIEPLAnS
+	ims2T1MID2oiOAq/hsj4kU1XjJ9C/E1G/t1ug1eo+ax3znQDwq1Obef8i/nr4oYj4fNHFw+wQB6VY
+	bxq1u44S+4sE/IqdU8WDWu1Ff56CGfDgYnnlwvyTivtnPAQ+/Qjkln16wOQIxiiBQgJ9ByQqdBsoE
+	Ynj2rQG1fLd+9vLXblxwFpWX8F1k+mJsjon2B4SOADc26DDcYkDY0fVkR20/PUr9RIW/lCS353U/h
+	i8Hdc251337XVPpUfNPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkkLz-0003hu-KQ; Mon, 15 Jun 2020 08:20:28 +0000
+	id 1jkkM7-0004ij-TX; Mon, 15 Jun 2020 08:20:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkLd-0002sS-Kf
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:20:06 +0000
+ id 1jkkLd-000312-QA
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:20:07 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 81D2B2053B;
- Mon, 15 Jun 2020 08:20:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0CA85206E2;
+ Mon, 15 Jun 2020 08:20:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592209204;
- bh=rn6yKK06LpzRw/3dsq0h1xocnLbW3SUFTAd2Sa8+1Js=;
- h=From:To:Cc:Subject:Date:From;
- b=YWtLZGQyd7nbuuYsMvmTnST0IZDFzzhO9C/apw+MIVjPu8F//TT/q/odf8KcBnu/g
- kQRjs69i3amQsA177aT9+pF5TTUI85VSEjMlFL679jKIVBEIn9BlrjaJ1Qvbun4oL/
- UOZwW4WuBQ5zAmwPQLaPAf3q1FKAxQMcQCjeiQ4A=
+ s=default; t=1592209205;
+ bh=3JOu3whXJHagX3A5FXu4YOyMwg0buhIfq0J6saBPEWM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=MSVi3gmPR9xUm2rCakwEj3nJ130UF203cE4RAlDZuI/haaRGRkXWZNddLJefxqnsZ
+ V0TFhXghmCZq4V9HsILYwivR5UaqASj/PZe163BnLIJDF5hNmTXWy1sNbEHfZLzoil
+ nTRsqhvhoxu5nK9fr7nRde30rwecznbQbbHFG94Q=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=wait-a-minute.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jkkLb-0031ew-1k; Mon, 15 Jun 2020 09:20:03 +0100
+ id 1jkkLb-0031ew-Ju; Mon, 15 Jun 2020 09:20:03 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  kvmarm@lists.cs.columbia.edu
-Subject: [PATCH 0/4] KVM/arm64: Enable PtrAuth on non-VHE KVM
-Date: Mon, 15 Jun 2020 09:19:50 +0100
-Message-Id: <20200615081954.6233-1-maz@kernel.org>
+Subject: [PATCH 1/4] KVM: arm64: Enable Pointer Authentication at EL2 if
+ available
+Date: Mon, 15 Jun 2020 09:19:51 +0100
+Message-Id: <20200615081954.6233-2-maz@kernel.org>
 X-Mailer: git-send-email 2.27.0
+In-Reply-To: <20200615081954.6233-1-maz@kernel.org>
+References: <20200615081954.6233-1-maz@kernel.org>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
 X-SA-Exim-Rcpt-To: kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
@@ -57,8 +60,9 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_012005_706707_016AC26B 
-X-CRM114-Status: GOOD (  10.31  )
+X-CRM114-CacheID: sfid-20200615_012005_867590_EAB90BA1 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -95,33 +99,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Not having PtrAuth on non-VHE KVM (for whatever reason VHE is not
-enabled on a v8.3 system) has always looked like an oddity. This
-trivial series remedies it, and allows a non-VHE KVM to offer PtrAuth
-to its guests.
+While initializing EL2, switch Pointer Authentication if detected
+from EL1. We use the EL1-provided keys though.
 
-In the tradition of not having separate security between host-EL1 and
-EL2, EL2 reuses the keys set up by host-EL1. It is likely that, should
-we switch to a mode where EL2 is more distrusting of EL1, we'd have
-private keys there.
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+---
+ arch/arm64/kvm/hyp-init.S | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-The last patch is just an optimisation which I've lobbed with the rest
-of the series in order not to forget it.
-
-Marc Zyngier (4):
-  KVM: arm64: Enable Pointer Authentication at EL2 if available
-  KVM: arm64: Allow ARM64_PTR_AUTH when ARM64_VHE=n
-  KVM: arm64: Allow PtrAuth to be enabled from userspace on non-VHE
-    systems
-  KVM: arm64: Check HCR_EL2 instead of shadow copy to swap PtrAuth
-    registers
-
- arch/arm64/Kconfig                   |  4 +---
- arch/arm64/include/asm/kvm_ptrauth.h |  4 ++--
- arch/arm64/kvm/hyp-init.S            | 11 +++++++++++
- arch/arm64/kvm/reset.c               | 21 ++++++++++-----------
- 4 files changed, 24 insertions(+), 16 deletions(-)
-
+diff --git a/arch/arm64/kvm/hyp-init.S b/arch/arm64/kvm/hyp-init.S
+index 6e6ed5581eed..81732177507d 100644
+--- a/arch/arm64/kvm/hyp-init.S
++++ b/arch/arm64/kvm/hyp-init.S
+@@ -104,6 +104,17 @@ alternative_else_nop_endif
+ 	 */
+ 	mov_q	x4, (SCTLR_EL2_RES1 | (SCTLR_ELx_FLAGS & ~SCTLR_ELx_A))
+ CPU_BE(	orr	x4, x4, #SCTLR_ELx_EE)
++alternative_if ARM64_HAS_ADDRESS_AUTH_ARCH
++	b	1f
++alternative_else_nop_endif
++alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
++	b	2f
++alternative_else_nop_endif
++1:
++	orr	x4, x4, #(SCTLR_ELx_ENIA | SCTLR_ELx_ENIB)
++	orr	x4, x4, #SCTLR_ELx_ENDA
++	orr	x4, x4, #SCTLR_ELx_ENDB
++2:
+ 	msr	sctlr_el2, x4
+ 	isb
+ 
 -- 
 2.27.0
 
