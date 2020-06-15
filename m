@@ -2,75 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80B501F9547
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:25:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571351F954A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:26:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LbYh59djMQ/0iVnZZYPxGwwMXOVMMH1O5avaKar6gDc=; b=NvaMgoBq7Aa3JB
-	ZqZ5KcaNORcl1TnPg5T3cVDT8Ublqz/FmAy12wZs2yOxZAMp0aD9/h6b0mJCU8hKQcSZJxlHQkrxa
-	qBTL/OEj5fnyMs/AnghzyjjHuhLJQ9y2+LovzDiQv7hPL+0SkMLezNs+S1l3Zv5ewpfJQc02VgT7B
-	QDa1Llix5CGT/2kFMeIYQTiiJnJp5mIXyrSp0Dix1awZW7htmgZfP81Jx9wYQso7St+vh6H/DDbko
-	IUhjyZr3HMQ7S6dXXvhX25NIdLwH3XfV7BrtwHPsbVNCqJhw2pjoBtN3jNSp9gEM3Dpm63s+DeqA7
-	ymAUJqVxYlGCFBkJUh0Q==;
+	List-Owner; bh=i0uXD+g6m7H7zAJTrTISSvEjUOoWXJToqho8CQiNtj8=; b=gbT2qEUXkJsopJ
+	1Y8fQjiADr+1Tg4/FJ3bpk+repF9q7WcLBUlgs0Q4mYqVhPlTRHrL+03CZ8OjSRmr1SI/wl8/5uUr
+	/bhHQNyVixIqXy1J/ZLhMiavZThqMw2FguqksB7ZQpvYu0byLrffzTfvax/Ng8hdovKY599Tvoyhz
+	uz0geLm9jV+nvF71vTO6GX9w+NtNl4jwbcWMRuBigDxQGf5E9MwytOuo3PH68JGMSu0mzYwgAMqnB
+	GbZTxY6GufJ5Ag/KSaYeA2/46RTM5UG+yKUTCK+KQKFBB1zckPwaFIefdCkLw5i4uqc+G6RPXnO0V
+	IQ0MvqIihywITdhYb4dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jknFL-0001IT-At; Mon, 15 Jun 2020 11:25:47 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1jknFh-0001Wp-NO; Mon, 15 Jun 2020 11:26:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jknFC-0001Hb-FF
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:25:40 +0000
-Received: by mail-ua1-x944.google.com with SMTP id v6so5521914uam.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 04:25:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vrKmkhg+c1u0kB4U6Q0PfBV1XmTvqqdQ8hWTNkN5v2k=;
- b=XIIEk3jhhCjnXxJTApUX1KsztsSHxmkhzNIzJiVbqEHf7zAn0F9ATFYCTcxehIn7Db
- PSo6AK16Dk/Mq2bHaFCNXJPKhXFfIyKWlZ64UGJVCrZI5POsNEiNmiXtK4/nrUoQyxE7
- QHFnkyTx7Mf1Cjrktsn7BMYv521Nzaa/sKvQWydv/s1Sx4G5vEEGEzjGrqvH0ubiDc45
- oBYNVXzgJF6M5MhYQLfXHAaZnaB+ow+dxNe5MRjqhZkkny1Gytj8LuYB8sxhWldVtsrz
- jrDMHgw3N8/IG4Ozcd3vnUA3fApwh05lTSBFjbz5aKHtOvycqlLUQb87pFCTW7Ocp/gA
- +uhg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vrKmkhg+c1u0kB4U6Q0PfBV1XmTvqqdQ8hWTNkN5v2k=;
- b=GU9+3WMgHw7+piwj3efyFl27q1EKxe1aKvVYpj2/QlQ9R6TdyvoXDL6WJiZr2vRZRH
- ZIAwJ7BXNsyHAp3QRTX9yspawF4sxQ9F6mS43xsg8wMEFSURUkLrPRdncRvfHB+ApUsu
- VlPazmzn8a9u8dx5ZD+FeeMZwzCzW0HqfVjsYFNB0zjpsQwUEq2XA9k4C5LE29+pu68p
- IrsBo5QR2gsMEbkI8DaV9x1awaNRxr2f2OtxEZoP2asMwBtHluPljvReldLYiZTaDCCq
- 9Iljdm7zlWVGsWLEwZ1ZbuIWJVmVU71WMjU1h6Sbf2fPlrYhTgJM4solgTUEZoXnIL4P
- 1Y2g==
-X-Gm-Message-State: AOAM5311jRL14Yorn18GidsyVhA4Y6iZHs/HlH6ZcqG4BM7zbo3qtgGe
- qRGrzCnhpF6II/htQNKE+tYwe1RWpMpdk7tDgLvVjQ==
-X-Google-Smtp-Source: ABdhPJzqNGqsG+5owbRVG/KlqJGvlwwJKZq02aq94CP4ikq3550XKb+IM6Rhtt+J/C/aq6FLjSiLs0/JETpwhEPnOTc=
-X-Received: by 2002:a9f:22e1:: with SMTP id 88mr18170672uan.19.1592220336997; 
- Mon, 15 Jun 2020 04:25:36 -0700 (PDT)
+ id 1jknFT-0001Vb-Jt
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:25:57 +0000
+Received: from localhost (unknown [171.61.66.58])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4C58E20663;
+ Mon, 15 Jun 2020 11:25:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592220355;
+ bh=hheBwTSFc6iwBWB8MsUTDTdzd+3OLaOnprLkDFHzJZ4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=m8rK1weuyASMxJgo3gsh7sPxRrQAYD12kwRU1DXbJp57frQ+XcatZNTgVFVlxrzQI
+ HOg/s3WpJX7CJxde07iTNDrw+n3kKCCoA2P+oBdHx2M9cBJqLd2p4ITInuMOO2Twgz
+ poRfTxYiKMbsrXKoOOM3hCXA5vN9EbhrexQch/hA=
+Date: Mon, 15 Jun 2020 16:55:49 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
+Message-ID: <20200615112549.GL1393454@vkoul-mobl>
+References: <1591880310-1813-1-git-send-email-yibin.gong@nxp.com>
+ <1591880310-1813-2-git-send-email-yibin.gong@nxp.com>
+ <20200611134042.GG4671@sirena.org.uk>
+ <VE1PR04MB66383245FAD2AE33CFEA76F789810@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200612101357.GA5396@sirena.org.uk>
+ <VE1PR04MB66384013797FE6B01943F2A889810@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200612141611.GI5396@sirena.org.uk>
+ <VE1PR04MB6638B43E3AC83286946DABCD899F0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20200615071931.GK1393454@vkoul-mobl>
+ <VE1PR04MB6638959679C644C76B4D3D3A899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20200429103644.5492-1-daniel.lezcano@linaro.org>
- <20200429103644.5492-4-daniel.lezcano@linaro.org>
-In-Reply-To: <20200429103644.5492-4-daniel.lezcano@linaro.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 15 Jun 2020 13:25:00 +0200
-Message-ID: <CAPDyKFrdzcf5e98EM0VvwxnR0zDFQ851PDLOZ9wpe-LO6n4Abw@mail.gmail.com>
-Subject: Re: [PATCH v4 4/4] thermal: cpuidle: Register cpuidle cooling device
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <VE1PR04MB6638959679C644C76B4D3D3A899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_042538_956957_489213F2 
-X-CRM114-Status: GOOD (  18.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_042555_695473_EB53E628 
+X-CRM114-Status: GOOD (  16.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,87 +84,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Zhang Rui <rui.zhang@intel.com>,
- lukasz.luba@arm.com
+Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 Apr 2020 at 12:37, Daniel Lezcano <daniel.lezcano@linaro.org> wrote:
->
-> The cpuidle driver can be used as a cooling device by injecting idle
-> cycles. The DT binding for the idle state added an optional
->
-> When the property is set, register the cpuidle driver with the idle
-> state node pointer as a cooling device. The thermal framework will do
-> the association automatically with the thermal zone via the
-> cooling-device defined in the device tree cooling-maps section.
->
-> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-> ---
->  - V4:
->    - Do not check the return value as the function does no longer return one
-> ---
->  drivers/cpuidle/cpuidle-arm.c  | 3 +++
->  drivers/cpuidle/cpuidle-psci.c | 3 +++
->  2 files changed, 6 insertions(+)
->
-> diff --git a/drivers/cpuidle/cpuidle-arm.c b/drivers/cpuidle/cpuidle-arm.c
-> index 9e5156d39627..8c758920d699 100644
-> --- a/drivers/cpuidle/cpuidle-arm.c
-> +++ b/drivers/cpuidle/cpuidle-arm.c
-> @@ -8,6 +8,7 @@
->
->  #define pr_fmt(fmt) "CPUidle arm: " fmt
->
-> +#include <linux/cpu_cooling.h>
->  #include <linux/cpuidle.h>
->  #include <linux/cpumask.h>
->  #include <linux/cpu_pm.h>
-> @@ -124,6 +125,8 @@ static int __init arm_idle_init_cpu(int cpu)
->         if (ret)
->                 goto out_kfree_drv;
->
-> +       cpuidle_cooling_register(drv);
-> +
->         return 0;
->
->  out_kfree_drv:
-> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> index bae9140a65a5..1f38e0dfc9b2 100644
-> --- a/drivers/cpuidle/cpuidle-psci.c
-> +++ b/drivers/cpuidle/cpuidle-psci.c
-> @@ -9,6 +9,7 @@
->  #define pr_fmt(fmt) "CPUidle PSCI: " fmt
->
->  #include <linux/cpuhotplug.h>
-> +#include <linux/cpu_cooling.h>
->  #include <linux/cpuidle.h>
->  #include <linux/cpumask.h>
->  #include <linux/cpu_pm.h>
-> @@ -313,6 +314,8 @@ static int __init psci_idle_init_cpu(int cpu)
->         if (ret)
->                 goto out_kfree_drv;
->
-> +       cpuidle_cooling_register(drv);
-> +
+Hi Robin,
 
-Apologies for the late reply, but just noticed this change in v5.8-rc1.
+On 15-06-20, 08:59, Robin Gong wrote:
+> On 2020/06/15 15:20 Vinod Koul <vkoul@kernel.org> wrote:
 
-Don't you need a cpuidle_cooling_unregister function? For example,
-cpuidle-psci may fail and then calls cpuidle_unregister() to cleans up
-things.
+> > > Yes, but both assume spi controller driver could detect such dma
+> > > failure before dmaengine_prep_*(). Let's wait Vinod's comment for that
+> > > if dmaengine_slave_config could keep direction.
+> > 
+> > The direction is already in the prep_ call, so sending in dmaengine_slave_config
+> > is not required, pls pass it in the prep_ call
+> Hi Vinod,
+> 	Is there any way to let the device driver to know dma controller is ready
+> (in sdma case is sdma firmware loaded or not)before prep_call? Hence, spi core
+> could map dma buffer or not. Prep_call is too late for spi core since the buffers
+> have been already mapped. 
 
-Is that okay?
+Can you use .device_alloc_chan_resources for that? This is where all
+the resource allocation for a channel should happen...
 
-Kind regards
-Uffe
+> 	From my view, seems dmaengine_slave_config is the only one...Further,
+> sdma need direction in dmaengine_slave_config phase, because currently
+> what's the tx/rx script used on sdma channel is decided not only peripheral_type
+> but also direction. For example, spi tx dma is running ram script to workaround
+> ecspi ERR009165 while rx dma is running rom script, so only spi tx dma channel
+> depends on sdma firmware loaded(now that could be detect by ' load_address
+> < 0' in sdma_load_context() and prep_ call finally).
+>    I knew direction is deprecated in dmaengine_slave_config, but that's really
+> very useful for sdma to check if firmware loaded and spi core could get it earlier
+> before prep_call(fallback to PIO if dma is not ready).
+
+I think that is wrong expectation, dmaengine_slave_config should pass
+the slave_config to driver and nothing else. The relevant action should
+be taken in respective prep_ calls here, so that should be fixed as well
+
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
