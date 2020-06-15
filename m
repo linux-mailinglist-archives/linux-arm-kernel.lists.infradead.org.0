@@ -2,61 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F402F1F93CE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:45:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CE821F93D0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:46:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pKcLcIcs0cwR9LEgsuVpmmqLzoOJmNrduzyeo4Ehglo=; b=GjKmZpMEkz6oCr
-	a96Kq9TAfP6DwOMWONqzV7xKbvlReCiZQwR/qTcgMLmwfZF+sAlY+pDw/Z+YEWFgsL8sEFyj3FxSH
-	PMmeAZnBr7oeaITsm1fIvevl+WChrWG/x1y/pp6sd5mWAvcEg0gh8UtxiUmjB1SPADR9nuiIn92sL
-	yDseBlrvBDst+q1aR8wwASsHAJhmbvakt/lvgbifnDzX4oyE6Npvg/tokn5j/To6Jhy0QItvfxYG2
-	YfBG6F+w8YdcZSS1hMeTUwyTs1ZqGGFN89ELHQInGR7uN5oErQqvBlg/NT0VoagAkY05ldEoWM1mN
-	+WmUPnVjQqELe3i8MTwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=J8FiygAWLOwy/HqC4gGlSy5VCMLHODUo/qT6e+T/wyM=; b=Q54jNpu1ahC3Cg2Ntrm4cOCyf
+	tKoQZsDINlQw2rCjADkc73IyfP0zpJiA60lNGxoNOWffB58zDbMADDBNXnDSITMHbDsdeMyFk/wtc
+	THxCowDx9R34Tikjl8tY08RcksVpeHFM8axaRAdpsIXW1SmN2NM9DyfGhVgnvzyCXqwhbSvAbSuDu
+	ET4QmKrUS0lMk44/kbK0E2IV3glZvTYfi6t2cVyFTrAMiBYR8Yf3hOl5BXiOSq/MC4DOYhqhrNHvS
+	NbIodUiD+9s6QfWKTG5WkU9LFCf8t/szGXOO8ml7TsiFuw6XFFgVlS5YbYIDBcZlIHnqGM9PskID/
+	g5HANX9WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklge-0000iM-4x; Mon, 15 Jun 2020 09:45:52 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jklgu-00011h-IQ; Mon, 15 Jun 2020 09:46:08 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jklfu-0006bL-7o
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:45:10 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id C5A19D8476B33A990449;
- Mon, 15 Jun 2020 17:45:00 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.58) by
- DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 15 Jun 2020 17:44:51 +0800
-From: John Garry <john.garry@huawei.com>
-To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
- <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
- <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH 2/2] perf pmu: Improve CPU core PMU HW event list ordering
-Date: Mon, 15 Jun 2020 17:40:46 +0800
-Message-ID: <1592214046-32385-3-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-In-Reply-To: <1592214046-32385-1-git-send-email-john.garry@huawei.com>
-References: <1592214046-32385-1-git-send-email-john.garry@huawei.com>
+ id 1jklgj-000103-JW
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:45:59 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 05F9YmAg015035; Mon, 15 Jun 2020 11:45:38 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=HzRMy6iVCZcLIfFdNcJlFmRB2z9fKYZjPMelH03qdYY=;
+ b=nOlzI78SZ3BXZsTxqFqoExmXdRONkXi5UKuqpvBc92FLtDOUT9oj+HyLeFTjarNKmxwH
+ yO/6GjTPHN7RMfwgh0/kv5U1rUzXgEF2o3ZEJ68+kTo7R+HkRAqEGRAGvOT/p44c7azE
+ 8ZGDzljkTLZb8dokG1oa27eTNcQCzjEL9LCX9FjHPQMYBhPa0PdxQkYXyvYgzkUrVGI4
+ CXDJPCMmEMMQsah697bvJDTc1OsChq0OhJn4cAf/iMsje5syLv6nRGy8cd1SdFTBhA1Y
+ Vl6vgqwoLU1Aw8xGzNpiRgQn1uVKdFOCKIZIODsOkx94i2/l8/9eUFykiSzy6m3273J7 tw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 31mmjvrwjd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 15 Jun 2020 11:45:38 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1B0C710002A;
+ Mon, 15 Jun 2020 11:45:38 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E456E2C298D;
+ Mon, 15 Jun 2020 11:45:37 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun
+ 2020 11:45:36 +0200
+Subject: Re: [PATCH v6 2/9] ARM: dts: stm32: Add pin map for ltdc & spi5 on
+ stm32f429-disco board
+To: <dillon.minfei@gmail.com>, <robh+dt@kernel.org>, <p.zabel@pengutronix.de>, 
+ <mcoquelin.stm32@gmail.com>, <thierry.reding@gmail.com>,
+ <sam@ravnborg.org>, <airlied@linux.ie>, <daniel@ffwll.ch>,
+ <mturquette@baylibre.com>, <sboyd@kernel.org>,
+ <andy.shevchenko@gmail.com>, <noralf@tronnes.org>,
+ <linus.walleij@linaro.org>, <broonie@kernel.org>
+References: <1590564453-24499-1-git-send-email-dillon.minfei@gmail.com>
+ <1590564453-24499-3-git-send-email-dillon.minfei@gmail.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <2273a168-7b14-9e28-5904-b9d2c2e2d9d3@st.com>
+Date: Mon, 15 Jun 2020 11:45:36 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.69.192.58]
-X-CFilter-Loop: Reflected
+In-Reply-To: <1590564453-24499-3-git-send-email-dillon.minfei@gmail.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-15_01:2020-06-15,
+ 2020-06-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_024506_630605_2B2C5738 
-X-CRM114-Status: GOOD (  11.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200615_024558_022160_A517EB64 
+X-CRM114-Status: GOOD (  18.76  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,178 +103,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: irogers@google.com, ak@linux.intel.com, John Garry <john.garry@huawei.com>,
- linuxarm@huawei.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, dillonhua@gmail.com, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-spi@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For perf list, the CPU core PMU HW event ordering is such that not all
-events may will be listed adjacent - consider this example:
+Hi Dillon
 
-$ tools/perf/perf list
+On 5/27/20 9:27 AM, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
+> 
+> This patch adds the pin configuration for ltdc and spi5 controller
+> on stm32f429-disco board.
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> ---
+>   arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 67 ++++++++++++++++++++++++++++++++++
+>   1 file changed, 67 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+> index 392fa143ce07..0eb107f968cd 100644
+> --- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+> @@ -316,6 +316,73 @@
+>   				};
+>   			};
+>   
+> +			ltdc_pins_f429_disco: ltdc-1 {
 
-List of pre-defined events (to be used in -e):
+Sorry I missed this issue during review. I changed ltdc_pins_f429_disco 
+by ltdc_pins_b when I applied your patch.
 
-  duration_time                                      [Tool event]
 
-  branch-instructions OR cpu/branch-instructions/    [Kernel PMU event]
-  branch-misses OR cpu/branch-misses/                [Kernel PMU event]
-  bus-cycles OR cpu/bus-cycles/                      [Kernel PMU event]
-  cache-misses OR cpu/cache-misses/                  [Kernel PMU event]
-  cache-references OR cpu/cache-references/          [Kernel PMU event]
-  cpu-cycles OR cpu/cpu-cycles/                      [Kernel PMU event]
-  cstate_core/c3-residency/                          [Kernel PMU event]
-  cstate_core/c6-residency/                          [Kernel PMU event]
-  cstate_core/c7-residency/                          [Kernel PMU event]
-  cstate_pkg/c2-residency/                           [Kernel PMU event]
-  cstate_pkg/c3-residency/                           [Kernel PMU event]
-  cstate_pkg/c6-residency/                           [Kernel PMU event]
-  cstate_pkg/c7-residency/                           [Kernel PMU event]
-  cycles-ct OR cpu/cycles-ct/                        [Kernel PMU event]
-  cycles-t OR cpu/cycles-t/                          [Kernel PMU event]
-  el-abort OR cpu/el-abort/                          [Kernel PMU event]
-  el-capacity OR cpu/el-capacity/                    [Kernel PMU event]
+Regards
+alex
 
-Notice in the above example how the cstate_core PMU events are mixed in
-the middle of the CPU core events.
-
-For my arm64 platform, all the uncore events get mixed in, making the list
-very disorganised:
- page-faults OR faults                              [Software event]
-  task-clock                                         [Software event]
-  duration_time                                      [Tool event]
-  L1-dcache-load-misses                              [Hardware cache event]
-  L1-dcache-loads                                    [Hardware cache event]
-  L1-icache-load-misses                              [Hardware cache event]
-  L1-icache-loads                                    [Hardware cache event]
-  branch-load-misses                                 [Hardware cache event]
-  branch-loads                                       [Hardware cache event]
-  dTLB-load-misses                                   [Hardware cache event]
-  dTLB-loads                                         [Hardware cache event]
-  iTLB-load-misses                                   [Hardware cache event]
-  iTLB-loads                                         [Hardware cache event]
-  br_mis_pred OR armv8_pmuv3_0/br_mis_pred/          [Kernel PMU event]
-  br_mis_pred_retired OR armv8_pmuv3_0/br_mis_pred_retired/ [Kernel PMU event]
-  br_pred OR armv8_pmuv3_0/br_pred/                  [Kernel PMU event]
-  br_retired OR armv8_pmuv3_0/br_retired/            [Kernel PMU event]
-  br_return_retired OR armv8_pmuv3_0/br_return_retired/ [Kernel PMU event]
-  bus_access OR armv8_pmuv3_0/bus_access/            [Kernel PMU event]
-  bus_cycles OR armv8_pmuv3_0/bus_cycles/            [Kernel PMU event]
-  cid_write_retired OR armv8_pmuv3_0/cid_write_retired/ [Kernel PMU event]
-  cpu_cycles OR armv8_pmuv3_0/cpu_cycles/            [Kernel PMU event]
-  dtlb_walk OR armv8_pmuv3_0/dtlb_walk/              [Kernel PMU event]
-  exc_return OR armv8_pmuv3_0/exc_return/            [Kernel PMU event]
-  exc_taken OR armv8_pmuv3_0/exc_taken/              [Kernel PMU event]
-  hisi_sccl1_ddrc0/act_cmd/                          [Kernel PMU event]
-  hisi_sccl1_ddrc0/flux_rcmd/                        [Kernel PMU event]
-  hisi_sccl1_ddrc0/flux_rd/                          [Kernel PMU event]
-  hisi_sccl1_ddrc0/flux_wcmd/                        [Kernel PMU event]
-  hisi_sccl1_ddrc0/flux_wr/                          [Kernel PMU event]
-  hisi_sccl1_ddrc0/pre_cmd/                          [Kernel PMU event]
-  hisi_sccl1_ddrc0/rnk_chg/                          [Kernel PMU event]
-
-...
-
-  hisi_sccl7_l3c21/wr_hit_cpipe/                     [Kernel PMU event]
-  hisi_sccl7_l3c21/wr_hit_spipe/                     [Kernel PMU event]
-  hisi_sccl7_l3c21/wr_spipe/                         [Kernel PMU event]
-  inst_retired OR armv8_pmuv3_0/inst_retired/        [Kernel PMU event]
-  inst_spec OR armv8_pmuv3_0/inst_spec/              [Kernel PMU event]
-  itlb_walk OR armv8_pmuv3_0/itlb_walk/              [Kernel PMU event]
-  l1d_cache OR armv8_pmuv3_0/l1d_cache/              [Kernel PMU event]
-  l1d_cache_refill OR armv8_pmuv3_0/l1d_cache_refill/ [Kernel PMU event]
-  l1d_cache_wb OR armv8_pmuv3_0/l1d_cache_wb/        [Kernel PMU event]
-  l1d_tlb OR armv8_pmuv3_0/l1d_tlb/                  [Kernel PMU event]
-  l1d_tlb_refill OR armv8_pmuv3_0/l1d_tlb_refill/    [Kernel PMU event]
-
-So the events are list alphabetically. However, CPU core event listing is
-special from commit dc098b35b56f ("perf list: List kernel supplied event
-aliases"), in that the alias and full event is shown (in that order).
-As such, the core events may become sparse.
-
-Improve this by grouping the CPU core events and ensure that they are
-listed first for kernel PMU events. For the first example, above, this
-now looks like:
-
-duration_time                                      [Tool event]
-  branch-instructions OR cpu/branch-instructions/    [Kernel PMU event]
-  branch-misses OR cpu/branch-misses/                [Kernel PMU event]
-  bus-cycles OR cpu/bus-cycles/                      [Kernel PMU event]
-  cache-misses OR cpu/cache-misses/                  [Kernel PMU event]
-  cache-references OR cpu/cache-references/          [Kernel PMU event]
-  cpu-cycles OR cpu/cpu-cycles/                      [Kernel PMU event]
-  cycles-ct OR cpu/cycles-ct/                        [Kernel PMU event]
-  cycles-t OR cpu/cycles-t/                          [Kernel PMU event]
-  el-abort OR cpu/el-abort/                          [Kernel PMU event]
-  el-capacity OR cpu/el-capacity/                    [Kernel PMU event]
-  el-commit OR cpu/el-commit/                        [Kernel PMU event]
-  el-conflict OR cpu/el-conflict/                    [Kernel PMU event]
-  el-start OR cpu/el-start/                          [Kernel PMU event]
-  instructions OR cpu/instructions/                  [Kernel PMU event]
-  mem-loads OR cpu/mem-loads/                        [Kernel PMU event]
-  mem-stores OR cpu/mem-stores/                      [Kernel PMU event]
-  ref-cycles OR cpu/ref-cycles/                      [Kernel PMU event]
-  topdown-fetch-bubbles OR cpu/topdown-fetch-bubbles/ [Kernel PMU event]
-  topdown-recovery-bubbles OR cpu/topdown-recovery-bubbles/ [Kernel PMU event]
-  topdown-slots-issued OR cpu/topdown-slots-issued/  [Kernel PMU event]
-  topdown-slots-retired OR cpu/topdown-slots-retired/ [Kernel PMU event]
-  topdown-total-slots OR cpu/topdown-total-slots/    [Kernel PMU event]
-  tx-abort OR cpu/tx-abort/                          [Kernel PMU event]
-  tx-capacity OR cpu/tx-capacity/                    [Kernel PMU event]
-  tx-commit OR cpu/tx-commit/                        [Kernel PMU event]
-  tx-conflict OR cpu/tx-conflict/                    [Kernel PMU event]
-  tx-start OR cpu/tx-start/                          [Kernel PMU event]
-  cstate_core/c3-residency/                          [Kernel PMU event]
-  cstate_core/c6-residency/                          [Kernel PMU event]
-  cstate_core/c7-residency/                          [Kernel PMU event]
-  cstate_pkg/c2-residency/                           [Kernel PMU event]
-  cstate_pkg/c3-residency/                           [Kernel PMU event]
-  cstate_pkg/c6-residency/                           [Kernel PMU event]
-  cstate_pkg/c7-residency/                           [Kernel PMU event]
-
-Signed-off-by: John Garry <john.garry@huawei.com>
----
- tools/perf/util/pmu.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-index a375364537cd..e9a4a6961263 100644
---- a/tools/perf/util/pmu.c
-+++ b/tools/perf/util/pmu.c
-@@ -1400,6 +1400,7 @@ struct sevent {
- 	char *pmu;
- 	char *metric_expr;
- 	char *metric_name;
-+	int is_cpu;
- };
- 
- static int cmp_sevent(const void *a, const void *b)
-@@ -1416,6 +1417,12 @@ static int cmp_sevent(const void *a, const void *b)
- 		if (n)
- 			return n;
- 	}
-+
-+	if (as->is_cpu && !bs->is_cpu)
-+		return -1;
-+	else if (!as->is_cpu && bs->is_cpu)
-+		return 1;
-+
- 	return strcmp(as->name, bs->name);
- }
- 
-@@ -1507,6 +1514,7 @@ void print_pmu_events(const char *event_glob, bool name_only, bool quiet_flag,
- 			aliases[j].pmu = pmu->name;
- 			aliases[j].metric_expr = alias->metric_expr;
- 			aliases[j].metric_name = alias->metric_name;
-+			aliases[j].is_cpu = is_cpu;
- 			j++;
- 		}
- 		if (pmu->selectable &&
--- 
-2.26.2
-
+> +				pins {
+> +					pinmux = <STM32_PINMUX('C', 6,  AF14)>,
+> +						/* LCD_HSYNC */
+> +						 <STM32_PINMUX('A', 4,  AF14)>,
+> +						 /* LCD_VSYNC */
+> +						 <STM32_PINMUX('G', 7,  AF14)>,
+> +						 /* LCD_CLK */
+> +						 <STM32_PINMUX('C', 10, AF14)>,
+> +						 /* LCD_R2 */
+> +						 <STM32_PINMUX('B', 0,  AF9)>,
+> +						 /* LCD_R3 */
+> +						 <STM32_PINMUX('A', 11, AF14)>,
+> +						 /* LCD_R4 */
+> +						 <STM32_PINMUX('A', 12, AF14)>,
+> +						 /* LCD_R5 */
+> +						 <STM32_PINMUX('B', 1,  AF9)>,
+> +						 /* LCD_R6*/
+> +						 <STM32_PINMUX('G', 6,  AF14)>,
+> +						 /* LCD_R7 */
+> +						 <STM32_PINMUX('A', 6,  AF14)>,
+> +						 /* LCD_G2 */
+> +						 <STM32_PINMUX('G', 10, AF9)>,
+> +						 /* LCD_G3 */
+> +						 <STM32_PINMUX('B', 10, AF14)>,
+> +						 /* LCD_G4 */
+> +						 <STM32_PINMUX('D', 6,  AF14)>,
+> +						 /* LCD_B2 */
+> +						 <STM32_PINMUX('G', 11, AF14)>,
+> +						 /* LCD_B3*/
+> +						 <STM32_PINMUX('B', 11, AF14)>,
+> +						 /* LCD_G5 */
+> +						 <STM32_PINMUX('C', 7,  AF14)>,
+> +						 /* LCD_G6 */
+> +						 <STM32_PINMUX('D', 3,  AF14)>,
+> +						 /* LCD_G7 */
+> +						 <STM32_PINMUX('G', 12, AF9)>,
+> +						 /* LCD_B4 */
+> +						 <STM32_PINMUX('A', 3,  AF14)>,
+> +						 /* LCD_B5 */
+> +						 <STM32_PINMUX('B', 8,  AF14)>,
+> +						 /* LCD_B6 */
+> +						 <STM32_PINMUX('B', 9,  AF14)>,
+> +						 /* LCD_B7 */
+> +						 <STM32_PINMUX('F', 10, AF14)>;
+> +						 /* LCD_DE */
+> +					slew-rate = <2>;
+> +				};
+> +			};
+> +
+> +			spi5_pins: spi5-0 {
+> +				pins1 {
+> +					pinmux = <STM32_PINMUX('F', 7, AF5)>,
+> +						/* SPI5_CLK */
+> +						 <STM32_PINMUX('F', 9, AF5)>;
+> +						/* SPI5_MOSI */
+> +					bias-disable;
+> +					drive-push-pull;
+> +					slew-rate = <0>;
+> +				};
+> +				pins2 {
+> +					pinmux = <STM32_PINMUX('F', 8, AF5)>;
+> +						/* SPI5_MISO */
+> +					bias-disable;
+> +				};
+> +			};
+> +
+>   			dcmi_pins: dcmi-0 {
+>   				pins {
+>   					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
