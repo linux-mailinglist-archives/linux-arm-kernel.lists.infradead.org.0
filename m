@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 542B41F955D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:35:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 401EE1F9564
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:37:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4k2vt3LVmg6Rysx4tpZL7/0zWsGORBeS33qT+MlaG7g=; b=dmteh4BvbYDDNv
-	0mOkdHgoCMbpndAa+u2JEit/pnaWtWD0fkM9NfVR/sncfxmmShHw5QTsBZhz1p6x1Z8E1gmxfFIhB
-	8u0ALpmpjELCO/y7rr0PINs3uQnI19kV3+LMo2esNfgiwmLjcJ9txkptmBkjAjOQ6DCoZHVZvY0TN
-	drHVk1kjR4HNKlIWPCMhdUrwAfPKeR3YBjKaVNwS0sz35Fm35rkrIEbpjT3Fb5mCq7c0elmiIXMR8
-	df6/g1RDc8MwWVFbTiJRFnsMbz11SJGOzZwXH82+zl9cLcBRXfLQtK7xDtm3zlUFddIdOOeVN+nZE
-	45YMbs98xWstmQLfHgdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oxnoSOuHI7eVyrp7h2EZksWjgcjQ/IilE+0m9eH+IR0=; b=nHlFXS/+w++C77olYzT+jgA57
+	0YP/x/AbFKnzh6FoP7x0ITc7SnkcIZGi86WCT39BKj2ghJDetrF2RQU1oUzZ2oqMkv4Ihli1UrHcK
+	wDlnEKddm9eg41lRUexobwj2JJ4OM8dx2YTqV6bY8pt+BKojCrZonmfUpbANuI5h3rMiS50QXVWpO
+	RJrB+fGzEFGZjiMToEZspY3XJDCz9nmqBqKQaDt4WeqMI4unuwhncxXuCCHqBJGti8x/6+6aMJdjS
+	9wtVKg5SSCOKS0nH7laHSNckd6GuUCm3O0ChRkK7Dsc8UeiodXZjL8FICUlxvxYOTBi+WDGFgS5sY
+	erprunpxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jknOY-00069q-4J; Mon, 15 Jun 2020 11:35:18 +0000
+	id 1jknQn-0008CZ-Q2; Mon, 15 Jun 2020 11:37:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jknOJ-0005Sv-Rp
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:35:05 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jknQf-0008CA-6S
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:37:30 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4AA1F20663;
- Mon, 15 Jun 2020 11:35:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 618A02067B;
+ Mon, 15 Jun 2020 11:37:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592220903;
- bh=U+Ra4+MGv3itok8OivvDYnef7h9H+I9uORJTiZA5H24=;
- h=From:To:Cc:Subject:Date:From;
- b=kJtUHq/k/VLVC+l+pRT1x87+uIKlIEIeZu9GmwQtgKLi5vTCcPeuZE4TGEZbmcd/W
- 0lihwNWeD6TQuj8VP1j5mj05dXFAgt1+xRLcqPveW6rxfFc0bP8QrSgZfFrIKUpQ1c
- 22T9WLczH0bpRQmDbrLX4MPpe366f7glYJfF8qTk=
-From: Will Deacon <will@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: traps: Dump registers prior to panic() in bad_mode()
-Date: Mon, 15 Jun 2020 12:34:58 +0100
-Message-Id: <20200615113458.2884-1-will@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ s=default; t=1592221048;
+ bh=042ahzrXLwQ4rzed+tZ81tXSuX0NoAHNUQlsisbnNFc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=QgpvCEMti79rfD8OA2cipvVkYnf9Y6A+EG0YSfKUMVO+da78JSZOnCtjJfKW3hpsX
+ 46Un2hI2LvBi1zoKT8Ey1JLdgA34RORVoNwIawQnlLI2QlMcaRd6sHHS5g5WJR6YSl
+ hHTZdy/0gQj9me3Z4FNKPq6wg97FXv8iFw7BbA5U=
+Date: Mon, 15 Jun 2020 12:37:26 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: Clang miscompiling arm64 kernel with BTI and PAC?
+Message-ID: <20200615113726.GE4447@sirena.org.uk>
+References: <20200615105524.GA2694@willie-the-truck>
 MIME-Version: 1.0
+In-Reply-To: <20200615105524.GA2694@willie-the-truck>
+X-Cookie: Offer may end without notice.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_043503_926597_A9889AAA 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20200615_043729_254874_318E7074 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -74,46 +77,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
- Mark Brown <broonie@kernel.org>, kernel-team@android.com,
- Catalin Marinas <catalin.marinas@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, android-kvm@google.com, catalin.marinas@arm.com,
+ ndesaulniers@google.com, clang-built-linux@googlegroups.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0923763743053527724=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When panicing due to an unknown/unhandled exception at EL1, dump the
-registers of the faulting context so that it's easier to figure out
-what went wrong. In particular, this makes it a lot easier to debug
-in-kernel BTI failures since it pretty-prints PSTATE.BTYPE in the crash
-log.
 
-Cc: Mark Brown <broonie@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Will Deacon <will@kernel.org>
----
- arch/arm64/kernel/traps.c | 2 ++
- 1 file changed, 2 insertions(+)
+--===============0923763743053527724==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="lteA1dqeVaWQ9QQl"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 50cc30acf106..f1869e5bd743 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -812,6 +812,8 @@ asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr)
- 	pr_crit("Bad mode in %s handler detected on CPU%d, code 0x%08x -- %s\n",
- 		handler[reason], smp_processor_id(), esr,
- 		esr_get_class_string(esr));
-+	if (regs)
-+		__show_regs(regs);
- 
- 	local_daif_mask();
- 	panic("bad mode");
--- 
-2.27.0.290.gba653c62da-goog
 
+--lteA1dqeVaWQ9QQl
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Jun 15, 2020 at 11:55:24AM +0100, Will Deacon wrote:
+
+> We currently support for this Clang 8+, but maybe we need to reconsider t=
+hat
+> :(
+
+Yes, looking a bit like that - this one is relatively rare but could
+come up elsewhere so we can't just disable the functionality. =20
+
+--lteA1dqeVaWQ9QQl
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7nXXUACgkQJNaLcl1U
+h9AO6Af9F9k3I4IEfLpMuUI+CcvuiE1Fc/0HUnwK5m2n+PEJ9NpiEO2Er2vdOHys
+Cz2h+WjidPF+Wx/dnf1eTwxtdx0RW+PBdLSLZO2AATBCuRg3zw76fv+cL7SSMVtU
+DR36oCqKNYMpe95q3TDcbskRymTKNdNHKnBsR5seKP9hYgCriBnv4UwdbOnKc4VY
+eQPvsAecwzcNMKI05migKCqyL6j/dipuXLoRtnV55iE6P/uk6tXrSYY9/2K2FOX8
+ZVbfPf4awNuvOdeWodj8G+nHLkWHtRFWAQLavPvy5rrSiXc0whFE23ctxjCCVo0Z
+9UT8KZV9OSA/W+28GZup81fRE9gMhw==
+=sPLj
+-----END PGP SIGNATURE-----
+
+--lteA1dqeVaWQ9QQl--
+
+
+--===============0923763743053527724==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0923763743053527724==--
+
