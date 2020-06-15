@@ -2,114 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F5581F8C53
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 04:48:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 746FA1F8C82
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 05:38:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1QR59/JQlaog7sGFKSyDPQbsvbCGw4CtyDFZ47qpMxQ=; b=bavmF3FlOwoFf7
-	DMA0vlaNSQ80xicpSY8T/LF1tNabr4x/dwCpbskhrvWykcRqW86YHQAPafwKjjnhQ9yOKJJeeCSTY
-	DwiojNYNgolR79EZnKsvJddeyyoGyjU8F8dsR+5GBDqKp3DQHcCU2HwvVUpMT61uA1dbut+yL+hHJ
-	qdZcaGzEzJTOZP3jefVA3f8cnZ+sCaa4mS2JYtOCLKOXUlGDQN76o43sNtyVXAZqFyGRXkHicC615
-	w8SNWLxmVw/ht0wKs1A1FAYsFnZ3AMWG7BLBYTQGvu5Z9pi57NJ040Dn8NvW7aPOJEGg64LkAAn4T
-	2dKAo6ehXmPj12m1i5Sg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bj24Bh9uv6csbYyfFZHsAjZJosNmWz1WAFmlfIX8KSA=; b=d7d
+	o6/Xx0fUcEoXWyH3hbsBSdoUUgVkblzSa/ePyb121g9G93h3CVwIv7rAcES2UH6P3DbM0FIPvEuDN
+	PfFAPHYN4okYvnB459dZqVfJI0k3MZyhZWXqmthQ7ypSw/iMXZliF8RXOwy3vi8ebhjxn7IajV5/w
+	Ibb8NdPvUGKy4PbSxAG/+HMwvthOZRaEdJ5XaCXl5XQD+TcGn5tzrKoDy0D4jpIaLC2aYkF/bZAnN
+	hU45K7C83daMOsTC81NFfBk2RzAxmE3ASSwUXkxxdzkW4XEp2y1XehJjwJjrd+jup0I+8FW6FF/Uq
+	9NBpwXFXwIZGgJrOpkg1LFbqi+yjUSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkfB2-0004Vi-Bn; Mon, 15 Jun 2020 02:48:48 +0000
-Received: from mail-am6eur05on2067.outbound.protection.outlook.com
- ([40.107.22.67] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkfAt-0004Up-M0
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 02:48:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FWvN1hbnICaMKMI22LfJl02T4Ei10K+zxHBdO1MupNNCaRgZsm61/TUT+CIYT0JnkWZgpHcoOl9BBFvwAQqmtIlNQnZ5vkjrqy6bUQyFXlHFDfFUZbBwNRBn/j4WBYpKWaN8LgViGruBmleN7vroYHh5tlG0oBmZVV43v1mwjxyOblJm2QIZQpN6sd4N1/gpMpXPIEkbvp5+xPegV7zpdYbU47AaaXeHcWA1G3uhdQbxfAJ/Ar7P5z8cejZE+JNV3qqDs0w9UKNwyteTgw7H8ONlD/4Rj+GJjI0WiK0zUOKijwl3vqcRR8jJK6DmrQ2+H3rHLHIa1uzmfsm2dtOnPQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FjWBxzCzef2PLnNvF36EMNRusNQqfMQqbXp6ZOmzrkA=;
- b=MIWerlq0AjX2xiFRr0JiJsUPq71XHnEHtmxGwoZtrO1vqB/9FXsbMXBc+h4E85CWUoQVRdVh8pb62jT1MB5tsGsWlV/AX70+UvxNIL/fiqUmoETn0D3WbiVrQdrhU2/iFHzjzfYzmt7xv45upZbib/x8sxHGS5LxPSOgHd3vhxt3V/SyJk2Te6iZyDHz26Q0b7YdsplmB+4EW39YfZSwRVY0qDKkLqHQ31MPh8ze3ZOm0z5bLhv4PlKQiEdQdnqgUcr9qZJgiaEafnj+YiYFm5JX0KOgvbPE43Akmj3mhdVzzwYRfSvugGWEAJsBxFcuglp1pfBn5YPtf5qOog3CIw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FjWBxzCzef2PLnNvF36EMNRusNQqfMQqbXp6ZOmzrkA=;
- b=kdU21r5xaMoTRKfBckiIYTvNhIWgUTWQdOvRqDVcTglFK8Ut3rkMmSIE00TxUKXQZxT67wZDLMRAvC33IordBKdWmw7M8cLKdZtsxGv0Qmh1NxOggaZ9CX90VetHaGm8T9tGMcG2hRXslipo6nEomFK3dko9722Gy5Ft0dZuCK0=
-Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
- (2603:10a6:209:12::18) by AM6PR0402MB3846.eurprd04.prod.outlook.com
- (2603:10a6:209:18::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.20; Mon, 15 Jun
- 2020 02:48:34 +0000
-Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
- ([fe80::35f8:f020:9b47:9aa1]) by AM6PR0402MB3607.eurprd04.prod.outlook.com
- ([fe80::35f8:f020:9b47:9aa1%7]) with mapi id 15.20.3088.028; Mon, 15 Jun 2020
- 02:48:34 +0000
-From: Andy Duan <fugang.duan@nxp.com>
-To: "wu000273@umn.edu" <wu000273@umn.edu>, "kjlu@umn.edu" <kjlu@umn.edu>
-Subject: RE: [EXT] [PATCH] i2c: busses: Fix a reference count leak.
-Thread-Topic: [EXT] [PATCH] i2c: busses: Fix a reference count leak.
-Thread-Index: AQHWQc+52GnSsJfEJEa/K47t5grMhqjY+ylA
-Date: Mon, 15 Jun 2020 02:48:33 +0000
-Message-ID: <AM6PR0402MB36071B3C8859FA8F694FB706FF9C0@AM6PR0402MB3607.eurprd04.prod.outlook.com>
-References: <20200613221213.6679-1-wu000273@umn.edu>
-In-Reply-To: <20200613221213.6679-1-wu000273@umn.edu>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: umn.edu; dkim=none (message not signed)
- header.d=none;umn.edu; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 561f26df-7afd-45c3-9d54-08d810d6987d
-x-ms-traffictypediagnostic: AM6PR0402MB3846:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR0402MB3846B9BCFD8899CCA4AEC616FF9C0@AM6PR0402MB3846.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:298;
-x-forefront-prvs: 04359FAD81
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 03PgDYci00kBYI2Q7oy7a1QzqIsQ2ZTZlsfPj1YiqEXcpzMtVIOhj+zOaZREVrCQnhPnb58dO9RGVua5LvzSmRv/588BgmFqP8HVfcCDdII4mBq9Eu6zaAwLgrL2bpGboGbMRf9gi3Sph4RBqAbEwy+jbC+BiqPGhCzCcmoWtkDIACI35NDIEGBfbMm0ejuOKpl+/MpBmj5TSu/6JAPYdCFwGoQnyKYj6RLk4Sah5ZS55LRomdgcLABfvzhMasY1/9p49V+/V2y9o1HgGvjnB+cou2x+Rk3E2144nynYPjyBiVGAeQZU2GKaBMWCrj1z
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR0402MB3607.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(136003)(376002)(39860400002)(366004)(396003)(7696005)(52536014)(55016002)(9686003)(6506007)(83380400001)(86362001)(7416002)(26005)(8676002)(5660300002)(76116006)(8936002)(66446008)(66556008)(66476007)(186003)(66946007)(64756008)(316002)(4326008)(2906002)(33656002)(54906003)(71200400001)(110136005)(478600001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: w3ikn4oVBT1M7HPfC+dfcFenhQrPG4vjmf9O3neHExDBJ/JtwvBJiedIfE/VNH6kywZ51GLSu5y/OiEB+DShek7YJcbUGBVAosZGyUlAIdy+IP7ivwmBt6zyobideuwVbapAWmL6wNG5TZjQLQdskCgCxVkp+5OcuDLxXaA3rdNsTLsDY6aSDE/zQ5XdudRn3uafTatcWPihMpSUTylFuG97fxZP5U33cWexIwwfcvBuOt8R86hjIkNuRmufwHYvTATmc0U5/+fYHQmQUasNGqSQyBi7vnQRRokZaUfRvk3MjjxASR9NBXbNImC79aigUmNZe6/UzZo36O+BQ1DTF5rIh0TC4wy3WCa57UpnCGwCR+Nr2fQCOwDuzFJfvGTNaVLrGogmY9QVQmIFQmVJAw/Nmt+vQSLZzIWdFwvlIpphKJFNRnSUWKMDU6MC6z/1zUq+Xv+Z/5eT/lkOtk9rNqdzBxrxeGfPbChxfv6ymPU=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 561f26df-7afd-45c3-9d54-08d810d6987d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jun 2020 02:48:33.8952 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: wqaiwy8eAv8iAF8nnBxe33N1oJU5g3S6sKeC0JXp6gecklI62loIXEgjubklECL9oZbOLMcaostoISmvE0NcEQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3846
+	id 1jkfxA-0000Kb-U0; Mon, 15 Jun 2020 03:38:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkfx2-0000JO-05; Mon, 15 Jun 2020 03:38:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9E9E631B;
+ Sun, 14 Jun 2020 20:38:20 -0700 (PDT)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.79.186])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 687243F71F;
+ Sun, 14 Jun 2020 20:38:10 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH V3 0/4] mm/debug_vm_pgtable: Add some more tests
+Date: Mon, 15 Jun 2020 09:07:53 +0530
+Message-Id: <1592192277-8421-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_194839_790627_C4E828B2 
-X-CRM114-Status: GOOD (  13.22  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200614_203824_211385_670C858F 
+X-CRM114-Status: GOOD (  11.56  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.22.67 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.22.67 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,54 +57,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Wolfram Sang <wsa@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
+Cc: linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, ziy@nvidia.com,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, gerald.schaefer@de.ibm.com,
+ christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: wu000273@umn.edu <wu000273@umn.edu> Sent: Sunday, June 14, 2020 6:12 AM
-> From: Qiushi Wu <wu000273@umn.edu>
-> 
-> pm_runtime_get_sync() increments the runtime PM usage counter even
-> when it returns an error code. Thus call pm_runtime_put_noidle() if
-> pm_runtime_get_sync() fails.
-> 
-> Fixes: 13d6eb20fc79 ("i2c: imx-lpi2c: add runtime pm support")
-> Signed-off-by: Qiushi Wu <wu000273@umn.edu>
+This series adds some more arch page table helper validation tests which
+are related to core and advanced memory functions. This also creates a
+documentation, enlisting expected semantics for all page table helpers as
+suggested by Mike Rapoport previously (https://lkml.org/lkml/2020/1/30/40).
 
-Again, which case can trigger the issue ?
-> ---
->  drivers/i2c/busses/i2c-imx-lpi2c.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-imx-lpi2c.c
-> b/drivers/i2c/busses/i2c-imx-lpi2c.c
-> index 9db6ccded5e9..85b9c1fc7681 100644
-> --- a/drivers/i2c/busses/i2c-imx-lpi2c.c
-> +++ b/drivers/i2c/busses/i2c-imx-lpi2c.c
-> @@ -260,8 +260,10 @@ static int lpi2c_imx_master_enable(struct
-> lpi2c_imx_struct *lpi2c_imx)
->         int ret;
-> 
->         ret = pm_runtime_get_sync(lpi2c_imx->adapter.dev.parent);
-> -       if (ret < 0)
-> +       if (ret < 0) {
-> +               pm_runtime_put_noidle(lpi2c_imx->adapter.dev.parent);
->                 return ret;
-> +       }
-> 
->         temp = MCR_RST;
->         writel(temp, lpi2c_imx->base + LPI2C_MCR);
-> --
-> 2.17.1
+There are many TRANSPARENT_HUGEPAGE and ARCH_HAS_TRANSPARENT_HUGEPAGE_PUD
+ifdefs scattered across the test. But consolidating all the fallback stubs
+is not very straight forward because ARCH_HAS_TRANSPARENT_HUGEPAGE_PUD is
+not explicitly dependent on ARCH_HAS_TRANSPARENT_HUGEPAGE.
+
+Tested on arm64, x86 platforms but only build tested on all other enabled
+platforms through ARCH_HAS_DEBUG_VM_PGTABLE i.e powerpc, arc, s390. The
+following failure on arm64 still exists which was mentioned previously. It
+will be fixed with the upcoming THP migration on arm64 enablement series.
+
+WARNING .... mm/debug_vm_pgtable.c:860 debug_vm_pgtable+0x940/0xa54
+WARN_ON(!pmd_present(pmd_mkinvalid(pmd_mkhuge(pmd))))
+
+This series is based on v5.8-rc1.
+
+Changes in V3:
+
+- Replaced HAVE_ARCH_SOFT_DIRTY with MEM_SOFT_DIRTY
+- Added HAVE_ARCH_HUGE_VMAP checks in pxx_huge_tests() per Gerald
+- Updated documentation for pmd_thp_tests() per Zi Yan
+- Replaced READ_ONCE() with huge_ptep_get() per Gerald
+- Added pte_mkhuge() and masking with PMD_MASK per Gerald
+- Replaced pte_same() with holding pfn check in pxx_swap_tests()
+- Added documentation for all (#ifdef #else #endif) per Gerald
+- Updated pmd_protnone_tests() per Gerald
+- Updated HugeTLB PTE creation in hugetlb_advanced_tests() per Gerald
+- Replaced [pmd|pud]_mknotpresent() with [pmd|pud]_mkinvalid()
+- Added has_transparent_hugepage() check for PMD and PUD tests
+- Added a patch which debug prints all individual tests being executed
+- Updated documentation for renamed [pmd|pud]_mkinvalid() helpers
+
+Changes in V2: (https://patchwork.kernel.org/project/linux-mm/list/?series=260573)
+
+- Dropped CONFIG_ARCH_HAS_PTE_SPECIAL per Christophe
+- Dropped CONFIG_NUMA_BALANCING per Christophe
+- Dropped CONFIG_HAVE_ARCH_SOFT_DIRTY per Christophe
+- Dropped CONFIG_MIGRATION per Christophe
+- Replaced CONFIG_S390 with __HAVE_ARCH_PMDP_INVALIDATE
+- Moved page allocation & free inside swap_migration_tests() per Christophe
+- Added CONFIG_TRANSPARENT_HUGEPAGE to protect pfn_pmd()
+- Added CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD to protect pfn_pud()
+- Added a patch for other arch advanced page table helper tests
+- Added a patch creating a documentation for page table helper semantics
+
+Changes in V1: (https://patchwork.kernel.org/patch/11408253/)
+
+Cc: Jonathan Corbet <corbet@lwn.net>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Mike Rapoport <rppt@linux.ibm.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: Vasily Gorbik <gor@linux.ibm.com>
+Cc: Christian Borntraeger <borntraeger@de.ibm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
+Cc: "H. Peter Anvin" <hpa@zytor.com>
+Cc: Kirill A. Shutemov <kirill@shutemov.name>
+Cc: Paul Walmsley <paul.walmsley@sifive.com>
+Cc: Palmer Dabbelt <palmer@dabbelt.com>
+Cc: linux-snps-arc@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-riscv@lists.infradead.org
+Cc: x86@kernel.org
+Cc: linux-mm@kvack.org
+Cc: linux-doc@vger.kernel.org
+Cc: linux-arch@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+Anshuman Khandual (4):
+  mm/debug_vm_pgtable: Add tests validating arch helpers for core MM features
+  mm/debug_vm_pgtable: Add tests validating advanced arch page table helpers
+  mm/debug_vm_pgtable: Add debug prints for individual tests
+  Documentation/mm: Add descriptions for arch page table helpers
+
+ Documentation/vm/arch_pgtable_helpers.rst | 258 +++++++++
+ mm/debug_vm_pgtable.c                     | 660 +++++++++++++++++++++-
+ 2 files changed, 916 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/vm/arch_pgtable_helpers.rst
+
+-- 
+2.20.1
 
 
 _______________________________________________
