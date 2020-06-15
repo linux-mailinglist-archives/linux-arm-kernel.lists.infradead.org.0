@@ -2,89 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71FF61F90FA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:04:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 518CB1F911C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:13:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a3rtL+bmE2w4VHEOYBAG051QfiACKfYQIAvadni01e8=; b=cfunSJij7Pqeqq
-	lVhMlI8isPsVkGn024adsM13igfGmjj8xRuk4MVJi8vQAhD8A7K8PnkmN/yeAswWlUyN+qZXWkz2k
-	nbaVEqMoYazsngWa8YSQOBVsR+0jxjkekes8jPFoYoUN4QUCaz91DR2VH3dWtXsesMRTMEXS4VFpr
-	SwIm74wtowML568KNC1ybteCnUb5DXKor219hXQC5c8HpQMiGCSlM4MhARWgWNhr5CoEIhSumkxx+
-	plJwQ6ufzRAnxLodlM8NBuYHhdZXgNNtsc0IpHNInJgxcXJK2bwCnQUNYdC3bUY01h8jWTUnwRj5q
-	YpKmlRcp7gf6WiqURVQA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=O9Dx5+SUXlxcfwGLgQ90VR+FVPzXODYHAT2gYNIiSRA=; b=Cxr73ALcYKFhLtSKnCRtlTs2r
+	/eItvZWrLl79GVqVOpfiygk1b5+iQ7m/Yu/j+25mqgowe/5l2Bz1sgIwwQFoHs1csQ59lAi+VYAl6
+	WKde+Ap81Bpe6djzf4XSLsEqkUuf0fAVMIixUjXQSkn2JIQuKEIqAiWi5faGJyiBRVFHYSXVxsb5s
+	RHsJf0lg+3ca5/BDuRR2d8oumpO+cgteqtTFNgeULlXtXKiBP8U5j6FvbaTyAYB0WOeLrqZZ9ZL6L
+	5NR6CrcucIWCNhSbN/yH2DTI+ma5U3M3dyetsmiSFt0O62ySNmRHu/vsCTfDcP+BT+BYmlKaa45VU
+	06VBrgRDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkk6o-0008Nz-A4; Mon, 15 Jun 2020 08:04:46 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jkkEt-0006VL-Mt; Mon, 15 Jun 2020 08:13:07 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkk5h-0007WD-JP
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:03:39 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05F83Pf9008385;
- Mon, 15 Jun 2020 03:03:25 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1592208205;
- bh=Uk+sr31sgCXRnh6PktSit7kYbZ3ovLU3+zbv2SOX1s0=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=Aq1ntnpBIbSFrlciefSobaz+dLVpHV2kpLTHqx+3vhzEgci69C74ga154PpfaAtAh
- oYmkcndvSeIZ7XePbT8IWI4EUTY3PBSqyA7tjr5sWJWcYy+7BFw0G0KT3Nbyrlmwnb
- 7IanqCL+dYZWkUp3eAbiS1+JJBnd71A6R/t7EHNM=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 05F83PQO003489
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 15 Jun 2020 03:03:25 -0500
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 15
- Jun 2020 03:03:25 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 15 Jun 2020 03:03:25 -0500
-Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05F83LeO018322;
- Mon, 15 Jun 2020 03:03:22 -0500
-Subject: Re: [PATCH 04/12] dt-bindings: irqchip: ti, sci-intr: Update bindings
- to drop the usage of gic as parent
-From: Lokesh Vutla <lokeshvutla@ti.com>
-To: Marc Zyngier <maz@kernel.org>
-References: <20200520124454.10532-1-lokeshvutla@ti.com>
- <20200520124454.10532-5-lokeshvutla@ti.com> <20200528221406.GA769073@bogus>
- <f803f646-2a55-4f15-9682-1dc616d7c714@ti.com>
- <4ea8c6110a16900220a65f1d44145146@kernel.org>
- <3f253e25-2ee7-96f2-3158-7f6be0710a33@ti.com>
-Message-ID: <d586e88c-2907-1771-dee2-32429082aa07@ti.com>
-Date: Mon, 15 Jun 2020 13:33:20 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jkkEl-0006U2-JB
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:13:01 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id CB05F5C00A7;
+ Mon, 15 Jun 2020 04:12:51 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 15 Jun 2020 04:12:51 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=sAfu4p+QiVeNnuEcI3dCQR633pL
+ v27vuwHggq/8UNPk=; b=c6TQB5IO+se7UhdTaUAAm4AbOCSU6oH94xlzR17ZRJb
+ xRk/LYcxyMqmX31VFketon1w65JvTnh1QmJgvNYGgc3JZf/civgef/BhH6F6ssgC
+ yyYEwB2zOgcJWLdOOcBCjd9TgjtoCzuKMe6ulDs6VaKR7h14G54ZYfPp9nHxZDxt
+ Xlu2xiIq3P7DTkUnoksJMoVP6g/xspJz/9z1oR1KBoGC6Arg3fENLqOlP5lzt8c+
+ ssCii8sXngs57wOfyieDj6h8jpKEWeSEO7mmcg1IZd4Wivscwv8OjrlCwzmreM7c
+ mGIcMf33UDWXKPGmvmVEoilZBCA6XbcOmCo+qTa1QNQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=sAfu4p
+ +QiVeNnuEcI3dCQR633pLv27vuwHggq/8UNPk=; b=nzprzlOTjayaOK/LwLkSb5
+ FSgNJVEawb7PUpqqIFw7UxZGT7jbuTX1kNgoU7+atS0elw71SRYxtxMPdcbChBxi
+ uQBdzSLAwbEKrdjMAW/BujZETNnj44U31L3DmKVO3fZAMHH6+gg3VCPaOWXmTUsH
+ KcLAZYSXS0lTCitesZDGH2NF4HhUHvATpO/Gz3xtVbPLKUnwR5EyruEcVrrcbcyG
+ 4EcAu9kt2hDwBcuVLLc2N2+H9Mg1DeokOS3QPfthUX0Lfq+O9dyGVUsywqva7/d7
+ P/0ublXIRqEK7v5zgZEo5B2bApv86qbJ7HFjnC/9bjhkUabpgbAMfiLL3yQy6pXg
+ ==
+X-ME-Sender: <xms:gy3nXrNPwdpt83ykIxo4DVy-YXFVhIf4yaOFm5bTsV7rrXHMc_az0Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeikecutefuodetggdotefrodftvfcurf
+ hrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecuuegr
+ ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
+ hrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgvucft
+ ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrh
+ hnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeguden
+ ucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrh
+ grmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:gy3nXl_d48xf74ugtZHDOi92LxftFaHPR_ruLHOHLvVDeiQPsRkgBg>
+ <xmx:gy3nXqTz3GKvwThxRh_Z-TY8Nag74qeO70zgmnVhUC_dsWefUyAqRg>
+ <xmx:gy3nXvuADLO1-9us_vHUwf8292XL9qxGp6ycUHTIdysiI-aIH-5NLw>
+ <xmx:gy3nXv4ap4YyrLEtJUG8liu0zAs1Cop1-vz1Hj9WzdT9KfJ0V3-Xvg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id E7D923280059;
+ Mon, 15 Jun 2020 04:12:50 -0400 (EDT)
+Date: Mon, 15 Jun 2020 10:12:49 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Diego Rondini <diego.rondini@kynetics.com>
+Subject: Re: [PATCH 1/2] ARM: dts: orange-pi-zero-plus2: enable USB OTG port
+Message-ID: <20200615081249.zx6caiirp72jywui@gilmour.lan>
+References: <20200528204712.552964-1-diego.rondini@kynetics.com>
 MIME-Version: 1.0
-In-Reply-To: <3f253e25-2ee7-96f2-3158-7f6be0710a33@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20200528204712.552964-1-diego.rondini@kynetics.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_010337_741537_E5D51486 
-X-CRM114-Status: GOOD (  16.63  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200615_011259_769078_53513516 
+X-CRM114-Status: GOOD (  16.33  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,66 +106,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Rob Herring <robh@kernel.org>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Sekhar Nori <nsekhar@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Santosh Shilimkar <ssantosh@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6820257067212069898=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
 
-On 01/06/20 5:06 pm, Lokesh Vutla wrote:
-> Hi Marc,
-> 
-> On 29/05/20 3:48 pm, Marc Zyngier wrote:
->> On 2020-05-29 11:14, Lokesh Vutla wrote:
->>> Hi Rob,
->>>
->>> On 29/05/20 3:44 am, Rob Herring wrote:
->>>> On Wed, May 20, 2020 at 06:14:46PM +0530, Lokesh Vutla wrote:
->>>>> Drop the firmware related dt-bindings and use the hardware specified
->>>>> interrupt numbers within Interrupt Router. This ensures interrupt router
->>>>> DT node need not assume any interrupt parent type.
->>>>
->>>> I didn't like this binding to begin with, but now you're breaking
->>>> compatibility.
->>>
->>> Yes, I do agree that this change is breaking backward compatibility. But IMHO,
->>> this does cleanup of firmware specific properties from DT. Since this is not
->>> deployed out yet in the wild market, I took the leverage of breaking backward
->>> compatibility. Before accepting these changes from firmware team, I did
->>> discuss[0] with Marc on this topic.
->>
->> And I assume that should anyone complain about the kernel being broken
->> because they have an old firmware, you'll be OK with the patches being
->> reverted, right?
-> 
-> I am assuming there is no one to complain as there is no product available yet
-> with upstream kernel. Internally everyone is aware of the changes. So, yes I
-> would agree with you to revert the changes if someone really needs it. :)
+--===============6820257067212069898==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="tpgcvphjqdudnw7t"
+Content-Disposition: inline
 
-Any chance you can shower your blessings on this series :)
 
-Thanks and regards,
-Lokesh
+--tpgcvphjqdudnw7t
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> 
-> Thanks and regards,
-> Lokesh
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Hi Diego,
+
+On Thu, May 28, 2020 at 10:47:11PM +0200, Diego Rondini wrote:
+> Enable support for USB OTG port on Orange Pi Zero Plus 2 (both H3 and H5
+> variants). As, according to the board schematics, the USB OTG port cannot
+> provide power to external devices, we set dr_mode to peripheral.
+>=20
+> Signed-off-by: Diego Rondini <diego.rondini@kynetics.com>
+
+Sorry for the time it took to review it. I initially thought it was ok
+and wanted to wait until -rc1 was out to apply it, but...
+
+> ---
+>  .../boot/dts/sun8i-h3-orangepi-zero-plus2.dts | 23 +++++++++++++++++++
+>  .../sun50i-h5-orangepi-zero-plus2.dts         | 23 +++++++++++++++++++
+>  2 files changed, 46 insertions(+)
+>=20
+> diff --git a/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts b/arch/ar=
+m/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
+> index b8f46e2802fd3..4376767699a47 100644
+> --- a/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
+> +++ b/arch/arm/boot/dts/sun8i-h3-orangepi-zero-plus2.dts
+> @@ -137,3 +137,26 @@ &uart0 {
+>  	pinctrl-0 =3D <&uart0_pa_pins>;
+>  	status =3D "okay";
+>  };
+> +
+> +&usbphy {
+> +	status =3D "okay";
+> +};
+> +
+> +&usb_otg {
+> +	/*
+> +	 * According to schematics CN1 MicroUSB port can be used to take
+> +	 * external 5V to power up the board VBUS. On the contrary CN1 MicroUSB
+> +	 * port cannot provide power externally even if the board is powered
+> +	 * via GPIO pins. It thus makes sense to force peripheral mode.
+> +	 */
+> +	dr_mode =3D "peripheral";
+> +	status =3D "okay";
+> +};
+> +
+> +&ehci0 {
+> +	status =3D "okay";
+> +};
+> +
+> +&ohci0 {
+> +	status =3D "okay";
+> +};
+
+Nodes should be ordered alphabetically here.
+
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.=
+dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
+> index c95a68541309c..d8192a7483e9e 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dts
+> @@ -103,3 +103,26 @@ &uart1 {
+>  	pinctrl-0 =3D <&uart1_pins>, <&uart1_rts_cts_pins>;
+>  	status =3D "okay";
+>  };
+> +
+> +&usbphy {
+> +	status =3D "okay";
+> +};
+> +
+> +&usb_otg {
+> +	/*
+> +	 * According to schematics CN1 MicroUSB port can be used to take
+> +	 * external 5V to power up the board VBUS. On the contrary CN1 MicroUSB
+> +	 * port cannot provide power externally even if the board is powered
+> +	 * via GPIO pins. It thus makes sense to force peripheral mode.
+> +	 */
+> +	dr_mode =3D "peripheral";
+> +	status =3D "okay";
+> +};
+> +
+> +&ehci0 {
+> +	status =3D "okay";
+> +};
+> +
+> +&ohci0 {
+> +	status =3D "okay";
+> +};
+
+And here too.
+
+Sorry for not spotting this earlier.
+
+Maxime
+
+--tpgcvphjqdudnw7t
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXuctgQAKCRDj7w1vZxhR
+xWnzAQCSvSidJmcewISQiPCQTATc2AKJsvFQJCKjT31JrlJGjQEAqor0s+oGJb62
+aUklO6rMf2UikngeBjD1cdXEn04sEw8=
+=RVYf
+-----END PGP SIGNATURE-----
+
+--tpgcvphjqdudnw7t--
+
+
+--===============6820257067212069898==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6820257067212069898==--
+
