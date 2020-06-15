@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E9491F9A3C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:32:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CC281F9A47
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:32:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eJf9hnZUGs4UgOmC97VpwgwzPdxeEx6cdqXWTV9uP3I=; b=Rqm0XoEptvKQ54
-	at3pd77H14gDtZynKT6CVJIr1yTin48nb3kvSV6mkiyemPVeCf0ADTarpSVv9szDB51f/QrXNgRuT
-	kXVB9lQ0Ho/rLdtZDJFoB1OEYGPWObZG/RfvLehciroAD0wOcXwRUsWW8CousUhF1nFKk0Qqo4+Y9
-	PLmrz1bEY1uAWKZSj4WbG8qf+daeZDVFNPCb896qarn8Y//j2ugrp1LsFQunUxlvoy8Z0wkmRYByW
-	qB/a5YqFB3BCtKwqz4/p2SLLhKjPioQKv+AYtGrcDOWRm/79D7uGQIY4G53Cyt7N0DxDFNbp7urU6
-	zlpxX0z8p7Qz5allFwcw==;
+	List-Owner; bh=YbfGKhsxY4IOxJYD+Epj+1xAyWr3kWNIQuUAYwfImOk=; b=hrBo9Xh7dUym43
+	sJEKfMM1AkIGXqAXzabz/ZaPNjGxOlOwk9r1tuYH4B+J898c4CoTWpJNPusbXquSs0WSOlZfnMtgY
+	JxJ0NBc1wmczR+4IuB6IEE4IWTtT00udS/jvN6VksyYv1t5qx/sZk7Rfs9/0FsgaZD6BVHcoiw5bK
+	G27PssqjpA38ttvlygFFr93nZKDMT1LgLH3YZVIQ6XAGw/yFFS94pdm9xs3FZNvSBPUXhC49yrk6X
+	arhw9E86t6RjZlLpbih/wnPHGRORzmscw3nTzMcV8QyS7nfDg5Sq0/XPpO0O0jLm0oem/H5loMx5O
+	G/2nsOpzhPuF85DBt5rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkq9o-0000nA-JI; Mon, 15 Jun 2020 14:32:16 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jkqAM-0001LJ-CI; Mon, 15 Jun 2020 14:32:50 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkq9F-0000S8-Jv; Mon, 15 Jun 2020 14:31:43 +0000
-X-UUID: a5a7dad1d02a485cba086ccbb27fe73b-20200615
+ id 1jkq9I-0000UV-AQ; Mon, 15 Jun 2020 14:31:45 +0000
+X-UUID: 491d86ba799d4bdc9fef71ec94716264-20200615
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=omTxP510z3SeJM3158srmfQljfQpeJ6GXR7o8i88WeQ=; 
- b=LezwDBguD/HW6bv6NTgNCLX7zSZtg/Bz/sEMi/+aFlLQU6EuMfv8EiZlxWuDF/eo3LNceJu+ATeM2oCjCs3Cb4Q8eA8dYebKX1CsVlrKSou1Z7J66+zGukMAUTuHgUHfAe0lZGzLF99BcBhMfNpVq3zFU8k8s7uROuMCgWeSE4Q=;
-X-UUID: a5a7dad1d02a485cba086ccbb27fe73b-20200615
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=kr2jM3RF3TtcKfmiwQa78Z5GzGFPEkqB/QqVcBMG3TY=; 
+ b=UFyGNRZGPWnOhHUMVcxkDzOBNOvjTOmWdC2yqHnkqjzo7aoy/Xwyt16jObOfYMqVIr6pdd6DLM5ET2X0QCZLYfA/rLVXAiuW6RsjkZUJXISYMcQMOUPnz1guSQ12yMK+X1Vf0HI1pytWpnG/mlHw+Q1johWc2lpKoy7pVjl4TR0=;
+X-UUID: 491d86ba799d4bdc9fef71ec94716264-20200615
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1860454384; Mon, 15 Jun 2020 06:31:32 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 15 Jun 2020 07:31:30 -0700
+ with ESMTP id 1916784615; Mon, 15 Jun 2020 06:31:40 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 15 Jun 2020 07:31:38 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 15 Jun 2020 22:31:21 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 15 Jun 2020 22:31:22 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
  Frontend Transport; Mon, 15 Jun 2020 22:31:22 +0800
@@ -46,18 +46,20 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v1 2/3] scsi: ufs: Manage and export UFS debugging information
- dump
-Date: Mon, 15 Jun 2020 22:31:22 +0800
-Message-ID: <20200615143123.6627-3-stanley.chu@mediatek.com>
+Subject: [PATCH v1 3/3] scsi: ufs-mediatek: Print host information for failed
+ supsend and resume
+Date: Mon, 15 Jun 2020 22:31:23 +0800
+Message-ID: <20200615143123.6627-4-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200615143123.6627-1-stanley.chu@mediatek.com>
 References: <20200615143123.6627-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 8EC26055AF32B427709C81554C49B22046A151F1F85C4188A4CE82C53D9714202000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_073141_662825_44134622 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20200615_073144_369490_820839BA 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,162 +101,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UFS has many functions to print different types of debugging
-information. Some information is helpful for vendor drivers and
-can be dumped if something wrong in vendor-specific flows.
-
-To have minimum and most simple exported interface for vendor
-drivers, create a single and unified entrance to most
-debugging functions, and then export the entry function.
+Print host state and register dumps while suspend or resume flow
+is failed.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 49 +++++++++++++++++++++++----------------
- drivers/scsi/ufs/ufshcd.h |  8 +++++++
- 2 files changed, 37 insertions(+), 20 deletions(-)
+ drivers/scsi/ufs/ufs-mediatek.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 152ae7f5ae86..5158c496cf95 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -573,6 +573,19 @@ static void ufshcd_print_pwr_info(struct ufs_hba *hba)
- 		 hba->pwr_info.hs_rate);
- }
+diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+index d56ce8d97d4e..b0f626f6f9fe 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.c
++++ b/drivers/scsi/ufs/ufs-mediatek.c
+@@ -469,22 +469,25 @@ static int ufs_mtk_link_set_hpm(struct ufs_hba *hba)
  
-+void ufshcd_print_info(struct ufs_hba *hba, enum ufs_info_item flags)
-+{
-+	if (flags & UFS_INFO_HOST_STATE)
-+		ufshcd_print_host_state(hba);
-+	if (flags & UFS_INFO_HOST_REGS)
-+		ufshcd_print_host_regs(hba);
-+	if (flags & UFS_INFO_PWR)
-+		ufshcd_print_pwr_info(hba);
-+	if (flags & UFS_INFO_TMRS)
-+		ufshcd_print_tmrs(hba, hba->outstanding_tasks);
-+}
-+EXPORT_SYMBOL_GPL(ufshcd_print_info);
-+
- void ufshcd_delay_us(unsigned long us, unsigned long tolerance)
- {
- 	if (!us)
-@@ -3783,11 +3796,9 @@ static int ufshcd_uic_pwr_ctrl(struct ufs_hba *hba, struct uic_command *cmd)
- 		ret = (status != PWR_OK) ? status : -1;
- 	}
- out:
--	if (ret) {
--		ufshcd_print_host_state(hba);
--		ufshcd_print_pwr_info(hba);
--		ufshcd_print_host_regs(hba);
--	}
-+	if (ret)
-+		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
-+				  UFS_INFO_HOST_REGS | UFS_INFO_PWR);
- 
- 	spin_lock_irqsave(hba->host->host_lock, flags);
- 	hba->active_uic_cmd = NULL;
-@@ -4454,7 +4465,7 @@ static int ufshcd_link_startup(struct ufs_hba *hba)
- 
- 	/* Mark that link is up in PWM-G1, 1-lane, SLOW-AUTO mode */
- 	ufshcd_init_pwr_info(hba);
--	ufshcd_print_pwr_info(hba);
-+	ufshcd_print_info(hba, UFS_INFO_PWR);
- 
- 	if (hba->quirks & UFSHCD_QUIRK_BROKEN_LCC) {
- 		ret = ufshcd_disable_device_tx_lcc(hba);
-@@ -4471,9 +4482,8 @@ static int ufshcd_link_startup(struct ufs_hba *hba)
- out:
- 	if (ret) {
- 		dev_err(hba->dev, "link startup failed %d\n", ret);
--		ufshcd_print_host_state(hba);
--		ufshcd_print_pwr_info(hba);
--		ufshcd_print_host_regs(hba);
-+		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
-+				  UFS_INFO_HOST_REGS | UFS_INFO_PWR);
- 	}
- 	return ret;
- }
-@@ -4817,8 +4827,8 @@ ufshcd_transfer_rsp_status(struct ufs_hba *hba, struct ufshcd_lrb *lrbp)
- 		dev_err(hba->dev,
- 				"OCS error from controller = %x for tag %d\n",
- 				ocs, lrbp->task_tag);
--		ufshcd_print_host_regs(hba);
--		ufshcd_print_host_state(hba);
-+		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
-+				  UFS_INFO_HOST_REGS);
- 		break;
- 	} /* end of switch */
- 
-@@ -5801,9 +5811,9 @@ static irqreturn_t ufshcd_check_errors(struct ufs_hba *hba)
- 					__func__, hba->saved_err,
- 					hba->saved_uic_err);
- 
--				ufshcd_print_host_regs(hba);
--				ufshcd_print_pwr_info(hba);
--				ufshcd_print_tmrs(hba, hba->outstanding_tasks);
-+				ufshcd_print_info(hba, UFS_INFO_HOST_REGS |
-+						  UFS_INFO_PWR |
-+						  UFS_INFO_TMRS);
- 				ufshcd_print_trs(hba, hba->outstanding_reqs,
- 							pr_prdt);
- 			}
-@@ -6416,9 +6426,8 @@ static int ufshcd_abort(struct scsi_cmnd *cmd)
- 	scsi_print_command(hba->lrb[tag].cmd);
- 	if (!hba->req_abort_count) {
- 		ufshcd_update_reg_hist(&hba->ufs_stats.task_abort, 0);
--		ufshcd_print_host_regs(hba);
--		ufshcd_print_host_state(hba);
--		ufshcd_print_pwr_info(hba);
-+		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
-+				  UFS_INFO_HOST_REGS | UFS_INFO_PWR);
- 		ufshcd_print_trs(hba, 1 << tag, true);
- 	} else {
- 		ufshcd_print_trs(hba, 1 << tag, false);
-@@ -7444,7 +7453,7 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool async)
- 					__func__, ret);
- 			goto out;
- 		}
--		ufshcd_print_pwr_info(hba);
-+		ufshcd_print_info(hba, UFS_INFO_PWR);
- 	}
- 
- 	/*
-@@ -8897,8 +8906,8 @@ int ufshcd_init(struct ufs_hba *hba, void __iomem *mmio_base, unsigned int irq)
  	err = ufshcd_hba_enable(hba);
- 	if (err) {
- 		dev_err(hba->dev, "Host controller enable failed\n");
--		ufshcd_print_host_regs(hba);
--		ufshcd_print_host_state(hba);
-+		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
-+				  UFS_INFO_HOST_REGS);
- 		goto free_tmf_queue;
- 	}
+ 	if (err)
+-		return err;
++		goto out;
  
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 7fa35c78342b..3450d9589602 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -817,6 +817,13 @@ static inline void ufshcd_rmwl(struct ufs_hba *hba, u32 mask, u32 val, u32 reg)
- 	ufshcd_writel(hba, tmp, reg);
+ 	err = ufs_mtk_unipro_set_pm(hba, 0);
+ 	if (err)
+-		return err;
++		goto out;
+ 
+ 	err = ufshcd_uic_hibern8_exit(hba);
+ 	if (!err)
+ 		ufshcd_set_link_active(hba);
+ 	else
+-		return err;
++		goto out;
+ 
+ 	err = ufshcd_make_hba_operational(hba);
+ 	if (err)
+-		return err;
+-
++		goto out;
++out:
++	if (err)
++		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
++				  UFS_INFO_HOST_REGS | UFS_INFO_PWR);
+ 	return 0;
  }
  
-+enum ufs_info_item {
-+	UFS_INFO_HOST_STATE = (1 << 0),
-+	UFS_INFO_HOST_REGS  = (1 << 1),
-+	UFS_INFO_PWR        = (1 << 2),
-+	UFS_INFO_TMRS       = (1 << 3)
-+};
+@@ -494,6 +497,9 @@ static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
+ 
+ 	err = ufs_mtk_unipro_set_pm(hba, 1);
+ 	if (err) {
++		ufshcd_print_info(hba, UFS_INFO_HOST_STATE |
++				  UFS_INFO_HOST_REGS | UFS_INFO_PWR);
 +
- int ufshcd_alloc_host(struct device *, struct ufs_hba **);
- void ufshcd_dealloc_host(struct ufs_hba *);
- int ufshcd_hba_enable(struct ufs_hba *hba);
-@@ -826,6 +833,7 @@ int ufshcd_make_hba_operational(struct ufs_hba *hba);
- void ufshcd_remove(struct ufs_hba *);
- int ufshcd_uic_hibern8_exit(struct ufs_hba *hba);
- void ufshcd_delay_us(unsigned long us, unsigned long tolerance);
-+void ufshcd_print_info(struct ufs_hba *hba, enum ufs_info_item flags);
- int ufshcd_wait_for_register(struct ufs_hba *hba, u32 reg, u32 mask,
- 				u32 val, unsigned long interval_us,
- 				unsigned long timeout_ms);
+ 		/* Resume UniPro state for following error recovery */
+ 		ufs_mtk_unipro_set_pm(hba, 0);
+ 		return err;
 -- 
 2.18.0
 _______________________________________________
