@@ -2,54 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 259271F8C9B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 05:40:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76DCF1F8D4D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 07:30:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=sN1ZOF9cVSo5rPpZNPscR3G+GZr4tRlEp95MOH/jTfI=; b=SaD4Uwc8Ln4Y5bhpcKFxIo7d0l
-	H6EJ8v+JpSd0Is7pFClI0CJ7ZwtW46rRX/xyAJC2+cUi7gE9EWCQshlrl84UX/vra5MdG5IUif0aq
-	z7Y2XZJRqbztsHL1Upb7cVeWLrYwx67UMZ386MMs8Fsfrwh3IURtrsgBaoHg9CEM01s6hmd1O6moS
-	nK2nqBHyw+z5LIqmLAV8GZF1pAXRvNFBNf8DJr+2nn5fE30GoB1qQ8xpC3085H47i9/mA0sJPsdDp
-	6t5/bRwvQzVHCR9EAe/E0tFvDCKZ1HvCQsqSEg2X1eQORHtrbxsMW2B1nA6X0C+0JFGdoPjyIkLOq
-	A22i9idA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dbOAtM/zztaavqLzseBvbuSxWfBlM4s/hzyzWbxFuxo=; b=O/yQl7tI2wv6Mi
+	DHn19+qIyJEHQBWHTqP/xMhxlqRS5P1MCnZtLZe9/NX1VzUN1E1RhrfGcsf/jK9iy+VNp7Kk07skr
+	8NZ2bDmMxNcowBM3DiBg6Rrl+MAvcxpbZuytoeP+Jga4vR3k8z8momDWXe4wceS4TU5omQDh0A8Lf
+	NPJvoAHmK6RI1hIF/u8lnCQiHFVIN3gSrdgEFwed8XsLC3FXfyo47DDYczS8XFzC45NnUkVo9jUO9
+	bKnNJuToMTlhYRGTOpjqbrDWS0BxDMHpiePT1hWGGU9sgb9VAimirE1+0b+og8GnEEBttG98syykQ
+	hoT9uGo9Ku+ZMAAgoWDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkfyx-0001gO-R8; Mon, 15 Jun 2020 03:40:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkfxi-00011w-Dp; Mon, 15 Jun 2020 03:39:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4CCBA11B3;
- Sun, 14 Jun 2020 20:39:02 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.79.186])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9AE783F71F;
- Sun, 14 Jun 2020 20:38:52 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH V3 4/4] Documentation/mm: Add descriptions for arch page table
- helpers
-Date: Mon, 15 Jun 2020 09:07:57 +0530
-Message-Id: <1592192277-8421-5-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1592192277-8421-1-git-send-email-anshuman.khandual@arm.com>
-References: <1592192277-8421-1-git-send-email-anshuman.khandual@arm.com>
+	id 1jkhhI-0005u2-Si; Mon, 15 Jun 2020 05:30:16 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkhh9-0003jx-Vw
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 05:30:10 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 11C7858015D;
+ Mon, 15 Jun 2020 01:29:59 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 15 Jun 2020 01:29:59 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=T
+ aA4E30QnHyeJ9whAqz+gQm0yiiY1N3IeCntOygSgK0=; b=VnHovaYBvVNQ5PB69
+ 2joW6HWwNYxw+wLXn1HV058OUH4LUVjdRtUcukZZkSgJ5bp0VgMXUaZLpNfQ+VwE
+ Wd0GVbRcy6B+PqW998RP/0zpjkb/FyI5oBBzt9gpnPkhS/hROGqv4YLpOMzcIcxq
+ TJQL1Xv8t6WIo2ob5T6LjcaDwPlEVyU5ot92ibnwhuvOXKv6Vdc5JfcjvUmyCfW5
+ BU4YA9BpbtqGg8NjsYglD+Roerx5mi/qbpNwtqEeX6M5FoXjGjEIBZSgd26Ob+4i
+ n7E1j4daZ4TRFTe9ztm4Wuxv2vzXhUqciaS0pAZzjoqAB1gt/CwKxzbauG4VKLSR
+ 6NIJg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm3; bh=TaA4E30QnHyeJ9whAqz+gQm0yiiY1N3IeCntOygSg
+ K0=; b=T6bPl0dmmV+dSft3EEM3ybxMd1c/zRbCddAhVegeIYK6h2twX3hVO/12y
+ L9wfTjIZxSZmg4UxUA6/hjMjZWGQFhWGkP+wmA362R0DmTXGNzCueZyvVDlbKB6m
+ d1TZsa4OqjKUk3zTlcm/o0cFBN2cnQxWdNHu08VW9hg5bePFlGt3zdf0RhAqjxap
+ S9O6IYZNT2zyEL7FrmTdhWV0RuMRQNh6BOlz1Cn0OwJKqdhfWU0z+eYnGEDh0lqA
+ U3hC5ID2RB/VCpU+7Xnqfp3A3F7F0jPyTw54w7Pw+VYNoAMIN6c+NNqdqBnc2qb6
+ EX1FA+M1rSVZ9RjiFxCHbMenonGJw==
+X-ME-Sender: <xms:UAfnXgchR5EfKaztTnPmBJEqIwAJhjyy4s1u_RDLA6EBXk8q5KXEuA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeijedgleekucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepuffvfhfhkffffgggjggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
+ vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
+ ftrfgrthhtvghrnhepuefhfffgveejjeevhfdukeejhedtiefhgeejfeeuuddtkedugeei
+ hfduteelffetnecuffhomhgrihhnpehlihhnuhigqdhsuhhngihirdhorhhgnecukfhppe
+ ejtddrudefhedrudegkedrudehudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgr
+ mhepmhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
+X-ME-Proxy: <xmx:UAfnXiN2X4_CmZVwRgc2hQ9c57zCzsCTMNu2VwPLWGK9a7NE8qEWCg>
+ <xmx:UAfnXhgXbQlQlWFfOYc2YwnRrfMGPI-ddUY8YxtMJLcqGQliEwJnKQ>
+ <xmx:UAfnXl_RNWWM8Nx-uvbY74bwSX1fkCMRrx0RI9d8g5fT-EvqgPOnbg>
+ <xmx:VwfnXuIHbrppvTvIufguNgabIuddsz8xtj8GMgOmr9F4WXgMBD0j6A>
+Received: from [192.168.50.169]
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id A99B330618B7;
+ Mon, 15 Jun 2020 01:29:51 -0400 (EDT)
+Subject: Re: [PATCH v2 1/9] irqchip/sun6i-r: Use a stacked irqchip driver
+To: Maxime Ripard <maxime@cerno.tech>
+References: <20200525041302.51213-1-samuel@sholland.org>
+ <20200525041302.51213-2-samuel@sholland.org>
+ <20200608084853.wr6eca5nt772p5h7@gilmour.lan>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <fcfe6d02-2500-37de-e795-664bf2c7b5ee@sholland.org>
+Date: Mon, 15 Jun 2020 00:29:50 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <20200608084853.wr6eca5nt772p5h7@gilmour.lan>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_203906_915102_BC825037 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200614_223008_186036_7425E62F 
+X-CRM114-Status: GOOD (  21.98  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.229 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [66.111.4.229 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,357 +113,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org, ziy@nvidia.com,
- Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
- Vasily Gorbik <gor@linux.ibm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, Borislav Petkov <bp@alien8.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, gerald.schaefer@de.ibm.com,
- christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>, linux-sunxi@googlegroups.com,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a specific description file for all arch page table helpers which
-is in sync with the semantics being tested via CONFIG_DEBUG_VM_PGTABLE. All
-future changes either to these descriptions here or the debug test should
-always remain in sync.
+On 6/8/20 3:48 AM, Maxime Ripard wrote:
+> On Sun, May 24, 2020 at 11:12:54PM -0500, Samuel Holland wrote:
+>> The R_INTC in the A31 and newer sun8i/sun50i SoCs is more similar to the
+>> original sun4i interrupt controller than the sun7i/sun9i NMI controller.
+>> It is used for two distinct purposes:
+>>  1) To control the trigger, latch, and mask for the NMI input pin
+>>  2) To provide the interrupt input for the ARISC coprocessor
+>>
+>> As this interrupt controller is not documented, information about it
+>> comes from vendor-provided ARISC firmware and from experimentation.
+>>
+>> Like the original sun4i interrupt controller, it has:
+>>  - A VECTOR_REG at 0x00 (configurable via the BASE_ADDR_REG at 0x04)
+>>  - A NMI_CTRL_REG, PENDING_REG, and ENABLE_REG as used by both the
+>>    sun4i and sunxi-nmi drivers
+>>  - A MASK_REG at 0x50
+>>  - A RESP_REG at 0x60
+>>
+>> Differences from the sun4i interrupt controller appear to be:
+>>  - It is only known to have one register of each kind (max 32 inputs)
+>>  - There is no FIQ-related logic
+>>  - There is no interrupt priority logic
+>>
+>> In order to fulfill its two purposes, this hardware block combines two
+>> types of IRQs. First, the NMI pin is routed to the "IRQ 0" input on this
+>> chip, with a trigger type controlled by the NMI_CTRL_REG. The "IRQ 0
+>> pending" output from this chip, if enabled, is then routed to a SPI IRQ
+>> input on the GIC, as IRQ_TYPE_LEVEL_HIGH. In other words, bit 0 of
+>> ENABLE_REG *does* affect the NMI IRQ seen at the GIC.
+>>
+>> The NMI is then followed by a contiguous block of (at least) 15 IRQ
+>> inputs that are connected in parallel to both R_INTC and the GIC. Or
+>> in other words, the other bits of ENABLE_REG *do not* affect the IRQs
+>> seen at the GIC.
+>>
+>> Finally, the global "IRQ pending" output from R_INTC, after being masked
+>> by MASK_REG and RESP_REG, is connected to the "external interrupt" input
+>> of the ARISC CPU (an OR1200). This path is not relevant to Linux.
+>>
+>> Because of the 1:1 correspondence between R_INTC and GIC inputs, this is
+>> a perfect scenario for using a stacked irqchip driver. We want to hook
+>> into enabling/disabling IRQs to add more features to the GIC
+>> (specifically to allow masking the NMI and setting its trigger type),
+>> but we don't need to actually handle the IRQ in this driver.
+>>
+>> And since R_INTC is in the always-on power domain, and its output is
+>> connected directly in to the power management coprocessor, a stacked
+>> irqchip driver provides a simple way to add wakeup support to this set
+>> of IRQs. That is a future patch; for now, just the NMI is moved over.
+>>
+>> This driver keeps the same DT binding as the existing driver. The
+>> "interrupt" property of the R_INTC node is used to determine 1) the
+>> offset between GIC and R_INTC hwirq numbers and 2) the type of trigger
+>> between the R_INTC "IRQ 0 pending" output and the GIC NMI input.
+>>
+>> This commit mostly reverts commit 173bda53b340 ("irqchip/sunxi-nmi:
+>> Support sun6i-a31-r-intc compatible").
+>>
+>> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> 
+> As usual, thanks for that commit log (and the experiments you did to
+> write it in the first place).
+> 
+> Acked-by: Maxime Ripard <mripard@kernel.org>
+> 
+> Maxime
 
-Cc: Jonathan Corbet <corbet@lwn.net>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Mike Rapoport <rppt@linux.ibm.com>
-Cc: Vineet Gupta <vgupta@synopsys.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: Vasily Gorbik <gor@linux.ibm.com>
-Cc: Christian Borntraeger <borntraeger@de.ibm.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H. Peter Anvin" <hpa@zytor.com>
-Cc: Kirill A. Shutemov <kirill@shutemov.name>
-Cc: Paul Walmsley <paul.walmsley@sifive.com>
-Cc: Palmer Dabbelt <palmer@dabbelt.com>
-Cc: linux-snps-arc@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: linux-s390@vger.kernel.org
-Cc: linux-riscv@lists.infradead.org
-Cc: x86@kernel.org
-Cc: linux-arch@vger.kernel.org
-Cc: linux-mm@kvack.org
-Cc: linux-doc@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
-Suggested-by: Mike Rapoport <rppt@kernel.org>
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- Documentation/vm/arch_pgtable_helpers.rst | 258 ++++++++++++++++++++++
- mm/debug_vm_pgtable.c                     |   6 +
- 2 files changed, 264 insertions(+)
- create mode 100644 Documentation/vm/arch_pgtable_helpers.rst
+I've done more experimenting, and I've learned what comes after the first 16
+IRQs: all of the other SPI IRQs, multiplexed in clusters of 8, with per-IRQ
+masks for the inputs to each cluster.
 
-diff --git a/Documentation/vm/arch_pgtable_helpers.rst b/Documentation/vm/arch_pgtable_helpers.rst
-new file mode 100644
-index 000000000000..cd7609b05446
---- /dev/null
-+++ b/Documentation/vm/arch_pgtable_helpers.rst
-@@ -0,0 +1,258 @@
-+.. SPDX-License-Identifier: GPL-2.0
-+
-+.. _arch_page_table_helpers:
-+
-+===============================
-+Architecture Page Table Helpers
-+===============================
-+
-+Generic MM expects architectures (with MMU) to provide helpers to create, access
-+and modify page table entries at various level for different memory functions.
-+These page table helpers need to conform to a common semantics across platforms.
-+Following tables describe the expected semantics which can also be tested during
-+boot via CONFIG_DEBUG_VM_PGTABLE option. All future changes in here or the debug
-+test need to be in sync.
-+
-+======================
-+PTE Page Table Helpers
-+======================
-+
-+--------------------------------------------------------------------------------
-+| pte_same                  | Tests whether both PTE entries are the same      |
-+--------------------------------------------------------------------------------
-+| pte_bad                   | Tests a non-table mapped PTE                     |
-+--------------------------------------------------------------------------------
-+| pte_present               | Tests a valid mapped PTE                         |
-+--------------------------------------------------------------------------------
-+| pte_young                 | Tests a young PTE                                |
-+--------------------------------------------------------------------------------
-+| pte_dirty                 | Tests a dirty PTE                                |
-+--------------------------------------------------------------------------------
-+| pte_write                 | Tests a writable PTE                             |
-+--------------------------------------------------------------------------------
-+| pte_special               | Tests a special PTE                              |
-+--------------------------------------------------------------------------------
-+| pte_protnone              | Tests a PROT_NONE PTE                            |
-+--------------------------------------------------------------------------------
-+| pte_devmap                | Tests a ZONE_DEVICE mapped PTE                   |
-+--------------------------------------------------------------------------------
-+| pte_soft_dirty            | Tests a soft dirty PTE                           |
-+--------------------------------------------------------------------------------
-+| pte_swp_soft_dirty        | Tests a soft dirty swapped PTE                   |
-+--------------------------------------------------------------------------------
-+| pte_mkyoung               | Creates a young PTE                              |
-+--------------------------------------------------------------------------------
-+| pte_mkold                 | Creates an old PTE                               |
-+--------------------------------------------------------------------------------
-+| pte_mkdirty               | Creates a dirty PTE                              |
-+--------------------------------------------------------------------------------
-+| pte_mkclean               | Creates a clean PTE                              |
-+--------------------------------------------------------------------------------
-+| pte_mkwrite               | Creates a writable PTE                           |
-+--------------------------------------------------------------------------------
-+| pte_mkwrprotect           | Creates a write protected PTE                    |
-+--------------------------------------------------------------------------------
-+| pte_mkspecial             | Creates a special PTE                            |
-+--------------------------------------------------------------------------------
-+| pte_mkdevmap              | Creates a ZONE_DEVICE mapped PTE                 |
-+--------------------------------------------------------------------------------
-+| pte_mksoft_dirty          | Creates a soft dirty PTE                         |
-+--------------------------------------------------------------------------------
-+| pte_clear_soft_dirty      | Clears a soft dirty PTE                          |
-+--------------------------------------------------------------------------------
-+| pte_swp_mksoft_dirty      | Creates a soft dirty swapped PTE                 |
-+--------------------------------------------------------------------------------
-+| pte_swp_clear_soft_dirty  | Clears a soft dirty swapped PTE                  |
-+--------------------------------------------------------------------------------
-+| pte_mknotpresent          | Invalidates a mapped PTE                         |
-+--------------------------------------------------------------------------------
-+| ptep_get_and_clear        | Clears a PTE                                     |
-+--------------------------------------------------------------------------------
-+| ptep_get_and_clear_full   | Clears a PTE                                     |
-+--------------------------------------------------------------------------------
-+| ptep_test_and_clear_young | Clears young from a PTE                          |
-+--------------------------------------------------------------------------------
-+| ptep_set_wrprotect        | Converts into a write protected PTE              |
-+--------------------------------------------------------------------------------
-+| ptep_set_access_flags     | Converts into a more permissive PTE              |
-+--------------------------------------------------------------------------------
-+
-+======================
-+PMD Page Table Helpers
-+======================
-+
-+--------------------------------------------------------------------------------
-+| pmd_same                  | Tests whether both PMD entries are the same      |
-+--------------------------------------------------------------------------------
-+| pmd_bad                   | Tests a non-table mapped PMD                     |
-+--------------------------------------------------------------------------------
-+| pmd_leaf                  | Tests a leaf mapped PMD                          |
-+--------------------------------------------------------------------------------
-+| pmd_huge                  | Tests a HugeTLB mapped PMD                       |
-+--------------------------------------------------------------------------------
-+| pmd_trans_huge            | Tests a Transparent Huge Page (THP) at PMD       |
-+--------------------------------------------------------------------------------
-+| pmd_present               | Tests a valid mapped PMD                         |
-+--------------------------------------------------------------------------------
-+| pmd_young                 | Tests a young PMD                                |
-+--------------------------------------------------------------------------------
-+| pmd_dirty                 | Tests a dirty PMD                                |
-+--------------------------------------------------------------------------------
-+| pmd_write                 | Tests a writable PMD                             |
-+--------------------------------------------------------------------------------
-+| pmd_special               | Tests a special PMD                              |
-+--------------------------------------------------------------------------------
-+| pmd_protnone              | Tests a PROT_NONE PMD                            |
-+--------------------------------------------------------------------------------
-+| pmd_devmap                | Tests a ZONE_DEVICE mapped PMD                   |
-+--------------------------------------------------------------------------------
-+| pmd_soft_dirty            | Tests a soft dirty PMD                           |
-+--------------------------------------------------------------------------------
-+| pmd_swp_soft_dirty        | Tests a soft dirty swapped PMD                   |
-+--------------------------------------------------------------------------------
-+| pmd_mkyoung               | Creates a young PMD                              |
-+--------------------------------------------------------------------------------
-+| pmd_mkold                 | Creates an old PMD                               |
-+--------------------------------------------------------------------------------
-+| pmd_mkdirty               | Creates a dirty PMD                              |
-+--------------------------------------------------------------------------------
-+| pmd_mkclean               | Creates a clean PMD                              |
-+--------------------------------------------------------------------------------
-+| pmd_mkwrite               | Creates a writable PMD                           |
-+--------------------------------------------------------------------------------
-+| pmd_mkwrprotect           | Creates a write protected PMD                    |
-+--------------------------------------------------------------------------------
-+| pmd_mkspecial             | Creates a special PMD                            |
-+--------------------------------------------------------------------------------
-+| pmd_mkdevmap              | Creates a ZONE_DEVICE mapped PMD                 |
-+--------------------------------------------------------------------------------
-+| pmd_mksoft_dirty          | Creates a soft dirty PMD                         |
-+--------------------------------------------------------------------------------
-+| pmd_clear_soft_dirty      | Clears a soft dirty PMD                          |
-+--------------------------------------------------------------------------------
-+| pmd_swp_mksoft_dirty      | Creates a soft dirty swapped PMD                 |
-+--------------------------------------------------------------------------------
-+| pmd_swp_clear_soft_dirty  | Clears a soft dirty swapped PMD                  |
-+--------------------------------------------------------------------------------
-+| pmd_mkinvalid             | Invalidates a mapped PMD [1]                     |
-+--------------------------------------------------------------------------------
-+| pmd_set_huge              | Creates a PMD huge mapping                       |
-+--------------------------------------------------------------------------------
-+| pmd_clear_huge            | Clears a PMD huge mapping                        |
-+--------------------------------------------------------------------------------
-+| pmdp_get_and_clear        | Clears a PMD                                     |
-+--------------------------------------------------------------------------------
-+| pmdp_get_and_clear_full   | Clears a PMD                                     |
-+--------------------------------------------------------------------------------
-+| pmdp_test_and_clear_young | Clears young from a PMD                          |
-+--------------------------------------------------------------------------------
-+| pmdp_set_wrprotect        | Converts into a write protected PMD              |
-+--------------------------------------------------------------------------------
-+| pmdp_set_access_flags     | Converts into a more permissive PMD              |
-+--------------------------------------------------------------------------------
-+
-+======================
-+PUD Page Table Helpers
-+======================
-+
-+--------------------------------------------------------------------------------
-+| pud_same                  | Tests whether both PUD entries are the same      |
-+--------------------------------------------------------------------------------
-+| pud_bad                   | Tests a non-table mapped PUD                     |
-+--------------------------------------------------------------------------------
-+| pud_leaf                  | Tests a leaf mapped PUD                          |
-+--------------------------------------------------------------------------------
-+| pud_huge                  | Tests a HugeTLB mapped PUD                       |
-+--------------------------------------------------------------------------------
-+| pud_trans_huge            | Tests a Transparent Huge Page (THP) at PUD       |
-+--------------------------------------------------------------------------------
-+| pud_present               | Tests a valid mapped PUD                         |
-+--------------------------------------------------------------------------------
-+| pud_young                 | Tests a young PUD                                |
-+--------------------------------------------------------------------------------
-+| pud_dirty                 | Tests a dirty PUD                                |
-+--------------------------------------------------------------------------------
-+| pud_write                 | Tests a writable PUD                             |
-+--------------------------------------------------------------------------------
-+| pud_devmap                | Tests a ZONE_DEVICE mapped PUD                   |
-+--------------------------------------------------------------------------------
-+| pud_mkyoung               | Creates a young PUD                              |
-+--------------------------------------------------------------------------------
-+| pud_mkold                 | Creates an old PUD                               |
-+--------------------------------------------------------------------------------
-+| pud_mkdirty               | Creates a dirty PUD                              |
-+--------------------------------------------------------------------------------
-+| pud_mkclean               | Creates a clean PUD                              |
-+--------------------------------------------------------------------------------
-+| pud_mkwrite               | Creates a writable PMD                           |
-+--------------------------------------------------------------------------------
-+| pud_mkwrprotect           | Creates a write protected PMD                    |
-+--------------------------------------------------------------------------------
-+| pud_mkdevmap              | Creates a ZONE_DEVICE mapped PMD                 |
-+--------------------------------------------------------------------------------
-+| pud_mkinvalid             | Invalidates a mapped PUD [1]                     |
-+--------------------------------------------------------------------------------
-+| pud_set_huge              | Creates a PUD huge mapping                       |
-+--------------------------------------------------------------------------------
-+| pud_clear_huge            | Clears a PUD huge mapping                        |
-+--------------------------------------------------------------------------------
-+| pudp_get_and_clear        | Clears a PUD                                     |
-+--------------------------------------------------------------------------------
-+| pudp_get_and_clear_full   | Clears a PUD                                     |
-+--------------------------------------------------------------------------------
-+| pudp_test_and_clear_young | Clears young from a PUD                          |
-+--------------------------------------------------------------------------------
-+| pudp_set_wrprotect        | Converts into a write protected PUD              |
-+--------------------------------------------------------------------------------
-+| pudp_set_access_flags     | Converts into a more permissive PUD              |
-+--------------------------------------------------------------------------------
-+
-+==========================
-+HugeTLB Page Table Helpers
-+==========================
-+
-+--------------------------------------------------------------------------------
-+| pte_huge                  | Tests a HugeTLB                                  |
-+--------------------------------------------------------------------------------
-+| pte_mkhuge                | Creates a HugeTLB                                |
-+--------------------------------------------------------------------------------
-+| huge_pte_dirty            | Tests a dirty HugeTLB                            |
-+--------------------------------------------------------------------------------
-+| huge_pte_write            | Tests a writable HugeTLB                         |
-+--------------------------------------------------------------------------------
-+| huge_pte_mkdirty          | Creates a dirty HugeTLB                          |
-+--------------------------------------------------------------------------------
-+| huge_pte_mkwrite          | Creates a writable HugeTLB                       |
-+--------------------------------------------------------------------------------
-+| huge_pte_mkwrprotect      | Creates a write protected HugeTLB                |
-+--------------------------------------------------------------------------------
-+| huge_ptep_get_and_clear   | Clears a HugeTLB                                 |
-+--------------------------------------------------------------------------------
-+| huge_ptep_set_wrprotect   | Converts into a write protected HugeTLB          |
-+--------------------------------------------------------------------------------
-+| huge_ptep_set_access_flags  | Converts into a more permissive HugeTLB        |
-+--------------------------------------------------------------------------------
-+
-+========================
-+SWAP Page Table Helpers
-+========================
-+
-+--------------------------------------------------------------------------------
-+| __pte_to_swp_entry        | Creates a swapped entry (arch) from a mapepd PTE |
-+--------------------------------------------------------------------------------
-+| __swp_to_pte_entry        | Creates a mapped PTE from a swapped entry (arch) |
-+--------------------------------------------------------------------------------
-+| __pmd_to_swp_entry        | Creates a swapped entry (arch) from a mapepd PMD |
-+--------------------------------------------------------------------------------
-+| __swp_to_pmd_entry        | Creates a mapped PMD from a swapped entry (arch) |
-+--------------------------------------------------------------------------------
-+| is_migration_entry        | Tests a migration (read or write) swapped entry  |
-+--------------------------------------------------------------------------------
-+| is_write_migration_entry  | Tests a write migration swapped entry            |
-+--------------------------------------------------------------------------------
-+| make_migration_entry_read | Converts into read migration swapped entry       |
-+--------------------------------------------------------------------------------
-+| make_migration_entry      | Creates a migration swapped entry (read or write)|
-+--------------------------------------------------------------------------------
-+
-+[1] https://lore.kernel.org/linux-mm/20181017020930.GN30832@redhat.com/
-diff --git a/mm/debug_vm_pgtable.c b/mm/debug_vm_pgtable.c
-index 536f3b1b3ad6..a2936938ed78 100644
---- a/mm/debug_vm_pgtable.c
-+++ b/mm/debug_vm_pgtable.c
-@@ -31,6 +31,12 @@
- #include <asm/pgalloc.h>
- #include <asm/tlbflush.h>
- 
-+/*
-+ * Please refer Documentation/vm/arch_pgtable_helpers.rst for the semantics
-+ * expectations that are being validated here. All future changes in here
-+ * or the documentation need to be in sync.
-+ */
-+
- #define VMFLAGS	(VM_READ|VM_WRITE|VM_EXEC)
- 
- /*
--- 
-2.20.1
+In fact, the H6 has so many IRQs that it begins to use the the second register
+in each group (0x14, 0x44, 0x54). This means that more than one register in each
+group are in fact implemented.
 
+See https://linux-sunxi.org/INTC#IRQ_Mapping for more details.
+
+The ability to send other IRQs to the AR100 makes it possible to implement
+functionality like USB Remote Wakeup or Wake on LAN without adding complexity to
+the AR100 firmware.
+
+I will need to update the driver to take advantage of this ability, and it
+raises some questions about the binding. Since the NMI is not the
+lowest-numbered IRQ that can be mapped, the numbering scheme would need to
+change. Maybe the IRQ number should be the same as the GIC SPI IRQ number? But
+this would mean a new compatible.
+
+The other question is which devices should be routed through this irqchip
+driver? Anything that provides a wakeup source needs to go through it, so it can
+intercept irq_set_wake. Probably other devices should not, as 1) not quite all
+IRQs can even be sent to the AR100 for wakeup (e.g. the A64 appears to stop in
+the middle of the GPU IRQs), and 2) stacking on another irqchip driver adds a
+(tiny) overhead to masking/unmasking during IRQ handling.
+
+Thoughts?
+Samuel
 
 _______________________________________________
 linux-arm-kernel mailing list
