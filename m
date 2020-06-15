@@ -2,110 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B4561F9F8F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 20:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BE711F9FA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 20:47:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=E+nU4ie1TrGM4ER0QoiI4s87L7CgNsHWjvathVbgTds=; b=hnpix+lAuK+3PN8x6SwPWTZD8
-	0QmtYW2WOyNadnxfSDnN0KSLVUTF5g8blw2EylTAMK18WiQAd8nFfCtw/2v1wivazAqcaVqoW3r2I
-	Y406om349H+qqoPo4gBGs6mPhWf0IUNQFqH4h59CjNX1dtMgzbEb8YztsbVghBc++8iIPzH8ncuOX
-	/P7fi5La6JwSj+gV/OiFTBoVGciYfBj6Ut2V34JVF/76z1wkFqZRsk9NG8lE5UkQRPAFFHFUYAiE+
-	G2fxSdE++SqLTJ88QMueqdPjKnuOt+/EZ9QmybgzAONo2dqAVAdRsoevxTUBzfn+ZSAOWJktJX5MK
-	eXEhvN1dA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WE34LIoa8wh9orgsTp0pmWu04UOnxfB6jRmIGgFGRDA=; b=d2f9xZ7L0cU5Bc
+	/nlvhuB1kaidxsuqafUHl8WblQvbdzPheWPV7n3xFHjFPfH/mAy4MLg+v755Uay/mBw/H1OOU3yqO
+	PnvOdNMgzxSkMbiNUKgtzk/FCrZIjl8AkjpC1cci0FN2bel2e40InjVRSBdoKRpovz+mLhnoUpYfy
+	dFtl1PstZaOv4Sa4d5ZoYDz35djWQLYeVBN0E4823PGixqmNIRZbfhDcmP7xcdwZRpzTSNX6j+fhc
+	RbIDy9P/Zl1V6P+OjuMu1jwsmfl2XS7ltFZYonw10hoYAsnOt7Sy0xanj5NCdsKyL/ZBMwruk+4dK
+	xnLhbAfmM4SW3/g/rntQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jku2h-0002w7-Vp; Mon, 15 Jun 2020 18:41:12 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jku8p-0006II-2e; Mon, 15 Jun 2020 18:47:31 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jku2X-0002tk-U2
- for linux-arm-kernel@bombadil.infradead.org; Mon, 15 Jun 2020 18:41:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description;
- bh=3LdVapGy9WTsAkwpfNEzCTfQe3Pij8/lM5ySXZsHExs=; b=iuyqJ3S+w7X0Ye7qU0Cb7YQnyp
- PTAI0fJzmkCIKBS32O5Pyo3kck96yib9tmThrisqwMAAhk548nKcyOtFMYk3caoakVwibJCUbW0n/
- +CPMqnU9B0b3abRL46DaO9nButePXY8JdiQEh+S6Cb89j16JH/wzX73G5TcCBqEe9TJuJnT0ipobu
- oQWGid0YRWzD79d3/bwRjR0uBmFJ1cmHiw1dP2nXRy4CSrW1chmCZ3DihanSUtgtaVvJZ/Dse6iQ4
- OAgmTXcVlmKWxzix52aqcAbaKhwCv0Q+yl5uvB2Is0ux0AqdDEBa+37l1d7f3BhaMkUSUcxcAul6X
- pGSfCang==;
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jku2V-0004Cb-FZ
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 18:41:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1592246437;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=3LdVapGy9WTsAkwpfNEzCTfQe3Pij8/lM5ySXZsHExs=;
- b=JZUrw80wsDeK0bo3tEKQK8XiW9ngmDKg5MFnAeOyBAYl0bASVB+QJjQFV1GJsM7juSSDEX
- zWSaFZX2UdG6N7HwH1NEKT0XcQDnP7iZ8aY1Tv5Ylz+cF8epg7Ev8QJSHYanngZUDD+NKp
- g2VWPw/vUn4XzPWpEZ+uPXRfRhU1J0Q=
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1592246458;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=3LdVapGy9WTsAkwpfNEzCTfQe3Pij8/lM5ySXZsHExs=;
- b=LtPJTANzbHBowo2ItENPFQ9zRO4EIPRVJCvvrHOP9lVjm3OAoLJFx/lc2KSAD2ZVJ6beCW
- +u4BA1rzyF6mFCifn9pXk2hKcr1DAHD4xucHAXbrdHhIt2+BHol+t1uPrb5aJZZlWBdjU+
- hrQoS0EU4IvlQ3MMd01UO8s1DgAd1hU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-513-n3G_ZfGUONug8wkjJytxqA-1; Mon, 15 Jun 2020 14:40:12 -0400
-X-MC-Unique: n3G_ZfGUONug8wkjJytxqA-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E5F43184D144;
- Mon, 15 Jun 2020 18:40:06 +0000 (UTC)
-Received: from llong.remote.csb (ovpn-117-41.rdu2.redhat.com [10.10.117.41])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 3972B5D9CC;
- Mon, 15 Jun 2020 18:40:00 +0000 (UTC)
-Subject: Re: [PATCH 1/2] mm, treewide: Rename kzfree() to kfree_sensitive()
-To: Dan Carpenter <dan.carpenter@oracle.com>
-References: <20200413211550.8307-1-longman@redhat.com>
- <20200413211550.8307-2-longman@redhat.com> <20200615180753.GJ4151@kadam>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <9d084be2-29a3-7757-9386-20dbaeb5fc24@redhat.com>
-Date: Mon, 15 Jun 2020 14:39:59 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jku8h-0006HY-20
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 18:47:24 +0000
+Received: from mail-qk1-f175.google.com ([209.85.222.175]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MiIhU-1jEL4L2qik-00fPsP for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 15 Jun 2020 20:47:19 +0200
+Received: by mail-qk1-f175.google.com with SMTP id 205so16776992qkg.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 11:47:19 -0700 (PDT)
+X-Gm-Message-State: AOAM530RvSC7Wy7qjbeRWxShCWT/KxBeoXTNt1bgcMjp7CPb4+iLlWTf
+ WFka5GptYQW2SYncxHbQDV3jOYnMrqBIlwjC50c=
+X-Google-Smtp-Source: ABdhPJzcQbK0Gh43Vbjt9NhNlEHEP8lArPvLwYPZGPIYALBqTjBUF1iUc73zpucajmn7+xgOQVN3+L0nF4AR+SfsCY0=
+X-Received: by 2002:ae9:c10d:: with SMTP id z13mr15874842qki.3.1592246838316; 
+ Mon, 15 Jun 2020 11:47:18 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200615180753.GJ4151@kadam>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+References: <20200615130032.931285-1-hch@lst.de>
+ <20200615130032.931285-3-hch@lst.de>
+ <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
+ <20200615141239.GA12951@lst.de>
+ <CAMzpN2heSzZzg16ws3yQkd7YZwmPPx_4RFCpb9JYfFWJ9gfPhA@mail.gmail.com>
+In-Reply-To: <CAMzpN2heSzZzg16ws3yQkd7YZwmPPx_4RFCpb9JYfFWJ9gfPhA@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 15 Jun 2020 20:47:02 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3q-hC7kZwLPbc+E5VYcqthQS4J4Rqo+rKkBRU2n071XA@mail.gmail.com>
+Message-ID: <CAK8P3a3q-hC7kZwLPbc+E5VYcqthQS4J4Rqo+rKkBRU2n071XA@mail.gmail.com>
+Subject: Re: [PATCH 2/6] exec: simplify the compat syscall handling
+To: Brian Gerst <brgerst@gmail.com>
+X-Provags-ID: V03:K1:4RguZygpWGlPI9VDAYS41xtc4uDy54M8dNcVKjv+2TUMFu/HyUp
+ l98SQMFVF4BI3U/hylvLBBnOYuqSTHILCdKdery8fBayUMDSvmbP1HChHriqE0UsGK3iIDz
+ zdY16paNE49tVyflBro0WDhLG7BzZmk8o7qu/5T4PYHL73wmYucLszbQuk7/I082wJrmPSB
+ /PCvnXfHKJZURkl4P5Awg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ma9Mf0dCgU4=:hPrTxyzq80iWe8yTIfDX6f
+ /mNLhiDNkQPfOUn8x2CSii+PhBb7Ney7H2VhkMeA5xyxuSahX1frsBigZgmDoGfIZfBX3HIRC
+ Crb7tjd26O4IwDEiCD9QBW0SfzktrOMR4xAwH4ehrCqqryaTGrapeVWPtaSPZC8/P/8gSWD9a
+ vO5SS6BYGKaemVkPkaO8rIiWpEDqnbvqRs3R0ZfERmDO/IpZxAKU60lxH09CHrjmBiEEfV6oZ
+ Hm8cJ0TSNUNzcn1QojR2cfHJPzOaTW9sS6jNySAt1bow7I2a8wMOYlWx7uUWuy/3qtHLVHX0y
+ vFyR/a4VDq+6e2XLHmDkmuMPaJ+DGxFNGN4uIXdTlaE5nn4sVnoBsQ+YD0DWJaXeKLDx9KuzD
+ 8NqhN1dhi2mHnxi+X4xtdc1OhNmxXis8KcOsKTGjeYLcDpuL0fJveIcgnQvS8E5MqvKMZgvQ+
+ mE6OTgxe6WHG6PYkTe30ICmgTFCNa2Vkk7/xutG+5X/pUsq4RMGJGCzwx4J8z1mNZ9+xSYXAE
+ Cdskc34C5z/pP3WF6Naen57z/2dgMLqseajOe9e7tVJbucyidD8aatmcUu00bTBWQ+puIkCn6
+ C9WvB+nwqTxMcGadouhqNN5VSNVaVjjfPzBp7LM7Fn15A06qngveAgrgFCXIb1XHEIyxbXI84
+ h1/PnJKVgvz4pK0Gs5b12V8cmbCaENFEGEXHkPdQVfhDYAGVq0mXKCdNc6qUPBNfXLlN+KE+J
+ Rj1mkZdlAswHFeROGdn7BsPq7cHPg53IzoQFgICCe0jkQd9gjpgKeR4GmX2aljVziV8cH7Ey3
+ d9D6jkmkKdxPGlOZHE77mfB53gtGdy+AlgfMMyuQQp+EYf/oko=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200615_114723_402493_DE0632AC 
+X-CRM114-Status: GOOD (  12.99  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [207.211.31.81 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.72.192.74 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,85 +91,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-cifs@vger.kernel.org, linux-wireless@vger.kernel.org,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- virtualization@lists.linux-foundation.org, David Howells <dhowells@redhat.com>,
- linux-mm@kvack.org, linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
- kasan-dev@googlegroups.com, cocci@systeme.lip6.fr, devel@driverdev.osuosl.org,
- linux-s390@vger.kernel.org, linux-scsi@vger.kernel.org, x86@kernel.org,
- James Morris <jmorris@namei.org>, Matthew Wilcox <willy@infradead.org>,
- linux-stm32@st-md-mailman.stormreply.com, intel-wired-lan@lists.osuosl.org,
- David Rientjes <rientjes@google.com>, "Serge E. Hallyn" <serge@hallyn.com>,
- linux-pm@vger.kernel.org, ecryptfs@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-fscrypt@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-btrfs@vger.kernel.org, linux-integrity@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- Linus Torvalds <torvalds@linux-foundation.org>,
- samba-technical@lists.samba.org, linux-kernel@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, linux-security-module@vger.kernel.org,
- keyrings@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
- linux-crypto@vger.kernel.org, netdev@vger.kernel.org,
- Joe Perches <joe@perches.com>, Andrew Morton <akpm@linux-foundation.org>,
- linux-wpan@vger.kernel.org, wireguard@lists.zx2c4.com,
- linux-ppp@vger.kernel.org
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ Parisc List <linux-parisc@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Al Viro <viro@zeniv.linux.org.uk>,
+ sparclinux <sparclinux@vger.kernel.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/15/20 2:07 PM, Dan Carpenter wrote:
-> On Mon, Apr 13, 2020 at 05:15:49PM -0400, Waiman Long wrote:
->> diff --git a/mm/slab_common.c b/mm/slab_common.c
->> index 23c7500eea7d..c08bc7eb20bd 100644
->> --- a/mm/slab_common.c
->> +++ b/mm/slab_common.c
->> @@ -1707,17 +1707,17 @@ void *krealloc(const void *p, size_t new_size, gfp_t flags)
->>   EXPORT_SYMBOL(krealloc);
->>   
->>   /**
->> - * kzfree - like kfree but zero memory
->> + * kfree_sensitive - Clear sensitive information in memory before freeing
->>    * @p: object to free memory of
->>    *
->>    * The memory of the object @p points to is zeroed before freed.
->> - * If @p is %NULL, kzfree() does nothing.
->> + * If @p is %NULL, kfree_sensitive() does nothing.
->>    *
->>    * Note: this function zeroes the whole allocated buffer which can be a good
->>    * deal bigger than the requested buffer size passed to kmalloc(). So be
->>    * careful when using this function in performance sensitive code.
->>    */
->> -void kzfree(const void *p)
->> +void kfree_sensitive(const void *p)
->>   {
->>   	size_t ks;
->>   	void *mem = (void *)p;
->> @@ -1725,10 +1725,10 @@ void kzfree(const void *p)
->>   	if (unlikely(ZERO_OR_NULL_PTR(mem)))
->>   		return;
->>   	ks = ksize(mem);
->> -	memset(mem, 0, ks);
->> +	memzero_explicit(mem, ks);
->          ^^^^^^^^^^^^^^^^^^^^^^^^^
-> This is an unrelated bug fix.  It really needs to be pulled into a
-> separate patch by itself and back ported to stable kernels.
->
->>   	kfree(mem);
->>   }
->> -EXPORT_SYMBOL(kzfree);
->> +EXPORT_SYMBOL(kfree_sensitive);
->>   
->>   /**
->>    * ksize - get the actual amount of memory allocated for a given object
-> regards,
-> dan carpenter
->
-Thanks for the suggestion. I will break it out and post a version soon.
+On Mon, Jun 15, 2020 at 4:48 PM Brian Gerst <brgerst@gmail.com> wrote:
+> On Mon, Jun 15, 2020 at 10:13 AM Christoph Hellwig <hch@lst.de> wrote:
+> > On Mon, Jun 15, 2020 at 03:31:35PM +0200, Arnd Bergmann wrote:
 
-Cheers,
-Longman
+> >
+> > I'd rather keep it in common code as that allows all the low-level
+> > exec stuff to be marked static, and avoid us growing new pointless
+> > compat variants through copy and paste.
+> > smart compiler to d
+> >
+> > > I don't really understand
+> > > the comment, why can't this just use this?
+> >
+> > That errors out with:
+> >
+> > ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1040): undefined reference to
+> > `__x32_sys_execve'
+> > ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1108): undefined reference to
+> > `__x32_sys_execveat'
+> > make: *** [Makefile:1139: vmlinux] Error 1
+>
+> I think I have a fix for this, by modifying the syscall wrappers to
+> add an alias for the __x32 variant to the native __x64_sys_foo().
+> I'll get back to you with a patch.
 
+Do we actually need the __x32 prefix any more, or could we just
+change all x32 specific calls to use __x64_compat_sys_foo()?
+
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
