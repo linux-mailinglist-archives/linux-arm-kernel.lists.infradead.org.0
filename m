@@ -2,78 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B45041F953D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:22:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AD7B1F9542
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:24:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+anElHkxEqvLcsErlDcQsGavcyqaqwXHb1PBVtaaf3k=; b=iz8UBzrK1MQ9f+
-	QmgZzjBkZjYPx6RJF4E5WEHnnJOFYeSLatUw7VChUqFybuTNychWOy0a43T4juYakncYZHy0EGhh3
-	TLbDInB0XlgGRGekjBmh5a3CtVmw0sPgFjIa5a/YrnxHXzGoi6RaRN8axh3UQ/No7F5PFA9lEJE6n
-	n/mmfJmLXIr3c9EHZuqWnFS4OFbxxaYS97Z9fwIpq35IvpMXx4CHrZrz/jl7IiC5BLcHTXFMS98ID
-	QjciozTW52qczMHLgrEVVURmAwsoFvDBDPOADWQwKnJP3gMHpeawc81CYrA28rX5KHHVIyEKNS3c7
-	cCmX3VZJXco9vM8FyXIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gqc+k00LvUiQBtxgo61lYwIE/My3+zU779OYoxFSSmc=; b=MeKI/hqThSq+lL
+	J9hriwUt8XZHHLVMVFOx0butB/0Uc6fvZ3NqtSqT/D2QmSA/CLg4uIG0Uhd/JwTODybbiMXCYEwns
+	U77lLwBzBBlGSDcAo/fASYclF9nz4dVdz700JwfV84uNLumXDiFhWuLRWBwMsc56pxi0YWqVYKei5
+	etV7yePfIsjPXW1vBN91JUH4+Lm+/ix1HTIpQ7ABSr6oLsqLIOoVYEOfXOYfSjVIsdfKMY/MvCbv9
+	DNYu7OlrNK6wPEKcAFKbGnxv8CkDLYjVKYexpgpyGOWLPcAHnsPiUv1Ad4Erf/inkKstsLxcwfbf4
+	UVObmBVGLR+WwrYyCuaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jknCX-0006b8-VQ; Mon, 15 Jun 2020 11:22:54 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([185.58.86.151])
+	id 1jknEH-0006wJ-Fb; Mon, 15 Jun 2020 11:24:41 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jknCO-0006aL-Rm
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:22:46 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-47-9KR430kxM7Czl-jMyYnSMw-1; Mon, 15 Jun 2020 12:22:36 +0100
-X-MC-Unique: 9KR430kxM7Czl-jMyYnSMw-1
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Mon, 15 Jun 2020 12:22:35 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Mon, 15 Jun 2020 12:22:35 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Al Viro' <viro@zeniv.linux.org.uk>, afzal mohammed
- <afzal.mohd.ma@gmail.com>
-Subject: RE: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-Thread-Topic: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
-Thread-Index: AQHWQZeuKY4+jVw3gESBYOJARK44Q6jZh6/w
-Date: Mon, 15 Jun 2020 11:22:35 +0000
-Message-ID: <3ef1b43f182041bc9585f5fd462a092f@AcuMS.aculab.com>
-References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
- <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
- <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
- <20200612135538.GA13399@afzalpc>
- <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
- <20200613120432.GA5319@afzalpc> <20200613125126.GE23230@ZenIV.linux.org.uk>
- <20200613125615.GF23230@ZenIV.linux.org.uk> <20200613134236.GA4086@afzalpc>
- <20200613153102.GG23230@ZenIV.linux.org.uk>
-In-Reply-To: <20200613153102.GG23230@ZenIV.linux.org.uk>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+ id 1jknE9-0006vl-4g
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:24:34 +0000
+Received: by mail-pg1-x543.google.com with SMTP id d4so451517pgk.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 04:24:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=android.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3QRZ5ywtyFsxk5MHx1800AYGN1jSYKOCI9c+NnnOAzM=;
+ b=FAymlCvsvMbZ0UGo7IGXv3Sx+u4nZzqXQmkPZXbDH2rYLctsQIAQl0UybmevkxWJAh
+ Y66PQ0Xbepd7cy1Qyyx0C3Jqsd5MnxaoojSyG94AsIfq4/pRnVleBjftGrY/co+YHHPc
+ np2IKhqqzuZ/mktxoHGb/nI5/pcgMIXX+KsYjzG+tgft7Strlrehv9eRLCNMWSDIjiAp
+ F1ea71iUqK2hT5FhESPYbfNBZviEWNmbOzyXk6Q5e8v1FogWR1v5YTh9TEyau+hw+4uP
+ J1eJgjCc7gc4VAl0c3CBub5C2BsmlnoSMPg1f8s6/rqX0157r+wcmYx1iYlnmHSwmcl5
+ 2g7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3QRZ5ywtyFsxk5MHx1800AYGN1jSYKOCI9c+NnnOAzM=;
+ b=bnZpJDm7qkz1FBO27+lNZPjJpVt1TfVjll2xcJvIN3Tg3Ux5KdbwXK4POQJRVGvzWr
+ 6XHi+CG0mslR7n6aLorvQbwHDa4ZDj7HOyWBMpQw4eHHWh/kHAv+jvwPjUM2R5A2ChEH
+ VNeNnn+ZonqhCho46zdmf9PqxTiXdLpiko6MImyxOyw6SpBcZntn2z1t8RM4FdU6poKj
+ Aujakqzx1dBX38ikN0fnqF592quB+pOIo1r4fw1nxZzzQp971gOhW1XR51Xialf2eN5G
+ ZrNRYePpTt5Zcq1cK3P5jkwU+60HTmHeRf4S0HlMnitjWn4C6X66MVI7u9QFxnn8Puzl
+ 8AtA==
+X-Gm-Message-State: AOAM531FVXYOpcOn5ORtnv4Pe/Luz+e5Bef4NU/9MA95p6qjXBcFZecB
+ d5FA23ZFT6x9CYi5lcHiI0NN2A==
+X-Google-Smtp-Source: ABdhPJywD7hLKqggb4lGrVFIGkjim2YhP5qSbAbVYtu42KtLN2murCX0vQWnPhvhXP54HoGsMJQ55A==
+X-Received: by 2002:a62:6d01:: with SMTP id i1mr23403506pfc.286.1592220271439; 
+ Mon, 15 Jun 2020 04:24:31 -0700 (PDT)
+Received: from nebulus.mtv.corp.google.com
+ ([2620:15c:211:200:5404:91ba:59dc:9400])
+ by smtp.gmail.com with ESMTPSA id gg10sm12160121pjb.38.2020.06.15.04.24.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 04:24:30 -0700 (PDT)
+From: Mark Salyzyn <salyzyn@android.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH]: arch: arm64: vdso: export the symbols for time()
+Date: Mon, 15 Jun 2020 04:24:05 -0700
+Message-Id: <20200615112422.234735-1-salyzyn@android.com>
+X-Mailer: git-send-email 2.27.0.290.gba653c62da-goog
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: aculab.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_042245_189621_6AB230C1 
-X-CRM114-Status: GOOD (  16.54  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200615_042433_197815_749FF574 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.58.86.151 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [185.58.86.151 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,59 +97,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Enrico Weigelt <info@metux.net>, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mark Salyzyn <salyzyn@android.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Chiawei Wang <chiaweiwang@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, kernel-team@android.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Al Viro
-> Sent: 13 June 2020 16:31
-> On Sat, Jun 13, 2020 at 07:12:36PM +0530, afzal mohammed wrote:
-> > Hi,
-> >
-> > On Sat, Jun 13, 2020 at 01:56:15PM +0100, Al Viro wrote:
-> >
-> > > Incidentally, what about get_user()/put_user()?  _That_ is where it's
-> > > going to really hurt...
-> >
-> > All other uaccess routines are also planned to be added, posting only
-> > copy_{from,to}_user() was to get early feedback (mentioned in the
-> > cover letter)
-> 
-> Sure, but what I mean is that I'd expect the performance loss to be
-> dominated by that, not by copy_from_user/copy_to_user on large amounts
-> of data.  Especially on the loads like kernel builds - a lot of stat()
-> and getdents() calls there.
+From: Chiawei Wang <chiaweiwang@google.com>
 
-Or any network traffic where the number of usercopies involved in,
-for example, sendmsg() gives a measurable performance decrease when
-HARDENED_USERCOPY is enabled.
+__cvdso_time() can be found in vDSO implementation,
+but the symbols for time() are not exported.
 
-Do you have issues with cache aliasing?
-(Is aliasing the right term?)
-Where potentially the temporary kernel map doesn't use the same
-cache lines as the user processes map.
+Export the symbols and run bionic-benchmarks.
 
-I'm not sure what problem you are trying to solve, but for 64bit
-systems it may be possible to map all of physical memory into the
-kernel address map, them you (loosely) only have to find the KVA
-that matches the user-VA to do the copy.
+BEFORE:
+bionic-benchmarks32 --bionic_extra BM_time_time
+-----------------------------------------------------
+Benchmark           Time             CPU   Iterations
+-----------------------------------------------------
+BM_time_time     83.6 ns         83.5 ns      8385964
 
-IIRC our SYSV kernels used to do that - until we had 384MB of physical
-memory and ran out of kernel address space.
+bionic-benchmarks64 --bionic_extra BM_time_time
+-----------------------------------------------------
+Benchmark           Time             CPU   Iterations
+-----------------------------------------------------
+BM_time_time     63.5 ns         63.4 ns     11037509
 
-	David
+AFTER:
+bionic-benchmarks32 --bionic_extra BM_time_time
+-----------------------------------------------------
+Benchmark           Time             CPU   Iterations
+-----------------------------------------------------
+BM_time_time     8.57 ns         8.56 ns     81887312
 
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
+bionic-benchmarks64 --bionic_extra BM_time_time
+-----------------------------------------------------
+Benchmark           Time             CPU   Iterations
+-----------------------------------------------------
+BM_time_time     7.52 ns         7.51 ns     93253809
+
+Signed-off-by: Chiawei Wang <chiaweiwang@google.com>
+Signed-off-by: Mark Salyzyn <salyzyn@android.com>
+---
+ arch/arm64/include/asm/vdso/compat_gettimeofday.h | 2 ++
+ arch/arm64/include/asm/vdso/gettimeofday.h        | 2 ++
+ arch/arm64/kernel/vdso/vdso.lds.S                 | 1 +
+ arch/arm64/kernel/vdso/vgettimeofday.c            | 5 +++++
+ arch/arm64/kernel/vdso32/vdso.lds.S               | 1 +
+ arch/arm64/kernel/vdso32/vgettimeofday.c          | 5 +++++
+ 6 files changed, 16 insertions(+)
+
+diff --git a/arch/arm64/include/asm/vdso/compat_gettimeofday.h b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
+index b6907ae78e53..55e841bff432 100644
+--- a/arch/arm64/include/asm/vdso/compat_gettimeofday.h
++++ b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
+@@ -14,6 +14,8 @@
+ 
+ #define VDSO_HAS_CLOCK_GETRES		1
+ 
++#define VDSO_HAS_TIME			1
++
+ #define BUILD_VDSO32			1
+ 
+ static __always_inline
+diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
+index afba6ba332f8..4d2f028284a0 100644
+--- a/arch/arm64/include/asm/vdso/gettimeofday.h
++++ b/arch/arm64/include/asm/vdso/gettimeofday.h
+@@ -11,6 +11,8 @@
+ 
+ #define VDSO_HAS_CLOCK_GETRES		1
+ 
++#define VDSO_HAS_TIME			1
++
+ static __always_inline
+ int gettimeofday_fallback(struct __kernel_old_timeval *_tv,
+ 			  struct timezone *_tz)
+diff --git a/arch/arm64/kernel/vdso/vdso.lds.S b/arch/arm64/kernel/vdso/vdso.lds.S
+index 7ad2d3a0cd48..61dddb0af1a5 100644
+--- a/arch/arm64/kernel/vdso/vdso.lds.S
++++ b/arch/arm64/kernel/vdso/vdso.lds.S
+@@ -77,6 +77,7 @@ VERSION
+ 		__kernel_gettimeofday;
+ 		__kernel_clock_gettime;
+ 		__kernel_clock_getres;
++		__kernel_time;
+ 	local: *;
+ 	};
+ }
+diff --git a/arch/arm64/kernel/vdso/vgettimeofday.c b/arch/arm64/kernel/vdso/vgettimeofday.c
+index 4236cf34d7d9..09be63204e74 100644
+--- a/arch/arm64/kernel/vdso/vgettimeofday.c
++++ b/arch/arm64/kernel/vdso/vgettimeofday.c
+@@ -23,3 +23,8 @@ int __kernel_clock_getres(clockid_t clock_id,
+ {
+ 	return __cvdso_clock_getres(clock_id, res);
+ }
++
++time_t __kernel_time(time_t *time)
++{
++	return __cvdso_time(time);
++}
+diff --git a/arch/arm64/kernel/vdso32/vdso.lds.S b/arch/arm64/kernel/vdso32/vdso.lds.S
+index a3944927eaeb..2222c78451b4 100644
+--- a/arch/arm64/kernel/vdso32/vdso.lds.S
++++ b/arch/arm64/kernel/vdso32/vdso.lds.S
+@@ -69,6 +69,7 @@ VERSION
+ 		__kernel_rt_sigreturn_arm;
+ 		__kernel_rt_sigreturn_thumb;
+ 		__vdso_clock_gettime64;
++		__vdso_time;
+ 	local: *;
+ 	};
+ }
+diff --git a/arch/arm64/kernel/vdso32/vgettimeofday.c b/arch/arm64/kernel/vdso32/vgettimeofday.c
+index 5acff29c5991..9296385e7bb8 100644
+--- a/arch/arm64/kernel/vdso32/vgettimeofday.c
++++ b/arch/arm64/kernel/vdso32/vgettimeofday.c
+@@ -30,6 +30,11 @@ int __vdso_clock_getres(clockid_t clock_id,
+ 	return __cvdso_clock_getres_time32(clock_id, res);
+ }
+ 
++time_t __vdso_time(time_t *time)
++{
++	return __cvdso_time(time);
++}
++
+ /* Avoid unresolved references emitted by GCC */
+ 
+ void __aeabi_unwind_cpp_pr0(void)
+-- 
+2.27.0.290.gba653c62da-goog
 
 
 _______________________________________________
