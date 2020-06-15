@@ -2,93 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CCC11FA0A0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 21:43:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42F2A1FA0BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 21:45:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qUtY5IGoYeO/tEJ6C3zFLQzdDPW1blGXk7svgTGtjZA=; b=bBr+3L+gxKefjX
-	7Jtqq7Q5py4I5KfPWr9vZSqIjDXckr8HtnSS7IStlwqDeRSnCwCRAR3H/2839idAXv/dLN0v5GBp/
-	uuhG0lKbmnnFvWSodTTjbPUUTzPUvLmuDzi9QjYY/ikx99lizSsXQWcyVNS2xPEIiaNsNqDLac4gY
-	fapEgTApcLSPr2MnSrQd3kEYpFjs3e6ruRMDENCMqIoCmt35kUAVLA1HsBYhPIxbtgqPzZ01XxswJ
-	/po7mXPuMZIaQg4gnGWzHRk5IRPJbUpT4Sl+2UUm9Beoz33qMNZ/m8K0m7KzXAQHVZuzriZ7jaq63
-	mZpDXRM6t5W6NOL+om0A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=efAMMetDbISbb+ovN/LDUmayFeqaermnTmtwso5XBq8=; b=sGOpPWQrCylhHu
+	bqk+A216kGOME69Dwb6H7USHgtI76QOUlBkK1fXwVJ14BQLhVCPAu8275Ms3RtWMhvMksso728tks
+	oTNIdfAcHgeJJd8vgroZwq9BB9yKtURr3Z6DygG9DYhXP2F71I73aOcH3h1Rcnof+8m1Fksw8s5Pt
+	47xVnZ3eg21QmzqIKs6HD4Nq8BiCF7JQCCLxyZ5/KgPRWqTnyC1sWAxo5YBPQInKiLN7c74WeEE2u
+	UVg9UZuG2v/9P0aCszgJPrmNfPKz5xMl06tZW9+zEoXf7P5b1qXkVozLZibbsQImIjXzx6TTwtFMh
+	/sZv/84edMrXddXq8LyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkv0c-0007qG-MS; Mon, 15 Jun 2020 19:43:06 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jkv3C-0002K2-L9; Mon, 15 Jun 2020 19:45:46 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkv0S-0007p2-4B; Mon, 15 Jun 2020 19:42:57 +0000
-Received: by mail-pf1-x444.google.com with SMTP id a127so8250364pfa.12;
- Mon, 15 Jun 2020 12:42:54 -0700 (PDT)
+ id 1jkv34-0002J1-Ri
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 19:45:40 +0000
+Received: by mail-io1-xd44.google.com with SMTP id w18so19272947iom.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 12:45:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=0qrQRoXABWjnKwQa7O+onv4TFfIuamL/7UM0/e+lKcY=;
- b=L2sUgJQOmXLIdpN/acBHO/x2Cs7rcGS5cLssbvpSCPQavY3CLsMPoxVRWpDQ4X3gg2
- Q6EhXUvFvQYhYYYikWxkiO8jgo9sxSaLKxp0irclj3xWDXwHWzSmnmErDycvzIxS3G0i
- fKcDmGBbWHU5ZcS45ePpyoZ62Grc589q5VCS5LX8TwDSRLtIrtWycymbEQ0o3/Xb/FP4
- K/IlsTc96LpXUjzuoz74MUtSgISWwunogcs9Kn7bx5EbyvWj8Dah2flMxF9A0IKyNFOe
- qylDtRWWQUxDgq9sjf9xcJLZWxo4W1z4ascb3zMs8UXv1cFkP939eIgwwnwwVCaEdeI6
- WQqg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GcEsP5XHkAYWjVB1MFDssViF4cxMQLWXk2Kgbxji0hs=;
+ b=d1N76KYXqQ1fpaIX30dgZBqRd8wI/sojfUihP9H9n7SrJl5fw8AIM1QjJHFUie0ynn
+ Ba7u2YUNcGPgUH5k5/xR7j1g1AD4ubDfekbuaJsUIn8tpQbEqATe7gJrtx3bqoUJmH4s
+ 5+bquUS4RYotC8sNbFVFKTlUv9aULk2bwxwqhhxgC1NWXrZ2b3J+MnEA2epJN5YcPwJd
+ seJUjothmBUqRpHkR2X5MhScZehYA2HegUeEnFWW4JD2VuEs9SDBgZ0eGzbMT5M7oi0/
+ XAULqncIPF3a7VQsBQHJiygHfxiVk4UqM7Xb3uuuIVXJb73uzIjZdrMQlG7Z9vwbj0Z+
+ CyHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=0qrQRoXABWjnKwQa7O+onv4TFfIuamL/7UM0/e+lKcY=;
- b=AHTQjwM5CLYxklcsBMaYgRUKwkgiKkZ/8sV4zpbLZ6pwk+0xYZ75DIgxyxfwcBq3ei
- euoVZmtOJWc5+OzHNsWWeH2YU2bSnaZmclclAmUS1vIt8YBRbqyaAye5aOVxSC9hwoZR
- AAI3XdsjIc17uy8caXqrKAbDKX2GxL9PeiQGBRfSGTcXc1DEwJlkH3/ZDo05Ob6Lx/2T
- Br6stQuLzqKES+H24lrDqOVRsc+N/1ShKU9UnMekdcGbeeID8u1b91rMczmG/LHwklT+
- oE/lu+HS0N9I18yiLKUlAT4Lb7lwWfw8YpABrJd/E0h9AfxQV5YUa9bnz0QIf0+NDTX5
- 2umQ==
-X-Gm-Message-State: AOAM533t9IdApMVwnkskyfWl2Kvhg/AzUZaPn0vW5kzy+vFMleHW8OvX
- +XR8mUqYQusA7WIae2R8lmg=
-X-Google-Smtp-Source: ABdhPJzd8NKZ4V1T8V4Nkdlh9ron23wWPpYk6qMRFJf5t5GVGxrIMoa3t6qMXRy8YkjSV+ietR9EQg==
-X-Received: by 2002:a63:546:: with SMTP id 67mr23612510pgf.364.1592250173912; 
- Mon, 15 Jun 2020 12:42:53 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id n65sm14213758pfn.17.2020.06.15.12.42.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 15 Jun 2020 12:42:53 -0700 (PDT)
-Subject: Re: [PATCH v2] spi: bcm2835: Enable shared interrupt support
-To: Robin Murphy <robin.murphy@arm.com>, Lukas Wunner <lukas@wunner.de>
-References: <20200604212819.715-1-f.fainelli@gmail.com>
- <142d48ae-2725-1368-3e11-658449662371@arm.com>
- <20200605132037.GF5413@sirena.org.uk>
- <2e371a32-fb52-03a2-82e4-5733d9f139cc@arm.com>
- <06342e88-e130-ad7a-9f97-94f09156f868@arm.com>
- <d3fe8b56-83ef-8ef0-bb05-11c7cb2419f8@gmail.com>
- <a6f158e3-af51-01d9-331c-4bc8b6847abb@arm.com>
- <20200608114148.4bau4mdcvwgf25ut@wunner.de>
- <3d4fd3f9-9bde-90a8-bef5-9fc97cc9b363@arm.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <2e4a6c4b-857f-1000-e7fd-327b0800fb97@gmail.com>
-Date: Mon, 15 Jun 2020 12:42:50 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.9.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GcEsP5XHkAYWjVB1MFDssViF4cxMQLWXk2Kgbxji0hs=;
+ b=CmixQ1uQ5BUqiqbRXUC4eF8I2DQo/jGomeMQTuHmDm8DGxp1X+y1ry5KF/jYZm/KAc
+ KLAtE97YUTu2czMUnr/KMyFDPKiuHHu+pA4vK5Wk2y25UtyX9D/ZmCf/Lsii1a/Q2a/c
+ 4vq7P6Q2mrPYbH5fkHddul/nNti8hTFiqaIxs+7i5yAKPBeE/XiQxTdlWQJemAjwNdvk
+ LXioQqC0cmZNcFf/1ximEAmB/GNUJdzdg+WWFlko0oi9bjj/PTLkxzzYc50SymLL13wl
+ oxoxyM23FiaP+oYUuDLDTA93cfv8W+ecS0Wt1zTgCXYNA+6tDo3uC6YJLQpeQCbJfKM2
+ NSsw==
+X-Gm-Message-State: AOAM530eDwsM+ndJIRYhJdfQKi3Hg/PxO0LmB4/9ahSWkeOuGnGKeGeV
+ JnApJtdGi1EkddfgPafZ/ifRvBUeVO7atx48dA==
+X-Google-Smtp-Source: ABdhPJxruXU+i+P2JjGW09+nvoxmHKpEF1SP+mxNnwxG3exn2/HqUJry5Lh3ZGwSfno6ZlJbUa99xQueu/DZAVZXhg0=
+X-Received: by 2002:a05:6602:80b:: with SMTP id
+ z11mr29222473iow.109.1592250335524; 
+ Mon, 15 Jun 2020 12:45:35 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <3d4fd3f9-9bde-90a8-bef5-9fc97cc9b363@arm.com>
-Content-Language: en-US
+References: <20200615130032.931285-1-hch@lst.de>
+ <20200615130032.931285-3-hch@lst.de>
+ <CAK8P3a0bRD3RzE_X6Tjzu9Tj+OhHhP+S=k6+VYODBGko8oQhew@mail.gmail.com>
+ <20200615141239.GA12951@lst.de>
+ <CAMzpN2heSzZzg16ws3yQkd7YZwmPPx_4RFCpb9JYfFWJ9gfPhA@mail.gmail.com>
+ <CAK8P3a3q-hC7kZwLPbc+E5VYcqthQS4J4Rqo+rKkBRU2n071XA@mail.gmail.com>
+In-Reply-To: <CAK8P3a3q-hC7kZwLPbc+E5VYcqthQS4J4Rqo+rKkBRU2n071XA@mail.gmail.com>
+From: Brian Gerst <brgerst@gmail.com>
+Date: Mon, 15 Jun 2020 15:45:24 -0400
+Message-ID: <CAMzpN2iDPKatOqs+Uuw70ACbnB-D__dgSRZU0wBjOUBwTGOJ-A@mail.gmail.com>
+Subject: Re: [PATCH 2/6] exec: simplify the compat syscall handling
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_124256_170543_E50E9365 
-X-CRM114-Status: GOOD (  21.61  )
+X-CRM114-CacheID: sfid-20200615_124538_912660_5AA29D20 
+X-CRM114-Status: GOOD (  14.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
+ provider [brgerst[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,70 +98,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>,
- "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Mark Brown <broonie@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Martin Sperl <kernel@martin.sperl.org>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ Parisc List <linux-parisc@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Al Viro <viro@zeniv.linux.org.uk>,
+ sparclinux <sparclinux@vger.kernel.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA2LzE1LzIwMjAgMTI6MDkgUE0sIFJvYmluIE11cnBoeSB3cm90ZToKPiBPbiAyMDIwLTA2
-LTA4IDEyOjQxLCBMdWthcyBXdW5uZXIgd3JvdGU6Cj4+IE9uIE1vbiwgSnVuIDA4LCAyMDIwIGF0
-IDEyOjExOjExUE0gKzAxMDAsIFJvYmluIE11cnBoeSB3cm90ZToKPj4+IEFuZCBhbGwgaW4gY29k
-ZSB0aGF0IGhhcyBhdCBsZWFzdCBvbmUgb2J2aW91cyBpbmVmZmljaWVuY3kgbGVmdCBvbgo+Pj4g
-dGhlIHRhYmxlIGVpdGhlciB3YXkuCj4+Cj4+IENhcmUgdG8gc3VibWl0IGEgcGF0Y2ggdG8gb3Zl
-cmNvbWUgdGhhdCBpbmVmZmljaWVuY3k/Cj4gCj4gSSdsbCBoYXZlIGEgcXVpY2sgZ28sIGJ1dCB3
-aXRob3V0IGFueSB3YXkgdG8gbWVhc3VyZSBwZXJmb3JtYW5jZSBpbXBhY3QKPiAob3IgZXZlbiB0
-ZXN0IGZvciBjb3JyZWN0bmVzcykgSSBkb24ndCBmYW5jeSBnb2luZyB0b28gZGVlcCBiYXNlZCBw
-dXJlbHkKPiBvbiBkaXNhc3NlbWJseSBhbmQgQVJNMTEgY3ljbGUgdGltaW5ncy4KPiAKPj4+IFRo
-aXMgdGhyZWFkIHRydWx5IGVwaXRvbWlzZXMgS251dGgncyAicHJlbWF0dXJlIG9wdGltaXNhdGlv
-biIKPj4+IHF1b3RlLi4uIDspCj4+Cj4+IFRoZSB0aHJlYWQgY2FtZSBhYm91dCBiZWNhdXNlIGl0
-IGNhbiBiZSBkZXRlcm1pbmVkIGF0IGNvbXBpbGUgdGltZQo+PiB3aGV0aGVyIHRoZSBpbnRlcnJ1
-cHQgaXMgZ29pbmcgdG8gYmUgc2hhcmVkOgo+IAo+IC4uLndoaWNoIGlzIGV4YWN0bHkgbXkgcG9p
-bnQgLSAiYmVjYXVzZSBpdCBjYW4gYmUiIGlzIGFueXRoaW5nIGJ1dCBwcm9vZgo+IHRoYXQgYXZv
-aWRpbmcgYSB0cml2aWFsIGNoZWNrIG1ha2VzIGVub3VnaCBtZWFzdXJhYmxlIGRpZmZlcmVuY2Ug
-dG8KPiBqdXN0aWZ5IHB1dHRpbmcgaW4gdGhlIGVmZm9ydCB0byBkbyBzby4KPiAKPj4gT24gdGhl
-IEJDTTI4MzUgKFJhc3BiZXJyeSBQaSAxKSwgQ09ORklHX0FSQ0hfTVVMVElfVjYgaXMgc2V0IGFu
-ZCB0aGlzCj4+IFNvQyBkb2Vzbid0IGhhdmUgbXVsdGlwbGUgYmNtMjgzNS1zcGkgaW5zdGFuY2Vz
-LCBzbyBubyBzaGFyZWQgaW50ZXJydXB0Lgo+Pgo+PiBUaGUgcXVlc3Rpb24gaXMgaG93IHRvIGRp
-c2Nlcm4gQkNNMjgzNi9CQ00yODM3IChSYXNwYmVycnkgUGkgMi8zKSwgd2hpY2gKPj4gZG8gbm90
-IGhhdmUgbXVsdGlwbGUgaW5zdGFuY2VzLCBhbmQgQkNNMjcxMSAoUmFzcGJlcnJ5IFBpIDQpIHdo
-aWNoIGRvZXMuCj4gCj4gSG1tLCBob3cgbXVjaCByZWxhdGl2ZSBpbXBvcnRhbmNlIGRvZXMgdGhh
-dCBoYXZlPyBPbiBhIDcwME1IeiBBUk0xMSBpdCdzCj4gb2J2aW91c2x5IGRlc2lyYWJsZSB0byBz
-cGVuZCBhcyBsaXR0bGUgdGltZSBpbiB0aGUgSVJRIGhhbmRsZXIgYXMKPiBwb3NzaWJsZSBpbiBv
-cmRlciB0byBoYXZlIHRpbWUgbGVmdCB0byBkbyBhbnl0aGluZyBlbHNlLCBidXQgb24gdGhlCj4g
-b3RoZXIgU29DcyBldmVuIGlmIHRoZSBJUlEgcmVtYWlucyBwZXJtYW5lbnRseSBhc3NlcnRlZCBp
-dCBjYW4gc3RpbGwKPiBvbmx5IGNvbnN1bWUgMjUlIG9mIHRoZSBhdmFpbGFibGUgQ1BVIGNhcGFj
-aXR5LCBhdCB3aGljaCBwb2ludCB0aGUKPiBpbXBhY3Qgb2YgMi0zIGN5Y2xlcyBlaXRoZXIgd2F5
-IGF0IDFHSHorIHNlZW1zIHByZXR0eSBtdWNoIGltbWVhc3VyYWJsZS4KPiAKPj4gVGhlIFJhc3Bi
-ZXJyeSBQaSBGb3VuZGF0aW9uIGNvbXBpbGVzIEJDTTI3MTEga2VybmVscyB3aXRoCj4+IENPTkZJ
-R19BUk1fTFBBRT15LAo+PiBidXQgRmxvcmlhbiBjb25zaWRlcmVkIHRoYXQga2x1ZGd5IGFzIGEg
-ZGlzY3JpbWluYXRvciBhbmQgb3B0ZWQgZm9yCj4+IHJ1bnRpbWUtZGV0ZWN0aW9uIHZpYSB0aGUg
-Y29tcGF0aWJsZSBzdHJpbmcgaW5zdGVhZC7CoCBJZiB5b3UndmUgZ290Cj4+IGEgYmV0dGVyIGlk
-ZWEgcGxlYXNlIGNvbWUgZm9yd2FyZC4KPj4KPj4gSXMgIm9wdGltaXplIHNoYXJlZCBJUlEgc3Vw
-cG9ydCBhd2F5IGlmIElTX0VOQUJMRUQoQ09ORklHX0FSQ0hfTVVMVElfVjYpLAo+PiBlbHNlIGxl
-YXZlIGl0IGluIiB0aGUgYmVzdCB3ZSBjYW4gZG8/Cj4gCj4gSW4gYWxsIGhvbmVzdHkgSSdtIHN0
-YXJ0aW5nIHRvIHRoaW5rIGl0IHNlcmlvdXNseSBtaWdodCBiZSA6KQoKT3IgaG93IGFib3V0IHRo
-aXM6IHdlIHNsaWdodGx5IHJlLXN0cnVjdHVyZSB0aGUgaW50ZXJydXB0IGhhbmRsZXIgc3VjaAp0
-aGF0IGFsbCBwb3NzaWJsZSBpbnRlcnJ1cHQgY29uZGl0aW9ucyBhcmUgZXhwbGljaXRseSBoYW5k
-bGVkIGFuZAp0ZXJtaW5hdGUgd2l0aCBhIHJldHVybiBJUlFfSEFORExFRCwgYW5kIHRob3NlIHdo
-aWNoIGFyZSBub3QsIGluY2x1ZGluZwppbiB0aGUgY2FzZSBvZiBhICJzcHVyaW91cyIgKGJlY2F1
-c2UgdGhlIGludGVycnVwdCB3YXMgdHJpZ2dlcmVkIGZvcgphbm90aGVyIFNQSSBjb250cm9sbGVy
-IGluc3RhbmNlKSwgdGhlbiB3ZSBmaW5pc2ggdGhlIGZ1bmN0aW9uIHdpdGgKSVJRX05PTkUuIFRo
-aXMgd291bGQgbm90IGltcGFjdCB0aGUgcGVyZm9ybWFuY2UgZm9yIHRoZSBCQ00yODM1LzM2LzM3
-CndoaWNoIHdvdWxkIHN0aWxsIGhhdmUgYSBzaW5nbGUgY29udHJvbGxlci9zaW5nbGUgaW50ZXJy
-dXB0IGxpbmUgdG8gaGFuZGxlLgotLSAKRmxvcmlhbgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, Jun 15, 2020 at 2:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> On Mon, Jun 15, 2020 at 4:48 PM Brian Gerst <brgerst@gmail.com> wrote:
+> > On Mon, Jun 15, 2020 at 10:13 AM Christoph Hellwig <hch@lst.de> wrote:
+> > > On Mon, Jun 15, 2020 at 03:31:35PM +0200, Arnd Bergmann wrote:
+>
+> > >
+> > > I'd rather keep it in common code as that allows all the low-level
+> > > exec stuff to be marked static, and avoid us growing new pointless
+> > > compat variants through copy and paste.
+> > > smart compiler to d
+> > >
+> > > > I don't really understand
+> > > > the comment, why can't this just use this?
+> > >
+> > > That errors out with:
+> > >
+> > > ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1040): undefined reference to
+> > > `__x32_sys_execve'
+> > > ld: arch/x86/entry/syscall_x32.o:(.rodata+0x1108): undefined reference to
+> > > `__x32_sys_execveat'
+> > > make: *** [Makefile:1139: vmlinux] Error 1
+> >
+> > I think I have a fix for this, by modifying the syscall wrappers to
+> > add an alias for the __x32 variant to the native __x64_sys_foo().
+> > I'll get back to you with a patch.
+>
+> Do we actually need the __x32 prefix any more, or could we just
+> change all x32 specific calls to use __x64_compat_sys_foo()?
+
+I suppose that would work too.  The prefix really describes the
+register mapping.
+
+--
+Brian Gerst
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
