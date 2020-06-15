@@ -2,61 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7E251F95B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:56:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA7531F95BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:58:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=93d5fHV2oPKjaqNafvGZxI5rXzkzRbVE1MmFu4CWd1g=; b=eYt3O90pUXimGo
-	N08EUVpGmKMGck4MFD6Oh3MutVs3/i0Y8Qe4S2YIuhOFOQDVmjQDtNe93ZEzNbZp46Etk4D+J62MQ
-	E6K47vOzCzFi/Fo4JVMZ7Yi3QVa4wqACVxXyz29ymDQpII/tmfwngNNckmTVZTxpgYJLujSwRbB81
-	jZFxWi1N5eTUj+a2v3aslCyFAmlAJkATg0085r1fBW4SBa4VTVlzgKvhsPmW4299213goDGWNvYGs
-	1VkH4BDq+IMDvvuJ+zaFabrZqaNA1+JpPr++PmPPJjx6gn02Z256toBLtBB3VoCLpDoGfUENwDrBg
-	iXxNOLnAbauB8jaDeFkA==;
+	List-Owner; bh=tL6VKFiqBbZBVzuHfd5habqf1SWPEvFpobKRCK9Ps2Y=; b=ug7xbiAsrMWwQG
+	+HkpYO9r9Rzu20txPVRV9Wc90CwPW0jvuGQGBZaRIaHSSzzgTwL3YGOTYrZmnJkn7G0ExajVWGwAb
+	V24R1SCQHKzIN12LWLXwYKGQH6iPYJRvKR6nO+EmY4yPo+9zxWhpa9ccyMr+FNjWOgGXt2OVnBCLC
+	eKQLo4I9Oje5ZbIdkYjygf434PMKtk4n2+VVfcVbA/FeWHeYV6Y9tZ5XFhkSkVe9Eo2k7EFUH+Jvd
+	XJ5FPekHM7n7/0RSrgHxFCbLWY7sfG5H3Hu85YSSzPYbTnvx0FT6DzjuYAvgU30W9Y8aqw5/q6HSx
+	Q2rrtPyuQm5hrP4zz8kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jknid-0004zG-Vu; Mon, 15 Jun 2020 11:56:04 +0000
+	id 1jknkS-0005fz-Ac; Mon, 15 Jun 2020 11:57:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkniW-0004yn-5b
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:55:57 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 10F7F20707;
- Mon, 15 Jun 2020 11:55:52 +0000 (UTC)
+ id 1jknkJ-0005fF-NV; Mon, 15 Jun 2020 11:57:48 +0000
+Received: from coco.lan (ip5f5ad5c5.dynamic.kabel-deutschland.de
+ [95.90.213.197])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C6E9420707;
+ Mon, 15 Jun 2020 11:57:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592222154;
- bh=AO7AE4H28zPxTT7UHp3OpiQhDU8PH5d+mG1D/8R7SwA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qvzQqPQA3BQ1OLRePjsqrdXDVTmCHirBImXPywATw+TELdMrEIE9m+qbuGqLkMtSI
- awSxXXgOxwAKHGYVeID31HizncxE8uNnVDdmjVGRdfvDS9FpPav4KTqnzQRK3W2Rbr
- ufdyXiqS8JkFdaMr+FFK+/vlwf9rTPYhSHlM5AhU=
-Date: Mon, 15 Jun 2020 12:55:49 +0100
-From: Will Deacon <will@kernel.org>
-To: Achin Gupta <achin.gupta@arm.com>
-Subject: Re: [RFC PATCH 1/3] dt-bindings: Add ARM PSA FF binding for
- non-secure VM partitions
-Message-ID: <20200615115549.GB2694@willie-the-truck>
-References: <20200601094512.50509-1-sudeep.holla@arm.com>
- <20200601094512.50509-2-sudeep.holla@arm.com>
- <20200609223551.GA1620273@bogus>
- <20200610074346.GB15939@willie-the-truck>
- <5B3F18A4-5DA4-411E-9E26-7D25DEE3D414@arm.com>
- <20200611171222.GB7725@willie-the-truck>
- <20200615091639.GD46361@C02TC1ARHF1T>
- <20200615095133.GA2477@willie-the-truck>
- <20200615114220.GE46361@C02TC1ARHF1T>
+ s=default; t=1592222267;
+ bh=rpbnAOKtxA3+nfUXJkVdH+zEnfJWigejr23KttLO5UY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=2i3T7ir8nRePtjA7yM7lTLP8N5Mg8pTCb0g5sSudBtMQUXuSInrQXbPvspRlwfi3D
+ e6dqCc5qQw1g9wuB2qHFB+MBvKWAfMx91pxYWrRiBAjO+LwOWTqj1ALsYLAOHXl0yW
+ zvCtLuwvkqCilQiWyGUQ4B1EJBkYVMVC7zPzP+bg=
+Date: Mon, 15 Jun 2020 13:57:39 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 13/29] dt: fix broken links due to txt->yaml renames
+Message-ID: <20200615135739.798f4489@coco.lan>
+In-Reply-To: <20200615111927.GC4447@sirena.org.uk>
+References: <cover.1592203542.git.mchehab+huawei@kernel.org>
+ <0e4a7f0b7efcc8109c8a41a2e13c8adde4d9c6b9.1592203542.git.mchehab+huawei@kernel.org>
+ <20200615111927.GC4447@sirena.org.uk>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200615114220.GE46361@C02TC1ARHF1T>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_045556_250182_F31E5EF0 
-X-CRM114-Status: GOOD (  24.84  )
+X-CRM114-CacheID: sfid-20200615_045747_787967_0BF3622E 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,82 +78,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sudeep Holla <Sudeep.Holla@arm.com>, nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org,
+ Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ linux-rockchip@lists.infradead.org, Sandy Huang <hjc@rock-chips.com>,
+ Jakub Kicinski <kuba@kernel.org>, linux-mips@vger.kernel.org,
+ devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, netdev@vger.kernel.org,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-bluetooth@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 12:42:20PM +0100, Achin Gupta wrote:
-> On Mon, Jun 15, 2020 at 10:51:34AM +0100, Will Deacon wrote:
-> > On Mon, Jun 15, 2020 at 10:16:39AM +0100, Achin Gupta wrote:
-> > > Right! FFA_PARTITION_INFO_GET is meant to help the FF-A driver in the kernel to
-> > > determine partition properties. It assumes that EL2 SW has already read each
-> > > partition's manifest and will reply to this ABI.
-> > >
-> > > IIUC, with protected KVM, this information will have to be a part of the
-> > > manifest that the KVM host consumes.
-> >
-> > The host does not consume the manifest directly -- instead, the bootloader
-> > will use the manifest to populate these DT nodes. Again, these are *only*
-> > for non-secure virtual partitions which are to be managed by KVM.
+Hi Mark,
+
+Em Mon, 15 Jun 2020 12:19:27 +0100
+Mark Brown <broonie@kernel.org> escreveu:
+
+> On Mon, Jun 15, 2020 at 08:46:52AM +0200, Mauro Carvalho Chehab wrote:
+> > There are some new broken doc links due to yaml renames
+> > at DT. Developers should really run:  
 > 
-> Yes. Understand and agree. Manifest is an overloaded term. I was using it to
-> describe the DT nodes that the host will consume.
+> I also previously acked this one in 20200504100822.GA5491@sirena.org.uk.
+> Has anything changed here to cause the ack to be dropped?
 
-Hmm, I think that conflates two things though because only the partitions
-managed by KVM will have DT nodes.
+Both patches are the same. I forgot to add your acks on my tree. 
 
-> > > Separate topic, protected KVM does not get dibs on the manifest and it relies on
-> > > the KVM host to specify the address ranges for each partition? Does this not
-> > > mean that the KVM host can control the physical address space each partition
-> > > sees. This seems contrary to the isolation guarantees that protected KVM must
-> > > provide?
-> >
-> > The host is trusted during early boot, and gives up this trust after
-> > initialising EL2 fully. So roughly speaking, we:
-> >
-> > 	* Boot at EL2 and install a shim
-> > 	* Drop down to EL2 and start the host kernel
-> > 	* Before some initialisation (DT parsing, SMP bringup, etc)
-> > 	* Init KVM by calling back up to EL2 to install the full hypervisor
-> >
-> > At that point, the EL1 host is no longer trusted and the last call
-> > effectively "locks it out" from EL2.
-> 
-> Ok. Protected KVM (PKVM) must create S2 tables when asked to setup a partition
-> by the Host. My main concern is if PKVM must trust the Host to provide the
-> correct physical address space ranges for a partition?
+My bad!
 
-Yes, but that all happens as part of KVM initialisation: the host parses
-the DT nodes and memory reservations, and then passes this information
-up to EL2.
-
-> I guess your point is this is not a problem since PKVM can lock the Host out of
-> those address ranges in any case?
-
-It has to do this, regardless of how they are probed. Once KVM has
-initialised, the host will have a stage-2 which limits it to the memory that
-it is allowed to access.
-
-> It is a bit counter intuitive that the Host gets to see and potentially
-> manipulate information that was verified and extracted by the bootloader from
-> the partition's manifest. This hapens before PKVM sees the same
-> information. Can't put my finger on what could go wrong though. Depends upon the
-> threat model too!
-
-I think you're trying too hard to separate the host from the EL2 code during
-early boot. Don't forget -- this is all part of the same binary payload that
-is loaded and initially run at EL2. Having the host take care of early boot
-/significantly/ reduces the amount of code at EL2, which has a very
-clear security benefit.
-
-Will
+Thanks,
+Mauro
 
 _______________________________________________
 linux-arm-kernel mailing list
