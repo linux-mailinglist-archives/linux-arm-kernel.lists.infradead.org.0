@@ -2,55 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFC421F995F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:55:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 476641F9978
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 16:01:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5SJ/AqY97v+ZuCi/3ubw8UeEi68yROaMumHK6vjVeRc=; b=DhpeqvguJaBxvt
-	39eoXfudxl8sQuzh8eiXsmR1IaS5XAP/mNyAUQ4sHVJFYphV49yadOZroDWET2JaglC8SdEuigxJS
-	33kqyht4ei8zM6SL9s49YoIwfjJpLQLSbq8GLjSsvDKHRCc3DUYxiWYaIAvtapHSawZdthEkqJtBw
-	gzc11QZ4TJn24uxU9NP1iStf3DN+YbTim4jZ75psjLJ/23rGFGZpFUPLknbMuva8do6edM8ZC0r3B
-	qzS5gy68dAjIm3leUCJLZ7i8oKuvkZ0Bv24jAW/BOZlyUVOAV6BLilwi50fCtTIU9pmqkP7qt3Tg9
-	QFrjBrgMvHKuV0nLeyHg==;
+	List-Owner; bh=C4xN/4zHdQfgyGlhSmNQyieNFoRMyjXL0HKFMCnm6ew=; b=usnjLRzhzPU/Gh
+	5Sl1HuGobKnTwOZ2/+z1ye0JslLaSCfriBqdWlBqVBMRVMekEymEyxqlzZ75nq0ySGu2bvm/625nK
+	J0zkXd1Y2YgYccmMv9d+hYFMhPTMTnaLxdUee8V/wY2jJpS/evBziwblFrII3tbOecRPeobgMYP07
+	8BOiTzoQihuDrnjdmuPHesUPlCIeWMitjIthjh3PXYhTBDI4osbcSD3bEdujTBNLGtRHIRISZEGa+
+	phg0IgC9awe4SjMNj9MX+VedsI2SW3oUzcBkcEXUD1GWlrGVcXyzSY+eMDyf8kXXvO5SwfkJUxZst
+	oJCisvtiNgRBXG+ffcgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkpaL-0001eW-Ca; Mon, 15 Jun 2020 13:55:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkpaE-0001d3-Gu
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:55:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99BD031B;
- Mon, 15 Jun 2020 06:55:29 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.7.221])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DE463F6CF;
- Mon, 15 Jun 2020 06:55:28 -0700 (PDT)
-Date: Mon, 15 Jun 2020 14:55:25 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: traps: Dump registers prior to panic() in
- bad_mode()
-Message-ID: <20200615135525.GF773@C02TD0UTHF1T.local>
-References: <20200615113458.2884-1-will@kernel.org>
+	id 1jkpfm-000530-KT; Mon, 15 Jun 2020 14:01:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jkpfe-00052O-BR; Mon, 15 Jun 2020 14:01:07 +0000
+Received: from mail-ed1-f42.google.com (mail-ed1-f42.google.com
+ [209.85.208.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3C7FA207FF;
+ Mon, 15 Jun 2020 14:01:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592229665;
+ bh=4ZrW2imLQHEXjli9BMhglqZFIS7OW1wia511Wm26A1U=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=K/KRxrBXnu5c9C61GD1bP9YnkYAS8ruyvyXbp1IrTBwyjJw+wcLWprnxL6Pt+0wlm
+ iClKngonSjFnN4GcpEb/ADtDlsiWUqvVUKQ8JDCe6hgbWqgJU1vZkvsgZoL6NfpZR3
+ B5ltzhb/M60tsPAqEQpKTzCJp69GVQrDZHrDNus0=
+Received: by mail-ed1-f42.google.com with SMTP id d15so11581285edm.10;
+ Mon, 15 Jun 2020 07:01:05 -0700 (PDT)
+X-Gm-Message-State: AOAM5312qyMRFdEdQb3rK78o7dhAxg9eNTg6qYklxgRD+kJUPpmZR/nn
+ 9duYWXwkO5SF3NOAZZD6n5koT+81/3Ty0vj2tw==
+X-Google-Smtp-Source: ABdhPJzhTQFzeEH1zu8mZaCAKp7pknQNSxFhk52tv3DYlzeZp7BzgLrUFynXCoEueO+cSHinJ+GV8Pn0MiN3cVMAAd0=
+X-Received: by 2002:a05:6402:1247:: with SMTP id
+ l7mr22777542edw.61.1592229663698; 
+ Mon, 15 Jun 2020 07:01:03 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200615113458.2884-1-will@kernel.org>
+References: <20200612124007.4990-1-bernard@vivo.com>
+ <48891eaf60c5e0c449e573a906894db2c3a7b72c.camel@perches.com>
+In-Reply-To: <48891eaf60c5e0c449e573a906894db2c3a7b72c.camel@perches.com>
+From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Mon, 15 Jun 2020 22:00:52 +0800
+X-Gmail-Original-Message-ID: <CAAOTY__sSV2f4MqSLJYvSW9TGV=bCKXz+zELYREaEOFVjA6XQQ@mail.gmail.com>
+Message-ID: <CAAOTY__sSV2f4MqSLJYvSW9TGV=bCKXz+zELYREaEOFVjA6XQQ@mail.gmail.com>
+Subject: Re: [PATCH] drm/mediatek: remove unnecessary conversion to bool
+To: Joe Perches <joe@perches.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_065530_617755_25340560 
-X-CRM114-Status: GOOD (  16.66  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200615_070106_412462_827EACB5 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,55 +84,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
- kernel-team@android.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, opensource.kernel@vivo.com,
+ David Airlie <airlied@linux.ie>, Bernard Zhao <bernard@vivo.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 12:34:58PM +0100, Will Deacon wrote:
-> When panicing due to an unknown/unhandled exception at EL1, dump the
-> registers of the faulting context so that it's easier to figure out
-> what went wrong. In particular, this makes it a lot easier to debug
-> in-kernel BTI failures since it pretty-prints PSTATE.BTYPE in the crash
-> log.
-> 
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Will Deacon <will@kernel.org>
-> ---
->  arch/arm64/kernel/traps.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index 50cc30acf106..f1869e5bd743 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -812,6 +812,8 @@ asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr)
->  	pr_crit("Bad mode in %s handler detected on CPU%d, code 0x%08x -- %s\n",
->  		handler[reason], smp_processor_id(), esr,
->  		esr_get_class_string(esr));
-> +	if (regs)
-> +		__show_regs(regs);
-
-For bad_mode() regs is never NULL, so you don't need to check that here.
-
-Otherwise, this looks sane to me, so with the redundant check removed:
-
-Acked-by: Mark Rutland <mark.rutland@arm.con>
-
-Mark.
-
->  
->  	local_daif_mask();
->  	panic("bad mode");
-> -- 
-> 2.27.0.290.gba653c62da-goog
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Sm9lIFBlcmNoZXMgPGpvZUBwZXJjaGVzLmNvbT4g5pa8IDIwMjDlubQ25pyIMTXml6Ug6YCx5LiA
+IOS4iuWNiDQ6NDHlr6vpgZPvvJoKPgo+IE9uIEZyaSwgMjAyMC0wNi0xMiBhdCAyMDo0MCArMDgw
+MCwgQmVybmFyZCBaaGFvIHdyb3RlOgo+ID4gSW4gZnVuY3Rpb24gbXRrX2RzaV9jbGtfaHNfc3Rh
+dGUsIHJlbW92ZSB1bm5lY2Vzc2FyeSBjb252ZXJzaW9uCj4gPiB0byBib29sIHJldHVybiwgdGhp
+cyBjaGFuZ2UgaXMgdG8gbWFrZSB0aGUgY29kZSBhIGJpdCByZWFkYWJsZS4KPiBbXQo+ID4gZGlm
+ZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHNpLmMgYi9kcml2ZXJzL2dw
+dS9kcm0vbWVkaWF0ZWsvbXRrX2RzaS5jCj4gW10KPiA+IEBAIC0zMTksNyArMzE5LDcgQEAgc3Rh
+dGljIGJvb2wgbXRrX2RzaV9jbGtfaHNfc3RhdGUoc3RydWN0IG10a19kc2kgKmRzaSkKPiA+ICAg
+ICAgIHUzMiB0bXBfcmVnMTsKPiA+Cj4gPiAgICAgICB0bXBfcmVnMSA9IHJlYWRsKGRzaS0+cmVn
+cyArIERTSV9QSFlfTENDT04pOwo+ID4gLSAgICAgcmV0dXJuICgodG1wX3JlZzEgJiBMQ19IU19U
+WF9FTikgPT0gMSkgPyB0cnVlIDogZmFsc2U7Cj4gPiArICAgICByZXR1cm4gKCh0bXBfcmVnMSAm
+IExDX0hTX1RYX0VOKSA9PSAxKTsKPgo+IEdpdmVuOgo+Cj4gZHJpdmVycy9ncHUvZHJtL21lZGlh
+dGVrL210a19kc2kuYzojZGVmaW5lIExDX0hTX1RYX0VOICAgICAgICAgICAgICAgICAgQklUKDAp
+Cj4KPiBUaGlzIGlzIGxpa2VseSBjbGVhcmVyIGFzCj4KPiAgICAgICAgIHJldHVybiB0bXBfcmVn
+MSAmIExDX0hTX1RYX0VOOwo+Cj4gb3IgZXZlbgo+Cj4gc3RhdGljIGJvb2wgbXRrX2RzaV9jbGtf
+aHNfc3RhdGUoc3RydWN0IG10a19kc2kgKmRzaSkKPiB7Cj4gICAgICAgICByZXR1cm4gcmVhZGwo
+ZHNpLT5yZWdzICsgRFNJX1BIWV9MQ0NPTikgJiBMQ19IU19UWF9FTjsKPiB9CgpJIGxpa2UgdGhl
+IHNlY29uZCBvbmUuCgo+Cj4KPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwo+IGRyaS1kZXZlbCBtYWlsaW5nIGxpc3QKPiBkcmktZGV2ZWxAbGlzdHMuZnJl
+ZWRlc2t0b3Aub3JnCj4gaHR0cHM6Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9kcmktZGV2ZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
