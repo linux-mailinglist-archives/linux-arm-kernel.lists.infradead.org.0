@@ -2,70 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17C1C1F9404
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:56:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B661F9409
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:56:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kyWUve7oMcJIP2oj2T+iLnZ3F0hi7DURdp2IkYCTcqs=; b=qdVbqaE6KF6Tmj
-	/P4f3C/+CFnhxj7jUwbrSIjg8ShuCcvk9lrXkB+b2GyT/RrNSVq1gzG/YOXOm2oGWLAoCb1W7RKNA
-	3Wpr0VHZm2JeJz24mZJZ35wpuGJAEj/GhGMTaqcMvNhk+lmO7egwGkSQbHVbtYgYcNlFAB6rBzidK
-	dpBSrHoP7aPCc70XXFeFn+G4vYlutpYYZx9TX44+y+W+NpGEvAs5WJoKc7+iCMjXr015+u13CgX78
-	+Pf5snj/JUQv7mLGDReIDyV2lQOMf5KlU6ixFX+SDm7aD9gOxuiMtiKMUm0HbhWJiz6T3Ef+qdqkj
-	dcxPy8EFRVLdr4olRQ8w==;
+	List-Owner; bh=4crc1WSikBdBEEind/eyj3ndpwzXdMK1K/MDBfxBfVA=; b=LvSKeyemhh6beO
+	owj99xhHwX3k0Rkr7HPFhys35517CXGmu63789egCgaiLS8H6q8N7Y7hoZpJNr7VsFBPRL/h3uPXw
+	yqAFE57I/Qhd5mb56xq/bCQ67Iveq46dlj4FrAWadmcJOVyH4jafGvYKQi3B1u+yZ+tw42YDM1+M8
+	m+TiPfspg7B9u3aHyRPNrVO+CfvPIXmUOmclZ7qGjQpwkmvsMrNct7JC1gCIfAp0lkoJdzSGCYNGp
+	QbO/Bp7k+X5JvcMpWhAsEIcx+sppd7sd9nE4xDCuLhzdHj+aJkePP1udF5n3p5Bl5i3/vOIruPJA7
+	c0WDZoFcVm6A7HTo3tpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklqJ-0007gZ-TI; Mon, 15 Jun 2020 09:55:51 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1jklqo-0007y7-29; Mon, 15 Jun 2020 09:56:22 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jklqC-0007fy-DV
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:55:45 +0000
+ id 1jklqR-0007uL-9p
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:56:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592214944; x=1623750944;
+ t=1592214959; x=1623750959;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=EhgQcEHdAJNNogp8ECOYFDSbKYvI+4DJ91LLczqWy04=;
- b=Dspl5P+bhRQOX+ptXnspCyF7uUlitBUYSPd80FRjYbGl19+D2ntp+nje
- 6axp9m3t54ngDMexN5l4QWH3WvHAURRQUnm0AA/ffGiwUImSl+hcHCSd/
- T2pF6Q73apQzUha3+eqc3LukaDH8YYGNyBR5q0dUNu5q+FyJJY749M8pc
- iNbDkEmofETaEXhVnURr0nyJ5uI+lSItjbsOgzakQ/ovdqCLvtfGoMmmj
- U2h9NAIoUr+n07nK3A2ExOoD0R8OVKt57+rEAPae/d/Y5UFB08CbJPZqI
- H4mg3hFMTqpARMs9FYAAPSNnXAKVu8NzKWyqR0MIdBMN688sFQC9h2CBY A==;
-IronPort-SDR: 3s2PWCYQ6TfpQV3qjczFo20MSKizU76Vihaekzc+/qHm8xTAzxtT3kh+4s+S0oZYGEXetR6Yh7
- OfTBjXknHe7jR+mfKwKGcahtHRVhbVSRLO5zcR/GRQdNaB05IDPbRfnS1Xtf5JfgGSkfHG263Y
- ZrBWFhHPBLCIhyQioV5KNu8CxD1fegoTK2DkpAvTTErXbcW1ka2VixFF60DiKFiup4XUpuNOU7
- ad73hHq2NghakCJmS3kNIiG/1RyLF7u0eB0kGR0l9UtEqcHwI3bmImJjlnFp3ARRwNNZrOqwKJ
- KAU=
-X-IronPort-AV: E=Sophos;i="5.73,514,1583218800"; d="scan'208";a="80112721"
+ bh=692fkDEuh1BmOmtP0c+bSMMGsuxUEiPJurUSSpS4uUw=;
+ b=lWPr468GGPAs4VroLrv/jwBQxAqRNM00sHDyk3KraGVEIqCpAg/loQTE
+ avQaQjIt7CjzCV8LYQC84lX42uxhizFVZu4sEB3QB/0GJmip4NhOlRBEq
+ NDuabZr9p/NQxPUjleQRjrSiJWD4+8BuNq/nCb7uOHnRft+OJLrWs5Qyh
+ uxbFliXTgOFqmgx8O1stA20d4fygZSswFmOmq6H7SmhKzJ7ut4KpaEoVB
+ 9KILV401IlN7i0Nz0NrKWl/FWpzQEsob9IwR2+EvGyfgCTel9YUdC00cA
+ pmXa8EzNE6W6t8RzYFJIOFdInqiWi1CyilOgQy1MF1qazZxgiModpQxg6 g==;
+IronPort-SDR: rLYBr+VslBxEOPYBjxUKEiYArqrXdl9kzqgrpURDyTHV2dKN/ngSX3uyqdBTUkBqCkl/1lr0xw
+ BrLv8RVagFWn3O4YnP872q1Mh8APTyh86pbT858yl0HVl+FTLRdCiyCxL6Dsbqa2XDa9ruKkGN
+ gN3PUdg8PZPxdyuXLzock7a4rHmjYn7p7zAflOPDYIXnlpe/MXcM3RrJ27RF8G0E9EPJfYIFvU
+ /3f9df31Sd7y4Hb2IMxza02O8Be5Cc/J2f0v8eNdcezxJZ3Ktx/VszckxGyYgIaCjBXyFzkb6J
+ 2eo=
+X-IronPort-AV: E=Sophos;i="5.73,514,1583218800"; d="scan'208";a="76588062"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 15 Jun 2020 02:55:40 -0700
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 Jun 2020 02:55:43 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
  15.1.1979.3; Mon, 15 Jun 2020 02:55:40 -0700
 Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Mon, 15 Jun 2020 02:55:37 -0700
+ 15.1.1979.3 via Frontend Transport; Mon, 15 Jun 2020 02:55:40 -0700
 From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 To: <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 2/3] ARM: dts: at91: sam9x60ek: classd: pull-down the L1 and
- L3 lines
-Date: Mon, 15 Jun 2020 12:55:24 +0300
-Message-ID: <20200615095525.43414-2-codrin.ciubotariu@microchip.com>
+Subject: [PATCH 3/3] Revert "ARM: at91/dt: sama5d2 Xplained: add pdmic node"
+Date: Mon, 15 Jun 2020 12:55:25 +0300
+Message-ID: <20200615095525.43414-3-codrin.ciubotariu@microchip.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
 References: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_025544_466260_3F0FE210 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20200615_025559_572402_EFD88E94 
+X-CRM114-Status: UNSURE (   6.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -73,9 +72,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [68.232.153.233 listed in wl.mailspike.net]
+ [68.232.154.123 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -105,34 +104,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The L1 and L3 lines drive NMOS transistors that are OFF with a low level.
-On the SAM9X60 EK board, if the pins corresponding to L1 and L3
-have pull-ups enabled, there is an extra 2 x 30uA power consumption.
-Use pull-downs for these 2 lines to remove the unnecessary power
-consumption.
+There are no PDM microphones on SAMA5D2 Xplained, to exercize the
+PDMIC.
 
-Fixes: 1e5f532c2737 ("ARM: dts: at91: sam9x60: add device tree for soc and board")
+This reverts commit ca6349a8c51f2e3d6f2acdb36431e7d7328261f7.
+
 Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 ---
- arch/arm/boot/dts/at91-sam9x60ek.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/at91-sama5d2_xplained.dts | 16 ----------------
+ 1 file changed, 16 deletions(-)
 
-diff --git a/arch/arm/boot/dts/at91-sam9x60ek.dts b/arch/arm/boot/dts/at91-sam9x60ek.dts
-index b484745bf2d4..3b9bb29d9e23 100644
---- a/arch/arm/boot/dts/at91-sam9x60ek.dts
-+++ b/arch/arm/boot/dts/at91-sam9x60ek.dts
-@@ -470,9 +470,9 @@ classd {
- 		pinctrl_classd_default: classd {
- 			atmel,pins =
- 				<AT91_PIOA 24 AT91_PERIPH_C AT91_PINCTRL_PULL_UP
--				 AT91_PIOA 25 AT91_PERIPH_C AT91_PINCTRL_PULL_UP
-+				 AT91_PIOA 25 AT91_PERIPH_C AT91_PINCTRL_PULL_DOWN
- 				 AT91_PIOA 26 AT91_PERIPH_C AT91_PINCTRL_PULL_UP
--				 AT91_PIOA 27 AT91_PERIPH_C AT91_PINCTRL_PULL_UP>;
-+				 AT91_PIOA 27 AT91_PERIPH_C AT91_PINCTRL_PULL_DOWN>;
- 		};
- 	};
+diff --git a/arch/arm/boot/dts/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+index 54d96649da77..c0a255bda477 100644
+--- a/arch/arm/boot/dts/at91-sama5d2_xplained.dts
++++ b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+@@ -109,16 +109,6 @@ timer1: timer@1 {
+ 				};
+ 			};
  
+-			pdmic@f8018000 {
+-				pinctrl-names = "default";
+-				pinctrl-0 = <&pinctrl_pdmic_default>;
+-				atmel,model = "PDMIC @ sama5d2_xplained";
+-				atmel,mic-min-freq = <1000000>;
+-				atmel,mic-max-freq = <3246000>;
+-				atmel,mic-offset = <0x0>;
+-				status = "okay";
+-			};
+-
+ 			uart1: serial@f8020000 {
+ 				pinctrl-names = "default";
+ 				pinctrl-0 = <&pinctrl_uart1_default>;
+@@ -533,12 +523,6 @@ pinctrl_macb0_phy_irq: macb0_phy_irq {
+ 					bias-disable;
+ 				};
+ 
+-				pinctrl_pdmic_default: pdmic_default {
+-					pinmux = <PIN_PB26__PDMIC_DAT>,
+-						<PIN_PB27__PDMIC_CLK>;
+-					bias-disable;
+-				};
+-
+ 				pinctrl_sdmmc0_default: sdmmc0_default {
+ 					cmd_data {
+ 						pinmux = <PIN_PA1__SDMMC0_CMD>,
 -- 
 2.25.1
 
