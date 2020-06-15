@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CADE1F8BEA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 02:19:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 733EC1F8BEB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 02:20:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ooHv+tc6nYEJfcWgm5V/Ry926WTQhIEip+zEhmv5rc=; b=kf5TMUIAEQP0+q
-	vxFji19SxD7vqPwBE7RFk93Bwo5QZZ+V1gAM9X935oOPpJgUIpN8L6bSMPXnsn42sD9vmXkzefzdz
-	6CUwAVUK59Apaoge0UB+C8AKATC+IFcRoFIjatPnkvFtYCjlmD+BOfI+vHwWLVB+96b/8pFtIg+R/
-	+QhLDXEhUoqZdxsod0CGOd1G1Ql6C7PfGZ+eaAVIaYDG2funYRcu9EJyHjszOLhsJCAA9b9Fvsn7i
-	f9yZAYk7gsln02CE/hyzhPc02aS0J31OZtUElY5PEI05ug3zcW6WqRA5X+aVVgqH/4g+3sv6xkGld
-	m7K9JUr5ZR8/7xG90/FQ==;
+	List-Owner; bh=N+Sq12q8JCGx8wRMUtUskotUtHb0Z5CPDXq1it2EdtM=; b=csj2xLi1HImLeR
+	36IYNx2WrxLpMHAFLmqXb+wQKXe4biLkJY3QCPgdEfInZcSjBSxB9+Y1c4i5QDTzZv5VLcHYcaRdG
+	RCNPpiwphTcR6TUHgoKBWn3+LFg8tAcwTZGKOH1d5fsQ7mT1C2rgJJsoOnweD/rAuL8Qfej6AoUeq
+	ZMstAXsrglVWU/1Udo/FuKLFoDYeR6wYQaL+3RBW8/Cj+S2xIXxHwLGWZT4xU4+V+Ee0jKR5Iz8K6
+	ka0Y/rHojpXiPMaI0KqATA4Pb42Y9R9rerftA6iK1ryUdCCfZaUhA/mcsAemVgxCyNNd/G2SSRWgr
+	GyoyB5blBfLRBTsc28vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkcqj-0005cM-6k; Mon, 15 Jun 2020 00:19:41 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1jkcr7-0005xj-G3; Mon, 15 Jun 2020 00:20:05 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkcqL-0005Pe-Go
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 00:19:18 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id dr13so15511769ejc.3
+ id 1jkcqN-0005QI-04
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 00:19:20 +0000
+Received: by mail-ej1-x641.google.com with SMTP id dr13so15511787ejc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 14 Jun 2020 17:19:17 -0700 (PDT)
+ Sun, 14 Jun 2020 17:19:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=79mtyeZRq2M0mbofzOHg0zNB78sTVjll89dsFzzw1/A=;
- b=NHpYiO0pJV/aIO/FAwrExUQ0w2HuXfi6XgL9WspR+elldDdqxgXm2xWfHM8w6/vb6Q
- 7FJu91sbuk7hjeb0I3TzkkOJz+KUJ0GDpJvVngCm/D3UNV2DaKq6d+vAV6XSU0r5NmgM
- 7hYbFtX57qXclSH2Qs3KF/6BtS/RQ687VLqZ8yOnMpJ67YMPN78A/bXYzYOlaJ5SL5cP
- KVsp5uyUC6wPgFf9kCAVQOHfZWq+lJXpfnd5yxUuTe/ULJKpvdVf446HbXeWYpQRRKMZ
- aaxrjXBbjF58XPeweVCjESM6LDz8rKExO24nwH9H6uHP7PhyiS8gz1jjg9z2RPz9Bghx
- goMw==
+ bh=sMTnpuFTK9jMtHgfDYfsLFnZ16e3Qp2YKWz6Fg/OOQQ=;
+ b=TMNNMnFOmmen27sobkCbO/xSOzIoROxVXssX4s+9qM9gKFKpBNvv4poHe354kO8kXM
+ x+NT1ijS7ZTZkGoMohxBwyFdzGESdLYqQ58GeUuuOR2pXScfC6b58wpDHY0H+2QZ814d
+ +u104JG+82FO24SGOu/jkVTmg2FMv0LHg4orVIE4qK971JwvT5QzI31rSa/JDj5AK/d5
+ USVTLKwKjIhxH7HUdYc9o8e4SbuTMhwy5J3rt10eSd8q6LhjSSyYYDfJ0wbld9QdvUvH
+ 3/Z4s7gCKFlIWv82r6BxlZMGM9A+lXAexHsyxJet1K8NTtU8VoyNhGfWs7LnTRqG6cSl
+ BM8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=79mtyeZRq2M0mbofzOHg0zNB78sTVjll89dsFzzw1/A=;
- b=F00d1JVbWUjtobSaBU8qlw+K4Z5r84Kpq1CDs4bT07TcpBYEVMVdDl3TjIlCmGlBfD
- rgJ/PNPao1jkba7ZyeZvmRUxr2wRkP/T5W4p0LbYA/kl34D83RjUKtv09lmZ14pqdBMg
- zTXGuWJnoGHZZe/qU3KKW+XFXCNa6VLYglslHfHB5A799gEmLBC2SWoNgSalYDYijrVc
- TBrG6kis3xWJJZFBCtRmzYWu/VLa1v4I6tEqbU5jm0xuSmGgwhZziyF6N24XoY9qo2xh
- I++Bh24akHHfetxQjfUCgW5U9VeHRp3BbEIV/4odQiT8+e05vLBF4yPF+5RpBTSx2D/4
- y/SA==
-X-Gm-Message-State: AOAM532RBn1bSZCd2ED18Gmtqt2DiJsE72E3N7wtEarKIdm1DCpvJ06S
- EXEJrXjoRsxdbxAlvwuLpveaMlcm
-X-Google-Smtp-Source: ABdhPJyWxRtGqOVWJHbPHm8CKtWRtRgzWemc3OYy+Bd9RL/zDPoXbrCJYveSipGIWh3fX1pGc90CQw==
-X-Received: by 2002:a17:906:5283:: with SMTP id
- c3mr21898256ejm.22.1592180356065; 
- Sun, 14 Jun 2020 17:19:16 -0700 (PDT)
+ bh=sMTnpuFTK9jMtHgfDYfsLFnZ16e3Qp2YKWz6Fg/OOQQ=;
+ b=GFfqD0jUsQmrqkgTtXnn//mIwvtKV8heLK3V+XeD1mc1CJAwYE0wG+FQHwLiyyckrR
+ u12GSKsyfVSl5bgGtBYwSdMrfF/+/5Ss1ZzZD2ge1fbzHXahPc+V/VPuMrKquf7QRt7i
+ vxqG1J21nrrG9q4EofOpxeB/b5Ydk7Fk/6GEJ3KGGjKObTqOWfn1I5IchHrcJRIfnvy1
+ lsnhtM1s7Wv7IXlB5vcm/glciKWsGssd2cNTZ86vyJ94bnI97V3a6rH7102m0cOaiTeN
+ RAZ732Gs8JIDKsJL2dpY74ndQ9/DhJuw49rEwJrTG1qq5S9zBN+UlQ44ZxA3EssQsE3t
+ i70A==
+X-Gm-Message-State: AOAM533bdMg6Pmww2nBXXSTGbuwe5k0vqvi54tCk2/PA+mrUER/yj+Q1
+ 7T6ESott7TiD3GWxSi/vRnE=
+X-Google-Smtp-Source: ABdhPJynU7JATluvS5IkONOy2HvGg1e/Xs2GAOvxN6KxiJXIZWmcUHYO6vytc6SvZDhpg+KBsFxMHw==
+X-Received: by 2002:a17:906:4f87:: with SMTP id
+ o7mr3547346eju.233.1592180357346; 
+ Sun, 14 Jun 2020 17:19:17 -0700 (PDT)
 Received: from localhost.localdomain ([188.24.129.96])
- by smtp.gmail.com with ESMTPSA id m30sm7450666eda.16.2020.06.14.17.19.14
+ by smtp.gmail.com with ESMTPSA id m30sm7450666eda.16.2020.06.14.17.19.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 14 Jun 2020 17:19:15 -0700 (PDT)
+ Sun, 14 Jun 2020 17:19:17 -0700 (PDT)
 From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
-To: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+To: Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH 3/4] dt-bindings: arm: actions: Document RoseapplePi
-Date: Mon, 15 Jun 2020 03:19:10 +0300
-Message-Id: <40f7d54f9502f0d33f2dcf18b02c6de0d55d2ecb.1592123160.git.cristian.ciocaltea@gmail.com>
+Subject: [PATCH 4/4] arm: dts: owl-s500: Add RoseapplePi
+Date: Mon, 15 Jun 2020 03:19:11 +0300
+Message-Id: <2d12521d196e2c08a30aacd0ab20d93593f94707.1592123160.git.cristian.ciocaltea@gmail.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <cover.1592123160.git.cristian.ciocaltea@gmail.com>
 References: <cover.1592123160.git.cristian.ciocaltea@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_171917_561034_BA4B5630 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200614_171919_056003_5EA26D8A 
+X-CRM114-Status: GOOD (  13.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:62d listed in]
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -101,33 +101,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Define compatible strings for RoseapplePi, a SBC manufactured
-in Taiwan, based on Actions Semi S500 reference design.
+Add a Device Tree for the RoseapplePi SBC.
 
 Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
 ---
- Documentation/devicetree/bindings/arm/actions.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/Makefile                 |  1 +
+ arch/arm/boot/dts/owl-s500-roseapplepi.dts | 47 ++++++++++++++++++++++
+ 2 files changed, 48 insertions(+)
+ create mode 100644 arch/arm/boot/dts/owl-s500-roseapplepi.dts
 
-diff --git a/Documentation/devicetree/bindings/arm/actions.yaml b/Documentation/devicetree/bindings/arm/actions.yaml
-index ace3fdaa8396..787cd1b4f26c 100644
---- a/Documentation/devicetree/bindings/arm/actions.yaml
-+++ b/Documentation/devicetree/bindings/arm/actions.yaml
-@@ -18,6 +18,7 @@ properties:
-           - enum:
-               - allo,sparky # Allo.com Sparky
-               - cubietech,cubieboard6 # Cubietech CubieBoard6
-+              - roseapplepi,roseapplepi # RoseapplePi.org RoseapplePi
-           - const: actions,s500
-       - items:
-           - enum:
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index e8dd99201397..d0712e7275da 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -856,6 +856,7 @@ dtb-$(CONFIG_ARCH_ORION5X) += \
+ dtb-$(CONFIG_ARCH_ACTIONS) += \
+ 	owl-s500-cubieboard6.dtb \
+ 	owl-s500-guitar-bb-rev-b.dtb \
++	owl-s500-roseapplepi.dtb \
+ 	owl-s500-sparky.dtb
+ dtb-$(CONFIG_ARCH_PRIMA2) += \
+ 	prima2-evb.dtb
+diff --git a/arch/arm/boot/dts/owl-s500-roseapplepi.dts b/arch/arm/boot/dts/owl-s500-roseapplepi.dts
+new file mode 100644
+index 000000000000..c61fbaa3821e
+--- /dev/null
++++ b/arch/arm/boot/dts/owl-s500-roseapplepi.dts
+@@ -0,0 +1,47 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Roseapple Pi
++ *
++ * Copyright (c) 2020 Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
++ */
++
++/dts-v1/;
++
++#include "owl-s500.dtsi"
++
++/ {
++	compatible = "roseapplepi,roseapplepi", "actions,s500";
++	model = "Roseapple Pi";
++
++	aliases {
++		serial2 = &uart2;
++	};
++
++	chosen {
++		stdout-path = "serial2:115200n8";
++	};
++
++	memory@0 {
++		device_type = "memory";
++		reg = <0x0 0x80000000>; /* 2GB */
++	};
++
++	uart2_clk: uart2-clk {
++		compatible = "fixed-clock";
++		clock-frequency = <921600>;
++		#clock-cells = <0>;
++	};
++};
++
++&twd_timer {
++	status = "okay";
++};
++
++&timer {
++	clocks = <&hosc>;
++};
++
++&uart2 {
++	status = "okay";
++	clocks = <&uart2_clk>;
++};
 -- 
 2.27.0
 
