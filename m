@@ -2,75 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07D3E1F8D9B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 08:18:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 109531F8DEA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 08:34:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8YOvFrF9ziauxPkLwSj2HUOjD8A0X3H7LcHhFuTkb08=; b=EIPpvchhZP7IU+
-	8Dky1+e7mqlMbFP5+aNoHjjm6RyvUYW9AuRWgpFjNajKHihW6YlQa89NXwNG4+HhBI+B2kD/hQ3PJ
-	r7lQnn68/eTTliKyvK7P0FLeHYmNO9YRiN9mWTC1W1bdv7RAkfAFbDHtcom/PEcN9z8hZd7XD7l1W
-	PN7fto7ktExQvAluBc2t3UzGxj4LV9RHLvgwb4F1+6TGBFNhtGOBGxGORfin3JPADLmnC7z02fNVj
-	pCdq8fGccTrGDUr6uhPYkyoAifAfCLBlUSZfi2BYIY7hS/AQJEHAEt23kCkU0M3BEBvPlEvLQdWKS
-	Qw//AuMhiGucE8mrjcJg==;
+	List-Owner; bh=uVXWdcuqdBrlj4xqNVFYfPP44lHHJ718GRycRGvqh8M=; b=pJimA6j/Bwpld4
+	UGXS5Kp+e94uc1/1ON8YpX/V203Ao0Q1SzXt8U1YnExFN/xFBVdE7d+VnaE2txbB2bzdSx8HMdSLv
+	685vPgSfTuu4Qbg2noC/8nEiWXTZ/XYkjnyPmw/F5ThZj/jxP3yyFpt+Ddk9NbMlkhDXG2HYOR1Ew
+	qsssBFAWIE68h3mf6ugmjTBxfdNoEvphtzOJUzAx3SM/PLfyJp/M3LR7/Bba+r7pRJB4R3S/nbyVX
+	ySyytNGmUzaccCrMqi8mcmDDhqK3ghMpYZyL/yrisBgNWu5urBJ7BjFa0UaeVRc5HE0bIiiO76ueP
+	Zt19JcMF/dY0X0f0Am0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkiRR-0000zC-2i; Mon, 15 Jun 2020 06:17:57 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jkigx-0001Zk-85; Mon, 15 Jun 2020 06:33:59 +0000
+Received: from mail-eopbgr60083.outbound.protection.outlook.com ([40.107.6.83]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkiRH-0000xS-M3; Mon, 15 Jun 2020 06:17:49 +0000
-X-UUID: 4ffdd50c18af4656a46eefc0bfbb791b-20200614
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=8E6iUgy1G5r0W+amwcAzOmYy/2hIRJmEje9glVMcWAE=; 
- b=b/X8KeEoJ94QKzFOYASCMzMn/nguGtHkwdi9D7frlPbA/VSjC8rvGQuQflitKCFsvC8qLQltFeQWJwzHhHFMm2Iwka/GPAMP1dr1OflTS3hLmTGwSt08KHMJmX4sa9l4bV3B5PZH9d8Zi0fo/BWyJhPqS2NsYwfNz+87voD7qIo=;
-X-UUID: 4ffdd50c18af4656a46eefc0bfbb791b-20200614
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 822435723; Sun, 14 Jun 2020 22:17:40 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sun, 14 Jun 2020 23:17:40 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 15 Jun 2020 14:17:38 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Mon, 15 Jun 2020 14:17:36 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Felipe Balbi <balbi@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- Jim Lin <jilin@nvidia.com>, Siqi Lin <siqilin@google.com>, Alan Stern
- <stern@rowland.harvard.edu>
-Subject: [PATCH v2] usb: replace hardcode maximum usb string length by
- definition
-Date: Mon, 15 Jun 2020 14:17:35 +0800
-Message-ID: <1592201855-8218-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1591939967-29943-1-git-send-email-macpaul.lin@mediatek.com>
-References: <1591939967-29943-1-git-send-email-macpaul.lin@mediatek.com>
+ id 1jkigq-0001Z6-0g
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 06:33:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HtZbfevxDS5Zs9arBmfSlRlIk3ZE3Nfmk64+zue172B0rzrHrOIywMniFz1VECHn3LUVpvef2nysJWY89FRzrpww4pYmBOgy7OzXk/2r9JmZtrejw/BM8fcWpPlW+i5bj754SsGbpuKxsU9hwV+j9UM6SmZnMvpHSR/n/2kcEko16Ex67Al5vHG4bh/xjyimu2nd9yZ6g5gkBuSMq7t4mhC/n+kmS+vc/UtGfqPLnEJ9tx64uijUA/3VVvIQSfSsxpRM399KaaQAuaRrijQ3IirfR+0kfjDgTB0eiq/pdvMY7bEC8ACVWrBRUSzKzNTB0bC8Ne32Bg1wcDnDSE/Mxw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aXfroRNA573vzufwOFVP7OPR7NqOBERM2VqA4kkvUjQ=;
+ b=TIwk2tcQmwXIbgGNLNRkUh0I8MuI0vx+Kv3Z9kA8LbaljP1N9F+BwADFesxdatwhH6nLGVOxh9+2lQL2rCVM9i8FnvbwYtjmvefkI61aZbwbMZrfT0MKSC/WGWWJaDJ+rqCLfjE8tmJI1BnV0DYbweyTJeERsfWk0N+RmFbeeaPTY0PptMOmRzemQ5ZykQEFHWPj8NMTnqO2qDVonwQ05qCqOVLBUZwgwZ3Y55mYNjJ90wUG2/qYjYUZQkPvIkwmdIWHrWZAvT1Q1OZ0b7HGV51KgLBDsMhPV+JLNT76qlcnfrRi87249XdWM5M3UAIUyMJnh4HeGzzj61BXtFpJ9w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aXfroRNA573vzufwOFVP7OPR7NqOBERM2VqA4kkvUjQ=;
+ b=M+NYOW+AX+MEJxxcMUqQy+yRIq7/Z9Yag4P8nGzyHzUsuBRDGgrxUgBJAHwaFCR6W4O/W4ZpcwO1EpSuMOb2K9329iE87VL4yC7Ncn+KhnCwQcy7U415+eEDQTRaSNqmU4YSVEHPM2FMrZCdUB4lQAKMse2ecniDykfMWK/6sYE=
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
+ by AM6PR04MB5816.eurprd04.prod.outlook.com (2603:10a6:20b:ac::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.19; Mon, 15 Jun
+ 2020 06:33:40 +0000
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3088.028; Mon, 15 Jun 2020
+ 06:33:40 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Wolfram Sang <wsa@kernel.org>, Dinghao Liu <dinghao.liu@zju.edu.cn>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>, Ulf Hansson
+ <ulf.hansson@linaro.org>, "Rafael J . Wysocki" <rafael.j.wysocki@intel.com>
+Subject: RE: [PATCH] [v3] i2c: imx-lpi2c: Fix runtime PM imbalance on error
+Thread-Topic: [PATCH] [v3] i2c: imx-lpi2c: Fix runtime PM imbalance on error
+Thread-Index: AQHWN9w+Q0hrdD3Y0kW70eX0BSxaHKjX6AOAgAFl52A=
+Date: Mon, 15 Jun 2020 06:33:40 +0000
+Message-ID: <AM6PR04MB4966A1FD80A29BA1E63247C0809C0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <20200601061640.27632-1-dinghao.liu@zju.edu.cn>
+ <20200614091203.GC2878@kunai>
+In-Reply-To: <20200614091203.GC2878@kunai>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 1f7f00cf-9453-43cf-5bf7-08d810f60aef
+x-ms-traffictypediagnostic: AM6PR04MB5816:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR04MB5816859867C9BE2F31C92489809C0@AM6PR04MB5816.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 04359FAD81
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ynGJi13+7+qoVaQ1BuPL5pU416dIPos5KKrPoy7VoCY6qsk0LE6GpvvrwSE95jLWDCIiVwmhA5p21uS7qANG8N4pgDuSj60h7k5WLTkcTHmBgkfw2AazRpmgz/Ms3Dif7kccwklqU7YnbcqxxMa9qRHwoVX0lUiTaE0+loyOpXmPBtPG0z4sfUEHlRugfoJk1ZFBjAjYRqcQcArrGc0LYdxVPC+KRWhDomsoG546jBNhAez/ATQeUBROvmuCfNqvrVnJ87ULM6RqNukLs2+zqPwe+5ZbE1tjNRUSs3fhEzwZuJzeyV2/6as8HjazLQXZP7h7NsKWr/UO7cesoAGbAQ==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(376002)(346002)(39860400002)(396003)(136003)(366004)(186003)(478600001)(7416002)(26005)(52536014)(7696005)(4326008)(2906002)(6506007)(5660300002)(55016002)(86362001)(54906003)(4744005)(9686003)(316002)(66946007)(33656002)(66556008)(66476007)(64756008)(66446008)(44832011)(8936002)(110136005)(8676002)(71200400001)(76116006);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: xOQbWgDDdfHgdukctlkQpW+16OTaJVaLufKzI/JXzccbhMp/cNQLkLEIK4YOq7IO4+Q+/LaOgc1JnlmvuA8cQb9Ye+51LwJc3luVpJhhPgQrR6GsIFsag+1jOPabvj5zys76Bgu9IrE2xTRKsKxfhCZDEd+EwFMAKFFpI28aIWY8yvXJlm+hcQ2y1ZKkv3cdvGKG62JpvYQebN1asjUhNQ+eSvOSnfiSab/ZRn999XFppSO3LM8YMsZkvommjZSofIXC3/QApuMlWg4sVdtiT2SuxbihiKrb1buM8Sfh6W851HzxzNoKBscsg5A6amvkNiDD6/m2NeiGoqbuhuwzQcwKaHSqHc1duwk5PMTbu6OgaS5xGwaIJYMXoB0q0sm7dsFhW2SGTsHLznwijl4/CuGh9/oWTvFMZ2ydMr68XE9nk6qRgHwrjpxWG4SQUkJJ/jwptHDwWGUun6dBghmUclh5YV7+62eHaJnTsy1tiwg=
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: ADBF890E55533CA3D08784747C3C1882B436106C825BCC1A9AAF43AD4F3E88222000:8
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1f7f00cf-9453-43cf-5bf7-08d810f60aef
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jun 2020 06:33:40.3743 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qTbP9cAGOAw091QLY9zkFceLr40n2FaHrFQTrMImZmyHG60N9X5z0FNoZ7WXnyBYSbSCRgKKM4Oqu6qwUgsUgA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5816
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_231747_727891_60663F0E 
-X-CRM114-Status: GOOD (  10.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200614_233352_057504_DA19682F 
+X-CRM114-Status: GOOD (  11.72  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.6.83 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -78,8 +111,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.83 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,95 +124,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Macpaul Lin <macpaul.lin@gmail.com>, Macpaul Lin <macpaul.lin@mediatek.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>
+Cc: Andy Duan <fugang.duan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, "kjlu@umn.edu" <kjlu@umn.edu>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Markus Elfring <Markus.Elfring@web.de>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace hardcode maximum usb string length (126 bytes) by definition
-"MAX_USB_STRING_LEN".
+> From: Wolfram Sang <wsa@kernel.org>
+> Sent: Sunday, June 14, 2020 5:12 PM
+> 
+> On Mon, Jun 01, 2020 at 02:16:40PM +0800, Dinghao Liu wrote:
+> > pm_runtime_get_sync() increments the runtime PM usage counter even the
+> > call returns an error code. Thus a corresponding decrement is needed
+> > on the error handling path to keep the counter balanced.
+> 
+> Can you point me to a discussion where it was decided that this is a proper fix?
+> I'd think we rather should fix pm_runtime_get_sync() but maybe there are
+> technical reasons against it.
 
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
----
-Changes for v2:
-  - Add definition "MAX_USB_STRING_LEN" in ch9.h instead of in usb.h.
-    Thanks for Alan's suggestion.
+I had the same feeling.
+Copy pm guys to comments.
 
- drivers/usb/gadget/composite.c |    4 ++--
- drivers/usb/gadget/configfs.c  |    2 +-
- drivers/usb/gadget/usbstring.c |    4 ++--
- include/uapi/linux/usb/ch9.h   |    3 +++
- 4 files changed, 8 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/usb/gadget/composite.c b/drivers/usb/gadget/composite.c
-index cb4950c..d0de016 100644
---- a/drivers/usb/gadget/composite.c
-+++ b/drivers/usb/gadget/composite.c
-@@ -1041,7 +1041,7 @@ static void collect_langs(struct usb_gadget_strings **sp, __le16 *buf)
- 	while (*sp) {
- 		s = *sp;
- 		language = cpu_to_le16(s->language);
--		for (tmp = buf; *tmp && tmp < &buf[126]; tmp++) {
-+		for (tmp = buf; *tmp && tmp < &buf[MAX_USB_STRING_LEN]; tmp++) {
- 			if (*tmp == language)
- 				goto repeat;
- 		}
-@@ -1116,7 +1116,7 @@ static int get_string(struct usb_composite_dev *cdev,
- 			collect_langs(sp, s->wData);
- 		}
- 
--		for (len = 0; len <= 126 && s->wData[len]; len++)
-+		for (len = 0; len <= MAX_USB_STRING_LEN && s->wData[len]; len++)
- 			continue;
- 		if (!len)
- 			return -EINVAL;
-diff --git a/drivers/usb/gadget/configfs.c b/drivers/usb/gadget/configfs.c
-index 32b637e..70dd4ba 100644
---- a/drivers/usb/gadget/configfs.c
-+++ b/drivers/usb/gadget/configfs.c
-@@ -115,7 +115,7 @@ static int usb_string_copy(const char *s, char **s_copy)
- 	char *str;
- 	char *copy = *s_copy;
- 	ret = strlen(s);
--	if (ret > 126)
-+	if (ret > MAX_USB_STRING_LEN)
- 		return -EOVERFLOW;
- 
- 	str = kstrdup(s, GFP_KERNEL);
-diff --git a/drivers/usb/gadget/usbstring.c b/drivers/usb/gadget/usbstring.c
-index 7c24d1c..8a8d647 100644
---- a/drivers/usb/gadget/usbstring.c
-+++ b/drivers/usb/gadget/usbstring.c
-@@ -55,9 +55,9 @@
- 		return -EINVAL;
- 
- 	/* string descriptors have length, tag, then UTF16-LE text */
--	len = min((size_t) 126, strlen (s->s));
-+	len = min((size_t)MAX_USB_STRING_LEN, strlen(s->s));
- 	len = utf8s_to_utf16s(s->s, len, UTF16_LITTLE_ENDIAN,
--			(wchar_t *) &buf[2], 126);
-+			(wchar_t *) &buf[2], MAX_USB_STRING_LEN);
- 	if (len < 0)
- 		return -EINVAL;
- 	buf [0] = (len + 1) * 2;
-diff --git a/include/uapi/linux/usb/ch9.h b/include/uapi/linux/usb/ch9.h
-index 2b623f3..cc02d05 100644
---- a/include/uapi/linux/usb/ch9.h
-+++ b/include/uapi/linux/usb/ch9.h
-@@ -364,6 +364,9 @@ struct usb_config_descriptor {
- 
- /*-------------------------------------------------------------------------*/
- 
-+/* USB String descriptors can contain at most 126 characters. */
-+#define MAX_USB_STRING_LEN	126
-+
- /* USB_DT_STRING: String descriptor */
- struct usb_string_descriptor {
- 	__u8  bLength;
--- 
-1.7.9.5
+Regards
+Aisheng
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
