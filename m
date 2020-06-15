@@ -2,52 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30B851F95A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:53:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7E251F95B2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:56:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=t36lJE7FcIPgRCSDZu/aw/thlrORXDjta9IhNFw3MdY=; b=JEl/RuNHJRdP03jleFuxpiSP2
-	zZnzkNDl8rcdVOh/RzHdC63DS0FjCt5zx9C/IvHXbXsRL97K9K4C+Ect8StP/Hy0eoSD4PBwkYcgY
-	fNmwwDNQ8DLvooL9I4kIlU/0SyKopxSIaQreL5UhR37OlQMwLnra/pi2kRXXJLR4H8KAEL1LCtcSa
-	f9kbRfC6MV4cOlAAO3TAntHSctrR/NQD9Ih3/rYy0cyZQo7fMQOoNgzY85qTF4lhPgk08auxVfXF8
-	M6s30AUrJweYtZ0S8QPEwOTriJEG9zoI2fosiRG0jIKCuiWTEMnE5HmprC6pkcciOSnZpm/X1REQr
-	UoJysBhvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=93d5fHV2oPKjaqNafvGZxI5rXzkzRbVE1MmFu4CWd1g=; b=eYt3O90pUXimGo
+	N08EUVpGmKMGck4MFD6Oh3MutVs3/i0Y8Qe4S2YIuhOFOQDVmjQDtNe93ZEzNbZp46Etk4D+J62MQ
+	E6K47vOzCzFi/Fo4JVMZ7Yi3QVa4wqACVxXyz29ymDQpII/tmfwngNNckmTVZTxpgYJLujSwRbB81
+	jZFxWi1N5eTUj+a2v3aslCyFAmlAJkATg0085r1fBW4SBa4VTVlzgKvhsPmW4299213goDGWNvYGs
+	1VkH4BDq+IMDvvuJ+zaFabrZqaNA1+JpPr++PmPPJjx6gn02Z256toBLtBB3VoCLpDoGfUENwDrBg
+	iXxNOLnAbauB8jaDeFkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkngT-0001vv-B7; Mon, 15 Jun 2020 11:53:49 +0000
+	id 1jknid-0004zG-Vu; Mon, 15 Jun 2020 11:56:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkngK-0001vT-9D
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:53:41 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6743720707;
- Mon, 15 Jun 2020 11:53:39 +0000 (UTC)
+ id 1jkniW-0004yn-5b
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:55:57 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 10F7F20707;
+ Mon, 15 Jun 2020 11:55:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592222019;
- bh=ucsWxCGxcXrDZ8lJt9rGlvTvHt6cK583zUTyVvXZjQU=;
+ s=default; t=1592222154;
+ bh=AO7AE4H28zPxTT7UHp3OpiQhDU8PH5d+mG1D/8R7SwA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PfyejClY80eromUUWRPmUlPHFj99e+kXp6dKholDjCQTT8rxom6U8N/fM8Hv2uttP
- QJLgscHYXdo+8oKKD5ud7NgHRYCekpqibqeHCkcvyR8lszOiPXaxK/Fk46pxShok0Y
- YWCuo55go8hHRsUMfTVVOCJ6/1iRxC4kXUrAbkdo=
-Date: Mon, 15 Jun 2020 12:53:37 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: Clang miscompiling arm64 kernel with BTI and PAC?
-Message-ID: <20200615115337.GG4447@sirena.org.uk>
-References: <20200615105524.GA2694@willie-the-truck>
+ b=qvzQqPQA3BQ1OLRePjsqrdXDVTmCHirBImXPywATw+TELdMrEIE9m+qbuGqLkMtSI
+ awSxXXgOxwAKHGYVeID31HizncxE8uNnVDdmjVGRdfvDS9FpPav4KTqnzQRK3W2Rbr
+ ufdyXiqS8JkFdaMr+FFK+/vlwf9rTPYhSHlM5AhU=
+Date: Mon, 15 Jun 2020 12:55:49 +0100
+From: Will Deacon <will@kernel.org>
+To: Achin Gupta <achin.gupta@arm.com>
+Subject: Re: [RFC PATCH 1/3] dt-bindings: Add ARM PSA FF binding for
+ non-secure VM partitions
+Message-ID: <20200615115549.GB2694@willie-the-truck>
+References: <20200601094512.50509-1-sudeep.holla@arm.com>
+ <20200601094512.50509-2-sudeep.holla@arm.com>
+ <20200609223551.GA1620273@bogus>
+ <20200610074346.GB15939@willie-the-truck>
+ <5B3F18A4-5DA4-411E-9E26-7D25DEE3D414@arm.com>
+ <20200611171222.GB7725@willie-the-truck>
+ <20200615091639.GD46361@C02TC1ARHF1T>
+ <20200615095133.GA2477@willie-the-truck>
+ <20200615114220.GE46361@C02TC1ARHF1T>
 MIME-Version: 1.0
-In-Reply-To: <20200615105524.GA2694@willie-the-truck>
-X-Cookie: Offer may end without notice.
+Content-Disposition: inline
+In-Reply-To: <20200615114220.GE46361@C02TC1ARHF1T>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_045340_342208_B8055808 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200615_045556_250182_F31E5EF0 
+X-CRM114-Status: GOOD (  24.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,79 +85,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, android-kvm@google.com, catalin.marinas@arm.com,
- ndesaulniers@google.com, clang-built-linux@googlegroups.com,
- linux-arm-kernel@lists.infradead.org, daniel.kiss@arm.com
-Content-Type: multipart/mixed; boundary="===============0223846162043333789=="
+Cc: Rob Herring <robh@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Marc Zyngier <maz@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sudeep Holla <Sudeep.Holla@arm.com>, nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 15, 2020 at 12:42:20PM +0100, Achin Gupta wrote:
+> On Mon, Jun 15, 2020 at 10:51:34AM +0100, Will Deacon wrote:
+> > On Mon, Jun 15, 2020 at 10:16:39AM +0100, Achin Gupta wrote:
+> > > Right! FFA_PARTITION_INFO_GET is meant to help the FF-A driver in the kernel to
+> > > determine partition properties. It assumes that EL2 SW has already read each
+> > > partition's manifest and will reply to this ABI.
+> > >
+> > > IIUC, with protected KVM, this information will have to be a part of the
+> > > manifest that the KVM host consumes.
+> >
+> > The host does not consume the manifest directly -- instead, the bootloader
+> > will use the manifest to populate these DT nodes. Again, these are *only*
+> > for non-secure virtual partitions which are to be managed by KVM.
+> 
+> Yes. Understand and agree. Manifest is an overloaded term. I was using it to
+> describe the DT nodes that the host will consume.
 
---===============0223846162043333789==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="oOB74oR0WcNeq9Zb"
-Content-Disposition: inline
+Hmm, I think that conflates two things though because only the partitions
+managed by KVM will have DT nodes.
 
+> > > Separate topic, protected KVM does not get dibs on the manifest and it relies on
+> > > the KVM host to specify the address ranges for each partition? Does this not
+> > > mean that the KVM host can control the physical address space each partition
+> > > sees. This seems contrary to the isolation guarantees that protected KVM must
+> > > provide?
+> >
+> > The host is trusted during early boot, and gives up this trust after
+> > initialising EL2 fully. So roughly speaking, we:
+> >
+> > 	* Boot at EL2 and install a shim
+> > 	* Drop down to EL2 and start the host kernel
+> > 	* Before some initialisation (DT parsing, SMP bringup, etc)
+> > 	* Init KVM by calling back up to EL2 to install the full hypervisor
+> >
+> > At that point, the EL1 host is no longer trusted and the last call
+> > effectively "locks it out" from EL2.
+> 
+> Ok. Protected KVM (PKVM) must create S2 tables when asked to setup a partition
+> by the Host. My main concern is if PKVM must trust the Host to provide the
+> correct physical address space ranges for a partition?
 
---oOB74oR0WcNeq9Zb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Yes, but that all happens as part of KVM initialisation: the host parses
+the DT nodes and memory reservations, and then passes this information
+up to EL2.
 
-On Mon, Jun 15, 2020 at 11:55:24AM +0100, Will Deacon wrote:
+> I guess your point is this is not a problem since PKVM can lock the Host out of
+> those address ranges in any case?
 
-> Here, the switch statement has been replaced by a jump table which we *tail
-> call* into. The register dump shows we're going to 0xffffd68929392e14:
+It has to do this, regardless of how they are probed. Once KVM has
+initialised, the host will have a stage-2 which limits it to the memory that
+it is allowed to access.
 
-> ffff800010032e14:       d503233f        paciasp
-> ffff800010032e18:       a9bf7bfd        stp     x29, x30, [sp, #-16]!
-> ffff800010032e1c:       910003fd        mov     x29, sp
-> ffff800010032e20:       aa0803e0        mov     x0, x8
-> ffff800010032e24:       940017c0        bl      ffff800010038d24 <kvm_vm_ioctl_check_extension>
-> ffff800010032e28:       93407c00        sxtw    x0, w0
-> ffff800010032e2c:       a8c17bfd        ldp     x29, x30, [sp], #16
-> ffff800010032e30:       d50323bf        autiasp
-> ffff800010032e34:       d65f03c0        ret
+> It is a bit counter intuitive that the Host gets to see and potentially
+> manipulate information that was verified and extracted by the bootloader from
+> the partition's manifest. This hapens before PKVM sees the same
+> information. Can't put my finger on what could go wrong though. Depends upon the
+> threat model too!
 
-> The problem is that the paciasp instruction is not BTYPE-compatible with BR;
-> it expects to be called with a branch-and-link, and so we panic. I think you
-> need to emit a 'bti j' here prior to the paciasp.
+I think you're trying too hard to separate the host from the EL2 code during
+early boot. Don't forget -- this is all part of the same binary payload that
+is loaded and initially run at EL2. Having the host take care of early boot
+/significantly/ reduces the amount of code at EL2, which has a very
+clear security benefit.
 
-I checked with our internal teams and they actually ran into this
-recently with some other code, the patch:
-
-   https://reviews.llvm.org/D81746
-
-([AArch64] Fix BTI instruction emission) should fix this, it's been
-reviewed so should be merged shortly.
-
---oOB74oR0WcNeq9Zb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7nYUAACgkQJNaLcl1U
-h9DyLQf7Bhsfl2G+2q4v0J8E4KX19EIP7PbfT//jfywg/LCih22CzPQ4ow90jBEa
-a/9+8AtECexLWj1QCwOp/Zoik27A/YB+bNtRMOLYk12G4YthHncarh/TqcNJM9h3
-HUD/m7BSfcxOCYiKBk3zR3SwWkNMl+gsbvwC1cPEgeE9v/VlGZKDNZrj6/FZCCvp
-MrkD7kOuWoYTsYNQaVkQwxFGU4eHsXSTyy62fxtpJEptN4j7C61YWK//N/Bysnde
-6thlTzSFrWcqQkf1KkIhuwna6FP3nXHcu4VMJKbqy97qmaqBo02BP+8qrxmU/JtG
-G8uJ/qZAsHPvBKF84FJ8wkZewcDGLw==
-=3A9l
------END PGP SIGNATURE-----
-
---oOB74oR0WcNeq9Zb--
-
-
---===============0223846162043333789==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0223846162043333789==--
-
