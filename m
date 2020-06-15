@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A4C61F9142
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15B841F9146
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:21:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wENlajTzxkvDTYAK2E968vT8arUNTZdSdCy0PBWgJGE=; b=nugzYFczt/q4XQ
-	/yRSm9NBykk3vh0+fM0RO5Xq5WIp2PiyVc1kV5EpMaVMqXxawb6fPupxQv1iRDIgg7jA2UKgrRmJG
-	qHYcgOiwHBT3aD2cYI2Qmhyur5f3V/UeSi/r097nsKR2QFwlI47TuVoV4QLBrQz1EBSyrJs2KGTq6
-	iiy6i0UTgRb/ujWqWezreqc2o4aAsiWwyFqvu1rPuSAsDHiXPnc3dHNuICOfbv84kH4nTMl/NzNVL
-	Cie3PEfymbxyzsS5Naz8mGvTUKW7OY+ERxtscI7Hvkfyh3y1Q1Ag9QOzYAZG01ev5dlKCQfLdFrXt
-	UzmE7XFPhxTskUeWYHQg==;
+	List-Owner; bh=tKiYvDkT+F/KhC+sXK/ML/qDOS4idxwms7WcOE8VeKk=; b=RSz9Ymwo6asLx2
+	vGWaxWE+qyanAzupWDNyL6I1ZqsrdOVsF9MvGQbrtIRpCJcBAE7y7v0ylbMDR4WvpSYcuh7L4lTua
+	XT84a+ABoFTimuTgh4SL7iITFgFFwxP044o+E0QCGitMHiitKUpnshjvzHEm1AfArO0CKZcFK01rZ
+	jnwHrf4ncK6x2kBOryWi0mteANK1Nl4Hw0cvHirUPKh7rm+6I+P1r8moR11IWziznU0o/EdbsAtqv
+	PgETgAzCv3bTAEiPbIjNWW8UeBFjrdedTQsbpXC9JhHxOSbeG0as0yEHolAh1MSin9WrWfJpy9dm5
+	3osBpu/gKa5JseHgvbLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkkMQ-0004rs-7p; Mon, 15 Jun 2020 08:20:54 +0000
+	id 1jkkMg-0005A1-VE; Mon, 15 Jun 2020 08:21:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkLe-0003AT-3v
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:20:08 +0000
+ id 1jkkLe-0003Ko-PR
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:20:09 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AD0E52068E;
- Mon, 15 Jun 2020 08:20:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6076620714;
+ Mon, 15 Jun 2020 08:20:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592209205;
- bh=IyUoA5HHobhU+zQ+UlsDQmzlUdahHvTQN8l1w3bApgE=;
+ s=default; t=1592209206;
+ bh=teLpAbnj9atb0pVhfPoGLTjUX7m3uxJIO1TyC1h59vY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PgiUupTNUC/sx/RLSvYu1ASmHcnr8UkaYGZYaDrk4UdUpIkFVHCImTmiTMiKsKhsN
- aO9QNGCgumztrkR3305CuDdGDtY9T/Bzli2u5ea1wNQ5n8sjGT1QspUzfY3j6GCJHS
- r3SO+n+EYzmgDdWPLcqx0E7HRZPQIYQJa9PveiAM=
+ b=lZuFDXssn8emu7X/tg8N78917FwVRqNDHKQXjkCvvoxpQsRJjQexKxXK61MeK4ODD
+ soHkKFhEr2beO4N43BYHW7J2tCp0g8HbhidR4ihWVYGMGxyJTYy0sxvGMpMD4lVR1t
+ 2neHDmARfYxvJ6wyi6ZzP7btSdSXoboV7R+TOTVU=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=wait-a-minute.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jkkLc-0031ew-81; Mon, 15 Jun 2020 09:20:04 +0100
+ id 1jkkLc-0031ew-Qn; Mon, 15 Jun 2020 09:20:05 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  kvmarm@lists.cs.columbia.edu
-Subject: [PATCH 2/4] KVM: arm64: Allow ARM64_PTR_AUTH when ARM64_VHE=n
-Date: Mon, 15 Jun 2020 09:19:52 +0100
-Message-Id: <20200615081954.6233-3-maz@kernel.org>
+Subject: [PATCH 3/4] KVM: arm64: Allow PtrAuth to be enabled from userspace on
+ non-VHE systems
+Date: Mon, 15 Jun 2020 09:19:53 +0100
+Message-Id: <20200615081954.6233-4-maz@kernel.org>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200615081954.6233-1-maz@kernel.org>
 References: <20200615081954.6233-1-maz@kernel.org>
@@ -59,8 +60,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_012006_186313_5B091633 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20200615_012006_854525_EA8D81C1 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,40 +98,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We currently prevent PtrAuth from even being built if KVM is selected,
-but VHE isn't. It is a bit of a pointless restriction, since we also
-check this at run time (rejecting the enabling of PtrAuth for the
-vcpu if we're not running with VHE).
-
-Just drop this apparently useless restriction.
+Now that the scene is set for enabling PtrAuth on non-VHE, drop
+the restrictions preventing userspace from enabling it.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/Kconfig | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ arch/arm64/kvm/reset.c | 21 ++++++++++-----------
+ 1 file changed, 10 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 31380da53689..d719ea9c596d 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1516,7 +1516,6 @@ menu "ARMv8.3 architectural features"
- config ARM64_PTR_AUTH
- 	bool "Enable support for pointer authentication"
- 	default y
--	depends on !KVM || ARM64_VHE
- 	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
- 	# GCC 9.1 and later inserts a .note.gnu.property section note for PAC
- 	# which is only understood by binutils starting with version 2.33.1.
-@@ -1543,8 +1542,7 @@ config ARM64_PTR_AUTH
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index d3b209023727..2a929789fe2e 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -42,6 +42,11 @@ static u32 kvm_ipa_limit;
+ #define VCPU_RESET_PSTATE_SVC	(PSR_AA32_MODE_SVC | PSR_AA32_A_BIT | \
+ 				 PSR_AA32_I_BIT | PSR_AA32_F_BIT)
  
- 	  The feature is detected at runtime. If the feature is not present in
- 	  hardware it will not be advertised to userspace/KVM guest nor will it
--	  be enabled. However, KVM guest also require VHE mode and hence
--	  CONFIG_ARM64_VHE=y option to use this feature.
-+	  be enabled.
++static bool system_has_full_ptr_auth(void)
++{
++	return system_supports_address_auth() && system_supports_generic_auth();
++}
++
+ /**
+  * kvm_arch_vm_ioctl_check_extension
+  *
+@@ -80,8 +85,7 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
+ 		break;
+ 	case KVM_CAP_ARM_PTRAUTH_ADDRESS:
+ 	case KVM_CAP_ARM_PTRAUTH_GENERIC:
+-		r = has_vhe() && system_supports_address_auth() &&
+-				 system_supports_generic_auth();
++		r = system_has_full_ptr_auth();
+ 		break;
+ 	default:
+ 		r = 0;
+@@ -205,19 +209,14 @@ static void kvm_vcpu_reset_sve(struct kvm_vcpu *vcpu)
  
- 	  If the feature is present on the boot CPU but not on a late CPU, then
- 	  the late CPU will be parked. Also, if the boot CPU does not have
+ static int kvm_vcpu_enable_ptrauth(struct kvm_vcpu *vcpu)
+ {
+-	/* Support ptrauth only if the system supports these capabilities. */
+-	if (!has_vhe())
+-		return -EINVAL;
+-
+-	if (!system_supports_address_auth() ||
+-	    !system_supports_generic_auth())
+-		return -EINVAL;
+ 	/*
+ 	 * For now make sure that both address/generic pointer authentication
+-	 * features are requested by the userspace together.
++	 * features are requested by the userspace together and the system
++	 * supports these capabilities.
+ 	 */
+ 	if (!test_bit(KVM_ARM_VCPU_PTRAUTH_ADDRESS, vcpu->arch.features) ||
+-	    !test_bit(KVM_ARM_VCPU_PTRAUTH_GENERIC, vcpu->arch.features))
++	    !test_bit(KVM_ARM_VCPU_PTRAUTH_GENERIC, vcpu->arch.features) ||
++	    !system_has_full_ptr_auth())
+ 		return -EINVAL;
+ 
+ 	vcpu->arch.flags |= KVM_ARM64_GUEST_HAS_PTRAUTH;
 -- 
 2.27.0
 
