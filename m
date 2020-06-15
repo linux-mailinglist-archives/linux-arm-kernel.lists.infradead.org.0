@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35B081F987E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:28:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E358A1F9883
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 15:28:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=42Cq3oO7ux5fcUaY549knSyTivdhWKbf+3ltQ4jQ5Gw=; b=gu0SWPYIKMeNEF
-	2NtyMkTf8PHaEANCpL5qeVPflKm+z0iLr2TIl2bXvaqlIzHX4wK9rrUybMTuDbjnVK77WEUq+7xFZ
-	Ry2XM7cNlVi5R1TF6sswl5macajOvNeYQ+vwnMYndZk8VMuQ/hz1j0wyrmtCp9idKncNur9x20wtG
-	+3C5QCXxc4bjFQtmx8AHwscg+XIxLC4O6U8LLBulLH7NsFNBKR8KmEsWQ8BcEDfuoUgxjZlbI5VB1
-	AJGvkEY00amOH1k2oAkb3LNJBdzjo0HG+vV8Mqo830RkzvWYBTM8nCJLvMMPa7kvULBAawFZm629E
-	077+Pyf9S+75LYYDBCEg==;
+	List-Owner; bh=EOQXduEpktmajXgrWiIaw9/wB42eNgLfJhsQ9VQBPSw=; b=JKPwiwgqed6s1G
+	/DNzx9uU9MZpFggQQ8pIjpeUKvdaTA7C/UjFY3GYybxGz+4am7p8oKJ5yZtW5DFMuNNWbikogbtdc
+	t9KqSYebHScq7yYq/TIy+HwNoKZJPWu2QiCCui+ElBl+UJK3TzrXMPTxzA1GwmWscyteRDOOpUOtS
+	C2ygSosbEbAth0NA214qk1xq8mWDyJ2ifwr2uxbzsXZnZc/nI3FAuGVN45X5Awki10AR/w3UAknpd
+	dSVN0LbI4olAik46ZAeQz2etSythfj7RledDkI7Un5UMJFxrbyFBza4KTcxyjHXlDHDtDV3lvxXST
+	JZpTJdaVwE+1qDlYVFeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkp9p-0001y1-IW; Mon, 15 Jun 2020 13:28:13 +0000
+	id 1jkpA4-0002GT-MH; Mon, 15 Jun 2020 13:28:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkp9H-0001lM-BU
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:27:40 +0000
+ id 1jkp9I-0001le-5L
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 13:27:42 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DF0D0207D4;
- Mon, 15 Jun 2020 13:27:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD0D7207D3;
+ Mon, 15 Jun 2020 13:27:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1592227659;
- bh=rLQjYcCm94Zoc0awY10i+1Fx+oNalmwQo14Gfz2ySh8=;
+ bh=dhWuPpmAVk+44oMBcMvSwUdvIZADnaHzjuY66vjxD+E=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qiBnJRF7qgFNgg+s/juSxfo5/L3rlQQif7ej2XGk5kHXdDqeZYdgGrNk3HB5IZIso
- agdxaFzLeR6UBgOqWOZsHySW0Qiajh7n76snOobmTVScCPajm1bThEEPHnIYRp041P
- DVvXEevVeUuhLyrtjkcZkK+lflSc4zvLB2UQcNPs=
+ b=0FvOOVP8gkVTC+WZeH4bLtllu7+wpiWqIlIMX2ksWS+EJz9OjkyQuj3VJa+QzHruK
+ FsCVyUnapqz5f1gs1YOLBfl+DSa9u7kLJ8Kv4koz1Colb35/sklB8cEJr0vxe5PCM0
+ IIUmf5mHsgAJfOIc6ZPuhuyM82THeTR7TkhZW9oM=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jkp9F-0036w9-G3; Mon, 15 Jun 2020 14:27:37 +0100
+ id 1jkp9G-0036w9-9X; Mon, 15 Jun 2020 14:27:38 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 02/17] arm64: Detect the ARMv8.4 TTL feature
-Date: Mon, 15 Jun 2020 14:27:04 +0100
-Message-Id: <20200615132719.1932408-3-maz@kernel.org>
+Subject: [PATCH v2 03/17] arm64: Document SW reserved PTE/PMD bits in Stage-2
+ descriptors
+Date: Mon, 15 Jun 2020 14:27:05 +0100
+Message-Id: <20200615132719.1932408-4-maz@kernel.org>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200615132719.1932408-1-maz@kernel.org>
 References: <20200615132719.1932408-1-maz@kernel.org>
@@ -63,8 +64,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_062739_428612_7BC78667 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200615_062740_241386_A7D23918 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -108,76 +109,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to reduce the cost of TLB invalidation, the ARMv8.4 TTL
-feature allows TLBs to be issued with a level allowing for quicker
-invalidation.
+Advertise bits [58:55] as reserved for SW in the S2 descriptors.
 
-Let's detect the feature for now. Further patches will implement
-its actual usage.
-
-Reviewed-by : Suzuki K Polose <suzuki.poulose@arm.com>
+Reviewed-by: Andrew Scull <ascull@google.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/cpucaps.h |  3 ++-
- arch/arm64/include/asm/sysreg.h  |  1 +
- arch/arm64/kernel/cpufeature.c   | 11 +++++++++++
- 3 files changed, 14 insertions(+), 1 deletion(-)
+ arch/arm64/include/asm/pgtable-hwdef.h | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index d7b3bb0cb180..d44ba903d11d 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -62,7 +62,8 @@
- #define ARM64_HAS_GENERIC_AUTH			52
- #define ARM64_HAS_32BIT_EL1			53
- #define ARM64_BTI				54
-+#define ARM64_HAS_ARMv8_4_TTL			55
+diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+index 9c91a8f93a0e..de0b603955f4 100644
+--- a/arch/arm64/include/asm/pgtable-hwdef.h
++++ b/arch/arm64/include/asm/pgtable-hwdef.h
+@@ -178,10 +178,12 @@
+ #define PTE_S2_RDONLY		(_AT(pteval_t, 1) << 6)   /* HAP[2:1] */
+ #define PTE_S2_RDWR		(_AT(pteval_t, 3) << 6)   /* HAP[2:1] */
+ #define PTE_S2_XN		(_AT(pteval_t, 2) << 53)  /* XN[1:0] */
++#define PTE_S2_SW_RESVD		(_AT(pteval_t, 15) << 55) /* Reserved for SW */
  
--#define ARM64_NCAPS				55
-+#define ARM64_NCAPS				56
+ #define PMD_S2_RDONLY		(_AT(pmdval_t, 1) << 6)   /* HAP[2:1] */
+ #define PMD_S2_RDWR		(_AT(pmdval_t, 3) << 6)   /* HAP[2:1] */
+ #define PMD_S2_XN		(_AT(pmdval_t, 2) << 53)  /* XN[1:0] */
++#define PMD_S2_SW_RESVD		(_AT(pmdval_t, 15) << 55) /* Reserved for SW */
  
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 463175f80341..8c209aa17273 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -746,6 +746,7 @@
- 
- /* id_aa64mmfr2 */
- #define ID_AA64MMFR2_E0PD_SHIFT		60
-+#define ID_AA64MMFR2_TTL_SHIFT		48
- #define ID_AA64MMFR2_FWB_SHIFT		40
- #define ID_AA64MMFR2_AT_SHIFT		32
- #define ID_AA64MMFR2_LVA_SHIFT		16
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 4ae41670c2e6..bda002078ec5 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -323,6 +323,7 @@ static const struct arm64_ftr_bits ftr_id_aa64mmfr1[] = {
- 
- static const struct arm64_ftr_bits ftr_id_aa64mmfr2[] = {
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_E0PD_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_TTL_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_FWB_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_AT_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_LVA_SHIFT, 4, 0),
-@@ -1880,6 +1881,16 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.matches = has_cpuid_feature,
- 		.cpu_enable = cpu_has_fwb,
- 	},
-+	{
-+		.desc = "ARMv8.4 Translation Table Level",
-+		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.capability = ARM64_HAS_ARMv8_4_TTL,
-+		.sys_reg = SYS_ID_AA64MMFR2_EL1,
-+		.sign = FTR_UNSIGNED,
-+		.field_pos = ID_AA64MMFR2_TTL_SHIFT,
-+		.min_field_value = 1,
-+		.matches = has_cpuid_feature,
-+	},
- #ifdef CONFIG_ARM64_HW_AFDBM
- 	{
- 		/*
+ #define PUD_S2_RDONLY		(_AT(pudval_t, 1) << 6)   /* HAP[2:1] */
+ #define PUD_S2_RDWR		(_AT(pudval_t, 3) << 6)   /* HAP[2:1] */
 -- 
 2.27.0
 
