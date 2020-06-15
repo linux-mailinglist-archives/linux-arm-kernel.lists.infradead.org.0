@@ -2,91 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A662B1FA2E9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 23:35:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84C6E1FA34D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 00:16:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=68c3qKnuHDtDPEQ33vdbnto/Jmgp7zRYZyZT66mWq9A=; b=CkDjT010zWoOej
-	PldLcn5Jw3y12GDeGedoNhjAnfR8iWkibNt02XAk30toIyddWpKAz+uCNHx7N0HIj8J0B+sv9mL3B
-	EodtrpxAQtoRpczba2pJt53FVsY+SuMeEuUZMOLbk4P6OC1LTsMcCSWbYCRyfwfY+ro0p7dkA6SDH
-	D4sCnpDo6J87I+PK1Ohr0n8j84fe34CpSVLhwSq6gD9yzfqQXPCqtQyt1KbY2RyqnPeyFTV+l8Opl
-	DNGIwNIoe4CQAssdmdx1xoP2g9fvGegiC3X/Rqm3KMkZWIxhFTuk+yqj3eao2JHlVI/adLaWuSp/R
-	+slcpHQ4iJxbWlpPm4Qg==;
+	List-Owner; bh=hvwMzqOE+UxXHcpOm53jV3rdS0A2xvUbF8YZ2K7+6LE=; b=EQCqrEU4zlR65F
+	VPtJ4JI0zUVM1fkjDiXJ6SYKJxsup7pygYh9HnyiJHu1GaiOLchIjmvoMgsKrvnbt4wes28OD24a5
+	YrK2/HVMwZUADRoKCrpMVBHe6lK/N9VKIcr3fnCK3c5G3E8lXATGQHb66XuX7OPHd2oXAQmZlU5/k
+	nYIpjMIV2aEJMngQ2ahKKxsWTIEwimhYHBAXfsq1ChJyEyneoVzGICmvoArpAoVD1dEyW4OkCGJRF
+	3pbpH6OZqDQbr/dvZsBZ7i2Y7fSFykX3UANMLJjJEXtzTlByCo7xE+dOd6y1qNhK4xijSKWYBNy2Q
+	Q6O3JTf1pdNiDcIeGI4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkwkm-0007Wy-9x; Mon, 15 Jun 2020 21:34:52 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+	id 1jkxP3-0008Go-Ve; Mon, 15 Jun 2020 22:16:29 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkwka-0007VW-H7
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 21:34:42 +0000
+ id 1jkxOv-0008FZ-M5
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 22:16:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1592256876;
+ s=mimecast20190719; t=1592259380;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=ItwxuioZVdA5XdCXR1QbAewm4+8qdb0KbH1lb+9ehrA=;
- b=gVPACN6xO1SeIGsjRKFWvtdrnZBydlA/xLaXlBTA9ukZGl8rrSHTnjN2uogdd2Fc4Dt43t
- N034oGy0lR/F8iU1msOQSncDNnrtFpLzDG+Yj7bkEUSC/23fQh5XZcOAkeqq2c9/GUp5z8
- vlzphSUVDu2xnhW42LAOptOJw/OIneY=
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com
- [209.85.160.199]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-272-YWDA7cnDPtKmx8J1vIQAOw-1; Mon, 15 Jun 2020 17:34:34 -0400
-X-MC-Unique: YWDA7cnDPtKmx8J1vIQAOw-1
-Received: by mail-qt1-f199.google.com with SMTP id l26so15117237qtr.14
+ bh=KKXlC2Ik8MurO5EQW9zZhxy63+C0QjUDgELZmh6OLDU=;
+ b=XzjbGjYSO2ZZ0YPuDEfe5hlMZ+8jzM0eBMEMih5xZm0rVqn1E31JbYmv/vK8lBQmDzTw0p
+ 5OHcLdy2pm9NzbqVjT9jy0ILTYVjjsUiMIp1z1CJUGSa7KMuqX30wft1zRdqfSPtWVg/vt
+ 7AhVK6usG+dHFogTO7MvUzdrT1jZsDc=
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
+ [209.85.219.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-273-SbTEflwCNwqpfdK_E0kEvg-1; Mon, 15 Jun 2020 18:16:19 -0400
+X-MC-Unique: SbTEflwCNwqpfdK_E0kEvg-1
+Received: by mail-qv1-f69.google.com with SMTP id j4so14112010qvt.20
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 14:34:34 -0700 (PDT)
+ Mon, 15 Jun 2020 15:16:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=ItwxuioZVdA5XdCXR1QbAewm4+8qdb0KbH1lb+9ehrA=;
- b=BkjwR2iqSmc7AvtTJxupOJRcaiU4zPxd7bqjHKD8WNlL4cBndIXLXw5tnoznqBJAG5
- +1chc42JR/QG+i647NwV8/oq2wfzVMK1kE2z4q1k5DT2H7wK95J8f6T7OBpqUf768RYe
- s1vK7OZHdYGiO+SdujpwJX7v5IHFsgtCv9jiCbDI550b2iC7JZCMNJHcZcALqDb9Aas7
- K2iSzD0W4aBOV28Av3iJWFIWGUQA3ALLED18wRkrdGwf2bPLhVNsQIx8q7mpPSDIo+iq
- YKHgluapMb8yhiRXwpcYTyCDIr9MpnyNlauMpaCixunkxeMfJTTvSHatOlXq43Azm1To
- 4xHQ==
-X-Gm-Message-State: AOAM533VGElNeZuyOICem0e1B7zNtsGpMF3y20YPZv/VDun08ummFbwg
- on9XVTjb3qe609cO1gTualbsHp0w2DTEB3rllg9Zs29VVpr/ENWmRkCsv9dr+yQ5CnkESIio6ye
- 4DbrpmDyRquXewDLluiPFLCzvRBbpaVDy88Q=
-X-Received: by 2002:a0c:ed31:: with SMTP id u17mr25540574qvq.117.1592256874108; 
- Mon, 15 Jun 2020 14:34:34 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJz0iHGiHde51cucRTUPE7NzfM/1jQRbNlFV4ChXmFExBXup/Ay4TPRKGywEeToUwHIWcL2Psg==
-X-Received: by 2002:a0c:ed31:: with SMTP id u17mr25540552qvq.117.1592256873805; 
- Mon, 15 Jun 2020 14:34:33 -0700 (PDT)
-Received: from xz-x1 ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id f30sm12961493qtb.9.2020.06.15.14.34.31
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=KKXlC2Ik8MurO5EQW9zZhxy63+C0QjUDgELZmh6OLDU=;
+ b=ZO/yuMu3ud7c7J/cSan5J9Sc64IzE5ZMszzDcD3mraKyxXmUg1uXgvgT71rRGVJ2tu
+ MlZPtDVE0a5Uy4Nr3zjKTni68Djt0+KOUdcb1XUK4k+u0HzKLnF9yQ7nY+yupCzb/xyJ
+ Haf+ZWx0FiVKpTzOdtpD7RVBsf08YQj3RkgovAszvPntbesx16KDck+Hfj0125Af3NNI
+ I8zd+O+vGMUw1Kfg1oNwe/6theK58T3Ucb3DV0BBoLL64eoQkfAij7nLKjnQDI8Yb5MY
+ H33RcRsNaMxFllJVmOB817JUHGH/RMivg9nn3TXUNu7+ZFEvUZJrC9wHmrVS/SaJXnS6
+ xScA==
+X-Gm-Message-State: AOAM531exNm36jRVqHyvoslg5OiBZCoBl9ZySTz0q/cIdrxKH0Zol1XQ
+ Flp/1BJtqpTOvmwyRq0x5BruY9Gb1DEqlte+QpT1j9ZaZfpj6YDjnD9iFXXtSKB/ldisCuXM+wS
+ RzEKHQb4seDptyBjcvNrE6EY4r0apE7mCrzs=
+X-Received: by 2002:a05:6214:17cb:: with SMTP id
+ cu11mr26619258qvb.202.1592259378652; 
+ Mon, 15 Jun 2020 15:16:18 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzYdEz/PXgGWV8lG2AkZeCE0DWjNT0NnU9fGbVJx/ytdFI4o+mld4AJShPV7+8taxw+Ukt3hQ==
+X-Received: by 2002:a05:6214:17cb:: with SMTP id
+ cu11mr26619231qvb.202.1592259378438; 
+ Mon, 15 Jun 2020 15:16:18 -0700 (PDT)
+Received: from xz-x1.hitronhub.home ([2607:9880:19c0:32::2])
+ by smtp.gmail.com with ESMTPSA id w13sm12351509qkb.91.2020.06.15.15.16.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 14:34:33 -0700 (PDT)
-Date: Mon, 15 Jun 2020 17:34:31 -0400
+ Mon, 15 Jun 2020 15:16:17 -0700 (PDT)
 From: Peter Xu <peterx@redhat.com>
-To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
-Subject: Re: Possible duplicate page fault accounting on some archs after
- commit 4064b9827063
-Message-ID: <20200615213431.GC111927@xz-x1>
-References: <20200610174811.44b94525@thinkpad> <20200610165023.GA67179@xz-x1>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 05/25] mm/arm: Use mm_fault_accounting()
+Date: Mon, 15 Jun 2020 18:15:47 -0400
+Message-Id: <20200615221607.7764-6-peterx@redhat.com>
+X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200615221607.7764-1-peterx@redhat.com>
+References: <20200615221607.7764-1-peterx@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20200610165023.GA67179@xz-x1>
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_143440_634928_CEA639BF 
-X-CRM114-Status: GOOD (  23.20  )
+X-CRM114-CacheID: sfid-20200615_151621_791707_678D0938 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.120 listed in wl.mailspike.net]
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -109,67 +111,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, linux-hexagon@vger.kernel.org,
- Ley Foon Tan <ley.foon.tan@intel.com>, Andrea Arcangeli <aarcange@redhat.com>,
- linux-xtensa@linux-xtensa.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Michal Simek <monstr@monstr.eu>, Nick Hu <nickhu@andestech.com>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-alpha@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Andrea Arcangeli <aarcange@redhat.com>, Will Deacon <will@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, peterx@redhat.com,
+ linux-arm-kernel@lists.infradead.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 10, 2020 at 12:50:23PM -0400, Peter Xu wrote:
-> On Wed, Jun 10, 2020 at 05:48:11PM +0200, Gerald Schaefer wrote:
-> > Hi,
-> 
-> Hi, Gerald,
-> 
-> > 
-> > Some architectures have their page fault accounting code inside the fault
-> > retry loop, and rely on only going through that code once. Before commit
-> > 4064b9827063 ("mm: allow VM_FAULT_RETRY for multiple times"), that was
-> > ensured by testing for and clearing FAULT_FLAG_ALLOW_RETRY.
-> > 
-> > That commit had to remove the clearing of FAULT_FLAG_ALLOW_RETRY for all
-> > architectures, and introduced a subtle change to page fault accounting
-> > logic in the affected archs. It is now possible to go through the retry
-> > loop multiple times, and the affected archs would then account multiple
-> > page faults instead of just one.
-> > 
-> > This was found by coincidence in s390 code, and a quick check showed that
-> > there are quite a lot of other architectures that seem to be affected in a
-> > similar way. I'm preparing a fix for s390, by moving the accounting behind
-> > the retry loop, similar to x86. It is not completely straight-forward, so
-> > I leave the fix for other archs to the respective maintainers.
-> 
-> Sorry for not noticing this before.  The accounting part should definitely be
-> put at least into a check against fault_flag_allow_retry_first() to mimic what
-> was done before.  And I agree it would be even better to put it after the retry
-> logic, so if any of the page faults gets a major fault, it'll be accounted as a
-> major fault which makes more sense to me, just like what x86 is doing now with:
-> 
-> 	major |= fault & VM_FAULT_MAJOR;
-> 
-> I'm not sure what's the preference of the arch maintainers, just let me know if
-> it's preferred to use a single series to address this issue for all affected
-> archs (or the archs besides s390), then I'll do.
+Use the new mm_fault_accounting() helper for page fault accounting.
 
-To make sure this won't fall through the cracks... I'll give it a shot with a
-single series to address this issue for all archs.  Although it might not be
-easy to do accounting directly in handle_mm_fault(), it might be still a chance
-to introduce a helper so the accounting can be done in general code.
+Avoid doing page fault accounting multiple times if the page fault is retried.
+Meanwhile, take the page fault as a major fault as long as any of the retried
+page fault is a major fault.
 
-Thanks,
+CC: Russell King <linux@armlinux.org.uk>
+CC: Will Deacon <will@kernel.org>
+CC: linux-arm-kernel@lists.infradead.org
+Signed-off-by: Peter Xu <peterx@redhat.com>
+---
+ arch/arm/mm/fault.c | 21 ++++-----------------
+ 1 file changed, 4 insertions(+), 17 deletions(-)
 
+diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
+index 2dd5c41cbb8d..92d4436e74da 100644
+--- a/arch/arm/mm/fault.c
++++ b/arch/arm/mm/fault.c
+@@ -240,7 +240,7 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+ 	struct task_struct *tsk;
+ 	struct mm_struct *mm;
+ 	int sig, code;
+-	vm_fault_t fault;
++	vm_fault_t fault, major = 0;
+ 	unsigned int flags = FAULT_FLAG_DEFAULT;
+ 
+ 	if (kprobe_page_fault(regs, fsr))
+@@ -290,6 +290,7 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+ 	}
+ 
+ 	fault = __do_page_fault(mm, addr, fsr, flags, tsk);
++	major |= fault & VM_FAULT_MAJOR;
+ 
+ 	/* If we need to retry but a fatal signal is pending, handle the
+ 	 * signal first. We do not need to release the mmap_sem because
+@@ -301,23 +302,7 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+ 		return 0;
+ 	}
+ 
+-	/*
+-	 * Major/minor page fault accounting is only done on the
+-	 * initial attempt. If we go through a retry, it is extremely
+-	 * likely that the page will be found in page cache at that point.
+-	 */
+-
+-	perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS, 1, regs, addr);
+ 	if (!(fault & VM_FAULT_ERROR) && flags & FAULT_FLAG_ALLOW_RETRY) {
+-		if (fault & VM_FAULT_MAJOR) {
+-			tsk->maj_flt++;
+-			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MAJ, 1,
+-					regs, addr);
+-		} else {
+-			tsk->min_flt++;
+-			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MIN, 1,
+-					regs, addr);
+-		}
+ 		if (fault & VM_FAULT_RETRY) {
+ 			flags |= FAULT_FLAG_TRIED;
+ 			goto retry;
+@@ -326,6 +311,8 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+ 
+ 	up_read(&mm->mmap_sem);
+ 
++	mm_fault_accounting(tsk, regs, addr, major);
++
+ 	/*
+ 	 * Handle the "normal" case first - VM_FAULT_MAJOR
+ 	 */
 -- 
-Peter Xu
+2.26.2
 
 
 _______________________________________________
