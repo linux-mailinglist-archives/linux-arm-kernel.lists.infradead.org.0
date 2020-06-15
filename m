@@ -2,101 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EBCE1F9E0F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 19:05:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F11E61F9E13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 19:05:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RwE1YGS2gaj00FE9QmXoreRzSCWURr4SNniPu7XPsi8=; b=RSNoFuAwZ3BBgu
-	8jmgLyaQMQSgFSJaNnNEzGFv1/8Msc0qFYt9KMepOu6tANqIKp+3l3+97aAVeCWHmrEXsMWLkoTls
-	/ZAgUNT98gCT2pqEYbdgT7YSaKLQUtK/VWgTgttMmfyAM2yn65prRSO9AkQKRmIIKwaaYeV7z5Pne
-	RpMh15dGRBRYFL41yNcHagwQDGMgGzIe3V4ZVY9s00BDX0dhq1RfSSHXzRGMmdMBKr0Yhyfdh/i0v
-	oQXcQfyUgSqx5hzHBvOf4RagC36wD+HboIjIzEdAgL6CeVdT8qdaOG/WXVspR9+V0Su/aDiZJpVdf
-	C+AOSRGknp/fD1w4YtNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ASUED8el9hnfxaxZc4tM4L+hdpW/emdEeIIfbjMljNI=; b=ih9kxsSCfQmckJ
+	5xdTtO14+AGhcWXpsY777IvBDQuH1LNgY78PY6RCMeoVcD4HsNodna6rsPa6teseo5zGZKHvl7yMr
+	0RDcLRsBlg4Jmc1WCkCAcabo2ibR8rn2Kh1tTCI9GAW8efJQBQru7NYFZZwD+OBxoDbFGnx9PMbTu
+	OKUKEXg0bQotjFiWlG2fU3LYx7hzIgvT/60ZRpoGflb8rh5WdWLk5SGaTccTMRKqo3hjHMpKLoXjT
+	lCz/zknzW9HRcb19utLsCgnq0ga/GRdYt0uu5Cy1Qll/af3NIxbRI+d7NGi3hladA9auMZLStsZ4L
+	oreOs8LsNf8R59sQlpQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jksXs-0000bZ-QY; Mon, 15 Jun 2020 17:05:17 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jksY7-0003CY-Rx; Mon, 15 Jun 2020 17:05:31 +0000
+Received: from mail-il1-f195.google.com ([209.85.166.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jksXU-0000bC-Q3; Mon, 15 Jun 2020 17:04:54 +0000
-Received: by mail-pf1-x444.google.com with SMTP id j1so8081879pfe.4;
- Mon, 15 Jun 2020 10:04:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=3ZukZRysDpxL7fluIxKkVz5UMBr+FzAndpusseTc58o=;
- b=RRk08ULTO8k9lQEnZPvMHzTmLcBYiBUfQqYtqU0+OXYULw/mQHXm1p+4jWfh6uWqVy
- XvGa5nV6UfH+8LUhazVxdugNTG+Ig2BKwdEqEvDlKp+/ZHCJfu0qmZmKLctYTHF8/5I0
- tKl+o71fVnw8sKFXKi9LBaLsLQAg0VW4fo4fxA/NEzSICTJ4lUJMEz4jPFxoW95ow25E
- evL5iC/gZi8hQ4RGxXqVBGGjY2giAMgQDXVSMfBkvIxaNpr9exnTy8EX3ZWjTPetND+S
- hghLTzEoONyP3+ZOXHPAA3tt2Kh3xb7m1gs8QFmgOGiEwnmMN1RG6Yle7Zih94TlqQXH
- gxLQ==
+ id 1jksXm-0001mG-7G
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 17:05:11 +0000
+Received: by mail-il1-f195.google.com with SMTP id g3so746503ilq.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 10:05:09 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=3ZukZRysDpxL7fluIxKkVz5UMBr+FzAndpusseTc58o=;
- b=bwErms6HWyNY2sAiSY1OsR03uMe8h6GpADJ9fUE68CglGSBDMDmgeombRoMP6CkqIE
- 1AVmwu4OIV02HrV0GYfl0Nh3+FBs8TskQjKrG97n1NEEsTJzY+pgjwCrX4OAwwbDRfz2
- Vx6O/9g9A1UJ70aN741E3tYHVJswHT7no8/YlRJblf2Mk7xv5jF5vyPrPS3IABBF/jtl
- hEFIz7yDGQcfNIMFZ3tcOP98gWKrTVzM1lw9vVRvTWstPMv6q4VmjoqvOG41wj+8qogU
- lARzOXmUKxt63PnGeE4p/BW/jgHYYivSfk0frc47Wg0DnhFBH58liS1km2APhDm8XhHk
- qJkw==
-X-Gm-Message-State: AOAM532cNiz1E/Uh0mjpFO2HYp09JaUAIDbjJQCyZeZnwkaOYgLrnerf
- l9D25q1nQB2m0ElclXRvYdg=
-X-Google-Smtp-Source: ABdhPJxkrT/eEFR2lr5RpODPo3zO/3YcXLxATPx3PWI7oA17rPMi1gELvyI+TosRvIfdlRhWVQPn9g==
-X-Received: by 2002:a63:c407:: with SMTP id h7mr21679517pgd.174.1592240691842; 
- Mon, 15 Jun 2020 10:04:51 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id b23sm12254427pgs.33.2020.06.15.10.04.49
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 15 Jun 2020 10:04:51 -0700 (PDT)
-Subject: Re: [PATCH v2] spi: bcm2835: Enable shared interrupt support
-To: Mark Brown <broonie@kernel.org>
-References: <20200604212819.715-1-f.fainelli@gmail.com>
- <142d48ae-2725-1368-3e11-658449662371@arm.com>
- <20200605132037.GF5413@sirena.org.uk>
- <2e371a32-fb52-03a2-82e4-5733d9f139cc@arm.com>
- <06342e88-e130-ad7a-9f97-94f09156f868@arm.com>
- <d3fe8b56-83ef-8ef0-bb05-11c7cb2419f8@gmail.com>
- <a6f158e3-af51-01d9-331c-4bc8b6847abb@arm.com>
- <20200608112840.GC4593@sirena.org.uk>
- <bb9dbf11-9e33-df60-f5ae-f7fdfe8458b4@gmail.com>
- <20200615170031.GA4447@sirena.org.uk>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <692bc94e-d574-e07a-d834-c0d569e87bba@gmail.com>
-Date: Mon, 15 Jun 2020 10:04:46 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.9.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=iil1Ct3yqqoRyLs7AUrfXx88B12vf8Oqs/d10YbLStk=;
+ b=mioP7gAFC48FqMTb46M5zmECkRU4bvxpoR0la9czABldjGVWaJ3IL0qItszCuzcZVp
+ Ps86U/ozcP/5Q0ta5msRS1Xjxr84Je8oYdLh6AyVSm/HYvEYDQ94IRcuuiLd2eJZ3WiP
+ B0fhqUugX829WLyq5gVwoMBu6Mui4PxPioO0eaBHb0efUFOFbLBih6yaKTGcPdgCzRmy
+ qzUOGrpwbl0nAXvLvNWqIc8YvIjgKFiOKU6buCdBtuTtjK5uotlhismSNLAVmoeENIJH
+ DCF91dCYKPJ4QtIYI++TgC1/wLaCjerBrMxxTigDC305IkwDPbcOKhsRHcOhFg91nL0a
+ 9Hbg==
+X-Gm-Message-State: AOAM530I7D1SDcXnJVjtk9pMFUvYrrQJqaS7IAK/0MPzJC8tac6ev+nQ
+ tIpCedAAh01GGQtX8HnWSA==
+X-Google-Smtp-Source: ABdhPJwc1Mh+mwwfssvJd2rCp7WiDQI7C4KOV3xgJBzwmOkCj5D8rBpAuHCNLWKgFfw7tkpvCelglg==
+X-Received: by 2002:a92:244c:: with SMTP id k73mr27644530ilk.292.1592240708523; 
+ Mon, 15 Jun 2020 10:05:08 -0700 (PDT)
+Received: from xps15 ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id c23sm8274077ioc.28.2020.06.15.10.05.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 10:05:07 -0700 (PDT)
+Received: (nullmailer pid 1959366 invoked by uid 1000);
+ Mon, 15 Jun 2020 17:05:06 -0000
+Date: Mon, 15 Jun 2020 11:05:06 -0600
+From: Rob Herring <robh@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V2 1/3] dt-bindings: i2c: Convert imx lpi2c to json-schema
+Message-ID: <20200615170506.GA1959153@bogus>
+References: <1591235358-15516-1-git-send-email-Anson.Huang@nxp.com>
+ <1591235358-15516-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20200615170031.GA4447@sirena.org.uk>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1591235358-15516-2-git-send-email-Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_100452_870692_499F94CA 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_100510_454310_EB5A5BE2 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [209.85.166.195 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,46 +92,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>,
- "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, lukas@wunner.de,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Martin Sperl <kernel@martin.sperl.org>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: aisheng.dong@nxp.com, devicetree@vger.kernel.org, wolfram@the-dreams.de,
+ festevam@gmail.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ linux@rempel-privat.de, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 6/15/2020 10:00 AM, Mark Brown wrote:
-> On Mon, Jun 15, 2020 at 09:34:58AM -0700, Florian Fainelli wrote:
+On Thu, 04 Jun 2020 09:49:16 +0800, Anson Huang wrote:
+> Convert the i.MX LPI2C binding to DT schema format using json-schema
 > 
->> OK, so this has been dropped for spi/for-next right? How do we move from
->> there?
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V1:
+> 	- add "additionalProperties: false".
+> ---
+>  .../devicetree/bindings/i2c/i2c-imx-lpi2c.txt      | 20 ---------
+>  .../devicetree/bindings/i2c/i2c-imx-lpi2c.yaml     | 47 ++++++++++++++++++++++
+>  2 files changed, 47 insertions(+), 20 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt
+>  create mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.yaml
 > 
-> Well, I actually have it queued up for applying so unless I pull it
-> before my scripts get that far through the stuff I queued over the merge
-> window it'll go in (I dropped it due to it not being a bugfix).  If it
-> were me I'd go with the two instruction hit from checking the flag TBH
-> but otherwise I guess __always_inline should work for compilers that
-> misoptimize.  None of this is getting in the way of the framework so if
-> everyone involved in the driver is happy to spend time optimising it
-> and dealing with the fragility then it's fine by me.
 
-OK, how about I send you an increment patch (would a fixup be okay?)
-that adds __always_inline since we know from this thread that some
-compilers may mis-optimize the function inlining?
--- 
-Florian
+Applied, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
