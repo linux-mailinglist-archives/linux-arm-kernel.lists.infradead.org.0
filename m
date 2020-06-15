@@ -2,68 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B9A61F940B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:56:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17C1C1F9404
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:56:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZA2iixo28ugI7NcwFNu5ti5EaQ25SEuwfiSs6uT/qZc=; b=HjQ0li8riCUwBK
-	imN6MUhK0NBYbqoY1dTbSzvVxsp2cxutuEwT9eFOAW1ygQQ7SWkyz75NNMWQAr/aUKjHTYjZU3rIE
-	spdnM/hZbGPPOV2DxzmnnexlI+GeiYLEtPak4Uk+4cl+9JVUIcq1TsVRIS0SHVpi/ySiNXxSybyIH
-	JuaP2PAyzKEHfrnTwGhXogQmKGCYkKB1KeuaCnStKfFWQX7C63Jzw0ujmgdtVT0gQ67q2sSK0TbBC
-	FQDI5+5n/8uQoF/4n6B9HA8SvEg6aufmjKBTd3qdy2krBmU1GGdNMdw8WA1/f+mxKIyTSAZgwpBoA
-	VtZQ26B3oFR1j6wFsYNQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kyWUve7oMcJIP2oj2T+iLnZ3F0hi7DURdp2IkYCTcqs=; b=qdVbqaE6KF6Tmj
+	/P4f3C/+CFnhxj7jUwbrSIjg8ShuCcvk9lrXkB+b2GyT/RrNSVq1gzG/YOXOm2oGWLAoCb1W7RKNA
+	3Wpr0VHZm2JeJz24mZJZ35wpuGJAEj/GhGMTaqcMvNhk+lmO7egwGkSQbHVbtYgYcNlFAB6rBzidK
+	dpBSrHoP7aPCc70XXFeFn+G4vYlutpYYZx9TX44+y+W+NpGEvAs5WJoKc7+iCMjXr015+u13CgX78
+	+Pf5snj/JUQv7mLGDReIDyV2lQOMf5KlU6ixFX+SDm7aD9gOxuiMtiKMUm0HbhWJiz6T3Ef+qdqkj
+	dcxPy8EFRVLdr4olRQ8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklr8-0008Cr-1Z; Mon, 15 Jun 2020 09:56:42 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1jklqJ-0007gZ-TI; Mon, 15 Jun 2020 09:55:51 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jklqP-0007sW-OZ
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:56:01 +0000
+ id 1jklqC-0007fy-DV
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:55:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592214957; x=1623750957;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=GzeJj/XXb+bfDz1yMw3bsPNp+jtcDG/wV7P8Xtgw3Ng=;
- b=S0LpLBIY0Ws3aV9+EJaEuiq8hteQZxakWTrNgCA6gElh6m9hVKIg1Mjv
- GuYj/r+oyDntsm/NE9bfaa+URjQoqOmr8xF6RHpcFN6tt6z9jaHSw1H2a
- cj8jZWwCeenSSXs7lJGQh0GQq5vJoPK2KVXR+w9aC90WSZudeeYIvr5g7
- VfX7btxA2CrgcUZxm+YzrvcFHUbPDmMAkRI1bWdwBTSvjFOdbBP/BlyAE
- zuvGw8+mjHKzESoFQItsIWMX7T/2i80q+KiFmDXNvRO1PJvaP5v6n+9Ls
- bX/PuBcSC53002N1oqXmX59+9QuvQXhqjmTaqD2km3Jf/1Rjg10V4OaNB A==;
-IronPort-SDR: FLUh7f3tYdmwYeq/0GKWObURf1q1qgv21VHkgV76si99bxpQJ7GomyUsx6gbCHtDg8FKrTm3Ou
- O9Qu1RWxXaqg/C1/s1KqEavDwxx4SU/4XENFhU9gcWQTuwqFSxXYWcxB6o7wxRqoU2Nk2gNjMH
- NlEpS6tr8nmC5VDHatNayufgNOg7qcxbp/2xAbOAEcsoA3sbK5R8ag2DbjQSNmmI9/iZug+rId
- 4R0CpGFWxocpdKyn/sfgmCHj3tpPXEufZMPTezRyvbBm6f0aKTxJDVHePBqBNdqy+YDKbh47El
- aAw=
-X-IronPort-AV: E=Sophos;i="5.73,514,1583218800"; d="scan'208";a="76588047"
+ t=1592214944; x=1623750944;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=EhgQcEHdAJNNogp8ECOYFDSbKYvI+4DJ91LLczqWy04=;
+ b=Dspl5P+bhRQOX+ptXnspCyF7uUlitBUYSPd80FRjYbGl19+D2ntp+nje
+ 6axp9m3t54ngDMexN5l4QWH3WvHAURRQUnm0AA/ffGiwUImSl+hcHCSd/
+ T2pF6Q73apQzUha3+eqc3LukaDH8YYGNyBR5q0dUNu5q+FyJJY749M8pc
+ iNbDkEmofETaEXhVnURr0nyJ5uI+lSItjbsOgzakQ/ovdqCLvtfGoMmmj
+ U2h9NAIoUr+n07nK3A2ExOoD0R8OVKt57+rEAPae/d/Y5UFB08CbJPZqI
+ H4mg3hFMTqpARMs9FYAAPSNnXAKVu8NzKWyqR0MIdBMN688sFQC9h2CBY A==;
+IronPort-SDR: 3s2PWCYQ6TfpQV3qjczFo20MSKizU76Vihaekzc+/qHm8xTAzxtT3kh+4s+S0oZYGEXetR6Yh7
+ OfTBjXknHe7jR+mfKwKGcahtHRVhbVSRLO5zcR/GRQdNaB05IDPbRfnS1Xtf5JfgGSkfHG263Y
+ ZrBWFhHPBLCIhyQioV5KNu8CxD1fegoTK2DkpAvTTErXbcW1ka2VixFF60DiKFiup4XUpuNOU7
+ ad73hHq2NghakCJmS3kNIiG/1RyLF7u0eB0kGR0l9UtEqcHwI3bmImJjlnFp3ARRwNNZrOqwKJ
+ KAU=
+X-IronPort-AV: E=Sophos;i="5.73,514,1583218800"; d="scan'208";a="80112721"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 15 Jun 2020 02:55:37 -0700
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 Jun 2020 02:55:40 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1979.3; Mon, 15 Jun 2020 02:55:34 -0700
+ 15.1.1979.3; Mon, 15 Jun 2020 02:55:40 -0700
 Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Mon, 15 Jun 2020 02:55:34 -0700
+ 15.1.1979.3 via Frontend Transport; Mon, 15 Jun 2020 02:55:37 -0700
 From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 To: <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/3] ARM: dts: at91: sama5d2_xplained: classd: pull-down the
- R1 and R3 lines
-Date: Mon, 15 Jun 2020 12:55:23 +0300
-Message-ID: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
+Subject: [PATCH 2/3] ARM: dts: at91: sam9x60ek: classd: pull-down the L1 and
+ L3 lines
+Date: Mon, 15 Jun 2020 12:55:24 +0300
+Message-ID: <20200615095525.43414-2-codrin.ciubotariu@microchip.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
+References: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_025558_061202_B4BF3374 
-X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-CacheID: sfid-20200615_025544_466260_3F0FE210 
+X-CRM114-Status: UNSURE (   8.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -71,9 +73,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [68.232.154.123 listed in wl.mailspike.net]
+ [68.232.153.233 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,54 +105,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The R1 and R3 lines drive NMOS transistors that are OFF with a low level.
-On the SAMA5D2 Xplained board, if the pins corresponding to R1 and R3
+The L1 and L3 lines drive NMOS transistors that are OFF with a low level.
+On the SAM9X60 EK board, if the pins corresponding to L1 and L3
 have pull-ups enabled, there is an extra 2 x 30uA power consumption.
 Use pull-downs for these 2 lines to remove the unnecessary power
 consumption.
 
-Fixes: b133ca7a653c ("ARM: dts: at91: sama5d2_xplained: add pin muxing and enable classd")
+Fixes: 1e5f532c2737 ("ARM: dts: at91: sam9x60: add device tree for soc and board")
 Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 ---
- arch/arm/boot/dts/at91-sama5d2_xplained.dts | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ arch/arm/boot/dts/at91-sam9x60ek.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-index 055ee53e4773..54d96649da77 100644
---- a/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-+++ b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-@@ -430,14 +430,18 @@ pinctrl_charger_lbo: charger_lbo {
- 					bias-pull-up;
- 				};
+diff --git a/arch/arm/boot/dts/at91-sam9x60ek.dts b/arch/arm/boot/dts/at91-sam9x60ek.dts
+index b484745bf2d4..3b9bb29d9e23 100644
+--- a/arch/arm/boot/dts/at91-sam9x60ek.dts
++++ b/arch/arm/boot/dts/at91-sam9x60ek.dts
+@@ -470,9 +470,9 @@ classd {
+ 		pinctrl_classd_default: classd {
+ 			atmel,pins =
+ 				<AT91_PIOA 24 AT91_PERIPH_C AT91_PINCTRL_PULL_UP
+-				 AT91_PIOA 25 AT91_PERIPH_C AT91_PINCTRL_PULL_UP
++				 AT91_PIOA 25 AT91_PERIPH_C AT91_PINCTRL_PULL_DOWN
+ 				 AT91_PIOA 26 AT91_PERIPH_C AT91_PINCTRL_PULL_UP
+-				 AT91_PIOA 27 AT91_PERIPH_C AT91_PINCTRL_PULL_UP>;
++				 AT91_PIOA 27 AT91_PERIPH_C AT91_PINCTRL_PULL_DOWN>;
+ 		};
+ 	};
  
--				pinctrl_classd_default: classd_default {
-+				pinctrl_classd_default_pfets: classd_default_pfets {
- 					pinmux = <PIN_PB1__CLASSD_R0>,
--						 <PIN_PB2__CLASSD_R1>,
--						 <PIN_PB3__CLASSD_R2>,
--						 <PIN_PB4__CLASSD_R3>;
-+						 <PIN_PB3__CLASSD_R2>;
- 					bias-pull-up;
- 				};
- 
-+				pinctrl_classd_default_nfets: classd_default_nfets {
-+					pinmux = <PIN_PB2__CLASSD_R1>,
-+						 <PIN_PB4__CLASSD_R3>;
-+					bias-pull-down;
-+				};
-+
- 				pinctrl_flx0_default: flx0_default {
- 					pinmux = <PIN_PB28__FLEXCOM0_IO0>,
- 						 <PIN_PB29__FLEXCOM0_IO1>;
-@@ -614,7 +618,7 @@ pinctrl_pwm0_pwm2_default: pwm0_pwm2_default {
- 
- 			classd: classd@fc048000 {
- 				pinctrl-names = "default";
--				pinctrl-0 = <&pinctrl_classd_default>;
-+				pinctrl-0 = <&pinctrl_classd_default_pfets &pinctrl_classd_default_nfets>;
- 				atmel,pwm-type = "diff";
- 				atmel,non-overlap-time = <10>;
- 				status = "okay";
 -- 
 2.25.1
 
