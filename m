@@ -2,84 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9A301F9CE4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:16:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F29431F9CC4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:15:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rN3OwT+StVrYOVtNEi1tgRgnYRGZX0/AUiiwoDR2tpY=; b=IcUUts16KInJA4
-	6k0P7a4mJdzjkMCXHPpLbbkkeR2Qum5zJAtTReOQy8sHlBipabXWphFIkrv1PWGeLP7xim6pQB+O7
-	pTc0ip0ebqLujRfhNfJ9CRARQpEja+yfwlX7uJw/PH7w2OH6vUiAEWxO59sHWrEtL4j5+aDR/x97t
-	u9CAC0qcFW8UnGkQKibzCkC9vLdBHEIupY34U2Exfd5ute0/gbtC7598YCpjQfpucRcsl9WBNEbbs
-	ntsBrZWQseoBMhQdORyn0GJAFRY0Zd5LhJG91YbRD4OuZdXz4FVNnaYOidTjPNZg44SYUefXKXXAd
-	zzYHUy4l3j5Z1GQ05k/w==;
+	List-Owner; bh=NKf++UdGEOn5rl1oFZja8qGkvfYfxkTcMH2OMrV4eE4=; b=QZCu41c5rR4yNk
+	cfc20YD25mwa/J5sTyQ5oHPpUeSvJRRaMifBzeQK7g/9LOFjnY02694AHfMkxUtLuuW9hhvq7/jcT
+	DWPhCpKZ3glrd10X7/RVOJoXgAIF03QASBlk823RrK/vTzuEfIr9MAmbV65NnGj8ONnYqDi5YmNfL
+	/MRKV4Cr0uCmtVejWDOian4t9evbbh8ICiTt9Gt9kC/lg8YnzF926fT285bMFXvTmf9nY4AqUb+Df
+	RoKEtluv9aAVCBq/QhOne3SDT5kys4migWnVfuvEbT/JIPPOLobMd4P9IXaGcvBYNOeSQQ1mcTbFc
+	q5yytUxNt1SFGOy6ZyXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkrmx-0008Ok-JR; Mon, 15 Jun 2020 16:16:47 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jkrm6-0007qh-Ly; Mon, 15 Jun 2020 16:15:54 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkrmK-000861-Tn
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 16:16:14 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05FGF0sD011191; Mon, 15 Jun 2020 18:15:54 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=Xkqzh+C6FWWTmU37LOuSdIhSb7PIonm3PgO/z5FgNvI=;
- b=dx9RMEyVylmWbL5lXa3SYNQDq5f+d6Y9WE9r8Bt2mowHekYmFYSA8uDz97hu5nEjDJiR
- xNot7L6wZ5Ri7nZHMz+6OhDs+KO4PoVouTv2UizzKPmHjKgLFAKC9JjIfkFadVf7hc3q
- Kve2XkRskN3RCva7qEr7MhVVKpJP3ktxOJCRTTcqJ7WAQsDrJY1ZoZH1XfKb+uVEUD+/
- FMfOwNkwUAoj2R06SqIEU4E7BPCkmW/p/yYOdTDBmmIAX3Sx+7ZNWnTA8QGCLUS1aZBm
- ihdUgylbm28bGNvCrer0rFzpjhAPAoG04XkQJtHYSpKWu3mAW4poQGVToOJMG/FSYMRO jw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31mmjvthje-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 15 Jun 2020 18:15:54 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2178C10002A;
- Mon, 15 Jun 2020 18:15:54 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1374B2C5ADA;
- Mon, 15 Jun 2020 18:15:54 +0200 (CEST)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun 2020 18:15:53
- +0200
-From: Amelie Delaunay <amelie.delaunay@st.com>
-To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Russell King
- <linux@armlinux.org.uk>, Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Subject: [PATCH 6/6] ARM: multi_v7_defconfig: enable STUSB160X Type-C port
- controller support
-Date: Mon, 15 Jun 2020 18:15:12 +0200
-Message-ID: <20200615161512.19150-7-amelie.delaunay@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200615161512.19150-1-amelie.delaunay@st.com>
-References: <20200615161512.19150-1-amelie.delaunay@st.com>
+ id 1jkrly-0007qL-48
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 16:15:47 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20200615161541epoutp02ff7964fb579d665e564682f07a01bd52~Yw8o5sb8r0729707297epoutp02v
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 16:15:41 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20200615161541epoutp02ff7964fb579d665e564682f07a01bd52~Yw8o5sb8r0729707297epoutp02v
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1592237741;
+ bh=yn3ZGD3Sx3u9Xx0Gs4zDm9kZr9Wmnca8BtW7gNrs0f8=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=IUzfOVGo6yNO6b1tEEYeyqjPNpsYXTtZdOY2FjFOZ1scE5bh3S29H5gNQrEW4RNu2
+ apyQ0IfM2BVOvh4ypvUsO8ZMDJLE7U8DXObmAAs0uz9B6wadfFt10VGrA8m4tUrcTq
+ ho0m4749DnkcCfXqtmVxO7jClZWSSPK8GLbfNphg=
+Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200615161540epcas5p1f284bbb11bcb5d84ed0d6753d9f957ef~Yw8oM0xY_2011020110epcas5p1f;
+ Mon, 15 Jun 2020 16:15:40 +0000 (GMT)
+Received: from epcas5p3.samsung.com ( [182.195.41.41]) by
+ epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ EE.85.09475.CAE97EE5; Tue, 16 Jun 2020 01:15:40 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200615161539epcas5p26241107c8eaabfae1edafc35256091e0~Yw8nBstNa1810518105epcas5p28;
+ Mon, 15 Jun 2020 16:15:39 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200615161539epsmtrp26cfc9488f423cfe861fe655a0ca4588c~Yw8nA3U8o0928009280epsmtrp2R;
+ Mon, 15 Jun 2020 16:15:39 +0000 (GMT)
+X-AuditID: b6c32a4b-389ff70000002503-18-5ee79eacead8
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ F9.B0.08303.BAE97EE5; Tue, 16 Jun 2020 01:15:39 +0900 (KST)
+Received: from alimakhtar02 (unknown [107.108.234.165]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200615161536epsmtip1dffc161c3bdee0e92186109a3b7e45a6~Yw8kCavY91507915079epsmtip1I;
+ Mon, 15 Jun 2020 16:15:36 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
+In-Reply-To: <20200614110202.GA9009@kozik-lap>
+Subject: RE: [RESEND PATCH v10 10/10] arm64: dts: Add node for ufs exynos7
+Date: Mon, 15 Jun 2020 21:45:34 +0530
+Message-ID: <000001d64330$35947020$a0bd5060$@samsung.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-15_06:2020-06-15,
- 2020-06-15 signatures=0
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQG4t7PjQZEdjsbMgiywO+bF2ZMTLwIE8gPVATQJid0Cb/nUPqjnqNbQ
+Content-Language: en-in
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrPKsWRmVeSWpSXmKPExsWy7bCmpu6aec/jDF590bN4+fMqm8Wn9ctY
+ LeYfOcdqceFpD5vF+fMb2C1ubjnKYrHp8TVWi8u75rBZzDi/j8mi+/oONovlx/8xWfzfs4Pd
+ YunWm4wOvB6X+3qZPDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1Zxehx/MZ2Jo/Pm+Q82g90MwVw
+ RnHZpKTmZJalFunbJXBl7N1zg7FgEnvFpcPrmBsYr7N1MXJySAiYSOxYeZ6xi5GLQ0hgN6PE
+ poc3GUESQgKfGCW6fjhAJD4zShzdcpcFpuP53XYmiKJdjBLzj5tBFL1hlJi4/irYWDYBXYkd
+ i9vAbBEge/ON5ewgRcwCt5gknl/5zAqS4BTQk7gy8QZYkbCAl8TiUxPBVrMIqEp8mHQZrIZX
+ wFLi4dPXULagxMmZT8CuYBbQlli28DUzxEUKEj+fLmOFWOYmMf3LPkaIGnGJoz97mEEWSwjc
+ 4JDonrGNFaLBReLXsQdMELawxKvjW9ghbCmJz+/2Ah3EAWRnS/TsMoYI10gsnXcM6nt7iQNX
+ 5rCAlDALaEqs36UPsYpPovf3EyaITl6JjjYhiGpVieZ3V6E6pSUmdndDHeAhcaB9H/sERsVZ
+ SB6bheSxWUgemIWwbAEjyypGydSC4tz01GLTAuO81HK94sTc4tK8dL3k/NxNjOA0p+W9g/HR
+ gw96hxiZOBgPMUpwMCuJ8B6Sfx4nxJuSWFmVWpQfX1Sak1p8iFGag0VJnFfpx5k4IYH0xJLU
+ 7NTUgtQimCwTB6dUA5PPb4eG5lsJl+WeRRdM594+q2WdqM2bj7aG0hu3Llj7bmFHeovFuQId
+ ybu1epe+dYld0JD7fOpfz8rdH5uWZmSWrnlxLJO3zmzZwZbjIa7T+PzXnHu2LPlFp72rdOHK
+ B1n7tN9+CD7xJXHKM6a5yoG7hMp6CratvMp/cX7IE5+dzMo/75/Y3f8s3X1xnIy5T5TNoUMX
+ vnbfEiqWj4u6xfo+WsrCvfuOK9f2bdo62fEzOO98z+r47F0R+ttv1dTVHGLfu3U33dm+/vCT
+ 2y/jFO5vkY17PSmEd/nJM6kZ+5LfhxooOH+Lush04883VhHv76d1hY8H3LLe61zw/Ia9sdDX
+ v836IVdNfh7fslPqXfgGJZbijERDLeai4kQALx9+vuIDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrGIsWRmVeSWpSXmKPExsWy7bCSnO7qec/jDBZdlrR4+fMqm8Wn9ctY
+ LeYfOcdqceFpD5vF+fMb2C1ubjnKYrHp8TVWi8u75rBZzDi/j8mi+/oONovlx/8xWfzfs4Pd
+ YunWm4wOvB6X+3qZPDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1Zxehx/MZ2Jo/Pm+Q82g90MwVw
+ RnHZpKTmZJalFunbJXBlbFvXxFKwhbXizrNVLA2My1i6GDk5JARMJJ7fbWfqYuTiEBLYwShx
+ 5m0LI0RCWuL6xgnsELawxMp/z9khil4xSizrbGUDSbAJ6ErsWNwGZosA2ZtvLAcrYhZ4xiSx
+ /tx/qI5HjBKXmqazglRxCuhJXJl4A6xDWMBLYvGpiWDrWARUJT5MugxWwytgKfHw6WsoW1Di
+ 5MwnYLcyC2hLPL35FM5etvA1M8R5ChI/ny5jhbjCTWL6l32MEDXiEkd/9jBPYBSehWTULCSj
+ ZiEZNQtJywJGllWMkqkFxbnpucWGBUZ5qeV6xYm5xaV56XrJ+bmbGMFRq6W1g3HPqg96hxiZ
+ OBgPMUpwMCuJ8B6Sfx4nxJuSWFmVWpQfX1Sak1p8iFGag0VJnPfrrIVxQgLpiSWp2ampBalF
+ MFkmDk6pBqYZyWntagy+f8tqF37x2fzmlJrYzOg9bV83LBMRtKxsW7l5ZkfKuamR/9YpTe7U
+ aw2c4JIkxr3iRhxD0adLn01+TOs9lVgVsNmpKOxM1LHF7Hf76779u+c71XW+vNZz6+A3WzXP
+ L/x6MO5mX9rXzVo9AimeqlNCRFOSGS75nl5+RuLe9GnWzx5abZP4OH9q6ZKruzTWu5Tfm5BY
+ anG2UH7/sYmxp7xSO/lefGfiWzCh86/nwngN2ZLJc3YHiBqbXRLu8Hw3/77Vllm7+QPOb59i
+ sVj5anCjsHDkkX1y8w83W7ZGc104wqd8/TbL1lVzVKYfiVcu60r7Z712bq6qep/ZZP5Yw+16
+ RzauSzc2OiKhxFKckWioxVxUnAgAVKBKmkkDAAA=
+X-CMS-MailID: 20200615161539epcas5p26241107c8eaabfae1edafc35256091e0
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20200613030458epcas5p3f9667bab202d99fb332d5bf5aad63c85
+References: <20200613024706.27975-1-alim.akhtar@samsung.com>
+ <CGME20200613030458epcas5p3f9667bab202d99fb332d5bf5aad63c85@epcas5p3.samsung.com>
+ <20200613024706.27975-11-alim.akhtar@samsung.com>
+ <20200614110202.GA9009@kozik-lap>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_091609_341469_40D2F33B 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_091546_415037_A3F21841 
+X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.25 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.25 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,6 +132,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,42 +145,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Amelie Delaunay <amelie.delaunay@st.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: robh@kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ kwmad.kim@samsung.com, kishon@ti.com, avri.altman@wdc.com, cang@codeaurora.org,
+ stanley.chu@mediatek.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable support for the STMicroelectronics STUSB160X USB Type-C port
-controller driver by turning on CONFIG_TYPEC and CONFIG_TYPEC_STUSB160X as
-modules.
-
-Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
----
- arch/arm/configs/multi_v7_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 95543914d3c7..f85ee102c9a3 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -821,6 +821,8 @@ CONFIG_USB_CONFIGFS_F_HID=y
- CONFIG_USB_CONFIGFS_F_UVC=y
- CONFIG_USB_CONFIGFS_F_PRINTER=y
- CONFIG_USB_ETH=m
-+CONFIG_TYPEC=m
-+CONFIG_TYPEC_STUSB160X=m
- CONFIG_MMC=y
- CONFIG_MMC_BLOCK_MINORS=16
- CONFIG_MMC_ARMMMCI=y
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cj4gT24gU2F0LCBKdW4gMTMsIDIwMjAgYXQgMDg6MTc6MDZBTSArMDUzMCwgQWxpbSBBa2h0YXIg
+d3JvdGU6Cj4gPiBBZGRpbmcgZHQgbm9kZSBmb2UgVUZTIGFuZCBVRlMtUEhZIGZvciBleHlub3M3
+IFNvQy4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBBbGltIEFraHRhciA8YWxpbS5ha2h0YXJAc2Ft
+c3VuZy5jb20+Cj4gPiBUZXN0ZWQtYnk6IFBhd2XFgiBDaG1pZWwgPHBhd2VsLm1pa29sYWouY2ht
+aWVsQGdtYWlsLmNvbT4NCj4gPiAtLS0NCj4gPiAgLi4uL2Jvb3QvZHRzL2V4eW5vcy9leHlub3M3
+LWVzcHJlc3NvLmR0cyAgICAgIHwgIDQgKysNCj4gPiAgYXJjaC9hcm02NC9ib290L2R0cy9leHlu
+b3MvZXh5bm9zNy5kdHNpICAgICAgIHwgNDMgKysrKysrKysrKysrKysrKysrLQ0KPiA+ICAyIGZp
+bGVzIGNoYW5nZWQsIDQ1IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pDQo+ID4NCj4gDQo+
+IFRoaXMgaXMgYWxyZWFkeSBhcHBsaWVkIGFuZCBpbiB0aGUgbGludXgtbmV4dC4gIERvbid0IHJl
+c2VuZCBhcHBsaWVkIHBhdGNoZXMuDQo+IA0KU29ycnkgS3J6eXN6dG9mLCBkaWQgbm90IHJlYWxp
+emVkIHRoYXQgdGhpcyB3YXMgYWxyZWFkeSBsYW5kZWQgaW4gTGludXgtbmV4dCwgIHlvdXIgcG9p
+bnQgdGFrZW4uDQoNCj4gQmVzdCByZWdhcmRzLA0KPiBLcnp5c3p0b2YNCg0KCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
