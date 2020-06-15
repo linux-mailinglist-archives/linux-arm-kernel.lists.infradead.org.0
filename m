@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 732EE1F948C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:25:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 006281F9494
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:27:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o0v5CTLbabMpPoNrIYnK2hQ8csSHLsY7kizZOqFHc4w=; b=oufq1rKU7Y3M9h
-	tsp13fyA8EO+kBB4aeoDWa4fh9HxgcMxN37yZkydUTkiaxR+VBo+pmGA7dAa3gvv1+KmttwRxYPUM
-	3RFyfMGjLxRG8Bmo/0owtTduvyGkj5xumxQjvKjZkL18ZAORoqNgtR5iSzNSYGXHW+5056Vx3VyG3
-	TkqbO/wOuuLx3nmsEXWRwLKE+HuKU+i94JOom5i2lLSQxnzPkm+CngSb5D1qBJUkDfGn10NTG54s8
-	OZPtJxPIV4MduBxzJ0+kUWcRomfw0/YfV4kedDTfVXvzKzTT+TuKiMQeQCiluw2CWXj0xt/xnMu36
-	vmMewCL+YRsYR8PzeVzw==;
+	List-Owner; bh=pzObvp/z2c6SyK/4IiRvcMgp1+36HcAnK+HqlYe9+NM=; b=pjBkRfBgS4e4PK
+	+jICso9hU/NOYEyAZQ4qOz76+rVbdXLFZ3fTds9kF2kCP3cK2vOZLr7o0lthksiWIAXFU5UX9U2Sw
+	40+vmQ8tSh6iiUaQs38VAPYrjkp0EIFA0rcGJ83p9uKx7enNN9DFRprKNp6RPqTXcngEYulMiDfZ4
+	lCqJ9Y9+A3VZfc5BuCmoTzb48n3h29XeU+smGLYIVZZX775OgJONgjy2qeKEBt0gf9IFpg+rxqopq
+	vNBznFRvkQSb2fgls94mp0QdY047G38jL6TECyGdxWCXSj4UsrCgmmrrx+wZn8SD3PpK975YNk+Rj
+	gmiEKR/F51ljMHOnnwLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkmJF-00044l-Ld; Mon, 15 Jun 2020 10:25:45 +0000
+	id 1jkmKh-0004Za-EV; Mon, 15 Jun 2020 10:27:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkmJ3-000440-Q2
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:25:35 +0000
+ id 1jkmKX-0004Wt-Ta
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:27:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 092D81F1;
- Mon, 15 Jun 2020 03:25:33 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CAF631F1;
+ Mon, 15 Jun 2020 03:27:04 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (unknown [10.57.7.221])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15F323F71F;
- Mon, 15 Jun 2020 03:25:31 -0700 (PDT)
-Date: Mon, 15 Jun 2020 11:25:29 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28A083F71F;
+ Mon, 15 Jun 2020 03:27:04 -0700 (PDT)
+Date: Mon, 15 Jun 2020 11:27:01 +0100
 From: Mark Rutland <mark.rutland@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 4/4] KVM: arm64: Check HCR_EL2 instead of shadow copy to
- swap PtrAuth registers
-Message-ID: <20200615102529.GD773@C02TD0UTHF1T.local>
-References: <20200615081954.6233-1-maz@kernel.org>
- <20200615081954.6233-5-maz@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm64: remove TEXT_OFFSET randomization
+Message-ID: <20200615102701.GE773@C02TD0UTHF1T.local>
+References: <20200615101939.634391-1-ardb@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200615081954.6233-5-maz@kernel.org>
+In-Reply-To: <20200615101939.634391-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_032533_890650_8E047586 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20200615_032706_007502_3C43DEAA 
+X-CRM114-Status: GOOD (  21.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,62 +61,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
- kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu
+Cc: will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 09:19:54AM +0100, Marc Zyngier wrote:
-> When save/restoring PtrAuth registers between host and guest, it is
-> pretty useless to fetch the in-memory state, while we have the right
-> state in the HCR_EL2 system register. Use that instead.
+On Mon, Jun 15, 2020 at 12:19:39PM +0200, Ard Biesheuvel wrote:
+> TEXT_OFFSET was recently changed to 0x0, in preparation for its removal
+> at a later stage, and a warning is emitted into the kernel log when the
+> bootloader appears to have failed to take the TEXT_OFFSET image header
+> value into account.
 > 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> Ironically, this warning itself fails to take TEXT_OFFSET into account,
+> and compares the kernel image's alignment modulo 2M against a hardcoded
+> value of 0x0, and so the warning will trigger spuriously when TEXT_OFFSET
+> randomization is enabled.
+> 
+> Given the intent to get rid of TEXT_OFFSET entirely, let's fix this
+> oversight by just removing support for TEXT_OFFSET randomization.
+> 
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 
-It took me a while to spot that we switched the guest/host hcr_el2 value
-in the __activate_traps() and __deactivate_traps() paths, but given that
-this is only called in the __kvm_vcpu_run_*() paths called between
-those, I agree this is sound. Given that:
+If nothing else, it's nice to see the scary awk go, so:
 
 Acked-by: Mark Rutland <mark.rutland@arm.com>
 
 Mark.
 
 > ---
->  arch/arm64/include/asm/kvm_ptrauth.h | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  arch/arm64/Kconfig.debug | 15 ---------------
+>  arch/arm64/Makefile      |  6 ------
+>  2 files changed, 21 deletions(-)
 > 
-> diff --git a/arch/arm64/include/asm/kvm_ptrauth.h b/arch/arm64/include/asm/kvm_ptrauth.h
-> index 6301813dcace..f1830173fa9e 100644
-> --- a/arch/arm64/include/asm/kvm_ptrauth.h
-> +++ b/arch/arm64/include/asm/kvm_ptrauth.h
-> @@ -74,7 +74,7 @@ alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
->  	b	1001f
->  alternative_else_nop_endif
->  1000:
-> -	ldr	\reg1, [\g_ctxt, #(VCPU_HCR_EL2 - VCPU_CONTEXT)]
-> +	mrs	\reg1, hcr_el2
->  	and	\reg1, \reg1, #(HCR_API | HCR_APK)
->  	cbz	\reg1, 1001f
->  	add	\reg1, \g_ctxt, #CPU_APIAKEYLO_EL1
-> @@ -90,7 +90,7 @@ alternative_if_not ARM64_HAS_ADDRESS_AUTH_IMP_DEF
->  	b	2001f
->  alternative_else_nop_endif
->  2000:
-> -	ldr	\reg1, [\g_ctxt, #(VCPU_HCR_EL2 - VCPU_CONTEXT)]
-> +	mrs	\reg1, hcr_el2
->  	and	\reg1, \reg1, #(HCR_API | HCR_APK)
->  	cbz	\reg1, 2001f
->  	add	\reg1, \g_ctxt, #CPU_APIAKEYLO_EL1
+> diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
+> index cdf7ec0b975e..265c4461031f 100644
+> --- a/arch/arm64/Kconfig.debug
+> +++ b/arch/arm64/Kconfig.debug
+> @@ -8,21 +8,6 @@ config PID_IN_CONTEXTIDR
+>  	  instructions during context switch. Say Y here only if you are
+>  	  planning to use hardware trace tools with this kernel.
+>  
+> -config ARM64_RANDOMIZE_TEXT_OFFSET
+> -	bool "Randomize TEXT_OFFSET at build time"
+> -	help
+> -	  Say Y here if you want the image load offset (AKA TEXT_OFFSET)
+> -	  of the kernel to be randomized at build-time. When selected,
+> -	  this option will cause TEXT_OFFSET to be randomized upon any
+> -	  build of the kernel, and the offset will be reflected in the
+> -	  text_offset field of the resulting Image. This can be used to
+> -	  fuzz-test bootloaders which respect text_offset.
+> -
+> -	  This option is intended for bootloader and/or kernel testing
+> -	  only. Bootloaders must make no assumptions regarding the value
+> -	  of TEXT_OFFSET and platforms must not require a specific
+> -	  value.
+> -
+>  config DEBUG_EFI
+>  	depends on EFI && DEBUG_INFO
+>  	bool "UEFI debugging"
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index 76359cfb328a..a0d94d063fa8 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -121,13 +121,7 @@ endif
+>  head-y		:= arch/arm64/kernel/head.o
+>  
+>  # The byte offset of the kernel image in RAM from the start of RAM.
+> -ifeq ($(CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET), y)
+> -TEXT_OFFSET := $(shell awk "BEGIN {srand(); printf \"0x%06x\n\", \
+> -		 int(2 * 1024 * 1024 / (2 ^ $(CONFIG_ARM64_PAGE_SHIFT)) * \
+> -		 rand()) * (2 ^ $(CONFIG_ARM64_PAGE_SHIFT))}")
+> -else
+>  TEXT_OFFSET := 0x0
+> -endif
+>  
+>  ifeq ($(CONFIG_KASAN_SW_TAGS), y)
+>  KASAN_SHADOW_SCALE_SHIFT := 4
 > -- 
 > 2.27.0
 > 
-> _______________________________________________
-> kvmarm mailing list
-> kvmarm@lists.cs.columbia.edu
-> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
 
 _______________________________________________
 linux-arm-kernel mailing list
