@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E08E61F9CEA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 023401F9CF6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 18:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3RBOhW5Nclyd6P60K4ZipBZjzSUXaqFKEHfyZx688Fc=; b=o8KcdBq5sQgMkj
-	Eok/FIXnF5sKm3W0C/NdDhr0HFe0ur2EZQtatOQ6z/TIe8IS01EaCOaTCJq2kt30wRemJ6zcTzBDi
-	my5xionhCbRMNokK0Rwgb57eWsb3OPYrhQRzRNhDnQh/YXHJFW7ZCUEUWcspJpoIbQwJyQA6WmOrM
-	J10q8VUx/aQlRgQVrEhV0hDthRUZLoNkOtx4SkY5KZITiKEbDMjRrHd/d2FL71x5tnDZ+leLjuoGn
-	eV8AEwnGndFnv2aWKsm3SncZ3/U73m3EFdeIzgih5FkFr0cA7KBfsjDLPeXh4IEUtUuXRqsMF1g86
-	jhGQzLoR+O9jXv0H8IDg==;
+	List-Owner; bh=4I7aovORV/Mtr5PFgFJ7I6DK6Nsm6U6GjzwkuTX+x1M=; b=TSze5oXjPyvc+I
+	I+Hg3FAxePOOVXYTn+8HDLdYoyKEeFqIKVNFee+iAa5FcrKcyrX/0BTq++Zo6a6sl8+UI5naSE5kF
+	umVQ/iwMjYmR5UB8QYxEotEx/wyqLdoJ85lMQQ9hZrvgS0rn65qIfPAzO2rHSu4kMMho7lSzN5Jh1
+	SLH4XV2rCSeIVekuff8mCc/w1BfIaFgJHt5PI2HemMEcu4mgd0eQFL/X2TTAGFTm4bXy+V5YXvU/i
+	698YOtxDZHkqnkhCMsbRIC6s3WEaeM5OZTK9BmZEjTnbXMY3oaOcXE1Q3PY0/esShhftXhgiBdZ91
+	5XogwjRAJoPDLA4w69xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkrnO-0000RA-5t; Mon, 15 Jun 2020 16:17:14 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jkroV-0001Ry-3Z; Mon, 15 Jun 2020 16:18:23 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkrmN-0008DU-5g
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 16:16:22 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ id 1jkrmb-0008Py-2H
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 16:16:35 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05FGF0sC011191; Mon, 15 Jun 2020 18:15:52 +0200
+ 05FGDwP4008012; Mon, 15 Jun 2020 18:15:53 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=upycScNUai8VP3s0XmL0DB4dGiDqlrGmZO+Gt4LS8FY=;
- b=UzT/E6e/LalTMy5v8Jk4rSj9ZQ3zO014EkA4BnQeHhM3BNxsio7jEQoa2Op1uXsnIe5j
- Z5LGuZd1kQZpyRNGWcRDx4fROrwml1sD+aaQs1DpZ1aliOnV4SRow1DjNczPEu43Xcjz
- c1bj0kMOwoqKR4UeUXjUS2Nf1biPAqhhYCC87gTPdwxTCvWKViQUIV4j7QHZ+5Gpnt5C
- bgCXoHvpz7cLWUqzv8tQc+ewQg39t2uXM5+4No76N6bot/CgFTNm7o2PeAU/pTUZWGC6
- HXc2ARf1AtkjVEYpu0CLEtZ9ES6/uJkuERWDA9si/C+3RpkM3NyF5zVNcOKGy+xnW2QT 2w== 
+ bh=kcFl5IZcfC0YQFwTAT8Jn+gPeu/Bp4cT/yA7bI3bAQ0=;
+ b=FMvzbeB64dOv4yvJhVvQPBuH4gZ0bMABJkmB0Up23PRaspEIFYxDD3XJbfoFG5OOGGsr
+ Z1f5OVZQRxcYLZuKMt5AC1qwV7mLaoEvJdB3H0XifYyr+dSNyQqH1w3tlJN0XWllAJ/f
+ MBdW/Kk9RxEdj2fC7UJJG35mWefxZ4EtENFmbwUuP18HI8l1hWCDnueNY/ah+POVrEzb
+ QzpYLq0zbxxrbKE0z7Im3bxDiZOJvU4aD22Wr3CEWjGBGTKHMdwYB72FrrmX9tGmRCkb
+ fUZZ7Exs1Yh63tttDHhWNcps2+7cfFkG0pDdrq8OUk0mCFpc8bcBGGkgr3AxOG1k3XIx eA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31mmjvthj8-1
+ by mx07-00178001.pphosted.com with ESMTP id 31mnph2bea-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 15 Jun 2020 18:15:52 +0200
+ Mon, 15 Jun 2020 18:15:53 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 130EC10002A;
- Mon, 15 Jun 2020 18:15:52 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 19D2510002A;
+ Mon, 15 Jun 2020 18:15:53 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F34162C5AD8;
- Mon, 15 Jun 2020 18:15:51 +0200 (CEST)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun 2020 18:15:50
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0733B2C5AD8;
+ Mon, 15 Jun 2020 18:15:53 +0200 (CEST)
+Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun 2020 18:15:52
  +0200
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Alexandre Torgue <alexandre.torgue@st.com>, Russell King
  <linux@armlinux.org.uk>, Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Subject: [PATCH 4/6] usb: typec: add support for STUSB160x Type-C controller
- family
-Date: Mon, 15 Jun 2020 18:15:10 +0200
-Message-ID: <20200615161512.19150-5-amelie.delaunay@st.com>
+Subject: [PATCH 5/6] ARM: dts: stm32: add STUSB1600 Type-C using I2C4 on
+ stm32mp15xx-dkx
+Date: Mon, 15 Jun 2020 18:15:11 +0200
+Message-ID: <20200615161512.19150-6-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200615161512.19150-1-amelie.delaunay@st.com>
 References: <20200615161512.19150-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
  definitions=2020-06-15_06:2020-06-15,
  2020-06-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_091611_711721_F00B8A34 
-X-CRM114-Status: GOOD (  23.81  )
+X-CRM114-CacheID: sfid-20200615_091625_440683_D792950E 
+X-CRM114-Status: GOOD (  17.57  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [91.207.212.93 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,957 +111,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-STMicroelectronics USB Type-C port controllers use I2C interface to
-configure, control and read the operation status of the device. All ST USB
-Type-C port controllers are based on the same I2C register map. That's why
-this driver can be used with all ST USB Type-C ICs.
-Some ST USB Type-C port controllers are Dual Role Port (DRP), only Sink or
-Source, some supports USB Power Delivery. This can be configured through
-connector device tree bindings.
+This patch adds support for STUSB1600 USB Type-C port controller, used on
+I2C4 on stm32mp15xx-dkx.
+The default configuration on this board, on Type-C connector, is:
+- Dual Power Role (DRP), so set power-role to "dual";
+- Vbus limited to 500mA, so set power-opmode to "default" (it means 500mA
+  in USB 2.0).
+power-opmode is used to reconfigure the STUSB1600 advertising of current
+capability when its NVM is not in line with the board layout.
+On stm32mp15xx-dkx, Vbus power source of STUSB1600 is 5V_VIN (so add the
+vin fixed 5V regulator too). So power operation mode depends on the power
+supply used. To avoid any power issues, it is better to limit Vbus to 500mA
+on this board.
+ALERT# is the interrupt pin of STUSB1600. It needs an external pull-up, and
+signal is active low.
 
-This driver is a basic Type-C port controller driver, with no power
-delivery support. It allows to configure ST USB Type-C port controller.
-Interrupt is supported and enables CC connection events, to detect
-attach and detach and update Type-C subsystem accordingly as well as usb
-role switch.
-
-ST USB Type-C port controller can be supplied in three different ways
-depending on the target application:
-- through VDD pin only (so VDD is the main supply)
-- through VSYS pin only (so VSYS is the main supply)
-- through VDD and VSYS pins.
-When both VDD and VSYS power supplies are present, the low power supply
-VSYS is selected as main supply when VSYS voltage is above 3.1V, else
-VDD is selected as main supply.
-
-In case of Source or Dual port type, if VDD supply is present, it has to be
-enabled in case of Source power role to provide Vbus. When interrupt
-support is available, VDD supply is dynamically managed upon attach/detach
-interrupt. When there is no interrupt support, VDD supply is enabled by
-default.
+USB OTG controller ID and Vbus signals are not connected on stm32mp15xx-dkx
+boards, so disconnection are not detected.
+If you unplug the USB cable from the Type-C port, you have to manually
+disconnect the USB gadget:
+echo disconnect > /sys/devices/platform/soc/49000000.usb-otg/udc/49000000.usb-otg/soft_connect
+Then you can plug the USB cable again in the Type-C port, and manually
+reconnect the USB gadget:
+echo connect > /sys/devices/platform/soc/49000000.usb-otg/udc/49000000.usb-otg/soft_connect
 
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- drivers/usb/typec/Kconfig     |  12 +
- drivers/usb/typec/Makefile    |   1 +
- drivers/usb/typec/stusb160x.c | 875 ++++++++++++++++++++++++++++++++++
- 3 files changed, 888 insertions(+)
- create mode 100644 drivers/usb/typec/stusb160x.c
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi |  7 +++++
+ arch/arm/boot/dts/stm32mp15xx-dkx.dtsi   | 38 ++++++++++++++++++++++++
+ 2 files changed, 45 insertions(+)
 
-diff --git a/drivers/usb/typec/Kconfig b/drivers/usb/typec/Kconfig
-index 559dd06117e7..eee8536ae600 100644
---- a/drivers/usb/typec/Kconfig
-+++ b/drivers/usb/typec/Kconfig
-@@ -73,6 +73,18 @@ config TYPEC_TPS6598X
- 	  If you choose to build this driver as a dynamically linked module, the
- 	  module will be called tps6598x.ko.
+diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+index 7eb858732d6d..55deaa52c3ee 100644
+--- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+@@ -1574,6 +1574,13 @@
+ 		};
+ 	};
  
-+config TYPEC_STUSB160X
-+	tristate "STMicroelectronics STUSB160x Type-C controller driver"
-+	depends on I2C
-+	depends on REGMAP_I2C
-+	depends on USB_ROLE_SWITCH || !USB_ROLE_SWITCH
-+	help
-+	  Say Y or M here if your system has STMicroelectronics STUSB160x
-+	  Type-C port controller.
++	stusb1600_pins_a: stusb1600-0 {
++		pins {
++			pinmux = <STM32_PINMUX('I', 11, ANALOG)>;
++			bias-pull-up;
++		};
++	};
 +
-+	  If you choose to build this driver as a dynamically linked module, the
-+	  module will be called stusb160x.ko.
+ 	usart2_pins_a: usart2-0 {
+ 		pins1 {
+ 			pinmux = <STM32_PINMUX('F', 5, AF7)>, /* USART2_TX */
+diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+index 70db923a45f7..8d55f3fd06b3 100644
+--- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+@@ -80,6 +80,14 @@
+ 		dais = <&sai2a_port &sai2b_port &i2s2_port>;
+ 		status = "okay";
+ 	};
 +
- source "drivers/usb/typec/mux/Kconfig"
++	vin: vin {
++		compatible = "regulator-fixed";
++		regulator-name = "vin";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++	};
+ };
  
- source "drivers/usb/typec/altmodes/Kconfig"
-diff --git a/drivers/usb/typec/Makefile b/drivers/usb/typec/Makefile
-index 7753a5c3cd46..671bc2d3cd6a 100644
---- a/drivers/usb/typec/Makefile
-+++ b/drivers/usb/typec/Makefile
-@@ -6,4 +6,5 @@ obj-$(CONFIG_TYPEC_TCPM)	+= tcpm/
- obj-$(CONFIG_TYPEC_UCSI)	+= ucsi/
- obj-$(CONFIG_TYPEC_HD3SS3220)	+= hd3ss3220.o
- obj-$(CONFIG_TYPEC_TPS6598X)	+= tps6598x.o
-+obj-$(CONFIG_TYPEC_STUSB160X) 	+= stusb160x.o
- obj-$(CONFIG_TYPEC)		+= mux/
-diff --git a/drivers/usb/typec/stusb160x.c b/drivers/usb/typec/stusb160x.c
-new file mode 100644
-index 000000000000..ce0bd7b3ad88
---- /dev/null
-+++ b/drivers/usb/typec/stusb160x.c
-@@ -0,0 +1,875 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * STMicroelectronics STUSB160x Type-C controller family driver
-+ *
-+ * Copyright (C) 2020, STMicroelectronics
-+ * Author(s): Amelie Delaunay <amelie.delaunay@st.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/i2c.h>
-+#include <linux/interrupt.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/regmap.h>
-+#include <linux/regulator/consumer.h>
-+#include <linux/usb/role.h>
-+#include <linux/usb/typec.h>
-+
-+#define STUSB160X_ALERT_STATUS			0x0B /* RC */
-+#define STUSB160X_ALERT_STATUS_MASK_CTRL	0x0C /* RW */
-+#define STUSB160X_CC_CONNECTION_STATUS_TRANS	0x0D /* RC */
-+#define STUSB160X_CC_CONNECTION_STATUS		0x0E /* RO */
-+#define STUSB160X_MONITORING_STATUS_TRANS	0x0F /* RC */
-+#define STUSB160X_MONITORING_STATUS		0x10 /* RO */
-+#define STUSB160X_CC_OPERATION_STATUS		0x11 /* RO */
-+#define STUSB160X_HW_FAULT_STATUS_TRANS		0x12 /* RC */
-+#define STUSB160X_HW_FAULT_STATUS		0x13 /* RO */
-+#define STUSB160X_CC_CAPABILITY_CTRL		0x18 /* RW */
-+#define STUSB160X_CC_VCONN_SWITCH_CTRL		0x1E /* RW */
-+#define STUSB160X_VCONN_MONITORING_CTRL		0x20 /* RW */
-+#define STUSB160X_VBUS_MONITORING_RANGE_CTRL	0x22 /* RW */
-+#define STUSB160X_RESET_CTRL			0x23 /* RW */
-+#define STUSB160X_VBUS_DISCHARGE_TIME_CTRL	0x25 /* RW */
-+#define STUSB160X_VBUS_DISCHARGE_STATUS		0x26 /* RO */
-+#define STUSB160X_VBUS_ENABLE_STATUS		0x27 /* RO */
-+#define STUSB160X_CC_POWER_MODE_CTRL		0x28 /* RW */
-+#define STUSB160X_VBUS_MONITORING_CTRL		0x2E /* RW */
-+#define STUSB1600_REG_MAX			0x2F /* RO - Reserved */
-+
-+/* STUSB160X_ALERT_STATUS/STUSB160X_ALERT_STATUS_MASK_CTRL bitfields */
-+#define STUSB160X_HW_FAULT			BIT(4)
-+#define STUSB160X_MONITORING			BIT(5)
-+#define STUSB160X_CC_CONNECTION			BIT(6)
-+#define STUSB160X_ALL_ALERTS			GENMASK(6, 4)
-+
-+/* STUSB160X_CC_CONNECTION_STATUS_TRANS bitfields */
-+#define STUSB160X_CC_ATTACH_TRANS		BIT(0)
-+
-+/* STUSB160X_CC_CONNECTION_STATUS bitfields */
-+#define STUSB160X_CC_ATTACH			BIT(0)
-+#define STUSB160X_CC_VCONN_SUPPLY		BIT(1)
-+#define STUSB160X_CC_DATA_ROLE(s)		(!!((s) & BIT(2)))
-+#define STUSB160X_CC_POWER_ROLE(s)		(!!((s) & BIT(3)))
-+#define STUSB160X_CC_ATTACHED_MODE		GENMASK(7, 5)
-+
-+/* STUSB160X_MONITORING_STATUS_TRANS bitfields */
-+#define STUSB160X_VCONN_PRESENCE_TRANS		BIT(0)
-+#define STUSB160X_VBUS_PRESENCE_TRANS		BIT(1)
-+#define STUSB160X_VBUS_VSAFE0V_TRANS		BIT(2)
-+#define STUSB160X_VBUS_VALID_TRANS		BIT(3)
-+
-+/* STUSB160X_MONITORING_STATUS bitfields */
-+#define STUSB160X_VCONN_PRESENCE		BIT(0)
-+#define STUSB160X_VBUS_PRESENCE			BIT(1)
-+#define STUSB160X_VBUS_VSAFE0V			BIT(2)
-+#define STUSB160X_VBUS_VALID			BIT(3)
-+
-+/* STUSB160X_CC_OPERATION_STATUS bitfields */
-+#define STUSB160X_TYPEC_FSM_STATE		GENMASK(4, 0)
-+#define STUSB160X_SINK_POWER_STATE		GENMASK(6, 5)
-+#define STUSB160X_CC_ATTACHED			BIT(7)
-+
-+/* STUSB160X_HW_FAULT_STATUS_TRANS bitfields */
-+#define STUSB160X_VCONN_SW_OVP_FAULT_TRANS	BIT(0)
-+#define STUSB160X_VCONN_SW_OCP_FAULT_TRANS	BIT(1)
-+#define STUSB160X_VCONN_SW_RVP_FAULT_TRANS	BIT(2)
-+#define STUSB160X_VPU_VALID_TRANS		BIT(4)
-+#define STUSB160X_VPU_OVP_FAULT_TRANS		BIT(5)
-+#define STUSB160X_THERMAL_FAULT			BIT(7)
-+
-+/* STUSB160X_HW_FAULT_STATUS bitfields */
-+#define STUSB160X_VCONN_SW_OVP_FAULT_CC2	BIT(0)
-+#define STUSB160X_VCONN_SW_OVP_FAULT_CC1	BIT(1)
-+#define STUSB160X_VCONN_SW_OCP_FAULT_CC2	BIT(2)
-+#define STUSB160X_VCONN_SW_OCP_FAULT_CC1	BIT(3)
-+#define STUSB160X_VCONN_SW_RVP_FAULT_CC2	BIT(4)
-+#define STUSB160X_VCONN_SW_RVP_FAULT_CC1	BIT(5)
-+#define STUSB160X_VPU_VALID			BIT(6)
-+#define STUSB160X_VPU_OVP_FAULT			BIT(7)
-+
-+/* STUSB160X_CC_CAPABILITY_CTRL bitfields */
-+#define STUSB160X_CC_VCONN_SUPPLY_EN		BIT(0)
-+#define STUSB160X_CC_VCONN_DISCHARGE_EN		BIT(4)
-+#define STUSB160X_CC_CURRENT_ADVERTISED		GENMASK(7, 6)
-+
-+/* STUSB160X_VCONN_SWITCH_CTRL bitfields */
-+#define STUSB160X_CC_VCONN_SWITCH_ILIM		GENMASK(3, 0)
-+
-+/* STUSB160X_VCONN_MONITORING_CTRL bitfields */
-+#define STUSB160X_VCONN_UVLO_THRESHOLD		BIT(6)
-+#define STUSB160X_VCONN_MONITORING_EN		BIT(7)
-+
-+/* STUSB160X_VBUS_MONITORING_RANGE_CTRL bitfields */
-+#define STUSB160X_SHIFT_LOW_VBUS_LIMIT		GENMASK(3, 0)
-+#define STUSB160X_SHIFT_HIGH_VBUS_LIMIT		GENMASK(7, 4)
-+
-+/* STUSB160X_RESET_CTRL bitfields */
-+#define STUSB160X_SW_RESET_EN			BIT(0)
-+
-+/* STUSB160X_VBUS_DISCHARGE_TIME_CTRL bitfields */
-+#define STUSBXX02_VBUS_DISCHARGE_TIME_TO_PDO	GENMASK(3, 0)
-+#define STUSB160X_VBUS_DISCHARGE_TIME_TO_0V	GENMASK(7, 4)
-+
-+/* STUSB160X_VBUS_DISCHARGE_STATUS bitfields */
-+#define STUSB160X_VBUS_DISCHARGE_EN		BIT(7)
-+
-+/* STUSB160X_VBUS_ENABLE_STATUS bitfields */
-+#define STUSB160X_VBUS_SOURCE_EN		BIT(0)
-+#define STUSB160X_VBUS_SINK_EN			BIT(1)
-+
-+/* STUSB160X_CC_POWER_MODE_CTRL bitfields */
-+#define STUSB160X_CC_POWER_MODE			GENMASK(2, 0)
-+
-+/* STUSB160X_VBUS_MONITORING_CTRL bitfields */
-+#define STUSB160X_VDD_UVLO_DISABLE		BIT(0)
-+#define STUSB160X_VBUS_VSAFE0V_THRESHOLD	GENMASK(2, 1)
-+#define STUSB160X_VBUS_RANGE_DISABLE		BIT(4)
-+#define STUSB160X_VDD_OVLO_DISABLE		BIT(6)
-+
-+enum stusb160x_pwr_mode {
-+	SOURCE_WITH_ACCESSORY,
-+	SINK_WITH_ACCESSORY,
-+	SINK_WITHOUT_ACCESSORY,
-+	DUAL_WITH_ACCESSORY,
-+	DUAL_WITH_ACCESSORY_AND_TRY_SRC,
-+	DUAL_WITH_ACCESSORY_AND_TRY_SNK,
-+};
-+
-+enum stusb160x_attached_mode {
-+	NO_DEVICE_ATTACHED,
-+	SINK_ATTACHED,
-+	SOURCE_ATTACHED,
-+	DEBUG_ACCESSORY_ATTACHED,
-+	AUDIO_ACCESSORY_ATTACHED,
-+};
-+
-+struct stusb160x {
-+	struct device		*dev;
-+	struct regmap		*regmap;
-+	struct regulator	*vdd_supply;
-+	struct regulator	*vsys_supply;
-+	struct regulator	*vconn_supply;
-+	struct regulator	*main_supply;
-+
-+	struct typec_port	*port;
-+	struct typec_capability capability;
-+	struct typec_partner	*partner;
-+
-+	enum typec_port_type	port_type;
-+	enum typec_pwr_opmode	pwr_opmode;
-+	bool			vbus_on;
-+
-+	struct usb_role_switch	*role_sw;
-+};
-+
-+static bool stusb160x_reg_writeable(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case STUSB160X_ALERT_STATUS_MASK_CTRL:
-+	case STUSB160X_CC_CAPABILITY_CTRL:
-+	case STUSB160X_CC_VCONN_SWITCH_CTRL:
-+	case STUSB160X_VCONN_MONITORING_CTRL:
-+	case STUSB160X_VBUS_MONITORING_RANGE_CTRL:
-+	case STUSB160X_RESET_CTRL:
-+	case STUSB160X_VBUS_DISCHARGE_TIME_CTRL:
-+	case STUSB160X_CC_POWER_MODE_CTRL:
-+	case STUSB160X_VBUS_MONITORING_CTRL:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static bool stusb160x_reg_readable(struct device *dev, unsigned int reg)
-+{
-+	if (reg <= 0x0A ||
-+	    (reg >= 0x14 && reg <= 0x17) ||
-+	    (reg >= 0x19 && reg <= 0x1D) ||
-+	    (reg >= 0x29 && reg <= 0x2D) ||
-+	    (reg == 0x1F || reg == 0x21 || reg == 0x24 || reg == 0x2F))
-+		return false;
-+	else
-+		return true;
-+}
-+
-+static bool stusb160x_reg_volatile(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case STUSB160X_ALERT_STATUS:
-+	case STUSB160X_CC_CONNECTION_STATUS_TRANS:
-+	case STUSB160X_CC_CONNECTION_STATUS:
-+	case STUSB160X_MONITORING_STATUS_TRANS:
-+	case STUSB160X_MONITORING_STATUS:
-+	case STUSB160X_CC_OPERATION_STATUS:
-+	case STUSB160X_HW_FAULT_STATUS_TRANS:
-+	case STUSB160X_HW_FAULT_STATUS:
-+	case STUSB160X_VBUS_DISCHARGE_STATUS:
-+	case STUSB160X_VBUS_ENABLE_STATUS:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static bool stusb160x_reg_precious(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case STUSB160X_ALERT_STATUS:
-+	case STUSB160X_CC_CONNECTION_STATUS_TRANS:
-+	case STUSB160X_MONITORING_STATUS_TRANS:
-+	case STUSB160X_HW_FAULT_STATUS_TRANS:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static const struct regmap_config stusb1600_regmap_config = {
-+	.reg_bits	= 8,
-+	.reg_stride	= 1,
-+	.val_bits	= 8,
-+	.max_register	= STUSB1600_REG_MAX,
-+	.writeable_reg	= stusb160x_reg_writeable,
-+	.readable_reg	= stusb160x_reg_readable,
-+	.volatile_reg	= stusb160x_reg_volatile,
-+	.precious_reg	= stusb160x_reg_precious,
-+	.cache_type	= REGCACHE_RBTREE,
-+};
-+
-+static bool stusb160x_get_vconn(struct stusb160x *chip)
-+{
-+	u32 val;
-+	int ret;
-+
-+	ret = regmap_read(chip->regmap, STUSB160X_CC_CAPABILITY_CTRL, &val);
-+	if (ret) {
-+		dev_err(chip->dev, "Unable to get Vconn status: %d\n", ret);
-+		return false;
-+	}
-+
-+	return !!FIELD_GET(STUSB160X_CC_VCONN_SUPPLY_EN, val);
-+}
-+
-+static int stusb160x_set_vconn(struct stusb160x *chip, bool on)
-+{
-+	int ret;
-+
-+	/* Manage VCONN input supply */
-+	if (chip->vconn_supply) {
-+		if (on) {
-+			ret = regulator_enable(chip->vconn_supply);
-+			if (ret) {
-+				dev_err(chip->dev,
-+					"failed to enable vconn supply: %d\n",
-+					ret);
-+				return ret;
-+			}
-+		} else {
-+			regulator_disable(chip->vconn_supply);
-+		}
-+	}
-+
-+	/* Manage VCONN monitoring and power path */
-+	ret = regmap_update_bits(chip->regmap, STUSB160X_VCONN_MONITORING_CTRL,
-+				 STUSB160X_VCONN_MONITORING_EN,
-+				 on ? STUSB160X_VCONN_MONITORING_EN : 0);
-+	if (ret)
-+		goto vconn_reg_disable;
-+
-+	return 0;
-+
-+vconn_reg_disable:
-+	if (chip->vconn_supply && on)
-+		regulator_disable(chip->vconn_supply);
-+
-+	return ret;
-+}
-+
-+static enum typec_pwr_opmode stusb160x_get_pwr_opmode(struct stusb160x *chip)
-+{
-+	u32 val;
-+	int ret;
-+
-+	ret = regmap_read(chip->regmap, STUSB160X_CC_CAPABILITY_CTRL, &val);
-+	if (ret) {
-+		dev_err(chip->dev, "Unable to get pwr opmode: %d\n", ret);
-+		return TYPEC_PWR_MODE_USB;
-+	}
-+
-+	return FIELD_GET(STUSB160X_CC_CURRENT_ADVERTISED, val);
-+}
-+
-+static enum typec_accessory stusb160x_get_accessory(u32 status)
-+{
-+	enum stusb160x_attached_mode mode;
-+
-+	mode = FIELD_GET(STUSB160X_CC_ATTACHED_MODE, status);
-+
-+	switch (mode) {
-+	case DEBUG_ACCESSORY_ATTACHED:
-+		return TYPEC_ACCESSORY_DEBUG;
-+	case AUDIO_ACCESSORY_ATTACHED:
-+		return TYPEC_ACCESSORY_AUDIO;
-+	default:
-+		return TYPEC_ACCESSORY_NONE;
-+	}
-+}
-+
-+static enum typec_role stusb160x_get_vconn_role(u32 status)
-+{
-+	if (FIELD_GET(STUSB160X_CC_VCONN_SUPPLY, status))
-+		return TYPEC_SOURCE;
-+
-+	return TYPEC_SINK;
-+}
-+
-+static void stusb160x_set_data_role(struct stusb160x *chip,
-+				    enum typec_data_role data_role,
-+				    bool attached)
-+{
-+	enum usb_role usb_role = USB_ROLE_NONE;
-+
-+	if (attached) {
-+		if (data_role == TYPEC_HOST)
-+			usb_role = USB_ROLE_HOST;
-+		else
-+			usb_role = USB_ROLE_DEVICE;
-+	}
-+
-+	usb_role_switch_set_role(chip->role_sw, usb_role);
-+	typec_set_data_role(chip->port, data_role);
-+}
-+
-+static int stusb160x_attach(struct stusb160x *chip, u32 status)
-+{
-+	struct typec_partner_desc desc;
-+	int ret;
-+
-+	if ((STUSB160X_CC_POWER_ROLE(status) == TYPEC_SOURCE) &&
-+	    chip->vdd_supply) {
-+		ret = regulator_enable(chip->vdd_supply);
-+		if (ret) {
-+			dev_err(chip->dev,
-+				"Failed to enable Vbus supply: %d\n", ret);
-+			return ret;
-+		}
-+		chip->vbus_on = true;
-+	}
-+
-+	desc.usb_pd = false;
-+	desc.accessory = stusb160x_get_accessory(status);
-+	desc.identity = NULL;
-+
-+	chip->partner = typec_register_partner(chip->port, &desc);
-+	if (IS_ERR(chip->partner)) {
-+		ret = PTR_ERR(chip->partner);
-+		goto vbus_disable;
-+	}
-+
-+	typec_set_pwr_role(chip->port, STUSB160X_CC_POWER_ROLE(status));
-+	typec_set_pwr_opmode(chip->port, stusb160x_get_pwr_opmode(chip));
-+	typec_set_vconn_role(chip->port, stusb160x_get_vconn_role(status));
-+	stusb160x_set_data_role(chip, STUSB160X_CC_DATA_ROLE(status), true);
-+
-+	return 0;
-+
-+vbus_disable:
-+	if (chip->vbus_on) {
-+		regulator_disable(chip->vdd_supply);
-+		chip->vbus_on = false;
-+	}
-+
-+	return ret;
-+}
-+
-+static void stusb160x_detach(struct stusb160x *chip, u32 status)
-+{
-+	typec_unregister_partner(chip->partner);
-+	chip->partner = NULL;
-+
-+	typec_set_pwr_role(chip->port, STUSB160X_CC_POWER_ROLE(status));
-+	typec_set_pwr_opmode(chip->port, TYPEC_PWR_MODE_USB);
-+	typec_set_vconn_role(chip->port, stusb160x_get_vconn_role(status));
-+	stusb160x_set_data_role(chip, STUSB160X_CC_DATA_ROLE(status), false);
-+
-+	if (chip->vbus_on) {
-+		regulator_disable(chip->vdd_supply);
-+		chip->vbus_on = false;
-+	}
-+}
-+
-+static irqreturn_t stusb160x_irq_handler(int irq, void *data)
-+{
-+	struct stusb160x *chip = data;
-+	u32 pending, trans, status;
-+	int ret;
-+
-+	ret = regmap_read(chip->regmap, STUSB160X_ALERT_STATUS, &pending);
-+	if (ret)
-+		goto err;
-+
-+	if (pending & STUSB160X_CC_CONNECTION) {
-+		ret = regmap_read(chip->regmap,
-+				  STUSB160X_CC_CONNECTION_STATUS_TRANS, &trans);
-+		if (ret)
-+			goto err;
-+		ret = regmap_read(chip->regmap,
-+				  STUSB160X_CC_CONNECTION_STATUS, &status);
-+		if (ret)
-+			goto err;
-+
-+		if (trans & STUSB160X_CC_ATTACH_TRANS) {
-+			if (status & STUSB160X_CC_ATTACH) {
-+				ret = stusb160x_attach(chip, status);
-+				if (ret)
-+					goto err;
-+			} else {
-+				stusb160x_detach(chip, status);
-+			}
-+		}
-+	}
-+err:
-+	return IRQ_HANDLED;
-+}
-+
-+static int stusb160x_irq_init(struct stusb160x *chip, int irq)
-+{
-+	u32 status;
-+	int ret;
-+
-+	ret = regmap_read(chip->regmap,
-+			  STUSB160X_CC_CONNECTION_STATUS, &status);
-+	if (ret)
-+		return ret;
-+
-+	if (status & STUSB160X_CC_ATTACH) {
-+		ret = stusb160x_attach(chip, status);
-+		if (ret)
-+			dev_err(chip->dev, "attach failed: %d\n", ret);
-+	}
-+
-+	ret = devm_request_threaded_irq(chip->dev, irq, NULL,
-+					stusb160x_irq_handler, IRQF_ONESHOT,
-+					dev_name(chip->dev), chip);
-+	if (ret)
-+		goto partner_unregister;
-+
-+	/* Unmask CC_CONNECTION events */
-+	ret = regmap_write_bits(chip->regmap, STUSB160X_ALERT_STATUS_MASK_CTRL,
-+				STUSB160X_CC_CONNECTION, 0);
-+	if (ret)
-+		goto partner_unregister;
-+
-+	return 0;
-+
-+partner_unregister:
-+	if (chip->partner) {
-+		typec_unregister_partner(chip->partner);
-+		chip->partner = NULL;
-+	}
-+
-+	return ret;
-+}
-+
-+static int stusb160x_chip_init(struct stusb160x *chip)
-+{
-+	u32 val;
-+	int ret;
-+
-+	/* Change the default Type-C power mode */
-+	if (chip->port_type == TYPEC_PORT_SRC)
-+		ret = regmap_update_bits(chip->regmap,
-+					 STUSB160X_CC_POWER_MODE_CTRL,
-+					 STUSB160X_CC_POWER_MODE,
-+					 SOURCE_WITH_ACCESSORY);
-+	else if (chip->port_type == TYPEC_PORT_SNK)
-+		ret = regmap_update_bits(chip->regmap,
-+					 STUSB160X_CC_POWER_MODE_CTRL,
-+					 STUSB160X_CC_POWER_MODE,
-+					 SINK_WITH_ACCESSORY);
-+	else /* (chip->port_type == TYPEC_PORT_DRP) */
-+		ret = regmap_update_bits(chip->regmap,
-+					 STUSB160X_CC_POWER_MODE_CTRL,
-+					 STUSB160X_CC_POWER_MODE,
-+					 DUAL_WITH_ACCESSORY);
-+	if (ret)
-+		return ret;
-+
-+	if (chip->port_type == TYPEC_PORT_SNK)
-+		goto skip_src;
-+
-+	/* Change the default Type-C Source power operation mode capability */
-+	ret = regmap_update_bits(chip->regmap, STUSB160X_CC_CAPABILITY_CTRL,
-+				 STUSB160X_CC_CURRENT_ADVERTISED,
-+				 FIELD_PREP(STUSB160X_CC_CURRENT_ADVERTISED,
-+					    chip->pwr_opmode));
-+	if (ret)
-+		return ret;
-+
-+	/* Manage Type-C Source Vconn supply */
-+	if (stusb160x_get_vconn(chip)) {
-+		ret = stusb160x_set_vconn(chip, true);
-+		if (ret)
-+			return ret;
-+	}
-+
-+skip_src:
-+	/* Mask all events interrupts - to be unmasked with interrupt support */
-+	ret = regmap_update_bits(chip->regmap, STUSB160X_ALERT_STATUS_MASK_CTRL,
-+				 STUSB160X_ALL_ALERTS, STUSB160X_ALL_ALERTS);
-+	if (ret)
-+		return ret;
-+
-+	/* Read status at least once to clear any stale interrupts */
-+	regmap_read(chip->regmap, STUSB160X_ALERT_STATUS, &val);
-+	regmap_read(chip->regmap, STUSB160X_CC_CONNECTION_STATUS_TRANS, &val);
-+	regmap_read(chip->regmap, STUSB160X_MONITORING_STATUS_TRANS, &val);
-+	regmap_read(chip->regmap, STUSB160X_HW_FAULT_STATUS_TRANS, &val);
-+
-+	return 0;
-+}
-+
-+static int stusb160x_get_fw_caps(struct stusb160x *chip,
-+				 struct fwnode_handle *fwnode)
-+{
-+	const char *cap_str;
-+	int ret;
-+
-+	chip->capability.fwnode = fwnode;
-+
-+	/*
-+	 * Supported port type can be configured through device tree
-+	 * else it is read from chip registers in stusb160x_get_caps.
-+	 */
-+	ret = fwnode_property_read_string(fwnode, "power-role", &cap_str);
-+	if (!ret) {
-+		chip->port_type = typec_find_port_power_role(cap_str);
-+		if (chip->port_type < 0) {
-+			ret = chip->port_type;
-+			return ret;
-+		}
-+	}
-+	chip->capability.type = chip->port_type;
-+
-+	/* Skip DRP/Source capabilities in case of Sink only */
-+	if (chip->port_type == TYPEC_PORT_SNK)
-+		return 0;
-+
-+	if (chip->port_type == TYPEC_PORT_DRP)
-+		chip->capability.prefer_role = TYPEC_SINK;
-+
-+	/*
-+	 * Supported power operation mode can be configured through device tree
-+	 * else it is read from chip registers in stusb160x_get_caps.
-+	 */
-+	ret = fwnode_property_read_string(fwnode, "power-opmode", &cap_str);
-+	if (!ret) {
-+		chip->pwr_opmode = typec_find_pwr_opmode(cap_str);
-+		/* Power delivery not yet supported */
-+		if (chip->pwr_opmode < 0 ||
-+		    chip->pwr_opmode == TYPEC_PWR_MODE_PD) {
-+			ret = chip->pwr_opmode < 0 ? chip->pwr_opmode : -EINVAL;
-+			dev_err(chip->dev, "bad power operation mode: %d\n",
-+				chip->pwr_opmode);
-+			return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int stusb160x_get_caps(struct stusb160x *chip)
-+{
-+	enum typec_port_type *type = &chip->capability.type;
-+	enum typec_port_data *data = &chip->capability.data;
-+	enum typec_accessory *accessory = chip->capability.accessory;
-+	u32 val;
-+	int ret;
-+
-+	chip->capability.revision = USB_TYPEC_REV_1_2;
-+
-+	ret = regmap_read(chip->regmap, STUSB160X_CC_POWER_MODE_CTRL, &val);
-+	if (ret)
-+		return ret;
-+
-+	switch (FIELD_GET(STUSB160X_CC_POWER_MODE, val)) {
-+	case SOURCE_WITH_ACCESSORY:
-+		*type = TYPEC_PORT_SRC;
-+		*data = TYPEC_PORT_DFP;
-+		*accessory++ = TYPEC_ACCESSORY_AUDIO;
-+		*accessory++ = TYPEC_ACCESSORY_DEBUG;
-+		break;
-+	case SINK_WITH_ACCESSORY:
-+		*type = TYPEC_PORT_SNK;
-+		*data = TYPEC_PORT_UFP;
-+		*accessory++ = TYPEC_ACCESSORY_AUDIO;
-+		*accessory++ = TYPEC_ACCESSORY_DEBUG;
-+		break;
-+	case SINK_WITHOUT_ACCESSORY:
-+		*type = TYPEC_PORT_SNK;
-+		*data = TYPEC_PORT_UFP;
-+		break;
-+	case DUAL_WITH_ACCESSORY:
-+	case DUAL_WITH_ACCESSORY_AND_TRY_SRC:
-+	case DUAL_WITH_ACCESSORY_AND_TRY_SNK:
-+		*type = TYPEC_PORT_DRP;
-+		*data = TYPEC_PORT_DRD;
-+		*accessory++ = TYPEC_ACCESSORY_AUDIO;
-+		*accessory++ = TYPEC_ACCESSORY_DEBUG;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	chip->port_type = *type;
-+	chip->pwr_opmode = stusb160x_get_pwr_opmode(chip);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id stusb160x_of_match[] = {
-+	{ .compatible = "st,stusb1600", .data = &stusb1600_regmap_config},
-+	{},
-+};
-+
-+static int stusb160x_probe(struct i2c_client *client)
-+{
-+	struct stusb160x *chip;
-+	const struct of_device_id *match;
-+	struct regmap_config *regmap_config;
-+	struct fwnode_handle *fwnode;
-+	int ret;
-+
-+	chip = devm_kzalloc(&client->dev, sizeof(struct stusb160x), GFP_KERNEL);
-+	if (!chip)
-+		return -ENOMEM;
-+
-+	i2c_set_clientdata(client, chip);
-+
-+	match = i2c_of_match_device(stusb160x_of_match, client);
-+	regmap_config = (struct regmap_config *)match->data;
-+	chip->regmap = devm_regmap_init_i2c(client, regmap_config);
-+	if (IS_ERR(chip->regmap)) {
-+		ret = PTR_ERR(chip->regmap);
-+		dev_err(&client->dev,
-+			"Failed to allocate register map:%d\n", ret);
-+		return ret;
-+	}
-+
-+	chip->dev = &client->dev;
-+
-+	chip->vsys_supply = devm_regulator_get_optional(chip->dev, "vsys");
-+	if (IS_ERR(chip->vsys_supply)) {
-+		ret = PTR_ERR(chip->vsys_supply);
-+		if (ret != -ENODEV)
-+			return ret;
-+		chip->vsys_supply = NULL;
-+	}
-+
-+	chip->vdd_supply = devm_regulator_get_optional(chip->dev, "vdd");
-+	if (IS_ERR(chip->vdd_supply)) {
-+		ret = PTR_ERR(chip->vdd_supply);
-+		if (ret != -ENODEV)
-+			return ret;
-+		chip->vdd_supply = NULL;
-+	}
-+
-+	chip->vconn_supply = devm_regulator_get_optional(chip->dev, "vconn");
-+	if (IS_ERR(chip->vconn_supply)) {
-+		ret = PTR_ERR(chip->vconn_supply);
-+		if (ret != -ENODEV)
-+			return ret;
-+		chip->vconn_supply = NULL;
-+	}
-+
-+	fwnode = device_get_named_child_node(chip->dev, "connector");
-+	if (IS_ERR(fwnode))
-+		return PTR_ERR(fwnode);
-+
-+	/*
-+	 * When both VDD and VSYS power supplies are present, the low power
-+	 * supply VSYS is selected when VSYS voltage is above 3.1 V.
-+	 * Otherwise VDD is selected.
-+	 */
-+	if (chip->vdd_supply &&
-+	    (!chip->vsys_supply ||
-+	     (regulator_get_voltage(chip->vsys_supply) <= 3100000)))
-+		chip->main_supply = chip->vdd_supply;
-+	else
-+		chip->main_supply = chip->vsys_supply;
-+
-+	if (chip->main_supply) {
-+		ret = regulator_enable(chip->main_supply);
-+		if (ret) {
-+			dev_err(chip->dev,
-+				"Failed to enable main supply: %d\n", ret);
-+			goto fwnode_put;
-+		}
-+	}
-+
-+	/* Get configuration from chip */
-+	ret = stusb160x_get_caps(chip);
-+	if (ret) {
-+		dev_err(chip->dev, "Failed to get port caps: %d\n", ret);
-+		goto main_reg_disable;
-+	}
-+
-+	/* Get optional re-configuration from device tree */
-+	ret = stusb160x_get_fw_caps(chip, fwnode);
-+	if (ret) {
-+		dev_err(chip->dev, "Failed to get connector caps: %d\n", ret);
-+		goto main_reg_disable;
-+	}
-+
-+	ret = stusb160x_chip_init(chip);
-+	if (ret) {
-+		dev_err(chip->dev, "Failed to init port: %d\n", ret);
-+		goto main_reg_disable;
-+	}
-+
-+	chip->port = typec_register_port(chip->dev, &chip->capability);
-+	if (!chip->port) {
-+		ret = -ENODEV;
-+		goto all_reg_disable;
-+	}
-+
-+	/*
-+	 * Default power operation mode initialization: will be updated upon
-+	 * attach/detach interrupt
-+	 */
-+	typec_set_pwr_opmode(chip->port, chip->pwr_opmode);
-+
-+	if (client->irq) {
-+		ret = stusb160x_irq_init(chip, client->irq);
-+		if (ret)
-+			goto port_unregister;
-+
-+		chip->role_sw = fwnode_usb_role_switch_get(fwnode);
-+		if (IS_ERR(chip->role_sw)) {
-+			ret = PTR_ERR(chip->role_sw);
-+			if (ret != -EPROBE_DEFER)
-+				dev_err(chip->dev,
-+					"Failed to get usb role switch: %d\n",
-+					ret);
-+			goto port_unregister;
-+		}
-+	} else {
-+		/*
-+		 * If Source or Dual power role, need to enable VDD supply
-+		 * providing Vbus if present. In case of interrupt support,
-+		 * VDD supply will be dynamically managed upon attach/detach
-+		 * interrupt.
-+		 */
-+		if (chip->port_type != TYPEC_PORT_SNK && chip->vdd_supply) {
-+			ret = regulator_enable(chip->vdd_supply);
-+			if (ret) {
-+				dev_err(chip->dev,
-+					"Failed to enable VDD supply: %d\n",
-+					ret);
-+				goto port_unregister;
-+			}
-+			chip->vbus_on = true;
-+		}
-+	}
-+
-+	fwnode_handle_put(fwnode);
-+
-+	return 0;
-+
-+port_unregister:
-+	typec_unregister_port(chip->port);
-+all_reg_disable:
-+	if (stusb160x_get_vconn(chip))
-+		stusb160x_set_vconn(chip, false);
-+main_reg_disable:
-+	if (chip->main_supply)
-+		regulator_disable(chip->main_supply);
-+fwnode_put:
-+	fwnode_handle_put(fwnode);
-+
-+	return ret;
-+}
-+
-+static int stusb160x_remove(struct i2c_client *client)
-+{
-+	struct stusb160x *chip = i2c_get_clientdata(client);
-+
-+	if (chip->partner) {
-+		typec_unregister_partner(chip->partner);
-+		chip->partner = NULL;
-+	}
-+
-+	if (chip->vbus_on)
-+		regulator_disable(chip->vdd_supply);
-+
-+	if (chip->role_sw)
-+		usb_role_switch_put(chip->role_sw);
-+
-+	typec_unregister_port(chip->port);
-+
-+	if (stusb160x_get_vconn(chip))
-+		stusb160x_set_vconn(chip, false);
-+
-+	if (chip->main_supply)
-+		regulator_disable(chip->main_supply);
-+
-+	return 0;
-+}
-+
-+static int __maybe_unused stusb160x_suspend(struct device *dev)
-+{
-+	struct stusb160x *chip = dev_get_drvdata(dev);
-+
-+	/* Mask interrupts */
-+	return regmap_update_bits(chip->regmap,
-+				  STUSB160X_ALERT_STATUS_MASK_CTRL,
-+				  STUSB160X_ALL_ALERTS, STUSB160X_ALL_ALERTS);
-+}
-+
-+static int __maybe_unused stusb160x_resume(struct device *dev)
-+{
-+	struct stusb160x *chip = dev_get_drvdata(dev);
-+	u32 status;
-+	int ret;
-+
-+	ret = regcache_sync(chip->regmap);
-+	if (ret)
-+		return ret;
-+
-+	/* Check if attach/detach occurred during low power */
-+	ret = regmap_read(chip->regmap,
-+			  STUSB160X_CC_CONNECTION_STATUS, &status);
-+	if (ret)
-+		return ret;
-+
-+	if (chip->partner && !(status & STUSB160X_CC_ATTACH))
-+		stusb160x_detach(chip, status);
-+
-+	if (!chip->partner && (status & STUSB160X_CC_ATTACH)) {
-+		ret = stusb160x_attach(chip, status);
-+		if (ret)
-+			dev_err(chip->dev, "attach failed: %d\n", ret);
-+	}
-+
-+	/* Unmask interrupts */
-+	return regmap_write_bits(chip->regmap, STUSB160X_ALERT_STATUS_MASK_CTRL,
-+				 STUSB160X_CC_CONNECTION, 0);
-+}
-+
-+static SIMPLE_DEV_PM_OPS(stusb160x_pm_ops, stusb160x_suspend, stusb160x_resume);
-+
-+static struct i2c_driver stusb160x_driver = {
-+	.driver = {
-+		.name = "stusb160x",
-+		.pm = &stusb160x_pm_ops,
-+		.of_match_table = stusb160x_of_match,
-+	},
-+	.probe_new = stusb160x_probe,
-+	.remove = stusb160x_remove,
-+};
-+module_i2c_driver(stusb160x_driver);
-+
-+MODULE_AUTHOR("Amelie Delaunay <amelie.delaunay@st.com>");
-+MODULE_DESCRIPTION("STMicroelectronics STUSB160x Type-C controller driver");
-+MODULE_LICENSE("GPL v2");
+ &adc {
+@@ -230,6 +238,30 @@
+ 	/delete-property/dmas;
+ 	/delete-property/dma-names;
+ 
++	stusb1600@28 {
++		compatible = "st,stusb1600";
++		reg = <0x28>;
++		interrupts = <11 IRQ_TYPE_EDGE_FALLING>;
++		interrupt-parent = <&gpioi>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&stusb1600_pins_a>;
++		status = "okay";
++		vdd-supply = <&vin>;
++
++		connector {
++			compatible = "usb-c-connector";
++			label = "USB-C";
++			power-role = "dual";
++			power-opmode = "default";
++
++			port {
++				con_usbotg_hs_ep: endpoint {
++					remote-endpoint = <&usbotg_hs_ep>;
++				};
++			};
++		};
++	};
++
+ 	pmic: stpmic@33 {
+ 		compatible = "st,stpmic1";
+ 		reg = <0x33>;
+@@ -599,6 +631,12 @@
+ 	phys = <&usbphyc_port1 0>;
+ 	phy-names = "usb2-phy";
+ 	status = "okay";
++
++	port {
++		usbotg_hs_ep: endpoint {
++			remote-endpoint = <&con_usbotg_hs_ep>;
++		};
++	};
+ };
+ 
+ &usbphyc {
 -- 
 2.17.1
 
