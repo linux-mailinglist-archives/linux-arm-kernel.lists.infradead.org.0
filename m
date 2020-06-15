@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3FE1FA485
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 01:41:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE9E01FA48F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 01:41:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
 	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+DK3/M2iqoLHWKbeKCVS53BN6L0c2LVECdN2uYAolSA=; b=Ui4OWImULHcWQT
-	wrB5u9huTK5/MZbkceJ+bR2dA/hJ7/0OKVveiXPJgY299RpdnkvV4EKlhtTBn+DR8sBDdF1Jb99zA
-	shQyCzw3TvoPmDZahZi8DCpZ4p+ZQjHV0h2v2uPfKEgIY8Mjt8JROLheTN0viqoRHg6YGWk0hSiUJ
-	e76aL8FZEdpSZmn7AbYR/r8OOKV08hqS9WYLxTQBNvEm2CcCihu0F0VmrdH3u3GtYJSyA7z0Nd/L6
-	Kd11nR5PwZWT+xoXRsXdzTYRZ+qPuD6ciFBCaK11eYAEQ97B72r0O3zTYaL09Wp5SwnbT5uZJwsNo
-	pbui2gf8WIwrw25dSDGg==;
+	List-Owner; bh=6L2Ifi4/2JTtTp8zXbOUNiAolssM8J+dlVRkiHajpEM=; b=s1OPJ7G0MR86Xa
+	1KrkGQq9Md+sS/vISCwH17OcgNiUz5aoEekPywdHXbXx31DbFiUBcZx0FocPPaOcHiike65/4k21Z
+	RLKJHSU0VjkuczcHGyicsmo4nOmeXJB28RD4sdB6MSb/T1D8P9R2tRpS+4jWyWA0im8rEDXRRju6v
+	c/XuE/P+smr+3aSF3rpdCT13tHaBSKsSeimgC0nmlv2bJ9Nz8DkLOtOBu6us8ZhY7tfsF+88tSchH
+	gY/mrNm/n4MOfygmxxnFG7JQwx3y4i28DIPUSR3cu2zED8HrRlxDYLu50F59bE7nD1F1Rb5Yy6oKR
+	j8+3wFg9ElhLXl5nKHLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkyix-0000hR-4C; Mon, 15 Jun 2020 23:41:07 +0000
+	id 1jkyjP-000119-Q2; Mon, 15 Jun 2020 23:41:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkyim-0000h1-NX; Mon, 15 Jun 2020 23:40:58 +0000
+ id 1jkyj7-0000xI-HD; Mon, 15 Jun 2020 23:41:19 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C3B46208C7;
- Mon, 15 Jun 2020 23:40:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B32D20714;
+ Mon, 15 Jun 2020 23:41:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592264456;
- bh=wmMrTJlDcXeeLr5UjbU5+uAWskHZyXjosJMgpE4Z/Ys=;
+ s=default; t=1592264477;
+ bh=4B3zxx0t4t/cAMnTcb1CgWAE+WyO6z4UCRqXbi4xzFg=;
  h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
- b=FMytGS/l9Q7rfRAWWuUJCjK4MdsYQ2tN5IbvduDrZtNhidlx8yhZFOPzGNUGHL5GW
- v9X3c71oALhFIQgqNdVKcPZ89EWHihH25poCzcxKLBrGUYKbqvAn3F1mFvdoO5iYbY
- 0icsalBe+CJcIfNBdvnAOTaxIYIvjfkZiwZSGleI=
-Date: Tue, 16 Jun 2020 00:40:54 +0100
+ b=AxBMUE88327gyD7AWPGhve+Wh8ybmWBfw1Vr5OWesrVIVG7NxKRQswpbnAXtofFbO
+ sLu3+N4jgXfA/ewD0/dj0zcDJeqxyFwsdjQymufuXtNvL6JVXHeVeKRAOTHmv+8yXX
+ grzN41FYi/g6IrCDmey/eZzzF6h2ijQ5jvrYbNpA=
+Date: Tue, 16 Jun 2020 00:41:15 +0100
 From: Mark Brown <broonie@kernel.org>
-To: Jiaxin Yu <jiaxin.yu@mediatek.com>, lgirdwood@gmail.com,
- matthias.bgg@gmail.com, tiwai@suse.com, hariprasad.kelam@gmail.com
-In-Reply-To: <1591353222-18576-1-git-send-email-jiaxin.yu@mediatek.com>
-References: <1591353222-18576-1-git-send-email-jiaxin.yu@mediatek.com>
-Subject: Re: [PATCH v2 0/2] ASoC: mediatek: mt6358: support DMIC one-wire mode
-Message-Id: <159226439189.27409.5559737025420657238.b4-ty@kernel.org>
+To: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>
+In-Reply-To: <20200609124610.3445662-1-kieran.bingham+renesas@ideasonboard.com>
+References: <20200609124610.3445662-1-kieran.bingham+renesas@ideasonboard.com>
+Subject: Re: [PATCH 00/17] spelling.txt: /decriptors/descriptors/
+Message-Id: <159226447507.27673.16785893373246037922.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_164056_785895_BD93B35D 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20200615_164117_605748_8E5AAE06 
+X-CRM114-Status: UNSURE (   9.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,36 +74,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, howie.huang@mediatek.com,
- linux-kernel@vger.kernel.org, tzungbi@google.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-usb@vger.kernel.org, linux-scsi@vger.kernel.org, linux-mm@kvack.org,
+ linux-rdma@vger.kernel.org, netdev@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ ath10k@lists.infradead.org, virtualization@lists.linux-foundation.org,
+ linux-renesas-soc@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-mtd@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-input@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 5 Jun 2020 18:33:40 +0800, Jiaxin Yu wrote:
-> v2 changes:
-> 	1. Uses a DT property to select DMIC mode instead of a mixer control.
+On Tue, 9 Jun 2020 13:45:53 +0100, Kieran Bingham wrote:
+> I wouldn't normally go through spelling fixes, but I caught sight of
+> this typo twice, and then foolishly grepped the tree for it, and saw how
+> pervasive it was.
 > 
-> v1 changes:
-> 	1. Uses a mixer control to select DMIC mode.
-> 	2. patchwork list:
-> 		https://patchwork.kernel.org/patch/11578309
+> so here I am ... fixing a typo globally... but with an addition in
+> scripts/spelling.txt so it shouldn't re-appear ;-)
 > 
 > [...]
 
 Applied to
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-next
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-next
 
 Thanks!
 
-[1/2] ASoC: mediatek: mt6358: support DMIC one-wire mode
-      commit: c46fc800948c2d0afb548ca12453b837aa1ac880
-[2/2] ASoC: dt-bindings: mediatek: mt6358: add dmic-mode property
-      commit: 6323f13b4d927f52f339f7122676de0b0d1da3c3
+[1/2] regulator: Fix trivial spelling
+      commit: d3f3723387f97118c337689fc73e4199fb4331ce
+[2/2] regulator: gpio: Fix trivial spelling
+      commit: 1f0b740004f09d2f1b716fd6c2fdca81004ded05
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
