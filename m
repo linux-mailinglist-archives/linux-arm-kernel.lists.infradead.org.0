@@ -2,64 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 012991FA1C8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 22:39:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 427E01FA1FA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 22:49:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=szUcp1GXBMsKHCOPJq7EfST9/34Gsz31oteKTtWgF9A=; b=NKzA75o1QJ1TqR
-	eXszU1FkpOZbyFvNMKow+YRSj01TehEduIFS47Pmn/HrFs5GYN1vhchT7vPaBGvJYRBZ1vv5mN0ZH
-	fSh3iUYEPaIRZRJRKptmzyBj8zAvZJJ7CzoS7TcFrhUJ2lif9sgmDa/Oy4lxzxh51iTVHfEGLmNyn
-	BVLyTzAY4WadoMGWIo/5gWbfVs5SN4hpfNAYsGSHvnIK1PAklGZBmxbgp4s3I/jDsUoNg1ek7nlXP
-	IcOBkZfYobfb4S1HE14rGknoUHANyR1+tQydwIXFcKYnyEh5wo7MKsIBghMyYgVHDsNjsNzwYMAqm
-	pyqADLbVLtvOAtgDB64w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BQ+JhUQsyLOhotmu5eRpYtMgnZYDk7Jd3NQPbf/u29Y=; b=Wsvp14soQsnBvNcwK4ldCcwC7
+	Fz3hHbTeggihv85NprE1b1GSQtE5MMS1SMsFSDaQdj35oZfIs7QzEw5NNQWTQGjH+uu/rqvmMIIGu
+	Y2kDm6lYJKYGIds0761Br1+ciu306iRPI5TnXvLICQaZrU/VWYIKoQv0N8qIoh5Iu7lTfLF8qF24L
+	5/cLDgkUrv0/ZHX0c3BsTRkwzD7qAAYCitVjUvhAnM4V69u9NcIdgfFDNUU+aREKyUX3U1UHqF0GR
+	zlDEtpvl8qh3/maT0UlIazotRKIGuIRKbTEmMskaIPo/+vT12Dil4OdE/wQoxohJ7VJ3uw1RDOGsl
+	BsNLehVRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkvsv-0004kw-Fl; Mon, 15 Jun 2020 20:39:13 +0000
+	id 1jkw2R-0004WK-Ri; Mon, 15 Jun 2020 20:49:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkvsn-0004jz-LJ
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 20:39:07 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jkw25-0004Ge-Mx; Mon, 15 Jun 2020 20:48:42 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8D9142078E;
- Mon, 15 Jun 2020 20:39:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DC1F62074D;
+ Mon, 15 Jun 2020 20:48:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592253544;
- bh=G3kx7gmxUbYjMZujOdTgVsLt+bvnDQ4dZNfve9RFnlk=;
- h=From:To:Cc:Subject:Date:From;
- b=hbeSjzVU1xGOS4JUuRdRRivUGCZtnAK3/1Mi7AdM0dFxbIlDquwWgRGgJk9elc6RK
- ZAvejcacP6lB+rH/i8FHrct33CahwXAecKzBCB4b7SMS1FBFMmN+vfuOpJK5Dyp8qE
- 2SGqkn4qmSXBvT1oNMcHN2XapvUrv3nj+nEk6TD4=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=wait-a-minute.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jkvsl-003EcH-0j; Mon, 15 Jun 2020 21:39:03 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org,
- kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v2] KVM: arm64: Allow in-atomic injection of SPIs
-Date: Mon, 15 Jun 2020 21:38:44 +0100
-Message-Id: <20200615203844.14793-1-maz@kernel.org>
-X-Mailer: git-send-email 2.27.0
+ s=default; t=1592254121;
+ bh=wo+re6s2YDnW0mUOtFNK3Gv5qenkYP/Ioxp0Ii0ipxk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=L9bF2WuOC/XYQjJ1bZnbdmypv0LffpNr8hVmWkop5+13+AmcUErcAInWJ68Yn0qqg
+ xtfvmizZti3ycCopliDMI17OZbSkRMUkSGMBnkVExAHB7yEsFK9F5pxuZkDjfgVgt6
+ 5GYlONQY7SQWv8T1RjbBgJ+yyfD0DetFOD9sboPY=
+Date: Mon, 15 Jun 2020 21:48:39 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v2] spi: bcm2835: Enable shared interrupt support
+Message-ID: <20200615204838.GD4447@sirena.org.uk>
+References: <20200604212819.715-1-f.fainelli@gmail.com>
+ <142d48ae-2725-1368-3e11-658449662371@arm.com>
+ <20200605132037.GF5413@sirena.org.uk>
+ <2e371a32-fb52-03a2-82e4-5733d9f139cc@arm.com>
+ <06342e88-e130-ad7a-9f97-94f09156f868@arm.com>
+ <d3fe8b56-83ef-8ef0-bb05-11c7cb2419f8@gmail.com>
+ <a6f158e3-af51-01d9-331c-4bc8b6847abb@arm.com>
+ <20200608114148.4bau4mdcvwgf25ut@wunner.de>
+ <3d4fd3f9-9bde-90a8-bef5-9fc97cc9b363@arm.com>
+ <2e4a6c4b-857f-1000-e7fd-327b0800fb97@gmail.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org,
- kvmarm@lists.cs.columbia.edu, yuzenghui@huawei.com, eric.auger@redhat.com,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- kernel-team@android.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <2e4a6c4b-857f-1000-e7fd-327b0800fb97@gmail.com>
+X-Cookie: Offer may end without notice.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_133905_890927_3925DF14 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20200615_134841_779718_9B7D3D3B 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,107 +84,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, eric.auger@redhat.com,
- James Morse <james.morse@arm.com>, yuzenghui@huawei.com,
- kernel-team@android.com, Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>,
+ "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Lukas Wunner <lukas@wunner.de>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>, Martin Sperl <kernel@martin.sperl.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============8342314274501051465=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On a system that uses SPIs to implement MSIs (as it would be
-the case on a GICv2 system exposing a GICv2m to its guests),
-we deny the possibility of injecting SPIs on the in-atomic
-fast-path.
 
-This results in a very large amount of context-switches
-(roughly equivalent to twice the interrupt rate) on the host,
-and suboptimal performance for the guest (as measured with
-a test workload involving a virtio interface backed by vhost-net).
-Given that GICv2 systems are usually on the low-end of the spectrum
-performance wise, they could do without the aggravation.
+--===============8342314274501051465==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="+Xnt6BZa+I2KmHWw"
+Content-Disposition: inline
 
-We solved this for GICv3+ITS by having a translation cache. But
-SPIs do not need any extra infrastructure, and can be immediately
-injected in the virtual distributor as the locking is already
-heavy enough that we don't need to worry about anything.
 
-This halves the number of context switches for the same workload.
+--+Xnt6BZa+I2KmHWw
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
-* From v1:
-  - Drop confusing comment (Zenghui, Eric)
-  - Now consistently return -EWOULDBLOCK when unable to inject (Eric)
-  - Don't inject if the vgic isn't initialized yet (Eric)
+On Mon, Jun 15, 2020 at 12:42:50PM -0700, Florian Fainelli wrote:
 
- arch/arm64/kvm/vgic/vgic-irqfd.c | 24 +++++++++++++++++++-----
- arch/arm64/kvm/vgic/vgic-its.c   |  3 +--
- 2 files changed, 20 insertions(+), 7 deletions(-)
+> Or how about this: we slightly re-structure the interrupt handler such
+> that all possible interrupt conditions are explicitly handled and
+> terminate with a return IRQ_HANDLED, and those which are not, including
+> in the case of a "spurious" (because the interrupt was triggered for
+> another SPI controller instance), then we finish the function with
+> IRQ_NONE. This would not impact the performance for the BCM2835/36/37
+> which would still have a single controller/single interrupt line to handle.
 
-diff --git a/arch/arm64/kvm/vgic/vgic-irqfd.c b/arch/arm64/kvm/vgic/vgic-irqfd.c
-index d8cdfea5cc96..79f8899b234c 100644
---- a/arch/arm64/kvm/vgic/vgic-irqfd.c
-+++ b/arch/arm64/kvm/vgic/vgic-irqfd.c
-@@ -100,19 +100,33 @@ int kvm_set_msi(struct kvm_kernel_irq_routing_entry *e,
- 
- /**
-  * kvm_arch_set_irq_inatomic: fast-path for irqfd injection
-- *
-- * Currently only direct MSI injection is supported.
-  */
- int kvm_arch_set_irq_inatomic(struct kvm_kernel_irq_routing_entry *e,
- 			      struct kvm *kvm, int irq_source_id, int level,
- 			      bool line_status)
- {
--	if (e->type == KVM_IRQ_ROUTING_MSI && vgic_has_its(kvm) && level) {
-+	if (!level)
-+		return -EWOULDBLOCK;
-+
-+	switch (e->type) {
-+	case KVM_IRQ_ROUTING_MSI: {
- 		struct kvm_msi msi;
- 
-+		if (!vgic_has_its(kvm))
-+			break;
-+
- 		kvm_populate_msi(e, &msi);
--		if (!vgic_its_inject_cached_translation(kvm, &msi))
--			return 0;
-+		return vgic_its_inject_cached_translation(kvm, &msi);
-+	}
-+
-+	case KVM_IRQ_ROUTING_IRQCHIP:
-+		/*
-+		 * Injecting SPIs is always possible in atomic context
-+		 * as long as the damn vgic is initialized.
-+		 */
-+		if (unlikely(!vgic_initialized(kvm)))
-+			break;
-+		return vgic_irqfd_set_irq(e, kvm, irq_source_id, 1, line_status);
- 	}
- 
- 	return -EWOULDBLOCK;
-diff --git a/arch/arm64/kvm/vgic/vgic-its.c b/arch/arm64/kvm/vgic/vgic-its.c
-index c012a52b19f5..40cbaca81333 100644
---- a/arch/arm64/kvm/vgic/vgic-its.c
-+++ b/arch/arm64/kvm/vgic/vgic-its.c
-@@ -757,9 +757,8 @@ int vgic_its_inject_cached_translation(struct kvm *kvm, struct kvm_msi *msi)
- 
- 	db = (u64)msi->address_hi << 32 | msi->address_lo;
- 	irq = vgic_its_check_cache(kvm, db, msi->devid, msi->data);
--
- 	if (!irq)
--		return -1;
-+		return -EWOULDBLOCK;
- 
- 	raw_spin_lock_irqsave(&irq->irq_lock, flags);
- 	irq->pending_latch = true;
--- 
-2.26.2
+That seems sensible - it's generally a good way to structure interrupt
+handlers.  It's almost there already.
 
+--+Xnt6BZa+I2KmHWw
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7n3qYACgkQJNaLcl1U
+h9DisAf6A5UOQQuqIInhodRjyyOGfjW8rSDr/5WD85MI8WAWlgspNB+6CifvPJk+
++/yjv693s/Qlzec/Yg+M92TBor94AU3VWYiT1re9UoFIu35WAPSCL1A4E6imwUxs
+cYJgHI0eE3L2muigphjbBlhUufPTRm2BDAFaHZhGTuJvRfCbbfPZdV555Fxa3r6w
+GVdrs5U40M3TsJ4Wy/ht3mcnF5jRc3OvpsLAIMeVadzsNzG80GNbCn8RYaKPnUPD
+OjxdMc4lA3HhZRqiYvUjUEmG4U0MXSb1DoC+8/tr/rfj6yOn+su94phT6RXF3plY
+CObjpS476p9DJlmYVYA54/uj06NWpg==
+=1R8u
+-----END PGP SIGNATURE-----
+
+--+Xnt6BZa+I2KmHWw--
+
+
+--===============8342314274501051465==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8342314274501051465==--
+
