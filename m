@@ -2,84 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E46491F94DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:50:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C54641F94F1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:55:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6PUyriyqLyJIfws8qpTmNULpRCuwwEl8DUBV/twfoWo=; b=OHrstQbb5Ab+pKlix37b2SG4A
-	dfKYMSXYRxElZ3X3/p9PZctNgMTSgigMKqEUfwjLveA8Q6X1iOOH0OHZiQzuRWeuHzbD9V39g9Gsi
-	0lHUJpB0jE9nnL8iAqFU5e0sHXpgwvbjukIzA0rAcRQUR8gE+mWFgvdmckVy26YAK+1+kT0crFDx8
-	8L2ePkt0fczewXbO8cunbwQguThl1NV7We5qVwev1SMLqrv0MabI6G78EZ5p5sXuRCrVKjuRblBp+
-	gj79D4R8ZohSARmOitbjs5jJ96TyzPMeOP6ELG5Mi9bnFC9NK89HYsZxGUzfAsGpsf38b2dbnatq5
-	iNNYahHsQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TbhrzCFfY9cOBjd/3ChTgHS/rxRiptYNssyZaBiBskI=; b=ZIUe6S8ldeh1aI
+	lyOxanth+FQHy8/UoKO0e2hYyu8fj0wC9E85OGj9Sl0cdZRcV89FIEP0nl3DLWZwjSNJ/TSlVpNLp
+	SRICuXXarCWOIPc4iH69+/BNKS0PPw+y65Q47bBYcbFKQ4JWTl49NoFAlquhp1UakVbGcdVn0kaKb
+	BMYXSZlj4cXBYaLQevOidodre1/AhLPj7R+1m+JoyFkwjjU7bNQZ56PP2r48MwPytLSUZAJIFTJDz
+	iStKep/KzAvvYXDfvKqWdMAw+TCEFKTtYOXGbZFvy6G9UNt6jiPUX9D7s2zzJGpVz+P8WCrXEFxBW
+	t2PChz5Xqxgc/fQyF95g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkmh1-0002Tj-Hu; Mon, 15 Jun 2020 10:50:19 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jkmmB-0006IS-6y; Mon, 15 Jun 2020 10:55:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkmgp-0001Qa-6S
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:50:09 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05FAWlLl003188; Mon, 15 Jun 2020 12:50:00 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=6uazfPAhQsttgP5kzZTw92A9LjEqdyZWqPnjXh89SHU=;
- b=oS6225LDlBacpl1Ddp48BwFpC3AjwYU6WszDnpBmvJyMVLu3A99UsTAMux5ThvFGXLdT
- EGKbmHBHT1RwwsvWZtGETAqqnfqJUn8hacHEZ8fWeieTN3j3BuFUGFh3AnWEgWcAmSDe
- 8mEKZpYJa2klMIpGrfOVeHs2OeaCBiemAmW3pJWkC5OABdFKlKbicvxyJiDDzjeVZxCM
- MJZT7wGb5ubVnMS8az9TEu4JpUCXYdYVzFftMfgQePUKsu7F9mYpB8etX2ZAbDrUEgnW
- ifHB1d6k5wffirFxYAsBj1HrqL3hw5EirUI4TT0ugMkXEzN1omzOFHoJnSBUSMLSQI21 9w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31mmjvs6j8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 15 Jun 2020 12:50:00 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6828B10002A;
- Mon, 15 Jun 2020 12:50:00 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3A0382B8A11;
- Mon, 15 Jun 2020 12:50:00 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 15 Jun
- 2020 12:49:59 +0200
-Subject: Re: [PATCH 1/5] ARM: dts: stm32: add usart2, usart3 and uart7 pins in
- stm32mp15-pinctrl
-To: Erwan Le Ray <erwan.leray@st.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>
-References: <20200528074029.24962-1-erwan.leray@st.com>
- <20200528074029.24962-2-erwan.leray@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <2ee07ea1-1336-3bc5-d978-c5dc5cd5f04f@st.com>
-Date: Mon, 15 Jun 2020 12:49:59 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jkmm2-0006I8-5f
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:55:31 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 27DA32068E;
+ Mon, 15 Jun 2020 10:55:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592218529;
+ bh=/SmkGJqgrdrihyTVEYcJ7/twe5bdfR5mZ6y/1kJKl3s=;
+ h=Date:From:To:Cc:Subject:From;
+ b=bPE8lGWl5P12TJ9zH1GPCsqwbokAodmy7HhGBXS8eI04n6G09r2xqg45RAmFOie/t
+ 177UDg0z04mdWt0hMYuH0pHvDg8HMV/gnHczlvrDYJCb+ciTWw55GlVG9ss+n5NHS7
+ r8AABKDs+krOeS1gbuKyt/ZRRnTrrhREB6uuTho0=
+Date: Mon, 15 Jun 2020 11:55:24 +0100
+From: Will Deacon <will@kernel.org>
+To: ndesaulniers@google.com
+Subject: Clang miscompiling arm64 kernel with BTI and PAC?
+Message-ID: <20200615105524.GA2694@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200528074029.24962-2-erwan.leray@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-15_02:2020-06-15,
- 2020-06-15 signatures=0
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_035007_542820_A4C506EE 
-X-CRM114-Status: GOOD (  16.91  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_035530_251574_5CEEDC3B 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,122 +74,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: mark.rutland@arm.com, android-kvm@google.com, catalin.marinas@arm.com,
+ clang-built-linux@googlegroups.com, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Erwan
+Hi Nick, [+android-kvm as FYI]
 
-On 5/28/20 9:40 AM, Erwan Le Ray wrote:
-> Adds usart2_pins_c, usart3_pins_b, usart3_pins_c and uart7_pins_c pins
-> configurations in stm32mp15-pinctrl.
-> - usart2_pins_c pins are connected to Bluetooth chip on dk2 board.
-> - usart3_pins_b pins are connected to GPIO expansion connector on evx board.
-> - usart3_pins_c pins are connected to GPIO expansion connector on dkx board.
-> - uart7_pins_c pins are connected to Arduino Uno connector on dkx board.
-> 
-> Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
-> 
-> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-> index fb98a66977fe..99e399e4e4c3 100644
-> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-> @@ -1658,6 +1658,36 @@
->   		};
-> 
+I just ran into a host panic when trying to spawn a KVM virtual machine
+with 5.8-rc1 on arm64 (defconfig):
 
-...
+(I had to hack in code to dump the regs; I'll send a patch for that shortly)
 
+[   56.229757] Bad mode in Synchronous Abort handler detected on CPU0, code 0x34000003 -- BTI
+[   56.230439] CPU: 0 PID: 279 Comm: lkvm Not tainted 5.8.0-rc1-dirty #2
+[   56.230864] Hardware name: QEMU QEMU Virtual Machine, BIOS 0.0.0 02/06/2015
+[   56.234182] pstate: 80000c05 (Nzcv daif -PAN -UAO BTYPE=j-)
+[   56.234646] pc : kvm_vm_ioctl_check_extension_generic+0x74/0x98
+[   56.235068] lr : kvm_dev_ioctl+0x94/0xbc
+[   56.237544] sp : ffff800010f4bdf0
+[   56.237797] x29: ffff800010f4bdf0 x28: ffff0000f9629c00 
+[   56.238277] x27: 0000000000000000 x26: 0000000000000000 
+[   56.238665] x25: 0000000000000000 x24: 0000000000000003 
+[   56.241275] x23: 000000000000ae03 x22: 0000000000000046 
+[   56.241708] x21: 00000000ffffffe7 x20: ffff0000f9621200 
+[   56.242155] x19: ffff0000f9621200 x18: 0000000000000000 
+[   56.242564] x17: 0000000000000000 x16: 0000000000000000 
+[   56.242987] x15: 0000000000000000 x14: 0000000000000000 
+[   56.245570] x13: 0000000000000000 x12: 0000000000000010 
+[   56.245953] x11: ffffd68929392e14 x10: ffffd6892a17b879 
+[   56.246420] x9 : 0000000000000043 x8 : 0000000000000000 
+[   56.246787] x7 : 0000000000000000 x6 : 0000000000000000 
+[   56.249737] x5 : 0000000000000000 x4 : 0000000000000000 
+[   56.250236] x3 : 0000000000000046 x2 : 0000000000000046 
+[   56.250644] x1 : 0000000000000046 x0 : 0000000000000001 
+[   56.253312] Kernel panic - not syncing: bad mode
+[   56.253834] CPU: 0 PID: 279 Comm: lkvm Not tainted 5.8.0-rc1-dirty #2
+[   56.254225] Hardware name: QEMU QEMU Virtual Machine, BIOS 0.0.0 02/06/2015
+[   56.254712] Call trace:
+[   56.254952]  dump_backtrace+0x0/0x1d4
+[   56.255305]  show_stack+0x1c/0x28
+[   56.255647]  dump_stack+0xc4/0x128
+[   56.255905]  panic+0x16c/0x35c
+[   56.256146]  bad_el0_sync+0x0/0x58
+[   56.256403]  el1_sync_handler+0xb4/0xe0
+[   56.256674]  el1_sync+0x7c/0x100
+[   56.256928]  kvm_vm_ioctl_check_extension_generic+0x74/0x98
+[   56.257286]  __arm64_sys_ioctl+0x94/0xcc
+[   56.257569]  el0_svc_common+0x9c/0x150
+[   56.257836]  do_el0_svc+0x84/0x90
+[   56.258083]  el0_sync_handler+0xf8/0x298
+[   56.258361]  el0_sync+0x158/0x180
+[   56.258900] SMP: stopping secondary CPUs
+[   56.259594] Kernel Offset: 0x568919360000 from 0xffff800010000000
+[   56.259969] PHYS_OFFSET: 0xffffb50180000000
+[   56.260304] CPU features: 0x7e0152,20802028
+[   56.260599] Memory Limit: none
+[   56.261242] ---[ end Kernel panic - not syncing: bad mode ]---
 
-> +	usart3_pins_b: usart3-0 {
-> +		pins1 {
-> +			pinmux = <STM32_PINMUX('B', 10, AF7)>, /* USART3_TX */
-> +				 <STM32_PINMUX('G', 8, AF8)>; /* USART3_RTS */
+Looking at the disassembly for kvm_vm_ioctl_check_extension_generic, it
+looks like this is a compiler bug:
 
-On EVx board this line is shared with ETH_CLK. The choice between both 
-is done thanks to SB23 and default choice is "ETH_CLK". So hardware 
-update has to be done to use usart3_rts. some words around that in 
-comment would be great.
+ffff800010032da0 <kvm_vm_ioctl_check_extension_generic>:
+ffff800010032da0:       aa0003e8        mov     x8, x0
+ffff800010032da4:       f102843f        cmp     x1, #0xa1
+ffff800010032da8:       52800020        mov     w0, #0x1                        // #1
+ffff800010032dac:       5400018c        b.gt    ffff800010032ddc <kvm_vm_ioctl_check_extension_generic+0x3c>
+ffff800010032db0:       d1000c29        sub     x9, x1, #0x3
+ffff800010032db4:       f101dd3f        cmp     x9, #0x77
+ffff800010032db8:       540002e8        b.hi    ffff800010032e14 <kvm_vm_ioctl_check_extension_generic+0x74>  // b.pmore
+ffff800010032dbc:       b0006f4a        adrp    x10, ffff800010e1b000 <vdso32_end>
+ffff800010032dc0:       9121e54a        add     x10, x10, #0x879
+ffff800010032dc4:       1000008b        adr     x11, ffff800010032dd4 <kvm_vm_ioctl_check_extension_generic+0x34>
+ffff800010032dc8:       3869694c        ldrb    w12, [x10, x9]
+ffff800010032dcc:       8b0c096b        add     x11, x11, x12, lsl #2
+ffff800010032dd0:       d61f0160        br      x11
 
-Thanks
-alex
+Here, the switch statement has been replaced by a jump table which we *tail
+call* into. The register dump shows we're going to 0xffffd68929392e14:
 
-> +			bias-disable;
-> +			drive-push-pull;
-> +			slew-rate = <0>;
-> +		};
-> +		pins2 {
-> +			pinmux = <STM32_PINMUX('B', 12, AF8)>, /* USART3_RX */
-> +				 <STM32_PINMUX('I', 10, AF8)>; /* USART3_CTS_NSS */
-> +			bias-disable;
-> +		};
-> +	};
-> +
-> +	usart3_idle_pins_b: usart3-idle-0 {
-> +		pins1 {
-> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
-> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
-> +				 <STM32_PINMUX('I', 10, ANALOG)>; /* USART3_CTS_NSS */
-> +		};
-> +		pins2 {
-> +			pinmux = <STM32_PINMUX('B', 12, AF8)>; /* USART3_RX */
-> +			bias-disable;
-> +		};
-> +	};
-> +
-> +	usart3_sleep_pins_b: usart3-sleep-0 {
-> +		pins {
-> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
-> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
-> +				 <STM32_PINMUX('I', 10, ANALOG)>, /* USART3_CTS_NSS */
-> +				 <STM32_PINMUX('B', 12, ANALOG)>; /* USART3_RX */
-> +		};
-> +	};
-> +
-> +	usart3_pins_c: usart3-1 {
-> +		pins1 {
-> +			pinmux = <STM32_PINMUX('B', 10, AF7)>, /* USART3_TX */
-> +				 <STM32_PINMUX('G', 8, AF8)>; /* USART3_RTS */
-> +			bias-disable;
-> +			drive-push-pull;
-> +			slew-rate = <0>;
-> +		};
-> +		pins2 {
-> +			pinmux = <STM32_PINMUX('B', 12, AF8)>, /* USART3_RX */
-> +				 <STM32_PINMUX('B', 13, AF7)>; /* USART3_CTS_NSS */
-> +			bias-disable;
-> +		};
-> +	};
-> +
-> +	usart3_idle_pins_c: usart3-idle-1 {
-> +		pins1 {
-> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
-> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
-> +				 <STM32_PINMUX('B', 13, ANALOG)>; /* USART3_CTS_NSS */
-> +		};
-> +		pins2 {
-> +			pinmux = <STM32_PINMUX('B', 12, AF8)>; /* USART3_RX */
-> +			bias-disable;
-> +		};
-> +	};
-> +
-> +	usart3_sleep_pins_c: usart3-sleep-1 {
-> +		pins {
-> +			pinmux = <STM32_PINMUX('B', 10, ANALOG)>, /* USART3_TX */
-> +				 <STM32_PINMUX('G', 8, ANALOG)>, /* USART3_RTS */
-> +				 <STM32_PINMUX('B', 13, ANALOG)>, /* USART3_CTS_NSS */
-> +				 <STM32_PINMUX('B', 12, ANALOG)>; /* USART3_RX */
-> +		};
-> +	};
-> +
->   	usbotg_hs_pins_a: usbotg-hs-0 {
->   		pins {
->   			pinmux = <STM32_PINMUX('A', 10, ANALOG)>; /* OTG_ID */
-> 
+ffff800010032e14:       d503233f        paciasp
+ffff800010032e18:       a9bf7bfd        stp     x29, x30, [sp, #-16]!
+ffff800010032e1c:       910003fd        mov     x29, sp
+ffff800010032e20:       aa0803e0        mov     x0, x8
+ffff800010032e24:       940017c0        bl      ffff800010038d24 <kvm_vm_ioctl_check_extension>
+ffff800010032e28:       93407c00        sxtw    x0, w0
+ffff800010032e2c:       a8c17bfd        ldp     x29, x30, [sp], #16
+ffff800010032e30:       d50323bf        autiasp
+ffff800010032e34:       d65f03c0        ret
+
+The problem is that the paciasp instruction is not BTYPE-compatible with BR;
+it expects to be called with a branch-and-link, and so we panic. I think you
+need to emit a 'bti j' here prior to the paciasp.
+
+$ clang --version
+
+Android (6443078 based on r383902) clang version 11.0.1 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79)
+
+We currently support for this Clang 8+, but maybe we need to reconsider that
+:(
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
