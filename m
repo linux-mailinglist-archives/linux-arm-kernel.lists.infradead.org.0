@@ -2,95 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E93B31F92FE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:14:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37A541F931A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:18:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HAWOvWDbelXN3D3ap4XScihK17IgDi06lMC5IzdhQwU=; b=cZkkrpielbul5V
-	vqs4exj8Eq/I2Alatl8V29dFPHMHSeHUU7k+9oXDRR4CbYNkk931d8RCLrT4P0wzxIE33I6bipxiJ
-	J4zjQ3TCBcG2LMp/6qcKk8MZ+HkbCNQs6J9UsAeG369Dm/+jRyUI6STsKs5r3hcuuT5VkLtHc/Nu9
-	f0zzg3m3i5woqUaEmBAXfClA3EVbx+xoTd52j2WYim6Zk47xWMit3QCyVMIC3wZYBUybEdXvtV0yg
-	VyMHLCuApWXg0xVeF22W7id0if8qgcRksY/BabB+v9Xtf0pYbnC3fa/jgUbo0l0+XNlJYX51T6XSX
-	EpEjalurhn91LYmTj1vQ==;
+	List-Owner; bh=nafShBSyzRroZVcTipRlRq38W5oD9Mcbo6e9/x1w16Y=; b=GZbZASX1sPsnf+
+	3Ja5ZtNRlIUHEOBLEiDRoYs9izKTj7MroEyG1kdlJsINdEGd0kLlfa1q3W5MY7uXao2JsrEKB1w2t
+	B0RJpUYvjGjHzywqxdqxXhlKzJh+JaQkPOx6n9E4FVrm405h1tR6KwIDYQJSj1Xa2QPF93gLFT5KO
+	2SVHlVTH9BS7cMKGVyGubN/tDnfV5I+Z8AP8PXqgB9gfb1BPp8Jbra+RG+Oe+aMrOzM7DhFbkgpYn
+	P9LpM0MJ+1YcXTeKBHUwSaao5cL6nZa+/atftnNFWsEH4WoWdkTtWUVwyq0AxM2R7I0zddUxaxPcR
+	SLmC5eUPYnsfthgkKhQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklC8-0004KK-KR; Mon, 15 Jun 2020 09:14:20 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jklGH-0001yi-05; Mon, 15 Jun 2020 09:18:37 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkl3B-0000u3-Um
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:05:26 +0000
-Received: by mail-lf1-x141.google.com with SMTP id c12so9049026lfc.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 02:05:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=nchE55nRntl3oCk4FdQW9onBhZ1ErhGUuqk3T1bdYUU=;
- b=BeYxegorvN1kdKyIZ6vhjqWeWmBi/dLiMgUFJcsvJOxBbV5ftuwvzxZ2VlVUGKyElz
- /YY7rxZPstQU0DnJ7DiCek22I28ZSFW1gnz0nXxW+hHd/7Fx2D5airxFAlEStZWekASc
- C8SaCEv4qE3PrNZhS/bZPiiBIndcRWnXeRKskxzPWF3eWzbsmpRtgAevCag8g14O7l0M
- wuX9nOXi0SNLRTj0QUPgm+Qo8ktyPg55kZSOi75NscbPp0qoUqXNA2up3zlo1z1Q0A4A
- 3NhPMMBJ1jPyVyVPG2u5hSTb258Jd5pjJ2RodI91TY08T9Xd5KAe8k/XTaAT9o/kWnDs
- 3xZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=nchE55nRntl3oCk4FdQW9onBhZ1ErhGUuqk3T1bdYUU=;
- b=SNikk9QI2w7kATGUXbP2idyQe7dFhaA+D4sc7e8QrftWP0kc64uw07Bmyc8sKOHHYk
- Se6RJReHC+A57b4gDNmDrNK7Ahn8yL8tMHrDTd34V2Xu98MLslT1J4t1vHPp6Pzk6RIw
- ekTo7UxBjHXa/BOBuhUBC9ST9jshS85R3c3KcWuPahGG4e+rYflpPoQ1r1Vx3RHEb6NT
- kD6RniVVzUlvm82X30/tB8HorvfgokWsygvemD8WPJxSGDx2qF+HTBRXzon9Pf5P/wN6
- J74Lq2Yog7C9wfp3L9yzcj+1uqvCN6LOywvYPiGvoWN6FhUMoSKsi7XI7oLcKCsNCkNH
- 4eJA==
-X-Gm-Message-State: AOAM532Lf8UNeYJKrpEj6AFXYevbmfPitFZieGzrE1tqmRtsipZq/Lrl
- 419A6sBRtfJBMnPvNeMNxDv6dA==
-X-Google-Smtp-Source: ABdhPJyfH6noou/AS3lYxq5yAsZI7Dz9o7y+d2z5VwPtrzSO9f4v319cpHhsvUOhV4TL4rCPcWvS2Q==
-X-Received: by 2002:a05:6512:488:: with SMTP id
- v8mr13266432lfq.205.1592211902846; 
- Mon, 15 Jun 2020 02:05:02 -0700 (PDT)
-Received: from localhost.localdomain
- (c-92d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.146])
- by smtp.gmail.com with ESMTPSA id c78sm5284434lfd.63.2020.06.15.02.05.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 02:05:02 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: Florian Fainelli <f.fainelli@gmail.com>,
- Abbott Liu <liuwenliang@huawei.com>, Russell King <linux@armlinux.org.uk>,
- Ard Biesheuvel <ardb@kernel.org>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Mike Rapoport <rppt@linux.ibm.com>
-Subject: [PATCH 5/5 v10] ARM: Enable KASan for ARM
-Date: Mon, 15 Jun 2020 11:02:47 +0200
-Message-Id: <20200615090247.5218-6-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.25.4
-In-Reply-To: <20200615090247.5218-1-linus.walleij@linaro.org>
-References: <20200615090247.5218-1-linus.walleij@linaro.org>
+ id 1jkl5g-00056Y-1X; Mon, 15 Jun 2020 09:07:41 +0000
+X-Originating-IP: 91.224.148.103
+Received: from localhost.localdomain (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 3D1DF240004;
+ Mon, 15 Jun 2020 09:07:35 +0000 (UTC)
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+ Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, linux-mtd@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ devicetree@vger.kernel.org
+Subject: Re: [PATCH v7 13/20] mtd: nand: Rename a core structure
+Date: Mon, 15 Jun 2020 11:07:34 +0200
+Message-Id: <20200615090734.26297-1-miquel.raynal@bootlin.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200529002517.3546-14-miquel.raynal@bootlin.com>
+References: 
 MIME-Version: 1.0
+X-linux-mtd-patch-notification: thanks
+X-linux-mtd-patch-commit: 8ea52c976c9f5ba7d8adbbc46733be5a0abbf5fd
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_020506_116664_A0867E82 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_020740_220789_AF1502BD 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,91 +69,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
- kasan-dev@googlegroups.com, Alexander Potapenko <glider@google.com>,
- linux-arm-kernel@lists.infradead.org, Andrey Ryabinin <ryabinin@virtuozzo.com>,
- Dmitry Vyukov <dvyukov@google.com>
+Cc: Julien Su <juliensu@mxic.com.tw>, Weijie Gao <weijie.gao@mediatek.com>,
+ Paul Cercueil <paul@crapouillou.net>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrey Ryabinin <ryabinin@virtuozzo.com>
+On Fri, 2020-05-29 at 00:25:10 UTC, Miquel Raynal wrote:
+> Prepare the migration to a generic ECC engine by renaming the
+> nand_ecc_req structure into nand_ecc_props. This structure will be the
+> base of a wider 'nand_ecc' structure.
+> 
+> In nand_device, these properties are still named "eccreq" even if
+> "eccprops" might be more descriptive. This is just a transition step,
+> this field is being replaced very soon by a much wider structure. The
+> impact of renaming this field would be huge compared to its interest.
+> 
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 
-This patch enables the kernel address sanitizer for ARM. XIP_KERNEL
-has not been tested and is therefore not allowed for now.
+Applied to https://git.kernel.org/pub/scm/linux/kernel/git/mtd/linux.git nand/next.
 
-Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Cc: Alexander Potapenko <glider@google.com>
-Cc: Dmitry Vyukov <dvyukov@google.com>
-Cc: kasan-dev@googlegroups.com
-Acked-by: Dmitry Vyukov <dvyukov@google.com>
-Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-Tested-by: Ard Biesheuvel <ardb@kernel.org> # QEMU/KVM/mach-virt/LPAE/8G
-Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
-ChangeLog v9->v10:
-- Rebase on v5.8-rc1
-ChangeLog v8->v9:
-- Fix the arch feature matrix for Arm to include KASan.
-- Collect Ard's tags.
-ChangeLog v7->v8:
-- Moved the hacks to __ADDRESS_SANITIZE__ to the patch
-  replacing the memory access functions.
-- Moved the definition of KASAN_OFFSET out of this patch
-  and to the patch that defines the virtual memory used by
-  KASan.
----
- Documentation/dev-tools/kasan.rst                   | 4 ++--
- Documentation/features/debug/KASAN/arch-support.txt | 2 +-
- arch/arm/Kconfig                                    | 1 +
- 3 files changed, 4 insertions(+), 3 deletions(-)
-
-diff --git a/Documentation/dev-tools/kasan.rst b/Documentation/dev-tools/kasan.rst
-index c652d740735d..0962365e1405 100644
---- a/Documentation/dev-tools/kasan.rst
-+++ b/Documentation/dev-tools/kasan.rst
-@@ -21,8 +21,8 @@ global variables yet.
- 
- Tag-based KASAN is only supported in Clang and requires version 7.0.0 or later.
- 
--Currently generic KASAN is supported for the x86_64, arm64, xtensa, s390 and
--riscv architectures, and tag-based KASAN is supported only for arm64.
-+Currently generic KASAN is supported for the x86_64, arm, arm64, xtensa, s390
-+and riscv architectures, and tag-based KASAN is supported only for arm64.
- 
- Usage
- -----
-diff --git a/Documentation/features/debug/KASAN/arch-support.txt b/Documentation/features/debug/KASAN/arch-support.txt
-index 6ff38548923e..a73c55fb76e6 100644
---- a/Documentation/features/debug/KASAN/arch-support.txt
-+++ b/Documentation/features/debug/KASAN/arch-support.txt
-@@ -8,7 +8,7 @@
-     -----------------------
-     |       alpha: | TODO |
-     |         arc: | TODO |
--    |         arm: | TODO |
-+    |         arm: |  ok  |
-     |       arm64: |  ok  |
-     |         c6x: | TODO |
-     |        csky: | TODO |
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index d291cdb84c9d..6a6059f8bab9 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -65,6 +65,7 @@ config ARM
- 	select HAVE_ARCH_BITREVERSE if (CPU_32v7M || CPU_32v7) && !CPU_32v6
- 	select HAVE_ARCH_JUMP_LABEL if !XIP_KERNEL && !CPU_ENDIAN_BE32 && MMU
- 	select HAVE_ARCH_KGDB if !CPU_ENDIAN_BE32 && MMU
-+	select HAVE_ARCH_KASAN if MMU && !XIP_KERNEL
- 	select HAVE_ARCH_MMAP_RND_BITS if MMU
- 	select HAVE_ARCH_SECCOMP_FILTER if AEABI && !OABI_COMPAT
- 	select HAVE_ARCH_THREAD_STRUCT_WHITELIST
--- 
-2.25.4
-
+Miquel
 
 _______________________________________________
 linux-arm-kernel mailing list
