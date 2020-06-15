@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 297421F912A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:15:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9983B1F9140
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 10:20:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hvBAt85d77OtvY6MZZ6IkJ70oGUurJFOL72MdphdMyM=; b=FvUkT2EWQKtQju
-	VqpBwlaDkt03pNKmcPQRLIaWA5b44mCLi7LVFBJJms38sfHrwBbVvCraIhqDb5+GCP7YdlISTQzdL
-	a7o6DibYdBw1DrJbiM9GiUV5I/qhr/CG8M/eL6xuHQC2US0Vv6sRqKCninon22bTFBUknyjuyI1Qy
-	gUDS+sgNpaqoSdLR36yPALvsKrj/AMVjko6of8XIXTc2aHH7hI0EvtVjTLPB4bAyCQjyBUL7LNOOY
-	OpcuFJM68e9qZUm+ZJEUu7U/PHQ9tMRmtroeGBVmFygnwWlQlJnMoalnvVh21VCxaWCWBCY1SH702
-	4tXvaK2EcsOWXb/UerOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KT8lKJJX8bnbvm/iZ+Mc0SC4i0Z5F2ajmBcuEE4jH8Y=; b=Ku2npM8Y5av6iH
+	EeOuLNxPMSimOm0vk7Bp08lYWssv8EWvHDdJMIdodTNZa9DLqCw6yVWHW2p9wAdoOj3BmSZzpVUw8
+	JdrDpyQe2NjCyr9xw2g0WJx73N+6yLtg6kSnPV7s2g0y+t4HAJutb3EUt55GdWh16+cplZB+Y5Zie
+	HsrdMW1jEQ2xkP0Oq9V1Nrc/6ARzsK/LwpFMxKSFOXbVW3eDiAK069x4xmnxREGHbnEX343Zr8WpS
+	sU01hWJcq9JPB5zUoBrrIpvqLyAGjxkzKnic21d2yp6eeNxlZ1yCAD1vDwC2344ydhxpV2FT3M50J
+	rLOID50IjP3uPF7uz0+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkkHE-0000xE-7F; Mon, 15 Jun 2020 08:15:32 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1jkkLz-0003hu-KQ; Mon, 15 Jun 2020 08:20:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkkGr-00086H-Oj
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:15:12 +0000
-Received: by mail-qt1-x842.google.com with SMTP id y1so11882537qtv.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jun 2020 01:15:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=PeSKgvXd465F+nZeBzqPtfbPRR02KvmYom1kw5jFHRM=;
- b=gaolLM3SJibkTPiylW9CVkCvCtGtkxucJIQ+CjQLqcZ1i6V69L5CIm3fo4ZfvxBQ18
- QTxmHkyBQ94s6V+QynK5T2wiO0+Tp2UpWly1tWGkZ+W6E1gr6meQBPbsnnkYj6b6QMox
- BhEmWboyPED4vbU5z8o12yd8lkNXdMr6RHHxqIzSr7HZB9HOXndhUw4peAckPJm5a7xC
- YZHiIxNIlnEcMYDf2fMqw7ZQTfT+sUyrlgso/2CAE3eQWlhM5oKZmsOuinqdjk6+TM1E
- GciWb3a65LfFuKSKuNA3ArEUQB0jxZ3MApSu1gQGHHMIrfyQmVV6y7RFFeSXHoQQDGxi
- obxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=PeSKgvXd465F+nZeBzqPtfbPRR02KvmYom1kw5jFHRM=;
- b=j4Y5RCRQaI7BDgDxs7L1x40OmU9loe2GgksVRO4vgjFzoTfFRWjNOjbQyhtFQsU3zM
- PkXLW4xMjdDUiSHqcAuWR0ulaHZSekRb6XOTYBk6TFvxqw73LOvJeU8yCBM3ZGaoIWX/
- uC44NjyZdz4nbsPlCzvE4BPbOhFmdxQFbqHPYo5WCz1yaERkoqZqAH+eCsT+JBr+2Lgl
- j+YKd3/2EDwdUnofwfKxJn2NjI7wnjrfzrQ+m8BlMN7XlMEn+it2S0DC/LzMpDa08nE/
- TrkQl00p4oXR3fZxIsQDpx1scwEIXiX5BjWu9hQlP3YA1T5SNPYKeHDkp8w0ijJqJEoe
- a8rw==
-X-Gm-Message-State: AOAM532ldFWqvv1Vnrqzulkacow0bRQ4hiLuePzamMiBELEsGDY6rjgd
- qHkeFKGhy6LszJ54wwB0JbL6xLOoLFm4jU6QJQsLug==
-X-Google-Smtp-Source: ABdhPJyzaLHGZRBoz244z1QgtZDLkoNy4Y/LUfzCIH8w/SgjyAXy9AFzI588si91fFcHWalj927TbVmmYo2/kiKLK6Q=
-X-Received: by 2002:ac8:1bc1:: with SMTP id m1mr14093638qtk.57.1592208905775; 
- Mon, 15 Jun 2020 01:15:05 -0700 (PDT)
+ id 1jkkLd-0002sS-Kf
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 08:20:06 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 81D2B2053B;
+ Mon, 15 Jun 2020 08:20:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592209204;
+ bh=rn6yKK06LpzRw/3dsq0h1xocnLbW3SUFTAd2Sa8+1Js=;
+ h=From:To:Cc:Subject:Date:From;
+ b=YWtLZGQyd7nbuuYsMvmTnST0IZDFzzhO9C/apw+MIVjPu8F//TT/q/odf8KcBnu/g
+ kQRjs69i3amQsA177aT9+pF5TTUI85VSEjMlFL679jKIVBEIn9BlrjaJ1Qvbun4oL/
+ UOZwW4WuBQ5zAmwPQLaPAf3q1FKAxQMcQCjeiQ4A=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=wait-a-minute.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jkkLb-0031ew-1k; Mon, 15 Jun 2020 09:20:03 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu
+Subject: [PATCH 0/4] KVM/arm64: Enable PtrAuth on non-VHE KVM
+Date: Mon, 15 Jun 2020 09:19:50 +0100
+Message-Id: <20200615081954.6233-1-maz@kernel.org>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-References: <20200611102809.27829-1-hui.song_1@nxp.com>
-In-Reply-To: <20200611102809.27829-1-hui.song_1@nxp.com>
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Date: Mon, 15 Jun 2020 10:14:55 +0200
-Message-ID: <CAMpxmJUH-3=-r=DRVHP1dccvKQsuKZrng3vp7Ho864CtUMGR1g@mail.gmail.com>
-Subject: Re: [PATCH] gpio: mpc8xxx: change the gpio interrupt flags.
-To: Hui Song <hui.song_1@nxp.com>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com, kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_011509_870970_BCB249C5 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200615_012005_706707_016AC26B 
+X-CRM114-Status: GOOD (  10.31  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,37 +87,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, LKML <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, linux-gpio <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kernel-team@android.com, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Y3p3LiwgMTEgY3plIDIwMjAgbyAxMjo0MyBIdWkgU29uZyA8aHVpLnNvbmdfMUBueHAuY29tPiBu
-YXBpc2HFgihhKToKPgo+IEZyb206IFNvbmcgSHVpIDxodWkuc29uZ18xQG54cC5jb20+Cj4KPiBE
-ZWxldGUgdGhlIGludGVycnVwdCBJUlFGX05PX1RIUkVBRCBmbGFncyBpbiBvcmRlciB0byBncGlv
-IGludGVycnVwdHMKPiBjYW4gYmUgdGhyZWFkZWQgdG8gYWxsb3cgaGlnaC1wcmlvcml0eSBwcm9j
-ZXNzZXMgdG8gcHJlZW1wdC4KPgo+IFNpZ25lZC1vZmYtYnk6IFNvbmcgSHVpIDxodWkuc29uZ18x
-QG54cC5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvZ3Bpby9ncGlvLW1wYzh4eHguYyB8IDIgKy0KPiAg
-MSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4KPiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9ncGlvL2dwaW8tbXBjOHh4eC5jIGIvZHJpdmVycy9ncGlvL2dwaW8tbXBj
-OHh4eC5jCj4gaW5kZXggNjA0ZGZlYy4uMWU4NjY1MiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dw
-aW8vZ3Bpby1tcGM4eHh4LmMKPiArKysgYi9kcml2ZXJzL2dwaW8vZ3Bpby1tcGM4eHh4LmMKPiBA
-QCAtNDE3LDcgKzQxNyw3IEBAIHN0YXRpYyBpbnQgbXBjOHh4eF9wcm9iZShzdHJ1Y3QgcGxhdGZv
-cm1fZGV2aWNlICpwZGV2KQo+Cj4gICAgICAgICByZXQgPSBkZXZtX3JlcXVlc3RfaXJxKCZwZGV2
-LT5kZXYsIG1wYzh4eHhfZ2MtPmlycW4sCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IG1wYzh4eHhfZ3Bpb19pcnFfY2FzY2FkZSwKPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgSVJRRl9OT19USFJFQUQgfCBJUlFGX1NIQVJFRCwgImdwaW8tY2FzY2FkZSIsCj4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIElSUUZfU0hBUkVELCAiZ3Bpby1jYXNjYWRlIiwKPiAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbXBjOHh4eF9nYyk7Cj4gICAgICAgICBpZiAo
-cmV0KSB7Cj4gICAgICAgICAgICAgICAgIGRldl9lcnIoJnBkZXYtPmRldiwgIiVzOiBmYWlsZWQg
-dG8gZGV2bV9yZXF1ZXN0X2lycSglZCksIHJldCA9ICVkXG4iLAo+IC0tCj4gMi45LjUKPgoKUGF0
-Y2ggYXBwbGllZCwgdGhhbmtzIQoKQmFydG9zegoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Not having PtrAuth on non-VHE KVM (for whatever reason VHE is not
+enabled on a v8.3 system) has always looked like an oddity. This
+trivial series remedies it, and allows a non-VHE KVM to offer PtrAuth
+to its guests.
+
+In the tradition of not having separate security between host-EL1 and
+EL2, EL2 reuses the keys set up by host-EL1. It is likely that, should
+we switch to a mode where EL2 is more distrusting of EL1, we'd have
+private keys there.
+
+The last patch is just an optimisation which I've lobbed with the rest
+of the series in order not to forget it.
+
+Marc Zyngier (4):
+  KVM: arm64: Enable Pointer Authentication at EL2 if available
+  KVM: arm64: Allow ARM64_PTR_AUTH when ARM64_VHE=n
+  KVM: arm64: Allow PtrAuth to be enabled from userspace on non-VHE
+    systems
+  KVM: arm64: Check HCR_EL2 instead of shadow copy to swap PtrAuth
+    registers
+
+ arch/arm64/Kconfig                   |  4 +---
+ arch/arm64/include/asm/kvm_ptrauth.h |  4 ++--
+ arch/arm64/kvm/hyp-init.S            | 11 +++++++++++
+ arch/arm64/kvm/reset.c               | 21 ++++++++++-----------
+ 4 files changed, 24 insertions(+), 16 deletions(-)
+
+-- 
+2.27.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
