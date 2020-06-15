@@ -2,81 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8B661F9409
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 11:56:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 948281F9425
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 12:00:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4crc1WSikBdBEEind/eyj3ndpwzXdMK1K/MDBfxBfVA=; b=LvSKeyemhh6beO
-	owj99xhHwX3k0Rkr7HPFhys35517CXGmu63789egCgaiLS8H6q8N7Y7hoZpJNr7VsFBPRL/h3uPXw
-	yqAFE57I/Qhd5mb56xq/bCQ67Iveq46dlj4FrAWadmcJOVyH4jafGvYKQi3B1u+yZ+tw42YDM1+M8
-	m+TiPfspg7B9u3aHyRPNrVO+CfvPIXmUOmclZ7qGjQpwkmvsMrNct7JC1gCIfAp0lkoJdzSGCYNGp
-	QbO/Bp7k+X5JvcMpWhAsEIcx+sppd7sd9nE4xDCuLhzdHj+aJkePP1udF5n3p5Bl5i3/vOIruPJA7
-	c0WDZoFcVm6A7HTo3tpQ==;
+	List-Owner; bh=F/T+RdItmkGq7B2ZFgAVyY8lI/Ey0XaYCR9bb0zfgO4=; b=agIZquaEd4cyGy
+	dUAFjJNLHgjexPYzyJU02L7r7EFUe73ZZNJnVDWCVVschgCn8KbhW+Vyi2m6e96HJXWDegOWWdLTK
+	uUGWTpvUtiiwst+obAeKqgg9dBJlqF7P+hv01wDnzsoyQbp2LIahSpY3FQ7xMsZ9oWDMGozWHlHOf
+	k6qNVHGRu1SQTNUJR5uUFapSEv8W1V2eMOYfI9PJOuj2CvajpvSsS5c6QfGSAj32fvLj58Pz+tsFG
+	0W6Gp+hBYXwrX1g3bawXIYDWVNgnw3XgmXB1n2xsTrBtat4ETP9psJ07Nb+mjCFD7QnBSTY+FkVZ1
+	RQXO9cC9DIUW+v962lMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jklqo-0007y7-29; Mon, 15 Jun 2020 09:56:22 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1jklug-0002ji-Pa; Mon, 15 Jun 2020 10:00:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jklqR-0007uL-9p
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 09:56:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592214959; x=1623750959;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=692fkDEuh1BmOmtP0c+bSMMGsuxUEiPJurUSSpS4uUw=;
- b=lWPr468GGPAs4VroLrv/jwBQxAqRNM00sHDyk3KraGVEIqCpAg/loQTE
- avQaQjIt7CjzCV8LYQC84lX42uxhizFVZu4sEB3QB/0GJmip4NhOlRBEq
- NDuabZr9p/NQxPUjleQRjrSiJWD4+8BuNq/nCb7uOHnRft+OJLrWs5Qyh
- uxbFliXTgOFqmgx8O1stA20d4fygZSswFmOmq6H7SmhKzJ7ut4KpaEoVB
- 9KILV401IlN7i0Nz0NrKWl/FWpzQEsob9IwR2+EvGyfgCTel9YUdC00cA
- pmXa8EzNE6W6t8RzYFJIOFdInqiWi1CyilOgQy1MF1qazZxgiModpQxg6 g==;
-IronPort-SDR: rLYBr+VslBxEOPYBjxUKEiYArqrXdl9kzqgrpURDyTHV2dKN/ngSX3uyqdBTUkBqCkl/1lr0xw
- BrLv8RVagFWn3O4YnP872q1Mh8APTyh86pbT858yl0HVl+FTLRdCiyCxL6Dsbqa2XDa9ruKkGN
- gN3PUdg8PZPxdyuXLzock7a4rHmjYn7p7zAflOPDYIXnlpe/MXcM3RrJ27RF8G0E9EPJfYIFvU
- /3f9df31Sd7y4Hb2IMxza02O8Be5Cc/J2f0v8eNdcezxJZ3Ktx/VszckxGyYgIaCjBXyFzkb6J
- 2eo=
-X-IronPort-AV: E=Sophos;i="5.73,514,1583218800"; d="scan'208";a="76588062"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 15 Jun 2020 02:55:43 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1979.3; Mon, 15 Jun 2020 02:55:40 -0700
-Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Mon, 15 Jun 2020 02:55:40 -0700
-From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-To: <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH 3/3] Revert "ARM: at91/dt: sama5d2 Xplained: add pdmic node"
-Date: Mon, 15 Jun 2020 12:55:25 +0300
-Message-ID: <20200615095525.43414-3-codrin.ciubotariu@microchip.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
-References: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
+ id 1jkluX-0002j3-Fx
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 10:00:15 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0E2A52068E;
+ Mon, 15 Jun 2020 10:00:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592215213;
+ bh=NclZlsh0JNDPCh7/tgM7lDu27PNeuUCqty414H60fo4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=j97I5KZbz9w21gUAN1DylupVwPgIjeFytHA4gPPAudiRlCwvnhaBcnTrzyVhV1D2Y
+ XFel1vN89smdSsfXFsHkK2Jjr5D/tIr/dag7doSecgYiiJJUiJMpUYaXWkpnCLEHlE
+ k+IVad79C8U9qrJvICVhkTlseaDwlnHZeXHbISeI=
+Date: Mon, 15 Jun 2020 11:00:08 +0100
+From: Will Deacon <will@kernel.org>
+To: Masahiro Yamada <masahiroy@kernel.org>
+Subject: Re: [PATCH 2/2] kconfig: unify cc-option and as-option
+Message-ID: <20200615100007.GD2477@willie-the-truck>
+References: <20200614144341.1077495-1-masahiroy@kernel.org>
+ <20200614144341.1077495-2-masahiroy@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200614144341.1077495-2-masahiroy@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_025559_572402_EFD88E94 
-X-CRM114-Status: UNSURE (   6.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200615_030013_556912_B2BB2558 
+X-CRM114-Status: GOOD (  20.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [68.232.154.123 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,7 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,61 +77,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
- robh+dt@kernel.org, Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- claudiu.beznea@microchip.com
+Cc: linux-kbuild@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Changbin Du <changbin.du@intel.com>,
+ Arvind Sankar <nivedita@alum.mit.edu>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are no PDM microphones on SAMA5D2 Xplained, to exercize the
-PDMIC.
+On Sun, Jun 14, 2020 at 11:43:41PM +0900, Masahiro Yamada wrote:
+> cc-option and as-option are almost the same; both pass the flag to
+> $(CC). The main difference is the cc-option stops before the assemble
+> stage (-S option) whereas as-option stops after it (-c option).
+> 
+> I chose -S because it is slightly faster, but $(cc-option,-gz=zlib)
+> returns a wrong result (https://lkml.org/lkml/2020/6/9/1529).
+> It has been fixed by a separate patch, but using -c is more robust.
+> 
+> However, you cannot simply replace -S with -c because the following
+> code would break:
+> 
+>     depends on $(cc-option,-gsplit-dwarf)
+> 
+> The combination of -c and -gsplit-dwarf does not accept /dev/null as
+> output.
+> 
+>   $ cat /dev/null | gcc -gsplit-dwarf -S -x c - -o /dev/null
+>   $ echo $?
+>   0
+> 
+>   $ cat /dev/null | gcc -gsplit-dwarf -c -x c - -o /dev/null
+>   objcopy: Warning: '/dev/null' is not an ordinary file
+>   $ echo $?
+>   1
+> 
+>   $ cat /dev/null | gcc -gsplit-dwarf -c -x c - -o tmp.o
+>   $ echo $?
+>   0
+> 
+> There is another flag that creates an separate file based on the
+> object file path:
+> 
+>   $ cat /dev/null | gcc -ftest-coverage -c -x c - -o /dev/null
+>   <stdin>:1: error: cannot open /dev/null.gcno
+> 
+> So, we cannot use /dev/null to sink the output.
+> 
+> Align the cc-option implementation with scripts/Kbuild.include.
+> 
+> With -c option used in cc-option, as-option is unneeded.
+> 
+> Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+> ---
+> 
+>  arch/arm64/Kconfig      | 2 +-
+>  lib/Kconfig.debug       | 1 -
+>  scripts/Kconfig.include | 8 +-------
+>  3 files changed, 2 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 31380da53689..6eb18f45258e 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1564,7 +1564,7 @@ config CC_HAS_SIGN_RETURN_ADDRESS
+>  	def_bool $(cc-option,-msign-return-address=all)
+>  
+>  config AS_HAS_PAC
+> -	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
+> +	def_bool $(cc-option,-Wa$(comma)-march=armv8.3-a)
 
-This reverts commit ca6349a8c51f2e3d6f2acdb36431e7d7328261f7.
+For this arm64 part:
 
-Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
----
- arch/arm/boot/dts/at91-sama5d2_xplained.dts | 16 ----------------
- 1 file changed, 16 deletions(-)
+Acked-by: Will Deacon <will@kernel.org>
 
-diff --git a/arch/arm/boot/dts/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-index 54d96649da77..c0a255bda477 100644
---- a/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-+++ b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-@@ -109,16 +109,6 @@ timer1: timer@1 {
- 				};
- 			};
- 
--			pdmic@f8018000 {
--				pinctrl-names = "default";
--				pinctrl-0 = <&pinctrl_pdmic_default>;
--				atmel,model = "PDMIC @ sama5d2_xplained";
--				atmel,mic-min-freq = <1000000>;
--				atmel,mic-max-freq = <3246000>;
--				atmel,mic-offset = <0x0>;
--				status = "okay";
--			};
--
- 			uart1: serial@f8020000 {
- 				pinctrl-names = "default";
- 				pinctrl-0 = <&pinctrl_uart1_default>;
-@@ -533,12 +523,6 @@ pinctrl_macb0_phy_irq: macb0_phy_irq {
- 					bias-disable;
- 				};
- 
--				pinctrl_pdmic_default: pdmic_default {
--					pinmux = <PIN_PB26__PDMIC_DAT>,
--						<PIN_PB27__PDMIC_CLK>;
--					bias-disable;
--				};
--
- 				pinctrl_sdmmc0_default: sdmmc0_default {
- 					cmd_data {
- 						pinmux = <PIN_PA1__SDMMC0_CMD>,
--- 
-2.25.1
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
