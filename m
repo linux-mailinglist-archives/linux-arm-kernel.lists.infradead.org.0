@@ -2,70 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B54D1F952F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:19:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B45041F953D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 13:22:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zVJJQaNpWBFnU7nAxo62VwzXofYc3DcmMnAONYoHdus=; b=EHt5P56Cq+9HuURWBXPVq58v1
-	2Rj50EUDty0t0AhhtRrCivgUVXlvz9GPsf/xL3mXEthiurN6omQTvXb8+yP8kGarWkAOXVCXDB1r+
-	ladiksYlTU6xuTn4pV4IhdTsKhS2UtJ/EeXYpo/VMVoqWou7mBP6GmyvTW7vKQmyC3jN3pAyKjfqo
-	Z7MVEUwoSCr4YONPWCuN0WkV3PizC7v/fcrVPizRM2lvgMex5pOkxLDJaspUGuPyK2k2feij1cB6X
-	h1zMk5g6CA1jupSucMz+GNYq4041x89AxEeT0i7EgVuNyW5RzcJu7VsrQc39noj75wqtboZl2OXE3
-	ShSfTvDIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+anElHkxEqvLcsErlDcQsGavcyqaqwXHb1PBVtaaf3k=; b=iz8UBzrK1MQ9f+
+	QmgZzjBkZjYPx6RJF4E5WEHnnJOFYeSLatUw7VChUqFybuTNychWOy0a43T4juYakncYZHy0EGhh3
+	TLbDInB0XlgGRGekjBmh5a3CtVmw0sPgFjIa5a/YrnxHXzGoi6RaRN8axh3UQ/No7F5PFA9lEJE6n
+	n/mmfJmLXIr3c9EHZuqWnFS4OFbxxaYS97Z9fwIpq35IvpMXx4CHrZrz/jl7IiC5BLcHTXFMS98ID
+	QjciozTW52qczMHLgrEVVURmAwsoFvDBDPOADWQwKnJP3gMHpeawc81CYrA28rX5KHHVIyEKNS3c7
+	cCmX3VZJXco9vM8FyXIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkn9P-0003Vt-5r; Mon, 15 Jun 2020 11:19:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jknCX-0006b8-VQ; Mon, 15 Jun 2020 11:22:54 +0000
+Received: from eu-smtp-delivery-151.mimecast.com ([185.58.86.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkn9F-0003SE-Pk; Mon, 15 Jun 2020 11:19:30 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 058D020679;
- Mon, 15 Jun 2020 11:19:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592219969;
- bh=09YCLJTSpwXYksfyCYSJl2k+cwsJ7qFx3Cq3UzjbGyI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Y9XD9p0MeL4taa2ELATHmZjnxuB2Qwom8k1ILpzM+ZKmgHncRSrZRkWHzXJoKUZYG
- RVzFdcjhfF4+7tviRu0Z7J7pql7QVnbcy5lmyaFqXh1wKUMpINf6iGMDn+vhj+ObwV
- iv9FZnGvAGdOWuUFB1fqKEZG7JlfMHbBDSJzRm08=
-Date: Mon, 15 Jun 2020 12:19:27 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH 13/29] dt: fix broken links due to txt->yaml renames
-Message-ID: <20200615111927.GC4447@sirena.org.uk>
-References: <cover.1592203542.git.mchehab+huawei@kernel.org>
- <0e4a7f0b7efcc8109c8a41a2e13c8adde4d9c6b9.1592203542.git.mchehab+huawei@kernel.org>
+ id 1jknCO-0006aL-Rm
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 11:22:46 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id
+ uk-mta-47-9KR430kxM7Czl-jMyYnSMw-1; Mon, 15 Jun 2020 12:22:36 +0100
+X-MC-Unique: 9KR430kxM7Czl-jMyYnSMw-1
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
+ AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
+ Server (TLS) id 15.0.1347.2; Mon, 15 Jun 2020 12:22:35 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Mon, 15 Jun 2020 12:22:35 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Al Viro' <viro@zeniv.linux.org.uk>, afzal mohammed
+ <afzal.mohd.ma@gmail.com>
+Subject: RE: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
+Thread-Topic: [RFC 1/3] lib: copy_{from,to}_user using gup & kmap_atomic()
+Thread-Index: AQHWQZeuKY4+jVw3gESBYOJARK44Q6jZh6/w
+Date: Mon, 15 Jun 2020 11:22:35 +0000
+Message-ID: <3ef1b43f182041bc9585f5fd462a092f@AcuMS.aculab.com>
+References: <cover.1591885760.git.afzal.mohd.ma@gmail.com>
+ <9e1de19f35e2d5e1d115c9ec3b7c3284b4a4e077.1591885760.git.afzal.mohd.ma@gmail.com>
+ <CAK8P3a1XUJHC0kG_Qwh4D4AoxTgCL5ggHd=45yNSmzaYWLUWXw@mail.gmail.com>
+ <20200612135538.GA13399@afzalpc>
+ <CAK8P3a25ffh_2Y1xKDbkL2xU9nLpGbEq7j6xHdODEwUtavgdwA@mail.gmail.com>
+ <20200613120432.GA5319@afzalpc> <20200613125126.GE23230@ZenIV.linux.org.uk>
+ <20200613125615.GF23230@ZenIV.linux.org.uk> <20200613134236.GA4086@afzalpc>
+ <20200613153102.GG23230@ZenIV.linux.org.uk>
+In-Reply-To: <20200613153102.GG23230@ZenIV.linux.org.uk>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
 MIME-Version: 1.0
-In-Reply-To: <0e4a7f0b7efcc8109c8a41a2e13c8adde4d9c6b9.1592203542.git.mchehab+huawei@kernel.org>
-X-Cookie: Offer may end without notice.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: aculab.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_041929_855629_A4AD73B8 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200615_042245_189621_6AB230C1 
+X-CRM114-Status: GOOD (  16.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.58.86.151 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [185.58.86.151 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,71 +85,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org,
- Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- linux-rockchip@lists.infradead.org, Sandy Huang <hjc@rock-chips.com>,
- Jakub Kicinski <kuba@kernel.org>, linux-mips@vger.kernel.org,
- devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, netdev@vger.kernel.org,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-bluetooth@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, "David S. Miller" <davem@davemloft.net>
-Content-Type: multipart/mixed; boundary="===============1516894381969381336=="
+Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Al Viro
+> Sent: 13 June 2020 16:31
+> On Sat, Jun 13, 2020 at 07:12:36PM +0530, afzal mohammed wrote:
+> > Hi,
+> >
+> > On Sat, Jun 13, 2020 at 01:56:15PM +0100, Al Viro wrote:
+> >
+> > > Incidentally, what about get_user()/put_user()?  _That_ is where it's
+> > > going to really hurt...
+> >
+> > All other uaccess routines are also planned to be added, posting only
+> > copy_{from,to}_user() was to get early feedback (mentioned in the
+> > cover letter)
+> 
+> Sure, but what I mean is that I'd expect the performance loss to be
+> dominated by that, not by copy_from_user/copy_to_user on large amounts
+> of data.  Especially on the loads like kernel builds - a lot of stat()
+> and getdents() calls there.
 
---===============1516894381969381336==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="WfZ7S8PLGjBY9Voh"
-Content-Disposition: inline
+Or any network traffic where the number of usercopies involved in,
+for example, sendmsg() gives a measurable performance decrease when
+HARDENED_USERCOPY is enabled.
 
+Do you have issues with cache aliasing?
+(Is aliasing the right term?)
+Where potentially the temporary kernel map doesn't use the same
+cache lines as the user processes map.
 
---WfZ7S8PLGjBY9Voh
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+I'm not sure what problem you are trying to solve, but for 64bit
+systems it may be possible to map all of physical memory into the
+kernel address map, them you (loosely) only have to find the KVA
+that matches the user-VA to do the copy.
 
-On Mon, Jun 15, 2020 at 08:46:52AM +0200, Mauro Carvalho Chehab wrote:
-> There are some new broken doc links due to yaml renames
-> at DT. Developers should really run:
+IIRC our SYSV kernels used to do that - until we had 384MB of physical
+memory and ran out of kernel address space.
 
-I also previously acked this one in 20200504100822.GA5491@sirena.org.uk.
-Has anything changed here to cause the ack to be dropped?
+	David
 
---WfZ7S8PLGjBY9Voh
-Content-Type: application/pgp-signature; name="signature.asc"
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
 
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7nWT4ACgkQJNaLcl1U
-h9BSJQf9FR8Vke3pe9Gs5pnWmw6vzxds7jfidCUpXIKPoosgfYfzYQrN1G9m2fSm
-pLlYWjhQBEAU+w9oq7WktfEZ8r736noKsRW4hd5a+Zf2koBr0M9O7ull4h7WlHvr
-asCHlWuqJvpVevxf1ag9x0dAA9NRMqh8xxd8ah/ENWTbXmzZPir0Pa6Q+9lzG2Ld
-aqgHcA+WbonAUk4BqLRSasRy6AkO3zUbYWqVecAV8xRPcVjiWd/PkhEQ/BV67wG9
-Kh/sFCs6+PalKQu5PDZP70apmaRPYHwPZmkNu5Y8rAUsjsQradS2JB1zFlWDSxZk
-0qIWVDJdY+FIcxlqt8Rda5akpjL2SQ==
-=51fv
------END PGP SIGNATURE-----
-
---WfZ7S8PLGjBY9Voh--
-
-
---===============1516894381969381336==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1516894381969381336==--
-
