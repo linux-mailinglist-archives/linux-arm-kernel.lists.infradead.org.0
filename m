@@ -2,146 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA5731F9020
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 09:41:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D927B1F9033
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jun 2020 09:45:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TWLHrtV0Xsdr6ctdIRfU9qVvnK0v25E8sljDb9ax9Yc=; b=HZfLnh31aZtYta
-	Mw0xT1r4790XM1mHhByYcqmuoqCFNWA3pNyS+hlWlhtBhzg7kw3ox9PekBpPaMzeGPypjbZQViI4T
-	VqF8jhU+OEIG1g5DDVVgvCUdqS1aBxgKUJnMm8PbLluOofKVsyRaXrv8t73bjgxzyO0w+Z9Ika27/
-	g0Fhcv3VP4A9DiOhUwvdYy37acESHfJHDZFI87iYGokHGJElL9I60ZX6/in9q+2Bu15bCK4g2tWpt
-	atc/aOYQRzjXaeL7oHu2jmxZJQu8gWAml637UVwWHyNTjR8ezYvaoMGDluvydmGMdiZa5xtgwp3gk
-	xZJXBaLe6oacm4oi8N3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RLLs1d2l+bzAUngLW8trXTB9hRShLhs8uCGMceIKhb8=; b=kexbxzx441fyNg
+	dBHgw6gjPeSCQrZ/TSZDc3QUA/iLVQEjYET+ujQHyqkY3MRLPUso11Q7Dr7Su6+nui/amPClkL+Lq
+	cImGrV1anvmn+v8RR8KDGdXkMhEL4T6cqlzBlNmpQqRV9rQtKraa/ZMCKZyKZlJHyHpiefrilWSU3
+	kNmxnJZ5uHOuaQKygIdHbn2Igq5WwvF3ZrFJZNjXKPioykNQAu+w9+6WPEa++GxxRcKMzgnDeCr1x
+	CN/DoDLU0g53OxJgH+PTxLGUONTV6iIsW2FRY09hVkKVIDx8RiyI19YK3xMGSJJXMkH8FOwIFc6zL
+	PIm5sDpLap7Ioa0dyThQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkjkU-00022W-6U; Mon, 15 Jun 2020 07:41:42 +0000
-Received: from mout.web.de ([212.227.15.4])
+	id 1jkjo1-0002md-DP; Mon, 15 Jun 2020 07:45:21 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkjkM-00021j-5g
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 07:41:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1592206866;
- bh=bItkEfVhTtW3qhNuAqeugRekO6eOCtuOduTADC0Dxpo=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=Zr9HGQbqrU9fyeP4eO2ZtJrBxH8XaC0ynw0tq5V0+wzIpUJiXLRbt1y2LYOa8ei4b
- iS9HAJ7mN4kR9zTAJ1ubULFO6wsLGMtofBN0a56KNo8CTdRMPaFjdB8jGj8SoPhcbO
- qWwKneuMOCgFwl8ZifRNCyt/xJyU/L9IiFfxHQ1k=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([78.49.107.236]) by smtp.web.de (mrweb003
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0MSrll-1jIzl12fBd-00RtLL; Mon, 15
- Jun 2020 09:41:06 +0200
-Subject: Re: [v3] i2c: imx-lpi2c: Fix runtime PM imbalance on error
-To: Wolfram Sang <wsa@kernel.org>, linux-pm@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20200601061640.27632-1-dinghao.liu@zju.edu.cn>
- <20200614091203.GC2878@kunai>
- <AM6PR04MB4966A1FD80A29BA1E63247C0809C0@AM6PR04MB4966.eurprd04.prod.outlook.com>
- <20200615070613.GA1497@kunai>
-From: Markus Elfring <Markus.Elfring@web.de>
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <44768ceb-ee7c-85f2-6091-ec6bcd06ab54@web.de>
-Date: Mon, 15 Jun 2020 09:40:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
+ id 1jkjnX-0002lk-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jun 2020 07:44:52 +0000
+Received: by mail-wr1-x443.google.com with SMTP id j10so15969897wrw.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 00:44:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wLML/7CffDFBhoqwyzC9IFFqzUtN0PnXKPbU0+WecW8=;
+ b=ngWpM4Vd5ByUkX1bUWebKGgG0vYWezYAT7vWvhgdaTo8IBZujJgVraWXo6Ox6Yb/+9
+ cR5YyPmPnGK45v6sM/dK+T+hW3FTrjwS10sazaftNflzQNQFOABhYSmVSimImmg7Euyf
+ NWVYY4ypkR2JseWN9ChtJP2Zy7FLfsT19Qf0ZhjPbmHYo5yH0kRts0nNcfii4NqLMQfR
+ V0ShmXbG7Hr4Fn6EETdOiX0bcZ9x7AHb8xGgXyVHxF7rsg+vYDrbgjynUJQAntcaQYal
+ CY/a/rom9ousRJ9Z25dSmcaGbQViMd2DjSbRFsfm6lLnvb+dsVxLdfbwJedlIfVqAzC/
+ sDYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wLML/7CffDFBhoqwyzC9IFFqzUtN0PnXKPbU0+WecW8=;
+ b=bZDBdPMvotdutAl9AZbkmURQw9blmAG8nda2nNCdyURL+RsvDTxJzJ3DONwi9oovUl
+ 3JzMX332Yq94yJN1sCsXN9hpuFbtIcnhRznnZBKBrcKZk1mYdKIHSSUPtj4u2UG29h+y
+ 9Ke3ed6XnI/US1ws5+74iAJ756/ksZAH+8rwfqmrH9oaEowaQSx5Kqo/ygcfbmA4mAl+
+ mlB3WE+JWbqeLM7KJFX5mmdyGJ7+5JlVloG0E/n8sxO8YPXlCqHY3bSY4sqGFN0fyCfz
+ PY/ECjYhey2t0HalovdDtNs07vOiP57E4hShZHI2Nqp9iUhOFZHquFpXMew4yOYfoXjS
+ 4iuA==
+X-Gm-Message-State: AOAM533/tkuDkk+rbdtdWsKYjTFW/M8HPM9LRom3aFGV3hI0Ge30wVGA
+ KHP+N7CCZ/xauB/p+2VpIocrcQ==
+X-Google-Smtp-Source: ABdhPJw4+6gHE62n11a4DToU9lNCniCgkvi+x33BOd94wC0+HgPDvk1KRFmpSkPOQNQpytwNGESEAg==
+X-Received: by 2002:a5d:6150:: with SMTP id y16mr29528478wrt.219.1592207089789; 
+ Mon, 15 Jun 2020 00:44:49 -0700 (PDT)
+Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
+ [2.15.156.232])
+ by smtp.gmail.com with ESMTPSA id z16sm23227610wrm.70.2020.06.15.00.44.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 00:44:49 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [RESEND PATCH] irqchip/irq-mtk-sysirq: replace spinlock with
+ raw_spinlock
+Date: Mon, 15 Jun 2020 09:44:45 +0200
+Message-Id: <20200615074445.3579-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-In-Reply-To: <20200615070613.GA1497@kunai>
-Content-Language: en-GB
-X-Provags-ID: V03:K1:FuBQm1DRSSkCYJ2edMYXZR4IvGdroKwuuv04BLF5yUfFgHJ/mn+
- yD3jvW29OaoGTyGy+53Tb9VbJash4lZqCw/HNyfKTmEhtIMhsEa2PSDwhiRlg5s8AI/2+nL
- LHwX1OD/k456WCZgpwcSRhM1lEugbwyYhKb0PTP6t4axS2GwVFWXBU8U19jyMoK0fnOEQU5
- kdeP64TlrD8QanCbAxDzg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:NXiTrW/1b1M=:SgG+2iWLn8ElTNhwZuZrBS
- UY0H5Nti9xLwHfPHxBLBETlP4WJaBb2K1Qr3Pq4y0aWz7N+OSgtzmwEO2q2Pvj+YDSsyErOHB
- qQmiS1V0hHuRKfbLnDqsf6BcM3j0zbxbqPBRh08xgrmYRfNenVGT5t3HsZt1r+0PaNgB1rErp
- SaHjxuT8L/TBYbTbnDfa5LoBPRrW3jK/1SI1xPMtOnfP+jbXTbFZ052Ce48QunlB3ycJWVAI9
- Tze+LsWZrTokMSEWjZzpkE+rrqyGZcUg9UBz66Nj26P9fHFUy/gPIGgWP2R1eAnrhqzkDgZyc
- GZgeSepUsLYp5ZXoj1d2+BRda645LYU121Txcljw0aRMDlPMvkTfxIWBRzs+lu9zizVkYSvqb
- 9+8dStG6yFFvxLeySVFeQ284wMc+PLvZ1BSoJ4IPAt5wlvmJV53LnGemc9lPlvmnK8u7BClXd
- H69TX32QTlMz204B41n2JcrAqMaHr0H9MmRzhbSXOAriTGngBWJPKwsIN7fyrQ11WDChm4M4R
- I4VAnLS5Yk5og4hKGKd8NhmgqgwHRWDEs1WNwuxRxhBvcWSl9xDhTTzmsc2c6XjMYDJ/AW981
- +1oVOZZhr7uoGl8+XM/SrSc3jgJP9lafyz5dE+8aCXzOmQCiIh6qc3nGGFuaLpsMK587eO0qD
- Pne/t1wE1i1Icj7BHC/dNLiPSrKMQjG2nkTyNktD6DXmDLFnt9NBC5/DvFwX10rgaJztL0sDD
- Bo9fJQd2+1JhC0TsK7L8HexjTsAz7mHBxxUGxHRCjtEo20RlAcQD8kOEawedMjoYvGWqFHsFT
- jabT3Ow1yqv9IigwZoALXEPgVAOGZex6zrl/7nG7AQMSxgJd/aSCwnZaEDAqziF1qrMVZsPuH
- nfxc3yvja1BjPnYn+1yfOmMh8nZaAaQd3VBf+tkj9wA9aWSjnNb4iwUNBVnrB/DG/Neyjiqhv
- /NnTnTZoLEPE+Fg3tDpHA0gPmgXlF0lT6bUCMo9J29V1OfqIAy3RiTeVZFnAKOPsqU+hi78DV
- s64Pge9GWzxa88PE9EguTO0W9J9cevmUH+4i+E2zfY2QNfas2JmoXOD2wXOtLyQQJuOL/Tqzt
- iviJsFj+UQD9e89/nNXE2Tzefg6AnxVvfIbfHW4EIheLFpds22Hjs8NOSlHnxJxLUfItQUxeh
- /y9U7MrigPyp3RCNX8Yd8hLLy5dIoRC8AoGZS5E2gz0qlX07SmLIQ5tRO3CjJe7T+FSAld5rW
- u8LEQM+KET53W+4m1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_004134_551197_49A83568 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200615_004451_527228_C5457BA9 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.15.4 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [markus.elfring[at]web.de]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.227.15.4 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -153,33 +94,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Andy Duan <fugang.duan@nxp.com>, Qiushi Wu <wu000273@umn.edu>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "Rafael J . Wysocki" <rafael.j.wysocki@intel.com>, Kangjie Lu <kjlu@umn.edu>,
- linux-kernel@vger.kernel.org, Navid Emamdoost <emamd001@umn.edu>,
- Dinghao Liu <dinghao.liu@zju.edu.cn>, Aditya Pakki <pakki001@umn.edu>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, linux-kernel@vger.kernel.org,
+ Fabien Parent <fparent@baylibre.com>, linux-mediatek@lists.infradead.org,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> I started a seperate thread:
->
-> https://lkml.org/lkml/2020/6/14/76
->
-> Still, on-going discussion if the proper fix is to remove the error check.
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-I find that a bit of additional information can make such a link safer.
+This driver may take a regular spinlock when a raw spinlock
+(irq_desc->lock) is already taken which results in the following
+lockdep splat:
 
-RFC: a failing pm_runtime_get increases the refcnt?
-https://lore.kernel.org/lkml/20200614090751.GA2878@kunai/
+=============================
+[ BUG: Invalid wait context ]
+5.7.0-rc7 #1 Not tainted
+-----------------------------
+swapper/0/0 is trying to lock:
+ffffff800303b798 (&chip_data->lock){....}-{3:3}, at: mtk_sysirq_set_type+0x48/0xc0
+other info that might help us debug this:
+context-{5:5}
+2 locks held by swapper/0/0:
+ #0: ffffff800302ee68 (&desc->request_mutex){....}-{4:4}, at: __setup_irq+0xc4/0x8a0
+ #1: ffffff800302ecf0 (&irq_desc_lock_class){....}-{2:2}, at: __setup_irq+0xe4/0x8a0
+stack backtrace:
+CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.7.0-rc7 #1
+Hardware name: Pumpkin MT8516 (DT)
+Call trace:
+ dump_backtrace+0x0/0x180
+ show_stack+0x14/0x20
+ dump_stack+0xd0/0x118
+ __lock_acquire+0x8c8/0x2270
+ lock_acquire+0xf8/0x470
+ _raw_spin_lock_irqsave+0x50/0x78
+ mtk_sysirq_set_type+0x48/0xc0
+ __irq_set_trigger+0x58/0x170
+ __setup_irq+0x420/0x8a0
+ request_threaded_irq+0xd8/0x190
+ timer_of_init+0x1e8/0x2c4
+ mtk_gpt_init+0x5c/0x1dc
+ timer_probe+0x74/0xf4
+ time_init+0x14/0x44
+ start_kernel+0x394/0x4f0
 
-How will the clarification of corresponding software aspects evolve further?
+Replace the spinlock_t with raw_spinlock_t to avoid this warning.
 
-Regards,
-Markus
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+Rebased on top of v5.8-rc1.
+
+ drivers/irqchip/irq-mtk-sysirq.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/irqchip/irq-mtk-sysirq.c b/drivers/irqchip/irq-mtk-sysirq.c
+index 73eae5966a40..6ff98b87e5c0 100644
+--- a/drivers/irqchip/irq-mtk-sysirq.c
++++ b/drivers/irqchip/irq-mtk-sysirq.c
+@@ -15,7 +15,7 @@
+ #include <linux/spinlock.h>
+ 
+ struct mtk_sysirq_chip_data {
+-	spinlock_t lock;
++	raw_spinlock_t lock;
+ 	u32 nr_intpol_bases;
+ 	void __iomem **intpol_bases;
+ 	u32 *intpol_words;
+@@ -37,7 +37,7 @@ static int mtk_sysirq_set_type(struct irq_data *data, unsigned int type)
+ 	reg_index = chip_data->which_word[hwirq];
+ 	offset = hwirq & 0x1f;
+ 
+-	spin_lock_irqsave(&chip_data->lock, flags);
++	raw_spin_lock_irqsave(&chip_data->lock, flags);
+ 	value = readl_relaxed(base + reg_index * 4);
+ 	if (type == IRQ_TYPE_LEVEL_LOW || type == IRQ_TYPE_EDGE_FALLING) {
+ 		if (type == IRQ_TYPE_LEVEL_LOW)
+@@ -53,7 +53,7 @@ static int mtk_sysirq_set_type(struct irq_data *data, unsigned int type)
+ 
+ 	data = data->parent_data;
+ 	ret = data->chip->irq_set_type(data, type);
+-	spin_unlock_irqrestore(&chip_data->lock, flags);
++	raw_spin_unlock_irqrestore(&chip_data->lock, flags);
+ 	return ret;
+ }
+ 
+@@ -212,7 +212,7 @@ static int __init mtk_sysirq_of_init(struct device_node *node,
+ 		ret = -ENOMEM;
+ 		goto out_free_which_word;
+ 	}
+-	spin_lock_init(&chip_data->lock);
++	raw_spin_lock_init(&chip_data->lock);
+ 
+ 	return 0;
+ 
+-- 
+2.26.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
