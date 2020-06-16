@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D40E1FC117
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 23:40:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C9A21FC15A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 00:05:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+k+ShpnBjT6hGO8mgkxKT6/Om2RgC9NFp3PAi3ukoZk=; b=br82kwVdyqcMaD
-	JPNrS8P/AodN3GyzGZ0L3y56wybkyXbbIRGCNd7L/iy+1U4KQ/Cwzok8iqJgfxekbeWICUcokJrHZ
-	jbByUw2X8otTiEcGOB+0W9QwffYUhJnjoUK8jpyC7NwSSo8rUrpEw//mIMTUwgI9/YSwZBgHBG6NK
-	VJiXNdgpwwWFlCdCF0Bip2i3Z/i+QPwppKNkBEoxmlVm7wbyqZVBbP+0xiCa98LftJnvrJfwfpzvs
-	S+M3TfAEz3daAHEeNEH65SgMjUWQBNWx7wckgLq7W470GSv8DZUvjpMvDZlgdQHgVtlgiesfMfmq5
-	z0Px7fqqTbqgd2nNdQww==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=vmrVd60B0uJWxbUXjv+jiwrRugBNIFxo02yKSdny5WU=; b=GMbEoIuC/FF17d
+	/vNob4k290ImvapAvHRy/27EPe2RCe6fmGfNlKkljtIfSe9DWToMK0hx06YgcsCKbgGP5a/SLF5zB
+	vr/pOI2nvSVjyDzl4jHRaYF8L28IDtCdUnxvKpajxYQDYQv8lf7Pe5hfqkgzQkVOkpU4RuTot5tSw
+	0zrBWbaTWqhDSw5lSt759K0W6Q9RBufsEuScGtfdyKBwUKc7jZRUQanlH5P9YVwGms8NJ5DUcLwWs
+	AA6c4RKLHWocvn103JvykDJaLudHQve3J3HtWemIA1rKuSN9h/IglWFEj7zQJ1gVoj0Fns3Ke4LF4
+	g+3U+haqadhV0v1tWtDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlJJd-0003Cz-43; Tue, 16 Jun 2020 21:40:21 +0000
+	id 1jlJhl-0002X8-Eq; Tue, 16 Jun 2020 22:05:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlJJG-0003CD-CP
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 21:39:59 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D9A742082E;
- Tue, 16 Jun 2020 21:39:56 +0000 (UTC)
+ id 1jlJha-0001c1-Gi; Tue, 16 Jun 2020 22:05:08 +0000
+Received: from localhost (mobile-166-170-222-206.mycingular.net
+ [166.170.222.206])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 70AC520739;
+ Tue, 16 Jun 2020 22:05:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592343598;
- bh=NAcC0C5+lhAkJJBBDMO+UHb5TJKRWin2TviSHE2JPPM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lZ+vVY98S3MdQSrzT7nf8/jg2P0oOocyAto8BzVR96Ti+4lwAl7q/9m+10hINfM9u
- LrF0pCBZabIwXnZHACZ+2Hwcofw+zdq3R4f/o620KS7tOyZp+Iwbzcy/Da5x6QIXND
- 46h54xMlmpCise5E7WEG12r2zcRmfOKR8Uy6w4fg=
-Date: Tue, 16 Jun 2020 22:39:53 +0100
-From: Will Deacon <will@kernel.org>
-To: Saravana Kannan <saravanak@google.com>
-Subject: Re: [PATCH v1] arm64/module: Optimize module load time by optimizing
- PLT counting
-Message-ID: <20200616213953.GA2561@willie-the-truck>
-References: <20200605222257.44882-1-saravanak@google.com>
+ s=default; t=1592345105;
+ bh=9bH3nkbMis+3M+lEU06ECFeAOUKxNtoZ5l6kTuWtHJ4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=NjFR2rOLvjf1Fl8aIw/KJ8pg7rdNAzn+ldbAARieoWv6tfX23tuZTCAG/lBok9e3H
+ sgtWezY0YeOjBEX/eyBS6rW1QM7IkGdvUIF4plMokntwY7lOSSWG+ay7TIm9Hv/iwb
+ tGfciR+AzZ5vTi9M3+jj17AmDOmEqBbHiBZRS5ps=
+Date: Tue, 16 Jun 2020 17:05:04 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jim Quinlan <james.quinlan@broadcom.com>
+Subject: Re: [PATCH v5 03/12] dt-bindings: PCI: Add bindings for more Brcmstb
+ chips
+Message-ID: <20200616220504.GA1983902@bjorn-Precision-5520>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200605222257.44882-1-saravanak@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200616205533.3513-4-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_143958_455038_C8DB2178 
-X-CRM114-Status: GOOD (  24.75  )
+X-CRM114-CacheID: sfid-20200616_150506_600131_940E8DB3 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,96 +76,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, kernel-team@android.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ linux-pci@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 03:22:57PM -0700, Saravana Kannan wrote:
-> When loading a module, module_frob_arch_sections() tries to figure out
-> the number of PLTs that'll be needed to handle all the RELAs. While
-> doing this, it tries to dedupe PLT allocations for multiple
-> R_AARCH64_CALL26 relocations to the same symbol. It does the same for
-> R_AARCH64_JUMP26 relocations too.
+On Tue, Jun 16, 2020 at 04:55:10PM -0400, Jim Quinlan wrote:
+> From: Jim Quinlan <jquinlan@broadcom.com>
 > 
-> To make checks for duplicates easier/faster, it sorts the relocation
-> list by type, symbol and addend. That way, to check for a duplicate
-> relocation, it just needs to compare with the previous entry.
-> 
-> However, sorting the entire relocation array is unnecessary and
-> expensive (O(n log n)) because there are a lot of other relocation types
-> that don't need deduping or can't be deduped.
-> 
-> So this commit partitions the array into entries that need deduping and
-> those that don't. And then sorts just the part that needs deduping. And
-> when CONFIG_RANDOMIZE_BASE is disabled, the sorting is skipped entirely
-> because PLTs are not allocated for R_AARCH64_CALL26 and R_AARCH64_JUMP26
-> if it's disabled.
-> 
-> This gives significant reduction in module load time for modules with
-> large number of relocations with no measurable impact on modules with a
-> small number of relocations. In my test setup with CONFIG_RANDOMIZE_BASE
-> enabled, the load time for one module went down from 268ms to 100ms.
-> Another module went down from 143ms to 83ms.
+> - Add compatible strings for three more Broadcom STB chips: 7278, 7216,
+>   7211 (STB version of RPi4).
+> - add new property 'brcm,scb-sizes'
+> - add new property 'resets'
+> - add new property 'reset-names' for 7216 only
+> - allow 'ranges' and 'dma-ranges' to have more than one item and update
+>   the example to show this.
 
-Whilst I can see that's a significant relative saving, what proportion of
-actual boot time are we talking about here? It would be interesting to
-know if there are bigger potential savings elsewhere.
-
-> This commit also disables the sorting if CONFIG_RANDOMIZE_BASE is
-> disabled because it looks like PLTs are not allocated for
-> R_AARCH64_CALL26 and R_AARCH64_JUMP26 if it's disabled.
-> 
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Signed-off-by: Saravana Kannan <saravanak@google.com>
-> ---
->  arch/arm64/kernel/module-plts.c | 37 ++++++++++++++++++++++++++++++++-
->  1 file changed, 36 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/kernel/module-plts.c b/arch/arm64/kernel/module-plts.c
-> index 65b08a74aec6..bf5118b3b828 100644
-> --- a/arch/arm64/kernel/module-plts.c
-> +++ b/arch/arm64/kernel/module-plts.c
-> @@ -253,6 +253,36 @@ static unsigned int count_plts(Elf64_Sym *syms, Elf64_Rela *rela, int num,
->  	return ret;
->  }
->  
-> +static bool rela_needs_dedup(Elf64_Rela *rela)
-> +{
-> +	return ELF64_R_TYPE(rela->r_info) == R_AARCH64_JUMP26
-> +	       || ELF64_R_TYPE(rela->r_info) == R_AARCH64_CALL26;
-> +}
-
-Does this handle A53 erratum 843419 correctly? I'm worried that we skip
-the ADRP PLTs there.
-
-> +
-> +/* Group the CALL26/JUMP26 relas toward the beginning of the array. */
-> +static int partition_dedup_relas(Elf64_Rela *rela, int numrels)
-> +{
-> +	int i = 0, j = numrels - 1;
-> +	Elf64_Rela t;
-> +
-> +	while (i < j) {
-> +		while (rela_needs_dedup(rela + i) && i < j)
-> +			i++;
-> +		while (!rela_needs_dedup(rela + j) && i < j)
-> +			j--;
-> +		if (i < j) {
-> +			t = *(rela + j);
-> +			*(rela + j) = *(rela + i);
-> +			*(rela + i) = t;
-> +		}
-> +	}
-
-This is very hard to read and I think some of the 'i < j' comparisons are
-redundant. Would it make more sense to assign a temporary rather than
-post-inc/decrement and recheck?
-
-Will
+Capitalize and add periods to the list items consistently.
 
 _______________________________________________
 linux-arm-kernel mailing list
