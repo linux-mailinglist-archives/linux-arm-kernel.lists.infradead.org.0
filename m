@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F07761FAC7A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:34:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A56A1FAC7C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:34:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=MM9bphamxH5CuW5ALGKQ09B2SEVqRXQ6aevElk0dVtI=; b=Ccteqa5JflCHVopiUmC9JMmNU3
-	WnMFVt4rb646T/b2azeBGa1ijoHGqzk90JinDW7F8B0kuupzFAi6KGYb0d/dr32u/sewoU8BQ5aWK
-	XzQKpD7aiuzgj9qOU03YlqA4h3N7Bh2DchhHYdfJ0cw7T+fFTQn4LBiRcuItbiVuuJzGu2UOEgvmH
-	hSjfzj4LNU80rapFHdKALav3BRGA43iOXlfno8rl0nK0W50uNLihA/v4oSjRYzCYz5MAo8WCo5M3D
-	/Ry0HYYTGm8gW1dKVM+ulBPo8fwUHmcf40VXnh5lhbNuzkTxGCM1B0WH5VKjYUjz96NeXo8fAHffG
-	65TEc7eg==;
+	bh=tXfuOvJXpLzgMlCH5bakNjEfHwfn98l5Esvq2JXQOXg=; b=HtMADsvvDiP6NWSkMf9a8oIRIv
+	Kq3/elKL7YOfkMjpxXxJ0x83dJiH1/CIeAGrW814zIpl8u+2Go2Hu3XzABblBkggz3oV+JSE+gPKq
+	Q4GQNfyTHR/9QgvXjyf6GBt5STb5ck/v8yXckPEtveCpLVZX1M+I41Y67s1bwDfUQ4Q5Wi++0w+72
+	Q+KkuSr5F59DqXaDdAEuFi2GEw2jLRHlrLhZzaCEENNOOnxajWoLcbyPUgrBpy6GhohDg05AZSxcl
+	8+IeZWoztvWQQay9xBUqIv0zzuDslCng68NAb1JbqNe8VuB0AGC5IW9/7Ab8czkCzLOJ6FUABscz1
+	1O8e1kfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl7yn-0005sy-9C; Tue, 16 Jun 2020 09:34:05 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jl7z0-00069k-DG; Tue, 16 Jun 2020 09:34:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl7yN-0005fe-Jq
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:33:42 +0000
-Received: by mail-wr1-x443.google.com with SMTP id l10so19973513wrr.10
+ id 1jl7yO-0005fi-Bg
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:33:44 +0000
+Received: by mail-wr1-x444.google.com with SMTP id q11so20022690wrp.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 02:33:39 -0700 (PDT)
+ Tue, 16 Jun 2020 02:33:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=UkxWceIqGQ7XQKBCF9BsfRIAOtRo9bMGnldWME5GM5Y=;
- b=Ma+8k4LR3nbuxqMK1pSQBi9He02YkzVDFiG5Jqtlk3+XnUBkct4frBtzw6ME21PLgh
- J4QrLAsGIkFaTg5TWACIW74Ym3jQb7y5RGGrGdCyYL4mWV8jD51TmjRzEDLE0p7oqLds
- twrbBnVOK9i80i7gFAmA2qcf2+LAVD1vQl2xi8/WLCJtMiiExSWMqX0CIwnZal0Yx/sW
- 2QktcBS1Rw0ntsno3X1ufnQpVqC8KhNUcIoUffLQuuRt7BUS6RgiBUapCT0vlbCzZT1E
- mcYy0H/Any31kARoBQnVqXWqw/Zxo8Osz4XhVYvKoTD5osfWz/RWD185rX9QS4BllAWq
- 7S9g==
+ bh=Dy5D7VvQs6lAMvvvXI7RWH+DLEr70PY2Qco3Y2BGZWQ=;
+ b=y5x+xGuXe1DYGI72EVJ9QLUkm7Xw/xXJ47Z5lyO79YYfur88Wtfk+N1cNEagdkOys2
+ CnR/JoGhKCD/2ld/3eUNThLJfe59H3XqQhNSgg/rsWYgwD3Ch/a1iaGJ/is4pF1B3lXy
+ AEssqE7ycnWaqetbf21ddm+09P0vD37cuq1eeNOnCjdJrfO0QGthJ43vJbwIlt2f8Ys2
+ hTjArnHzn9SDISGePLvwzc087T0Vh+WDZpC/aotB2UXwAPmDa/S1Kces0i344Ggzopa4
+ k5sU5oMdq+DkrPkKisU4GHsju40ibyjy6spZ61+omSD2S8yH+ZiIjWssC4XRu/Ek8JWq
+ TABQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=UkxWceIqGQ7XQKBCF9BsfRIAOtRo9bMGnldWME5GM5Y=;
- b=mCXG8hctP7GVMJEDxD5WpAfxWXwxJfwCSRMjiI4iEFSi5u4vxI/3BT3EfBOGCwzTdp
- VZMGg3mYLFb0c0nFNXvHzKfDZKRug9pL840O/2cBgyWRzSX2Mg7cQ53EFIak1TeuVvfR
- HCnUHZdcDZ5i254DEKISbGaYrGJIJyq5YKRTOuCqydehFg9xyV4+ONC3RtUFbNaSBX9Z
- GIltbHlkbyVqzMJQ7jsVxl8afWvNwK9DP/nfT9V6Ejar6840T5LNQ0bXzFkBsKfUjWLX
- lRg9iOaEiVCkWzOpjy4mJxZvo4a8JwU8D/c/X4DM0NBPBLP0tKZxBnNLNoCpVxPDbW0t
- sqqQ==
-X-Gm-Message-State: AOAM530B93fFhYJq7WrSDIexNfnV/IkwBtmX/N876eVHPXk5ddxbBUmu
- Occ/l550qpxxlcss4MtF3GfqcTo9oTM=
-X-Google-Smtp-Source: ABdhPJwxawRamVODM5GFxF6vDRZPipRKcLiPXgHT5YIq0YRXlPVcaclmm2PuQlJOS4PoOVMbP2BDHA==
-X-Received: by 2002:a5d:6b86:: with SMTP id n6mr2014868wrx.167.1592300017807; 
- Tue, 16 Jun 2020 02:33:37 -0700 (PDT)
+ bh=Dy5D7VvQs6lAMvvvXI7RWH+DLEr70PY2Qco3Y2BGZWQ=;
+ b=elDUkuATL6SMSUmH4czvkXIszLoksuWVml0OltCIes10EiUccVZ6oLYX8J76pG8e1Q
+ 6O7VSDZdope91jCEa3lkeEN+85RzyPOoWrBbDgpiXrphEbr9i7XqV2a3mjDn9UxXTIoc
+ 0m8hPMrkuo7rm7D2rN7kzeZrtWu+q33onnfUrOoaa4b9iDQmjpzXzTo5G8cW+i5a2Or2
+ vKdyEw2m2SoVg5TRoHaYABeAp7V8zf9Of7ZHDUnF7BYwY7mRk3HJUIv0SUVtnQpN5Wbe
+ aE6+dZ6PA7fz6172d1rdEFXb9JJW1pAQ01J8aKacy4rmqbs4yHk+AAwCQnM+Ni5o/1HZ
+ Bkaw==
+X-Gm-Message-State: AOAM531lNLHpI6dgl6xHw1kAGRr0o6PJjP4VCOMfy2E8DSVrYFr8C6ZE
+ l4WxWpr/e/ioGa34qq5gX2yZ0vfwlII=
+X-Google-Smtp-Source: ABdhPJyA/kADmHum2cQMcQ5/JMV1u/yVEwJ45ZI1USVYiTIfLc4OS6jIx8x90lDlYWrj4/EeUmu0Zw==
+X-Received: by 2002:a5d:4701:: with SMTP id y1mr2055792wrq.310.1592300018888; 
+ Tue, 16 Jun 2020 02:33:38 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6801:1801:c5c1:794c:e67f:3280])
- by smtp.gmail.com with ESMTPSA id s72sm3166391wme.35.2020.06.16.02.33.36
+ by smtp.gmail.com with ESMTPSA id s72sm3166391wme.35.2020.06.16.02.33.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 02:33:36 -0700 (PDT)
+ Tue, 16 Jun 2020 02:33:38 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
  mathieu.poirier@linaro.org
-Subject: [PATCH 1/3] coresight: Fix comment in main header file.
-Date: Tue, 16 Jun 2020 10:33:31 +0100
-Message-Id: <20200616093333.31283-2-mike.leach@linaro.org>
+Subject: [PATCH 2/3] coresight: etmv4: Counter values not saved on disable.
+Date: Tue, 16 Jun 2020 10:33:32 +0100
+Message-Id: <20200616093333.31283-3-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200616093333.31283-1-mike.leach@linaro.org>
 References: <20200616093333.31283-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_023341_299810_EDF42415 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20200616_023341_302873_4ADD008D 
+X-CRM114-Status: GOOD (  11.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,30 +103,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Comment for an elemnt in the coresight_device structure appears to have
-been corrupted & makes no sense. Fix this before making further changes.
+The counter value registers change during operation, however this change
+is not reflected in the values seen by the user in sysfs.
+
+This fixes the issue by reading back the values on disable.
 
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- include/linux/coresight.h | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-index e55499dcc010..fc320dd2cedc 100644
---- a/include/linux/coresight.h
-+++ b/include/linux/coresight.h
-@@ -180,7 +180,8 @@ struct coresight_sysfs_link {
-  * @enable:	'true' if component is currently part of an active path.
-  * @activated:	'true' only if a _sink_ has been activated.  A sink can be
-  *		activated but not yet enabled.  Enabling for a _sink_
-- *		appens when a source has been selected for that it.
-+ *		happens when a source has been selected and a path is enabled
-+ *		from source to that sink.
-  * @ea:		Device attribute for sink representation under PMU directory.
-  * @def_sink:	cached reference to default sink found for this device.
-  * @last_sink:	Name of last sink used for this source to trace into. Set when
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index 747afc875f91..60a5133d801c 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -507,6 +507,12 @@ static void etm4_disable_hw(void *info)
+ 			readl_relaxed(drvdata->base + TRCSSCSRn(i));
+ 	}
+ 
++	/* read back the current counter values */
++	for (i = 0; i < drvdata->nr_cntr; i++) {
++		config->cntr_val[i] =
++			readl_relaxed(drvdata->base + TRCCNTVRn(i));
++	}
++
+ 	coresight_disclaim_device_unlocked(drvdata->base);
+ 
+ 	CS_LOCK(drvdata->base);
 -- 
 2.17.1
 
