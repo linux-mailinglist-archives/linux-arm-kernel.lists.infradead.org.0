@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B160F1FBBE7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:40:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 595481FBBE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:40:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PPR3U94SrAeYxhMcJwU82c92Z2oN50Hxi7NqZn+2wDo=; b=B7U
-	JrOnj89K2jlc2aKZbcgEfOIaTe7mM55hzZkJBb9GpTQ55Vs7+zKrgZokZjC/Kq+g7yf+bPWKoodyU
-	wYbRVXbzZinN7clsPwOVqWiLVOOUVzCo2uYc+sYaNXKnJORI7OoPz028i+tRFIFuAlwqW8tiAM90U
-	J2KiIqS74htMb59deBLxWujVwDwHCoJoPjuCatDyGY8Ys2xFeCG6y1Z9YDnIW8K8vbiBo3RrMEpJc
-	2Zsy9WuH1OK9fOp5JAsivMhpWDRJHPKtUnTQdAIyd3rreb1Kj43DOh72B+NKw7nm3/JE9sklg3Osi
-	Gw9xkerHLJ8qUBzgADzNVkg71+FfMfw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=KjTwrfeZwxmADQurC81VyW6LYRvreYGA+fNfwp5o7a0=; b=bemZG4RW9bS0Stn97mgTcJLYko
+	lj4Wg5hJzYeA4+rgaTfweq8zvcAkZDuxk5BX2OS72F7ChvuSPqn9rD4gTPMSPy/Fd0FhKL/2asYSn
+	mEpvfUbLknAz57La4i0G3suoxt1/SXxUeonIUCXUuYdF/i4dJJbAYmY2Ol4KuJud1kGXqRywuBjvN
+	99DqeWrm7HgxUPxKZE168/CALkmNQPeC7lARXVHWhTuHKhBO400czbGtVOe6v0AlQOmi/8P4+f3W6
+	XkID6MKMmhRTmUERPK1rxS2U4OgJKeiiKcecs5nOFKXt/Yi7uAr8xzOdPqObhJebvVNnaUXSiuIBP
+	FgfPo+UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlEdJ-0008P7-Qz; Tue, 16 Jun 2020 16:40:21 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jlEdb-00006N-SY; Tue, 16 Jun 2020 16:40:39 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlEd9-0007nW-3u
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 16:40:12 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r9so3505862wmh.2
+ id 1jlEdA-00088H-72
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 16:40:14 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j10so21463377wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 09:40:10 -0700 (PDT)
+ Tue, 16 Jun 2020 09:40:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=9YnYFHSDFso0fOXJihLtGhBF6BHm2kdc2yEvgjFZSLo=;
- b=IfhLyJyMNmzDSSV/StjX50lByTvyQPH5cwg/i2ouZ3scawz9Ws2ZXbzUj3sMoGFYkp
- z9bmwLiPc/i836ZAYwG1k/EczuGLtoSrgEtgmsEu3+N0Pd1N20aUmG/qEnQVjyYpphCk
- tJdD3IF8QPe+YLX8zFovV5c9zHil/g8wUjp2K3k04v8et2E95wbSpaEMrAM1wrPdMVsw
- /r9hZXrrEIp4wSLDjIAgUZ9v4pwNz3nO9IUhrbcS9as/9HdK0SQf1DgTW4xLhosImMUU
- 6yAM3NLdzbN60IPeaEQHOL4vlQp/FqcfHspanV/ThlWgxjK+66IzuZYtXZH24gdI9075
- wQWQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=JvNhFPgAekuOh98eM7QIE6yiEIZ2rGlQ4CDaGTYjSLY=;
+ b=iXLSMGTMAMcpGOJzbRoQjT/sKbFJ/0Tk+PrBtjhSvvSD3aFuu8JUwnpYo+qOEfGyQm
+ Qp7tZnkqPi5mP+DJ5MdEqUQJL+1zk6csiRQnFT8HBUfCg7o2uPhtexcLRhM9HC0BzKgM
+ Kv/ZREQagHWdbdVG3saAe9l+KekzRZ+J9SRAIzMD9l62cybThc18ulRQcvOUH2EKDe1Y
+ i3p4aVSmip2ULHoRsElkW4GuL4C7OzMNcBTq8F7vHIOgX1Jex74cqKo3mtq94GN/g/Ol
+ tCCgDt1WTg+jlI7M+lu6ycRfjuV3+gGq0Yj2qr6JDr0KC6EvP9cjOE/tb73GX2YGV74f
+ VrYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=9YnYFHSDFso0fOXJihLtGhBF6BHm2kdc2yEvgjFZSLo=;
- b=coXHdWM8xqS0A2xEpy5+DqtoC6J2Pg3TtkWcgczGNLXHhwWv+pPwMyJoCwhvsL0QgQ
- RKL3fUlx3lWmMXRdhrZUwmtVNn5sQMHlZnoImZ/+o13YOA8X1phxw7dv2c9k24NFqPNY
- dtfVVFFvP7aIP3tbZCAw9Mzp+PKyLX/oo2GYA/pZyb2frfG9JhQE/B22xNlFZB5GWu2z
- rTtp45nZ5TRoRGOC4bSqNcftJGnWdXGPkdW4Vw5TFKSjyLOUvjRYrOZlxFtD+J2uHxi5
- HyoF3C5icZzfUNKud0nkEldd3zHxlrQHGFQwORRWwF2v7LueVsTlVjVPlCQPUrYQcRwD
- EnIA==
-X-Gm-Message-State: AOAM5328Tq67IZljRQnsT8A8yt+FPA+KjYPVqQCmN26D5UN2DfzYf3W8
- o7Jzq1GkN6CRucg5HEEfPEhM/xAyfHs=
-X-Google-Smtp-Source: ABdhPJwOW/ZcdzOtmgDO7T7j7fpeFuwagPUWSfa/Hl/yBeEfz5zBBT5h5oAt0PPG2VgQ6j/9Xifpxw==
-X-Received: by 2002:a7b:c761:: with SMTP id x1mr4341190wmk.90.1592325608924;
- Tue, 16 Jun 2020 09:40:08 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=JvNhFPgAekuOh98eM7QIE6yiEIZ2rGlQ4CDaGTYjSLY=;
+ b=SVw5BilTnzFExSDWSzuqmPYy4ktOsuNIfRRTfHYlaQraVoVP0RCPZJMXl6nH3qcf+1
+ BSiEPF3iMwTnbocklb1kXDiISSyI2GGncK2ld5lK49wLout66i6W5TY73tSUnszvhHmN
+ jSwpYA3VhhUbFDKvMcL+Yvv5kjiAwW0uavTr8lOP1T2EtdGLAs2a8MJzar2v04uK+ZN2
+ p7pT9S8zjDVScBA1PdkIsBzyDWMToNs/cMhUzTypNWQPSD+k+VEIwPQ3E47ED6E7utyI
+ LOXIwwUanBJRXcPpGETI2vlLIfcYBIalUkMKOJzQvWVk6yPLW617KlX3KOIHdG6bPygo
+ IANg==
+X-Gm-Message-State: AOAM533fK6w3/BryQ10KdU6+IZBqz2ns2Nc33chytqEKAxPSlp9cOOKa
+ LOgvnSKKE08hTYrCOSdfW+H48VDUR3Q=
+X-Google-Smtp-Source: ABdhPJwddWC6tT5XMJlG5DztkmNAEg5w+rvwoDqKakRGTHObzKvjpep3f/GVlfAsPbSThzoQodvg7w==
+X-Received: by 2002:adf:f6ce:: with SMTP id y14mr4138185wrp.90.1592325610126; 
+ Tue, 16 Jun 2020 09:40:10 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6801:1801:dc9e:c297:59e5:dbd9])
- by smtp.gmail.com with ESMTPSA id g82sm4843866wmf.1.2020.06.16.09.40.07
+ by smtp.gmail.com with ESMTPSA id g82sm4843866wmf.1.2020.06.16.09.40.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 09:40:08 -0700 (PDT)
+ Tue, 16 Jun 2020 09:40:09 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
  coresight@lists.linaro.org, mathieu.poirier@linaro.org
-Subject: [PATCH v5 0/5] Update CoreSight infrastructure to select a default
- sink.
-Date: Tue, 16 Jun 2020 17:40:01 +0100
-Message-Id: <20200616164006.15309-1-mike.leach@linaro.org>
+Subject: [PATCH v5 1/5] coresight: Add default sink selection to CoreSight
+ base.
+Date: Tue, 16 Jun 2020 17:40:02 +0100
+Message-Id: <20200616164006.15309-2-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200616164006.15309-1-mike.leach@linaro.org>
+References: <20200616164006.15309-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_094011_193293_DE61C472 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20200616_094012_269129_BF51E98B 
+X-CRM114-Status: GOOD (  26.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,65 +104,257 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset provides an infrastructure to allow for the automatic
-selection of a sink during CoreSight tracing operations.
+Adds a method to select a suitable sink connected to a given source.
 
-Currently starting tracing using perf requires a sink selection on the
-command line:-
+In cases where no sink is defined, the coresight_find_default_sink
+routine can search from a given source, through the child connections
+until a suitable sink is found.
 
-sudo ./perf record -e cs_etm/@tmc_etr0/ --per-thread uname -a
+The suitability is defined in by the sink coresight_dev_subtype on the
+CoreSight device, and the distance from the source by counting
+connections.
 
-After this set (and the follow-up perf change set) the infrastructure will
-be able to select a default sink:-
+Higher value subtype is preferred - where these are equal, shorter
+distance from source is used as a tie-break.
 
-sudo ./perf record -e cs_etm// --per-thread uname -a
+This allows for default sink to be discovered were none is specified
+(e.g. perf command line)
 
-This matches with the default operation provided with perf and intelpt.
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
+Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Reviewed-by: Leo Yan <leo.yan@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
+ drivers/hwtracing/coresight/coresight-priv.h |   2 +
+ drivers/hwtracing/coresight/coresight.c      | 166 +++++++++++++++++++
+ include/linux/coresight.h                    |   3 +
+ 3 files changed, 171 insertions(+)
 
-Where no sink is specified at the start of a trace session, the CoreSight
-system will walk the connection graph from the source ETM, to find a
-suitable sink using the first encountered highest priority device.
-
-The CoreSight infrastructure is updated to define sink sub_types to
-differentiate between sinks with built in buffers (ETB / ETF) - BUFFER
-type, and those that use system memory (ETR) - SYSMEM - types.
-
-SYSMEM types are considered higher priority.
-
-When two sinks are found of equal priority, then the closest sink to the
-source in terms of connection nodes is chosen.
-
-The automatic sink selection will also operate if an ETM is enabled using
-sysfs commands, and no sink is currently enabled. A last_sink attribute is
-added to trace sources that is set to the value of the sink used when a
-source is enabled via sysfs. This is set in both default and user enabled
-sink scenarios.
-
-Applies to Linux 5.8-rc1
-
-Tested on Dragonboard DB410c.
-
-Changes since v4:
-1) Added reviewed-by etc that were missing from previous sets.
-2) Added last_sink attribute to source devices.
-3) Added documentation patch to update docs for default sinks.
-4) Moved comment fix patch into separate misc fixes set.
-
-Mike Leach (5):
-  coresight: Add default sink selection to CoreSight base.
-  coresight: tmc: Update sink types for default selection.
-  coresight: etm: perf: Add default sink selection to etm perf.
-  coresight: sysfs: Allow select default sink on source enable.
-  documentation: coresight: Update CoreSight document for default sink.
-
- Documentation/trace/coresight/coresight.rst   |  48 ++--
- .../hwtracing/coresight/coresight-etm-perf.c  |  17 +-
- drivers/hwtracing/coresight/coresight-priv.h  |   2 +
- drivers/hwtracing/coresight/coresight-tmc.c   |   3 +-
- drivers/hwtracing/coresight/coresight.c       | 205 +++++++++++++++++-
- include/linux/coresight.h                     |   6 +
- 6 files changed, 261 insertions(+), 20 deletions(-)
-
+diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+index 36c943ae94d5..f2dc625ea585 100644
+--- a/drivers/hwtracing/coresight/coresight-priv.h
++++ b/drivers/hwtracing/coresight/coresight-priv.h
+@@ -150,6 +150,8 @@ int coresight_enable_path(struct list_head *path, u32 mode, void *sink_data);
+ struct coresight_device *coresight_get_sink(struct list_head *path);
+ struct coresight_device *coresight_get_enabled_sink(bool reset);
+ struct coresight_device *coresight_get_sink_by_id(u32 id);
++struct coresight_device *
++coresight_find_default_sink(struct coresight_device *csdev);
+ struct list_head *coresight_build_path(struct coresight_device *csdev,
+ 				       struct coresight_device *sink);
+ void coresight_release_path(struct list_head *path);
+diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
+index f3efbb3b2b4d..e9c90f2de34a 100644
+--- a/drivers/hwtracing/coresight/coresight.c
++++ b/drivers/hwtracing/coresight/coresight.c
+@@ -769,6 +769,171 @@ void coresight_release_path(struct list_head *path)
+ 	path = NULL;
+ }
+ 
++/* return true if the device is a suitable type for a default sink */
++static inline bool coresight_is_def_sink_type(struct coresight_device *csdev)
++{
++	/* sink & correct subtype */
++	if (((csdev->type == CORESIGHT_DEV_TYPE_SINK) ||
++	     (csdev->type == CORESIGHT_DEV_TYPE_LINKSINK)) &&
++	    (csdev->subtype.sink_subtype >= CORESIGHT_DEV_SUBTYPE_SINK_BUFFER))
++		return true;
++	return false;
++}
++
++/**
++ * coresight_select_best_sink - return the best sink for use as default from
++ * the two provided.
++ *
++ * @sink:	current best sink.
++ * @depth:      search depth where current sink was found.
++ * @new_sink:	new sink for comparison with current sink.
++ * @new_depth:  search depth where new sink was found.
++ *
++ * Sinks prioritised according to coresight_dev_subtype_sink, with only
++ * subtypes CORESIGHT_DEV_SUBTYPE_SINK_BUFFER or higher being used.
++ *
++ * Where two sinks of equal priority are found, the sink closest to the
++ * source is used (smallest search depth).
++ *
++ * return @new_sink & update @depth if better than @sink, else return @sink.
++ */
++static struct coresight_device *
++coresight_select_best_sink(struct coresight_device *sink, int *depth,
++			   struct coresight_device *new_sink, int new_depth)
++{
++	bool update = false;
++
++	if (!sink) {
++		/* first found at this level */
++		update = true;
++	} else if (new_sink->subtype.sink_subtype >
++		   sink->subtype.sink_subtype) {
++		/* found better sink */
++		update = true;
++	} else if ((new_sink->subtype.sink_subtype ==
++		    sink->subtype.sink_subtype) &&
++		   (*depth > new_depth)) {
++		/* found same but closer sink */
++		update = true;
++	}
++
++	if (update)
++		*depth = new_depth;
++	return update ? new_sink : sink;
++}
++
++/**
++ * coresight_find_sink - recursive function to walk trace connections from
++ * source to find a suitable default sink.
++ *
++ * @csdev: source / current device to check.
++ * @depth: [in] search depth of calling dev, [out] depth of found sink.
++ *
++ * This will walk the connection path from a source (ETM) till a suitable
++ * sink is encountered and return that sink to the original caller.
++ *
++ * If current device is a plain sink return that & depth, otherwise recursively
++ * call child connections looking for a sink. Select best possible using
++ * coresight_select_best_sink.
++ *
++ * return best sink found, or NULL if not found at this node or child nodes.
++ */
++static struct coresight_device *
++coresight_find_sink(struct coresight_device *csdev, int *depth)
++{
++	int i, curr_depth = *depth + 1, found_depth = 0;
++	struct coresight_device *found_sink = NULL;
++
++	if (coresight_is_def_sink_type(csdev)) {
++		found_depth = curr_depth;
++		found_sink = csdev;
++		if (csdev->type == CORESIGHT_DEV_TYPE_SINK)
++			goto return_def_sink;
++		/* look past LINKSINK for something better */
++	}
++
++	/*
++	 * Not a sink we want - or possible child sink may be better.
++	 * recursively explore each port found on this element.
++	 */
++	for (i = 0; i < csdev->pdata->nr_outport; i++) {
++		struct coresight_device *child_dev, *sink = NULL;
++		int child_depth = curr_depth;
++
++		child_dev = csdev->pdata->conns[i].child_dev;
++		if (child_dev)
++			sink = coresight_find_sink(child_dev, &child_depth);
++
++		if (sink)
++			found_sink = coresight_select_best_sink(found_sink,
++								&found_depth,
++								sink,
++								child_depth);
++	}
++
++return_def_sink:
++	/* return found sink and depth */
++	if (found_sink)
++		*depth = found_depth;
++	return found_sink;
++}
++
++/**
++ * coresight_find_default_sink: Find a sink suitable for use as a
++ * default sink.
++ *
++ * @csdev: starting source to find a connected sink.
++ *
++ * Walks connections graph looking for a suitable sink to enable for the
++ * supplied source. Uses CoreSight device subtypes and distance from source
++ * to select the best sink.
++ *
++ * If a sink is found, then the default sink for this device is set and
++ * will be automatically used in future.
++ *
++ * Used in cases where the CoreSight user (perf / sysfs) has not selected a
++ * sink.
++ */
++struct coresight_device *
++coresight_find_default_sink(struct coresight_device *csdev)
++{
++	int depth = 0;
++
++	/* look for a default sink if we have not found for this device */
++	if (!csdev->def_sink)
++		csdev->def_sink = coresight_find_sink(csdev, &depth);
++	return csdev->def_sink;
++}
++
++static int coresight_remove_sink_ref(struct device *dev, void *data)
++{
++	struct coresight_device *sink = data;
++	struct coresight_device *source = to_coresight_device(dev);
++
++	if (source->def_sink == sink)
++		source->def_sink = NULL;
++	return 0;
++}
++
++/**
++ * coresight_clear_default_sink: Remove all default sink references to the
++ * supplied sink.
++ *
++ * If supplied device is a sink, then check all the bus devices and clear
++ * out all the references to this sink from the coresight_device def_sink
++ * parameter.
++ *
++ * @csdev: coresight sink - remove references to this from all sources.
++ */
++static void coresight_clear_default_sink(struct coresight_device *csdev)
++{
++	if ((csdev->type == CORESIGHT_DEV_TYPE_SINK) ||
++	    (csdev->type == CORESIGHT_DEV_TYPE_LINKSINK)) {
++		bus_for_each_dev(&coresight_bustype, NULL, csdev,
++				 coresight_remove_sink_ref);
++	}
++}
++
+ /** coresight_validate_source - make sure a source has the right credentials
+  *  @csdev:	the device structure for a source.
+  *  @function:	the function this was called from.
+@@ -1358,6 +1523,7 @@ void coresight_unregister(struct coresight_device *csdev)
+ 	etm_perf_del_symlink_sink(csdev);
+ 	/* Remove references of that device in the topology */
+ 	coresight_remove_conns(csdev);
++	coresight_clear_default_sink(csdev);
+ 	coresight_release_platform_data(csdev, csdev->pdata);
+ 	device_unregister(&csdev->dev);
+ }
+diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+index 84dc695e87d4..58fffdecdbfd 100644
+--- a/include/linux/coresight.h
++++ b/include/linux/coresight.h
+@@ -48,6 +48,7 @@ enum coresight_dev_subtype_sink {
+ 	CORESIGHT_DEV_SUBTYPE_SINK_NONE,
+ 	CORESIGHT_DEV_SUBTYPE_SINK_PORT,
+ 	CORESIGHT_DEV_SUBTYPE_SINK_BUFFER,
++	CORESIGHT_DEV_SUBTYPE_SINK_SYSMEM,
+ };
+ 
+ enum coresight_dev_subtype_link {
+@@ -182,6 +183,7 @@ struct coresight_sysfs_link {
+  *		happens when a source has been selected and a path is enabled
+  *		from source to that sink.
+  * @ea:		Device attribute for sink representation under PMU directory.
++ * @def_sink:	cached reference to default sink found for this device.
+  * @ect_dev:	Associated cross trigger device. Not part of the trace data
+  *		path or connections.
+  * @nr_links:   number of sysfs links created to other components from this
+@@ -200,6 +202,7 @@ struct coresight_device {
+ 	/* sink specific fields */
+ 	bool activated;	/* true only if a sink is part of a path */
+ 	struct dev_ext_attribute *ea;
++	struct coresight_device *def_sink;
+ 	/* cross trigger handling */
+ 	struct coresight_device *ect_dev;
+ 	/* sysfs links between components */
 -- 
 2.17.1
 
