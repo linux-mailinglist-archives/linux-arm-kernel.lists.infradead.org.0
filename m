@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34EB41FAF23
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 13:28:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60CDC1FAF31
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 13:31:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VuLPG7oQrN4xPLYt/WPzH99CbsGju8IJRYpSk809tx4=; b=bxD
-	4OvC4BmPDBqa4qNYYMBdf4agFyF2FI1hnJmoH0Q2bTIpJgdM6e5mC4/AHurT+A0+2v6I5KoS8ZN6R
-	dOmb5VocrJymddui1XE6EG7Y3bi2o7cqY84kod1FbVqpfwACXVmfSBP2Muoe8kWZ4mhs7n0vZ6Cyi
-	im+qnFGuaTXr6DH2RsFJRs2DTjIFCZTUivyZvEQjQEj7ur7VXrayxMnUkV/rwq7gjN8k85t/6Lt8K
-	nCG6AsQVHA/w6zfjRi3LlbNOJIausLvGSR0nEOpMPFurmibZahTAuIfEiKB2Hjj2Mc5WNdVYKGHZ8
-	IRnTy8RV3NmChPrnnSAXKfsCLAsuO5g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zNh+kRBH92Jh6xB9jbBB3oxgu2U5KwFQGTRbDSGTcCA=; b=cYG+5ky6tXT/YP
+	UDvZf0uBsUnfGbPRl0ZhCxJ7oKVD1Boe3m3ko7YsqW1Fe+ogKb1GssFUKjDBwP3sAGsr1Dnisx3If
+	JiFXMBwiXjtJCEBi476sZ4Y9eghujelfFqJkQLk6ug2fuNfEpNaFaBPfjVBEyDxs3nIPIY+uf4jKW
+	tmQ7yBmhvfTi0LWWyEC3P/dNnUPAsskjxQZStmM7OfsrHYom2NaTYLgHLx63zCuu8/AZG2cBEcmUm
+	YUNgj9KiC3wi/usARF6pqxpXZoOu0zZh326q1qRaSkJLAodBhfdbA703JhG1QYTF/yRfbMkeqMC7C
+	bRCQnw2e0TPKDHiTHbLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl9lD-00025Z-S0; Tue, 16 Jun 2020 11:28:11 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jl9o1-00051H-7l; Tue, 16 Jun 2020 11:31:05 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl9l5-00024m-9a; Tue, 16 Jun 2020 11:28:04 +0000
-Received: by mail-pl1-x641.google.com with SMTP id k6so3300023pll.9;
- Tue, 16 Jun 2020 04:28:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=C66Iy0udb87vhjoDYd71Ql6l2XA6eYACBYbwZNfMhzU=;
- b=ICJev4x2OgJ6X7xmSzWcGWWwJAyPTOuhILDrFDfIxcor78l92hde85mv/ysyicxvef
- iPNwenqBqzDbFYvb1JN0CUUfCD/bVIu8lN07+lYRk/zQ79/IhvUQXPkBOAMQHdCG5CLq
- w5Sq6/CXDDYr0RG7p6vn79pM30Dl03IYtNXE4GfkD0tlZFOzpYLWUvcRW0T2WAK+H2/S
- 6dRw9Bh5DKve8/a1Nd85Gd7LTgTsOPUU1p2F6w3ozF/XkHf/bG/7J2lhs7lGUJtze0wc
- f8CojXLI6JoBPREEVLMQjgXwOSuemXoDk4DjB7x7zXK9YgYMX8a87KK7rZeLaVKjY4Xk
- I0ew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=C66Iy0udb87vhjoDYd71Ql6l2XA6eYACBYbwZNfMhzU=;
- b=rAeJamletUxRhW6ycKlzWgszRSTbXM/Y9xDmrjq7vRxJzezpM8z/LO1kRKCygmBt6z
- nmU2D4RyxhXwyCui8vndMcdWtrE5kelbNCaPvX5seCIiW+Tul8hAMN/HzkH6wzFx7pnv
- U2dzhU9Z5YC+FbPHTuwRY/NshuXmUiXVUFhQ+5OiILercYsFmwWOPFZI6uI5gZlhlUHg
- haMgc8JMTG4EG2b1L0pb62Y7ZV/Qz75rgK4zXVvQEgkWaQvwCGg8spOijuCjejd4VLwh
- Pcv4luVDYr0fqk2xGk1Y4f3TScwK9ri2oxHIDvXUC7b+UBRr9C9pUE4X2awh0U5+6wJa
- X1Xw==
-X-Gm-Message-State: AOAM533+OtMzIN7gHcobkvf0MBUn5wElEd50w52Z6ShCM2v5sIdVAgKJ
- gFtwn+2aRCkHSEthcxHDDCU=
-X-Google-Smtp-Source: ABdhPJwaevj2Eg+de+5NM26vCPlyHzB6CcylDSU3H8uKvyfdS27T3gYBG5pWtcngruNnK1bLe2z5/A==
-X-Received: by 2002:a17:90a:c85:: with SMTP id
- v5mr2248738pja.114.1592306882003; 
- Tue, 16 Jun 2020 04:28:02 -0700 (PDT)
-Received: from localhost.localdomain ([101.12.205.96])
- by smtp.gmail.com with ESMTPSA id b19sm16617701pft.74.2020.06.16.04.27.59
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 16 Jun 2020 04:28:01 -0700 (PDT)
-From: Gene Chen <gene.chen.richtek@gmail.com>
-To: robh+dt@kernel.org,
-	matthias.bgg@gmail.com
-Subject: [PATCH] dt-bindings: mfd: Add bindings for the Mediatek MT6360 PMIC
-Date: Tue, 16 Jun 2020 19:27:56 +0800
-Message-Id: <1592306876-3504-1-git-send-email-gene.chen.richtek@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jl9ns-00050D-Um
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 11:30:58 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 05GBO12D019879; Tue, 16 Jun 2020 13:30:47 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=Is1HFAKxrRK4M9wTQ7ky+YcCCVHYlPfvKWxElD41J9I=;
+ b=hdVbR5ll8P9IF/DCqIP9G5yC0gyORLZAtaFpHlEHLAYcrss21imUCGZ672jRtxl1+Lbv
+ RrlD5NcLkRJFxGMc+1djtYauSv8oaE7GPkkMiOG4ROcdaRWtG9gvv4B6/3B6/AKj6M+L
+ 8IMSsICY8SWe4DyVBdCJqEWXO4q0uM3T7+CMkHkpbqFNc44SOkWFYo4k2dbLjjm7GX15
+ VELNUaORbZjL19mUTbAuCVaKPreTimyaNv845pe8Y+WAOwWSkTQWzNYonkdx3ygbXpHF
+ 05zTm2Tq5WRs10obXx5TShs2TPOruCcqhInCUxeCXhLvjSzxxFc/1SAyLA3t2d2xMoqK qw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 31mm91q2v1-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 16 Jun 2020 13:30:47 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DB1EB10002A;
+ Tue, 16 Jun 2020 13:30:44 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CD57D2C0D26;
+ Tue, 16 Jun 2020 13:30:44 +0200 (CEST)
+Received: from localhost (10.75.127.44) by SFHDAG6NODE3.st.com (10.75.127.18)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Tue, 16 Jun 2020 13:30:44 +0200
+From: <patrice.chotard@st.com>
+To: Mark Brown <broonie@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>
+Subject: spi: stm32-qspi: Fix error path in case of -EPROBE_DEFER
+Date: Tue, 16 Jun 2020 13:30:35 +0200
+Message-ID: <20200616113035.4514-1-patrice.chotard@st.com>
+X-Mailer: git-send-email 2.17.1
+MIME-Version: 1.0
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG6NODE3.st.com
+ (10.75.127.18)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-16_04:2020-06-16,
+ 2020-06-16 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_042803_333549_26E1C1BD 
-X-CRM114-Status: GOOD (  10.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200616_043057_435385_C2044BF9 
+X-CRM114-Status: GOOD (  15.92  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gene.chen.richtek[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,87 +91,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, devicetree@vger.kernel.org, Wilma.Wu@mediatek.com,
- linux-kernel@vger.kernel.org, cy_huang@richtek.com,
- linux-mediatek@lists.infradead.org, lee.jones@linaro.org,
- linux-arm-kernel@lists.infradead.org, shufan_lee@richtek.com
-MIME-Version: 1.0
+Cc: linux-kernel@vger.kernel.org, Patrice Chotard <patrice.chotard@st.com>,
+ mcoquelin.stm32@gmail.com, linux-spi@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Gene Chen <gene_chen@richtek.com>
+From: Patrice Chotard <patrice.chotard@st.com>
 
-Add devicetree binding document support Mediatek MT6360 PMIC
+In case of -EPROBE_DEFER, stm32_qspi_release() was called
+in any case which unregistered driver from pm_runtime framework
+even if it has not been registered yet to it. This leads to:
 
-Signed-off-by: Gene Chen <gene_chen@richtek.com>
+stm32-qspi 58003000.spi: can't setup spi0.0, status -13
+spi_master spi0: spi_device register error /soc/spi@58003000/mx66l51235l@0
+spi_master spi0: Failed to create SPI device for /soc/spi@58003000/mx66l51235l@0
+stm32-qspi 58003000.spi: can't setup spi0.1, status -13
+spi_master spi0: spi_device register error /soc/spi@58003000/mx66l51235l@1
+spi_master spi0: Failed to create SPI device for /soc/spi@58003000/mx66l51235l@1
+
+On v5.7 kernel,this issue was not "visible", qspi driver was probed
+successfully.
+
+Fixes: 9d282c17b023 ("spi: stm32-qspi: Add pm_runtime support")
+
+Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
 ---
- Documentation/devicetree/bindings/mfd/mt6360.txt | 53 ++++++++++++++++++++++++
- 1 file changed, 53 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/mfd/mt6360.txt
+ drivers/spi/spi-stm32-qspi.c | 46 ++++++++++++++++++++----------------
+ 1 file changed, 26 insertions(+), 20 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/mfd/mt6360.txt b/Documentation/devicetree/bindings/mfd/mt6360.txt
-new file mode 100644
-index 0000000..e25b5c6
---- /dev/null
-+++ b/Documentation/devicetree/bindings/mfd/mt6360.txt
-@@ -0,0 +1,53 @@
-+MediaTek MT6360 Multifunction Device Driver
-+
-+MT6360 is a multifunction device with the following sub modules:
-+- ADC
-+- Battery Charger/OTG boost
-+- Flash LED/RGB LED/moonlight LED
-+- 2-channel Buck
-+- 6-channel LDO
-+- USB_PD
-+
-+It is interfaced to host controller using I2C interface.
-+This document describes the binding for MFD device and its sub module.
-+
-+Required properties:
-+- compatible:	Must be "mediatek,mt6360_pmu"
-+- reg:			Specifies the I2C slave address of PMIC block, Must be <0x34>
-+- interrupts:	I2C device IRQ line connected to the main SoC.
-+
-+Optional subnodes:
-+- ADC
-+	Required properties:
-+		- compatible: "mediatek,mt6360_adc"
-+- battery charger/OTG boost
-+	Required properties:
-+		- compatible: "mediatek,mt6360_chg"
-+- Flash LED/RGB LED/moonlight LED
-+	Required properties:
-+		- compatible: "mediatek,mt6360_led"
-+- 2-channel Buck
-+	Required properties:
-+		- compatible: "mediatek,mt6360_pmic"
-+- 6-channel LDO
-+	Required properties:
-+		- compatible: "mediatek,mt6360_ldo"
-+- USB_PD
-+	Required properties:
-+		- compatible: "mediatek,mt6360_tcpc"
-+
-+Example:
-+
-+	#include <dt-bindings/usb/pd.h>
-+
-+	pmu: mt6360_pmu@34 {
-+		status = "ok";
-+		compatible = "mediatek,mt6360_pmu";
-+		reg = <0x34>;
-+		wakeup-source;
-+		interrupts-extended = <&gpio26 0 IRQ_TYPE_LEVEL_LOW>;
-+		interrupt-names = "IRQB";
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+	};
-+
+diff --git a/drivers/spi/spi-stm32-qspi.c b/drivers/spi/spi-stm32-qspi.c
+index 3c44bb2fd9b1..a900962b4336 100644
+--- a/drivers/spi/spi-stm32-qspi.c
++++ b/drivers/spi/spi-stm32-qspi.c
+@@ -553,20 +553,6 @@ static const struct spi_controller_mem_ops stm32_qspi_mem_ops = {
+ 	.exec_op = stm32_qspi_exec_op,
+ };
+ 
+-static void stm32_qspi_release(struct stm32_qspi *qspi)
+-{
+-	pm_runtime_get_sync(qspi->dev);
+-	/* disable qspi */
+-	writel_relaxed(0, qspi->io_base + QSPI_CR);
+-	stm32_qspi_dma_free(qspi);
+-	mutex_destroy(&qspi->lock);
+-	pm_runtime_put_noidle(qspi->dev);
+-	pm_runtime_disable(qspi->dev);
+-	pm_runtime_set_suspended(qspi->dev);
+-	pm_runtime_dont_use_autosuspend(qspi->dev);
+-	clk_disable_unprepare(qspi->clk);
+-}
+-
+ static int stm32_qspi_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -642,7 +628,7 @@ static int stm32_qspi_probe(struct platform_device *pdev)
+ 	if (IS_ERR(rstc)) {
+ 		ret = PTR_ERR(rstc);
+ 		if (ret == -EPROBE_DEFER)
+-			goto err_qspi_release;
++			goto err_clk_disable;
+ 	} else {
+ 		reset_control_assert(rstc);
+ 		udelay(2);
+@@ -653,7 +639,7 @@ static int stm32_qspi_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, qspi);
+ 	ret = stm32_qspi_dma_setup(qspi);
+ 	if (ret)
+-		goto err_qspi_release;
++		goto err_dma_free;
+ 
+ 	mutex_init(&qspi->lock);
+ 
+@@ -673,15 +659,26 @@ static int stm32_qspi_probe(struct platform_device *pdev)
+ 
+ 	ret = devm_spi_register_master(dev, ctrl);
+ 	if (ret)
+-		goto err_qspi_release;
++		goto err_pm_runtime_free;
+ 
+ 	pm_runtime_mark_last_busy(dev);
+ 	pm_runtime_put_autosuspend(dev);
+ 
+ 	return 0;
+ 
+-err_qspi_release:
+-	stm32_qspi_release(qspi);
++err_pm_runtime_free:
++	pm_runtime_get_sync(qspi->dev);
++	/* disable qspi */
++	writel_relaxed(0, qspi->io_base + QSPI_CR);
++	mutex_destroy(&qspi->lock);
++	pm_runtime_put_noidle(qspi->dev);
++	pm_runtime_disable(qspi->dev);
++	pm_runtime_set_suspended(qspi->dev);
++	pm_runtime_dont_use_autosuspend(qspi->dev);
++err_dma_free:
++	stm32_qspi_dma_free(qspi);
++err_clk_disable:
++	clk_disable_unprepare(qspi->clk);
+ err_master_put:
+ 	spi_master_put(qspi->ctrl);
+ 
+@@ -692,7 +689,16 @@ static int stm32_qspi_remove(struct platform_device *pdev)
+ {
+ 	struct stm32_qspi *qspi = platform_get_drvdata(pdev);
+ 
+-	stm32_qspi_release(qspi);
++	pm_runtime_get_sync(qspi->dev);
++	/* disable qspi */
++	writel_relaxed(0, qspi->io_base + QSPI_CR);
++	stm32_qspi_dma_free(qspi);
++	mutex_destroy(&qspi->lock);
++	pm_runtime_put_noidle(qspi->dev);
++	pm_runtime_disable(qspi->dev);
++	pm_runtime_set_suspended(qspi->dev);
++	pm_runtime_dont_use_autosuspend(qspi->dev);
++	clk_disable_unprepare(qspi->clk);
+ 
+ 	return 0;
+ }
 -- 
-2.7.4
+2.17.1
 
 
 _______________________________________________
