@@ -2,55 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB3301FAB8C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 10:46:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC8561FABA5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 10:51:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GuKEVAwuSIctUVmUf99//ZaLEL4jsNgz7WYRtgZAa10=; b=Goyp3b+/cyLDIm
-	h7Kt9YdyX8tPeeQPQPaPL5e1Ty5ZOEdcE/jDgEi66whLqB0TZSVfn8snySyCt85sVLDG6tgBH0HzU
-	se9T/okLVoRPmRWN0m30BjbzkbrRBD2jXJ5E2CloR9JaZjx/pt23MhK1q3HOTDs4qJfRIMs4d+pvz
-	pizKcBo4NuJGKVyKot3ZC2AIg2k0ZO/JEY9gbfXVYKz5UyJ+10yEH33znGfE1ECTeU/HIOjkTvw8r
-	m/1ty3BtWgKuDIVPzeQegIosArr/QTmeh+Q2MA/VPHYYoWjQkmLtu5UNahRlY5vmak5qE8wZUChQc
-	gb+9jCxpR4iHp2sgT6qQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8KkenNs/qGRaZ78SJ7NP0o2WOjtyGFD7Ro1cUw8r6iQ=; b=bUw8j234rY9wCY
+	p4mvm5nJGNtkz2BUSoX4bFUj+qcFpkJrjUiLsUW+EAZSp6Y8uTPtQaeh+ycnYTQjORYB5ssrjn6J8
+	6RonXy32oY5jT/iEkN8a8NIxGEzADK56dOK+Qu61YZZPzGTC+n/JC2bdbxWFElohMatxpYB/qJiWR
+	oWNHrJaR3KyVVXvSxaaKwQj8r16hTXws59AJtzsrqo2qDHu1p6vON3eeuryit89Dycqd+iRdflSCj
+	FwBw2q1Yy2QvJ/Yq/ut2UctzPpajWlea2PKRqcG877RO7ro3niFLG2TlyBvQJQ5cpMrp3BkdBhgOp
+	eu2+5IwkXotXrO5Pm6oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl7Ea-0001kQ-0s; Tue, 16 Jun 2020 08:46:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl7ES-0001js-0u
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 08:46:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 79EB91FB;
- Tue, 16 Jun 2020 01:46:10 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.1.157])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5E24B3F71F;
- Tue, 16 Jun 2020 01:46:09 -0700 (PDT)
-Date: Tue, 16 Jun 2020 09:45:48 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: pgtable: Clear the GP bit for non-executable
- kernel pages
-Message-ID: <20200616084548.GA11780@C02TD0UTHF1T.local>
-References: <20200615154642.3579-1-will@kernel.org>
+	id 1jl7JA-0005At-Pc; Tue, 16 Jun 2020 08:51:04 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jl7J2-0005A3-UV
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 08:50:58 +0000
+Received: from localhost.localdomain (lfbn-nic-1-188-42.w2-15.abo.wanadoo.fr
+ [2.15.37.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A6AA22074D;
+ Tue, 16 Jun 2020 08:50:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592297456;
+ bh=e/DPqgacTeoetfncHNJ6uuH/hpsGrcrHb6ib503DLqQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=GI0B23yNN3l7BrlsXjzs0RNwQKgxP0mYY7U5AA/nV/2uO6sC1rrdJUACff/0IQEiH
+ tN5OKvYiIWi4OPnEnP6a7CY12HHj4K5JdQz3E5l+kjkBXC3R01a+GmTz0Q98PDeUjc
+ BziSfRuN+9KtQG95QPviFFyS2FFybh4vTrg0zJa0=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [PATCH v3] efi/libstub: arm: Print CPU boot mode and MMU state at boot
+Date: Tue, 16 Jun 2020 10:50:50 +0200
+Message-Id: <20200616085050.994094-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200615154642.3579-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_014612_112388_008B3B37 
-X-CRM114-Status: GOOD (  15.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200616_015057_025304_A61543CE 
+X-CRM114-Status: GOOD (  16.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,54 +74,250 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, kernel-team@android.com,
+Cc: Samer.El-Haj-Mahmoud@arm.com, xypron.glpk@gmx.de, grant.likely@arm.com,
+ leif@nuviainc.com, Ard Biesheuvel <ardb@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 04:46:42PM +0100, Will Deacon wrote:
-> Commit cca98e9f8b5e ("mm: enforce that vmap can't map pages executable")
-> introduced 'pgprot_nx(prot)' for arm64 but colliding silently with the
-> BTI support during the merge window, which endeavours to clear the GP
-> bit for non-executable kernel mappings in set_memory_nx().
-> 
-> For consistency between the two APIs, clear the GP bit in pgprot_nx().
-> 
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Mark Brown <broonie@kernel.org>
-> Signed-off-by: Will Deacon <will@kernel.org>
-> ---
->  arch/arm64/include/asm/pgtable.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-> index 6dbd267ab931..758e2d1577d0 100644
-> --- a/arch/arm64/include/asm/pgtable.h
-> +++ b/arch/arm64/include/asm/pgtable.h
-> @@ -416,7 +416,7 @@ static inline pmd_t pmd_mkdevmap(pmd_t pmd)
->  	__pgprot((pgprot_val(prot) & ~(mask)) | (bits))
->  
->  #define pgprot_nx(prot) \
-> -	__pgprot_modify(prot, 0, PTE_PXN)
-> +	__pgprot_modify(prot, PTE_MAYBE_GP, PTE_PXN)
+On 32-bit ARM, we may boot at HYP mode, or with the MMU and caches off
+(or both), even though the EFI spec does not actually support this.
+While booting at HYP mode is something we might tolerate, fiddling
+with the caches is a more serious issue, as disabling the caches is
+tricky to do safely from C code, and running without the Dcache makes
+it impossible to support unaligned memory accesses, which is another
+explicit requirement imposed by the EFI spec.
 
-Since this is just used to clear the bit, we could use PTE_GP directly
-and allow the compiler to constant fold this.
+So take note of the CPU mode and MMU state in the EFI stub diagnostic
+output so that we can easily diagnose any issues that may arise from
+this. E.g.,
 
-Either way:
+  EFI stub: Entering in SVC mode with MMU enabled
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+Also, capture the CPSR and SCTLR system register values at EFI stub
+entry, and after ExitBootServices() returns, and check whether the
+MMU and Dcache were disabled at any point. If this is the case, a
+diagnostic message like the following will be emitted:
 
-Mark.
+  efi: [Firmware Bug]: EFI stub was entered with MMU and Dcache disabled, please fix your firmware!
+  efi: CPSR at EFI stub entry        : 0x600001d3
+  efi: SCTLR at EFI stub entry       : 0x00c51838
+  efi: CPSR after ExitBootServices() : 0x600001d3
+  efi: SCTLR after ExitBootServices(): 0x00c50838
 
->  
->  /*
->   * Mark the prot value as uncacheable and unbufferable.
-> -- 
-> 2.27.0.290.gba653c62da-goog
-> 
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+Adding Grant and Samer to cc, as this may be something that should be taken
+into account in the EBBR context? Note that this affects 64-bit only.
+
+ arch/arm/include/asm/efi.h                |  7 +++
+ drivers/firmware/efi/arm-init.c           | 37 ++++++++++++--
+ drivers/firmware/efi/libstub/arm32-stub.c | 52 +++++++++++++++++++-
+ drivers/firmware/efi/libstub/efi-stub.c   |  3 ++
+ drivers/firmware/efi/libstub/efistub.h    |  2 +
+ include/linux/efi.h                       |  1 +
+ 6 files changed, 98 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm/include/asm/efi.h b/arch/arm/include/asm/efi.h
+index 84dc0ba822f5..5dcf3c6011b7 100644
+--- a/arch/arm/include/asm/efi.h
++++ b/arch/arm/include/asm/efi.h
+@@ -87,4 +87,11 @@ static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
+ 	return dram_base + SZ_512M;
+ }
+ 
++struct efi_arm_entry_state {
++	u32	cpsr_before_ebs;
++	u32	sctlr_before_ebs;
++	u32	cpsr_after_ebs;
++	u32	sctlr_after_ebs;
++};
++
+ #endif /* _ASM_ARM_EFI_H */
+diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
+index c697e70ca7e7..4d1c272a4f79 100644
+--- a/drivers/firmware/efi/arm-init.c
++++ b/drivers/firmware/efi/arm-init.c
+@@ -52,9 +52,11 @@ static phys_addr_t __init efi_to_phys(unsigned long addr)
+ }
+ 
+ static __initdata unsigned long screen_info_table = EFI_INVALID_TABLE_ADDR;
++static __initdata unsigned long cpu_state_table = EFI_INVALID_TABLE_ADDR;
+ 
+ static const efi_config_table_type_t arch_tables[] __initconst = {
+ 	{LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID, &screen_info_table},
++	{LINUX_EFI_ARM_CPU_STATE_TABLE_GUID, &cpu_state_table},
+ 	{}
+ };
+ 
+@@ -116,7 +118,8 @@ static int __init uefi_init(u64 efi_system_table)
+ 		goto out;
+ 	}
+ 	retval = efi_config_parse_tables(config_tables, systab->nr_tables,
+-					 arch_tables);
++					 IS_ENABLED(CONFIG_ARM) ? arch_tables
++								: NULL);
+ 
+ 	early_memunmap(config_tables, table_size);
+ out:
+@@ -238,9 +241,37 @@ void __init efi_init(void)
+ 
+ 	init_screen_info();
+ 
++#ifdef CONFIG_ARM
+ 	/* ARM does not permit early mappings to persist across paging_init() */
+-	if (IS_ENABLED(CONFIG_ARM))
+-		efi_memmap_unmap();
++	efi_memmap_unmap();
++
++	if (cpu_state_table != EFI_INVALID_TABLE_ADDR) {
++		struct efi_arm_entry_state *state;
++		bool dump_state = true;
++
++		state = early_memremap_ro(cpu_state_table,
++					  sizeof(struct efi_arm_entry_state));
++		if (state == NULL) {
++			pr_warn("Unable to map CPU entry state table.\n");
++			return;
++		}
++
++		if ((state->sctlr_before_ebs & 1) == 0)
++			pr_warn(FW_BUG "EFI stub was entered with MMU and Dcache disabled, please fix your firmware!\n");
++		else if ((state->sctlr_after_ebs & 1) == 0)
++			pr_warn(FW_BUG "ExitBootServices() returned with MMU and Dcache disabled, please fix your firmware!\n");
++		else
++			dump_state = false;
++
++		if (dump_state || efi_enabled(EFI_DBG)) {
++			pr_info("CPSR at EFI stub entry        : 0x%08x\n", state->cpsr_before_ebs);
++			pr_info("SCTLR at EFI stub entry       : 0x%08x\n", state->sctlr_before_ebs);
++			pr_info("CPSR after ExitBootServices() : 0x%08x\n", state->cpsr_after_ebs);
++			pr_info("SCTLR after ExitBootServices(): 0x%08x\n", state->sctlr_after_ebs);
++		}
++		early_memunmap(state, sizeof(struct efi_arm_entry_state));
++	}
++#endif
+ }
+ 
+ static bool efifb_overlaps_pci_range(const struct of_pci_range *range)
+diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
+index 40243f524556..60783228db6e 100644
+--- a/drivers/firmware/efi/libstub/arm32-stub.c
++++ b/drivers/firmware/efi/libstub/arm32-stub.c
+@@ -7,10 +7,49 @@
+ 
+ #include "efistub.h"
+ 
++static efi_guid_t cpu_state_guid = LINUX_EFI_ARM_CPU_STATE_TABLE_GUID;
++
++struct efi_arm_entry_state *efi_entry_state;
++
++static void get_cpu_state(u32 *cpsr, u32 *sctlr)
++{
++	asm("mrs %0, cpsr" : "=r"(*cpsr));
++	if ((*cpsr & MODE_MASK) == HYP_MODE)
++		asm("mrc p15, 4, %0, c1, c0, 0" : "=r"(*sctlr));
++	else
++		asm("mrc p15, 0, %0, c1, c0, 0" : "=r"(*sctlr));
++}
++
+ efi_status_t check_platform_features(void)
+ {
++	efi_status_t status;
++	u32 cpsr, sctlr;
+ 	int block;
+ 
++	get_cpu_state(&cpsr, &sctlr);
++
++	efi_info("Entering in %s mode with MMU %sabled\n",
++		 ((cpsr & MODE_MASK) == HYP_MODE) ? "HYP" : "SVC",
++		 (sctlr & 1) ? "en" : "dis");
++
++	status = efi_bs_call(allocate_pool, EFI_LOADER_DATA,
++			     sizeof(*efi_entry_state),
++			     (void **)&efi_entry_state);
++	if (status != EFI_SUCCESS) {
++		efi_err("allocate_pool() failed\n");
++		return status;
++	}
++
++	efi_entry_state->cpsr_before_ebs = cpsr;
++	efi_entry_state->sctlr_before_ebs = sctlr;
++
++	status = efi_bs_call(install_configuration_table, &cpu_state_guid,
++			     efi_entry_state);
++	if (status != EFI_SUCCESS) {
++		efi_err("install_configuration_table() failed\n");
++		goto free_state;
++	}
++
+ 	/* non-LPAE kernels can run anywhere */
+ 	if (!IS_ENABLED(CONFIG_ARM_LPAE))
+ 		return EFI_SUCCESS;
+@@ -19,9 +58,20 @@ efi_status_t check_platform_features(void)
+ 	block = cpuid_feature_extract(CPUID_EXT_MMFR0, 0);
+ 	if (block < 5) {
+ 		efi_err("This LPAE kernel is not supported by your CPU\n");
+-		return EFI_UNSUPPORTED;
++		status = EFI_UNSUPPORTED;
++		goto free_state;
+ 	}
+ 	return EFI_SUCCESS;
++
++free_state:
++	efi_bs_call(free_pool, efi_entry_state);
++	return status;
++}
++
++void efi_handle_post_ebs_state(void)
++{
++	get_cpu_state(&efi_entry_state->cpsr_after_ebs,
++		      &efi_entry_state->sctlr_after_ebs);
+ }
+ 
+ static efi_guid_t screen_info_guid = LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID;
+diff --git a/drivers/firmware/efi/libstub/efi-stub.c b/drivers/firmware/efi/libstub/efi-stub.c
+index e97370bdfdb0..3318ec3f8e5b 100644
+--- a/drivers/firmware/efi/libstub/efi-stub.c
++++ b/drivers/firmware/efi/libstub/efi-stub.c
+@@ -329,6 +329,9 @@ efi_status_t __efiapi efi_pe_entry(efi_handle_t handle,
+ 	if (status != EFI_SUCCESS)
+ 		goto fail_free_initrd;
+ 
++	if (IS_ENABLED(CONFIG_ARM))
++		efi_handle_post_ebs_state();
++
+ 	efi_enter_kernel(image_addr, fdt_addr, fdt_totalsize((void *)fdt_addr));
+ 	/* not reached */
+ 
+diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
+index bcd8c0a785f0..6217ce647ebf 100644
+--- a/drivers/firmware/efi/libstub/efistub.h
++++ b/drivers/firmware/efi/libstub/efistub.h
+@@ -771,4 +771,6 @@ efi_status_t efi_load_initrd(efi_loaded_image_t *image,
+ 			     unsigned long soft_limit,
+ 			     unsigned long hard_limit);
+ 
++void efi_handle_post_ebs_state(void);
++
+ #endif
+diff --git a/include/linux/efi.h b/include/linux/efi.h
+index c3449c9699d0..bb35f3305e55 100644
+--- a/include/linux/efi.h
++++ b/include/linux/efi.h
+@@ -350,6 +350,7 @@ void efi_native_runtime_setup(void);
+  * associated with ConOut
+  */
+ #define LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID	EFI_GUID(0xe03fc20a, 0x85dc, 0x406e,  0xb9, 0x0e, 0x4a, 0xb5, 0x02, 0x37, 0x1d, 0x95)
++#define LINUX_EFI_ARM_CPU_STATE_TABLE_GUID	EFI_GUID(0xef79e4aa, 0x3c3d, 0x4989,  0xb9, 0x02, 0x07, 0xa9, 0x43, 0xe5, 0x50, 0xd2)
+ #define LINUX_EFI_LOADER_ENTRY_GUID		EFI_GUID(0x4a67b082, 0x0a4c, 0x41cf,  0xb6, 0xc7, 0x44, 0x0b, 0x29, 0xbb, 0x8c, 0x4f)
+ #define LINUX_EFI_RANDOM_SEED_TABLE_GUID	EFI_GUID(0x1ce1e5bc, 0x7ceb, 0x42f2,  0x81, 0xe5, 0x8a, 0xad, 0xf1, 0x80, 0xf5, 0x7b)
+ #define LINUX_EFI_TPM_EVENT_LOG_GUID		EFI_GUID(0xb7799cb0, 0xeca2, 0x4943,  0x96, 0x67, 0x1f, 0xae, 0x07, 0xb7, 0x47, 0xfa)
+-- 
+2.27.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
