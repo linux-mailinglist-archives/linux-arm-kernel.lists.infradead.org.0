@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 098901FB01F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:18:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4BB21FB036
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:19:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BNs+DDZCm0Xungp6VermkoXoHYhinsWt+JLrUu/h35g=; b=TTy5IXs2h+QQDn
-	PYEq8j/8KHyjo7rIgPBn0Fw2S5rSVIRJ/vp1c+G0mmkwvS/Pc9gCONZS6tHei+iEyKYgV5auqusAd
-	2DRuJfNKCQ66WHMDGegSkyyQ05uZIo988GuHrrnjhj49Geie6iJIqLGoTceJk7+EwIDSVFgyZ9oN1
-	fbRkLNpn9Qacck49ogwZAWrdYErh3m6VvSPrlzNn0+bFH6IplmXhSyq21KQwpfMv8eouXyac1fF8Z
-	sta4Ubw/A9KALsAEaHihC7vMuwubrFQ+IgrEVXaksC+i8GJHseduDn0mCHtV3eoR+EoxqtfLw+owR
-	dOzkcIDltv+LHFyuoKJg==;
+	List-Owner; bh=WhMDfYp6+sIsiFnjvYBeBVBDJTHD90CN2+udngLDNiE=; b=KqtiqA3+Hk3WMp
+	w3HHoF00zjvs2b9Bcfoft2bzdKRtxHHuJKqbFghiPk6B1ljUsfGHZ6x1xFsla0cGeSjhh7wkXrImJ
+	noDdIJnhYL4Dt4LB69y4QT2OZRdvOYmJNIV9PWSiX55mC4zuZOpIP9aiiKUrBtmemjUPxaxrT9eeQ
+	4/+RUdB57mZg/ZsOhk50gAQtsbQTsVFlYWSpYnBfMbCe6ez8EtCNNy1jk55ifPK1s/TbRsje+C4fK
+	HtAd9PLNWYyxe5nHPFr5hIoKuGb7eKy48W+9vwH1vQF42q0EEngGQbuj7tLNN2HQaYjxdV/dvMPGK
+	GpKTct6nI2kztTLjIYIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlAYB-0001Ef-Qz; Tue, 16 Jun 2020 12:18:47 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1jlAYX-0001WL-3A; Tue, 16 Jun 2020 12:19:09 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlAWm-0000Gp-MN
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 12:17:22 +0000
-Received: by mail-pf1-x433.google.com with SMTP id d66so9424103pfd.6
+ id 1jlAWo-0000J3-Qe
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 12:17:24 +0000
+Received: by mail-pf1-x432.google.com with SMTP id 23so9403111pfw.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 05:17:20 -0700 (PDT)
+ Tue, 16 Jun 2020 05:17:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7Ofrbcs6powOIpLHVgUb+s2Y6gSuASwM2PMR2S8GC/8=;
- b=K9GBZe8gNJO/W9HkRUGhLRRenI1uWzOY2VyMcVpQ1qpJoy8XFBU/gN9hplt+ZBwytp
- Vl3FWj2Xe9Qotiq1GXQaR+lcoBmvS22iEhQgk3IrWMNrUgSANF8Ny/DCdDURZNZ9npKx
- 4DV78QiAjJ4kj6JhAdhMLmVrC5LAM7JTlQYnI=
+ bh=fDQC1q/6pTc2BSyh05jjBKpJepT+dwpazrZGsFLJpVo=;
+ b=ESIgPO/yFoN1yMwOvDNrlQaYh8bbunv9VbR9IKFnZbYX6dpCTDGH+c6VH2SDIdfESr
+ vkcjchgJk6GtVFwTNIHnN8OZeh0eizMagRZB+bTDD0IE1qBG1X8AdLbFDrBj6qZfvGOw
+ jXleuZz+UEUBvMbo8Remr4eW4uLhYb2tLHhlU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7Ofrbcs6powOIpLHVgUb+s2Y6gSuASwM2PMR2S8GC/8=;
- b=En2mWnfLKtPKaSl98tJgJAG24+9OYNzczZ0b6ZGaaXrk9rjD+tw8RK+DVX5O5Orriy
- jKMojEHoh8cxXDecX+FPVl8OExRRaPEgM1iaXk50PxHMmN0flo3D4NZsTb1ELXhR07Q1
- RUa3hjkyhTJhoR692vISWCqmkCK0EWftnoKPUK7mY8kJOuuTuatLFYdQwsF4KXLUS4Hs
- knlQmjX4z4sAgqF5qhubgsJEdj6VezpnPT6C55h0D8umEtQXYZTZtgtLH3dXV6pkf5fW
- tGGon3BVfAV41QyUzVZjcGs04wgNwOVni9dIowGIwutdYowkF4fN1yXjVVKSx2jqy84B
- IsFA==
-X-Gm-Message-State: AOAM531Nrr9GiQXvlRiiUXqTmiOrxutvLnwgJbPbAlvfWxcf0YAseGSz
- B7nVBTjtOBVKYrIRUifsqv7ogbJZJVA=
-X-Google-Smtp-Source: ABdhPJx2/ZThHxd7TkGqkTWZKS35Q9MJ8+CEueo+tZWGJimgB1gnkJ2ft0DeXHEgR4K/xPkFcWleWw==
-X-Received: by 2002:a62:7dd1:: with SMTP id y200mr1787559pfc.184.1592309839077; 
- Tue, 16 Jun 2020 05:17:19 -0700 (PDT)
+ bh=fDQC1q/6pTc2BSyh05jjBKpJepT+dwpazrZGsFLJpVo=;
+ b=EBrNr2Zf4NmvOH1dCr/r/IbHh/sfT72FpVOw630csMRcWxVR0hD6C1ijcnzkTHszlC
+ luDb/BT4fGt+KeN8WfHZV9jKYbcYk86OqBu6PP12xi0qNctWqJtRE9b73Bh3GfltPSLr
+ vZ5voroH9H7NrSj2frbBuGA0NmvxN4tY56vXTw9uBuE1FUYgm70N/sRO0eq5bcP94OHB
+ Mx5Lq4h7VhX44caQUG9MBiSlINqMl2dIQb03T+9hOsd0qup/rI8ZYxJ/IuGPnKs6AmFR
+ aEOyGkJFl2carBW/41ItAwsHDiwTSuodCeMQK7Cevbv0mVRfwSA+ZRo9AhIDbrScg7uP
+ /giw==
+X-Gm-Message-State: AOAM533hLi+WSX8injzVeRQ/XK1Di/xKayBRUL+IJcJkMa/w5kW/WsT/
+ MA6Ef8dFc0QMlykO9SOixQvhlDKDc/I=
+X-Google-Smtp-Source: ABdhPJyWmAquQyVAsMd+xi0kijqsxvUQQiX6VNMiN1pZ1XkqqyV013WG62jyzVMUsqdx145PjJ2Rmw==
+X-Received: by 2002:a63:c204:: with SMTP id b4mr1819831pgd.67.1592309841318;
+ Tue, 16 Jun 2020 05:17:21 -0700 (PDT)
 Received: from shiro.work (p1285116-ipngn200805sizuokaden.shizuoka.ocn.ne.jp.
  [114.171.61.116])
- by smtp.googlemail.com with ESMTPSA id f23sm2360703pja.8.2020.06.16.05.17.17
+ by smtp.googlemail.com with ESMTPSA id f23sm2360703pja.8.2020.06.16.05.17.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 05:17:18 -0700 (PDT)
+ Tue, 16 Jun 2020 05:17:20 -0700 (PDT)
 From: Daniel Palmer <daniel@0x0f.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 04/12] dt-bindings: vendor-prefixes: Add thingy.jp prefix
-Date: Tue, 16 Jun 2020 21:15:17 +0900
-Message-Id: <20200616121525.1409790-5-daniel@0x0f.com>
+Subject: [PATCH v4 05/12] dt-bindings: arm: Add mstar YAML schema
+Date: Tue, 16 Jun 2020 21:15:18 +0900
+Message-Id: <20200616121525.1409790-6-daniel@0x0f.com>
 X-Mailer: git-send-email 2.27.0.rc0
 In-Reply-To: <20200616121525.1409790-1-daniel@0x0f.com>
 References: <20200612130032.3905240-2-daniel@0x0f.com>
  <20200616121525.1409790-1-daniel@0x0f.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_051720_750807_87CC9CF7 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_051722_869390_9D5ED835 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:433 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:432 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,26 +102,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add prefix for thingy.jp
+This adds some intial boards for Armv7 based mstar platforms.
 
 Signed-off-by: Daniel Palmer <daniel@0x0f.com>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ .../devicetree/bindings/arm/mstar.yaml        | 34 +++++++++++++++++++
+ MAINTAINERS                                   |  7 ++++
+ 2 files changed, 41 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/arm/mstar.yaml
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 53cd050668e6..c209b3dc7ecc 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -1038,6 +1038,8 @@ patternProperties:
-     description: Three Five Corp
-   "^thine,.*":
-     description: THine Electronics, Inc.
-+  "^thingyjp,.*":
-+    description: thingy.jp
-   "^ti,.*":
-     description: Texas Instruments
-   "^tianma,.*":
+diff --git a/Documentation/devicetree/bindings/arm/mstar.yaml b/Documentation/devicetree/bindings/arm/mstar.yaml
+new file mode 100644
+index 000000000000..7bb91a546b5f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/mstar.yaml
+@@ -0,0 +1,34 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/arm/mstar.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MStar platforms device tree bindings
++
++maintainers:
++  - Daniel Palmer <daniel@thingy.jp>
++
++properties:
++  $nodename:
++    const: '/'
++  compatible:
++    oneOf:
++        # infinity boards
++        - items:
++          - enum:
++              - thingyjp,breadbee-crust # thingy.jp BreadBee Crust
++              - thingyjp,breadbee-crustx # thingy.jp BreadBee Crustx
++          - const: mstar,infinity
++
++        # infinity3 boards
++        - items:
++          - enum:
++              - thingyjp,breadbee # thingy.jp BreadBee
++          - const: mstar,infinity3
++
++        # mercury5 boards
++        - items:
++          - enum:
++              - 70mai,midrived08 # 70mai midrive d08
++          - const: mstar,mercury5
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 68f21d46614c..a8640c1c50cc 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2117,6 +2117,13 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	arch/arm/mach-pxa/mioa701.c
+ 
++ARM/MStar/Sigmastar Armv7 SoC support
++M:	Daniel Palmer <daniel@thingy.jp>
++L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
++S:	Maintained
++W:	http://linux-chenxing.org/
++F:	Documentation/devicetree/bindings/arm/mstar.yaml
++
+ ARM/NEC MOBILEPRO 900/c MACHINE SUPPORT
+ M:	Michael Petchkovsky <mkpetch@internode.on.net>
+ S:	Maintained
 -- 
 2.27.0.rc0
 
