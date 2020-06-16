@@ -2,71 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14AFC1FADE7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 12:27:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09AF71FAE18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 12:36:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pieOLUxFH9AxO2aIGZqFuvfOjnvMVpGwrGjvavbjA9k=; b=owtHK7X8wZxooIAdMgXzncUUI
-	kkESuIpgLfVsQ7nmHlCPJbIEl/98fSbH0sdl3p+r3VFOzlKnUdNONM/v9EcdZOWxF9YvnICf5Zn6+
-	a7NfgAQeVQPTvZtRhAjx3BXn1NDNoukPU9PKkkuCinvNIurWl7A+qQfT1RhqscjZqPX+fCabjf8xm
-	n1O+T5G/4vF/c9Sh2c8vpkycdYZnP9bwcMD+gtuCIpVDK6Vx6gTnLytrKJvrtdrkll/QNGw7/i7xd
-	7OGL0QnNaB7RmRcUpuXQ6WLmPjh0W8w6hG/T6J6WrsRRGbaocRKpShpxCKlQOBZrO01Na6dZ1GlB3
-	3U1NP9ADQ==;
+	 bh=XaDIPBgOuEegtpQQkU+af6BP+ATaK3InDA3uAKPuJsc=; b=jWp7Sntkn1eUuMJqKWL16wXRu
+	23gZFFa06Jf9qJGTNlHtw0OOPUWcxVt8p741yuWAwF+xwtk/gqK68uj2IHKxvg36r4Tm7HEBK0mwA
+	VupP6tbnyDM8foEmSLdBGKCu4+Ja8KYkGye0xpy/buCqY5bAEAL6TkQZdL/vuao3xOAzAyIuNvJLT
+	yRhlLyRl9nhKGjg5mLjjvEmg8xURpLU5aVrHMXPvnIZmeRtTPNDRj1ERxQC8ewaL3GLB//9sG9bPp
+	4Cyozv5rSGFM2IgN5q1BasofeSMEMPfm9sMVdy16WgUgDyedWJXkzwpaAwQ6BmDM/CQip1HEGB5fU
+	kC8bruycg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl8oE-0001rm-GP; Tue, 16 Jun 2020 10:27:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jl8xN-00007s-1m; Tue, 16 Jun 2020 10:36:41 +0000
+Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl8o2-0001rP-5l
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 10:27:03 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47D932074D;
- Tue, 16 Jun 2020 10:27:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592303221;
- bh=h+uJjTNyXThELVktOw4GwJ+7MZ17efhM9W2zSlxhrfE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=W6bU3A0EaWVwqB76C7G7Q8IPA9+8NDlndx78P4FO5p55YBIboAQ+ng5RuIHbh7arj
- cDq2IabAY/pe4YgW8N+oycWxtz82vqVOx9X8cA2CW3t6pe1ufX8DiWIRg6MbpwFL4a
- 4lfwdoblwodIxGq5kz8hB3BKYLT1P24WTfkeaTDQ=
-Date: Tue, 16 Jun 2020 11:26:59 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Message-ID: <20200616102659.GK4447@sirena.org.uk>
-References: <20200615123553.GP4447@sirena.org.uk>
- <VE1PR04MB6638C65257F41072C3D61583899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615133905.GV4447@sirena.org.uk>
- <VE1PR04MB6638793C00742D5BA72F8AC2899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615143622.GX4447@sirena.org.uk>
- <VE1PR04MB6638D0C9FE0289FFE13ABA49899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615145556.GY4447@sirena.org.uk>
- <VE1PR04MB66380FD8FB7FCE79AF4B6CD4899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200616095948.GJ4447@sirena.org.uk>
- <VE1PR04MB66387499F9AF80A68F720529899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ id 1jl8xA-00006B-RP
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 10:36:34 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id 70AD01B1;
+ Tue, 16 Jun 2020 06:36:20 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 16 Jun 2020 06:36:20 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=UIpR3OcQr1VhZFmrKqImDBYkcR+
+ LfAGA7lozqCBKyyA=; b=M014hv6SCnQirV1ZC8PNY5Kp0nQz3egQcugRwDGARI3
+ tQbzQx6BDORKt9xhVLsZxg//g95V/7NNtMJ9z0cmaGe2lvwocwKGoMhzhzJIRHB6
+ hWMzH7PRbn2vE09LNeEoDvoIuozYfea9ORw9VmvKl/bl+rSVQq3Y6m4azUkkC6iL
+ YCy7UANyoWI7EfDCqB8p/irvXTdQcp+mVNz+1CuSlHSqoMuo6W4ThyNdEjOV+U31
+ QpO4BqFM50PLVH4h/xHd9iSHPVhcr96VCdsUDQQagNcP7rvhhhXMPEhrDBKoc21Z
+ GwLn9fuHWqKbMyu4kp099flFiITKyAQvy/V16pr1wzg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=UIpR3O
+ cQr1VhZFmrKqImDBYkcR+LfAGA7lozqCBKyyA=; b=UjEXWmFKQYWW0Na1SChIsO
+ kqDAlSvy/xGG1k1Sec3PMV3eFFp2Sinj4HvxNztrvrMD+nP5AixNfQ3NW0TetyTM
+ ZrXwPFsmXc9cYo6D1hhy0YF5pjkGK9uhnu40AsV+G0Ijs+nYLRIIAzsIT/mns0qh
+ hSKuKAdXFZXbKo0yTq04TsrPAZKj7wPFB+lse6Qqot9OSaYCFRHEnrxTzdR7vgOw
+ yS+htzMnApCZDIWxTXN8w0oLp+w/PQicLH8z/7VEkm85sePUp99VfQLLwHqg7ogx
+ i2sGMgUwE8H6b1Zyw92tNOh3HYaJvkCbo49aX1k7AUoB/KYo4TuHPGIxAqS9zmHw
+ ==
+X-ME-Sender: <xms:o6DoXsJx_W1GrhUkaq8WeZvyqWeGKpYxKARNDDYkr4yDyCBHV0uHvA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudejtddgfeefucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
+ frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:o6DoXsLX6-uqGc3jLAe-QjHy2kP4Zo73GhgiR1hlmZ4nLDZD5ULzdg>
+ <xmx:o6DoXsuBe3Ga5Ycy4ewuHLPa42iZZeXqh5PPJuOct9P8LR2zEqGtrQ>
+ <xmx:o6DoXpYROj4DMqVZQzzd2YEMYEjTbJkILW_mAF9n2hzsn7unbnXboA>
+ <xmx:pKDoXvF3RmDVfnWBd2n7ALDCPRHj4fByVW0SZiHzOlDktV_0bAQHjg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 29A62328005A;
+ Tue, 16 Jun 2020 06:36:19 -0400 (EDT)
+Date: Tue, 16 Jun 2020 12:36:17 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Diego Rondini <diego.rondini@kynetics.com>
+Subject: Re: [PATCH v2 2/2] ARM: dts: orange-pi-zero-plus2: add leds
+ configuration
+Message-ID: <20200616103617.ddzfbz7yvnpl3ss4@gilmour.lan>
+References: <20200615130223.34464-1-diego.rondini@kynetics.com>
+ <20200615130223.34464-2-diego.rondini@kynetics.com>
 MIME-Version: 1.0
-In-Reply-To: <VE1PR04MB66387499F9AF80A68F720529899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-X-Cookie: Offer may end without notice.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200615130223.34464-2-diego.rondini@kynetics.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_032702_239346_8B550939 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20200616_033629_132860_D180765E 
+X-CRM114-Status: UNSURE (   6.48  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.19 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [64.147.123.19 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -74,7 +97,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,63 +109,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============4782449075961467582=="
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7402815254165583099=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4782449075961467582==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qE0/TkNoJLLGUzs4"
+--===============7402815254165583099==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="augg5iz66jyevl6m"
 Content-Disposition: inline
 
 
---qE0/TkNoJLLGUzs4
+--augg5iz66jyevl6m
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Tue, Jun 16, 2020 at 10:13:08AM +0000, Robin Gong wrote:
-> On 2020/06/16 Mark Brown <broonie@kernel.org> wrote:
+On Mon, Jun 15, 2020 at 03:02:25PM +0200, Diego Rondini wrote:
+> Add pwr and status leds configuration and turn on pwr led by default for =
+Orange
+> Pi Zero Plus 2 (both H3 and H5 variants).
+>=20
+> Signed-off-by: Diego Rondini <diego.rondini@kynetics.com>
 
-> > I'd just make this a generic flag for failures before we start interacting with the
-> > hardware rather than specifically this one error case.  Otherwise this looks
-> > fine.
+Applied both ,thanks!
+Maxime
 
-> So rename to SPI_TRANS_DMA_FAIL? I think at least DMA is MUST for fallback
-> case...
-
-This is not purely for DMA, it's just about the failure having occurred
-before the transfer started.  How about _FAIL_NO_START?
-
---qE0/TkNoJLLGUzs4
+--augg5iz66jyevl6m
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7onnIACgkQJNaLcl1U
-h9Cs0Qf8CdBZ6A+/Gn/ijwLKgPntYUIu7iNkeoHkhYqOXmt1S4e0m5GoT+ROMOLV
-k1elBNRfWqVdKJfHMzmk5wANM+F5XqTCOpWx0SErZRiSHMFb5V8gClcNBYTNL/eU
-3A/I62fz09JL/onIv3qEkUTsWvL3Rq7VG0mAsJvL27oMRecxS0EwEGW33kaY9axI
-59Irl+2GcI/oQchTMzeHBdBMd5bqdGjDvI2xSrqnbyip+/G1p6xHPmYRyypcl+AZ
-X976ervmpNe4o3XKh80pDajyx5aKgyQxgtB7cjE2UPSKXAgVhG+N8LWRwoAw03+y
-1fXXMrymNw+yvlVU0QNEuMOYGRjTFg==
-=9EtT
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXuigoQAKCRDj7w1vZxhR
+xRzjAP0UVUc51P9p6mICdulyK7gjndsyarVDsU3W1zc2VrdYpQEAq4hcUnP+jHVV
+ynDLt5rRNVkGy1G8ZdpLLrdsTc4KPQ0=
+=ZfHR
 -----END PGP SIGNATURE-----
 
---qE0/TkNoJLLGUzs4--
+--augg5iz66jyevl6m--
 
 
---===============4782449075961467582==
+--===============7402815254165583099==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -153,5 +163,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4782449075961467582==--
+--===============7402815254165583099==--
 
