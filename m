@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AB971FBB0D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:16:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54F5B1FBB1D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:17:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lt9jQGzQzEU1IKbjgS8FfcXMEa5+oJ0kHp5RNnOF2tE=; b=E8/G7vpvUAAxhA
-	ubFAtCc9yShlMug0/GwSOt1aYgGVsA1PbMqGEKfOc7YghHiyph2N2TukyLOJT5fZUVXE0CesNYN7K
-	9KPURje22qN/zMdVKIC2ruPKm61W4ab0F7p30PSrfzeqNZZiLT38l7LJbxK74dgu9k163m/opC9wK
-	jCNbKtTuLfANVdEWoWT+I5pALNLJa+EHXdTGYpFfFy7lKxEAaw8A4eEiNDDPoalNuaSs8T7JLGic9
-	QXftlxlqXQhzKxv4UIhevSw7soyS17WzrPG0qQO16SeilFo2409jCQBKxNdt1sr0lko8+A3BA2fLN
-	GjVH7c/js44onXd5PXXw==;
+	List-Owner; bh=WR6cyzCHsICZSLcO6q5XoU7qdeWfbUz+dutUnNZpoeg=; b=lhZRqa0M2cWS5h
+	1Cx2AYPLsExSu7ORMOquXNUYTmzKOp/+FomJAts3vcLA2KQQ6EsgQqC6K3sFn5j8XpBSa5SGzHokp
+	+esXQOEkb1Ct7OC9knVOIb5y1JX5gyvyJlcN+Y2irfXZi3NMHkDZx8dP1aDb5Bi7e1EKouzdEqfxW
+	A0y0ak4dEA7O3W6HVy+nZMqdv821BZ6TWG6AwWIv4KNkjB1FUzIbaFFM0okJcs+YbiouBxxdU+u5l
+	lRL4hO3PIc8w8Xly4T64bTlaTGWF910LtM/Pb02qyOsjqYaow9fZosE7RoS/OSW70DZj3unRnSP+e
+	7CHF6qlUVPYM6AqXkgKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlEGS-00014R-9F; Tue, 16 Jun 2020 16:16:44 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlEGI-000148-PV
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 16:16:36 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id c1so11737401vsc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 09:16:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=j0f7aQbEfhsw24ZMy40vxFz161lgqQWF2rmVXfxppeU=;
- b=mH9A5mQ3ouroig2SXDtIPCJ2Xh+w/YtCly1FlWr0h6/txUnYBBZdQcU9XKf2FhrlJU
- W53l5Mp6VTv694VILrKENUTo30e1FeQi5CLtdbc2gh/CzkY8ZrMMpxsROT2zHf8Ml0nf
- TCbSMG7Qcsykr4zHuBNb4uJBqX2SJwz0yQciutxchw1fi4ByfPmHGMbpBeI+/ygEFfMK
- pOYoxY4dM7Y6pjNIlYoCZQozLVop1Kw+lckxIwjX33448TvZec9MunV5S0p52f1SFGsz
- 8KMVPlWibjuMbMZiHAc+hSYymGMmnIzFEpN7JxY5Klo/o/n2ScZOmXDolAxqpiWvNs2S
- KkmA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=j0f7aQbEfhsw24ZMy40vxFz161lgqQWF2rmVXfxppeU=;
- b=ErYMFX3mILpgbvl5mGyjndWxAiEAROluAhHjP6Mgd2bc/0qgiX4DoLr/X/1p44EPkQ
- zR5lMKnETfQeLIEOEOL00RQbGbF5BfCEWEYHXMGBifPIp5q3J2+fxrYwzrP9GajpHkUu
- C7jgslbJ1sxWTZxM+iCYvg/l448Qdy8bHrskYsCDUrBg2yAnX5QrHllfJ3Fl7EEINMHS
- JNcxG0V8obCKZK4v5tvkFw5tOk4byrLfIQSdOTGXBD3I5Vj8g57IqsEQu6bQzTwiNlfE
- +1nAr7J7OkS8i1Xy4Y8C9i9kLcCX2UdpU6ORu2Vw2Oj+KECs439Kog4VI1KPo3TSjB0Z
- DIJA==
-X-Gm-Message-State: AOAM532mpHawpmzCWioWnlpPpbppH5MnglyeXOjrdWcMja77jVm6Iahn
- YA0mxBCfvxHQ0NYbsU7kdDbGUNnv5awlp3IMNlo=
-X-Google-Smtp-Source: ABdhPJwEOfuAZpDyAicRuaHACbGkk742F1Urk0jRcNhWYHdVilvKR9a1h7RpgtkV/So8XeSKrSzT5XbL89p/SceswGI=
-X-Received: by 2002:a67:c18a:: with SMTP id h10mr2320162vsj.186.1592324193305; 
- Tue, 16 Jun 2020 09:16:33 -0700 (PDT)
+	id 1jlEH2-0001KQ-A9; Tue, 16 Jun 2020 16:17:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlEGr-0001K5-Mv
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 16:17:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DBA41F1;
+ Tue, 16 Jun 2020 09:17:07 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8EAC23F73C;
+ Tue, 16 Jun 2020 09:17:06 -0700 (PDT)
+Date: Tue, 16 Jun 2020 17:17:04 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 2/2] arm64/sve: Eliminate data races on sve_default_vl
+Message-ID: <20200616161704.GN25945@arm.com>
+References: <1591808590-20210-1-git-send-email-Dave.Martin@arm.com>
+ <1591808590-20210-3-git-send-email-Dave.Martin@arm.com>
+ <20200616131808.GA1040@lca.pw>
+ <20200616150451.GA1941@willie-the-truck>
 MIME-Version: 1.0
-References: <20200609200446.153209-4-linus.walleij@linaro.org>
- <202006101538.mV5c2loX%lkp@intel.com>
-In-Reply-To: <202006101538.mV5c2loX%lkp@intel.com>
-From: Emil Velikov <emil.l.velikov@gmail.com>
-Date: Tue, 16 Jun 2020 17:12:51 +0100
-Message-ID: <CACvgo536CxAynhx3zcamS2-e=a7j++X7X66N4zG_L_HrjLk77A@mail.gmail.com>
-Subject: Re: [PATCH 4/4] drm: pl111: Update documentation
-To: kernel test robot <lkp@intel.com>
+Content-Disposition: inline
+In-Reply-To: <20200616150451.GA1941@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_091634_842777_9FBE9D86 
-X-CRM114-Status: GOOD (  16.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200616_091709_795359_B74F8E39 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [emil.l.velikov[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,121 +65,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, Linus Walleij <linus.walleij@linaro.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Russell King <linux@armlinux.org.uk>, Maxime Ripard <mripard@kernel.org>,
- Eric Anholt <eric@anholt.net>, ML dri-devel <dri-devel@lists.freedesktop.org>,
- Sean Paul <sean@poorly.run>, LAKML <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Qian Cai <cai@lca.pw>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
-
-Inspired by Linus and my personal confusion with the report, allow me
-to put some suggestions. Followed by an illustrative example.
-
-On Wed, 10 Jun 2020 at 08:38, kernel test robot <lkp@intel.com> wrote:
->
-> Hi Linus,
->
-> I love your patch! Perhaps something to improve:
->
-> [auto build test WARNING on drm-exynos/exynos-drm-next]
-> [also build test WARNING on drm-intel/for-linux-next tegra-drm/drm/tegra/for-next linus/master v5.7 next-20200609]
-One thing which was always inclear me - is the warning identical in
-all the branches listed.
-
-> [cannot apply to drm-tip/drm-tip drm/drm-next]
-> [if your patch is applied to the wrong git tree, please drop us a note to help
-> improve the system. BTW, we also suggest to use '--base' option to specify the
-> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
->
-Reference to the manual tends to be better than an old SO thread.
-
-> url:    https://github.com/0day-ci/linux/commits/Linus-Walleij/drm-pl111-Credit-where-credit-is-due/20200610-041025
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/daeinki/drm-exynos.git exynos-drm-next
-> reproduce: make htmldocs
->
-> If you fix the issue, kindly add following tag as appropriate
-> Reported-by: kernel test robot <lkp@intel.com>
->
-> All warnings (new ones prefixed by >>, old ones prefixed by <<):
->
-Please do not list old warnings/errors. They only distract and dilute
-what/where the problem is.
-
-
-> vim +1 drivers/gpu/drm/pl111/pl111_drv.c
->
-> e559355a9da60a Thomas Gleixner 2019-06-01  @1  // SPDX-License-Identifier: GPL-2.0-only
-> bed41005e6174d Tom Cooksey     2017-04-12   2  /*
-> bed41005e6174d Tom Cooksey     2017-04-12   3   * (C) COPYRIGHT 2012-2013 ARM Limited. All rights reserved.
-> bed41005e6174d Tom Cooksey     2017-04-12   4   *
-> bed41005e6174d Tom Cooksey     2017-04-12   5   * Parts of this file were based on sources as follows:
-> bed41005e6174d Tom Cooksey     2017-04-12   6   *
-> bed41005e6174d Tom Cooksey     2017-04-12   7   * Copyright (c) 2006-2008 Intel Corporation
-> bed41005e6174d Tom Cooksey     2017-04-12   8   * Copyright (c) 2007 Dave Airlie <airlied@linux.ie>
-> bed41005e6174d Tom Cooksey     2017-04-12   9   * Copyright (C) 2011 Texas Instruments
-> bed41005e6174d Tom Cooksey     2017-04-12  10   */
-> bed41005e6174d Tom Cooksey     2017-04-12  11
->
-> :::::: The code at line 1 was first introduced by commit
-> :::::: e559355a9da60a2388893d9e9da66c79fd604b9a treewide: Replace GPLv2 boilerplate/reference with SPDX - rule 443
->
-> :::::: TO: Thomas Gleixner <tglx@linutronix.de>
-> :::::: CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
->
-All of this seems useful when debugging the kernel test robot itself.
-Which in this case is misleading as hell.
-
-
-Here is something which is much shorter, with clearer structure and
-reads much easier.
-
----
-Hi Linus,
-
-This is an automated message from your friendly test robot.
-We've noticed some issues with your patch although being a robot,
-kindly double-check the results.
-
-Branches:
-[if the warning/errors are the same group them, otherwise split them
-in separate sections]
-
-- drm-exynos/exynos-drm-next [1]: WARNING
-- drm-intel/for-linux-next [2]: WARNING
-- .... : WARNING
-drivers/gpu/drm/pl111/pl111_drv.c:1: warning: 'ARM PrimeCell PL111
-CLCD Driver' not found
-- tegra-drm/drm/tegra/for-next [3]: WARNING
-some other warning
-- drm-tip/drm-tip [4] drm/drm-next [5]: cannot apply series
-
-Note: when submitting patches, please use `--base` as documented in
-https://git-scm.com/docs/git-format-patch.
-
-
-To reproduce:
- - wget https://url/to/build/toolchain // when applicable
- - wget https://url/to/config // when applicable
- - make htmldocs // use explicit make command instead of magic shell
-script, as seen in the cross build reports
-
-
-If you fix the issue, kindly add following tag as appropriate
-Reported-by: kernel test robot <lkp@intel.com>
-
-Thank you
-The LKP team
-
-[1] URI to the drm-exynos/exynos-drm-next repo
-[2] URI to the drm-intel/for-linux-next repo
-[3] URI to the ...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBKdW4gMTYsIDIwMjAgYXQgMDQ6MDQ6NTFQTSArMDEwMCwgV2lsbCBEZWFjb24gd3Jv
+dGU6Cj4gT24gVHVlLCBKdW4gMTYsIDIwMjAgYXQgMDk6MTg6MDhBTSAtMDQwMCwgUWlhbiBDYWkg
+d3JvdGU6Cj4gPiBPbiBXZWQsIEp1biAxMCwgMjAyMCBhdCAwNjowMzoxMFBNICswMTAwLCBEYXZl
+IE1hcnRpbiB3cm90ZToKPiA+ID4gc3ZlX2RlZmF1bHRfdmwgY2FuIGJlIG1vZGlmaWVkIHZpYSB0
+aGUgL3Byb2Mvc3lzL2FiaS9zdmVfZGVmYXVsdF92bAo+ID4gPiBzeXNjdGwgY29uY3VycmVudGx5
+IHdpdGggdXNlLCBhbmQgbW9kaWZpZWQgY29uY3VycmVudGx5IGJ5IG11bHRpcGxlCj4gPiA+IHRo
+cmVhZHMuCj4gPiA+IAo+ID4gPiBBZGRpbmcgYSBsb2NrIGZvciB0aGlzIHNlZW1zIG92ZXJraWxs
+LCBhbmQgSSBkb24ndCB3YW50IHRvIHRoaW5rIGFueQo+ID4gPiBtb3JlIHRoYW4gbmVjZXNzYXJ5
+LCBzbyBqdXN0IGRlZmluZSB3cmFwcGVycyB1c2luZyBSRUFEX09OQ0UoKS8KPiA+ID4gV1JJVEVf
+T05DRSgpLgo+ID4gPiAKPiA+ID4gVGhpcyB3aWxsIGF2b2lkIHRoZSBwb3NzaWJpbGl0eSBvZiB0
+b3JuIGFjY2Vzc2VzIGFuZCByZXBlYXRlZCBsb2Fkcwo+ID4gPiBhbmQgc3RvcmVzLgo+ID4gPiAK
+PiA+ID4gVGhlcmUncyBubyBldmlkZW5jZSB5ZXQgdGhhdCB0aGlzIGlzIGdvaW5nIHdyb25nIGlu
+IHByYWN0aWNlOiB0aGlzCj4gPiA+IGlzIGp1c3QgaHlnaWVuZS4gIEZvciBnZW5lcmljIHN5c2N0
+bCB1c2VycywgaXQgd291bGQgYmUgYmV0dGVyIHRvCj4gPiA+IGJ1aWxkIHRoaXMga2luZCBvZiB0
+aGluZyBpbnRvIHRoZSBzeXNjdGwgY29tbW9uIGNvZGUgc29tZWhvdy4KPiA+ID4gCj4gPiA+IFJl
+cG9ydGVkLWJ5OiBXaWxsIERlYWNvbiA8d2lsbEBrZXJuZWwub3JnPgo+ID4gPiBTaWduZWQtb2Zm
+LWJ5OiBEYXZlIE1hcnRpbiA8RGF2ZS5NYXJ0aW5AYXJtLmNvbT4KPiA+IAo+ID4gV2hpbGUgdGhp
+cyBvcmlnaW5hbCBwYXRjaCBsb29rcyBjb3JyZWN0LCBsaW51eC1uZXh0IGhhcyB0aGlzLAo+ID4g
+Cj4gPiBbd2lsbDogbW92ZSBzZXRfc3ZlX2RlZmF1bHRfdmwoKSBpbnNpZGUgI2lmZGVmIHRvIHNx
+dWFzaCBhbGxub2NvbmZpZyB3YXJuaW5nXQo+ID4gCj4gPiAxZTU3MGY1MTJjYmQgKCJhcm02NC9z
+dmU6IEVsaW1pbmF0ZSBkYXRhIHJhY2VzIG9uIHN2ZV9kZWZhdWx0X3ZsIikKPiA+IAo+ID4gd2hp
+Y2ggY2F1c2VzIGFuIGVycm9yIHdpdGggQ09ORklHX0FSTTY0X1NWRT1uLAo+ID4gCj4gPiBUaGlz
+IC5jb25maWcsCj4gPiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vY2FpbGNhL2xp
+bnV4LW1tL21hc3Rlci9hcm02NC5jb25maWcKPiA+IAo+ID4gYXJjaC9hcm02NC9rZXJuZWwvZnBz
+aW1kLmM6IEluIGZ1bmN0aW9uIOKAmHN2ZV9wcm9jX2RvX2RlZmF1bHRfdmzigJk6Cj4gPiBhcmNo
+L2FybTY0L2tlcm5lbC9mcHNpbWQuYzozNzU6MjogZXJyb3I6IGltcGxpY2l0IGRlY2xhcmF0aW9u
+IG9mCj4gPiBmdW5jdGlvbiDigJhzZXRfc3ZlX2RlZmF1bHRfdmzigJk7IGRpZCB5b3UgbWVhbiDi
+gJhnZXRfc3ZlX2RlZmF1bHRfdmzigJk/Cj4gPiBbLVdlcnJvcj1pbXBsaWNpdC1mdW5jdGlvbi1k
+ZWNsYXJhdGlvbl0KPiA+ICAgc2V0X3N2ZV9kZWZhdWx0X3ZsKGZpbmRfc3VwcG9ydGVkX3ZlY3Rv
+cl9sZW5ndGgodmwpKTsKPiA+ICAgXn5+fn5+fn5+fn5+fn5+fn5+Cj4gPiAgIGdldF9zdmVfZGVm
+YXVsdF92bAo+IAo+IFRoYW5rcywgSSdsbCB0YWtlIGEgbG9vay4KCkkgaGF2ZW4ndCBsb29rZWQg
+aW4gZGV0YWlsIGF0IHRoaXM7IEkgZ3Vlc3MgdGhlIG5ldyBoZWxwZXJzIGp1c3QKbmVlZCB0byBi
+ZSBtYW51YWxseSBwbGFjZWQgaW4gdGhlIHJpZ2h0ICNpZmRlZiBibG9jay4KCkNoZWVycwotLS1E
+YXZlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
