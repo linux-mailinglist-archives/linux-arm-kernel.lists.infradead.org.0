@@ -2,71 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73CB51FBE61
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 20:47:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 083211FBE8C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 20:55:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t4Bjn6cHst62bzCtFWUuuPTfDlhI0JARX96XFbJX/T4=; b=Goom2gNWbp6kKn
-	NI+kBOnoEOPOkbscvcqevtrCl+QtZ/yixhtyTUfmFCo12xd/PvyVH3Z2iHnskwCF40E1+qLFYnhZ4
-	EpDLz6iCvrxtE28HfpEv7vCTQ+Xzf4nll92MWHmYFRb5PJkphl5SC1nE5uySQ0CL/i/78AdiwyU4D
-	PEGtRKtu4vABkiknPcTn/YBo7Daoi4gFlnNZKWzTJNwVwwgV9felFTotO0ChJwttT5KdT29F4L7Hx
-	5W/H17jY7//3u5j9jY+BFyLjV7HeDiRray2O1NoFR/bMcyMFWuzlPEiYeQyn1qFUcIlB0r5cgaalt
-	ndisznBBxvnE4atthYSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4Q1rAz54+D5uzrp1/Xhgt4eSJ2MIphg9LTu8WvkttMU=; b=u4c97q2OpvS37dw7yqjBd8Rql
+	JHYNyKWdVR1KsoV6UQeSCY++2H4q/+O60QpAYtgP6PrHcVBNpEdq7gv+6Z94pDJZoLVEOd6qNPQbT
+	pmA62NcyzqII4GiWYkvV0beN7aAXYwmSI9/0eqpUV2evmQKzKri66CZzI6hf+KDXr3rV37NV3sk35
+	j3SwoXdXibbAbQEdEyoyi8Y0y5pFJzpwtltqScrtQ++4LHlaplSrszcGtqpEFp9ECvnYfG0T/hNdI
+	g3dVqHEJi1JN7hn604B6FAR2+LqgPZrVYLH5Xno9jpMsYg7PvCtB3q4QxRS9ZgbwLQ8+gKHgOMIVl
+	IQTHvbx1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlGbo-0000WX-AG; Tue, 16 Jun 2020 18:46:56 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jlGkM-0006Tc-GN; Tue, 16 Jun 2020 18:55:46 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlGbX-0000V0-Kp
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 18:46:41 +0000
-IronPort-SDR: u4maVk9AhXHHhO2r+HcHuzBAwmntaDXn1ViXtfoDHQsX87LKeqTDQ725pBnz4RWbEpR26zYJlL
- JYgh9zZIfaCw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 16 Jun 2020 11:46:38 -0700
-IronPort-SDR: yS4kdxs3NL8vNSOJdyaZMSBL1jVCCWzOmJc3lPSd14irDK4TUkxn/OPPXN/ybnkz2cjsq+AgLl
- ZlhPLUZmLgcQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,519,1583222400"; d="scan'208";a="273248485"
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.73])
- ([10.237.72.73])
- by orsmga003.jf.intel.com with ESMTP; 16 Jun 2020 11:46:35 -0700
-Subject: Re: [PATCH v3 2/3] sdhci: sparx5: Add Sparx5 SoC eMMC driver
-To: Lars Povlsen <lars.povlsen@microchip.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, SoC Team <soc@kernel.org>
-References: <20200616140027.4949-1-lars.povlsen@microchip.com>
- <20200616140027.4949-3-lars.povlsen@microchip.com>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <b4ba671d-aa51-78a4-8e49-f105663a308a@intel.com>
-Date: Tue, 16 Jun 2020 21:46:05 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+ id 1jlGkF-0006T3-9u
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 18:55:40 +0000
+Received: by mail-lj1-x241.google.com with SMTP id x18so24824111lji.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jun 2020 11:55:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Q0q8gubf8krgZV8oGCJJ77Manwa2gcrwHgDVVcoIMF4=;
+ b=Za9iu2csZgttP35aE+aT08tNb3V6uxoyuIhn76uFapZGtiQBoNJQlm46x1X88modKX
+ 56L73dqUCWnkD91z+9cqMwv5Y5xo/wgnVPwKoQqgiOz23E0vmPXaA37iu5082TSSxz11
+ OBgSNYHUnDL9NHnY2O/1eCVT5xkEIS6vHlrTo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Q0q8gubf8krgZV8oGCJJ77Manwa2gcrwHgDVVcoIMF4=;
+ b=RAjU+94Iy5edAfmy3NsuwHUFWnK0K32QBYv2qFvhRaKhqDy3ZuYZLPaRKt/XyJzmsg
+ SNl7vjEaydnkfGhrzrcW1Z7VYOAKouhal0tFC4dKAkqGZ6sTTWfdntFSGlBspUOphbzs
+ ScRQKhtFqjVqTjTM+gMK3rzYHi0q5vO6e6NEMF1kLbO0pPEQE1A7FCV5LicPLjG476yz
+ QQNtZccAquS2uSMIiLfV01sQywrPtayQjP0XXxqzoyZWu7AVxWU5Cr06LR2U2JJWRVo8
+ hqv076sDiph50caXNapWD83v5+MzRxDpx4LULVxNbJi9PzpirQMp0t1ij1Mjivegm5yF
+ FpPQ==
+X-Gm-Message-State: AOAM53240OBEa8i35abxDFGHr93C35R0FM1rW1Inu/qS027lCHM1bQyS
+ M1KE5Z91rRo0VMmXTTELjliC96+v574=
+X-Google-Smtp-Source: ABdhPJxHd7pIBdnqvpFCLU6+B6SLSjPRJSOES+HM6NDDLvHRTJ+ZHldnSIr6eB+/Wpgp7nC46CglQg==
+X-Received: by 2002:a2e:9ac2:: with SMTP id p2mr2284006ljj.223.1592333735917; 
+ Tue, 16 Jun 2020 11:55:35 -0700 (PDT)
+Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com.
+ [209.85.208.172])
+ by smtp.gmail.com with ESMTPSA id i23sm4552184ljh.56.2020.06.16.11.55.34
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 16 Jun 2020 11:55:34 -0700 (PDT)
+Received: by mail-lj1-f172.google.com with SMTP id a9so24887428ljn.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jun 2020 11:55:34 -0700 (PDT)
+X-Received: by 2002:a2e:97c3:: with SMTP id m3mr2263094ljj.312.1592333733916; 
+ Tue, 16 Jun 2020 11:55:33 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200616140027.4949-3-lars.povlsen@microchip.com>
-Content-Language: en-US
+References: <20200615221607.7764-1-peterx@redhat.com>
+In-Reply-To: <20200615221607.7764-1-peterx@redhat.com>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Tue, 16 Jun 2020 11:55:17 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wiTjaXHu+uxMi0xCZQOm4KVr0MucECAK=Zm4p4YZZ1XEg@mail.gmail.com>
+Message-ID: <CAHk-=wiTjaXHu+uxMi0xCZQOm4KVr0MucECAK=Zm4p4YZZ1XEg@mail.gmail.com>
+Subject: Re: [PATCH 00/25] mm: Page fault accounting cleanups
+To: Peter Xu <peterx@redhat.com>
+Content-Type: multipart/mixed; boundary="00000000000093703c05a8381612"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_114639_702177_83C20A1C 
-X-CRM114-Status: GOOD (  28.07  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200616_115539_349174_E765EF50 
+X-CRM114-Status: GOOD (  25.52  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,348 +101,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Andrea Arcangeli <aarcange@redhat.com>,
+ linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ openrisc@lists.librecores.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ Alexander Gordeev <agordeev@linux.ibm.com>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16/06/20 5:00 pm, Lars Povlsen wrote:
-> This adds the eMMC driver for the Sparx5 SoC. It is based upon the
-> designware IP, but requires some extra initialization and quirks.
-> 
-> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
-> ---
->  drivers/mmc/host/Kconfig           |  13 ++
->  drivers/mmc/host/Makefile          |   1 +
->  drivers/mmc/host/sdhci-of-sparx5.c | 269 +++++++++++++++++++++++++++++
->  3 files changed, 283 insertions(+)
->  create mode 100644 drivers/mmc/host/sdhci-of-sparx5.c
-> 
-> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
-> index 3b706af35ec31..a3bad4b4ed7ea 100644
-> --- a/drivers/mmc/host/Kconfig
-> +++ b/drivers/mmc/host/Kconfig
-> @@ -213,6 +213,19 @@ config MMC_SDHCI_OF_DWCMSHC
->  	  If you have a controller with this interface, say Y or M here.
->  	  If unsure, say N.
->  
-> +config MMC_SDHCI_OF_SPARX5
-> +	tristate "SDHCI OF support for the MCHP Sparx5 SoC"
-> +	depends on MMC_SDHCI_PLTFM
-> +	depends on ARCH_SPARX5
-> +	select MMC_SDHCI_IO_ACCESSORS
-> +	help
-> +	  This selects the Secure Digital Host Controller Interface (SDHCI)
-> +	  found in the MCHP Sparx5 SoC.
-> +
-> +	  If you have a Sparx5 SoC with this interface, say Y or M here.
-> +
-> +	  If unsure, say N.
-> +
->  config MMC_SDHCI_CADENCE
->  	tristate "SDHCI support for the Cadence SD/SDIO/eMMC controller"
->  	depends on MMC_SDHCI_PLTFM
-> diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
-> index 4d5bcb0144a0a..451c25fc2c692 100644
-> --- a/drivers/mmc/host/Makefile
-> +++ b/drivers/mmc/host/Makefile
-> @@ -94,6 +94,7 @@ obj-$(CONFIG_MMC_SDHCI_OF_AT91)		+= sdhci-of-at91.o
->  obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)	+= sdhci-of-esdhc.o
->  obj-$(CONFIG_MMC_SDHCI_OF_HLWD)		+= sdhci-of-hlwd.o
->  obj-$(CONFIG_MMC_SDHCI_OF_DWCMSHC)	+= sdhci-of-dwcmshc.o
-> +obj-$(CONFIG_MMC_SDHCI_OF_SPARX5)	+= sdhci-of-sparx5.o
->  obj-$(CONFIG_MMC_SDHCI_BCM_KONA)	+= sdhci-bcm-kona.o
->  obj-$(CONFIG_MMC_SDHCI_IPROC)		+= sdhci-iproc.o
->  obj-$(CONFIG_MMC_SDHCI_MSM)		+= sdhci-msm.o
-> diff --git a/drivers/mmc/host/sdhci-of-sparx5.c b/drivers/mmc/host/sdhci-of-sparx5.c
-> new file mode 100644
-> index 0000000000000..972942fed4a68
-> --- /dev/null
-> +++ b/drivers/mmc/host/sdhci-of-sparx5.c
-> @@ -0,0 +1,269 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later
-> +/*
-> + * drivers/mmc/host/sdhci-of-sparx5.c
-> + *
-> + * MCHP Sparx5 SoC Secure Digital Host Controller Interface.
-> + *
-> + * Copyright (c) 2019 Microchip Inc.
-> + *
-> + * Author: Lars Povlsen <lars.povlsen@microchip.com>
-> + */
-> +
-> +#include <linux/sizes.h>
-> +#include <linux/delay.h>
-> +#include <linux/module.h>
-> +#include <linux/regmap.h>
-> +#include <linux/of_device.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/dma-mapping.h>
-> +
-> +#include "sdhci-pltfm.h"
-> +
-> +#define CPU_REGS_GENERAL_CTRL	(0x22 * 4)
-> +#define  MSHC_DLY_CC_MASK	GENMASK(16, 13)
-> +#define  MSHC_DLY_CC_SHIFT	13
-> +#define  MSHC_DLY_CC_MAX	15
-> +
-> +#define CPU_REGS_PROC_CTRL	(0x2C * 4)
-> +#define  ACP_CACHE_FORCE_ENA	BIT(4)
-> +#define  ACP_AWCACHE		BIT(3)
-> +#define  ACP_ARCACHE		BIT(2)
-> +#define  ACP_CACHE_MASK		(ACP_CACHE_FORCE_ENA|ACP_AWCACHE|ACP_ARCACHE)
-> +
-> +#define MSHC2_VERSION			0x500	/* Off 0x140, reg 0x0 */
-> +#define MSHC2_TYPE			0x504	/* Off 0x140, reg 0x1 */
-> +#define MSHC2_EMMC_CTRL			0x52c	/* Off 0x140, reg 0xB */
-> +#define  MSHC2_EMMC_CTRL_EMMC_RST_N	BIT(2)
-> +#define  MSHC2_EMMC_CTRL_IS_EMMC	BIT(0)
-> +
-> +struct sdhci_sparx5_data {
-> +	struct sdhci_host *host;
-> +	struct regmap *cpu_ctrl;
-> +	int delay_clock;
-> +};
-> +
-> +#define BOUNDARY_OK(addr, len) \
-> +	((addr | (SZ_128M - 1)) == ((addr + len - 1) | (SZ_128M - 1)))
-> +
-> +/*
-> + * If DMA addr spans 128MB boundary, we split the DMA transfer into two
-> + * so that each DMA transfer doesn't exceed the boundary.
-> + */
-> +static void sdhci_sparx5_adma_write_desc(struct sdhci_host *host, void **desc,
-> +					  dma_addr_t addr, int len,
-> +					  unsigned int cmd)
-> +{
-> +	int tmplen, offset;
-> +
-> +	if (likely(!len || BOUNDARY_OK(addr, len))) {
-> +		sdhci_adma_write_desc(host, desc, addr, len, cmd);
-> +		return;
-> +	}
-> +
-> +	pr_debug("%s: write_desc: splitting dma len %d, offset 0x%0llx\n",
-> +		 mmc_hostname(host->mmc), len, addr);
-> +
-> +	offset = addr & (SZ_128M - 1);
-> +	tmplen = SZ_128M - offset;
-> +	sdhci_adma_write_desc(host, desc, addr, tmplen, cmd);
-> +
-> +	addr += tmplen;
-> +	len -= tmplen;
-> +	sdhci_adma_write_desc(host, desc, addr, len, cmd);
-> +}
-> +
-> +static void sparx5_set_cacheable(struct sdhci_host *host, u32 value)
-> +{
-> +	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
-> +	struct sdhci_sparx5_data *sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
-> +
-> +	pr_debug("%s: Set Cacheable = 0x%x\n", mmc_hostname(host->mmc), value);
-> +
-> +	/* Update ACP caching attributes in HW */
-> +	regmap_update_bits(sdhci_sparx5->cpu_ctrl,
-> +			   CPU_REGS_PROC_CTRL, ACP_CACHE_MASK, value);
-> +}
-> +
-> +static void sparx5_set_delay(struct sdhci_host *host, u8 value)
-> +{
-> +	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
-> +	struct sdhci_sparx5_data *sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
-> +
-> +	pr_debug("%s: Set DLY_CC = %u\n", mmc_hostname(host->mmc), value);
-> +
-> +	/* Update DLY_CC in HW */
-> +	regmap_update_bits(sdhci_sparx5->cpu_ctrl,
-> +			   CPU_REGS_GENERAL_CTRL,
-> +			   MSHC_DLY_CC_MASK,
-> +			   (value << MSHC_DLY_CC_SHIFT));
-> +}
-> +
-> +static void sdhci_sparx5_set_emmc(struct sdhci_host *host)
-> +{
-> +	if (!mmc_card_is_removable(host->mmc)) {
-> +		u8 value;
-> +
-> +		value = sdhci_readb(host, MSHC2_EMMC_CTRL);
-> +		if (!(value & MSHC2_EMMC_CTRL_IS_EMMC)) {
-> +			value |= MSHC2_EMMC_CTRL_IS_EMMC;
-> +			pr_debug("%s: Set EMMC_CTRL: 0x%08x\n",
-> +				 mmc_hostname(host->mmc), value);
-> +			sdhci_writeb(host, value, MSHC2_EMMC_CTRL);
-> +		}
-> +	}
-> +}
-> +
-> +static void sdhci_sparx5_reset_emmc(struct sdhci_host *host)
-> +{
-> +	u8 value;
-> +
-> +	pr_debug("%s: Toggle EMMC_CTRL.EMMC_RST_N\n", mmc_hostname(host->mmc));
-> +	value = sdhci_readb(host, MSHC2_EMMC_CTRL) &
-> +		~MSHC2_EMMC_CTRL_EMMC_RST_N;
-> +	sdhci_writeb(host, value, MSHC2_EMMC_CTRL);
-> +	/* For eMMC, minimum is 1us but give it 10us for good measure */
-> +	usleep_range(10, 20);
-> +	sdhci_writeb(host, value | MSHC2_EMMC_CTRL_EMMC_RST_N,
-> +		     MSHC2_EMMC_CTRL);
-> +	/* For eMMC, minimum is 200us but give it 300us for good measure */
-> +	usleep_range(300, 400);
-> +}
-> +
-> +static void sdhci_sparx5_reset(struct sdhci_host *host, u8 mask)
-> +{
-> +	pr_debug("%s: *** RESET: mask %d\n", mmc_hostname(host->mmc), mask);
-> +
-> +	sdhci_reset(host, mask);
-> +
-> +	/* Be sure CARD_IS_EMMC stays set */
-> +	sdhci_sparx5_set_emmc(host);
-> +}
-> +
-> +static const struct sdhci_ops sdhci_sparx5_ops = {
-> +	.set_clock		= sdhci_set_clock,
-> +	.set_bus_width		= sdhci_set_bus_width,
-> +	.set_uhs_signaling	= sdhci_set_uhs_signaling,
-> +	.get_max_clock		= sdhci_pltfm_clk_get_max_clock,
-> +	.reset			= sdhci_sparx5_reset,
-> +	.adma_write_desc	= sdhci_sparx5_adma_write_desc,
-> +};
-> +
-> +static const struct sdhci_pltfm_data sdhci_sparx5_pdata = {
-> +	.quirks  = 0,
-> +	.quirks2 = SDHCI_QUIRK2_HOST_NO_CMD23 | /* Controller issue */
-> +		   SDHCI_QUIRK2_NO_1_8_V, /* No sdr104, ddr50, etc */
-> +	.ops = &sdhci_sparx5_ops,
-> +};
-> +
-> +int sdhci_sparx5_probe(struct platform_device *pdev)
-> +{
-> +	int ret;
-> +	const char *syscon = "microchip,sparx5-cpu-syscon";
-> +	struct sdhci_host *host;
-> +	struct sdhci_pltfm_host *pltfm_host;
-> +	struct sdhci_sparx5_data *sdhci_sparx5;
-> +	struct device_node *np = pdev->dev.of_node;
-> +	u32 value;
-> +	u32 extra;
-> +
-> +	host = sdhci_pltfm_init(pdev, &sdhci_sparx5_pdata,
-> +				sizeof(*sdhci_sparx5));
-> +
-> +	if (IS_ERR(host))
-> +		return PTR_ERR(host);
-> +
-> +	/*
-> +	 * extra adma table cnt for cross 128M boundary handling.
-> +	 */
-> +	extra = DIV_ROUND_UP_ULL(dma_get_required_mask(&pdev->dev), SZ_128M);
-> +	if (extra > SDHCI_MAX_SEGS)
-> +		extra = SDHCI_MAX_SEGS;
-> +	host->adma_table_cnt += extra;
-> +
-> +	pltfm_host = sdhci_priv(host);
-> +	sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
-> +	sdhci_sparx5->host = host;
-> +
-> +	pltfm_host->clk = devm_clk_get(&pdev->dev, "core");
-> +	if (IS_ERR(pltfm_host->clk)) {
-> +		ret = PTR_ERR(pltfm_host->clk);
-> +		dev_err(&pdev->dev, "failed to get core clk: %d\n", ret);
-> +		goto free_pltfm;
-> +	}
-> +	ret = clk_prepare_enable(pltfm_host->clk);
-> +	if (ret)
-> +		goto free_pltfm;
-> +
-> +	if (!of_property_read_u32(np, "microchip,clock-delay", &value) &&
-> +	    (value > 0 && value <= MSHC_DLY_CC_MAX))
-> +		sdhci_sparx5->delay_clock = value;
-> +
-> +	sdhci_get_of_property(pdev);
-> +
-> +	ret = mmc_of_parse(host->mmc);
-> +	if (ret)
-> +		goto err_clk;
-> +
-> +	sdhci_sparx5->cpu_ctrl = syscon_regmap_lookup_by_compatible(syscon);
-> +	if (IS_ERR(sdhci_sparx5->cpu_ctrl)) {
-> +		dev_err(&pdev->dev, "No CPU syscon regmap !\n");
-> +		ret = PTR_ERR(sdhci_sparx5->cpu_ctrl);
-> +		goto err_clk;
-> +	}
-> +
-> +	if (sdhci_sparx5->delay_clock >= 0)
-> +		sparx5_set_delay(host, sdhci_sparx5->delay_clock);
-> +
-> +	if (!mmc_card_is_removable(host->mmc)) {
-> +		/* Do a HW reset of eMMC card */
-> +		sdhci_sparx5_reset_emmc(host);
-> +		/* Update EMMC_CTRL */
-> +		sdhci_sparx5_set_emmc(host);
-> +		/* If eMMC, disable SD and SDIO */
-> +		host->mmc->caps2 |= (MMC_CAP2_NO_SDIO|MMC_CAP2_NO_SD);
-> +	}
-> +
-> +	ret = sdhci_add_host(host);
-> +	if (ret)
-> +		dev_err(&pdev->dev, "sdhci_add_host() failed (%d)\n", ret);
+--00000000000093703c05a8381612
+Content-Type: text/plain; charset="UTF-8"
 
-Shouldn't this goto err_clk;
+On Mon, Jun 15, 2020 at 3:16 PM Peter Xu <peterx@redhat.com> wrote:
+>
+> This series tries to address all of them by introducing mm_fault_accounting()
+> first, so that we move all the page fault accounting into the common code base,
+> then call it properly from arch pf handlers just like handle_mm_fault().
 
-Also, the error message is not really needed if ret == -EPROBE_DEFER
+Hmm.
 
-> +
-> +	/* Set AXI bus master to use un-cached access (for DMA) */
-> +	if (host->flags & (SDHCI_USE_SDMA | SDHCI_USE_ADMA) &&
-> +	    IS_ENABLED(CONFIG_DMA_DECLARE_COHERENT))
-> +		sparx5_set_cacheable(host, ACP_CACHE_FORCE_ENA);
-> +
-> +	pr_debug("%s: SDHC version: 0x%08x\n",
-> +		 mmc_hostname(host->mmc), sdhci_readl(host, MSHC2_VERSION));
-> +	pr_debug("%s: SDHC type:    0x%08x\n",
-> +		 mmc_hostname(host->mmc), sdhci_readl(host, MSHC2_TYPE));
-> +
-> +	return ret;
-> +
-> +err_clk:
-> +	clk_disable_unprepare(pltfm_host->clk);
-> +free_pltfm:
-> +	sdhci_pltfm_free(pdev);
-> +	return ret;
-> +}
-> +
-> +static const struct of_device_id sdhci_sparx5_of_match[] = {
-> +	{ .compatible = "microchip,dw-sparx5-sdhci" },
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, sdhci_sparx5_of_match);
-> +
-> +static struct platform_driver sdhci_sparx5_driver = {
-> +	.driver = {
-> +		.name = "sdhci-sparx5",
-> +		.of_match_table = sdhci_sparx5_of_match,
-> +		.pm = &sdhci_pltfm_pmops,
-> +	},
-> +	.probe = sdhci_sparx5_probe,
-> +	.remove = sdhci_pltfm_unregister,
-> +};
-> +
-> +module_platform_driver(sdhci_sparx5_driver);
-> +
-> +MODULE_DESCRIPTION("Sparx5 SDHCI OF driver");
-> +MODULE_AUTHOR("Lars Povlsen <lars.povlsen@microchip.com>");
-> +MODULE_LICENSE("GPL v2");
-> 
+So having looked at this a bit more, I'd actually like to go even
+further, and just get rid of the per-architecture code _entirely_.
 
+Here's a straw-man patch to the generic code - the idea is mostly laid
+out in the comment that I'm just quoting here directly too:
+
+        /*
+         * Do accounting in the common code, to avoid unnecessary
+         * architecture differences or duplicated code.
+         *
+         * We arbitrarily make the rules be:
+         *
+         *  - faults that never even got here (because the address
+         *    wasn't valid). That includes arch_vma_access_permitted()
+         *    failing above.
+         *
+         *    So this is expressly not a "this many hardware page
+         *    faults" counter. Use the hw profiling for that.
+         *
+         *  - incomplete faults (ie RETRY) do not count (see above).
+         *    They will only count once completed.
+         *
+         *  - the fault counts as a "major" fault when the final
+         *    successful fault is VM_FAULT_MAJOR, or if it was a
+         *    retry (which implies that we couldn't handle it
+         *    immediately previously).
+         *
+         *  - if the fault is done for GUP, regs wil be NULL and
+         *    no accounting will be done (but you _could_ pass in
+         *    your own regs and it would be accounted to the thread
+         *    doing the fault, not to the target!)
+         */
+
+the code itself in the patch is
+
+ (a) pretty trivial and self-evident
+
+ (b) INCOMPLETE
+
+that (b) is worth noting: this patch won't compile on its own. It
+intentionally leaves all the users without the new 'regs' argument,
+because you obviously simply need to remove all the code that
+currently tries to do any accounting.
+
+Comments?
+
+This is a bigger change, but I think it might be worth it to _really_
+consolidate the major/minor logic.
+
+One detail worth noting: I do wonder if we should put the
+
+    perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS, 1, regs, addr);
+
+just in the arch code at the top of the fault handling, and consider
+it entirely unrelated to the major/minor fault handling. The
+major/minor faults fundamnetally are about successes. But the plain
+PERF_COUNT_SW_PAGE_FAULTS could be about things that fail, including
+things that never even get to this point at all.
+
+I'm not convinced it's useful to have three SW events that are defined
+to be A=B+C.
+
+But this does *not* do that part. It' sreally just an RFC patch.
+
+                    Linus
+
+--00000000000093703c05a8381612
+Content-Type: application/octet-stream; name=patch
+Content-Disposition: attachment; filename=patch
+Content-Transfer-Encoding: base64
+Content-ID: <f_kbiacfcm0>
+X-Attachment-Id: f_kbiacfcm0
+
+IGluY2x1ZGUvbGludXgvbW0uaCB8ICAzICsrLQogbW0vbWVtb3J5LmMgICAgICAgIHwgNDYgKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrLQogMiBmaWxlcyBjaGFu
+Z2VkLCA0NyBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2luY2x1
+ZGUvbGludXgvbW0uaCBiL2luY2x1ZGUvbGludXgvbW0uaAppbmRleCBkYzdiODczMTBjMTAuLmU4
+MmE2MDQzMzljMCAxMDA2NDQKLS0tIGEvaW5jbHVkZS9saW51eC9tbS5oCisrKyBiL2luY2x1ZGUv
+bGludXgvbW0uaApAQCAtMTY0OCw3ICsxNjQ4LDggQEAgaW50IGludmFsaWRhdGVfaW5vZGVfcGFn
+ZShzdHJ1Y3QgcGFnZSAqcGFnZSk7CiAKICNpZmRlZiBDT05GSUdfTU1VCiBleHRlcm4gdm1fZmF1
+bHRfdCBoYW5kbGVfbW1fZmF1bHQoc3RydWN0IHZtX2FyZWFfc3RydWN0ICp2bWEsCi0JCQl1bnNp
+Z25lZCBsb25nIGFkZHJlc3MsIHVuc2lnbmVkIGludCBmbGFncyk7CisJCQl1bnNpZ25lZCBsb25n
+IGFkZHJlc3MsIHVuc2lnbmVkIGludCBmbGFncywKKwkJCXN0cnVjdCBwdF9yZWdzICopOwogZXh0
+ZXJuIGludCBmaXh1cF91c2VyX2ZhdWx0KHN0cnVjdCB0YXNrX3N0cnVjdCAqdHNrLCBzdHJ1Y3Qg
+bW1fc3RydWN0ICptbSwKIAkJCSAgICB1bnNpZ25lZCBsb25nIGFkZHJlc3MsIHVuc2lnbmVkIGlu
+dCBmYXVsdF9mbGFncywKIAkJCSAgICBib29sICp1bmxvY2tlZCk7CmRpZmYgLS1naXQgYS9tbS9t
+ZW1vcnkuYyBiL21tL21lbW9yeS5jCmluZGV4IGRjN2YzNTQzYjFmZC4uZjE1MDU2MTUxZmIxIDEw
+MDY0NAotLS0gYS9tbS9tZW1vcnkuYworKysgYi9tbS9tZW1vcnkuYwpAQCAtNzIsNiArNzIsNyBA
+QAogI2luY2x1ZGUgPGxpbnV4L29vbS5oPgogI2luY2x1ZGUgPGxpbnV4L251bWEuaD4KIAorI2lu
+Y2x1ZGUgPGxpbnV4L3BlcmZfZXZlbnQuaD4KICNpbmNsdWRlIDx0cmFjZS9ldmVudHMva21lbS5o
+PgogCiAjaW5jbHVkZSA8YXNtL2lvLmg+CkBAIC00MzUzLDcgKzQzNTQsNyBAQCBzdGF0aWMgdm1f
+ZmF1bHRfdCBfX2hhbmRsZV9tbV9mYXVsdChzdHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnZtYSwKICAq
+IHJldHVybiB2YWx1ZS4gIFNlZSBmaWxlbWFwX2ZhdWx0KCkgYW5kIF9fbG9ja19wYWdlX29yX3Jl
+dHJ5KCkuCiAgKi8KIHZtX2ZhdWx0X3QgaGFuZGxlX21tX2ZhdWx0KHN0cnVjdCB2bV9hcmVhX3N0
+cnVjdCAqdm1hLCB1bnNpZ25lZCBsb25nIGFkZHJlc3MsCi0JCXVuc2lnbmVkIGludCBmbGFncykK
+KwkJdW5zaWduZWQgaW50IGZsYWdzLCBzdHJ1Y3QgcHRfcmVncyAqcmVncykKIHsKIAl2bV9mYXVs
+dF90IHJldDsKIApAQCAtNDM5NCw2ICs0Mzk1LDQ5IEBAIHZtX2ZhdWx0X3QgaGFuZGxlX21tX2Zh
+dWx0KHN0cnVjdCB2bV9hcmVhX3N0cnVjdCAqdm1hLCB1bnNpZ25lZCBsb25nIGFkZHJlc3MsCiAJ
+CQltZW1fY2dyb3VwX29vbV9zeW5jaHJvbml6ZShmYWxzZSk7CiAJfQogCisJaWYgKHJldCAmIFZN
+X0ZBVUxUX1JFVFJZKQorCQlyZXR1cm4gcmV0OworCisJLyoKKwkgKiBEbyBhY2NvdW50aW5nIGlu
+IHRoZSBjb21tb24gY29kZSwgdG8gYXZvaWQgdW5uZWNlc3NhcnkKKwkgKiBhcmNoaXRlY3R1cmUg
+ZGlmZmVyZW5jZXMgb3IgZHVwbGljYXRlZCBjb2RlLgorCSAqCisJICogV2UgYXJiaXRyYXJpbHkg
+bWFrZSB0aGUgcnVsZXMgYmU6CisJICoKKwkgKiAgLSBmYXVsdHMgdGhhdCBuZXZlciBldmVuIGdv
+dCBoZXJlIChiZWNhdXNlIHRoZSBhZGRyZXNzCisJICogICAgd2Fzbid0IHZhbGlkKS4gVGhhdCBp
+bmNsdWRlcyBhcmNoX3ZtYV9hY2Nlc3NfcGVybWl0dGVkKCkKKwkgKiAgICBmYWlsaW5nIGFib3Zl
+LgorCSAqCisJICogICAgU28gdGhpcyBpcyBleHByZXNzbHkgbm90IGEgInRoaXMgbWFueSBoYXJk
+d2FyZSBwYWdlCisJICogICAgZmF1bHRzIiBjb3VudGVyLiBVc2UgdGhlIGh3IHByb2ZpbGluZyBm
+b3IgdGhhdC4KKwkgKgorCSAqICAtIGluY29tcGxldGUgZmF1bHRzIChpZSBSRVRSWSkgZG8gbm90
+IGNvdW50IChzZWUgYWJvdmUpLgorCSAqICAgIFRoZXkgd2lsbCBvbmx5IGNvdW50IG9uY2UgY29t
+cGxldGVkLgorCSAqCisJICogIC0gdGhlIGZhdWx0IGNvdW50cyBhcyBhICJtYWpvciIgZmF1bHQg
+d2hlbiB0aGUgZmluYWwKKwkgKiAgICBzdWNjZXNzZnVsIGZhdWx0IGlzIFZNX0ZBVUxUX01BSk9S
+LCBvciBpZiBpdCB3YXMgYQorCSAqICAgIHJldHJ5ICh3aGljaCBpbXBsaWVzIHRoYXQgd2UgY291
+bGRuJ3QgaGFuZGxlIGl0CisJICogICAgaW1tZWRpYXRlbHkgcHJldmlvdXNseSkuCisJICoKKwkg
+KiAgLSBpZiB0aGUgZmF1bHQgaXMgZG9uZSBmb3IgR1VQLCByZWdzIHdpbCBiZSBOVUxMIGFuZAor
+CSAqICAgIG5vIGFjY291bnRpbmcgd2lsbCBiZSBkb25lIChidXQgeW91IF9jb3VsZF8gcGFzcyBp
+bgorCSAqICAgIHlvdXIgb3duIHJlZ3MgYW5kIGl0IHdvdWxkIGJlIGFjY291bnRlZCB0byB0aGUg
+dGhyZWFkCisJICogICAgZG9pbmcgdGhlIGZhdWx0LCBub3QgdG8gdGhlIHRhcmdldCEpCisJICov
+CisKKwlpZiAoIXJlZ3MpCisJCXJldHVybiByZXQ7CisKKwlwZXJmX3N3X2V2ZW50KFBFUkZfQ09V
+TlRfU1dfUEFHRV9GQVVMVFMsIDEsIHJlZ3MsIGFkZHJlc3MpOworCisJaWYgKChyZXQgJiBWTV9G
+QVVMVF9NQUpPUikgfHwgKGZsYWdzICYgRkFVTFRfRkxBR19UUklFRCkpIHsKKwkJY3VycmVudC0+
+bWFqX2ZsdCsrOworCQlwZXJmX3N3X2V2ZW50KFBFUkZfQ09VTlRfU1dfUEFHRV9GQVVMVFNfTUFK
+LCAxLCByZWdzLCBhZGRyZXNzKTsKKwl9IGVsc2UgeworCQljdXJyZW50LT5taW5fZmx0Kys7CisJ
+CXBlcmZfc3dfZXZlbnQoUEVSRl9DT1VOVF9TV19QQUdFX0ZBVUxUU19NSU4sIDEsIHJlZ3MsIGFk
+ZHJlc3MpOworCX0KKwogCXJldHVybiByZXQ7CiB9CiBFWFBPUlRfU1lNQk9MX0dQTChoYW5kbGVf
+bW1fZmF1bHQpOwo=
+--00000000000093703c05a8381612
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--00000000000093703c05a8381612--
+
