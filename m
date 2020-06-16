@@ -2,113 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E9E71FB4C4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:43:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D74D1FB56B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 17:05:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+msMbEJ5IGCZAukrnvM0RehyRc64bMSXn3lYep4x0+0=; b=AJaADk4/4iV+EO
-	GuCLLgLPQEu8ciOtcoIK7lLUa2vTxNUbK6LZoxG9ZaCjx4IYXtd6VaTd/iJI9RtNZv8+zWdeopzkR
-	7YVOgmQcuy7ilZGY9RD7JQvMdSUH+004BbrrDJuBAl7CVH7RKe2lsv2WWGY86ye8bWzemXjAx54kb
-	hYyWLdjXNTG+x4WhrZ6d5WKS//NztsgJphKS+0oRewROXnGR0y+HpPg/ofesp6JmyBsOmlB0vkDKe
-	EgSC4Iat3Lvbs34JVz7bDgNJ7pZvlFOnPqabwCQdQlzcjXGYJMdShNn9a3tsvJqbg68Zj0ZEkf+nX
-	NEgmXg9uPN3ZlzLGFP8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wMjebkI3o1xuLvm+FfptMwznH4AX+ph1rIyM3wqNIcE=; b=ue2VC/1lZUpFg2aIc9Ozkjd+Q
+	o/D8XKrRdfXJCpmW9eLoeKJPJ6vEmk6FEJSOsCX/V/c0toWKGlB1oJULNMA6OsuU/1M6+fxC/Rre+
+	ZGOJdEzYPpZFoCgpwqjIZzmnxJxMOohdqLIBXjpDNb+mN6iITDx7G6MH7utr0RBkKoX9h5/stAaku
+	5sFflrxG1LUxJ+CsFbHvpd9s8gP3+HYsWWhMeI8BH/2s4eXqD70ehJSZFO/s7zKHUoRv9noFdnJYJ
+	BU4ZPQTCTyx4HHtMfOq1UI7HN7PMyfRQtqk2QtznUzkz79QBx6nqmalH2trhq3Zo/ZNIeJK9aNYGT
+	3P4Ajkj8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCoP-0002XC-0O; Tue, 16 Jun 2020 14:43:41 +0000
-Received: from mail-eopbgr80059.outbound.protection.outlook.com ([40.107.8.59]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jlD9Z-0000wB-I2; Tue, 16 Jun 2020 15:05:33 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlCnb-000259-UT
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:43:01 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BPFjd78Wktwm6XioOjxlAnCLDXcwck/s0R8gmKU0GCU9pRaZ+uI9xca/1Z5obxBUibfqo3YCsIXDjwGufCZOF6YFSSPVGoltOGF0+eAzBa5WfBNARGcL/fBVl44AlQaRo8Sm80pUwPdN5dwXJjdLtzL57OxJ8+GuRkFgMapfORMfuh9SZvDmdnBQxwKMYWcg0ExAGYMTfIDwwkOQR5txNJtfB/m0NeQGZw5uZmOzUvpC2Xf3YxEHQG24V7/RXLLxBj1qOwwQsSTPMU59rIYb+f/sAaDrI9DHtAESX+Rfv6eqh1DoPz+wkowiiQlBFIMtV4a8xc35JPceTUIBTuxgZg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BWD0C4nag/n17IHZIAleGqEk3ypshR7pobGoU1GZAI0=;
- b=M5VMpNva1ZeTUI63HX3xqBXKxu6sOVfiEEd1mTB8tWa3HNPC7IOsOPGVNIcc3d0/XTDl374N4eEtuSHDRSiXHmusVWCYn3qJhj+JKHoJqiUkjPaw2ekcT2beZtcdX3oJ03CBxbNC6ee6PTTYHWQ6IXnYpd12KU7MWIYA+ALhoODSx99S0xfF1G0Nh2wEzV2ll7auB2TXgAArIrKwVL4nW38XNNmFWZ8ttnJPPuI9WmAq9FJlgpFvbGvS01nhg+yA+uFjvD4AcGoNLFBU9q69CLgWV81K6Mgv32vLr+L/PorTz0JtTawLA/oScPVcQsqUKV68D6zRVV1jngOBlcW9Uw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BWD0C4nag/n17IHZIAleGqEk3ypshR7pobGoU1GZAI0=;
- b=cubxPXICtEw1lFbOzy/qZ6Z9qr+enCZzXZ/u0/rzROd7b1ZM304OBtL63rmazo+/7O7ONxMDofAxl+zlRa2sywQ//ex5k3NjxJvseT65fng8DGonyLQs9fJ9f4abnq75hN5yLEMQYD729vbquKTFWt0zbwB7E1Pjf3NyqjSy91M=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6623.eurprd04.prod.outlook.com (2603:10a6:803:125::29)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.24; Tue, 16 Jun
- 2020 14:42:48 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3088.028; Tue, 16 Jun 2020
- 14:42:48 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: broonie@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- festevam@gmail.com, robin.murphy@arm.com, matthias.schiffer@ew.tq-group.com
-Subject: [PATCH v2 2/2] spi: imx: add fallback feature
-Date: Wed, 17 Jun 2020 06:42:09 +0800
-Message-Id: <1592347329-28363-3-git-send-email-yibin.gong@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1592347329-28363-1-git-send-email-yibin.gong@nxp.com>
-References: <1592347329-28363-1-git-send-email-yibin.gong@nxp.com>
-X-ClientProxiedBy: SG2PR06CA0163.apcprd06.prod.outlook.com
- (2603:1096:1:1e::17) To VE1PR04MB6638.eurprd04.prod.outlook.com
- (2603:10a6:803:119::15)
+ id 1jlD97-0006pz-UT; Tue, 16 Jun 2020 15:05:08 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 31B065C00AB;
+ Tue, 16 Jun 2020 11:05:02 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 16 Jun 2020 11:05:02 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=+/Free3np84k0kBJDWVF1jSVMhN
+ u9FRY1V3ChXa3w8c=; b=dsvQ4DphF2djb9iaYRtH9j4VQm7shqQLUk5XgA0Vt93
+ 2oVR+dcRcLKX9tAQzm/51Zr/WsRetYV4zAKdDIkGvuF5/92+l0hDyc4R5T3j3S5s
+ 0f/43NQqAiBMsI4JnDB9kuMSx5ECdOiaBR2sz9e3pOFOR8zVWUneOWT9Gkynk5rn
+ 6jK+jgYzW0WNEQXZUfKIJFEfEfvDDsSuyig18T18qtLNoxiEaAnbWv3V6K0dKAHg
+ 8SWSTsOl8Ivbp58Br2yjTLxc9eMyL3PYlkJtPfz8LzBF9Xa2JhAaMUAq3KmHqM5H
+ rRarKnzBKK/Lc8N//p2eqN4RGVtr5OGtR+BE+mrnyJg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=+/Free
+ 3np84k0kBJDWVF1jSVMhNu9FRY1V3ChXa3w8c=; b=YfteQO+m0GL348X5GIWnSy
+ 9fs8PdyRFCR/bZqYXpD+IBG6ROAjSUPBs6XyhS85y5QtEOruOlWF8AgrL3IJnpA/
+ GXsHBR44HS6367JtwebmBDHyzjBZzGRBUdaPEbRFAubNQQ4BjpFZuFdu69sKdk9Q
+ GOdQB/1J1J+p1cHytU5yfHkk+qYqHoxI2qQJBIfkQNEPVDh9nv2iMf1iHgBYIFK0
+ 69S2qqQBZiGD0MiyzmTBqg6MfxE8s1K/DF2M2/659wZymeJQLBMa9GNBEO06zPX7
+ F/FY/Zaz+UAoxmLs5ftIQJ8CCkPV44/TipaKpFccsTpRq8HnTFu4BJllgqE40B4w
+ ==
+X-ME-Sender: <xms:k9_oXo3iNZdgVrB0xb65jqVksRCtvsSQX_BIBRwkVGY3umwQ7b_A6A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudejtddgkeejucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
+ frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:k9_oXjFAbjMjEA3tPARwNGHNQWQ34yMoLuy18PXLCKrUDU-qwi_B7Q>
+ <xmx:k9_oXg6zKZb2uVVaeKcANbxOebLSfFsEJbgrKytYuYaoikiuFXy3eA>
+ <xmx:k9_oXh09a-A9ZWJBme-hAE_5PDIIhj-QsUq5PcEH1ReT8jBfeMTbDQ>
+ <xmx:nt_oXuPj6PyWLNQr86spA3S1nr2DsRPH56txu_vj7VrnOrfLpio4zg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 92996328005A;
+ Tue, 16 Jun 2020 11:04:51 -0400 (EDT)
+Date: Tue, 16 Jun 2020 17:04:49 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Eric Anholt <eric@anholt.net>
+Subject: Re: [PATCH v3 033/105] drm/vc4: crtc: Assign output to channel
+ automatically
+Message-ID: <20200616150449.xkgyxd6bwcp3cfkb@gilmour.lan>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <5186409a2b5d290b78f6b518a2eb8e407bf1e83e.1590594512.git-series.maxime@cerno.tech>
+ <CADaigPXQ4fLyba3X1mtSnRZb-Z2HgJck_acbpLXGnaL0RqEXQQ@mail.gmail.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
- SG2PR06CA0163.apcprd06.prod.outlook.com (2603:1096:1:1e::17) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3109.21 via Frontend Transport; Tue, 16 Jun 2020 14:42:45 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: bf07b327-f169-4980-e1e8-08d812038a0f
-X-MS-TrafficTypeDiagnostic: VE1PR04MB6623:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB66235BACB166DAE88B405BEA899D0@VE1PR04MB6623.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:597;
-X-Forefront-PRVS: 04362AC73B
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: DIj/4MADuq49/noAjeuFxqjRxTbcKC7nqBbXp9iEy2463fcZTzQIXm7y4cB3N85Rwwsgyyk/JZbmB5BTR5D5pzHuk60D2zxhshCv4GFDFlayp5Ad30BgbKmlnqVZBDyq4IFA7pdOc4oi7oFldWIK/bsNCBXuiYgcdJi4WTl4eWWoGHXU2fLiTgNMIYXab9XhTHSO/kMDVo90C1XIJwd7qHd3/lmFNA47uWBjGIlBGTxFozJ87BARnO+oGaBlYmd/MC9VRze5U7JCaqrvcL67Jtd42xj6mcVQGrAIAqxCJHB9smCY1pGeUa/xZGxzeqAFTwGehJOH33FDDrdpVMrOhw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(366004)(8936002)(6512007)(6506007)(66946007)(66556008)(8676002)(4326008)(66476007)(498600001)(186003)(16526019)(86362001)(2906002)(83380400001)(6486002)(26005)(52116002)(36756003)(5660300002)(7416002)(2616005)(6666004)(956004);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: UNYLPLHVhD+Gc689JFfECxKaTFTd4dp0Img25I0JOYNkAFpHxjw22teliZ3Ik6Uhi15WlpSQuSMjwx8llNDBPzxXLZUvBHi73aE1CoinWC1HEo7uw2npCN8NBYmP9NwXKbCw6pCCRFJNJl+8OUAdxb9y5dWTy4jg91sgMwI6wFT2zxq69eFwFiKdF+aicq3rqbdYGINLLubJwb2RqcgdA/h0kPZ2SGicyNJlC7N1Zn2Eq0JqnKBncvKBUMQIDkNWF/3MpjHRFIkcz8Ok+sd7rYvSWpfGVbZSXadCTiJ9IlwYRNY4HGwQWak02KBMCILR/vORHTXBUIyeQLH1CASZeXd5k8BazJR6toN1uZUYiKny5VfwBwMtxPSQUwZAiSbwCBEvi3PjkefR7Hh+YWNaL5YLn0uuU6Yze+eyr7pbXWKvyw7hHESL3yX858KGwnSbX4knsPbtFYLnLKalPPJX9YJplwRbe3YyNkGMAFyewvePwn3732Nlbzqzi5XZbYPi
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bf07b327-f169-4980-e1e8-08d812038a0f
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jun 2020 14:42:48.5802 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: V+pzcmYib8kkVR9Is9sLUQWLAx6L9UOb2jMaM3a81xKbyvsd+MqvDlNfYRxQCZhLw7lRyo+qED5YCTEcJ/GFFA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6623
+In-Reply-To: <CADaigPXQ4fLyba3X1mtSnRZb-Z2HgJck_acbpLXGnaL0RqEXQQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_074252_025190_7C366376 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20200616_080506_524283_85DFF829 
+X-CRM114-Status: GOOD (  21.35  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.8.59 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.59 listed in wl.mailspike.net]
+ low trust [66.111.4.26 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -116,7 +96,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,112 +108,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, linux-spi@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2150561599575728423=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add fallback pio feature in case  dma transfer failed before start.
-Besides, another whole pio transfer including setup_transfer will be
-issued by spi core, no need to restore jobs like commit bcd8e7761ec9 ("spi:
-imx: fallback to PIO if dma setup failure").
 
-Signed-off-by: Robin Gong <yibin.gong@nxp.com>
----
- drivers/spi/spi-imx.c | 35 ++++++++++++++---------------------
- 1 file changed, 14 insertions(+), 21 deletions(-)
+--===============2150561599575728423==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="zmtci7znkd6b2wdu"
+Content-Disposition: inline
 
-diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c
-index b7a85e3..2b8d339 100644
---- a/drivers/spi/spi-imx.c
-+++ b/drivers/spi/spi-imx.c
-@@ -224,7 +224,7 @@ static bool spi_imx_can_dma(struct spi_master *master, struct spi_device *spi,
- {
- 	struct spi_imx_data *spi_imx = spi_master_get_devdata(master);
- 
--	if (!use_dma)
-+	if (!use_dma || master->fallback)
- 		return false;
- 
- 	if (!master->dma_rx)
-@@ -1364,11 +1364,12 @@ static int spi_imx_dma_transfer(struct spi_imx_data *spi_imx,
- 
- 	ret = spi_imx_dma_configure(master);
- 	if (ret)
--		return ret;
-+		goto dma_failure_no_start;
- 
- 	if (!spi_imx->devtype_data->setup_wml) {
- 		dev_err(spi_imx->dev, "No setup_wml()?\n");
--		return -EINVAL;
-+		ret = -EINVAL;
-+		goto dma_failure_no_start;
- 	}
- 	spi_imx->devtype_data->setup_wml(spi_imx);
- 
-@@ -1379,8 +1380,10 @@ static int spi_imx_dma_transfer(struct spi_imx_data *spi_imx,
- 	desc_rx = dmaengine_prep_slave_sg(master->dma_rx,
- 				rx->sgl, rx->nents, DMA_DEV_TO_MEM,
- 				DMA_PREP_INTERRUPT | DMA_CTRL_ACK);
--	if (!desc_rx)
--		return -EINVAL;
-+	if (!desc_rx) {
-+		ret = -EINVAL;
-+		goto dma_failure_no_start;
-+	}
- 
- 	desc_rx->callback = spi_imx_dma_rx_callback;
- 	desc_rx->callback_param = (void *)spi_imx;
-@@ -1425,6 +1428,10 @@ static int spi_imx_dma_transfer(struct spi_imx_data *spi_imx,
- 	}
- 
- 	return transfer->len;
-+/* fallback to pio */
-+dma_failure_no_start:
-+	transfer->error |= SPI_TRANS_FAIL_NO_START;
-+	return ret;
- }
- 
- static int spi_imx_pio_transfer(struct spi_device *spi,
-@@ -1507,7 +1514,6 @@ static int spi_imx_transfer(struct spi_device *spi,
- 				struct spi_transfer *transfer)
- {
- 	struct spi_imx_data *spi_imx = spi_master_get_devdata(spi->master);
--	int ret;
- 
- 	/* flush rxfifo before transfer */
- 	while (spi_imx->devtype_data->rx_available(spi_imx))
-@@ -1516,21 +1522,8 @@ static int spi_imx_transfer(struct spi_device *spi,
- 	if (spi_imx->slave_mode)
- 		return spi_imx_pio_transfer_slave(spi, transfer);
- 
--	/*
--	 * fallback PIO mode if dma setup error happen, for example sdma
--	 * firmware may not be updated as ERR009165 required.
--	 */
--	if (spi_imx->usedma) {
--		ret = spi_imx_dma_transfer(spi_imx, transfer);
--		if (ret != -EINVAL)
--			return ret;
--
--		spi_imx->devtype_data->disable_dma(spi_imx);
--
--		spi_imx->usedma = false;
--		spi_imx->dynamic_burst = spi_imx->devtype_data->dynamic_burst;
--		dev_dbg(&spi->dev, "Fallback to PIO mode\n");
--	}
-+	if (spi_imx->usedma)
-+		return spi_imx_dma_transfer(spi_imx, transfer);
- 
- 	return spi_imx_pio_transfer(spi, transfer);
- }
--- 
-2.7.4
 
+--zmtci7znkd6b2wdu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Eric,
+
+On Wed, May 27, 2020 at 10:23:23AM -0700, Eric Anholt wrote:
+> On Wed, May 27, 2020 at 8:50 AM Maxime Ripard <maxime@cerno.tech> wrote:
+> >  static int
+> >  vc4_atomic_check(struct drm_device *dev, struct drm_atomic_state *stat=
+e)
+> >  {
+> > -       int ret;
+> > +       unsigned long unassigned_channels =3D GENMASK(NUM_CHANNELS - 1,=
+ 0);
+> > +       struct drm_crtc_state *crtc_state;
+> > +       struct drm_crtc *crtc;
+> > +       int i, ret;
+> > +
+> > +       for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
+> > +               struct vc4_crtc_state *vc4_crtc_state =3D
+> > +                       to_vc4_crtc_state(crtc_state);
+> > +               struct vc4_crtc *vc4_crtc =3D to_vc4_crtc(crtc);
+> > +               bool is_assigned =3D false;
+> > +               unsigned int channel;
+> > +
+> > +               if (!crtc_state->active)
+> > +                       continue;
+> > +
+> > +               /*
+> > +                * The problem we have to solve here is that we have
+> > +                * up to 7 encoders, connected to up to 6 CRTCs.
+> > +                *
+> > +                * Those CRTCs, depending on the instance, can be
+> > +                * routed to 1, 2 or 3 HVS FIFOs, and we need to set
+> > +                * the change the muxing between FIFOs and outputs in
+> > +                * the HVS accordingly.
+> > +                *
+> > +                * It would be pretty hard to come up with an
+> > +                * algorithm that would generically solve
+> > +                * this. However, the current routing trees we support
+> > +                * allow us to simplify a bit the problem.
+> > +                *
+> > +                * Indeed, with the current supported layouts, if we
+> > +                * try to assign in the ascending crtc index order the
+> > +                * FIFOs, we can't fall into the situation where an
+> > +                * earlier CRTC that had multiple routes is assigned
+> > +                * one that was the only option for a later CRTC.
+> > +                *
+> > +                * If the layout changes and doesn't give us that in
+> > +                * the future, we will need to have something smarter,
+> > +                * but it works so far.
+> > +                */
+> > +               for_each_set_bit(channel, &unassigned_channels,
+> > +                                sizeof(unassigned_channels)) {
+> > +
+> > +                       if (!(BIT(channel) & vc4_crtc->data->hvs_availa=
+ble_channels))
+> > +                               continue;
+> > +
+> > +                       vc4_crtc_state->assigned_channel =3D channel;
+> > +                       unassigned_channels &=3D ~BIT(channel);
+> > +                       is_assigned =3D true;
+> > +                       break;
+> > +               }
+> > +
+> > +               if (!is_assigned)
+> > +                       return -EINVAL;
+>=20
+> I think this logic is just
+>=20
+> int matching_channels =3D unassigned_channels &
+> vc4_crtc->data->hvs_available_channels;
+> if (matching_channels) {
+>   vc4_crtc_state->assigned_channel =3D ffs(matching_channels) - 1;
+>   unassigned_channels &=3D ~BIT(channel);
+> } else {
+>   return -EINVAL;
+> }
+
+Thanks for that suggestion (and the others), it indeed works as expected.
+
+> If you're changing the assignment of a channel, I think you're going
+> to need to set state->mode_changed or something to trigger a full
+> modeset, so we don't try to just rewrite the channel of an existing
+> CRTC while scanning out.
+
+Since we won't have any CRTC configuration done outside of atomic_enable
+/ atomic_disable, can we really have a case where we would reallocate a
+new channel to a CRTC without that CRTC being disabled / enabled?
+
+Maxime
+
+--zmtci7znkd6b2wdu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXujfkQAKCRDj7w1vZxhR
+xQm+AP9F9MIRdIiijjgN1Mb4ApZjJiIV3vUc+zN2siB+w5+gXAD+NrbAe75hbs1Y
+t37PcJ+IJstdGHrCFC+4QRRYyhPxBgY=
+=qtWX
+-----END PGP SIGNATURE-----
+
+--zmtci7znkd6b2wdu--
+
+
+--===============2150561599575728423==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2150561599575728423==--
+
