@@ -2,92 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6B981FBFE2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 22:20:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D74551FC057
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 22:56:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O2V13+sq2lpKdDBqgSJEBHREyqVlsNfv5DSjXAsE6EI=; b=jnfmIM0VK82AfN
-	ZKIfdvTkrjt3RMuVhKUE+Tv/2i2GIsxwVbdQIbHt4PTdMZ6yVFM+CTi2aOLynmfKj3xTmVGCpy0Lw
-	jm6/7xPLm7MuzAzk/u+y8XFaTYR76NxXGionPX0754Wr6XKWlWaYxEKyy76e18MR5LUtyHABTzWz7
-	HAk0SxZJ0bz3S/4b814j6x98mTM3XLPEMqNKQJEPjwDUUxor1Nkl3iLCpTI7Jk6U6jioszzJ7yGVt
-	G6IgJK/MqC63wWSJLG9+YBq6sb8U/yX/krq99OHh6tK/G1c0DPPRHxwf8gZ0EKTn2iGkiefVlgLHl
-	oR6ng2KLY/bqyPq/fljQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=s7QCHoDVOJjNS4q38vhHCwmBBeFKytpXRHdkwhzMb6o=; b=d8F
+	f0qimw3km/EWvJZJ4t4bm7vZwIaqD8fBOb1yRwAzTF62C5YdxaM5O1jC5wCqlSCqYBL6kuXv4+Omu
+	XlqDaosXQcM0JvZJLwHdXWcKI35OZdS4KLsQjs7EKu5d6u9U5GjgrtINSgqU2ajHDThlcHsqlIPvH
+	PvRR83gqReDo8bAYW6PsDbkpDJ6UB9klweINzWUOIHovjZrzs5uLXQKp8mbUyo7BljViF5zDK9y9e
+	8ox0KaKjjznyRYl4RjQrpjZIZKLq9F1KZxtqRCK7mMSD3nD8SqQ5JWDPZJd5kGGqnWmY2dsSiiRc0
+	Kx2Q1GxqsSvoxH1LvaS8Y1ByFp3H5qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlI4B-0005xC-Pr; Tue, 16 Jun 2020 20:20:19 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jlIdA-0002Pi-LR; Tue, 16 Jun 2020 20:56:28 +0000
+Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlI3t-0005Mt-0r
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 20:20:02 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c71so4069409wmd.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 13:19:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=3wFm9ppO8ULkxiCADJKRnXA2iDnjr8ZjowAIpexl/Hc=;
- b=N81wUKNPQIZUxYmgUDgnPT/wwOQ2Xk7LebNpYpXXzRQPKKBe9DdvyeRK31obFJjroO
- zS8w1RE2w04XzBodYo9FCnghtQ0ona725X6rYAfrpPePssH0Fkm4TR9TYbcjsc2A+AX1
- e2OB7Idnj7AwlP6OLaY/Je77kZmqr2ylq2TTvZwE0ETfXY0XoAgwd24WHg/2WB+ixAL0
- jxTt81dtKTKfmJwldzEpoOeca8EQQjwCQGFx1sY8D7JK+BIADYT2Zi0Q81hD8xH98ZF1
- pv6Gcg2qp/ZTIFu0bRidEGUZmB4OfAf1adxMZSVcM0PkJGdtBobDeocd26fA+iWz8FEQ
- /zWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=3wFm9ppO8ULkxiCADJKRnXA2iDnjr8ZjowAIpexl/Hc=;
- b=pWuiw9qBDpsbGmn7InbJ321nS5/OGYY+2RIJqMKyV1waSeviAyZQAIe8ndODcp6euv
- lg+kSCnByDj24x5sfSKBEdjZ4k8SLr6JxREV+vNIFqTMeInTwIcRZ5l47OJA2jWUcLKa
- +9R7jJIkl3UquuctGP5cb3fOaf/naZ3jSeS0AeM5GCSreddfAdv8zGTl2quzF5SThLEa
- TOEFrfTPcMftJApMkU7K5XFfVL85t67pQP6W3unIKr9hiUDzEQMEqyPdok2zjEfv/W8y
- 6yJAobw3dBkAkwsiUe7/tYOyRjnLsr8InjFqpcX8ERFRBnN1c2Opot8MWSVTzgIi59nI
- ndwg==
-X-Gm-Message-State: AOAM533880pbSCBO5OfAnZeAGsHjlogVmaiYq9a3jt+L1NXYLSW9CPsf
- ETa/aZA2xkvAuQ/VksXi5DH8KgFW
-X-Google-Smtp-Source: ABdhPJwTLjwBRYfFzDikwfA1l4lRZVBR11j6vEk91mXAzf1GLkWmxFGBWFgj3BG3+hwuJCDXmu9Hqg==
-X-Received: by 2002:a1c:22d7:: with SMTP id i206mr4862866wmi.186.1592338797117; 
- Tue, 16 Jun 2020 13:19:57 -0700 (PDT)
-Received: from localhost.localdomain (haganm.plus.com. [212.159.108.31])
- by smtp.gmail.com with ESMTPSA id i10sm29871318wrw.51.2020.06.16.13.19.55
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 16 Jun 2020 13:19:56 -0700 (PDT)
-Subject: Re: [PATCH 2/3] ARM: dts: NSP: Correct amac_base lengths, mailbox reg
- and add amac3
-To: Florian Fainelli <f.fainelli@gmail.com>
-References: <c19be985a3e7abc8ac05fc30678475aeadb73c50.1591719237.git.mnhagan88@gmail.com>
- <d638e006713d82d1a6af4bdbcfa516f425264bf6.1591719237.git.mnhagan88@gmail.com>
- <c08a06a8-de71-d1cd-541d-2e15a23f130a@gmail.com>
-From: Matthew Hagan <mnhagan88@gmail.com>
-Message-ID: <acbf9159-375c-5dcc-3353-e9d60496516e@gmail.com>
-Date: Tue, 16 Jun 2020 21:19:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
-MIME-Version: 1.0
-In-Reply-To: <c08a06a8-de71-d1cd-541d-2e15a23f130a@gmail.com>
-Content-Language: en-US
+ id 1jlIca-0002Ex-9s; Tue, 16 Jun 2020 20:55:54 +0000
+Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
+ [10.75.242.48])
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id E5B9C30D887;
+ Tue, 16 Jun 2020 13:55:46 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com E5B9C30D887
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
+ s=dkimrelay; t=1592340946;
+ bh=rfno4F7HiS8LiAdPYLi+a1WYnEQJIb94Ut0WyA5KWcI=;
+ h=From:To:Cc:Subject:Date:From;
+ b=PaTfaUqcmDwD6JrrdtOJDGj9AieSbSy5n5dCRm4ofxbYKITAcKCxA9ctasj8YUusH
+ TyjbXiyk+Aq2DTfX53E9ixj4JZKhzXlPbmZxcTqfxrcVqnwhdP8sElx8kNXEY071cq
+ J6KOs/AtEwzC3fMmHmYu+sU+qanIY7yhUFU0Q2Ms=
+Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
+ [10.28.16.211])
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 64A55140069;
+ Tue, 16 Jun 2020 13:55:43 -0700 (PDT)
+From: Jim Quinlan <james.quinlan@broadcom.com>
+To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
+Subject: [PATCH v5 00/12] PCI: brcmstb: enable PCIe for STB chips
+Date: Tue, 16 Jun 2020 16:55:07 -0400
+Message-Id: <20200616205533.3513-1-james.quinlan@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_132001_084163_896DCD64 
-X-CRM114-Status: GOOD (  21.28  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200616_135552_385166_6391C3E5 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.19.229.170 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [mnhagan88[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mnhagan88[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,58 +77,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, Russell King <linux@armlinux.org.uk>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Oliver Neukum <oneukum@suse.com>,
+ "open list:SUPERH" <linux-sh@vger.kernel.org>,
+ "open list:REMOTE PROCESSOR REMOTEPROC SUBSYSTEM"
+ <linux-remoteproc@vger.kernel.org>,
+ "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
+ "open list:LIBATA SUBSYSTEM Serial and Parallel ATA drivers"
+ <linux-ide@vger.kernel.org>, Julien Grall <julien.grall@arm.com>,
+ "H. Peter Anvin" <hpa@zytor.com>,
+ "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Corey Minyard <minyard@acm.org>, Saravana Kannan <saravanak@google.com>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ "open list:ACPI FOR ARM64 ACPI/arm64" <linux-acpi@vger.kernel.org>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ "open list:ALLWINNER A10 CSI DRIVER" <linux-media@vger.kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE"
+ <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Hans de Goede <hdegoede@redhat.com>,
+ Stefano Stabellini <sstabellini@kernel.org>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ Jens Axboe <axboe@kernel.dk>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "open list:USB SUBSYSTEM" <linux-usb@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>, Wolfram Sang <wsa@kernel.org>,
+ "open list:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
+ Robin Murphy <robin.murphy@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Patchset Summary:
+  Enhance a PCIe host controller driver.  Because of its unusual design
+  we are foced to change dev->dma_pfn_offset into a more general role
+  allowing multiple offsets.
 
+v5:
+  Commit "device core: Introduce multiple dma pfn offsets"
+  -- in of/address.c: "map_size = 0" => "*map_size = 0"
+  -- use kcalloc instead of kzalloc (AndyS)
+  -- use PHYS_ADDR_MAX instead of "~(phys_addr_t)0"
+  Commit "PCI: brcmstb: Set internal memory viewport sizes"
+  -- now gives error on missing dma-ranges property.
+  Commit "dt-bindings: PCI: Add bindings for more Brcmstb chips"
+  -- removed "Allof:" from brcm,scb-sizes definition (RobH)
+  All Commits:
+  -- indentation style, use max chars 100 (AndyS)
+  -- rebased to torvalds master
 
-On 14/06/2020 23:28, Florian Fainelli wrote:
-> 
-> 
-> On 6/9/2020 9:58 AM, Matthew Hagan wrote:
->> According to gmac/src/et/sys/et_linux.c, IORESOURCE_MEM end address for each
->> mac is IPROC_GMACx_REG_BASE+0xbff.
-> 
-> The datasheet shows an entire GMAC to end at 0x1000 from its base offset
-> which is likely what was used to construct this DTS, I do not believe
-> this is a functional change, and if we look at the register details, the
-> last register starts at 0xb44 so 0xc00 is giving a little bit of
-> headroom. In practice it does not change anything since you are still
-> going to need a full 4KB page frame to map the registers.
-> 
->>
->> The FA2 mailbox is specified at 0x18025000 but should actually be 0x18025c00,
->> length 0x400 according to socregs_nsp.h and board_bu.c. amac3 is at 25000.
-> 
-> Yes, FA2 definitively start 0x18025c00, and ends 0x400 later, so I did
-> split this patch in three patches:
-> 
-> - one that fixes the FA2 base address, which can be queued to stable
-> kernel branches
-> - one that changes the AMAC register size
-> - one that adds the AMAC3
+v4:
+  Commit "device core: Introduce multiple dma pfn offsets"
+  -- of_dma_get_range() does not take a dev param but instead
+     takes two "out" params: map and map_size.  We do this so
+     that the code that parses dma-ranges is separate from
+     the code that modifies 'dev'.   (Nicolas)
+  -- the separate case of having a single pfn offset has
+     been removed and is now processed by going through the
+     map array. (Nicolas)
+  -- move attach_uniform_dma_pfn_offset() from of/address.c to
+     dma/mapping.c so that it does not depend on CONFIG_OF. (Nicolas)
+  -- devm_kcalloc => devm_kzalloc (DanC)
+  -- add/fix assignment to dev->dma_pfn_offset_map for func
+     attach_uniform_dma_pfn_offset() (DanC, Nicolas)
+  -- s/struct dma_pfn_offset_region/struct bus_dma_region/ (Nicolas)
+  -- s/attach_uniform_dma_pfn_offset/dma_attach_uniform_pfn_offset/
+  -- s/attach_dma_pfn_offset_map/dma_attach_pfn_offset_map/
+  -- More use of PFN_{PHYS,DOWN,UP}. (AndyS)
+  Commit "of: Include a dev param in of_dma_get_range()"
+  -- this commit was sqaushed with "device core: Introduce ..."
 
-Since AMAC3 has been added with interrupt 150, should the mailbox
-interrupt not also be incremented to 151?
-> 
-> Such that the first patch can be queued for -stable fixes, whereas the
-> other two, not being functional changes are candidates for devicetree/next.
-> 
-> Result here:
-> 
-> https://github.com/Broadcom/stblinux/commits/devicetree/next
-> 
-> Thanks!
-> 
+v3:
+  Commit "device core: Introduce multiple dma pfn offsets"
+  Commit "arm: dma-mapping: Invoke dma offset func if needed"
+  -- The above two commits have been squashed.  More importantly,
+     the code has been modified so that the functionality for
+     multiple pfn offsets subsumes the use of dev->dma_pfn_offset.
+     In fact, dma_pfn_offset is removed and supplanted by
+     dma_pfn_offset_map, which is a pointer to an array.  The
+     more common case of a uniform offset is now handled as
+     a map with a single entry, while cases requiring multiple
+     pfn offsets use a map with multiple entries.  Code paths
+     that used to do this:
 
-Thanks,
-Matthew
+         dev->dma_pfn_offset = mydrivers_pfn_offset;
+
+     have been changed to do this:
+
+         attach_uniform_dma_pfn_offset(dev, pfn_offset);
+
+  Commit "dt-bindings: PCI: Add bindings for more Brcmstb chips"
+  -- Add if/then clause for required props: resets, reset-names (RobH)
+  -- Change compatible list from const to enum (RobH)
+  -- Change list of u32-tuples to u64 (RobH)
+
+  Commit "of: Include a dev param in of_dma_get_range()"
+  -- modify of/unittests.c to add NULL param in of_dma_get_range() call.
+
+  Commit "device core: Add ability to handle multiple dma offsets"
+  -- align comment in device.h (AndyS).
+  -- s/cpu_beg/cpu_start/ and s/dma_beg/dma_start/ in struct
+     dma_pfn_offset_region (AndyS).
+
+v2:
+Commit: "device core: Add ability to handle multiple dma offsets"
+  o Added helper func attach_dma_pfn_offset_map() in address.c (Chistoph)
+  o Helpers funcs added to __phys_to_dma() & __dma_to_phys() (Christoph)
+  o Added warning when multiple offsets are needed and !DMA_PFN_OFFSET_MAP
+  o dev->dma_pfn_map => dev->dma_pfn_offset_map
+  o s/frm/from/ for dma_pfn_offset_frm_{phys,dma}_addr() (Christoph)
+  o In device.h: s/const void */const struct dma_pfn_offset_region */
+  o removed 'unlikely' from unlikely(dev->dma_pfn_offset_map) since
+    guarded by CONFIG_DMA_PFN_OFFSET_MAP (Christoph)
+  o Since dev->dma_pfn_offset is copied in usb/core/{usb,message}.c, now
+    dev->dma_pfn_offset_map is copied as well.
+  o Merged two of the DMA commits into one (Christoph).
+
+Commit "arm: dma-mapping: Invoke dma offset func if needed":
+  o Use helper functions instead of #if CONFIG_DMA_PFN_OFFSET
+
+Other commits' changes:
+  o Removed need for carrying of_id var in priv (Nicolas)
+  o Commit message rewordings (Bjorn)
+  o Commit log messages filled to 75 chars (Bjorn)
+  o devm_reset_control_get_shared())
+    => devm_reset_control_get_optional_shared (Philipp)
+  o Add call to reset_control_assert() in PCIe remove routines (Philipp)
+
+v1:
+This patchset expands the usefulness of the Broadcom Settop Box PCIe
+controller by building upon the PCIe driver used currently by the
+Raspbery Pi.  Other forms of this patchset were submitted by me years
+ago and not accepted; the major sticking point was the code required
+for the DMA remapping needed for the PCIe driver to work [1].
+
+There have been many changes to the DMA and OF subsystems since that
+time, making a cleaner and less intrusive patchset possible.  This
+patchset implements a generalization of "dev->dma_pfn_offset", except
+that instead of a single scalar offset it provides for multiple
+offsets via a function which depends upon the "dma-ranges" property of
+the PCIe host controller.  This is required for proper functionality
+of the BrcmSTB PCIe controller and possibly some other devices.
+
+[1] https://lore.kernel.org/linux-arm-kernel/1516058925-46522-5-git-send-email-jim2101024@gmail.com/
+
+Jim Quinlan (12):
+  PCI: brcmstb: PCIE_BRCMSTB depends on ARCH_BRCMSTB
+  ata: ahci_brcm: Fix use of BCM7216 reset controller
+  dt-bindings: PCI: Add bindings for more Brcmstb chips
+  PCI: brcmstb: Add bcm7278 register info
+  PCI: brcmstb: Add suspend and resume pm_ops
+  PCI: brcmstb: Add bcm7278 PERST support
+  PCI: brcmstb: Add control of rescal reset
+  device core: Introduce multiple dma pfn offsets
+  PCI: brcmstb: Set internal memory viewport sizes
+  PCI: brcmstb: Accommodate MSI for older chips
+  PCI: brcmstb: Set bus max burst size by chip type
+  PCI: brcmstb: Add bcm7211, bcm7216, bcm7445, bcm7278 to match list
+
+ .../bindings/pci/brcm,stb-pcie.yaml           |  56 ++-
+ arch/arm/include/asm/dma-mapping.h            |   9 +-
+ arch/arm/mach-keystone/keystone.c             |   8 +-
+ arch/sh/drivers/pci/pcie-sh7786.c             |   3 +-
+ arch/sh/kernel/dma-coherent.c                 |  14 +-
+ arch/x86/pci/sta2x11-fixup.c                  |   7 +-
+ drivers/acpi/arm64/iort.c                     |   4 +-
+ drivers/ata/ahci_brcm.c                       |  11 +-
+ drivers/gpu/drm/sun4i/sun4i_backend.c         |   5 +-
+ drivers/iommu/io-pgtable-arm.c                |   2 +-
+ .../platform/sunxi/sun4i-csi/sun4i_csi.c      |   5 +-
+ .../platform/sunxi/sun6i-csi/sun6i_csi.c      |   4 +-
+ drivers/of/address.c                          |  71 ++-
+ drivers/of/device.c                           |  19 +-
+ drivers/of/of_private.h                       |  11 +-
+ drivers/of/unittest.c                         |   8 +-
+ drivers/pci/controller/Kconfig                |   3 +-
+ drivers/pci/controller/pcie-brcmstb.c         | 403 +++++++++++++++---
+ drivers/remoteproc/remoteproc_core.c          |   2 +-
+ .../staging/media/sunxi/cedrus/cedrus_hw.c    |   7 +-
+ drivers/usb/core/message.c                    |   4 +-
+ drivers/usb/core/usb.c                        |   2 +-
+ include/linux/device.h                        |   4 +-
+ include/linux/dma-direct.h                    |  14 +-
+ include/linux/dma-mapping.h                   |  38 ++
+ kernel/dma/coherent.c                         |  11 +-
+ kernel/dma/mapping.c                          |  39 ++
+ 27 files changed, 632 insertions(+), 132 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
