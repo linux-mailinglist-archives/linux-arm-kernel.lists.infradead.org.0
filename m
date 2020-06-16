@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF0041FA7D8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 06:38:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C84D1FA7D9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 06:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ay4fy8SDzeZzLsTrFWfXSoEeCX/EfdiOTBv5GYoWgJA=; b=QJX0Lt+gyH9lApDZ6MeoqAkl5I
-	6fcqxZErHn1Q2HUMa4OwVz90NQWSY00edBntjJiCI2oNaNw9cgp8/7mzdQcdIXNkJnQrItVOD6z8A
-	izhYh24qfYX5/nGYWHDhKRY5uOsyR9AqCeljyWJREiAWX990xNlVQ4EPWaxexrYVHtwA2TXWsSqln
-	Q8n645lIyBh3IaTxZO7SnFGk7OJT57yMZa/obMMhgkzcLbT2K/BCJ3z/4RjzdvbF5JCCUXFhCndPq
-	TTj+4tLdG8rcemnEOoJDFhhRw3W+GRpCeMbPlqkBq6TxIXJw3B9A4S9JQM7D6oDfA816ZwNFNW8si
-	iiIKMMsg==;
+	bh=6Fx1ibt7ap+9uIX/9/1li1myyD6XU7NJOXax02M5IcA=; b=CfVwYoufNg3HACnOeF9cCS1kv/
+	3xJ0TxyRIG7Ks6x7msgYeXcWWjZSdmwpDS6Tp2bFZuvoCZBohffouirSlwd9dcL3GYFkIZG9S+R5F
+	bSnYW3/xdWba6+8Ke72lJNEDJMD9mtbKGfpuy2hZkm1M4xmzuzFEBTlHuCeWFLgh54/nBXJyxd+HX
+	pgwPYtrvC2xNmM7w40NXNT/DHsfTLBqn9BpPdePkYNtjwmih8yE73EtGtVacH6XdHR55sL4LwpfZZ
+	inCVMwm/ArDLSUVpWa4iLP7kHkJt2aZFq8mxNbc3zNpr+UNkdgTHMPxfY8RjxoS0lFA4AQpW2iL3U
+	B+RdrO9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl3ML-00061H-1D; Tue, 16 Jun 2020 04:38:05 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jl3Mc-0006Fn-Ej; Tue, 16 Jun 2020 04:38:22 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl3Lh-0005Wh-1t
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 04:37:28 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C23721A05A1;
- Tue, 16 Jun 2020 06:37:23 +0200 (CEST)
+ id 1jl3Li-0005X1-38
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 04:37:29 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E0D9D2003FE;
+ Tue, 16 Jun 2020 06:37:24 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B21201A0597;
- Tue, 16 Jun 2020 06:37:18 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C5C2C200408;
+ Tue, 16 Jun 2020 06:37:19 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 50E5D402E8;
- Tue, 16 Jun 2020 12:37:12 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 76FB7402F3;
+ Tue, 16 Jun 2020 12:37:13 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: broonie@kernel.org, robh+dt@kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  marex@denx.de, linux-spi@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V3 2/3] dt-bindings: spi: Convert imx cspi to json-schema
-Date: Tue, 16 Jun 2020 12:26:14 +0800
-Message-Id: <1592281575-32708-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 3/3] dt-bindings: spi: Convert imx lpspi to json-schema
+Date: Tue, 16 Jun 2020 12:26:15 +0800
+Message-Id: <1592281575-32708-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1592281575-32708-1-git-send-email-Anson.Huang@nxp.com>
 References: <1592281575-32708-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_213725_363050_E209064A 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20200615_213726_413854_5243C81A 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,127 +77,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX CSPI binding to DT schema format using json-schema,
-update compatible, remove obsolete properties "fsl,spi-num-chipselects"
-and update the example based on latest DT file.
+Convert the i.MX LPSPI binding to DT schema format using json-schema
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 Changes since V2:
 	- remove redundant "maxItems" in "clocks" and "clock-names".
 ---
- .../devicetree/bindings/spi/fsl-imx-cspi.txt       | 56 -------------
- .../devicetree/bindings/spi/fsl-imx-cspi.yaml      | 97 ++++++++++++++++++++++
- 2 files changed, 97 insertions(+), 56 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
- create mode 100644 Documentation/devicetree/bindings/spi/fsl-imx-cspi.yaml
+ .../devicetree/bindings/spi/spi-fsl-lpspi.txt      | 29 -----------
+ .../devicetree/bindings/spi/spi-fsl-lpspi.yaml     | 60 ++++++++++++++++++++++
+ 2 files changed, 60 insertions(+), 29 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt
+ create mode 100644 Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml
 
-diff --git a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
+diff --git a/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt b/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt
 deleted file mode 100644
-index 33bc58f..0000000
---- a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
+index e71b81a..0000000
+--- a/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt
 +++ /dev/null
-@@ -1,56 +0,0 @@
--* Freescale (Enhanced) Configurable Serial Peripheral Interface
--  (CSPI/eCSPI) for i.MX
+@@ -1,29 +0,0 @@
+-* Freescale Low Power SPI (LPSPI) for i.MX
 -
 -Required properties:
 -- compatible :
--  - "fsl,imx1-cspi" for SPI compatible with the one integrated on i.MX1
--  - "fsl,imx21-cspi" for SPI compatible with the one integrated on i.MX21
--  - "fsl,imx27-cspi" for SPI compatible with the one integrated on i.MX27
--  - "fsl,imx31-cspi" for SPI compatible with the one integrated on i.MX31
--  - "fsl,imx35-cspi" for SPI compatible with the one integrated on i.MX35
--  - "fsl,imx51-ecspi" for SPI compatible with the one integrated on i.MX51
--  - "fsl,imx53-ecspi" for SPI compatible with the one integrated on i.MX53 and later Soc
--  - "fsl,imx8mq-ecspi" for SPI compatible with the one integrated on i.MX8MQ
--  - "fsl,imx8mm-ecspi" for SPI compatible with the one integrated on i.MX8MM
--  - "fsl,imx8mn-ecspi" for SPI compatible with the one integrated on i.MX8MN
--  - "fsl,imx8mp-ecspi" for SPI compatible with the one integrated on i.MX8MP
--- reg : Offset and length of the register set for the device
--- interrupts : Should contain CSPI/eCSPI interrupt
--- clocks : Clock specifiers for both ipg and per clocks.
--- clock-names : Clock names should include both "ipg" and "per"
--See the clock consumer binding,
--	Documentation/devicetree/bindings/clock/clock-bindings.txt
+-  - "fsl,imx7ulp-spi" for LPSPI compatible with the one integrated on i.MX7ULP soc
+-  - "fsl,imx8qxp-spi" for LPSPI compatible with the one integrated on i.MX8QXP soc
+-- reg : address and length of the lpspi master registers
+-- interrupt-parent : core interrupt controller
+-- interrupts : lpspi interrupt
+-- clocks : lpspi clock specifier. Its number and order need to correspond to the
+-	   value in clock-names.
+-- clock-names : Corresponding to per clock and ipg clock in "clocks"
+-		respectively. In i.MX7ULP, it only has per clk, so use CLK_DUMMY
+-		to fill the "ipg" blank.
+-- spi-slave : spi slave mode support. In slave mode, add this attribute without
+-	      value. In master mode, remove it.
 -
--Recommended properties:
--- cs-gpios : GPIOs to use as chip selects, see spi-bus.txt.  While the native chip
--select lines can be used, they appear to always generate a pulse between each
--word of a transfer.  Most use cases will require GPIO based chip selects to
--generate a valid transaction.
+-Examples:
 -
--Optional properties:
--- num-cs :  Number of total chip selects, see spi-bus.txt.
--- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
--Documentation/devicetree/bindings/dma/dma.txt.
--- dma-names: DMA request names, if present, should include "tx" and "rx".
--- fsl,spi-rdy-drctl: Integer, representing the value of DRCTL, the register
--controlling the SPI_READY handling. Note that to enable the DRCTL consideration,
--the SPI_READY mode-flag needs to be set too.
--Valid values are: 0 (disabled), 1 (edge-triggered burst) and 2 (level-triggered burst).
--
--Obsolete properties:
--- fsl,spi-num-chipselects : Contains the number of the chipselect
--
--Example:
--
--ecspi@70010000 {
--	#address-cells = <1>;
--	#size-cells = <0>;
--	compatible = "fsl,imx51-ecspi";
--	reg = <0x70010000 0x4000>;
--	interrupts = <36>;
--	cs-gpios = <&gpio3 24 0>, /* GPIO3_24 */
--		   <&gpio3 25 0>; /* GPIO3_25 */
--	dmas = <&sdma 3 7 1>, <&sdma 4 7 2>;
--	dma-names = "rx", "tx";
--	fsl,spi-rdy-drctl = <1>;
+-lpspi2: lpspi@40290000 {
+-	compatible = "fsl,imx7ulp-spi";
+-	reg = <0x40290000 0x10000>;
+-	interrupt-parent = <&intc>;
+-	interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
+-	clocks = <&clks IMX7ULP_CLK_LPSPI2>,
+-		 <&clks IMX7ULP_CLK_DUMMY>;
+-	clock-names = "per", "ipg";
+-	spi-slave;
 -};
-diff --git a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.yaml b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.yaml
+diff --git a/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml b/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml
 new file mode 100644
-index 0000000..6e44c9c
+index 0000000..143b94a
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.yaml
-@@ -0,0 +1,97 @@
++++ b/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml
+@@ -0,0 +1,60 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/spi/fsl-imx-cspi.yaml#
++$id: http://devicetree.org/schemas/spi/spi-fsl-lpspi.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Freescale (Enhanced) Configurable Serial Peripheral Interface (CSPI/eCSPI) for i.MX
++title: Freescale Low Power SPI (LPSPI) for i.MX
 +
 +maintainers:
-+  - Shawn Guo <shawn.guo@linaro.org>
++  - Anson Huang <Anson.Huang@nxp.com>
 +
 +allOf:
 +  - $ref: "/schemas/spi/spi-controller.yaml#"
 +
 +properties:
 +  compatible:
-+    oneOf:
-+      - const: fsl,imx1-cspi
-+      - const: fsl,imx21-cspi
-+      - const: fsl,imx27-cspi
-+      - const: fsl,imx31-cspi
-+      - const: fsl,imx35-cspi
-+      - const: fsl,imx51-ecspi
-+      - const: fsl,imx53-ecspi
-+      - items:
-+        - enum:
-+          - fsl,imx50-ecspi
-+          - fsl,imx6q-ecspi
-+          - fsl,imx6sx-ecspi
-+          - fsl,imx6sl-ecspi
-+          - fsl,imx6sll-ecspi
-+          - fsl,imx6ul-ecspi
-+          - fsl,imx7d-ecspi
-+          - fsl,imx8mq-ecspi
-+          - fsl,imx8mm-ecspi
-+          - fsl,imx8mn-ecspi
-+          - fsl,imx8mp-ecspi
-+        - const: fsl,imx51-ecspi
++    enum:
++      - fsl,imx7ulp-spi
++      - fsl,imx8qxp-spi
 +
 +  reg:
 +    maxItems: 1
@@ -207,32 +159,13 @@ index 0000000..6e44c9c
 +
 +  clocks:
 +    items:
-+      - description: SoC SPI ipg clock
 +      - description: SoC SPI per clock
++      - description: SoC SPI ipg clock
 +
 +  clock-names:
 +    items:
-+      - const: ipg
 +      - const: per
-+
-+  dmas:
-+    items:
-+      - description: DMA controller phandle and request line for RX
-+      - description: DMA controller phandle and request line for TX
-+
-+  dma-names:
-+    items:
-+      - const: rx
-+      - const: tx
-+
-+  fsl,spi-rdy-drctl:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description: |
-+      Integer, representing the value of DRCTL, the register controlling
-+      the SPI_READY handling. Note that to enable the DRCTL consideration,
-+      the SPI_READY mode-flag needs to be set too.
-+      Valid values are: 0 (disabled), 1 (edge-triggered burst) and 2 (level-triggered burst).
-+    enum: [0, 1, 2]
++      - const: ipg
 +
 +required:
 +  - compatible
@@ -245,17 +178,18 @@ index 0000000..6e44c9c
 +
 +examples:
 +  - |
-+    #include <dt-bindings/clock/imx5-clock.h>
++    #include <dt-bindings/clock/imx7ulp-clock.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
 +
-+    spi@70010000 {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        compatible = "fsl,imx51-ecspi";
-+        reg = <0x70010000 0x4000>;
-+        interrupts = <36>;
-+        clocks = <&clks IMX5_CLK_ECSPI1_IPG_GATE>,
-+                 <&clks IMX5_CLK_ECSPI1_PER_GATE>;
-+        clock-names = "ipg", "per";
++    spi@40290000 {
++        compatible = "fsl,imx7ulp-spi";
++        reg = <0x40290000 0x10000>;
++        interrupt-parent = <&intc>;
++        interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&clks IMX7ULP_CLK_LPSPI2>,
++                 <&clks IMX7ULP_CLK_DUMMY>;
++        clock-names = "per", "ipg";
++        spi-slave;
 +    };
 -- 
 2.7.4
