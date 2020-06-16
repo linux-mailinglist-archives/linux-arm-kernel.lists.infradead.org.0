@@ -2,59 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 069501FB431
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:24:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADBC81FB419
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:20:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kchVc81ZS3slgzbb2blCqJgZjgmXSUVMBMv20J52/hY=; b=FnTdw+bSAjJDbN
-	RUSQSPH7K+Tut62juuPgU98fvwKAc/JiZyMdpCtLWy/uiZomCCiRCMOWO2Ic7V/MUzFfJ0jzvYA9w
-	A4DyWNEKXpnl9rsGHk55LtOlo5dREkxJBp/ALQ8cqSSjxVsVjgxyM9iN0bhxFNYZCFZOCjQXgV5sr
-	hmLDU9PFoGXLfTBH8g+I9esjt8btBRcfQLoaWFvh1eDhs5cfLOFfwwF55AiafqBs4+w9YMmXyva2A
-	tGEDUxZWy/IaXE+zODkgPv12T9zRxbv7324zRo9ZyrT6LGya6Fs6M+xcBgJp36qUPOaukoJPj7tmz
-	atKoBXAbOr+ZqGm4JMUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=spSxUhSF+hq1kKmtuUeZlTex63QaCRZkZzrmcwhQY5I=; b=AhBadu4ZCSluXnc1M8juKOPW2k
+	kKVI1wOY6wMMBFWraymuTSC9DcL3mmSpLm+z+xIzstAeXDiaFEnITTJneVKIq66I9clWwGSxQdDnj
+	iyFUJ+xygN+FCtO8P96+Th10b/z8PedNnQ3mdog+kZ+Y374Vyz5HyoLaauBVYHpkccGXK/l22UsVa
+	kyABj2GsU0/24whhWgqVsZS0O9GaZOLIGlyZEL5qv9Tbij7FAV1ZQ/3U0oATDkmcuFlERVnxz9kOD
+	Lnoj6/ikGMO48Cal6g1TkagFcxRsFdxyC6gitOV4Gd+jhWysOQemBCHbTt7i41gDYvFve7IvgVt+u
+	+3/6Mgww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCVw-0005Ga-H6; Tue, 16 Jun 2020 14:24:36 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jlCSK-0002Id-4G; Tue, 16 Jun 2020 14:20:52 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlCCF-00053j-9b
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:04:26 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 99BA45AC549A2D2B9715;
- Tue, 16 Jun 2020 22:04:02 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.58) by
- DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 16 Jun 2020 22:03:52 +0800
-From: John Garry <john.garry@huawei.com>
-To: <will@kernel.org>, <robin.murphy@arm.com>
-Subject: [PATCH RFC v2 4/4] iommu/arm-smmu-v3: Remove cmpxchg() in
- arm_smmu_cmdq_issue_cmdlist()
-Date: Tue, 16 Jun 2020 21:59:53 +0800
-Message-ID: <1592315993-164290-5-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-In-Reply-To: <1592315993-164290-1-git-send-email-john.garry@huawei.com>
-References: <1592315993-164290-1-git-send-email-john.garry@huawei.com>
+ id 1jlC8P-0008HG-Bl
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:00:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1592316017; x=1623852017;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=8NYRhDKiQXbaWf1MouEhiZqR8tXnHRkU5Dc/wRCaVnU=;
+ b=oKCh+i6YSpdctMTr+EsasHRpIJE+hYf2VPu6Rrsdksb6X7PwQOg0cO1N
+ Le/xAGUuUMRhDeuHXLNdZElYePcqyKPBxbDuuFCiSR/ucoAMUhhK0j1VM
+ Tq3aRQZPR6DAu3mojsHUwCkrASxSKC+pYwxhImeUrsEzPZWvqTXYy57ke
+ 2F37OkZsBZz66NM40PvBzqXBfPSd5304LFW/Srzbcmw+qzJ9tfvVNQx0i
+ bz2DXwJHT9RBvZCTvYSB7xCXJkXQ1ZfAXlpFKznRvmxof+55rBb3sfpaY
+ SJtfoNZTczP8Z0HQJeOV+DomK8u3/mdIGr+uLyxs7UUTmyZdnKzLUC5x2 g==;
+IronPort-SDR: 12OtTTwF80YV7Gm/h2sKCo/bw5znrs51mUtZzdh78y6sSdQXEIqLbIcHToeeOtlYSWfjAOX0YB
+ i39/T4+Rq35O8MpkDdmuT5Y3tmVM/PEo0q+zpxrO1Lm70nb4zWi2RH6ldhgnhpif1nYQZPuWXd
+ I4ip8Z6+ZinIJuqhn47bloFbt/AUI5qdTwI5jc8xOPzcz3X6JAzVMk62fUMvR6xEAw3vGmeOmQ
+ 1pw5eWoWU8ixXJzRd+yy8amRmRhDYO/7lr8LwPdb0JSejh2HIuGpKU+0MLVK/1neH3Tb8908/l
+ Fw4=
+X-IronPort-AV: E=Sophos;i="5.73,518,1583218800"; d="scan'208";a="83808659"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 16 Jun 2020 07:00:14 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1979.3; Tue, 16 Jun 2020 07:00:09 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1979.3
+ via Frontend Transport; Tue, 16 Jun 2020 07:00:12 -0700
+References: <20200609102008.10530-1-lars.povlsen@microchip.com>
+ <20200609102008.10530-3-lars.povlsen@microchip.com>
+ <CAPDyKFoJP5mY5YU_t=pds5MA=TGs9ggw5EbkbDesxD2dWK1KUQ@mail.gmail.com>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v2 2/3] sdhci: sparx5: Add Sparx5 SoC eMMC driver
+In-Reply-To: <CAPDyKFoJP5mY5YU_t=pds5MA=TGs9ggw5EbkbDesxD2dWK1KUQ@mail.gmail.com>
+Date: Tue, 16 Jun 2020 16:00:10 +0200
+Message-ID: <87imfrw1p1.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-X-Originating-IP: [10.69.192.58]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_070415_855883_8F39E8BA 
-X-CRM114-Status: GOOD (  24.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200616_070017_467617_1E9EB6BD 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
+ [68.232.147.91 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,249 +97,379 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: trivial@kernel.org, maz@kernel.org, joro@8bytes.org,
- John Garry <john.garry@huawei.com>, linuxarm@huawei.com,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: DTML <devicetree@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It has been shown that the cmpxchg() for finding space in the cmdq can
-be a real bottleneck:
-- for more CPUs contending the cmdq, the cmpxchg() will fail more often
-- since the software-maintained cons pointer is updated on the same 64b
-  memory region, the chance of cmpxchg() failure increases again
 
-The cmpxchg() is removed as part of 2 related changes:
+Ulf Hansson writes:
 
-- Update prod and cmdq owner in a single atomic add operation. For this, we
-  count the prod and owner in separate regions in prod memory.
+> On Tue, 9 Jun 2020 at 12:20, Lars Povlsen <lars.povlsen@microchip.com> wrote:
+>>
+>> This adds the eMMC driver for the Sparx5 SoC. It is based upon the
+>> designware IP, but requires some extra initialization and quirks.
+>
+> I need a signed-off-by tag to apply this, and I would also appreciate
+> an ack from Adrian.
+>
+> Kind regards
+> Uffe
 
-  As with simple binary counting, once the prod+wrap fields overflow, they
-  will zero. They should never overflow into "owner" region, and we zero
-  the non-owner, prod region for each owner. This maintains the prod
-  pointer.
+Hi Uffe!
 
-  As for the "owner", we now count this value, instead of setting a flag.
-  Similar to before, once the owner has finished gathering, it will clear
-  a mask. As such, a CPU declares itself as the "owner" when it reads zero
-  for this region. This zeroing will also clear possible overflow in
-  wrap+prod region, above.
+Argh, that must have dropped off during a rebase.
 
-  The owner is now responsible for cmdq locking to avoid possible deadlock.
-  The owner will lock the cmdq for all non-owers it has gathered when they
-  have space in the queue and have written their entries.
+Accidentally, I had just queued up a new series with some minor changed,
+I'll sent that off right away. Should be good to go. I have checked the
+signed-off-by is present :-)
 
-- Check for space in the cmdq after the prod pointer has been assigned.
+---Lars
 
-  We don't bother checking for space in the cmdq before assigning the prod
-  pointer, as this would be racy.
 
-  So since the prod pointer is updated unconditionally, it would be common
-  for no space to be available in the cmdq when prod is assigned - that
-  is, according the software-maintained prod and cons pointer. So now
-  it must be ensured that the entries are not yet written and not until
-  there is space.
+>
+>
+>
+>> ---
+>>  drivers/mmc/host/Kconfig           |  13 ++
+>>  drivers/mmc/host/Makefile          |   1 +
+>>  drivers/mmc/host/sdhci-of-sparx5.c | 274 +++++++++++++++++++++++++++++
+>>  3 files changed, 288 insertions(+)
+>>  create mode 100644 drivers/mmc/host/sdhci-of-sparx5.c
+>>
+>> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+>> index eb85237bf2d63..32dc3ced8529d 100644
+>> --- a/drivers/mmc/host/Kconfig
+>> +++ b/drivers/mmc/host/Kconfig
+>> @@ -213,6 +213,19 @@ config MMC_SDHCI_OF_DWCMSHC
+>>           If you have a controller with this interface, say Y or M here.
+>>           If unsure, say N.
+>>
+>> +config MMC_SDHCI_OF_SPARX5
+>> +       tristate "SDHCI OF support for the MCHP Sparx5 SoC"
+>> +       depends on MMC_SDHCI_PLTFM
+>> +       depends on ARCH_SPARX5
+>> +       select MMC_SDHCI_IO_ACCESSORS
+>> +       help
+>> +         This selects the Secure Digital Host Controller Interface (SDHCI)
+>> +         found in the MCHP Sparx5 SoC.
+>> +
+>> +         If you have a Sparx5 SoC with this interface, say Y or M here.
+>> +
+>> +         If unsure, say N.
+>> +
+>>  config MMC_SDHCI_CADENCE
+>>         tristate "SDHCI support for the Cadence SD/SDIO/eMMC controller"
+>>         depends on MMC_SDHCI_PLTFM
+>> diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
+>> index 4d5bcb0144a0a..4a57c4bf18a2e 100644
+>> --- a/drivers/mmc/host/Makefile
+>> +++ b/drivers/mmc/host/Makefile
+>> @@ -92,6 +92,7 @@ obj-$(CONFIG_MMC_SDHCI_OF_ARASAN)     += sdhci-of-arasan.o
+>>  obj-$(CONFIG_MMC_SDHCI_OF_ASPEED)      += sdhci-of-aspeed.o
+>>  obj-$(CONFIG_MMC_SDHCI_OF_AT91)                += sdhci-of-at91.o
+>>  obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)       += sdhci-of-esdhc.o
+>> +obj-$(CONFIG_MMC_SDHCI_OF_SPARX5)      += sdhci-of-sparx5.o
+>>  obj-$(CONFIG_MMC_SDHCI_OF_HLWD)                += sdhci-of-hlwd.o
+>>  obj-$(CONFIG_MMC_SDHCI_OF_DWCMSHC)     += sdhci-of-dwcmshc.o
+>>  obj-$(CONFIG_MMC_SDHCI_BCM_KONA)       += sdhci-bcm-kona.o
+>> diff --git a/drivers/mmc/host/sdhci-of-sparx5.c b/drivers/mmc/host/sdhci-of-sparx5.c
+>> new file mode 100644
+>> index 0000000000000..1ec40bb27e06d
+>> --- /dev/null
+>> +++ b/drivers/mmc/host/sdhci-of-sparx5.c
+>> @@ -0,1 +1,274 @@
+>> +// SPDX-License-Identifier: GPL-2.0-or-later
+>> +/*
+>> + * drivers/mmc/host/sdhci-of-sparx5.c
+>> + *
+>> + * MCHP Sparx5 SoC Secure Digital Host Controller Interface.
+>> + *
+>> + * Copyright (c) 2019 Microchip Inc.
+>> + *
+>> + * Author: Lars Povlsen <lars.povlsen@microchip.com>
+>> + */
+>> +
+>> +#include <linux/sizes.h>
+>> +#include <linux/delay.h>
+>> +#include <linux/module.h>
+>> +#include <linux/regmap.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/mfd/syscon.h>
+>> +#include <linux/dma-mapping.h>
+>> +
+>> +#include "sdhci-pltfm.h"
+>> +
+>> +#define CPU_REGS_GENERAL_CTRL  (0x22 * 4)
+>> +#define  MSHC_DLY_CC_MASK      GENMASK(16, 13)
+>> +#define  MSHC_DLY_CC_SHIFT     13
+>> +#define  MSHC_DLY_CC_MAX       15
+>> +
+>> +#define CPU_REGS_PROC_CTRL     (0x2C * 4)
+>> +#define  ACP_CACHE_FORCE_ENA   BIT(4)
+>> +#define  ACP_AWCACHE           BIT(3)
+>> +#define  ACP_ARCACHE           BIT(2)
+>> +#define  ACP_CACHE_MASK                (ACP_CACHE_FORCE_ENA|ACP_AWCACHE|ACP_ARCACHE)
+>> +
+>> +#define MSHC2_VERSION                  0x500   /* Off 0x140, reg 0x0 */
+>> +#define MSHC2_TYPE                     0x504   /* Off 0x140, reg 0x1 */
+>> +#define MSHC2_EMMC_CTRL                        0x52c   /* Off 0x140, reg 0xB */
+>> +#define  MSHC2_EMMC_CTRL_EMMC_RST_N    BIT(2)
+>> +#define  MSHC2_EMMC_CTRL_IS_EMMC       BIT(0)
+>> +
+>> +struct sdhci_sparx5_data {
+>> +       struct sdhci_host *host;
+>> +       struct regmap *cpu_ctrl;
+>> +       int delay_clock;
+>> +};
+>> +
+>> +#define BOUNDARY_OK(addr, len) \
+>> +       ((addr | (SZ_128M - 1)) == ((addr + len - 1) | (SZ_128M - 1)))
+>> +
+>> +/*
+>> + * If DMA addr spans 128MB boundary, we split the DMA transfer into two
+>> + * so that each DMA transfer doesn't exceed the boundary.
+>> + */
+>> +static void sdhci_sparx5_adma_write_desc(struct sdhci_host *host, void **desc,
+>> +                                         dma_addr_t addr, int len,
+>> +                                         unsigned int cmd)
+>> +{
+>> +       int tmplen, offset;
+>> +
+>> +       pr_debug("%s: write_desc: cmd %02x: len %d, offset 0x%0llx\n",
+>> +                mmc_hostname(host->mmc), cmd, len, addr);
+>> +
+>> +       if (likely(!len || BOUNDARY_OK(addr, len))) {
+>> +               sdhci_adma_write_desc(host, desc, addr, len, cmd);
+>> +               return;
+>> +       }
+>> +
+>> +       pr_debug("%s: write_desc: splitting dma len %d, offset 0x%0llx\n",
+>> +                mmc_hostname(host->mmc), len, addr);
+>> +
+>> +       offset = addr & (SZ_128M - 1);
+>> +       tmplen = SZ_128M - offset;
+>> +       sdhci_adma_write_desc(host, desc, addr, tmplen, cmd);
+>> +
+>> +       addr += tmplen;
+>> +       len -= tmplen;
+>> +       sdhci_adma_write_desc(host, desc, addr, len, cmd);
+>> +}
+>> +
+>> +static void sparx5_set_cacheable(struct sdhci_host *host, u32 value)
+>> +{
+>> +       struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+>> +       struct sdhci_sparx5_data *sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
+>> +
+>> +       pr_debug("%s: Set Cacheable = 0x%x\n", mmc_hostname(host->mmc), value);
+>> +
+>> +       /* Update ACP caching attributes in HW */
+>> +       regmap_update_bits(sdhci_sparx5->cpu_ctrl,
+>> +                          CPU_REGS_PROC_CTRL, ACP_CACHE_MASK, value);
+>> +}
+>> +
+>> +static void sparx5_set_delay(struct sdhci_host *host, u8 value)
+>> +{
+>> +       struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+>> +       struct sdhci_sparx5_data *sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
+>> +
+>> +       pr_debug("%s: Set DLY_CC = %u\n", mmc_hostname(host->mmc), value);
+>> +
+>> +       /* Update DLY_CC in HW */
+>> +       regmap_update_bits(sdhci_sparx5->cpu_ctrl,
+>> +                          CPU_REGS_GENERAL_CTRL,
+>> +                          MSHC_DLY_CC_MASK,
+>> +                          (value << MSHC_DLY_CC_SHIFT));
+>> +}
+>> +
+>> +static void sdhci_sparx5_set_emmc(struct sdhci_host *host)
+>> +{
+>> +       if (!mmc_card_is_removable(host->mmc)) {
+>> +               u8 value;
+>> +
+>> +               value = sdhci_readb(host, MSHC2_EMMC_CTRL);
+>> +               if (!(value & MSHC2_EMMC_CTRL_IS_EMMC)) {
+>> +                       value |= MSHC2_EMMC_CTRL_IS_EMMC;
+>> +                       pr_debug("%s: Set EMMC_CTRL: 0x%08x\n",
+>> +                                mmc_hostname(host->mmc), value);
+>> +                       sdhci_writeb(host, value, MSHC2_EMMC_CTRL);
+>> +               }
+>> +       }
+>> +}
+>> +
+>> +static void sdhci_sparx5_reset_emmc(struct sdhci_host *host)
+>> +{
+>> +       u8 value;
+>> +
+>> +       pr_debug("%s: Toggle EMMC_CTRL.EMMC_RST_N\n", mmc_hostname(host->mmc));
+>> +       value = sdhci_readb(host, MSHC2_EMMC_CTRL) &
+>> +               ~MSHC2_EMMC_CTRL_EMMC_RST_N;
+>> +       sdhci_writeb(host, value, MSHC2_EMMC_CTRL);
+>> +       /* For eMMC, minimum is 1us but give it 10us for good measure */
+>> +       usleep_range(10, 20);
+>> +       sdhci_writeb(host, value | MSHC2_EMMC_CTRL_EMMC_RST_N,
+>> +                    MSHC2_EMMC_CTRL);
+>> +       /* For eMMC, minimum is 200us but give it 300us for good measure */
+>> +       usleep_range(300, 400);
+>> +}
+>> +
+>> +static void sdhci_sparx5_reset(struct sdhci_host *host, u8 mask)
+>> +{
+>> +       pr_debug("%s: *** RESET: mask %d\n", mmc_hostname(host->mmc), mask);
+>> +
+>> +       sdhci_reset(host, mask);
+>> +
+>> +       /* Be sure CARD_IS_EMMC stays set */
+>> +       sdhci_sparx5_set_emmc(host);
+>> +}
+>> +
+>> +static const struct sdhci_ops sdhci_sparx5_ops = {
+>> +       .set_clock              = sdhci_set_clock,
+>> +       .set_bus_width          = sdhci_set_bus_width,
+>> +       .set_uhs_signaling      = sdhci_set_uhs_signaling,
+>> +       .get_max_clock          = sdhci_pltfm_clk_get_max_clock,
+>> +       .reset                  = sdhci_sparx5_reset,
+>> +       .adma_write_desc        = sdhci_sparx5_adma_write_desc,
+>> +};
+>> +
+>> +static const struct sdhci_pltfm_data sdhci_sparx5_pdata = {
+>> +       .quirks  = 0,
+>> +       .quirks2 = SDHCI_QUIRK2_HOST_NO_CMD23 | /* Controller issue */
+>> +                  SDHCI_QUIRK2_NO_1_8_V, /* No sdr104, ddr50, etc */
+>> +       .ops = &sdhci_sparx5_ops,
+>> +};
+>> +
+>> +int sdhci_sparx5_probe(struct platform_device *pdev)
+>> +{
+>> +       int ret;
+>> +       const char *syscon = "microchip,sparx5-cpu-syscon";
+>> +       struct sdhci_host *host;
+>> +       struct sdhci_pltfm_host *pltfm_host;
+>> +       struct sdhci_sparx5_data *sdhci_sparx5;
+>> +       struct device_node *np = pdev->dev.of_node;
+>> +       u32 value;
+>> +       u32 extra;
+>> +
+>> +       host = sdhci_pltfm_init(pdev, &sdhci_sparx5_pdata,
+>> +                               sizeof(*sdhci_sparx5));
+>> +
+>> +       if (IS_ERR(host))
+>> +               return PTR_ERR(host);
+>> +
+>> +       /*
+>> +        * extra adma table cnt for cross 128M boundary handling.
+>> +        */
+>> +       extra = DIV_ROUND_UP_ULL(dma_get_required_mask(&pdev->dev), SZ_128M);
+>> +       if (extra > SDHCI_MAX_SEGS)
+>> +               extra = SDHCI_MAX_SEGS;
+>> +       host->adma_table_cnt += extra;
+>> +
+>> +       pltfm_host = sdhci_priv(host);
+>> +       sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
+>> +       sdhci_sparx5->host = host;
+>> +
+>> +       pltfm_host->clk = devm_clk_get(&pdev->dev, "core");
+>> +       if (IS_ERR(pltfm_host->clk)) {
+>> +               ret = PTR_ERR(pltfm_host->clk);
+>> +               dev_err(&pdev->dev, "failed to get core clk: %d\n", ret);
+>> +               goto free_pltfm;
+>> +       }
+>> +       ret = clk_prepare_enable(pltfm_host->clk);
+>> +       if (ret)
+>> +               goto free_pltfm;
+>> +
+>> +       if (!of_property_read_u32(np, "microchip,clock-delay", &value) &&
+>> +           value <= MSHC_DLY_CC_MAX)
+>> +               sdhci_sparx5->delay_clock = value;
+>> +       else
+>> +               sdhci_sparx5->delay_clock = -1; /* Autotune */
+>> +
+>> +       sdhci_get_of_property(pdev);
+>> +
+>> +       ret = mmc_of_parse(host->mmc);
+>> +       if (ret)
+>> +               goto err_clk;
+>> +
+>> +       sdhci_sparx5->cpu_ctrl = syscon_regmap_lookup_by_compatible(syscon);
+>> +       if (IS_ERR(sdhci_sparx5->cpu_ctrl)) {
+>> +               dev_err(&pdev->dev, "No CPU syscon regmap !\n");
+>> +               ret = PTR_ERR(sdhci_sparx5->cpu_ctrl);
+>> +               goto err_clk;
+>> +       }
+>> +
+>> +       if (sdhci_sparx5->delay_clock >= 0)
+>> +               sparx5_set_delay(host, sdhci_sparx5->delay_clock);
+>> +
+>> +       if (!mmc_card_is_removable(host->mmc)) {
+>> +               /* Do a HW reset of eMMC card */
+>> +               sdhci_sparx5_reset_emmc(host);
+>> +               /* Update EMMC_CTRL */
+>> +               sdhci_sparx5_set_emmc(host);
+>> +               /* If eMMC, disable SD and SDIO */
+>> +               host->mmc->caps2 |= (MMC_CAP2_NO_SDIO|MMC_CAP2_NO_SD);
+>> +       }
+>> +
+>> +       ret = sdhci_add_host(host);
+>> +       if (ret)
+>> +               dev_err(&pdev->dev, "sdhci_add_host() failed (%d)\n", ret);
+>> +
+>> +       /* Set AXI bus master to use un-cached access (for DMA) */
+>> +       if (host->flags & (SDHCI_USE_SDMA | SDHCI_USE_ADMA) &&
+>> +           IS_ENABLED(CONFIG_DMA_DECLARE_COHERENT))
+>> +               sparx5_set_cacheable(host, ACP_CACHE_FORCE_ENA);
+>> +
+>> +       pr_debug("%s: SDHC version: 0x%08x\n",
+>> +                mmc_hostname(host->mmc), sdhci_readl(host, MSHC2_VERSION));
+>> +       pr_debug("%s: SDHC type:    0x%08x\n",
+>> +                mmc_hostname(host->mmc), sdhci_readl(host, MSHC2_TYPE));
+>> +
+>> +       return ret;
+>> +
+>> +err_clk:
+>> +       clk_disable_unprepare(pltfm_host->clk);
+>> +free_pltfm:
+>> +       sdhci_pltfm_free(pdev);
+>> +       return ret;
+>> +}
+>> +
+>> +static const struct of_device_id sdhci_sparx5_of_match[] = {
+>> +       { .compatible = "microchip,dw-sparx5-sdhci" },
+>> +       { }
+>> +};
+>> +MODULE_DEVICE_TABLE(of, sdhci_sparx5_of_match);
+>> +
+>> +static struct platform_driver sdhci_sparx5_driver = {
+>> +       .driver = {
+>> +               .name = "sdhci-sparx5",
+>> +               .of_match_table = sdhci_sparx5_of_match,
+>> +               .pm = &sdhci_pltfm_pmops,
+>> +       },
+>> +       .probe = sdhci_sparx5_probe,
+>> +       .remove = sdhci_pltfm_unregister,
+>> +};
+>> +
+>> +module_platform_driver(sdhci_sparx5_driver);
+>> +
+>> +MODULE_DESCRIPTION("Sparx5 SDHCI OF driver");
+>> +MODULE_AUTHOR("Lars Povlsen <lars.povlsen@microchip.com>");
+>> +MODULE_LICENSE("GPL v2");
+>> --
+>> Cc: Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>
+>> Cc: linux-mmc@vger.kernel.org
+>> Cc: devicetree@vger.kernel.org
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: linux-kernel@vger.kernel.org
 
-  How the prod pointer is maintained also leads to a strange condition
-  where the prod pointer can wrap past the cons pointer. We can detect this
-  condition, and report no space here. However, a prod pointer progressed
-  twice past the cons pointer cannot be detected. But it can be ensured that
-  this that this scenario does not occur, as we limit the amount of
-  commands any CPU can issue at any given time, such that we cannot
-  progress prod pointer further.
-
-Signed-off-by: John Garry <john.garry@huawei.com>
----
- drivers/iommu/arm-smmu-v3.c | 102 +++++++++++++++++++++---------------
- 1 file changed, 61 insertions(+), 41 deletions(-)
-
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 36648163364c..fd42a98f501f 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -772,10 +772,19 @@ static bool queue_has_space(struct arm_smmu_ll_queue *q, u32 n)
- 	prod = Q_IDX(q, q->prod);
- 	cons = Q_IDX(q, q->cons);
- 
--	if (Q_WRP(q, q->prod) == Q_WRP(q, q->cons))
-+	if (Q_WRP(q, q->prod) == Q_WRP(q, q->cons)) {
-+		/* check if we have wrapped twice, meaning definitely no space */
-+		if (cons > prod)
-+			return false;
-+
- 		space = (1 << q->max_n_shift) - (prod - cons);
--	else
-+	} else {
-+		/* similar check to above */
-+		if (prod > cons)
-+			return false;
-+
- 		space = cons - prod;
-+	}
- 
- 	return space >= n;
- }
-@@ -1073,7 +1082,7 @@ static void arm_smmu_cmdq_skip_err(struct arm_smmu_device *smmu)
-  *   fails if the caller appears to be the last lock holder (yes, this is
-  *   racy). All successful UNLOCK routines have RELEASE semantics.
-  */
--static void arm_smmu_cmdq_shared_lock(struct arm_smmu_cmdq *cmdq)
-+static void arm_smmu_cmdq_shared_lock(struct arm_smmu_cmdq *cmdq, int count)
- {
- 	int val;
- 
-@@ -1083,12 +1092,12 @@ static void arm_smmu_cmdq_shared_lock(struct arm_smmu_cmdq *cmdq)
- 	 * to INT_MIN so these increments won't hurt as the value will remain
- 	 * negative.
- 	 */
--	if (atomic_fetch_inc_relaxed(&cmdq->lock) >= 0)
-+	if (atomic_fetch_add_relaxed(count, &cmdq->lock) >= 0)
- 		return;
- 
- 	do {
- 		val = atomic_cond_read_relaxed(&cmdq->lock, VAL >= 0);
--	} while (atomic_cmpxchg_relaxed(&cmdq->lock, val, val + 1) != val);
-+	} while (atomic_cmpxchg_relaxed(&cmdq->lock, val, val + count) != val);
- }
- 
- static void arm_smmu_cmdq_shared_unlock(struct arm_smmu_cmdq *cmdq)
-@@ -1374,8 +1383,10 @@ static void arm_smmu_cmdq_write_entries(struct arm_smmu_cmdq *cmdq, u64 *cmds,
-  *   insert their own list of commands then all of the commands from one
-  *   CPU will appear before any of the commands from the other CPU.
-  *
-- * - A CMD_SYNC is always inserted, ensuring that any CPU does not issue
-- *   more than the permitted amount commands at once.
-+ * - A CMD_SYNC is always inserted, which ensures we limit the prod pointer
-+ *   for when the cmdq is full, such that we don't wrap more than twice.
-+ *   It also makes it easy for the owner to know by how many to increment the
-+ *   cmdq lock.
-  */
- static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 				       u64 *cmds, int n)
-@@ -1388,39 +1399,38 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 	struct arm_smmu_cmdq *cmdq = &smmu->cmdq;
- 	struct arm_smmu_ll_queue llq = {
- 		.max_n_shift = cmdq->q.llq.max_n_shift,
--	}, head = llq;
-+	}, head = llq, space = llq;
-+	u32 owner_val = 1 << cmdq->q.llq.owner_count_shift;
-+	u32 prod_mask = GENMASK(cmdq->q.llq.max_n_shift, 0);
-+	u32 owner_mask = GENMASK(30, cmdq->q.llq.owner_count_shift);
- 	int ret = 0;
- 
- 	/* 1. Allocate some space in the queue */
- 	local_irq_save(flags);
--	llq.val = READ_ONCE(cmdq->q.llq.val);
--	do {
--		u64 old;
- 
--		while (!queue_has_space(&llq, n + sync)) {
--			local_irq_restore(flags);
--			if (arm_smmu_cmdq_poll_until_not_full(smmu, &llq))
--				dev_err_ratelimited(smmu->dev, "CMDQ timeout\n");
--			local_irq_save(flags);
--		}
-+	prod = atomic_fetch_add(n + sync + owner_val,
-+				&cmdq->q.llq.atomic.prod);
- 
--		head.cons = llq.cons;
--		head.prod = queue_inc_prod_n(&llq, n + sync) |
--					     CMDQ_PROD_OWNED_FLAG;
-+	owner = !(prod & owner_mask);
-+	llq.prod = prod_mask & prod;
-+	head.prod = queue_inc_prod_n(&llq, n + sync);
- 
--		old = cmpxchg_relaxed(&cmdq->q.llq.val, llq.val, head.val);
--		if (old == llq.val)
--			break;
-+	/*
-+	 * Ensure it's safe to write the entries. For this, we need to ensure
-+	 * that there is space in the queue from our prod pointer.
-+	 */
-+	space.cons = READ_ONCE(cmdq->q.llq.cons);
-+	space.prod = llq.prod;
-+	while (!queue_has_space(&space, n + sync)) {
-+		if (arm_smmu_cmdq_poll_until_not_full(smmu, &space))
-+			dev_err_ratelimited(smmu->dev, "CMDQ timeout\n");
- 
--		llq.val = old;
--	} while (1);
--	owner = !(llq.prod & CMDQ_PROD_OWNED_FLAG);
--	head.prod &= ~CMDQ_PROD_OWNED_FLAG;
--	llq.prod &= ~CMDQ_PROD_OWNED_FLAG;
-+		space.prod = llq.prod;
-+	}
- 
- 	/*
- 	 * 2. Write our commands into the queue
--	 * Dependency ordering from the cmpxchg() loop above.
-+	 * Dependency ordering from the space-checking while loop, above.
- 	 */
- 	arm_smmu_cmdq_write_entries(cmdq, cmds, llq.prod, n);
- 
-@@ -1428,27 +1438,24 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 	arm_smmu_cmdq_build_sync_cmd(cmd_sync, smmu, prod);
- 	queue_write(Q_ENT(&cmdq->q, prod), cmd_sync, CMDQ_ENT_DWORDS);
- 
--	/*
--	 * In order to determine completion of our CMD_SYNC, we must
--	 * ensure that the queue can't wrap twice without us noticing.
--	 * We achieve that by taking the cmdq lock as shared before
--	 * marking our slot as valid.
--	 */
--	arm_smmu_cmdq_shared_lock(cmdq);
--
- 	/* 3. Mark our slots as valid, ensuring commands are visible first */
- 	dma_wmb();
- 	arm_smmu_cmdq_set_valid_map(cmdq, llq.prod, head.prod);
- 
- 	/* 4. If we are the owner, take control of the SMMU hardware */
- 	if (owner) {
-+		int owner_count;
-+		u32 prod_tmp;
-+
- 		/* a. Wait for previous owner to finish */
- 		atomic_cond_read_relaxed(&cmdq->owner_prod, VAL == llq.prod);
- 
--		/* b. Stop gathering work by clearing the owned flag */
--		prod = atomic_fetch_andnot_relaxed(CMDQ_PROD_OWNED_FLAG,
--						   &cmdq->q.llq.atomic.prod);
--		prod &= ~CMDQ_PROD_OWNED_FLAG;
-+		/* b. Stop gathering work by clearing the owned mask */
-+		prod_tmp = atomic_fetch_andnot_relaxed(~prod_mask,
-+						       &cmdq->q.llq.atomic.prod);
-+		prod = prod_tmp & prod_mask;
-+		owner_count = prod_tmp & owner_mask;
-+		owner_count >>= cmdq->q.llq.owner_count_shift;
- 
- 		/*
- 		 * c. Wait for any gathered work to be written to the queue.
-@@ -1457,6 +1464,19 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 		 */
- 		arm_smmu_cmdq_poll_valid_map(cmdq, llq.prod, prod);
- 
-+		/*
-+		 * In order to determine completion of the CMD_SYNCs, we must
-+		 * ensure that the queue can't wrap twice without us noticing.
-+		 * We achieve that by taking the cmdq lock as shared before
-+		 * progressing the prod pointer.
-+		 * The owner does this for all the non-owners it has gathered.
-+		 * Otherwise, some non-owner(s) may lock the cmdq, blocking
-+		 * cons being updating. This could be when the cmdq has just
-+		 * become full. In this case, other sibling non-owners could be
-+		 * blocked from progressing, leading to deadlock.
-+		 */
-+		arm_smmu_cmdq_shared_lock(cmdq, owner_count);
-+
- 		/*
- 		 * d. Advance the hardware prod pointer
- 		 * Control dependency ordering from the entries becoming valid.
 -- 
-2.26.2
-
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
