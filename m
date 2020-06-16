@@ -2,80 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B7591FB15D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:58:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32ACA1FB149
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:57:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VLxn+FfRVotOU/v6nBH7BP+SiscKxCcqDmTVWGZLu10=; b=gL4U80qI2nT0ic
-	j2eumfI3TmbuC4hvh3OD9NbwiTxPZjdi3eKImtS+Xpaq9T4Jiukn7TqIkFUVBGS13WKLmd9JWShbX
-	V3A+tuTGCwkykuhbG7rOngnGgonsyqkARdzFkod1y4gNYjtJ6wWJ4+HPWmar+xlYXLwih3x2m4JhV
-	2gzXdGo3fVMBb3SsLkT04YzUhyYgUX9V1Tmu+u9JLPtm40oUmBFraAZWeaa2oMuTSTjqupffSGfv/
-	hGlMIPxPVIRg+BenXmvC0Nuf7T/V9Yiw9QcCtbutHpRTv8uPWDq2jjpPwq2Rbz/0oa4Qb3+O7AMRX
-	L80Edn6hfKPZFi91Nasg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RN4y07EY5S/S0j0P+6ONU/NN2olAumCxi9Sme+mvFqQ=; b=X9ObS/lIApucR1
+	lFAhNg0BYWbCkISGc+u3LsiTJBYtMUF7AHq+vQ+/hmZcLjfBMlXsU5hCxsycXQxZw7fudnxO5/EIL
+	1jAyi2DA6WbHY63iBwqCTmMjWqPpCHihqIwWq02dV5vOH0mxpQw2OQ6khvVlom+eYal5Gv7+dDYs4
+	tLBD2a7WrFN6fZqMZGrrweDRwg9LiBIuQCBQXI0OekIWFPyKk9+mmquNktISyG0sS9CCLuGK0lhPn
+	hr919zZSoxoP0rRFBY5uWvtSdfI8EZG4FHJZd0afGv6rb7PMuAVAGGsGdxsSkTMtrzFCtPmiu8ECd
+	5YpTne4qztfHAacveeCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlBAQ-0005dH-Kr; Tue, 16 Jun 2020 12:58:18 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jlB9N-0004zw-IB; Tue, 16 Jun 2020 12:57:13 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlBAG-0005c6-AV; Tue, 16 Jun 2020 12:58:10 +0000
-X-UUID: a07f37de364741b6ae95946d71a88386-20200616
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=oNHjaMOtZSRmFXKNgj4jutQqnqBUtcgYhDdv/yzFkco=; 
- b=leubagLZK/HGWxX/mDodYglcxtNSjE0hq0QyZdaDQZrsieWLSZdj3yUjmeHkLSc15tDfU4GB/DrZ/r8nrf8R+gA0dhjQJvgjJzlEM59LfxS81SZlQhH1XxO4p6H4xKKhJXBTUrYRFwnxLPBFRXw5+YBy/bOQkHyRyArytkKm34g=;
-X-UUID: a07f37de364741b6ae95946d71a88386-20200616
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 780172729; Tue, 16 Jun 2020 04:57:53 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 16 Jun 2020 05:58:00 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 16 Jun 2020 20:58:00 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 16 Jun 2020 20:57:58 +0800
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: <linus.walleij@linaro.org>, <bgolaszewski@baylibre.com>,
- <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
- <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
- <bingbu.cao@intel.com>
-Subject: [PATCH V8 0/2] media: i2c: Add support for DW9768 VCM driver
-Date: Tue, 16 Jun 2020 20:55:29 +0800
-Message-ID: <20200616125531.31671-1-dongchun.zhu@mediatek.com>
-X-Mailer: git-send-email 2.9.2
+ id 1jlB9D-0004yI-T1
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 12:57:05 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jlB96-0007Oj-Of; Tue, 16 Jun 2020 14:56:56 +0200
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jlB95-0004yK-DX; Tue, 16 Jun 2020 14:56:55 +0200
+Message-ID: <706f56a20d318b841792ca19a6fe7135cb6c61e3.camel@pengutronix.de>
+Subject: Re: [PATCH v4 3/3] ARM: dts: bcm2711: Add HDMI DVP
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Maxime Ripard <maxime@cerno.tech>, Nicolas Saenz Julienne
+ <nsaenzjulienne@suse.de>
+Date: Tue, 16 Jun 2020 14:56:55 +0200
+In-Reply-To: <20200616121641.jpoz237p43sbndg2@gilmour.lan>
+References: <cover.4c4625a8e076f3163b800b3d8986b282ee98d908.1591867332.git-series.maxime@cerno.tech>
+ <e22222ca7f41b960e9bb1a31e0dd2de95b8c0cd1.1591867332.git-series.maxime@cerno.tech>
+ <810816166d8ef554e1bb1f4a2b39ea0b8a1a3d5b.camel@suse.de>
+ <20200616121641.jpoz237p43sbndg2@gilmour.lan>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-X-MTK: N
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_055808_365315_F7F690F1 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200616_055703_937507_5AEBAB25 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,74 +71,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- shengnan.wang@mediatek.com, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Hi Maxime,
 
-This series adds DT bindings and V4L2 sub-device driver for Dongwoon's DW9768,
-which is a 10-bit DAC with 100mA output current sink capability.
+On Tue, 2020-06-16 at 14:16 +0200, Maxime Ripard wrote:
+> Hi Nicolas,
+> 
+> On Mon, Jun 15, 2020 at 06:26:19PM +0200, Nicolas Saenz Julienne wrote:
+> > On Thu, 2020-06-11 at 11:23 +0200, Maxime Ripard wrote:
+> > > Now that we have a driver for the DVP, let's add its DT node.
+> > > 
+> > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > > ---
+> > 
+> > I can take this patch, but I guess the rest should go trough the clock tree.
+> > Is it OK with you?
+> 
+> We have a build dependency on the reset framework for that driver, so it
+> should rather go through the reset tree (or Philipp should make an
+> immutable branch that the clk maintainers can merge).
 
-The driver is designed for linear control of voice coil motor(VCM),
-and controlled via IIC serial interface to set the desired focus.
+I've prepared an immutable branch that these patches could be based on
+and that could be merged into the clk tree:
 
-It controls the position with 10-bit DAC data D[9:0] and seperates
-two 8-bit registers to control the VCM position as belows.
-DAC_MSB: D[9:8](ADDR: 0x03):
-     +---+---+---+---+---+---+---+---+
-     |---|---|---|---|---|---|D09|D08|
-     +---+---+---+---+---+---+---+---+
-DAC_LSB: D[7:0](ADDR: 0x04):
-     +---+---+---+---+---+---+---+---+
-     |D07|D06|D05|D04|D03|D02|D01|D00|
-     +---+---+---+---+---+---+---+---+
+The following changes since commit b3a9e3b9622ae10064826dccb4f7a52bd88c7407:
 
-This driver supports:
- - set DW9768 to standby mode once suspend and turn it back to active if resume
- - set the desired focus via V4L2_CID_FOCUS_ABSOLUTE ctrl
+  Linux 5.8-rc1 (2020-06-14 12:45:04 -0700)
 
-Previous versions of this patch-set can be found here:
-v7: https://lore.kernel.org/linux-media/20200605105412.18813-1-dongchun.zhu@mediatek.com/
-v6: https://lore.kernel.org/linux-media/20200518132731.20855-1-dongchun.zhu@mediatek.com/
-v5: https://lore.kernel.org/linux-media/20200502161727.30463-1-dongchun.zhu@mediatek.com/
-v4: https://lore.kernel.org/linux-media/20200330123634.363-1-dongchun.zhu@mediatek.com/
-v3: https://lore.kernel.org/linux-media/20200228155958.20657-1-dongchun.zhu@mediatek.com/
-v2: https://lore.kernel.org/linux-media/20190905072142.14606-1-dongchun.zhu@mediatek.com/
-v1: https://lore.kernel.org/linux-media/20190708100641.2702-1-dongchun.zhu@mediatek.com/
+are available in the Git repository at:
 
-Mainly changes of v8 are addressing comments from Rob, Sakari, Andy, Tomasz.
-Compared to v7:
- - Rebase onto 5.8-rc1
- - Calculate move delay time once in probe() and restore it in private struct
- - Use the fwnode property API to read the properties into the filed directly
- - Rename error_async_register to err_power_off and refine it
- - Fix other review comments in v7
+  git://git.pengutronix.de/git/pza/linux reset/simple
 
-Please review.
-Thanks.
+for you to fetch changes up to a9701376ed0fb61a5be4bb438daf26bd9cfa24b5:
 
-Dongchun Zhu (2):
-  media: dt-bindings: media: i2c: Document DW9768 bindings
-  media: i2c: dw9768: Add DW9768 VCM driver
+  reset: simple: Add reset callback (2020-06-16 14:19:57 +0200)
 
- .../bindings/media/i2c/dongwoon,dw9768.yaml        | 100 ++++
- MAINTAINERS                                        |   8 +
- drivers/media/i2c/Kconfig                          |  12 +
- drivers/media/i2c/Makefile                         |   1 +
- drivers/media/i2c/dw9768.c                         | 553 +++++++++++++++++++++
- 5 files changed, 674 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
- create mode 100644 drivers/media/i2c/dw9768.c
+----------------------------------------------------------------
+Maxime Ripard (2):
+      reset: Move reset-simple header out of drivers/reset
+      reset: simple: Add reset callback
 
--- 
-2.9.2
+ drivers/reset/reset-simple.c                    | 23 +++++++++++++++++++++--
+ drivers/reset/reset-socfpga.c                   |  3 +--
+ drivers/reset/reset-sunxi.c                     |  3 +--
+ drivers/reset/reset-uniphier-glue.c             |  3 +--
+ {drivers => include/linux}/reset/reset-simple.h |  7 +++++++
+ 5 files changed, 31 insertions(+), 8 deletions(-)
+ rename {drivers => include/linux}/reset/reset-simple.h (74%)
+
+regards
+Philipp
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
