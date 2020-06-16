@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBBA11FB897
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 17:58:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CD931FB898
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 17:58:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+6MZ9noJmobldZ7ZrutBk3RfPbIqkzpnFvEPSIAu23k=; b=o4/TjG0iOzDZzG
-	ksdJDo9y+rEENQ43s6zQRJpCv6bB61H1xSyiAbqBTXwoMNWkf2G0Qfo371heVd9VP7SmSrmoJw8rV
-	VCJSteyX2SXdMoQIittaO9I3/9RWefNw6sO/ujPOpMavcwePHyhnzZrlgLedEdpgZthntC4XyN5Oo
-	+3B2vKQlsACWJoV5M8nUt3kXrj33nmQlL7/BmvopVILqvYHCHMA4hUdeYMwT5UAN+4UzRO473Vt05
-	4jEdSMbOzY0wlyuQlWuGLxeu09ynjqLc2DGFt06FphXp3fe/kG3T5ocGdQ+3RHDFFEAnAixpuCaY8
-	GYcsI3dXAmpDtJFsvurg==;
+	List-Owner; bh=pcRFr5Hqe70l0wFg2HW7K003WgTviQixDuu3t/xw0qc=; b=kH4QP3vInLMvS5
+	WhNt3IR4qVVz95lFgwWeDjAEgSCxEwaWijh/4RhgizV8VeUQ56IC3rx4cyjXcvrYijtv/SAMa5yJ9
+	ouasprzllD6Qll2FnwAHkC6q8cmc50Xv0jE5N7+p8TxH2+Y08SVDzfwz3A9dwlvo9S2rtubaKKxJ3
+	KGHPSglIONMpjmhdKQlud2LciiwhPxkcNm591iaOyCS3Kv06IfFL0GyEKTnHLtFM1a4NCdeBEPz/d
+	wnfCCoV/jd4HRly++oMnkH/rZdpAEs0b+uN2b2Q7aNC4aIoSnlBWR8Ne7mh+Eln3WAMMoADzjCAth
+	KBOPb7Ed6BAjV9yK1Y6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlDyB-0002d3-JK; Tue, 16 Jun 2020 15:57:51 +0000
+	id 1jlDyT-0002sU-Gs; Tue, 16 Jun 2020 15:58:09 +0000
 Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlDx5-0001ZP-33
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 15:56:44 +0000
-IronPort-SDR: T+apxyoP0ZwjjnM58OCHld33Ufe0Ht5YPU364WDHR3d/GYlxlE1q/8NdtPASD8haA+o05jUd3Z
- 9JxtUOvwwrzQ==
+ id 1jlDx8-0001ZP-Mr
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 15:56:48 +0000
+IronPort-SDR: 4fGk18f80ZKUOw0Ubac2SoKM5ROZpAdxFYtFhWKS3mpchTRtMLrdVkCvBaTzmObqR/nngIjtQP
+ axqHF704xYxQ==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga005.jf.intel.com ([10.7.209.41])
  by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 16 Jun 2020 08:56:42 -0700
-IronPort-SDR: Kw9PzyEPkP+zk94aZ9uYowEicv+cJNOr5x7+YvOVapgzRRO1h+JjStJbTNTOunkos7CAqt/ANq
- +DgYsNdL/1Nw==
-X-IronPort-AV: E=Sophos;i="5.73,518,1583222400"; d="scan'208";a="449888131"
+ 16 Jun 2020 08:56:46 -0700
+IronPort-SDR: nzPcmt43wjvPio6T3fVA1CS4W5AduSmcR5lBh7PmeQXkiyKG7J8gtIFQ3pOL02RCHDOtKcS+Pp
+ GNfpqOq8PrrA==
+X-IronPort-AV: E=Sophos;i="5.73,518,1583222400"; d="scan'208";a="449888148"
 Received: from pperycz-mobl.ger.corp.intel.com (HELO
  dalessan-mobl1.ir.intel.com) ([10.213.235.69])
  by orsmga005-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 16 Jun 2020 08:56:39 -0700
+ 16 Jun 2020 08:56:43 -0700
 From: Daniele Alessandrelli <daniele.alessandrelli@linux.intel.com>
 To: linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
  Jassi Brar <jassisinghbrar@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
  Olof Johansson <olof@lixom.net>
-Subject: [PATCH 5/7] MAINTAINERS: Add maintainers for Keem Bay SoC
-Date: Tue, 16 Jun 2020 16:56:11 +0100
-Message-Id: <20200616155613.121242-6-daniele.alessandrelli@linux.intel.com>
+Subject: [PATCH 6/7] arm64: dts: keembay: Add device tree for Keem Bay SoC
+Date: Tue, 16 Jun 2020 16:56:12 +0100
+Message-Id: <20200616155613.121242-7-daniele.alessandrelli@linux.intel.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200616155613.121242-1-daniele.alessandrelli@linux.intel.com>
 References: <20200616155613.121242-1-daniele.alessandrelli@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_085643_182284_C88BB1AB 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_085646_832911_15D0CAA7 
+X-CRM114-Status: GOOD (  15.31  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -83,33 +82,209 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Daniele Alessandrelli <daniele.alessandrelli@intel.com>
 
-Add maintainers for the new Intel Movidius SoC code-named Keem Bay.
+Add initial device tree for Intel Movidius SoC code-named Keem Bay.
+
+This initial DT includes nodes for Cortex-A53 cores, UARTs, timers, GIC,
+PSCI, PMU, and Keem Bay SCMI mailbox.
 
 Reviewed-by: Dinh Nguyen <dinguyen@kernel.org>
 Signed-off-by: Daniele Alessandrelli <daniele.alessandrelli@intel.com>
 ---
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ MAINTAINERS                                |   1 +
+ arch/arm64/boot/dts/intel/keembay-soc.dtsi | 172 +++++++++++++++++++++
+ 2 files changed, 173 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/intel/keembay-soc.dtsi
 
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 4887e004cd26..3b919aa8b1bd 100644
+index 3b919aa8b1bd..610907bf391b 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -1954,6 +1954,14 @@ F:	drivers/irqchip/irq-ixp4xx.c
- F:	include/linux/irqchip/irq-ixp4xx.h
- F:	include/linux/platform_data/timer-ixp4xx.h
+@@ -1959,6 +1959,7 @@ M:	Paul J. Murphy <paul.j.murphy@intel.com>
+ M:	Daniele Alessandrelli <daniele.alessandrelli@intel.com>
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/arm/keembay.yaml
++F:	arch/arm64/boot/dts/intel/keembay-soc.dtsi
+ F:	include/dt-bindings/clock/keembay-clocks.h
+ F:	include/dt-bindings/power/keembay-power.h
  
-+ARM/INTEL KEEMBAY ARCHITECTURE
-+M:	Paul J. Murphy <paul.j.murphy@intel.com>
-+M:	Daniele Alessandrelli <daniele.alessandrelli@intel.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/arm/keembay.yaml
-+F:	include/dt-bindings/clock/keembay-clocks.h
-+F:	include/dt-bindings/power/keembay-power.h
+diff --git a/arch/arm64/boot/dts/intel/keembay-soc.dtsi b/arch/arm64/boot/dts/intel/keembay-soc.dtsi
+new file mode 100644
+index 000000000000..bd0a48f24e09
+--- /dev/null
++++ b/arch/arm64/boot/dts/intel/keembay-soc.dtsi
+@@ -0,0 +1,172 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * Copyright (C) 2020, Intel Corporation.
++ *
++ * Device tree describing Keem Bay SoC.
++ */
 +
- ARM/INTEL RESEARCH IMOTE/STARGATE 2 MACHINE SUPPORT
- M:	Jonathan Cameron <jic23@cam.ac.uk>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
++#include <dt-bindings/clock/keembay-clocks.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <dt-bindings/power/keembay-power.h>
++
++/ {
++	compatible = "intel,keembay";
++	interrupt-parent = <&gic>;
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	cpus {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		cpu@0 {
++			compatible = "arm,cortex-a53";
++			device_type = "cpu";
++			reg = <0x0>;
++			enable-method = "psci";
++			clocks = <&scmi_dvfs 0>;
++		};
++
++		cpu@1 {
++			compatible = "arm,cortex-a53";
++			device_type = "cpu";
++			reg = <0x1>;
++			enable-method = "psci";
++			clocks = <&scmi_dvfs 0>;
++		};
++
++		cpu@2 {
++			compatible = "arm,cortex-a53";
++			device_type = "cpu";
++			reg = <0x2>;
++			enable-method = "psci";
++			clocks = <&scmi_dvfs 0>;
++		};
++
++		cpu@3 {
++			compatible = "arm,cortex-a53";
++			device_type = "cpu";
++			reg = <0x3>;
++			enable-method = "psci";
++			clocks = <&scmi_dvfs 0>;
++		};
++	};
++
++	psci {
++		compatible = "arm,psci-0.2";
++		method = "smc";
++	};
++
++	firmware: firmware {
++
++		scmi: scmi {
++			compatible = "arm,scmi";
++			mboxes = <&scmi_mailbox 0>;
++			shmem = <&scmi_sec_shmem>;
++			mbox-names = "tx";
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			scmi_devpd: protocol@11 {
++				reg = <0x11>;
++				#power-domain-cells = <1>;
++			};
++
++			scmi_dvfs: protocol@13 {
++				reg = <0x13>;
++				#clock-cells = <1>;
++			};
++
++			scmi_clk: protocol@14 {
++				reg = <0x14>;
++				#clock-cells = <1>;
++			};
++		};
++	};
++
++	scmi_mailbox: scmi_mailbox {
++		compatible = "intel,keembay-scmi-mailbox";
++		#mbox-cells = <1>;
++		memory-region = <&scmi_sec_shmem>;
++		u-boot,dm-pre-reloc;
++	};
++
++	gic: interrupt-controller@20500000 {
++		compatible = "arm,gic-v3";
++		interrupt-controller;
++		#interrupt-cells = <3>;
++		reg = <0x0 0x20500000 0x0 0x20000>,	/* GICD */
++		      <0x0 0x20580000 0x0 0x80000>;	/* GICR */
++		/* VGIC maintenance interrupt */
++		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
++	timer {
++		compatible = "arm,armv8-timer";
++		/* Secure, non-secure, virtual, and hypervisor */
++		interrupts = <GIC_PPI 13 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_PPI 14 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_PPI 11 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_PPI 10 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
++	pmu {
++		compatible = "arm,armv8-pmuv3";
++		interrupts = <GIC_PPI 0x7 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
++	soc {
++		compatible = "simple-bus";
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		uart0: serial@20150000 {
++			compatible = "snps,dw-apb-uart";
++			reg = <0x0 0x20150000 0x0 0x100>;
++			interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++			clock-names = "baudclk", "apb_pclk";
++			clocks = <&scmi_clk KEEM_BAY_PSS_AUX_UART0>,
++				 <&scmi_clk KEEM_BAY_PSS_UART0>;
++			reg-shift = <2>;
++			reg-io-width = <4>;
++			status = "disabled";
++		};
++
++		uart1: serial@20160000 {
++			compatible = "snps,dw-apb-uart";
++			reg = <0x0 0x20160000 0x0 0x100>;
++			interrupts = <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>;
++			clock-names = "baudclk", "apb_pclk";
++			clocks = <&scmi_clk KEEM_BAY_PSS_AUX_UART1>,
++				 <&scmi_clk KEEM_BAY_PSS_UART1>;
++			reg-shift = <2>;
++			reg-io-width = <4>;
++			status = "disabled";
++		};
++
++		uart2: serial@20170000 {
++			compatible = "snps,dw-apb-uart";
++			reg = <0x0 0x20170000 0x0 0x100>;
++			interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>;
++			clock-names = "baudclk", "apb_pclk";
++			clocks = <&scmi_clk KEEM_BAY_PSS_AUX_UART2>,
++				 <&scmi_clk KEEM_BAY_PSS_UART2>;
++			reg-shift = <2>;
++			reg-io-width = <4>;
++			status = "disabled";
++		};
++
++		uart3: serial@20180000 {
++			compatible = "snps,dw-apb-uart";
++			reg = <0x0 0x20180000 0x0 0x100>;
++			interrupts = <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>;
++			clock-names = "baudclk", "apb_pclk";
++			clocks = <&scmi_clk KEEM_BAY_PSS_AUX_UART3>,
++				 <&scmi_clk KEEM_BAY_PSS_UART3>;
++			reg-shift = <2>;
++			reg-io-width = <4>;
++			status = "disabled";
++		};
++	};
++};
 -- 
 2.26.2
 
