@@ -2,59 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 301211FB8CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 17:59:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14DA61FB8FA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:00:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OHV4p0N+YbsvU72Zs5xt3dNIJOpPscjO15Eau0DQ5ks=; b=D9MDrhr1Lu/drn
-	vd+VHAB2UlCM9MXtCh2hazDtDn5ax9i3Ocyfb2X8dPDFMMimAd4XY93XJrw6s9AWfqNM23jQOuBoy
-	4AutYAyyE0NSTirivRvcYlHlp20nFkv1HuOfWQQ2V2GEDsA9YaS4uc6zjr/quhqg7OxGujcHJDcep
-	2hd+cCZmlIgb9fcAmQ1ELwyoUwAlAm/YARZXu+bjCTToFjP5kcDwvHeiXmFf9eVNlLq0SQpuhonLf
-	sqXwN3atWc9sB+oHQgQ8Jfcq/I8tINfbMlcjVNjwYZ+DIhYfv7Rh6hmNgNUUCbLyoxaPcsQY+MYfj
-	LLmAHCwCbTLD409dEygQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TNTJwqtSNe6mf12+lmisF8oLNYMnFlZet07ynAiX98k=; b=rDyKDJAWNJA2dr
+	EHS/0qoePLoZJyryy/F7aCIgKpU2p5ewgOfW/WEg9Hnu47dklAdBVj1gX1HfbeUmekp4RmnMxyYyb
+	1WrGJRdlF0dzyF0VB9PXlpU6mr5Hy2vEViIiWoh4IC+ZZJRy/afKXP7wpEfIdJ2ZhPqj+Nq8wo4wZ
+	W83iRqXC/UrV18m1j8k52ndok5wbf2Htwt9PgiGkEKZ0VwOLRr37gcd/YaTVVpNnxWSihWXhGDRRF
+	sYx+71PLCV7OPZcrl6yzGv+iAV3ZgpQDIR02h9evx6sc9BeF5ZRiFrTX1ElJMBTztSit5kbVbyzhv
+	pO7T0LX7ourjY593yuJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlDzU-0003oT-II; Tue, 16 Jun 2020 15:59:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlDys-0003TW-NA
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 15:58:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 70E8A1F1;
- Tue, 16 Jun 2020 08:58:31 -0700 (PDT)
-Received: from [192.168.0.110] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A36E3F73C;
- Tue, 16 Jun 2020 08:58:29 -0700 (PDT)
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Subject: Re: [PATCH v2 01/17] KVM: arm64: Factor out stage 2 page table data
- from struct kvm
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20200615132719.1932408-1-maz@kernel.org>
- <20200615132719.1932408-2-maz@kernel.org>
-Message-ID: <17d37bde-2fc8-d165-ee02-7640fc561167@arm.com>
-Date: Tue, 16 Jun 2020 16:59:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
+	id 1jlE0t-0006fS-Iz; Tue, 16 Jun 2020 16:00:39 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlDze-0004C8-Gw
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 15:59:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1592323161;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=5Gc0Dg29WyIqBxMjGZGdoDeYitc04zw+8Uk/3lb0oUU=;
+ b=bT0HTOvX7SlMU628ugkPMVhaTKAhm0p4uIeekRPBvNlhSihwE8P6e4ualmbbJnRLKayi4w
+ KaofhGQmWZmo1IFaJnA92mMwwg+KNpo7reeVC4eI8gnCa0ec/RLmLtbc9dezCSvMBYyItf
+ ycWZ2vTFA+L94hNaujLB0K7q/rrnIUI=
+Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
+ [209.85.219.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-496-qHF1zSjAOAK8LSXflAsw7w-1; Tue, 16 Jun 2020 11:59:17 -0400
+X-MC-Unique: qHF1zSjAOAK8LSXflAsw7w-1
+Received: by mail-qv1-f72.google.com with SMTP id 59so15909367qvb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jun 2020 08:59:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=5Gc0Dg29WyIqBxMjGZGdoDeYitc04zw+8Uk/3lb0oUU=;
+ b=P9At7hmj8dKi988Tnn9ZNnhMcSJgQaQPr47aaMOEZGGtBLOHyLu9tau2ebhmmEd8Mc
+ gGUcMRlFXN78ZMXRQLcQthhnyXu5kRikdsmRnyDNlD2akMpswY7v3MHbXMGHy62AVP4A
+ mAopzgFSN9hrMGRCkitQ82ESK9mHwNF2I49vJm8y6CJA7+MfTrtTbGiLlUgvsYlg9tjl
+ vwkfi0pGSSXKH3CsRdi4z2IBac2DoQ6HG6Fmnn9gLAqJn1qzHhmXDFf46JK5/JU3ZWTX
+ U3Jq2AApcQavejzvrcB5T9jVIlnoBkojNwGQB5U8PuOk77g4MzE/u+CSg2V7LVyF88mp
+ CTTA==
+X-Gm-Message-State: AOAM532QiSQ+LK4O+p88SXS1O9pUWdXtaQQYQF2DWhj5bbU5SJUmbk5s
+ TC/Q1RQ9SB0nShXkDDvr8YyPGt5WIxbVAp55ycIPynuIZf4qFyRVvF6oKVEU1upaZH/++YCShJU
+ N13Mn4+UD/8UcSsu/okkXVx+Ug20Xy7W3ShE=
+X-Received: by 2002:a37:6f02:: with SMTP id k2mr20702246qkc.129.1592323157178; 
+ Tue, 16 Jun 2020 08:59:17 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJy+CJxAHuYkrcTeCwjCPlS1h0Nvk5LsJIDdZuRwaKtc+dpfMVU5ZGkZ12CkR4olUnzdv9Abeg==
+X-Received: by 2002:a37:6f02:: with SMTP id k2mr20702225qkc.129.1592323156891; 
+ Tue, 16 Jun 2020 08:59:16 -0700 (PDT)
+Received: from xz-x1 ([2607:9880:19c0:32::2])
+ by smtp.gmail.com with ESMTPSA id 123sm154267qkj.56.2020.06.16.08.59.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 16 Jun 2020 08:59:15 -0700 (PDT)
+Date: Tue, 16 Jun 2020 11:59:14 -0400
+From: Peter Xu <peterx@redhat.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 06/25] mm/arm64: Use mm_fault_accounting()
+Message-ID: <20200616155914.GB11838@xz-x1>
+References: <20200615221607.7764-1-peterx@redhat.com>
+ <20200615221607.7764-7-peterx@redhat.com>
+ <20200616074307.GA1637@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200615132719.1932408-2-maz@kernel.org>
-Content-Language: en-US
+In-Reply-To: <20200616074307.GA1637@willie-the-truck>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_085834_862736_CCDE1E20 
-X-CRM114-Status: GOOD (  27.36  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200616_085922_636931_07CBE7DC 
+X-CRM114-Status: GOOD (  13.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [205.139.110.120 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,97 +110,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kernel-team@android.com,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- George Cherian <gcherian@marvell.com>, James Morse <james.morse@arm.com>,
- Andrew Scull <ascull@google.com>, "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Jintack Lim <jintack@cs.columbia.edu>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andrea Arcangeli <aarcange@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpJTU8sIHRoaXMgcGF0Y2ggZG9lcyB0d28gZGlmZmVyZW50IHRoaW5nczogYWRkcyBhIG5l
-dyBzdHJ1Y3R1cmUsIGt2bV9zMl9tbXUsIGFuZApjb252ZXJ0cyB0aGUgbWVtb3J5IG1hbmFnZW1l
-bnQgY29kZSB0byB1c2UgdGhlIDQgbGV2ZWwgcGFnZSB0YWJsZSBBUEkuIEkgcmVhbGl6ZQppdCdz
-IHBhaW5mdWwgdG8gY29udmVydCB0aGUgTU1VIGNvZGUgdG8gdXNlIHRoZSBwNGQgZnVuY3Rpb25z
-LCBhbmQgdGhlbiBtb2RpZnkKZXZlcnl0aGluZyB0byB1c2Uga3ZtX3MyX21tdSBpbiBhIHNlcGFy
-YXRlIHBhdGNoLCBidXQgSSBiZWxpZXZlIHNwbGl0dGluZyBpdCBpbnRvCjIgd291bGQgYmUgYmV0
-dGVyIGluIHRoZSBsb25nIHJ1bi4gVGhlIHJlc3VsdGluZyBwYXRjaGVzIHdpbGwgYmUgc21hbGxl
-ciBhbmQgYm90aAp3aWxsIGhhdmUgYSBiZXR0ZXIgY2hhbmNlIG9mIGJlaW5nIHJldmlld2VkIGJ5
-IHRoZSByaWdodCBwZW9wbGUuCgpFaXRoZXIgd2F5LCB0aGVyZSB3ZXJlIHN0aWxsIHNvbWUgc3Vn
-Z2VzdGlvbnMgbGVmdCBvdmVyIGZyb20gdjEsIEkgZG9uJ3Qga25vdyBpZgp0aGV5IHdlcmUgd2Vy
-ZSB0b28gbWlub3Ivc3ViamVjdGl2ZSB0byBpbXBsZW1lbnQsIG9yIHRoZXkgd2VyZSBvdmVybG9v
-a2VkLiBJJ2xsCnJlLXBvc3QgdGhlbSBoZXJlIGFuZCBJJ2xsIHRyeSB0byByZXZpZXcgdGhlIHBh
-dGNoIGFnYWluIG9uY2UgSSBmaWd1cmUgb3V0IGhvdyB0aGUKcDRkIGNoYW5nZXMgZml0IGluLgoK
-T24gNi8xNS8yMCAyOjI3IFBNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4gRnJvbTogQ2hyaXN0b2Zm
-ZXIgRGFsbCA8Y2hyaXN0b2ZmZXIuZGFsbEBhcm0uY29tPgo+Cj4gQXMgd2UgYXJlIGFib3V0IHRv
-IHJldXNlIG91ciBzdGFnZSAyIHBhZ2UgdGFibGUgbWFuaXB1bGF0aW9uIGNvZGUgZm9yCj4gc2hh
-ZG93IHN0YWdlIDIgcGFnZSB0YWJsZXMgaW4gdGhlIGNvbnRleHQgb2YgbmVzdGVkIHZpcnR1YWxp
-emF0aW9uLCB3ZQo+IGFyZSBnb2luZyB0byBtYW5hZ2UgbXVsdGlwbGUgc3RhZ2UgMiBwYWdlIHRh
-YmxlcyBmb3IgYSBzaW5nbGUgVk0uCj4KPiBUaGlzIHJlcXVpcmVzIHNvbWUgcHJldHR5IGludmFz
-aXZlIGNoYW5nZXMgdG8gb3VyIGRhdGEgc3RydWN0dXJlcywKPiB3aGljaCBtb3ZlcyB0aGUgdm1p
-ZCBhbmQgcGdkIHBvaW50ZXJzIGludG8gYSBzZXBhcmF0ZSBzdHJ1Y3R1cmUgYW5kCj4gY2hhbmdl
-IHByZXR0eSBtdWNoIGFsbCBvZiBvdXIgbW11IGNvZGUgdG8gb3BlcmF0ZSBvbiB0aGlzIHN0cnVj
-dHVyZQo+IGluc3RlYWQuCj4KPiBUaGUgbmV3IHN0cnVjdHVyZSBpcyBjYWxsZWQgc3RydWN0IGt2
-bV9zMl9tbXUuCj4KPiBUaGVyZSBpcyBubyBpbnRlbmRlZCBmdW5jdGlvbmFsIGNoYW5nZSBieSB0
-aGlzIHBhdGNoIGFsb25lLgo+Cj4gUmV2aWV3ZWQtYnk6IEphbWVzIE1vcnNlIDxqYW1lcy5tb3Jz
-ZUBhcm0uY29tPgo+IFtEZXNpZ25lZCBkYXRhIHN0cnVjdHVyZSBsYXlvdXQgaW4gY29sbGFib3Jh
-dGlvbl0KPiBTaWduZWQtb2ZmLWJ5OiBDaHJpc3RvZmZlciBEYWxsIDxjaHJpc3RvZmZlci5kYWxs
-QGFybS5jb20+Cj4gQ28tZGV2ZWxvcGVkLWJ5OiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwub3Jn
-Pgo+IFttYXo6IE1vdmVkIHRoZSBsYXN0X3ZjcHVfcmFuIGRvd24gdG8gdGhlIFMyIE1NVSBzdHJ1
-Y3R1cmUgYXMgd2VsbF0KPiBTaWduZWQtb2ZmLWJ5OiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwu
-b3JnPgo+IC0tLQo+ICBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL2t2bV9hc20uaCAgfCAgIDcgKy0K
-PiAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1faG9zdC5oIHwgIDMyICsrKy0KPiAgYXJjaC9h
-cm02NC9pbmNsdWRlL2FzbS9rdm1fbW11LmggIHwgIDE2ICstCj4gIGFyY2gvYXJtNjQva3ZtL2Fy
-bS5jICAgICAgICAgICAgICB8ICAzNiArKy0tCj4gIGFyY2gvYXJtNjQva3ZtL2h5cC9zd2l0Y2gu
-YyAgICAgICB8ICAgOCArLQo+ICBhcmNoL2FybTY0L2t2bS9oeXAvdGxiLmMgICAgICAgICAgfCAg
-NTIgKysrLS0tCj4gIGFyY2gvYXJtNjQva3ZtL21tdS5jICAgICAgICAgICAgICB8IDI3OCArKysr
-KysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0KPiAgNyBmaWxlcyBjaGFuZ2VkLCAyMzMgaW5zZXJ0
-aW9ucygrKSwgMTk2IGRlbGV0aW9ucygtKQo+Cj4gWy4uXQo+IGRpZmYgLS1naXQgYS9hcmNoL2Fy
-bTY0L2t2bS9hcm0uYyBiL2FyY2gvYXJtNjQva3ZtL2FybS5jCj4gaW5kZXggOTBjYjkwNTYxNDQ2
-Li4zNjAzOTZlY2M2ZDMgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9rdm0vYXJtLmMKPiArKysg
-Yi9hcmNoL2FybTY0L2t2bS9hcm0uYwoKVGhlcmUncyBzdGlsbCBvbmUgY29tbWVudCBpbiB0aGUg
-ZmlsZSB0aGF0IHJlZmVycyB0byBhcmNoLnZtaWQ6CgpzdGF0aWMgYm9vbCBuZWVkX25ld192bWlk
-X2dlbihzdHJ1Y3Qga3ZtX3ZtaWQgKnZtaWQpCnsKwqDCoMKgIHU2NCBjdXJyZW50X3ZtaWRfZ2Vu
-ID0gYXRvbWljNjRfcmVhZCgma3ZtX3ZtaWRfZ2VuKTsKwqDCoMKgIHNtcF9ybWIoKTsgLyogT3Jk
-ZXJzIHJlYWQgb2Yga3ZtX3ZtaWRfZ2VuIGFuZCBrdm0tPmFyY2gudm1pZCAqLwrCoMKgwqAgcmV0
-dXJuIHVubGlrZWx5KFJFQURfT05DRSh2bWlkLT52bWlkX2dlbikgIT0gY3VycmVudF92bWlkX2dl
-bik7Cn0KClRoZSBjb21tZW50IGNvdWxkIGJlIHJlcGhyYXNlZCB0byByZW1vdmUgdGhlIHJlZmVy
-ZW5jZSB0byBrdm0tPmFyY2gudm1pZDogIk9yZGVycwpyZWFkIG9mIGt2bV92bWlkX2dlbiBhbmQg
-a3ZtX3MyX21tdS0+dm1pZCIuCgo+IFsuLl0KPiAgCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQv
-a3ZtL21tdS5jIGIvYXJjaC9hcm02NC9rdm0vbW11LmMKPiBpbmRleCA4YzAwMzVjYWI2YjYuLjRh
-NDQzN2JlNGJjNSAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybTY0L2t2bS9tbXUuYwo+ICsrKyBiL2Fy
-Y2gvYXJtNjQva3ZtL21tdS5jCj4KPiBbLi5dCj4gIAo+ICAvKioKPiAtICoga3ZtX2FsbG9jX3N0
-YWdlMl9wZ2QgLSBhbGxvY2F0ZSBsZXZlbC0xIHRhYmxlIGZvciBzdGFnZS0yIHRyYW5zbGF0aW9u
-Lgo+IC0gKiBAa3ZtOglUaGUgS1ZNIHN0cnVjdCBwb2ludGVyIGZvciB0aGUgVk0uCj4gKyAqIGt2
-bV9pbml0X3N0YWdlMl9tbXUgLSBJbml0aWFsaXNlIGEgUzIgTU1VIHN0cnVjcnVyZQo+ICsgKiBA
-a3ZtOglUaGUgcG9pbnRlciB0byB0aGUgS1ZNIHN0cnVjdHVyZQo+ICsgKiBAbW11OglUaGUgcG9p
-bnRlciB0byB0aGUgczIgTU1VIHN0cnVjdHVyZQo+ICAgKgo+ICAgKiBBbGxvY2F0ZXMgb25seSB0
-aGUgc3RhZ2UtMiBIVyBQR0QgbGV2ZWwgdGFibGUocykgb2Ygc2l6ZSBkZWZpbmVkIGJ5Cj4gLSAq
-IHN0YWdlMl9wZ2Rfc2l6ZShrdm0pLgo+ICsgKiBzdGFnZTJfcGdkX3NpemUobW11LT5rdm0pLgo+
-ICAgKgo+ICAgKiBOb3RlIHdlIGRvbid0IG5lZWQgbG9ja2luZyBoZXJlIGFzIHRoaXMgaXMgb25s
-eSBjYWxsZWQgd2hlbiB0aGUgVk0gaXMKPiAgICogY3JlYXRlZCwgd2hpY2ggY2FuIG9ubHkgYmUg
-ZG9uZSBvbmNlLgo+ICAgKi8KPiAtaW50IGt2bV9hbGxvY19zdGFnZTJfcGdkKHN0cnVjdCBrdm0g
-Kmt2bSkKPiAraW50IGt2bV9pbml0X3N0YWdlMl9tbXUoc3RydWN0IGt2bSAqa3ZtLCBzdHJ1Y3Qg
-a3ZtX3MyX21tdSAqbW11KQo+ICB7Cj4gIAlwaHlzX2FkZHJfdCBwZ2RfcGh5czsKPiAgCXBnZF90
-ICpwZ2Q7Cj4gKwlpbnQgY3B1Owo+ICAKPiAtCWlmIChrdm0tPmFyY2gucGdkICE9IE5VTEwpIHsK
-PiArCWlmIChtbXUtPnBnZCAhPSBOVUxMKSB7Cj4gIAkJa3ZtX2Vycigia3ZtX2FyY2ggYWxyZWFk
-eSBpbml0aWFsaXplZD9cbiIpOwo+ICAJCXJldHVybiAtRUlOVkFMOwo+ICAJfQo+IEBAIC0xMDI0
-LDggKzEwNDAsMjAgQEAgaW50IGt2bV9hbGxvY19zdGFnZTJfcGdkKHN0cnVjdCBrdm0gKmt2bSkK
-PiAgCWlmIChXQVJOX09OKHBnZF9waHlzICYgfmt2bV92dHRicl9iYWRkcl9tYXNrKGt2bSkpKQo+
-ICAJCXJldHVybiAtRUlOVkFMOwoKV2UgZG9uJ3QgZnJlZSB0aGUgcGdkIGlmIHdlIGdldCB0aGUg
-ZXJyb3IgYWJvdmUsIGJ1dCB3ZSBkbyBmcmVlIGl0IGJlbG93LCBpZgphbGxvY2F0aW5nIGxhc3Rf
-dmNwdV9yYW4gZmFpbHMuIFNob3VsZG4ndCB3ZSBmcmVlIGl0IGluIGJvdGggY2FzZXM/Cgo+IC0J
-a3ZtLT5hcmNoLnBnZCA9IHBnZDsKPiAtCWt2bS0+YXJjaC5wZ2RfcGh5cyA9IHBnZF9waHlzOwo+
-ICsJbW11LT5sYXN0X3ZjcHVfcmFuID0gYWxsb2NfcGVyY3B1KHR5cGVvZigqbW11LT5sYXN0X3Zj
-cHVfcmFuKSk7Cj4gKwlpZiAoIW1tdS0+bGFzdF92Y3B1X3Jhbikgewo+ICsJCWZyZWVfcGFnZXNf
-ZXhhY3QocGdkLCBzdGFnZTJfcGdkX3NpemUoa3ZtKSk7Cj4gKwkJcmV0dXJuIC1FTk9NRU07Cj4g
-Kwl9Cj4KPiBbLi5dCgpUaGFua3MsCkFsZXgKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi, Will,
+
+On Tue, Jun 16, 2020 at 08:43:08AM +0100, Will Deacon wrote:
+> Please can you explain why it's ok to move the PERF_COUNT_SW_PAGE_FAULTS
+> update like this? Seems like a user-visible change to me, so some
+> justification would really help.
+
+Indeed this could be a functional change for PERF_COUNT_SW_PAGE_FAULTS on some
+archs, e.g., for arm64, PERF_COUNT_SW_PAGE_FAULTS previously will also contain
+accounting of severe errors where we go into the "no_context" path.  However if
+you see the other archs, it's not always true, for example, the xtensa arch
+only accounts the correctly handled faults (arch/xtensa/mm/fault.c).
+
+After I thought about this, I don't think it's extremely useful (or please
+correct me if I missed something important) to use PERF_COUNT_SW_PAGE_FAULTS
+for fatal error accountings among all those correct ones.  After all they are
+really extremely rare cases, and even if we got a sigbus for a process, we'll
+normally got something dumped in dmesg so if we really want to capture the
+error cases there should always be a better way (because by following things
+like dmesg we can not only know how many error faults triggered, but also on
+the details of the errors).
+
+IOW, my understanding of users of PERF_COUNT_SW_PAGE_FAULTS is that they want
+to trap normal/correct page faults, not really care about rare errors.
+
+Then when I went back to think PERF_COUNT_SW_PAGE_FAULTS, it's really about:
+
+  A=PERF_COUNT_SW_PAGE_FAULTS 
+  B=PERF_COUNT_SW_PAGE_FAULTS_MAJ
+  C=PERF_COUNT_SW_PAGE_FAULTS_MIN
+
+And:
+
+  A=B+C
+
+If that's the case (which is simple and clear), it's really helpful too that we
+unify this definition across all the architectures, then it'll also be easier
+for us to provide some helper like mm_fault_accounting() so that the accounting
+can be managed in the general code rather than in arch-specific ways.
+
+Thanks,
+
+-- 
+Peter Xu
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
