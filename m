@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C244B1FAC77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:33:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07761FAC7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:34:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=MNk9PykNVXkE8puTLaRkIGLrqgWFW1+jFXiame7g+Fc=; b=txG
-	t4YjBUsA97aDsx/ituTLuKV1WEfY2u8z+BYvnm3GzlCP33CWkq/0gH+q6Db4qvZrw8TDfpyVljrkM
-	GYVwe8o7+gBR/SyrLXFdUSl0QT3t1rUFd56qJ+GmXqVC9AqNXvfAK/KCcVUkOg1EDM0DnkJ57B1nI
-	g4jV5kiEB6Scifx1nsKzSYH2fDRDkLsCRGZvy67hwPsZ+Kmh8gcM9QrIePUXrKhzcwrVNpWQmHQRN
-	gk/1LToIBEN2xmOfEx8R9ibfah8+ntIqtyIODp0FVHylD7S4z2tv8VvVfRG3yZvX0psHDCHW0WSgL
-	4yg8nfPf75MEM7/4r28nfKgx3YXPhMA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=MM9bphamxH5CuW5ALGKQ09B2SEVqRXQ6aevElk0dVtI=; b=Ccteqa5JflCHVopiUmC9JMmNU3
+	WnMFVt4rb646T/b2azeBGa1ijoHGqzk90JinDW7F8B0kuupzFAi6KGYb0d/dr32u/sewoU8BQ5aWK
+	XzQKpD7aiuzgj9qOU03YlqA4h3N7Bh2DchhHYdfJ0cw7T+fFTQn4LBiRcuItbiVuuJzGu2UOEgvmH
+	hSjfzj4LNU80rapFHdKALav3BRGA43iOXlfno8rl0nK0W50uNLihA/v4oSjRYzCYz5MAo8WCo5M3D
+	/Ry0HYYTGm8gW1dKVM+ulBPo8fwUHmcf40VXnh5lhbNuzkTxGCM1B0WH5VKjYUjz96NeXo8fAHffG
+	65TEc7eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl7yY-0005gv-2L; Tue, 16 Jun 2020 09:33:50 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jl7yn-0005sy-9C; Tue, 16 Jun 2020 09:34:05 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl7yN-0005fT-Cg
+ id 1jl7yN-0005fe-Jq
  for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:33:42 +0000
-Received: by mail-wm1-x343.google.com with SMTP id u26so1838706wmn.1
+Received: by mail-wr1-x443.google.com with SMTP id l10so19973513wrr.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 02:33:37 -0700 (PDT)
+ Tue, 16 Jun 2020 02:33:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=V3ItL99zeJ4+dSDGZoa+YIY60rLryQIbuqJoBSzhmcw=;
- b=AJmNMdIxyNlpz8ryliR4GE/cil3bmEd66hIxWSSKQi8Dox30PVtaarAJvlIPjefUxK
- 9h2BY1EFQNE0MZ4n0P2SgkyQAUhb/LbJ/Xa9IPLvgsDFw70jtlwF7Z3P+C5U2CInOlmU
- YV5NuBSN3NvEfJEp0g66dUxrkiJzOIsGrvFVEw294Kqp5LGDqeyy4rP8oF23+hSgcC4z
- z1TFCMdENYljG0Sf2Moh6sAVNn85GBaCkHN9ab9qcHjFagFm+AkSXzKv7ilE0FAebdIs
- Mu87xXorEyrxL5q1D6jRQvZUrBdXFgW2dMo5f685rlxEjMWcUl/ujT7Mdd2hUmU83rRU
- PPug==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=UkxWceIqGQ7XQKBCF9BsfRIAOtRo9bMGnldWME5GM5Y=;
+ b=Ma+8k4LR3nbuxqMK1pSQBi9He02YkzVDFiG5Jqtlk3+XnUBkct4frBtzw6ME21PLgh
+ J4QrLAsGIkFaTg5TWACIW74Ym3jQb7y5RGGrGdCyYL4mWV8jD51TmjRzEDLE0p7oqLds
+ twrbBnVOK9i80i7gFAmA2qcf2+LAVD1vQl2xi8/WLCJtMiiExSWMqX0CIwnZal0Yx/sW
+ 2QktcBS1Rw0ntsno3X1ufnQpVqC8KhNUcIoUffLQuuRt7BUS6RgiBUapCT0vlbCzZT1E
+ mcYy0H/Any31kARoBQnVqXWqw/Zxo8Osz4XhVYvKoTD5osfWz/RWD185rX9QS4BllAWq
+ 7S9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=V3ItL99zeJ4+dSDGZoa+YIY60rLryQIbuqJoBSzhmcw=;
- b=XpRbcXyhTKyavgs20drRJj2jvjlusXdVVH7NxQ0SRogmuhoqEljK3mJ7Z+aSApGFU1
- z6jOv4Vm0xjCPH0khJyQbKpDaFiyyNq4HF06TvcRxcH+3cCLv5RgcWWdE6wttGJHjaSK
- 3QW3f+sqB92B6ueDJlbT4vxKbnepLT+RaRydaFIY60zPja/kD1Wa7+evmY9BOsCDT677
- R17ZQcyqz8ADZsiwSRF/lINhnewZinwULyRB4020lS/HsY8Inpn2limpeXx+H3IpT+MQ
- CVdggLRHM5dSaj3qUFO2f1kG7/GToxklXbUylfGlSpa7ERRXj0JqgVOZTeZZyvkWy+V1
- FeEA==
-X-Gm-Message-State: AOAM532nnIpwuyFa/TZHLpcOiDCFDUzCKohQXtjVFl3kNsQ4hTgEf46V
- m8iUgvqqQVfXzFhpjGe6ijMrPWYPlw0=
-X-Google-Smtp-Source: ABdhPJz8XA9ljCsSo4tdxEE1dlUXMUsYGUvfKszaOPYkAZBmkQcUHcQCOPNkwAco53j1ySlWEX/+/g==
-X-Received: by 2002:a1c:6446:: with SMTP id y67mr2408984wmb.156.1592300016312; 
- Tue, 16 Jun 2020 02:33:36 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=UkxWceIqGQ7XQKBCF9BsfRIAOtRo9bMGnldWME5GM5Y=;
+ b=mCXG8hctP7GVMJEDxD5WpAfxWXwxJfwCSRMjiI4iEFSi5u4vxI/3BT3EfBOGCwzTdp
+ VZMGg3mYLFb0c0nFNXvHzKfDZKRug9pL840O/2cBgyWRzSX2Mg7cQ53EFIak1TeuVvfR
+ HCnUHZdcDZ5i254DEKISbGaYrGJIJyq5YKRTOuCqydehFg9xyV4+ONC3RtUFbNaSBX9Z
+ GIltbHlkbyVqzMJQ7jsVxl8afWvNwK9DP/nfT9V6Ejar6840T5LNQ0bXzFkBsKfUjWLX
+ lRg9iOaEiVCkWzOpjy4mJxZvo4a8JwU8D/c/X4DM0NBPBLP0tKZxBnNLNoCpVxPDbW0t
+ sqqQ==
+X-Gm-Message-State: AOAM530B93fFhYJq7WrSDIexNfnV/IkwBtmX/N876eVHPXk5ddxbBUmu
+ Occ/l550qpxxlcss4MtF3GfqcTo9oTM=
+X-Google-Smtp-Source: ABdhPJwxawRamVODM5GFxF6vDRZPipRKcLiPXgHT5YIq0YRXlPVcaclmm2PuQlJOS4PoOVMbP2BDHA==
+X-Received: by 2002:a5d:6b86:: with SMTP id n6mr2014868wrx.167.1592300017807; 
+ Tue, 16 Jun 2020 02:33:37 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6801:1801:c5c1:794c:e67f:3280])
- by smtp.gmail.com with ESMTPSA id s72sm3166391wme.35.2020.06.16.02.33.34
+ by smtp.gmail.com with ESMTPSA id s72sm3166391wme.35.2020.06.16.02.33.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 02:33:35 -0700 (PDT)
+ Tue, 16 Jun 2020 02:33:36 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
  mathieu.poirier@linaro.org
-Subject: [PATCH 0/3] coresight: minor fixes for CoreSight and ETMv4
-Date: Tue, 16 Jun 2020 10:33:30 +0100
-Message-Id: <20200616093333.31283-1-mike.leach@linaro.org>
+Subject: [PATCH 1/3] coresight: Fix comment in main header file.
+Date: Tue, 16 Jun 2020 10:33:31 +0100
+Message-Id: <20200616093333.31283-2-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200616093333.31283-1-mike.leach@linaro.org>
+References: <20200616093333.31283-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_023341_289749_7BAEC6BA 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_023341_299810_EDF42415 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,19 +103,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Set consists of minor fixes discovered during other development work.
-Fixes are stand-alone and not directly part of new work.
+Comment for an elemnt in the coresight_device structure appears to have
+been corrupted & makes no sense. Fix this before making further changes.
 
-Mike Leach (3):
-  coresight: Fix comment in main header file.
-  coresight: etmv4: Counter values not saved on disable.
-  coresight: etmv4: Fix resource selector constant.
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+---
+ include/linux/coresight.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
- drivers/hwtracing/coresight/coresight-etm4x.c | 6 ++++++
- drivers/hwtracing/coresight/coresight-etm4x.h | 4 ++--
- include/linux/coresight.h                     | 3 ++-
- 3 files changed, 10 insertions(+), 3 deletions(-)
-
+diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+index e55499dcc010..fc320dd2cedc 100644
+--- a/include/linux/coresight.h
++++ b/include/linux/coresight.h
+@@ -180,7 +180,8 @@ struct coresight_sysfs_link {
+  * @enable:	'true' if component is currently part of an active path.
+  * @activated:	'true' only if a _sink_ has been activated.  A sink can be
+  *		activated but not yet enabled.  Enabling for a _sink_
+- *		appens when a source has been selected for that it.
++ *		happens when a source has been selected and a path is enabled
++ *		from source to that sink.
+  * @ea:		Device attribute for sink representation under PMU directory.
+  * @def_sink:	cached reference to default sink found for this device.
+  * @last_sink:	Name of last sink used for this source to trace into. Set when
 -- 
 2.17.1
 
