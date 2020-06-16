@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60CDC1FAF31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 13:31:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2034D1FAF3B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 13:33:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zNh+kRBH92Jh6xB9jbBB3oxgu2U5KwFQGTRbDSGTcCA=; b=cYG+5ky6tXT/YP
-	UDvZf0uBsUnfGbPRl0ZhCxJ7oKVD1Boe3m3ko7YsqW1Fe+ogKb1GssFUKjDBwP3sAGsr1Dnisx3If
-	JiFXMBwiXjtJCEBi476sZ4Y9eghujelfFqJkQLk6ug2fuNfEpNaFaBPfjVBEyDxs3nIPIY+uf4jKW
-	tmQ7yBmhvfTi0LWWyEC3P/dNnUPAsskjxQZStmM7OfsrHYom2NaTYLgHLx63zCuu8/AZG2cBEcmUm
-	YUNgj9KiC3wi/usARF6pqxpXZoOu0zZh326q1qRaSkJLAodBhfdbA703JhG1QYTF/yRfbMkeqMC7C
-	bRCQnw2e0TPKDHiTHbLg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lEmFDKWD7wfFkpySoSsa06YIeHecbenHP+49trjw4e0=; b=h7Ed9HqqlT+9ye
+	yuMSkuoheqAF2EYnnr8ex6R4aC3RaY1IRb9RI0mKcxcSKqFRsp7gk4LtLXXNHMBd/XFRyGGASN4VS
+	3kIACYAmVYYsETVZMRm8DmuHXYj45dq/XZ3CCESsU9Q1/Rgui7MN041Z80MZLTMlBk+Vo+mmc4qY4
+	8U+2ffTZ3p4Q8M7PCAFWHxma255WrjI591yMT/okViOtkecK9HP4ReRJKt99IpT2ZTDtL5fct6KRp
+	BPl3hy9gi6MrTJT4ZLvep8zuno+Ff3izpUD5mjtxGU4P1X43fCBlrcHFyJcU9MHfzA4NT0W3XlQLi
+	HqOjNa8rsfZS4fF9dCcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl9o1-00051H-7l; Tue, 16 Jun 2020 11:31:05 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jl9qG-0005M7-Cr; Tue, 16 Jun 2020 11:33:24 +0000
+Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl9ns-00050D-Um
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 11:30:58 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05GBO12D019879; Tue, 16 Jun 2020 13:30:47 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=Is1HFAKxrRK4M9wTQ7ky+YcCCVHYlPfvKWxElD41J9I=;
- b=hdVbR5ll8P9IF/DCqIP9G5yC0gyORLZAtaFpHlEHLAYcrss21imUCGZ672jRtxl1+Lbv
- RrlD5NcLkRJFxGMc+1djtYauSv8oaE7GPkkMiOG4ROcdaRWtG9gvv4B6/3B6/AKj6M+L
- 8IMSsICY8SWe4DyVBdCJqEWXO4q0uM3T7+CMkHkpbqFNc44SOkWFYo4k2dbLjjm7GX15
- VELNUaORbZjL19mUTbAuCVaKPreTimyaNv845pe8Y+WAOwWSkTQWzNYonkdx3ygbXpHF
- 05zTm2Tq5WRs10obXx5TShs2TPOruCcqhInCUxeCXhLvjSzxxFc/1SAyLA3t2d2xMoqK qw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31mm91q2v1-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 16 Jun 2020 13:30:47 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DB1EB10002A;
- Tue, 16 Jun 2020 13:30:44 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CD57D2C0D26;
- Tue, 16 Jun 2020 13:30:44 +0200 (CEST)
-Received: from localhost (10.75.127.44) by SFHDAG6NODE3.st.com (10.75.127.18)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 16 Jun 2020 13:30:44 +0200
-From: <patrice.chotard@st.com>
-To: Mark Brown <broonie@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>
-Subject: spi: stm32-qspi: Fix error path in case of -EPROBE_DEFER
-Date: Tue, 16 Jun 2020 13:30:35 +0200
-Message-ID: <20200616113035.4514-1-patrice.chotard@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jl9q6-0005Ky-Bq
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 11:33:15 +0000
+Received: by mail-vk1-xa41.google.com with SMTP id u15so4702305vkk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jun 2020 04:33:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZSg0muGbkwOyh6Ot3lTlpvo0Mmt4wgCAweHT5tRHxm0=;
+ b=VibwAZSD84LU+4hHmx7H20bVV8ZpftSbkJ7qeyM+fPSnWy5b52HMmY8uC6oN/TOJ3N
+ Ppd7MeLLzhu4lLdwL1u8+HFFzEJwEkIRbPl3l2liiO84a2tEXnOOLJLVeD2eQr2LEdo1
+ GuqKU5ksA+/+QuCtf656nkvB+l8BnzLR+CwMeWI8NMKjSG87T6hTFLog6RcU8uJ5b42y
+ lBqr6ENJXZQ31zwwwbbWm8fG8NZlpIVe4l6fg47KvRL/VkNsBi3g56UkQTQ64+dQKFpF
+ 89zZO5b6w/YjOAiLDeGYGxLcR5EKhAFvvlLFVKqumAr2y0DtwWTd9++bWUxaqHYG4fEh
+ NmyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZSg0muGbkwOyh6Ot3lTlpvo0Mmt4wgCAweHT5tRHxm0=;
+ b=tZpt+gbqR/wL5b2povSEB4OT3Ck+rGb0OUEetk9kqYMlohosAiIP7Sb9Sja3KCoOBq
+ ZnHythz1MV1BiuFyAFIRH7q4CgFjf+9szCYQJnTK7BFXxl8TcPLggXNd4EsG7Zxl/VbJ
+ CIFiwBWkgp0Pr8KTsAwumQcSl/yTZS88GmtiK3v2fpmZVqJYkbJO1NEhqz48IL4QFzs8
+ c/kj2ZRybo/a7DkI03q9rO4sVXkX10q06j9vMCrrN1QerHuoq5fDLD9d9yviDDTHOrYS
+ hVbDLjCwiRMuxbabE+EsOLmlBaSFxM/R+VSzvKfcExvT8a7CfzbkLmsAVQoG7eUVEjEE
+ Pk4w==
+X-Gm-Message-State: AOAM533ScMAJNiYoA6u0JROWGbqUiLuefolnEks9UN43JqHsSWk/aLA/
+ sSSl4GHr3JUeeKcJ3izJuVHIUuN7C9S3xctIOoUgnQ==
+X-Google-Smtp-Source: ABdhPJznqqxzYSq4IwrFjXL5kmjhHPScZNDOA7H32xZbM7qlqeiuriVkd5OOYnJKbb8oO4Q4Ov7r07YvZL4Xn1v7YjE=
+X-Received: by 2002:a1f:2145:: with SMTP id h66mr1118293vkh.53.1592307192362; 
+ Tue, 16 Jun 2020 04:33:12 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG6NODE3.st.com
- (10.75.127.18)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-16_04:2020-06-16,
- 2020-06-16 signatures=0
+References: <20200608084458.32014-1-narmstrong@baylibre.com>
+In-Reply-To: <20200608084458.32014-1-narmstrong@baylibre.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 16 Jun 2020 13:32:36 +0200
+Message-ID: <CAPDyKFo7VA-wbOZUxExUpPoc+u446KecFARX0KNCakaubowpXg@mail.gmail.com>
+Subject: Re: [PATCH] mmc: meson-gx: limit segments to 1 when dram-access-quirk
+ is needed
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_043057_435385_C2044BF9 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200616_043314_408559_61A7A993 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,131 +91,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Patrice Chotard <patrice.chotard@st.com>,
- mcoquelin.stm32@gmail.com, linux-spi@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Christian Hewitt <christianshewitt@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Art Nikpal <art@khadas.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Patrice Chotard <patrice.chotard@st.com>
+On Mon, 8 Jun 2020 at 10:45, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> The actual max_segs computation leads to failure while using the broadcom
+> sdio brcmfmac/bcmsdh driver, since the driver tries to make usage of scatter
+> gather.
+>
+> But with the dram-access-quirk we use a 1,5K SRAM bounce buffer, and the
+> max_segs current value of 3 leads to max transfers to 4,5k, which doesn't work.
+>
+> This patch sets max_segs to 1 to better describe the hardware limitation,
+> and fix the SDIO functionnality with the brcmfmac/bcmsdh driver on Amlogic
+> G12A/G12B SoCs on boards like SEI510 or Khadas VIM3.
+>
+> Reported-by: Art Nikpal <art@khadas.com>
+> Reported-by: Christian Hewitt <christianshewitt@gmail.com>
+> Fixes: acdc8e71d9bb ("mmc: meson-gx: add dram-access-quirk")
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-In case of -EPROBE_DEFER, stm32_qspi_release() was called
-in any case which unregistered driver from pm_runtime framework
-even if it has not been registered yet to it. This leads to:
+Applied for fixes and by adding a stable tag, thanks!
 
-stm32-qspi 58003000.spi: can't setup spi0.0, status -13
-spi_master spi0: spi_device register error /soc/spi@58003000/mx66l51235l@0
-spi_master spi0: Failed to create SPI device for /soc/spi@58003000/mx66l51235l@0
-stm32-qspi 58003000.spi: can't setup spi0.1, status -13
-spi_master spi0: spi_device register error /soc/spi@58003000/mx66l51235l@1
-spi_master spi0: Failed to create SPI device for /soc/spi@58003000/mx66l51235l@1
+Kind regards
+Uffe
 
-On v5.7 kernel,this issue was not "visible", qspi driver was probed
-successfully.
 
-Fixes: 9d282c17b023 ("spi: stm32-qspi: Add pm_runtime support")
-
-Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
----
- drivers/spi/spi-stm32-qspi.c | 46 ++++++++++++++++++++----------------
- 1 file changed, 26 insertions(+), 20 deletions(-)
-
-diff --git a/drivers/spi/spi-stm32-qspi.c b/drivers/spi/spi-stm32-qspi.c
-index 3c44bb2fd9b1..a900962b4336 100644
---- a/drivers/spi/spi-stm32-qspi.c
-+++ b/drivers/spi/spi-stm32-qspi.c
-@@ -553,20 +553,6 @@ static const struct spi_controller_mem_ops stm32_qspi_mem_ops = {
- 	.exec_op = stm32_qspi_exec_op,
- };
- 
--static void stm32_qspi_release(struct stm32_qspi *qspi)
--{
--	pm_runtime_get_sync(qspi->dev);
--	/* disable qspi */
--	writel_relaxed(0, qspi->io_base + QSPI_CR);
--	stm32_qspi_dma_free(qspi);
--	mutex_destroy(&qspi->lock);
--	pm_runtime_put_noidle(qspi->dev);
--	pm_runtime_disable(qspi->dev);
--	pm_runtime_set_suspended(qspi->dev);
--	pm_runtime_dont_use_autosuspend(qspi->dev);
--	clk_disable_unprepare(qspi->clk);
--}
--
- static int stm32_qspi_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -642,7 +628,7 @@ static int stm32_qspi_probe(struct platform_device *pdev)
- 	if (IS_ERR(rstc)) {
- 		ret = PTR_ERR(rstc);
- 		if (ret == -EPROBE_DEFER)
--			goto err_qspi_release;
-+			goto err_clk_disable;
- 	} else {
- 		reset_control_assert(rstc);
- 		udelay(2);
-@@ -653,7 +639,7 @@ static int stm32_qspi_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, qspi);
- 	ret = stm32_qspi_dma_setup(qspi);
- 	if (ret)
--		goto err_qspi_release;
-+		goto err_dma_free;
- 
- 	mutex_init(&qspi->lock);
- 
-@@ -673,15 +659,26 @@ static int stm32_qspi_probe(struct platform_device *pdev)
- 
- 	ret = devm_spi_register_master(dev, ctrl);
- 	if (ret)
--		goto err_qspi_release;
-+		goto err_pm_runtime_free;
- 
- 	pm_runtime_mark_last_busy(dev);
- 	pm_runtime_put_autosuspend(dev);
- 
- 	return 0;
- 
--err_qspi_release:
--	stm32_qspi_release(qspi);
-+err_pm_runtime_free:
-+	pm_runtime_get_sync(qspi->dev);
-+	/* disable qspi */
-+	writel_relaxed(0, qspi->io_base + QSPI_CR);
-+	mutex_destroy(&qspi->lock);
-+	pm_runtime_put_noidle(qspi->dev);
-+	pm_runtime_disable(qspi->dev);
-+	pm_runtime_set_suspended(qspi->dev);
-+	pm_runtime_dont_use_autosuspend(qspi->dev);
-+err_dma_free:
-+	stm32_qspi_dma_free(qspi);
-+err_clk_disable:
-+	clk_disable_unprepare(qspi->clk);
- err_master_put:
- 	spi_master_put(qspi->ctrl);
- 
-@@ -692,7 +689,16 @@ static int stm32_qspi_remove(struct platform_device *pdev)
- {
- 	struct stm32_qspi *qspi = platform_get_drvdata(pdev);
- 
--	stm32_qspi_release(qspi);
-+	pm_runtime_get_sync(qspi->dev);
-+	/* disable qspi */
-+	writel_relaxed(0, qspi->io_base + QSPI_CR);
-+	stm32_qspi_dma_free(qspi);
-+	mutex_destroy(&qspi->lock);
-+	pm_runtime_put_noidle(qspi->dev);
-+	pm_runtime_disable(qspi->dev);
-+	pm_runtime_set_suspended(qspi->dev);
-+	pm_runtime_dont_use_autosuspend(qspi->dev);
-+	clk_disable_unprepare(qspi->clk);
- 
- 	return 0;
- }
--- 
-2.17.1
-
+> ---
+>  drivers/mmc/host/meson-gx-mmc.c | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/mmc/host/meson-gx-mmc.c b/drivers/mmc/host/meson-gx-mmc.c
+> index 35400cf2a2e4..cfaf8e7e22ec 100644
+> --- a/drivers/mmc/host/meson-gx-mmc.c
+> +++ b/drivers/mmc/host/meson-gx-mmc.c
+> @@ -1143,9 +1143,11 @@ static int meson_mmc_probe(struct platform_device *pdev)
+>
+>         mmc->caps |= MMC_CAP_CMD23;
+>         if (host->dram_access_quirk) {
+> +               /* Limit segments to 1 due to low available sram memory */
+> +               mmc->max_segs = 1;
+>                 /* Limit to the available sram memory */
+> -               mmc->max_segs = SD_EMMC_SRAM_DATA_BUF_LEN / mmc->max_blk_size;
+> -               mmc->max_blk_count = mmc->max_segs;
+> +               mmc->max_blk_count = SD_EMMC_SRAM_DATA_BUF_LEN /
+> +                                    mmc->max_blk_size;
+>         } else {
+>                 mmc->max_blk_count = CMD_CFG_LENGTH_MASK;
+>                 mmc->max_segs = SD_EMMC_DESC_BUF_LEN /
+> --
+> 2.22.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
