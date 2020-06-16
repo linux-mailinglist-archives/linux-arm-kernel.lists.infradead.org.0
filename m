@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA1C61FB10B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:45:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AADC81FB109
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:45:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4/fSRJ015BfHKUiH4GARmk75kO/4S+gdDAIlGiSD/1o=; b=cU7SLyqvTuDMC4
-	mg4Su4S6+IZcSKYuPt+h0w8toZyijtdscaAdrQ99SoGJNUlhnt9MwAmh9PioExoYrq/T5/FYjqoQE
-	cNM/q9U76Qt3e9b0EIQV/xAmPryb42F1dAxHfT/7HuOMRVTXDM0DSV+4j8X03dwIi1Otwytziydgy
-	ffgWtFBdpUlmaUZJH0/yUlcltQFyGvl7TwIqf332qX+BaeKPeN3ptCOowoH7U2yhKRKzW0JG+SF20
-	ghfDHxcfmIeqQIxjuOhgSUhwRGujDhw33eOaHYnneuR8r+Lgt59P3z8RJHECwhkPC5adI08uyOZAl
-	a1BW+kMnpyb/8iImYtRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y/qyIX/KJA1SofLT2VbBXd3XpZqqp9Gwre3RNyJJBVM=; b=RIvu4nPiGRZBba
+	aRLN4nwM3cUEGjAeFgBJa27GeXVQJARwwZ3quNnXmLuWUlKR21Cx8hvpHl4jF4uHjovDOXx/DMLAS
+	raP/JqaFEGIBOU78K5wK327bpOtEND8VIIVLWe47osU4A4sjsvn1zoEkmV8EbxMJvoW3os6aioEec
+	UTSs489d8R089RQviA5a0os75sFgVOAXxmandCFqk/eU5pxf8aHeOTadXsbmH8YHw0XrY0hDCiyd4
+	A7MGHk5q3iJf1c2lHEkvY1GFyTYQWrU2OqMfwE2ehZAY8/YMomeuhJ30s9LamHMIzKVPEJzZV9cLQ
+	TVppbbFDC2MQsus6QDLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlAy4-00077n-LE; Tue, 16 Jun 2020 12:45:32 +0000
+	id 1jlAxt-0005WE-R5; Tue, 16 Jun 2020 12:45:21 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlAxa-0004VV-Ml; Tue, 16 Jun 2020 12:45:04 +0000
-X-UUID: 4d82aed94592474f8381813f80a32ca5-20200616
+ id 1jlAxa-0004VT-Mu; Tue, 16 Jun 2020 12:45:04 +0000
+X-UUID: 6ef4f37616c84916b480fb5dab34743b-20200616
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=1y6jYCU5bn8D2X7/K/Tvzzlj7X36JuNHASO4pxrPu4w=; 
- b=iQnnbsRTQitClaSbkDUZL8p5j1UhN/N0a5ci1xagj+SPqnGJrzpDu9K8qXY0GEqvkm/5tOJCUIW8SFZRqygRE0vjXP9Z9AzJdl2QGfFmTsN48qrV1puJ+aD5Em255xhl/L0G4KiP4alOAGAH4vg/szZj1braTQKUI3CFef5Iscw=;
-X-UUID: 4d82aed94592474f8381813f80a32ca5-20200616
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=+GHnm45hE2jvr2nHAZ9rbe0xkhq/hG963s3MyoZ72c0=; 
+ b=RrRhHGiGV0t4OXGgcT7VKiX/vI2w/HIAhYCyfeZ+AsuiQnTp8EFlAMPgxd8sfvF5Pt/VB0aTqvixBIEVIBewSI0t84bfZbQjkmgaAFS1tJSWChW+B5xXY7ueSjRtztyvU06H978JuV4m5hm+3CxfmOQLG087mysYD7b9dsxdC/k=;
+X-UUID: 6ef4f37616c84916b480fb5dab34743b-20200616
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <macpaul.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1256596933; Tue, 16 Jun 2020 04:44:46 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ with ESMTP id 1551260507; Tue, 16 Jun 2020 04:44:46 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 16 Jun 2020 05:34:51 -0700
+ 15.0.1497.2; Tue, 16 Jun 2020 05:34:58 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 16 Jun 2020 20:34:45 +0800
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 16 Jun 2020 20:34:49 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Tue, 16 Jun 2020 20:34:45 +0800
+ Frontend Transport; Tue, 16 Jun 2020 20:34:50 +0800
 From: Macpaul Lin <macpaul.lin@mediatek.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Felipe Balbi <balbi@kernel.org>, "Matthias
@@ -50,15 +50,19 @@ To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Greg Kroah-Hartman
  Gasnier" <fabrice.gasnier@st.com>, <linux-usb@vger.kernel.org>,
  <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/2] usb: gadget: introduce flag for large request
-Date: Tue, 16 Jun 2020 20:34:43 +0800
-Message-ID: <1592310884-4307-1-git-send-email-macpaul.lin@mediatek.com>
+Subject: [PATCH 2/2] usb: gadget: u_serial: improve performance for large data
+Date: Tue, 16 Jun 2020 20:34:44 +0800
+Message-ID: <1592310884-4307-2-git-send-email-macpaul.lin@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1592310884-4307-1-git-send-email-macpaul.lin@mediatek.com>
+References: <1592310884-4307-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: EDECF17A48CB3E8AC57607178CD1F115DB62B0B3FEBF009D4986F0C9798111442000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_054502_767313_080F3DFB 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20200616_054502_757898_FE86BC5E 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,67 +99,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some USB hardware like DMA engine can help to process (split) the data
-of each URB request into small packets. For example, the max packet size
-of high speed is 512 bytes. These kinds of hardware can help to split
-the continue Tx/Rx data requests into packets just at the max packet
-size during transmission. Hence upper layer software can reduce some
-effort for queueing many requests back and forth for larger data.
-
-Here we introduce "can_exceed_maxp" flag in gadget when these kinds of
-hardware is ready to support these operations.
+If the hardware (like DMA engine) could support large usb request exceeds
+maximum packet size, use larger buffer when performing Rx/Tx could reduce
+request numbers and improve performance.
 
 Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 ---
- drivers/usb/mtu3/mtu3_qmu.c |   11 ++++++++++-
- include/linux/usb/gadget.h  |    1 +
- 2 files changed, 11 insertions(+), 1 deletion(-)
+ drivers/usb/gadget/function/u_serial.c |    9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/usb/mtu3/mtu3_qmu.c b/drivers/usb/mtu3/mtu3_qmu.c
-index 3f414f9..2b51a20 100644
---- a/drivers/usb/mtu3/mtu3_qmu.c
-+++ b/drivers/usb/mtu3/mtu3_qmu.c
-@@ -620,7 +620,7 @@ irqreturn_t mtu3_qmu_isr(struct mtu3 *mtu)
+diff --git a/drivers/usb/gadget/function/u_serial.c b/drivers/usb/gadget/function/u_serial.c
+index 3cfc6e2..cdcc070 100644
+--- a/drivers/usb/gadget/function/u_serial.c
++++ b/drivers/usb/gadget/function/u_serial.c
+@@ -80,6 +80,8 @@
+ #define QUEUE_SIZE		16
+ #define WRITE_BUF_SIZE		8192		/* TX only */
+ #define GS_CONSOLE_BUF_SIZE	8192
++/* for hardware can do more than max packet */
++#define REQ_BUF_SIZE		4096
  
- int mtu3_qmu_init(struct mtu3 *mtu)
- {
--
-+	int i;
- 	compiletime_assert(QMU_GPD_SIZE == 16, "QMU_GPD size SHOULD be 16B");
+ /* console info */
+ struct gs_console {
+@@ -247,7 +249,8 @@ static int gs_start_tx(struct gs_port *port)
+ 			break;
  
- 	mtu->qmu_gpd_pool = dma_pool_create("QMU_GPD", mtu->dev,
-@@ -629,10 +629,19 @@ int mtu3_qmu_init(struct mtu3 *mtu)
- 	if (!mtu->qmu_gpd_pool)
- 		return -ENOMEM;
- 
-+	/* Let gadget know we can process request larger than max packet */
-+	for (i = 1; i < mtu->num_eps; i++)
-+		mtu->ep_array[i].ep.can_exceed_maxp = 1;
-+
- 	return 0;
- }
- 
- void mtu3_qmu_exit(struct mtu3 *mtu)
- {
-+	int i;
- 	dma_pool_destroy(mtu->qmu_gpd_pool);
-+
-+	/* Disable large request support */
-+	for (i = 1; i < mtu->num_eps; i++)
-+		mtu->ep_array[i].ep.can_exceed_maxp = 0;
- }
-diff --git a/include/linux/usb/gadget.h b/include/linux/usb/gadget.h
-index 6a17817..60e0645 100644
---- a/include/linux/usb/gadget.h
-+++ b/include/linux/usb/gadget.h
-@@ -236,6 +236,7 @@ struct usb_ep {
- 	unsigned		max_streams:16;
- 	unsigned		mult:2;
- 	unsigned		maxburst:5;
-+	unsigned		can_exceed_maxp:1;
- 	u8			address;
- 	const struct usb_endpoint_descriptor	*desc;
- 	const struct usb_ss_ep_comp_descriptor	*comp_desc;
+ 		req = list_entry(pool->next, struct usb_request, list);
+-		len = gs_send_packet(port, req->buf, in->maxpacket);
++		len = gs_send_packet(port, req->buf, in->can_exceed_maxp ?
++				REQ_BUF_SIZE : in->maxpacket);
+ 		if (len == 0) {
+ 			wake_up_interruptible(&port->drain_wait);
+ 			break;
+@@ -514,7 +517,9 @@ static int gs_alloc_requests(struct usb_ep *ep, struct list_head *head,
+ 	 * be as speedy as we might otherwise be.
+ 	 */
+ 	for (i = 0; i < n; i++) {
+-		req = gs_alloc_req(ep, ep->maxpacket, GFP_ATOMIC);
++		req = gs_alloc_req(ep, ep->can_exceed_maxp ?
++					REQ_BUF_SIZE : ep->maxpacket,
++					GFP_ATOMIC);
+ 		if (!req)
+ 			return list_empty(head) ? -ENOMEM : 0;
+ 		req->complete = fn;
 -- 
 1.7.9.5
 _______________________________________________
