@@ -2,53 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12FE91FB423
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:23:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F3BB1FB433
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:25:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7GfYUQwxik0hjxtCVxu7GBegacl8AnE9OgPSOAWQ5RM=; b=uNxBmILZo3mnof
-	SY9+hQ9GvnsIZxTbTdtjWLSQo8MPkYdmpFqOtz0oUXBWhpglcmUU+qOGvhZu0mLlCIpkGQmTuMlXT
-	wYIkYlsRDOTpXRyHk+iFTTEAF0f6/kxP2areGwbd30t9rPlhX2inCZGo5ImYCj5gTAg+FCcX/gH6X
-	Kgbd+RtwyHdCkUWm78m0vtnburO9G2FrLL9TXI2vpC41XmGvbqI5Em1fOLNOZ791/gzQ3q3X3MU7F
-	mNv0D/mKiDtpe2bvYGQN9ykgcwu17R6lRTsVjWw3OLTLL4ecagS+xgzzJ7zDfA9Rw/+LbRGeSXiWj
-	aPMSVYQuIZUn7mxTEm5A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qzTecSmXjKNReQOZpW8CXy2DYeeyf7xyZFcjE3wLddk=; b=O/cKs2V4r4ZxwF
+	qyTftHo8HCURw8MS/0mihBrkhEByu1HF9jlPSIZOvQLUqNQnQVNAAwyA6qj1ElE9Opf0d2o/EETMz
+	P26evWM0ujQLyuwK9sVTjk8u6iqnvuogfg6BG9L7BVsQg24fd2rKpAngLYqhWQ4LnLyt/+4sltJ5T
+	uQT69xBbEBdyaO4cXYDn18aqYrPciBe5/DpJ/eKPVielSh45IM52w/SbK3u5lbb7J5rpToWp3xLxf
+	8n1AoYYgVmZFMimSIvy7HOd9TvDcCLVDObay7TKWopXKc2LDV1nWqSUeUtYDwBcKZnYNXxulxGMZ5
+	Gd8Jvaz1fn5yNmccbU9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCUH-0003ui-4T; Tue, 16 Jun 2020 14:22:53 +0000
-Received: from netrider.rowland.org ([192.131.102.5])
- by bombadil.infradead.org with smtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlCAr-0003zP-TT
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:02:51 +0000
-Received: (qmail 31737 invoked by uid 1000); 16 Jun 2020 10:02:46 -0400
-Date: Tue, 16 Jun 2020 10:02:46 -0400
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: Re: [PATCH 1/2] usb: gadget: introduce flag for large request
-Message-ID: <20200616140246.GA30975@rowland.harvard.edu>
-References: <1592310884-4307-1-git-send-email-macpaul.lin@mediatek.com>
+	id 1jlCWI-0005b6-TU; Tue, 16 Jun 2020 14:24:58 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlCFS-0001kc-FY
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:07:38 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 05GE2wij002436; Tue, 16 Jun 2020 16:07:28 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=5Hcd79p5ovxHgR2Kw+vJ8ycKacohfcjtHYW/V9jWRZU=;
+ b=LQlgpY2PuUrJPpqbJ2bkNsqYx7LRUbCXYxr526KmqbAo6u6b+8mQreEakCrDmEQeFoKE
+ Wl1DDz98V9dTNm7gWmOKwBQ0zn2aBcADVyfvinxmpVrL0xAQs4k2qxXsAu4/BzPMCzBt
+ bFw6sZUCUUMKM8hP+kPh+W6Ypm4pW7pfZScttWpox8UDOBFhfuj0n3rDtuARZXq8P2ic
+ C0UZgoIbFsLAriSPDz84DMrdg4BYhUrJbtAZC53k0M+AGiVOylMSaUoFI/sEE3sDHGcO
+ 0L236C5TIVaxyMNqBos64ddV5zOcAa8/Fe/TW81sHv54yNIYSaZAg9LB4O1UjBAGm41p rA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 31mmjvyrjv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 16 Jun 2020 16:07:28 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5F8DD10002A;
+ Tue, 16 Jun 2020 16:07:27 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 48A582B56B6;
+ Tue, 16 Jun 2020 16:07:27 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 16 Jun 2020 16:07:26
+ +0200
+From: Amelie Delaunay <amelie.delaunay@st.com>
+To: Minas Harutyunyan <hminas@synopsys.com>, Felipe Balbi <balbi@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
+ <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Subject: [PATCH 0/3] Add USB role switch support to DWC2
+Date: Tue, 16 Jun 2020 16:07:14 +0200
+Message-ID: <20200616140717.28465-1-amelie.delaunay@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1592310884-4307-1-git-send-email-macpaul.lin@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-16_04:2020-06-16,
+ 2020-06-16 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_070250_119312_33D6CB6D 
-X-CRM114-Status: UNSURE (   5.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200616_070734_953486_5BE277A3 
+X-CRM114-Status: GOOD (  13.71  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.131.102.5 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,35 +94,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- =?utf-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sergey Organov <sorganov@gmail.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-mediatek@lists.infradead.org,
- Macpaul Lin <macpaul.lin@gmail.com>, Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Amelie Delaunay <amelie.delaunay@st.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 16, 2020 at 08:34:43PM +0800, Macpaul Lin wrote:
-> Some USB hardware like DMA engine can help to process (split) the data
-> of each URB request into small packets. For example, the max packet size
-> of high speed is 512 bytes. These kinds of hardware can help to split
-> the continue Tx/Rx data requests into packets just at the max packet
-> size during transmission. Hence upper layer software can reduce some
-> effort for queueing many requests back and forth for larger data.
-> 
-> Here we introduce "can_exceed_maxp" flag in gadget when these kinds of
-> hardware is ready to support these operations.
+When using usb-c connector (but it can also be the case with a micro-b
+connector), iddig, avalid, bvalid, vbusvalid input signals may not be
+connected to the DWC2 OTG controller.
+DWC2 OTG controller features an overriding control of the PHY voltage valid
+and ID input signals.
+So, missing signals can be forced using usb role from usb role switch and
+this override feature.
 
-This isn't needed.  All UDC drivers must be able to support requests that 
-are larger than the maxpacket size.
+This series adds support for usb role switch to dwc2, by using overriding
+control of the PHY voltage valid and ID input signals.
 
-Alan Stern
+It has been tested on stm32mp157c-dk2 [1], which has a Type-C connector
+managed by a Type-C port controller, and connected to USB OTG controller.
+
+[1] https://www.st.com/en/evaluation-tools/stm32mp157c-dk2.html
+
+Amelie Delaunay (3):
+  usb: dwc2: override PHY input signals with usb role switch support
+  usb: dwc2: don't use ID/Vbus detection if usb-role-switch on STM32MP15
+    SoCs
+  ARM: dts: stm32: enable usb-role-switch on USB OTG on stm32mp15xx-dkx
+
+ arch/arm/boot/dts/stm32mp15xx-dkx.dtsi |   2 +-
+ drivers/usb/dwc2/Kconfig               |   1 +
+ drivers/usb/dwc2/Makefile              |   2 +-
+ drivers/usb/dwc2/core.h                |   8 ++
+ drivers/usb/dwc2/drd.c                 | 190 +++++++++++++++++++++++++
+ drivers/usb/dwc2/gadget.c              |   2 +-
+ drivers/usb/dwc2/params.c              |   4 +-
+ drivers/usb/dwc2/platform.c            |  13 ++
+ 8 files changed, 218 insertions(+), 4 deletions(-)
+ create mode 100644 drivers/usb/dwc2/drd.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
