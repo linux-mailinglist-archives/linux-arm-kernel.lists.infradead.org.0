@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 494451FB374
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:06:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDDD41FB377
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ffTpCio8q+rB5Ws6nRALsAa9Bc1ZR9GGnay4FYUCZFc=; b=sqB0Mio/9U0U0D
-	r+TpdjGQpLVihrWvMGnqsC3s3BuPtDKdtQeY0R8c5YBredUL6e8iPuLp/4NxFkwXrsSIVBGfCU3wu
-	SmZTZS8hKmiJ6c8CCR/bQZyQzQqHNPI1bSmlbMLuWxAFLRAVrmWx9KBY/lzTj9p9TnhSyijkBbsfL
-	nDFAU65pyEjSL8nIThKLRr/D16AcM3h9bsZ5CRGl4yRFqSRNUSByxWW7mE3YRooVs7ArMykDUE9kA
-	Gwl5SgRSJxGxwY1PM5rF3iyBVLcnl3lgJ6dEuhn06lADAlbFnjJEv+/eBKPavHEI4C201kdvVXrmx
-	NpyiC2ffP4ivVn1wWiUg==;
+	List-Owner; bh=qGmMZN1xFP29bGEHiRssiGdOUcZbiZAzEMc6pmN+dws=; b=hMpPgKXGu6XK5B
+	klxCP+tfZq5AaO5iOVQcX8BQYRypyE4wC8ryfhzMsg1+p/lGh6YUcW05F5/NBfmNTZGKG9vTG+19D
+	ouJfarD3dLs9JCoQvmKF7SVkJsbaTM2MsjGYjxJTkbrm7qjQu0HTyeGet1QJ6vAlhIGKe4Jqi5KcE
+	63i9jS78U7o/Mbj/4wldTvP2s2yQ7r7uAOo6uS+3ltpN3RxMnrwtSxPT0vx14D6ag6tH85zdJKb4W
+	CwG2xQjbekNe7CUouMlVaiUN1cb6r4/PGoS+QdWx8XpYA6mtG8oIpI/ZMcgElBIjUwRHBEV7OEfs+
+	UmRzcB1KfurNHPpqJjIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCEP-0000ck-RO; Tue, 16 Jun 2020 14:06:29 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jlCEd-0000nG-2r; Tue, 16 Jun 2020 14:06:43 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC2U-000206-OI
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:13 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r7so20896503wro.1
+ id 1jlC2Y-00022J-F0
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:16 +0000
+Received: by mail-wm1-x344.google.com with SMTP id b82so2981489wmb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:54:10 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=pwE35G81wgEIvaTTAj8x7ONwFHGN+HySTYYEqF0s99Y=;
- b=Jv1sFJzp58JI28XF+/gu0gljB0qYxU/OqEcP3oSh5BKS1iaklTd4gA410IVLtHQ3f6
- +H1LWqsCDVN0aSJJ02TumbWf7ZGMTeKvdoizX8Vyp+tyiOjlzYseMxJQPNO4wkMz0OPz
- EeLZj5zvZnnGjasW7eOPXmGAkr+0JfND+l5tgQRr/IlGrUB/X02T4hGbhCXADKxyHCjy
- +hkh6xUSCRV5LeyvgWIFGtjVc9YUp1w6nPcxH9gF5iaTZLFVWa5s2GCsO9ERlM/Cz5tT
- kaAXZuxWOYsJ9Eo+CCD7Xi5DKakAIT/zcNqIbbKYuJBgYiCCx0PPZ2uS0utLzHUcx7PF
- CcoA==
+ bh=iSV77y8AmWb+Wh1piRcAkQT0I7rk2MZqZTm5Fu4vFQA=;
+ b=jGexnNuzhW3pKohokLWtgune9Doo8bb8gmGqdgTvbDkhDMwKYdhPz3/WCqj22H9MIO
+ i0dXeEBirSfyKW80seDcyCd2Bst4RkZB1JtkhgLrpSvw6G9VFNqHH8SoQeJ5LuokoJ1p
+ aNTuHV7IwXqDHLI3WWgIF+I63heoPGbFWZEiaI9iaG69Ob6v0s18rm/N6k+m9U2VpQQD
+ UWaRUjYZBWHbxpdT+z3vfonrchDD0cVDN88fMw+tWwh+RIJnEHMBKXE7e4yIrL1p5hwp
+ uafyjnRl2+LAzAngMLPw69/+EpTRfc+2/JHFUrP45Py2gyJaOI2Uz80mxWmTHYq8m+M7
+ FDtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=pwE35G81wgEIvaTTAj8x7ONwFHGN+HySTYYEqF0s99Y=;
- b=Y9LfrBte0Sj9t036HEe4k/3g/ZEEtPNgBXO3wNK1Jf5VwZ5NqVvlLx/l85qgD8BULd
- 4YULvXjrqv0XqX1wXy5+WRs+vK275sBQpvpNBNhC2taAOO/zfBWI8BjGBXLO8NOJx4I+
- ck1REasEVi4RL4q2DJfhXYw+7tmfKUydPI2OH9rfbXcda4KYcQMzk+hapHLWmDulMs8h
- eL+yH6aoaS+ZVxyt9/+OfxgnWOvFxrIM7bjOWTRLJxdmMfum6CzoD6fezoKE1IXoancX
- en1Hq7ndQH8x6sqzBb1+jysTXvmGyzkfXQz0P/sce7MPq/AUJ5wyk6sVc8bQYQP+Pxnc
- 3vag==
-X-Gm-Message-State: AOAM531/HAb4HN+aOLGU8tunzSbk7fYIpPBl6YjFli3BmTGsAv7ZTQ1b
- frjmHgl6qGUHZ6w0J/vL0gs=
-X-Google-Smtp-Source: ABdhPJw3w75sDLQDhSMDHVawPQsm/dWJbeacSJHf5qyvFJ1g0kkLRv427rHG4Bu1lBl4G8L3bUF52g==
-X-Received: by 2002:adf:82f4:: with SMTP id 107mr2387804wrc.163.1592315649142; 
- Tue, 16 Jun 2020 06:54:09 -0700 (PDT)
+ bh=iSV77y8AmWb+Wh1piRcAkQT0I7rk2MZqZTm5Fu4vFQA=;
+ b=jVSRleb+YueT89sAevEnY0zeYo8d9l5qLzy6afsJb7hFkmmB/k83e5kwB8VMF8tOWJ
+ Pi84t3VZj7+zNPy0xsbn2do6Yw3nysvzwdB4yrwB1fJdLYY4SjLjPZmVgF+xmhGoatLW
+ m2TYtT7WBcZ1CJL8Q3yLczEZyuwp1u6iygDI31a3BtJKgsxDoRREWGZAI8m7upOzUcMk
+ 31tVgMXwevXR1izBIx0dEY/qcrcoJ8pbWbE3LWpNmNLpHFaC89NMsiu1MhSDE3SzMeTz
+ 9m1Na8Fe5SB8caJ35rl1IaH6vBFBGqtGoV5Y2jhFmcs7cOUCI4KYPoNYwo6M2HYFXN/1
+ VksQ==
+X-Gm-Message-State: AOAM532wJSGh9Y3p9MaF5uMHO50MGqKDYv9p5vzi+p5/I3K+Fq+sC5am
+ nkMIVPe6QWT1fKLBtCQj3Mg=
+X-Google-Smtp-Source: ABdhPJwWvCiIh9OzTTLCPHqPjRDt8xPuHQuoHliL9OM1vk6X4Sdjm50lnyyfjGdrH6xZNulYKpnMbQ==
+X-Received: by 2002:a1c:60d6:: with SMTP id u205mr3548805wmb.163.1592315652471; 
+ Tue, 16 Jun 2020 06:54:12 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id z16sm29333427wrm.70.2020.06.16.06.54.08
+ by smtp.gmail.com with ESMTPSA id o18sm4383482wme.19.2020.06.16.06.54.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:54:08 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:11 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 33/73] ARM: tegra: The Tegra30 DC is not backwards-compatible
-Date: Tue, 16 Jun 2020 15:51:58 +0200
-Message-Id: <20200616135238.3001888-34-thierry.reding@gmail.com>
+Subject: [PATCH 34/73] ARM: tegra: The Tegra30 SDHCI is not
+ backwards-compatible
+Date: Tue, 16 Jun 2020 15:51:59 +0200
+Message-Id: <20200616135238.3001888-35-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065410_979970_B006E77B 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20200616_065414_592923_0815F01A 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,28 +109,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The display controller on Tegra30 is in fact not backwards-compatible
-with the instantiation found on earlier SoCs. Drop the misleading
-compatible string.
+The SDHCI on Tegra30 is in fact not backwards-compatible with the
+instantiation found on earlier SoCs. Drop the misleading compatible
+string.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm/boot/dts/tegra30.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/tegra30.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/tegra30.dtsi b/arch/arm/boot/dts/tegra30.dtsi
-index d80f9d3d2d18..bedab43016c7 100644
+index bedab43016c7..3c7ee0b871c0 100644
 --- a/arch/arm/boot/dts/tegra30.dtsi
 +++ b/arch/arm/boot/dts/tegra30.dtsi
-@@ -197,7 +197,7 @@ gr3d@54180000 {
- 		};
+@@ -854,7 +854,7 @@ tegra_i2s4: i2s@70080700 {
+ 	};
  
- 		dc@54200000 {
--			compatible = "nvidia,tegra30-dc", "nvidia,tegra20-dc";
-+			compatible = "nvidia,tegra30-dc";
- 			reg = <0x54200000 0x00040000>;
- 			interrupts = <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&tegra_car TEGRA30_CLK_DISP1>;
+ 	mmc@78000000 {
+-		compatible = "nvidia,tegra30-sdhci", "nvidia,tegra20-sdhci";
++		compatible = "nvidia,tegra30-sdhci";
+ 		reg = <0x78000000 0x200>;
+ 		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA30_CLK_SDMMC1>;
+@@ -865,7 +865,7 @@ mmc@78000000 {
+ 	};
+ 
+ 	mmc@78000200 {
+-		compatible = "nvidia,tegra30-sdhci", "nvidia,tegra20-sdhci";
++		compatible = "nvidia,tegra30-sdhci";
+ 		reg = <0x78000200 0x200>;
+ 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA30_CLK_SDMMC2>;
+@@ -876,7 +876,7 @@ mmc@78000200 {
+ 	};
+ 
+ 	mmc@78000400 {
+-		compatible = "nvidia,tegra30-sdhci", "nvidia,tegra20-sdhci";
++		compatible = "nvidia,tegra30-sdhci";
+ 		reg = <0x78000400 0x200>;
+ 		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA30_CLK_SDMMC3>;
+@@ -887,7 +887,7 @@ mmc@78000400 {
+ 	};
+ 
+ 	mmc@78000600 {
+-		compatible = "nvidia,tegra30-sdhci", "nvidia,tegra20-sdhci";
++		compatible = "nvidia,tegra30-sdhci";
+ 		reg = <0x78000600 0x200>;
+ 		interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA30_CLK_SDMMC4>;
 -- 
 2.24.1
 
