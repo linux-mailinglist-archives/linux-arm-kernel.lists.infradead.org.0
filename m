@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFAC61FACD1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:38:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2EA41FACDE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:40:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bhyIEDNbfvZelpxxIDpVfgXLVPwlgxuatqS2eZQz9fE=; b=aGcPrm/ObYw7fI
-	eH6/Kc0Jxl+wtUtMQT8O3UGTleJ5JnvygbI/737JOk/Q0EEYKKMuV9lpskKuAN6f8svco47qC+25C
-	EqSkPICgcTl7BZf0T8YMR0/wGinVccVwlM3KF+B3x/tFMyqAY6R9ERR9jpUf2fMEEkFYCK683eFQJ
-	ZkYKOpuXAwpDAI2zGhEE61ZTtiEEwrjDhsQOl2/QpiSsHaG8dPcgT47NbN+8Yz2FhgRzDozf7BriY
-	vhBfBl5TQnAcR8DtUvqPF31MyMSXf+9MXlj/pRa2+eEt2bEA5JdDX6MqsSIY5b8JeFQuOs8nWEz74
-	SMh2yrw5aLUPIPleoG/w==;
+	List-Owner; bh=fgP8HyHoQvADox5+LheF6aDm7mhhihXIj9VZFZiBOLk=; b=A66y6C2nTq5KX/
+	B4DagJFYCGG7nzVtw2lVYLZ10jD1vQGJ5qA/MN0MzfGXn56CWNWhRBwvPdGR/kah4LVZr4m4gDaUf
+	5FsdpXo2xVmfVn+3rlwxhWDCa87vMfIWV+hp1gq/AjE0L3XfmHnZKbHcOK40MRXe26VvKKj6df9uN
+	akd+TyaehMNd+VONatIIjYpnoAeKCLD+RmWvZx9LVsLWVYGO8TX70NSwo9eZJ+5SW5mGUwzBC6YYi
+	eyVwrMxOwAjZr0JINybsLi+2fQmGVeNvuO2f04PyQ6sfsNShk8/p169fJMRPDgPsqGpsg08VuYQ0Y
+	Dz6dnf5mQzjDJkPuyukA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl82k-00037Y-O0; Tue, 16 Jun 2020 09:38:10 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jl84T-0004bw-3f; Tue, 16 Jun 2020 09:39:57 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl810-0001m4-Pr
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:36:29 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id A7F67EB29739727ABAE9;
- Tue, 16 Jun 2020 17:36:13 +0800 (CST)
+ id 1jl814-0001nl-Kg
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:36:34 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id AD27B10AC27B32B7709B;
+ Tue, 16 Jun 2020 17:36:18 +0800 (CST)
 Received: from DESKTOP-5IS4806.china.huawei.com (10.173.221.230) by
  DGGEMS414-HUB.china.huawei.com (10.3.19.214) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 16 Jun 2020 17:36:07 +0800
+ 14.3.487.0; Tue, 16 Jun 2020 17:36:08 +0800
 From: Keqian Zhu <zhukeqian1@huawei.com>
 To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>
-Subject: [PATCH 05/12] KVM: arm64: Add KVM_CAP_ARM_HW_DIRTY_LOG capability
-Date: Tue, 16 Jun 2020 17:35:46 +0800
-Message-ID: <20200616093553.27512-6-zhukeqian1@huawei.com>
+Subject: [PATCH 06/12] KVM: arm64: Set DBM bit of PTEs during write protecting
+Date: Tue, 16 Jun 2020 17:35:47 +0800
+Message-ID: <20200616093553.27512-7-zhukeqian1@huawei.com>
 X-Mailer: git-send-email 2.8.4.windows.1
 In-Reply-To: <20200616093553.27512-1-zhukeqian1@huawei.com>
 References: <20200616093553.27512-1-zhukeqian1@huawei.com>
@@ -42,17 +42,17 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.221.230]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_023623_030349_A8F92703 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200616_023626_853538_B76680A1 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
+ [45.249.212.35 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -82,98 +82,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For that using arm64 DBM to log dirty pages has the side effect
-of long time dirty log sync, we should give userspace opportunity
-to enable or disable this feature, to realize some policy.
+During write protecting PTEs, if hardware dirty log is enabled,
+set the DBM bit of PTEs when they are *already writable*. This
+ensures some mechanisms that rely on "write fault", such as CoW,
+are not broken.
 
 Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
+Signed-off-by: Peng Liang <liangpeng10@huawei.com>
 ---
- arch/arm64/include/asm/kvm_host.h |  7 +++++++
- arch/arm64/kvm/arm.c              | 10 ++++++++++
- arch/arm64/kvm/reset.c            |  5 +++++
- include/uapi/linux/kvm.h          |  1 +
- tools/include/uapi/linux/kvm.h    |  1 +
- 5 files changed, 24 insertions(+)
+ arch/arm64/kvm/mmu.c | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 9ea2dcfd609c..2bc3256759e3 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -95,6 +95,13 @@ struct kvm_arch {
- 	 * supported.
- 	 */
- 	bool return_nisv_io_abort_to_user;
-+
-+	/*
-+	 * Use hardware management of dirty status (DBM) to log dirty pages.
-+	 * Userspace can enable this feature if KVM_CAP_ARM_HW_DIRTY_LOG is
-+	 * supported.
-+	 */
-+	bool hw_dirty_log;
- };
+diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
+index f08b0fbca0a0..742c7943176f 100644
+--- a/arch/arm64/kvm/mmu.c
++++ b/arch/arm64/kvm/mmu.c
+@@ -1536,19 +1536,24 @@ int kvm_phys_addr_ioremap(struct kvm *kvm, phys_addr_t guest_ipa,
  
- #define KVM_NR_MEM_OBJS     40
-diff --git a/arch/arm64/kvm/arm.c b/arch/arm64/kvm/arm.c
-index 90cb90561446..850cc5cbc6f0 100644
---- a/arch/arm64/kvm/arm.c
-+++ b/arch/arm64/kvm/arm.c
-@@ -87,6 +87,16 @@ int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
- 		r = 0;
- 		kvm->arch.return_nisv_io_abort_to_user = true;
- 		break;
+ /**
+  * stage2_wp_ptes - write protect PMD range
++ * @kvm:	kvm instance for the VM
+  * @pmd:	pointer to pmd entry
+  * @addr:	range start address
+  * @end:	range end address
+  */
+-static void stage2_wp_ptes(pmd_t *pmd, phys_addr_t addr, phys_addr_t end)
++static void stage2_wp_ptes(struct kvm *kvm, pmd_t *pmd,
++			   phys_addr_t addr, phys_addr_t end)
+ {
+ 	pte_t *pte;
+ 
+ 	pte = pte_offset_kernel(pmd, addr);
+ 	do {
+-		if (!pte_none(*pte)) {
+-			if (!kvm_s2pte_readonly(pte))
+-				kvm_set_s2pte_readonly(pte);
++		if (!pte_none(*pte) && !kvm_s2pte_readonly(pte)) {
 +#ifdef CONFIG_ARM64_HW_AFDBM
-+	case KVM_CAP_ARM_HW_DIRTY_LOG:
-+		if ((cap->args[0] & ~1) || !kvm_hw_dbm_enabled()) {
-+			r = -EINVAL;
-+		} else {
-+			r = 0;
-+			kvm->arch.hw_dirty_log = cap->args[0];
-+		}
-+		break;
++			if (kvm->arch.hw_dirty_log && !kvm_s2pte_dbm(pte))
++				kvm_set_s2pte_dbm(pte);
 +#endif
- 	default:
- 		r = -EINVAL;
- 		break;
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index d3b209023727..52bb801c9b2c 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -83,6 +83,11 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 		r = has_vhe() && system_supports_address_auth() &&
- 				 system_supports_generic_auth();
- 		break;
-+#ifdef CONFIG_ARM64_HW_AFDBM
-+	case KVM_CAP_ARM_HW_DIRTY_LOG:
-+		r = kvm_hw_dbm_enabled();
-+		break;
-+#endif /* CONFIG_ARM64_HW_AFDBM */
- 	default:
- 		r = 0;
- 	}
-diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-index 4fdf30316582..e0b12c43397b 100644
---- a/include/uapi/linux/kvm.h
-+++ b/include/uapi/linux/kvm.h
-@@ -1031,6 +1031,7 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_PPC_SECURE_GUEST 181
- #define KVM_CAP_HALT_POLL 182
- #define KVM_CAP_ASYNC_PF_INT 183
-+#define KVM_CAP_ARM_HW_DIRTY_LOG 184
- 
- #ifdef KVM_CAP_IRQ_ROUTING
- 
-diff --git a/tools/include/uapi/linux/kvm.h b/tools/include/uapi/linux/kvm.h
-index fdd632c833b4..53908a8881a4 100644
---- a/tools/include/uapi/linux/kvm.h
-+++ b/tools/include/uapi/linux/kvm.h
-@@ -1017,6 +1017,7 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_S390_VCPU_RESETS 179
- #define KVM_CAP_S390_PROTECTED 180
- #define KVM_CAP_PPC_SECURE_GUEST 181
-+#define KVM_CAP_ARM_HW_DIRTY_LOG 184
- 
- #ifdef KVM_CAP_IRQ_ROUTING
- 
++			kvm_set_s2pte_readonly(pte);
+ 		}
+ 	} while (pte++, addr += PAGE_SIZE, addr != end);
+ }
+@@ -1575,7 +1580,7 @@ static void stage2_wp_pmds(struct kvm *kvm, pud_t *pud,
+ 				if (!kvm_s2pmd_readonly(pmd))
+ 					kvm_set_s2pmd_readonly(pmd);
+ 			} else {
+-				stage2_wp_ptes(pmd, addr, next);
++				stage2_wp_ptes(kvm, pmd, addr, next);
+ 			}
+ 		}
+ 	} while (pmd++, addr = next, addr != end);
 -- 
 2.19.1
 
