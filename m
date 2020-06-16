@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2C261FB3D9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:13:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EB361FB3D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:12:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zzfo+jDD2988qHnCsT7nAmUX6gRMpnNnHefCdnf6oxo=; b=H/vMfD0NaIOhzp
-	Y8Z2oGorDp2Cr0eRtGGdEUpqOITdrxhxMMsHkt0NOomWI74KYNhFVp7N4j1N81eNcctmsEZaWzV0w
-	8vwuj5DQ8S7FOEgiMhGgnbral8naV/bD5iPnytC2C9kRZjYxLNT/nq2/ecVJDEiV+HZ8IgQEi2Zjd
-	/LK72Mg+TLZc4LwjOyYHpNFMJzHzt6yEx/oQunaIy16jdTsaf2dflB7CI54NzN36GkPFTN3JYLoRK
-	C6lzQTEP2G0tfIiAGWjezRkgYA1CycqIgmPVud1FN/ILtsJv5/tmtC3qiiWP92ZUAVu8V3+5NvcGC
-	OS+9Af7ANtdMs6eUvYwA==;
+	List-Owner; bh=w2MhsaHhfTCxWfjkYY7ZW1riOH9qJ7L6/L/zAOKuCYk=; b=i2ttI0la/II4NP
+	GDYG5EK6IgKK4FwpUQKldgQlvwF8SWHxRP9uJhH14Z5jeVnMppBu8Ss774jigMjiW1+w2/TMHpBaf
+	pFLAbvaN4jix97WCdyy6o78XKKulbmjdEeC5xpPP3UR07mtLspgZkLTGNvtbQBI1yb8hhsh1RTnXs
+	7ZL0uUKRQOfkhiudR2wrCPh/cM7go9mqhC0Wl29U9MrhYggtPow4U/LnP5yev8MYw19QkkfqxvgfW
+	fwT7SrjOU4e2n0XebNWApe5eh/GyELb+PXcagC10PRkCzq3BRInP+4B4JPnsWsb0DRIIe5knCiTH3
+	9i/SI89fmCjnvwaj27+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCKg-00087b-AI; Tue, 16 Jun 2020 14:12:58 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	id 1jlCK2-0007g9-G7; Tue, 16 Jun 2020 14:12:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC3C-0002T8-Dz
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:56 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id j10so20865416wrw.8
+ id 1jlC3D-0002Uo-Ne
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:58 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c3so20836342wru.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:54:53 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=QXMHdTSjKnJTBQa+yeQ6TFk/aEjdgmbMfG2wiWsT72M=;
- b=EDytKPF67Kca8PxTD99/qP0+/Wj7QFQI3dL50eTw54CjHBD8+DUtjPb3NIrSzhoWT5
- CQ3x0ptbKZxTelIAeLaoAMjxJCujZFcgSDc0USIe9HQR4Trnc+mG+iS6T51UGQvFSTLN
- nRnvX7L7bkC8Yqscse9fDO7D+V962xsaP/RCCwynTV+NdV3mv2uoMibQAGfbdTehfLMp
- WF4IqhfuIJ6SNr2Um2Uu3nQtnyr+QCsU1e7+Aqch8C5Mt6Mso7irh5Iyz6O3f+9XX5+Q
- 6kzOqHaC9ZJIrYEFul5kTuxP5L9359jFUyJJqyci2nxM/EigdKteJqQfufxGzsrDcV7N
- FgIw==
+ bh=DOFznB5E/wdO9myo3nDsORYkzeuJ1ic/QUyt2XcRSJo=;
+ b=isC2qMgE9O6/T+VUY1zSAoxzHfh/aajYltRdjdQ7blQSUqddB62j2JhVIA6Z7O3zyP
+ FVi0xXPP6dFLvTaDrp+WJ9/uGdLyt8hZ7t0dQ4GkU66qtNlkK7WLvqaHWhzg06UqlXcY
+ ZN0qRxI/NvV58z7mXIrtzdjRtiw9/OngGXKtb80/2w2LrB+0hRb0mg9GF9c9pL4MC4ni
+ MAUVRDuMa63uqjlGQOhYfX7FD9N6e/edlFHFrnwSJCl5nYYeSp40RktCQAeqr3m/2t8d
+ P8jIwKQ2xcQMK31l37JGf3Q90liolw9ygufnLH9mkjx9HcP6emCIpuvfVLjBffwbAS8r
+ tl3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=QXMHdTSjKnJTBQa+yeQ6TFk/aEjdgmbMfG2wiWsT72M=;
- b=tDx//YCFVOuICQCjfbgmqAj16X53IlNDN9W2y3nACjSw9LTxBEa+TLhIcIwqEhvZ1C
- Zx5onsik3iJly/R65cVJ2ibayQtBiXltSIZH49SUICzxKn1eIYfoKs5gebiRo9MveHKP
- 2Ed5SV2iDJdITs3/VlCGnMWsrezBiA9u3p5zu4i+HR+OlTAAGqh9XZmcAtX1c88s1XO4
- M0a2QyVugKoZ4tIOwaWRtFJXFcLQHOV0BB1W2EDL80xEaNirCetLE0agh4b2nMxDbpHZ
- dK5MmD+w2PGxNaTus9pV9T+lhB/hobNR2elc4YP5LMTMxlk9m46oMHthlQQ6ixgqY3jw
- iHQQ==
-X-Gm-Message-State: AOAM530nngBA24oq7aK33j6UhUyeAAQH0ntbDoVk+aCRCRsbis1YS7Lv
- UNenSOFavr5b+6LfD+PqDgS/qP2D
-X-Google-Smtp-Source: ABdhPJy0/S0KAmsoECEct/X2U6rXeakk+08ygv95OV1lQM7msU4JDMhCOceAP/jFaAKlI2VyrBfaNQ==
-X-Received: by 2002:a5d:6b8c:: with SMTP id n12mr3226956wrx.61.1592315692287; 
- Tue, 16 Jun 2020 06:54:52 -0700 (PDT)
+ bh=DOFznB5E/wdO9myo3nDsORYkzeuJ1ic/QUyt2XcRSJo=;
+ b=r/g0Gl79hWuFz9R7wJmwMtTV4hU7F0QEkomo8QwdMyE8umdrCDc8Ojs5xWIPuu2mtJ
+ c3qfBJJ643W6yI51Od5PGA0R5L7Ur183Yhe/aLI90IiO5ytQ62jEdA1fFnwDpv8pFWoM
+ 1QysKTREVWIC1pv6yIgsJQ6Q/b9wzkQtztKugqmo6GBTXxvWaL6GcLBGzrHB6v5GMQHM
+ 5TMZbLo5vnOnmxKIFDGaxtxQbu75BLGi67hcHHitO9k8jESr075m3WXe+BFsNRVsFZ+R
+ ZTA4GND0/92r7pjy0vzZ6FwpmQJb36KfXHUhaVXrp+mv7Ejwp9MZp+/AYSro3G74IPy7
+ ijew==
+X-Gm-Message-State: AOAM531O3yO/vQVLRum5TyeVejBaDw9KCM3hSypMYIxz/8lglzp3rxu+
+ +4gX6mwrHYFCo7bo6/adH4HVbue/
+X-Google-Smtp-Source: ABdhPJwo780ARtuG5wvTBo7C1WSiJ0w1ASIadyWwgCHXCUi/7JYtl6MsDfMbOGLDmXcfuxAWG17bgA==
+X-Received: by 2002:a5d:6b81:: with SMTP id n1mr3155097wrx.411.1592315694381; 
+ Tue, 16 Jun 2020 06:54:54 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id j41sm539180wre.12.2020.06.16.06.54.51
+ by smtp.gmail.com with ESMTPSA id b143sm4142690wme.20.2020.06.16.06.54.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:54:51 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:53 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 51/73] arm64: tegra: Remove undocumented battery-name property
-Date: Tue, 16 Jun 2020 15:52:16 +0200
-Message-Id: <20200616135238.3001888-52-thierry.reding@gmail.com>
+Subject: [PATCH 52/73] arm64: tegra: Remove simple clocks bus
+Date: Tue, 16 Jun 2020 15:52:17 +0200
+Message-Id: <20200616135238.3001888-53-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065454_495890_2D74F3D7 
-X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-CacheID: sfid-20200616_065455_846169_047A1527 
+X-CRM114-Status: UNSURE (   8.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42a listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,39 +108,175 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-battery-name is not a documented property, so drop it to avoid
-validation failures.
+The standard way to do this is to list out the clocks at the top-level.
+Adopt the standard way to fix validation.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra132-norrin.dts | 1 -
- arch/arm64/boot/dts/nvidia/tegra210-smaug.dts  | 1 -
- 2 files changed, 2 deletions(-)
+ arch/arm64/boot/dts/nvidia/tegra132-norrin.dts    | 15 ++++-----------
+ arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi    | 15 ++++-----------
+ arch/arm64/boot/dts/nvidia/tegra210-p2530.dtsi    | 15 ++++-----------
+ arch/arm64/boot/dts/nvidia/tegra210-p2894.dtsi    | 15 ++++-----------
+ .../arm64/boot/dts/nvidia/tegra210-p3450-0000.dts | 15 ++++-----------
+ arch/arm64/boot/dts/nvidia/tegra210-smaug.dts     | 15 ++++-----------
+ 6 files changed, 24 insertions(+), 66 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra132-norrin.dts b/arch/arm64/boot/dts/nvidia/tegra132-norrin.dts
-index bba8a4b82b0b..bb45ca6a5cf2 100644
+index bb45ca6a5cf2..278bef2d8810 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra132-norrin.dts
 +++ b/arch/arm64/boot/dts/nvidia/tegra132-norrin.dts
-@@ -781,7 +781,6 @@ TEGRA_GPIO(J, 0)
- 				battery: smart-battery {
- 					compatible = "sbs,sbs-battery";
- 					reg = <0xb>;
--					battery-name = "battery";
- 					sbs,i2c-retry-count = <2>;
- 					sbs,poll-retry-count = <10>;
- 				/*	power-supplies = <&charger>; */
+@@ -1022,17 +1022,10 @@ backlight: backlight {
+ 		backlight-boot-off;
+ 	};
+ 
+-	clocks {
+-		compatible = "simple-bus";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		clk32k_in: clock@0 {
+-			compatible = "fixed-clock";
+-			reg=<0>;
+-			#clock-cells = <0>;
+-			clock-frequency = <32768>;
+-		};
++	clk32k_in: clock@0 {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		#clock-cells = <0>;
+ 	};
+ 
+ 	gpio-keys {
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi b/arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi
+index 251c6099482a..8a4ba371ff92 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi
+@@ -300,17 +300,10 @@ mmc@700b0600 {
+ 		vqmmc-supply = <&vdd_1v8>;
+ 	};
+ 
+-	clocks {
+-		compatible = "simple-bus";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		clk32k_in: clock@0 {
+-			compatible = "fixed-clock";
+-			reg = <0>;
+-			#clock-cells = <0>;
+-			clock-frequency = <32768>;
+-		};
++	clk32k_in: clock@0 {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		#clock-cells = <0>;
+ 	};
+ 
+ 	cpus {
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210-p2530.dtsi b/arch/arm64/boot/dts/nvidia/tegra210-p2530.dtsi
+index f9158dc943f9..58aa0518965e 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210-p2530.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra210-p2530.dtsi
+@@ -40,17 +40,10 @@ mmc@700b0600 {
+ 		non-removable;
+ 	};
+ 
+-	clocks {
+-		compatible = "simple-bus";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		clk32k_in: clock@0 {
+-			compatible = "fixed-clock";
+-			reg = <0>;
+-			#clock-cells = <0>;
+-			clock-frequency = <32768>;
+-		};
++	clk32k_in: clock@0 {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		#clock-cells = <0>;
+ 	};
+ 
+ 	cpus {
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210-p2894.dtsi b/arch/arm64/boot/dts/nvidia/tegra210-p2894.dtsi
+index 579d5b8a757d..9f81cabdcbb6 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210-p2894.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra210-p2894.dtsi
+@@ -1586,17 +1586,10 @@ mmc@700b0600 {
+ 		status = "okay";
+ 	};
+ 
+-	clocks {
+-		compatible = "simple-bus";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		clk32k_in: clock@0 {
+-			compatible = "fixed-clock";
+-			reg = <0>;
+-			#clock-cells = <0>;
+-			clock-frequency = <32768>;
+-		};
++	clk32k_in: clock@0 {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		#clock-cells = <0>;
+ 	};
+ 
+ 	gpio-keys {
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts b/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts
+index 4a354f5293fc..b888efcea86f 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts
++++ b/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts
+@@ -566,17 +566,10 @@ mmc@700b0400 {
+ 		wakeup-source;
+ 	};
+ 
+-	clocks {
+-		compatible = "simple-bus";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		clk32k_in: clock@0 {
+-			compatible = "fixed-clock";
+-			reg = <0>;
+-			#clock-cells = <0>;
+-			clock-frequency = <32768>;
+-		};
++	clk32k_in: clock@0 {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		#clock-cells = <0>;
+ 	};
+ 
+ 	cpus {
 diff --git a/arch/arm64/boot/dts/nvidia/tegra210-smaug.dts b/arch/arm64/boot/dts/nvidia/tegra210-smaug.dts
-index d32053934f3c..9f630ecc06bc 100644
+index 9f630ecc06bc..a28ca6620b86 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra210-smaug.dts
 +++ b/arch/arm64/boot/dts/nvidia/tegra210-smaug.dts
-@@ -1330,7 +1330,6 @@ ec_i2c_0: i2c-tunnel {
- 				battery: bq27742@55 {
- 					compatible = "ti,bq27742";
- 					reg = <0x55>;
--					battery-name = "battery";
- 				};
- 			};
+@@ -1722,17 +1722,10 @@ agic@702f9000 {
  		};
+ 	};
+ 
+-	clocks {
+-		compatible = "simple-bus";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		clk32k_in: clock@0 {
+-			compatible = "fixed-clock";
+-			reg = <0>;
+-			#clock-cells = <0>;
+-			clock-frequency = <32768>;
+-		};
++	clk32k_in: clock@0 {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		#clock-cells = <0>;
+ 	};
+ 
+ 	cpus {
 -- 
 2.24.1
 
