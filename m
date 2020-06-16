@@ -2,69 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B67F91FAD46
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 12:00:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D5411FAD92
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 12:09:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NsVxKm5a0iVOTC66NPheP2ZlSEAGKADh6qRPPqFdX/0=; b=tqdfhJLbvoJplvUyprDrneBJx
-	PsiCi8rFLrs61czdR9y7znHpkTf1U3aYiTq/7p11wZZx48hNHmaLFImcd500oh+HpG+QRJNfjXEA7
-	7lKvKvWjn+rpjqDVHB4yjEAC36FazXYaRounGufhVpCYdU46urAQCQm/ZjP8e0/XVHLbgRzu6SIxj
-	N6qDO3SLgHu7JPCDCR5FlwHyxLkeJAjIOWRxzcKh0HhXMLJnm5WAQMnhgG3EzF/F8eOG436EYLa2S
-	46Mcu5V/qtk73PHFqx5aDqlg5iFA/zH2aNNOXEWwrdPXEEtwxQKWaq4V4IdVm45vK53tPnd1nGubI
-	HOkUog+og==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BkBDmxTehUfEdirEvAim2MpKWfU5HA2oh3TDORJ5mmU=; b=sm3nYuT3C7mrwo
+	oZHy/FwmdunPdzluDM1fmyQeo+oPT4vKahYY41au4Q45AAA9BCMf4zeWPVu2/EUDEJf5fZzQ1fg3m
+	kHjtncL+xfbXsBVo1MfwjbxuU6NUR3VnRjJL20k1p1GT45UckJJFiOaoV00QckFEd7rjVG5NvGabr
+	YC33FfUljDT4NQ8q3EE6arAqDleY9hITHCLPguei61aTiwZebuHDAvILJDQdC1G1IP5dcBao+7DOi
+	9PLQqQpRIo3Fbfk8Pn6Q9+7S1Ell6JLc8Xa7IPR3PhKWizKcITqspwg5heSRDksTnLF7y51V3WpnC
+	9xvimJLmpdzViCzSKlmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl8Nr-0000iv-Mn; Tue, 16 Jun 2020 09:59:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jl8Ww-0006Qn-OW; Tue, 16 Jun 2020 10:09:22 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl8Nj-0000iX-6m
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:59:52 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0CA0720767;
- Tue, 16 Jun 2020 09:59:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592301590;
- bh=H00RGJq5KezVcrQ/vGzLRXHsGQa2G3LnLHyCG7559QU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=s35iCxf2ApOcJZGyTnKb4vFHqFOY/SexyqbRTgxWkYLnGAD85dUn2XN6AYZkK4Yms
- bl62nwah75Ax2duvcU+bVe2CmlysoY32l9chot9A7Qr1u4UA5fiP/m2ZlZQO/ik3av
- tMj/TY1ARiyudeRqXH3l8XqEFpJspJfUFi6ej97w=
-Date: Tue, 16 Jun 2020 10:59:48 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Message-ID: <20200616095948.GJ4447@sirena.org.uk>
-References: <20200612141611.GI5396@sirena.org.uk>
- <VE1PR04MB6638B43E3AC83286946DABCD899F0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615123553.GP4447@sirena.org.uk>
- <VE1PR04MB6638C65257F41072C3D61583899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615133905.GV4447@sirena.org.uk>
- <VE1PR04MB6638793C00742D5BA72F8AC2899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615143622.GX4447@sirena.org.uk>
- <VE1PR04MB6638D0C9FE0289FFE13ABA49899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615145556.GY4447@sirena.org.uk>
- <VE1PR04MB66380FD8FB7FCE79AF4B6CD4899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ id 1jl8Wm-0006Oa-4v; Tue, 16 Jun 2020 10:09:15 +0000
+X-UUID: 500266359890447d81c8e1dcf6911a78-20200616
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=CB73VtdavxrMNvrBe5qYzcEfTo8P2rBquMkfCKDMTZY=; 
+ b=NRLEukpe6wiZ0Q/Ix1y3v/G6pP62nvIqUpUjPn1mG3OeDCGlWUy+eJQBLgoA0CiBd5OvvqhCCLjYpZHHMFKAm0JPIn0+a6Ey5eD0R9rS0K3zwUjXIrAbmKcaRyedYi0E5RfcZ2KONoYbV/Fuu6vVGL8HRpucN/YTAUQVuGiG6S4=;
+X-UUID: 500266359890447d81c8e1dcf6911a78-20200616
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <wen.su@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 496608450; Tue, 16 Jun 2020 02:09:09 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 16 Jun 2020 02:58:06 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 16 Jun 2020 17:58:04 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Tue, 16 Jun 2020 17:58:04 +0800
+Message-ID: <1592301485.30613.7.camel@mtkswgap22>
+Subject: Re: [RESEND v2 2/4] mfd: Add for PMIC MT6359 registers definition
+From: Wen Su <Wen.Su@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>, Mark Brown <broonie@kernel.org>
+Date: Tue, 16 Jun 2020 17:58:05 +0800
+In-Reply-To: <1582252746-8149-3-git-send-email-Wen.Su@mediatek.com>
+References: <1582252746-8149-1-git-send-email-Wen.Su@mediatek.com>
+ <1582252746-8149-3-git-send-email-Wen.Su@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <VE1PR04MB66380FD8FB7FCE79AF4B6CD4899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-X-Cookie: Offer may end without notice.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_025951_269211_F7A1E422 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200616_030912_217340_11E5D6C7 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -74,7 +70,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,72 +84,587 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, wen.su@mediatek.com,
+ wsd_upstream <wsd_upstream@mediatek.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3108385117953840908=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Dear Reviewers, 
 
---===============3108385117953840908==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="6xTM0kUsJcaNctaW"
-Content-Disposition: inline
+I am sorry to bother you. How should I proceed for this patch set ?
+Since the regulator driver were applied and dropped because of the MFD
+header file dependency on this patch.
 
+Will this mfd registers definition patch and regulator driver patch be
+applied ? Please advice.
 
---6xTM0kUsJcaNctaW
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Thanks
 
-On Tue, Jun 16, 2020 at 02:03:40AM +0000, Robin Gong wrote:
-> On 2020/06/15 22:56 Mark Brown <broonie@kernel.org> wrote:=20
-
->         struct list_head transfer_list;
+On Fri, 2020-02-21 at 10:39 +0800, Wen Su wrote:
+> From: "Wen Su" <wen.su@mediatek.com>
+> 
+> This adds MediaTek PMIC MT6359 registers definition for the
+> following sub modules:
+> 
+> - Regulator
+> - RTC
+> - Interrupt
+> 
+> Signed-off-by: Wen Su <wen.su@mediatek.com>
+> Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>  include/linux/mfd/mt6359/registers.h | 531 +++++++++++++++++++++++++++++++++++
+>  1 file changed, 531 insertions(+)
+>  create mode 100644 include/linux/mfd/mt6359/registers.h
+> 
+> diff --git a/include/linux/mfd/mt6359/registers.h b/include/linux/mfd/mt6359/registers.h
+> new file mode 100644
+> index 0000000..32f627e
+> --- /dev/null
+> +++ b/include/linux/mfd/mt6359/registers.h
+> @@ -0,0 +1,531 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + */
 > +
-> +#define        SPI_TRANS_DMA_PREP_FAIL BIT(3)  /* prepare dma failed */
-> +       u16             flags;
-
-I'd just make this a generic flag for failures before we start
-interacting with the hardware rather than specifically this one error
-case.  Otherwise this looks fine.
-
---6xTM0kUsJcaNctaW
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7omBMACgkQJNaLcl1U
-h9CvpQf+Nxs8GAzGWD8q5WQ5Yfk5Dd+UDwg0tf7+zdTr05h6hiN4THe7qjTZBk6+
-MC0R19TGfmpOaqHJY8nh3Nr2HY2QUv+ceTtIYVmwxpG+oE9TTE1v5WQTzOTQ5HMV
-yq8qU6g8Tfa1uB6BLAchJMy2lBvU/mjNqRnDY4ONnr5qkrmmKgQZycDnilH3ICEy
-VVS2cenoNIUooeyGwBCFOO8GnxfPhYtO3P5CLZvFPmg6OEdq0qIbluxYksdknKiR
-cBMORkKWR3BEZwuCx2R6xjUk17zxIpc5Km7XmjrZXSSitzONPcMjcaqVq4mtuNAU
-5hztHr9mzDtIlWqoD8uLxSczu7wlVg==
-=AZSa
------END PGP SIGNATURE-----
-
---6xTM0kUsJcaNctaW--
-
-
---===============3108385117953840908==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +#ifndef __MFD_MT6359_REGISTERS_H__
+> +#define __MFD_MT6359_REGISTERS_H__
+> +
+> +/* PMIC Registers */
+> +#define MT6359_SWCID                         0xa
+> +#define MT6359_MISC_TOP_INT_CON0             0x188
+> +#define MT6359_MISC_TOP_INT_STATUS0          0x194
+> +#define MT6359_TOP_INT_STATUS0               0x19e
+> +#define MT6359_SCK_TOP_INT_CON0              0x528
+> +#define MT6359_SCK_TOP_INT_STATUS0           0x534
+> +#define MT6359_EOSC_CALI_CON0                0x53a
+> +#define MT6359_EOSC_CALI_CON1                0x53c
+> +#define MT6359_RTC_MIX_CON0                  0x53e
+> +#define MT6359_RTC_MIX_CON1                  0x540
+> +#define MT6359_RTC_MIX_CON2                  0x542
+> +#define MT6359_RTC_DSN_ID                    0x580
+> +#define MT6359_RTC_DSN_REV0                  0x582
+> +#define MT6359_RTC_DBI                       0x584
+> +#define MT6359_RTC_DXI                       0x586
+> +#define MT6359_RTC_BBPU                      0x588
+> +#define MT6359_RTC_IRQ_STA                   0x58a
+> +#define MT6359_RTC_IRQ_EN                    0x58c
+> +#define MT6359_RTC_CII_EN                    0x58e
+> +#define MT6359_RTC_AL_MASK                   0x590
+> +#define MT6359_RTC_TC_SEC                    0x592
+> +#define MT6359_RTC_TC_MIN                    0x594
+> +#define MT6359_RTC_TC_HOU                    0x596
+> +#define MT6359_RTC_TC_DOM                    0x598
+> +#define MT6359_RTC_TC_DOW                    0x59a
+> +#define MT6359_RTC_TC_MTH                    0x59c
+> +#define MT6359_RTC_TC_YEA                    0x59e
+> +#define MT6359_RTC_AL_SEC                    0x5a0
+> +#define MT6359_RTC_AL_MIN                    0x5a2
+> +#define MT6359_RTC_AL_HOU                    0x5a4
+> +#define MT6359_RTC_AL_DOM                    0x5a6
+> +#define MT6359_RTC_AL_DOW                    0x5a8
+> +#define MT6359_RTC_AL_MTH                    0x5aa
+> +#define MT6359_RTC_AL_YEA                    0x5ac
+> +#define MT6359_RTC_OSC32CON                  0x5ae
+> +#define MT6359_RTC_POWERKEY1                 0x5b0
+> +#define MT6359_RTC_POWERKEY2                 0x5b2
+> +#define MT6359_RTC_PDN1                      0x5b4
+> +#define MT6359_RTC_PDN2                      0x5b6
+> +#define MT6359_RTC_SPAR0                     0x5b8
+> +#define MT6359_RTC_SPAR1                     0x5ba
+> +#define MT6359_RTC_PROT                      0x5bc
+> +#define MT6359_RTC_DIFF                      0x5be
+> +#define MT6359_RTC_CALI                      0x5c0
+> +#define MT6359_RTC_WRTGR                     0x5c2
+> +#define MT6359_RTC_CON                       0x5c4
+> +#define MT6359_RTC_SEC_CTRL                  0x5c6
+> +#define MT6359_RTC_INT_CNT                   0x5c8
+> +#define MT6359_RTC_SEC_DAT0                  0x5ca
+> +#define MT6359_RTC_SEC_DAT1                  0x5cc
+> +#define MT6359_RTC_SEC_DAT2                  0x5ce
+> +#define MT6359_RTC_SEC_DSN_ID                0x600
+> +#define MT6359_RTC_SEC_DSN_REV0              0x602
+> +#define MT6359_RTC_SEC_DBI                   0x604
+> +#define MT6359_RTC_SEC_DXI                   0x606
+> +#define MT6359_RTC_TC_SEC_SEC                0x608
+> +#define MT6359_RTC_TC_MIN_SEC                0x60a
+> +#define MT6359_RTC_TC_HOU_SEC                0x60c
+> +#define MT6359_RTC_TC_DOM_SEC                0x60e
+> +#define MT6359_RTC_TC_DOW_SEC                0x610
+> +#define MT6359_RTC_TC_MTH_SEC                0x612
+> +#define MT6359_RTC_TC_YEA_SEC                0x614
+> +#define MT6359_RTC_SEC_CK_PDN                0x616
+> +#define MT6359_RTC_SEC_WRTGR                 0x618
+> +#define MT6359_PSC_TOP_INT_CON0              0x910
+> +#define MT6359_PSC_TOP_INT_STATUS0           0x91c
+> +#define MT6359_BM_TOP_INT_CON0               0xc32
+> +#define MT6359_BM_TOP_INT_CON1               0xc38
+> +#define MT6359_BM_TOP_INT_STATUS0            0xc4a
+> +#define MT6359_BM_TOP_INT_STATUS1            0xc4c
+> +#define MT6359_HK_TOP_INT_CON0               0xf92
+> +#define MT6359_HK_TOP_INT_STATUS0            0xf9e
+> +#define MT6359_BUCK_TOP_INT_CON0             0x1418
+> +#define MT6359_BUCK_TOP_INT_STATUS0          0x1424
+> +#define MT6359_BUCK_VPU_CON0                 0x1488
+> +#define MT6359_BUCK_VPU_DBG0                 0x14a6
+> +#define MT6359_BUCK_VPU_DBG1                 0x14a8
+> +#define MT6359_BUCK_VPU_ELR0                 0x14ac
+> +#define MT6359_BUCK_VCORE_CON0               0x1508
+> +#define MT6359_BUCK_VCORE_DBG0               0x1526
+> +#define MT6359_BUCK_VCORE_DBG1               0x1528
+> +#define MT6359_BUCK_VCORE_SSHUB_CON0         0x152a
+> +#define MT6359_BUCK_VCORE_ELR0               0x1534
+> +#define MT6359_BUCK_VGPU11_CON0              0x1588
+> +#define MT6359_BUCK_VGPU11_DBG0              0x15a6
+> +#define MT6359_BUCK_VGPU11_DBG1              0x15a8
+> +#define MT6359_BUCK_VGPU11_ELR0              0x15ac
+> +#define MT6359_BUCK_VMODEM_CON0              0x1688
+> +#define MT6359_BUCK_VMODEM_DBG0              0x16a6
+> +#define MT6359_BUCK_VMODEM_DBG1              0x16a8
+> +#define MT6359_BUCK_VMODEM_ELR0              0x16ae
+> +#define MT6359_BUCK_VPROC1_CON0              0x1708
+> +#define MT6359_BUCK_VPROC1_DBG0              0x1726
+> +#define MT6359_BUCK_VPROC1_DBG1              0x1728
+> +#define MT6359_BUCK_VPROC1_ELR0              0x172e
+> +#define MT6359_BUCK_VPROC2_CON0              0x1788
+> +#define MT6359_BUCK_VPROC2_DBG0              0x17a6
+> +#define MT6359_BUCK_VPROC2_DBG1              0x17a8
+> +#define MT6359_BUCK_VPROC2_ELR0              0x17b2
+> +#define MT6359_BUCK_VS1_CON0                 0x1808
+> +#define MT6359_BUCK_VS1_DBG0                 0x1826
+> +#define MT6359_BUCK_VS1_DBG1                 0x1828
+> +#define MT6359_BUCK_VS1_ELR0                 0x1834
+> +#define MT6359_BUCK_VS2_CON0                 0x1888
+> +#define MT6359_BUCK_VS2_DBG0                 0x18a6
+> +#define MT6359_BUCK_VS2_DBG1                 0x18a8
+> +#define MT6359_BUCK_VS2_ELR0                 0x18b4
+> +#define MT6359_BUCK_VPA_CON0                 0x1908
+> +#define MT6359_BUCK_VPA_CON1                 0x190e
+> +#define MT6359_BUCK_VPA_CFG0                 0x1910
+> +#define MT6359_BUCK_VPA_CFG1                 0x1912
+> +#define MT6359_BUCK_VPA_DBG0                 0x1914
+> +#define MT6359_BUCK_VPA_DBG1                 0x1916
+> +#define MT6359_VGPUVCORE_ANA_CON2            0x198e
+> +#define MT6359_VGPUVCORE_ANA_CON13           0x19a4
+> +#define MT6359_VPROC1_ANA_CON3               0x19b2
+> +#define MT6359_VPROC2_ANA_CON3               0x1a0e
+> +#define MT6359_VMODEM_ANA_CON3               0x1a1a
+> +#define MT6359_VPU_ANA_CON3                  0x1a26
+> +#define MT6359_VS1_ANA_CON0                  0x1a2c
+> +#define MT6359_VS2_ANA_CON0                  0x1a34
+> +#define MT6359_VPA_ANA_CON0                  0x1a3c
+> +#define MT6359_LDO_TOP_INT_CON0              0x1b14
+> +#define MT6359_LDO_TOP_INT_CON1              0x1b1a
+> +#define MT6359_LDO_TOP_INT_STATUS0           0x1b28
+> +#define MT6359_LDO_TOP_INT_STATUS1           0x1b2a
+> +#define MT6359_LDO_VSRAM_PROC1_ELR           0x1b40
+> +#define MT6359_LDO_VSRAM_PROC2_ELR           0x1b42
+> +#define MT6359_LDO_VSRAM_OTHERS_ELR          0x1b44
+> +#define MT6359_LDO_VSRAM_MD_ELR              0x1b46
+> +#define MT6359_LDO_VFE28_CON0                0x1b88
+> +#define MT6359_LDO_VFE28_MON                 0x1b8a
+> +#define MT6359_LDO_VXO22_CON0                0x1b98
+> +#define MT6359_LDO_VXO22_MON                 0x1b9a
+> +#define MT6359_LDO_VRF18_CON0                0x1ba8
+> +#define MT6359_LDO_VRF18_MON                 0x1baa
+> +#define MT6359_LDO_VRF12_CON0                0x1bb8
+> +#define MT6359_LDO_VRF12_MON                 0x1bba
+> +#define MT6359_LDO_VEFUSE_CON0               0x1bc8
+> +#define MT6359_LDO_VEFUSE_MON                0x1bca
+> +#define MT6359_LDO_VCN33_1_CON0              0x1bd8
+> +#define MT6359_LDO_VCN33_1_MON               0x1bda
+> +#define MT6359_LDO_VCN33_1_MULTI_SW          0x1be8
+> +#define MT6359_LDO_VCN33_2_CON0              0x1c08
+> +#define MT6359_LDO_VCN33_2_MON               0x1c0a
+> +#define MT6359_LDO_VCN33_2_MULTI_SW          0x1c18
+> +#define MT6359_LDO_VCN13_CON0                0x1c1a
+> +#define MT6359_LDO_VCN13_MON                 0x1c1c
+> +#define MT6359_LDO_VCN18_CON0                0x1c2a
+> +#define MT6359_LDO_VCN18_MON                 0x1c2c
+> +#define MT6359_LDO_VA09_CON0                 0x1c3a
+> +#define MT6359_LDO_VA09_MON                  0x1c3c
+> +#define MT6359_LDO_VCAMIO_CON0               0x1c4a
+> +#define MT6359_LDO_VCAMIO_MON                0x1c4c
+> +#define MT6359_LDO_VA12_CON0                 0x1c5a
+> +#define MT6359_LDO_VA12_MON                  0x1c5c
+> +#define MT6359_LDO_VAUX18_CON0               0x1c88
+> +#define MT6359_LDO_VAUX18_MON                0x1c8a
+> +#define MT6359_LDO_VAUD18_CON0               0x1c98
+> +#define MT6359_LDO_VAUD18_MON                0x1c9a
+> +#define MT6359_LDO_VIO18_CON0                0x1ca8
+> +#define MT6359_LDO_VIO18_MON                 0x1caa
+> +#define MT6359_LDO_VEMC_CON0                 0x1cb8
+> +#define MT6359_LDO_VEMC_MON                  0x1cba
+> +#define MT6359_LDO_VSIM1_CON0                0x1cc8
+> +#define MT6359_LDO_VSIM1_MON                 0x1cca
+> +#define MT6359_LDO_VSIM2_CON0                0x1cd8
+> +#define MT6359_LDO_VSIM2_MON                 0x1cda
+> +#define MT6359_LDO_VUSB_CON0                 0x1d08
+> +#define MT6359_LDO_VUSB_MON                  0x1d0a
+> +#define MT6359_LDO_VUSB_MULTI_SW             0x1d18
+> +#define MT6359_LDO_VRFCK_CON0                0x1d1a
+> +#define MT6359_LDO_VRFCK_MON                 0x1d1c
+> +#define MT6359_LDO_VBBCK_CON0                0x1d2a
+> +#define MT6359_LDO_VBBCK_MON                 0x1d2c
+> +#define MT6359_LDO_VBIF28_CON0               0x1d3a
+> +#define MT6359_LDO_VBIF28_MON                0x1d3c
+> +#define MT6359_LDO_VIBR_CON0                 0x1d4a
+> +#define MT6359_LDO_VIBR_MON                  0x1d4c
+> +#define MT6359_LDO_VIO28_CON0                0x1d5a
+> +#define MT6359_LDO_VIO28_MON                 0x1d5c
+> +#define MT6359_LDO_VM18_CON0                 0x1d88
+> +#define MT6359_LDO_VM18_MON                  0x1d8a
+> +#define MT6359_LDO_VUFS_CON0                 0x1d98
+> +#define MT6359_LDO_VUFS_MON                  0x1d9a
+> +#define MT6359_LDO_VSRAM_PROC1_CON0          0x1e88
+> +#define MT6359_LDO_VSRAM_PROC1_MON           0x1e8a
+> +#define MT6359_LDO_VSRAM_PROC1_VOSEL1        0x1e8e
+> +#define MT6359_LDO_VSRAM_PROC2_CON0          0x1ea6
+> +#define MT6359_LDO_VSRAM_PROC2_MON           0x1ea8
+> +#define MT6359_LDO_VSRAM_PROC2_VOSEL1        0x1eac
+> +#define MT6359_LDO_VSRAM_OTHERS_CON0         0x1f08
+> +#define MT6359_LDO_VSRAM_OTHERS_MON          0x1f0a
+> +#define MT6359_LDO_VSRAM_OTHERS_VOSEL1       0x1f0e
+> +#define MT6359_LDO_VSRAM_OTHERS_SSHUB        0x1f26
+> +#define MT6359_LDO_VSRAM_MD_CON0             0x1f2c
+> +#define MT6359_LDO_VSRAM_MD_MON              0x1f2e
+> +#define MT6359_LDO_VSRAM_MD_VOSEL1           0x1f32
+> +#define MT6359_VFE28_ANA_CON0                0x1f88
+> +#define MT6359_VAUX18_ANA_CON0               0x1f8c
+> +#define MT6359_VUSB_ANA_CON0                 0x1f90
+> +#define MT6359_VBIF28_ANA_CON0               0x1f94
+> +#define MT6359_VCN33_1_ANA_CON0              0x1f98
+> +#define MT6359_VCN33_2_ANA_CON0              0x1f9c
+> +#define MT6359_VEMC_ANA_CON0                 0x1fa0
+> +#define MT6359_VSIM1_ANA_CON0                0x1fa4
+> +#define MT6359_VSIM2_ANA_CON0                0x1fa8
+> +#define MT6359_VIO28_ANA_CON0                0x1fac
+> +#define MT6359_VIBR_ANA_CON0                 0x1fb0
+> +#define MT6359_VRF18_ANA_CON0                0x2008
+> +#define MT6359_VEFUSE_ANA_CON0               0x200c
+> +#define MT6359_VCN18_ANA_CON0                0x2010
+> +#define MT6359_VCAMIO_ANA_CON0               0x2014
+> +#define MT6359_VAUD18_ANA_CON0               0x2018
+> +#define MT6359_VIO18_ANA_CON0                0x201c
+> +#define MT6359_VM18_ANA_CON0                 0x2020
+> +#define MT6359_VUFS_ANA_CON0                 0x2024
+> +#define MT6359_VRF12_ANA_CON0                0x202a
+> +#define MT6359_VCN13_ANA_CON0                0x202e
+> +#define MT6359_VA09_ANA_CON0                 0x2032
+> +#define MT6359_VA12_ANA_CON0                 0x2036
+> +#define MT6359_VXO22_ANA_CON0                0x2088
+> +#define MT6359_VRFCK_ANA_CON0                0x208c
+> +#define MT6359_VBBCK_ANA_CON0                0x2094
+> +#define MT6359_AUD_TOP_INT_CON0              0x2328
+> +#define MT6359_AUD_TOP_INT_STATUS0           0x2334
+> +
+> +#define MT6359_RG_BUCK_VPU_EN_ADDR		MT6359_BUCK_VPU_CON0
+> +#define MT6359_RG_BUCK_VPU_LP_ADDR		MT6359_BUCK_VPU_CON0
+> +#define MT6359_RG_BUCK_VPU_LP_SHIFT             1
+> +#define MT6359_DA_VPU_VOSEL_ADDR		MT6359_BUCK_VPU_DBG0
+> +#define MT6359_DA_VPU_VOSEL_MASK                0x7F
+> +#define MT6359_DA_VPU_VOSEL_SHIFT               0
+> +#define MT6359_DA_VPU_EN_ADDR			MT6359_BUCK_VPU_DBG1
+> +#define MT6359_RG_BUCK_VPU_VOSEL_ADDR		MT6359_BUCK_VPU_ELR0
+> +#define MT6359_RG_BUCK_VPU_VOSEL_MASK           0x7F
+> +#define MT6359_RG_BUCK_VPU_VOSEL_SHIFT          0
+> +#define MT6359_RG_BUCK_VCORE_EN_ADDR		MT6359_BUCK_VCORE_CON0
+> +#define MT6359_RG_BUCK_VCORE_LP_ADDR		MT6359_BUCK_VCORE_CON0
+> +#define MT6359_RG_BUCK_VCORE_LP_SHIFT           1
+> +#define MT6359_DA_VCORE_VOSEL_ADDR		MT6359_BUCK_VCORE_DBG0
+> +#define MT6359_DA_VCORE_VOSEL_MASK              0x7F
+> +#define MT6359_DA_VCORE_VOSEL_SHIFT             0
+> +#define MT6359_DA_VCORE_EN_ADDR			MT6359_BUCK_VCORE_DBG1
+> +#define MT6359_RG_BUCK_VCORE_SSHUB_EN_ADDR      MT6359_BUCK_VCORE_SSHUB_CON0
+> +#define MT6359_RG_BUCK_VCORE_SSHUB_VOSEL_ADDR   MT6359_BUCK_VCORE_SSHUB_CON0
+> +#define MT6359_RG_BUCK_VCORE_SSHUB_VOSEL_MASK   0x7F
+> +#define MT6359_RG_BUCK_VCORE_SSHUB_VOSEL_SHIFT  4
+> +#define MT6359_RG_BUCK_VCORE_VOSEL_ADDR         MT6359_BUCK_VCORE_ELR0
+> +#define MT6359_RG_BUCK_VCORE_VOSEL_MASK         0x7F
+> +#define MT6359_RG_BUCK_VCORE_VOSEL_SHIFT        0
+> +#define MT6359_RG_BUCK_VGPU11_EN_ADDR           MT6359_BUCK_VGPU11_CON0
+> +#define MT6359_RG_BUCK_VGPU11_LP_ADDR           MT6359_BUCK_VGPU11_CON0
+> +#define MT6359_RG_BUCK_VGPU11_LP_SHIFT          1
+> +#define MT6359_DA_VGPU11_VOSEL_ADDR             MT6359_BUCK_VGPU11_DBG0
+> +#define MT6359_DA_VGPU11_VOSEL_MASK             0x7F
+> +#define MT6359_DA_VGPU11_VOSEL_SHIFT            0
+> +#define MT6359_DA_VGPU11_EN_ADDR                MT6359_BUCK_VGPU11_DBG1
+> +#define MT6359_RG_BUCK_VGPU11_VOSEL_ADDR        MT6359_BUCK_VGPU11_ELR0
+> +#define MT6359_RG_BUCK_VGPU11_VOSEL_MASK        0x7F
+> +#define MT6359_RG_BUCK_VGPU11_VOSEL_SHIFT       0
+> +#define MT6359_RG_BUCK_VMODEM_EN_ADDR           MT6359_BUCK_VMODEM_CON0
+> +#define MT6359_RG_BUCK_VMODEM_LP_ADDR           MT6359_BUCK_VMODEM_CON0
+> +#define MT6359_RG_BUCK_VMODEM_LP_SHIFT          1
+> +#define MT6359_DA_VMODEM_VOSEL_ADDR             MT6359_BUCK_VMODEM_DBG0
+> +#define MT6359_DA_VMODEM_VOSEL_MASK             0x7F
+> +#define MT6359_DA_VMODEM_VOSEL_SHIFT            0
+> +#define MT6359_DA_VMODEM_EN_ADDR                MT6359_BUCK_VMODEM_DBG1
+> +#define MT6359_RG_BUCK_VMODEM_VOSEL_ADDR        MT6359_BUCK_VMODEM_ELR0
+> +#define MT6359_RG_BUCK_VMODEM_VOSEL_MASK        0x7F
+> +#define MT6359_RG_BUCK_VMODEM_VOSEL_SHIFT       0
+> +#define MT6359_RG_BUCK_VPROC1_EN_ADDR           MT6359_BUCK_VPROC1_CON0
+> +#define MT6359_RG_BUCK_VPROC1_LP_ADDR           MT6359_BUCK_VPROC1_CON0
+> +#define MT6359_RG_BUCK_VPROC1_LP_SHIFT          1
+> +#define MT6359_DA_VPROC1_VOSEL_ADDR             MT6359_BUCK_VPROC1_DBG0
+> +#define MT6359_DA_VPROC1_VOSEL_MASK             0x7F
+> +#define MT6359_DA_VPROC1_VOSEL_SHIFT            0
+> +#define MT6359_DA_VPROC1_EN_ADDR                MT6359_BUCK_VPROC1_DBG1
+> +#define MT6359_RG_BUCK_VPROC1_VOSEL_ADDR        MT6359_BUCK_VPROC1_ELR0
+> +#define MT6359_RG_BUCK_VPROC1_VOSEL_MASK        0x7F
+> +#define MT6359_RG_BUCK_VPROC1_VOSEL_SHIFT       0
+> +#define MT6359_RG_BUCK_VPROC2_EN_ADDR           MT6359_BUCK_VPROC2_CON0
+> +#define MT6359_RG_BUCK_VPROC2_LP_ADDR           MT6359_BUCK_VPROC2_CON0
+> +#define MT6359_RG_BUCK_VPROC2_LP_SHIFT          1
+> +#define MT6359_DA_VPROC2_VOSEL_ADDR             MT6359_BUCK_VPROC2_DBG0
+> +#define MT6359_DA_VPROC2_VOSEL_MASK             0x7F
+> +#define MT6359_DA_VPROC2_VOSEL_SHIFT            0
+> +#define MT6359_DA_VPROC2_EN_ADDR                MT6359_BUCK_VPROC2_DBG1
+> +#define MT6359_RG_BUCK_VPROC2_VOSEL_ADDR        MT6359_BUCK_VPROC2_ELR0
+> +#define MT6359_RG_BUCK_VPROC2_VOSEL_MASK        0x7F
+> +#define MT6359_RG_BUCK_VPROC2_VOSEL_SHIFT       0
+> +#define MT6359_RG_BUCK_VS1_EN_ADDR              MT6359_BUCK_VS1_CON0
+> +#define MT6359_RG_BUCK_VS1_LP_ADDR              MT6359_BUCK_VS1_CON0
+> +#define MT6359_RG_BUCK_VS1_LP_SHIFT             1
+> +#define MT6359_DA_VS1_VOSEL_ADDR                MT6359_BUCK_VS1_DBG0
+> +#define MT6359_DA_VS1_VOSEL_MASK                0x7F
+> +#define MT6359_DA_VS1_VOSEL_SHIFT               0
+> +#define MT6359_DA_VS1_EN_ADDR			MT6359_BUCK_VS1_DBG1
+> +#define MT6359_RG_BUCK_VS1_VOSEL_ADDR           MT6359_BUCK_VS1_ELR0
+> +#define MT6359_RG_BUCK_VS1_VOSEL_MASK           0x7F
+> +#define MT6359_RG_BUCK_VS1_VOSEL_SHIFT          0
+> +#define MT6359_RG_BUCK_VS2_EN_ADDR              MT6359_BUCK_VS2_CON0
+> +#define MT6359_RG_BUCK_VS2_LP_ADDR              MT6359_BUCK_VS2_CON0
+> +#define MT6359_RG_BUCK_VS2_LP_SHIFT             1
+> +#define MT6359_DA_VS2_VOSEL_ADDR		MT6359_BUCK_VS2_DBG0
+> +#define MT6359_DA_VS2_VOSEL_MASK                0x7F
+> +#define MT6359_DA_VS2_VOSEL_SHIFT               0
+> +#define MT6359_DA_VS2_EN_ADDR			MT6359_BUCK_VS2_DBG1
+> +#define MT6359_RG_BUCK_VS2_VOSEL_ADDR           MT6359_BUCK_VS2_ELR0
+> +#define MT6359_RG_BUCK_VS2_VOSEL_MASK           0x7F
+> +#define MT6359_RG_BUCK_VS2_VOSEL_SHIFT          0
+> +#define MT6359_RG_BUCK_VPA_EN_ADDR              MT6359_BUCK_VPA_CON0
+> +#define MT6359_RG_BUCK_VPA_LP_ADDR              MT6359_BUCK_VPA_CON0
+> +#define MT6359_RG_BUCK_VPA_LP_SHIFT             1
+> +#define MT6359_RG_BUCK_VPA_VOSEL_ADDR           MT6359_BUCK_VPA_CON1
+> +#define MT6359_RG_BUCK_VPA_VOSEL_MASK           0x3F
+> +#define MT6359_RG_BUCK_VPA_VOSEL_SHIFT          0
+> +#define MT6359_DA_VPA_VOSEL_ADDR                MT6359_BUCK_VPA_DBG0
+> +#define MT6359_DA_VPA_VOSEL_MASK                0x3F
+> +#define MT6359_DA_VPA_VOSEL_SHIFT               0
+> +#define MT6359_DA_VPA_EN_ADDR                   MT6359_BUCK_VPA_DBG1
+> +#define MT6359_RG_VGPU11_FCCM_ADDR              MT6359_VGPUVCORE_ANA_CON2
+> +#define MT6359_RG_VGPU11_FCCM_SHIFT             9
+> +#define MT6359_RG_VCORE_FCCM_ADDR		MT6359_VGPUVCORE_ANA_CON13
+> +#define MT6359_RG_VCORE_FCCM_SHIFT              5
+> +#define MT6359_RG_VPROC1_FCCM_ADDR		MT6359_VPROC1_ANA_CON3
+> +#define MT6359_RG_VPROC1_FCCM_SHIFT             1
+> +#define MT6359_RG_VPROC2_FCCM_ADDR              MT6359_VPROC2_ANA_CON3
+> +#define MT6359_RG_VPROC2_FCCM_SHIFT             1
+> +#define MT6359_RG_VMODEM_FCCM_ADDR              MT6359_VMODEM_ANA_CON3
+> +#define MT6359_RG_VMODEM_FCCM_SHIFT             1
+> +#define MT6359_RG_VPU_FCCM_ADDR                 MT6359_VPU_ANA_CON3
+> +#define MT6359_RG_VPU_FCCM_SHIFT                1
+> +#define MT6359_RG_VS1_FPWM_ADDR                 MT6359_VS1_ANA_CON0
+> +#define MT6359_RG_VS1_FPWM_SHIFT                3
+> +#define MT6359_RG_VS2_FPWM_ADDR			MT6359_VS2_ANA_CON0
+> +#define MT6359_RG_VS2_FPWM_SHIFT                3
+> +#define MT6359_RG_VPA_MODESET_ADDR              MT6359_VPA_ANA_CON0
+> +#define MT6359_RG_VPA_MODESET_SHIFT             1
+> +#define MT6359_RG_LDO_VSRAM_PROC1_VOSEL_ADDR	MT6359_LDO_VSRAM_PROC1_ELR
+> +#define MT6359_RG_LDO_VSRAM_PROC1_VOSEL_MASK    0x7F
+> +#define MT6359_RG_LDO_VSRAM_PROC1_VOSEL_SHIFT   0
+> +#define MT6359_RG_LDO_VSRAM_PROC2_VOSEL_ADDR    MT6359_LDO_VSRAM_PROC2_ELR
+> +#define MT6359_RG_LDO_VSRAM_PROC2_VOSEL_MASK    0x7F
+> +#define MT6359_RG_LDO_VSRAM_PROC2_VOSEL_SHIFT   0
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_VOSEL_ADDR   MT6359_LDO_VSRAM_OTHERS_ELR
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_VOSEL_MASK   0x7F
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_VOSEL_SHIFT  0
+> +#define MT6359_RG_LDO_VSRAM_MD_VOSEL_ADDR       MT6359_LDO_VSRAM_MD_ELR
+> +#define MT6359_RG_LDO_VSRAM_MD_VOSEL_MASK       0x7F
+> +#define MT6359_RG_LDO_VSRAM_MD_VOSEL_SHIFT      0
+> +#define MT6359_RG_LDO_VFE28_EN_ADDR             MT6359_LDO_VFE28_CON0
+> +#define MT6359_DA_VFE28_B_EN_ADDR               MT6359_LDO_VFE28_MON
+> +#define MT6359_RG_LDO_VXO22_EN_ADDR		MT6359_LDO_VXO22_CON0
+> +#define MT6359_RG_LDO_VXO22_EN_SHIFT            0
+> +#define MT6359_DA_VXO22_B_EN_ADDR               MT6359_LDO_VXO22_MON
+> +#define MT6359_RG_LDO_VRF18_EN_ADDR             MT6359_LDO_VRF18_CON0
+> +#define MT6359_RG_LDO_VRF18_EN_SHIFT            0
+> +#define MT6359_DA_VRF18_B_EN_ADDR               MT6359_LDO_VRF18_MON
+> +#define MT6359_RG_LDO_VRF12_EN_ADDR             MT6359_LDO_VRF12_CON0
+> +#define MT6359_RG_LDO_VRF12_EN_SHIFT            0
+> +#define MT6359_DA_VRF12_B_EN_ADDR               MT6359_LDO_VRF12_MON
+> +#define MT6359_RG_LDO_VEFUSE_EN_ADDR            MT6359_LDO_VEFUSE_CON0
+> +#define MT6359_RG_LDO_VEFUSE_EN_SHIFT           0
+> +#define MT6359_DA_VEFUSE_B_EN_ADDR              MT6359_LDO_VEFUSE_MON
+> +#define MT6359_RG_LDO_VCN33_1_EN_0_ADDR         MT6359_LDO_VCN33_1_CON0
+> +#define MT6359_RG_LDO_VCN33_1_EN_0_MASK         0x1
+> +#define MT6359_RG_LDO_VCN33_1_EN_0_SHIFT        0
+> +#define MT6359_DA_VCN33_1_B_EN_ADDR             MT6359_LDO_VCN33_1_MON
+> +#define MT6359_RG_LDO_VCN33_1_EN_1_ADDR         MT6359_LDO_VCN33_1_MULTI_SW
+> +#define MT6359_RG_LDO_VCN33_1_EN_1_SHIFT        15
+> +#define MT6359_RG_LDO_VCN33_2_EN_0_ADDR		MT6359_LDO_VCN33_2_CON0
+> +#define MT6359_RG_LDO_VCN33_2_EN_0_SHIFT        0
+> +#define MT6359_DA_VCN33_2_B_EN_ADDR             MT6359_LDO_VCN33_2_MON
+> +#define MT6359_RG_LDO_VCN33_2_EN_1_ADDR         MT6359_LDO_VCN33_2_MULTI_SW
+> +#define MT6359_RG_LDO_VCN33_2_EN_1_MASK         0x1
+> +#define MT6359_RG_LDO_VCN33_2_EN_1_SHIFT        15
+> +#define MT6359_RG_LDO_VCN13_EN_ADDR             MT6359_LDO_VCN13_CON0
+> +#define MT6359_RG_LDO_VCN13_EN_SHIFT            0
+> +#define MT6359_DA_VCN13_B_EN_ADDR               MT6359_LDO_VCN13_MON
+> +#define MT6359_RG_LDO_VCN18_EN_ADDR             MT6359_LDO_VCN18_CON0
+> +#define MT6359_DA_VCN18_B_EN_ADDR               MT6359_LDO_VCN18_MON
+> +#define MT6359_RG_LDO_VA09_EN_ADDR		MT6359_LDO_VA09_CON0
+> +#define MT6359_RG_LDO_VA09_EN_SHIFT             0
+> +#define MT6359_DA_VA09_B_EN_ADDR                MT6359_LDO_VA09_MON
+> +#define MT6359_RG_LDO_VCAMIO_EN_ADDR		MT6359_LDO_VCAMIO_CON0
+> +#define MT6359_RG_LDO_VCAMIO_EN_SHIFT           0
+> +#define MT6359_DA_VCAMIO_B_EN_ADDR              MT6359_LDO_VCAMIO_MON
+> +#define MT6359_RG_LDO_VA12_EN_ADDR              MT6359_LDO_VA12_CON0
+> +#define MT6359_RG_LDO_VA12_EN_SHIFT             0
+> +#define MT6359_DA_VA12_B_EN_ADDR		MT6359_LDO_VA12_MON
+> +#define MT6359_RG_LDO_VAUX18_EN_ADDR            MT6359_LDO_VAUX18_CON0
+> +#define MT6359_DA_VAUX18_B_EN_ADDR              MT6359_LDO_VAUX18_MON
+> +#define MT6359_RG_LDO_VAUD18_EN_ADDR            MT6359_LDO_VAUD18_CON0
+> +#define MT6359_DA_VAUD18_B_EN_ADDR              MT6359_LDO_VAUD18_MON
+> +#define MT6359_RG_LDO_VIO18_EN_ADDR             MT6359_LDO_VIO18_CON0
+> +#define MT6359_RG_LDO_VIO18_EN_SHIFT            0
+> +#define MT6359_DA_VIO18_B_EN_ADDR               MT6359_LDO_VIO18_MON
+> +#define MT6359_RG_LDO_VEMC_EN_ADDR              MT6359_LDO_VEMC_CON0
+> +#define MT6359_RG_LDO_VEMC_EN_SHIFT             0
+> +#define MT6359_DA_VEMC_B_EN_ADDR                MT6359_LDO_VEMC_MON
+> +#define MT6359_RG_LDO_VSIM1_EN_ADDR             MT6359_LDO_VSIM1_CON0
+> +#define MT6359_RG_LDO_VSIM1_EN_SHIFT            0
+> +#define MT6359_DA_VSIM1_B_EN_ADDR               MT6359_LDO_VSIM1_MON
+> +#define MT6359_RG_LDO_VSIM2_EN_ADDR		MT6359_LDO_VSIM2_CON0
+> +#define MT6359_RG_LDO_VSIM2_EN_SHIFT            0
+> +#define MT6359_DA_VSIM2_B_EN_ADDR               MT6359_LDO_VSIM2_MON
+> +#define MT6359_RG_LDO_VUSB_EN_0_ADDR            MT6359_LDO_VUSB_CON0
+> +#define MT6359_RG_LDO_VUSB_EN_0_MASK            0x1
+> +#define MT6359_RG_LDO_VUSB_EN_0_SHIFT           0
+> +#define MT6359_DA_VUSB_B_EN_ADDR                MT6359_LDO_VUSB_MON
+> +#define MT6359_RG_LDO_VUSB_EN_1_ADDR            MT6359_LDO_VUSB_MULTI_SW
+> +#define MT6359_RG_LDO_VUSB_EN_1_MASK            0x1
+> +#define MT6359_RG_LDO_VUSB_EN_1_SHIFT           15
+> +#define MT6359_RG_LDO_VRFCK_EN_ADDR             MT6359_LDO_VRFCK_CON0
+> +#define MT6359_RG_LDO_VRFCK_EN_SHIFT            0
+> +#define MT6359_DA_VRFCK_B_EN_ADDR               MT6359_LDO_VRFCK_MON
+> +#define MT6359_RG_LDO_VBBCK_EN_ADDR             MT6359_LDO_VBBCK_CON0
+> +#define MT6359_RG_LDO_VBBCK_EN_SHIFT            0
+> +#define MT6359_DA_VBBCK_B_EN_ADDR               MT6359_LDO_VBBCK_MON
+> +#define MT6359_RG_LDO_VBIF28_EN_ADDR            MT6359_LDO_VBIF28_CON0
+> +#define MT6359_DA_VBIF28_B_EN_ADDR              MT6359_LDO_VBIF28_MON
+> +#define MT6359_RG_LDO_VIBR_EN_ADDR              MT6359_LDO_VIBR_CON0
+> +#define MT6359_RG_LDO_VIBR_EN_SHIFT             0
+> +#define MT6359_DA_VIBR_B_EN_ADDR                MT6359_LDO_VIBR_MON
+> +#define MT6359_RG_LDO_VIO28_EN_ADDR             MT6359_LDO_VIO28_CON0
+> +#define MT6359_RG_LDO_VIO28_EN_SHIFT            0
+> +#define MT6359_DA_VIO28_B_EN_ADDR               MT6359_LDO_VIO28_MON
+> +#define MT6359_RG_LDO_VM18_EN_ADDR		MT6359_LDO_VM18_CON0
+> +#define MT6359_RG_LDO_VM18_EN_SHIFT             0
+> +#define MT6359_DA_VM18_B_EN_ADDR                MT6359_LDO_VM18_MON
+> +#define MT6359_RG_LDO_VUFS_EN_ADDR              MT6359_LDO_VUFS_CON0
+> +#define MT6359_RG_LDO_VUFS_EN_SHIFT		0
+> +#define MT6359_DA_VUFS_B_EN_ADDR                MT6359_LDO_VUFS_MON
+> +#define MT6359_RG_LDO_VSRAM_PROC1_EN_ADDR       MT6359_LDO_VSRAM_PROC1_CON0
+> +#define MT6359_DA_VSRAM_PROC1_B_EN_ADDR         MT6359_LDO_VSRAM_PROC1_MON
+> +#define MT6359_DA_VSRAM_PROC1_VOSEL_ADDR        MT6359_LDO_VSRAM_PROC1_VOSEL1
+> +#define MT6359_DA_VSRAM_PROC1_VOSEL_MASK        0x7F
+> +#define MT6359_DA_VSRAM_PROC1_VOSEL_SHIFT       8
+> +#define MT6359_RG_LDO_VSRAM_PROC2_EN_ADDR       MT6359_LDO_VSRAM_PROC2_CON0
+> +#define MT6359_DA_VSRAM_PROC2_B_EN_ADDR         MT6359_LDO_VSRAM_PROC2_MON
+> +#define MT6359_DA_VSRAM_PROC2_VOSEL_ADDR        MT6359_LDO_VSRAM_PROC2_VOSEL1
+> +#define MT6359_DA_VSRAM_PROC2_VOSEL_MASK        0x7F
+> +#define MT6359_DA_VSRAM_PROC2_VOSEL_SHIFT       8
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_EN_ADDR      MT6359_LDO_VSRAM_OTHERS_CON0
+> +#define MT6359_DA_VSRAM_OTHERS_B_EN_ADDR        MT6359_LDO_VSRAM_OTHERS_MON
+> +#define MT6359_DA_VSRAM_OTHERS_VOSEL_ADDR       MT6359_LDO_VSRAM_OTHERS_VOSEL1
+> +#define MT6359_DA_VSRAM_OTHERS_VOSEL_MASK       0x7F
+> +#define MT6359_DA_VSRAM_OTHERS_VOSEL_SHIFT      8
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_EN_ADDR \
+> +						MT6359_LDO_VSRAM_OTHERS_SSHUB
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_VOSEL_ADDR \
+> +						MT6359_LDO_VSRAM_OTHERS_SSHUB
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_VOSEL_MASK	0x7F
+> +#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_VOSEL_SHIFT	1
+> +#define MT6359_RG_LDO_VSRAM_MD_EN_ADDR          MT6359_LDO_VSRAM_MD_CON0
+> +#define MT6359_DA_VSRAM_MD_B_EN_ADDR            MT6359_LDO_VSRAM_MD_MON
+> +#define MT6359_DA_VSRAM_MD_VOSEL_ADDR           MT6359_LDO_VSRAM_MD_VOSEL1
+> +#define MT6359_DA_VSRAM_MD_VOSEL_MASK		0x7F
+> +#define MT6359_DA_VSRAM_MD_VOSEL_SHIFT          8
+> +#define MT6359_RG_VCN33_1_VOSEL_ADDR		MT6359_VCN33_1_ANA_CON0
+> +#define MT6359_RG_VCN33_1_VOSEL_MASK            0xF
+> +#define MT6359_RG_VCN33_1_VOSEL_SHIFT           8
+> +#define MT6359_RG_VCN33_2_VOSEL_ADDR            MT6359_VCN33_2_ANA_CON0
+> +#define MT6359_RG_VCN33_2_VOSEL_MASK            0xF
+> +#define MT6359_RG_VCN33_2_VOSEL_SHIFT           8
+> +#define MT6359_RG_VEMC_VOSEL_ADDR               MT6359_VEMC_ANA_CON0
+> +#define MT6359_RG_VEMC_VOSEL_MASK               0xF
+> +#define MT6359_RG_VEMC_VOSEL_SHIFT              8
+> +#define MT6359_RG_VSIM1_VOSEL_ADDR              MT6359_VSIM1_ANA_CON0
+> +#define MT6359_RG_VSIM1_VOSEL_MASK              0xF
+> +#define MT6359_RG_VSIM1_VOSEL_SHIFT             8
+> +#define MT6359_RG_VSIM2_VOSEL_ADDR              MT6359_VSIM2_ANA_CON0
+> +#define MT6359_RG_VSIM2_VOSEL_MASK              0xF
+> +#define MT6359_RG_VSIM2_VOSEL_SHIFT             8
+> +#define MT6359_RG_VIO28_VOSEL_ADDR		MT6359_VIO28_ANA_CON0
+> +#define MT6359_RG_VIO28_VOSEL_MASK              0xF
+> +#define MT6359_RG_VIO28_VOSEL_SHIFT             8
+> +#define MT6359_RG_VIBR_VOSEL_ADDR               MT6359_VIBR_ANA_CON0
+> +#define MT6359_RG_VIBR_VOSEL_MASK               0xF
+> +#define MT6359_RG_VIBR_VOSEL_SHIFT              8
+> +#define MT6359_RG_VRF18_VOSEL_ADDR              MT6359_VRF18_ANA_CON0
+> +#define MT6359_RG_VRF18_VOSEL_MASK              0xF
+> +#define MT6359_RG_VRF18_VOSEL_SHIFT             8
+> +#define MT6359_RG_VEFUSE_VOSEL_ADDR		MT6359_VEFUSE_ANA_CON0
+> +#define MT6359_RG_VEFUSE_VOSEL_MASK             0xF
+> +#define MT6359_RG_VEFUSE_VOSEL_SHIFT            8
+> +#define MT6359_RG_VCAMIO_VOSEL_ADDR             MT6359_VCAMIO_ANA_CON0
+> +#define MT6359_RG_VCAMIO_VOSEL_MASK             0xF
+> +#define MT6359_RG_VCAMIO_VOSEL_SHIFT            8
+> +#define MT6359_RG_VIO18_VOSEL_ADDR              MT6359_VIO18_ANA_CON0
+> +#define MT6359_RG_VIO18_VOSEL_MASK              0xF
+> +#define MT6359_RG_VIO18_VOSEL_SHIFT             8
+> +#define MT6359_RG_VM18_VOSEL_ADDR               MT6359_VM18_ANA_CON0
+> +#define MT6359_RG_VM18_VOSEL_MASK               0xF
+> +#define MT6359_RG_VM18_VOSEL_SHIFT              8
+> +#define MT6359_RG_VUFS_VOSEL_ADDR               MT6359_VUFS_ANA_CON0
+> +#define MT6359_RG_VUFS_VOSEL_MASK               0xF
+> +#define MT6359_RG_VUFS_VOSEL_SHIFT              8
+> +#define MT6359_RG_VRF12_VOSEL_ADDR              MT6359_VRF12_ANA_CON0
+> +#define MT6359_RG_VRF12_VOSEL_MASK              0xF
+> +#define MT6359_RG_VRF12_VOSEL_SHIFT             8
+> +#define MT6359_RG_VCN13_VOSEL_ADDR		MT6359_VCN13_ANA_CON0
+> +#define MT6359_RG_VCN13_VOSEL_MASK              0xF
+> +#define MT6359_RG_VCN13_VOSEL_SHIFT             8
+> +#define MT6359_RG_VA09_VOSEL_ADDR		MT6359_VA09_ANA_CON0
+> +#define MT6359_RG_VA09_VOSEL_MASK               0xF
+> +#define MT6359_RG_VA09_VOSEL_SHIFT              8
+> +#define MT6359_RG_VA12_VOSEL_ADDR               MT6359_VA12_ANA_CON0
+> +#define MT6359_RG_VA12_VOSEL_MASK               0xF
+> +#define MT6359_RG_VA12_VOSEL_SHIFT              8
+> +#define MT6359_RG_VXO22_VOSEL_ADDR              MT6359_VXO22_ANA_CON0
+> +#define MT6359_RG_VXO22_VOSEL_MASK              0xF
+> +#define MT6359_RG_VXO22_VOSEL_SHIFT             8
+> +#define MT6359_RG_VRFCK_VOSEL_ADDR              MT6359_VRFCK_ANA_CON0
+> +#define MT6359_RG_VRFCK_VOSEL_MASK              0xF
+> +#define MT6359_RG_VRFCK_VOSEL_SHIFT             8
+> +#define MT6359_RG_VBBCK_VOSEL_ADDR              MT6359_VBBCK_ANA_CON0
+> +#define MT6359_RG_VBBCK_VOSEL_MASK              0xF
+> +#define MT6359_RG_VBBCK_VOSEL_SHIFT             8
+> +
+> +#endif /* __MFD_MT6359_REGISTERS_H__ */
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3108385117953840908==--
-
