@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 986E31FB3F1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA1431FB3F2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TB3FiecA5qqgQ0xExwSBxkHEjmlcNc/j1S1NfgyztOk=; b=dKTZCVY6Av9Rs4
-	d4D8Wave+NxIAPDy/QopTOVSH3hnTGewVrIKUShEJv1C9HYIsV7q3Y/LeCUF4m5U5G24IsCNmp3a5
-	HZaPpj1CdIAgJik5E7Kwh5f1LnGqaYtzdgnh4x7VIuf1fNQOHdlkXNpcdbEzfnd4A3wUqarqb7ghP
-	FCH4Dku7MtHiiXW0/Y2WcUrixSryvKnmmYK1om3UFPNEhkH0c14EENO60+AQG4Xuo//kxw3MMact5
-	dcjJoKU0Iy/h2vQh7VCcb+M1+5u4yEh5xrFc8dWyP7HBaXtbQkE/oEj0CcVnMtwJt8GJqYUUJRExC
-	ghZyedRLqrnpY3QvXr8g==;
+	List-Owner; bh=BNIKh++OiaEyA2vM6HjXNbo+nKaa1PAOZ9LKijq6B6I=; b=OB6uqXqesTRKMx
+	EPu9Y4UyBTWPm2iBcDUn6ZI1bUmpiPWQ6FfTmUuuVSe9exF8VFfRGablbCc99YLoo1RIHNnkUOyZ4
+	4CS16SxPXIk0vW2rZvKr1Kwtefogg9WdWacOjdSDFrQWun3Gy5zkq6jK2yAenbfry7mWVlNAFHvU9
+	Brs0nEZtZSg2vNeL8DQ+4zD4JuBYjuFuJST5E54+FrxQfnZJs9qQCc44irUSwM3GM3pcIt4gVkhhd
+	AKIP06IdIHs5F/MrDX2nvOvPni98q8R56LOaBYJ8Xbu7bhl2Cp2UK4pfrCfsd5byjxYOyt/mEG24I
+	hte6N6Ii6PaizTMhNHQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCMu-0001Mc-KW; Tue, 16 Jun 2020 14:15:16 +0000
+	id 1jlCN7-0003jh-JL; Tue, 16 Jun 2020 14:15:29 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC3V-0003k4-32
+ id 1jlC3X-0003zl-HB
  for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:55:35 +0000
-Received: by mail-wm1-x344.google.com with SMTP id y20so3178240wmi.2
+Received: by mail-wm1-x344.google.com with SMTP id q25so3194348wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:55:12 -0700 (PDT)
+ Tue, 16 Jun 2020 06:55:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=SUdlPyxdGWCgmnigeWgRVCwmjI++8hho3XmOt25jjdI=;
- b=lG33AK5PdVrGfzQbJRnW9klc7931v/SPsOkRM/oequaJiGe/cbVfXTzZ+rQHIApQcf
- gEUph1xaWj1okiVqas98eKy5J85tlN84RfqVfRkFwTVr/Rpge0QDA+XjMYgg/xa8LjJq
- xTNXRiLH0AvC3vDmfE+E0Nkvv9jCHdPS6V98KVYFy6/1oXdjdarPhfzeYhU8iP4V1QyV
- Zi30DaGHvwPrRKa+lGhjMgQZxF3C1nG+15jI9gjzns9lNDQAZb2Fqsn3TET3zhGIKr81
- XOs/oh6gy3rInlFu8MesJx/8tOOu3e8mKeFsf7ZIx9lPxPrGSigTVo5sbTpHRb1M8B0P
- QaZw==
+ bh=5UaeiYULrewUtGThWV95Xt3+CgB3hdR6MxdVeCxs+eU=;
+ b=BbG8JMK4tEiZ0a2HH5vQb9gMCG84W2N5EGnIixOTYaqZ/4yn/FDrGR5qKk7J+fJN2j
+ l5MiPzMoKpgbxClG4i2DXZWTfkO6oSxKjfFGyC2yeVjzmwKJg+snkWRNDI9qn/LLNSEP
+ q2yE1ZZNykudgaJinVIB2JrpMbOriHb/gES1qM2JTtzzbCLuBeDLmB6UZQXujYUJHXyS
+ R+aNafBH9Y2iS0gQXNdwdUDW51MOQ0h8ylCQfAKECO4WVW2617VQQvrTbFOf5EaQ3AUy
+ 7bbld7Bwq/A+SbnVkvlhFLXXXBaYgRU08A7h0GOPUuDBv+KZz0P44WTjk3Y4pQPL5KUc
+ DJxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=SUdlPyxdGWCgmnigeWgRVCwmjI++8hho3XmOt25jjdI=;
- b=XaClxFjknyJbg48xWWhe75TnBtYMrgAIMXGqccwSYPJUR86C+wV2n+Ic65JH0Cld4T
- Ae/FDPpsOlkFbeFxJOLxv9jDuiTfALrJH+KXBRg7WhlgwYc2aYs19ZZ71yF57mr5WeZ6
- M4PJOsKm+zPsa4BU94uYn/hwHfQ7HbW3chDEkOgBdpscxJ8hiZkvEZ5P3tHMKWIlqSCb
- 5payoEaH8L+HEUmXCqgq0wUxDCtXOZoCXBKo1GetuU8/ZF85LZEra69HIynzzNSmbAnh
- 8ePGKvaxvLgSTkiAzpja5dBAuPsTTWV6dcg0kL/8YKQ9/mJBMA/45MnlynpK46MxUdo8
- sJtg==
-X-Gm-Message-State: AOAM530fFhTVXgMt74pqgubfecQFs7+s5/iUsq5HjEyWZTN8bzn/js1I
- v02ENIZcD3YB/PXjEKJ3XRM=
-X-Google-Smtp-Source: ABdhPJyRJKmPN8L7dtwQ/4k64aAuB2UW6h7GFFC+jQd8XIlu/SoAy1Yac0HJcSCb4Voylfd6BUkeeQ==
-X-Received: by 2002:a7b:c0cc:: with SMTP id s12mr3476240wmh.111.1592315711173; 
- Tue, 16 Jun 2020 06:55:11 -0700 (PDT)
+ bh=5UaeiYULrewUtGThWV95Xt3+CgB3hdR6MxdVeCxs+eU=;
+ b=hLkF5C3DuDhuFiAk5CTc2m94Ci3UfRmYiDcfMSbt0KFk3XwyLO5ecVVhRDnhMCxFe2
+ Q0GYiCN85zaGQGMNOyTBwEh8ZTDPzHzmBS2zQ4gA7kcqRSc1ln4MsIWJxZaTyIrpYuoH
+ S6x9SOtooGn5N6hEs3kN7OoNMUp8IqJvyZK1z0QjivSxAEhb4Ju2lp+/fliYN+gTmjlV
+ iPgxxaay+iLNXS1z2nBgCabcKZxBapGdjLLVUHhvnUGOZdKysNpR+S25ZrF36rO15RTw
+ Z4X+VQDXpzVsKm5hn/Oi6fjpWQwOsk+NZsmzyvWU6YXGIInIcGOJcwijx76a9/a47m5E
+ u5Xg==
+X-Gm-Message-State: AOAM531KyTEt75sm+SksGsxSEbg75hzp4vneWQmJoly0XLumNBqolZUX
+ jiqLckFiJ7t0QfdAPKE+wwtT+VwS
+X-Google-Smtp-Source: ABdhPJx0YWWE5EwMSLqluEDsr0Na6X/CXb8aWgF9NZ01YYq2d32S8wQk3UtDXGfxw0Z+zyfFUmAI8w==
+X-Received: by 2002:a7b:c1c5:: with SMTP id a5mr3293085wmj.35.1592315712791;
+ Tue, 16 Jun 2020 06:55:12 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id d17sm30608379wrg.75.2020.06.16.06.55.10
+ by smtp.gmail.com with ESMTPSA id u130sm4293586wmg.32.2020.06.16.06.55.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:55:10 -0700 (PDT)
+ Tue, 16 Jun 2020 06:55:12 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 60/73] arm64: tegra: Remove unneeded power supplies
-Date: Tue, 16 Jun 2020 15:52:25 +0200
-Message-Id: <20200616135238.3001888-61-thierry.reding@gmail.com>
+Subject: [PATCH 61/73] arm64: tegra: Update USB connector nodes
+Date: Tue, 16 Jun 2020 15:52:26 +0200
+Message-Id: <20200616135238.3001888-62-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065513_307959_7CF48F5C 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.1 (++)
+X-CRM114-CacheID: sfid-20200616_065515_980952_29D7CD75 
+X-CRM114-Status: GOOD (  10.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
- 2.3 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,29 +107,100 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-On Tegra186 and later, the BPMP is responsible for enabling/disabling
-the PCIe related power supplies of the pad controller and there is no
-need for the operating system to control them, so they can be removed.
+Use the preferred {id,vbus}-gpios over the {id,vbus}-gpio properties and
+fix the ordering of compatible strings (most-specific ones should come
+first).
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts | 4 ----
- 1 file changed, 4 deletions(-)
+ .../arm64/boot/dts/nvidia/tegra186-p2771-0000.dts | 15 +++++++--------
+ arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi    | 12 ++++++------
+ .../arm64/boot/dts/nvidia/tegra210-p3450-0000.dts | 10 +++++-----
+ 3 files changed, 18 insertions(+), 19 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts b/arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts
-index 43b8d643e7a1..482ed7b0fcff 100644
+index 482ed7b0fcff..4a7a022acabb 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts
 +++ b/arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts
-@@ -119,10 +119,6 @@ padctl@3520000 {
+@@ -171,19 +171,18 @@ usb2-0 {
+ 				status = "okay";
+ 				mode = "otg";
+ 				vbus-supply = <&vdd_usb0>;
+-
+ 				usb-role-switch;
++
+ 				connector {
+-					compatible = "usb-b-connector",
+-						     "gpio-usb-b-connector";
++					compatible = "gpio-usb-b-connector",
++						     "usb-b-connector";
+ 					label = "micro-USB";
+ 					type = "micro";
+-					vbus-gpio = <&gpio
+-						     TEGRA186_MAIN_GPIO(X, 7)
+-						     GPIO_ACTIVE_LOW>;
+-					id-gpio = <&pmic 0 GPIO_ACTIVE_HIGH>;
++					vbus-gpios = <&gpio
++						      TEGRA186_MAIN_GPIO(X, 7)
++						      GPIO_ACTIVE_LOW>;
++					id-gpios = <&pmic 0 GPIO_ACTIVE_HIGH>;
+ 				};
+-
+ 			};
  
- 		avdd-pll-erefeut-supply = <&vdd_1v8_pll>;
- 		avdd-usb-supply = <&vdd_3v3_sys>;
--		dvdd-pex-supply = <&vdd_pex>;
--		dvdd-pex-pll-supply = <&vdd_pex>;
--		hvdd-pex-supply = <&vdd_1v8>;
--		hvdd-pex-pll-supply = <&vdd_1v8>;
- 		vclamp-usb-supply = <&vdd_1v8>;
- 		vddio-hsic-supply = <&gnd>;
+ 			usb2-1 {
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi b/arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi
+index 4771c1668825..3ba36a52dc89 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi
+@@ -1456,17 +1456,17 @@ ports {
+ 			usb2-0 {
+ 				status = "okay";
+ 				vbus-supply = <&vdd_usb_vbus_otg>;
++				usb-role-switch;
+ 				mode = "otg";
+ 
+-				usb-role-switch;
+ 				connector {
+-					compatible = "usb-b-connector",
+-						     "gpio-usb-b-connector";
++					compatible = "gpio-usb-b-connector",
++						     "usb-b-connector";
+ 					label = "micro-USB";
+ 					type = "micro";
+-					vbus-gpio = <&gpio TEGRA_GPIO(Z, 0)
+-						     GPIO_ACTIVE_LOW>;
+-					id-gpio = <&pmic 0 0>;
++					vbus-gpios = <&gpio TEGRA_GPIO(Z, 0)
++						      GPIO_ACTIVE_LOW>;
++					id-gpios = <&pmic 0 GPIO_ACTIVE_HIGH>;
+ 				};
+ 			};
+ 
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts b/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts
+index d7a4eced0149..ac17f5485bf8 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts
++++ b/arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts
+@@ -505,15 +505,15 @@ ports {
+ 			usb2-0 {
+ 				status = "okay";
+ 				mode = "peripheral";
+-
+ 				usb-role-switch;
++
+ 				connector {
+-					compatible = "usb-b-connector",
+-						     "gpio-usb-b-connector";
++					compatible = "gpio-usb-b-connector",
++						     "usb-b-connector";
+ 					label = "micro-USB";
+ 					type = "micro";
+-					vbus-gpio = <&gpio TEGRA_GPIO(CC, 4)
+-						     GPIO_ACTIVE_LOW>;
++					vbus-gpios = <&gpio TEGRA_GPIO(CC, 4)
++						      GPIO_ACTIVE_LOW>;
+ 				};
+ 			};
  
 -- 
 2.24.1
