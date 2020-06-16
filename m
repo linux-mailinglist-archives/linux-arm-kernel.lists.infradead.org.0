@@ -2,97 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 283C41FA757
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 06:01:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5235B1FA78D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 06:24:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NxWxBFQJoFy2tpw/BYB/+icQVshkZZ32Lj+FaGKiXIs=; b=npUZ0LfIkylZ6d
-	8mng/83D1d+0tvFh2kJ2jE00zmo9w8jmHDlNHwW/IdEtCGvR+WAkZxG3MrSIq1i5dXq6Gbbc6NkJ7
-	tV6qXkcV+ktOJifihdJGV8QAl1r0s+9itQiuSZqGk3HRf1mbdfZoiJCFyZiuXHjetdVC8xPladELO
-	jXDK3LxXQZAbwvJUBK9IzIk3UOE1r3cFCchF6oAL79U5tXy8uuieKreBoye4P+lvX7TjeYddA/0OE
-	U3Su0VyXKS/klGSmBqqlhri2VztoY8dLwOEjRCGEfMplSqBP9Q0jVpRf12PIdDw1aSXbUJbhUBZor
-	fp/cOaTlMinEair3QP5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hIbtoU07L6RsCs9+Vvpgb4xrCrFbRBZphZ2LO54YAqc=; b=kmn9Ew6e+mGqjUP1BgiAp/FPB
+	FsKvpHtaUJTgZsmBioLV+0VPdgs8uTOtX13UYYktG/WxRwJHFeU0S7DgVliE2zsSiaKEiYY2s94wL
+	Tz3odYUj425LgEYHycW4yrb0BpvYbq2SWhJqtkafjZrP12L/ssHhUeh1Bge1awOEIiMlOrM1anAQh
+	5GkgE7tdYqQAPeZLxUCUOnmIszSUqqvP55iuAN51jDnctDZxFAZbLIu817bcFyJy+bH1HghqDLBwa
+	vL0/oW3I30vC39867wbBcShGs6diWUO/n5U+/H6HWGywJvtT9yzr3L1iuGORF9qZApKIW4S62I5bR
+	ceM3r/4Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl2mv-0001Iq-E5; Tue, 16 Jun 2020 04:01:29 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jl39R-0005cE-RO; Tue, 16 Jun 2020 04:24:45 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl2lu-0000TD-9V; Tue, 16 Jun 2020 04:00:28 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05G3x7Hk195261;
- Tue, 16 Jun 2020 04:00:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2020-01-29;
- bh=WCUhN94eoOku1+k3rSNEpLPDTZnjBYL2UylmBfw0T1s=;
- b=NrEF6i/WPI6mRZlBtiSuc80dJEZ8fMw8uud9MG/3nLfqrX7LqZJS4U1a4qso/A/oPt4N
- V/NXy7NNTZZqrsh6omloaDD8SD6POTRaxTKyAckG75SIi/o3pc42BgiEmsG/3jg/zgNQ
- brXy7hecxgguL8oMWf0CnfLy894rfQPLYE0kJ+YwCDDk5D0xpADI6/QgQqkMSyYbbW3K
- 8cG9oOOWevdtW1Qx9siqtD/7jbR8CRrckYS2R9rpxV2VugnDXxoE5rvglvxABYRaqoiX
- jFqOcLrY3vI9KO+quzwEQ5xi8cBah2vX+sGfmfj5L1zLepAXOvYFPh6qPIxNgR6NjBnf bQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 31p6e5vdan-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 16 Jun 2020 04:00:22 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05G3x2a6020916;
- Tue, 16 Jun 2020 04:00:21 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 31p6s6hmcu-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 16 Jun 2020 04:00:21 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 05G40KmY001266;
- Tue, 16 Jun 2020 04:00:20 GMT
-Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 15 Jun 2020 21:00:20 -0700
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-To: linux-scsi@vger.kernel.org, jejb@linux.ibm.com, avri.altman@wdc.com,
- Stanley Chu <stanley.chu@mediatek.com>, asutoshd@codeaurora.org,
- alim.akhtar@samsung.com
-Subject: Re: [PATCH v5] scsi: ufs: Fix imprecise load calculation in devfreq
- window
-Date: Mon, 15 Jun 2020 23:59:59 -0400
-Message-Id: <159227986423.24883.5364281872549678357.b4-ty@oracle.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200611101043.6379-1-stanley.chu@mediatek.com>
-References: <20200611101043.6379-1-stanley.chu@mediatek.com>
+ id 1jl39J-0005bU-GQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 04:24:38 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 05G4OLKx098869;
+ Mon, 15 Jun 2020 23:24:21 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1592281461;
+ bh=ThaAyWLSMOIe+/0BXs13JX/wpbe2DZuw6Fx9tKINAQQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=AzAk8oMPjuu+vWdMhJ8MbC4IDNo7BwtyMxh1q6OqBbTlyuIFm8P8NsQoc5ZooOZry
+ 72gBaAj6nqZkOzkmk0PSRIIqoZ3I2zQTBkI6qsbVqZX4qfiLJ5jKKU1NWARC+gnjpq
+ 9NJQe2x9fTbHubJJ7H6mhDXM7Rfe/ThsrFlExWu0=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 05G4OLh7005653
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 15 Jun 2020 23:24:21 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 15
+ Jun 2020 23:24:20 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Mon, 15 Jun 2020 23:24:20 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 05G4OIOs119071;
+ Mon, 15 Jun 2020 23:24:19 -0500
+Subject: Re: [PATCHv4 0/7] crypto: sa2ul support for TI K3 SoCs
+To: Eric Biggers <ebiggers@kernel.org>
+References: <20200615071452.25141-1-t-kristo@ti.com>
+ <20200615182029.GA85413@gmail.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <b8ac78c4-dbd1-aa47-e41c-89624d1960fa@ti.com>
+Date: Tue, 16 Jun 2020 07:24:17 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9653
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- malwarescore=0 mlxscore=0
- suspectscore=0 mlxlogscore=999 phishscore=0 bulkscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2006160027
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9653
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 adultscore=0
- mlxscore=0 phishscore=0 mlxlogscore=999 lowpriorityscore=0 clxscore=1015
- suspectscore=0 spamscore=0 bulkscore=0 malwarescore=0 impostorscore=0
- cotscore=-2147483648 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2004280000 definitions=main-2006160027
+In-Reply-To: <20200615182029.GA85413@gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_210026_487214_547D7439 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20200615_212437_640304_B953A60D 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [198.47.19.142 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,8 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -114,38 +96,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, "Martin K . Petersen" <martin.petersen@oracle.com>,
- andy.teng@mediatek.com, cc.chou@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, chaotian.jing@mediatek.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-crypto@vger.kernel.org, j-keerthy@ti.com, herbert@gondor.apana.org.au,
+ linux-arm-kernel@lists.infradead.org, davem@davemloft.net
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 11 Jun 2020 18:10:43 +0800, Stanley Chu wrote:
-
-> The UFS load calculation is based on "total_time" and "busy_time" in a
-> devfreq window. However, the source of time is different for both
-> parameters: "busy_time" is assigned from "jiffies" thus has different
-> accuracy from "total_time" which is assigned from ktime_get().
+On 15/06/2020 21:20, Eric Biggers wrote:
+> On Mon, Jun 15, 2020 at 10:14:45AM +0300, Tero Kristo wrote:
+>> Hi,
+>>
+>> This is basically just a rebase of v2 to 5.8-rc1, and application of
+>> Rob's Ack on the dt-binding patch. No other changes.
+>>
+>> Only driver side + DT binding should be applied via the crypto tree, DTS
+>> patches should be queued separately via ARM SoC tree (I can take care of
+>> that myself assuming the driver side gets applied.)
+>>
+>> -Tero
 > 
-> Besides, the time of window boundary is not exactly the same as
-> the starting busy time in this window if UFS is actually busy
-> in the beginning of the window. A similar accuracy error may also
-> happen for the end of busy time in current window.
-> 
-> [...]
+> Does this driver pass all the crypto self-tests, including with
+> CONFIG_CRYPTO_MANAGER_EXTRA_TESTS=y?
 
-Applied to 5.9/scsi-queue, thanks!
+Yes, this passes full self test suite with no failures at all, including 
+the extra tests.
 
-[1/1] scsi: ufs: Fix imprecise load calculation in devfreq window
-      https://git.kernel.org/mkp/scsi/c/b1bf66d1d5a8
+> Please include details about testing in your commits.
 
--- 
-Martin K. Petersen	Oracle Linux Engineering
+I believe I mentioned this on the first iteration of the series.
+
+In addition to self tests I've been testing the driver with tcrypt.ko, 
+IPSec, and openssl (via cryptodev.)
+
+-Tero
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
