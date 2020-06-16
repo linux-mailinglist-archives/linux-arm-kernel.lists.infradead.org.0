@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A25C1FAB19
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 10:26:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196851FAB1E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 10:27:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qVV0HkWF0EzUm6jyJX3tT7AZTPRoh6Nijd6JEsOHxqM=; b=nGDj1Ab28AGODG
-	8GSh5QHmpDB2vRc9upT/85qQqlvc/Am3bFAdphP1xAezlft3ZZMS66jfMuuZO+150gdya77pDuH2I
-	iEVjipRJtk95bM+oMvBYekGbekZsganCV0X78dyWpXIRFsHnJ56FsGqKTS4A0AX81lKKu4M4F2fDY
-	H8KbThYyzsq2ZxkNyj/XLAuQm6PEIdet6PBIF6/XBlo8zavBB4yvPSnTD7/B7HeRBa958o03qSDAj
-	4fGVbxYBtUQI/d0soROgBqYh3GTwnU/uyiCWMxALb4ZoALJgdHoj4FpMxNR/Rlma0AYrbOB1987ac
-	UvZ/Gh94mIKWqDwsxAvQ==;
+	List-Owner; bh=FysUfwGeSnn8uQ3XowsqBU5IB2qzXtiHTy1JjXLlmwo=; b=a39HUzOcxEuzZ2
+	gMKsBbN1oGgPqcP4QMi42qEBn9pYlfyDwTwAA/nhjp8UzMpsIXcYDfQJYIvA/u+ctkcXQz957nF4D
+	8iuxLRXKrWt0HEXwDKKjoYqfQfBCKlsJmNjLX0QIWjmXDJCYC/AYbYgG5/m34Nb3Jr9005LurWent
+	7zlBryEV9RvCRmDh4Mli3PXd9EbJXfDtdv+FwVofv0NCUOZL9QlBtwOrf4SuIKCtwFwZuzZu7Bu+y
+	f7so5KCaKHps03zfE1DmOePqPmabaxvpYpu8QwsY9fTKz6w4MaLFUW8q6y2Im2I7mue6MLpiWBaFH
+	s9h67ywF2hjpmbKgrcvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl6vY-000458-RD; Tue, 16 Jun 2020 08:26:40 +0000
+	id 1jl6vo-0004Os-Du; Tue, 16 Jun 2020 08:26:56 +0000
 Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl6vB-0003xh-A3
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 08:26:18 +0000
+ id 1jl6vF-0003xh-Hd
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 08:26:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592295978; x=1623831978;
+ t=1592295982; x=1623831982;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=UXU8xjgeD8uULtQXTbOnbSoc5eRHvFPsywKHip7NVXs=;
- b=1glgbDoOg8L7Y295yOy9rhoTk55+pCX2+cmc4DPYKFJO/IOXA2FmwnQ7
- fGbZ9zRiId4J+OGp6jT9Bqi9HrN8dvPqYu8bN5C2W8Pha71oJd7rkNzG0
- tbNUaQYcRyqBLgig5jN7G2fmrQbIbz9xnSxRsothFTdoTiZ7auY0RH7np
- dh/iuO0TOiLeze0halKVpbTOha2MJzKiTXdAjEV1jLmpPcXtN/oG/46ng
- 5CHNXrQVVchL1wnkG8EZVMP9m3PRyE+EKHu+RrOeOc1bLRZXCKO8KUgCz
- xUzTAgwzyB0+JdhVUqV1+IHCMFCBt9GcabB/BWtSMaqzE+9umIXET4zkE g==;
-IronPort-SDR: oLPrloCPosfK2Oj+eHset1dHFSuEZWYg1KuwFZ15O+1pbC3SH5kkWl+t3yo+FzKpeLQzoMJ3ll
- ToOOZ+6KHvt3JXQrHeN8zSFIgLqS53+V/xlBWJzX+nxJgMPCOXzfeLmF5Lh0HFdDXhrSsKHw8I
- 1QACVhyS/a451EcL1Is9HTea94e1WWnvo6TU+7DQcpFWQmdL1h+RiWTqM4BZwlXFe3lW5VbeZ2
- ihFnvkxKLuEjV1kBz2Q+ujPb1vvGIqzhBVdL4qN7y4tlJ1RZphSMuyiooz2zAHhKEhkQpcM3Ba
- 5jQ=
-X-IronPort-AV: E=Sophos;i="5.73,518,1583218800"; d="scan'208";a="79621908"
+ bh=9zgZF5bF0PxY60Zea7h/pZzEv9hjVHtWCRJ66bY+LUo=;
+ b=v8tXmR+BNSU7L4Dq/zFcXfS+RAy8HZ2X47RYTc04mZpGyprzSFwRz8g2
+ h/k3lafyBLqZoEnjTTqrwApDQatZfS2lM1X5qLU0zvfbxrWvYIMBiCS2y
+ Z7RBu1btksBK1TvL88VmJ2RQR+XEA+UhsOkeAbE5Z/pcFaKmKThoH+/MQ
+ kx3sO2iPnIRjqI1W4SPydgVJEnZOYwddE4CwqOgBsmCHQMU9jCAgISdod
+ LeLWNMsTkAulR0cO9T2FTHh0tz3HRyvxb1njYpjcHdvLlA5qCihJFJQB3
+ hJz1jmW6x5+Wtp1729C3PFUHWeTQFzvcZtjLVkSRvSI6W1FCfjDjqFWif w==;
+IronPort-SDR: nQLKe7M2JbKxcSEuN9o9/w/3B80GVtsqVwMNHg/UCcgFRRCfQH0sTMIGeM6Aa13NFsjjKR2Vko
+ Zv1AArKEH1CaF8ZIamKCZYP1VgEtb4/KLVHqik52uqyYwhtFmyNMa609/IRbOTaxcUjp113oiJ
+ nr9mLuyH0Azz5FHI6m/P3jqWuKcdJH5TkA1h+bE4TNT9w8yWYr46WiRqOIQT9Eln7ABDYkbVMd
+ 8IxNrS1VxOKHU3cg76/fJysE6Ov2Jx5uxYB6YRQTK2205YCK/uH6NTgUl0aBQJ1SmnnpWlBQ3y
+ zhY=
+X-IronPort-AV: E=Sophos;i="5.73,518,1583218800"; d="scan'208";a="79621936"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 16 Jun 2020 01:26:17 -0700
+ 16 Jun 2020 01:26:22 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1979.3; Tue, 16 Jun 2020 01:26:16 -0700
+ 15.1.1979.3; Tue, 16 Jun 2020 01:26:18 -0700
 Received: from soft-dev15.microsemi.net (10.10.115.15) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Tue, 16 Jun 2020 01:26:14 -0700
+ 15.1.1979.3 via Frontend Transport; Tue, 16 Jun 2020 01:26:16 -0700
 From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v3 1/3] dt-bindings: hwmon: Add Sparx5 temperature sensor
-Date: Tue, 16 Jun 2020 10:25:54 +0200
-Message-ID: <20200616082556.27877-2-lars.povlsen@microchip.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: [PATCH v3 2/3] arm64: dts: sparx5: Add hwmon temperature sensor
+Date: Tue, 16 Jun 2020 10:25:55 +0200
+Message-ID: <20200616082556.27877-3-lars.povlsen@microchip.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200616082556.27877-1-lars.povlsen@microchip.com>
 References: <20200616082556.27877-1-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_012617_389818_F8B140E3 
-X-CRM114-Status: GOOD (  10.31  )
+X-CRM114-CacheID: sfid-20200616_012621_666847_A81CE5ED 
+X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -105,60 +106,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This add the DT binding specification for the Sparx5 temperature
-sensor.
+This adds a hwmon temperature node sensor to the Sparx5 SoC.
 
 Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 ---
- .../bindings/hwmon/microchip,sparx5-temp.yaml | 39 +++++++++++++++++++
- 1 file changed, 39 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/hwmon/microchip,sparx5-temp.yaml
+ arch/arm64/boot/dts/microchip/sparx5.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/hwmon/microchip,sparx5-temp.yaml b/Documentation/devicetree/bindings/hwmon/microchip,sparx5-temp.yaml
-new file mode 100644
-index 0000000000000..0df4813fd7b24
---- /dev/null
-+++ b/Documentation/devicetree/bindings/hwmon/microchip,sparx5-temp.yaml
-@@ -0,0 +1,39 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/hwmon/microchip,sparx5-temp.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm64/boot/dts/microchip/sparx5.dtsi b/arch/arm64/boot/dts/microchip/sparx5.dtsi
+index c9dbd1a8b22b6..49d4f289b9026 100644
+--- a/arch/arm64/boot/dts/microchip/sparx5.dtsi
++++ b/arch/arm64/boot/dts/microchip/sparx5.dtsi
+@@ -244,5 +244,11 @@ i2c1: i2c@600103000 {
+ 			clock-frequency = <100000>;
+ 			clocks = <&ahb_clk>;
+ 		};
 +
-+title: Microchip Sparx5 Temperature Monitor
-+
-+maintainers:
-+  - Lars Povlsen <lars.povlsen@microchip.com>
-+
-+description: |
-+  Microchip Sparx5 embedded temperature monitor
-+
-+properties:
-+  compatible:
-+    enum:
-+      - microchip,sparx5-temp
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#thermal-sensor-cells':
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    tmon0: tmon@610508110 {
-+        compatible = "microchip,sparx5-temp";
-+        reg = <0x10508110 0xc>;
-+        #thermal-sensor-cells = <0>;
-+    };
-+
++		tmon0: tmon@610508110 {
++			compatible = "microchip,sparx5-temp";
++			reg = <0x6 0x10508110 0xc>;
++			#thermal-sensor-cells = <0>;
++		};
+ 	};
+ };
 -- 
 2.27.0
 
