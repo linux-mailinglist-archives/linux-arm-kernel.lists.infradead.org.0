@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E2941FB00D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:17:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 175941FB01A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:18:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xn5XUe+i0CRys6lt8dOx1cSoO7nI4KMIa2myANtGHrI=; b=BUtPck+qfW27Bx
-	GATux7yVp9FMz18bm9XQ/xwqixx/JHMPVTyFEhlXIRKTqaHk+mb5PrwwrI9bQnWQ8K0s8FtpFbfZF
-	CowbWDF2ZcDg9svjYX86zWRs3eufZQtANmIj+iSYT5jlpDEWWFv6q6rkhRcWcC/zFOaU/1iOQgkIC
-	9lqeXFma6qe3sdJ1kG98SFs3oBUdwyt3GENLn+r5zb8MZ+5l9C8FEuXUH3hXW4UaumJHBDsAFc6Q2
-	lPwWWAgoIXM22d79NO+0JI97b8PU5R0Gcg1bdgrniYsSpRWrQ28Sm9z4+VbTNIxuAHPnE4BH/mMdf
-	WC+XsegOjZ83S487JXjA==;
+	List-Owner; bh=8oH3HoxHohVLJivctFtIiSzYOyYM176dGSCcG491tY4=; b=oMHnlYBmgmQmRd
+	ITwyS/OqsenFP770pCRlzN+d7ehNwltaer19s1tN5Eax3AtfzCsQX5l1sKBdSKaCn4xBSqMKU3a9P
+	+Lkb6WESgY6MbqrWmta7/+i3wAk/zpQrc6KpHBnbvdg8mnZ4bvRJ85XzlA9RRECw2y7Mpm0AdLIaZ
+	U9xjk72cxSzi2GJ0vyfim/F5MgaQnroBHA0grWbl/tJd4wSdU4HuoVmPXrPfRNf2JDgxxikU2u0aI
+	o8kch/jma+lWY81FPkv2zqcwEGeVVrS20Yay4mMVyXDhlHeLibDwDvET3NS2WzP9ynKNwo9O7MtoY
+	+i75cEVrYYi3NiILrDLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlAXF-0000Mh-2r; Tue, 16 Jun 2020 12:17:49 +0000
-Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
+	id 1jlAXW-0000gw-Vs; Tue, 16 Jun 2020 12:18:07 +0000
+Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlAWf-0000B8-HK
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 12:17:14 +0000
-Received: by mail-pj1-x1030.google.com with SMTP id u8so1355150pje.4
+ id 1jlAWh-0000C8-SR
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 12:17:17 +0000
+Received: by mail-pl1-x631.google.com with SMTP id j4so5063086plk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 05:17:13 -0700 (PDT)
+ Tue, 16 Jun 2020 05:17:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Im+gWXwz9xrt/i5JNVHGmDB8gIP62Jly/iM3EIi0NBg=;
- b=XYOS/3//CEA68v+h5ngRHMKXDOo7bWl8gOA4MxY7IFFhBr64ctPeOjbdTHTw+cO2i0
- qSghunqiPGyKUL6GxCGttew8Tst+2b0tT+u444JO6vUfdlf03BIeFycb/Kt8E5xvo46Y
- hbXIctmm+yhchgtjbUEFjTfyv7YPB169kf0+Y=
+ bh=LJO92mvN8G5Ck3uoTs8tbtHokwelI/PjMZ8RoMwKBik=;
+ b=qYuLDE6cUJWd5a4DmxyscuvyFglYOxees6+5yxZbHCeW4dVK/TAHc5qEfavEUmqtku
+ 4jynq09mMyw7LfQBSZ2XkmvVR0xQfwjDSx/aPlX3EdAOGqTBfN+Rd7VzMBFpksIDfWrd
+ jSI6ZMBqHU3nd1Kvqh3mtN33mVSeNv9oMvyIo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Im+gWXwz9xrt/i5JNVHGmDB8gIP62Jly/iM3EIi0NBg=;
- b=gCA59zwzC4buSS3Q4hJTcWZxmM/8GxZNg3Vb7IVB4mJBrX/aze737rmNWfy+jUS2Si
- aG/RL4iHqv0Vnb+zfV/fHUkyUvukB+3nzTeriL5El/tIQqSMZ/DoWW7erN4PMQtOYvCM
- SmF3LDskdW+Ro47g0WJ4FDiEuKqVNnifT9k3Ov3Yv3pDpRErHu+KEA/oM6sKWmax7FIZ
- 1ZoeOROyb3n1SbWxtkon6FGSDEYQthSHjpFVBOHFlr5nlooX+ORkN1A/Syvx9u6kVCt8
- 5H+5BjUotfM02OX251o8I6zvChVEmjM8B1im0ErVV2bdlB0H9OjUc1I4TNRgL5lREMDq
- qzDQ==
-X-Gm-Message-State: AOAM532vh9FGIRZ5g+uVf7Gr8V/bcsCnUY2kG2GKn14xi8c1f7dzgern
- epuchGz4/tlUMGOhQhOqWkBJxpxLxIs=
-X-Google-Smtp-Source: ABdhPJwaPXD+3UGrbUOue2kQH1OEHemcgB9H5Q7Z04moIxoi/6LLQ2MgiaKS6I+q8uTmAUSpd8zc6Q==
-X-Received: by 2002:a17:902:848d:: with SMTP id
- c13mr1819369plo.289.1592309832346; 
- Tue, 16 Jun 2020 05:17:12 -0700 (PDT)
+ bh=LJO92mvN8G5Ck3uoTs8tbtHokwelI/PjMZ8RoMwKBik=;
+ b=Q5Ce2iHar3SBj0p5TPcvwQR0eKlgy+OClXXWCJ7Mu6RAj+sMOv2m8SoFR7hPMy9t9v
+ YLvfIAVH8RF9SHl8RhxCl3h2j48+Xu7DKuWg5lhMxyoNOJf/Zpy6Z/crUVz0BkCS/qdZ
+ /U4TJ1E+U7KDjCjCjQKaVRMrCX+Q/l2yHRauzhW0ubYECK60kOqoXTuVv+R9gmO+3V3W
+ AzUAOe+gTuP/0+C3+drKmMvctLJRXOeES3MGki2aB3G6ulixB9ZDjSHg65Agi8ifS8wN
+ LTTW4J+2Z6dRR7JdaWvqQ/41Dybjx8J2rNsHjPpyzJaLPp0QUi4d8KnloiQrghS/kiJG
+ LA8w==
+X-Gm-Message-State: AOAM532ugI0/ca3pcIqt9pGaee5TpN/RR8qVa+h61ToooW+yKVc8E7P0
+ 0VaeMOPzsATcvgebgJazFb350cOtJqM=
+X-Google-Smtp-Source: ABdhPJxh4mja4k9jxSfXKuDqMXATuL0/kxNng8htaYKY7QzDnrSNVuiHfGFh8qWBfZavfBpJSAz/kA==
+X-Received: by 2002:a17:902:9b92:: with SMTP id
+ y18mr1756775plp.228.1592309834497; 
+ Tue, 16 Jun 2020 05:17:14 -0700 (PDT)
 Received: from shiro.work (p1285116-ipngn200805sizuokaden.shizuoka.ocn.ne.jp.
  [114.171.61.116])
- by smtp.googlemail.com with ESMTPSA id f23sm2360703pja.8.2020.06.16.05.17.10
+ by smtp.googlemail.com with ESMTPSA id f23sm2360703pja.8.2020.06.16.05.17.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 05:17:11 -0700 (PDT)
+ Tue, 16 Jun 2020 05:17:13 -0700 (PDT)
 From: Daniel Palmer <daniel@0x0f.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 01/12] dt-bindings: vendor-prefixes: Add mstar vendor prefix
-Date: Tue, 16 Jun 2020 21:15:14 +0900
-Message-Id: <20200616121525.1409790-2-daniel@0x0f.com>
+Subject: [PATCH v4 02/12] dt-bindings: vendor-prefixes: Add sstar vendor prefix
+Date: Tue, 16 Jun 2020 21:15:15 +0900
+Message-Id: <20200616121525.1409790-3-daniel@0x0f.com>
 X-Mailer: git-send-email 2.27.0.rc0
 In-Reply-To: <20200616121525.1409790-1-daniel@0x0f.com>
 References: <20200612130032.3905240-2-daniel@0x0f.com>
  <20200616121525.1409790-1-daniel@0x0f.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_051713_569383_03C48F7B 
-X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-CacheID: sfid-20200616_051715_941666_2BAE5DCC 
+X-CRM114-Status: UNSURE (   8.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1030 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:631 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,7 +104,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add prefix for MStar Semiconductor, Inc.
+Add prefix for Xiamen Xingchen Technology Co., Ltd
 
 Signed-off-by: Daniel Palmer <daniel@0x0f.com>
 ---
@@ -112,18 +112,18 @@ Signed-off-by: Daniel Palmer <daniel@0x0f.com>
  1 file changed, 2 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 9aeab66be85f..b09b6c9911c3 100644
+index b09b6c9911c3..ba5bd3b0ed9a 100644
 --- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
 +++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -680,6 +680,8 @@ patternProperties:
-     description: Microsemi Corporation
-   "^msi,.*":
-     description: Micro-Star International Co. Ltd.
-+  "^mstar,.*":
-+    description: MStar Semiconductor, Inc. (acquired by MediaTek Inc.)
-   "^mti,.*":
-     description: Imagination Technologies Ltd. (formerly MIPS Technologies Inc.)
-   "^multi-inno,.*":
+@@ -986,6 +986,8 @@ patternProperties:
+     description: Spreadtrum Communications Inc.
+   "^sst,.*":
+     description: Silicon Storage Technology, Inc.
++  "^sstar,.*":
++    description: Xiamen Xingchen(SigmaStar) Technology Co., Ltd. (formerly part of MStar Semiconductor, Inc.)
+   "^st,.*":
+     description: STMicroelectronics
+   "^starry,.*":
 -- 
 2.27.0.rc0
 
