@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D8911FAE6F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 12:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8A1A1FAE7D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 12:49:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nDQUTonLlrAKeOF8CWJNYxegaQCA61OdEof1SZTnQv8=; b=tHMyNrf7AijmKP
-	b365hlb+aukoxmVNMgT9WMAMyOZZVqRM+h/sgE2MbACfN25Wiip4NsBBjFKmpuiCRD+8whv5p8cQK
-	zeSGOP4On+s3eY9+9Fgr7dlFlFrSj661QZhEdk7gJ69kS9X4lzHKs3cX01eCtimZz53NqCrvg1Zzv
-	RXe4tCMmjHM7bDBLa5DaXBUqJptMHrMqrwbBcuKcearh2r3PDIJyllIWScfsT2ab+xhzJXTQs+qME
-	Xklge4ikymGM0w6ffMn6JsQNze57Aj7XfpDqm4ktV27DvurJlXW+ArhL7v+w9Rd1Mm8PZiiZDRX/D
-	l6AitLOT7V3u7IxEmCEQ==;
+	List-Owner; bh=mwxYDuvxoP39c+f4EOB+ypUbHZbwM91rzbs3VrquA5w=; b=ZbrGdAqNTIGDEp
+	2B+Lxn7b+FfXwIW1FsCsfPEz/E9ceSPddIq3je90/iq1bjD5jzMZoavkt4aizPTBj3SVeCkNiDuaf
+	ymw/QqZi7DU5Lngik53eLC0vEZev7sgM/BtNdY7Zy9LiI13jKPcpmZYQ5gWUEtE8cTlMcruXyAlVm
+	MfkP1e9w4isEXFy4F9DIDVR6CBZueiLkBUz7CrsYbXKkXVKUY7y1pRQDSHgsWhc6uXSw/n5em6mt9
+	8mw1s6g5oq6U92FxjxnqT+3FjAHxOyfYBfizB0SquFLk2dGH0R4GV5zRdXItLrXt36BRAvYJEVABT
+	59reijNvGqQt85/n25ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl97O-0008Mt-FA; Tue, 16 Jun 2020 10:47:02 +0000
+	id 1jl99K-0000Lx-W0; Tue, 16 Jun 2020 10:49:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl97C-0008MF-3o
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 10:46:56 +0000
-Received: from mail-ot1-f45.google.com (mail-ot1-f45.google.com
- [209.85.210.45])
+ id 1jl997-0000LO-If
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 10:48:55 +0000
+Received: from mail-oi1-f179.google.com (mail-oi1-f179.google.com
+ [209.85.167.179])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 69A4720786
+ by mail.kernel.org (Postfix) with ESMTPSA id 31EB020786
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 10:46:49 +0000 (UTC)
+ Tue, 16 Jun 2020 10:48:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592304409;
- bh=0PXjeOhBOiAQJW7EZrusM6UHceOiWfpOFZpqkCZ1uXI=;
+ s=default; t=1592304529;
+ bh=rOPMHNEU4g7buUM2Y3WpMEq2LU0QypRNIrKBgemrcD8=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ggFD+fmvSqX68OL1wbA17jX+0Fvc1AGGios+45/NHaCbpuiyvwVbPeHDAspVh5K2a
- +ZOfCCLLK1Vs0jdzxEyG4MpwAdTGA5fF0bKPbXSzg57mD+vmiYc50iIhx/7GHtwJ5R
- W+g+v4FG/XrHwNLtQEwi9p7wWDp0RSr9p9tkaXRo=
-Received: by mail-ot1-f45.google.com with SMTP id e5so15538330ote.11
+ b=ZnywB5enva02cduDVzEh/uXYf8/KRDhO7IoZ2hGsKql0wRfYYGQ1h1B1dfoCFjP/j
+ ZkLp70K4HdtkxriuKOyXrw6YpKX+InIgKMVblkaDmnK0SZcIRnJ4HNlRDl6nsMPBMO
+ TcNp03XFu9TM3egDadLE+Q0CNJ1dwKzWV4LkT+cc=
+Received: by mail-oi1-f179.google.com with SMTP id t25so18818551oij.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 03:46:49 -0700 (PDT)
-X-Gm-Message-State: AOAM5321od7TW2wWdTc9cx6JJ3SJ3e5PSglZpV9m5yEgzlV4rc/vNxYf
- glytDdkH7CamvVeIjl2fZj20N2S/WmCf8XP6C1s=
-X-Google-Smtp-Source: ABdhPJyY8+SSQDgZrerPoVgaVJRpKqf1AIOwKpS0mQ7HBnjY02rI/lflCe5ugbM4X0gx+2ZZgSAaaY7ql70hmiVZuss=
-X-Received: by 2002:a9d:5a12:: with SMTP id v18mr1818014oth.90.1592304408615; 
- Tue, 16 Jun 2020 03:46:48 -0700 (PDT)
+ Tue, 16 Jun 2020 03:48:49 -0700 (PDT)
+X-Gm-Message-State: AOAM531hpX+957yH8xLT2XsVsN4ieBv3JQGrYKbR23H78YvzH6LrWAek
+ wKporpkgkiCtvPCSg9cW01gj8iFTRUqJjfmhXxk=
+X-Google-Smtp-Source: ABdhPJya1ABiVY7gxtazrfifA5pcPPrW0p9zjln/yKRXtKydIpRxJhdNFcEe9Cg6kywXtW0C4iOgoYQHg5fdxztNjwI=
+X-Received: by 2002:aca:ba03:: with SMTP id k3mr2761160oif.33.1592304528407;
+ Tue, 16 Jun 2020 03:48:48 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200616085050.994094-1-ardb@kernel.org>
  <CAMj1kXG9mY2SoHoHuvjhHB3SHPCq6-zEQZBqU1LX57fL-Gy__Q@mail.gmail.com>
  <20200616103922.GC6739@vanye>
-In-Reply-To: <20200616103922.GC6739@vanye>
+ <CAMj1kXGUM1MHy8q3YLZx_MR8WRAc-4YJ54rE534=RWZMnJBn_Q@mail.gmail.com>
+In-Reply-To: <CAMj1kXGUM1MHy8q3YLZx_MR8WRAc-4YJ54rE534=RWZMnJBn_Q@mail.gmail.com>
 From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 16 Jun 2020 12:46:29 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXGUM1MHy8q3YLZx_MR8WRAc-4YJ54rE534=RWZMnJBn_Q@mail.gmail.com>
-Message-ID: <CAMj1kXGUM1MHy8q3YLZx_MR8WRAc-4YJ54rE534=RWZMnJBn_Q@mail.gmail.com>
+Date: Tue, 16 Jun 2020 12:48:37 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXGbg369dh58qK4Pp51N8wPn5bWJDuuoyOjc4OdPqefwzA@mail.gmail.com>
+Message-ID: <CAMj1kXGbg369dh58qK4Pp51N8wPn5bWJDuuoyOjc4OdPqefwzA@mail.gmail.com>
 Subject: Re: [PATCH v3] efi/libstub: arm: Print CPU boot mode and MMU state at
  boot
 To: Leif Lindholm <leif@nuviainc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_034650_403144_F6853962 
-X-CRM114-Status: GOOD (  31.55  )
+X-CRM114-CacheID: sfid-20200616_034849_663195_48C30A5A 
+X-CRM114-Status: GOOD (  33.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,285 +97,293 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Jun 2020 at 12:39, Leif Lindholm <leif@nuviainc.com> wrote:
+On Tue, 16 Jun 2020 at 12:46, Ard Biesheuvel <ardb@kernel.org> wrote:
 >
-> On Tue, Jun 16, 2020 at 10:51:48 +0200, Ard Biesheuvel wrote:
-> > On Tue, 16 Jun 2020 at 10:50, Ard Biesheuvel <ardb@kernel.org> wrote:
-> > >
-> > > On 32-bit ARM, we may boot at HYP mode, or with the MMU and caches off
-> > > (or both), even though the EFI spec does not actually support this.
-> > > While booting at HYP mode is something we might tolerate, fiddling
-> > > with the caches is a more serious issue, as disabling the caches is
-> > > tricky to do safely from C code, and running without the Dcache makes
-> > > it impossible to support unaligned memory accesses, which is another
-> > > explicit requirement imposed by the EFI spec.
-> > >
-> > > So take note of the CPU mode and MMU state in the EFI stub diagnostic
-> > > output so that we can easily diagnose any issues that may arise from
-> > > this. E.g.,
-> > >
-> > >   EFI stub: Entering in SVC mode with MMU enabled
-> > >
-> > > Also, capture the CPSR and SCTLR system register values at EFI stub
-> > > entry, and after ExitBootServices() returns, and check whether the
-> > > MMU and Dcache were disabled at any point. If this is the case, a
-> > > diagnostic message like the following will be emitted:
-> > >
-> > >   efi: [Firmware Bug]: EFI stub was entered with MMU and Dcache disabled, please fix your firmware!
-> > >   efi: CPSR at EFI stub entry        : 0x600001d3
-> > >   efi: SCTLR at EFI stub entry       : 0x00c51838
-> > >   efi: CPSR after ExitBootServices() : 0x600001d3
-> > >   efi: SCTLR after ExitBootServices(): 0x00c50838
-> > >
-> > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > > ---
-> > > Adding Grant and Samer to cc, as this may be something that should be taken
-> > > into account in the EBBR context? Note that this affects 64-bit only.
-> > >
+> On Tue, 16 Jun 2020 at 12:39, Leif Lindholm <leif@nuviainc.com> wrote:
 > >
-> > Affects *32* bit only
+> > On Tue, Jun 16, 2020 at 10:51:48 +0200, Ard Biesheuvel wrote:
+> > > On Tue, 16 Jun 2020 at 10:50, Ard Biesheuvel <ardb@kernel.org> wrote:
+> > > >
+> > > > On 32-bit ARM, we may boot at HYP mode, or with the MMU and caches off
+> > > > (or both), even though the EFI spec does not actually support this.
+> > > > While booting at HYP mode is something we might tolerate, fiddling
+> > > > with the caches is a more serious issue, as disabling the caches is
+> > > > tricky to do safely from C code, and running without the Dcache makes
+> > > > it impossible to support unaligned memory accesses, which is another
+> > > > explicit requirement imposed by the EFI spec.
+> > > >
+> > > > So take note of the CPU mode and MMU state in the EFI stub diagnostic
+> > > > output so that we can easily diagnose any issues that may arise from
+> > > > this. E.g.,
+> > > >
+> > > >   EFI stub: Entering in SVC mode with MMU enabled
+> > > >
+> > > > Also, capture the CPSR and SCTLR system register values at EFI stub
+> > > > entry, and after ExitBootServices() returns, and check whether the
+> > > > MMU and Dcache were disabled at any point. If this is the case, a
+> > > > diagnostic message like the following will be emitted:
+> > > >
+> > > >   efi: [Firmware Bug]: EFI stub was entered with MMU and Dcache disabled, please fix your firmware!
+> > > >   efi: CPSR at EFI stub entry        : 0x600001d3
+> > > >   efi: SCTLR at EFI stub entry       : 0x00c51838
+> > > >   efi: CPSR after ExitBootServices() : 0x600001d3
+> > > >   efi: SCTLR after ExitBootServices(): 0x00c50838
+> > > >
+> > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > > > ---
+> > > > Adding Grant and Samer to cc, as this may be something that should be taken
+> > > > into account in the EBBR context? Note that this affects 64-bit only.
+> > > >
+> > >
+> > > Affects *32* bit only
+> >
+> > One question and a teeny tiny nit below.
+> >
+> > > >  arch/arm/include/asm/efi.h                |  7 +++
+> > > >  drivers/firmware/efi/arm-init.c           | 37 ++++++++++++--
+> > > >  drivers/firmware/efi/libstub/arm32-stub.c | 52 +++++++++++++++++++-
+> > > >  drivers/firmware/efi/libstub/efi-stub.c   |  3 ++
+> > > >  drivers/firmware/efi/libstub/efistub.h    |  2 +
+> > > >  include/linux/efi.h                       |  1 +
+> > > >  6 files changed, 98 insertions(+), 4 deletions(-)
+> > > >
+> > > > diff --git a/arch/arm/include/asm/efi.h b/arch/arm/include/asm/efi.h
+> > > > index 84dc0ba822f5..5dcf3c6011b7 100644
+> > > > --- a/arch/arm/include/asm/efi.h
+> > > > +++ b/arch/arm/include/asm/efi.h
+> > > > @@ -87,4 +87,11 @@ static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
+> > > >         return dram_base + SZ_512M;
+> > > >  }
+> > > >
+> > > > +struct efi_arm_entry_state {
+> > > > +       u32     cpsr_before_ebs;
+> > > > +       u32     sctlr_before_ebs;
+> > > > +       u32     cpsr_after_ebs;
+> > > > +       u32     sctlr_after_ebs;
+> > > > +};
+> > > > +
+> > > >  #endif /* _ASM_ARM_EFI_H */
+> > > > diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
+> > > > index c697e70ca7e7..4d1c272a4f79 100644
+> > > > --- a/drivers/firmware/efi/arm-init.c
+> > > > +++ b/drivers/firmware/efi/arm-init.c
+> > > > @@ -52,9 +52,11 @@ static phys_addr_t __init efi_to_phys(unsigned long addr)
+> > > >  }
+> > > >
+> > > >  static __initdata unsigned long screen_info_table = EFI_INVALID_TABLE_ADDR;
+> > > > +static __initdata unsigned long cpu_state_table = EFI_INVALID_TABLE_ADDR;
+> > > >
+> > > >  static const efi_config_table_type_t arch_tables[] __initconst = {
+> > > >         {LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID, &screen_info_table},
+> > > > +       {LINUX_EFI_ARM_CPU_STATE_TABLE_GUID, &cpu_state_table},
+> > > >         {}
+> > > >  };
+> > > >
+> > > > @@ -116,7 +118,8 @@ static int __init uefi_init(u64 efi_system_table)
+> > > >                 goto out;
+> > > >         }
+> > > >         retval = efi_config_parse_tables(config_tables, systab->nr_tables,
+> > > > -                                        arch_tables);
+> > > > +                                        IS_ENABLED(CONFIG_ARM) ? arch_tables
+> > > > +                                                               : NULL);
+> >
+> > It this worthwhile?
+> > If it turns out we have no need for an arch_table on arm64, should we
+> > still include the static table, holding values only relevant for
+> > 32-bit, in arm64 builds at all?
+> >
 >
-> One question and a teeny tiny nit below.
+> On arm64, the stub and the kernel proper are the same binary, so there
+> should never be a need to use configuration tables to carry
+> information from the stub to the kernel proper.
 >
-> > >  arch/arm/include/asm/efi.h                |  7 +++
-> > >  drivers/firmware/efi/arm-init.c           | 37 ++++++++++++--
-> > >  drivers/firmware/efi/libstub/arm32-stub.c | 52 +++++++++++++++++++-
-> > >  drivers/firmware/efi/libstub/efi-stub.c   |  3 ++
-> > >  drivers/firmware/efi/libstub/efistub.h    |  2 +
-> > >  include/linux/efi.h                       |  1 +
-> > >  6 files changed, 98 insertions(+), 4 deletions(-)
-> > >
-> > > diff --git a/arch/arm/include/asm/efi.h b/arch/arm/include/asm/efi.h
-> > > index 84dc0ba822f5..5dcf3c6011b7 100644
-> > > --- a/arch/arm/include/asm/efi.h
-> > > +++ b/arch/arm/include/asm/efi.h
-> > > @@ -87,4 +87,11 @@ static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
-> > >         return dram_base + SZ_512M;
-> > >  }
-> > >
-> > > +struct efi_arm_entry_state {
-> > > +       u32     cpsr_before_ebs;
-> > > +       u32     sctlr_before_ebs;
-> > > +       u32     cpsr_after_ebs;
-> > > +       u32     sctlr_after_ebs;
-> > > +};
-> > > +
-> > >  #endif /* _ASM_ARM_EFI_H */
-> > > diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
-> > > index c697e70ca7e7..4d1c272a4f79 100644
-> > > --- a/drivers/firmware/efi/arm-init.c
-> > > +++ b/drivers/firmware/efi/arm-init.c
-> > > @@ -52,9 +52,11 @@ static phys_addr_t __init efi_to_phys(unsigned long addr)
-> > >  }
-> > >
-> > >  static __initdata unsigned long screen_info_table = EFI_INVALID_TABLE_ADDR;
-> > > +static __initdata unsigned long cpu_state_table = EFI_INVALID_TABLE_ADDR;
-> > >
-> > >  static const efi_config_table_type_t arch_tables[] __initconst = {
-> > >         {LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID, &screen_info_table},
-> > > +       {LINUX_EFI_ARM_CPU_STATE_TABLE_GUID, &cpu_state_table},
-> > >         {}
-> > >  };
-> > >
-> > > @@ -116,7 +118,8 @@ static int __init uefi_init(u64 efi_system_table)
-> > >                 goto out;
-> > >         }
-> > >         retval = efi_config_parse_tables(config_tables, systab->nr_tables,
-> > > -                                        arch_tables);
-> > > +                                        IS_ENABLED(CONFIG_ARM) ? arch_tables
-> > > +                                                               : NULL);
+> As this is the only reference, the compiler will simply drop the table
+> from the build, and it could even optimize away the '!=
+> EFI_INVALID_TABLE_ADDR' checks and conditional code, as it can observe
+> that those variables never change values.
 >
-> It this worthwhile?
-> If it turns out we have no need for an arch_table on arm64, should we
-> still include the static table, holding values only relevant for
-> 32-bit, in arm64 builds at all?
+> However, it appears that the latter does not actually occur in
+> practice, so I will rewrite the test below:
 >
-
-On arm64, the stub and the kernel proper are the same binary, so there
-should never be a need to use configuration tables to carry
-information from the stub to the kernel proper.
-
-As this is the only reference, the compiler will simply drop the table
-from the build, and it could even optimize away the '!=
-EFI_INVALID_TABLE_ADDR' checks and conditional code, as it can observe
-that those variables never change values.
-
-However, it appears that the latter does not actually occur in
-practice, so I will rewrite the test below:
-
-> > >
-> > >         early_memunmap(config_tables, table_size);
-> > >  out:
-> > > @@ -238,9 +241,37 @@ void __init efi_init(void)
-> > >
-> > >         init_screen_info();
-> > >
-> > > +#ifdef CONFIG_ARM
-> > >         /* ARM does not permit early mappings to persist across paging_init() */
-> > > -       if (IS_ENABLED(CONFIG_ARM))
-> > > -               efi_memmap_unmap();
-> > > +       efi_memmap_unmap();
-> > > +
-> > > +       if (cpu_state_table != EFI_INVALID_TABLE_ADDR) {
-
-if (IS_ENABLED(CONFIG_ARM)) && cpu_state_table != EFI_INVALID_TABLE_ADDR
-
-and do the same for screen_info_table (but in a separate patch)
-
-> > > +               struct efi_arm_entry_state *state;
-> > > +               bool dump_state = true;
-> > > +
-> > > +               state = early_memremap_ro(cpu_state_table,
-> > > +                                         sizeof(struct efi_arm_entry_state));
-> > > +               if (state == NULL) {
-> > > +                       pr_warn("Unable to map CPU entry state table.\n");
-> > > +                       return;
-> > > +               }
-> > > +
-> > > +               if ((state->sctlr_before_ebs & 1) == 0)
-> > > +                       pr_warn(FW_BUG "EFI stub was entered with MMU and Dcache disabled, please fix your firmware!\n");
-> > > +               else if ((state->sctlr_after_ebs & 1) == 0)
-> > > +                       pr_warn(FW_BUG "ExitBootServices() returned with MMU and Dcache disabled, please fix your firmware!\n");
-> > > +               else
-> > > +                       dump_state = false;
-> > > +
-> > > +               if (dump_state || efi_enabled(EFI_DBG)) {
-> > > +                       pr_info("CPSR at EFI stub entry        : 0x%08x\n", state->cpsr_before_ebs);
-> > > +                       pr_info("SCTLR at EFI stub entry       : 0x%08x\n", state->sctlr_before_ebs);
-> > > +                       pr_info("CPSR after ExitBootServices() : 0x%08x\n", state->cpsr_after_ebs);
-> > > +                       pr_info("SCTLR after ExitBootServices(): 0x%08x\n", state->sctlr_after_ebs);
-> > > +               }
-> > > +               early_memunmap(state, sizeof(struct efi_arm_entry_state));
-> > > +       }
-> > > +#endif
-> > >  }
-> > >
-> > >  static bool efifb_overlaps_pci_range(const struct of_pci_range *range)
-> > > diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
-> > > index 40243f524556..60783228db6e 100644
-> > > --- a/drivers/firmware/efi/libstub/arm32-stub.c
-> > > +++ b/drivers/firmware/efi/libstub/arm32-stub.c
-> > > @@ -7,10 +7,49 @@
-> > >
-> > >  #include "efistub.h"
-> > >
-> > > +static efi_guid_t cpu_state_guid = LINUX_EFI_ARM_CPU_STATE_TABLE_GUID;
-> > > +
-> > > +struct efi_arm_entry_state *efi_entry_state;
-> > > +
-> > > +static void get_cpu_state(u32 *cpsr, u32 *sctlr)
-> > > +{
-> > > +       asm("mrs %0, cpsr" : "=r"(*cpsr));
-> > > +       if ((*cpsr & MODE_MASK) == HYP_MODE)
-> > > +               asm("mrc p15, 4, %0, c1, c0, 0" : "=r"(*sctlr));
-> > > +       else
-> > > +               asm("mrc p15, 0, %0, c1, c0, 0" : "=r"(*sctlr));
-> > > +}
-> > > +
-> > >  efi_status_t check_platform_features(void)
-> > >  {
-> > > +       efi_status_t status;
-> > > +       u32 cpsr, sctlr;
-> > >         int block;
-> > >
-> > > +       get_cpu_state(&cpsr, &sctlr);
-> > > +
-> > > +       efi_info("Entering in %s mode with MMU %sabled\n",
-> > > +                ((cpsr & MODE_MASK) == HYP_MODE) ? "HYP" : "SVC",
-> > > +                (sctlr & 1) ? "en" : "dis");
-> > > +
-> > > +       status = efi_bs_call(allocate_pool, EFI_LOADER_DATA,
-> > > +                            sizeof(*efi_entry_state),
-> > > +                            (void **)&efi_entry_state);
-> > > +       if (status != EFI_SUCCESS) {
-> > > +               efi_err("allocate_pool() failed\n");
-> > > +               return status;
-> > > +       }
-> > > +
-> > > +       efi_entry_state->cpsr_before_ebs = cpsr;
-> > > +       efi_entry_state->sctlr_before_ebs = sctlr;
-> > > +
-> > > +       status = efi_bs_call(install_configuration_table, &cpu_state_guid,
-> > > +                            efi_entry_state);
-> > > +       if (status != EFI_SUCCESS) {
-> > > +               efi_err("install_configuration_table() failed\n");
-> > > +               goto free_state;
-> > > +       }
-> > > +
-> > >         /* non-LPAE kernels can run anywhere */
-> > >         if (!IS_ENABLED(CONFIG_ARM_LPAE))
-> > >                 return EFI_SUCCESS;
-> > > @@ -19,9 +58,20 @@ efi_status_t check_platform_features(void)
-> > >         block = cpuid_feature_extract(CPUID_EXT_MMFR0, 0);
-> > >         if (block < 5) {
-> > >                 efi_err("This LPAE kernel is not supported by your CPU\n");
-> > > -               return EFI_UNSUPPORTED;
-> > > +               status = EFI_UNSUPPORTED;
-> > > +               goto free_state;
-> > >         }
-> > >         return EFI_SUCCESS;
-> > > +
-> > > +free_state:
-> > > +       efi_bs_call(free_pool, efi_entry_state);
-> > > +       return status;
-> > > +}
-> > > +
-> > > +void efi_handle_post_ebs_state(void)
-> > > +{
-> > > +       get_cpu_state(&efi_entry_state->cpsr_after_ebs,
-> > > +                     &efi_entry_state->sctlr_after_ebs);
-> > >  }
-> > >
-> > >  static efi_guid_t screen_info_guid = LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID;
-> > > diff --git a/drivers/firmware/efi/libstub/efi-stub.c b/drivers/firmware/efi/libstub/efi-stub.c
-> > > index e97370bdfdb0..3318ec3f8e5b 100644
-> > > --- a/drivers/firmware/efi/libstub/efi-stub.c
-> > > +++ b/drivers/firmware/efi/libstub/efi-stub.c
-> > > @@ -329,6 +329,9 @@ efi_status_t __efiapi efi_pe_entry(efi_handle_t handle,
-> > >         if (status != EFI_SUCCESS)
-> > >                 goto fail_free_initrd;
-> > >
-> > > +       if (IS_ENABLED(CONFIG_ARM))
-> > > +               efi_handle_post_ebs_state();
-> > > +
-> > >         efi_enter_kernel(image_addr, fdt_addr, fdt_totalsize((void *)fdt_addr));
-> > >         /* not reached */
-> > >
-> > > diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
-> > > index bcd8c0a785f0..6217ce647ebf 100644
-> > > --- a/drivers/firmware/efi/libstub/efistub.h
-> > > +++ b/drivers/firmware/efi/libstub/efistub.h
-> > > @@ -771,4 +771,6 @@ efi_status_t efi_load_initrd(efi_loaded_image_t *image,
-> > >                              unsigned long soft_limit,
-> > >                              unsigned long hard_limit);
-> > >
-> > > +void efi_handle_post_ebs_state(void);
-> > > +
+> > > >
+> > > >         early_memunmap(config_tables, table_size);
+> > > >  out:
+> > > > @@ -238,9 +241,37 @@ void __init efi_init(void)
+> > > >
+> > > >         init_screen_info();
+> > > >
+> > > > +#ifdef CONFIG_ARM
+> > > >         /* ARM does not permit early mappings to persist across paging_init() */
+> > > > -       if (IS_ENABLED(CONFIG_ARM))
+> > > > -               efi_memmap_unmap();
+> > > > +       efi_memmap_unmap();
+> > > > +
+> > > > +       if (cpu_state_table != EFI_INVALID_TABLE_ADDR) {
 >
-> This declaration is made for both arm/arm64.
-> (I said it was tiny, feel free to ignore.)
+> if (IS_ENABLED(CONFIG_ARM)) && cpu_state_table != EFI_INVALID_TABLE_ADDR
 >
 
-Yes, that was deliberate. Forward declarations don't take up any
-space, and so there is no need for an #ifdef here.
+Ah never mind, this is already inside #ifdef CONFIG_ARM
 
+> and do the same for screen_info_table (but in a separate patch)
+>
 
-> > >  #endif
-> > > diff --git a/include/linux/efi.h b/include/linux/efi.h
-> > > index c3449c9699d0..bb35f3305e55 100644
-> > > --- a/include/linux/efi.h
-> > > +++ b/include/linux/efi.h
-> > > @@ -350,6 +350,7 @@ void efi_native_runtime_setup(void);
-> > >   * associated with ConOut
-> > >   */
-> > >  #define LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID   EFI_GUID(0xe03fc20a, 0x85dc, 0x406e,  0xb9, 0x0e, 0x4a, 0xb5, 0x02, 0x37, 0x1d, 0x95)
-> > > +#define LINUX_EFI_ARM_CPU_STATE_TABLE_GUID     EFI_GUID(0xef79e4aa, 0x3c3d, 0x4989,  0xb9, 0x02, 0x07, 0xa9, 0x43, 0xe5, 0x50, 0xd2)
-> > >  #define LINUX_EFI_LOADER_ENTRY_GUID            EFI_GUID(0x4a67b082, 0x0a4c, 0x41cf,  0xb6, 0xc7, 0x44, 0x0b, 0x29, 0xbb, 0x8c, 0x4f)
-> > >  #define LINUX_EFI_RANDOM_SEED_TABLE_GUID       EFI_GUID(0x1ce1e5bc, 0x7ceb, 0x42f2,  0x81, 0xe5, 0x8a, 0xad, 0xf1, 0x80, 0xf5, 0x7b)
-> > >  #define LINUX_EFI_TPM_EVENT_LOG_GUID           EFI_GUID(0xb7799cb0, 0xeca2, 0x4943,  0x96, 0x67, 0x1f, 0xae, 0x07, 0xb7, 0x47, 0xfa)
-> > > --
-> > > 2.27.0
-> > >
+but this I will still do
+
+> > > > +               struct efi_arm_entry_state *state;
+> > > > +               bool dump_state = true;
+> > > > +
+> > > > +               state = early_memremap_ro(cpu_state_table,
+> > > > +                                         sizeof(struct efi_arm_entry_state));
+> > > > +               if (state == NULL) {
+> > > > +                       pr_warn("Unable to map CPU entry state table.\n");
+> > > > +                       return;
+> > > > +               }
+> > > > +
+> > > > +               if ((state->sctlr_before_ebs & 1) == 0)
+> > > > +                       pr_warn(FW_BUG "EFI stub was entered with MMU and Dcache disabled, please fix your firmware!\n");
+> > > > +               else if ((state->sctlr_after_ebs & 1) == 0)
+> > > > +                       pr_warn(FW_BUG "ExitBootServices() returned with MMU and Dcache disabled, please fix your firmware!\n");
+> > > > +               else
+> > > > +                       dump_state = false;
+> > > > +
+> > > > +               if (dump_state || efi_enabled(EFI_DBG)) {
+> > > > +                       pr_info("CPSR at EFI stub entry        : 0x%08x\n", state->cpsr_before_ebs);
+> > > > +                       pr_info("SCTLR at EFI stub entry       : 0x%08x\n", state->sctlr_before_ebs);
+> > > > +                       pr_info("CPSR after ExitBootServices() : 0x%08x\n", state->cpsr_after_ebs);
+> > > > +                       pr_info("SCTLR after ExitBootServices(): 0x%08x\n", state->sctlr_after_ebs);
+> > > > +               }
+> > > > +               early_memunmap(state, sizeof(struct efi_arm_entry_state));
+> > > > +       }
+> > > > +#endif
+> > > >  }
+> > > >
+> > > >  static bool efifb_overlaps_pci_range(const struct of_pci_range *range)
+> > > > diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
+> > > > index 40243f524556..60783228db6e 100644
+> > > > --- a/drivers/firmware/efi/libstub/arm32-stub.c
+> > > > +++ b/drivers/firmware/efi/libstub/arm32-stub.c
+> > > > @@ -7,10 +7,49 @@
+> > > >
+> > > >  #include "efistub.h"
+> > > >
+> > > > +static efi_guid_t cpu_state_guid = LINUX_EFI_ARM_CPU_STATE_TABLE_GUID;
+> > > > +
+> > > > +struct efi_arm_entry_state *efi_entry_state;
+> > > > +
+> > > > +static void get_cpu_state(u32 *cpsr, u32 *sctlr)
+> > > > +{
+> > > > +       asm("mrs %0, cpsr" : "=r"(*cpsr));
+> > > > +       if ((*cpsr & MODE_MASK) == HYP_MODE)
+> > > > +               asm("mrc p15, 4, %0, c1, c0, 0" : "=r"(*sctlr));
+> > > > +       else
+> > > > +               asm("mrc p15, 0, %0, c1, c0, 0" : "=r"(*sctlr));
+> > > > +}
+> > > > +
+> > > >  efi_status_t check_platform_features(void)
+> > > >  {
+> > > > +       efi_status_t status;
+> > > > +       u32 cpsr, sctlr;
+> > > >         int block;
+> > > >
+> > > > +       get_cpu_state(&cpsr, &sctlr);
+> > > > +
+> > > > +       efi_info("Entering in %s mode with MMU %sabled\n",
+> > > > +                ((cpsr & MODE_MASK) == HYP_MODE) ? "HYP" : "SVC",
+> > > > +                (sctlr & 1) ? "en" : "dis");
+> > > > +
+> > > > +       status = efi_bs_call(allocate_pool, EFI_LOADER_DATA,
+> > > > +                            sizeof(*efi_entry_state),
+> > > > +                            (void **)&efi_entry_state);
+> > > > +       if (status != EFI_SUCCESS) {
+> > > > +               efi_err("allocate_pool() failed\n");
+> > > > +               return status;
+> > > > +       }
+> > > > +
+> > > > +       efi_entry_state->cpsr_before_ebs = cpsr;
+> > > > +       efi_entry_state->sctlr_before_ebs = sctlr;
+> > > > +
+> > > > +       status = efi_bs_call(install_configuration_table, &cpu_state_guid,
+> > > > +                            efi_entry_state);
+> > > > +       if (status != EFI_SUCCESS) {
+> > > > +               efi_err("install_configuration_table() failed\n");
+> > > > +               goto free_state;
+> > > > +       }
+> > > > +
+> > > >         /* non-LPAE kernels can run anywhere */
+> > > >         if (!IS_ENABLED(CONFIG_ARM_LPAE))
+> > > >                 return EFI_SUCCESS;
+> > > > @@ -19,9 +58,20 @@ efi_status_t check_platform_features(void)
+> > > >         block = cpuid_feature_extract(CPUID_EXT_MMFR0, 0);
+> > > >         if (block < 5) {
+> > > >                 efi_err("This LPAE kernel is not supported by your CPU\n");
+> > > > -               return EFI_UNSUPPORTED;
+> > > > +               status = EFI_UNSUPPORTED;
+> > > > +               goto free_state;
+> > > >         }
+> > > >         return EFI_SUCCESS;
+> > > > +
+> > > > +free_state:
+> > > > +       efi_bs_call(free_pool, efi_entry_state);
+> > > > +       return status;
+> > > > +}
+> > > > +
+> > > > +void efi_handle_post_ebs_state(void)
+> > > > +{
+> > > > +       get_cpu_state(&efi_entry_state->cpsr_after_ebs,
+> > > > +                     &efi_entry_state->sctlr_after_ebs);
+> > > >  }
+> > > >
+> > > >  static efi_guid_t screen_info_guid = LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID;
+> > > > diff --git a/drivers/firmware/efi/libstub/efi-stub.c b/drivers/firmware/efi/libstub/efi-stub.c
+> > > > index e97370bdfdb0..3318ec3f8e5b 100644
+> > > > --- a/drivers/firmware/efi/libstub/efi-stub.c
+> > > > +++ b/drivers/firmware/efi/libstub/efi-stub.c
+> > > > @@ -329,6 +329,9 @@ efi_status_t __efiapi efi_pe_entry(efi_handle_t handle,
+> > > >         if (status != EFI_SUCCESS)
+> > > >                 goto fail_free_initrd;
+> > > >
+> > > > +       if (IS_ENABLED(CONFIG_ARM))
+> > > > +               efi_handle_post_ebs_state();
+> > > > +
+> > > >         efi_enter_kernel(image_addr, fdt_addr, fdt_totalsize((void *)fdt_addr));
+> > > >         /* not reached */
+> > > >
+> > > > diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
+> > > > index bcd8c0a785f0..6217ce647ebf 100644
+> > > > --- a/drivers/firmware/efi/libstub/efistub.h
+> > > > +++ b/drivers/firmware/efi/libstub/efistub.h
+> > > > @@ -771,4 +771,6 @@ efi_status_t efi_load_initrd(efi_loaded_image_t *image,
+> > > >                              unsigned long soft_limit,
+> > > >                              unsigned long hard_limit);
+> > > >
+> > > > +void efi_handle_post_ebs_state(void);
+> > > > +
+> >
+> > This declaration is made for both arm/arm64.
+> > (I said it was tiny, feel free to ignore.)
+> >
+>
+> Yes, that was deliberate. Forward declarations don't take up any
+> space, and so there is no need for an #ifdef here.
+>
+>
+> > > >  #endif
+> > > > diff --git a/include/linux/efi.h b/include/linux/efi.h
+> > > > index c3449c9699d0..bb35f3305e55 100644
+> > > > --- a/include/linux/efi.h
+> > > > +++ b/include/linux/efi.h
+> > > > @@ -350,6 +350,7 @@ void efi_native_runtime_setup(void);
+> > > >   * associated with ConOut
+> > > >   */
+> > > >  #define LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID   EFI_GUID(0xe03fc20a, 0x85dc, 0x406e,  0xb9, 0x0e, 0x4a, 0xb5, 0x02, 0x37, 0x1d, 0x95)
+> > > > +#define LINUX_EFI_ARM_CPU_STATE_TABLE_GUID     EFI_GUID(0xef79e4aa, 0x3c3d, 0x4989,  0xb9, 0x02, 0x07, 0xa9, 0x43, 0xe5, 0x50, 0xd2)
+> > > >  #define LINUX_EFI_LOADER_ENTRY_GUID            EFI_GUID(0x4a67b082, 0x0a4c, 0x41cf,  0xb6, 0xc7, 0x44, 0x0b, 0x29, 0xbb, 0x8c, 0x4f)
+> > > >  #define LINUX_EFI_RANDOM_SEED_TABLE_GUID       EFI_GUID(0x1ce1e5bc, 0x7ceb, 0x42f2,  0x81, 0xe5, 0x8a, 0xad, 0xf1, 0x80, 0xf5, 0x7b)
+> > > >  #define LINUX_EFI_TPM_EVENT_LOG_GUID           EFI_GUID(0xb7799cb0, 0xeca2, 0x4943,  0x96, 0x67, 0x1f, 0xae, 0x07, 0xb7, 0x47, 0xfa)
+> > > > --
+> > > > 2.27.0
+> > > >
 
 _______________________________________________
 linux-arm-kernel mailing list
