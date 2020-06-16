@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12F091FB387
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:08:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4323E1FB38E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:08:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ko1Xqweg0kN/mAUrYlZUDWotxyMDcVyH4Sz5QIcBus=; b=YmVN0XBVNNjfYx
-	9nzbknQ6kn//v34HP8k4eZSmjqUr/hPoxRX1tMQeBvefrB5cNtThevPGivWuhVosJbmbfHqDO+y2E
-	93xZcFbik5iH4wIxbbQWute4vOzsRMCa3QwpYkp/JdtEvVh4TnAZ8uJnO3sxUJh0yQzz2n0RL2g2e
-	kNm8f1CTOhtlHiE7L2cDkDqL7ujqPW64etKP0ikucTuP5lSIK2P1L46ibo7XgEnOOswgOn6j/he3l
-	WpM5uwNvWJHUB7wKaDotjx0SIUAcm2wglYbQJfKRVsP7kjCqnTIRv582IXOOdFfE9cY97JEXUqEla
-	IOKB4nqDfzZ2jD9uB2GQ==;
+	List-Owner; bh=IzjbIaI0soa9md6ufeDcN9t3HikklbECZary1jBbSgo=; b=R9gec5vR8pGapg
+	rdWkwqUH4uUN0nh0vIj4zUS3kqoKC8JszbH4NzGwfa1hnYRe1s9RDNNydQk3gD+LS/W9OJgu3JSzJ
+	cSkCxDxcc+l4AswGwNkqGTQIlP0poIqLIodwe6/gj08i3vzvxgR6sV4R9YwkXUFcOhoodTvBUTLrE
+	tl2U11MaNWuxFRzkeXvBPo0eRPMwTxRMQbi+QrBPB6ZCSxGdRBE6Y6HqF3jM2CKCwXNnd2UvsbHsn
+	q+ET+xNhQePqK2y9jlCOqkR4s0NGU0JUX39zS1eVEn+YX1dLEyoo/4syDNSWwEE9AHOWctG6/VysV
+	llBtmrF1K1HayXzvM4sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCG2-00021h-08; Tue, 16 Jun 2020 14:08:10 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jlCGH-0002Eu-PH; Tue, 16 Jun 2020 14:08:25 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC2j-00028Y-If
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:27 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r9so2974332wmh.2
+ id 1jlC2l-0002AT-O7
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:30 +0000
+Received: by mail-wm1-x341.google.com with SMTP id u26so2326171wmn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:54:25 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kThqcb4cQbBx/uIsel8TVm5M32tgO5gv/gDCIhxkJJA=;
- b=o/hi0mnh2wpMjd4mgh7FpL98ASw5tSNjvcUQsMZmDL7CaRzCWFSeuAtCWoaRhUUZXn
- hS5gS/LCLSrTDWGHwZcaT/lr1RQ3IHm8vpgwcQLD5N99QRwLS7eAWrBI0m7zdsZRwRxu
- /dk6beZXp7QzUWAW94rcDpjx4WtdNIIbPZnYhkbNPyehGuq9Tp2FEHl1x/2ragpYV3ST
- grA85cCHOXQI/nyfs0m6Z8L/3V9r+yz5RA+vU/DbD8+obw/Z2gIfCBalD5VmQ79OTstK
- k2vn2+Tom6TvlQk0EVBdlJoZOJyznexZ4YUTO3Jm8QlYN1+gi5T3wYtZy0IeO7LD0B45
- MLuQ==
+ bh=XC8gu6MUt6zWRMhzY2/0XhcHGyfRevUXTL89flX6beE=;
+ b=O9LtF6HdHx1EDTtLBe+5kdtSnBwuAd4ddqtu5IPeAU/COAmLwFdwkIgc47uKEu76wC
+ zTEugU/ATrCS47nE8m4SbsohpWD5Jc9vf39a3qVw9/kDRP83YjvH8GKy0Lba8voaz+gS
+ yXTqXbuwAqbq6mJAlMnZn03FtFi+EjZsdffQ3TfLSuaMFhyHAMeXWAWqpCwdBb7oCgyN
+ BoVHKjVaxQ2dfaVNcSXDM/TBkUPZogLgclUMpMM33m/ywBqvw7dtrLQ4+C87x3N01+H+
+ y6K/wIU+wn01Rqk8uwVinX2Nf5ijJ4f5aUG1AZRAFSIFfUVBCzZnJ07JRKC74yIIIjy9
+ DGvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kThqcb4cQbBx/uIsel8TVm5M32tgO5gv/gDCIhxkJJA=;
- b=IG8uHASEZdb5v0fR5j3l0rguewxIDeMofhMgO2TwQuAlOQT9GOePXrL1NlDv66Ork1
- iCzZHKvKFTXqB1prDyopHDNYiMQXoQBzdQmD1ySTH4fJodGNcXHuoO6pm5um2we3J1B5
- PYLs7QeIvyBTws6662BkBjxDXiphMWfxQatibkjoJbXx42XWvHnlu1+i9Nefdm2n6tbj
- MLE0f2yx2GM2s1fFn8HZ/UtNflHwGFdNjWEjarYZo6KFB1E42a0qS24WtC5QkLU1EDR2
- 5Au6CSPzax6+A46xEGWi/sJLljPzn1He4yIk3ej37cEONKvqyUruo6zsuLtfi5D2PSoR
- cxcg==
-X-Gm-Message-State: AOAM533i1q9PibS4uOmPJ62oO4fbeG5vQPupx+BHUeOG3x1vxiumj8m6
- XRnd1JA5duXDI8eCnntj22s=
-X-Google-Smtp-Source: ABdhPJwJwKgoBKOrgh9ybWXJW1wfiTzi0G/DnJugS41di6b6KeHJcMacLd5pTXFBo1vjSqxmGbaNEQ==
-X-Received: by 2002:a1c:154:: with SMTP id 81mr3295877wmb.23.1592315664359;
- Tue, 16 Jun 2020 06:54:24 -0700 (PDT)
+ bh=XC8gu6MUt6zWRMhzY2/0XhcHGyfRevUXTL89flX6beE=;
+ b=RKfwHzFZlr7PAxy4tH1pEhlc/mwxxNWivEhoq6vx2q7V/X17/NN2k3bzFn6/o7sbp/
+ uSslWaKN99nCFmv12dN8qjghWPgAY3gVpXyegW6sfokqEkZ8NFDt6/xvP+a7W6WsjqLk
+ XNrXu5yJkY5peWUujcJP0vPqjZzE2z+b/BKaoU5mkH8tUGxjWk2mvk+LsaHHM/wcfoGu
+ VRUxmLDD6zeZQz/Mj9mduuCCIStcdOp8tzgPnnZAcHNDWua5EFTOdwv6Ug5ytWHjzDlb
+ uZmVTlIEFPX+yOslGI6Pdnipz9mAbDfzP0nV0NS1caSIfgmKlMZBgntrNDfCmjDZq9uD
+ S6Jg==
+X-Gm-Message-State: AOAM533ARh/xELymxFCEzUbqvd/AV0xXrTGmCq16TvoFcW18+joagev8
+ 2v7k4eCoydt7kgzhpysnQEY=
+X-Google-Smtp-Source: ABdhPJyWPYonq75pR1HSqUUoE6DrwrW1nCA0FtK6irvG2rc4uDX9sIA2lSQT44WMNMaBVDNyU4XcFA==
+X-Received: by 2002:a1c:f00a:: with SMTP id a10mr3468960wmb.61.1592315666556; 
+ Tue, 16 Jun 2020 06:54:26 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id a124sm4156094wmh.4.2020.06.16.06.54.22
+ by smtp.gmail.com with ESMTPSA id f13sm3971363wmb.33.2020.06.16.06.54.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:54:23 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:25 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 39/73] arm64: tegra: Remove extra compatible for Tegra194 SDHCI
-Date: Tue, 16 Jun 2020 15:52:04 +0200
-Message-Id: <20200616135238.3001888-40-thierry.reding@gmail.com>
+Subject: [PATCH 40/73] arm64: tegra: Remove extra compatible for Tegra210 SDHCI
+Date: Tue, 16 Jun 2020 15:52:05 +0200
+Message-Id: <20200616135238.3001888-41-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065425_640027_B1804B7F 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20200616_065427_898672_1525AFE2 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,45 +108,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The SDHCI on Tegra194 is in fact not compatible with the one found on
-Tegra186. Remove the extra compatible string to reflect that.
+The SDHCI on Tegra210 is in fact not compatible with the one found on
+Tegra124. Remove the extra compatible string to reflect that.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra194.dtsi | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/nvidia/tegra210.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index 4bc187a4eacd..ae438b2c4dd9 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -450,7 +450,7 @@ pwm8: pwm@32f0000 {
- 		};
+diff --git a/arch/arm64/boot/dts/nvidia/tegra210.dtsi b/arch/arm64/boot/dts/nvidia/tegra210.dtsi
+index 08655081f72d..cbf0d30a2f8b 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra210.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra210.dtsi
+@@ -1177,7 +1177,7 @@ usb3-3 {
+ 	};
  
- 		sdmmc1: sdhci@3400000 {
--			compatible = "nvidia,tegra194-sdhci", "nvidia,tegra186-sdhci";
-+			compatible = "nvidia,tegra194-sdhci";
- 			reg = <0x03400000 0x10000>;
- 			interrupts = <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&bpmp TEGRA194_CLK_SDMMC1>;
-@@ -472,7 +472,7 @@ sdmmc1: sdhci@3400000 {
- 		};
+ 	sdhci@700b0000 {
+-		compatible = "nvidia,tegra210-sdhci", "nvidia,tegra124-sdhci";
++		compatible = "nvidia,tegra210-sdhci";
+ 		reg = <0x0 0x700b0000 0x0 0x200>;
+ 		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA210_CLK_SDMMC1>;
+@@ -1205,7 +1205,7 @@ sdhci@700b0000 {
+ 	};
  
- 		sdmmc3: sdhci@3440000 {
--			compatible = "nvidia,tegra194-sdhci", "nvidia,tegra186-sdhci";
-+			compatible = "nvidia,tegra194-sdhci";
- 			reg = <0x03440000 0x10000>;
- 			interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&bpmp TEGRA194_CLK_SDMMC3>;
-@@ -495,7 +495,7 @@ sdmmc3: sdhci@3440000 {
- 		};
+ 	sdhci@700b0200 {
+-		compatible = "nvidia,tegra210-sdhci", "nvidia,tegra124-sdhci";
++		compatible = "nvidia,tegra210-sdhci";
+ 		reg = <0x0 0x700b0200 0x0 0x200>;
+ 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA210_CLK_SDMMC2>;
+@@ -1222,7 +1222,7 @@ sdhci@700b0200 {
+ 	};
  
- 		sdmmc4: sdhci@3460000 {
--			compatible = "nvidia,tegra194-sdhci", "nvidia,tegra186-sdhci";
-+			compatible = "nvidia,tegra194-sdhci";
- 			reg = <0x03460000 0x10000>;
- 			interrupts = <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&bpmp TEGRA194_CLK_SDMMC4>;
+ 	sdhci@700b0400 {
+-		compatible = "nvidia,tegra210-sdhci", "nvidia,tegra124-sdhci";
++		compatible = "nvidia,tegra210-sdhci";
+ 		reg = <0x0 0x700b0400 0x0 0x200>;
+ 		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA210_CLK_SDMMC3>;
+@@ -1245,7 +1245,7 @@ sdhci@700b0400 {
+ 	};
+ 
+ 	sdhci@700b0600 {
+-		compatible = "nvidia,tegra210-sdhci", "nvidia,tegra124-sdhci";
++		compatible = "nvidia,tegra210-sdhci";
+ 		reg = <0x0 0x700b0600 0x0 0x200>;
+ 		interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&tegra_car TEGRA210_CLK_SDMMC4>;
 -- 
 2.24.1
 
