@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C50E1FB3FB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:17:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 638D21FB400
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:17:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sFVXD919hB07sQ3yV5sRtegaNysLUVMnnyJRha/bR9w=; b=l00O822nOO/b9a
-	W4fJZ6bFvAvcwV/Ta9z8FR7supzjgK0b+nYDaKMLB8NZXpnbWBq238x+70PLH0LvtXjLgT8JNUMK1
-	uRhMMxduadi3xC0I0p6b0TwX399vKKTyAP/bzgmd0b76cvD86jpE2FtN6kCce9OFnx2p+S0oKZERI
-	GiCNYfO2FewFN2WATat6vLOosfEjR+XbxdAGzWdM357JXfytCBeg0NjBGAbM5wZhodZyJIEEVXRQ+
-	lTaMjA+pD3WAmPFHkCaevEXTz8tFuhWSiKZoTrWSMlCXQciyARHy3HLHQ0CQ/dKF6MQvIYgApXiWt
-	AkLRd7f71Uw+cyONtXeA==;
+	List-Owner; bh=dvNp7g2Pc9LF0wJ+H02hnxJ9/MqZlnXbKEMBxPBjnjw=; b=CR1beNRAEDej/Q
+	9IpUOMVGfKuDZMyn+dI2P/crFnF0H7hdTlRK9Ac2L77fT4ZHX90UqUmf6QGOsjcMnBSkYh1wKTy5a
+	jdxWTLbMrYiDlyJd19bA0nI0y+DbohPOgh53vli0kKcgGvUAjfw1XdxuQkfBdfYoBmKSV0PEv7ftz
+	ANcLMYZYz4kjOfRPOlojnbsCxVphmmyn90FcK9ypUS0eZCqDPNOpVouMJa1htYsFxPutZZDyMODbM
+	xMriWwYyGUZNOP4PY+LwuVGKvFE+LZaKtPEAxfKOZQJMIIM6UE/ALfpSw63O+g5kHveCU+DefPEoG
+	KJNTpkFrOR4pQQgOdhfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCOk-0005Nk-M1; Tue, 16 Jun 2020 14:17:11 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jlCPG-0005tV-Ir; Tue, 16 Jun 2020 14:17:42 +0000
+Received: from mail-wm1-f65.google.com ([209.85.128.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC3j-00058G-Bz
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:55:39 +0000
-Received: by mail-wm1-x343.google.com with SMTP id b82so2985823wmb.1
+ id 1jlC3m-00059t-Hn
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:55:40 +0000
+Received: by mail-wm1-f65.google.com with SMTP id j198so2336368wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:55:27 -0700 (PDT)
+ Tue, 16 Jun 2020 06:55:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qZkPY5bmoCgpmhUCVf6pNbB0U2EgFEkvwmeKVPqcE4I=;
- b=RJBSY6X3D75xtJyfmnTDI6AZfDHhVeb64mmheEEmVIb/poZNRfrXigc+Kg10fO4Hvy
- e7IiCqrmBN36GV2U3nGUDZDf5rZAtlkRCHLcwVwx1LaIKhcWZ8ZFY1WU0YvWoqYKFJJb
- 03Kk0e4KOkIumR/Js4azvwYTa2kxAxPCSko59QWp4pBPE5/e6McJLYcMqVf3isRsKijp
- VHAfk5YTUZwQtJdxMFHqbzGVATF83sQlcgox+JFw5gdE8nM1m/0basM2WFig1a8Wy+iX
- 0WSLf6j49GiHDsStQZ8kBobnmkpbHvfyXtTLr6HjKCP+hYeW7MY9Dh6CYo16NhlBL2gL
- v3TA==
+ bh=m+Oy5TCjklnJXJnTpsKQEAS9YPNmRw7/jZUo1uh4cXY=;
+ b=LxamS/MKqnBLmNYe28YdSGsQ2D8LWMfmQDzPPPrawRoo0jK+j9uVCTVLqs3pRS/lLV
+ fPfBQTV4wbWNspZy2uIfTzJLjaPx88EiNXMYxUhzlj94j4q3Ua6rTaCdigGBt1p3vAED
+ EsLzN8r3e7G/PmEt1aeNOjqoo63QtrqHRoEJ0NbE9VuZ9zjOQVvGH8EU6yxURx12AARe
+ YTMteZDPpvpcq2c7rfr4RUc+BoMcVO73enc2RF6ANHiWUarzlVFt8MkXya37iTOScJgU
+ aN4QX72MwfXU/uMzvNOrO9+IUZWhYtoLMPNs8DIZ0zePW1mYaDGMcvDLoBpMbhImHzH+
+ i1OQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qZkPY5bmoCgpmhUCVf6pNbB0U2EgFEkvwmeKVPqcE4I=;
- b=mkiaP622pixgvQCwCEr1/LLN1jD1Zwb4Ggum/x+1TegjGLRs+uMujIKqleU1k+62RS
- q1XOvZVthTVIH1gcRz/NFfwFvJFS4TaCONzDfe3fan/HrBFMoMftoNFJkoN0uh2/mgx0
- f2Xo3TyHOxLkqwIj1rH8upUv0g9vJYXmOFV+9IuLKINEf13HT5uOjYnfkK5wQrmm8tgL
- /rzkBVenFiQNd80anRSrmSsbE5ee8gS6iKF03q8MKR/HowPGtCSSEg0iRfa48tmvTBY5
- kZTNqudcnmOuQTk9owHYG0Q5ukckCWE9Z5EujEGXi/zCDxEB6f3YfnAsuds2g6qiqFGz
- 4UHQ==
-X-Gm-Message-State: AOAM532EpGvH+Fu8J+Ly1QfEZxcC9QzOEGG2TrwNAu12F+MJJh71yh0w
- mpoAxtyFH/jKMihhjUtqkb0=
-X-Google-Smtp-Source: ABdhPJzhOQC9gckMGWo4NKUvSt4NZfpgQk/k5WXziNdJe6I0mhJandqfAD4DXCQ2dCspJWQEhoMUEQ==
-X-Received: by 2002:a1c:c908:: with SMTP id f8mr3402681wmb.150.1592315726078; 
- Tue, 16 Jun 2020 06:55:26 -0700 (PDT)
+ bh=m+Oy5TCjklnJXJnTpsKQEAS9YPNmRw7/jZUo1uh4cXY=;
+ b=IeoIqHFC1Ry+da2luYutcZx8dg51uhfm+N4Dl7gzCfRUCC70WAv/XDDGE4OrFXNtQF
+ dd/ogdn5MAZYT9dixZTiYNmCzBLP44zyr7Z3mBRAYobSi3T9WLfQbFC4jppsqa1ZX3Ug
+ LsXdRIZJG6lbNJOV2xV14pOyJZ7vZzqeLIPxuETqGglByuM35tmseDAQmsACvKyziveW
+ Hk0RihZD1qTMlmXBsbIGvxGeUpjlwNVu4PerUl3JUeIr+x6HS4E1G25SLS52T0+Htje/
+ uOD6QPWfk38nW0kCRolYkzCsiFwpnCHkr4F6TLAtvgHCT8PY5hsCRhZmIa1SA7yYHD8O
+ VXkA==
+X-Gm-Message-State: AOAM5312VJZReqVvyE+ocgBRbvnrAz2CnCpXF/wlKzyjRNL2ctqISWMq
+ h7XlGwI+Ku6aQCI8sPoLTQQ=
+X-Google-Smtp-Source: ABdhPJw3jkTqJ+lgKZ6qIB5biG0YKqBZg1et2dqIrNIfkE5GKlgmyf7OxfU5uJnFQ/yiM2iWbEIe1w==
+X-Received: by 2002:a7b:c10c:: with SMTP id w12mr3164846wmi.132.1592315728126; 
+ Tue, 16 Jun 2020 06:55:28 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id u3sm4187727wmg.38.2020.06.16.06.55.24
+ by smtp.gmail.com with ESMTPSA id w14sm1974388wrt.55.2020.06.16.06.55.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:55:25 -0700 (PDT)
+ Tue, 16 Jun 2020 06:55:27 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 67/73] arm64: tegra: Remove unused interrupts from Tegra194
- AON GPIO
-Date: Tue, 16 Jun 2020 15:52:32 +0200
-Message-Id: <20200616135238.3001888-68-thierry.reding@gmail.com>
+Subject: [PATCH 68/73] arm64: tegra: Fix indentation in Tegra194 device tree
+Date: Tue, 16 Jun 2020 15:52:33 +0200
+Message-Id: <20200616135238.3001888-69-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065527_495513_A8DB1F05 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_065530_628246_D9FA7E63 
+X-CRM114-Status: GOOD (  10.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [209.85.128.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,30 +108,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The AON GPIO controller on Tegra194 currently only uses a single
-interrupt, so remove the extra ones.
+Properly indent subsequent lines so that they align with the first line.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra194.dtsi | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index 2ecb80e1b09d..e0aa6c74073a 100644
+index e0aa6c74073a..307f999edbf9 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
 +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -999,10 +999,7 @@ gpio_aon: gpio@c2f0000 {
- 			reg-names = "security", "gpio";
- 			reg = <0xc2f0000 0x1000>,
- 			      <0xc2f1000 0x1000>;
--			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 58 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
- 			gpio-controller;
- 			#gpio-cells = <2>;
- 			interrupt-controller;
+@@ -1669,7 +1669,7 @@ pcie@141a0000 {
+ 		pinctrl-0 = <&pex_rst_c5_out_state>, <&clkreq_c5_bi_dir_state>;
+ 
+ 		clocks = <&bpmp TEGRA194_CLK_PEX1_CORE_5>,
+-			<&bpmp TEGRA194_CLK_PEX1_CORE_5M>;
++			 <&bpmp TEGRA194_CLK_PEX1_CORE_5M>;
+ 		clock-names = "core", "core_m";
+ 
+ 		resets = <&bpmp TEGRA194_RESET_PEX1_CORE_5_APB>,
 -- 
 2.24.1
 
