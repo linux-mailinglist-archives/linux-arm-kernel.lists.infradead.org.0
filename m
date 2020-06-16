@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94ABB1FC07B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 22:58:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70E901FC080
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 22:58:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kI54ON3MLRhG+G8olzluiUEkgDphfK0IcGXh6xul2OY=; b=seCTKW6Zqm7Nlx/JAg1BXxTF/q
-	q7M90WD4j+EYkehEwyF2dIQV5dF0bGSVX7aMnMVnpb3Zyof4gZszK7BvmPwdDVBUnhriUhzc/IjKB
-	9Ot4rF4GX8IQUKUM8XEPhnSr5VceCuh9P/t1vouFi6TWCqzVyEGjR6D+4DqtqKSs/xbiOqiSlivV/
-	1ovbIb19fJFpLKJh7EAwXwU7Ect1pg7s7iCoslyZvWQKtjM2zw0xpwZwPmCp/89QzbFQl9V+tr0Aq
-	WJz3vMOUbXQsnxOaw7XUoWNsxLNHtFLcBWwJ50xqWBR96iKPyYtZgKTGHT36F9XFOJGrYulU226kA
-	UNXdbfxg==;
+	bh=MUj4d88IUI24Axf8eMc2CjIVoNPENpfKXgmtqRu2K04=; b=eHJ/Qbwfl32RgumAJbLU2HxgkV
+	CjnB2UPr9OT9f7Pysd0E/8cXK6Nns/fQRxsmzFHZbEpPGvzsDxdWt+PENssrE20zvctSqK6Yrq0pO
+	ndCldmmARVSBiHO1zW2wEhxFNf2EM1fTNmZGrRDo7FnZSS3pfYmkQ3gVnV1LQNoXruYVYc09ze2Yp
+	ckl6Epfa/9Ow9BLgOkQclgGzGNlRNU88jwXAeIhgXOAyuHKppo1Qzh7wUXF0cEdjdSWpz+dvKtYns
+	0WYGKW8gOAHQ/tA9K+RvUaby1arHubAHaUzoW5CFiGjgdt2S6QxcsH+Z3OQizfTLcDKS0Ljmnw0Cw
+	1cT+N6BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlIee-0003s3-BZ; Tue, 16 Jun 2020 20:58:00 +0000
+	id 1jlIfR-0004Ra-LZ; Tue, 16 Jun 2020 20:58:49 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlIcz-0002co-UW; Tue, 16 Jun 2020 20:56:25 +0000
+ id 1jlId1-0002eI-Jm; Tue, 16 Jun 2020 20:56:25 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 0D81030D887;
- Tue, 16 Jun 2020 13:56:16 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 0D81030D887
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 9E72A30D897;
+ Tue, 16 Jun 2020 13:56:17 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 9E72A30D897
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1592340976;
- bh=6PoDpzaO2MmhT4GEwMCs2XqdMmfj99225wAtpStBliQ=;
+ s=dkimrelay; t=1592340977;
+ bh=ilq9mBIjq7XK8nsqOuv2uXxAO9WaBvfrxotL7WW0h0M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ScdqCfBi2E0XYAaMr4aZSVFVDY4j/OOb2IQFRDgPqavLV/cJJsm+qzse1oF/rp5AQ
- /qisSou8k9HIMTaHEvkwooCo1jJW0Nzr5Oe3EZCcualSZL1K2WlHshBIq6fA6VFbuB
- 4xVVO6EDbPh8258xhI5LWBrQV8FUFRzFbR33DZ+E=
+ b=dLjSBLWfr7MIKSgZ2tn8fWvoV3KuAeS5y/pWYMEd6dl3Z+Nc/d+/bKc1+KYRYf1Fw
+ lja9CxjifxH5nbE3yD+W6x2p+FUOLmNa5fIJvwOdu2YrKQSCqNJz5wSNlKJc5GYlEn
+ kcxSpCtVuS/gB5lOZSTUk8hoyqDSX+BiMblLpMhU=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id 87C7B140069;
- Tue, 16 Jun 2020 13:56:14 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 10EBB14008B;
+ Tue, 16 Jun 2020 13:56:15 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
-Subject: [PATCH v5 09/12] PCI: brcmstb: Set internal memory viewport sizes
-Date: Tue, 16 Jun 2020 16:55:16 -0400
-Message-Id: <20200616205533.3513-10-james.quinlan@broadcom.com>
+Subject: [PATCH v5 10/12] PCI: brcmstb: Accommodate MSI for older chips
+Date: Tue, 16 Jun 2020 16:55:17 -0400
+Message-Id: <20200616205533.3513-11-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200616205533.3513-1-james.quinlan@broadcom.com>
 References: <20200616205533.3513-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_135618_124109_00794290 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20200616_135619_791747_9E2E18DD 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -85,7 +85,8 @@ Cc: Rob Herring <robh@kernel.org>,
  open list <linux-kernel@vger.kernel.org>,
  Florian Fainelli <f.fainelli@gmail.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ <linux-rpi-kernel@lists.infradead.org>,
+ Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
@@ -94,141 +95,208 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BrcmSTB PCIe controllers are intimately connected to the memory
-controller(s) on the SOC.  There is a "viewport" for each memory controller
-that allows inbound accesses to CPU memory.  Each viewport's size must be
-set to a power of two, and that size must be equal to or larger than the
-amount of memory each controller supports.
+From: Jim Quinlan <jquinlan@broadcom.com>
 
-Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
+Older BrcmSTB chips do not have a separate register for MSI interrupts; the
+MSIs are in a register that also contains unrelated interrupts.  In
+addition, the interrupts lie in bits [31..24] for these legacy chips.  This
+commit provides common code for both legacy and non-legacy MSI interrupt
+registers.
+
+Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/pci/controller/pcie-brcmstb.c | 68 ++++++++++++++++++++-------
- 1 file changed, 50 insertions(+), 18 deletions(-)
+ drivers/pci/controller/pcie-brcmstb.c | 71 +++++++++++++++++++--------
+ 1 file changed, 50 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-index 9189406fd35c..39f77709c6a2 100644
+index 39f77709c6a2..29fad717f619 100644
 --- a/drivers/pci/controller/pcie-brcmstb.c
 +++ b/drivers/pci/controller/pcie-brcmstb.c
-@@ -57,6 +57,8 @@
- #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK	0x300000
- #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128		0x0
- #define  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK		0xf8000000
-+#define  PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK		0x07c00000
-+#define  PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK		0x0000001f
+@@ -82,7 +82,8 @@
+ #define PCIE_MISC_MSI_BAR_CONFIG_HI			0x4048
  
- #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO		0x400c
- #define PCIE_MEM_WIN0_LO(win)	\
-@@ -154,6 +156,7 @@
- #define SSC_STATUS_OFFSET		0x1
- #define SSC_STATUS_SSC_MASK		0x400
- #define SSC_STATUS_PLL_LOCK_MASK	0x800
-+#define PCIE_BRCM_MAX_MEMC		3
+ #define PCIE_MISC_MSI_DATA_CONFIG			0x404c
+-#define  PCIE_MISC_MSI_DATA_CONFIG_VAL			0xffe06540
++#define  PCIE_MISC_MSI_DATA_CONFIG_VAL_32		0xffe06540
++#define  PCIE_MISC_MSI_DATA_CONFIG_VAL_8		0xfff86540
  
- #define IDX_ADDR(pcie)			(pcie->reg_offsets[EXT_CFG_INDEX])
- #define DATA_ADDR(pcie)			(pcie->reg_offsets[EXT_CFG_DATA])
-@@ -260,6 +263,8 @@ struct brcm_pcie {
- 	const int		*reg_field_info;
- 	enum pcie_type		type;
+ #define PCIE_MISC_PCIE_CTRL				0x4064
+ #define  PCIE_MISC_PCIE_CTRL_PCIE_L23_REQUEST_MASK	0x1
+@@ -94,6 +95,9 @@
+ #define  PCIE_MISC_PCIE_STATUS_PCIE_PHYLINKUP_MASK	0x10
+ #define  PCIE_MISC_PCIE_STATUS_PCIE_LINK_IN_L23_MASK	0x40
+ 
++#define PCIE_MISC_REVISION				0x406c
++#define  BRCM_PCIE_HW_REV_33				0x0303
++
+ #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT		0x4070
+ #define  PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_LIMIT_MASK	0xfff00000
+ #define  PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_BASE_MASK	0xfff0
+@@ -114,10 +118,14 @@
+ #define  PCIE_MISC_HARD_PCIE_HARD_DEBUG_CLKREQ_DEBUG_ENABLE_MASK	0x2
+ #define  PCIE_MISC_HARD_PCIE_HARD_DEBUG_SERDES_IDDQ_MASK		0x08000000
+ 
+-#define PCIE_MSI_INTR2_STATUS				0x4500
+-#define PCIE_MSI_INTR2_CLR				0x4508
+-#define PCIE_MSI_INTR2_MASK_SET				0x4510
+-#define PCIE_MSI_INTR2_MASK_CLR				0x4514
++
++#define PCIE_INTR2_CPU_BASE		0x4300
++#define PCIE_MSI_INTR2_BASE		0x4500
++/* Offsets from PCIE_INTR2_CPU_BASE and PCIE_MSI_INTR2_BASE */
++#define  MSI_INT_STATUS			0x0
++#define  MSI_INT_CLR			0x8
++#define  MSI_INT_MASK_SET		0x10
++#define  MSI_INT_MASK_CLR		0x14
+ 
+ #define PCIE_EXT_CFG_DATA				0x8000
+ 
+@@ -132,6 +140,8 @@
+ /* PCIe parameters */
+ #define BRCM_NUM_PCIE_OUT_WINS		0x4
+ #define BRCM_INT_PCI_MSI_NR		32
++#define BRCM_INT_PCI_MSI_LEGACY_NR	8
++#define BRCM_INT_PCI_MSI_SHIFT		0
+ 
+ /* MSI target adresses */
+ #define BRCM_MSI_TARGET_ADDR_LT_4GB	0x0fffffffcULL
+@@ -246,6 +256,12 @@ struct brcm_msi {
+ 	int			irq;
+ 	/* used indicates which MSI interrupts have been alloc'd */
+ 	unsigned long		used;
++	bool			legacy;
++	/* Some chips have MSIs in bits [31..24] of a shared register. */
++	int			legacy_shift;
++	int			nr; /* No. of MSI available, depends on chip */
++	/* This is the base pointer for interrupt status/set/clr regs */
++	void __iomem		*intr_base;
+ };
+ 
+ /* Internal PCIe Host Controller Information.*/
+@@ -265,6 +281,7 @@ struct brcm_pcie {
  	struct reset_control	*rescal;
-+	int			num_memc;
-+	u64			memc_size[PCIE_BRCM_MAX_MEMC];
+ 	int			num_memc;
+ 	u64			memc_size[PCIE_BRCM_MAX_MEMC];
++	u32			hw_rev;
  };
  
  /*
-@@ -715,22 +720,44 @@ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
- 							u64 *rc_bar2_offset)
+@@ -455,8 +472,10 @@ static void brcm_pcie_msi_isr(struct irq_desc *desc)
+ 	msi = irq_desc_get_handler_data(desc);
+ 	dev = msi->dev;
+ 
+-	status = readl(msi->base + PCIE_MSI_INTR2_STATUS);
+-	for_each_set_bit(bit, &status, BRCM_INT_PCI_MSI_NR) {
++	status = readl(msi->intr_base + MSI_INT_STATUS);
++	status >>= msi->legacy_shift;
++
++	for_each_set_bit(bit, &status, msi->nr) {
+ 		virq = irq_find_mapping(msi->inner_domain, bit);
+ 		if (virq)
+ 			generic_handle_irq(virq);
+@@ -473,7 +492,7 @@ static void brcm_msi_compose_msi_msg(struct irq_data *data, struct msi_msg *msg)
+ 
+ 	msg->address_lo = lower_32_bits(msi->target_addr);
+ 	msg->address_hi = upper_32_bits(msi->target_addr);
+-	msg->data = (0xffff & PCIE_MISC_MSI_DATA_CONFIG_VAL) | data->hwirq;
++	msg->data = (0xffff & PCIE_MISC_MSI_DATA_CONFIG_VAL_32) | data->hwirq;
+ }
+ 
+ static int brcm_msi_set_affinity(struct irq_data *irq_data,
+@@ -485,8 +504,9 @@ static int brcm_msi_set_affinity(struct irq_data *irq_data,
+ static void brcm_msi_ack_irq(struct irq_data *data)
  {
- 	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
--	struct device *dev = pcie->dev;
- 	struct resource_entry *entry;
-+	struct device *dev = pcie->dev;
-+	u64 lowest_pcie_addr = ~(u64)0;
-+	int ret, i = 0;
-+	u64 size = 0;
+ 	struct brcm_msi *msi = irq_data_get_irq_chip_data(data);
++	const int shift_amt = data->hwirq + msi->legacy_shift;
  
--	entry = resource_list_first_type(&bridge->dma_ranges, IORESOURCE_MEM);
--	if (!entry)
--		return -ENODEV;
-+	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
-+		u64 pcie_beg = entry->res->start - entry->offset;
+-	writel(1 << data->hwirq, msi->base + PCIE_MSI_INTR2_CLR);
++	writel(1 << shift_amt, msi->intr_base + MSI_INT_CLR);
+ }
  
-+		size += entry->res->end - entry->res->start + 1;
-+		if (pcie_beg < lowest_pcie_addr)
-+			lowest_pcie_addr = pcie_beg;
-+	}
  
--	/*
--	 * The controller expects the inbound window offset to be calculated as
--	 * the difference between PCIe's address space and CPU's. The offset
--	 * provided by the firmware is calculated the opposite way, so we
--	 * negate it.
--	 */
--	*rc_bar2_offset = -entry->offset;
--	*rc_bar2_size = 1ULL << fls64(entry->res->end - entry->res->start);
-+	if (lowest_pcie_addr == ~(u64)0) {
-+		dev_err(dev, "DT node has no dma-ranges\n");
-+		return -EINVAL;
-+	}
+@@ -502,7 +522,7 @@ static int brcm_msi_alloc(struct brcm_msi *msi)
+ 	int hwirq;
+ 
+ 	mutex_lock(&msi->lock);
+-	hwirq = bitmap_find_free_region(&msi->used, BRCM_INT_PCI_MSI_NR, 0);
++	hwirq = bitmap_find_free_region(&msi->used, msi->nr, 0);
+ 	mutex_unlock(&msi->lock);
+ 
+ 	return hwirq;
+@@ -551,8 +571,7 @@ static int brcm_allocate_domains(struct brcm_msi *msi)
+ 	struct fwnode_handle *fwnode = of_node_to_fwnode(msi->np);
+ 	struct device *dev = msi->dev;
+ 
+-	msi->inner_domain = irq_domain_add_linear(NULL, BRCM_INT_PCI_MSI_NR,
+-						  &msi_domain_ops, msi);
++	msi->inner_domain = irq_domain_add_linear(NULL, msi->nr, &msi_domain_ops, msi);
+ 	if (!msi->inner_domain) {
+ 		dev_err(dev, "failed to create IRQ domain\n");
+ 		return -ENOMEM;
+@@ -589,7 +608,10 @@ static void brcm_msi_remove(struct brcm_pcie *pcie)
+ 
+ static void brcm_msi_set_regs(struct brcm_msi *msi)
+ {
+-	writel(0xffffffff, msi->base + PCIE_MSI_INTR2_MASK_CLR);
++	u32 val = __GENMASK(31, msi->legacy_shift);
 +
-+	ret = of_property_read_variable_u64_array(pcie->np, "brcm,scb-sizes", pcie->memc_size, 1,
-+						  PCIE_BRCM_MAX_MEMC);
++	writel(val, msi->intr_base + MSI_INT_MASK_CLR);
++	writel(val, msi->intr_base + MSI_INT_CLR);
+ 
+ 	/*
+ 	 * The 0 bit of PCIE_MISC_MSI_BAR_CONFIG_LO is repurposed to MSI
+@@ -600,8 +622,8 @@ static void brcm_msi_set_regs(struct brcm_msi *msi)
+ 	writel(upper_32_bits(msi->target_addr),
+ 	       msi->base + PCIE_MISC_MSI_BAR_CONFIG_HI);
+ 
+-	writel(PCIE_MISC_MSI_DATA_CONFIG_VAL,
+-	       msi->base + PCIE_MISC_MSI_DATA_CONFIG);
++	val = msi->legacy ? PCIE_MISC_MSI_DATA_CONFIG_VAL_8 : PCIE_MISC_MSI_DATA_CONFIG_VAL_32;
++	writel(val, msi->base + PCIE_MISC_MSI_DATA_CONFIG);
+ }
+ 
+ static int brcm_pcie_enable_msi(struct brcm_pcie *pcie)
+@@ -626,6 +648,17 @@ static int brcm_pcie_enable_msi(struct brcm_pcie *pcie)
+ 	msi->np = pcie->np;
+ 	msi->target_addr = pcie->msi_target_addr;
+ 	msi->irq = irq;
++	msi->legacy = pcie->hw_rev < BRCM_PCIE_HW_REV_33;
 +
-+	if (ret <= 0) {
-+		/* Make an educated guess */
-+		pcie->num_memc = 1;
-+		pcie->memc_size[0] = 1 << fls64(size - 1);
++	if (msi->legacy) {
++		msi->intr_base = msi->base + PCIE_INTR2_CPU_BASE;
++		msi->nr = BRCM_INT_PCI_MSI_LEGACY_NR;
++		msi->legacy_shift = 24;
 +	} else {
-+		pcie->num_memc = ret;
++		msi->intr_base = msi->base + PCIE_MSI_INTR2_BASE;
++		msi->nr = BRCM_INT_PCI_MSI_NR;
++		msi->legacy_shift = 0;
 +	}
+ 
+ 	ret = brcm_allocate_domains(msi);
+ 	if (ret)
+@@ -885,12 +918,6 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+ 	tmp &= ~PCIE_MISC_RC_BAR3_CONFIG_LO_SIZE_MASK;
+ 	writel(tmp, base + PCIE_MISC_RC_BAR3_CONFIG_LO);
+ 
+-	/* Mask all interrupts since we are not handling any yet */
+-	writel(0xffffffff, pcie->base + PCIE_MSI_INTR2_MASK_SET);
+-
+-	/* clear any interrupts we find on boot */
+-	writel(0xffffffff, pcie->base + PCIE_MSI_INTR2_CLR);
+-
+ 	if (pcie->gen)
+ 		brcm_pcie_set_gen(pcie, pcie->gen);
+ 
+@@ -1233,6 +1260,8 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto fail;
+ 
++	pcie->hw_rev = readl(pcie->base + PCIE_MISC_REVISION);
 +
-+	/* Each memc is viewed through a "port" that is a power of 2 */
-+	for (i = 0, size = 0; i < pcie->num_memc; i++)
-+		size += pcie->memc_size[i];
-+
-+	/* System memory starts at this address in PCIe-space */
-+	*rc_bar2_offset = lowest_pcie_addr;
-+	/* The sum of all memc views must also be a power of 2 */
-+	*rc_bar2_size = 1ULL << fls64(size - 1);
- 
- 	/*
- 	 * We validate the inbound memory view even though we should trust
-@@ -782,12 +809,11 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
- 	void __iomem *base = pcie->base;
- 	struct device *dev = pcie->dev;
- 	struct resource_entry *entry;
--	unsigned int scb_size_val;
- 	bool ssc_good = false;
- 	struct resource *res;
- 	int num_out_wins = 0;
- 	u16 nlw, cls, lnksta;
--	int i, ret;
-+	int i, ret, memc;
- 	u32 tmp, aspm_support;
- 
- 	/* Reset the bridge */
-@@ -824,11 +850,17 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
- 	writel(upper_32_bits(rc_bar2_offset),
- 	       base + PCIE_MISC_RC_BAR2_CONFIG_HI);
- 
--	scb_size_val = rc_bar2_size ?
--		       ilog2(rc_bar2_size) - 15 : 0xf; /* 0xf is 1GB */
- 	tmp = readl(base + PCIE_MISC_MISC_CTRL);
--	u32p_replace_bits(&tmp, scb_size_val,
--			  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK);
-+	for (memc = 0; memc < pcie->num_memc; memc++) {
-+		u32 scb_size_val = ilog2(pcie->memc_size[memc]) - 15;
-+
-+		if (memc == 0)
-+			u32p_replace_bits(&tmp, scb_size_val, PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK);
-+		else if (memc == 1)
-+			u32p_replace_bits(&tmp, scb_size_val, PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK);
-+		else if (memc == 2)
-+			u32p_replace_bits(&tmp, scb_size_val, PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK);
-+	}
- 	writel(tmp, base + PCIE_MISC_MISC_CTRL);
- 
- 	/*
+ 	msi_np = of_parse_phandle(pcie->np, "msi-parent", 0);
+ 	if (pci_msi_enabled() && msi_np == pcie->np) {
+ 		ret = brcm_pcie_enable_msi(pcie);
 -- 
 2.17.1
 
