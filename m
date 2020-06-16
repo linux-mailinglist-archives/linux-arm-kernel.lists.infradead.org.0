@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 192C21FBBF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:41:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13B011FBBF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 18:42:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=LRUndVbje4SsxNUMMCgJakeoI78DURxQNujKamnp22o=; b=SINv51WaT7kx5gnd9IyAsh/VGO
-	fhlw/78gZ12JhFVR7uHfxH8y+DSkcY6ICfgWxbMpNV3N5L/jBKyVRhWYQhc2ElGO6re8Kk1GwkBPh
-	IYal5pgKzQbEVuxkNuVln7C/649AVthdK7tn6CB5WQz6r8xSBMGMAYtEKmzo7vQdZjgEpkB/wGLgf
-	WpOz8bhyjLT1dpnXjyqF7RYIX9ZhwAzqjcRvA7qAOLXOZNNM+JVrQcZTQ47a2RoGwKmN9sx886Ci1
-	3kTenh/twWVGt2hseiZxq0aJ7L2XLf60SyBLnNLUN+SjNH8JzIcCx/Kc5arXKpybTsLkCNJbf9O20
-	ejZbE4zQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rs0e1RvVOA/JNkHBAC1NCo/lHVUknQpL9pN1pRI9nNI=; b=Q6e
+	6BRP1Ew8PT8Kea92sdwkmExcGKa2506BErj3Sqgu8HQLRGtsY8tQz2CS7g1LYcEGTE7yv39fbnSYE
+	Ewv49nWneKPHaxn7tV7bTX7q91DRjLXmwsX2b3fgcWypJuWjLsGna19PPsiQzVT+GC0quwMmxU7m3
+	pVsJPSLv5N4X4+7rq1rvcZJfxVfeA53SmFTjWhEQGVCcRonbpCtdAlhNOJeHDA28AVp3jYaZweesS
+	HVeMsyAl6KeZPvPPVIPoG56OVf46eu9ZSXNaPR3KuNX0zVauOkjF3HoxRuvjbbp/cBg28UKNS68SN
+	1m/6y6RQl7Y9D7uYr+vxODEmFGo4lNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlEei-0001Bc-M0; Tue, 16 Jun 2020 16:41:48 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jlEf2-0001UG-Gu; Tue, 16 Jun 2020 16:42:08 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlEdE-0008QG-Oy
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 16:40:18 +0000
-Received: by mail-wr1-x441.google.com with SMTP id c3so21437581wru.12
+ id 1jlEdh-0000Qz-CA
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 16:40:47 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t18so21488526wru.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 09:40:16 -0700 (PDT)
+ Tue, 16 Jun 2020 09:40:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=n2NHRnVJc5C6MADoxTFzUsgSIOdIPkV7GWDKSuh8LYo=;
- b=Go2w4WPCylLmbALMzBQK1S5p5HIA2UF8kUfalYYZuEi+oM8rpfFnsJWEw9REsNwibv
- ZFNa1a1qi5kn/kzvFwXrUl5nN8iZEgAgkj+s0U5Q8dgGy+tn4EOvSVJ2YKOGc8MTkl+G
- FzpUdQO5X9c/zsT5qswdlBlyZsLJMPwd7laysY30SxuisShVk/v8SPNsh+IOVrbmIUIV
- 2R58yyZ9S7I7EmiLTwKi+dW72oXk/0DHZtegD+MIs6dYiRQNhFILxcs5DWkqZFS5BL9o
- FQ460OG9NYzDbdQ2Xaog7ylhkTQ12yRTaDK8/zmsMknI6DKKKjZ9M9w6VO9lRl2syIqZ
- Swqg==
+ h=from:to:cc:subject:date:message-id;
+ bh=WHqB6EkNA8oBXEj884xpeOH1tWkcs/swUK4ixSzrRYk=;
+ b=ZwrR2yXSRnzq8fJmaU/Ft19OuUL+JcebIVKx+K+K3inypyk4yqAXnwd9cGZzbt4QLp
+ Zbw7psLTreM8ibN/64YUufoNJNT5qmZZrsk/G+9c94PTvgWKyKm6ni7pFmtiFXRcIZJM
+ 7WvGH+ybJ4B9Gl5UgcSLXxBfok6FcJ3vVlj9zZXrvDv7sPB9TVXZUSliEgQUXDAzt+yM
+ 2yaIrJcROu87DkTvWn2N1mC8nU2caj1S40X/ii+ozR57mM5Jl5Sv6o8rVrZVIEJ12rEW
+ rgQAXlLtZfLiJ1LfbNqLJqN4Q0v6SVOoTQpMSYZoPBrBpbMnI6Z5Ki9no8XBgCYXR2Ju
+ JyUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=n2NHRnVJc5C6MADoxTFzUsgSIOdIPkV7GWDKSuh8LYo=;
- b=btRHELWOI72aNkYC2oCx8kPPFtAe3Xl0Od75BJsVtyN2MZZaO0tHizRLtsYkaSSXaq
- TkAadv3r8FrsG1ZTdyE3NJDGczRicLG6Umqn7uEiGWjVNNGgQicVFXQR8/nH+drrRrlF
- WMPuR1dRzuvNmwILIrN3Kl39Enb1lfy8L2sUZfMUJoUtTNpMSZcPeqTEJl2+Pwkva+i3
- oOAsIOJdm8BHWW03TA47ZUWm0wS5EKcj4sWE+dT+wuUtqDfj3ws3rnaNbbwpNIEboW3y
- r/42cwlNuAjnP1QaGSYbtMutlw61d0OvGi7pLVjRSiKrDRSUhz6u+ENwilmvPM+aKDYl
- 45Sg==
-X-Gm-Message-State: AOAM532cgEwE4x3TxqludqsDneBZAukJeTyjZ0SQSMmwMLB76uCX0OUF
- 8nvl9HWtWq8NN8/yUl8JMoZ3ZtqdacM=
-X-Google-Smtp-Source: ABdhPJwWreG7Y7CLeVlSpKGbSAIZCOj/MG40rFIWNn8jJLxll8XJOve70JeA1trsCvcLLdg4q03IkA==
-X-Received: by 2002:a05:6000:18c:: with SMTP id
- p12mr4249039wrx.66.1592325614772; 
- Tue, 16 Jun 2020 09:40:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=WHqB6EkNA8oBXEj884xpeOH1tWkcs/swUK4ixSzrRYk=;
+ b=rxVvLnZKZiDuqQbF5YcKQ5QiLYtl9REB5bwHqCU//+f/B2sWzNxrhjh+aPYgHt9nkP
+ yyoe6KGJd+cERww8Ev81jJEFI4LVe+LrAmd1t+7crTZGgxAXMt/oAOvy3Ogh3O4IJm/p
+ x2BAVq/EnaKg4rAdRSEcAVjFCFNaDpRRIyvLUZcNK8WZflpShPS8oJ/o3+wvuRN6AcI6
+ BuKACBeq2CfnOihWmnBsvOBJoYmvtjBMeRJrtnUQLC2vWzZpcBw4D5NYO2psepXEFr1h
+ oqyGmE76+C+jE6VyQ53BFdflKFrYAzpdobn3nvFtq4aoEF24s6uEoCgJNeR39QAEl8uE
+ 8Icg==
+X-Gm-Message-State: AOAM533A9hi9HvA02O9vu4EMA8+Mg2IqCyGoWY46xvpbn/cgIt3l4QBm
+ 9uMLVxnpQ1j7m/erOjJWLy/kOw==
+X-Google-Smtp-Source: ABdhPJxaHNhsXDQT25pKEGf6V6Lo5P8qsuBsEahEVvOej9W2mcExoGOTjer9hmAjpieqbvIf1v8x6w==
+X-Received: by 2002:adf:97cb:: with SMTP id t11mr3964126wrb.314.1592325644013; 
+ Tue, 16 Jun 2020 09:40:44 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6801:1801:dc9e:c297:59e5:dbd9])
- by smtp.gmail.com with ESMTPSA id g82sm4843866wmf.1.2020.06.16.09.40.13
+ by smtp.gmail.com with ESMTPSA id s18sm36598946wra.85.2020.06.16.09.40.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 09:40:13 -0700 (PDT)
+ Tue, 16 Jun 2020 09:40:43 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
-To: linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
- coresight@lists.linaro.org, mathieu.poirier@linaro.org
-Subject: [PATCH v5 5/5] documentation: coresight: Update CoreSight document
- for default sink.
-Date: Tue, 16 Jun 2020 17:40:06 +0100
-Message-Id: <20200616164006.15309-6-mike.leach@linaro.org>
+To: acme@kernel.org, linux-arm-kernel@lists.infradead.org,
+ coresight@lists.linaro.org
+Subject: [PATCH v5] perf: cs-etm: Allow no CoreSight sink to be specified on
+ command line
+Date: Tue, 16 Jun 2020 17:40:41 +0100
+Message-Id: <20200616164041.15373-1-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200616164006.15309-1-mike.leach@linaro.org>
-References: <20200616164006.15309-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_094016_844835_A64EEF68 
-X-CRM114-Status: GOOD (  13.91  )
+X-CRM114-CacheID: sfid-20200616_094045_432377_A70A5DDF 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,109 +93,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, Mike Leach <mike.leach@linaro.org>, suzuki.poulose@arm.com
+Cc: peterz@infradead.org, mingo@redhat.com, Mike Leach <mike.leach@linaro.org>,
+ mathieu.poirier@linaro.org, suzuki.poulose@arm.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Updates the CoreSight documentation to cover the use of default sinks for
-both perf and sysfs operations.
+Adjust the handling of the session sink selection to allow no sink to
+be selected on the command line. This then forwards the sink selection to
+the CoreSight infrastructure which will attempt to select a sink based
+on the default sink select priorities.
 
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
+Tested-by: Leo Yan <leo.yan@linaro.org>
 ---
- Documentation/trace/coresight/coresight.rst | 48 +++++++++++++++------
- 1 file changed, 34 insertions(+), 14 deletions(-)
+ tools/perf/arch/arm/util/cs-etm.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/trace/coresight/coresight.rst b/Documentation/trace/coresight/coresight.rst
-index 0b73acb44efa..917d89f74c2e 100644
---- a/Documentation/trace/coresight/coresight.rst
-+++ b/Documentation/trace/coresight/coresight.rst
-@@ -341,17 +341,18 @@ provide details on using both methods.
- 1) Using the sysFS interface:
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index cea5e33d61d2..cad7bf783413 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -243,10 +243,10 @@ static int cs_etm_set_sink_attr(struct perf_pmu *pmu,
+ 	}
  
- Before trace collection can start, a coresight sink needs to be identified.
--There is no limit on the amount of sinks (nor sources) that can be enabled at
--any given moment.  As a generic operation, all device pertaining to the sink
--class will have an "active" entry in sysfs::
-+There is no limit on the amount of sources and sinks that can be enabled at
-+any given moment. However, any source will only trace into a single sink.
-+As a generic operation, all device pertaining to the sink class will have an
-+"active" entry in sysfs::
+ 	/*
+-	 * No sink was provided on the command line - for _now_ treat
+-	 * this as an error.
++	 * No sink was provided on the command line - allow the CoreSight
++	 * system to look for a default
+ 	 */
+-	return ret;
++	return 0;
+ }
  
-     root:/sys/bus/coresight/devices# ls
--    replicator  20030000.tpiu    2201c000.ptm  2203c000.etm  2203e000.etm
--    20010000.etb         20040000.funnel  2201d000.ptm  2203d000.etm
--    root:/sys/bus/coresight/devices# ls 20010000.etb
-+    replicator0  tpiu0  ptm0  etm2  etm3
-+    etb0  funnel0  ptm1  etm4
-+    root:/sys/bus/coresight/devices# ls etb0
-     enable_sink  status  trigger_cntr
--    root:/sys/bus/coresight/devices# echo 1 > 20010000.etb/enable_sink
--    root:/sys/bus/coresight/devices# cat 20010000.etb/enable_sink
-+    root:/sys/bus/coresight/devices# echo 1 > etb0/enable_sink
-+    root:/sys/bus/coresight/devices# cat etb0/enable_sink
-     1
-     root:/sys/bus/coresight/devices#
- 
-@@ -360,10 +361,10 @@ comparator with "_stext" and "_etext", essentially tracing any instruction
- that falls within that range.  As such "enabling" a source will immediately
- trigger a trace capture::
- 
--    root:/sys/bus/coresight/devices# echo 1 > 2201c000.ptm/enable_source
--    root:/sys/bus/coresight/devices# cat 2201c000.ptm/enable_source
-+    root:/sys/bus/coresight/devices# echo 1 > ptm0/enable_source
-+    root:/sys/bus/coresight/devices# cat ptm0/enable_source
-     1
--    root:/sys/bus/coresight/devices# cat 20010000.etb/status
-+    root:/sys/bus/coresight/devices# cat etb0/status
-     Depth:          0x2000
-     Status:         0x1
-     RAM read ptr:   0x0
-@@ -376,13 +377,22 @@ trigger a trace capture::
- 
- Trace collection is stopped the same way::
- 
--    root:/sys/bus/coresight/devices# echo 0 > 2201c000.ptm/enable_source
-+    root:/sys/bus/coresight/devices# echo 0 > ptm0/enable_source
-     root:/sys/bus/coresight/devices#
- 
-+If no sink is enabled before the source is enabled, then a default sink will
-+be selected and enabled automatically. Once the source is disabled, then the
-+sink used can be read from <source>/last_sink.::
-+
-+    root:/sys/bus/coresight/devices# echo 1 > ptm0/enable_source
-+    root:/sys/bus/coresight/devices# echo 0 > ptm0/enable_source
-+    root:/sys/bus/coresight/devices# cat ptm0/last_sink
-+    etb0
-+    root:/sys/bus/coresight/devices# echo 0 > etb0/enable_sink
-+
- The content of the ETB buffer can be harvested directly from /dev::
- 
--    root:/sys/bus/coresight/devices# dd if=/dev/20010000.etb \
--    of=~/cstrace.bin
-+    root:/sys/bus/coresight/devices# dd if=/dev/etb0 of=~/cstrace.bin
-     64+0 records in
-     64+0 records out
-     32768 bytes (33 kB) copied, 0.00125258 s, 26.2 MB/s
-@@ -490,6 +500,16 @@ The syntax within the forward slashes '/' is important.  The '@' character
- tells the parser that a sink is about to be specified and that this is the sink
- to use for the trace session.
- 
-+Alternatively, if no sink name is given between the //, then the CoreSight
-+system will select a default sink::
-+
-+	root@linaro-nano:~# perf record -e cs_etm//u --per-thread program
-+
-+The system selects a sink by searching connection path from the source ETM to
-+any sink that is on the path.The system will prefer ETR devices over ETB/ETF,
-+and where two of the same type are found, the closest to the ETM, in terms of
-+connection links.
-+
- More information on the above and other example on how to use Coresight with
- the perf tools can be found in the "HOWTO.md" file of the openCSD gitHub
- repository [#third]_.
+ static int cs_etm_recording_options(struct auxtrace_record *itr,
 -- 
 2.17.1
 
