@@ -2,50 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 010601FACC9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:37:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E87471FAD23
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:52:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RL/aQsxkbb1bripPPmH/Fshm1ZsCG7GhSyjPY3WoFXY=; b=idNO/Fe5q+2Fp0
-	JNU7cUpSi2hJ7VHtutQKDYha728Gh/jh19tWlwKgsGxM90onqz+WoB4b7PCJL/cDGTcHP3OrOvkGd
-	7MpIuNnz3lse2gzgmyrbG3NrbdkIIJSxNPNTEzMV7MbyZG+krKLVsbX7aWXDaHLbmXiB1MmW0lhTH
-	TzTkTTxbcwI1UhJ/D/jJPqS0I25xeFJshCk/4uMKEDMOK5rZyuGWFXZDezZKR80atEj90bq1ctA1K
-	hh6EZSGVZtCPE7VpysPQ1Zk0LUyYzjQCmqnJp9i08CX+ZYC2ZMzVdNq97dRBDopccH2BJqzUtrJx0
-	9jO389ZgRtC4GxJ8jX3g==;
+	List-Owner; bh=oLUB6NbWo28TabwTIkQNnHmiRdgADlcx0FssqLTzj5k=; b=KkImnHT214S3kf
+	kt0y1dsn4X9JSDO7FvucK0jA1oq4cLl8Cir1qBoIyO+ocLIigmuFC9wjoX0xW+d8FzODURvei/fRa
+	McJVhd41HmrjWLa6RN53MMZYLl7YsznRVIW79ik8j10GR16j1bcLmDEj28W6mawCssL2G0AqR7Zpf
+	+zgi/mVE1IEg6iEGVCNGlmkTzQhpkfk+zx+atSn6qA2UprdeMlxZS0cPWW4FJCN2wNcvJDwdbuDpF
+	The2joRsBy0q4UJ12xbm0hHj8CdDW7q1+rve9VNBU0DnDI/DIYbwZ+RThzpap09laaSbcO+YgZplO
+	1YWkUQ6YMPocAgdUFStg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl828-0002Tg-D9; Tue, 16 Jun 2020 09:37:32 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jl8Gg-0005YH-Cx; Tue, 16 Jun 2020 09:52:34 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl810-0001n7-6W
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:36:27 +0000
+ id 1jl8GD-0004nJ-Ur
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 16 Jun 2020 09:52:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=M4SEgvz0nyb9jcZO7f0rIys4Vap0y4Kr6/0oBvgK0ns=; b=NhnR1LzDkKU+D3fZC/UneKn4ie
+ qGczg9okttLEg1qoi8Qpw4AkHD7St8bUxyqX62O0mKqVwgsFHPcvuee2yw8JM+ZQCop9nJyGr8Rkj
+ hs6lZqs+rj25ZacH134AzZD0bu/wRFsWExW1KFzh4DPjh3NIsrWdFqmlSyrrI22ITJhtWULw7d1ei
+ TScjqWLI6zLdxKF5c1vIcmUFPf0R/IfiRExHQ/ea1DSFAu/619UgVfrBjcbeXQsKjJ3Ccjn9eb7pB
+ nNH9ZG6DweI1JUgWPITxSCoQLPGScMBCAMn3PkYCjQiWBIC/OLsA4gviq04IMz+YaXtdGsSGw0OLc
+ EUj7vEHQ==;
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jl81G-0005aA-67
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:36:39 +0000
 Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id CB61C6A3FCE268A0B19E;
+ by Forcepoint Email with ESMTP id D41EBD40471D8FD3AFBD;
  Tue, 16 Jun 2020 17:36:18 +0800 (CST)
 Received: from DESKTOP-5IS4806.china.huawei.com (10.173.221.230) by
  DGGEMS414-HUB.china.huawei.com (10.3.19.214) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 16 Jun 2020 17:36:11 +0800
+ 14.3.487.0; Tue, 16 Jun 2020 17:36:12 +0800
 From: Keqian Zhu <zhukeqian1@huawei.com>
 To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>
-Subject: [PATCH 09/12] KVM: arm64: Steply write protect page table by mask bit
-Date: Tue, 16 Jun 2020 17:35:50 +0800
-Message-ID: <20200616093553.27512-10-zhukeqian1@huawei.com>
+Subject: [PATCH 10/12] KVM: arm64: Save stage2 PTE dirty status if it is
+ coverred
+Date: Tue, 16 Jun 2020 17:35:51 +0800
+Message-ID: <20200616093553.27512-11-zhukeqian1@huawei.com>
 X-Mailer: git-send-email 2.8.4.windows.1
 In-Reply-To: <20200616093553.27512-1-zhukeqian1@huawei.com>
 References: <20200616093553.27512-1-zhukeqian1@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.173.221.230]
 X-CFilter-Loop: Reflected
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_023622_527191_F9B90AB2 
-X-CRM114-Status: GOOD (  10.76  )
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -82,45 +95,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-During dirty log clear, page table entries are write protected
-according to a mask. In the past we write protect all entries
-corresponding to the mask from ffs to fls. Though there may be
-zero bits between this range, we are holding the kvm mmu lock
-so we won't write protect entries that we don't want to.
+There are two types of operations will change PTE and may cover
+dirty status set by hardware.
 
-We are about to add support for hardware management of dirty state
-to arm64, holding kvm mmu lock will be not enough. We should write
-protect entries steply by mask bit.
+1. Stage2 PTE unmapping: Page table merging (revert of huge page
+table dissolving), kvm_unmap_hva_range() and so on.
+
+2. Stage2 PTE changing: including user_mem_abort(), kvm_mmu_notifier
+_change_pte() and so on.
+
+All operations above will invoke kvm_set_pte() finally. We should
+save the dirty status into memslot bitmap.
+
+Question: Should we acquire kvm_slots_lock when invoke mark_page_dirty?
+It seems that user_mem_abort does not acquire this lock when invoke it.
 
 Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
 ---
- arch/arm64/kvm/mmu.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ arch/arm64/kvm/mmu.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
-index 3aa0303d83f0..898e272a2c07 100644
+index 898e272a2c07..a230fbcf3889 100644
 --- a/arch/arm64/kvm/mmu.c
 +++ b/arch/arm64/kvm/mmu.c
-@@ -1710,10 +1710,16 @@ static void kvm_mmu_write_protect_pt_masked(struct kvm *kvm,
- 		gfn_t gfn_offset, unsigned long mask)
+@@ -294,15 +294,23 @@ static void unmap_stage2_ptes(struct kvm *kvm, pmd_t *pmd,
  {
- 	phys_addr_t base_gfn = slot->base_gfn + gfn_offset;
--	phys_addr_t start = (base_gfn +  __ffs(mask)) << PAGE_SHIFT;
--	phys_addr_t end = (base_gfn + __fls(mask) + 1) << PAGE_SHIFT;
-+	phys_addr_t start, end;
-+	u32 i;
+ 	phys_addr_t start_addr = addr;
+ 	pte_t *pte, *start_pte;
++	bool dirty_coverred;
++	int idx;
  
--	stage2_wp_range(kvm, start, end);
-+	for (i = __ffs(mask); i <= __fls(mask); i++) {
-+		if (test_bit_le(i, &mask)) {
-+			start = (base_gfn + i) << PAGE_SHIFT;
-+			end = (base_gfn + i + 1) << PAGE_SHIFT;
-+			stage2_wp_range(kvm, start, end);
+ 	start_pte = pte = pte_offset_kernel(pmd, addr);
+ 	do {
+ 		if (!pte_none(*pte)) {
+ 			pte_t old_pte = *pte;
+ 
+-			kvm_set_pte(pte, __pte(0));
++			dirty_coverred = kvm_set_pte(pte, __pte(0));
+ 			kvm_tlb_flush_vmid_ipa(kvm, addr);
+ 
++			if (dirty_coverred) {
++				idx = srcu_read_lock(&kvm->srcu);
++				mark_page_dirty(kvm, addr >> PAGE_SHIFT);
++				srcu_read_unlock(&kvm->srcu, idx);
++			}
++
+ 			/* No need to invalidate the cache for device mappings */
+ 			if (!kvm_is_device_pfn(pte_pfn(old_pte)))
+ 				kvm_flush_dcache_pte(old_pte);
+@@ -1388,6 +1396,8 @@ static int stage2_set_pte(struct kvm *kvm, struct kvm_mmu_memory_cache *cache,
+ 	pte_t *pte, old_pte;
+ 	bool iomap = flags & KVM_S2PTE_FLAG_IS_IOMAP;
+ 	bool logging_active = flags & KVM_S2_FLAG_LOGGING_ACTIVE;
++	bool dirty_coverred;
++	int idx;
+ 
+ 	VM_BUG_ON(logging_active && !cache);
+ 
+@@ -1453,8 +1463,14 @@ static int stage2_set_pte(struct kvm *kvm, struct kvm_mmu_memory_cache *cache,
+ 		if (pte_val(old_pte) == pte_val(*new_pte))
+ 			return 0;
+ 
+-		kvm_set_pte(pte, __pte(0));
++		dirty_coverred = kvm_set_pte(pte, __pte(0));
+ 		kvm_tlb_flush_vmid_ipa(kvm, addr);
++
++		if (dirty_coverred) {
++			idx = srcu_read_lock(&kvm->srcu);
++			mark_page_dirty(kvm, addr >> PAGE_SHIFT);
++			srcu_read_unlock(&kvm->srcu, idx);
 +		}
-+	}
- }
- 
- /*
+ 	} else {
+ 		get_page(virt_to_page(pte));
+ 	}
 -- 
 2.19.1
 
