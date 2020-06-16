@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE98C1FB42D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:24:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 069501FB431
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:24:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lamf5E2EAiCjRlwb9xrccXAKA+dxhoCCY1hwyveWG6Q=; b=X2/cn2Z/6L4Joz
-	NLelSkkJp9xRQaawch83dOHSUF0Glmy9m66jGVuubvG0Ot5kY44RT4yhChsLWyqObzveK4eTUnmcl
-	P/1kXDJdQQsYtUSf1ns75OSgbHIUVruv+SDOmGnOkpeOAt7A/8NC4x6lG5xK0U1M3H9ZsxOfBDljV
-	xNzQrPsDJC+fmshRY3RkRyaTyXK+UbAONUhvcDRSKfZyMFWt4rwYs1DmyLTGgNavs15dP237EWR9K
-	6ocVS/hpbL+bbX67AOCkyrmLkOQesav0w73b5/0e2chVVdabOYCGljQpcG+M4pOEe/UEUb9vxxznk
-	zRtk5CvC2/GOTzHoFZSw==;
+	List-Owner; bh=kchVc81ZS3slgzbb2blCqJgZjgmXSUVMBMv20J52/hY=; b=FnTdw+bSAjJDbN
+	RUSQSPH7K+Tut62juuPgU98fvwKAc/JiZyMdpCtLWy/uiZomCCiRCMOWO2Ic7V/MUzFfJ0jzvYA9w
+	A4DyWNEKXpnl9rsGHk55LtOlo5dREkxJBp/ALQ8cqSSjxVsVjgxyM9iN0bhxFNYZCFZOCjQXgV5sr
+	hmLDU9PFoGXLfTBH8g+I9esjt8btBRcfQLoaWFvh1eDhs5cfLOFfwwF55AiafqBs4+w9YMmXyva2A
+	tGEDUxZWy/IaXE+zODkgPv12T9zRxbv7324zRo9ZyrT6LGya6Fs6M+xcBgJp36qUPOaukoJPj7tmz
+	atKoBXAbOr+ZqGm4JMUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCVc-00051B-J6; Tue, 16 Jun 2020 14:24:16 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jlCVw-0005Ga-H6; Tue, 16 Jun 2020 14:24:36 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlCC8-000516-E0
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:04:21 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id AABFE974DBF50C8407E0;
- Tue, 16 Jun 2020 22:03:57 +0800 (CST)
+ id 1jlCCF-00053j-9b
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 14:04:26 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 99BA45AC549A2D2B9715;
+ Tue, 16 Jun 2020 22:04:02 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 16 Jun 2020 22:03:51 +0800
+ 14.3.487.0; Tue, 16 Jun 2020 22:03:52 +0800
 From: John Garry <john.garry@huawei.com>
 To: <will@kernel.org>, <robin.murphy@arm.com>
-Subject: [PATCH RFC v2 3/4] iommu/arm-smmu-v3: Always issue a CMD_SYNC per
- batch
-Date: Tue, 16 Jun 2020 21:59:52 +0800
-Message-ID: <1592315993-164290-4-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC v2 4/4] iommu/arm-smmu-v3: Remove cmpxchg() in
+ arm_smmu_cmdq_issue_cmdlist()
+Date: Tue, 16 Jun 2020 21:59:53 +0800
+Message-ID: <1592315993-164290-5-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1592315993-164290-1-git-send-email-john.garry@huawei.com>
 References: <1592315993-164290-1-git-send-email-john.garry@huawei.com>
@@ -42,17 +42,17 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_070409_326044_2F1B485D 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20200616_070415_855883_8F39E8BA 
+X-CRM114-Status: GOOD (  24.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
+ [45.249.212.32 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -76,199 +76,237 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To ensure that a CPU does not send more than a permitted amount of commands
-to the cmdq, ensure that each batch includes a CMD_SYNC. When issuing a
-CMD_SYNC, we always wait for the consumption of its batch of commands - as
-such, we guarantee that any CPU will not issue more than its permitted
-amount.
+It has been shown that the cmpxchg() for finding space in the cmdq can
+be a real bottleneck:
+- for more CPUs contending the cmdq, the cmpxchg() will fail more often
+- since the software-maintained cons pointer is updated on the same 64b
+  memory region, the chance of cmpxchg() failure increases again
+
+The cmpxchg() is removed as part of 2 related changes:
+
+- Update prod and cmdq owner in a single atomic add operation. For this, we
+  count the prod and owner in separate regions in prod memory.
+
+  As with simple binary counting, once the prod+wrap fields overflow, they
+  will zero. They should never overflow into "owner" region, and we zero
+  the non-owner, prod region for each owner. This maintains the prod
+  pointer.
+
+  As for the "owner", we now count this value, instead of setting a flag.
+  Similar to before, once the owner has finished gathering, it will clear
+  a mask. As such, a CPU declares itself as the "owner" when it reads zero
+  for this region. This zeroing will also clear possible overflow in
+  wrap+prod region, above.
+
+  The owner is now responsible for cmdq locking to avoid possible deadlock.
+  The owner will lock the cmdq for all non-owers it has gathered when they
+  have space in the queue and have written their entries.
+
+- Check for space in the cmdq after the prod pointer has been assigned.
+
+  We don't bother checking for space in the cmdq before assigning the prod
+  pointer, as this would be racy.
+
+  So since the prod pointer is updated unconditionally, it would be common
+  for no space to be available in the cmdq when prod is assigned - that
+  is, according the software-maintained prod and cons pointer. So now
+  it must be ensured that the entries are not yet written and not until
+  there is space.
+
+  How the prod pointer is maintained also leads to a strange condition
+  where the prod pointer can wrap past the cons pointer. We can detect this
+  condition, and report no space here. However, a prod pointer progressed
+  twice past the cons pointer cannot be detected. But it can be ensured that
+  this that this scenario does not occur, as we limit the amount of
+  commands any CPU can issue at any given time, such that we cannot
+  progress prod pointer further.
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- drivers/iommu/arm-smmu-v3.c | 87 +++++++++++++++++--------------------
- 1 file changed, 40 insertions(+), 47 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 102 +++++++++++++++++++++---------------
+ 1 file changed, 61 insertions(+), 41 deletions(-)
 
 diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index c3562dc35d45..36648163364c 100644
+index 36648163364c..fd42a98f501f 100644
 --- a/drivers/iommu/arm-smmu-v3.c
 +++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1373,11 +1373,15 @@ static void arm_smmu_cmdq_write_entries(struct arm_smmu_cmdq *cmdq, u64 *cmds,
-  * - Command insertion is totally ordered, so if two CPUs each race to
-  *   insert their own list of commands then all of the commands from one
-  *   CPU will appear before any of the commands from the other CPU.
-+ *
-+ * - A CMD_SYNC is always inserted, ensuring that any CPU does not issue
-+ *   more than the permitted amount commands at once.
-  */
- static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
--				       u64 *cmds, int n, bool sync)
-+				       u64 *cmds, int n)
- {
- 	u64 cmd_sync[CMDQ_ENT_DWORDS];
-+	const int sync = 1;
- 	u32 prod;
- 	unsigned long flags;
- 	bool owner;
-@@ -1419,19 +1423,18 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 	 * Dependency ordering from the cmpxchg() loop above.
- 	 */
- 	arm_smmu_cmdq_write_entries(cmdq, cmds, llq.prod, n);
--	if (sync) {
--		prod = queue_inc_prod_n(&llq, n);
--		arm_smmu_cmdq_build_sync_cmd(cmd_sync, smmu, prod);
--		queue_write(Q_ENT(&cmdq->q, prod), cmd_sync, CMDQ_ENT_DWORDS);
+@@ -772,10 +772,19 @@ static bool queue_has_space(struct arm_smmu_ll_queue *q, u32 n)
+ 	prod = Q_IDX(q, q->prod);
+ 	cons = Q_IDX(q, q->cons);
  
--		/*
--		 * In order to determine completion of our CMD_SYNC, we must
--		 * ensure that the queue can't wrap twice without us noticing.
--		 * We achieve that by taking the cmdq lock as shared before
--		 * marking our slot as valid.
--		 */
--		arm_smmu_cmdq_shared_lock(cmdq);
--	}
-+	prod = queue_inc_prod_n(&llq, n);
-+	arm_smmu_cmdq_build_sync_cmd(cmd_sync, smmu, prod);
-+	queue_write(Q_ENT(&cmdq->q, prod), cmd_sync, CMDQ_ENT_DWORDS);
+-	if (Q_WRP(q, q->prod) == Q_WRP(q, q->cons))
++	if (Q_WRP(q, q->prod) == Q_WRP(q, q->cons)) {
++		/* check if we have wrapped twice, meaning definitely no space */
++		if (cons > prod)
++			return false;
 +
-+	/*
-+	 * In order to determine completion of our CMD_SYNC, we must
-+	 * ensure that the queue can't wrap twice without us noticing.
-+	 * We achieve that by taking the cmdq lock as shared before
-+	 * marking our slot as valid.
-+	 */
-+	arm_smmu_cmdq_shared_lock(cmdq);
- 
- 	/* 3. Mark our slots as valid, ensuring commands are visible first */
- 	dma_wmb();
-@@ -1468,26 +1471,22 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 		atomic_set_release(&cmdq->owner_prod, prod);
- 	}
- 
--	/* 5. If we are inserting a CMD_SYNC, we must wait for it to complete */
--	if (sync) {
--		llq.prod = queue_inc_prod_n(&llq, n);
--		ret = arm_smmu_cmdq_poll_until_sync(smmu, &llq);
--		if (ret) {
--			dev_err_ratelimited(smmu->dev,
--					    "CMD_SYNC timeout at 0x%08x [hwprod 0x%08x, hwcons 0x%08x]\n",
--					    llq.prod,
--					    readl_relaxed(cmdq->q.prod_reg),
--					    readl_relaxed(cmdq->q.cons_reg));
--		}
-+	/* 5. Since we always insert a CMD_SYNC, we must wait for it to complete */
-+	llq.prod = queue_inc_prod_n(&llq, n);
-+	ret = arm_smmu_cmdq_poll_until_sync(smmu, &llq);
-+	if (ret) {
-+		dev_err_ratelimited(smmu->dev, "CMD_SYNC timeout at 0x%08x [hwprod 0x%08x, hwcons 0x%08x]\n",
-+				    llq.prod, readl_relaxed(cmdq->q.prod_reg),
-+				    readl_relaxed(cmdq->q.cons_reg));
+ 		space = (1 << q->max_n_shift) - (prod - cons);
+-	else
++	} else {
++		/* similar check to above */
++		if (prod > cons)
++			return false;
++
+ 		space = cons - prod;
 +	}
  
--		/*
--		 * Try to unlock the cmdq lock. This will fail if we're the last
--		 * reader, in which case we can safely update cmdq->q.llq.cons
--		 */
--		if (!arm_smmu_cmdq_shared_tryunlock(cmdq)) {
--			WRITE_ONCE(cmdq->q.llq.cons, llq.cons);
--			arm_smmu_cmdq_shared_unlock(cmdq);
--		}
-+	/*
-+	 * Try to unlock the cmdq lock. This will fail if we're the last reader,
-+	 * in which case we can safely update cmdq->q.llq.cons
-+	 */
-+	if (!arm_smmu_cmdq_shared_tryunlock(cmdq)) {
-+		WRITE_ONCE(cmdq->q.llq.cons, llq.cons);
-+		arm_smmu_cmdq_shared_unlock(cmdq);
- 	}
- 
- 	local_irq_restore(flags);
-@@ -1505,12 +1504,7 @@ static int arm_smmu_cmdq_issue_cmd(struct arm_smmu_device *smmu,
- 		return -EINVAL;
- 	}
- 
--	return arm_smmu_cmdq_issue_cmdlist(smmu, cmd, 1, false);
--}
--
--static int arm_smmu_cmdq_issue_sync(struct arm_smmu_device *smmu)
--{
--	return arm_smmu_cmdq_issue_cmdlist(smmu, NULL, 0, true);
-+	return arm_smmu_cmdq_issue_cmdlist(smmu, cmd, 1);
+ 	return space >= n;
  }
- 
- static void arm_smmu_cmdq_batch_add(struct arm_smmu_device *smmu,
-@@ -1521,7 +1515,7 @@ static void arm_smmu_cmdq_batch_add(struct arm_smmu_device *smmu,
- 	struct arm_smmu_ll_queue *llq = &q->q.llq;
- 
- 	if (cmds->num == llq->max_cmd_per_batch) {
--		arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, false);
-+		arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num);
- 		cmds->num = 0;
- 	}
- 	arm_smmu_cmdq_build_cmd(&cmds->cmds[cmds->num * CMDQ_ENT_DWORDS], cmd);
-@@ -1531,7 +1525,7 @@ static void arm_smmu_cmdq_batch_add(struct arm_smmu_device *smmu,
- static int arm_smmu_cmdq_batch_submit(struct arm_smmu_device *smmu,
- 				      struct arm_smmu_cmdq_batch *cmds)
+@@ -1073,7 +1082,7 @@ static void arm_smmu_cmdq_skip_err(struct arm_smmu_device *smmu)
+  *   fails if the caller appears to be the last lock holder (yes, this is
+  *   racy). All successful UNLOCK routines have RELEASE semantics.
+  */
+-static void arm_smmu_cmdq_shared_lock(struct arm_smmu_cmdq *cmdq)
++static void arm_smmu_cmdq_shared_lock(struct arm_smmu_cmdq *cmdq, int count)
  {
--	return arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, true);
-+	return arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num);
- }
+ 	int val;
  
- /* Context descriptor manipulation functions */
-@@ -1803,7 +1797,6 @@ static void arm_smmu_sync_ste_for_sid(struct arm_smmu_device *smmu, u32 sid)
- 	};
- 
- 	arm_smmu_cmdq_issue_cmd(smmu, &cmd);
--	arm_smmu_cmdq_issue_sync(smmu);
- }
- 
- static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
-@@ -2197,17 +2190,20 @@ arm_smmu_atc_inv_to_cmd(int ssid, unsigned long iova, size_t size,
- 
- static int arm_smmu_atc_inv_master(struct arm_smmu_master *master)
- {
--	int i;
-+	int i, ret = 0;
- 	struct arm_smmu_cmdq_ent cmd;
- 
- 	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
- 
- 	for (i = 0; i < master->num_sids; i++) {
-+		int rc;
-+
- 		cmd.atc.sid = master->sids[i];
--		arm_smmu_cmdq_issue_cmd(master->smmu, &cmd);
-+		rc = arm_smmu_cmdq_issue_cmd(master->smmu, &cmd);
-+		ret = ret ? :  rc;
- 	}
- 
--	return arm_smmu_cmdq_issue_sync(master->smmu);
-+	return ret;
- }
- 
- static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
-@@ -2280,7 +2276,6 @@ static void arm_smmu_tlb_inv_context(void *cookie)
- 	 * careful, 007.
+@@ -1083,12 +1092,12 @@ static void arm_smmu_cmdq_shared_lock(struct arm_smmu_cmdq *cmdq)
+ 	 * to INT_MIN so these increments won't hurt as the value will remain
+ 	 * negative.
  	 */
- 	arm_smmu_cmdq_issue_cmd(smmu, &cmd);
--	arm_smmu_cmdq_issue_sync(smmu);
- 	arm_smmu_atc_inv_domain(smmu_domain, 0, 0, 0);
+-	if (atomic_fetch_inc_relaxed(&cmdq->lock) >= 0)
++	if (atomic_fetch_add_relaxed(count, &cmdq->lock) >= 0)
+ 		return;
+ 
+ 	do {
+ 		val = atomic_cond_read_relaxed(&cmdq->lock, VAL >= 0);
+-	} while (atomic_cmpxchg_relaxed(&cmdq->lock, val, val + 1) != val);
++	} while (atomic_cmpxchg_relaxed(&cmdq->lock, val, val + count) != val);
  }
  
-@@ -3650,7 +3645,6 @@ static int arm_smmu_device_reset(struct arm_smmu_device *smmu, bool bypass)
- 	/* Invalidate any cached configuration */
- 	cmd.opcode = CMDQ_OP_CFGI_ALL;
- 	arm_smmu_cmdq_issue_cmd(smmu, &cmd);
--	arm_smmu_cmdq_issue_sync(smmu);
+ static void arm_smmu_cmdq_shared_unlock(struct arm_smmu_cmdq *cmdq)
+@@ -1374,8 +1383,10 @@ static void arm_smmu_cmdq_write_entries(struct arm_smmu_cmdq *cmdq, u64 *cmds,
+  *   insert their own list of commands then all of the commands from one
+  *   CPU will appear before any of the commands from the other CPU.
+  *
+- * - A CMD_SYNC is always inserted, ensuring that any CPU does not issue
+- *   more than the permitted amount commands at once.
++ * - A CMD_SYNC is always inserted, which ensures we limit the prod pointer
++ *   for when the cmdq is full, such that we don't wrap more than twice.
++ *   It also makes it easy for the owner to know by how many to increment the
++ *   cmdq lock.
+  */
+ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 				       u64 *cmds, int n)
+@@ -1388,39 +1399,38 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 	struct arm_smmu_cmdq *cmdq = &smmu->cmdq;
+ 	struct arm_smmu_ll_queue llq = {
+ 		.max_n_shift = cmdq->q.llq.max_n_shift,
+-	}, head = llq;
++	}, head = llq, space = llq;
++	u32 owner_val = 1 << cmdq->q.llq.owner_count_shift;
++	u32 prod_mask = GENMASK(cmdq->q.llq.max_n_shift, 0);
++	u32 owner_mask = GENMASK(30, cmdq->q.llq.owner_count_shift);
+ 	int ret = 0;
  
- 	/* Invalidate any stale TLB entries */
- 	if (smmu->features & ARM_SMMU_FEAT_HYP) {
-@@ -3660,7 +3654,6 @@ static int arm_smmu_device_reset(struct arm_smmu_device *smmu, bool bypass)
+ 	/* 1. Allocate some space in the queue */
+ 	local_irq_save(flags);
+-	llq.val = READ_ONCE(cmdq->q.llq.val);
+-	do {
+-		u64 old;
  
- 	cmd.opcode = CMDQ_OP_TLBI_NSNH_ALL;
- 	arm_smmu_cmdq_issue_cmd(smmu, &cmd);
--	arm_smmu_cmdq_issue_sync(smmu);
+-		while (!queue_has_space(&llq, n + sync)) {
+-			local_irq_restore(flags);
+-			if (arm_smmu_cmdq_poll_until_not_full(smmu, &llq))
+-				dev_err_ratelimited(smmu->dev, "CMDQ timeout\n");
+-			local_irq_save(flags);
+-		}
++	prod = atomic_fetch_add(n + sync + owner_val,
++				&cmdq->q.llq.atomic.prod);
  
- 	/* Event queue */
- 	writeq_relaxed(smmu->evtq.q.q_base, smmu->base + ARM_SMMU_EVTQ_BASE);
+-		head.cons = llq.cons;
+-		head.prod = queue_inc_prod_n(&llq, n + sync) |
+-					     CMDQ_PROD_OWNED_FLAG;
++	owner = !(prod & owner_mask);
++	llq.prod = prod_mask & prod;
++	head.prod = queue_inc_prod_n(&llq, n + sync);
+ 
+-		old = cmpxchg_relaxed(&cmdq->q.llq.val, llq.val, head.val);
+-		if (old == llq.val)
+-			break;
++	/*
++	 * Ensure it's safe to write the entries. For this, we need to ensure
++	 * that there is space in the queue from our prod pointer.
++	 */
++	space.cons = READ_ONCE(cmdq->q.llq.cons);
++	space.prod = llq.prod;
++	while (!queue_has_space(&space, n + sync)) {
++		if (arm_smmu_cmdq_poll_until_not_full(smmu, &space))
++			dev_err_ratelimited(smmu->dev, "CMDQ timeout\n");
+ 
+-		llq.val = old;
+-	} while (1);
+-	owner = !(llq.prod & CMDQ_PROD_OWNED_FLAG);
+-	head.prod &= ~CMDQ_PROD_OWNED_FLAG;
+-	llq.prod &= ~CMDQ_PROD_OWNED_FLAG;
++		space.prod = llq.prod;
++	}
+ 
+ 	/*
+ 	 * 2. Write our commands into the queue
+-	 * Dependency ordering from the cmpxchg() loop above.
++	 * Dependency ordering from the space-checking while loop, above.
+ 	 */
+ 	arm_smmu_cmdq_write_entries(cmdq, cmds, llq.prod, n);
+ 
+@@ -1428,27 +1438,24 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 	arm_smmu_cmdq_build_sync_cmd(cmd_sync, smmu, prod);
+ 	queue_write(Q_ENT(&cmdq->q, prod), cmd_sync, CMDQ_ENT_DWORDS);
+ 
+-	/*
+-	 * In order to determine completion of our CMD_SYNC, we must
+-	 * ensure that the queue can't wrap twice without us noticing.
+-	 * We achieve that by taking the cmdq lock as shared before
+-	 * marking our slot as valid.
+-	 */
+-	arm_smmu_cmdq_shared_lock(cmdq);
+-
+ 	/* 3. Mark our slots as valid, ensuring commands are visible first */
+ 	dma_wmb();
+ 	arm_smmu_cmdq_set_valid_map(cmdq, llq.prod, head.prod);
+ 
+ 	/* 4. If we are the owner, take control of the SMMU hardware */
+ 	if (owner) {
++		int owner_count;
++		u32 prod_tmp;
++
+ 		/* a. Wait for previous owner to finish */
+ 		atomic_cond_read_relaxed(&cmdq->owner_prod, VAL == llq.prod);
+ 
+-		/* b. Stop gathering work by clearing the owned flag */
+-		prod = atomic_fetch_andnot_relaxed(CMDQ_PROD_OWNED_FLAG,
+-						   &cmdq->q.llq.atomic.prod);
+-		prod &= ~CMDQ_PROD_OWNED_FLAG;
++		/* b. Stop gathering work by clearing the owned mask */
++		prod_tmp = atomic_fetch_andnot_relaxed(~prod_mask,
++						       &cmdq->q.llq.atomic.prod);
++		prod = prod_tmp & prod_mask;
++		owner_count = prod_tmp & owner_mask;
++		owner_count >>= cmdq->q.llq.owner_count_shift;
+ 
+ 		/*
+ 		 * c. Wait for any gathered work to be written to the queue.
+@@ -1457,6 +1464,19 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 		 */
+ 		arm_smmu_cmdq_poll_valid_map(cmdq, llq.prod, prod);
+ 
++		/*
++		 * In order to determine completion of the CMD_SYNCs, we must
++		 * ensure that the queue can't wrap twice without us noticing.
++		 * We achieve that by taking the cmdq lock as shared before
++		 * progressing the prod pointer.
++		 * The owner does this for all the non-owners it has gathered.
++		 * Otherwise, some non-owner(s) may lock the cmdq, blocking
++		 * cons being updating. This could be when the cmdq has just
++		 * become full. In this case, other sibling non-owners could be
++		 * blocked from progressing, leading to deadlock.
++		 */
++		arm_smmu_cmdq_shared_lock(cmdq, owner_count);
++
+ 		/*
+ 		 * d. Advance the hardware prod pointer
+ 		 * Control dependency ordering from the entries becoming valid.
 -- 
 2.26.2
 
