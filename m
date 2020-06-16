@@ -2,67 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FA641FA65C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 04:17:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9869F1FA671
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 04:26:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:MIME-Version:In-Reply-To:
-	Subject:To:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=zXK8QHUF4+qcF1JI1VidHoyfNaUioQTyWS632TO4GvQ=; b=aPDMIOVB7BLsMA
-	rKHyphnFP8Prwxh92cVTqawLg7VEsX+RX+IR1Wq1rZwqyPexKMeXLbJpVwx43J1EasWVg5dNIANdK
-	EgPcEv9lLovvhJNJMWIL7RHZJGdiBu1+10gxYc6LlGAgetUGhm/26hY/VUm/t7IVU9iIxGVJUTr9J
-	PEUbFJvChHoWIjPSZoeGy64Tel0btbtV5rDwOKyZmlHLlagPBpOH2RDU5x86jr26W2/9cKQUpHw2r
-	UqIggzkFRVLNrC4Aj3Lklm+pKdIEJ+rmEdBmqZqxOUEtBTlVXopoV47CKif79MOsYNC8UFESkqrNA
-	GRubz9Xggl44hVCzj7Tw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=knqjlQHmLFXtdPgtZmVdFcxVEjTASL/2yHzKOQa9+uQ=; b=Dq7
+	bbZWVGEATLY8r5REapgddccwbryRfFGmAfKiI68YEmomARLbWM39+nc0ZdAVkZAQLlV8P0J00zKyL
+	rK9OTRTpS7of6xjZJqEmnlpMwwWZv0woDVJqoRq8N3g/o9XLd7t77DfoTCsNtTjDhAqY1ZwaoLznV
+	PHfaB1wy+DhHC37sWVu/eBAoImxs2KWLMdqGswaJIiuJczj5Hz23reAUVb2Hjpjjrd0uYvxtiYS2S
+	AtepZTCesHdJPn1HXUE6EUhh4YurW1wVEB6c/1mbctvo2Wt0awXVmzJL2Dhha5FViMreJiTWLmZtQ
+	vge9BwMnnJoOVSJiwhO9OOB/hiofZUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl1AL-0007ah-QU; Tue, 16 Jun 2020 02:17:33 +0000
-Received: from m176149.mail.qiye.163.com ([59.111.176.149])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl1AB-0007Zn-Lk
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 02:17:26 +0000
-Received: from vivo.com (wm-9.qy.internal [127.0.0.1])
- by m176149.mail.qiye.163.com (Hmail) with ESMTP id 136E3281F35;
- Tue, 16 Jun 2020 10:16:40 +0800 (CST)
-Message-ID: <AGQAVQB8CJTteCgzBUXE5Kra.3.1592273800065.Hmail.bernard@vivo.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Subject: =?UTF-8?B?UmU6UmU6IFtQQVRDSF0gZHJtL21lZGlhdGVrOiByZW1vdmUgdW5uZWNlc3NhcnkgY29udmVyc2lvbiB0byBib29s?=
-X-Priority: 3
-X-Mailer: HMail Webmail Server V2.0 Copyright (c) 2016-163.com
-X-Originating-IP: 14.29.82.33
-In-Reply-To: <CAAOTY__sSV2f4MqSLJYvSW9TGV=bCKXz+zELYREaEOFVjA6XQQ@mail.gmail.com>
-MIME-Version: 1.0
-Received: from bernard@vivo.com( [14.29.82.33) ] by ajax-webmail ( [127.0.0.1]
- ) ; Tue, 16 Jun 2020 10:16:40 +0800 (GMT+08:00)
-From: Bernard <bernard@vivo.com>
-Date: Tue, 16 Jun 2020 10:16:40 +0800 (GMT+08:00)
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgYFAkeWUFZS1VLWVdZKFlBSE83V1ktWUFJV1kPCR
- oVCBIfWUFZGU4YGh8fGhgYGRpKVkpOQklJTEhDS0tKSktVEwETFhoSFyQUDg9ZV1kWGg8SFR0UWU
- FZT0tIVUpKS0hKTFVKS0tZBg++
-X-HM-Sender-Digest: e1kJHlYWEh9ZQUhDSEhKTExPTUJLN1dZDB4ZWUEPCQ4eV1kSHx4VD1lB
- WUc6PCo6LSo5QzgxLw8eOBwBOS4jPk4wCRpVSFVKTkJJSUxIQ0tLTUhCVTMWGhIXVRkeCRUaCR87
- DRINFFUYFBZFWVdZEgtZQVlKT1VJQlVDSVVISFlXWQgBWUFOSUNCNwY+
-X-HM-Tid: 0a72baea0b989395kuws136e3281f35
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1jl1IW-00053D-0A; Tue, 16 Jun 2020 02:26:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jl1IO-000525-7f
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 02:25:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1ED4F1FB;
+ Mon, 15 Jun 2020 19:25:48 -0700 (PDT)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.80.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 219B33F71F;
+ Mon, 15 Jun 2020 19:25:44 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64/cpufeature: Validate feature bits spacing in
+ arm64_ftr_regs[]
+Date: Tue, 16 Jun 2020 07:55:31 +0530
+Message-Id: <1592274331-19006-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_191724_119438_091FC506 
-X-CRM114-Status: UNSURE (   7.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200615_192552_321926_7A92153E 
+X-CRM114-Status: GOOD (  14.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.149 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [59.111.176.149 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,55 +59,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, opensource.kernel@vivo.com,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Daniel Vetter <daniel@ffwll.ch>, Joe Perches <joe@perches.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgrlj5Hku7bkurrvvJpDaHVuLUt1YW5nIEh1IDxjaHVua3VhbmcuaHVAa2VybmVsLm9yZz4K5Y+R
-6YCB5pel5pyf77yaMjAyMC0wNi0xNSAyMjowMDo1MgrmlLbku7bkurrvvJpKb2UgUGVyY2hlcyA8
-am9lQHBlcmNoZXMuY29tPgrmioTpgIHkurrvvJpCZXJuYXJkIFpoYW8gPGJlcm5hcmRAdml2by5j
-b20+LENodW4tS3VhbmcgSHUgPGNodW5rdWFuZy5odUBrZXJuZWwub3JnPixQaGlsaXBwIFphYmVs
-IDxwLnphYmVsQHBlbmd1dHJvbml4LmRlPixEYXZpZCBBaXJsaWUgPGFpcmxpZWRAbGludXguaWU+
-LERhbmllbCBWZXR0ZXIgPGRhbmllbEBmZndsbC5jaD4sTWF0dGhpYXMgQnJ1Z2dlciA8bWF0dGhp
-YXMuYmdnQGdtYWlsLmNvbT4sRFJJIERldmVsb3BtZW50IDxkcmktZGV2ZWxAbGlzdHMuZnJlZWRl
-c2t0b3Aub3JnPixMaW51eCBBUk0gPGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-Zz4sIm1vZGVyYXRlZCBsaXN0OkFSTS9NZWRpYXRlayBTb0Mgc3VwcG9ydCIgPGxpbnV4LW1lZGlh
-dGVrQGxpc3RzLmluZnJhZGVhZC5vcmc+LGxpbnV4LWtlcm5lbCA8bGludXgta2VybmVsQHZnZXIu
-a2VybmVsLm9yZz4sb3BlbnNvdXJjZS5rZXJuZWxAdml2by5jb20K5Li76aKY77yaUmU6IFtQQVRD
-SF0gZHJtL21lZGlhdGVrOiByZW1vdmUgdW5uZWNlc3NhcnkgY29udmVyc2lvbiB0byBib29sPkpv
-ZSBQZXJjaGVzIDxqb2VAcGVyY2hlcy5jb20+IOaWvCAyMDIw5bm0NuaciDE15pelIOmAseS4gCDk
-uIrljYg0OjQx5a+r6YGT77yaCj4+Cj4+IE9uIEZyaSwgMjAyMC0wNi0xMiBhdCAyMDo0MCArMDgw
-MCwgQmVybmFyZCBaaGFvIHdyb3RlOgo+PiA+IEluIGZ1bmN0aW9uIG10a19kc2lfY2xrX2hzX3N0
-YXRlLCByZW1vdmUgdW5uZWNlc3NhcnkgY29udmVyc2lvbgo+PiA+IHRvIGJvb2wgcmV0dXJuLCB0
-aGlzIGNoYW5nZSBpcyB0byBtYWtlIHRoZSBjb2RlIGEgYml0IHJlYWRhYmxlLgo+PiBbXQo+PiA+
-IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RzaS5jIGIvZHJpdmVy
-cy9ncHUvZHJtL21lZGlhdGVrL210a19kc2kuYwo+PiBbXQo+PiA+IEBAIC0zMTksNyArMzE5LDcg
-QEAgc3RhdGljIGJvb2wgbXRrX2RzaV9jbGtfaHNfc3RhdGUoc3RydWN0IG10a19kc2kgKmRzaSkK
-Pj4gPiAgICAgICB1MzIgdG1wX3JlZzE7Cj4+ID4KPj4gPiAgICAgICB0bXBfcmVnMSA9IHJlYWRs
-KGRzaS0+cmVncyArIERTSV9QSFlfTENDT04pOwo+PiA+IC0gICAgIHJldHVybiAoKHRtcF9yZWcx
-ICYgTENfSFNfVFhfRU4pID09IDEpID8gdHJ1ZSA6IGZhbHNlOwo+PiA+ICsgICAgIHJldHVybiAo
-KHRtcF9yZWcxICYgTENfSFNfVFhfRU4pID09IDEpOwo+Pgo+PiBHaXZlbjoKPj4KPj4gZHJpdmVy
-cy9ncHUvZHJtL21lZGlhdGVrL210a19kc2kuYzojZGVmaW5lIExDX0hTX1RYX0VOICAgICAgICAg
-ICAgICAgICAgQklUKDApCj4+Cj4+IFRoaXMgaXMgbGlrZWx5IGNsZWFyZXIgYXMKPj4KPj4gICAg
-ICAgICByZXR1cm4gdG1wX3JlZzEgJiBMQ19IU19UWF9FTjsKPj4KPj4gb3IgZXZlbgo+Pgo+PiBz
-dGF0aWMgYm9vbCBtdGtfZHNpX2Nsa19oc19zdGF0ZShzdHJ1Y3QgbXRrX2RzaSAqZHNpKQo+PiB7
-Cj4+ICAgICAgICAgcmV0dXJuIHJlYWRsKGRzaS0+cmVncyArIERTSV9QSFlfTENDT04pICYgTENf
-SFNfVFhfRU47Cj4+IH0KPgo+SSBsaWtlIHRoZSBzZWNvbmQgb25lLgoKSGk6CgpUaGlzIG1vZGlm
-aWNhdGlvbiBpcyBjbGVhciBhbmQgZWFzeSB0byB1bmRlcnN0YW5kLgpJIHdpbGwgdXBkYXRlIHRo
-ZSBwYXRjaCBhbmQgcmVzdWJtaXQuClRoYW5rcyEKCkJSLy9CZXJuYXJkCgo+Pgo+Pgo+PiBfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+PiBkcmktZGV2ZWwg
-bWFpbGluZyBsaXN0Cj4+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3RvcC5vcmcKPj4gaHR0cHM6
-Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcvbWFpbG1hbi9saXN0aW5mby9kcmktZGV2ZWwKDQoNCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+arm64_feature_bits for a register in arm64_ftr_regs[] are in a descending
+order as per their shift values. Validate that these features bits are
+defined correctly and do not overlap with each other. This check protects
+against any inadvertent erroneous changes to the register definitions.
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Mark Brown <broonie@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+---
+Applies on 5.8-rc1.
+
+ arch/arm64/kernel/cpufeature.c | 45 +++++++++++++++++++++++++++++++---
+ 1 file changed, 42 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 4ae41670c2e6..2270eda9a7fb 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -697,11 +697,50 @@ static s64 arm64_ftr_safe_value(const struct arm64_ftr_bits *ftrp, s64 new,
+ 
+ static void __init sort_ftr_regs(void)
+ {
+-	int i;
++	const struct arm64_ftr_reg *ftr_reg;
++	const struct arm64_ftr_bits *ftr_bits;
++	unsigned int i, j, width, shift, prev_shift;
++
++	for (i = 0; i < ARRAY_SIZE(arm64_ftr_regs); i++) {
++		/*
++		 * Features here must be sorted in descending order with respect
++		 * to their shift values and should not overlap with each other.
++		 */
++		ftr_reg = arm64_ftr_regs[i].reg;
++		for (ftr_bits = ftr_reg->ftr_bits, j = 0;
++				ftr_bits->width != 0; ftr_bits++, j++) {
++			if (WARN_ON(ftr_bits->shift  + ftr_bits->width > 64))
++				pr_err("%s has invalid feature at shift %d\n",
++					ftr_reg->name, ftr_bits->shift);
++
++			/*
++			 * Skip the first feature. There is nothing to
++			 * compare against for now.
++			 */
++			if (j == 0)
++				continue;
++
++			prev_shift = ftr_reg->ftr_bits[j - 1].shift;
++			width = ftr_reg->ftr_bits[j].width;
++			shift = ftr_reg->ftr_bits[j].shift;
++			if (WARN_ON(prev_shift < shift + width))
++				pr_err("%s has feature overlap at shift %d\n",
++					ftr_reg->name, ftr_bits->shift);
++		}
+ 
+-	/* Check that the array is sorted so that we can do the binary search */
+-	for (i = 1; i < ARRAY_SIZE(arm64_ftr_regs); i++)
++		/*
++		 * Skip the first register. There is nothing to
++		 * compare against for now.
++		 */
++		if (i == 0)
++			continue;
++		/*
++		 * Registers here must be sorted in ascending order with respect
++		 * to sys_id for subsequent binary search in get_arm64_ftr_reg()
++		 * to work correctly.
++		 */
+ 		BUG_ON(arm64_ftr_regs[i].sys_id < arm64_ftr_regs[i - 1].sys_id);
++	}
+ }
+ 
+ /*
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
