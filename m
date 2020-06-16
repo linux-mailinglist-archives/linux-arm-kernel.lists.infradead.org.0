@@ -2,39 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 909461FACD7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:39:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 198B51FACCD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 11:37:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/wg/y2Z6hcb1J7Q0Oz58UVEYt2JmLOwDvQszTpLYvxQ=; b=Ox6wQPGrqhX9QB
-	8IS9ZLl6zYaIhumaqj0KW1D+vZMODU/l7i3X3lPR/od1vNj5IoOCgQX7Cbah3ls3uZbuQfeL/g5H7
-	TdKbJTbvPdMPB615vF9rIFOjMCVeP0gZ5AIfChvv/TRcoqop+2wIRJOUnwYXuLs0Y6v9BG+CXbwZ1
-	CUrUDsYDDaS9Jrp+X1ePhBLLbZ2kxwFzZKfWMBJhMX/mGw8IZQqY8ZaY1/WbWwJ3+Gjs5FdYLU0Cr
-	vm5bVjn7WkXm5qEE5Ue7rIKar2G0st2k60tLfhndTQjVwePcuEjj8yP2xkfojkL9dmpagYuER5pIh
-	e2ASrb8slOt+HKplrQzw==;
+	List-Owner; bh=PcQnqbQON2AXPMH/15iq/VQJT/t7KxRI3KL7jhre7Oc=; b=l+CWwuDdDksP0g
+	hrreUiHVspTjvTta9fFcWEF9mbswdy+NFGBZs0xJ6wE6j2t7auMUMPTw9cE/4Lh8Lb9BEhX44LpFY
+	En75iZg+uRYZK7vIcaoo5zXxDwehLwD06M05RBvE0jH9Hto4C/uL7zTmwvK67aP3vcKo40BTibZTV
+	71dlzMRs6Tc8A9OHg9vuzKT+sPGX+dsHfSHalfdu752krYgdqqI0QtN0t4OV6XeGlK06T0wdZvYhK
+	6xUvPzHWH4ZnBslam11zi7GedJxZW//j+SFIk9oZrb1Y6c8iey1ujKXuNf2TckTdNGOiNFCRQ++wM
+	yNzdiHdYsZR1QcDn7t3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl83e-0003u9-DO; Tue, 16 Jun 2020 09:39:06 +0000
+	id 1jl82I-0002gj-CQ; Tue, 16 Jun 2020 09:37:42 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl811-0001m3-LR
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:36:29 +0000
+ id 1jl810-0001m1-3w
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 09:36:27 +0000
 Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id B02EF4A35D21C942F8BC;
+ by Forcepoint Email with ESMTP id B8F055F8BBC2B2F531C4;
  Tue, 16 Jun 2020 17:36:13 +0800 (CST)
 Received: from DESKTOP-5IS4806.china.huawei.com (10.173.221.230) by
  DGGEMS414-HUB.china.huawei.com (10.3.19.214) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 16 Jun 2020 17:36:04 +0800
+ 14.3.487.0; Tue, 16 Jun 2020 17:36:05 +0800
 From: Keqian Zhu <zhukeqian1@huawei.com>
 To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>
-Subject: [PATCH 01/12] KVM: arm64: Add some basic functions to support hw DBM
-Date: Tue, 16 Jun 2020 17:35:42 +0800
-Message-ID: <20200616093553.27512-2-zhukeqian1@huawei.com>
+Subject: [PATCH 02/12] KVM: arm64: Modify stage2 young mechanism to support hw
+ DBM
+Date: Tue, 16 Jun 2020 17:35:43 +0800
+Message-ID: <20200616093553.27512-3-zhukeqian1@huawei.com>
 X-Mailer: git-send-email 2.8.4.windows.1
 In-Reply-To: <20200616093553.27512-1-zhukeqian1@huawei.com>
 References: <20200616093553.27512-1-zhukeqian1@huawei.com>
@@ -42,9 +43,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.221.230]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_023623_882890_A6A9214D 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_023622_364851_0B9084B0 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,61 +83,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Prepare some basic functions to support hardware DBM for PTEs.
+Marking PTs young (set AF bit) should be atomic to avoid cover
+dirty status set by hardware.
 
 Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
-Signed-off-by: Peng Liang <liangpeng10@huawei.com>
 ---
- arch/arm64/include/asm/kvm_mmu.h | 36 ++++++++++++++++++++++++++++++++
- 1 file changed, 36 insertions(+)
+ arch/arm64/include/asm/kvm_mmu.h | 32 ++++++++++++++++++++++----------
+ arch/arm64/kvm/mmu.c             | 15 ++++++++-------
+ 2 files changed, 30 insertions(+), 17 deletions(-)
 
 diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
-index b12bfc1f051a..e0ee6e23d626 100644
+index e0ee6e23d626..51af71505fbc 100644
 --- a/arch/arm64/include/asm/kvm_mmu.h
 +++ b/arch/arm64/include/asm/kvm_mmu.h
-@@ -265,6 +265,42 @@ static inline bool kvm_s2pud_young(pud_t pud)
- 	return pud_young(pud);
+@@ -215,6 +215,18 @@ static inline void kvm_set_s2pte_readonly(pte_t *ptep)
+ 	} while (pteval != old_pteval);
  }
  
-+#ifdef CONFIG_ARM64_HW_AFDBM
-+static inline bool kvm_hw_dbm_enabled(void)
-+{
-+	return !!(read_sysreg(vtcr_el2) & VTCR_EL2_HD);
-+}
-+
-+static inline void kvm_set_s2pte_dbm(pte_t *ptep)
++static inline void kvm_set_s2pte_young(pte_t *ptep)
 +{
 +	pteval_t old_pteval, pteval;
 +
 +	pteval = READ_ONCE(pte_val(*ptep));
 +	do {
 +		old_pteval = pteval;
-+		pteval |= PTE_DBM;
++		pteval |= PTE_AF;
 +		pteval = cmpxchg_relaxed(&pte_val(*ptep), old_pteval, pteval);
 +	} while (pteval != old_pteval);
 +}
 +
-+static inline void kvm_clear_s2pte_dbm(pte_t *ptep)
-+{
-+	pteval_t old_pteval, pteval;
-+
-+	pteval = READ_ONCE(pte_val(*ptep));
-+	do {
-+		old_pteval = pteval;
-+		pteval &= ~PTE_DBM;
-+		pteval = cmpxchg_relaxed(&pte_val(*ptep), old_pteval, pteval);
-+	} while (pteval != old_pteval);
-+}
-+
-+static inline bool kvm_s2pte_dbm(pte_t *ptep)
-+{
-+	return !!(READ_ONCE(pte_val(*ptep)) & PTE_DBM);
-+}
-+#endif /* CONFIG_ARM64_HW_AFDBM */
-+
- #define hyp_pte_table_empty(ptep) kvm_page_empty(ptep)
+ static inline bool kvm_s2pte_readonly(pte_t *ptep)
+ {
+ 	return (READ_ONCE(pte_val(*ptep)) & PTE_S2_RDWR) == PTE_S2_RDONLY;
+@@ -230,6 +242,11 @@ static inline void kvm_set_s2pmd_readonly(pmd_t *pmdp)
+ 	kvm_set_s2pte_readonly((pte_t *)pmdp);
+ }
  
- #ifdef __PAGETABLE_PMD_FOLDED
++static inline void kvm_set_s2pmd_young(pmd_t *pmdp)
++{
++	kvm_set_s2pte_young((pte_t *)pmdp);
++}
++
+ static inline bool kvm_s2pmd_readonly(pmd_t *pmdp)
+ {
+ 	return kvm_s2pte_readonly((pte_t *)pmdp);
+@@ -245,6 +262,11 @@ static inline void kvm_set_s2pud_readonly(pud_t *pudp)
+ 	kvm_set_s2pte_readonly((pte_t *)pudp);
+ }
+ 
++static inline void kvm_set_s2pud_young(pud_t *pudp)
++{
++	kvm_set_s2pte_young((pte_t *)pudp);
++}
++
+ static inline bool kvm_s2pud_readonly(pud_t *pudp)
+ {
+ 	return kvm_s2pte_readonly((pte_t *)pudp);
+@@ -255,16 +277,6 @@ static inline bool kvm_s2pud_exec(pud_t *pudp)
+ 	return !(READ_ONCE(pud_val(*pudp)) & PUD_S2_XN);
+ }
+ 
+-static inline pud_t kvm_s2pud_mkyoung(pud_t pud)
+-{
+-	return pud_mkyoung(pud);
+-}
+-
+-static inline bool kvm_s2pud_young(pud_t pud)
+-{
+-	return pud_young(pud);
+-}
+-
+ #ifdef CONFIG_ARM64_HW_AFDBM
+ static inline bool kvm_hw_dbm_enabled(void)
+ {
+diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
+index 8c0035cab6b6..5ad87bce23c0 100644
+--- a/arch/arm64/kvm/mmu.c
++++ b/arch/arm64/kvm/mmu.c
+@@ -2008,8 +2008,9 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+  * Resolve the access fault by making the page young again.
+  * Note that because the faulting entry is guaranteed not to be
+  * cached in the TLB, we don't need to invalidate anything.
+- * Only the HW Access Flag updates are supported for Stage 2 (no DBM),
+- * so there is no need for atomic (pte|pmd)_mkyoung operations.
++ *
++ * Note: Both DBM and HW AF updates are supported for Stage2, so
++ * young operations should be atomic.
+  */
+ static void handle_access_fault(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa)
+ {
+@@ -2027,15 +2028,15 @@ static void handle_access_fault(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa)
+ 		goto out;
+ 
+ 	if (pud) {		/* HugeTLB */
+-		*pud = kvm_s2pud_mkyoung(*pud);
++		kvm_set_s2pud_young(pud);
+ 		pfn = kvm_pud_pfn(*pud);
+ 		pfn_valid = true;
+ 	} else	if (pmd) {	/* THP, HugeTLB */
+-		*pmd = pmd_mkyoung(*pmd);
++		kvm_set_s2pmd_young(pmd);
+ 		pfn = pmd_pfn(*pmd);
+ 		pfn_valid = true;
+-	} else {
+-		*pte = pte_mkyoung(*pte);	/* Just a page... */
++	} else {		/* Just a page... */
++		kvm_set_s2pte_young(pte);
+ 		pfn = pte_pfn(*pte);
+ 		pfn_valid = true;
+ 	}
+@@ -2280,7 +2281,7 @@ static int kvm_test_age_hva_handler(struct kvm *kvm, gpa_t gpa, u64 size, void *
+ 		return 0;
+ 
+ 	if (pud)
+-		return kvm_s2pud_young(*pud);
++		return pud_young(*pud);
+ 	else if (pmd)
+ 		return pmd_young(*pmd);
+ 	else
 -- 
 2.19.1
 
