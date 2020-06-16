@@ -2,116 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0D771FB0B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:30:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB9791FB0B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 14:31:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kdgGP+f9Xm9Iae3ovaTz61Yu7j55gdb2KOR8y84SpUY=; b=SEePUuCpM7Tk8O
-	cont/y7DJXKZjT1Qzl0mdh5CWiJ9fKBAZrmn+yuOzvVkRfYHRzGJmSnw5x/eWhRnQDIvenY3jv97/
-	zmD90S1BbM0nugIoN9XtcblwYrvyrsuyaC8sdYY0hkVhcZ9vW0QV+u6KLr6M3oAamXkiRmJ4bCx43
-	V8njo9aiDA3cQKnD7FPt7QaCcL/ZCMT8qFR2lpSbkVO+XVdMQq94FdzVIH7/JlIJk9J+LpeysUKps
-	wx8DKc9QfVhcOiH/5NSN5HdPZzgOze/KT27WIe0ycwBQeRXt/cemiKq/QsrACzxByHbPfPq5Cbxqr
-	6715wGVcvyGfNeyJMldw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=i1Elg2IPMuKqM8hB33o2hqshXhhP1OWwB5jSM9JkH0g=; b=iyyC5XAzRnKRu2dyLf/PVoxFn
+	87+EEIkUkGPI7EYtVE7CaJxrBx001z8OzByFLWhhWoQxzZFWqPBsA/36JAZrrZvCdeFyLUmKVaPcY
+	1jCcyphzi/OEYCNRCZANb526sRlcxUKBaMAwUeL84l4ME/0Omourz84xwqltbCJ4wb39P3xKdQQDJ
+	/QsFba18KTSxhHvhtZCH2Ek6z9/bcJwD90EENj4Cl71lGro5vB5iKWJ87dnXyxsx4lcHUVGkdQ0RD
+	Nzw/clgdbOyup+FehdLueW4LEpPLisvLJApCHiBc+/zDqTSI6dgNBM6d7t111Kvc8Jt3QWC7w4qa+
+	gAiiZg0EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlAjU-00038t-TH; Tue, 16 Jun 2020 12:30:28 +0000
-Received: from mail-vi1eur05on2051.outbound.protection.outlook.com
- ([40.107.21.51] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jlAkG-0004YU-2l; Tue, 16 Jun 2020 12:31:16 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlAj9-0002Hk-6k
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 12:30:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=W0m8UEHBgp3aj0ky4izuhQbbZYLArDkrEK1hfp7g7nwtE17xwomgjBBsdGdQphNSvOXCxWw13+5Bf2V9k6FTBj9eua8gXvnOQ0V0yOleFDmTNnM+8YILEck+hP0fXoTi+3nssqScTM56rA9uf6Tl54+6D+Dj4BsSygj6o5lLKwPPGXE8895DqxQfmlji3rBk3rHwLIqRB/sWoycUKSqrzayo0XIv9Lkuf4nfm1cJcqBRKlenFCqMIbVaxEYEsgN6SrltCNvLKi6v6+bA+YvcGWXX9PQCFPGNpSWaiKG2TjqpK3I15rtNb3eJLPE91/zExSD2RGk4fAZbLtpMaRad5A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0sVxqG14Wz23Ve98PNOWs+hUDuulFT7sSBxtQCOvTBI=;
- b=b1EI6XqgNGREBN1IU2guzfL3/2prttrxq1shTNW4FKjTVuEAievoiw41PJy4HnGYp5/s7kKyb+mY/sRQCNqIck1BM8Ydyvq5Rftsu15+fSyCibW0bHUysg+PbDPJfDg/hengnHu9kBblHaJ6pYnEEd06TqQZiOn8/dtxhZ9ZLUSet00aLd+7DmF+VGR+lhHOmSr99qgoLEUGr1emeLpB3Naq7xO55uKbrgkKJiB6ngl2pnyfbPK8kzA6qoGdWADt1mZ278LR24DJBOjB6ZJbRnVnT2c9pnrYFlgBeQiCNETqFeUrfD3LXamxV0ntbxnHr4QGQ2p2iFuH1+SvpcvnQw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0sVxqG14Wz23Ve98PNOWs+hUDuulFT7sSBxtQCOvTBI=;
- b=Ok+zdHUCj3sf5n0Ki5oPL7F4QXgOxkFp3V+yI82fUlSVix8LBUC9MdslQNBwvi92i6BnZkwK+IBLmp1sz6Y2ykNPcAWrs9r949FI03g+XK5SG82BBQskS3E5nlHDWtzA4tAqsOKyWixhgOYZheq6gWMQh7rqlPHrcs4P0ychRG4=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6509.eurprd04.prod.outlook.com (2603:10a6:803:125::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18; Tue, 16 Jun
- 2020 12:29:57 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3088.028; Tue, 16 Jun 2020
- 12:29:57 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: RE: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Thread-Topic: [PATCH v1 RFC 1/2] spi: introduce fallback to pio
-Thread-Index: AQHWP6z7CX2etPvPnk+oddH8JEW5FKjTbHIAgADDYUCAAJUwgIAACjoQgAA5dICAAOmA8IADsXmAgAANH1CAAASJgIAACZlAgAAGaACAAAKk4IAAAtQAgAC2bzCAAIkpAIAAAgdAgAAFkYCAAB+kcA==
-Date: Tue, 16 Jun 2020 12:29:57 +0000
-Message-ID: <VE1PR04MB66381A584159BEF5450B4CCD899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <20200615123553.GP4447@sirena.org.uk>
- <VE1PR04MB6638C65257F41072C3D61583899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615133905.GV4447@sirena.org.uk>
- <VE1PR04MB6638793C00742D5BA72F8AC2899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615143622.GX4447@sirena.org.uk>
- <VE1PR04MB6638D0C9FE0289FFE13ABA49899C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200615145556.GY4447@sirena.org.uk>
- <VE1PR04MB66380FD8FB7FCE79AF4B6CD4899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200616095948.GJ4447@sirena.org.uk>
- <VE1PR04MB66387499F9AF80A68F720529899D0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200616102659.GK4447@sirena.org.uk>
-In-Reply-To: <20200616102659.GK4447@sirena.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [92.121.68.129]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8ae0c9ac-8def-4235-d4ed-08d811f0fb28
-x-ms-traffictypediagnostic: VE1PR04MB6509:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB65092A75F2428B61091A09B3899D0@VE1PR04MB6509.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 04362AC73B
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 8E1xpVG9oy3KT4LZIStHjaKOL6rGKB55gaNj/rvCKYgOp+nHpLggikJE7hj9Ak2hH4AR0cSA65UchE0eGDK0Mo1q0m9Ylne0oB3/9NySnXwXfJnjY8vI3eoK11a05Cq3ji8BmdJe/yR5GNtM9KW9CIg5wP7dZgoC400mOb6/jA97QX7r+1yh6Lz6tB8iJCvkdtyejWEqT4mujrqyPXy0xlK7Uym3z0Mohvod1CuU7F3jrR5DEROCmoKphu2BxjTV+onOExnSdUcOhGRrMtO3b7GIzeE4VOy2OPvLIXvu/ZAndMICTZe5abnOhAxNysPt
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(366004)(7416002)(6506007)(7696005)(9686003)(71200400001)(33656002)(66556008)(64756008)(76116006)(54906003)(55016002)(86362001)(4744005)(6916009)(66476007)(66946007)(66446008)(186003)(52536014)(5660300002)(8676002)(83380400001)(4326008)(498600001)(2906002)(26005)(8936002)(53546011);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: FoGBSC5YrHU2pEFKAno/aB7yV3Qz3NWuvrQ6zJTlAxS28majXcctRPgQWy1xDs5S7s1JJ2FhcS3DFFk3YuJAYnbiQ+gEReltXKFNy64xzLFLA9txV1KUFGiIn/Mx0lZa8O6ii60PYg5EeKJs6yoQpkhnDe5wZ2ACsmdLUqQSUEHVL9Nnab2yx6+ZXeRcmLeYjxT5r/RegH60/5vek/NEWc/ivL6KgK3eSEBWv8M5Qtbjg35cCScjvG/LzfQatj75vK0xKMd7h6zjfVsNU4aDZJdAIR65viV6GjWkkBuyq9e3ojtMqzlWcUwjBI34IqgiLgQvzarstzZ5Sy2CFgzfgDtlJFhX5f16efzc9WZHQUIuthz12YBPQLzR1AxSdgVZeJf/sGJpl+k4HHU+gSPziedB9pnwz1MRaSycs3luWNtCGqFZGaFRvy+ragZ0WbkduechhwGWGuY9xmPHHLl6Oo6OWd+23oiUoL4qR+DfyvtZRgTT8MMW2zWImzkgidaA
+ id 1jlAk7-0004Xz-77; Tue, 16 Jun 2020 12:31:09 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id D5DD9580230;
+ Tue, 16 Jun 2020 08:31:01 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 16 Jun 2020 08:31:01 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=Czu8B8/QH/WNCgJQNgYJNhpSKue
+ t+bFlALwMiXQlt7Q=; b=M7dBEPbeWLwwTqlbLUs3KVxosMxMWtxu157ekKSzfRe
+ IRe2Cwba8ac60C0H4drOIvkhepU3/jYX5wACKHQ6Pzhr2Fp5PY1t3lN288pUc2Jn
+ oE3m4e+kDBi+IdxV/jPLgZoT5lPxZC98W/R4VR2cTE+sDwMgd4pBrDinWuaAs9yo
+ 9kX6uSS7/9VE3DvuQ+Cir2m5AfIE9+RxBkRC0ZSR9oOvFsisdXVHeFzuPGXLBk8d
+ rw4uH6wyKm6Sv+Km/7lPWM5uJhXe0bdepy4avpEpriiTaZ/mBkM7PEN1bxRtOZx1
+ DiKqwSITgkDlpnI1a608T7j4pX2Rz9dh4PBvwzM+Dsg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=Czu8B8
+ /QH/WNCgJQNgYJNhpSKuet+bFlALwMiXQlt7Q=; b=RkDOGdQSXIbFE7mVnntUg6
+ gtzvEYQ929qV8uboYKIDxIxIrh7fs1z3L1xm/2zOJuUD6e0PcuF+wc1IcdlypP77
+ ICwnJdA2vYjAQoJoCoI0bUoC6LkYDEgcnOLbhGZS3Q3D9dH0202C7JvHttRBPRWS
+ BKkADc3N9SS4nqjZPUQF9mZPr9/6aRlK0wTtIkatYBijvrFOMvYHCnlHb/6Sd6EN
+ QTfVP68NhEnKUVCYpNRZBrECP5nGSD98qpzdF+RdSYuxa8jHsyHAXwkPYOfSMGUQ
+ EanP8l0pKGV4V1a/RPuw4UGQfY3h7uiOypO0V56lmn0K9J7I7atsa3q5bsawJocA
+ ==
+X-ME-Sender: <xms:hLvoXljkBehjch5RkoIgRfjal7ws-UNUHZ-W4XwnYzikDhz3jvL_RA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudejtddgheeiucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddunecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepjeekkefftdffhffhvedvudetgfdtleejveffvedvvdetgeeltdfggefhhedv
+ ieffnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucfkphepledtrdekledrieekrd
+ ejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehm
+ rgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:hLvoXqBlvy7B1v3bIFYxEVVnyB6EY5lVLyr9AFhexzp0GnL_IcsDhA>
+ <xmx:hLvoXlFdrEM7v5h1cYprIX0lKT7TUuxsP2SJCjat9zNA5S6dD69O3w>
+ <xmx:hLvoXqTtyTUyNunov6n2cEhqOTm0aNaIOLjBN-RiYookQILJr4LtHg>
+ <xmx:hbvoXtyXTVzevx9bJGEqiHilEKUF4etRgDp9TQE3mkdOX2Kwpsvpwg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 200833280064;
+ Tue, 16 Jun 2020 08:31:00 -0400 (EDT)
+Date: Tue, 16 Jun 2020 14:30:58 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Stefan Wahren <stefan.wahren@i2se.com>
+Subject: Re: [PATCH v3 070/105] drm/vc4: hdmi: rework connectors and encoders
+Message-ID: <20200616123058.skjudypbsefiom5c@gilmour.lan>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <020de18840a1075b2671736c6cc2e451030fad74.1590594512.git-series.maxime@cerno.tech>
+ <CADaigPXJ0BnMUp=XN6G92Tx=H9j55pmsBAujO2mcpiiTs-RHnQ@mail.gmail.com>
+ <20200602155421.niyvpwqc42xh5c7v@gilmour>
+ <6cd190e0-c81c-8e47-3ca8-22360de9b46d@i2se.com>
+ <20200605143536.i6cc2v57eupmlvtn@gilmour.lan>
+ <197a3164-828b-510e-47a7-f18ce1300d9d@i2se.com>
+ <20200611133444.narsdlxmko2wgyj7@gilmour.lan>
+ <8ad354c1-203c-e4bc-ef24-36a2a7b4a9b5@i2se.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8ae0c9ac-8def-4235-d4ed-08d811f0fb28
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jun 2020 12:29:57.2158 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: HpA2Ue4y7Pkz2HbLjEd4LRDBGRg69ZoBNfDcWDwrHOUMUDEp1Pg5/zi3RLrfz18hb57eNNNNXBBd7TDvWMX6XA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6509
+In-Reply-To: <8ad354c1-203c-e4bc-ef24-36a2a7b4a9b5@i2se.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_053007_311734_060EE92A 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_053107_407641_68FB6440 
+X-CRM114-Status: GOOD (  27.09  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.51 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.51 listed in wl.mailspike.net]
+ low trust [66.111.4.230 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -132,31 +111,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "matthias.schiffer@ew.tq-group.com" <matthias.schiffer@ew.tq-group.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3286308064633894945=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/06/16 18:27 Mark Brown <broonie@kernel.org> wrote:
-> On Tue, Jun 16, 2020 at 10:13:08AM +0000, Robin Gong wrote:
-> > So rename to SPI_TRANS_DMA_FAIL? I think at least DMA is MUST for
-> > fallback case...
-> 
-> This is not purely for DMA, it's just about the failure having occurred before the
-> transfer started.  How about _FAIL_NO_START?
-Okay, I'll use SPI_TRANS_FAIL_NO_START in v2. Thanks Mark for your kind support :)
+
+--===============3286308064633894945==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="mnj3pykzsuovov52"
+Content-Disposition: inline
+
+
+--mnj3pykzsuovov52
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sun, Jun 14, 2020 at 06:16:56PM +0200, Stefan Wahren wrote:
+> Am 11.06.20 um 15:34 schrieb Maxime Ripard:
+> > Hi Stefan,
+> >
+> > On Sat, Jun 06, 2020 at 10:06:12AM +0200, Stefan Wahren wrote:
+> >> Hi Maxime,
+> >>
+> >> Am 05.06.20 um 16:35 schrieb Maxime Ripard:
+> >>> Hi Stefan,
+> >>>
+> >>> On Wed, Jun 03, 2020 at 07:32:30PM +0200, Stefan Wahren wrote:
+> >>>> Am 02.06.20 um 17:54 schrieb Maxime Ripard:
+> >>>> FWIW this is the first patch which breaks X on my Raspberry Pi 3 B.
+> >>>>
+> >>>> Here are the bisect results:
+> >>>>
+> >>>> 587d6e4a529a8d807a5c0bae583dd432d77064d6 bad (black screen, no heart=
+beat)
+> >>>>
+> >>>> b0523c7b1c9d0edcd6c0fe6d2cb558a9ad5c60a8 good
+> >>>>
+> >>>> 2c6a651cac6359cb0244a40d3b7a14e72918f169 good
+> >>>>
+> >>>> 1705c3cb40906863ec0d24ee5ea5092f5ee2e994 bad (black screen, but hear=
+tbeat)
+> >>>>
+> >>>> 601527fea6bb226abd088a864e74b25368218e87 good
+> >>>>
+> >>>> 2165607ede34d229d0cbce916c70c7fb6c0337be good
+> >>>>
+> >>>> f094f388fc2df848227e2ae648df2c97872df42b good
+> >>>>
+> >>>> 020de18840a1075b2671736c6cc2e451030fad74 bad (black screen, but hear=
+tbeat)
+> >>>>
+> >>>> 4c4da3823e4d1a8189e96a59a79451fff372f70b good
+> >>>>
+> >>>> 020de18840a1075b2671736c6cc2e451030fad74 is the first bad commit
+> >>>> commit 020de18840a1075b2671736c6cc2e451030fad74
+> >>>> Author: Maxime Ripard <maxime@cerno.tech>
+> >>>> Date:=A0=A0 Mon Jan 6 17:17:29 2020 +0100
+> >>>>
+> >>>> =A0=A0=A0 drm/vc4: hdmi: rework connectors and encoders
+> >>>> =A0=A0=A0
+> >>>> =A0=A0=A0 the vc4_hdmi driver has some custom structures to hold the=
+ data it
+> >>>> needs to
+> >>>> =A0=A0=A0 associate with the drm_encoder and drm_connector structure=
+s.
+> >>>> =A0=A0=A0
+> >>>> =A0=A0=A0 However, it allocates them separately from the vc4_hdmi st=
+ructure which
+> >>>> =A0=A0=A0 makes it more complicated than it needs to be.
+> >>>> =A0=A0=A0
+> >>>> =A0=A0=A0 Move those structures to be contained by vc4_hdmi and upda=
+te the code
+> >>>> =A0=A0=A0 accordingly.
+> >>>> =A0=A0=A0
+> >>>> =A0=A0=A0 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> >>> So it looks like there was two issues on the Pi3. The first one was
+> >>> causing the timeouts (and therefore likely the black screen but
+> >>> heartbeat case you had) and I've fixed it.
+> >>>
+> >>> However, I can indeed reproduce the case with the black screen / no
+> >>> heartbeat you mentionned. My bisection however returns that it's the
+> >>> patch "drm/vc4: hdmi: Implement finer-grained hooks" that is at fault.
+> >>> I've pushed my updated branch, if you have some spare time, it would =
+be
+> >>> great if you could confirm it on your Pi.
+> >> yesterday i checked out your latest rpi4-kms branch, but i was still
+> >> facing similiar issues with my Raspberry Pi 3 and multi_v7_defconfig
+> >> (heartbeat stops, splashscreen freeze, heartbeat is abnormal fast). So=
+ i
+> >> tried to bisect but the offending commit didn't cause an issue the
+> >> second time.
+> >>
+> >> By accident i noticed that a simple reboot seems to hang for at least 8
+> >> minutes (using b0523c7b1c9d0edcd the base of your branch). This usually
+> >> take a few seconds. So i consider this base on linux-next as too
+> >> unstable for reliable testing.
+> >>
+> >> Is it possible to rebase this on something more stable like linux-5.7 =
+or
+> >> at least drm-misc-next? This should avoid chasing unrelated issues.
+> > I've rebased it on 5.7 here:
+> > https://git.kernel.org/pub/scm/linux/kernel/git/mripard/linux.git/log/?=
+h=3Drpi4-kms-5.7
+> >
+> > And it looks to be indeed an issue coming from next. That branch can
+> > start the desktop just fine on an RPi3 here. It would be great if you
+> > could confirm on your end.
+> >
+> > Thanks!
+> > Maxime
+>=20
+> thank you very much. The good news are that the "black screen, but
+> heartbeat" issue and reboot hang are gone. Unfortunately the "no
+> heartbeat" issue is still there.
+>=20
+> Here are more details about the issue. It doesn't occur everytime. I
+> would guess the probability is about 40 percent, which made bisecting
+> much harder.
+
+Are you sure about that 40% reliability? I found out that the culprit
+was that the commit we mentionned was actually running atomic_disable
+before our own custom callbacks, meaning that we would run the custom
+callbacks with the clocks and the power domain shut down, resulting in a
+stall.
+
+I was seeing it all the time when X was shutting down the display, but
+maybe you were changing the resolution between the framebuffer console
+or something, and since the power domain is shut down asynchronously, it
+wasn't running fast enough for the next enable to come up and re-enable
+it again?
+
+> It is reproducible on my 2 Raspberry Pi 3 B Rev 1.2. It is
+> also seems independent from the display because the problem occured on
+> my Computer display and my TV.
+
+But only on HDMI, right?
+
+I've pushed a new branch with that fix.
+
+Maxime
+
+--mnj3pykzsuovov52
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXui7ggAKCRDj7w1vZxhR
+xTIYAP4gnQF4W2S9Kk51AvcjH8hnbrHB6RyGKzF2l9eqWRerZgEA0wobgfw2R4Sr
+w16Vk3zTXggYQVJtfTF3hYpNXafEhQQ=
+=1RvC
+-----END PGP SIGNATURE-----
+
+--mnj3pykzsuovov52--
+
+
+--===============3286308064633894945==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3286308064633894945==--
+
