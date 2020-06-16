@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63BB91FB36C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:05:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 324491FB371
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:06:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sMbS0+P78Sfrplq3OXlOairpYdNaTpBjuANmf0GiXw0=; b=r1s9wBSk8m2rI6
-	1jhQsYcBPdFzySbA/faMmv+xDipVcjFJsH+CT1YmqlS4BzJrgnXQtV/sye6bEczznkX8Y0ZYG8lF/
-	GhIdC1mM+XHIglMG3q/VxGNWb6GpZF8trBFwRAv20TgYHicOYjEhGAfu4VunP+rlj8ip+y40/Dj3v
-	o6a/B84O5j3fuA4s8FymmVq4dNDpMzd5Oer38GDTl433Yo9baezBSDDaXHBNAEequhlCik1pTPmfo
-	ap7yW/Zqpq8GRoI248ebhykdSlo3zMTw9gDwVspT4BuizBdwViUcN8pciQns1bnAppa6oWG++urI9
-	UzZj8cehTaTmpb0yFMhA==;
+	List-Owner; bh=zqnFvSH1qRKVFCb7TCq//rxVZSQ3RXszjv4VbwDT/DA=; b=ifSZs0bnku/yYI
+	uc6efceCy/GEMGmLm+myLZyqr/nCx8XLiLRxTZGiapjf9Sze92FlTvhoenx5HvIbVmHh+S2UR+Z5t
+	wvLEjggEZQWYcdi08tCMdjV9/SdPzOOESu1qbptsZL2sX3YRumV200Et5q2rOzrkyGOmiMI1XzclV
+	r6Kk0FkNDCRkXI2a9cvSC/E/WZnTTStQhSj9bXS6FKUNTjDnYCui5b8UhUannH8ZzJ15j3Zh3ncip
+	QYgcFfW9a0HaeqZibRbwe1h2ySrk+74sZxudcaJG5lsCEhBptcZWZxNLYgnQUIfBrZaz/4kR8QCpT
+	5pEyWUAS6bFDmktBPi2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCDI-0005cO-4K; Tue, 16 Jun 2020 14:05:20 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jlCDu-00008O-QV; Tue, 16 Jun 2020 14:05:58 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC2N-0001wO-UL
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:07 +0000
-Received: by mail-wm1-x341.google.com with SMTP id t194so3162806wmt.4
+ id 1jlC2Q-0001xZ-LV
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:54:09 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id r15so3158590wmh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:54:03 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tMYaQdji6zR5lZgb0sKLhTaK1Jb/52l/cl/I/Gv3TlY=;
- b=dpTouy5lnSQNwoKZkllwZ8r+NnHAugELmJre2azRgCaQxs5E5VP/CHt559N+CRRAJc
- r38la9JiGOAAgaAbB4vgHn+YjfN9gnaC3acHsy1NP8dTezZirBLxLUQpPdHuTPRFqOG6
- S/AnbWdTVqfJcTl0VQqCI9NANyHEI28uZL7ZyzAlo2eYP5bqNOgCgU+FKfI+Xnii9Bbg
- AVDO1YqUWkb5H3vQo780+pJd7AufKtya7nEGgp02RK73QzU5T2LRbs9KalwYtmjpeuVz
- 12+6gsGppT6hPxq5VrxH0ZUY0Ari+gnw2Uir6EdF8yQ2es93YWReAj1dubVuk0ZAPKZw
- kNRQ==
+ bh=IvqY4q4DC8wmUVG9y7FJtCDdIsu08hGHLIyN1vg73Fs=;
+ b=jttMGiL+Q4csJzhn2Ol/uy4X7sitxf1eDThGniOc/UH4rb9cWVc06eGU39cshmzywX
+ e7a35YM/GlXBsx9duIUGYpkKT5p9VSzPJVOLm9AgftiqpZJSYtvTqfnrdg+VXsBmRpuj
+ TydYsw+KL5pQYq2+BEr51C2ZBKk3qgMEVgcsBKcCQAQGowzJ/iTtYdfqWo2UKm0az3XG
+ OVzwYHQeWQrMg1tlsn7IGxlGLlQAbHvycxqeHxTVubEt8b6BDrgYrf1CzDC5c72ESTh5
+ F7Vxv62d3A7Z4g/Kief8YhVTumcWJLxv3Mgu9HI/R9nYxe4drTpt/2TW1pU9KVhSvMvo
+ GXdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tMYaQdji6zR5lZgb0sKLhTaK1Jb/52l/cl/I/Gv3TlY=;
- b=Sd732Ektm+aVwcV006QKf7tHeqro77tFXvmsaurCt9mo+mf0LDCvltBFkleY/SimRd
- nR/hrodXTHIeUE1gd2mlCv8krTVFS0wg9P0exqQteB8KdIiBG35XZj0QX4sbqH+TqXUB
- QJr/lsbkobm8VimjS16YYdpmh7ilVhylu/M8m6Yd/NDrfN/muh1wD4kTXB/0Fx9Og170
- A4QDpQRJKytUhOTAhWWPWbLmJXKd4SzIY/ePeRZEBkn+HFnaSYBCZY1vIO80KBVx6+97
- rOvJgkIKMVyvJv9y6yKMka1YTVA1KEfphX8+RxgaDE0cpftYx/9GtEKQTNMTr++zA7Vu
- kWgA==
-X-Gm-Message-State: AOAM532kJwc3IKThUC0VeQVNbK/0kQrLLvhbLpf/3Cxs/o++FlYIzMLg
- 94jYcY3Azp1G/g06WhejeDShbMCY
-X-Google-Smtp-Source: ABdhPJyqXi3fI4wDpzEil4M7ad15F2TY4dvEOrQvYWH6fnTkBq/azOgr+vucDNV5uc/ts6EfAesU6g==
-X-Received: by 2002:a7b:cb18:: with SMTP id u24mr3441539wmj.67.1592315642652; 
- Tue, 16 Jun 2020 06:54:02 -0700 (PDT)
+ bh=IvqY4q4DC8wmUVG9y7FJtCDdIsu08hGHLIyN1vg73Fs=;
+ b=lUlQRNMGVv1HBwM/1n0KZz1gAKY3UYw1SJifzOAQOIxiLP9ihRbJDpV51NFIEGduhh
+ tiiBURDk+1MbCxbm9lAh1nPOc3dn1NEE6UZB+GwsCEUM2Igauqd8qQbUjzd2s2CyEObk
+ 3O3K7pzp2DAt2D2CKgtji8IicqOhpDhn88B0KMADJeGMs1bM6AoCyaJY2R0A25JZaUY+
+ w6NsRzgRNpX0kiDdy13eRxE+U6OdDABu0VRqr1aJE7tIiKzG3dSuYbMY38kMfQJwSWzA
+ dfEENsuFhaY8bXpHDMiYep6zkMjwF8FgdlK+1YgXlnnmcbWCXhogYyu7cC9DLrJyzb5l
+ dcvw==
+X-Gm-Message-State: AOAM531AcsxD937Eh4RAguSGb4/rDVOnzT6l2QL67k3RIqBxltDAyn07
+ jaoWvjCze3mctZKbPLmCV7s=
+X-Google-Smtp-Source: ABdhPJwC1XcwS+3qA7bwc+eN4nmKzW+jEOyXH+9PsT2cd4xYAYa247dLNBU+WaNY1N3vWnpdjwvRrQ==
+X-Received: by 2002:a05:600c:4102:: with SMTP id
+ j2mr3328009wmi.48.1592315644736; 
+ Tue, 16 Jun 2020 06:54:04 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id 67sm30302842wrk.49.2020.06.16.06.54.01
+ by smtp.gmail.com with ESMTPSA id a16sm29256154wrx.8.2020.06.16.06.54.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:54:01 -0700 (PDT)
+ Tue, 16 Jun 2020 06:54:03 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 30/73] ARM: tegra: Use standard names for SRAM nodes
-Date: Tue, 16 Jun 2020 15:51:55 +0200
-Message-Id: <20200616135238.3001888-31-thierry.reding@gmail.com>
+Subject: [PATCH 31/73] ARM: tegra: Add parent clock to DSI output
+Date: Tue, 16 Jun 2020 15:51:56 +0200
+Message-Id: <20200616135238.3001888-32-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065404_002885_F98DE3CA 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200616_065406_802190_C342A56D 
+X-CRM114-Status: GOOD (  10.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:32c listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,56 +108,45 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-SRAM nodes should be named sram@<unit-address> to match the bindings.
+The DSI output needs to specify a parent clock that will be used to
+drive both the output and the display controller.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm/boot/dts/tegra20.dtsi | 4 ++--
- arch/arm/boot/dts/tegra30.dtsi | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/tegra20.dtsi | 4 +++-
+ arch/arm/boot/dts/tegra30.dtsi | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/boot/dts/tegra20.dtsi b/arch/arm/boot/dts/tegra20.dtsi
-index ccd2995aef83..2568236284ad 100644
+index 2568236284ad..19d5d4b8692b 100644
 --- a/arch/arm/boot/dts/tegra20.dtsi
 +++ b/arch/arm/boot/dts/tegra20.dtsi
-@@ -17,14 +17,14 @@ memory@0 {
- 		reg = <0 0>;
- 	};
- 
--	iram@40000000 {
-+	sram@40000000 {
- 		compatible = "mmio-sram";
- 		reg = <0x40000000 0x40000>;
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		ranges = <0 0x40000000 0x40000>;
- 
--		vde_pool: vde@400 {
-+		vde_pool: sram@400 {
- 			reg = <0x400 0x3fc00>;
- 			pool;
- 		};
+@@ -154,7 +154,9 @@ tvo@542c0000 {
+ 		dsi@54300000 {
+ 			compatible = "nvidia,tegra20-dsi";
+ 			reg = <0x54300000 0x00040000>;
+-			clocks = <&tegra_car TEGRA20_CLK_DSI>;
++			clocks = <&tegra_car TEGRA20_CLK_DSI>,
++				 <&tegra_car TEGRA20_CLK_PLL_D_OUT0>;
++			clock-names = "dsi", "parent";
+ 			resets = <&tegra_car 48>;
+ 			reset-names = "dsi";
+ 			status = "disabled";
 diff --git a/arch/arm/boot/dts/tegra30.dtsi b/arch/arm/boot/dts/tegra30.dtsi
-index f838e4775cf6..690e1628860f 100644
+index 690e1628860f..d80f9d3d2d18 100644
 --- a/arch/arm/boot/dts/tegra30.dtsi
 +++ b/arch/arm/boot/dts/tegra30.dtsi
-@@ -97,14 +97,14 @@ pci@3,0 {
- 		};
- 	};
- 
--	iram@40000000 {
-+	sram@40000000 {
- 		compatible = "mmio-sram";
- 		reg = <0x40000000 0x40000>;
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		ranges = <0 0x40000000 0x40000>;
- 
--		vde_pool: vde@400 {
-+		vde_pool: sram@400 {
- 			reg = <0x400 0x3fc00>;
- 			pool;
- 		};
+@@ -255,7 +255,9 @@ tvo@542c0000 {
+ 		dsi@54300000 {
+ 			compatible = "nvidia,tegra30-dsi";
+ 			reg = <0x54300000 0x00040000>;
+-			clocks = <&tegra_car TEGRA30_CLK_DSIA>;
++			clocks = <&tegra_car TEGRA30_CLK_DSIA>,
++				 <&tegra_car TEGRA30_CLK_PLL_D_OUT0>;
++			clock-names = "dsi", "parent";
+ 			resets = <&tegra_car 48>;
+ 			reset-names = "dsi";
+ 			status = "disabled";
 -- 
 2.24.1
 
