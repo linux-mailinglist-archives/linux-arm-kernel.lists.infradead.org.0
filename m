@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18B081FB35D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:04:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8AB71FB358
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:04:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VM2KEK5TGClHsqyCQfXFYG9JBDw45/LnOIHgf4B2z8U=; b=jYO0HF462A67C0
-	fnSYkdz23gv6l85IW289lKT3PNPlLtopMEaaHkTpRfIbMuK1jAaUoL93ZMfus9eDR6Y1kqO2+ESqM
-	qBoORvMTIzLdqQeXCJE0PxKqhBZm8P/xcyNKtW+H04OKGGpTZ5S8yxa9IgNFaBUraSF7VsFWqSAZ4
-	YajlB65dYlw29AMDB9LMsWDbplz6BLsqQjtf4IYoSgMW81c9as6iYW/Y575TZASWKB3cUx8/CWX3R
-	55bjlmk/GRgAVL+IORsr4BPqzWGSbXaaaDwZ2Ha28BtpndOjfVA/mo4U8ozA9ucuEadzo3WAmhGay
-	dpW/BT+havYre8uVRDKA==;
+	List-Owner; bh=plVbslxju4SgHVR0M+jKe8B5O1Zs4bvf3hLs2gLNjUs=; b=mFxRI93fHMd42V
+	oUn1ydhq39CYcEhxlDlnxLq4ML5Tx4v0l3dmU7i/iBwLOueS+tKQbSCyS2ftvP0HnAeGnXc/fjjMo
+	FCAscjEoMRMTIHQLpzgI8omspX+ePgaVb/N2r2yuka/aJCnnfyjBXIf1oaNZZ7v2LLHFfI2rUBz1r
+	H9lXgfvkdYPGhGqUx1N+qnaJ8odLC78NQcPAs8RTldheab4WKsOJzd9Sey9tJZ/onWvCYBAFz2uGH
+	/yPRNkaKVUaV/TgWAbB9qJ31Dnu1Tb8PWTwoiFHZGyeYR3QwUp07KdoRKp4S9bM/bM/v5x7MtXes7
+	5ryz4reN0+s5WKH0MOcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCCB-0004ui-KF; Tue, 16 Jun 2020 14:04:11 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jlCBu-0004dJ-6c; Tue, 16 Jun 2020 14:03:54 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC2E-0001ph-Iu
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:53:57 +0000
-Received: by mail-wm1-x343.google.com with SMTP id q25so3189650wmj.0
+ id 1jlC2H-0001rk-Eb
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:53:59 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f185so3162521wmf.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:53:54 -0700 (PDT)
+ Tue, 16 Jun 2020 06:53:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=UmNqc5hsD3DobIcOkfT8oUHZhc0K21ivxjwgeIbNRxc=;
- b=AnfoBKPuYoDsBtAsRxfzizoqUWkP+v8P+obvDks0pBbFBPfMYn2/3zp32EhJfN6rCA
- ucauSms2BpZCNQGt2xt+vjA6A2S2ltYFrxCA9tae3jxsQaXGu8ygVLzKktL0KfBaT7n6
- WGMmbBkN/Ew5JqxB3mSjX0pkEF+ncpqon8SH2FyYR+G+wlR62hguG4dQikHCmjWMJjt4
- I3SJmGC0gVFLxI7lQZvyhku2U6fOtOfqzbWlEmjH+g7HT7MDvBHXE6hRwU0VxATlftWe
- 8SjpIBO4jDOaSRIo85uuzUQuGzp+kgLAPctmDX4G9qxqxLxR+xhqUTlRQpRz8x5yVG5v
- AHgQ==
+ bh=M3L/vhQHjDE+C9l0qudwi26/w+psczXMcfOt270RlEk=;
+ b=WWyDyBs5/lglLdztMlKeP3eCq3IT9zB+pSBDzV9On7VRvPoGZ1onDmxKvlIMUrflCA
+ DnBR2rYBuhKNuxgqb0YNj/i+ahf5DQJMe3n+MDHHao8lnCuiTyZ1Q/T2NH9RTqBDufET
+ 2WAN93v80t/wOu8ts5CYozmiqXUc9rYrkHy6KG0vZlohFvGWYzwO0A+keYAaFmDZLegV
+ COMXdLz1S7ilS9BWHHZZssaVViCxzgmnDaArUxuYBP8begs2RtG3+IRthhMFP5njP0qW
+ 64urTl/UfKAZM63kk6Mfy+KJXzVwFgs1aYlxQoZjpMUbLxp6fRiZr0njqrQY6dkBT5Xw
+ s1bg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=UmNqc5hsD3DobIcOkfT8oUHZhc0K21ivxjwgeIbNRxc=;
- b=Pva2C1qsqN/UrUuSPzbswZhedOWwc2clJYYtzn+UUkOExrURrCObe5sD+xajlN6m9N
- sFxSh8ia6ZF5NJWBzoEb2F4Fz6EeTsfPGE4SIan+HvbaA4dG7hUkqiPyUQyVkc/bCbpQ
- 5nN6S8W7xVgFAl+50LdTVyfdwv3HTKa71niS+RCLuA2I3CSdkqErM31pDDodLnfV18E4
- WlXnYXYB+NvZMRxsezAIloGeNDmpMhFt0kJUkgC4LgiwsKh9F8nTyjIpNa04OWLMK6iF
- 3S1bV7FvlWvqQlKhfQ3jGLERb0eEXfZpMYbMp7JxZ3KhQlvb6oF0SlNTLXYFDmr6lQ7U
- s6cQ==
-X-Gm-Message-State: AOAM530ONQpA6wp52Lg18j3S0cxbe7WvDtt8rqCU3phTPrdDuxP39Wo4
- EnJSzPaIlOhtl20ufRaNqTM=
-X-Google-Smtp-Source: ABdhPJzzBUavyHf99hjFAc0SOolGUcuE7FGhCUvYuFKCUpHk+Xp2ZBz54eK9ibaAmHmndaISzrQuIw==
-X-Received: by 2002:a05:600c:2945:: with SMTP id
- n5mr3616321wmd.189.1592315633157; 
- Tue, 16 Jun 2020 06:53:53 -0700 (PDT)
+ bh=M3L/vhQHjDE+C9l0qudwi26/w+psczXMcfOt270RlEk=;
+ b=PyG+5g2mNHQrkI6BzsMe4+O+0anyScyTYTgGtA3zTs6poyjymVYwMbdZ+6l0WkpWGx
+ +3MSdrcpYCj7T+Gow35wgaE5bImz455bYs0eET+qFL6UAZg7Ia0F288gkLaRfCTqHhiD
+ PNCHMcMNrSh38WOs5xLJt5JqBhqDjd5OHHiBoTxsqVwH1LBte6DXCowbR/lLoRtJiFDh
+ JG+kIH3bQUIZwoB7wp24Si5MrNuMaMPGfF3rhyAsOkXH8Tc1eTV1YQp2p/Y340scElAh
+ zgWjjy9pGl7uDM3rUHkKnFsyE3hznurgi1eQSG2aa5VC8BMwXCjbZiLjsl5g/WN+XB0q
+ 6IbA==
+X-Gm-Message-State: AOAM532C7cFDqrVlPqu35SITZvtWiBB3x3GGXIZ1AyOwb/utjwPDzgNj
+ cmmKwLcJahiRiNJeRSKmJ9k=
+X-Google-Smtp-Source: ABdhPJzGk/jl8TeiUrND4uefnaHAqsSQ6+a99XBpUrP6SsfayTbaa6VwGdJdqbB2VWl0LieJIkYi2w==
+X-Received: by 2002:a7b:c842:: with SMTP id c2mr3404588wml.58.1592315636193;
+ Tue, 16 Jun 2020 06:53:56 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id r12sm30951520wrc.22.2020.06.16.06.53.47
+ by smtp.gmail.com with ESMTPSA id b143sm4139276wme.20.2020.06.16.06.53.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:53:48 -0700 (PDT)
+ Tue, 16 Jun 2020 06:53:54 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 26/73] ARM: tegra: medcom-wide: Remove extra panel power supply
-Date: Tue, 16 Jun 2020 15:51:51 +0200
-Message-Id: <20200616135238.3001888-27-thierry.reding@gmail.com>
+Subject: [PATCH 27/73] ARM: tegra: Use numeric unit-addresses
+Date: Tue, 16 Jun 2020 15:51:52 +0200
+Message-Id: <20200616135238.3001888-28-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065354_669311_6C96B922 
-X-CRM114-Status: GOOD (  12.89  )
-X-Spam-Score: 2.1 (++)
+X-CRM114-CacheID: sfid-20200616_065357_578288_5B8A0A25 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
- 2.3 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,32 +107,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-Simple panels can only have a single power supply. The second listed
-supply is not needed because it is also the input supply of the first
-supply and therefore will always be on at the same time.
-
-In retrospect the panel probably doesn't qualify as simple since it
-apparently does need both of these supplies, even if in the case of the
-Medcom Wide it isn't necessary to explicitly hook them up.
+Unit-addresses should be numeric. This fixes a validation failure seen
+using the json-schema tooling.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm/boot/dts/tegra20-medcom-wide.dts | 2 +-
+ arch/arm/boot/dts/tegra20-paz00.dts | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/tegra20-medcom-wide.dts b/arch/arm/boot/dts/tegra20-medcom-wide.dts
-index 049181421a86..a348ca30e522 100644
---- a/arch/arm/boot/dts/tegra20-medcom-wide.dts
-+++ b/arch/arm/boot/dts/tegra20-medcom-wide.dts
-@@ -59,7 +59,7 @@ backlight: backlight {
- 	panel: panel {
- 		compatible = "innolux,n156bge-l21";
+diff --git a/arch/arm/boot/dts/tegra20-paz00.dts b/arch/arm/boot/dts/tegra20-paz00.dts
+index 91b6bb82e960..f6aa783b0f02 100644
+--- a/arch/arm/boot/dts/tegra20-paz00.dts
++++ b/arch/arm/boot/dts/tegra20-paz00.dts
+@@ -314,7 +314,7 @@ nvec@7000c500 {
+ 	memory-controller@7000f400 {
+ 		nvidia,use-ram-code;
  
--		power-supply =  <&vdd_1v8_reg>, <&vdd_3v3_reg>;
-+		power-supply =  <&vdd_1v8_reg>; // <&vdd_3v3_reg>;
- 		enable-gpios = <&gpio TEGRA_GPIO(B, 2) GPIO_ACTIVE_HIGH>;
- 
- 		backlight = <&backlight>;
+-		emc-tables@hynix {
++		emc-tables@0 {
+ 			nvidia,ram-code = <0x0>;
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
 -- 
 2.24.1
 
