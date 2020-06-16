@@ -2,64 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36DCF1FA85C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 07:42:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D6DB1FA86B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 07:57:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MTNhkUcNKaiikgQCOj+Cpj6axhwKdkhbrt/RPQZXJcY=; b=Jfcz8Z9Cfmqqpl8CijLSGFbP0U
-	qcEe/bkq4WRquChMa8LuOzAki0GGzkMey1HRpMhnmJb0HhUdSGsBuRmR4R+FAXViqADVacP8zliqj
-	6pL3kWf32dBClDJ3NeMFWDamL1g06/VxatNW/xcZ2g3nvy6Exkt4J9xnEukdROvimAOk0FSDhucxk
-	uLGs5p14qy5LUV/n7dfnANg1IuXsaScpUXYeEAMxESS+ZHT1CLs65PMcA7ySeBFJQbpfH0onLSxdn
-	JbVzQscautRRA7daEufieDs5RASXTB2sm2YPpidIg4rJk23mEZaNGtSbCwaasHcROSfT6UpOH8sLM
-	MkynOGYg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5dZJwLkbLs9ifHE2KPen69bmU2mtJFrLv70NKvHWuVE=; b=psATaCqcvcwm8W
+	aQWuJVXdCxkdScqAOfLyeAKdTbEnQCk+4AD61grLaBxtW6VTgKAgnextnolSCTrxwqBtYQunofTv4
+	4Jn3+Lq1hadFkwPdIlhGtRXLsEonjFIQm5SJXxQiXn0y0zRL11NTjiyk2TJhyc40O7qaklt3BN052
+	nDBlFBkbhH06c1+T+DTekT4lQnQNwoJ1RAjMLZpYg8p96g2cAX2uXJpUifM2coCK3T+tSNB7GkZta
+	okmd3pqV5h+NJRgR4w091C4CG7uEGeZx3VPnq7SX0pGThEV5FYTOBFNbDc97U2yBPUMYyFcJ0ZcB1
+	CSMCiHSB6AGU+wNpK+hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl4Mv-00015t-98; Tue, 16 Jun 2020 05:42:45 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jl4bJ-0001LF-Tx; Tue, 16 Jun 2020 05:57:37 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl4MX-0000xf-4B
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 05:42:23 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1782A1A0592;
- Tue, 16 Jun 2020 07:42:16 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A2DB91A05CF;
- Tue, 16 Jun 2020 07:42:10 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AB4B3402D0;
- Tue, 16 Jun 2020 13:42:03 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: dmitry.torokhov@gmail.com, robh+dt@kernel.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- gnuiyl@gmail.com, olof@lixom.net, linux-input@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH V2 2/2] dt-bindings: input: Convert imx keypad to json-schema
-Date: Tue, 16 Jun 2020 13:31:07 +0800
-Message-Id: <1592285467-18371-2-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1592285467-18371-1-git-send-email-Anson.Huang@nxp.com>
-References: <1592285467-18371-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jl4bC-0001KY-DZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 05:57:32 +0000
+Received: by mail-il1-x142.google.com with SMTP id b5so17712542iln.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jun 2020 22:57:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jO6HidFD2GZHYEdq4Pf2STG4Y5Qbo03mtR4akQ8KCrc=;
+ b=XNcJFU+rZ0+XQJp6ONQ9hU4ZBMCl6KiGYneEjomu+Lm5Sl16WzM00tDZ3f7QKoct40
+ Z4S778WXwJFLa9FZWahFfpuBaUw6AZD9ZZDt3Kizgl59ImGei18iRi/Xr4RuKc1wqG0x
+ GpnQFApUOn0UBHJMFIRiHODUez3MBBgUiDA2CLc1tkdMnOTA1TQ1ldgaMOtPmfEo9ebS
+ Py94inw3gWE2cFXJlNDTZcBVV/YJ2edW/w2AcuCdCCUSKV834QIWNDh7lg/EBOxCLZDI
+ 0HetA9coL37DNQoYHj4XOSn5NIhP7TwVMt4gHzhE1zZl+OcTDx0gfyQjJ55dlkw0VKzc
+ LFUw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jO6HidFD2GZHYEdq4Pf2STG4Y5Qbo03mtR4akQ8KCrc=;
+ b=Edew8iVY4q7qzdezLiwaQeGT1yzmk4jkUk48p63208dHhw+SwTnpRYG1mY4IJ5jzSZ
+ l5Jv4WKU2k5lbWCeGmvA4A5sviyE6Ra0uh7tsfaOJIe0Jk2eHSFlCvtph+BtbbEfBNIn
+ kAwTsV4kohkyg0Qfu2KU2CvdzC6EKCATBEUtUvN7e7KjxGO95aasxEzcQvjLY1EBXH7L
+ l8DvGnsOKzwqYY2fe6tP7srBlvMSGO4W5DC57fLgElEHwLMjQ3kiZqfA8fAl5OCMFqdS
+ H6v0jEZuJ3wFj3Em3VVdiRjDNa8fllhjNzteqNWXmg1gOvk74+ie2Recu5V2FW2bUhYu
+ BoxQ==
+X-Gm-Message-State: AOAM532V8UPZbainszdiF6AEQfkPOPP3rU+LnaNzIjBMIOyAAP+QPc0C
+ YbAH8ekK4Xth0lpXupZDktjlPGlFKGf3kr2zo2A=
+X-Google-Smtp-Source: ABdhPJzJ4ulFoSzwUUSDOauNc6vwON0bZod0JOc0uYBVetSDlB2Hekxu0gh7p7PaYD/VNrPCi/qFhMZ0NAHmZyf3amk=
+X-Received: by 2002:a92:7309:: with SMTP id o9mr1580810ilc.205.1592287049436; 
+ Mon, 15 Jun 2020 22:57:29 -0700 (PDT)
+MIME-Version: 1.0
+References: <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
+ <202006160420.iatdr9ab%lkp@intel.com>
+In-Reply-To: <202006160420.iatdr9ab%lkp@intel.com>
+From: Syed Nayyar Waris <syednwaris@gmail.com>
+Date: Tue, 16 Jun 2020 11:27:18 +0530
+Message-ID: <CACG_h5oiA8mDpTjtyGFYR4eptbxppN9tq+2wUj8T1hsbZ5h47A@mail.gmail.com>
+Subject: Re: [PATCH v8 4/4] gpio: xilinx: Utilize for_each_set_clump macro
+To: kernel test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_224221_440038_904296C6 
-X-CRM114-Status: GOOD (  12.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200615_225730_477705_9F9B228B 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [syednwaris[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,179 +93,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: kbuild-all@lists.01.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX KEYPAD binding to DT schema format using json-schema
+On Tue, Jun 16, 2020 at 1:39 AM kernel test robot <lkp@intel.com> wrote:
+>
+> Hi Syed,
+>
+> Thank you for the patch! Perhaps something to improve:
+>
+> [auto build test WARNING on 444fc5cde64330661bf59944c43844e7d4c2ccd8]
+>
+> url:    https://github.com/0day-ci/linux/commits/Syed-Nayyar-Waris/Introduce-the-for_each_set_clump-macro/20200615-205729
+> base:    444fc5cde64330661bf59944c43844e7d4c2ccd8
+> config: sparc64-randconfig-s032-20200615 (attached as .config)
+> compiler: sparc64-linux-gcc (GCC) 9.3.0
+> reproduce:
+>         # apt-get install sparse
+>         # sparse version: v0.6.2-rc1-3-g55607964-dirty
+>         # save the attached .config to linux build tree
+>         make W=1 C=1 ARCH=sparc64 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+>
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kernel test robot <lkp@intel.com>
+>
+>
+> sparse warnings: (new ones prefixed by >>)
+>
+> >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
+> >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
+>    include/linux/bitmap.h:594:63: sparse: sparse: shift too big (64) for type unsigned long
+> >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
+> >> include/linux/bitmap.h:638:17: sparse: sparse: invalid access past the end of 'old' (8 8)
+>
+> vim +639 include/linux/bitmap.h
+>
+> 169c474fb22d8a William Breathitt Gray 2019-12-04  613
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  614  /**
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  615   * bitmap_set_value - set n-bit value within a memory region
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  616   * @map: address to the bitmap memory region
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  617   * @value: value of nbits
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  618   * @start: bit offset of the n-bit value
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  619   * @nbits: size of value in bits
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  620   */
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  621  static inline void bitmap_set_value(unsigned long *map,
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  622                               unsigned long value,
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  623                               unsigned long start, unsigned long nbits)
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  624  {
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  625   const size_t index = BIT_WORD(start);
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  626   const unsigned long offset = start % BITS_PER_LONG;
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  627   const unsigned long ceiling = roundup(start + 1, BITS_PER_LONG);
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  628   const unsigned long space = ceiling - start;
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  629
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  630   value &= GENMASK(nbits - 1, 0);
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  631
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  632   if (space >= nbits) {
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  633           map[index] &= ~(GENMASK(nbits + offset - 1, offset));
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  634           map[index] |= value << offset;
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  635   } else {
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  636           map[index] &= ~BITMAP_FIRST_WORD_MASK(start);
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  637           map[index] |= value << offset;
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15 @638           map[index + 1] &= ~BITMAP_LAST_WORD_MASK(start + nbits);
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15 @639           map[index + 1] |= (value >> space);
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  640   }
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  641  }
+> 803024b6c8a375 Syed Nayyar Waris      2020-06-15  642
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-Changes since V1:
-	- include matrix-keymap.yaml and "linux,keymap" is unnecessary now, remove it.
----
- .../devicetree/bindings/input/imx-keypad.txt       | 53 --------------
- .../devicetree/bindings/input/imx-keypad.yaml      | 85 ++++++++++++++++++++++
- 2 files changed, 85 insertions(+), 53 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/input/imx-keypad.txt
- create mode 100644 Documentation/devicetree/bindings/input/imx-keypad.yaml
 
-diff --git a/Documentation/devicetree/bindings/input/imx-keypad.txt b/Documentation/devicetree/bindings/input/imx-keypad.txt
-deleted file mode 100644
-index 2ebaf7d..0000000
---- a/Documentation/devicetree/bindings/input/imx-keypad.txt
-+++ /dev/null
-@@ -1,53 +0,0 @@
--* Freescale i.MX Keypad Port(KPP) device tree bindings
--
--The KPP is designed to interface with a keypad matrix with 2-point contact
--or 3-point contact keys. The KPP is designed to simplify the software task
--of scanning a keypad matrix. The KPP is capable of detecting, debouncing,
--and decoding one or multiple keys pressed simultaneously on a keypad.
--
--Required SoC Specific Properties:
--- compatible: Should be "fsl,<soc>-kpp".
--
--- reg: Physical base address of the KPP and length of memory mapped
--  region.
--
--- interrupts: The KPP interrupt number to the CPU(s).
--
--- clocks: The clock provided by the SoC to the KPP. Some SoCs use dummy
--clock(The clock for the KPP is provided by the SoCs automatically).
--
--Required Board Specific Properties:
--- pinctrl-names: The definition can be found at
--pinctrl/pinctrl-bindings.txt.
--
--- pinctrl-0: The definition can be found at
--pinctrl/pinctrl-bindings.txt.
--
--- linux,keymap: The definition can be found at
--bindings/input/matrix-keymap.txt.
--
--Example:
--kpp: kpp@73f94000 {
--	compatible = "fsl,imx51-kpp", "fsl,imx21-kpp";
--	reg = <0x73f94000 0x4000>;
--	interrupts = <60>;
--	clocks = <&clks 0>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_kpp_1>;
--	linux,keymap = <0x00000067	/* KEY_UP */
--			0x0001006c	/* KEY_DOWN */
--			0x00020072	/* KEY_VOLUMEDOWN */
--			0x00030066	/* KEY_HOME */
--			0x0100006a	/* KEY_RIGHT */
--			0x01010069	/* KEY_LEFT */
--			0x0102001c	/* KEY_ENTER */
--			0x01030073	/* KEY_VOLUMEUP */
--			0x02000040	/* KEY_F6 */
--			0x02010042	/* KEY_F8 */
--			0x02020043	/* KEY_F9 */
--			0x02030044	/* KEY_F10 */
--			0x0300003b	/* KEY_F1 */
--			0x0301003c	/* KEY_F2 */
--			0x0302003d	/* KEY_F3 */
--			0x03030074>;	/* KEY_POWER */
--};
-diff --git a/Documentation/devicetree/bindings/input/imx-keypad.yaml b/Documentation/devicetree/bindings/input/imx-keypad.yaml
-new file mode 100644
-index 0000000..7432c6e
---- /dev/null
-+++ b/Documentation/devicetree/bindings/input/imx-keypad.yaml
-@@ -0,0 +1,85 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/input/imx-keypad.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Freescale i.MX Keypad Port(KPP) device tree bindings
-+
-+maintainers:
-+  - Liu Ying <gnuiyl@gmail.com>
-+
-+allOf:
-+  - $ref: "/schemas/input/matrix-keymap.yaml#"
-+
-+description: |
-+  The KPP is designed to interface with a keypad matrix with 2-point contact
-+  or 3-point contact keys. The KPP is designed to simplify the software task
-+  of scanning a keypad matrix. The KPP is capable of detecting, debouncing,
-+  and decoding one or multiple keys pressed simultaneously on a keypad.
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: fsl,imx21-kpp
-+      - items:
-+          - enum:
-+            - fsl,imx25-kpp
-+            - fsl,imx27-kpp
-+            - fsl,imx31-kpp
-+            - fsl,imx35-kpp
-+            - fsl,imx51-kpp
-+            - fsl,imx53-kpp
-+            - fsl,imx50-kpp
-+            - fsl,imx6q-kpp
-+            - fsl,imx6sx-kpp
-+            - fsl,imx6sl-kpp
-+            - fsl,imx6sll-kpp
-+            - fsl,imx6ul-kpp
-+            - fsl,imx7d-kpp
-+          - const: fsl,imx21-kpp
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - linux,keymap
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    keypad@73f94000 {
-+        compatible = "fsl,imx51-kpp", "fsl,imx21-kpp";
-+        reg = <0x73f94000 0x4000>;
-+        interrupts = <60>;
-+        clocks = <&clks 0>;
-+        pinctrl-names = "default";
-+        pinctrl-0 = <&pinctrl_kpp_1>;
-+        linux,keymap = <0x00000067	/* KEY_UP */
-+                        0x0001006c	/* KEY_DOWN */
-+                        0x00020072	/* KEY_VOLUMEDOWN */
-+                        0x00030066	/* KEY_HOME */
-+                        0x0100006a	/* KEY_RIGHT */
-+                        0x01010069	/* KEY_LEFT */
-+                        0x0102001c	/* KEY_ENTER */
-+                        0x01030073	/* KEY_VOLUMEUP */
-+                        0x02000040	/* KEY_F6 */
-+                        0x02010042	/* KEY_F8 */
-+                        0x02020043	/* KEY_F9 */
-+                        0x02030044	/* KEY_F10 */
-+                        0x0300003b	/* KEY_F1 */
-+                        0x0301003c	/* KEY_F2 */
-+                        0x0302003d	/* KEY_F3 */
-+                        0x03030074>;	/* KEY_POWER */
-+    };
--- 
-2.7.4
+Regarding the compilation warning reported above:
 
+"sparse: shift too big (64) for type unsigned long" at line 639
+"sparse: invalid access past the end of 'old' (8 8)" at line 638
+
+Kindly refer to the code above, at these line numbers.
+
+I am in the process of fixing this warning. But what would be the fix
+? At the moment can't think of a code-fix to make the compilation
+warning disappear (specially at line 639). Can anyone please explain
+to me the meaning of the compilation warning more deeply?
+
+By the way, this warning was not reported in (earlier) v7 of the patchset.
+
+Regards
+Syed Nayyar Waris
 
 _______________________________________________
 linux-arm-kernel mailing list
