@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA3F81FB3F8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:16:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 823741FB3F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 16:16:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jInQrt+IzoGRUNGPtIhTEMJ1OzJ4QCgQKwGDNpsaGGE=; b=g5QSsZRbc6qS61
-	CWWCV+GxwZVoJeoBl4LAFI0QC1mI7KjK1uIewLeoKJJPxNFgKOX/ce2vN1yaCF5Fht444ERnfB3E7
-	c1+khG4R848qGjPVQLEOUwSNotiAjcvvrPlvBiKXaARIm7v/Q4fqvQ6HOrHo/b7qelVLihf5Nk639
-	HWVbVHVVTl4udupY3pKmFwRAo5YOYTdySROChUbMSxlgojWlPfun1ecUcJvwXK2F1sKaJZiRgSnix
-	H+rZ9mDt5FWqZbQRu2giD0awRzM0Hj+xyzrMGAGgukw2mw/wwtDQJqXsa53xQWtkvbQyny1/mCWjq
-	P7ss9Rf9cvosnxUz2Qlg==;
+	List-Owner; bh=qGrFx1QgZvVhZICCS/gaFiTsS5mmPYXugMmkM5rxQxo=; b=ZvHv1iq4Zh6UvD
+	1KjWrFj72BJNC/xl9+Eyq9YOcAXRXvqT6a3tNdjU5Lqd2fAn3+U8PAB2T9b7eyDHtnCwUloVtSW5d
+	q/2+QoxNfKn9Ae/mK/gIxAoc8vLOyy9dFkvPL5XJltLlvxl/XzTw27MOlv+Qm4Nhkt3RO02xUW/Iv
+	650scjmc3i2m6G4/473HH0ac2I5uPljdwqDtArk+/ZIPyxLhILBWjjlOcWLZ88nu+9WOebCtwb16P
+	i2QBAGkLtc5e7jgerU1Vr4mmWVCbWBnbcWoJ5v71t51W5lwlCnez3jBcwNIShrKdP3ZkYeox1HJjQ
+	imqmpnUoTsydGh4AiPkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlCO7-0004tD-JP; Tue, 16 Jun 2020 14:16:31 +0000
+	id 1jlCOQ-00057u-Cb; Tue, 16 Jun 2020 14:16:50 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlC3d-0004pT-0R
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:55:38 +0000
-Received: by mail-wm1-x341.google.com with SMTP id q25so3194759wmj.0
+ id 1jlC3e-00056B-DU
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 13:55:39 +0000
+Received: by mail-wm1-x341.google.com with SMTP id j198so2336168wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 06:55:20 -0700 (PDT)
+ Tue, 16 Jun 2020 06:55:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Wbc2pnbB3OBTDG8nCrQ0ZO/9K8+8OAOdCsSzY43cJ8U=;
- b=nyVEktSdoXCMtIrXFAb2yKXVkaA5SJQzXyQHtsh/1LaXRtDXlXdXj8eAjhColWBk2J
- SGliWBa2Z2euCaDT1iyq+U6Q7tk0WWXKYRzK1K+VeedCOFimxP4xyieUr8QdVhYNoWBK
- hANDAFWVPwVmV8mcB0BJTMs/sDVmHjwcm7JYdR6P7NoCqnIPQsKcKkQqtBCTDtE/bSW8
- mvH9jjqpz4gd7VcrFMETNWSZ0/tsU0+XEn0F5qn54ipbY4rEtSFVsVXDJ9QqlHR8qHkA
- /RoWDa3KWWZY0sXjmHJ8HVqJs0WgXtzk6O4GGsqKDhtuJJGYC/U+DIAmG5qFEj8xd2lV
- S6ng==
+ bh=iIbYc6mjj2XC9sB0100ZE5S9+tg7Z6KcqIjSEJek5/A=;
+ b=txZgLaXFOtb1TJEVVvNDNlwz12hfxlSWcBarAU9dyFlctbMWrhF2nzSBhF3LhePv1T
+ Ww/TUO2Rdz4HLFnjRLPAnitwyWxCZkAIJ21GXL0VVzh73J/rF6mhbnRj1nyKPok/1RGc
+ MBoBs6w6tnd95AkdiAIe8CSdnG3DC/A5NdJoaX67YhOWosNuv3w1qk089WMEdz5l1CZV
+ PerrFUyuimQoHRrBX3J9AElj7uGBKpwag1GbftgmP1n3aL9rkAst0f3pg/1nQZMkumjy
+ +/gSwYqxJfkadCa1iwh3V4QM5rRP5O1uUL+QOBzyoXho97Yw4DBdeeurN7vLI0BS1dP3
+ 1boQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Wbc2pnbB3OBTDG8nCrQ0ZO/9K8+8OAOdCsSzY43cJ8U=;
- b=OpaDb/NT/IZd5fmgCVUeUJxNC5aKMRAAH9of0wdfKfIUg5nQhFM0FyNV3xYnE5w9jO
- 6IzLVh1RumTZtlgEMEGiHtLFhTxLF4lKUTHPhkCSIKhujUGsCQl5cVbSP0/WDZ8uLWwY
- Im0DLQrgL2Wzs2ZH92FsS6UGpR//oyAiRrJ+TY5znf/aAh1Odr0BugTu/A/kYZ7OzTx5
- NkwG+yd52tek9bFv0cdDL7ZYFavGZRvOzFRSDdwaXXh9/XmjvGhVVpchabRfRJXCjW+z
- a72OZUivAl++TWbFHGx2JpLWLS+zM6cCz/OWBk3s4TVhWzFkLVw6WuUgvAh9DErlwPBS
- 0KvA==
-X-Gm-Message-State: AOAM532y7q3yTuzkRMI1sv7YQs9uFPs35wtATk8KdS7IU1i4TOosyjDK
- fQ3F42q1qfx7EKzU9whJHkQ=
-X-Google-Smtp-Source: ABdhPJw7Ne/U54AuM1vlB4mwhW8A1Pje6DrkDeyNYelZnKcA43bmqjMswzYv3makQFEhByGTlZ/Ehw==
-X-Received: by 2002:a1c:4d11:: with SMTP id o17mr3256659wmh.37.1592315719144; 
- Tue, 16 Jun 2020 06:55:19 -0700 (PDT)
+ bh=iIbYc6mjj2XC9sB0100ZE5S9+tg7Z6KcqIjSEJek5/A=;
+ b=S/ZG2tZSRH+Q+HB758YlBlZ9OWg6WcuEPGkkDIajF7b9YyuG45p3zsm0/WkazTOTeg
+ rYSyrAyANZXuRAWBtDIWtmbjvQgvPztVP2Gv6A9dOp4A+tcR7deoEDahlXCyZRDKRJZH
+ PAACh05kezfWgxTKMyzasR8TktOxkqS6pecY1GOocrg8HfsZdxzsjqJ0LD3146tE2Ywi
+ v19H8A6B/m5l7GjVz+5NIq/OIezjMRlfpnrVpp7ghn8NORp0hggal9OJbz8qxHkQDujy
+ tJs64hjCmbMmLhsmeFDpliZ5lcTPmW8VX4HN+9Nlzf2YnlaSsPAY9dSd0DmryL7E+DUo
+ z4Jw==
+X-Gm-Message-State: AOAM530S0H5y9QlWtJjJyn5QirEubOAy4h9BspmFY3M0bCbQt4T8CNRI
+ gYHOFBa0+8QlQSpiuEkFNqqBF30T
+X-Google-Smtp-Source: ABdhPJx+AEgax2zGOWrfqomo1JreetAMxNewvozhWQyn7Y2ngUxG6D9CWDLNNRWJtNNec19UjZ1t5g==
+X-Received: by 2002:a1c:f204:: with SMTP id s4mr3548336wmc.159.1592315721268; 
+ Tue, 16 Jun 2020 06:55:21 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id i8sm28364307wru.30.2020.06.16.06.55.17
+ by smtp.gmail.com with ESMTPSA id k14sm28337070wrq.97.2020.06.16.06.55.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 06:55:17 -0700 (PDT)
+ Tue, 16 Jun 2020 06:55:20 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 64/73] arm64: tegra: Fix {clock,reset}-names ordering
-Date: Tue, 16 Jun 2020 15:52:29 +0200
-Message-Id: <20200616135238.3001888-65-thierry.reding@gmail.com>
+Subject: [PATCH 65/73] arm64: tegra: Do not mark display hub as simple bus
+Date: Tue, 16 Jun 2020 15:52:30 +0200
+Message-Id: <20200616135238.3001888-66-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200616135238.3001888-1-thierry.reding@gmail.com>
 References: <20200616135238.3001888-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_065521_257441_56C497D5 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200616_065522_543983_EBDA91D7 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,42 +107,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-It's very difficult to describe string lists that can be in arbitrary
-order using the json-schema based validation tooling. Since the OS is
-not going to care either way, take the easy way out and reorder these
-entries to match the order defined in the bindings.
+The display hub on Tegra186 and Tegra194 is not a simple bus, so drop
+the corresponding compatible string.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra186.dtsi | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ arch/arm64/boot/dts/nvidia/tegra186.dtsi | 2 +-
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra186.dtsi b/arch/arm64/boot/dts/nvidia/tegra186.dtsi
-index 1cd369ac48d2..a73050ec61a7 100644
+index a73050ec61a7..3a41203deba2 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra186.dtsi
 +++ b/arch/arm64/boot/dts/nvidia/tegra186.dtsi
-@@ -799,15 +799,15 @@ pcie@10003000 {
- 			 <0x02000000 0 0x50100000 0x0 0x50100000 0 0x07f00000>, /* non-prefetchable memory (127 MiB) */
- 			 <0x42000000 0 0x58000000 0x0 0x58000000 0 0x28000000>; /* prefetchable memory (640 MiB) */
+@@ -990,7 +990,7 @@ i2c-bus {
+ 		};
  
--		clocks = <&bpmp TEGRA186_CLK_AFI>,
--			 <&bpmp TEGRA186_CLK_PCIE>,
-+		clocks = <&bpmp TEGRA186_CLK_PCIE>,
-+			 <&bpmp TEGRA186_CLK_AFI>,
- 			 <&bpmp TEGRA186_CLK_PLLE>;
--		clock-names = "afi", "pex", "pll_e";
-+		clock-names = "pex", "afi", "pll_e";
+ 		display-hub@15200000 {
+-			compatible = "nvidia,tegra186-display", "simple-bus";
++			compatible = "nvidia,tegra186-display";
+ 			reg = <0x15200000 0x00040000>;
+ 			resets = <&bpmp TEGRA186_RESET_NVDISPLAY0_MISC>,
+ 				 <&bpmp TEGRA186_RESET_NVDISPLAY0_WGRP0>,
+diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+index 4d6f2127dd4a..3089ebecfbef 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+@@ -1055,7 +1055,7 @@ host1x@13e00000 {
+ 			interconnect-names = "dma-mem";
  
--		resets = <&bpmp TEGRA186_RESET_AFI>,
--			 <&bpmp TEGRA186_RESET_PCIE>,
-+		resets = <&bpmp TEGRA186_RESET_PCIE>,
-+			 <&bpmp TEGRA186_RESET_AFI>,
- 			 <&bpmp TEGRA186_RESET_PCIEXCLK>;
--		reset-names = "afi", "pex", "pcie_x";
-+		reset-names = "pex", "afi", "pcie_x";
- 
- 		interconnects = <&mc TEGRA186_MEMORY_CLIENT_AFIR &emc>,
- 				<&mc TEGRA186_MEMORY_CLIENT_AFIW &emc>;
+ 			display-hub@15200000 {
+-				compatible = "nvidia,tegra194-display", "simple-bus";
++				compatible = "nvidia,tegra194-display";
+ 				reg = <0x15200000 0x00040000>;
+ 				resets = <&bpmp TEGRA194_RESET_NVDISPLAY0_MISC>,
+ 					 <&bpmp TEGRA194_RESET_NVDISPLAY0_WGRP0>,
 -- 
 2.24.1
 
