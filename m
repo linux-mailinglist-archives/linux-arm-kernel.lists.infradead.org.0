@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 150B01FA760
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 06:03:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37C351FA761
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 06:03:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=caQO/AQ8xCkIfuEczesS0Xv4k276GYmqMoYQc+GSwOI=; b=AS2
-	3DJNfdqS9Y04zG6B2O7T9fL+u6NPDC4zPDC4hQUszQNakNlPBsHsxa6NVkUby2BykUT5dlYzKVtJb
-	kARmZ9Ml6wm4kLHRZqkTr0ET+U/Mvtd6ip1Czrk9vUDS49x+Gnt+Dn76oGg39RH9Z8lxLerNirb4F
-	1IBrSj0NNMuBET4Y+igDWnawJrcN81jBbYO1XxISaTJjyd5oHdYm6IZM+4gnIPKDPJwX5Npoi3RS6
-	xGRgkJkQgIPONhhOwv8KTY77WvJkP9yKR/kNSF4L/MrwKzzxPy4MGVYef3RwXB16PWcDJOcVn1fqY
-	vxpLDoy/HJqxY71oqCq4UdwtGecDZAA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=GkOTajHXbkaYdFBfFWqOPM7sPB1iNMSaZj06nlZmRUw=; b=PdyMo2Ds1NuABuRQ8AtJW3IZwJ
+	JSdkJEBRpeYw0vo4sy93+wlbW8hNA3QxNPW3i7h2MoD/52SGEQbBM3biQiosBkEmgqZz6lMur1ZVL
+	Rqx2DyzvfupoxM6trXTxvqvXO+MNkT41/3rKOF1SMSeMTY2fte5Epm6PlZxwV5skeP/z0fTtvat/b
+	wxhy347C+knM2VTbDL2dP8gNTScNEo0qp0BXW5aegdjS2wzcOJVjPeBKF9mYXFPBqkb8CjFtnLwt7
+	GqMBtRrGnRMc4FN1Rc2HdkrBVzar2LWype0NWcbDQIS/Plfh85snB2Piqam677XSEsL179hWhCSWv
+	cSBa5AcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl2oE-0002T5-5v; Tue, 16 Jun 2020 04:02:50 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jl2oX-0002ie-EI; Tue, 16 Jun 2020 04:03:09 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl2nR-0001xQ-DQ
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 04:02:03 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 90C102003FA;
- Tue, 16 Jun 2020 06:01:59 +0200 (CEST)
+ id 1jl2nS-0001ys-Qv
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 04:02:05 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 04E831A0579;
+ Tue, 16 Jun 2020 06:02:01 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AD422200403;
- Tue, 16 Jun 2020 06:01:54 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D43861A053F;
+ Tue, 16 Jun 2020 06:01:55 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6166F402D0;
- Tue, 16 Jun 2020 12:01:48 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8A072402E8;
+ Tue, 16 Jun 2020 12:01:49 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: linux@rempel-privat.de, kernel@pengutronix.de, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com,
  wolfram@the-dreams.de, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V3 1/2] dt-bindings: i2c: Convert mxs i2c to json-schema
-Date: Tue, 16 Jun 2020 11:50:53 +0800
-Message-Id: <1592279454-32551-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 2/2] dt-bindings: i2c: Convert imx i2c to json-schema
+Date: Tue, 16 Jun 2020 11:50:54 +0800
+Message-Id: <1592279454-32551-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1592279454-32551-1-git-send-email-Anson.Huang@nxp.com>
+References: <1592279454-32551-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_210201_605391_F17F3C6F 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200615_210203_170191_512C315A 
+X-CRM114-Status: GOOD (  14.31  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,72 +78,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the MXS I2C binding to DT schema format using json-schema
+Convert the i.MX I2C binding to DT schema format using json-schema,
+some improvements applied, such as update example based on latest DT
+file, add more compatible for existing SoCs, and remove unnecessary
+common property "pinctrl".
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 Changes since V2:
-	- remove 'clock-frequency' property's typs and use enum for it, as it ONLY support 100KHz/400KHz.
+	- remove 'clock-frequency' property's type and use enum for it, ONLY support 100KHz/400KHz.
+	- remove *-gpios's typs/description, since it is already defined in i2c-gpio.yaml.
+	- fix space issue in example.
 ---
- Documentation/devicetree/bindings/i2c/i2c-mxs.txt  | 25 -----------
- Documentation/devicetree/bindings/i2c/i2c-mxs.yaml | 51 ++++++++++++++++++++++
- 2 files changed, 51 insertions(+), 25 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mxs.txt
- create mode 100644 Documentation/devicetree/bindings/i2c/i2c-mxs.yaml
+ Documentation/devicetree/bindings/i2c/i2c-imx.txt  |  49 ----------
+ Documentation/devicetree/bindings/i2c/i2c-imx.yaml | 103 +++++++++++++++++++++
+ 2 files changed, 103 insertions(+), 49 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx.txt
+ create mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx.yaml
 
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-mxs.txt b/Documentation/devicetree/bindings/i2c/i2c-mxs.txt
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-imx.txt b/Documentation/devicetree/bindings/i2c/i2c-imx.txt
 deleted file mode 100644
-index 4e1c8ac..0000000
---- a/Documentation/devicetree/bindings/i2c/i2c-mxs.txt
+index b967544..0000000
+--- a/Documentation/devicetree/bindings/i2c/i2c-imx.txt
 +++ /dev/null
-@@ -1,25 +0,0 @@
--* Freescale MXS Inter IC (I2C) Controller
+@@ -1,49 +0,0 @@
+-* Freescale Inter IC (I2C) and High Speed Inter IC (HS-I2C) for i.MX
 -
 -Required properties:
--- compatible: Should be "fsl,<chip>-i2c"
--- reg: Should contain registers location and length
--- interrupts: Should contain ERROR interrupt number
--- clock-frequency: Desired I2C bus clock frequency in Hz.
--                   Only 100000Hz and 400000Hz modes are supported.
--- dmas: DMA specifier, consisting of a phandle to DMA controller node
--  and I2C DMA channel ID.
--  Refer to dma.txt and fsl-mxs-dma.txt for details.
--- dma-names: Must be "rx-tx".
+-- compatible :
+-  - "fsl,imx1-i2c" for I2C compatible with the one integrated on i.MX1 SoC
+-  - "fsl,imx21-i2c" for I2C compatible with the one integrated on i.MX21 SoC
+-  - "fsl,vf610-i2c" for I2C compatible with the one integrated on Vybrid vf610 SoC
+-- reg : Should contain I2C/HS-I2C registers location and length
+-- interrupts : Should contain I2C/HS-I2C interrupt
+-- clocks : Should contain the I2C/HS-I2C clock specifier
+-
+-Optional properties:
+-- clock-frequency : Constains desired I2C/HS-I2C bus clock frequency in Hz.
+-  The absence of the property indicates the default frequency 100 kHz.
+-- dmas: A list of two dma specifiers, one for each entry in dma-names.
+-- dma-names: should contain "tx" and "rx".
+-- scl-gpios: specify the gpio related to SCL pin
+-- sda-gpios: specify the gpio related to SDA pin
+-- pinctrl: add extra pinctrl to configure i2c pins to gpio function for i2c
+-  bus recovery, call it "gpio" state
 -
 -Examples:
 -
--i2c0: i2c@80058000 {
--	#address-cells = <1>;
--	#size-cells = <0>;
--	compatible = "fsl,imx28-i2c";
--	reg = <0x80058000 2000>;
--	interrupts = <111>;
--	clock-frequency = <100000>;
--	dmas = <&dma_apbx 6>;
--	dma-names = "rx-tx";
+-i2c@83fc4000 { /* I2C2 on i.MX51 */
+-	compatible = "fsl,imx51-i2c", "fsl,imx21-i2c";
+-	reg = <0x83fc4000 0x4000>;
+-	interrupts = <63>;
 -};
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-mxs.yaml b/Documentation/devicetree/bindings/i2c/i2c-mxs.yaml
+-
+-i2c@70038000 { /* HS-I2C on i.MX51 */
+-	compatible = "fsl,imx51-i2c", "fsl,imx21-i2c";
+-	reg = <0x70038000 0x4000>;
+-	interrupts = <64>;
+-	clock-frequency = <400000>;
+-};
+-
+-i2c0: i2c@40066000 { /* i2c0 on vf610 */
+-	compatible = "fsl,vf610-i2c";
+-	reg = <0x40066000 0x1000>;
+-	interrupts =<0 71 0x04>;
+-	dmas = <&edma0 0 50>,
+-		<&edma0 0 51>;
+-	dma-names = "rx","tx";
+-	pinctrl-names = "default", "gpio";
+-	pinctrl-0 = <&pinctrl_i2c1>;
+-	pinctrl-1 = <&pinctrl_i2c1_gpio>;
+-	scl-gpios = <&gpio5 26 GPIO_ACTIVE_HIGH>;
+-	sda-gpios = <&gpio5 27 GPIO_ACTIVE_HIGH>;
+-};
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-imx.yaml b/Documentation/devicetree/bindings/i2c/i2c-imx.yaml
 new file mode 100644
-index 0000000..d3134ed
+index 0000000..869f2ae
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/i2c/i2c-mxs.yaml
-@@ -0,0 +1,51 @@
++++ b/Documentation/devicetree/bindings/i2c/i2c-imx.yaml
+@@ -0,0 +1,103 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/i2c/i2c-mxs.yaml#
++$id: http://devicetree.org/schemas/i2c/i2c-imx.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Freescale MXS Inter IC (I2C) Controller
++title: Freescale Inter IC (I2C) and High Speed Inter IC (HS-I2C) for i.MX
 +
 +maintainers:
-+  - Shawn Guo <shawn.guo@linaro.org>
++  - Wolfram Sang <wolfram@the-dreams.de>
 +
 +properties:
 +  compatible:
-+    enum:
-+      - fsl,imx23-i2c
-+      - fsl,imx28-i2c
++    oneOf:
++      - const: fsl,imx1-i2c
++      - const: fsl,imx21-i2c
++      - const: fsl,vf610-i2c
++      - items:
++          - const: fsl,imx35-i2c
++          - const: fsl,imx1-i2c
++      - items:
++          - enum:
++            - fsl,imx25-i2c
++            - fsl,imx27-i2c
++            - fsl,imx31-i2c
++            - fsl,imx50-i2c
++            - fsl,imx51-i2c
++            - fsl,imx53-i2c
++            - fsl,imx6q-i2c
++            - fsl,imx6sl-i2c
++            - fsl,imx6sx-i2c
++            - fsl,imx6sll-i2c
++            - fsl,imx6ul-i2c
++            - fsl,imx7s-i2c
++            - fsl,imx8mq-i2c
++            - fsl,imx8mm-i2c
++            - fsl,imx8mn-i2c
++            - fsl,imx8mp-i2c
++          - const: fsl,imx21-i2c
 +
 +  reg:
 +    maxItems: 1
@@ -149,33 +203,62 @@ index 0000000..d3134ed
 +  interrupts:
 +    maxItems: 1
 +
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: ipg
++
 +  clock-frequency:
 +    enum: [ 100000, 400000 ]
 +
 +  dmas:
-+    maxItems: 1
++    items:
++      - description: DMA controller phandle and request line for RX
++      - description: DMA controller phandle and request line for TX
 +
 +  dma-names:
-+    const: rx-tx
++    items:
++      - const: rx
++      - const: tx
++
++  sda-gpios:
++    maxItems: 1
++
++  scl-gpios:
++    maxItems: 1
 +
 +required:
 +  - compatible
 +  - reg
 +  - interrupts
-+  - dmas
-+  - dma-names
++  - clocks
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    i2c@80058000 {
-+        compatible = "fsl,imx28-i2c";
-+        reg = <0x80058000 2000>;
-+        interrupts = <111>;
-+        clock-frequency = <100000>;
-+        dmas = <&dma_apbx 6>;
-+        dma-names = "rx-tx";
++    #include <dt-bindings/clock/imx5-clock.h>
++    #include <dt-bindings/clock/vf610-clock.h>
++    #include <dt-bindings/gpio/gpio.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    i2c@83fc4000 {
++        compatible = "fsl,imx51-i2c", "fsl,imx21-i2c";
++        reg = <0x83fc4000 0x4000>;
++        interrupts = <63>;
++        clocks = <&clks IMX5_CLK_I2C2_GATE>;
++    };
++
++    i2c@40066000 {
++        compatible = "fsl,vf610-i2c";
++        reg = <0x40066000 0x1000>;
++        interrupts = <71 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&clks VF610_CLK_I2C0>;
++        clock-names = "ipg";
++        dmas = <&edma0 0 50>,
++               <&edma0 0 51>;
++        dma-names = "rx", "tx";
 +    };
 -- 
 2.7.4
