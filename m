@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2034D1FAF3B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 13:33:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CA4E1FAF4C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 13:33:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lEmFDKWD7wfFkpySoSsa06YIeHecbenHP+49trjw4e0=; b=h7Ed9HqqlT+9ye
-	yuMSkuoheqAF2EYnnr8ex6R4aC3RaY1IRb9RI0mKcxcSKqFRsp7gk4LtLXXNHMBd/XFRyGGASN4VS
-	3kIACYAmVYYsETVZMRm8DmuHXYj45dq/XZ3CCESsU9Q1/Rgui7MN041Z80MZLTMlBk+Vo+mmc4qY4
-	8U+2ffTZ3p4Q8M7PCAFWHxma255WrjI591yMT/okViOtkecK9HP4ReRJKt99IpT2ZTDtL5fct6KRp
-	BPl3hy9gi6MrTJT4ZLvep8zuno+Ff3izpUD5mjtxGU4P1X43fCBlrcHFyJcU9MHfzA4NT0W3XlQLi
-	HqOjNa8rsfZS4fF9dCcw==;
+	List-Owner; bh=Xlpdx8U9J4k8nBnAoTNCu9VnKZLgJF33A/Kq/QRzUUM=; b=jYQ5VLmcuBA8su
+	3G79lBWIFUvDNuJqjVT3SKco5yfnE9IgkPA0LIdiBLfJdOfwVKwnQPntLOX5c1WG8dyPlTO80c+nL
+	8D91FOxkfCZXelEEKu6TNain3V5MIq0scm2gcaRtFY1ETJOWJcA5pd0f+rhixk7htLC5bWvA8Ut0Y
+	sF0yJr59UEYf/fhztj7TtnKr1GO0gIV2woN3xhfmOLZJvDXa0ooqCAhZik1g9gCVaI1/pE2R+aR05
+	rZitlpVy6OxBjZBhsGbEG89BnoxSTiJwa4mCyDKdCiTUfSo47TYkiUAHgA01UO55Bo9+XYe25ydhF
+	XXtcb9c4xIvt4zhd8zjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jl9qG-0005M7-Cr; Tue, 16 Jun 2020 11:33:24 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1jl9qd-0005em-4b; Tue, 16 Jun 2020 11:33:47 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jl9q6-0005Ky-Bq
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 11:33:15 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id u15so4702305vkk.6
+ id 1jl9qP-0005cs-Hh
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 11:33:35 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id 190so11192760vsr.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 04:33:13 -0700 (PDT)
+ Tue, 16 Jun 2020 04:33:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZSg0muGbkwOyh6Ot3lTlpvo0Mmt4wgCAweHT5tRHxm0=;
- b=VibwAZSD84LU+4hHmx7H20bVV8ZpftSbkJ7qeyM+fPSnWy5b52HMmY8uC6oN/TOJ3N
- Ppd7MeLLzhu4lLdwL1u8+HFFzEJwEkIRbPl3l2liiO84a2tEXnOOLJLVeD2eQr2LEdo1
- GuqKU5ksA+/+QuCtf656nkvB+l8BnzLR+CwMeWI8NMKjSG87T6hTFLog6RcU8uJ5b42y
- lBqr6ENJXZQ31zwwwbbWm8fG8NZlpIVe4l6fg47KvRL/VkNsBi3g56UkQTQ64+dQKFpF
- 89zZO5b6w/YjOAiLDeGYGxLcR5EKhAFvvlLFVKqumAr2y0DtwWTd9++bWUxaqHYG4fEh
- NmyQ==
+ :cc; bh=Z4+Iz5hXHc4KqHs/Siy+ZWN5Iucm03GbQ2VElO3GIbE=;
+ b=nDIBdjVmKagHvZo44/5GnMutd+R9LOzqdj7KoKAjZCeARsNRBWF+9cGFnYMjSfV7Vs
+ r4303MeB7Zgsz3BHhUBei2NxgJ77BYTNOA6KEqwV2dziFSfcZeH/37omrb/OhrA2FVhN
+ iVNLxGGtaXs8BSbxMcqI1p1jIEB5fmqAanfN0b/EtI8ut38Sql4N/26QCNTV3WypKHL7
+ Zt940MpjDG13b3XlCEGfJ5u6HOdKds0M50x4KT+fPeZ+d5gjJmO3/4sxjcS67kQrPfUf
+ wAagBLnmntF9pcPlTMGp34+8QiVEPqy3ZyRCeSFCk6rky6z01YGR03XLjBKgUcGL6oXy
+ h9+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ZSg0muGbkwOyh6Ot3lTlpvo0Mmt4wgCAweHT5tRHxm0=;
- b=tZpt+gbqR/wL5b2povSEB4OT3Ck+rGb0OUEetk9kqYMlohosAiIP7Sb9Sja3KCoOBq
- ZnHythz1MV1BiuFyAFIRH7q4CgFjf+9szCYQJnTK7BFXxl8TcPLggXNd4EsG7Zxl/VbJ
- CIFiwBWkgp0Pr8KTsAwumQcSl/yTZS88GmtiK3v2fpmZVqJYkbJO1NEhqz48IL4QFzs8
- c/kj2ZRybo/a7DkI03q9rO4sVXkX10q06j9vMCrrN1QerHuoq5fDLD9d9yviDDTHOrYS
- hVbDLjCwiRMuxbabE+EsOLmlBaSFxM/R+VSzvKfcExvT8a7CfzbkLmsAVQoG7eUVEjEE
- Pk4w==
-X-Gm-Message-State: AOAM533ScMAJNiYoA6u0JROWGbqUiLuefolnEks9UN43JqHsSWk/aLA/
- sSSl4GHr3JUeeKcJ3izJuVHIUuN7C9S3xctIOoUgnQ==
-X-Google-Smtp-Source: ABdhPJznqqxzYSq4IwrFjXL5kmjhHPScZNDOA7H32xZbM7qlqeiuriVkd5OOYnJKbb8oO4Q4Ov7r07YvZL4Xn1v7YjE=
-X-Received: by 2002:a1f:2145:: with SMTP id h66mr1118293vkh.53.1592307192362; 
- Tue, 16 Jun 2020 04:33:12 -0700 (PDT)
+ bh=Z4+Iz5hXHc4KqHs/Siy+ZWN5Iucm03GbQ2VElO3GIbE=;
+ b=mrfPwBdfHKhJsXSKdl59m69gGRwgCSHlsQkrlnmO/z8smm2fMwVXEf34vsOXBQYlq5
+ C25tZN0szih52cPDpMvey72La17NXsVzpTLYU1g4jNItvZsx4H3e6NjY66iipXXKN0ql
+ xEbKEVtNuK2JmCpZReCVkcmzz7fdxwhyVnplczZ4WhkrBADHBmxK9ccBrNx2NLsDDogc
+ rNvNSucmxJVycEiGcjsIlxgx2ErUqsyDZnRREawH8tQUVaQxqvxvVYTt0mMOf3vKBgGq
+ Qz6ZzmfUot3LNMMH/Ra6oWK77YkxT4xkbCKCFX9FyQVPcjxuqi1sf3LEzWLoyphSCeZM
+ YQ6A==
+X-Gm-Message-State: AOAM531v+UzhkBuWM4aO1A0Z/ZTIVgR/BIXMePkOOjYTJ3bFzEMe2H/+
+ sxzT6z/W3N0ARu23rA81rT0RfyEHRX24y+ev88pvUQ==
+X-Google-Smtp-Source: ABdhPJyGZERfhW1QKFPZ5+rChUj0a55YKn9tZGUbhrD+eRw5UOrhMGu/7HPk1pqELV9Q/H4lqZhJMwIGM2yDSPP9sLo=
+X-Received: by 2002:a67:903:: with SMTP id 3mr1156423vsj.191.1592307212063;
+ Tue, 16 Jun 2020 04:33:32 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200608084458.32014-1-narmstrong@baylibre.com>
-In-Reply-To: <20200608084458.32014-1-narmstrong@baylibre.com>
+References: <20200608162226.3259186-1-hslester96@gmail.com>
+In-Reply-To: <20200608162226.3259186-1-hslester96@gmail.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 16 Jun 2020 13:32:36 +0200
-Message-ID: <CAPDyKFo7VA-wbOZUxExUpPoc+u446KecFARX0KNCakaubowpXg@mail.gmail.com>
-Subject: Re: [PATCH] mmc: meson-gx: limit segments to 1 when dram-access-quirk
- is needed
-To: Neil Armstrong <narmstrong@baylibre.com>
+Date: Tue, 16 Jun 2020 13:32:55 +0200
+Message-ID: <CAPDyKFrrrydrUaOVGB+VTgLSGMn41JO+ughhza_BzGPE7wm_yw@mail.gmail.com>
+Subject: Re: [PATCH] mmc: sdhci-of-arasan: Add missed checks for
+ devm_clk_register()
+To: Chuhong Yuan <hslester96@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_043314_408559_61A7A993 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20200616_043333_621619_A0A7BB3E 
+X-CRM114-Status: GOOD (  14.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -91,64 +91,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Christian Hewitt <christianshewitt@gmail.com>,
+Cc: Heiko Stuebner <heiko@sntech.de>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Art Nikpal <art@khadas.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 8 Jun 2020 at 10:45, Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Mon, 8 Jun 2020 at 18:22, Chuhong Yuan <hslester96@gmail.com> wrote:
 >
-> The actual max_segs computation leads to failure while using the broadcom
-> sdio brcmfmac/bcmsdh driver, since the driver tries to make usage of scatter
-> gather.
+> These functions do not check the return value of devm_clk_register():
+>   - sdhci_arasan_register_sdcardclk()
+>   - sdhci_arasan_register_sampleclk()
 >
-> But with the dram-access-quirk we use a 1,5K SRAM bounce buffer, and the
-> max_segs current value of 3 leads to max transfers to 4,5k, which doesn't work.
+> Therefore, add the missed checks to fix them.
 >
-> This patch sets max_segs to 1 to better describe the hardware limitation,
-> and fix the SDIO functionnality with the brcmfmac/bcmsdh driver on Amlogic
-> G12A/G12B SoCs on boards like SEI510 or Khadas VIM3.
->
-> Reported-by: Art Nikpal <art@khadas.com>
-> Reported-by: Christian Hewitt <christianshewitt@gmail.com>
-> Fixes: acdc8e71d9bb ("mmc: meson-gx: add dram-access-quirk")
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> Fixes: c390f2110adf1 ("mmc: sdhci-of-arasan: Add ability to export card clock")
+> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
 
-Applied for fixes and by adding a stable tag, thanks!
+Applied for next, thanks!
 
 Kind regards
 Uffe
 
 
 > ---
->  drivers/mmc/host/meson-gx-mmc.c | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
+>  drivers/mmc/host/sdhci-of-arasan.c | 4 ++++
+>  1 file changed, 4 insertions(+)
 >
-> diff --git a/drivers/mmc/host/meson-gx-mmc.c b/drivers/mmc/host/meson-gx-mmc.c
-> index 35400cf2a2e4..cfaf8e7e22ec 100644
-> --- a/drivers/mmc/host/meson-gx-mmc.c
-> +++ b/drivers/mmc/host/meson-gx-mmc.c
-> @@ -1143,9 +1143,11 @@ static int meson_mmc_probe(struct platform_device *pdev)
+> diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
+> index db9b544465cd..fb26e743e1fd 100644
+> --- a/drivers/mmc/host/sdhci-of-arasan.c
+> +++ b/drivers/mmc/host/sdhci-of-arasan.c
+> @@ -1299,6 +1299,8 @@ sdhci_arasan_register_sdcardclk(struct sdhci_arasan_data *sdhci_arasan,
+>         clk_data->sdcardclk_hw.init = &sdcardclk_init;
+>         clk_data->sdcardclk =
+>                 devm_clk_register(dev, &clk_data->sdcardclk_hw);
+> +       if (IS_ERR(clk_data->sdcardclk))
+> +               return PTR_ERR(clk_data->sdcardclk);
+>         clk_data->sdcardclk_hw.init = NULL;
 >
->         mmc->caps |= MMC_CAP_CMD23;
->         if (host->dram_access_quirk) {
-> +               /* Limit segments to 1 due to low available sram memory */
-> +               mmc->max_segs = 1;
->                 /* Limit to the available sram memory */
-> -               mmc->max_segs = SD_EMMC_SRAM_DATA_BUF_LEN / mmc->max_blk_size;
-> -               mmc->max_blk_count = mmc->max_segs;
-> +               mmc->max_blk_count = SD_EMMC_SRAM_DATA_BUF_LEN /
-> +                                    mmc->max_blk_size;
->         } else {
->                 mmc->max_blk_count = CMD_CFG_LENGTH_MASK;
->                 mmc->max_segs = SD_EMMC_DESC_BUF_LEN /
+>         ret = of_clk_add_provider(np, of_clk_src_simple_get,
+> @@ -1349,6 +1351,8 @@ sdhci_arasan_register_sampleclk(struct sdhci_arasan_data *sdhci_arasan,
+>         clk_data->sampleclk_hw.init = &sampleclk_init;
+>         clk_data->sampleclk =
+>                 devm_clk_register(dev, &clk_data->sampleclk_hw);
+> +       if (IS_ERR(clk_data->sampleclk))
+> +               return PTR_ERR(clk_data->sampleclk);
+>         clk_data->sampleclk_hw.init = NULL;
+>
+>         ret = of_clk_add_provider(np, of_clk_src_simple_get,
 > --
-> 2.22.0
+> 2.26.2
 >
 
 _______________________________________________
