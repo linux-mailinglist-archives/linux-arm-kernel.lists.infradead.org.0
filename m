@@ -2,97 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AFCE1FBE60
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 20:46:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73CB51FBE61
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jun 2020 20:47:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=74CoWCygXvKz9eUhEv77VAQOdrsJ3yZRJys/zRMlVro=; b=Rk4zPoKZSynmZZ
-	xbcAG5HUptGETYtBqn3i6KVc/tglQV5vN8zlMwArpL0klyE7BihW7uCaRNaeYg6gi3ZEDXX0uaMND
-	lbwBNcRJynZ9mRgsoLqW7qGQ76ektdU7V81TySBIjVwBjZrLq0BJWL/B63217pnmOSAwyg2RtQ0s0
-	gSsgOq8m3cxUTjjGkGzLkdj8l4ajCrUcn6W1165cRh+YGtPtX8/vkMZHUbhF01hA0OjonrJTA3UuZ
-	k1tMm35WM/TWnO3NNS00cWJPWuwxa5y9zZ6hWTPZHFU6KkwHnExob1lqn9dg3znM/RLsIswQ7M/eO
-	Ilu10Z3IDp+fuLdYS4GQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t4Bjn6cHst62bzCtFWUuuPTfDlhI0JARX96XFbJX/T4=; b=Goom2gNWbp6kKn
+	NI+kBOnoEOPOkbscvcqevtrCl+QtZ/yixhtyTUfmFCo12xd/PvyVH3Z2iHnskwCF40E1+qLFYnhZ4
+	EpDLz6iCvrxtE28HfpEv7vCTQ+Xzf4nll92MWHmYFRb5PJkphl5SC1nE5uySQ0CL/i/78AdiwyU4D
+	PEGtRKtu4vABkiknPcTn/YBo7Daoi4gFlnNZKWzTJNwVwwgV9felFTotO0ChJwttT5KdT29F4L7Hx
+	5W/H17jY7//3u5j9jY+BFyLjV7HeDiRray2O1NoFR/bMcyMFWuzlPEiYeQyn1qFUcIlB0r5cgaalt
+	ndisznBBxvnE4atthYSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlGbI-00007L-U0; Tue, 16 Jun 2020 18:46:24 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jlGbo-0000WX-AG; Tue, 16 Jun 2020 18:46:56 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlGai-00089M-M8
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 18:45:51 +0000
-Received: by mail-wm1-x344.google.com with SMTP id b82so3849910wmb.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 11:45:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=vdi3H2C/jQuyG7WR8KBqwcaxDEh5+6Bh4PRaCFGZApc=;
- b=ttoK+iT5v54o+ozc7iSNEMJWme4D9KPsqbec/RShIFlZEsqwv7nW4LOobZeYXK+rCN
- Lf5KC7Q3yI6B2Pu0zu+pMfM+4G2K4vVW4n1qiDcyowt3/o2COsXm8EQpC0kIhh4e1hfY
- Fj4JL8f48PPKeJ27KUnAECEWB4shocB6vzKOwDIbJNtPmpWtYMC0fw+ry5ttvVjqxHeX
- H7egn2lwMhiUq8DU0vpDM9tBdk5IhK26aMA2EKg84ZOSPZwHE5RkhiThTGLPvY90E74r
- HImBQXVQRLQ07BgDnGfsLEcR0FiLPsbdfa0aNeSYtIBjoIdqoytT/o7yfMB5U6yPUKTn
- HLIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=vdi3H2C/jQuyG7WR8KBqwcaxDEh5+6Bh4PRaCFGZApc=;
- b=osIrE01DQWAIR/heUlngzaL72ZzkWtsrOIinzG/0ujty36XkSYSdc7KfERg/xj9j9k
- WG6418JqeZ/2wAIQfP/R5s9e9s9bDcSumWj4FOY8xfbcqf+RwQJY2bnuos6A/0W8HOXX
- It0S1eaS/ObG+SlbZda6ogTagiKZ45pkHrp7CHQfzoJ2wUv7ZOaxpfuW5cXY96u7wpjt
- paDbr4vi0SU0wpeAkdRDXb+bds/QlpcNIxXvcYVkHLql2GBrM6Nbf17JmphP067/OXRQ
- CF4z6KVEvT7yYZuQOEtE9CdKa0WRMTQWHjjdNZPgMDbmsnOA78k2U1ZXA5D4pvQXKWqI
- qQOg==
-X-Gm-Message-State: AOAM533c2YNF2CKLnMTIP2r28A1CWUIG+P4kHopPERvw3AqR+Dzsq02G
- UI22TaXJvAhG+paekN61smE=
-X-Google-Smtp-Source: ABdhPJx8miejefYpdnSzJ2sGiZUVWiw6+05YNRxTgUFfx/SeWTuJIxITkyeIogXgJb5zfOUPTHzDyw==
-X-Received: by 2002:a1c:c203:: with SMTP id s3mr4524581wmf.174.1592333146859; 
- Tue, 16 Jun 2020 11:45:46 -0700 (PDT)
-Received: from skynet.lan (90.red-88-20-62.staticip.rima-tde.net.
- [88.20.62.90])
- by smtp.gmail.com with ESMTPSA id q11sm30528707wrv.67.2020.06.16.11.45.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 11:45:46 -0700 (PDT)
-From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-To: simon@fire.lp0.eu, jonas.gorski@gmail.com, kishon@ti.com, vkoul@kernel.org,
- robh+dt@kernel.org, f.fainelli@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, p.zabel@pengutronix.de,
- krzk@kernel.org, gregkh@linuxfoundation.org, alcooperx@gmail.com,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 2/2] phy: bcm63xx-usbh: Add BCM63xx USBH driver
-Date: Tue, 16 Jun 2020 20:45:42 +0200
-Message-Id: <20200616184542.3504965-3-noltari@gmail.com>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20200616184542.3504965-1-noltari@gmail.com>
-References: <20200616184542.3504965-1-noltari@gmail.com>
+ id 1jlGbX-0000V0-Kp
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jun 2020 18:46:41 +0000
+IronPort-SDR: u4maVk9AhXHHhO2r+HcHuzBAwmntaDXn1ViXtfoDHQsX87LKeqTDQ725pBnz4RWbEpR26zYJlL
+ JYgh9zZIfaCw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 Jun 2020 11:46:38 -0700
+IronPort-SDR: yS4kdxs3NL8vNSOJdyaZMSBL1jVCCWzOmJc3lPSd14irDK4TUkxn/OPPXN/ybnkz2cjsq+AgLl
+ ZlhPLUZmLgcQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,519,1583222400"; d="scan'208";a="273248485"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.73])
+ ([10.237.72.73])
+ by orsmga003.jf.intel.com with ESMTP; 16 Jun 2020 11:46:35 -0700
+Subject: Re: [PATCH v3 2/3] sdhci: sparx5: Add Sparx5 SoC eMMC driver
+To: Lars Povlsen <lars.povlsen@microchip.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, SoC Team <soc@kernel.org>
+References: <20200616140027.4949-1-lars.povlsen@microchip.com>
+ <20200616140027.4949-3-lars.povlsen@microchip.com>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <b4ba671d-aa51-78a4-8e49-f105663a308a@intel.com>
+Date: Tue, 16 Jun 2020 21:46:05 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
+In-Reply-To: <20200616140027.4949-3-lars.povlsen@microchip.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_114548_770964_6F8CB209 
-X-CRM114-Status: GOOD (  19.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200616_114639_702177_83C20A1C 
+X-CRM114-Status: GOOD (  28.07  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [noltari[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,266 +78,348 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIEJDTTYzeHggVVNCSCBQSFkgZHJpdmVyIGZvciBCTUlQUy4KClNpZ25lZC1vZmYtYnk6IMOB
-bHZhcm8gRmVybsOhbmRleiBSb2phcyA8bm9sdGFyaUBnbWFpbC5jb20+Ci0tLQogdjM6IGludHJv
-ZHVjZSBjaGFuZ2VzIHN1Z2dlc3RlZCBieSBGbG9yaWFuOgogIC0gQWRkIHN1cHBvcnQgZm9yIGRl
-dmljZSBtb2RlLgogdjI6IGludHJvZHVjZSBjaGFuZ2VzIHN1Z2dlc3RlZCBieSBGbG9yaWFuOgog
-IC0gRHJvcCBPRiBkZXBlbmRlbmN5ICh1c2UgZGV2aWNlX2dldF9tYXRjaF9kYXRhKS4KICAtIERy
-b3AgX19pbml0Y29uc3QgZnJvbSB2YXJpYW50IHRhYmxlcy4KICAtIFVzZSBkZXZtX2Nsa19nZXRf
-b3B0aW9uYWwuCgogZHJpdmVycy9waHkvYnJvYWRjb20vS2NvbmZpZyAgICAgICAgICAgIHwgICA5
-ICsKIGRyaXZlcnMvcGh5L2Jyb2FkY29tL01ha2VmaWxlICAgICAgICAgICB8ICAgMSArCiBkcml2
-ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtNjN4eC11c2JoLmMgfCA0NTYgKysrKysrKysrKysrKysr
-KysrKysrKysrCiAzIGZpbGVzIGNoYW5nZWQsIDQ2NiBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9k
-ZSAxMDA2NDQgZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbTYzeHgtdXNiaC5jCgpkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9waHkvYnJvYWRjb20vS2NvbmZpZyBiL2RyaXZlcnMvcGh5L2Jyb2FkY29t
-L0tjb25maWcKaW5kZXggYjI5ZjExYzE5MTU1Li5hNzg4OWRmOGM1NDEgMTAwNjQ0Ci0tLSBhL2Ry
-aXZlcnMvcGh5L2Jyb2FkY29tL0tjb25maWcKKysrIGIvZHJpdmVycy9waHkvYnJvYWRjb20vS2Nv
-bmZpZwpAQCAtMiw2ICsyLDE1IEBACiAjCiAjIFBoeSBkcml2ZXJzIGZvciBCcm9hZGNvbSBwbGF0
-Zm9ybXMKICMKK2NvbmZpZyBQSFlfQkNNNjNYWF9VU0JICisJdHJpc3RhdGUgIkJDTTYzeHggVVNC
-SCBQSFkgZHJpdmVyIgorCWRlcGVuZHMgb24gQk1JUFNfR0VORVJJQyB8fCBDT01QSUxFX1RFU1QK
-KwlzZWxlY3QgR0VORVJJQ19QSFkKKwlkZWZhdWx0IEJNSVBTX0dFTkVSSUMKKwloZWxwCisJICBF
-bmFibGUgdGhpcyB0byBzdXBwb3J0IHRoZSBCQ002M3h4IFVTQkggUEhZIGRyaXZlci4KKwkgIElm
-IHVuc3VyZSwgc2F5IE4uCisKIGNvbmZpZyBQSFlfQ1lHTlVTX1BDSUUKIAl0cmlzdGF0ZSAiQnJv
-YWRjb20gQ3lnbnVzIFBDSWUgUEhZIGRyaXZlciIKIAlkZXBlbmRzIG9uIE9GICYmIChBUkNIX0JD
-TV9DWUdOVVMgfHwgQ09NUElMRV9URVNUKQpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYnJvYWRj
-b20vTWFrZWZpbGUgYi9kcml2ZXJzL3BoeS9icm9hZGNvbS9NYWtlZmlsZQppbmRleCBjNzhkZTU0
-NjEzNWMuLjcwMjQxMjdmODZhZCAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvYnJvYWRjb20vTWFr
-ZWZpbGUKKysrIGIvZHJpdmVycy9waHkvYnJvYWRjb20vTWFrZWZpbGUKQEAgLTEsNCArMSw1IEBA
-CiAjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCitvYmotJChDT05GSUdfUEhZX0JD
-TTYzWFhfVVNCSCkJCSs9IHBoeS1iY202M3h4LXVzYmgubwogb2JqLSQoQ09ORklHX1BIWV9DWUdO
-VVNfUENJRSkJCSs9IHBoeS1iY20tY3lnbnVzLXBjaWUubwogb2JqLSQoQ09ORklHX0JDTV9LT05B
-X1VTQjJfUEhZKQkJKz0gcGh5LWJjbS1rb25hLXVzYjIubwogb2JqLSQoQ09ORklHX1BIWV9CQ01f
-TlNfVVNCMikJCSs9IHBoeS1iY20tbnMtdXNiMi5vCmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9i
-cm9hZGNvbS9waHktYmNtNjN4eC11c2JoLmMgYi9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNt
-NjN4eC11c2JoLmMKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwLi41ODQ4
-MDcyMDUxNjYKLS0tIC9kZXYvbnVsbAorKysgYi9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNt
-NjN4eC11c2JoLmMKQEAgLTAsMCArMSw0NTYgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVy
-OiBHUEwtMi4wLW9yLWxhdGVyCisvKgorICogQkNNNjMyOCBVU0JIIFBIWSBDb250cm9sbGVyIERy
-aXZlcgorICoKKyAqIENvcHlyaWdodCAoQykgMjAyMCDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMg
-PG5vbHRhcmlAZ21haWwuY29tPgorICogQ29weXJpZ2h0IChDKSAyMDE1IFNpbW9uIEFybG90dCA8
-c2ltb25AZmlyZS5scDAuZXU+CisgKgorICogRGVyaXZlZCBmcm9tIGJjbTk2M3h4XzQuMTJMLjA2
-Ql9jb25zdW1lci9rZXJuZWwvbGludXgvYXJjaC9taXBzL2JjbTk2M3h4L3NldHVwLmM6CisgKiBD
-b3B5cmlnaHQgKEMpIDIwMDIgQnJvYWRjb20gQ29ycG9yYXRpb24KKyAqCisgKiBEZXJpdmVkIGZy
-b20gT3BlbldydCBwYXRjaGVzOgorICogQ29weXJpZ2h0IChDKSAyMDEzIEpvbmFzIEdvcnNraSA8
-am9uYXMuZ29yc2tpQGdtYWlsLmNvbT4KKyAqIENvcHlyaWdodCAoQykgMjAxMyBGbG9yaWFuIEZh
-aW5lbGxpIDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KKyAqIENvcHlyaWdodCAoQykgMjAwOCBNYXhp
-bWUgQml6b24gPG1iaXpvbkBmcmVlYm94LmZyPgorICovCisKKyNpbmNsdWRlIDxsaW51eC9jbGsu
-aD4KKyNpbmNsdWRlIDxsaW51eC9pby5oPgorI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgorI2lu
-Y2x1ZGUgPGxpbnV4L3BoeS9waHkuaD4KKyNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2Uu
-aD4KKyNpbmNsdWRlIDxsaW51eC9yZXNldC5oPgorCisvKiBVU0JIIGNvbnRyb2wgcmVnaXN0ZXIg
-b2Zmc2V0cyAqLworZW51bSB1c2JoX3JlZ3MgeworCVVTQkhfQlJUX0NPTlRST0wxID0gMCwKKwlV
-U0JIX0JSVF9DT05UUk9MMiwKKwlVU0JIX0JSVF9TVEFUVVMxLAorCVVTQkhfQlJUX1NUQVRVUzIs
-CisJVVNCSF9VVE1JX0NPTlRST0wxLAorCVVTQkhfVEVTVF9QT1JUX0NPTlRST0wsCisJVVNCSF9Q
-TExfQ09OVFJPTDEsCisjZGVmaW5lICAgVVNCSF9QTExDX1JFRkNMS1NFTF9TSElGVAkwCisjZGVm
-aW5lICAgVVNCSF9QTExDX1JFRkNMS1NFTF9NQVNLCSgweDMgPDwgVVNCSF9QTExDX1JFRkNMS1NF
-TF9TSElGVCkKKyNkZWZpbmUgICBVU0JIX1BMTENfQ0xLU0VMX1NISUZUCTIKKyNkZWZpbmUgICBV
-U0JIX1BMTENfQ0xLU0VMX01BU0sJCSgweDMgPDwgVVNCSF9QTExDX0NMS1NFTF9NQVNLKQorI2Rl
-ZmluZSAgIFVTQkhfUExMQ19YVEFMX1BXUkRXTkIJQklUKDQpCisjZGVmaW5lICAgVVNCSF9QTExD
-X1BMTF9QV1JEV05CCQlCSVQoNSkKKyNkZWZpbmUgICBVU0JIX1BMTENfUExMX0NBTEVOCQlCSVQo
-NikKKyNkZWZpbmUgICBVU0JIX1BMTENfUEhZUExMX0JZUAkJQklUKDcpCisjZGVmaW5lICAgVVNC
-SF9QTExDX1BMTF9SRVNFVAkJQklUKDgpCisjZGVmaW5lICAgVVNCSF9QTExDX1BMTF9JRERRX1BX
-UkROCUJJVCg5KQorI2RlZmluZSAgIFVTQkhfUExMQ19QTExfUFdSRE5fREVMQVkJQklUKDEwKQor
-I2RlZmluZSAgIFVTQkhfNjMxOF9QTExDX1BMTF9TVVNQRU5EX0VOCUJJVCgyNykKKyNkZWZpbmUg
-ICBVU0JIXzYzMThfUExMQ19QSFlQTExfQllQCUJJVCgyOSkKKyNkZWZpbmUgICBVU0JIXzYzMThf
-UExMQ19QTExfUkVTRVQJQklUKDMwKQorI2RlZmluZSAgIFVTQkhfNjMxOF9QTExDX1BMTF9JRERR
-X1BXUkROCUJJVCgzMSkKKwlVU0JIX1NXQVBfQ09OVFJPTCwKKyNkZWZpbmUgICBVU0JIX1NDX09I
-Q0lfREFUQV9TV0FQCUJJVCgwKQorI2RlZmluZSAgIFVTQkhfU0NfT0hDSV9FTkRJQU5fU1dBUAlC
-SVQoMSkKKyNkZWZpbmUgICBVU0JIX1NDX09IQ0lfTE9HSUNBTF9BRERSX0VOCUJJVCgyKQorI2Rl
-ZmluZSAgIFVTQkhfU0NfRUhDSV9EQVRBX1NXQVAJQklUKDMpCisjZGVmaW5lICAgVVNCSF9TQ19F
-SENJX0VORElBTl9TV0FQCUJJVCg0KQorI2RlZmluZSAgIFVTQkhfU0NfRUhDSV9MT0dJQ0FMX0FE
-RFJfRU4JQklUKDUpCisjZGVmaW5lICAgVVNCSF9TQ19VU0JfREVWSUNFX1NFTAlCSVQoNikKKwlV
-U0JIX0dFTkVSSUNfQ09OVFJPTCwKKyNkZWZpbmUgICBVU0JIX0dDX1BMTF9TVVNQRU5EX0VOCUJJ
-VCgxKQorCVVTQkhfRlJBTUVfQURKVVNUX1ZBTFVFLAorCVVTQkhfU0VUVVAsCisjZGVmaW5lICAg
-VVNCSF9TX0lPQwkJCUJJVCg0KQorI2RlZmluZSAgIFVTQkhfU19JUFAJCQlCSVQoNSkKKwlVU0JI
-X01ESU8sCisJVVNCSF9NRElPMzIsCisJVVNCSF9VU0JfU0lNX0NPTlRST0wsCisjZGVmaW5lICAg
-VVNCSF9VU0NfTEFERFJfU0VMCQlCSVQoNSkKKworCV9fVVNCSF9FTlVNX1NJWkUKK307CisKK3N0
-cnVjdCBiY202M3h4X3VzYmhfcGh5X3ZhcmlhbnQgeworCS8qIFVTQiBTaW0gQ29udHJvbCBiaXRz
-IHRvIHNldCAqLworCXUzMiB1c2Nfc2V0OworCisJLyogVGVzdCBQb3J0IENvbnRyb2wgdmFsdWUg
-dG8gc2V0IGlmIG5vbi16ZXJvICovCisJdTMyIHRwY192YWw7CisKKwkvKiBTZXR1cCBiaXRzIHRv
-IHNldC9jbGVhciBmb3IgcG93ZXIgb24gKi8KKwl1MzIgc2V0dXBfc2V0OworCXUzMiBzZXR1cF9j
-bHI7CisKKwkvKiBQTExDIGJpdHMgdG8gc2V0L2NsZWFyIGZvciBwb3dlciBvbiAqLworCXUzMiBw
-b3dlcl9wbGxjX3NldDsKKwl1MzIgcG93ZXJfcGxsY19jbHI7CisKKwkvKiBEZXZpY2UgbW9kZSBz
-ZWxlY3RhYmxlICovCisJYm9vbCBkZXZfbW9kZTsKKworCS8qIFJlZ2lzdGVycyAqLworCWxvbmcg
-cmVnc1tfX1VTQkhfRU5VTV9TSVpFXTsKK307CisKK3N0cnVjdCBiY202M3h4X3VzYmhfcGh5IHsK
-Kwl2b2lkIF9faW9tZW0gKmJhc2U7CisJc3RydWN0IGNsayAqdXNiaF9jbGs7CisJc3RydWN0IGNs
-ayAqdXNiX3JlZl9jbGs7CisJc3RydWN0IHJlc2V0X2NvbnRyb2wgKnJlc2V0OworCWNvbnN0IHN0
-cnVjdCBiY202M3h4X3VzYmhfcGh5X3ZhcmlhbnQgKnZhcmlhbnQ7CisJYm9vbCBpc19kZXZpY2U7
-Cit9OworCitzdGF0aWMgY29uc3Qgc3RydWN0IGJjbTYzeHhfdXNiaF9waHlfdmFyaWFudCB1c2Jo
-X2JjbTYzMTggPSB7CisJLnJlZ3MgPSB7CisJCVtVU0JIX0JSVF9DT05UUk9MMV0gPSAtMSwKKwkJ
-W1VTQkhfQlJUX0NPTlRST0wyXSA9IC0xLAorCQlbVVNCSF9CUlRfU1RBVFVTMV0gPSAtMSwKKwkJ
-W1VTQkhfQlJUX1NUQVRVUzJdID0gLTEsCisJCVtVU0JIX1VUTUlfQ09OVFJPTDFdID0gMHgyYywK
-KwkJW1VTQkhfVEVTVF9QT1JUX0NPTlRST0xdID0gMHgxYywKKwkJW1VTQkhfUExMX0NPTlRST0wx
-XSA9IDB4MDQsCisJCVtVU0JIX1NXQVBfQ09OVFJPTF0gPSAweDBjLAorCQlbVVNCSF9HRU5FUklD
-X0NPTlRST0xdID0gLTEsCisJCVtVU0JIX0ZSQU1FX0FESlVTVF9WQUxVRV0gPSAweDA4LAorCQlb
-VVNCSF9TRVRVUF0gPSAweDAwLAorCQlbVVNCSF9NRElPXSA9IDB4MTQsCisJCVtVU0JIX01ESU8z
-Ml0gPSAweDE4LAorCQlbVVNCSF9VU0JfU0lNX0NPTlRST0xdID0gMHgyMCwKKwl9LAorCS5zZXR1
-cF9zZXQgPSBVU0JIX1NfSU9DLAorCS5zZXR1cF9jbHIgPSAwLAorCS51c2Nfc2V0ID0gVVNCSF9V
-U0NfTEFERFJfU0VMLAorCS50cGNfdmFsID0gMCwKKwkucG93ZXJfcGxsY19zZXQgPSBVU0JIXzYz
-MThfUExMQ19QTExfU1VTUEVORF9FTiwKKwkucG93ZXJfcGxsY19jbHIgPSBVU0JIXzYzMThfUExM
-Q19QTExfSUREUV9QV1JETiwKKwkuZGV2X21vZGUgPSB0cnVlLAorfTsKKworc3RhdGljIGNvbnN0
-IHN0cnVjdCBiY202M3h4X3VzYmhfcGh5X3ZhcmlhbnQgdXNiaF9iY202MzI4ID0geworCS5yZWdz
-ID0geworCQlbVVNCSF9CUlRfQ09OVFJPTDFdID0gMHgwMCwKKwkJW1VTQkhfQlJUX0NPTlRST0wy
-XSA9IDB4MDQsCisJCVtVU0JIX0JSVF9TVEFUVVMxXSA9IDB4MDgsCisJCVtVU0JIX0JSVF9TVEFU
-VVMyXSA9IDB4MGMsCisJCVtVU0JIX1VUTUlfQ09OVFJPTDFdID0gMHgxMCwKKwkJW1VTQkhfVEVT
-VF9QT1JUX0NPTlRST0xdID0gMHgxNCwKKwkJW1VTQkhfUExMX0NPTlRST0wxXSA9IDB4MTgsCisJ
-CVtVU0JIX1NXQVBfQ09OVFJPTF0gPSAweDFjLAorCQlbVVNCSF9HRU5FUklDX0NPTlRST0xdID0g
-MHgyMCwKKwkJW1VTQkhfRlJBTUVfQURKVVNUX1ZBTFVFXSA9IDB4MjQsCisJCVtVU0JIX1NFVFVQ
-XSA9IDB4MjgsCisJCVtVU0JIX01ESU9dID0gMHgyYywKKwkJW1VTQkhfTURJTzMyXSA9IDB4MzAs
-CisJCVtVU0JIX1VTQl9TSU1fQ09OVFJPTF0gPSAweDM0LAorCX0sCisJLnNldHVwX3NldCA9IFVT
-QkhfU19JT0MsCisJLnNldHVwX2NsciA9IDAsCisJLnVzY19zZXQgPSAwLAorCS50cGNfdmFsID0g
-MCwKKwkucG93ZXJfcGxsY19zZXQgPSAwLAorCS5wb3dlcl9wbGxjX2NsciA9IDAsCisJLmRldl9t
-b2RlID0gdHJ1ZSwKK307CisKK3N0YXRpYyBjb25zdCBzdHJ1Y3QgYmNtNjN4eF91c2JoX3BoeV92
-YXJpYW50IHVzYmhfYmNtNjM1OCA9IHsKKwkucmVncyA9IHsKKwkJW1VTQkhfQlJUX0NPTlRST0wx
-XSA9IC0xLAorCQlbVVNCSF9CUlRfQ09OVFJPTDJdID0gLTEsCisJCVtVU0JIX0JSVF9TVEFUVVMx
-XSA9IC0xLAorCQlbVVNCSF9CUlRfU1RBVFVTMl0gPSAtMSwKKwkJW1VTQkhfVVRNSV9DT05UUk9M
-MV0gPSAtMSwKKwkJW1VTQkhfVEVTVF9QT1JUX0NPTlRST0xdID0gMHgyNCwKKwkJW1VTQkhfUExM
-X0NPTlRST0wxXSA9IC0xLAorCQlbVVNCSF9TV0FQX0NPTlRST0xdID0gMHgwMCwKKwkJW1VTQkhf
-R0VORVJJQ19DT05UUk9MXSA9IC0xLAorCQlbVVNCSF9GUkFNRV9BREpVU1RfVkFMVUVdID0gLTEs
-CisJCVtVU0JIX1NFVFVQXSA9IC0xLAorCQlbVVNCSF9NRElPXSA9IC0xLAorCQlbVVNCSF9NRElP
-MzJdID0gLTEsCisJCVtVU0JIX1VTQl9TSU1fQ09OVFJPTF0gPSAtMSwKKwl9LAorCS8qCisJICog
-VGhlIG1hZ2ljIHZhbHVlIGNvbWVzIGZvciB0aGUgb3JpZ2luYWwgdmVuZG9yIEJTUAorCSAqIGFu
-ZCBpcyBuZWVkZWQgZm9yIFVTQiB0byB3b3JrLiBEYXRhc2hlZXQgZG9lcyBub3QKKwkgKiBoZWxw
-LCBzbyB0aGUgbWFnaWMgdmFsdWUgaXMgdXNlZCBhcy1pcy4KKwkgKi8KKwkudHBjX3ZhbCA9IDB4
-MWMwMDIwLAorfTsKKworc3RhdGljIGNvbnN0IHN0cnVjdCBiY202M3h4X3VzYmhfcGh5X3Zhcmlh
-bnQgdXNiaF9iY202MzY4ID0geworCS5yZWdzID0geworCQlbVVNCSF9CUlRfQ09OVFJPTDFdID0g
-MHgwMCwKKwkJW1VTQkhfQlJUX0NPTlRST0wyXSA9IDB4MDQsCisJCVtVU0JIX0JSVF9TVEFUVVMx
-XSA9IDB4MDgsCisJCVtVU0JIX0JSVF9TVEFUVVMyXSA9IDB4MGMsCisJCVtVU0JIX1VUTUlfQ09O
-VFJPTDFdID0gMHgxMCwKKwkJW1VTQkhfVEVTVF9QT1JUX0NPTlRST0xdID0gMHgxNCwKKwkJW1VT
-QkhfUExMX0NPTlRST0wxXSA9IDB4MTgsCisJCVtVU0JIX1NXQVBfQ09OVFJPTF0gPSAweDFjLAor
-CQlbVVNCSF9HRU5FUklDX0NPTlRST0xdID0gLTEsCisJCVtVU0JIX0ZSQU1FX0FESlVTVF9WQUxV
-RV0gPSAweDI0LAorCQlbVVNCSF9TRVRVUF0gPSAweDI4LAorCQlbVVNCSF9NRElPXSA9IDB4MmMs
-CisJCVtVU0JIX01ESU8zMl0gPSAweDMwLAorCQlbVVNCSF9VU0JfU0lNX0NPTlRST0xdID0gMHgz
-NCwKKwl9LAorCS5zZXR1cF9zZXQgPSBVU0JIX1NfSU9DLAorCS5zZXR1cF9jbHIgPSAwLAorCS51
-c2Nfc2V0ID0gMCwKKwkudHBjX3ZhbCA9IDAsCisJLnBvd2VyX3BsbGNfc2V0ID0gMCwKKwkucG93
-ZXJfcGxsY19jbHIgPSBVU0JIX1BMTENfUExMX0lERFFfUFdSRE4gfCBVU0JIX1BMTENfUExMX1BX
-UkROX0RFTEFZLAorCS5kZXZfbW9kZSA9IHRydWUsCit9OworCitzdGF0aWMgY29uc3Qgc3RydWN0
-IGJjbTYzeHhfdXNiaF9waHlfdmFyaWFudCB1c2JoX2JjbTYzMjY4ID0geworCS5yZWdzID0gewor
-CQlbVVNCSF9CUlRfQ09OVFJPTDFdID0gMHgwMCwKKwkJW1VTQkhfQlJUX0NPTlRST0wyXSA9IDB4
-MDQsCisJCVtVU0JIX0JSVF9TVEFUVVMxXSA9IDB4MDgsCisJCVtVU0JIX0JSVF9TVEFUVVMyXSA9
-IDB4MGMsCisJCVtVU0JIX1VUTUlfQ09OVFJPTDFdID0gMHgxMCwKKwkJW1VTQkhfVEVTVF9QT1JU
-X0NPTlRST0xdID0gMHgxNCwKKwkJW1VTQkhfUExMX0NPTlRST0wxXSA9IDB4MTgsCisJCVtVU0JI
-X1NXQVBfQ09OVFJPTF0gPSAweDFjLAorCQlbVVNCSF9HRU5FUklDX0NPTlRST0xdID0gMHgyMCwK
-KwkJW1VTQkhfRlJBTUVfQURKVVNUX1ZBTFVFXSA9IDB4MjQsCisJCVtVU0JIX1NFVFVQXSA9IDB4
-MjgsCisJCVtVU0JIX01ESU9dID0gMHgyYywKKwkJW1VTQkhfTURJTzMyXSA9IDB4MzAsCisJCVtV
-U0JIX1VTQl9TSU1fQ09OVFJPTF0gPSAweDM0LAorCX0sCisJLnNldHVwX3NldCA9IFVTQkhfU19J
-T0MsCisJLnNldHVwX2NsciA9IFVTQkhfU19JUFAsCisJLnVzY19zZXQgPSAwLAorCS50cGNfdmFs
-ID0gMCwKKwkucG93ZXJfcGxsY19zZXQgPSAwLAorCS5wb3dlcl9wbGxjX2NsciA9IFVTQkhfUExM
-Q19QTExfSUREUV9QV1JETiB8IFVTQkhfUExMQ19QTExfUFdSRE5fREVMQVksCisJLmRldl9tb2Rl
-ID0gdHJ1ZSwKK307CisKK3N0YXRpYyBpbmxpbmUgYm9vbCB1c2JoX2hhc19yZWcoc3RydWN0IGJj
-bTYzeHhfdXNiaF9waHkgKnVzYmgsIGludCByZWcpCit7CisJcmV0dXJuICh1c2JoLT52YXJpYW50
-LT5yZWdzW3JlZ10gPj0gMCk7Cit9CisKK3N0YXRpYyBpbmxpbmUgdTMyIHVzYmhfcmVhZGwoc3Ry
-dWN0IGJjbTYzeHhfdXNiaF9waHkgKnVzYmgsIGludCByZWcpCit7CisJcmV0dXJuIF9fcmF3X3Jl
-YWRsKHVzYmgtPmJhc2UgKyB1c2JoLT52YXJpYW50LT5yZWdzW3JlZ10pOworfQorCitzdGF0aWMg
-aW5saW5lIHZvaWQgdXNiaF93cml0ZWwoc3RydWN0IGJjbTYzeHhfdXNiaF9waHkgKnVzYmgsIGlu
-dCByZWcsCisJCQkgICAgICAgdTMyIHZhbHVlKQoreworCV9fcmF3X3dyaXRlbCh2YWx1ZSwgdXNi
-aC0+YmFzZSArIHVzYmgtPnZhcmlhbnQtPnJlZ3NbcmVnXSk7Cit9CisKK3N0YXRpYyBpbnQgYmNt
-NjN4eF91c2JoX3BoeV9pbml0KHN0cnVjdCBwaHkgKnBoeSkKK3sKKwlzdHJ1Y3QgYmNtNjN4eF91
-c2JoX3BoeSAqdXNiaCA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOworCWludCByZXQ7CisKKwlyZXQg
-PSBjbGtfcHJlcGFyZV9lbmFibGUodXNiaC0+dXNiaF9jbGspOworCWlmIChyZXQpIHsKKwkJZGV2
-X2VycigmcGh5LT5kZXYsICJ1bmFibGUgdG8gZW5hYmxlIHVzYmggY2xvY2s6ICVkXG4iLCByZXQp
-OworCQlyZXR1cm4gcmV0OworCX0KKworCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZSh1c2JoLT51
-c2JfcmVmX2Nsayk7CisJaWYgKHJldCkgeworCQlkZXZfZXJyKCZwaHktPmRldiwgInVuYWJsZSB0
-byBlbmFibGUgdXNiX3JlZiBjbG9jazogJWRcbiIsIHJldCk7CisJCWNsa19kaXNhYmxlX3VucHJl
-cGFyZSh1c2JoLT51c2JoX2Nsayk7CisJCXJldHVybiByZXQ7CisJfQorCisJcmV0ID0gcmVzZXRf
-Y29udHJvbF9yZXNldCh1c2JoLT5yZXNldCk7CisJaWYgKHJldCkgeworCQlkZXZfZXJyKCZwaHkt
-PmRldiwgInVuYWJsZSB0byByZXNldCBkZXZpY2U6ICVkXG4iLCByZXQpOworCQljbGtfZGlzYWJs
-ZV91bnByZXBhcmUodXNiaC0+dXNiX3JlZl9jbGspOworCQljbGtfZGlzYWJsZV91bnByZXBhcmUo
-dXNiaC0+dXNiaF9jbGspOworCQlyZXR1cm4gcmV0OworCX0KKworCS8qIENvbmZpZ3VyZSB0byB3
-b3JrIGluIG5hdGl2ZSBDUFUgZW5kaWFuICovCisJaWYgKHVzYmhfaGFzX3JlZyh1c2JoLCBVU0JI
-X1NXQVBfQ09OVFJPTCkpIHsKKwkJdTMyIHZhbCA9IHVzYmhfcmVhZGwodXNiaCwgVVNCSF9TV0FQ
-X0NPTlRST0wpOworCisJCXZhbCB8PSBVU0JIX1NDX0VIQ0lfREFUQV9TV0FQOworCQl2YWwgJj0g
-flVTQkhfU0NfRUhDSV9FTkRJQU5fU1dBUDsKKworCQl2YWwgfD0gVVNCSF9TQ19PSENJX0RBVEFf
-U1dBUDsKKwkJdmFsICY9IH5VU0JIX1NDX09IQ0lfRU5ESUFOX1NXQVA7CisKKwkJaWYgKHVzYmgt
-PmlzX2RldmljZSkKKwkJCXZhbCB8PSBVU0JIX1NDX1VTQl9ERVZJQ0VfU0VMOworCisJCXVzYmhf
-d3JpdGVsKHVzYmgsIFVTQkhfU1dBUF9DT05UUk9MLCB2YWwpOworCX0KKworCWlmICh1c2JoX2hh
-c19yZWcodXNiaCwgVVNCSF9TRVRVUCkpIHsKKwkJdTMyIHZhbCA9IHVzYmhfcmVhZGwodXNiaCwg
-VVNCSF9TRVRVUCk7CisKKwkJdmFsIHw9IHVzYmgtPnZhcmlhbnQtPnNldHVwX3NldDsKKwkJdmFs
-ICY9IH51c2JoLT52YXJpYW50LT5zZXR1cF9jbHI7CisKKwkJdXNiaF93cml0ZWwodXNiaCwgVVNC
-SF9TRVRVUCwgdmFsKTsKKwl9CisKKwlpZiAodXNiaF9oYXNfcmVnKHVzYmgsIFVTQkhfVVNCX1NJ
-TV9DT05UUk9MKSkgeworCQl1MzIgdmFsID0gdXNiaF9yZWFkbCh1c2JoLCBVU0JIX1VTQl9TSU1f
-Q09OVFJPTCk7CisKKwkJdmFsIHw9IHVzYmgtPnZhcmlhbnQtPnVzY19zZXQ7CisKKwkJdXNiaF93
-cml0ZWwodXNiaCwgVVNCSF9VU0JfU0lNX0NPTlRST0wsIHZhbCk7CisJfQorCisJaWYgKHVzYmgt
-PnZhcmlhbnQtPnRwY192YWwgJiYKKwkgICAgdXNiaF9oYXNfcmVnKHVzYmgsIFVTQkhfVEVTVF9Q
-T1JUX0NPTlRST0wpKQorCQl1c2JoX3dyaXRlbCh1c2JoLCBVU0JIX1RFU1RfUE9SVF9DT05UUk9M
-LAorCQkJICAgIHVzYmgtPnZhcmlhbnQtPnRwY192YWwpOworCisJcmV0dXJuIDA7Cit9CisKK3N0
-YXRpYyBpbnQgYmNtNjN4eF91c2JoX3BoeV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCit7CisJ
-c3RydWN0IGJjbTYzeHhfdXNiaF9waHkgKnVzYmggPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKKwor
-CWlmICh1c2JoX2hhc19yZWcodXNiaCwgVVNCSF9QTExfQ09OVFJPTDEpKSB7CisJCXUzMiB2YWwg
-PSB1c2JoX3JlYWRsKHVzYmgsIFVTQkhfUExMX0NPTlRST0wxKTsKKworCQl2YWwgfD0gdXNiaC0+
-dmFyaWFudC0+cG93ZXJfcGxsY19zZXQ7CisJCXZhbCAmPSB+dXNiaC0+dmFyaWFudC0+cG93ZXJf
-cGxsY19jbHI7CisKKwkJdXNiaF93cml0ZWwodXNiaCwgVVNCSF9QTExfQ09OVFJPTDEsIHZhbCk7
-CisJfQorCisJcmV0dXJuIDA7Cit9CisKK3N0YXRpYyBpbnQgYmNtNjN4eF91c2JoX3BoeV9wb3dl
-cl9vZmYoc3RydWN0IHBoeSAqcGh5KQoreworCXN0cnVjdCBiY202M3h4X3VzYmhfcGh5ICp1c2Jo
-ID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7CisKKwlpZiAodXNiaF9oYXNfcmVnKHVzYmgsIFVTQkhf
-UExMX0NPTlRST0wxKSkgeworCQl1MzIgdmFsID0gdXNiaF9yZWFkbCh1c2JoLCBVU0JIX1BMTF9D
-T05UUk9MMSk7CisKKwkJdmFsICY9IH51c2JoLT52YXJpYW50LT5wb3dlcl9wbGxjX3NldDsKKwkJ
-dmFsIHw9IHVzYmgtPnZhcmlhbnQtPnBvd2VyX3BsbGNfY2xyOworCisJCXVzYmhfd3JpdGVsKHVz
-YmgsIFVTQkhfUExMX0NPTlRST0wxLCB2YWwpOworCX0KKworCXJldHVybiAwOworfQorCitzdGF0
-aWMgaW50IGJjbTYzeHhfdXNiaF9waHlfZXhpdChzdHJ1Y3QgcGh5ICpwaHkpCit7CisJc3RydWN0
-IGJjbTYzeHhfdXNiaF9waHkgKnVzYmggPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKKworCWNsa19k
-aXNhYmxlX3VucHJlcGFyZSh1c2JoLT51c2JoX2Nsayk7CisJY2xrX2Rpc2FibGVfdW5wcmVwYXJl
-KHVzYmgtPnVzYl9yZWZfY2xrKTsKKworCXJldHVybiAwOworfQorCitzdGF0aWMgY29uc3Qgc3Ry
-dWN0IHBoeV9vcHMgYmNtNjN4eF91c2JoX3BoeV9vcHMgPSB7CisJLmV4aXQgPSBiY202M3h4X3Vz
-YmhfcGh5X2V4aXQsCisJLmluaXQgPSBiY202M3h4X3VzYmhfcGh5X2luaXQsCisJLnBvd2VyX29m
-ZiA9IGJjbTYzeHhfdXNiaF9waHlfcG93ZXJfb2ZmLAorCS5wb3dlcl9vbiA9IGJjbTYzeHhfdXNi
-aF9waHlfcG93ZXJfb24sCisJLm93bmVyID0gVEhJU19NT0RVTEUsCit9OworCitzdGF0aWMgc3Ry
-dWN0IHBoeSAqYmNtNjN4eF91c2JoX3BoeV94bGF0ZShzdHJ1Y3QgZGV2aWNlICpkZXYsCisJCQkJ
-CSAgc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqYXJncykKK3sKKwlzdHJ1Y3QgYmNtNjN4eF91c2Jo
-X3BoeSAqdXNiaCA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOworCisJaWYgKHVzYmgtPnZhcmlhbnQt
-PmRldl9tb2RlKQorCQl1c2JoLT5pc19kZXZpY2UgPSAhIWFyZ3MtPmFyZ3NbMF07CisKKwlyZXR1
-cm4gb2ZfcGh5X3NpbXBsZV94bGF0ZShkZXYsIGFyZ3MpOworfQorCitzdGF0aWMgaW50IF9faW5p
-dCBiY202M3h4X3VzYmhfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCit7
-CisJc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsKKwlzdHJ1Y3QgYmNtNjN4eF91c2Jo
-X3BoeQkqdXNiaDsKKwljb25zdCBzdHJ1Y3QgYmNtNjN4eF91c2JoX3BoeV92YXJpYW50ICp2YXJp
-YW50OworCXN0cnVjdCByZXNvdXJjZSAqcmVzOworCXN0cnVjdCBwaHkgKnBoeTsKKwlzdHJ1Y3Qg
-cGh5X3Byb3ZpZGVyICpwaHlfcHJvdmlkZXI7CisKKwl1c2JoID0gZGV2bV9remFsbG9jKGRldiwg
-c2l6ZW9mKCp1c2JoKSwgR0ZQX0tFUk5FTCk7CisJaWYgKCF1c2JoKQorCQlyZXR1cm4gLUVOT01F
-TTsKKworCXZhcmlhbnQgPSBkZXZpY2VfZ2V0X21hdGNoX2RhdGEoZGV2KTsKKwlpZiAoIXZhcmlh
-bnQpCisJCXJldHVybiAtRUlOVkFMOworCXVzYmgtPnZhcmlhbnQgPSB2YXJpYW50OworCisJcmVz
-ID0gcGxhdGZvcm1fZ2V0X3Jlc291cmNlKHBkZXYsIElPUkVTT1VSQ0VfTUVNLCAwKTsKKwl1c2Jo
-LT5iYXNlID0gZGV2bV9pb3JlbWFwX3Jlc291cmNlKGRldiwgcmVzKTsKKwlpZiAoSVNfRVJSKHVz
-YmgtPmJhc2UpKQorCQlyZXR1cm4gUFRSX0VSUih1c2JoLT5iYXNlKTsKKworCXVzYmgtPnJlc2V0
-ID0gZGV2bV9yZXNldF9jb250cm9sX2dldChkZXYsIE5VTEwpOworCWlmIChJU19FUlIodXNiaC0+
-cmVzZXQpKSB7CisJCWlmIChQVFJfRVJSKHVzYmgtPnJlc2V0KSAhPSAtRVBST0JFX0RFRkVSKQor
-CQkJZGV2X2VycihkZXYsICJmYWlsZWQgdG8gZ2V0IHJlc2V0XG4iKTsKKwkJcmV0dXJuIFBUUl9F
-UlIodXNiaC0+cmVzZXQpOworCX0KKworCXVzYmgtPnVzYmhfY2xrID0gZGV2bV9jbGtfZ2V0X29w
-dGlvbmFsKGRldiwgInVzYmgiKTsKKwlpZiAoSVNfRVJSKHVzYmgtPnVzYmhfY2xrKSkKKwkJcmV0
-dXJuIFBUUl9FUlIodXNiaC0+dXNiaF9jbGspOworCisJdXNiaC0+dXNiX3JlZl9jbGsgPSBkZXZt
-X2Nsa19nZXRfb3B0aW9uYWwoZGV2LCAidXNiX3JlZiIpOworCWlmIChJU19FUlIodXNiaC0+dXNi
-X3JlZl9jbGspKQorCQlyZXR1cm4gUFRSX0VSUih1c2JoLT51c2JfcmVmX2Nsayk7CisKKwlwaHkg
-PSBkZXZtX3BoeV9jcmVhdGUoZGV2LCBOVUxMLCAmYmNtNjN4eF91c2JoX3BoeV9vcHMpOworCWlm
-IChJU19FUlIocGh5KSkgeworCQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBjcmVhdGUgUEhZXG4i
-KTsKKwkJcmV0dXJuIFBUUl9FUlIocGh5KTsKKwl9CisKKwlwbGF0Zm9ybV9zZXRfZHJ2ZGF0YShw
-ZGV2LCB1c2JoKTsKKwlwaHlfc2V0X2RydmRhdGEocGh5LCB1c2JoKTsKKworCXBoeV9wcm92aWRl
-ciA9IGRldm1fb2ZfcGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKGRldiwKKwkJCQkJCSAgICAgYmNtNjN4
-eF91c2JoX3BoeV94bGF0ZSk7CisJaWYgKElTX0VSUihwaHlfcHJvdmlkZXIpKSB7CisJCWRldl9l
-cnIoZGV2LCAiZmFpbGVkIHRvIHJlZ2lzdGVyIFBIWSBwcm92aWRlclxuIik7CisJCXJldHVybiBQ
-VFJfRVJSKHBoeV9wcm92aWRlcik7CisJfQorCisJZGV2X2luZm8oZGV2LCAiUmVnaXN0ZXJlZCBC
-Q002M3h4IFVTQiBQSFkgZHJpdmVyXG4iKTsKKworCXJldHVybiAwOworfQorCitzdGF0aWMgY29u
-c3Qgc3RydWN0IG9mX2RldmljZV9pZCBiY202M3h4X3VzYmhfcGh5X2lkc1tdIF9faW5pdGNvbnN0
-ID0geworCXsgLmNvbXBhdGlibGUgPSAiYnJjbSxiY202MzE4LXVzYmgtcGh5IiwgLmRhdGEgPSAm
-dXNiaF9iY202MzE4IH0sCisJeyAuY29tcGF0aWJsZSA9ICJicmNtLGJjbTYzMjgtdXNiaC1waHki
-LCAuZGF0YSA9ICZ1c2JoX2JjbTYzMjggfSwKKwl7IC5jb21wYXRpYmxlID0gImJyY20sYmNtNjM1
-OC11c2JoLXBoeSIsIC5kYXRhID0gJnVzYmhfYmNtNjM1OCB9LAorCXsgLmNvbXBhdGlibGUgPSAi
-YnJjbSxiY202MzYyLXVzYmgtcGh5IiwgLmRhdGEgPSAmdXNiaF9iY202MzY4IH0sCisJeyAuY29t
-cGF0aWJsZSA9ICJicmNtLGJjbTYzNjgtdXNiaC1waHkiLCAuZGF0YSA9ICZ1c2JoX2JjbTYzNjgg
-fSwKKwl7IC5jb21wYXRpYmxlID0gImJyY20sYmNtNjMyNjgtdXNiaC1waHkiLCAuZGF0YSA9ICZ1
-c2JoX2JjbTYzMjY4IH0sCisJeyAvKiBzZW50aW5lbCAqLyB9Cit9OworTU9EVUxFX0RFVklDRV9U
-QUJMRShvZiwgYmNtNjN4eF91c2JoX3BoeV9pZHMpOworCitzdGF0aWMgc3RydWN0IHBsYXRmb3Jt
-X2RyaXZlciBiY202M3h4X3VzYmhfcGh5X2RyaXZlciBfX3JlZmRhdGEgPSB7CisJLmRyaXZlcgk9
-IHsKKwkJLm5hbWUgPSAiYmNtNjN4eC11c2JoLXBoeSIsCisJCS5vZl9tYXRjaF90YWJsZSA9IGJj
-bTYzeHhfdXNiaF9waHlfaWRzLAorCX0sCisJLnByb2JlCT0gYmNtNjN4eF91c2JoX3BoeV9wcm9i
-ZSwKK307Cittb2R1bGVfcGxhdGZvcm1fZHJpdmVyKGJjbTYzeHhfdXNiaF9waHlfZHJpdmVyKTsK
-KworTU9EVUxFX0RFU0NSSVBUSU9OKCJCQ002M3h4IFVTQkggUEhZIGRyaXZlciIpOworTU9EVUxF
-X0FVVEhPUigiw4FsdmFybyBGZXJuw6FuZGV6IFJvamFzIDxub2x0YXJpQGdtYWlsLmNvbT4iKTsK
-K01PRFVMRV9BVVRIT1IoIlNpbW9uIEFybG90dCA8c2ltb25AZmlyZS5scDAuZXU+Iik7CitNT0RV
-TEVfTElDRU5TRSgiR1BMIik7Ci0tIAoyLjI3LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 16/06/20 5:00 pm, Lars Povlsen wrote:
+> This adds the eMMC driver for the Sparx5 SoC. It is based upon the
+> designware IP, but requires some extra initialization and quirks.
+> 
+> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+> ---
+>  drivers/mmc/host/Kconfig           |  13 ++
+>  drivers/mmc/host/Makefile          |   1 +
+>  drivers/mmc/host/sdhci-of-sparx5.c | 269 +++++++++++++++++++++++++++++
+>  3 files changed, 283 insertions(+)
+>  create mode 100644 drivers/mmc/host/sdhci-of-sparx5.c
+> 
+> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+> index 3b706af35ec31..a3bad4b4ed7ea 100644
+> --- a/drivers/mmc/host/Kconfig
+> +++ b/drivers/mmc/host/Kconfig
+> @@ -213,6 +213,19 @@ config MMC_SDHCI_OF_DWCMSHC
+>  	  If you have a controller with this interface, say Y or M here.
+>  	  If unsure, say N.
+>  
+> +config MMC_SDHCI_OF_SPARX5
+> +	tristate "SDHCI OF support for the MCHP Sparx5 SoC"
+> +	depends on MMC_SDHCI_PLTFM
+> +	depends on ARCH_SPARX5
+> +	select MMC_SDHCI_IO_ACCESSORS
+> +	help
+> +	  This selects the Secure Digital Host Controller Interface (SDHCI)
+> +	  found in the MCHP Sparx5 SoC.
+> +
+> +	  If you have a Sparx5 SoC with this interface, say Y or M here.
+> +
+> +	  If unsure, say N.
+> +
+>  config MMC_SDHCI_CADENCE
+>  	tristate "SDHCI support for the Cadence SD/SDIO/eMMC controller"
+>  	depends on MMC_SDHCI_PLTFM
+> diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
+> index 4d5bcb0144a0a..451c25fc2c692 100644
+> --- a/drivers/mmc/host/Makefile
+> +++ b/drivers/mmc/host/Makefile
+> @@ -94,6 +94,7 @@ obj-$(CONFIG_MMC_SDHCI_OF_AT91)		+= sdhci-of-at91.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)	+= sdhci-of-esdhc.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_HLWD)		+= sdhci-of-hlwd.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_DWCMSHC)	+= sdhci-of-dwcmshc.o
+> +obj-$(CONFIG_MMC_SDHCI_OF_SPARX5)	+= sdhci-of-sparx5.o
+>  obj-$(CONFIG_MMC_SDHCI_BCM_KONA)	+= sdhci-bcm-kona.o
+>  obj-$(CONFIG_MMC_SDHCI_IPROC)		+= sdhci-iproc.o
+>  obj-$(CONFIG_MMC_SDHCI_MSM)		+= sdhci-msm.o
+> diff --git a/drivers/mmc/host/sdhci-of-sparx5.c b/drivers/mmc/host/sdhci-of-sparx5.c
+> new file mode 100644
+> index 0000000000000..972942fed4a68
+> --- /dev/null
+> +++ b/drivers/mmc/host/sdhci-of-sparx5.c
+> @@ -0,0 +1,269 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * drivers/mmc/host/sdhci-of-sparx5.c
+> + *
+> + * MCHP Sparx5 SoC Secure Digital Host Controller Interface.
+> + *
+> + * Copyright (c) 2019 Microchip Inc.
+> + *
+> + * Author: Lars Povlsen <lars.povlsen@microchip.com>
+> + */
+> +
+> +#include <linux/sizes.h>
+> +#include <linux/delay.h>
+> +#include <linux/module.h>
+> +#include <linux/regmap.h>
+> +#include <linux/of_device.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/dma-mapping.h>
+> +
+> +#include "sdhci-pltfm.h"
+> +
+> +#define CPU_REGS_GENERAL_CTRL	(0x22 * 4)
+> +#define  MSHC_DLY_CC_MASK	GENMASK(16, 13)
+> +#define  MSHC_DLY_CC_SHIFT	13
+> +#define  MSHC_DLY_CC_MAX	15
+> +
+> +#define CPU_REGS_PROC_CTRL	(0x2C * 4)
+> +#define  ACP_CACHE_FORCE_ENA	BIT(4)
+> +#define  ACP_AWCACHE		BIT(3)
+> +#define  ACP_ARCACHE		BIT(2)
+> +#define  ACP_CACHE_MASK		(ACP_CACHE_FORCE_ENA|ACP_AWCACHE|ACP_ARCACHE)
+> +
+> +#define MSHC2_VERSION			0x500	/* Off 0x140, reg 0x0 */
+> +#define MSHC2_TYPE			0x504	/* Off 0x140, reg 0x1 */
+> +#define MSHC2_EMMC_CTRL			0x52c	/* Off 0x140, reg 0xB */
+> +#define  MSHC2_EMMC_CTRL_EMMC_RST_N	BIT(2)
+> +#define  MSHC2_EMMC_CTRL_IS_EMMC	BIT(0)
+> +
+> +struct sdhci_sparx5_data {
+> +	struct sdhci_host *host;
+> +	struct regmap *cpu_ctrl;
+> +	int delay_clock;
+> +};
+> +
+> +#define BOUNDARY_OK(addr, len) \
+> +	((addr | (SZ_128M - 1)) == ((addr + len - 1) | (SZ_128M - 1)))
+> +
+> +/*
+> + * If DMA addr spans 128MB boundary, we split the DMA transfer into two
+> + * so that each DMA transfer doesn't exceed the boundary.
+> + */
+> +static void sdhci_sparx5_adma_write_desc(struct sdhci_host *host, void **desc,
+> +					  dma_addr_t addr, int len,
+> +					  unsigned int cmd)
+> +{
+> +	int tmplen, offset;
+> +
+> +	if (likely(!len || BOUNDARY_OK(addr, len))) {
+> +		sdhci_adma_write_desc(host, desc, addr, len, cmd);
+> +		return;
+> +	}
+> +
+> +	pr_debug("%s: write_desc: splitting dma len %d, offset 0x%0llx\n",
+> +		 mmc_hostname(host->mmc), len, addr);
+> +
+> +	offset = addr & (SZ_128M - 1);
+> +	tmplen = SZ_128M - offset;
+> +	sdhci_adma_write_desc(host, desc, addr, tmplen, cmd);
+> +
+> +	addr += tmplen;
+> +	len -= tmplen;
+> +	sdhci_adma_write_desc(host, desc, addr, len, cmd);
+> +}
+> +
+> +static void sparx5_set_cacheable(struct sdhci_host *host, u32 value)
+> +{
+> +	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+> +	struct sdhci_sparx5_data *sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
+> +
+> +	pr_debug("%s: Set Cacheable = 0x%x\n", mmc_hostname(host->mmc), value);
+> +
+> +	/* Update ACP caching attributes in HW */
+> +	regmap_update_bits(sdhci_sparx5->cpu_ctrl,
+> +			   CPU_REGS_PROC_CTRL, ACP_CACHE_MASK, value);
+> +}
+> +
+> +static void sparx5_set_delay(struct sdhci_host *host, u8 value)
+> +{
+> +	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+> +	struct sdhci_sparx5_data *sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
+> +
+> +	pr_debug("%s: Set DLY_CC = %u\n", mmc_hostname(host->mmc), value);
+> +
+> +	/* Update DLY_CC in HW */
+> +	regmap_update_bits(sdhci_sparx5->cpu_ctrl,
+> +			   CPU_REGS_GENERAL_CTRL,
+> +			   MSHC_DLY_CC_MASK,
+> +			   (value << MSHC_DLY_CC_SHIFT));
+> +}
+> +
+> +static void sdhci_sparx5_set_emmc(struct sdhci_host *host)
+> +{
+> +	if (!mmc_card_is_removable(host->mmc)) {
+> +		u8 value;
+> +
+> +		value = sdhci_readb(host, MSHC2_EMMC_CTRL);
+> +		if (!(value & MSHC2_EMMC_CTRL_IS_EMMC)) {
+> +			value |= MSHC2_EMMC_CTRL_IS_EMMC;
+> +			pr_debug("%s: Set EMMC_CTRL: 0x%08x\n",
+> +				 mmc_hostname(host->mmc), value);
+> +			sdhci_writeb(host, value, MSHC2_EMMC_CTRL);
+> +		}
+> +	}
+> +}
+> +
+> +static void sdhci_sparx5_reset_emmc(struct sdhci_host *host)
+> +{
+> +	u8 value;
+> +
+> +	pr_debug("%s: Toggle EMMC_CTRL.EMMC_RST_N\n", mmc_hostname(host->mmc));
+> +	value = sdhci_readb(host, MSHC2_EMMC_CTRL) &
+> +		~MSHC2_EMMC_CTRL_EMMC_RST_N;
+> +	sdhci_writeb(host, value, MSHC2_EMMC_CTRL);
+> +	/* For eMMC, minimum is 1us but give it 10us for good measure */
+> +	usleep_range(10, 20);
+> +	sdhci_writeb(host, value | MSHC2_EMMC_CTRL_EMMC_RST_N,
+> +		     MSHC2_EMMC_CTRL);
+> +	/* For eMMC, minimum is 200us but give it 300us for good measure */
+> +	usleep_range(300, 400);
+> +}
+> +
+> +static void sdhci_sparx5_reset(struct sdhci_host *host, u8 mask)
+> +{
+> +	pr_debug("%s: *** RESET: mask %d\n", mmc_hostname(host->mmc), mask);
+> +
+> +	sdhci_reset(host, mask);
+> +
+> +	/* Be sure CARD_IS_EMMC stays set */
+> +	sdhci_sparx5_set_emmc(host);
+> +}
+> +
+> +static const struct sdhci_ops sdhci_sparx5_ops = {
+> +	.set_clock		= sdhci_set_clock,
+> +	.set_bus_width		= sdhci_set_bus_width,
+> +	.set_uhs_signaling	= sdhci_set_uhs_signaling,
+> +	.get_max_clock		= sdhci_pltfm_clk_get_max_clock,
+> +	.reset			= sdhci_sparx5_reset,
+> +	.adma_write_desc	= sdhci_sparx5_adma_write_desc,
+> +};
+> +
+> +static const struct sdhci_pltfm_data sdhci_sparx5_pdata = {
+> +	.quirks  = 0,
+> +	.quirks2 = SDHCI_QUIRK2_HOST_NO_CMD23 | /* Controller issue */
+> +		   SDHCI_QUIRK2_NO_1_8_V, /* No sdr104, ddr50, etc */
+> +	.ops = &sdhci_sparx5_ops,
+> +};
+> +
+> +int sdhci_sparx5_probe(struct platform_device *pdev)
+> +{
+> +	int ret;
+> +	const char *syscon = "microchip,sparx5-cpu-syscon";
+> +	struct sdhci_host *host;
+> +	struct sdhci_pltfm_host *pltfm_host;
+> +	struct sdhci_sparx5_data *sdhci_sparx5;
+> +	struct device_node *np = pdev->dev.of_node;
+> +	u32 value;
+> +	u32 extra;
+> +
+> +	host = sdhci_pltfm_init(pdev, &sdhci_sparx5_pdata,
+> +				sizeof(*sdhci_sparx5));
+> +
+> +	if (IS_ERR(host))
+> +		return PTR_ERR(host);
+> +
+> +	/*
+> +	 * extra adma table cnt for cross 128M boundary handling.
+> +	 */
+> +	extra = DIV_ROUND_UP_ULL(dma_get_required_mask(&pdev->dev), SZ_128M);
+> +	if (extra > SDHCI_MAX_SEGS)
+> +		extra = SDHCI_MAX_SEGS;
+> +	host->adma_table_cnt += extra;
+> +
+> +	pltfm_host = sdhci_priv(host);
+> +	sdhci_sparx5 = sdhci_pltfm_priv(pltfm_host);
+> +	sdhci_sparx5->host = host;
+> +
+> +	pltfm_host->clk = devm_clk_get(&pdev->dev, "core");
+> +	if (IS_ERR(pltfm_host->clk)) {
+> +		ret = PTR_ERR(pltfm_host->clk);
+> +		dev_err(&pdev->dev, "failed to get core clk: %d\n", ret);
+> +		goto free_pltfm;
+> +	}
+> +	ret = clk_prepare_enable(pltfm_host->clk);
+> +	if (ret)
+> +		goto free_pltfm;
+> +
+> +	if (!of_property_read_u32(np, "microchip,clock-delay", &value) &&
+> +	    (value > 0 && value <= MSHC_DLY_CC_MAX))
+> +		sdhci_sparx5->delay_clock = value;
+> +
+> +	sdhci_get_of_property(pdev);
+> +
+> +	ret = mmc_of_parse(host->mmc);
+> +	if (ret)
+> +		goto err_clk;
+> +
+> +	sdhci_sparx5->cpu_ctrl = syscon_regmap_lookup_by_compatible(syscon);
+> +	if (IS_ERR(sdhci_sparx5->cpu_ctrl)) {
+> +		dev_err(&pdev->dev, "No CPU syscon regmap !\n");
+> +		ret = PTR_ERR(sdhci_sparx5->cpu_ctrl);
+> +		goto err_clk;
+> +	}
+> +
+> +	if (sdhci_sparx5->delay_clock >= 0)
+> +		sparx5_set_delay(host, sdhci_sparx5->delay_clock);
+> +
+> +	if (!mmc_card_is_removable(host->mmc)) {
+> +		/* Do a HW reset of eMMC card */
+> +		sdhci_sparx5_reset_emmc(host);
+> +		/* Update EMMC_CTRL */
+> +		sdhci_sparx5_set_emmc(host);
+> +		/* If eMMC, disable SD and SDIO */
+> +		host->mmc->caps2 |= (MMC_CAP2_NO_SDIO|MMC_CAP2_NO_SD);
+> +	}
+> +
+> +	ret = sdhci_add_host(host);
+> +	if (ret)
+> +		dev_err(&pdev->dev, "sdhci_add_host() failed (%d)\n", ret);
+
+Shouldn't this goto err_clk;
+
+Also, the error message is not really needed if ret == -EPROBE_DEFER
+
+> +
+> +	/* Set AXI bus master to use un-cached access (for DMA) */
+> +	if (host->flags & (SDHCI_USE_SDMA | SDHCI_USE_ADMA) &&
+> +	    IS_ENABLED(CONFIG_DMA_DECLARE_COHERENT))
+> +		sparx5_set_cacheable(host, ACP_CACHE_FORCE_ENA);
+> +
+> +	pr_debug("%s: SDHC version: 0x%08x\n",
+> +		 mmc_hostname(host->mmc), sdhci_readl(host, MSHC2_VERSION));
+> +	pr_debug("%s: SDHC type:    0x%08x\n",
+> +		 mmc_hostname(host->mmc), sdhci_readl(host, MSHC2_TYPE));
+> +
+> +	return ret;
+> +
+> +err_clk:
+> +	clk_disable_unprepare(pltfm_host->clk);
+> +free_pltfm:
+> +	sdhci_pltfm_free(pdev);
+> +	return ret;
+> +}
+> +
+> +static const struct of_device_id sdhci_sparx5_of_match[] = {
+> +	{ .compatible = "microchip,dw-sparx5-sdhci" },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, sdhci_sparx5_of_match);
+> +
+> +static struct platform_driver sdhci_sparx5_driver = {
+> +	.driver = {
+> +		.name = "sdhci-sparx5",
+> +		.of_match_table = sdhci_sparx5_of_match,
+> +		.pm = &sdhci_pltfm_pmops,
+> +	},
+> +	.probe = sdhci_sparx5_probe,
+> +	.remove = sdhci_pltfm_unregister,
+> +};
+> +
+> +module_platform_driver(sdhci_sparx5_driver);
+> +
+> +MODULE_DESCRIPTION("Sparx5 SDHCI OF driver");
+> +MODULE_AUTHOR("Lars Povlsen <lars.povlsen@microchip.com>");
+> +MODULE_LICENSE("GPL v2");
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
