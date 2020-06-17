@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 795281FC2C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 02:33:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A6F01FC2C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 02:32:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pl8WcoepKxe8oaYnpYnmncemUZGeddatNZz7nIFVM4E=; b=DuVCqjkpkk0Cd+
-	2OzP0M841fW0CwZy2wXmoYNS9asQCcaTrLuUSGZNREm67Nu19jJ4EL9q8JN57yJUysAE1xX6VAfeO
-	Z+QpyJVttNXI8f2qJwbfxOjAR1YT+oE1Y3zFB4IpYgUQdnhlR+gRmB/25syLlhPVbScjvWAv0cgvQ
-	ycMgE25jO9PoB10JNvkt9SxrRIjE1tTT1B/rfv55w6As5cT23OxGR4pGnskBqjvBqesTSMIp17GNy
-	kUJtC0DQxoipR3+dDvVmEqSMez40X4GwpXhA/mB2cJlsUMGdXWgD2tGowK2tc+0vfFtvzbhi9yDgj
-	KaGpzvZGOkqWRuond16g==;
+	List-Owner; bh=h8tQEEjd9u0hnQEb0/tWUuYKaonwnx0Z2Lr7Ai/f628=; b=Vr8TUXNtPVwedh
+	MOEgAGuMopxmYhmr5QRogks/DCOFubi/UUdNZgQaGg76bWeMXaOc4ZU2hr8zcALIVlQXT95CWS1Rl
+	eThBncR5g00wG/mA4W7/ictb62vnh2kKBeiQE713W6xVwRn2I/N7PuzcTuqxOCjdmw+xVunGHcA4g
+	2rwdOJe6NKA8bOKjL0AnqU7gl19l1zwjwk/cvJEQpq57XRTCei3IZ9sCpJ7sK9kDLcsN4bSOR9hNm
+	1kCdupN7GXQ+6GMs9BDB4AUMYFfcJtq2TBcLbm5HIOyBSeipH/I5CmSa0DcDWkLVEWDChsDucodpT
+	4XgZn8Hg4U6G7vXv/JIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlM0t-00023U-Pq; Wed, 17 Jun 2020 00:33:11 +0000
+	id 1jlM0a-0001fP-Ph; Wed, 17 Jun 2020 00:32:52 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlM06-0001VX-Gv
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 00:32:26 +0000
+ id 1jlM06-0001VY-9B
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 00:32:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1592353934; bh=V8lg3QrmlL/+ORB8+T8iagnNb4aO75aHpHs9Ov8wOuQ=;
+ t=1592353934; bh=AevVvrXCG/6msnRbOhEC/03tKHisk5y4PX4d+SPQkuw=;
  h=From:To:Cc:Subject:Date:References:From;
- b=iFZWG7Jk4cGe0wnGo0yrSN6+U5rgFqkyH8eIktOW7n56R2p856nCoJ1v+VvwN+4I/
- g/Z3xsN9cFb8Tkost21g70ouI4VdW5S1oU30IoY+uQIpVz2S+Qqp6CgcwrzPZGMvby
- +RdEsQGjErwFbTBbDoTt0kbluFoYxx60oAPE1EI4=
+ b=o0vX8nMPVcUPUCHAfRZce4ecgwFJ6TrWo0+s5nAauhfo5cRU4lBnRswBWKaN7+twi
+ jMrKSPl5KnNaduv4d2ZsR385eh/NO1UYrmbyyBHzfSUNhwktJw0/6lE58rDi5V1YEd
+ RYuzuIoIQ3cYi2+4ZON79kX++pWVTsGYZ8Dk+MCc=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com, Thierry Reding <thierry.reding@gmail.com>,
  Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Linus Walleij <linus.walleij@linaro.org>, Icenowy Zheng <icenowy@aosc.io>
-Subject: [PATCH v4 1/5] dt-bindings: vendor-prefixes: Add Xingbangda
-Date: Wed, 17 Jun 2020 02:32:05 +0200
-Message-Id: <20200617003209.670819-2-megous@megous.com>
+Subject: [PATCH v4 2/5] dt-bindings: panel: Add binding for Xingbangda XBD599
+ panel
+Date: Wed, 17 Jun 2020 02:32:06 +0200
+Message-Id: <20200617003209.670819-3-megous@megous.com>
 In-Reply-To: <20200617003209.670819-1-megous@megous.com>
 References: <20200617003209.670819-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_173222_730441_94E23A81 
-X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-CacheID: sfid-20200616_173222_492552_EF0800C1 
+X-CRM114-Status: UNSURE (   9.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -82,31 +83,89 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Icenowy Zheng <icenowy@aosc.io>
 
-Shenzhen Xingbangda Display Technology Co., Ltd is a company which
-produces LCD modules. It supplies the LCD panels for the PinePhone.
+Xingbangda XBD599 is a 5.99" 720x1440 MIPI-DSI LCD panel. It is based on
+Sitronix ST7703 LCD controller.
 
-Add the vendor prefix of it.
+Add its device tree binding.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Ondrej Jirman <megous@megous.com>
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ .../display/panel/sitronix,st7703.yaml        | 63 +++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/panel/sitronix,st7703.yaml
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 9aeab66be85f..740b116b179f 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -1157,6 +1157,8 @@ patternProperties:
-     description: Xiaomi Technology Co., Ltd.
-   "^xillybus,.*":
-     description: Xillybus Ltd.
-+  "^xingbangda,.*":
-+    description: Shenzhen Xingbangda Display Technology Co., Ltd
-   "^xinpeng,.*":
-     description: Shenzhen Xinpeng Technology Co., Ltd
-   "^xlnx,.*":
+diff --git a/Documentation/devicetree/bindings/display/panel/sitronix,st7703.yaml b/Documentation/devicetree/bindings/display/panel/sitronix,st7703.yaml
+new file mode 100644
+index 000000000000..6e1606db4ab4
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/panel/sitronix,st7703.yaml
+@@ -0,0 +1,63 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/panel/sitronix,st7703.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Sitronix ST7703 MIPI DSI panel
++
++maintainers:
++  - Icenowy Zheng <icenowy@aosc.io>
++  - Ondrej Jirman <megous@megous.com>
++
++allOf:
++  - $ref: panel-common.yaml#
++
++properties:
++  compatible:
++    items:
++      - enum:
++        - xingbangda,xbd599
++      - const: sitronix,st7703
++
++  reg:
++    description: DSI virtual channel used by that screen
++    maxItems: 1
++
++  vcc-supply:
++    description: regulator that supplies the VCC voltage
++
++  iovcc-supply:
++    description: regulator that supplies the IOVCC voltage
++
++  reset-gpios: true
++
++  backlight: true
++
++required:
++  - compatible
++  - reg
++  - vcc-supply
++  - iovcc-supply
++  - reset-gpios
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/gpio/gpio.h>
++
++    dsi {
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        panel@0 {
++            compatible = "xingbangda,xbd599", "sitronix,st7703";
++            reg = <0>;
++            reset-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>; /* LCD-RST: PD24 */
++            iovcc-supply = <&reg_dldo2>;
++            vcc-supply = <&reg_ldo_io0>;
++            backlight = <&backlight>;
++        };
++    };
++
 -- 
 2.27.0
 
