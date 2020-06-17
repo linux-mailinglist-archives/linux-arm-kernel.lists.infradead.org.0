@@ -2,85 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C53151FC683
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 08:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B87601FC702
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 09:17:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=j1XO4PGCHF10sYkYmewH5mILL3pbnmtqUYJDKuupSqQ=; b=bwqVKFtgTUXXvca9T/c8VEnig
-	isFiIhxRYFG916sAyJzBiXIH/uBZObNr7n6rA2GC9W9QptmhpAg3BBQVdXFjhE+KpnzSREDaWXFtr
-	H+3KLrFBhecy34DCfm0NLT2HCHG5Mfyxyxtu/s24Y24zrF0n8BSA/K86gjsyJsjANVZW1O1ya2Sra
-	g45VKWtJsfzOuchU+qqsOWrjATBS5wCUF7yWztDMAjI7imCKeg4KCWPoeLKeU4MGaYFPbjCKVJenA
-	6ZbW6Ev0fPfHbXaUNTT62lCr5tEzA19oL6LePbdqBjurvTEYsWc/GAXw6q0bgRfvN5fQc/fN065uM
-	vbC/z7Ssg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mCnZF2WpEkjoLYYNXX1dm2hmJYyhVpHMU6iPmo9fTnM=; b=XAGe8D7BNaxnvU
+	ASDPDs+YFPuqAiiD21tYfP5hUC82pHk4fcle3hytRxIaCn92kBptMkkZl5k+VSsSAuvOh0I/Zlg9X
+	LpCyS++qkLuxc/jVfLq8puwsvKIlFWviuraOJfDDrv+DQo1YFut0If6es6BZUK5+D5UTZ0Fo+GTkC
+	WTscuiMP9AiPQ/q0Cyu2IFeOw892Lk8u+IZweBeni1Akn26Q/ZGXqSc9bXlITbaDK1Zd6MVF8IDZP
+	cUNF9rgSwB8DQBslmBppebktK9jViVnPQuIXMClyVrvgenF0iVP0D8hJVS0zfILkaJGvA9PY9FK3M
+	K04VKMSv4uKsYJzA16ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlS0I-0003x4-Nz; Wed, 17 Jun 2020 06:56:58 +0000
-Received: from mail29.static.mailgun.info ([104.130.122.29])
+	id 1jlSJn-0003a2-Ql; Wed, 17 Jun 2020 07:17:07 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlS06-0003wK-SY
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 06:56:49 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1592377007; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=QDAPNg4/kJBIPrrC24qiYUrNEkN8hgr7WOxOCGbJ8R4=;
- b=fZ/GiEF/Ip8NiS9yVHzn30hW/KVyDM7zr27+6fQsWDqAKZk+8jGXvD7/RYXbSw39tFCbLTIX
- btChZuqTDzd9h6Gh1B2Swu/FYAJhSeX652ArM4xASknOJ0+As87o5MtmDBB8hA1VRjqP4X25
- b6jZbbjcVWrDsVxFX2c12fg0Le0=
-X-Mailgun-Sending-Ip: 104.130.122.29
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n08.prod.us-east-1.postgun.com with SMTP id
- 5ee9bea70206ad41d1637e9c (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 17 Jun 2020 06:56:39
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 7A705C433CB; Wed, 17 Jun 2020 06:56:38 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 0BF65C433C8;
- Wed, 17 Jun 2020 06:56:38 +0000 (UTC)
+ id 1jlSIE-0002Je-CL; Wed, 17 Jun 2020 07:15:32 +0000
+X-UUID: a275018831ce421f9fefa662bdc6a747-20200616
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=gkAfTQ6LXNQUT6avn+z4zRQbIwl9KPfbe41nK8IyoMc=; 
+ b=a8JQXrBYnlDKxpnK0NAMR0/g64nPtDzvT0uPVfYtHs7IBgTqSDFckR9QrfkkUGGFrlp1V8Vjz5Vlc8KKmPizq4XG0uRWPuPH8/L+3lKOQR1v0iMQHAC4xkRPqrcVnw43G7P93cIs+uSMy8PDpgXvSXlZX0pW1egJ2wmfIu50T8M=;
+X-UUID: a275018831ce421f9fefa662bdc6a747-20200616
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1120784960; Tue, 16 Jun 2020 23:15:14 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 00:05:23 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 15:05:22 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Wed, 17 Jun 2020 15:05:22 +0800
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Enric Balletbo Serra <eballetbo@gmail.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Nicolas Boichat <drinkcat@chromium.org>, "Rob
+ Herring" <robh@kernel.org>, Sascha Hauer <kernel@pengutronix.de>
+Subject: [PATCH v16 00/11] Mediatek MT8183 scpsys support 
+Date: Wed, 17 Jun 2020 15:05:06 +0800
+Message-ID: <1592377517-14817-1-git-send-email-weiyi.lu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-Date: Wed, 17 Jun 2020 12:26:38 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>
-Subject: Re: [PATCHv3 0/2] Convert QCOM watchdog timer bindings to YAML
-In-Reply-To: <cover.1581459151.git.saiprakash.ranjan@codeaurora.org>
-References: <cover.1581459151.git.saiprakash.ranjan@codeaurora.org>
-Message-ID: <c2b8fabcf82b27c7334482bd53ebba62@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_235647_732972_0A73C15D 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200617_001530_420768_F42A9199 
+X-CRM114-Status: GOOD (  15.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.29 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.29 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,61 +84,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Guenter Roeck <linux@roeck-us.net>, Stephen Boyd <swboyd@chromium.org>,
- linux-arm-msm-owner@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ srv_heupstream@mediatek.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Wendell Lin <wendell.lin@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+This series is based on v5.8-rc1
 
-On 2020-02-12 03:54, Sai Prakash Ranjan wrote:
-> This series converts QCOM watchdog timer bindings to YAML. Also
-> it adds the missing SoC-specific compatible for QCS404, SC7180,
-> SDM845 and SM8150 SoCs.
-> 
-> v1:
-> https://lore.kernel.org/lkml/cover.1576211720.git.saiprakash.ranjan@codeaurora.org/
-> v2:
-> https://lore.kernel.org/lkml/cover.1580570160.git.saiprakash.ranjan@codeaurora.org/
-> 
-> Changes since v2:
->  * Add missing compatibles to enum.
-> 
-> Changes since v1:
->  As per Rob's suggestion:
->   * Replaced oneOf+const with enum.
->   * Removed timeout-sec and included watchdog.yaml.
->   * Removed repeated use of const:qcom,kpss-wdt and made use of enum.
-> 
-> Sai Prakash Ranjan (2):
->   dt-bindings: watchdog: Convert QCOM watchdog timer bindings to YAML
->   dt-bindings: watchdog: Add compatible for QCS404, SC7180, SDM845,
->     SM8150
-> 
->  .../devicetree/bindings/watchdog/qcom-wdt.txt | 28 -----------
->  .../bindings/watchdog/qcom-wdt.yaml           | 48 +++++++++++++++++++
->  2 files changed, 48 insertions(+), 28 deletions(-)
->  delete mode 100644 
-> Documentation/devicetree/bindings/watchdog/qcom-wdt.txt
->  create mode 100644 
-> Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
+change since v15:
+- remove unneeded error log in [PATCH 06/11]
+
+changes since v14:
+- fix commit message typo
+- use property name "mediatek,smi" for smi phandle
+
+changes since v13:
+- document optional property "smi-comm"
+- move defines in scpsyc.h to mtk-scpsys.c directly
+- minor coding sytle fixes
+
+change since v12:
+- separate the fix of comma at the end into a new patch [PATCH 09/11]
+
+changes since v11:
+- re-order patches "Remove infracfg misc driver support" and "Add multiple step bus protection"
+- add cap MTK_SCPD_SRAM_ISO for extra sram control
+- minor coding sytle fixes and reword commit messages
+
+changes since v10:
+- squash PATCH 04 and PATCH 06 in v9 into its previous patch
+- add "ignore_clr_ack" for multiple step bus protection control to have a clean definition of power domain data
+- keep the mask register bit definitions and do the same for MT8183
+
+changes since v9:
+- add new PATCH 04 and PATCH 06 to replace by new method for all compatibles
+- add new PATCH 07 to remove infracfg misc driver
+- minor coding sytle fix
+
+changes since v7:
+- reword in binding document [PATCH 02/14]
+- fix error return checking bug in subsys clock control [PATCH 10/14]
+- add power domains properity to mfgcfg patch [PATCH 14/14] from
+  https://patchwork.kernel.org/patch/11126199/
+
+changes since v6:
+- remove the patch of SPDX license identifier because it's already fixed
+
+changes since v5:
+- fix documentation in [PATCH 04/14]
+- remove useless variable checking and reuse API of clock control in [PATCH 06/14]
+- coding style fix of bus protection control in [PATCH 08/14]
+- fix naming of new added data in [PATCH 09/14]
+- small refactor of multiple step bus protection control in [PATCH 10/14]
+
+changes since v4:
+- add property to mt8183 smi-common
+- seperate refactor patches and new add function
+- add power controller device node
 
 
-Gentle ping!
+Weiyi Lu (11):
+  dt-bindings: mediatek: Add property to mt8183 smi-common
+  dt-bindings: soc: Add MT8183 power dt-bindings
+  soc: mediatek: Add basic_clk_name to scp_power_data
+  soc: mediatek: Remove infracfg misc driver support
+  soc: mediatek: Add multiple step bus protection control
+  soc: mediatek: Add subsys clock control for bus protection
+  soc: mediatek: Add extra sram control
+  soc: mediatek: Add MT8183 scpsys support
+  soc: mediatek: Add a comma at the end
+  arm64: dts: Add power controller device node of MT8183
+  arm64: dts: Add power-domains property to mfgcfg
 
-Thanks,
-Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
-
+ .../mediatek,smi-common.txt                   |   2 +-
+ .../bindings/soc/mediatek/scpsys.txt          |  21 +-
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  63 ++
+ drivers/soc/mediatek/Kconfig                  |  10 -
+ drivers/soc/mediatek/Makefile                 |   1 -
+ drivers/soc/mediatek/mtk-infracfg.c           |  79 --
+ drivers/soc/mediatek/mtk-scpsys.c             | 704 ++++++++++++++----
+ include/dt-bindings/power/mt8183-power.h      |  26 +
+ include/linux/soc/mediatek/infracfg.h         |  39 -
+ 9 files changed, 669 insertions(+), 276 deletions(-)
+ delete mode 100644 drivers/soc/mediatek/mtk-infracfg.c
+ create mode 100644 include/dt-bindings/power/mt8183-power.h
+ delete mode 100644 include/linux/soc/mediatek/infracfg.h
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
