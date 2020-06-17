@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 751A01FC9F1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 11:35:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B1131FCA02
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 11:38:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M3MvDy4hSMuOiI7hdOiaX5EUvOi3+lMSmCfCdR1Rymc=; b=Q1SASrYr+mSAWe
-	TT6dqFoac4h9VuBd2xrZ7kRXPV6kGji+r8VI2VcMYqM1qRag9776BR2kvDAN+eo6Rsct7Yqiwospt
-	LwW86LynAYXbrL+TPkG4hDJPKfKlxw3J87c6PH9OLahFaTXHOHzPeZ68I0eWDv4ekAd4M34xckSn8
-	GGCaiMcEPSIz6Y01Ds9wwXpWkIqwmfa+ESGgojzxTR840aXH3Wc61Ro9fiAGkMLAaO7mP9xgbtiw2
-	hibkj8m5KMGmva+z84yJ14lliAMw8LohGqnJxSVkT+aVIOXquuyRHfmhgGY7kTxH9zRx1jmhnzCPU
-	NiUocz0FuZ257f8CWsEQ==;
+	List-Owner; bh=5/HTdzuEcTyQAzUm7qqThwW56BZEe0W6YXhIWB2vtbc=; b=Iyei9du5xnkybd
+	w8xxOGp0+DldldOpIhWwdwEHUctoqsKtRS6I2zDiyBYkjBD5166giNRHPlz4jnm/O+QbLiIOHAAbU
+	t0Sk9DH9ZRLBYh7DLSEBZtbYkCNkTg9UXkuOXLAhyzMTQVSYIpFFPxRcgpsNP24t2URc2rcQ/BaIZ
+	XLJzVHLCEc581ooaBp+1rIXTLpPgNRyx+tUfqWKTHP0hvVYiiu1rVG7ku3GBP8PuUBoDBrZh6CLXy
+	PrEsV2jKAUCAIffsFHsb4kx5OYvhEQFfB/dOK7i/1yvsfzblV1DPLUMufvzcB7Gp3Ctb8RbJweA7B
+	m6ZlSMHPzL3YLOf1x9dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlUTY-0007DI-MI; Wed, 17 Jun 2020 09:35:20 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jlUWs-0001Ry-5h; Wed, 17 Jun 2020 09:38:46 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlUTC-00070g-EE; Wed, 17 Jun 2020 09:34:59 +0000
-Received: by mail-wm1-x342.google.com with SMTP id l26so1171119wme.3;
- Wed, 17 Jun 2020 02:34:58 -0700 (PDT)
+ id 1jlUWj-0001Ra-Eu
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 09:38:39 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t18so1584314wru.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jun 2020 02:38:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=vxFzA3cYKumLjSg+IkqDhoQZF9KKnvNCqCSv8B89Cq4=;
- b=Ul/DjrrhaQsx4nLdf6PxEWChBCMC8V2VlDaGERyKgX/SJB+TgzfEDazNqta5zQxFdH
- ct2C4f1Kb+95vg604IkYGc27e6CZa6m5F/Y0Gfn/HCBmzfTiueTvaIqV2be9rkYxKS++
- 2j+blnY0AVDFJKBZIMJOfQVYevijTp2P2jbFLME1IqJjpwgUtfAsJh+DNuqWxBvTcv9f
- GwgigDTb/wJeEuYd6Sb+FTVsIDW82PvELY6VLJDyLtYG2YqlDjCjY1MtKt2SJ9QFUMRG
- aQOc8AglGCQCvcn8HgeA4fFo+7uh8pIPXHrjGHuamkPSWYz18teqyAc0Agzg0FNoLP4F
- 0hyg==
+ bh=E8BWmiCOfF8V7XGr0mx0rvBPzq+bwE1Pizm33AaL4qs=;
+ b=bsd4RjCof9NsLBOcJBYXveY3WXNatV+dmKY8CRZ63VzrThRUFJSbb/WktReskDvhdW
+ IswwZ+5mE5IgXOCqDy1WgC7H/fJBBxH1yoOpFA7VKpIzlDb/54UXEtQhJA0/r8E2fE8A
+ gQkN6DJKushqnB2TB/SkBmYYfwQrE8j8a+0i98cJcjrklIKGsX8qcybQQtHZRczqQEte
+ jW6OZowwLmB+g1qeUvh8IXFUeNu7WA2r+5E+ezr65XHGFIxIHNCihoMHwSedPaxFI3eA
+ 8OdLIFewBgPqGSzBIRUgIIeJr5B7WfFb4IDf+xnkUhrVIIg48fJ1juM8wYA/waJGhJTq
+ bdTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=vxFzA3cYKumLjSg+IkqDhoQZF9KKnvNCqCSv8B89Cq4=;
- b=NXqpK91/dttryLPCt/GrFSc946f5g5+UieEjHxUcVYQB/I66c6EuQwhsp4mTVKxQ0E
- Vv/362lTQFChXSyL+/zV9IQhcPh7IT7th45FYdRUCzAwQJSZgeRwdtWAMp+6LZG07vcI
- /Rcd1PwEFxMP1KcZRX1BI8KNUwvEN/Y7KtfokzhfpAsTTSjn0LvOKpQ1qmgftjPa7Mmc
- VrLarFMWzhcYUSo8nWRToP0iFL8fwEA19jKmIrx9gyqkFuDz5IIQu00dBJeC2iHws0sE
- yi2OAsVCR3s+W701r2ry+vZh6J73mjWSGWtXUmi9VyojKidr9r9dQ/mtT0zUOZn7U1wA
- 7Wnw==
-X-Gm-Message-State: AOAM533amwrcfQeMVwMLvQFKyMIt9CAGesgIPTiXZN/cvNqz1Kwes0BD
- 2FlBeTkQDcEVhZTSbbJnWeU=
-X-Google-Smtp-Source: ABdhPJwlUMlUMekrWYWlJc/svW/amWeg+5cacZmjj20pU5NIu8L6PN/4T177BpqHgCD8fF3eeSJUnA==
-X-Received: by 2002:a05:600c:4146:: with SMTP id
- h6mr7902746wmm.170.1592386497190; 
- Wed, 17 Jun 2020 02:34:57 -0700 (PDT)
+ bh=E8BWmiCOfF8V7XGr0mx0rvBPzq+bwE1Pizm33AaL4qs=;
+ b=dV3DDmxpItguhu57x6/PP6WTlaBgnTxVBYUvl3usLnou4J5WOULgdf+vL7Jz+WG5nn
+ 4KK8orqm5zJ+kM1vCxjLMvEVBvVGchco3+r7ipoW8Hf09pUULrXjKBD1lrvEZxz0mBLr
+ y/5yNxzC6GSrGryFIQt9JSrea4ZlSi+eZMwpfBvvOW7fYPowVJRM+YsidrVCrUdUEZQg
+ IigKVpNCohxoT1zGOCzQZt9qz4fIfxQd36E6rIY0YW6XEd/emvQaUl+pkwJCNVsFv1x6
+ gAcSxhNYHuNwAIOSizN7b6OMzoSqe/ylpu9FEY4wa6ir6+4BNNqibr4P8Y1lqa9vfJqH
+ YpSg==
+X-Gm-Message-State: AOAM530H9dEY8PiRVXdrm8/uTEJRFo2PBT6M96+Ke+YIlPHLiFzCPHsw
+ f8AQnCaN/pgMpS6AkweEMWgSXIBS
+X-Google-Smtp-Source: ABdhPJyLkS+G/NW5b7CY0JUQ7jw4vz0YuAovU389sx/HrFlMExNksQEo2Pp+o38rmzMqckV7F43e5g==
+X-Received: by 2002:adf:958a:: with SMTP id p10mr584351wrp.323.1592386715955; 
+ Wed, 17 Jun 2020 02:38:35 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.114.138])
- by smtp.gmail.com with ESMTPSA id d11sm33704602wrm.64.2020.06.17.02.34.56
+ by smtp.gmail.com with ESMTPSA id v28sm36517376wra.77.2020.06.17.02.38.34
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 17 Jun 2020 02:34:56 -0700 (PDT)
-Subject: Re: [PATCH v4 3/7] iommu/mediatek: Set MISC_CTRL register
-To: Chao Hao <chao.hao@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
- Rob Herring <robh+dt@kernel.org>
-References: <20200617030029.4082-1-chao.hao@mediatek.com>
- <20200617030029.4082-4-chao.hao@mediatek.com>
+ Wed, 17 Jun 2020 02:38:35 -0700 (PDT)
+Subject: Re: [PATCH v2] arm64: mm: reserve hugetlb CMA after numa_init
+To: Barry Song <song.bao.hua@hisilicon.com>, catalin.marinas@arm.com,
+ will@kernel.org, nsaenzjulienne@suse.de, steve.capper@arm.com,
+ rppt@linux.ibm.com, akpm@linux-foundation.org
+References: <20200616221924.74780-1-song.bao.hua@hisilicon.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +137,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <aaf422f5-2ac8-252d-a064-0c1246e09acc@gmail.com>
-Date: Wed, 17 Jun 2020 11:34:55 +0200
+Message-ID: <f76034e6-3a8d-55ef-dc3d-ad1b168c7c1a@gmail.com>
+Date: Wed, 17 Jun 2020 11:38:34 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200617030029.4082-4-chao.hao@mediatek.com>
+In-Reply-To: <20200616221924.74780-1-song.bao.hua@hisilicon.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_023458_477661_3A143654 
-X-CRM114-Status: GOOD (  20.29  )
+X-CRM114-CacheID: sfid-20200617_023837_552282_29C08185 
+X-CRM114-Status: GOOD (  18.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [matthias.bgg[at]gmail.com]
@@ -176,10 +177,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
- wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
- Yong Wu <yong.wu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: Roman Gushchin <guro@fb.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linuxarm@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -187,76 +186,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 17/06/2020 05:00, Chao Hao wrote:
-> Add F_MMU_IN_ORDER_WR_EN definition in MISC_CTRL.
-> In order to improve performance, we always disable STANDARD_AXI_MODE
-> and IN_ORDER_WR_EN in MISC_CTRL.
+On 17/06/2020 00:19, Barry Song wrote:
+> hugetlb_cma_reserve() is called at the wrong place. numa_init has not been
+> done yet. so all reserved memory will be located at node0.
 > 
-> Change since v3:
+> Fixes: cf11e85fc08c ("mm: hugetlb: optionally allocate gigantic hugepages using cma")
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Acked-by: Roman Gushchin <guro@fb.com>
+> Signed-off-by: Barry Song <song.bao.hua@hisilicon.com>
 
-The changelog should go below the '---' as we don't want this in the git history
-once the patch get's accepted.
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
-> 1. Rename Disable STANDARD_AXI_MODE in MISC_CTRL to Set MISC_CTRL register
-> 2. Add F_MMU_IN_DRDER_WR_EN definition in MISC_CTRL
->        We need to disable in_order_write to improve performance
-> 
-> Cc: Yong Wu <yong.wu@mediatek.com>
-> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 > ---
->  drivers/iommu/mtk_iommu.c | 11 +++++++++++
->  drivers/iommu/mtk_iommu.h |  1 +
->  2 files changed, 12 insertions(+)
+>  -v2: add Fixes tag according to Matthias Brugger's comment
 > 
-> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> index 88d3df5b91c2..239d2cdbbc9f 100644
-> --- a/drivers/iommu/mtk_iommu.c
-> +++ b/drivers/iommu/mtk_iommu.c
-> @@ -42,6 +42,9 @@
->  #define F_INVLD_EN1				BIT(1)
+>  arch/arm64/mm/init.c | 10 +++++-----
+>  1 file changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> index e631e6425165..41914b483d54 100644
+> --- a/arch/arm64/mm/init.c
+> +++ b/arch/arm64/mm/init.c
+> @@ -404,11 +404,6 @@ void __init arm64_memblock_init(void)
+>  	high_memory = __va(memblock_end_of_DRAM() - 1) + 1;
 >  
->  #define REG_MMU_MISC_CTRL			0x048
-> +#define F_MMU_IN_ORDER_WR_EN			(BIT(1) | BIT(17))
-> +#define F_MMU_STANDARD_AXI_MODE_BIT		(BIT(3) | BIT(19))
+>  	dma_contiguous_reserve(arm64_dma32_phys_limit);
+> -
+> -#ifdef CONFIG_ARM64_4K_PAGES
+> -	hugetlb_cma_reserve(PUD_SHIFT - PAGE_SHIFT);
+> -#endif
+> -
+>  }
+>  
+>  void __init bootmem_init(void)
+> @@ -424,6 +419,11 @@ void __init bootmem_init(void)
+>  	min_low_pfn = min;
+>  
+>  	arm64_numa_init();
 > +
->  #define REG_MMU_DCM_DIS				0x050
->  
->  #define REG_MMU_CTRL_REG			0x110
-> @@ -578,6 +581,14 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
->  		writel_relaxed(0, data->base + REG_MMU_MISC_CTRL);
->  	}
->  
-> +	if (data->plat_data->has_misc_ctrl) {
-
-That's confusing. We renamed the register to misc_ctrl, but it's present in all
-SoCs. We should find a better name for this flag to describe what the hardware
-supports.
-
-Regards,
-Matthias
-
-> +		/* For mm_iommu, it can improve performance by the setting */
-> +		regval = readl_relaxed(data->base + REG_MMU_MISC_CTRL);
-> +		regval &= ~F_MMU_STANDARD_AXI_MODE_BIT;
-> +		regval &= ~F_MMU_IN_ORDER_WR_EN;
-> +		writel_relaxed(regval, data->base + REG_MMU_MISC_CTRL);
-> +	}
+> +#ifdef CONFIG_ARM64_4K_PAGES
+> +	hugetlb_cma_reserve(PUD_SHIFT - PAGE_SHIFT);
+> +#endif
 > +
->  	if (devm_request_irq(data->dev, data->irq, mtk_iommu_isr, 0,
->  			     dev_name(data->dev), (void *)data)) {
->  		writel_relaxed(0, data->base + REG_MMU_PT_BASE_ADDR);
-> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-> index 1b6ea839b92c..d711ac630037 100644
-> --- a/drivers/iommu/mtk_iommu.h
-> +++ b/drivers/iommu/mtk_iommu.h
-> @@ -40,6 +40,7 @@ struct mtk_iommu_plat_data {
->  
->  	/* HW will use the EMI clock if there isn't the "bclk". */
->  	bool                has_bclk;
-> +	bool		    has_misc_ctrl;
->  	bool                has_vld_pa_rng;
->  	bool                reset_axi;
->  	unsigned char       larbid_remap[MTK_LARB_NR_MAX];
+>  	/*
+>  	 * Sparsemem tries to allocate bootmem in memory_present(), so must be
+>  	 * done after the fixed reservations.
 > 
 
 _______________________________________________
