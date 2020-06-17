@@ -2,82 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E4F31FD38D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 19:33:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF8B61FD413
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 20:06:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+D1ErKsEiCgq5QwQ6HBPIcRMH0I6Unh0JvOYjZglaAU=; b=tIehjvNw3miuIV
-	2XDwbbPZ/XQj2dd0UMhVwlEClmDE/T3CuA+aKwZDryoyugQPPvmlUopKY3HoS6GQH9tWaNiLcQcHc
-	udqXdmXLhhg0KBZ67QyMBMhwtDakO18Nxi/HDIjMjG7V/Vf9HytHITe73Y3pTtoNda/XvW1VMArHI
-	RWo7te2NF1CkxausLDsnTUP4ynd73Fz7qzI9CJNjMzDPftbuKUJ2jPoXBxBkxio+ZTkwUE3Ldcjgh
-	4jw8pdfEvjzsDbCtnn6S+exeK4QuX6qsIcHZFjdgf/R4cRjq7NRxrJxQCaZBWGaGsRL6hDMgd4a9I
-	C+FblcwPzorodRfPsHzw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fX4V/Z9eGq6URvjsXjeuG0iuUgLVMFyfZvr3SToH+YY=; b=U+Moamg/GoWxCO
+	EoL5TeyVDag5gqHCHUHs6k6iKpOXQVoEjj0BQYBypQcG+wYORnJjU/XlJcy5sqSGdkCC6rOtpXnK2
+	pUVhSiPhw4WGogCpd+TpOAb8vLAk/0j4jqaEYVM5GPvtjKYSPBHRlwmBEWkXFcScoJlzSk1akniaC
+	KELdqbCQvY2g0K6GleFfryiikpOLnieWrI3Vfn7SPOgBAIJPz1/+lX2b5U0UYJm5pYrMJoA6GEhQQ
+	w3C2olwoUxecaD7xK2MQncVsrEqSScb0KxMmsbAdMncjpAQL3DH7XJSX2UoInocKJFzPCACi7uhol
+	dFg8GJlVPCXGrrG7tC6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlbvw-0002GO-MZ; Wed, 17 Jun 2020 17:33:08 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jlcRg-0006iG-Qa; Wed, 17 Jun 2020 18:05:56 +0000
+Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlbvo-0002Fa-Lp
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 17:33:02 +0000
-Received: by mail-wm1-x342.google.com with SMTP id t194so2892119wmt.4
+ id 1jlcRZ-0006hn-59
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 18:05:50 +0000
+Received: by mail-ej1-x644.google.com with SMTP id mb16so3472213ejb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 10:33:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0QNRuJcws82P7uD3W5Xs1rYxppxPq6ASHSPM69pBKQM=;
- b=Fe61Js+MQ1NB3hDW2FqZX6bK8y0TfX5sBHTNEU2Yk0JzXcTVSvMsGzfAwL++w0EQLB
- gvg4q3+aUrOL9iaNWSM/h2bqDpSD3Vin8EmXucGR/bq6V6PQc6smK+NR7dHcQXgMaWzD
- UgjU7cA2bLrL+Byh9BAxtmivf+9accbbBQyCc=
+ Wed, 17 Jun 2020 11:05:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=beagleboard-org.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:subject:message-id:mime-version:content-disposition;
+ bh=yDJt73mw7weaay3nFZ2M3lWsQoLaL8FRFjLnlYqrKi0=;
+ b=1pp7YrVnknNM8LvbhqviZfKRvt81ldvDhhGsjRDo3NxyU+iQtzVy5HnFYycmwRt3HZ
+ 8kXQwp6KqzKKCgAEuL7X4AaMYTUL5AzZimCdK2+ZkoarZQ2nb7sWmI8waAMh73e544Of
+ 8W4pFCivlUMvYydSxAexRpQ/u0omhoVZrom6sC8wqe/dPPd0dxgPnX/xRtAsMvzTWrSd
+ cg0tCOjc0RVArkFtzbAnZE9mxuTdIsZcoYhWwmRkxPXqIfrpKd+DqtY5XeQ1KWxNct41
+ NDB4ME9I5woyo8wnVcumDy9syS2m2y/JCFIKZLKUGf99feP4bI3cWv5/D8Aig4l5eZTi
+ xgCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0QNRuJcws82P7uD3W5Xs1rYxppxPq6ASHSPM69pBKQM=;
- b=hDI28eNBuftNLtTb603CxkLfE3LyRo+qOXYH9G0OJQhE22GoBsL0+Q3KLHAKOhT3Cp
- 2jo3i/rS2c3XnB4nHVifZbu00td/ylpcCjozwRNQaXO/7vQ8t+pHCLeMG5/LlYrRS/AN
- vKV9Db4xTVV+ntCpTF3V/hGY6U88NQzVHZys7oPG9ZcA5gr1V7trES4vW5oTYw+oIrMF
- 5HVMxtuXGIPwCz0b24l1hOaZOq8k5PgAzPv3Qn5ZUglgD211OZyuADVgrA8jY+tWLcTB
- KFBzBmS5BFCEUuwwpV+Hz3Qz2lWP02JE8+DvN72d8Fg/uaTTrOlcDo0xkTALmQs1V19+
- 6DMg==
-X-Gm-Message-State: AOAM533Iu5J1UQOAB2TOPGvtOvhV+aus5WKgn7/FayWVfz9bB3uDqdeI
- bYYgnNEv00NRGDVScCXx5ZWJPfgsxM6qd8GuJzO9ew==
-X-Google-Smtp-Source: ABdhPJxnOs2MLe3C0AP9rvozUlSx2/nymavZrjsSjsvAn9I5kRCXHvTT2TSpRqQfMipTr/dlVrVwhPVh03aW+M/MoWI=
-X-Received: by 2002:a7b:c0cc:: with SMTP id s12mr9971856wmh.111.1592415179181; 
- Wed, 17 Jun 2020 10:32:59 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition;
+ bh=yDJt73mw7weaay3nFZ2M3lWsQoLaL8FRFjLnlYqrKi0=;
+ b=qy8psGuF3u3Nb8Hi8kVsV9gRV97ZxFm/lCpZYL7ui4OCZ/aIk5KcJNQie1uqxDgJ/p
+ Ipo6vn5OLqGCfM776KzhtghMlya31JwlHZ1W2iqCER9Ch5y14R6I733np66PyPwL1P4s
+ 3NGd89JWvthMlYfxtv90YCLchCmoaYNm0nCeFS54yijUAIEtcI4GM3m+VhRVyyRosbOC
+ 1w3VQiODmDXRllzW2ZLjZkAWmlIaqipUc/17/rqCTFP8BC8VYi2N6NnzopIhCvf3vy4a
+ pCkHZEqB6S0TotHSk2RvH7h9O2nFV7Dd3SNxvbGF6xRMtwlL8N/1QbpRuU+gSpilWsxW
+ ILIg==
+X-Gm-Message-State: AOAM530PNAfcicaaAP4H1CUrTuiGkxscQ1QYxnG7KD1cnZCqiUrvENGE
+ WJiswO36Brmm8V4JxPwTGuKjxA==
+X-Google-Smtp-Source: ABdhPJzMWK4g+FCDDXKT/NqpY8aSLOan2cBspKMr8Txzql3WBYoiuuE6IFAEwnRnzTYR8iJpw6uTrw==
+X-Received: by 2002:a17:906:7ad7:: with SMTP id
+ k23mr336797ejo.439.1592417147096; 
+ Wed, 17 Jun 2020 11:05:47 -0700 (PDT)
+Received: from x1 (i59F66838.versanet.de. [89.246.104.56])
+ by smtp.gmail.com with ESMTPSA id r6sm253016edq.44.2020.06.17.11.05.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 17 Jun 2020 11:05:46 -0700 (PDT)
+Date: Wed, 17 Jun 2020 20:05:43 +0200
+From: Drew Fustini <drew@beagleboard.org>
+To: trivial@kernel.org, Tony Lindgren <tony@atomide.com>,
+ Haojian Zhuang <haojian.zhuang@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2] pinctrl: single: fix function name in documentation
+Message-ID: <20200617180543.GA4186054@x1>
 MIME-Version: 1.0
-References: <20200616205533.3513-8-james.quinlan@broadcom.com>
- <20200616220523.GA1984295@bjorn-Precision-5520>
-In-Reply-To: <20200616220523.GA1984295@bjorn-Precision-5520>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Wed, 17 Jun 2020 13:32:46 -0400
-Message-ID: <CA+-6iNzFVmFp9MkYkRU=nf-sXSFPZY0gqmA0ZT4rfR0q1sueiA@mail.gmail.com>
-Subject: Re: [PATCH v5 07/12] PCI: brcmstb: Add control of rescal reset
-To: Bjorn Helgaas <helgaas@kernel.org>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_103300_729127_7C028282 
-X-CRM114-Status: GOOD (  23.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200617_110549_248755_DB533C12 
+X-CRM114-Status: GOOD (  12.08  )
+X-Spam-Score: 4.2 (++++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (4.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [89.246.104.56 listed in zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,197 +97,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Helgaas <bhelgaas@google.com>, Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 16, 2020 at 6:05 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
->
-> On Tue, Jun 16, 2020 at 04:55:14PM -0400, Jim Quinlan wrote:
-> > From: Jim Quinlan <jquinlan@broadcom.com>
-> >
-> > Some STB chips have a special purpose reset controller named RESCAL (reset
-> > calibration).  The PCIe HW can now control RESCAL to start and stop its
-> > operation.
->
-> The HW *can* now control RESCAL, but what does this patch do?
->
-> I guess maybe this patch uses RESCAL to turn on the PHY in probe and
-> resume and turn it off in suspend and remove?
-Yes, I will redo this text with a better description.
+Use the correct the function name in the documentation for
+"pcs_parse_one_pinctrl_entry()".
 
-Thanks,
-Jim
+"smux_parse_one_pinctrl_entry()" appears to be an artifact from the
+development of a prior patch series ("simple pinmux driver") which
+transformed into pinctrl-single.
 
-PS Will attend to your other responses as well in the V6.
->
-> > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
-> > Acked-by: Florian Fainelli <f.fainelli@gmail.com>
-> > ---
-> >  drivers/pci/controller/pcie-brcmstb.c | 81 ++++++++++++++++++++++++++-
-> >  1 file changed, 80 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> > index d0e256d8578a..9189406fd35c 100644
-> > --- a/drivers/pci/controller/pcie-brcmstb.c
-> > +++ b/drivers/pci/controller/pcie-brcmstb.c
-> > @@ -23,6 +23,7 @@
-> >  #include <linux/of_platform.h>
-> >  #include <linux/pci.h>
-> >  #include <linux/printk.h>
-> > +#include <linux/reset.h>
-> >  #include <linux/sizes.h>
-> >  #include <linux/slab.h>
-> >  #include <linux/string.h>
-> > @@ -158,6 +159,16 @@
-> >  #define DATA_ADDR(pcie)                      (pcie->reg_offsets[EXT_CFG_DATA])
-> >  #define PCIE_RGR1_SW_INIT_1(pcie)    (pcie->reg_offsets[RGR1_SW_INIT_1])
-> >
-> > +/* Rescal registers */
-> > +#define PCIE_DVT_PMU_PCIE_PHY_CTRL                           0xc700
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS                       0x3
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_MASK              0x4
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_SHIFT     0x2
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_MASK          0x2
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_SHIFT         0x1
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_MASK          0x1
-> > +#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_SHIFT         0x0
-> > +
-> >  enum {
-> >       RGR1_SW_INIT_1,
-> >       EXT_CFG_INDEX,
-> > @@ -248,6 +259,7 @@ struct brcm_pcie {
-> >       const int               *reg_offsets;
-> >       const int               *reg_field_info;
-> >       enum pcie_type          type;
-> > +     struct reset_control    *rescal;
-> >  };
-> >
-> >  /*
-> > @@ -963,6 +975,47 @@ static void brcm_pcie_enter_l23(struct brcm_pcie *pcie)
-> >               dev_err(pcie->dev, "failed to enter low-power link state\n");
-> >  }
-> >
-> > +static int brcm_phy_cntl(struct brcm_pcie *pcie, const int start)
-> > +{
-> > +     static const u32 shifts[PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS] = {
-> > +             PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_SHIFT,
-> > +             PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_SHIFT,
-> > +             PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_SHIFT,};
-> > +     static const u32 masks[PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS] = {
-> > +             PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_MASK,
-> > +             PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_MASK,
-> > +             PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_MASK,};
-> > +     const int beg = start ? 0 : PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS - 1;
-> > +     const int end = start ? PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS : -1;
-> > +     u32 tmp, combined_mask = 0;
-> > +     u32 val = !!start;
-> > +     void __iomem *base = pcie->base;
-> > +     int i;
-> > +
-> > +     for (i = beg; i != end; start ? i++ : i--) {
-> > +             tmp = readl(base + PCIE_DVT_PMU_PCIE_PHY_CTRL);
-> > +             tmp = (tmp & ~masks[i]) | ((val << shifts[i]) & masks[i]);
-> > +             writel(tmp, base + PCIE_DVT_PMU_PCIE_PHY_CTRL);
-> > +             usleep_range(50, 200);
-> > +             combined_mask |= masks[i];
-> > +     }
-> > +
-> > +     tmp = readl(base + PCIE_DVT_PMU_PCIE_PHY_CTRL);
-> > +     val = start ? combined_mask : 0;
-> > +
-> > +     return (tmp & combined_mask) == val ? 0 : -EIO;
-> > +}
-> > +
-> > +static inline int brcm_phy_start(struct brcm_pcie *pcie)
-> > +{
-> > +     return pcie->rescal ? brcm_phy_cntl(pcie, 1) : 0;
-> > +}
-> > +
-> > +static inline int brcm_phy_stop(struct brcm_pcie *pcie)
-> > +{
-> > +     return pcie->rescal ? brcm_phy_cntl(pcie, 0) : 0;
-> > +}
-> > +
-> >  static void brcm_pcie_turn_off(struct brcm_pcie *pcie)
-> >  {
-> >       void __iomem *base = pcie->base;
-> > @@ -990,11 +1043,15 @@ static void brcm_pcie_turn_off(struct brcm_pcie *pcie)
-> >  static int brcm_pcie_suspend(struct device *dev)
-> >  {
-> >       struct brcm_pcie *pcie = dev_get_drvdata(dev);
-> > +     int ret;
-> >
-> >       brcm_pcie_turn_off(pcie);
-> > +     ret = brcm_phy_stop(pcie);
-> > +     if (ret)
-> > +             dev_err(pcie->dev, "failed to stop phy\n");
-> >       clk_disable_unprepare(pcie->clk);
-> >
-> > -     return 0;
-> > +     return ret;
-> >  }
-> >
-> >  static int brcm_pcie_resume(struct device *dev)
-> > @@ -1007,6 +1064,12 @@ static int brcm_pcie_resume(struct device *dev)
-> >       base = pcie->base;
-> >       clk_prepare_enable(pcie->clk);
-> >
-> > +     ret = brcm_phy_start(pcie);
-> > +     if (ret) {
-> > +             dev_err(pcie->dev, "failed to start phy\n");
-> > +             return ret;
-> > +     }
-> > +
-> >       /* Take bridge out of reset so we can access the SERDES reg */
-> >       brcm_pcie_bridge_sw_init_set(pcie, 0);
-> >
-> > @@ -1032,6 +1095,9 @@ static void __brcm_pcie_remove(struct brcm_pcie *pcie)
-> >  {
-> >       brcm_msi_remove(pcie);
-> >       brcm_pcie_turn_off(pcie);
-> > +     if (brcm_phy_stop(pcie))
-> > +             dev_err(pcie->dev, "failed to stop phy\n");
-> > +     reset_control_assert(pcie->rescal);
-> >       clk_disable_unprepare(pcie->clk);
-> >  }
-> >
-> > @@ -1117,6 +1183,19 @@ static int brcm_pcie_probe(struct platform_device *pdev)
-> >               dev_err(&pdev->dev, "could not enable clock\n");
-> >               return ret;
-> >       }
-> > +     pcie->rescal = devm_reset_control_get_optional_shared(&pdev->dev, "rescal");
-> > +     if (IS_ERR(pcie->rescal))
-> > +             return PTR_ERR(pcie->rescal);
-> > +
-> > +     ret = reset_control_deassert(pcie->rescal);
-> > +     if (ret)
-> > +             dev_err(&pdev->dev, "failed to deassert 'rescal'\n");
-> > +
-> > +     ret = brcm_phy_start(pcie);
-> > +     if (ret) {
-> > +             dev_err(pcie->dev, "failed to start phy\n");
-> > +             return ret;
-> > +     }
-> >
-> >       ret = brcm_pcie_setup(pcie);
-> >       if (ret)
-> > --
-> > 2.17.1
-> >
+Fixes: 8b8b091bf07f ("pinctrl: Add one-register-per-pin type device tree based pinctrl driver")
+Signed-off-by: Drew Fustini <drew@beagleboard.org>
+---
+v2:
+- add trivial@kernel.org
+- add Fixes: tag
+
+ drivers/pinctrl/pinctrl-single.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/pinctrl/pinctrl-single.c b/drivers/pinctrl/pinctrl-single.c
+index a9d511982780..02f677eb1d53 100644
+--- a/drivers/pinctrl/pinctrl-single.c
++++ b/drivers/pinctrl/pinctrl-single.c
+@@ -958,7 +958,7 @@ static int pcs_parse_pinconf(struct pcs_device *pcs, struct device_node *np,
+ }
+ 
+ /**
+- * smux_parse_one_pinctrl_entry() - parses a device tree mux entry
++ * pcs_parse_one_pinctrl_entry() - parses a device tree mux entry
+  * @pctldev: pin controller device
+  * @pcs: pinctrl driver instance
+  * @np: device node of the mux entry
+-- 
+2.25.1
 
 _______________________________________________
 linux-arm-kernel mailing list
