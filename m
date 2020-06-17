@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFEC61FD28C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 18:49:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C38211FD28E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 18:49:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9zU+V0pLo/vdUSTWupFUUFklcfhIMkbWZ/Lt1fY6frc=; b=MHSP5x3xu5fFSo
-	D2ExWynLZVYrJoSuD4AKdlFYk8IoJEkW9DjIGYIFcmaKGfkA4NW6Z51dhXeBedsGo5KOZGD0o81yB
-	aoUtiaqgU2I4PryjHb8YSnz/MNQlVklXpsydp8tggKaJTK8bkwCnlODOa0Vyvcq8UFDcMdnolviUp
-	ikOPFM0SVQ7uVY1EVQvPd+d1W70ZS8ScCh4CzMxc24dRW1XJm5eCgyoF9reqE1P2kc3gw7bE7Op5W
-	GsMXOMXHy0CUJa32bub4qvhCrVmQtCORqU+6x5c7o2t61D1ukLHZIhttqkKTm4nZtvGuP/1Y9f8C4
-	yZ3WWu3V6yOajGCYr5Vg==;
+	List-Owner; bh=X0aQkidKr4T0KMGDMgt0Va8icDrW6tfCW1SoRcNQIYo=; b=rhFFNANj5CIQaL
+	CFdjDbuTvQ0vLg8WV8JNhmeza7Z6AfsT5CSB9hQxwYBoxlaXRxwRGoQczIingDiIKjR0nyjlrnTnF
+	AgZMM/7qscACmmbiGG3jW90xJ5O73kOINQclE/W4QMDCqHYtVgdQh1S/KWePzgu7bgv+qPtdjH+/j
+	WICblhIJJhRMRvP8lhC4A3+lH/sh0q4P+HM/7DMin17hiI46rD8gbUaXn1/i3AtEcviSXRGXeOBIE
+	vPSHldpHf5EEdHyjjHPtJmY+ARDhbDwCrFF4FTa96R64yLDEtDwCBrGwvgP4BhDEYseQLLB29Ni1o
+	dVHHzf9p7kwV5S81S9Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlbFO-0006HL-AZ; Wed, 17 Jun 2020 16:49:10 +0000
+	id 1jlbFg-0006UY-TW; Wed, 17 Jun 2020 16:49:28 +0000
 Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlbEZ-0005gJ-7w; Wed, 17 Jun 2020 16:48:20 +0000
-Received: by mail-ej1-x644.google.com with SMTP id gl26so3100867ejb.11;
- Wed, 17 Jun 2020 09:48:18 -0700 (PDT)
+ id 1jlbEZ-0005gw-VT; Wed, 17 Jun 2020 16:48:21 +0000
+Received: by mail-ej1-x644.google.com with SMTP id k11so3113512ejr.9;
+ Wed, 17 Jun 2020 09:48:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=HbW3NKNom8juXI2NoyDjAEEkKyRH9dumXigRxuvNwKY=;
- b=E5U6u+FwDamT/5MzUtw3K/1BEM1ZTiyttyrXEl1+8zSQWpBSc0B5FR4bIUQ1tonPZh
- tQ7Sq8engNniJfbizfbR8YisCx9Ora1eTcK48UUUNsPyrrmYz7ttfMJUyDIqWfREp4x0
- LT8uHcaKqqvZF70IgYU99gHaQCxC2cfAXiDO8ImYxJjaG5GtJKZ3Hfb1Q6NlVdmDbaZ8
- QDB11E5nYjm0cIK1jEV4D3ONYHyoB5X7seBi/J8PU31002wRNLpWLEKw0yPRy0NRsvSu
- nNp3fHo+x13H8YaQjGCkZbkO7eOeT90xaWFXuPE4kus7VDD8rQXbpeNqcWSXDawp1WUA
- c/ZQ==
+ bh=WbtFhwo2fqQ8/gIQgNvQA6jb7MjlC2oHnaaRv7v1IUo=;
+ b=A07pKi2LYvpXZf86f3a4g7sReKjO1U7SOzTgDaNnc/97/L9D0FW47EJvtPHPstA309
+ 2mIVuhTx3sOVsqo2afHlc+SVcwD8uYqdgBOjn3iRWrMODrsZZr/IyDt+/F1o/+5BgYbi
+ 5kerLNuB7Kyo1xTxHuR/6ABuvfGG7qM7CkTh7wf9lTJNQIJmFvGnb/Mf+hOz0JsKAiPM
+ rGHLrX2dsO8GB0b57TVodqMtY773pdHL5UFR8SxTswSh5WAuvJ4/XGkv6reN5iXBuG8M
+ CYAnohV2Gsvt32oYF4MO612scOWHHNfAW45MnaoaqIFu9XbuOLNUmpyipMnDLQktP5RU
+ cTyQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HbW3NKNom8juXI2NoyDjAEEkKyRH9dumXigRxuvNwKY=;
- b=etEqcT0QBR1KgbkqKKBmIJis44srw+QMHpmXVRhvwgC1KcbGUFxwqzQ+ZPDSM0Gtdi
- ZIPz2LzjxEjbCk7mhYR6EUzw2rOfwwEkK71L9BTaUqqHaLM+B7Us/ADrp+kp1mGjctKg
- Jv9m9AVFWuMNgqVLEQTO5k1hdMlDuQnT94XXVqokohtQDW7jHXVsEJjV2f4PMll2WEH3
- 9s2RT9VDb91RQx37KSuMbx9hO2drcaekuDYzS2MS6bQwIj23ESl2U4xt6OoOJyBR5IIo
- K7xceqpATetJ23r4RmRSl3j3dXvetanLTq+MqbFNUoY7+pHimjVp4+PuwzBcU74c1qgH
- qY7w==
-X-Gm-Message-State: AOAM5338GajagqCzvDalEsbfTdlZh22ZrDvuSt9zeKIvNdiCSZQiaJ50
- AxfyC3haLibYStPm7Wkx8vA=
-X-Google-Smtp-Source: ABdhPJzPdiDhZzkiIEvfyQqMk9m00A48c6U0WPQZgrYyBMDstasrSBdif/z88ONABd5SplNm1UNgmA==
-X-Received: by 2002:a17:907:9484:: with SMTP id
- dm4mr106072ejc.56.1592412497436; 
- Wed, 17 Jun 2020 09:48:17 -0700 (PDT)
+ bh=WbtFhwo2fqQ8/gIQgNvQA6jb7MjlC2oHnaaRv7v1IUo=;
+ b=uM3Gdt3DlJ81auiPdeRZSJ6v53rFsOxgu1hDGAbY8AS2asvA3ixPlG/WRYY747cx+I
+ p+5oY78IxNBwE7yH10TtdAPaJvon1+kE/aU83DOY6GJm2Da5P9G7WZXufd+3yQhLTwYz
+ 8bzw5G5cbtLxqveXKtIOOSV/Lbm84SOErvJn9KJDFSSVOfymjX0myvyjTQWDhirIFmc6
+ dVjAUDd4A5gAuLxNFNvP44VvxYrzohvAtV5JlWD3ZYzaXJ546chsWF+4v6jX7gu/e2hm
+ hKBKUJnVthdNmJ0zcl5jnJGUYooLTFvTghOnpNLY8jJKSodOHhdCNZJ3bnpLFlbH+nLm
+ //BA==
+X-Gm-Message-State: AOAM533kqLa5lOcAvGB6zG13zqf3kkVaX49e4OuxANYGpqevXqhYNzrO
+ WMn6V/VxLpp//rhm73a9ZtQ=
+X-Google-Smtp-Source: ABdhPJwpe09uu45N6nr4qcBknRYME+IG2U1ApAgHIb2wdtB6mfX4FJC13WILYduRAMnTW86xDre4wg==
+X-Received: by 2002:a17:906:148b:: with SMTP id
+ x11mr85532ejc.282.1592412498710; 
+ Wed, 17 Jun 2020 09:48:18 -0700 (PDT)
 Received: from localhost.localdomain ([188.24.129.96])
- by smtp.gmail.com with ESMTPSA id v3sm127124edj.89.2020.06.17.09.48.16
+ by smtp.gmail.com with ESMTPSA id v3sm127124edj.89.2020.06.17.09.48.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 09:48:17 -0700 (PDT)
+ Wed, 17 Jun 2020 09:48:18 -0700 (PDT)
 From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>,
  =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH 02/11] arm: dts: owl-s500: Add Clock Management Unit
-Date: Wed, 17 Jun 2020 19:48:02 +0300
-Message-Id: <9dba1e4d779be27594859ea71131624bb20b1618.1592407030.git.cristian.ciocaltea@gmail.com>
+Subject: [PATCH 03/11] arm: dts: owl-s500: Set UART clock refs from CMU
+Date: Wed, 17 Jun 2020 19:48:03 +0300
+Message-Id: <0dcd4186d4ecc420ce382977dd6624f6e63fefc7.1592407030.git.cristian.ciocaltea@gmail.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <cover.1592407030.git.cristian.ciocaltea@gmail.com>
 References: <cover.1592407030.git.cristian.ciocaltea@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_094819_282561_8F934F8B 
-X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-CacheID: sfid-20200617_094820_035294_8A87BE2C 
+X-CRM114-Status: UNSURE (   7.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -102,33 +102,84 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIENsb2NrIE1hbmFnZW1lbnQgVW5pdCBmb3IgQWN0aW9ucyBTZW1pIFM1MDAgU29DLgoKU2ln
-bmVkLW9mZi1ieTogQ3Jpc3RpYW4gQ2lvY2FsdGVhIDxjcmlzdGlhbi5jaW9jYWx0ZWFAZ21haWwu
-Y29tPgotLS0KIGFyY2gvYXJtL2Jvb3QvZHRzL293bC1zNTAwLmR0c2kgfCAxNCArKysrKysrKysr
-KysrKwogMSBmaWxlIGNoYW5nZWQsIDE0IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9hcmNo
-L2FybS9ib290L2R0cy9vd2wtczUwMC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMvb3dsLXM1MDAu
-ZHRzaQppbmRleCAxZGJlNGU4YjM4YWMuLjVkNWFkOWRiNTQ5YiAxMDA2NDQKLS0tIGEvYXJjaC9h
-cm0vYm9vdC9kdHMvb3dsLXM1MDAuZHRzaQorKysgYi9hcmNoL2FybS9ib290L2R0cy9vd2wtczUw
-MC5kdHNpCkBAIC01LDYgKzUsNyBAQAogICogQ29weXJpZ2h0IChjKSAyMDE2LTIwMTcgQW5kcmVh
-cyBGw6RyYmVyCiAgKi8KIAorI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2Nsb2NrL2FjdGlvbnMsczUw
-MC1jbXUuaD4KICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9hcm0t
-Z2ljLmg+CiAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvcG93ZXIvb3dsLXM1MDAtcG93ZXJnYXRlLmg+
-CiAKQEAgLTcwLDYgKzcxLDEyIEBAIGhvc2M6IGhvc2MgewogCQkjY2xvY2stY2VsbHMgPSA8MD47
-CiAJfTsKIAorCWxvc2M6IGxvc2MgeworCQljb21wYXRpYmxlID0gImZpeGVkLWNsb2NrIjsKKwkJ
-Y2xvY2stZnJlcXVlbmN5ID0gPDMyNzY4PjsKKwkJI2Nsb2NrLWNlbGxzID0gPDA+OworCX07CisK
-IAlzb2MgewogCQljb21wYXRpYmxlID0gInNpbXBsZS1idXMiOwogCQkjYWRkcmVzcy1jZWxscyA9
-IDwxPjsKQEAgLTE2OSw2ICsxNzYsMTMgQEAgdWFydDY6IHNlcmlhbEBiMDEyYzAwMCB7CiAJCQlz
-dGF0dXMgPSAiZGlzYWJsZWQiOwogCQl9OwogCisJCWNtdTogY2xvY2stY29udHJvbGxlckBiMDE2
-MDAwMCB7CisJCQljb21wYXRpYmxlID0gImFjdGlvbnMsczUwMC1jbXUiOworCQkJcmVnID0gPDB4
-YjAxNjAwMDAgMHg4MDAwPjsKKwkJCWNsb2NrcyA9IDwmaG9zYz4sIDwmbG9zYz47CisJCQkjY2xv
-Y2stY2VsbHMgPSA8MT47CisJCX07CisKIAkJdGltZXI6IHRpbWVyQGIwMTY4MDAwIHsKIAkJCWNv
-bXBhdGlibGUgPSAiYWN0aW9ucyxzNTAwLXRpbWVyIjsKIAkJCXJlZyA9IDwweGIwMTY4MDAwIDB4
-ODAwMD47Ci0tIAoyLjI3LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Enable using Clock Management Unit clocks for every UART node
+of the Actions Semi S500 SoC.
+
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+---
+ arch/arm/boot/dts/owl-s500.dtsi | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/arch/arm/boot/dts/owl-s500.dtsi b/arch/arm/boot/dts/owl-s500.dtsi
+index 5d5ad9db549b..ac3d04c75dd5 100644
+--- a/arch/arm/boot/dts/owl-s500.dtsi
++++ b/arch/arm/boot/dts/owl-s500.dtsi
+@@ -131,6 +131,7 @@ uart0: serial@b0120000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb0120000 0x2000>;
+ 			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART0>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -138,6 +139,7 @@ uart1: serial@b0122000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb0122000 0x2000>;
+ 			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART1>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -145,6 +147,7 @@ uart2: serial@b0124000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb0124000 0x2000>;
+ 			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART2>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -152,6 +155,7 @@ uart3: serial@b0126000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb0126000 0x2000>;
+ 			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART3>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -159,6 +163,7 @@ uart4: serial@b0128000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb0128000 0x2000>;
+ 			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART4>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -166,6 +171,7 @@ uart5: serial@b012a000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb012a000 0x2000>;
+ 			interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART5>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -173,6 +179,7 @@ uart6: serial@b012c000 {
+ 			compatible = "actions,s500-uart", "actions,owl-uart";
+ 			reg = <0xb012c000 0x2000>;
+ 			interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cmu CLK_UART6>;
+ 			status = "disabled";
+ 		};
+ 
+-- 
+2.27.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
