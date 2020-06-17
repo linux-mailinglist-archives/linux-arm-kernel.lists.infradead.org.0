@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93AFC1FC6AA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 09:05:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C71CD1FC6FB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 09:16:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+G8BhmTHoeVAVS+V3s+vgHULqQLx+2ixWOvGQ5kn7t4=; b=FiwSav7kWGo9OT
-	Dzt5xJ6NNzgnxBTFJghv1CkeE8kW9BmI/SRjCVPQKqgV80ufZ8jBsDXELxU7ju/SMQmnKU5hfXs5U
-	PMGa/epcB0yFgU1mhcep80vdEvsBHSfXWbfl6zHvJKyReFkBQ/drucvQpoSaicummmt/fgRpIH3qz
-	kmb+B6PiyM1nLT1CmeNA/2nb6nVoOk3i6i2LadrcGrQOgjPcEzU1kZho14vUatzSmL8kD6DRLJog4
-	Tc5GNrvWm+wSo/cwNbnZag7tE3fJ9Gu2ZcTQdYV/mqPIGNJeuUtoVvyJ1FlWnvqGHxf7N3ImVOpyw
-	Fv97FqV5zkY6kZksOEvg==;
+	List-Owner; bh=Iy/zeHh4G0u6qBUBxU/x+DGpe/ke/FZsFhUYfh6kW1s=; b=rn9rBH6sarcstA
+	Zz9xdO1q7/pa8Gnug/fc6OgYNRKzNkBaedkg0ngie7PfZNHxAf/Zd01zOYZ4FL+rY9OGWQrFZT2e8
+	5Yu1QGqRhjIZ+SZikRr23vH4a7UpOAed9EJsKY8uX6OS8L2S3cC2q//DXp6RbGpIyh9vho8496P+N
+	ct11PnDVJ0DZ5gOZU+DsMT17c6cMQ5eXqG8Gp+y3+0a3ZuPgAyL5iEkYpySJ4RGYn4TPHp7lVxoLl
+	2kxqaEiiOs6BsDPxHLYT35w6B7BKp/dIcanstObLjrmtlQyPcuf3Zs+m+LutQ76XD76YE0XzP1dHP
+	q/7Wq7qtktE4ye0liNrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlS8i-0002rl-23; Wed, 17 Jun 2020 07:05:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jlSJK-00031y-OL; Wed, 17 Jun 2020 07:16:38 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlS8Y-0002ox-MC; Wed, 17 Jun 2020 07:05:32 +0000
-X-UUID: 25d9be4e02b04cccabebb63b59fc6a90-20200616
+ id 1jlSIE-0002KJ-CL; Wed, 17 Jun 2020 07:15:32 +0000
+X-UUID: 1d193512d96a4fe1ab8056aae21fd819-20200616
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=OBPtD1tbN5OV8vnvCeCNDHHxC6o81b/X9CvevB+bOCk=; 
- b=UMXRRiIS1Zw0twgr0iU3FrzT+pTpbZotUbCNvZJPfuKttG4gMqwN0aXRcMJGmHexGYeb6ZConK+hxyEzB/bUT/ID3nHkF/ORANjl4ghrmU/YPJFNX+1PJkvOjd9kOTCMe8FBGpFNHEL8lZN3zpg8BuaBjqOltyuiM8Hvjx1td0M=;
-X-UUID: 25d9be4e02b04cccabebb63b59fc6a90-20200616
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=J6PkgKbPUDbilo/J8y2lejIVLu5Hr7UYF5ePvMS/4r4=; 
+ b=RwZkx60XGP/l1roAw4lyCgziumcXsOzWQ1iYRAcbZ4IqWPTG+GRf8LVNCD6ZHC36NMjjAkAp7Oe4/5Fk2Oapb+efkShfhHJTcxgvlWO13CzGxpENeIxDjU/y13InF5RBCtzrSfH8Zjn+I6vNs1l3wSKNeUYmWoSDBBQBRlxi4H4=;
+X-UUID: 1d193512d96a4fe1ab8056aae21fd819-20200616
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <weiyi.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 957038197; Tue, 16 Jun 2020 23:05:15 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 17 Jun 2020 00:05:26 -0700
+ with ESMTP id 587052734; Tue, 16 Jun 2020 23:15:14 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 00:05:24 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Wed, 17 Jun 2020 15:05:24 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -46,18 +46,18 @@ From: Weiyi Lu <weiyi.lu@mediatek.com>
 To: Enric Balletbo Serra <eballetbo@gmail.com>, Matthias Brugger
  <matthias.bgg@gmail.com>, Nicolas Boichat <drinkcat@chromium.org>, "Rob
  Herring" <robh@kernel.org>, Sascha Hauer <kernel@pengutronix.de>
-Subject: [PATCH v16 09/11] soc: mediatek: Add a comma at the end
-Date: Wed, 17 Jun 2020 15:05:15 +0800
-Message-ID: <1592377517-14817-10-git-send-email-weiyi.lu@mediatek.com>
+Subject: [PATCH v16 10/11] arm64: dts: Add power controller device node of
+ MT8183
+Date: Wed, 17 Jun 2020 15:05:16 +0800
+Message-ID: <1592377517-14817-11-git-send-email-weiyi.lu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1592377517-14817-1-git-send-email-weiyi.lu@mediatek.com>
 References: <1592377517-14817-1-git-send-email-weiyi.lu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F9D2535231E86EDD4072917BE38EC826236484326466FD89AC619CA89CE359B92000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_000530_734284_DD6F73D7 
-X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-CacheID: sfid-20200617_001530_420757_465BD829 
+X-CRM114-Status: UNSURE (   8.19  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -98,80 +98,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A minor coding style fix
+Add power controller node and smi-common node for MT8183
+In scpsys node, it contains clocks and regmapping of
+infracfg and smi-common for bus protection.
 
 Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 ---
- drivers/soc/mediatek/mtk-scpsys.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 62 ++++++++++++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
 
-diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-index abdbab4..5bfe58a 100644
---- a/drivers/soc/mediatek/mtk-scpsys.c
-+++ b/drivers/soc/mediatek/mtk-scpsys.c
-@@ -1426,7 +1426,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_domains = ARRAY_SIZE(scp_domain_data_mt2701),
- 	.regs = {
- 		.pwr_sta_offs = SPM_PWR_STATUS,
--		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
- 	},
- };
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 1e03c84..5b25471 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -8,6 +8,7 @@
+ #include <dt-bindings/clock/mt8183-clk.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/power/mt8183-power.h>
+ #include <dt-bindings/reset-controller/mt8183-resets.h>
+ #include "mt8183-pinfunc.h"
  
-@@ -1437,7 +1437,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt2712),
- 	.regs = {
- 		.pwr_sta_offs = SPM_PWR_STATUS,
--		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
- 	},
- };
+@@ -309,6 +310,62 @@
+ 			#interrupt-cells = <2>;
+ 		};
  
-@@ -1448,7 +1448,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt6797),
- 	.regs = {
- 		.pwr_sta_offs = SPM_PWR_STATUS_MT6797,
--		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6797
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6797,
- 	},
- };
++		scpsys: power-controller@10006000 {
++			compatible = "mediatek,mt8183-scpsys", "syscon";
++			#power-domain-cells = <1>;
++			reg = <0 0x10006000 0 0x1000>;
++			clocks = <&topckgen CLK_TOP_MUX_AUD_INTBUS>,
++				 <&infracfg CLK_INFRA_AUDIO>,
++				 <&infracfg CLK_INFRA_AUDIO_26M_BCLK>,
++				 <&topckgen CLK_TOP_MUX_MFG>,
++				 <&topckgen CLK_TOP_MUX_MM>,
++				 <&topckgen CLK_TOP_MUX_CAM>,
++				 <&topckgen CLK_TOP_MUX_IMG>,
++				 <&topckgen CLK_TOP_MUX_IPU_IF>,
++				 <&topckgen CLK_TOP_MUX_DSP>,
++				 <&topckgen CLK_TOP_MUX_DSP1>,
++				 <&topckgen CLK_TOP_MUX_DSP2>,
++				 <&mmsys CLK_MM_SMI_COMMON>,
++				 <&mmsys CLK_MM_SMI_LARB0>,
++				 <&mmsys CLK_MM_SMI_LARB1>,
++				 <&mmsys CLK_MM_GALS_COMM0>,
++				 <&mmsys CLK_MM_GALS_COMM1>,
++				 <&mmsys CLK_MM_GALS_CCU2MM>,
++				 <&mmsys CLK_MM_GALS_IPU12MM>,
++				 <&mmsys CLK_MM_GALS_IMG2MM>,
++				 <&mmsys CLK_MM_GALS_CAM2MM>,
++				 <&mmsys CLK_MM_GALS_IPU2MM>,
++				 <&imgsys CLK_IMG_LARB5>,
++				 <&imgsys CLK_IMG_LARB2>,
++				 <&camsys CLK_CAM_LARB6>,
++				 <&camsys CLK_CAM_LARB3>,
++				 <&camsys CLK_CAM_SENINF>,
++				 <&camsys CLK_CAM_CAMSV0>,
++				 <&camsys CLK_CAM_CAMSV1>,
++				 <&camsys CLK_CAM_CAMSV2>,
++				 <&camsys CLK_CAM_CCU>,
++				 <&ipu_conn CLK_IPU_CONN_IPU>,
++				 <&ipu_conn CLK_IPU_CONN_AHB>,
++				 <&ipu_conn CLK_IPU_CONN_AXI>,
++				 <&ipu_conn CLK_IPU_CONN_ISP>,
++				 <&ipu_conn CLK_IPU_CONN_CAM_ADL>,
++				 <&ipu_conn CLK_IPU_CONN_IMG_ADL>;
++			clock-names = "audio", "audio1", "audio2",
++				      "mfg", "mm", "cam",
++				      "isp", "vpu", "vpu1",
++				      "vpu2", "vpu3", "mm-0",
++				      "mm-1", "mm-2", "mm-3",
++				      "mm-4", "mm-5", "mm-6",
++				      "mm-7", "mm-8", "mm-9",
++				      "isp-0", "isp-1", "cam-0",
++				      "cam-1", "cam-2", "cam-3",
++				      "cam-4", "cam-5", "cam-6",
++				      "vpu-0", "vpu-1", "vpu-2",
++				      "vpu-3", "vpu-4", "vpu-5";
++			infracfg = <&infracfg>;
++			mediatek,smi = <&smi_common>;
++		};
++
+ 		watchdog: watchdog@10007000 {
+ 			compatible = "mediatek,mt8183-wdt",
+ 				     "mediatek,mt6589-wdt";
+@@ -690,6 +747,11 @@
+ 			#clock-cells = <1>;
+ 		};
  
-@@ -1457,7 +1457,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_domains = ARRAY_SIZE(scp_domain_data_mt7622),
- 	.regs = {
- 		.pwr_sta_offs = SPM_PWR_STATUS,
--		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
- 	},
- };
- 
-@@ -1466,7 +1466,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_domains = ARRAY_SIZE(scp_domain_data_mt7623a),
- 	.regs = {
- 		.pwr_sta_offs = SPM_PWR_STATUS,
--		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
- 	},
- };
- 
-@@ -1477,7 +1477,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt8173),
- 	.regs = {
- 		.pwr_sta_offs = SPM_PWR_STATUS,
--		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
- 	},
- };
- 
-@@ -1488,7 +1488,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
- 	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt8183),
- 	.regs = {
- 		.pwr_sta_offs = 0x0180,
--		.pwr_sta2nd_offs = 0x0184
-+		.pwr_sta2nd_offs = 0x0184,
- 	}
- };
- 
++		smi_common: smi@14019000 {
++			compatible = "mediatek,mt8183-smi-common", "syscon";
++			reg = <0 0x14019000 0 0x1000>;
++		};
++
+ 		imgsys: syscon@15020000 {
+ 			compatible = "mediatek,mt8183-imgsys", "syscon";
+ 			reg = <0 0x15020000 0 0x1000>;
 -- 
 1.8.1.1.dirty
 _______________________________________________
