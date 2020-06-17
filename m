@@ -2,69 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2F1D1FC48C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 05:13:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8CFF1FC495
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 05:19:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTbh5w5Ho/+eWwTBrGrp4yXpJxgmhm71fawh7xys6kk=; b=rcCjyS+JodgfCx
-	bJbuP02jQWIaXiJTQF0CZnGswmwElSKoHlz0g2/o+sH+sO6PUO84Bq64LMJZ/dMEyx6t9BD91CL7I
-	SOxXVMM8ao/XoENpD/2AoXHRSpJRHhRciYeU4hAtklu1twX1UjIWacowbeq+nZPhbzlwAdYCTgW4S
-	IoeWmG9wIqKoipW13cA63DCVmAIXsi+hUhSosYNso2vcHEcuP10USQPtzuLjD/L2EB0CSSO0Drlp7
-	ikYPtpSriBs61n49xizwo2vCo634xzuyLmxXH53LuzeIQlqIJylnq47aHTvXc3x5F/8piQj+i/bUV
-	trJ/U1Er3xoYauV8tL6Q==;
+	List-Owner; bh=F8fvKjImB3HYR4Iy+qp62K5QRCqc5pa0yDbGUb8K3CA=; b=dqbyn366/ab1kk
+	ch2mSpocL0SLLJjAz6Kh/Hcnh255+FOCiSZGXfE+v+4G4siets6v0jNRdEACVj+HWx7sGdwjeNg6T
+	4mTgDKnAG/AJBYsyNMIERIN5jRc0uRw496BNzYs5qdRAFpP6ueT7B23ytiuzOH87o1y1I8NUujwUC
+	RDF0QCDr/tZmOzYQFsjhX7i0c24qOIfZaZ0IEZiDT0zNeqgIx3tTvbKHoiOgr/V8cqVTIMRYD9q+C
+	B5PfFfPQvJgB6dM510wSbEJQNEkyamJJ5gwmd7X/yqnzjrjfsXA4heZdW+GlrwE6U4uCWhbi6JFPy
+	TANVnYJ7c6GJJx56UeGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlOVj-0000t4-1O; Wed, 17 Jun 2020 03:13:11 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jlObt-0004Ey-Qf; Wed, 17 Jun 2020 03:19:33 +0000
+Received: from mail-vi1eur05on2044.outbound.protection.outlook.com
+ ([40.107.21.44] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlOU5-0007x7-LB; Wed, 17 Jun 2020 03:11:31 +0000
-X-UUID: 185a29385ba5472f920e34587ca2fdd7-20200616
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=/Dw68WkMyThFaez9HaYgW4+YPicvNPWdln8HwgJeo4A=; 
- b=DTMIaZMBBY0nB0XqljD2PikVe9vBntlwVei9uSrnGp9shDj9LF+a11EuGeD8NFuuFVH6arsHTyY14hPm+HlljeF6Ey8+WbgLA9bu7pkvJYtanb2x4cg2mal/a91ubuA5lCvetdWAUVcNd7klCK13oAQYyWy5aUYbG1Fyof74XIw=;
-X-UUID: 185a29385ba5472f920e34587ca2fdd7-20200616
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chao.hao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 79552047; Tue, 16 Jun 2020 19:11:24 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 16 Jun 2020 20:01:21 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 17 Jun 2020 11:01:22 +0800
-Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 17 Jun 2020 11:01:10 +0800
-From: Chao Hao <chao.hao@mediatek.com>
-To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
- "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [PATCH v4 7/7] iommu/mediatek: Add mt6779 basic support
-Date: Wed, 17 Jun 2020 11:00:29 +0800
-Message-ID: <20200617030029.4082-8-chao.hao@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200617030029.4082-1-chao.hao@mediatek.com>
-References: <20200617030029.4082-1-chao.hao@mediatek.com>
+ id 1jlObj-0004Dm-RC
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 03:19:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=A2psrLbkMlFNhBI26RX0qpgzPT92DHeKNLpINcRlueSxF8Sg7D2pkYkaPcmOPhyV2PWUZI9PyF5S1L4nHmtyAOrkmD0+K28ZEIQwp/VF5kEm+Dy8v53aGTCUoN1NT4olzymE0RR9FdWcAA9Lakkaa7eVcwcpQ+JYEn0+UUISUUvbTijX2rPbEIzJQOOFXEv6Dwy5pWFDDFazxXR7SB2kk/4jW7II5/MWNW6g+GbkulwoD+J13WYOznEiu+7FvQ/uyhsq/D/SnVsZfGnttdcO9qL7i9Y057RJJuhqC1XYBJABeB4rmoACuNC0oHroVtpDST9UMAYUOXtIyV2G9jQS3Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=v49aZ7pXbYf0QXKnTK8HX8msxnIr5dWNWflPKkaiooU=;
+ b=edjRr8HQMO/728N0awFz8CjSqb/cyh3kNCDjitZTuAY2DKi9kFwfdaDyyp3XsEppCgnpBKIl2W2y5oTXOjaPeJGALx5roa3O2bCg8/eaBFZhpO/Ck1uuqs8DY9CmENQg0IrABpazyeh/qxfrpWppKHxtECOZjFCfEDQvXcWPvvZBOXoM8NsZlgV5TZepxMgMFDgz3bLayirboeEcQhNVAFca8BUuMUfCx/ZtCqsdUAYX33pXA48yN3719Dy2F3Mpmbg3UScsbYtXy2e0v0N53itDHHIlRFM6D2MfioZesBs6Oddkajc9S65qCwz9tyQEcUXrj1AERsfznNMXZ0NGIw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=v49aZ7pXbYf0QXKnTK8HX8msxnIr5dWNWflPKkaiooU=;
+ b=n2R0DVlvnt/P97Hfj7P28rZRdi2h5OvdK0w64fuI5E5wG/hhFWd99RezXTmtanuxjYQuVWp+GH9/5iEygZKqZT7/OA0yLp9JSllL9BTh50aZdTgAhSECXxq4HVOdj0wGqK7l33UkvN+Fm0QOL+0RemATmOcazEnSYYjHAkNT86k=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3817.eurprd04.prod.outlook.com (2603:10a6:8:12::14)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.27; Wed, 17 Jun
+ 2020 03:19:19 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3088.029; Wed, 17 Jun 2020
+ 03:19:19 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "festevam@gmail.com"
+ <festevam@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "stefan@agner.ch" <stefan@agner.ch>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "linux-gpio@vger.kernel.org"
+ <linux-gpio@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH V5 1/9] pinctrl: imx: Support building SCU pinctrl driver
+ as module
+Thread-Topic: [PATCH V5 1/9] pinctrl: imx: Support building SCU pinctrl driver
+ as module
+Thread-Index: AQHWP+XeJP9OTzRQzUu8oLCGsNFyaKja/seAgAAQIUCAARffAIAAA42Q
+Date: Wed, 17 Jun 2020 03:19:19 +0000
+Message-ID: <DB3PR0402MB391687D9A9CFAAAEB3E4F236F59A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1591875295-19427-1-git-send-email-Anson.Huang@nxp.com>
+ <1591875295-19427-2-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB4966C661D52B43E6938FCBF4809D0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <DB3PR0402MB3916610502199D90B4BFC5E3F59D0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <AM6PR04MB49661AA8A25B73D04FFF6769809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+In-Reply-To: <AM6PR04MB49661AA8A25B73D04FFF6769809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 241387f4-7555-4245-3837-08d8126d3982
+x-ms-traffictypediagnostic: DB3PR0402MB3817:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB38173FCB55BAF13977D91155F59A0@DB3PR0402MB3817.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 04371797A5
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 0FqJ13Z1qDpNWk8v+vKHkYnnOKBcTUxey6Bzu4vOdWogHkZGpoaMG17qkwjIC49QzOB3ubMUhPdkzbD15N0PYr7sfnuB2ptFwRKRJ2GfWPuNAVtArpdCZvSljGTMtmwm7xZp7GkMyDyQ4BPMa4lHQQ69drjMfMaaRPyhiHZY6+uB4Scl0pifb7QRyrUUpf2lJ4kpCwjD0UZKXnBIjhmajy8q74tgkMaruVpDSRqKpVUBXgOwUHAlqGqcE6LoLNPCCMws0EPttjosPeuRK4+j7HFSioPCtzH0xwkvI7qg8ky67dbWLiPibuBFXuZswfwDsUvTOn7Nntg/NbhRSykWkBXjmLad8gxPtfM2hyWNJ3DiIv0Itgr5LS43/bXi5/+Y
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(346002)(376002)(136003)(396003)(39850400004)(366004)(66446008)(66476007)(64756008)(66556008)(66946007)(86362001)(44832011)(71200400001)(76116006)(7696005)(8936002)(26005)(8676002)(110136005)(4326008)(9686003)(186003)(316002)(55016002)(53546011)(6506007)(478600001)(52536014)(5660300002)(33656002)(2906002)(83380400001)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: nFHrZFlY7z1Z6HHNKoRi3JEzvVcRvmqlQ7dXOrv9FzsNpny45F9KXf5CDPS22LF03p9N9Vx23/fotwJGf66MacQlk0DcyJPE2/IMokH0u14ZQNf+BtuewpOewsPa7sTi736dXUcnzUw+udL8W3r6XO5NLRkMS+PjjsjrPf2FT8nxrJfj8IaOpSXCK0nN7Z8G8s+n8Pd1uwwW2F86juJ7lhO2vKKWJKvv4gdmUXjkfjrxVMbh76kw9OpIxAZhqm3ECuIZNWWilnwxndzLYpFkAmQXrAcUXOHgHxqT3ZMQURtIyLWxVESxI5791bvRzmAns6TC6QL533SSJKFFWdN7WIGO8voPhY0JOPCu5omgmhc8e4lGQYlY2B75L7R+03kXJD0W+NpXBUQcmWpriXzqYvZqURbvTH80hYqLB5zCBknszQEM9oGZDmDWdRUP20KO35gQBJ8YCzq++M749jumRO9HjdaDf1yGFJoYfTr7R7I=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 241387f4-7555-4245-3837-08d8126d3982
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jun 2020 03:19:19.6556 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hsIjLrvnQw8LPE6Hh3B9vGQn0znpTNi9RljfUJmtE5f0VCMKtwAlzIpHDPhJd9HSRMLI5kB/4cev8fWUkPRB8g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3817
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_201129_770357_3801B396 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200616_201924_132511_38CFCC8C 
+X-CRM114-Status: GOOD (  30.02  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.44 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.44 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -72,8 +124,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,110 +135,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
- wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- Chao Hao <chao.hao@mediatek.com>, iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-1. Start from mt6779, INVLDT_SEL move to offset=0x2c, so we add
-   REG_MMU_INV_SEL_GEN2 definition and mt6779 uses it.
-2. Change PROTECT_PA_ALIGN from 128 byte to 256 byte.
-3. For REG_MMU_CTRL_REG register, we only need to change bit[2:0],
-   others bits keep default value, ex: enable victim tlb.
-4. Add mt6779_data to support mm_iommu HW init.
 
-Change since v3:
-1. When setting MMU_CTRL_REG, we don't need to include mt8173.
 
-Cc: Yong Wu <yong.wu@mediatek.com>
-Signed-off-by: Chao Hao <chao.hao@mediatek.com>
----
- drivers/iommu/mtk_iommu.c | 20 ++++++++++++++++++--
- drivers/iommu/mtk_iommu.h |  1 +
- 2 files changed, 19 insertions(+), 2 deletions(-)
+> Subject: RE: [PATCH V5 1/9] pinctrl: imx: Support building SCU pinctrl driver as
+> module
+> 
+> > From: Anson Huang <anson.huang@nxp.com>
+> > Sent: Tuesday, June 16, 2020 6:44 PM
+> >
+> > > Subject: RE: [PATCH V5 1/9] pinctrl: imx: Support building SCU
+> > > pinctrl driver as module
+> > >
+> > > > From: Anson Huang <Anson.Huang@nxp.com>
+> > > > Sent: Thursday, June 11, 2020 7:35 PM
+> > > >
+> > > > To support building i.MX SCU pinctrl driver as module, below
+> > > > things need to be
+> > > > changed:
+> > > >
+> > > >     - Export SCU related functions and use "IS_ENABLED" instead of
+> > > >       "ifdef" to support SCU pinctrl driver user and itself to be
+> > > >       built as module;
+> > > >     - Use function callbacks for SCU related functions in pinctrl-imx.c
+> > > >       in order to support the scenario of PINCTRL_IMX is built in
+> > > >       while PINCTRL_IMX_SCU is built as module;
+> > > >     - All drivers using SCU pinctrl driver need to initialize the
+> > > >       SCU related function callback;
+> > > >     - Change PINCTR_IMX_SCU to tristate;
+> > > >     - Add module author, description and license.
+> > > >
+> > > > With above changes, i.MX SCU pinctrl driver can be built as module.
+> > > >
+> > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > > ---
+> > > > Changes since V4:
+> > > > 	- add module author and description.
+> > > > ---
+> > > >  drivers/pinctrl/freescale/Kconfig           |  2 +-
+> > > >  drivers/pinctrl/freescale/pinctrl-imx.c     | 18 ++++-----
+> > > >  drivers/pinctrl/freescale/pinctrl-imx.h     | 57
+> > ++++++++++++-----------------
+> > > >  drivers/pinctrl/freescale/pinctrl-imx8dxl.c |  3 ++
+> > > > drivers/pinctrl/freescale/pinctrl-imx8qm.c  |  3 ++
+> > > > drivers/pinctrl/freescale/pinctrl-imx8qxp.c |  3 ++
+> > > >  drivers/pinctrl/freescale/pinctrl-scu.c     |  9 +++++
+> > > >  7 files changed, 51 insertions(+), 44 deletions(-)
+> > > >
+> > > > diff --git a/drivers/pinctrl/freescale/Kconfig
+> > > > b/drivers/pinctrl/freescale/Kconfig
+> > > > index 4ca44dd..a3a30f1d 100644
+> > > > --- a/drivers/pinctrl/freescale/Kconfig
+> > > > +++ b/drivers/pinctrl/freescale/Kconfig
+> > > > @@ -7,7 +7,7 @@ config PINCTRL_IMX
+> > > >  	select REGMAP
+> > > >
+> > > >  config PINCTRL_IMX_SCU
+> > > > -	bool
+> > > > +	tristate "IMX SCU pinctrl driver"
+> > > >  	depends on IMX_SCU
+> > > >  	select PINCTRL_IMX
+> > > >
+> > > > diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c
+> > > > b/drivers/pinctrl/freescale/pinctrl-imx.c
+> > > > index cb7e0f0..c1faae1 100644
+> > > > --- a/drivers/pinctrl/freescale/pinctrl-imx.c
+> > > > +++ b/drivers/pinctrl/freescale/pinctrl-imx.c
+> > > > @@ -372,8 +372,8 @@ static int imx_pinconf_get(struct pinctrl_dev
+> > > *pctldev,
+> > > >  	struct imx_pinctrl *ipctl = pinctrl_dev_get_drvdata(pctldev);
+> > > >  	const struct imx_pinctrl_soc_info *info = ipctl->info;
+> > > >
+> > > > -	if (info->flags & IMX_USE_SCU)
+> > > > -		return imx_pinconf_get_scu(pctldev, pin_id, config);
+> > > > +	if ((info->flags & IMX_USE_SCU) && info->imx_pinconf_get)
+> > > > +		return info->imx_pinconf_get(pctldev, pin_id, config);
+> > >
+> > > Pointer check here seems not be necessary
+> >
+> > I think it is NOT harmful and it is just in case the drivers using scu
+> > pinctrl do NOT initialize these functions callback and lead to NULL pointer
+> dump.
+> >
+> 
+> It is a bit harmful to the code readability as we already use flag IMX_USE_SCU
+> to distinguish the difference. Not need double check the pointer again because
+> platforms driver must have defined it.
 
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index c706bca6487e..def2e996683f 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -37,6 +37,11 @@
- #define REG_MMU_INVLD_START_A			0x024
- #define REG_MMU_INVLD_END_A			0x028
- 
-+/* In latest Coda, MMU_INV_SEL's offset is changed to 0x02c.
-+ * So we named offset = 0x02c to "REG_MMU_INV_SEL_GEN2"
-+ * and offset = 0x038 to "REG_MMU_INV_SEL_GEN1".
-+ */
-+#define REG_MMU_INV_SEL_GEN2			0x02c
- #define REG_MMU_INV_SEL_GEN1			0x038
- #define F_INVLD_EN0				BIT(0)
- #define F_INVLD_EN1				BIT(1)
-@@ -98,7 +103,7 @@
- #define F_MMU_INT_ID_LARB_ID(a)			(((a) >> 7) & 0x7)
- #define F_MMU_INT_ID_PORT_ID(a)			(((a) >> 2) & 0x1f)
- 
--#define MTK_PROTECT_PA_ALIGN			128
-+#define MTK_PROTECT_PA_ALIGN			256
- 
- /*
-  * Get the local arbiter ID and the portid within the larb arbiter
-@@ -543,11 +548,12 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
- 		return ret;
- 	}
- 
-+	regval = readl_relaxed(data->base + REG_MMU_CTRL_REG);
- 	if (data->plat_data->m4u_plat == M4U_MT8173)
- 		regval = F_MMU_PREFETCH_RT_REPLACE_MOD |
- 			 F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173;
- 	else
--		regval = F_MMU_TF_PROT_TO_PROGRAM_ADDR;
-+		regval |= F_MMU_TF_PROT_TO_PROGRAM_ADDR;
- 	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
- 
- 	regval = F_L2_MULIT_HIT_EN |
-@@ -797,6 +803,15 @@ static const struct mtk_iommu_plat_data mt2712_data = {
- 	.larbid_remap   = {{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}},
- };
- 
-+static const struct mtk_iommu_plat_data mt6779_data = {
-+	.m4u_plat      = M4U_MT6779,
-+	.has_sub_comm  = true,
-+	.has_wr_len    = true,
-+	.has_misc_ctrl = true,
-+	.inv_sel_reg   = REG_MMU_INV_SEL_GEN2,
-+	.larbid_remap  = {{0}, {1}, {2}, {3}, {5}, {7, 8}, {10}, {9}},
-+};
-+
- static const struct mtk_iommu_plat_data mt8173_data = {
- 	.m4u_plat     = M4U_MT8173,
- 	.has_4gb_mode = true,
-@@ -815,6 +830,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
- 
- static const struct of_device_id mtk_iommu_of_ids[] = {
- 	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
-+	{ .compatible = "mediatek,mt6779-m4u", .data = &mt6779_data},
- 	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
- 	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
- 	{}
-diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index 9971cedd72ea..fb79e710c8d9 100644
---- a/drivers/iommu/mtk_iommu.h
-+++ b/drivers/iommu/mtk_iommu.h
-@@ -31,6 +31,7 @@ struct mtk_iommu_suspend_reg {
- enum mtk_iommu_plat {
- 	M4U_MT2701,
- 	M4U_MT2712,
-+	M4U_MT6779,
- 	M4U_MT8173,
- 	M4U_MT8183,
- };
--- 
-2.18.0
+I am fine, it is just because checking the function callback before calling it is better.
+I can remove it if you insist to NOT check it. If there is other comment, will remove
+them together in next version.
+
+> 
+> > >
+> > > > diff --git a/drivers/pinctrl/freescale/pinctrl-imx.h
+> > > > b/drivers/pinctrl/freescale/pinctrl-imx.h
+> > > > index 333d32b..bdb86c2 100644
+> > > > --- a/drivers/pinctrl/freescale/pinctrl-imx.h
+> > > > +++ b/drivers/pinctrl/freescale/pinctrl-imx.h
+> > > > @@ -75,6 +75,21 @@ struct imx_cfg_params_decode {
+> > > >  	bool invert;
+> > > >  };
+> > > >
+> > > > +/**
+> > > > + * @dev: a pointer back to containing device
+> > > > + * @base: the offset to the controller in virtual memory  */
+> > > > +struct imx_pinctrl {
+> > > > +	struct device *dev;
+> > > > +	struct pinctrl_dev *pctl;
+> > > > +	void __iomem *base;
+> > > > +	void __iomem *input_sel_base;
+> > > > +	const struct imx_pinctrl_soc_info *info;
+> > > > +	struct imx_pin_reg *pin_regs;
+> > > > +	unsigned int group_index;
+> > > > +	struct mutex mutex;
+> > > > +};
+> > > > +
+> > > >  struct imx_pinctrl_soc_info {
+> > > >  	const struct pinctrl_pin_desc *pins;
+> > > >  	unsigned int npins;
+> > > > @@ -98,21 +113,13 @@ struct imx_pinctrl_soc_info {
+> > > >  				  struct pinctrl_gpio_range *range,
+> > > >  				  unsigned offset,
+> > > >  				  bool input);
+> > > > -};
+> > > > -
+> > > > -/**
+> > > > - * @dev: a pointer back to containing device
+> > > > - * @base: the offset to the controller in virtual memory
+> > > > - */
+> > > > -struct imx_pinctrl {
+> > > > -	struct device *dev;
+> > > > -	struct pinctrl_dev *pctl;
+> > > > -	void __iomem *base;
+> > > > -	void __iomem *input_sel_base;
+> > > > -	const struct imx_pinctrl_soc_info *info;
+> > > > -	struct imx_pin_reg *pin_regs;
+> > > > -	unsigned int group_index;
+> > > > -	struct mutex mutex;
+> > > > +	int (*imx_pinconf_get)(struct pinctrl_dev *pctldev, unsigned int
+> pin_id,
+> > > > +			       unsigned long *config);
+> > > > +	int (*imx_pinconf_set)(struct pinctrl_dev *pctldev, unsigned int
+> pin_id,
+> > > > +			       unsigned long *configs, unsigned int num_configs);
+> > > > +	void (*imx_pinctrl_parse_pin)(struct imx_pinctrl *ipctl,
+> > > > +				      unsigned int *pin_id, struct imx_pin *pin,
+> > > > +				      const __be32 **list_p);
+> > >
+> > > Compared with V4, this new implementation seems a bit complicated.
+> > > I guess we don't have to support PINCTRL_IMX=y && PINCTRL_IMX_SCU=m
+> > > case.
+> > > Will that make the support a bit easier?
+> >
+> > I am NOT sure if such scenario meets requirement, the fact is other
+> > non-i.MX SoC also selects the PINCTRL_IMX which will make
+> > PINCTRL_IMX=y, so in that case, even all i.MX PINCTRL drivers are set
+> > to module, it will still have PINCTRL_IMX=y and PINCTRL_IMX_SCU=m,
+> > then build will fail. And I believe the auto build test may also cover
+> > such case and build error will be reported, that is why this change is
+> > needed and with this change, function is NOT impacted,
+> >
+> 
+> Is it possible to add some constrainst to make sure PINCTRL_IMX_SCU value is
+> the same as PINCTRL_IMX? Or combine them into one?
+> If we can do that, it may ease the implementation a lot and make the code still
+> clean.
+
+Combine PINCTRL_IMX_SCU and PINCTRL_IMX is NOT making sense, since for non-SCU
+platforms, PINCTRL_IMX_SCU is NOT necessary, to make PINCTRL_IMX_SCU same value
+as PINCTRL_IMX, unless make "select PINCTRL_IMX_SCU" in PINCTRL_IMX, but that is
+also NOT making sense, because, PINCTRL_IMX does NOT depends on PINCTRL_IMX_SCU
+at all.
+
+The change is NOT that big IMO, and no better idea in my mind, have tried that in previous versions
+of patch series.
+
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
