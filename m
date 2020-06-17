@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 878961FD69D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 23:03:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B30481FD6DC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 23:15:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VRHSp11mH49qzDRABaYjDbAlvTTPJe+1/x9YFU5ZLXs=; b=YnCgq33EzTOiOg
-	3VC7/YvMpt3U3WN+YGl03O2mJDnrCY3343qUZ+w96ccrcu9AKPBhKMq1Ly04MQS1G0OmalHRNkteq
-	+39WyqlWHrqeRxLK/RGPu3GnvyXguhgYI8eUzeP0GfenbvKPG0FAgbf4pW56pH7eB/bf8NMFgGLAr
-	RWT7HNQslPwxO/q5RYCnusUvIqxyWcV+Z7TiGE4wVnOpocslLmU8JWOV7kgSu4iljqG/uQl1oYIWA
-	976Yls/5eVXljjyVRfNa12On8pbcXPGo8pilgN4BBaItloybFM7fg15mxMH+j1CdjfBwjRH/iM1lt
-	I1CMBH/mMTTHpaJE8qBA==;
+	List-Owner; bh=U42iF78Cl11McvLwtxlvIgjT3H8D99MbtrBYwon87xQ=; b=qOGygwLj5EXtih
+	x62Ol3hhSsKRmf+MtbaUzmgeVVI7bSGiaSTff8bPZonW6b0QHavgsR/cGf7owaJSIlqJWoPHh+wwt
+	oP4Mv3aFXTvd4su9T11/n9EZfZB/Yji7tPlbw9ftlhGybIzNGdSyAVj8FykkewoNQ+3Qg/GQ8tM1M
+	liYXgntqQy3UrGfo2GfBxRhNP1vr67C1e1DRMLx5WpudZW+W5VxcM/iuInte1rYYYNxOc3ZUt2HO4
+	THsjVVx46i5kQ/oMxt69GC6/u4GE7tQ7KGQfbMJDzzlw+nUdkrsptUpFHTQyYyzjbOjsl+LBuiRdY
+	RgEBH4llgJCOBLJosL1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlfDC-0004rX-9J; Wed, 17 Jun 2020 21:03:10 +0000
+	id 1jlfPC-0005hv-OG; Wed, 17 Jun 2020 21:15:34 +0000
 Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlfCt-0004pa-Um; Wed, 17 Jun 2020 21:02:57 +0000
-Received: by mail-io1-f67.google.com with SMTP id m81so4638446ioa.1;
- Wed, 17 Jun 2020 14:02:51 -0700 (PDT)
+ id 1jlfOW-000363-PZ; Wed, 17 Jun 2020 21:14:54 +0000
+Received: by mail-io1-f67.google.com with SMTP id u13so4607818iol.10;
+ Wed, 17 Jun 2020 14:14:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=xFFFGVbhSch5Pt2svn8MimZRF1LlF10vkrqi5t3dW9I=;
- b=tn4Hw2D+/uV5tAYKwqZPqAIieXjs16AQNT/fVFE0iEBso4WOUKShh4IfTz+fMxxJPd
- sU4SdzUx/U03HSvaEBXtSmDANczHzPy9TfOzOFSRlgiQ0SQ5Af2fJsfhXWkeOLHhRreB
- TgwPDVYFOfXWFXS2uzTTAHToLrjlHiuLThJvOcp7K70F7rGxpbtJsQ2x3vK6cvKC9s8a
- MhgRkLr21XrNAqDoeuKF4giQmJGxNNDUgavcEGQhq7IBBdPxDuV38M5a4edkhdLakySf
- TeI4OsW5+WRkWtT6/5rGYwHoj4St7nEaOKoOaIS5owApYiRrzn++e60qTdBSrCljo0LN
- Qxuw==
-X-Gm-Message-State: AOAM531Yt6g9wlb/xZdGrYspZKjtnulZU9lj16MSES+tIz8H8Knkn/pd
- OL3lL4tabWzVXwOan+rR8w==
-X-Google-Smtp-Source: ABdhPJyXhGFVD9efkJSsHu1gz54q5MCenhejfFdnSe9K2byNsnC5c7h0Xj90NBIYtbqHKRUf3MoPIg==
-X-Received: by 2002:a6b:9054:: with SMTP id s81mr1423659iod.122.1592427770922; 
- Wed, 17 Jun 2020 14:02:50 -0700 (PDT)
+ bh=VWO5LGmEg8Ig2cq5eIpV/Gm4FJwOWAH3M+GOgTvadrI=;
+ b=e8/xbij37h7/hr/0gO5TApVgbNUevvftH/kzPNe0b9W5PuVMufzlInSANOdTL2V1Q/
+ KxJB8hRSAILBLnNTxGCYUJjlhN2BK8Wt0HDnliiKb9fFIcWu43a9nGXTTnJxEwLDxuaf
+ H2z4q7y6DFHGQOfBsj/mgY49j8696SEh0gWEbsuAZvCLs2WNimRJTyX9DQc8h1PxXwVK
+ 7W879BSilRdXJe+HSbg+0IlX3TCxr+O87zm+IlzoLPRRyB4mpWXn8rJqzl4yuQl25wG3
+ 7FUAUrwvJcXfv+QH79/W/JENAx3nVGG0aIZo0MXzAwfLOhBlgBZQDMysYPCG0lo+amAw
+ wVCw==
+X-Gm-Message-State: AOAM5311x0z4AYuiRxdmUKFG56R8nyWRcZ7rTzNpF9kd2KYGZgC3Qqc0
+ dzjklN4BOYdTRwYlkB+FyQ==
+X-Google-Smtp-Source: ABdhPJy7XP0pSsuCKM5EibaN3mFwRa16qdK+sQARWZ0lMWqklFY1HprY+VlevFhTg9YxT29C3724dQ==
+X-Received: by 2002:a05:6602:809:: with SMTP id
+ z9mr1454740iow.79.1592428491937; 
+ Wed, 17 Jun 2020 14:14:51 -0700 (PDT)
 Received: from xps15 ([64.188.179.253])
- by smtp.gmail.com with ESMTPSA id f11sm398301ilf.53.2020.06.17.14.02.48
+ by smtp.gmail.com with ESMTPSA id w15sm430303ilj.21.2020.06.17.14.14.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 14:02:50 -0700 (PDT)
-Received: (nullmailer pid 2809826 invoked by uid 1000);
- Wed, 17 Jun 2020 21:02:47 -0000
-Date: Wed, 17 Jun 2020 15:02:47 -0600
+ Wed, 17 Jun 2020 14:14:51 -0700 (PDT)
+Received: (nullmailer pid 2834025 invoked by uid 1000);
+ Wed, 17 Jun 2020 21:14:50 -0000
+Date: Wed, 17 Jun 2020 15:14:50 -0600
 From: Rob Herring <robh@kernel.org>
-To: Chun-Hung Wu <chun-hung.wu@mediatek.com>
-Subject: Re: [PATCH v6 4/4] dt-bindings: mmc: mediatek: Add document for mt6779
-Message-ID: <20200617210247.GA2800817@bogus>
-References: <1591665502-6573-1-git-send-email-chun-hung.wu@mediatek.com>
- <1591665502-6573-5-git-send-email-chun-hung.wu@mediatek.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Subject: Re: [PATCH v6 1/8] dt-bindings: mtd: Describe Rockchip RK3xxx NAND
+ flash controller
+Message-ID: <20200617211450.GA2811091@bogus>
+References: <20200609074020.23860-1-yifeng.zhao@rock-chips.com>
+ <20200609074020.23860-2-yifeng.zhao@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1591665502-6573-5-git-send-email-chun-hung.wu@mediatek.com>
+In-Reply-To: <20200609074020.23860-2-yifeng.zhao@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_140255_963310_8C40BAA9 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20200617_141452_831334_F9708C1C 
+X-CRM114-Status: GOOD (  19.89  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -89,67 +91,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, wsd_upstream@mediatek.com,
- linux-mmc@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Al Cooper <alcooperx@gmail.com>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- Pavel Machek <pavel@ucw.cz>, Florian Fainelli <f.fainelli@gmail.com>,
- Michal Simek <michal.simek@xilinx.com>, Jonathan Hunter <jonathanh@nvidia.com>,
- Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Chaotian Jing <chaotian.jing@mediatek.com>, kernel-team@android.com,
- Pan Bian <bianpan2016@163.com>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-arm-msm@vger.kernel.org, mirq-linux@rere.qmqm.pl,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Stanley Chu <stanley.chu@mediatek.com>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Mathieu Malaterre <malat@debian.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kuohong Wang <kuohong.wang@mediatek.com>,
- Adrian Hunter <adrian.hunter@intel.com>, linux-kernel@vger.kernel.org
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, richard@nod.at,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
+ linux-arm-kernel@lists.infradead.org, vigneshr@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 09:18:22AM +0800, Chun-Hung Wu wrote:
-> Add compatible node for mt6779 mmc and HW cmdq selection
-> node "mediatek,cqhci".
+On Tue, Jun 09, 2020 at 03:40:18PM +0800, Yifeng Zhao wrote:
+> Documentation support for Rockchip RK3xxx NAND flash controllers
 > 
-> Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 > ---
->  Documentation/devicetree/bindings/mmc/mtk-sd.txt | 4 ++++
->  1 file changed, 4 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/mmc/mtk-sd.txt b/Documentation/devicetree/bindings/mmc/mtk-sd.txt
-> index 8a532f4..d4d20b9 100644
-> --- a/Documentation/devicetree/bindings/mmc/mtk-sd.txt
-> +++ b/Documentation/devicetree/bindings/mmc/mtk-sd.txt
-> @@ -12,6 +12,7 @@ Required properties:
->  	"mediatek,mt8173-mmc": for mmc host ip compatible with mt8173
->  	"mediatek,mt8183-mmc": for mmc host ip compatible with mt8183
->  	"mediatek,mt8516-mmc": for mmc host ip compatible with mt8516
-> +	"mediatek,mt6779-mmc": for mmc host ip compatible with mt6779
->  	"mediatek,mt2701-mmc": for mmc host ip compatible with mt2701
->  	"mediatek,mt2712-mmc": for mmc host ip compatible with mt2712
->  	"mediatek,mt7622-mmc": for MT7622 SoC
-> @@ -49,6 +50,9 @@ Optional properties:
->  		     error caused by stop clock(fifo full)
->  		     Valid range = [0:0x7]. if not present, default value is 0.
->  		     applied to compatible "mediatek,mt2701-mmc".
-> +- mediatek,cqhci: HW cmdq selection
-> +		  If present, hw command queue is enabled.
-> +		  If not present, hw command queue is disabled.
+> Changes in v6:
+> - Fix some wrong define
+> - Modified the definition of compatible
+> 
+> Changes in v5:
+> - Fix some wrong define
+> - Add boot-medium define
+> - Remove some compatible define
+> 
+> Changes in v4:
+> - The compatible define with rkxx_nfc
+> - Add assigned-clocks
+> - Fix some wrong define
+> 
+> Changes in v3:
+> - Change the title for the dt-bindings
+> 
+> Changes in v2: None
+> 
+>  .../mtd/rockchip,nand-controller.yaml         | 154 ++++++++++++++++++
+>  1 file changed, 154 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml b/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
+> new file mode 100644
+> index 000000000000..f753fe8248aa
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
+> @@ -0,0 +1,154 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mtd/rockchip,nand-controller.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip SoCs NAND FLASH Controller (NFC)
+> +
+> +allOf:
+> +  - $ref: "nand-controller.yaml#"
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: rockchip,px30-nfc
+> +      - const: rockchip,rk2928-nfc
+> +      - const: rockchip,rv1108-nfc
+> +      - items:
+> +          - const: rockchip,rk3326-nfc
+> +          - const: rockchip,px30-nfc
+> +      - items:
+> +          - const: rockchip,rk3036-nfc
+> +          - const: rockchip,rk2928-nfc
+> +      - items:
+> +          - const: rockchip,rk3308-nfc
+> +          - const: rockchip,rv1108-nfc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 1
+> +    items:
+> +      - description: Bus Clock
+> +      - description: Module Clock
+> +
+> +  clock-names:
+> +    minItems: 1
+> +    items:
+> +      - const: ahb
+> +      - const: nfc
+> +
+> +  assigned-clocks:
+> +    maxItems: 1
+> +
+> +  assigned-clock-rates:
+> +    maxItems: 1
+> +
+> +  pinctrl-0:
+> +    maxItems: 1
+> +
+> +  pinctrl-names:
+> +    const: default
 
-'supports-cqe' does the same thing.
+You can drop pinctrl-*. They are automatically supported.
 
->  
->  Examples:
->  mmc0: mmc@11230000 {
+> +
+> +  power-domains:
+> +     maxItems: 1
+> +
+> +patternProperties:
+> +  "^nand@[a-f0-9]$":
+
+'[0-7]' is correct here.
+
+Out of bounds nodes and other unknown properties should be prevented 
+with 'unevaluatedProperties: false' (though not yet until the tooling 
+supports it).
+
+> +    type: object
+> +    properties:
+> +      reg:
+> +        minimum: 0
+> +        maximum: 7
+> +
+> +      nand-ecc-mode:
+> +        const: hw
+> +
+> +      nand-ecc-step-size:
+> +        const: 1024
+> +
+> +      nand-ecc-strength:
+> +        enum: [16, 24, 40, 60, 70]
+> +        description:
+> +          The ECC configurations that can be supported are as follows.
+> +          - NFCv900(PX30 and RK3326) support ecc strength 16, 40, 60 and 70.
+> +          - NFCv600(RK3066 and RK2928) support ecc strength 16, 24, 40 and 60.
+> +          - NFCv622(RK3036 and RK3128) support ecc strength 16, 24, 40 and 60.
+> +          - NFCv800(RK3308 and RV1108) support ecc strength 16.
+> +
+> +      nand-bus-width:
+> +        const: 8
+> +
+> +      rockchip,boot-blks:
+> +        minimum: 2
+> +        default: 16
+> +        allOf:
+> +        - $ref: /schemas/types.yaml#/definitions/uint32
+
+You can drop 'allOf' now.
+
+> +        description:
+> +          The NFC driver need this information to select ECC
+> +          algorithms supported by the BOOTROM.
+> +          Only used in combination with 'nand-is-boot-medium'.
+> +
+> +      rockchip,boot-ecc-strength:
+> +        enum: [16, 24, 40, 60, 70]
+> +        allOf:
+> +        - $ref: /schemas/types.yaml#/definitions/uint32
+> +        description:
+> +          If specified it indicates that a different BCH/ECC setting is
+> +          supported by the BOOTROM.
+> +          - NFCv900(PX30 and RK3326) support ecc strength 16 and 70.
+> +          - NFCv600(RK3066 and RK2928) support ecc strength 16, 24, 40 and 60.
+> +          - NFCv622(RK3036 and RK3128) support ecc strength 16, 24, 40 and 60.
+> +          - NFCv800(RK3308 and RV1108) support ecc strength 16.
+> +          Only used in combination with 'nand-is-boot-medium'.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3308-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    nfc: nand-controller@ff4b0000 {
+> +      compatible = "rockchip,rk3308-nfc",
+> +                   "rockchip,rv1108-nfc";
+> +      reg = <0x0 0xff4b0000 0x0 0x4000>;
+> +      interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
+> +      clocks = <&cru HCLK_NANDC>, <&cru SCLK_NANDC>;
+> +      clock-names = "ahb", "nfc";
+> +      assigned-clocks = <&clks SCLK_NANDC>;
+> +      assigned-clock-rates = <150000000>;
+> +
+> +      pinctrl-0 = <&flash_ale &flash_bus8 &flash_cle &flash_csn0
+> +                   &flash_rdn &flash_rdy &flash_wrn>;
+> +      pinctrl-names = "default";
+> +
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +
+> +      nand@0 {
+> +        reg = <0>;
+> +        label = "rk-nand";
+> +        nand-bus-width = <8>;
+> +        nand-ecc-mode = "hw";
+> +        nand-ecc-step-size = <1024>;
+> +        nand-ecc-strength = <16>;
+> +        nand-is-boot-medium;
+> +        rockchip,boot-blks = <8>;
+> +        rockchip,boot-ecc-strength = <16>;
+> +      };
+> +    };
+> +
+> +...
 > -- 
-> 1.9.1
+> 2.17.1
+> 
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
