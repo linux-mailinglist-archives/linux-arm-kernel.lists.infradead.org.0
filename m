@@ -2,68 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3747F1FD73A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 23:29:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0D41FD764
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 23:35:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+wmNOeEK9ByVQFFXnYVXZCVyW9AzCpuF5cayhe2mvNk=; b=YYohiGwZXuVdDY
-	Qp8fNRTMUCl66t5kYRIjFJEbM+StiHw/lfFjLyTid6DqG5ymnn1SWMepdN0B6wwg0DxiTRjwAAR2K
-	fVbnwfiFJ4MvqN2fBGH29moxlUYEbaoy/5hL09i2M5gfthPfiSmPe/HAtZpcJZztJvsjxoEZ68NmO
-	a7ihcQx9i8FLbiHSsxAtnqT/SlZMjbz3Wxj5WCVAaqMaQU0Nb/fpXgrDvLO3ZrkNxyrDUsgMczryP
-	6obEZLxpMVep/ngE8W5aPPxEAr1RTNV1LG8LtXo6kPB76r2oOttDi/B82LGK41tQGOQh9GFKxnfKp
-	KmlVsjrU+xxABwp5FwjA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r3MdVZuoHrWC+nGrw/wEaDJ7kGV83qd6Fq33qMsYTL8=; b=IzNhsRX8WdFgbx
+	Pzy1MySCeW5m68O5kEMZ+whIHq5SgbLoEckNpHHqdgXvM7Bk7IwnuzeRlRDUSUUUGPr7OMMr2mJGI
+	8MlxHHRTPRg53+UGuPy6f/0NBPbBXBcqpQO+JXNcQkRCWS02Y8tIioHoWLRfCEb+fEdgPEVKkhh23
+	jeZqZUBh5/YaobiOKkONEki9U9xmX54I1+ItoZJnijXpaaAwuFYOQOzfKy0dPTZXLCFegjlLr4zry
+	pfrYeS492u9RvqPZPQQDgk3HRpX4fd8V9PmBYTxNoUzOIhLBjJE+r/eBTwQ3+9ZskuncNMA4Aqhvl
+	MuW2tyobssjpEuwG3bog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlfcD-0004q1-Db; Wed, 17 Jun 2020 21:29:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jlfiC-0008K2-A4; Wed, 17 Jun 2020 21:35:12 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlfbz-0004mD-Dr
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 21:28:51 +0000
-Received: from embeddedor (unknown [189.207.59.248])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1DEFF2168B;
- Wed, 17 Jun 2020 21:28:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592429326;
- bh=IBFohY0NkQV6wxVWydl+9zLFk4xIZ9akrDNFlU3W6Uo=;
- h=Date:From:To:Cc:Subject:From;
- b=Y6dpZh7bJ3CfbAnLWwakIP0aW30Um9NyESw2YkrN7MB+b1GOEXvGSlJIn+Wujoipi
- 0yWJhrM9Iyd9LtnxrTYTU06A7f1WHIm6oVWIHYwTPT5tR9kJoY9+DAwwshCZpXKIFQ
- P5LizBptF6eP71PzEjvncvwupt6zpuAaJmR5xOS0=
-Date: Wed, 17 Jun 2020 16:34:07 -0500
-From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH][next] arm64: kexec_file: Use struct_size() in kmalloc()
-Message-ID: <20200617213407.GA1385@embeddedor>
+ id 1jlfht-0008JA-DB
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 21:34:55 +0000
+X-Originating-IP: 86.202.110.81
+Received: from localhost (lfbn-lyo-1-15-81.w86-202.abo.wanadoo.fr
+ [86.202.110.81])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 90FF2C0003;
+ Wed, 17 Jun 2020 21:34:38 +0000 (UTC)
+Date: Wed, 17 Jun 2020 23:34:38 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Subject: Re: [PATCH 3/3] Revert "ARM: at91/dt: sama5d2 Xplained: add pdmic
+ node"
+Message-ID: <20200617213438.GF3675@piout.net>
+References: <20200615095525.43414-1-codrin.ciubotariu@microchip.com>
+ <20200615095525.43414-3-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200615095525.43414-3-codrin.ciubotariu@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_142847_497573_8F66E82B 
-X-CRM114-Status: GOOD (  11.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200617_143453_582684_E1215A22 
+X-CRM114-Status: GOOD (  13.51  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [217.70.183.198 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,41 +66,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ ludovic.desroches@microchip.com, robh+dt@kernel.org,
+ claudiu.beznea@microchip.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make use of the struct_size() helper instead of an open-coded version
-in order to avoid any potential type mistakes.
+Hi,
 
-This code was detected with the help of Coccinelle and, audited and
-fixed manually.
+The correct subject line prefix is "ARM: dts: at91:"
 
-Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
----
- arch/arm64/kernel/machine_kexec_file.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+On 15/06/2020 12:55:25+0300, Codrin Ciubotariu wrote:
+> There are no PDM microphones on SAMA5D2 Xplained, to exercize the
+> PDMIC.
+> 
+> This reverts commit ca6349a8c51f2e3d6f2acdb36431e7d7328261f7.
+> 
+> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> ---
+>  arch/arm/boot/dts/at91-sama5d2_xplained.dts | 16 ----------------
+>  1 file changed, 16 deletions(-)
+> 
 
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 522e6f517ec0..361a1143e09e 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -219,8 +219,7 @@ static int prepare_elf_headers(void **addr, unsigned long *sz)
- 					MEMBLOCK_NONE, &start, &end, NULL)
- 		nr_ranges++;
- 
--	cmem = kmalloc(sizeof(struct crash_mem) +
--			sizeof(struct crash_mem_range) * nr_ranges, GFP_KERNEL);
-+	cmem = kmalloc(struct_size(cmem, ranges, nr_ranges), GFP_KERNEL);
- 	if (!cmem)
- 		return -ENOMEM;
- 
+This patch doesn't apply and I think you'll have to motivate the removal
+a bit more because this seems like a change of policy to me.
+
+> diff --git a/arch/arm/boot/dts/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+> index 54d96649da77..c0a255bda477 100644
+> --- a/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+> +++ b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+> @@ -109,16 +109,6 @@ timer1: timer@1 {
+>  				};
+>  			};
+>  
+> -			pdmic@f8018000 {
+> -				pinctrl-names = "default";
+> -				pinctrl-0 = <&pinctrl_pdmic_default>;
+> -				atmel,model = "PDMIC @ sama5d2_xplained";
+> -				atmel,mic-min-freq = <1000000>;
+> -				atmel,mic-max-freq = <3246000>;
+> -				atmel,mic-offset = <0x0>;
+> -				status = "okay";
+> -			};
+> -
+>  			uart1: serial@f8020000 {
+>  				pinctrl-names = "default";
+>  				pinctrl-0 = <&pinctrl_uart1_default>;
+> @@ -533,12 +523,6 @@ pinctrl_macb0_phy_irq: macb0_phy_irq {
+>  					bias-disable;
+>  				};
+>  
+> -				pinctrl_pdmic_default: pdmic_default {
+> -					pinmux = <PIN_PB26__PDMIC_DAT>,
+> -						<PIN_PB27__PDMIC_CLK>;
+> -					bias-disable;
+> -				};
+> -
+>  				pinctrl_sdmmc0_default: sdmmc0_default {
+>  					cmd_data {
+>  						pinmux = <PIN_PA1__SDMMC0_CMD>,
+> -- 
+> 2.25.1
+> 
+
 -- 
-2.27.0
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
