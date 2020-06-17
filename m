@@ -2,79 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE9051FC666
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 08:49:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C53151FC683
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 08:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZOiYBM642q+1IAVe42LCDrzsiPISQMPlx14wLua/cp8=; b=RSzp4bH3iElWEP
-	9tyKFkCg7IMHQaN0bs48gWckS9pZ/G8v2aeOqXAFt7S29+FOyBMamiSAU0B7KyykbnIgafKIk/Teq
-	YJ+PluQtnJLEwhjNZA88yhu89IBuVxFKaHmni7deEbXxaqhWnbfQ6GMhnr3AKSryQeQ5w+3SDvWEm
-	kFHg46Bah0xdUASWJ8YGynMwb3ClDQ4w53iv/ME2pkKaaPrEcso44EwGT3Y1nUDXbqw/Sm9B7PvFG
-	mxKbypqFPM084bmgw9i7mzDYGoHvM025mO17OV3pTTrrUdU7aIgHSZsQwgtv5NUVdLrJndsN7nUnZ
-	idzLsrBZkswkO42JXXWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=j1XO4PGCHF10sYkYmewH5mILL3pbnmtqUYJDKuupSqQ=; b=bwqVKFtgTUXXvca9T/c8VEnig
+	isFiIhxRYFG916sAyJzBiXIH/uBZObNr7n6rA2GC9W9QptmhpAg3BBQVdXFjhE+KpnzSREDaWXFtr
+	H+3KLrFBhecy34DCfm0NLT2HCHG5Mfyxyxtu/s24Y24zrF0n8BSA/K86gjsyJsjANVZW1O1ya2Sra
+	g45VKWtJsfzOuchU+qqsOWrjATBS5wCUF7yWztDMAjI7imCKeg4KCWPoeLKeU4MGaYFPbjCKVJenA
+	6ZbW6Ev0fPfHbXaUNTT62lCr5tEzA19oL6LePbdqBjurvTEYsWc/GAXw6q0bgRfvN5fQc/fN065uM
+	vbC/z7Ssg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlRt4-0006La-Ga; Wed, 17 Jun 2020 06:49:30 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jlS0I-0003x4-Nz; Wed, 17 Jun 2020 06:56:58 +0000
+Received: from mail29.static.mailgun.info ([104.130.122.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlRsv-0006L5-VF; Wed, 17 Jun 2020 06:49:23 +0000
-X-UUID: f6286da125d84b9a893e0c49e80b685a-20200616
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=Yi8qckVCoc/BpINGsirl4HLvfSQpKF4ywGxOTUuDyXs=; 
- b=SEgxChRfS3LDVMAH8o9E5uWCg9fLjKKTSOErgn2Nj2djudDtMkh4zDkU8uJX0nPmQS6NEBwXHv2ChHZbeOUu8K7LK0FFvc6fOeMThRxRH/QQIjZ4/aeuPNQz/jC/uFUPYP2YcpGAaQnH/e2DRLpCjC9Ob3Dk6t6bo9lEd/5Rvek=;
-X-UUID: f6286da125d84b9a893e0c49e80b685a-20200616
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1132842642; Tue, 16 Jun 2020 22:49:05 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 16 Jun 2020 23:39:10 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 17 Jun 2020 14:39:10 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 17 Jun 2020 14:39:09 +0800
-Message-ID: <1592375950.27894.0.camel@mtksdaap41>
-Subject: Re: [PATCH v15 06/11] soc: mediatek: Add subsys clock control for
- bus protection
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Date: Wed, 17 Jun 2020 14:39:10 +0800
-In-Reply-To: <CANMq1KBRe81Sa4A6sCM2egOVRWCJbUNPsXHpfzkT33XGVZXBhg@mail.gmail.com>
-References: <1590051985-29149-1-git-send-email-weiyi.lu@mediatek.com>
- <1590051985-29149-7-git-send-email-weiyi.lu@mediatek.com>
- <CANMq1KBRe81Sa4A6sCM2egOVRWCJbUNPsXHpfzkT33XGVZXBhg@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jlS06-0003wK-SY
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 06:56:49 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1592377007; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=QDAPNg4/kJBIPrrC24qiYUrNEkN8hgr7WOxOCGbJ8R4=;
+ b=fZ/GiEF/Ip8NiS9yVHzn30hW/KVyDM7zr27+6fQsWDqAKZk+8jGXvD7/RYXbSw39tFCbLTIX
+ btChZuqTDzd9h6Gh1B2Swu/FYAJhSeX652ArM4xASknOJ0+As87o5MtmDBB8hA1VRjqP4X25
+ b6jZbbjcVWrDsVxFX2c12fg0Le0=
+X-Mailgun-Sending-Ip: 104.130.122.29
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n08.prod.us-east-1.postgun.com with SMTP id
+ 5ee9bea70206ad41d1637e9c (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 17 Jun 2020 06:56:39
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 7A705C433CB; Wed, 17 Jun 2020 06:56:38 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 0BF65C433C8;
+ Wed, 17 Jun 2020 06:56:38 +0000 (UTC)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FDDAF576199A3C79306B7E064DC94874A65BB2656A13F2F45D65F88AF7F8449F2000:8
-X-MTK: N
+Date: Wed, 17 Jun 2020 12:26:38 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>
+Subject: Re: [PATCHv3 0/2] Convert QCOM watchdog timer bindings to YAML
+In-Reply-To: <cover.1581459151.git.saiprakash.ranjan@codeaurora.org>
+References: <cover.1581459151.git.saiprakash.ranjan@codeaurora.org>
+Message-ID: <c2b8fabcf82b27c7334482bd53ebba62@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_234922_010043_2C989E46 
-X-CRM114-Status: GOOD (  18.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200616_235647_732972_0A73C15D 
+X-CRM114-Status: GOOD (  10.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.29 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.29 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,108 +92,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
- Enric Balletbo Serra <eballetbo@gmail.com>,
- lkml <linux-kernel@vger.kernel.org>, Fan Chen <fan.chen@mediatek.com>,
- Devicetree List <devicetree@vger.kernel.org>, "moderated list:ARM/Mediatek
- SoC support" <linux-mediatek@lists.infradead.org>,
- Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Guenter Roeck <linux@roeck-us.net>, Stephen Boyd <swboyd@chromium.org>,
+ linux-arm-msm-owner@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-06-04 at 10:29 +0800, Nicolas Boichat wrote:
-> On Thu, May 21, 2020 at 5:06 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
-> >
-> > For the bus protection operations, some subsys clocks need to be enabled
-> > before releasing the protection, and vice versa.
-> > But those subsys clocks could only be controlled once its corresponding
-> > power domain is turned on first.
-> > In this patch, we add the subsys clock control into its relevant steps.
-> >
-> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/mtk-scpsys.c | 62 +++++++++++++++++++++++++++++++++++++--
-> >  1 file changed, 60 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-> > index 59a525a..ef2c668 100644
-> > --- a/drivers/soc/mediatek/mtk-scpsys.c
-> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
-> > [snip]
-> >         val |= PWR_ISO_BIT;
-> > @@ -498,6 +511,39 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
-> >         return ret;
-> >  }
-> >
-> > +static int init_subsys_clks(struct platform_device *pdev,
-> > +               const char *prefix, struct clk **clk)
-> > +{
-> > +       struct device_node *node = pdev->dev.of_node;
-> > +       u32 prefix_len, sub_clk_cnt = 0;
-> > +       struct property *prop;
-> > +       const char *clk_name;
-> > +
-> > +       prefix_len = strlen(prefix);
-> > +
-> > +       of_property_for_each_string(node, "clock-names", prop, clk_name) {
-> > +               if (!strncmp(clk_name, prefix, prefix_len) &&
-> > +                               (clk_name[prefix_len] == '-')) {
-> > +                       if (sub_clk_cnt >= MAX_SUBSYS_CLKS) {
-> > +                               dev_err(&pdev->dev,
-> > +                                       "subsys clk out of range %d\n",
-> > +                                       sub_clk_cnt);
-> > +                               return -EINVAL;
-> > +                       }
-> > +
-> > +                       clk[sub_clk_cnt] = devm_clk_get(&pdev->dev,
-> > +                                               clk_name);
-> > +
-> > +                       if (IS_ERR(clk[sub_clk_cnt]))
-> > +                               return PTR_ERR(clk[sub_clk_cnt]);
-> > +
-> > +                       sub_clk_cnt++;
-> > +               }
-> > +       }
-> > +
-> > +       return sub_clk_cnt;
-> > +}
-> > +
-> >  static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
-> >                         const char * const *name)
-> >  {
-> > @@ -596,6 +642,18 @@ static struct scp *init_scp(struct platform_device *pdev,
-> >                 if (ret)
-> >                         return ERR_PTR(ret);
-> >
-> > +               if (data->subsys_clk_prefix) {
-> > +                       ret = init_subsys_clks(pdev,
-> > +                                       data->subsys_clk_prefix,
-> > +                                       scpd->subsys_clk);
-> > +                       if (ret < 0) {
-> > +                               dev_err(&pdev->dev,
-> > +                                       "%s: subsys clk unavailable\n",
-> > +                                       data->name);
-> 
-> init_subsys_clks should already have printed an error (directly or
-> indirectly), so this is not needed.
-> 
+Hi Bjorn,
 
-You're right. I'll remove it in next version v16.
+On 2020-02-12 03:54, Sai Prakash Ranjan wrote:
+> This series converts QCOM watchdog timer bindings to YAML. Also
+> it adds the missing SoC-specific compatible for QCS404, SC7180,
+> SDM845 and SM8150 SoCs.
+> 
+> v1:
+> https://lore.kernel.org/lkml/cover.1576211720.git.saiprakash.ranjan@codeaurora.org/
+> v2:
+> https://lore.kernel.org/lkml/cover.1580570160.git.saiprakash.ranjan@codeaurora.org/
+> 
+> Changes since v2:
+>  * Add missing compatibles to enum.
+> 
+> Changes since v1:
+>  As per Rob's suggestion:
+>   * Replaced oneOf+const with enum.
+>   * Removed timeout-sec and included watchdog.yaml.
+>   * Removed repeated use of const:qcom,kpss-wdt and made use of enum.
+> 
+> Sai Prakash Ranjan (2):
+>   dt-bindings: watchdog: Convert QCOM watchdog timer bindings to YAML
+>   dt-bindings: watchdog: Add compatible for QCS404, SC7180, SDM845,
+>     SM8150
+> 
+>  .../devicetree/bindings/watchdog/qcom-wdt.txt | 28 -----------
+>  .../bindings/watchdog/qcom-wdt.yaml           | 48 +++++++++++++++++++
+>  2 files changed, 48 insertions(+), 28 deletions(-)
+>  delete mode 100644 
+> Documentation/devicetree/bindings/watchdog/qcom-wdt.txt
+>  create mode 100644 
+> Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
 
-> > +                               return ERR_PTR(ret);
-> > +                       }
-> > +               }
-> > +
-> >                 genpd->name = data->name;
-> >                 genpd->power_off = scpsys_power_off;
-> >                 genpd->power_on = scpsys_power_on;
-> > --
-> > 1.8.1.1.dirty
+
+Gentle ping!
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
