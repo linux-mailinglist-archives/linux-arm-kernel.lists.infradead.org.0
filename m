@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 791D81FCD92
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:40:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 863441FCD97
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:40:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4M8OYP9hWoxsKcdhJQD4EGrSzGSNl4iQvmPLXFET0uQ=; b=OtVgQD5Nr9ncKo
-	lYLs8rxwMcVvx882xV6Aj/2BX1hRRomRW9RFtVuKgLnjVIo55Xxx4y2jB78m64QXFWm/7FYt0KPoz
-	tfWDMK9+IeYVPiFEGX4PyfqMo4oONriYj6GvGQAHnDajgXHR4d118y/PFMvyP4FLlu2HoOXtf+LIK
-	b+wT+6VS8d34Yl19Z/gdFU37ZrQmVv0Pqz856qtZYo+1kOfVuO9+HDxAPPLu2IWBzWtav8S10sLjV
-	qvc0BWOOFIaQIdzaFWRy8IRCrPHftJygl8vTleu6S7Ha0kCa+PkRMdld+cldZ9uM3U/4GAHipXvUp
-	ZqJ4psuVPGsYvWPyrvXg==;
+	List-Owner; bh=P9nboQkDmTfuEvR5RMeUVibLHCaD4gGSfOFVDYCFZ8Y=; b=SE+/IKTKyJPkSy
+	uxuQMfDhHG2CzUkAFIT11MMaF0isX3YVis15j06KHx5ju/nnduFVZDffNyBpIvdTY0Jp+mryv++rd
+	Jn4A5sHqJSrplfnajlXHe8N7hpoeWSUhLKNJc6D02bVmtmYkrtJx7N1hI0XxbIXlYDc1FDyMAfVwn
+	iYLu3ACVkf68/OHe3mpKJZg+iFlcUNw/wHyRXc7Zr1V4tHQQAKiNINEWJXAmCJmp12HisifyDimrB
+	pILrwL2VY+tN72XO5oRz2lTB1kJxWtJX1xEN2DLXVVVaE/SjcJBeDPagYqLMXaUslwohtl0cH+wse
+	FDRYlDlJcZMSNgscmidw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlXMH-0007d1-9g; Wed, 17 Jun 2020 12:40:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlXLi-0007Eq-RM
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 12:39:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D033512FC;
- Wed, 17 Jun 2020 05:39:24 -0700 (PDT)
-Received: from e112269-lin.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 100DB3F71F;
- Wed, 17 Jun 2020 05:39:22 -0700 (PDT)
-From: Steven Price <steven.price@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>
-Subject: [RFC PATCH 2/2] arm64: kvm: Introduce MTE VCPU feature
-Date: Wed, 17 Jun 2020 13:38:44 +0100
-Message-Id: <20200617123844.29960-3-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200617123844.29960-1-steven.price@arm.com>
-References: <20200617123844.29960-1-steven.price@arm.com>
+	id 1jlXMt-0001wl-7Z; Wed, 17 Jun 2020 12:40:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlXMb-0001tX-4Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 12:40:23 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 54F7A20707;
+ Wed, 17 Jun 2020 12:40:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592397620;
+ bh=ndOCPkh38nFJDiO+ELM8yvZLDJ1sr9wPZIH3weuN5TY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=hu9QCZJqAYpSvNtguuyYyagGeoTD4NslGLHEgWKfdLyg5aR+KpwghRONcr+GS4f5/
+ 97k7DaHIPshcOsqUU66DVp79knSFpk1HaMO6vFIWbGUxKmGVYzdP32YiEUiQLPQhKi
+ 647WVia1Oys+A1j7U02z6ADL0Iq1kidJxa5uF7os=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jlXMY-003mcB-Rj; Wed, 17 Jun 2020 13:40:19 +0100
+Date: Wed, 17 Jun 2020 13:40:17 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+Subject: Re: [PATCH v2 01/17] KVM: arm64: Factor out stage 2 page table data
+ from struct kvm
+Message-ID: <20200617134017.11e8cd15@why>
+In-Reply-To: <20200615132719.1932408-2-maz@kernel.org>
+References: <20200615132719.1932408-1-maz@kernel.org>
+ <20200615132719.1932408-2-maz@kernel.org>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, kernel-team@android.com,
+ will@kernel.org, andre.przywara@arm.com, Dave.Martin@arm.com,
+ gcherian@marvell.com, prime.zeng@hisilicon.com, catalin.marinas@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_053927_005407_38451BA0 
-X-CRM114-Status: GOOD (  17.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_054021_755202_2E85D521 
+X-CRM114-Status: GOOD (  23.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,130 +93,216 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-kernel@vger.kernel.org, Steven Price <steven.price@arm.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, kernel-team@android.com,
+ George Cherian <gcherian@marvell.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a new VCPU features 'KVM_ARM_VCPU_MTE' which enables memory tagging
-on a VCPU. When enabled on any VCPU in the virtual machine this causes
-all pages that are faulted into the VM to have the PG_mte_tagged flag
-set (and the tag storage cleared if this is the first use).
+On Mon, 15 Jun 2020 14:27:03 +0100
+Marc Zyngier <maz@kernel.org> wrote:
 
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/include/asm/kvm_emulate.h |  3 +++
- arch/arm64/include/asm/kvm_host.h    |  2 +-
- arch/arm64/include/uapi/asm/kvm.h    |  1 +
- arch/arm64/kvm/reset.c               |  8 ++++++++
- arch/arm64/kvm/sys_regs.c            |  3 ++-
- virt/kvm/arm/mmu.c                   | 11 +++++++++++
- 6 files changed, 26 insertions(+), 2 deletions(-)
+> From: Christoffer Dall <christoffer.dall@arm.com>
+> 
+> As we are about to reuse our stage 2 page table manipulation code for
+> shadow stage 2 page tables in the context of nested virtualization, we
+> are going to manage multiple stage 2 page tables for a single VM.
+> 
+> This requires some pretty invasive changes to our data structures,
+> which moves the vmid and pgd pointers into a separate structure and
+> change pretty much all of our mmu code to operate on this structure
+> instead.
+> 
+> The new structure is called struct kvm_s2_mmu.
+> 
+> There is no intended functional change by this patch alone.
+> 
+> Reviewed-by: James Morse <james.morse@arm.com>
+> [Designed data structure layout in collaboration]
+> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> Co-developed-by: Marc Zyngier <maz@kernel.org>
+> [maz: Moved the last_vcpu_ran down to the S2 MMU structure as well]
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  arch/arm64/include/asm/kvm_asm.h  |   7 +-
+>  arch/arm64/include/asm/kvm_host.h |  32 +++-
+>  arch/arm64/include/asm/kvm_mmu.h  |  16 +-
+>  arch/arm64/kvm/arm.c              |  36 ++--
+>  arch/arm64/kvm/hyp/switch.c       |   8 +-
+>  arch/arm64/kvm/hyp/tlb.c          |  52 +++---
+>  arch/arm64/kvm/mmu.c              | 278 +++++++++++++++++-------------
+>  7 files changed, 233 insertions(+), 196 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-index a30b4eec7cb4..b118f466a40b 100644
---- a/arch/arm64/include/asm/kvm_emulate.h
-+++ b/arch/arm64/include/asm/kvm_emulate.h
-@@ -79,6 +79,9 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
- 	if (cpus_have_const_cap(ARM64_MISMATCHED_CACHE_TYPE) ||
- 	    vcpu_el1_is_32bit(vcpu))
- 		vcpu->arch.hcr_el2 |= HCR_TID2;
-+
-+	if (test_bit(KVM_ARM_VCPU_MTE, vcpu->arch.features))
-+		vcpu->arch.hcr_el2 |= HCR_ATA;
- }
+[...]
+
+> diff --git a/arch/arm64/kvm/hyp/tlb.c b/arch/arm64/kvm/hyp/tlb.c
+> index d063a576d511..993c74cc054c 100644
+> --- a/arch/arm64/kvm/hyp/tlb.c
+> +++ b/arch/arm64/kvm/hyp/tlb.c
+> @@ -16,7 +16,7 @@ struct tlb_inv_context {
+>  	u64		sctlr;
+>  };
+>  
+> -static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm *kvm,
+> +static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm_s2_mmu *mmu,
+>  						 struct tlb_inv_context *cxt)
+>  {
+>  	u64 val;
+> @@ -53,14 +53,14 @@ static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm *kvm,
+>  	 * place before clearing TGE. __load_guest_stage2() already
+>  	 * has an ISB in order to deal with this.
+>  	 */
+> -	__load_guest_stage2(kvm);
+> +	__load_guest_stage2(mmu);
+>  	val = read_sysreg(hcr_el2);
+>  	val &= ~HCR_TGE;
+>  	write_sysreg(val, hcr_el2);
+>  	isb();
+>  }
+>  
+> -static void __hyp_text __tlb_switch_to_guest_nvhe(struct kvm *kvm,
+> +static void __hyp_text __tlb_switch_to_guest_nvhe(struct kvm_s2_mmu *mmu,
+>  						  struct tlb_inv_context *cxt)
+>  {
+>  	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT)) {
+> @@ -79,22 +79,19 @@ static void __hyp_text __tlb_switch_to_guest_nvhe(struct kvm *kvm,
+>  		isb();
+>  	}
+>  
+> -	/* __load_guest_stage2() includes an ISB for the workaround. */
+> -	__load_guest_stage2(kvm);
+> -	asm(ALTERNATIVE("isb", "nop", ARM64_WORKAROUND_SPECULATIVE_AT));
+> +	__load_guest_stage2(mmu);
+>  }
+>  
+> -static void __hyp_text __tlb_switch_to_guest(struct kvm *kvm,
+> +static void __hyp_text __tlb_switch_to_guest(struct kvm_s2_mmu *mmu,
+>  					     struct tlb_inv_context *cxt)
+>  {
+>  	if (has_vhe())
+> -		__tlb_switch_to_guest_vhe(kvm, cxt);
+> +		__tlb_switch_to_guest_vhe(mmu, cxt);
+>  	else
+> -		__tlb_switch_to_guest_nvhe(kvm, cxt);
+> +		__tlb_switch_to_guest_nvhe(mmu, cxt);
+>  }
+>  
+> -static void __hyp_text __tlb_switch_to_host_vhe(struct kvm *kvm,
+> -						struct tlb_inv_context *cxt)
+> +static void __hyp_text __tlb_switch_to_host_vhe(struct tlb_inv_context *cxt)
+>  {
+>  	/*
+>  	 * We're done with the TLB operation, let's restore the host's
+> @@ -113,8 +110,7 @@ static void __hyp_text __tlb_switch_to_host_vhe(struct kvm *kvm,
+>  	local_irq_restore(cxt->flags);
+>  }
+>  
+> -static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+> -						 struct tlb_inv_context *cxt)
+> +static void __hyp_text __tlb_switch_to_host_nvhe(struct tlb_inv_context *cxt)
+>  {
+>  	write_sysreg(0, vttbr_el2);
+>  
+> @@ -126,24 +122,23 @@ static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+>  	}
+>  }
+>  
+> -static void __hyp_text __tlb_switch_to_host(struct kvm *kvm,
+> -					    struct tlb_inv_context *cxt)
+> +static void __hyp_text __tlb_switch_to_host(struct tlb_inv_context *cxt)
+>  {
+>  	if (has_vhe())
+> -		__tlb_switch_to_host_vhe(kvm, cxt);
+> +		__tlb_switch_to_host_vhe(cxt);
+>  	else
+> -		__tlb_switch_to_host_nvhe(kvm, cxt);
+> +		__tlb_switch_to_host_nvhe(cxt);
+>  }
+>  
+> -void __hyp_text __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa)
+> +void __hyp_text __kvm_tlb_flush_vmid_ipa(struct kvm_s2_mmu *mmu, phys_addr_t ipa)
+>  {
+>  	struct tlb_inv_context cxt;
+>  
+>  	dsb(ishst);
+>  
+>  	/* Switch to requested VMID */
+> -	kvm = kern_hyp_va(kvm);
+> -	__tlb_switch_to_guest(kvm, &cxt);
+> +	mmu = kern_hyp_va(mmu);
+> +	__tlb_switch_to_guest(mmu, &cxt);
+>  
+>  	/*
+>  	 * We could do so much better if we had the VA as well.
+> @@ -186,39 +181,38 @@ void __hyp_text __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa)
+>  	if (!has_vhe() && icache_is_vpipt())
+>  		__flush_icache_all();
+>  
+> -	__tlb_switch_to_host(kvm, &cxt);
+> +	__tlb_switch_to_host(&cxt);
+>  }
+>  
+> -void __hyp_text __kvm_tlb_flush_vmid(struct kvm *kvm)
+> +void __hyp_text __kvm_tlb_flush_vmid(struct kvm_s2_mmu *mmu)
+>  {
+>  	struct tlb_inv_context cxt;
+>  
+>  	dsb(ishst);
+>  
+>  	/* Switch to requested VMID */
+> -	kvm = kern_hyp_va(kvm);
+> -	__tlb_switch_to_guest(kvm, &cxt);
+> +	mmu = kern_hyp_va(mmu);
+> +	__tlb_switch_to_guest(mmu, &cxt);
+>  
+>  	__tlbi(vmalls12e1is);
+>  	dsb(ish);
+>  	isb();
+>  
+> -	__tlb_switch_to_host(kvm, &cxt);
+> +	__tlb_switch_to_host(&cxt);
+>  }
+>  
+> -void __hyp_text __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu)
+> +void __hyp_text __kvm_tlb_flush_local_vmid(struct kvm_s2_mmu *mmu)
+>  {
+> -	struct kvm *kvm = kern_hyp_va(kern_hyp_va(vcpu)->kvm);
+>  	struct tlb_inv_context cxt;
+>  
+>  	/* Switch to requested VMID */
+> -	__tlb_switch_to_guest(kvm, &cxt);
+> +	__tlb_switch_to_guest(mmu, &cxt);
+
+The astute reviewer will have noticed that this sequence is unlikely
+to work on non-VHE systems, as what we get here is a kernel address.
+
+I fixed it with the following patch:
+
+diff --git a/arch/arm64/kvm/hyp/tlb.c b/arch/arm64/kvm/hyp/tlb.c
+index 993c74cc054c..e41217946289 100644
+--- a/arch/arm64/kvm/hyp/tlb.c
++++ b/arch/arm64/kvm/hyp/tlb.c
+@@ -206,6 +206,7 @@ void __hyp_text __kvm_tlb_flush_local_vmid(struct
+kvm_s2_mmu *mmu) struct tlb_inv_context cxt;
  
- static inline unsigned long *vcpu_hcr(struct kvm_vcpu *vcpu)
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 1f10e9dee2e0..3461639bb08a 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -37,7 +37,7 @@
+ 	/* Switch to requested VMID */
++	mmu = kern_hyp_va(mmu);
+ 	__tlb_switch_to_guest(mmu, &cxt);
  
- #define KVM_MAX_VCPUS VGIC_V3_MAX_CPUS
- 
--#define KVM_VCPU_MAX_FEATURES 7
-+#define KVM_VCPU_MAX_FEATURES 8
- 
- #define KVM_REQ_SLEEP \
- 	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
-diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-index ba85bb23f060..2677e1ab8c16 100644
---- a/arch/arm64/include/uapi/asm/kvm.h
-+++ b/arch/arm64/include/uapi/asm/kvm.h
-@@ -106,6 +106,7 @@ struct kvm_regs {
- #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
- #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
- #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
-+#define KVM_ARM_VCPU_MTE		7 /* VCPU supports Memory Tagging */
- 
- struct kvm_vcpu_init {
- 	__u32 target;
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index ab76728e2742..f87a434c0849 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -287,6 +287,14 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
- 		}
- 	}
- 
-+	if (test_bit(KVM_ARM_VCPU_MTE, vcpu->arch.features)) {
-+		if (!system_supports_mte()) {
-+			ret = -EINVAL;
-+			goto out;
-+		}
-+		vcpu->kvm->arch.vcpu_has_mte = true;
-+	}
-+
- 	switch (vcpu->arch.target) {
- 	default:
- 		if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features)) {
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 3ae008a9b0bd..a6a9552d1233 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -1096,7 +1096,8 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
- 			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
- 		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
- 	} else if (id == SYS_ID_AA64PFR1_EL1) {
--		val &= ~(0xfUL << ID_AA64PFR1_MTE_SHIFT);
-+		if (!test_bit(KVM_ARM_VCPU_MTE, vcpu->arch.features))
-+			val &= ~(0xfUL << ID_AA64PFR1_MTE_SHIFT);
- 	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
- 		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
- 			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
-diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index e3b9ee268823..040a7fffaa93 100644
---- a/virt/kvm/arm/mmu.c
-+++ b/virt/kvm/arm/mmu.c
-@@ -1783,6 +1783,17 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
- 			vma_pagesize = PMD_SIZE;
- 	}
- 
-+	if (system_supports_mte() && kvm->arch.vcpu_has_mte) {
-+		/*
-+		 * VM will be able to see the page's tags, so we must ensure
-+		 * they have been initialised.
-+		 */
-+		struct page *page = pfn_to_page(pfn);
-+
-+		if (!test_and_set_bit(PG_mte_tagged, &page->flags))
-+			mte_clear_page_tags(page_address(page), page_size(page));
-+	}
-+
- 	if (writable)
- 		kvm_set_pfn_dirty(pfn);
- 
+ 	__tlbi(vmalle1);
+
+and tested that things work as expected on such a system. I'll push out
+an updated branch shortly.
+
+Thanks,
+
+	M.
 -- 
-2.20.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
