@@ -2,91 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C667C1FD99A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 01:24:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AB591FD9A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 01:31:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FT+ljcYIEx9yWOcLK1DSNgn877mxEJgm/448FVXLwp4=; b=mVChKt0WCZSk+QzyJ5lTPdGOMW
-	z5rUZH+/6EjjfqFkEErRKQUpLBzQO6TIJasTbrOJ/m5FmTZIFaziMx0ZhMwSyK3Bz1oaTYhyQvdw9
-	2mYlYgLtpl7NwK4hhTzbhpFe4lRb8Mx2GT8Hn3i+jj/vv2NiHN5co5JrYzjaCwcZOLwJOdqCk2vD1
-	cyOhcN38XZklyrwPUDz6X5N0YlnBmodVsbW7e/CMN7I49Ho1+nUCSGvUlXTfuNCCFlArrtG22UIdr
-	JTCJFhdIZy7LtUZpuc9DepG3DmzYYfTlbwzf2YavMBGZDKwm77kxmvLwMibPscOf+y4OMpGE/SpMq
-	19o1wCwA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w2PUEkegSYneCnTq+xd7REYwFM19goBsEdid+n5f2K4=; b=TwroWUJn1uBU4c
+	ei4jcW9cR1/5S6zfSlu6Hk6ixu7nYtdiI1eHLVT7HQR9fO7MMuEiyneeUiCVEdTDPbhTCBtl736fT
+	75dR497ONdAlUNE9hNSzKvxIQUe4eJvdorA77661T64vmgpVJIR8NIC1TmBG64dOjoOc3XhUfzlhi
+	p20ILR2Y80Vw36yE3qsj2znot+aTjOQDWY0I0G4mCi9H8Tq5U4x66SlTUWnR6jkx9RI/Ks/ofdMEi
+	LX+A0w695PO7aqwDURG7BTK9ZRNK4LJXYP56nyKKRtlBU0cC/8Tn3towAO4oynkzAeMFXVzEilt7p
+	/KU3UC+PhN0kGI/Qqn/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlhPZ-0003S8-FJ; Wed, 17 Jun 2020 23:24:05 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlhPD-0003Jm-S3
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 23:23:45 +0000
-Received: by mail-qt1-x842.google.com with SMTP id z2so953347qts.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 16:23:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=xFbmZ2mBad+QESgZ3lzL2w1td3mq39Msg/iEa+3hrWU=;
- b=PydwoDGCeyJGnjQd6dXyQGeTKXjdVeLYfxsY7SEB+6a0jSVW0Oo0UJRvBJPInJBiJN
- 0V9SfMv4m3oAehHFgH/cJoPtXZNpvUP9cM7TLQv592+2kqbnfk66kgo2+qlurNQGJ3JG
- Gy3M/QAN+SYbIps+kBkVx6u0yxjxMbU2tiHbuspcUuyC0LBKySmvfbMKaR/8m24qu4Pg
- Vbd9LBB94XXX5lbdL5ix4AGlpwV1Is4qt/y1HlNtRAKVTXktiR6mrSw83no2FujNTAe3
- YwhY4oTXJUDPX1/uV7aDiERSCSPYDAvpIwhTpzKWwPTym4G2iM1d8A8SZsv7/AnlJspC
- 95gg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=xFbmZ2mBad+QESgZ3lzL2w1td3mq39Msg/iEa+3hrWU=;
- b=H18ryk4x/V3i4qMiY+Pd23LSAcxn2P7gSTuqpfrDV7YVDQcH+7a4y/1JqdE2niqkyE
- fLowlhClrsxtSLH8yaLMXN+zD56qudbQqlsE4WtQxjB/+tOBYHDWzg6uIxIjF60WblZz
- eCdmzz85FJUaztdFMdcb1Nca+3A2/n8ZHx77jSn1f9BjoRze5VQz+TBlPAJ7/haKS+nU
- Z39BlZBWQq88TSF7EiSwrxmlvrTfaIMDQJ2T3fhbeCozdbXqV9itvemjJ9ziIWVhnFPW
- 3ghEnuIIkuiPr4yJIKPMk6524NL0qogDQZG+JKhq/L/4OyaDFlC5Yn+N7lGRHm5UzEqY
- DD1Q==
-X-Gm-Message-State: AOAM5313LXHj+nZwyDg0A0RelMWzItERDouVmFmAsZXwAeYXGgqrT+lu
- Owftupkzv4BWNZ/zkPjCZ2E=
-X-Google-Smtp-Source: ABdhPJwU28vc5bbv3CFTYs8fJzYxU1v95JhiyqYw4VI2fPPFD0Gh2K0emzSaKP1m6VJ9DZXKWbzQsA==
-X-Received: by 2002:ac8:3f70:: with SMTP id w45mr1618201qtk.253.1592436222770; 
- Wed, 17 Jun 2020 16:23:42 -0700 (PDT)
-Received: from localhost.localdomain ([2804:14c:482:92b:9524:444f:ca0e:d637])
- by smtp.gmail.com with ESMTPSA id
- 70sm1357551qkk.10.2020.06.17.16.23.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 16:23:41 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH 2/2] ARM: dts: imx6qdl-sabresd: Add an mdio node
-Date: Wed, 17 Jun 2020 20:22:49 -0300
-Message-Id: <20200617232249.7201-2-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200617232249.7201-1-festevam@gmail.com>
-References: <20200617232249.7201-1-festevam@gmail.com>
+	id 1jlhWd-0000fo-Lq; Wed, 17 Jun 2020 23:31:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlhWT-0000fT-TO
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 23:31:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E77631042;
+ Wed, 17 Jun 2020 16:31:12 -0700 (PDT)
+Received: from e119603-lin.cambridge.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A6ACF3F71F;
+ Wed, 17 Jun 2020 16:31:11 -0700 (PDT)
+Date: Thu, 18 Jun 2020 00:31:05 +0100
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH v8 3/9] firmware: arm_scmi: Add notification dispatch and
+ delivery
+Message-ID: <20200617233105.GB9236@e119603-lin.cambridge.arm.com>
+References: <20200520081118.54897-1-cristian.marussi@arm.com>
+ <20200520081118.54897-4-cristian.marussi@arm.com>
+ <20200608170346.GD13622@bogus>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200608170346.GD13622@bogus>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_162343_905864_93CE5385 
-X-CRM114-Status: GOOD (  11.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200617_163113_994600_C8F89E9B 
+X-CRM114-Status: GOOD (  16.82  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,58 +65,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- linux-imx@nxp.com, kernel@pengutronix.de
-MIME-Version: 1.0
+Cc: cristian.marussi@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ Jonathan.Cameron@Huawei.com, dave.martin@arm.com, lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-imx6qdl-sabresd has an Atheros AR8031 Ethernet PHY at address 1.
+On Mon, Jun 08, 2020 at 06:03:46PM +0100, Sudeep Holla wrote:
+> On Wed, May 20, 2020 at 09:11:12AM +0100, Cristian Marussi wrote:
+> > Add core SCMI Notifications dispatch and delivery support logic which is
+> > able, at first, to dispatch well-known received events from the RX ISR to
+> > the dedicated deferred worker, and then, from there, to final deliver the
+> > events to the registered users' callbacks.
+> > 
+> > Dispatch and delivery is just added here, still not enabled.
+> > 
+> > Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> > ---
+> >  drivers/firmware/arm_scmi/notify.c | 354 ++++++++++++++++++++++++++++-
+> >  drivers/firmware/arm_scmi/notify.h |  10 +
+> >  2 files changed, 362 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/drivers/firmware/arm_scmi/notify.c b/drivers/firmware/arm_scmi/notify.c
+> > index 7cf61dbe2a8e..d582f71fde5b 100644
+> > --- a/drivers/firmware/arm_scmi/notify.c
+> > +++ b/drivers/firmware/arm_scmi/notify.c
+> 
+> [...]
+> 
+> > @@ -1085,6 +1422,12 @@ int scmi_notification_init(struct scmi_handle *handle)
+> >  	ni->gid = gid;
+> >  	ni->handle = handle;
+> >  
+> > +	ni->notify_wq = alloc_workqueue("scmi_notify",
+> > +					WQ_UNBOUND | WQ_FREEZABLE | WQ_SYSFS,
+> > +					0);
+> 
+> What's the use of WQ_SYSFS for SCMI notifications ? Do we need it ?
+> 
 
-The AR8031 provides a 125MHz clock to the ENET_REF_CLK i.MX6 pin.
+Lukasz asked for it, when we were talking about workqueues' priorities configurability.
+(not implemented in this series)
 
-Improve the Ethernet representation by adding an mdio node with such
-information.
+Thanks
 
-An advantage of adding the mdio node is that the AR8031 initialization
-code in the mx6sabresd board file in U-Boot can totally be removed.
-
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
- arch/arm/boot/dts/imx6qdl-sabresd.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/arch/arm/boot/dts/imx6qdl-sabresd.dtsi b/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-index 9697211b7693..fb70ae0811af 100644
---- a/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-@@ -203,10 +203,21 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_enet>;
- 	phy-mode = "rgmii-id";
-+	phy-handle = <&phy>;
- 	phy-reset-gpios = <&gpio1 25 GPIO_ACTIVE_LOW>;
- 	phy-reset-duration = <10>;
- 	fsl,magic-packet;
- 	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		phy: ethernet-phy@1 {
-+			reg = <1>;
-+			qca,clk-out-frequency = <125000000>;
-+		};
-+	};
- };
- 
- &hdmi {
--- 
-2.17.1
-
+Cristian
+> -- 
+> Regards,
+> Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
