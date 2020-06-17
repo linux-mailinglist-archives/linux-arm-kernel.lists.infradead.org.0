@@ -2,128 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E70FA1FCC0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:17:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 655901FCBBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:06:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:List-Owner; bh=UGJfcEe/CuzDiIP8vVKsLox9OKwn3nc8jK2RVi7p3Sw=; b=Al
-	VidyuiRYRvui72BuJdKDKEAZI4jk4i+e6FEAL02pjD2oDINPleN+VAd5opLO0/6LoEetLyfx3qaei
-	KMmG2ShBkrKpPap3Hb5DJpgAVjpu7HLnI8YxBLEAIJhupE7TplQJ6kmkQtIksfoi4Io+k98shKfJY
-	FDNRTIxPV2D0bfjIJ22DI8K+t11piT7bhfSE2vwCeqVtH5CMok4a8FUvZ8rp/sF848kmRv5EOR7IF
-	le/JtsNrAqLloMK4n+J/rvleMrMwABFiJu4OKBLL3e96BNrLfwm8stwUGR6+7JSBE6Of2HzOuSOwO
-	0m1SPH0+6ubHUnMPESXx5zLhJ/MiyRsA==;
+	List-Owner; bh=PyaA+nC1bBsMXoNVzvLJqge5QjCzmOrOJpxEqkM8CaI=; b=jPlmhFCqT/j1LL
+	ymxLLUlvomeXz9mxiC8EUtqP4ZOf3JCASG3eAFnVNtZ+cJDHLkk+i6yeiJIyOojUiYLg6y4eT2tni
+	Fvh8+GfCLaLNAkT4P4mfj4T2/5Cy1ZNzzzVA1H1yx0JnSqaVAPYkm8BKvnUe5KaKcpYpbhK1ieQys
+	mLKDUFJSEFm2P9DZrD5mIlWroUwc8+U86gbQ5YfrD1rmGgR+g4kskZOspxtVI2sMmADDNA7+QqfcS
+	zK+2kV5Lf57pZ8rf80Fgq4Jcn8Zk5OcDbstW5bKIl5bW6KMk/jtf9iGXSVbWPgLybaWsOKVW3R41k
+	0PEXSgVz10r00q23qEXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlW4J-00054T-Mb; Wed, 17 Jun 2020 11:17:23 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlW4A-00053Z-0q
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:17:15 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200617111708epoutp04f98b8d353932797bae51f2626682c03d~ZUKiy-qLF1362313623epoutp04J
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 11:17:08 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200617111708epoutp04f98b8d353932797bae51f2626682c03d~ZUKiy-qLF1362313623epoutp04J
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1592392628;
- bh=De11PZoZWlcQRwwo0Y8/mr/Pxhnq+Txfs9hPs4x5UzQ=;
- h=From:To:Cc:Subject:Date:References:From;
- b=MIEmoOwMZwBbGlks8DVr4ZZ0gmwE19zwK6jWDXf8QbmZA2jxeJ48oPRPOEVKlIxYL
- qruR5Ef8YTcNrq1kmbGvVum3ME5mVxxXE4gdNFLEqMnNddTSsL7/Hyqp7um7ojJt/C
- ewYmDNfTiF1caAmFXhGyJPcWa2QIYyBfIgwVjNCk=
-Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTP id
- 20200617111708epcas5p1c4e0e139b4bc55695b8bd93eea5fc4e9~ZUKiJfXDm1538915389epcas5p1N;
- Wed, 17 Jun 2020 11:17:08 +0000 (GMT)
-Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
- epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- DF.BD.09703.3BBF9EE5; Wed, 17 Jun 2020 20:17:07 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
- 20200617111707epcas5p3fcb86caeac4a852d44f37ae40759c8a1~ZUKhd7jLw3226032260epcas5p3F;
- Wed, 17 Jun 2020 11:17:07 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200617111707epsmtrp2629be9449835228b4369f02e6d3e5021~ZUKhdPlaY3247232472epsmtrp2B;
- Wed, 17 Jun 2020 11:17:07 +0000 (GMT)
-X-AuditID: b6c32a4a-4cbff700000025e7-45-5ee9fbb3f906
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 28.4E.08382.3BBF9EE5; Wed, 17 Jun 2020 20:17:07 +0900 (KST)
-Received: from Jaguar.sa.corp.samsungelectronics.net (unknown
- [107.108.73.139]) by epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200617111705epsmtip28dc31d81babdd092756d80f3eeda4d79~ZUKf9xn730587705877epsmtip2h;
- Wed, 17 Jun 2020 11:17:05 +0000 (GMT)
-From: Tamseel Shams <m.shams@samsung.com>
-To: kgene@kernel.org, krzk@kernel.org, gregkh@linuxfoundation.org,
- jslaby@suse.com
-Subject: [PATCH] serial: samsung: fix spelling mistake
-Date: Wed, 17 Jun 2020 16:29:07 +0530
-Message-Id: <20200617105907.7143-1-m.shams@samsung.com>
-X-Mailer: git-send-email 2.17.1
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrNIsWRmVeSWpSXmKPExsWy7bCmhu7m3y/jDM4/sbF4MG8bm0Xz4vVs
- FlM2fGCy6H/8mtni/PkN7BabHl9jtbi8aw6bxYzz+5gszizuZbe427qY3YHLY9OqTjaP/XPX
- sHtsXlLv0bdlFaPH+i1XWTw+b5ILYIvisklJzcksSy3St0vgyuh69YO1YAdrxfSTy1gbGHex
- dDFyckgImEhMvHyMuYuRi0NIYDejxPm/P9ggnE+MEqe7ZrFDON8YJZo2bgHKcIC1LL0YDhHf
- yygx4+06RginhUni3/MdjCBFbAKaEsfPc4OsEBEIkXh3dgtYDbPASUaJvZsbwHYLC5hJrD3Q
- wA5SzyKgKjFtqixImFfAXOLWqrnsEOfJS6zecIAZwj7HLtH3IQPiBheJi5fLIcLCEq+Ob4Eq
- l5L4/G4vG4SdLzF/3iqo1gqJlRfeQNn2EgeuzGEBGcMMdOX6XfogYWYBPone30+YIKbzSnS0
- CUFUK0r8390PNV1c4t2KKawQtofEv9vLwCYKCcRKvHx0n3kCo8wshKELGBlXMUqmFhTnpqcW
- mxYY5aWW6xUn5haX5qXrJefnbmIEx7+W1w7Ghw8+6B1iZOJgPMQowcGsJMLr/PtFnBBvSmJl
- VWpRfnxRaU5q8SFGaQ4WJXFepR9n4oQE0hNLUrNTUwtSi2CyTBycUg1MUx1U9k79cXn3jDiZ
- v/NevD748dqKgAK1jdw8rafsG959vH173jN7Ru3l25LevjVi0iz46nrZylFlU9TvSS4Pjxbm
- T9nBeT4/4Y7l/29er7fNsLxYv3bGdqaXNw0k6rx2KR39/3qG6MbcbaHbF/yIfdLhdGVxJI93
- q77iUz6LHZ9zXHZuOq3wjT3U2jx9m9ULr2vvz+y6eiYwaumLa6f0UifceTKL5b/fFMZLj+aY
- /FvU1yJ+8n7ue+mviyMrZV1O1CxblvmbT8pxssuK6W99Jj04ePjqPrad/+15971Z4vfzRHrO
- zufi97TLdgger+juE7wxY7a7sd6slRahAn7/vti9Lnhpk5jQ66G5V6GPafMmJZbijERDLeai
- 4kQAIHwlMm4DAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupnluLIzCtJLcpLzFFi42LZdlhJXnfz75dxBgu3c1k8mLeNzaJ58Xo2
- iykbPjBZ9D9+zWxx/vwGdotNj6+xWlzeNYfNYsb5fUwWZxb3slvcbV3M7sDlsWlVJ5vH/rlr
- 2D02L6n36NuyitFj/ZarLB6fN8kFsEVx2aSk5mSWpRbp2yVwZXS9+sFasIO1YvrJZawNjLtY
- uhg5OCQETCSWXgzvYuTiEBLYzSgxc8khxi5GTqC4uMS0X/uhbGGJlf+es0MUNTFJfLt/nBGk
- mU1AU+L4eW4QU0QgQmLmxxqQEmaB84wSO4+vZgLpFRYwk1h7oIEdpIZFQFVi2lRZkDCvgLnE
- rVVz2SHGy0us3nCAeQIjzwJGhlWMkqkFxbnpucWGBYZ5qeV6xYm5xaV56XrJ+bmbGMFhpqW5
- g3H7qg96hxiZOBgPMUpwMCuJ8Dr/fhEnxJuSWFmVWpQfX1Sak1p8iFGag0VJnPdG4cI4IYH0
- xJLU7NTUgtQimCwTB6dUA1OV3YnmfHbj1AV/b/De4vZeOJe9ie2xZ0hZYd7Dja+Uetjv79KV
- k5m3sMs/6tGNvaG9J00FfnaFzJ/0P3lB6Q2tiKmTauLeBNkIn/Nclsq35kB38Jc7d93vnd/z
- XuRs2o3uvPxN247uaTFp135z2fnH9qk30tgVHBtNnpfdPR986pvtE91pGc2HVGR3X+EVtLuv
- aOT7cvOj6P3bpEyOXPbKK9z2UGHOpRlr7z9od5nd+HGpzMOArUeWvWHzmqr5b9L+/SrMj7bK
- SbCefvC868/TTzfSszm95TS7fKqCuXr9gralvzo7gUPwyJvKure5KxbLul/LsL4mYr7MSEtv
- p/v/Oxxzrs7ivHjad+ZZax0WJZbijERDLeai4kQAXXhHFaICAAA=
-X-CMS-MailID: 20200617111707epcas5p3fcb86caeac4a852d44f37ae40759c8a1
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200617111707epcas5p3fcb86caeac4a852d44f37ae40759c8a1
-References: <CGME20200617111707epcas5p3fcb86caeac4a852d44f37ae40759c8a1@epcas5p3.samsung.com>
+	id 1jlVtb-0006rv-5l; Wed, 17 Jun 2020 11:06:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlVtQ-0006rK-Rz
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:06:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33FD31FB;
+ Wed, 17 Jun 2020 04:06:08 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 849EF3F71F;
+ Wed, 17 Jun 2020 04:06:07 -0700 (PDT)
+Date: Wed, 17 Jun 2020 12:06:05 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 2/2] arm64/sve: Eliminate data races on sve_default_vl
+Message-ID: <20200617110605.GQ25945@arm.com>
+References: <1591808590-20210-1-git-send-email-Dave.Martin@arm.com>
+ <1591808590-20210-3-git-send-email-Dave.Martin@arm.com>
+ <20200616131808.GA1040@lca.pw>
+ <20200616150451.GA1941@willie-the-truck>
+ <20200616161704.GN25945@arm.com>
+ <20200616171926.GA2129@willie-the-truck>
+ <20200617094054.GP25945@arm.com>
+ <20200617100832.GA3368@willie-the-truck>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200617100832.GA3368@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_041714_302360_DF3E2810 
-X-CRM114-Status: GOOD (  11.89  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200617_040608_993147_9F7ECEDE 
+X-CRM114-Status: GOOD (  27.96  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,38 +69,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-serial@vger.kernel.org,
- linux-kernel@vger.kernel.org, alim.akhtar@samsung.com,
- Tamseel Shams <m.shams@samsung.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Qian Cai <cai@lca.pw>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is a spelling mistake in a comment. Fix it.
+On Wed, Jun 17, 2020 at 11:08:32AM +0100, Will Deacon wrote:
+> On Wed, Jun 17, 2020 at 10:40:54AM +0100, Dave Martin wrote:
+> > On Tue, Jun 16, 2020 at 06:19:27PM +0100, Will Deacon wrote:
+> > > diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
+> > > index d9eee9194511..55c8f3ec6705 100644
+> > > --- a/arch/arm64/kernel/fpsimd.c
+> > > +++ b/arch/arm64/kernel/fpsimd.c
+> > > @@ -349,7 +349,7 @@ static unsigned int find_supported_vector_length(unsigned int vl)
+> > >  	return sve_vl_from_vq(__bit_to_vq(bit));
+> > >  }
+> > >  
+> > > -#ifdef CONFIG_SYSCTL
+> > > +#if defined(CONFIG_ARM64_SVE) && defined(CONFIG_SYSCTL)
+> > >  
+> > >  static int sve_proc_do_default_vl(struct ctl_table *table, int write,
+> > >  				  void *buffer, size_t *lenp, loff_t *ppos)
+> > > @@ -394,9 +394,9 @@ static int __init sve_sysctl_init(void)
+> > >  	return 0;
+> > >  }
+> > >  
+> > > -#else /* ! CONFIG_SYSCTL */
+> > > +#else /* ! (CONFIG_ARM64_SVE && CONFIG_SYSCTL) */
+> > >  static int __init sve_sysctl_init(void) { return 0; }
+> > > -#endif /* ! CONFIG_SYSCTL */
+> > > +#endif /* ! (CONFIG_ARM64_SVE && CONFIG_SYSCTL) */
+> > 
+> > Hmm, I guess that works, but it still seems cumbersome.  #ifdefs do
+> > tend to breed as the code gets extended, so I'd worked hard to
+> > eliminate them as much as possible.
+> 
+> This is just extending an existing #ifdef though, and I don't think it
+> makes any sense to compile in the SVE sysctl logic if SVE is not enabled.
+> If CONFIG_SYSCTL didn't exist, this code would almost certainly be inside
+> a CONFIG_SVE block anyway.
 
-Signed-off-by: Tamseel Shams <m.shams@samsung.com>
----
- drivers/tty/serial/samsung_tty.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Only code that's unreachable from inside the translation unit needs to
+be #ifdeffed.  For the rest, the compiler knows how to determine what's
+used (indeed, it's better at it than humans).
 
-diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
-index 6ef614d8648c..050a47fecdef 100644
---- a/drivers/tty/serial/samsung_tty.c
-+++ b/drivers/tty/serial/samsung_tty.c
-@@ -6,7 +6,7 @@
-  *	http://armlinux.simtec.co.uk/
-  */
- 
--/* Hote on 2410 error handling
-+/* Note on 2410 error handling
-  *
-  * The s3c2410 manual has a love/hate affair with the contents of the
-  * UERSTAT register in the UART blocks, and keeps marking some of the
--- 
-2.17.1
+Originally I relied on #ifdefs more, but I needed a lot of them, and it
+was hell to rebase every time anything needed to be moved around.
 
+Currently I don't see anything that gets compiled in if CONFIG_SYSCTL=n.
+Other than what was already compiled before this patch.  We still need
+to track the default vl, because it depends on the hardware; however it's
+effectively ro-after-init if CONFIG_SYSCTL=n.
+
+I think that complicating the #ifdef conditions in this file is a
+slippery slope, but I guess it's the it's up to the maintainer whether
+to care about that.
+
+Am I missing something?
+
+> > Can't we simply leave the helpers outside the #ifdef, and do this?
+> > 
+> >  /* Default VL for tasks that don't set it explicitly: */
+> >  static int __sve_default_vl = -1;
+> >  
+> > -static int get_sve_default_vl(void)
+> > +static inline int get_sve_default_vl(void)
+> >  {
+> >  	return READ_ONCE(__sve_default_vl);
+> >  }
+> >  
+> > -static void set_sve_default_vl(int val)
+> > +static inline void set_sve_default_vl(int val)
+> >  {
+> >  	WRITE_ONCE(__sve_default_vl, val);
+> >  }
+> 
+> That would work too, although I'd be wary of somebody removing the inline
+> later on because "the compiler knows best about inlining decisions". I'd
+
+AFAIK inline is widely used for static functions in headers for precisely
+this reason.  I have tried to use __maybe_unused (or even #ifdefs) in
+the past to be more explicit, but got shouted at.  We could optionally
+use __maybe_unused here if you think that's more self-explanatory.
+
+> also say that calling set_sve_default_vl() is an error if CONFIG_SVE is
+> not defined as we really want get_sve_default_vl() to return -1
+> unconditionally in that case. Having set_sve_default_vl() inside the
+> #ifdef ensures that.
+
+Fair point, I'm not sure how valuable it is.  We manage without it thus
+far: prior to these changes, the sve_default_vl variable was not #ifdeffed.
+
+> I don't care too strongly either way, but I already queued my diff last
+> night [1] in order to fix linux-next, so I'd prefer not to drop it unless
+> there's a functional reason to do so.
+
+Ack, since this change would be purely to ease future maintanence (or
+not, if you judge it's not useful), it's not urgent.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
