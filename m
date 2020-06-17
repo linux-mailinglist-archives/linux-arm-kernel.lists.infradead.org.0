@@ -2,133 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63A6A1FCA88
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:10:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8742E1FCAA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:19:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rkEdiAl6T+qDVHcDBgFtd0hcxScRG2bOo4SR1oIshBM=; b=M8kMSSye9d4A2g
-	izphciE/S57piwYIySPN4779G8LgpAUGeatorjuajLxFUg9NC3ScoaNWquSAMX4d8OvSS5WYhLd9l
-	shyNpnWPEG72ffnRrPyBtWF+skcZQ8S4deIL/fIHHalRhM4mmDb+3DacE3mg2am1c7tPNA7DVYJMU
-	OVztp7XW4fVsOHEMb1yIup7AXjPaXYriIBkRRtABbLBeD3Q+ACTunuAbklotfLqaXYRYZasX3M3Yb
-	aBwdakAYwiyIqB4dubcWm0evWCCdIm7jCqiE7M3sMiWyMJ2n4yqrJHUhihZeWbFkbw3Xg0oBX3rog
-	1kJRax5PY8aNkxHI84KQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=TUVjfSm8GkS0CjQJIg7e2KmT16zTW43ECA5e6PQKv2g=; b=hFEVPqq3TjDveFzU2F36z6zglO
+	Bjh09cVqxPc1ymwLXgE3gAwMszVzBrolVcHQE9Io8gawqhwbCzdxEjlFmHb4uB+DoRC6u2L+mttj6
+	Xr59wa5SJI0pZXF0zFj1P1p0uMpWp1uTlrzDD87qCHjuB2N0DVoVYtIFi5AxxtBUjJc/7HSdyc5BD
+	1tjTtt+s1Crr5ZOrxX2HaXWx5ZjkCfcNG0HHrXFHz+0zR4ua0i/F/3r5B8AmWe8UZ5+DaoMWWtheq
+	yU/5brtmKlCuu0j3KBxLdztXyqQ3PFg7w2ypUts1pZlYYCoSrm1V5fPo9S3ghG7DRG5C7rQo6Ia0l
+	fBIr5QpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlV1X-0001wO-EM; Wed, 17 Jun 2020 10:10:27 +0000
-Received: from mail-vi1eur05on2086.outbound.protection.outlook.com
- ([40.107.21.86] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jlV9m-0006Fk-Gf; Wed, 17 Jun 2020 10:18:58 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlV1E-0000WC-0S
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:10:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JEoAmhAjrMj3MIi2Qx0nhwWzgI7VL3e5fopTenAhbhOl35C2vESrNKBxq/JEZX7GwcrekUZ9sdZF/DR9LIcVJE6XPqRVAhWva2wexZeDgZTMnTSzetCoB4k3DPuqZv4ZmcJ1YsRvzKYi7JeSoXuPPQT9joiTpUB7GXXyiOYYAN6kjabLsfMMkT7EZeQkshNTcKN/EMxE+tlGfg3HEqMeqNu4HM5L/F9FHD46TRRMpnJHB+cmC2ehPrcPPUZUi6m7ToG4TFOf48Qea4xxXnvGwrNNhRzY+JK7VhtHAak87VBakApgJEpeJi7GjsHc18vPMQrw2I17R0ZA3r8H/UhAmQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sxf64OgTaC6lcGbbEbfInvceM1/NZWp8oGEn0hoBSSY=;
- b=P8hujXGguVYL84Guu76gzsqLOXKLa7B5EQSpVjkzmK0QUtO4nd5YpUtzHZXhssKRATysZVALolnuUdqQzVf9gl6SGxMPw/9kutwbpCkvnzwFnG89xep3f5wu7si44okXmzcqrGEX5mJDU8/X/J9SjbtfG43q0Hvy11T6inYxqLdn9f5D+/UBuZrNOWSfSv4AvdaX4EE/4d/M/GVEeC6p8EgQympuCzIpPK923tmOZ7t+ryLvMrQHFnftWVThRm0PHfC/KA/fG/DMjUpJ+JJAcHf75iK9opt9BeLGfp+qPwTibOx+eU20Lp0dXlzB8XFb6XEM1xpkXlbJi/F6wWXvuA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sxf64OgTaC6lcGbbEbfInvceM1/NZWp8oGEn0hoBSSY=;
- b=s9+ktiS/AhpGvy3cVYS7pTs93yGqPGxp7L9NEezk9ffvnDmGh511Siz0cnmUsa0A1PaU6UZeZgM+3fijYjD7PlzdtnO9MtG3iI9/0toR1solPRGd9vDWtlHTOaHBtOPlxmd9dWgaakuAfvpQ8pEtDma75O/PteM1fyP21VqgBUQ=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB5432.eurprd04.prod.outlook.com (2603:10a6:20b:93::33) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.22; Wed, 17 Jun
- 2020 10:10:02 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3088.028; Wed, 17 Jun 2020
- 10:10:02 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "linux@armlinux.org.uk"
- <linux@armlinux.org.uk>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>, "oleksandr.suvorov@toradex.com"
- <oleksandr.suvorov@toradex.com>, Stefan Agner <stefan.agner@toradex.com>,
- "arnd@arndb.de" <arnd@arndb.de>, Abel Vesa <abel.vesa@nxp.com>, Peng Fan
- <peng.fan@nxp.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
- "allison@lohutok.net" <allison@lohutok.net>, "gregkh@linuxfoundation.org"
- <gregkh@linuxfoundation.org>, "info@metux.net" <info@metux.net>, Leonard
- Crestez <leonard.crestez@nxp.com>, Andy Duan <fugang.duan@nxp.com>, Daniel
- Baluta <daniel.baluta@nxp.com>, "yuehaibing@huawei.com"
- <yuehaibing@huawei.com>, "sfr@canb.auug.org.au" <sfr@canb.auug.org.au>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-clk@vger.kernel.org"
- <linux-clk@vger.kernel.org>
-Subject: RE: [PATCH V2 1/9] clk: composite: Export clk_hw_register_composite()
-Thread-Topic: [PATCH V2 1/9] clk: composite: Export clk_hw_register_composite()
-Thread-Index: AQHWPjGiuQ2F29kQlUqqseTZxooV6ajcol7g
-Date: Wed, 17 Jun 2020 10:10:02 +0000
-Message-ID: <AM6PR04MB49665E5D93C2FFA8221F8660809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
- <1591687933-19495-2-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1591687933-19495-2-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e55bc7bb-174f-4b33-1859-08d812a699be
-x-ms-traffictypediagnostic: AM6PR04MB5432:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB54321C5852F49E5F4BC2CF8C809A0@AM6PR04MB5432.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2399;
-x-forefront-prvs: 04371797A5
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: tu70eWASn20Vf/QKebEZt/mSIDsicYAMAAFenYmfViUkDxEFHAq2wQHMhB2nDzh34t80Jd/K+CtUwdSSwD+gaSC/RiZb2F+oCTlZt81b3d+fKjbCHI7aDvx2HYpXpoSeyx5/jzjD/SAsAbP3ZsHMWUX6cjUVMoB+X7L/+hyLlVLNMuW0lYVfpFUwMP6ornPU1QDmfXhuepcXAf0H9ySMEogf8road7Co/tesjXZpOCZUMPce8cPztHd+YFzZmp2xaAJSisTQ5tJUaIky0ibxBdVj3FFAVUw0exXj/HIkrgevIMJVEhDVF8qdI7iZDw9+q39oAQ2P2N+zhIbmUqVp6BiVMoEirnIQ5Qxo5WcO2NlIEp5iumkvQU4Rn18VNhG6
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(39860400002)(396003)(136003)(366004)(346002)(76116006)(66946007)(66476007)(66556008)(64756008)(66446008)(7696005)(26005)(186003)(33656002)(44832011)(86362001)(316002)(6506007)(8936002)(478600001)(71200400001)(52536014)(7416002)(8676002)(110136005)(5660300002)(2906002)(4326008)(55016002)(9686003)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: /ZaNTPM8n/ngMzHoV9eanEI4hx5rJ+SjwkICBx11RiytKCQTZbFOB47Fkb+KhOHV8D4BRJMJjIl9InL/Cg9Ypfx3BsJoI9+WrHjO5KR5Qu1eaM7TgPTx1sQTyWPoV+1eqKC9lBT5ICgnsgieQfnCk7meTMv5CG44jyfwGtIuw5qzUuky7zINpUq1kQENQ/xP0D8cUM2IYwoE6H+y9kdK1m37Xw7hDBMXoNZwoHxpO0AumEfb97OWCG3LOgggirWF3cQgtAvFEB50AKLPZGo2Id7+sCcqEHXQNCy+uVIzJGWyXXiCqS+UeZs6In3VE0CMICmiBIR4/iGu3Qn7gwLI2LU/t6V5imf/prV6pglq+QsW0znhwbQp4ktjPiZuhlfraaOFG0HJgSPEpn0eS+ut7U4xwSZdp90HnP5+umjn9esv+jp68zjNBmj+Dy50aj4bUYcNnhEdqFR5/w5Fxsg1H0sUXYS6bUYp1UNUsU+6Tc6EOFgGuaO39xG60quMLPVZ
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e55bc7bb-174f-4b33-1859-08d812a699be
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jun 2020 10:10:02.5338 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 7JFEvABr4bHcfbs7nF/TSlw++b7BPAoR5At2XfbMuHufSm6DxHjj5yzPvzOBYJA1AA5W7mhcV7QTLrS6UKKJ0g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5432
+ id 1jlV9O-000670-9L
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:18:35 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 95B322A395D
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
+ patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
+ platform-driver-x86@vger.kernel.org
+Subject: [PATCH v2] Input: document inhibiting
+Date: Wed, 17 Jun 2020 12:18:22 +0200
+Message-Id: <20200617101822.8558-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <f9007f37-c526-5fa4-3188-a554d2434177@redhat.com>
+References: <f9007f37-c526-5fa4-3188-a554d2434177@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_031008_096620_93584131 
-X-CRM114-Status: GOOD (  12.94  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200617_031834_496602_52BDF04A 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.86 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.86 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,53 +64,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
+ Laxman Dewangan <ldewangan@nvidia.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Len Brown <lenb@kernel.org>, Michael Hennerich <michael.hennerich@analog.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
+ Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
+ =?UTF-8?q?Micha=C5=82=20Miros=C5=82aw?= <mirq-linux@rere.qmqm.pl>,
+ Barry Song <baohua@kernel.org>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang <Anson.Huang@nxp.com>
-> Sent: Tuesday, June 9, 2020 3:32 PM
-> 
-> Export clk_hw_register_composite() to support user built as module.
-> 
-> ERROR: modpost: "clk_hw_register_composite" [drivers/clk/imx/mxc-clk.ko]
-> undefined!
-> scripts/Makefile.modpost:111: recipe for target 'Module.symvers' failed
-> make[1]: *** [Module.symvers] Error 1
-> make[1]: *** Deleting file 'Module.symvers'
-> Makefile:1384: recipe for target 'modules' failed
-> make: *** [modules] Error 2
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> No change.
-> ---
->  drivers/clk/clk-composite.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/clk/clk-composite.c b/drivers/clk/clk-composite.c index
-> 7376f57..2ddb54f 100644
-> --- a/drivers/clk/clk-composite.c
-> +++ b/drivers/clk/clk-composite.c
-> @@ -328,6 +328,7 @@ struct clk_hw *clk_hw_register_composite(struct
-> device *dev, const char *name,
->  					   rate_hw, rate_ops, gate_hw,
->  					   gate_ops, flags);
->  }
-> +EXPORT_SYMBOL_GPL(clk_hw_register_composite);
-> 
->  struct clk_hw *clk_hw_register_composite_pdata(struct device *dev,
->  			const char *name,
+Document inhibiting input devices and its relation to being
+a wakeup source.
 
-I guess you'd better add this one as well.
+Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+---
+v1..v2:
 
-Regards
-Aisheng
+- Addressed editorial comments from Randy
+- Added a paragraph by Hans
 
-> --
-> 2.7.4
+ Documentation/input/input-programming.rst | 40 +++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+
+diff --git a/Documentation/input/input-programming.rst b/Documentation/input/input-programming.rst
+index 45a4c6e05e39..7432315cc829 100644
+--- a/Documentation/input/input-programming.rst
++++ b/Documentation/input/input-programming.rst
+@@ -164,6 +164,46 @@ disconnects. Calls to both callbacks are serialized.
+ The open() callback should return a 0 in case of success or any nonzero value
+ in case of failure. The close() callback (which is void) must always succeed.
+ 
++Inhibiting input devices
++~~~~~~~~~~~~~~~~~~~~~~~~
++
++Inhibiting a device means ignoring input events from it. As such it is about maintaining
++relationships with input handlers - either already existing relationships, or relationships
++to be established while the device is in inhibited state.
++
++If a device is inhibited, no input handler will receive events from it.
++
++The fact that nobody wants events from the device is exploited further, by calling device's
++close() (if there are users) and open() (if there are users) on inhibit and uninhibit
++operations, respectively. Indeed, the meaning of close() is to stop providing events
++to the input core and that of open() is to start providing events to the input core.
++
++Calling the device's close() method on inhibit (if there are users) allows the driver
++to save power. Either by directly powering down the device or by releasing the
++runtime-pm reference it got in open() when the driver is using runtime-pm.
++
++Inhibiting and uninhibiting are orthogonal to opening and closing the device by input
++handlers. Userspace might want to inhibit a device in anticipation before any handler is
++positively matched against it.
++
++Inhibiting and uninhibiting are orthogonal to device's being a wakeup source, too. Being a
++wakeup source plays a role when the system is sleeping, not when the system is operating.
++How drivers should program their interaction between inhibiting, sleeping and being a wakeup
++source is driver-specific.
++
++Taking the analogy with the network devices - bringing a network interface down doesn't mean
++that it should be impossible be wake the system up on LAN through this interface. So, there
++may be input drivers which should be considered wakeup sources even when inhibited. Actually,
++in many I2C input devices their interrupt is declared a wakeup interrupt and its handling
++happens in driver's core, which is not aware of input-specific inhibit (nor should it be).
++Composite devices containing several interfaces can be inhibited on a per-interface basis and
++e.g. inhibiting one interface shouldn't affect the device's capability of being a wakeup source.
++
++If a device is to be considered a wakeup source while inhibited, special care must be taken when
++programming its suspend(), as it might need to call device's open(). Depending on what close()
++means for the device in question, not opening() it before going to sleep might make it
++impossible to provide any wakeup events. The device is going to sleep anyway.
++
+ Basic event types
+ ~~~~~~~~~~~~~~~~~
+ 
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
