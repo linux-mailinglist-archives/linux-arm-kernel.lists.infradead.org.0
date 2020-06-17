@@ -2,86 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3061F1FD31B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 19:05:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC9641FD327
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 19:08:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f1+fRynToqLicVKCpzAno3ANY7gHfjNwNVTg3twVtJE=; b=m214crDSy+Nv4h
-	O5JdRltI/eENUcfJmoAHZ1MTRh8A87PQfOptz8lfpRD2zLa3vtqKW5ay+6Qp3PVxt77yxyGL5smxo
-	NEFh6UzPSF+jzbYeJ9XAt4Wjq6sc1SXMtJXF3yfqvuhPDVB3OE4bqowP5XtHsF/MVvc8Oo665XlRb
-	NLKbqGcsH0j5SfLf9sbeWOov8A1CW9zrhtOoDQf2jUCqS1omjQG0v1FYrlpZ2PKaKRJABiPy7F/c4
-	PECgUrvPmqUbLPRCD6QRvc3INJ9p1dnO3KCyhbxB1Ka9OeIi0o7r5TK1qox4U90nyPBCKi8Gyhb9v
-	yA+MH6KacqAHwjIxPzqw==;
+	List-Owner; bh=hdWj1Q9aik4x6SGwzG+oo6AgglKEV9V2cB+YWhbH7mU=; b=K272vH2cg3HkJi
+	KlhRjpqlNPaYLf34PHutz6sAfl0WwZ3mf4U2x2ltgyBRs8ntJTBCrsQHWRXEwpeTsDYZN8vsVrnm8
+	t70YY796Tw7qIBID6/aqXc4DCc7p5pVz4Yv3LAS/3hIRsRai3kmfKIpoEJe94t9qXa2Tj1XHylB42
+	o2KIpozRlyolmiBVtdmxFURD/xZ5xqOe2yQBJKwI3ZoMR8yXt+hVH9gTeIxN2Rn+LpSqajWaaQZhX
+	cWRX9ADshugMPeGPpxQInfOPjZ5QSRrJoa5xspCywS9H7CD5iLepquoEs2DswN6ir3Xc1S8tBhhxd
+	55JCH3uWdYW8UC/agQsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlbVM-0003Pc-Hc; Wed, 17 Jun 2020 17:05:40 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
+	id 1jlbY1-00043B-Nb; Wed, 17 Jun 2020 17:08:25 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlbV0-0003Ee-7t
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 17:05:19 +0000
-Received: by mail-io1-f65.google.com with SMTP id r2so3649719ioo.4
+ id 1jlbXr-00042o-7p
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 17:08:17 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20200617170812epoutp04d55257ee2f7e7a5d761df8c41bf2eed5~ZY9DrCrV_0266402664epoutp04I
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 10:05:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=HPxsEuG2Ekjg7Hds/kVbwy4+RHNKxxhI4PPschCmgkM=;
- b=d2xqFiZ750EvuK6wZTiSC6+OWbYww8ACtAuYDr3gAIlacFH1+o5jxd97zE2EdjKri5
- B7LLRqvO/8WCeQUU3W/imUeuQUSe1AfL9QDwcYfh0IBY7fvyIXhBk57U9lpxogoWmLhp
- xn/Zg7Q1mEYVVCosNMr6sYtyWKFrw9iGZ1r4Tt2FHmBXSpZDH7ww87WrTgBqOlQM2axW
- f5fpkTXKVifI+BnTXCF6eRlAozfMCo77F4MXdEYeLrovjBiGFrOxJIVs8dYYIps83djX
- ec7dQsjc1gSLwDO0pmKpDLAaLOWhc8Ah5zFbEVTlOryF8hBBfdxcUn8QCpqPTZ3Wbm/7
- gaRA==
-X-Gm-Message-State: AOAM530oEJ0pvK6EFUIWKFDT+Hden4IJVEduDEaL0pFK1iU5YDcROMhz
- PWkiXCIdikNg3yyzuTIvjQ==
-X-Google-Smtp-Source: ABdhPJxOueUOpkABb/OhgZnN7xdWgVuzrEQS51Ltu7wGIP6FvZw5VBXvVUAcxQRRSAHmmWE6Fgb+Kw==
-X-Received: by 2002:a02:1c4a:: with SMTP id c71mr229254jac.142.1592413517160; 
- Wed, 17 Jun 2020 10:05:17 -0700 (PDT)
-Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id d71sm130223ill.9.2020.06.17.10.05.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 10:05:16 -0700 (PDT)
-Received: (nullmailer pid 2311373 invoked by uid 1000);
- Wed, 17 Jun 2020 17:05:15 -0000
-Date: Wed, 17 Jun 2020 11:05:15 -0600
-From: Rob Herring <robh@kernel.org>
-To: =?iso-8859-1?Q?=C1lvaro_Fern=E1ndez?= Rojas <noltari@gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add bcm63xx-usbh bindings
-Message-ID: <20200617170515.GA2310896@bogus>
-References: <20200616181802.3498745-1-noltari@gmail.com>
- <20200616181802.3498745-2-noltari@gmail.com>
+ Wed, 17 Jun 2020 17:08:12 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20200617170812epoutp04d55257ee2f7e7a5d761df8c41bf2eed5~ZY9DrCrV_0266402664epoutp04I
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1592413692;
+ bh=8uegeGaZQaXzOszaS/XO+h1hPJdbqLK/6+7/IxX9QPk=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=g15sK8fOD3w4KJNmtjBxHErPstHjksqLtMEXx0r2rSgdTYAj8rmm03bkoBSsA7ulo
+ HAiwj6oJOtvxIz07Tdj766S7zvd4GyIPtd/uq5IeCAC3xJueu0owdtw//jlC+YZazr
+ F/msr4G6Cnw3lUr4H8pR8acd+X0+XCv9NMr/udac=
+Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
+ epcas5p4.samsung.com (KnoxPortal) with ESMTP id
+ 20200617170811epcas5p4b3769a525def33d34ae8e9fadcf56672~ZY9DUx7FO0730007300epcas5p41;
+ Wed, 17 Jun 2020 17:08:11 +0000 (GMT)
+Received: from epcas5p3.samsung.com ( [182.195.41.41]) by
+ epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ D0.A0.09703.BFD4AEE5; Thu, 18 Jun 2020 02:08:11 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
+ 20200617170810epcas5p3ea5ed916115df0f5e5908ad81b2b7b53~ZY9CPAygZ1441714417epcas5p3x;
+ Wed, 17 Jun 2020 17:08:10 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200617170810epsmtrp1f826008bae2346c4157b9e7fb37b1e40~ZY9COS6mE0839208392epsmtrp1k;
+ Wed, 17 Jun 2020 17:08:10 +0000 (GMT)
+X-AuditID: b6c32a4a-4cbff700000025e7-95-5eea4dfb862e
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ CA.9B.08382.AFD4AEE5; Thu, 18 Jun 2020 02:08:10 +0900 (KST)
+Received: from mshams01 (unknown [107.122.43.244]) by epsmtip2.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20200617170806epsmtip2e8aa64209a416af5b6427f0b90d27713~ZY8_eTan80225202252epsmtip29;
+ Wed, 17 Jun 2020 17:08:06 +0000 (GMT)
+From: "M Tamseel Shams" <m.shams@samsung.com>
+To: "'Robin Murphy'" <robin.murphy@arm.com>, <kgene@kernel.org>,
+ <krzk@kernel.org>, <gregkh@linuxfoundation.org>, <jslaby@suse.com>
+In-Reply-To: <027c0955-3246-8c1e-4d0d-053a2a177dc6@arm.com>
+Subject: RE: [RFC PATCH] serial: samsung: Re-factors UART IRQ resource for
+ various Samsung SoC
+Date: Wed, 17 Jun 2020 22:38:01 +0530
+Message-ID: <000101d644c9$e06bba40$a1432ec0$@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200616181802.3498745-2-noltari@gmail.com>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQKFLyHxHkUNw6bP6pRUtYOiC7jR2QHTNgWiAZJI3VmnY///wA==
+Content-Language: en-us
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrOKsWRmVeSWpSXmKPExsWy7bCmpu5v31dxBgeu6Vo8mLeNzaJ58Xo2
+ iykbPjBZ9D9+zWxx/vwGdotNj6+xWlzeNYfNYsb5fUwWZxb3slsc/PCE1YHLY828NYwem1Z1
+ snnsn7uG3WPzknqPvi2rGD3Wb7nK4vF5k1wAexSXTUpqTmZZapG+XQJXxom7Z1kKTgtUPDum
+ 2MDYytvFyMkhIWAi8bNtF0sXIxeHkMBuRolJS36xQzifGCVuP1/MCOF8Y5RYN+0bO0zLt/V7
+ mSESexkl7tz5ClX1nFHi/5ZmJpAqNgFdiUkH28CqRARaGSVaJ80ASzALrGOUaP8hAGJzClhL
+ PP+5hxHEFhZIkNi8ZwUziM0ioCrRsXsDWD2vgKXExbndbBC2oMTJmU9YIOZoSyxb+JoZ4iQF
+ iZ9Pl7GC2CICThJ7Dz5mhqgRl3h59AjU2Xs4JF7/r4SwXST2rJkOFReWeHV8C5QtJfGyvw3K
+ zpeYP28V1PwKiZUX3kDZ9hIHrswBuoEDaL6mxPpd+hCr+CR6fz9hAglLCPBKdLQJQVQrSvzf
+ 3Q81UVzi3YoprBC2h0T7pamsExgVZyF5bBaSx2YheWAWwrIFjCyrGCVTC4pz01OLTQuM8lLL
+ 9YoTc4tL89L1kvNzNzGC05aW1w7Ghw8+6B1iZOJgPMQowcGsJMLr/PtFnBBvSmJlVWpRfnxR
+ aU5q8SFGaQ4WJXFepR9n4oQE0hNLUrNTUwtSi2CyTBycUg1M2WmpGkJZx2QCOvMrNXO7kjyV
+ frR3H7uUdnaGSqQjWxELe97ndq1XKlsqOH/vUXi+9cKdgqSEr3ONNP97aa+7X1hU2+q9INVm
+ Qq+y0YPDHxL+aP+dIWe5t8DF0H+/mUh13qZv7SekfiqovXl+P6uQyej3l/9Bi6ZJ1D4wMKyY
+ nNbsuvbo19TvYb4bnJZwrndRj2Hi/npKoKXEOoHtm8Lz7x9eHSuwt5/CpZzymyOi26pnyeuZ
+ u471Lmaqv5MmxDmx5LbwAZO3KrMqD77k37LZY8b5yk8nJj+fFJTyeXKwTQqX5JfD/zcHb9vQ
+ scBF938y12Fh35XJ5TXxfIyhue/4XI8cjmjxjbkS/j301g0lluKMREMt5qLiRABPF+rlygMA
+ AA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprLIsWRmVeSWpSXmKPExsWy7bCSvO4v31dxBocvylk8mLeNzaJ58Xo2
+ iykbPjBZ9D9+zWxx/vwGdotNj6+xWlzeNYfNYsb5fUwWZxb3slsc/PCE1YHLY828NYwem1Z1
+ snnsn7uG3WPzknqPvi2rGD3Wb7nK4vF5k1wAexSXTUpqTmZZapG+XQJXxsRt+1gKZgpUPJzy
+ nrmB8TJPFyMnh4SAicS39XuZuxi5OIQEdjNKLJ5ylQkiIS4x7dd+RghbWGLlv+fsILaQwFNG
+ iZOHxEFsNgFdiUkH28CaRQS6GSWe/tzNAuIwC2xilPjz7i4TxNidjBIPO5exgrRwClhLPP+5
+ B2yssECcxIWdfSwgNouAqkTH7g1gq3kFLCUuzu1mg7AFJU7OfAJWwyygLfH05lM4e9nC18wQ
+ 5ylI/HwKMV9EwEli78HHzBA14hIvjx5hn8AoPAvJqFlIRs1CMmoWkpYFjCyrGCVTC4pz03OL
+ DQsM81LL9YoTc4tL89L1kvNzNzGCY1BLcwfj9lUf9A4xMnEwHmKU4GBWEuF1/v0iTog3JbGy
+ KrUoP76oNCe1+BCjNAeLkjjvjcKFcUIC6YklqdmpqQWpRTBZJg5OqQamap/gE6w8VVVHpeR9
+ xeaeve2+U/bRqdveAZ1fbz9ak8g4o1FWe/7vX9XsFwJjvEzmcHJ6qB6Y6CnydMWRztNMDzef
+ scg4KW0tZWarKdeQ9vVcx9+Db5ckfrfJneuxSrrXa9m7xXmxFj/9Q4I/Tf+VtsWoUpq99mvp
+ amlr42Dt/Ud/KOvorJj2+kvF6W61p618XBsTgoutX7ltuVm/1qXr8FaWgIwplyffKUy9ZKpi
+ 7Vj33XntDM3Ll/Lzdh9wDvkgYLdVumxfmFaKDWP28vPSTazq4lO/3VRlq/zV/6t59ZXuTxYf
+ S9+c3KNSUyQm9OWx5bbXgkq8u+w/XTOLnXBe/Lalwr1Gt8vxB7tf7F6pxFKckWioxVxUnAgA
+ UA4NIjADAAA=
+X-CMS-MailID: 20200617170810epcas5p3ea5ed916115df0f5e5908ad81b2b7b53
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20200615124355epcas5p446ae2f1b63331ef87334cd7d696c3c43
+References: <CGME20200615124355epcas5p446ae2f1b63331ef87334cd7d696c3c43@epcas5p4.samsung.com>
+ <20200615122609.71884-1-m.shams@samsung.com>
+ <027c0955-3246-8c1e-4d0d-053a2a177dc6@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_100518_292419_863BCD5F 
-X-CRM114-Status: UNSURE (   7.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200617_100815_699771_158ECDF3 
+X-CRM114-Status: GOOD (  14.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,57 +145,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com,
- gregkh@linuxfoundation.org, alcooperx@gmail.com, linux-kernel@vger.kernel.org,
- krzk@kernel.org, kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, p.zabel@pengutronix.de,
- simon@fire.lp0.eu, jonas.gorski@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-arm-kernel@lists.infradead.org, alim.akhtar@samsung.com,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-serial@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Jun 2020 20:18:01 +0200, =C1lvaro Fern=E1ndez Rojas wrote:
-> Document BCM63xx USBH PHY bindings.
-> =
+Hi Robin,
 
-> Signed-off-by: =C1lvaro Fern=E1ndez Rojas <noltari@gmail.com>
-> ---
->  v2: phy-cells changed to 1.
-> =
+> -----Original Message-----
+> From: Robin Murphy <robin.murphy@arm.com>
+> Sent: Monday, June 15, 2020 6:43 PM
+> To: Tamseel Shams <m.shams@samsung.com>; kgene@kernel.org;
+> krzk@kernel.org; gregkh@linuxfoundation.org; jslaby@suse.com
+> Cc: linux-samsung-soc@vger.kernel.org; linux-serial@vger.kernel.org; linux-
+> kernel@vger.kernel.org; alim.akhtar@samsung.com; linux-arm-
+> kernel@lists.infradead.org
+> Subject: Re: [RFC PATCH] serial: samsung: Re-factors UART IRQ resource for
+> various Samsung SoC
+> 
+> On 2020-06-15 13:26, Tamseel Shams wrote:
+> >   	else {
+> >   		port->irq = ret;
+> >   		ourport->rx_irq = ret;
+> > -		ourport->tx_irq = ret + 1;
+> > +		if (ourport->info->irq_cnt == 1)
+> > +			ourport->tx_irq = ret;
+> > +		else
+> > +			ourport->tx_irq = ret + 1;
+> >   	}
+> >
+> > -	ret = platform_get_irq(platdev, 1);
+> > -	if (ret > 0)
+> > -		ourport->tx_irq = ret;
+> > +	if (ourport->info->irq_cnt != 1) {
+> > +		ret = platform_get_irq(platdev, 1);
+> > +		if (ret > 0)
+> > +			ourport->tx_irq = ret;
+> 
+> FWIW, if you're not going to do anything in the error case then you may as well
+> just call platform_get_irq_optional() unconditionally.
+> 
+> Robin.
+> 
+My intention behind not using 'platform_get_irq_optional' was that it does not prints the error when the 2nd interrupt resource is missing for the older UART's. I am just using it to give information to the user in error case. I can use 'platform_get_irq_optional' too.
 
->  .../bindings/phy/brcm,bcm63xx-usbh-phy.yaml   | 72 +++++++++++++++++++
->  1 file changed, 72 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/brcm,bcm63xx-us=
-bh-phy.yaml
-> =
+Thanks & Regards
+Tamseel
 
-
-
-My bot found errors running 'make dt_binding_check' on your patch:
-
-Error: Documentation/devicetree/bindings/phy/brcm,bcm63xx-usbh-phy.example.=
-dts:22.33-34 syntax error
-FATAL ERROR: Unable to parse input tree
-scripts/Makefile.lib:315: recipe for target 'Documentation/devicetree/bindi=
-ngs/phy/brcm,bcm63xx-usbh-phy.example.dt.yaml' failed
-make[1]: *** [Documentation/devicetree/bindings/phy/brcm,bcm63xx-usbh-phy.e=
-xample.dt.yaml] Error 1
-make[1]: *** Waiting for unfinished jobs....
-Makefile:1347: recipe for target 'dt_binding_check' failed
-make: *** [dt_binding_check] Error 2
-
-
-See https://patchwork.ozlabs.org/patch/1310646
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
-
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --u=
-pgrade
-
-Please check and re-submit.
+> > +	}
+> >   	/*
+> >   	 * DMA is currently supported only on DT platforms, if DMA properties
+> >   	 * are specified.
+> > @@ -2387,6 +2393,7 @@ static struct s3c24xx_serial_drv_data
+> s3c2410_serial_drv_data = {
+> >   		.name		= "Samsung S3C2410 UART",
+> >   		.type		= PORT_S3C2410,
+> >   		.fifosize	= 16,
+> > +		.irq_cnt	= 2,
+> >   		.rx_fifomask	= S3C2410_UFSTAT_RXMASK,
+> >   		.rx_fifoshift	= S3C2410_UFSTAT_RXSHIFT,
+> >   		.rx_fifofull	= S3C2410_UFSTAT_RXFULL,
 
 
 _______________________________________________
