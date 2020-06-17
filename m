@@ -2,63 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AB541FC30C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 02:55:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07BD1FC3A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 03:41:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HbcbiZ7p9OIq9qroIDNIbINQkYdaq6AFqV6f56Mat7c=; b=LLWFpxnrCOUYjw
-	djuXN3wLT0pX5gThhyXxqVUwLm6aOQ9DR38S2S0FvxaZjyQLhNtseyq6E4/FELVTFZuq18uWZ1JXS
-	o4WU3luycZ/pv0NsjMialhqU/dyYDA+XXJcM63TF7Y2gdBeMr0OEijPeRy0oJfql+NQUyg3w8gogs
-	0TjT9sKhFQO5vo67J+KrSBDhsphP7k73cGWY6/1EcTs0zAZ/OQREPjlfv1T938RcLIxJ+p1JOQ8kE
-	WyxPz2PnxeZmgtGivVIi0ukqZmulYYXN9CKXoDeI32Uv0a1P2NgtvsvLb3ww4ii1XC2CEYySHW7u8
-	9ObmClgCtQqmWH6WFfMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EoYPkvD+vICZEkYB7X3Q8fX/tqRyjcHeElo/PUVSkQA=; b=MaYnX33DzY2JLr
+	J0ytiMgdk6fhojppIyA11e2KNDw40un78LDbWe6zhkKgiAj95a13jeGIxIxm+7i+y+8I9OyZCHaIr
+	1fMuww52TnUW+mYLpMFdNyClIyt4DVQ1rrRj0uPrevGTNimchMF0JM+9SQewnYvKdvg3FUonqFaA7
+	Z5RhVZNj9rdoZvohgmVj6K8QnmaSupSsfgUI5elGAiJBbmfK83bwnV7MBPE4WSaxCFxoFQRCgZiLn
+	OXVG7/9CCz2MtL7Hvqokm+Z1Wb94vzeUTD9yKlo+iWAeki8y0IEO0QGOgDu/WLEdqp26V91RpcMC9
+	Z+dOcgln0tKKZhNvWiaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlMMH-0007Ht-9U; Wed, 17 Jun 2020 00:55:17 +0000
-Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
+	id 1jlN4L-0003B4-Tt; Wed, 17 Jun 2020 01:40:49 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlMLu-0007Gf-E2
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 00:54:57 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 49mmn31DRrz9sRR;
- Wed, 17 Jun 2020 10:54:47 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ellerman.id.au;
- s=201909; t=1592355289;
- bh=Tt4ck1L8nY61ACyfCaQSk9IvU7WHJrdCNXj+0siSSyg=;
- h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
- b=X9ymJOnvys9Xta0MkoWBUczKpvqc1UyN/Q9aQyWmLXe1VKUTEmNDQSj0rsR9Q534F
- p6Cep2OQrqfnlebt9PQxQzVrQBhhGf8vxbnkZ2KkloITdv6wE3e3fWf2KzjAQ/3rHv
- 4Rf2KtyRVAUQ0TfXasgP2KtS5MyWwwXfSxOEHZFxwBGwJ77QG/uKkxjIM9la7HY3Yo
- s6mWsZ+5Aa9gVpDy6HW9lFlvnILbbuGiSBVRHnfji5SIv8PgYQDi4XcBz//pG5rD8Z
- yHLXPGR8ugwb3hM4yDbup0N8aruEnPrwavrRY0cCsW8tvoiEuDekDUjg2hB93vQcq9
- r0IQCg06h+QGQ==
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: Linus Torvalds <torvalds@linux-foundation.org>,
- Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH 00/25] mm: Page fault accounting cleanups
-In-Reply-To: <CAHk-=wiTjaXHu+uxMi0xCZQOm4KVr0MucECAK=Zm4p4YZZ1XEg@mail.gmail.com>
-References: <20200615221607.7764-1-peterx@redhat.com>
- <CAHk-=wiTjaXHu+uxMi0xCZQOm4KVr0MucECAK=Zm4p4YZZ1XEg@mail.gmail.com>
-Date: Wed, 17 Jun 2020 10:55:14 +1000
-Message-ID: <87imfqecjx.fsf@mpe.ellerman.id.au>
+ id 1jlN49-0003A1-Qc
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 01:40:39 +0000
+Received: by mail-qk1-x744.google.com with SMTP id w3so606277qkb.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jun 2020 18:40:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SmUuAYdq3VSDmDEV+vJqIoAD1bN1Pfe0CFNGJ2Z92oo=;
+ b=HWGSiETopD/8uT/vgDnO1Txg4Pp5nB6BJMg6gAMCIytMHnLMPYx9X5GgorKkY7+EYj
+ 2eExjiU5LPG11i5hxF+RFhIe6NezkmENcrB/siZPzF9/sCzIK2AyyJu6B/r3hIjFnWDp
+ VnFHCuFKpxp4FSeVN0xf6fHSAVcM6L4BrjwlOjwKmErHUjdRYs07Z/VsNt4YSH6kxWB8
+ Vjqz+wi7a/O5HgnpSh1MVK21BNNPOJVmK8AnxupiVzcMswsdie96UcBo92hIdVCuFxMJ
+ /+s0WcX2ZCIX8htssXw8VFsr7Y+3hr/WYW1GASqZTd4+Rlwr694ua+/yFFVPR1hCKbWw
+ /0eQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SmUuAYdq3VSDmDEV+vJqIoAD1bN1Pfe0CFNGJ2Z92oo=;
+ b=iAUXHtHRIv2Cqf5eRAqwzQQZFQjvzAeH+VJ7G4Ub45hbRkdztHWA8Pwo5f/Igx84iW
+ gL9S9YWmXUavg7rShPZtlt5Opi9LdX02qsd105r8BkJALh8Pw3q4mnsf35nRwqRF5UfW
+ v4RTFGS02PRXYOrji2vufq0kl3RoXnUAL1jGTzNonkd2R+j64m39oabesfhcxmq3F6+L
+ 2Oudyr/eH6NlOp44gzPIFhfrbY5nEVu9LVoRM0QYFxzAFf5W8u1R9mnqpnYna/84WeiN
+ CLViJdeh/Tq0ztzohbfzFSp932P50/pUsimaJ+zgTBnx1xpRlLeMbkQHcWIENgkTVZVc
+ Af5Q==
+X-Gm-Message-State: AOAM530sBT053faZQlrb1bnf5by7/UwvTSXiv/dRp5pU2yDrdvrWTF7/
+ xBw2FQRDhMUoe5261aerNRQ=
+X-Google-Smtp-Source: ABdhPJwIasLV+HgrGfsdPlWIktHCipTx9jA7XP9YqH4HFXHuTL2RhhgRP7gpJ2zoSD+VVGUwiYLt1g==
+X-Received: by 2002:a37:a292:: with SMTP id
+ l140mr23257952qke.171.1592358035895; 
+ Tue, 16 Jun 2020 18:40:35 -0700 (PDT)
+Received: from localhost.localdomain (072-189-064-225.res.spectrum.com.
+ [72.189.64.225])
+ by smtp.gmail.com with ESMTPSA id a14sm1917014qkn.16.2020.06.16.18.40.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 16 Jun 2020 18:40:34 -0700 (PDT)
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: jic23@kernel.org
+Subject: [PATCH v3 0/4] Introduce the Counter character device interface
+Date: Tue, 16 Jun 2020 21:39:58 -0400
+Message-Id: <cover.1592341702.git.vilhelm.gray@gmail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_175455_228809_02D356EE 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20200616_184037_882363_FE086FF8 
+X-CRM114-Status: GOOD (  20.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [vilhelm.gray[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,51 +98,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Arcangeli <aarcange@redhat.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- openrisc@lists.librecores.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Alexander Gordeev <agordeev@linux.ibm.com>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>
+Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, david@lechnology.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, William Breathitt Gray <vilhelm.gray@gmail.com>,
+ fabrice.gasnier@st.com, syednwaris@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Linus Torvalds <torvalds@linux-foundation.org> writes:
-> On Mon, Jun 15, 2020 at 3:16 PM Peter Xu <peterx@redhat.com> wrote:
->> This series tries to address all of them by introducing mm_fault_accounting()
->> first, so that we move all the page fault accounting into the common code base,
->> then call it properly from arch pf handlers just like handle_mm_fault().
->
-> Hmm.
->
-> So having looked at this a bit more, I'd actually like to go even
-> further, and just get rid of the per-architecture code _entirely_.
+Changes in v3:
+ - Remove string data type; there is no need to handle strings via the
+   chrdev interface
+ - Reimplement COUNTER_DATA_TYPE_ENUM using struct counter_available
+ - Refactor Count and Signal sysfs number as index offset rather than id
+   value; this should make the naming and paths more consistent
+ - Implement chrdev_format sysfs attribute; data format of chrdev is
+   configured via sysfs in order to keep data and configuration separate
 
-<snip>
+Over the past couple years we have noticed some shortcomings with the
+Counter sysfs interface. Although useful in the majority of situations,
+there are certain use-cases where interacting through sysfs attributes
+can become cumbersome and inefficient. A desire to support more advanced
+functionality such as timestamps, multi-axes positioning tables, and
+other such latency-sensitive applications, has motivated a reevaluation
+of the Counter subsystem. I believe a character device interface will be
+helpful for this more niche area of counter device use.
 
-> One detail worth noting: I do wonder if we should put the
->
->     perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS, 1, regs, addr);
->
-> just in the arch code at the top of the fault handling, and consider
-> it entirely unrelated to the major/minor fault handling. The
-> major/minor faults fundamnetally are about successes. But the plain
-> PERF_COUNT_SW_PAGE_FAULTS could be about things that fail, including
-> things that never even get to this point at all.
+To quell any concerns from the offset: this patchset makes no changes to
+the existing Counter sysfs userspace interface -- existing userspace
+applications will continue to work with no modifications necessary. I
+request that driver maintainers please test their applications to verify
+that this is true, and report any discrepancies if they arise.
 
-Yeah I think we should keep it in the arch code at roughly the top.
+However, this patchset does contain a major reimplementation of the
+Counter subsystem core and driver API. A reimplementation was necessary
+in order to separate the sysfs code from the counter device drivers and
+internalize it as a dedicated component of the core Counter subsystem
+module. A minor benefit from all of this is that the sysfs interface is
+now ensured a certain amount of consistency because the translation is
+performed outside of individual counter device drivers.
 
-If it's moved to the end you could have a process spinning taking bad
-page faults (and fixing them up), and see no sign of it from the perf
-page fault counters.
+Essentially, the reimplementation has enabled counter device drivers to
+pass and handle data as native C datatypes now rather than the sysfs
+strings from before. A high-level view of how a count value is passed
+down from a counter device driver can be exemplified by the following:
 
-cheers
+                 ----------------------
+                / Counter device       \
+                +----------------------+
+                | Count register: 0x28 |
+                +----------------------+
+                        |
+                 -----------------
+                / raw count data /
+                -----------------
+                        |
+                        V
+                +----------------------------+
+                | Counter device driver      |----------+
+                +----------------------------+          |
+                | Processes data from device |   -------------------
+                |----------------------------|  / driver callbacks /
+                | Type: u64                  |  -------------------
+                | Value: 42                  |          |
+                +----------------------------+          |
+                        |                               |
+                 ----------                             |
+                / u64     /                             |
+                ----------                              |
+                        |                               |
+                        |                               V
+                        |               +----------------------+
+                        |               | Counter core         |
+                        |               +----------------------+
+                        |               | Routes device driver |
+                        |               | callbacks to the     |
+                        |               | userspace interfaces |
+                        |               +----------------------+
+                        |                       |
+                        |                -------------------
+                        |               / driver callbacks /
+                        |               -------------------
+                        |                       |
+                +-------+---------------+       |
+                |                       |       |
+                |               +-------|-------+
+                |               |       |
+                V               |       V
+        +--------------------+  |  +---------------------+
+        | Counter sysfs      |<-+->| Counter chrdev      |
+        +--------------------+     +---------------------+
+        | Translates to the  |     | Translates to the   |
+        | standard Counter   |     | standard Counter    |
+        | sysfs output       |     | character device    |
+        |--------------------|     |---------------------+
+        | Type: const char * |     | Type: u64           |
+        | Value: "42"        |     | Value: 42           |
+        +--------------------+     +---------------------+
+                |                               |
+         ---------------                 ----------
+        / const char * /                / u64     /
+        ---------------                 ----------
+                |                               |
+                |                               V
+                |                       +-----------+
+                |                       | read      |
+                |                       +-----------+
+                |                       \ Count: 42 /
+                |                        -----------
+                |
+                V
+        +--------------------------------------------------+
+        | `/sys/bus/counter/devices/counterX/countY/count` |
+        +--------------------------------------------------+
+        \ Count: "42"                                      /
+         --------------------------------------------------
+
+I am aware that an in-kernel API can simplify the data transfer between
+counter device drivers and the userspace interfaces, but I want to
+postpone that development until after the new Counter character device
+interface is solidified. A userspace ABI is effectively immutable so I
+want to make sure we get that right before working on an in-kernel API
+that is more flexible to change. However, when we do develop an
+in-kernel API, it will likely be housed as part of the Counter core
+component, through which the userspace interfaces will then communicate.
+
+Interaction with Counter character devices occurs via standard character
+device read/write operations. This allows userspace applications to
+access and set counter data using native C datatypes rather than working
+through string translations.
+
+The following are some questions I have about this patchset:
+
+1. Should the data format of the character device be configured via a
+   sysfs attribute, ioctl, or something else?
+
+   I believe it's good to have the configuration of the data format
+   separate from the actual data, but I'm not sure if that configuration
+   should be exposed via sysfs or some other interface. What interface
+   would be most fitting for such configuration?
+
+2. Should the format of the chrdev_format attribute be more friendly for
+   a human user?
+
+   I implemented a minimalistic syntax for the sake of simplifying the
+   parsing code, but we could increase the verbosity a bit to make it
+   easier for humans to understand the format of the chrdev_format
+   attribute.
+
+   For example, "C0 C0E3 S1 C1E2" could instead be "Count 0, Count 0
+   Ceiling, Signal 1, Count 1 Floor"; because extension names are
+   required to be unique, it possible to refer to the extensions
+   directly by their names (i.e. "ceiling" and "floor") rather than
+   their index offset. The downside to this is of course the need for a
+   more complex parser.
+
+3. How should alignment of the character device data be handled?
+
+   We might not need to handle this just yet, but I can envision
+   situations where it would be nice for user to specify the alignment
+   of the data in order to match the packing of a structure in a
+   userspace application. How we specify the alignment will naturally
+   depend on the syntax we decide for the chrdev_format attribute. I can
+   see a "padding" option as a possible solution, but it'll be nice to
+   get some feedback if there are any other ideas.
+
+William Breathitt Gray (4):
+  counter: Internalize sysfs interface code
+  docs: counter: Update to reflect sysfs internalization
+  counter: Add character device interface
+  docs: counter: Document character device interface
+
+ Documentation/ABI/testing/sysfs-bus-counter  |   31 +
+ Documentation/driver-api/generic-counter.rst |  280 +++-
+ MAINTAINERS                                  |    3 +-
+ drivers/counter/104-quad-8.c                 |  474 +++---
+ drivers/counter/Makefile                     |    1 +
+ drivers/counter/counter-chrdev.c             |  612 +++++++
+ drivers/counter/counter-chrdev.h             |   23 +
+ drivers/counter/counter-common.h             |   15 +
+ drivers/counter/counter-core.c               |  187 +++
+ drivers/counter/counter-sysfs.c              |  881 +++++++++++
+ drivers/counter/counter-sysfs.h              |   14 +
+ drivers/counter/counter.c                    | 1496 ------------------
+ drivers/counter/ftm-quaddec.c                |   59 +-
+ drivers/counter/stm32-lptimer-cnt.c          |  161 +-
+ drivers/counter/stm32-timer-cnt.c            |  139 +-
+ drivers/counter/ti-eqep.c                    |  211 +--
+ include/linux/counter.h                      |  628 ++++----
+ include/linux/counter_enum.h                 |   45 -
+ include/uapi/linux/counter-types.h           |   34 +
+ 19 files changed, 2748 insertions(+), 2546 deletions(-)
+ create mode 100644 drivers/counter/counter-chrdev.c
+ create mode 100644 drivers/counter/counter-chrdev.h
+ create mode 100644 drivers/counter/counter-common.h
+ create mode 100644 drivers/counter/counter-core.c
+ create mode 100644 drivers/counter/counter-sysfs.c
+ create mode 100644 drivers/counter/counter-sysfs.h
+ delete mode 100644 drivers/counter/counter.c
+ delete mode 100644 include/linux/counter_enum.h
+ create mode 100644 include/uapi/linux/counter-types.h
+
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
