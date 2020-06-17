@@ -2,57 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DA181FCE19
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 15:09:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 636E71FCE38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 15:17:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NbqPbUkQtuJn6WRx9jvY5MRDAhaRRRDle2YkZ7P46HY=; b=aqdgQKTOlL7sMK
-	rXLXvYuVetYGQ4b6AYp6A9dnOgLogVT86YvfaEdihQpQHpn2XSyQXkc0rWlSItQkqGWG3LvCF5n73
-	2gaLVJtLZZSr3EdLuvMZFBromE9uzPmmITvNU/M6xRjJnxKBOE5dTR6DeJRmTK0ztkZrbP72nPlDD
-	PiSRoWHonXxA/2bHemuQ19Pp1Yc8VmnBYDsVFxYAxiJnihhJww2Y1CelN7aRKb9VNHzrw6TEDLya4
-	HnigXFEYXe9lHWOUQwyCBsgp87cksPudhS2FdAOxvitJyCv3bjI/IF5KGCQ8xsrgycqKHrf5/vPhO
-	5COwlPGn7NlzWjeunUqg==;
+	List-Owner; bh=sd57JimcxuYR0APn6IKyNIkuvEfEdZnQf/Oiv+GlUUk=; b=DHZ7bfWHsiiXag
+	iImmyILtiHI7B01mxFBqwMYU6FAxw1wBQ3MsTL89tMVhNXgd9ovlzCT5sjJNpUFCVJSxBR/a2nyp3
+	bPtSIChhRwefB9jZM0rGbH1s0wFPHscd6iGcYffj4ox7hCHeKv6oyjBLIefD4SUq00G77/f1mtaEE
+	hzaJ6U4NHNhB3gn9fNBw+iNf4AXlF1wza+Wv2RO6s8eOrnb9Io4TG6qQV3ABIxj4ZNtVP6/DriWv4
+	KONCi563AtPVsCfIsPaKjLvGIqXAKOe8Ow/E6xJ10i0ZSKzaQCMOGSWHJ9/etxskspKhapo3SmdZP
+	3B8XOgUk/PdbaE7IW+eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlXog-00014a-IU; Wed, 17 Jun 2020 13:09:22 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlXoY-00013m-Ev
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 13:09:16 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id A73B09B147F80A4789FE;
- Wed, 17 Jun 2020 21:09:06 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.58) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Wed, 17 Jun 2020 21:08:58 +0800
-From: John Garry <john.garry@huawei.com>
-To: <zhangshaokun@hisilicon.com>, <will@kernel.org>, <mark.rutland@arm.com>
-Subject: [PATCH] drivers/perf: hisi: Add identifier sysfs file
-Date: Wed, 17 Jun 2020 21:05:11 +0800
-Message-ID: <1592399111-134786-1-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
+	id 1jlXwK-0006uI-AM; Wed, 17 Jun 2020 13:17:16 +0000
+Received: from rdns2.delivers-solutions.com ([147.135.99.14])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlXwB-0006sv-Ej
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 13:17:08 +0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default;
+ d=delivers-solutions.com; 
+ h=Reply-To:From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ i=info@delivers-solutions.com; 
+ bh=HfOzYHtXihvNe2PYgpNWZYop7xo=;
+ b=pG9DFxwF2/LuAre2lSbU/Vbb8FoqWEQMZgRxND0vSK/e8OkHZJyLPtrnSjrlz6grLM2LCBG470eR
+ TVriCglw4HMxtq8RVzxIKgNoP+Jjyh+OvmXD/pfiZCMqHmbj9cr87qhad6D8geQj94B+RZSmu213
+ KGvK9FafLIhBDgdDSC0=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default;
+ d=delivers-solutions.com; 
+ b=nhkcFH0NStBQyX8dTnrKRf6wHW05s6+sbTKh53nIZKlPRJmifJx2TYxf/Mh4vGQRUrGSb52DIg1j
+ /W2W56mEFqY11VcSb0wlPlzhkAiHMtx+aq7Fy30BHXaZHbaDdNOagWOHuBLkAT7OL7caTDsVfQs+
+ DL5Pkjt6KajBtDQJ3I0=;
+From: info@delivers-solutions.com
+To: linux-arm-kernel@lists.infradead.org
+Subject: Receipt For Goods Available
+Date: 17 Jun 2020 15:17:05 +0200
+Message-ID: <20200617151705.A31D51875C11DB44@delivers-solutions.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.69.192.58]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_060915_087883_A5FB126B 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_061707_493093_466C1862 
+X-CRM114-Status: UNSURE (   1.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,205 +71,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: qiangqing.zhang@nxp.com, John
- Garry <john.garry@huawei.com>, linuxarm@huawei.com,
- linux-kernel@vger.kernel.org, jolsa@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Reply-To: info@cocyflame.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To allow userspace to identify the specific implementation of the device,
-add an "identifier" sysfs file.
+Hi
 
-Encoding is as follows:
-hi1620: 0x0	(aka hip08)
-hi1630: 0x30
+Hope this mail finds you well.
 
-Signed-off-by: John Garry <john.garry@huawei.com>
+Our company have not bought your products before but due to 
+excess demand of it here, so we decided to go for it.
 
-diff --git a/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c b/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c
-index 15713faaa07e..a83d99f2662e 100644
---- a/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c
-+++ b/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c
-@@ -33,6 +33,7 @@
- #define DDRC_INT_MASK		0x6c8
- #define DDRC_INT_STATUS		0x6cc
- #define DDRC_INT_CLEAR		0x6d0
-+#define DDRC_VERSION		0x710
+I still have other request to make but there all in my 
+specification.
+
+Please let me know if you still have stocks available.
+
+
+Waiting for your reply
+
  
- /* DDRC has 8-counters */
- #define DDRC_NR_COUNTERS	0x8
-@@ -267,6 +268,8 @@ static int hisi_ddrc_pmu_init_data(struct platform_device *pdev,
- 		return PTR_ERR(ddrc_pmu->base);
- 	}
- 
-+	ddrc_pmu->identifier = readl(ddrc_pmu->base + DDRC_VERSION);
-+
- 	return 0;
- }
- 
-@@ -308,10 +311,23 @@ static const struct attribute_group hisi_ddrc_pmu_cpumask_attr_group = {
- 	.attrs = hisi_ddrc_pmu_cpumask_attrs,
- };
- 
-+static struct device_attribute hisi_ddrc_pmu_identifier_attr =
-+	__ATTR(identifier, 0444, hisi_uncore_pmu_identifier_attr_show, NULL);
-+
-+static struct attribute *hisi_ddrc_pmu_identifier_attrs[] = {
-+	&hisi_ddrc_pmu_identifier_attr.attr,
-+	NULL
-+};
-+
-+static struct attribute_group hisi_ddrc_pmu_identifier_group = {
-+	.attrs = hisi_ddrc_pmu_identifier_attrs,
-+};
-+
- static const struct attribute_group *hisi_ddrc_pmu_attr_groups[] = {
- 	&hisi_ddrc_pmu_format_group,
- 	&hisi_ddrc_pmu_events_group,
- 	&hisi_ddrc_pmu_cpumask_attr_group,
-+	&hisi_ddrc_pmu_identifier_group,
- 	NULL,
- };
- 
-diff --git a/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c b/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c
-index dcc5600788a9..4fdaf1d995be 100644
---- a/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c
-+++ b/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c
-@@ -23,6 +23,7 @@
- #define HHA_INT_MASK		0x0804
- #define HHA_INT_STATUS		0x0808
- #define HHA_INT_CLEAR		0x080C
-+#define HHA_VERSION		0x1cf0
- #define HHA_PERF_CTRL		0x1E00
- #define HHA_EVENT_CTRL		0x1E04
- #define HHA_EVENT_TYPE0		0x1E80
-@@ -261,6 +262,8 @@ static int hisi_hha_pmu_init_data(struct platform_device *pdev,
- 		return PTR_ERR(hha_pmu->base);
- 	}
- 
-+	hha_pmu->identifier = readl(hha_pmu->base + HHA_VERSION);
-+
- 	return 0;
- }
- 
-@@ -320,10 +323,23 @@ static const struct attribute_group hisi_hha_pmu_cpumask_attr_group = {
- 	.attrs = hisi_hha_pmu_cpumask_attrs,
- };
- 
-+static struct device_attribute hisi_hha_pmu_identifier_attr =
-+	__ATTR(identifier, 0444, hisi_uncore_pmu_identifier_attr_show, NULL);
-+
-+static struct attribute *hisi_hha_pmu_identifier_attrs[] = {
-+	&hisi_hha_pmu_identifier_attr.attr,
-+	NULL
-+};
-+
-+static struct attribute_group hisi_hha_pmu_identifier_group = {
-+	.attrs = hisi_hha_pmu_identifier_attrs,
-+};
-+
- static const struct attribute_group *hisi_hha_pmu_attr_groups[] = {
- 	&hisi_hha_pmu_format_group,
- 	&hisi_hha_pmu_events_group,
- 	&hisi_hha_pmu_cpumask_attr_group,
-+	&hisi_hha_pmu_identifier_group,
- 	NULL,
- };
- 
-diff --git a/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c b/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-index 7719ae4e2c56..0e7477220be1 100644
---- a/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-+++ b/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-@@ -25,6 +25,7 @@
- #define L3C_INT_STATUS		0x0808
- #define L3C_INT_CLEAR		0x080c
- #define L3C_EVENT_CTRL	        0x1c00
-+#define L3C_VERSION		0x1cf0
- #define L3C_EVENT_TYPE0		0x1d00
- /*
-  * Each counter is 48-bits and [48:63] are reserved
-@@ -264,6 +265,8 @@ static int hisi_l3c_pmu_init_data(struct platform_device *pdev,
- 		return PTR_ERR(l3c_pmu->base);
- 	}
- 
-+	l3c_pmu->identifier = readl(l3c_pmu->base + L3C_VERSION);
-+
- 	return 0;
- }
- 
-@@ -310,10 +313,23 @@ static const struct attribute_group hisi_l3c_pmu_cpumask_attr_group = {
- 	.attrs = hisi_l3c_pmu_cpumask_attrs,
- };
- 
-+static struct device_attribute hisi_l3c_pmu_identifier_attr =
-+	__ATTR(identifier, 0444, hisi_uncore_pmu_identifier_attr_show, NULL);
-+
-+static struct attribute *hisi_l3c_pmu_identifier_attrs[] = {
-+	&hisi_l3c_pmu_identifier_attr.attr,
-+	NULL
-+};
-+
-+static struct attribute_group hisi_l3c_pmu_identifier_group = {
-+	.attrs = hisi_l3c_pmu_identifier_attrs,
-+};
-+
- static const struct attribute_group *hisi_l3c_pmu_attr_groups[] = {
- 	&hisi_l3c_pmu_format_group,
- 	&hisi_l3c_pmu_events_group,
- 	&hisi_l3c_pmu_cpumask_attr_group,
-+	&hisi_l3c_pmu_identifier_group,
- 	NULL,
- };
- 
-diff --git a/drivers/perf/hisilicon/hisi_uncore_pmu.c b/drivers/perf/hisilicon/hisi_uncore_pmu.c
-index 97aff877a4e7..023e247634db 100644
---- a/drivers/perf/hisilicon/hisi_uncore_pmu.c
-+++ b/drivers/perf/hisilicon/hisi_uncore_pmu.c
-@@ -119,6 +119,16 @@ int hisi_uncore_pmu_get_event_idx(struct perf_event *event)
- }
- EXPORT_SYMBOL_GPL(hisi_uncore_pmu_get_event_idx);
- 
-+ssize_t hisi_uncore_pmu_identifier_attr_show(struct device *dev,
-+					     struct device_attribute *attr,
-+					     char *page)
-+{
-+	struct hisi_pmu *hisi_pmu = to_hisi_pmu(dev_get_drvdata(dev));
-+
-+	return sprintf(page, "0x%x\n", hisi_pmu->identifier);
-+}
-+EXPORT_SYMBOL_GPL(hisi_uncore_pmu_identifier_attr_show);
-+
- static void hisi_uncore_pmu_clear_event_idx(struct hisi_pmu *hisi_pmu, int idx)
- {
- 	if (!hisi_uncore_pmu_counter_valid(hisi_pmu, idx)) {
-diff --git a/drivers/perf/hisilicon/hisi_uncore_pmu.h b/drivers/perf/hisilicon/hisi_uncore_pmu.h
-index 25b0c97b3eb0..14ecaf763153 100644
---- a/drivers/perf/hisilicon/hisi_uncore_pmu.h
-+++ b/drivers/perf/hisilicon/hisi_uncore_pmu.h
-@@ -74,6 +74,7 @@ struct hisi_pmu {
- 	int counter_bits;
- 	/* check event code range */
- 	int check_event;
-+	u32 identifier;
- };
- 
- int hisi_uncore_pmu_counter_valid(struct hisi_pmu *hisi_pmu, int idx);
-@@ -96,4 +97,10 @@ ssize_t hisi_cpumask_sysfs_show(struct device *dev,
- 				struct device_attribute *attr, char *buf);
- int hisi_uncore_pmu_online_cpu(unsigned int cpu, struct hlist_node *node);
- int hisi_uncore_pmu_offline_cpu(unsigned int cpu, struct hlist_node *node);
-+
-+ssize_t hisi_uncore_pmu_identifier_attr_show(struct device *dev,
-+					     struct device_attribute *attr,
-+					     char *page);
-+
-+
- #endif /* __HISI_UNCORE_PMU_H__ */
--- 
-2.26.2
+
+
+
+Warmest Regards,
+
+Angela Wilpert
+
+Sales Executives Dept
+
+HDT Sales & Merkating
+vasileos konstantinou 89 Paphos, Paphos, Cyprus
+Phone: +357 26 040001
 
 
 _______________________________________________
