@@ -2,93 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3C981FD2CE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 18:51:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E319F1FD2DB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 18:52:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LT+06NqFM+G/cOEPa/3kK01fM/ePwVoa9tFn5axnbSk=; b=u8xqrLVb7w3e7+
-	JkXXpJn2B3H2xxskeaN3A2DsBDFZg0Zk7tSg1CNpYx0+XWKoKV9t72M6px0gOxllvwiQ+WTepMHEU
-	RpiJYkSxVACZrMsKvw8anXI+AnyHbZ+RupPdKja/iY6Kr+6A5O9qrUdqhaK1fAhMskJ3tCXf07NE/
-	sftV/kR6tmczvv5i6xYP/5ZBr8JRtNxFWM9uKGJxW28ZIsJCMm0gyRJinMxD76pn2+hEZwk6bKXOi
-	8tDsIA6IyAdY9JC1OU0g2v/aGP2h4suAI3bjf7J1mFSfEERd5ZbNZdcngmEDEpHGbDgpWPu8SlJKd
-	DfoIgVX3EomMWfpmbGVQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JPnLJ+x7VMZ9rGz7m4OHs9YAoTgFvBmESWcmj7/Mgig=; b=KaCxGjlhoeTLRv
+	1YATbYPD2MglkKJ2654Qp+YaiEruIi2vf5PAclI3zOBknwMDL4p20NzE0RR03xjTGSaKYOiknEGPl
+	PoyoKFv9xF286MoqZe2ZCyc/mB2/KuAbfQaikfWJDX3V97ZYQ71/vW3Wvpln/ljhYloFRGTdWdS73
+	TdTmoFmAQ2bBr0c8tk4H6nx76Lz+WXpUhWGmBAOABXwlwLL5sTWUAZcTJWQZTsJ4lOnyK6uUnnX5T
+	oEBfUIhNF7npwFZ3dmdfv72R6EKMI4l+C62zVhgYKCepgTVbdsYfAu/jrm22gk76RDqfR/7nG/efH
+	fbKKq1Za7zz1wexWOuZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlbHg-00029E-PB; Wed, 17 Jun 2020 16:51:32 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlbEk-0005wM-DK; Wed, 17 Jun 2020 16:48:31 +0000
-Received: by mail-ed1-x543.google.com with SMTP id o26so2554802edq.0;
- Wed, 17 Jun 2020 09:48:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=lJKpt55I3R2NHkjVsgV/EWx4EQxkw9Y42GuSmQWOQXU=;
- b=SuWRHNm7e/2dXvHjlXZn0QaZypCtAgtrifRw8rwQWgE54p1v4gdCeAV3HzELa0cOUT
- NqjqJwR3GcIFqOIr2vEictKG/pCzUYfAVnataPnFzQnh0ANBCrrVnIgslT7RTyKQTOnj
- vrKhJMHVZ7e5JPjeKsIYjLzTAX+uwIIHZEWzddzbwc73CnPVdeJl1N1jviZrlvBK35wr
- 0zJiSrVrU+oCgIc2G/yRZlev6qcHLFYXZW+GjCscUYokGMAa/FPB7nmlIcEPARgObtKx
- SEvrzBB78PyZnVxKU7Jfa+USiKOlpvcb6xBrrlACe2DakKHp2yzaOIbQRmITI+tD+4M+
- FIrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=lJKpt55I3R2NHkjVsgV/EWx4EQxkw9Y42GuSmQWOQXU=;
- b=Z8m068W/8qvVSf8r1j1DZNR3jMtQYETaT5IBd8gJD8OuJRUL9T6xzO2CP88WOC8txq
- 26PRtc3P4hJdqYkD4BzpQBgkPgDDfdZ9sN+M2k2xEhPcSQan+qPfFzi5MXe3nEJaZejn
- YBgsKACREwqOgvmDInGLdR5OXmegXTYTgKQl+cT6qaPGwLQHTM+I3Ye4GVxMZGRkAPmJ
- u2ANWWvgIjR61csT1ezmtd06SBZxK5Huu6J426OKhzn8L0IgF0Mt38pmaksIBQvjoyl8
- kwtbyIjo0XGarnBtGNuzeYx6kNxHdXtFgyXgx/mF+8fiLvuRkrK6uZ+YTyk9maNt/lCU
- cflQ==
-X-Gm-Message-State: AOAM531gmcPpnkyj0zFXHhSofxbJOfuUry8Svi1817aZHmnSwy64RFop
- zNRPBG65TKk31GwdXbvrg2s=
-X-Google-Smtp-Source: ABdhPJzeRmr0uDJj/7U2GJ2r5I6AA3DS92T7LUZ/ga5mx5c0Ixaylw/uHtMWYjNSa4bQd2zTQrkEfA==
-X-Received: by 2002:a05:6402:307c:: with SMTP id
- bs28mr77851edb.3.1592412508568; 
- Wed, 17 Jun 2020 09:48:28 -0700 (PDT)
-Received: from localhost.localdomain ([188.24.129.96])
- by smtp.gmail.com with ESMTPSA id v3sm127124edj.89.2020.06.17.09.48.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 09:48:27 -0700 (PDT)
-From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH 10/11] arm: dts: owl-s500: Add Reset Controller support
-Date: Wed, 17 Jun 2020 19:48:10 +0300
-Message-Id: <0722104f0a281ef8b628de384b6e6e52b75ae6b9.1592407030.git.cristian.ciocaltea@gmail.com>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <cover.1592407030.git.cristian.ciocaltea@gmail.com>
-References: <cover.1592407030.git.cristian.ciocaltea@gmail.com>
+	id 1jlbIq-0002aX-A8; Wed, 17 Jun 2020 16:52:44 +0000
+Received: from [2601:1c0:6280:3f0::19c2]
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlbIe-0002Zw-LA; Wed, 17 Jun 2020 16:52:32 +0000
+Subject: Re: [PATCH v2] Input: document inhibiting
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
+ patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
+ platform-driver-x86@vger.kernel.org
+References: <f9007f37-c526-5fa4-3188-a554d2434177@redhat.com>
+ <20200617101822.8558-1-andrzej.p@collabora.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <8ebf502e-855d-6a6b-9c7b-d96d5e519d82@infradead.org>
+Date: Wed, 17 Jun 2020 09:52:30 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.9.0
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_094830_612658_3E458F61 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [cristian.ciocaltea[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+In-Reply-To: <20200617101822.8558-1-andrzej.p@collabora.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +51,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
+ Laxman Dewangan <ldewangan@nvidia.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Len Brown <lenb@kernel.org>, Michael Hennerich <michael.hennerich@analog.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
+ Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
+ =?UTF-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
+ Barry Song <baohua@kernel.org>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add reset controller property and bindings header for the
-Actions Semi S500 SoC DTS.
+On 6/17/20 3:18 AM, Andrzej Pietrasiewicz wrote:
+> Document inhibiting input devices and its relation to being
+> a wakeup source.
+> 
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> ---
+> v1..v2:
+> 
+> - Addressed editorial comments from Randy
+> - Added a paragraph by Hans
+> 
+>  Documentation/input/input-programming.rst | 40 +++++++++++++++++++++++
+>  1 file changed, 40 insertions(+)
+> 
+> diff --git a/Documentation/input/input-programming.rst b/Documentation/input/input-programming.rst
+> index 45a4c6e05e39..7432315cc829 100644
+> --- a/Documentation/input/input-programming.rst
+> +++ b/Documentation/input/input-programming.rst
+> @@ -164,6 +164,46 @@ disconnects. Calls to both callbacks are serialized.
+>  The open() callback should return a 0 in case of success or any nonzero value
+>  in case of failure. The close() callback (which is void) must always succeed.
+>  
+> +Inhibiting input devices
+> +~~~~~~~~~~~~~~~~~~~~~~~~
+> +
+> +Inhibiting a device means ignoring input events from it. As such it is about maintaining
+> +relationships with input handlers - either already existing relationships, or relationships
+> +to be established while the device is in inhibited state.
+> +
+> +If a device is inhibited, no input handler will receive events from it.
+> +
+> +The fact that nobody wants events from the device is exploited further, by calling device's
+> +close() (if there are users) and open() (if there are users) on inhibit and uninhibit
+> +operations, respectively. Indeed, the meaning of close() is to stop providing events
+> +to the input core and that of open() is to start providing events to the input core.
+> +
+> +Calling the device's close() method on inhibit (if there are users) allows the driver
+> +to save power. Either by directly powering down the device or by releasing the
+> +runtime-pm reference it got in open() when the driver is using runtime-pm.
+> +
+> +Inhibiting and uninhibiting are orthogonal to opening and closing the device by input
+> +handlers. Userspace might want to inhibit a device in anticipation before any handler is
+> +positively matched against it.
+> +
+> +Inhibiting and uninhibiting are orthogonal to device's being a wakeup source, too. Being a
+> +wakeup source plays a role when the system is sleeping, not when the system is operating.
+> +How drivers should program their interaction between inhibiting, sleeping and being a wakeup
+> +source is driver-specific.
+> +
+> +Taking the analogy with the network devices - bringing a network interface down doesn't mean
+> +that it should be impossible be wake the system up on LAN through this interface. So, there
+> +may be input drivers which should be considered wakeup sources even when inhibited. Actually,
+> +in many I2C input devices their interrupt is declared a wakeup interrupt and its handling
+> +happens in driver's core, which is not aware of input-specific inhibit (nor should it be).
+> +Composite devices containing several interfaces can be inhibited on a per-interface basis and
+> +e.g. inhibiting one interface shouldn't affect the device's capability of being a wakeup source.
+> +
+> +If a device is to be considered a wakeup source while inhibited, special care must be taken when
+> +programming its suspend(), as it might need to call device's open(). Depending on what close()
+> +means for the device in question, not opening() it before going to sleep might make it
+> +impossible to provide any wakeup events. The device is going to sleep anyway.
+> +
+>  Basic event types
+>  ~~~~~~~~~~~~~~~~~
+>  
+> 
 
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
----
- arch/arm/boot/dts/owl-s500.dtsi | 2 ++
- 1 file changed, 2 insertions(+)
+Reviewed-by: Randy Dunlap <rdunlap@infradead.org>
 
-diff --git a/arch/arm/boot/dts/owl-s500.dtsi b/arch/arm/boot/dts/owl-s500.dtsi
-index 0f4fc5487dad..0b7ba2926f0e 100644
---- a/arch/arm/boot/dts/owl-s500.dtsi
-+++ b/arch/arm/boot/dts/owl-s500.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/clock/actions,s500-cmu.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/power/owl-s500-powergate.h>
-+#include <dt-bindings/reset/actions,s500-reset.h>
- 
- / {
- 	compatible = "actions,s500";
-@@ -188,6 +189,7 @@ cmu: clock-controller@b0160000 {
- 			reg = <0xb0160000 0x8000>;
- 			clocks = <&hosc>, <&losc>;
- 			#clock-cells = <1>;
-+			#reset-cells = <1>;
- 		};
- 
- 		timer: timer@b0168000 {
+Thanks.
+
 -- 
-2.27.0
-
+~Randy
 
 _______________________________________________
 linux-arm-kernel mailing list
