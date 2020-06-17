@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8742E1FCAA4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:19:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 269AD1FCAA3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=TUVjfSm8GkS0CjQJIg7e2KmT16zTW43ECA5e6PQKv2g=; b=hFEVPqq3TjDveFzU2F36z6zglO
-	Bjh09cVqxPc1ymwLXgE3gAwMszVzBrolVcHQE9Io8gawqhwbCzdxEjlFmHb4uB+DoRC6u2L+mttj6
-	Xr59wa5SJI0pZXF0zFj1P1p0uMpWp1uTlrzDD87qCHjuB2N0DVoVYtIFi5AxxtBUjJc/7HSdyc5BD
-	1tjTtt+s1Crr5ZOrxX2HaXWx5ZjkCfcNG0HHrXFHz+0zR4ua0i/F/3r5B8AmWe8UZ5+DaoMWWtheq
-	yU/5brtmKlCuu0j3KBxLdztXyqQ3PFg7w2ypUts1pZlYYCoSrm1V5fPo9S3ghG7DRG5C7rQo6Ia0l
-	fBIr5QpA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j/kcWyz7U2kdflfHt6KmwDyzAfwyBiJ0nTaBBbWOLMI=; b=NAW31vagooHRuY
+	uEnV5gozsBlc+BGNav6i5wLhY73oZIvpB+OKp52nETLYsOUBSexJJhgcjKFauUpBUFMRdlbzSGtch
+	zjVvQwtUF0aMEtGLXUFhyOL7MISqvm5UlLEtf/aih1duXrL0YY/jfOHi+NW4TrimIURIkggvCfb2D
+	0Vph8vZYJf4IUB5OgVHiQEk6qWzKs0eveZdLuxPXHJU24DPvQbTrrrhaspndSsU7kx1U9oWofgFU0
+	PS8soAMAbSawiZs08IV/V2NimVoZnd1sHMWVvRHoE8haMjr6s145PZx8OLgF65dn1JOUMxhuD8sve
+	CTNO4udON2uyz7lBKjIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlV9m-0006Fk-Gf; Wed, 17 Jun 2020 10:18:58 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jlV9T-000672-VE; Wed, 17 Jun 2020 10:18:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlV9O-000670-9L
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:18:35 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 95B322A395D
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
- patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
- platform-driver-x86@vger.kernel.org
-Subject: [PATCH v2] Input: document inhibiting
-Date: Wed, 17 Jun 2020 12:18:22 +0200
-Message-Id: <20200617101822.8558-1-andrzej.p@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <f9007f37-c526-5fa4-3188-a554d2434177@redhat.com>
-References: <f9007f37-c526-5fa4-3188-a554d2434177@redhat.com>
+ id 1jlV9K-00066L-Sy
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:18:32 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 66A1C208B8;
+ Wed, 17 Jun 2020 10:18:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592389110;
+ bh=t3O3UqUPbUfT6U+LwvmDhf8VfLM3fmdWGiN7u6Z4cqU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=cTOqgPvE3c8CfIz5eGN+H1QWmhHhx4qZ+OBY53vIa2enZtatW6BqM01MylBKK03hc
+ xUemYqn0zAIhcnztlOTQh46+2RDBriTxkSiLc839HNanIu3LJCYD7uwQnbYqsaW7Rk
+ waEGqqsU7FVhnt5on9cwwAaNoUkeM0EySg/70Rek=
+Date: Wed, 17 Jun 2020 11:18:25 +0100
+From: Will Deacon <will@kernel.org>
+To: Barry Song <song.bao.hua@hisilicon.com>
+Subject: Re: [PATCH v2] arm64: mm: reserve hugetlb CMA after numa_init
+Message-ID: <20200617101824.GB3368@willie-the-truck>
+References: <20200616221924.74780-1-song.bao.hua@hisilicon.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200616221924.74780-1-song.bao.hua@hisilicon.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_031834_496602_52BDF04A 
-X-CRM114-Status: GOOD (  12.44  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200617_031830_956845_4C665F3C 
+X-CRM114-Status: GOOD (  15.69  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,98 +76,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
- Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
- Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
- Lars-Peter Clausen <lars@metafoo.de>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Len Brown <lenb@kernel.org>, Michael Hennerich <michael.hennerich@analog.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
- =?UTF-8?q?Micha=C5=82=20Miros=C5=82aw?= <mirq-linux@rere.qmqm.pl>,
- Barry Song <baohua@kernel.org>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
-MIME-Version: 1.0
+Cc: steve.capper@arm.com, catalin.marinas@arm.com, linuxarm@huawei.com,
+ linux-kernel@vger.kernel.org, rppt@linux.ibm.com, nsaenzjulienne@suse.de,
+ Matthias Brugger <matthias.bgg@gmail.com>, akpm@linux-foundation.org,
+ Roman Gushchin <guro@fb.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document inhibiting input devices and its relation to being
-a wakeup source.
+On Wed, Jun 17, 2020 at 10:19:24AM +1200, Barry Song wrote:
+> hugetlb_cma_reserve() is called at the wrong place. numa_init has not been
+> done yet. so all reserved memory will be located at node0.
+> 
+> Fixes: cf11e85fc08c ("mm: hugetlb: optionally allocate gigantic hugepages using cma")
 
-Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
----
-v1..v2:
+Damn, wasn't CC'd on that :/
 
-- Addressed editorial comments from Randy
-- Added a paragraph by Hans
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Acked-by: Roman Gushchin <guro@fb.com>
+> Signed-off-by: Barry Song <song.bao.hua@hisilicon.com>
+> ---
+>  -v2: add Fixes tag according to Matthias Brugger's comment
+> 
+>  arch/arm64/mm/init.c | 10 +++++-----
+>  1 file changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> index e631e6425165..41914b483d54 100644
+> --- a/arch/arm64/mm/init.c
+> +++ b/arch/arm64/mm/init.c
+> @@ -404,11 +404,6 @@ void __init arm64_memblock_init(void)
+>  	high_memory = __va(memblock_end_of_DRAM() - 1) + 1;
+>  
+>  	dma_contiguous_reserve(arm64_dma32_phys_limit);
+> -
+> -#ifdef CONFIG_ARM64_4K_PAGES
+> -	hugetlb_cma_reserve(PUD_SHIFT - PAGE_SHIFT);
+> -#endif
 
- Documentation/input/input-programming.rst | 40 +++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+Why is this dependent on CONFIG_ARM64_4K_PAGES? We unconditionally
+select ARCH_HAS_GIGANTIC_PAGE so this seems unnecessary.
 
-diff --git a/Documentation/input/input-programming.rst b/Documentation/input/input-programming.rst
-index 45a4c6e05e39..7432315cc829 100644
---- a/Documentation/input/input-programming.rst
-+++ b/Documentation/input/input-programming.rst
-@@ -164,6 +164,46 @@ disconnects. Calls to both callbacks are serialized.
- The open() callback should return a 0 in case of success or any nonzero value
- in case of failure. The close() callback (which is void) must always succeed.
- 
-+Inhibiting input devices
-+~~~~~~~~~~~~~~~~~~~~~~~~
-+
-+Inhibiting a device means ignoring input events from it. As such it is about maintaining
-+relationships with input handlers - either already existing relationships, or relationships
-+to be established while the device is in inhibited state.
-+
-+If a device is inhibited, no input handler will receive events from it.
-+
-+The fact that nobody wants events from the device is exploited further, by calling device's
-+close() (if there are users) and open() (if there are users) on inhibit and uninhibit
-+operations, respectively. Indeed, the meaning of close() is to stop providing events
-+to the input core and that of open() is to start providing events to the input core.
-+
-+Calling the device's close() method on inhibit (if there are users) allows the driver
-+to save power. Either by directly powering down the device or by releasing the
-+runtime-pm reference it got in open() when the driver is using runtime-pm.
-+
-+Inhibiting and uninhibiting are orthogonal to opening and closing the device by input
-+handlers. Userspace might want to inhibit a device in anticipation before any handler is
-+positively matched against it.
-+
-+Inhibiting and uninhibiting are orthogonal to device's being a wakeup source, too. Being a
-+wakeup source plays a role when the system is sleeping, not when the system is operating.
-+How drivers should program their interaction between inhibiting, sleeping and being a wakeup
-+source is driver-specific.
-+
-+Taking the analogy with the network devices - bringing a network interface down doesn't mean
-+that it should be impossible be wake the system up on LAN through this interface. So, there
-+may be input drivers which should be considered wakeup sources even when inhibited. Actually,
-+in many I2C input devices their interrupt is declared a wakeup interrupt and its handling
-+happens in driver's core, which is not aware of input-specific inhibit (nor should it be).
-+Composite devices containing several interfaces can be inhibited on a per-interface basis and
-+e.g. inhibiting one interface shouldn't affect the device's capability of being a wakeup source.
-+
-+If a device is to be considered a wakeup source while inhibited, special care must be taken when
-+programming its suspend(), as it might need to call device's open(). Depending on what close()
-+means for the device in question, not opening() it before going to sleep might make it
-+impossible to provide any wakeup events. The device is going to sleep anyway.
-+
- Basic event types
- ~~~~~~~~~~~~~~~~~
- 
--- 
-2.17.1
+> -
+>  }
+>  
+>  void __init bootmem_init(void)
+> @@ -424,6 +419,11 @@ void __init bootmem_init(void)
+>  	min_low_pfn = min;
+>  
+>  	arm64_numa_init();
+> +
+> +#ifdef CONFIG_ARM64_4K_PAGES
+> +	hugetlb_cma_reserve(PUD_SHIFT - PAGE_SHIFT);
+> +#endif
 
+A comment here wouldn't hurt, as it does look a lot more natural next
+to dma_contiguous_reserve().
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
