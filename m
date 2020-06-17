@@ -2,72 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF7DE1FCF92
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 16:31:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2562A1FCFC2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 16:38:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ssoRNQMv9TEgq2vyjA88j5LJyjvVwsyQ0+TQZf+s+Yk=; b=B3JtvropK9GBKM
-	VlA+MGO8HZ8Mu/DgA2bttW6tLCPLyZ4jkLzPnngCEO1UcfC0aiq3V1y+xGlBpy2eJggA3k1C669x1
-	jcvnM4b5Ivusxek6Q+TP9YG+pQiSTT7DxkwILvoqsCzNH88D7S3gHi3k8vZu9OxV11y05MVmpFxZx
-	rYpKpb9Hn3iy4olWUcVmAIVqLaTJUJUJYNEaGCBJYvjHxJkiU14zgC8/wqMzjb+tHWLgZ3IzNF0y2
-	2uSm+wxaulbKY45cFawQKtG1pqk47ozVdMxxlbpleYqXnNpFGzW5UUSfOkZCacMpeqYCat+/yco+A
-	M2z0pcNn1Vs1/ZnYGKXw==;
+	List-Owner; bh=3Gzaedd+Qfnf6hbNtS91dvbC8O212CRPNPO4k59+bTQ=; b=qa4mC92tr9o1Ce
+	IqfhYdMl2uVSrUgJQnLFW6UulBsNMNIYXM2dP7k5yOK3ZgdgPCL6Qe0uW2g9Ee0cKr8+LVVOuHZqK
+	766ZEqfVHvLots8c0F6GK2THmqC1TBTuVfPodKBigAnwCTkohZ9z19bk68yBBg8Gqr0rjtjuxOjO7
+	VysIIaew1zS17w2KeHlMySLFZ033CP5Z1LOV8Kt+3YXXYoYZJfgK/S5m4JnnSaQibfX6zza9Cbuc2
+	YngzcSqmusCbbfdHY1qRr3mYJG/yyBl5KUJ4Gm8PTQ8SEorvI4nqS2fvCGXprlDRHHojjClsEtg0t
+	h4NWOBGagpnOk1GemgFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlZ5Z-0003gD-Su; Wed, 17 Jun 2020 14:30:54 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlZ5K-0003fZ-Oi
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 14:30:40 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-144-tRDTNmFJP0-XS1WZyvnh3A-1; Wed, 17 Jun 2020 15:30:32 +0100
-X-MC-Unique: tRDTNmFJP0-XS1WZyvnh3A-1
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Wed, 17 Jun 2020 15:30:31 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Wed, 17 Jun 2020 15:30:31 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Wolfram Sang' <wsa@kernel.org>, "wu000273@umn.edu" <wu000273@umn.edu>
-Subject: RE: [PATCH] i2c: xiic: Fix reference count leaks.
-Thread-Topic: [PATCH] i2c: xiic: Fix reference count leaks.
-Thread-Index: AQHWQiuTE76LjToEc02VHcgO+GXIWKjc4oTg
-Date: Wed, 17 Jun 2020 14:30:31 +0000
-Message-ID: <8aa8ee3d005f4a7e9a4dfa6654cc2732@AcuMS.aculab.com>
-References: <20200613215923.2611-1-wu000273@umn.edu>
- <20200614090950.GB2878@kunai>
-In-Reply-To: <20200614090950.GB2878@kunai>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+	id 1jlZCs-0007IN-Sd; Wed, 17 Jun 2020 14:38:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlZCl-0007I1-8p
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 14:38:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4EA4531B;
+ Wed, 17 Jun 2020 07:38:18 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9D2CA3F73C;
+ Wed, 17 Jun 2020 07:38:16 -0700 (PDT)
+Date: Wed, 17 Jun 2020 15:38:10 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [RFC PATCH 2/2] arm64: kvm: Introduce MTE VCPU feature
+Message-ID: <20200617143809.GF5388@gaia>
+References: <20200617123844.29960-1-steven.price@arm.com>
+ <20200617123844.29960-3-steven.price@arm.com>
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: aculab.com
+Content-Disposition: inline
+In-Reply-To: <20200617123844.29960-3-steven.price@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_073039_078372_207B5A07 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200617_073819_356004_54B1AF84 
+X-CRM114-Status: GOOD (  13.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.82.80.151 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [207.82.80.151 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,48 +63,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, "kjlu@umn.edu" <kjlu@umn.edu>,
- Michal Simek <michal.simek@xilinx.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- Shubhrajyoti Datta <shubhraj@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ linux-kernel@vger.kernel.org, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Wolfram Sang
-> Sent: 14 June 2020 10:10
-> 
-> On Sat, Jun 13, 2020 at 04:59:23PM -0500, wu000273@umn.edu wrote:
-> > From: Qiushi Wu <wu000273@umn.edu>
-> >
-> > pm_runtime_get_sync() increments the runtime PM usage counter even
-> > when it returns an error code. Thus call pm_runtime_put_noidle()
-> > if pm_runtime_get_sync() fails.
-> 
-> Can you point me to a discussion where it was decided that this is a
-> proper fix? I'd think we rather should fix pm_runtime_get_sync() but
-> maybe there are technical reasons against it.
+On Wed, Jun 17, 2020 at 01:38:44PM +0100, Steven Price wrote:
+> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+> index e3b9ee268823..040a7fffaa93 100644
+> --- a/virt/kvm/arm/mmu.c
+> +++ b/virt/kvm/arm/mmu.c
+> @@ -1783,6 +1783,17 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+>  			vma_pagesize = PMD_SIZE;
+>  	}
+>  
+> +	if (system_supports_mte() && kvm->arch.vcpu_has_mte) {
+> +		/*
+> +		 * VM will be able to see the page's tags, so we must ensure
+> +		 * they have been initialised.
+> +		 */
+> +		struct page *page = pfn_to_page(pfn);
+> +
+> +		if (!test_and_set_bit(PG_mte_tagged, &page->flags))
+> +			mte_clear_page_tags(page_address(page), page_size(page));
+> +	}
 
-Or, if there is one place that actually needs the reference split the
-code so that unusual case keeps the reference.
+Are all the guest pages always mapped via a Stage 2 fault? It may be
+better if we did that via kvm_set_spte_hva().
 
-In one of the patches I also spotted:
-	ret = pm_runtime_get_sync();
-	if (ret < 0 && ret != _EAGAIN)
-		...
-
-(I think it was EAGAIN.)
-I can't help feeling that is just wrong somewhere.
-
-	David
-
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
-
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
