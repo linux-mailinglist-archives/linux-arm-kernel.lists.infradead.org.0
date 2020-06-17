@@ -2,55 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50AFF1FCCB1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:43:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50BC51FCD02
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:05:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KPJEeM8Au07tlrRPHoCF46aFRdRN3sd8PWw8zREK8yE=; b=rTF9yxjKCQBTe6
-	hAOKpc+jtQKitWBhJlzRSkzAzQm3/e7mTiFoF4TACEh0a274uIDv7/0W79MSEDa0cGI8/NVb4THPS
-	yt0Gx8gOv5zDxJpeG8+EevgqibxQqAhk2IK9Eenir2jxClShWCeRm/M/AMw2/DF6VWC+qTSRRcShX
-	b8sSKIXOnfgMPefRFWptGjdwSq+CsfE3XC/qs8g2JXN3RIIu+cFlZRAIrSgIHvdRmKe+Qwy22lMLv
-	plfHakiidJPD04KVpVdxk6hsgBe6HzazvnQiEst2htV98VKwpZPo1321U5xwvVaB42W7PF1EuKiE2
-	my/6D2ru//uhTcIISASA==;
+	List-Owner; bh=A7iUNb/BlYVxUnnLhTmVEYfaijhHGxGwv2oFpiE+o4A=; b=VvzANjf74anUUU
+	bt6RctX1x3hXIdEdMo6twXazuJioTNa5oieX6PUKzmj+96vrHkYauMETr9efZmmC+RvtWmR07j01L
+	8oFVwbLJ2u7ROdzQlz4+IuTA2mGMmqvBLrvN6kkYU5TNalu8TuVT+ukrNGddmdwPqv0W16/0CB9cL
+	ZJXxPSiiwg95U61E3m+R3eK58AWF7Xh6sMRwh1pNj/augi9OsrPmAB5WIAi6Mq0sokFbJZt+LNVEq
+	9lzQcgFx7nPVL1SFxFTBtZy+4CxU88bkComvLoyE6DH64vyAW70VGscTSVvnPCHZa9yHi+dvQH713
+	ui0gNC0949Hc2dXDIvNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlWTB-0007tO-Qs; Wed, 17 Jun 2020 11:43:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlWOq-0001e8-Mx
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:38:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 91C271045;
- Wed, 17 Jun 2020 04:38:36 -0700 (PDT)
-Received: from monolith.arm.com (unknown [10.37.8.7])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D64B03F71F;
- Wed, 17 Jun 2020 04:38:34 -0700 (PDT)
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v5 7/7] arm_pmu: arm64: Use NMIs for PMU
-Date: Wed, 17 Jun 2020 12:38:51 +0100
-Message-Id: <20200617113851.607706-8-alexandru.elisei@arm.com>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20200617113851.607706-1-alexandru.elisei@arm.com>
-References: <20200617113851.607706-1-alexandru.elisei@arm.com>
+	id 1jlWoy-00055r-V9; Wed, 17 Jun 2020 12:05:36 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlWop-00054E-He; Wed, 17 Jun 2020 12:05:29 +0000
+X-UUID: 8263704063f44f299ca29f8cfe18a2c8-20200617
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=ePqp1XCduyF+0DK0KjaNw0tZo0lcnwLg1Ln0fgHyKJo=; 
+ b=QlBh1x10nTR1U+ZrroXjlD6WXEINjAwuZWnEXud+3u/irbnVxzIZpX3JYlnUtEUU2+oda91MII8TTvhJSCO5+CfqipiHGw5VBd+12YrKMBRaAhquggeLMRvrdMQadgWnEhEv86R86pJi62ltalz/HyBCGOshJQ3Zor9zVxB95PM=;
+X-UUID: 8263704063f44f299ca29f8cfe18a2c8-20200617
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <andrew-sh.cheng@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 188358142; Wed, 17 Jun 2020 04:05:14 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 05:05:19 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 20:05:18 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 17 Jun 2020 20:05:17 +0800
+Message-ID: <1592395520.30389.2.camel@mtksdaap41>
+Subject: Re: [PATCH 08/12] dt-bindings: devfreq: add compatible for mt8183
+ cci devfreq
+From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>
+Date: Wed, 17 Jun 2020 20:05:20 +0800
+In-Reply-To: <4087bcdb-a247-3d2d-96b2-16f965e8ba5c@samsung.com>
+References: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
+ <CGME20200520034339epcas1p1524dea2d7089cb3492384bbe917dcffe@epcas1p1.samsung.com>
+ <20200520034307.20435-9-andrew-sh.cheng@mediatek.com>
+ <4087bcdb-a247-3d2d-96b2-16f965e8ba5c@samsung.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_043836_859755_443ACBAD 
-X-CRM114-Status: GOOD (  11.73  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_050527_593493_94675F33 
+X-CRM114-Status: GOOD (  19.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,124 +86,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Julien Thierry <julien.thierry@arm.com>,
- maz@kernel.org, Will Deacon <will.deacon@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Mark Brown <broonie@kernel.org>, "Rafael J
+ . Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Julien Thierry <julien.thierry@arm.com>
+On Thu, 2020-05-28 at 16:42 +0900, Chanwoo Choi wrote:
+> Hi,
+> 
+> On 5/20/20 12:43 PM, Andrew-sh.Cheng wrote:
+> > This adds dt-binding documentation of cci devfreq
+> > for Mediatek MT8183 SoC platform.
+> > 
+> > Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
+> > ---
+> >  .../devicetree/bindings/devfreq/mt8183-cci.yaml    | 51 ++++++++++++++++++++++
+> >  1 file changed, 51 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/devfreq/mt8183-cci.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/devfreq/mt8183-cci.yaml b/Documentation/devicetree/bindings/devfreq/mt8183-cci.yaml
+> > new file mode 100644
+> > index 000000000000..a7341fd94097
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/devfreq/mt8183-cci.yaml
+> > @@ -0,0 +1,51 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: https://protect2.fireeye.com/url?k=33f1f15d-6e23ea05-33f07a12-0cc47a31c8b4-91b3f8aeecce95dc&q=1&u=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fdevfreq%2Fmt8183-cci.yaml%23
+> > +$schema: https://protect2.fireeye.com/url?k=fc7d9089-a1af8bd1-fc7c1bc6-0cc47a31c8b4-b46f5afc59faf86d&q=1&u=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23
+> > +
+> > +title: CCI_DEVFREQ driver for MT8183.
+> > +
+> > +maintainers:
+> > +  - Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
+> > +
+> > +description: |
+> > +  This module is used to create CCI DEVFREQ.
+> > +  The performance will depend on both CCI frequency and CPU frequency.
+> > +  For MT8183, CCI co-buck with Little core.
+> > +  Contain CCI opp table for voltage and frequency scaling.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: "mediatek,mt8183-cci"
+> > +
+> > +  clocks:
+> > +    maxItems: 1
+> > +
+> > +  clock-names:
+> > +    const: "cci"
+> > +
+> > +  operating-points-v2: true
+> > +  opp-table: true
+> > +
+> > +  proc-supply:
+> > +    description:
+> > +      Phandle of the regulator that provides the supply voltage.
+> > +
+> > +required:
+> > +  - compatible
+> > +  - clocks
+> > +  - clock-names
+> > +  - proc-supply
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/mt8183-clk.h>
+> > +    cci: cci {
+> > +      compatible = "mediatek,mt8183-cci";
+> > +      clocks = <&apmixedsys CLK_APMIXED_CCIPLL>;
+> > +      clock-names = "cci";
+> > +      operating-points-v2 = <&cci_opp>;
+> > +      proc-supply = <&mt6358_vproc12_reg>;
+> > +    };
+> > +
+> > 
+> 
+> I recommend that add the more detailed example
+> with OPP table with CPU node.
+> 
 
-Add required PMU interrupt operations for NMIs. Request interrupt lines as
-NMIs when possible, otherwise fall back to normal interrupts.
+Hi Chanwoo Choi,
 
-NMIs are only supported on the arm64 architecture with a GICv3 irqchip.
+Actually, for previous versions of my patch set, I didn't use
+governor_passive as cci_devfreq governor.
+So I think it is okay that not provide CPU OPP node for this cci device
+node.
 
-Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Julien Thierry <julien.thierry@arm.com>
-[Added that NMIs only work on arm64 + GICv3]
-Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
----
- drivers/perf/arm_pmu.c | 62 ++++++++++++++++++++++++++++++++++++++----
- 1 file changed, 56 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
-index 17e5952d21e4..dd9d7f61ee29 100644
---- a/drivers/perf/arm_pmu.c
-+++ b/drivers/perf/arm_pmu.c
-@@ -45,6 +45,17 @@ static const struct pmu_irq_ops pmuirq_ops = {
- 	.free_pmuirq = armpmu_free_pmuirq
- };
- 
-+static void armpmu_free_pmunmi(unsigned int irq, int cpu, void __percpu *devid)
-+{
-+	free_nmi(irq, per_cpu_ptr(devid, cpu));
-+}
-+
-+static const struct pmu_irq_ops pmunmi_ops = {
-+	.enable_pmuirq = enable_nmi,
-+	.disable_pmuirq = disable_nmi_nosync,
-+	.free_pmuirq = armpmu_free_pmunmi
-+};
-+
- static void armpmu_enable_percpu_pmuirq(unsigned int irq)
- {
- 	enable_percpu_irq(irq, IRQ_TYPE_NONE);
-@@ -63,6 +74,31 @@ static const struct pmu_irq_ops percpu_pmuirq_ops = {
- 	.free_pmuirq = armpmu_free_percpu_pmuirq
- };
- 
-+static void armpmu_enable_percpu_pmunmi(unsigned int irq)
-+{
-+	if (!prepare_percpu_nmi(irq))
-+		enable_percpu_nmi(irq, IRQ_TYPE_NONE);
-+}
-+
-+static void armpmu_disable_percpu_pmunmi(unsigned int irq)
-+{
-+	disable_percpu_nmi(irq);
-+	teardown_percpu_nmi(irq);
-+}
-+
-+static void armpmu_free_percpu_pmunmi(unsigned int irq, int cpu,
-+				      void __percpu *devid)
-+{
-+	if (armpmu_count_irq_users(irq) == 1)
-+		free_percpu_nmi(irq, devid);
-+}
-+
-+static const struct pmu_irq_ops percpu_pmunmi_ops = {
-+	.enable_pmuirq = armpmu_enable_percpu_pmunmi,
-+	.disable_pmuirq = armpmu_disable_percpu_pmunmi,
-+	.free_pmuirq = armpmu_free_percpu_pmunmi
-+};
-+
- static DEFINE_PER_CPU(struct arm_pmu *, cpu_armpmu);
- static DEFINE_PER_CPU(int, cpu_irq);
- static DEFINE_PER_CPU(const struct pmu_irq_ops *, cpu_irq_ops);
-@@ -633,15 +669,29 @@ int armpmu_request_irq(int irq, int cpu)
- 			    IRQF_NO_THREAD;
- 
- 		irq_set_status_flags(irq, IRQ_NOAUTOEN);
--		err = request_irq(irq, handler, irq_flags, "arm-pmu",
-+
-+		err = request_nmi(irq, handler, irq_flags, "arm-pmu",
- 				  per_cpu_ptr(&cpu_armpmu, cpu));
- 
--		irq_ops = &pmuirq_ops;
-+		/* If cannot get an NMI, get a normal interrupt */
-+		if (err) {
-+			err = request_irq(irq, handler, irq_flags, "arm-pmu",
-+					  per_cpu_ptr(&cpu_armpmu, cpu));
-+			irq_ops = &pmuirq_ops;
-+		} else {
-+			irq_ops = &pmunmi_ops;
-+		}
- 	} else if (armpmu_count_irq_users(irq) == 0) {
--		err = request_percpu_irq(irq, handler, "arm-pmu",
--					 &cpu_armpmu);
--
--		irq_ops = &percpu_pmuirq_ops;
-+		err = request_percpu_nmi(irq, handler, "arm-pmu", &cpu_armpmu);
-+
-+		/* If cannot get an NMI, get a normal interrupt */
-+		if (err) {
-+			err = request_percpu_irq(irq, handler, "arm-pmu",
-+						 &cpu_armpmu);
-+			irq_ops = &percpu_pmuirq_ops;
-+		} else {
-+			irq_ops = &percpu_pmunmi_ops;
-+		}
- 	} else {
- 		/* Per cpudevid irq was already requested by another CPU */
- 		irq_ops = armpmu_find_irq_ops(irq);
--- 
-2.27.0
-
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
