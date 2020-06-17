@@ -2,76 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0788C1FCC4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:31:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C36001FCC79
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:38:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ww85KzGjeoKBlh5E2S98PAQq80P22C9OD859g6p2swM=; b=UwaubsbaCOZGCG
-	oxOXwwxQFVHwZoJuewrnBBnUI8CcGTEmlvM/PAe9530ZXuLQva2AzAjTxXqAdb5IzHesz2lRsYtKj
-	awpOKYsRYzK8e5shlFQi97aqqTcqC9kFXH8m2f5JokwgQK25CEQf7sNieVjfFuE8NCKp2pX8/6h+E
-	ArEN/VYOJqUyeyNtYXSRqVybOn4p/cBGy/Fhanc3AU+WfQepZGME/WbHnQXFvNIjVvSRFQ7Eqa9wc
-	RSxoDZKCom6Kvx/OvW1tbhG8+l30JsX1j3vFxm6ghtb4Lf5ADs5zhUfEhjYqMCUIkOr0Qz2vD7hXG
-	lESErZ+CFF/BzJfBMVmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wcO88lmWTXzn4OawdeTH4Z2yI5dmNfNlPC1xD580Aqw=; b=C23B7Kd8u0NH7j
+	b/qnKcD8eZJjBWcywiFK1BuBV6MsF9tWOAD5W7C5aMXpWr3Hc0e8uyxsqNERKQLBTzQOmdoVKQn+p
+	HsSKWtDgTDlNatmqDSBTbBYrbq1y3ETRR+sytfDpt/uYdY7HCa/cWFTCQ4czFgHOxPtwq1Azt/a2t
+	sJYmf60tGu0zu77+PnlPUlu23Ll7wh2GxLrBOx55K9jRG1wjfoa8NxyPkJLAc8BdwSvP4uj5/1XZr
+	eG1nUM0isYPjIYG2a6PyJ1l9ISalZm3BVPJjFigyDTg4Foiq0Et8e0oOiOHre7yIrmC/RjtWcks25
+	YvlL7KaqjiKXzEw7n9yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlWHr-0006Cg-RZ; Wed, 17 Jun 2020 11:31:23 +0000
-Received: from mail-wm1-f65.google.com ([209.85.128.65])
+	id 1jlWOZ-0001Ez-03; Wed, 17 Jun 2020 11:38:19 +0000
+Received: from mail-bn7nam10on2063.outbound.protection.outlook.com
+ ([40.107.92.63] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlWHj-0006Bw-Fg
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:31:17 +0000
-Received: by mail-wm1-f65.google.com with SMTP id g10so1513210wmh.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 04:31:14 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kZr+UUcngq4pZ8Pux6/lZtnMtsuUJloJJRcaDyHxShw=;
- b=CO66qOuy3UmeWchD+yXU4GVqDI1V5JHCjoHiEXICbN1FhhC46wQPXFN7oijf7QwbHw
- D3gC6v9+NWhu+3sYt/8vwCHRAUSudyBzcwdVBFGCkxO/dQznS4bCIEWfVRmD5iL3jSz6
- OJfcz6mK2iUYAQ0xVDdrfUYH8hQ/Zef8Pkiwbs3p2ge9RlSNMwpR3YAGYygtM+yxsPyM
- ghiGEZ+f2qwwkzW2tE1Abk45vlgH0rW/L0EClUg0gvdaPTVJ4a8aI0cV30Ge70pdbrz4
- t34smEjeXeAxhUW60u3gPpomUeDpCejpLU85+tC5XCladPkDlO3Fp9bLE56LZTb8imYb
- eqSQ==
-X-Gm-Message-State: AOAM530CV9T8m4lk6V8AyOfWF+yiqw6Bstf5cAKMhOfP2ZLiMMogF8th
- b0KYhoKk3g3sXeXJrTiGbIp4hfMot6hlah/atk48lg==
-X-Google-Smtp-Source: ABdhPJy7c5aYy3DhmTpyzkIOAZG0lU08SpF/fwf3+SMSnklE/0tIhk0lba9z9ndo7C5ye/JpFbX7Lv3yatxWVp5AdNg=
-X-Received: by 2002:a7b:c44a:: with SMTP id l10mr8407453wmi.92.1592393473399; 
- Wed, 17 Jun 2020 04:31:13 -0700 (PDT)
+ id 1jlWNz-0000zP-Ax
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:37:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=UT3LVo6mh+1OnWbVEo3OU3ef1lq3YhrziyRzM6V95PBiS8kv/xckuasQsRgw1qDmuozt+EhBuugjKsGpAaTja7aA9u4tEAmZ/T3nljvajtsEqaIJBckidJSQGmrXryjl9irxDP4cGtcrN8rEZC9XGYAzKrwMFRUFsZkEAfOuSAjEUAX/6l99Mo2CAuOwurf1QGxdyKw/Tvxm82JvocgMzjWtKb67pEIW4o9mvdQiCAs8ly+6UHeIVd6trotBEw/u1Dcdc9j5QljcrC0CB7E5lVcaXEUvqvF1vO+0sv64k6c/JvENl6nV3zcZ2v0C9oiK7KJ24IM3o0kMD94o+AlG5g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kCLDLDK8GNAsRPQHb48AEdaj6H8+DPmwV6z5eKEpG6I=;
+ b=MwqPHBw5hAvITH8EMiUfdhWND8bbgAbM/6R+A+A8nyADOesnLPZsCn+MzyinatoHo0r5r0Yq9bDJEKsePEjFcbMUNT6iGpizJtiqR7G4xO9Pe4kJNqkCb5ts+tlAYdjb4LHwb49MR9/pOmd0m0U9DDLwrhWMRG0BUFwTBo4W4dtp5KrqszovH/PJzsHqBz8MYywE0+b+HuHGA4rMrL7uuCRdqSaqaeyIS2AgVFbkiz8CTwZviRozSK3Ldr35eVKaWwSPumMYHvPw45YpVMauyHC61QenMDOvTGFMKCdckefh8ymAUrA+6qxNS87NyIMdcqnioLaciCgdAWEpQ7FvcA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kCLDLDK8GNAsRPQHb48AEdaj6H8+DPmwV6z5eKEpG6I=;
+ b=NapejguyG9tMc6I6yjXuUOuTDs3cNIb8vR0LNjCvV8OOH0Stc1ACaTjusY3x/08scuIENXUgrRGd+bkkn8eZCs2Xm1tCdrESnN/h6T6ZT/2CL3d+EWO4woGtWur7vG3YBf6rsURbCxX5khwrYFjNCp9xLo23S13q/FRHSzdZIks=
+Received: from SN4PR0701CA0014.namprd07.prod.outlook.com
+ (2603:10b6:803:28::24) by BYAPR02MB4264.namprd02.prod.outlook.com
+ (2603:10b6:a03:16::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.25; Wed, 17 Jun
+ 2020 11:37:40 +0000
+Received: from SN1NAM02FT059.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:803:28:cafe::c1) by SN4PR0701CA0014.outlook.office365.com
+ (2603:10b6:803:28::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.21 via Frontend
+ Transport; Wed, 17 Jun 2020 11:37:39 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT059.mail.protection.outlook.com (10.152.72.177) with Microsoft SMTP
+ Server id 15.20.3088.18 via Frontend Transport; Wed, 17 Jun 2020 11:37:39
+ +0000
+Received: from [149.199.38.66] (port=36024 helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
+ (envelope-from <srinivas.neeli@xilinx.com>)
+ id 1jlWMt-0001HX-5l; Wed, 17 Jun 2020 04:36:35 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <srinivas.neeli@xilinx.com>)
+ id 1jlWNv-0007Wp-Fz; Wed, 17 Jun 2020 04:37:39 -0700
+Received: from xsj-pvapsmtp01 (xsj-smtp1.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 05HBbUYo032503; 
+ Wed, 17 Jun 2020 04:37:31 -0700
+Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <srinivas.neeli@xilinx.com>)
+ id 1jlWNm-0007TR-FN; Wed, 17 Jun 2020 04:37:30 -0700
+From: Srinivas Neeli <srinivas.neeli@xilinx.com>
+To: linus.walleij@linaro.org, bgolaszewski@baylibre.com,
+ michal.simek@xilinx.com, shubhrajyoti.datta@xilinx.com, sgoud@xilinx.com
+Subject: [PATCH V4 0/7] gpio: zynq: Update on gpio-zynq driver
+Date: Wed, 17 Jun 2020 17:07:20 +0530
+Message-Id: <1592393847-1415-1-git-send-email-srinivas.neeli@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
+ SFTY:;
+ SFS:(376002)(396003)(136003)(346002)(39860400002)(46966005)(83380400001)(316002)(81166007)(47076004)(8936002)(107886003)(26005)(8676002)(82740400003)(9786002)(478600001)(186003)(336012)(426003)(82310400002)(7696005)(4326008)(5660300002)(356005)(70206006)(70586007)(44832011)(15650500001)(36756003)(2616005)(2906002)(6636002)(6666004);
+ DIR:OUT; SFP:1101; 
+X-MS-PublicTrafficType: Email
 MIME-Version: 1.0
-References: <1592384514-119954-1-git-send-email-john.garry@huawei.com>
- <1592384514-119954-3-git-send-email-john.garry@huawei.com>
-In-Reply-To: <1592384514-119954-3-git-send-email-john.garry@huawei.com>
-From: Namhyung Kim <namhyung@kernel.org>
-Date: Wed, 17 Jun 2020 20:31:02 +0900
-Message-ID: <CAM9d7cgqJzQJ7GfL6Q3VgARd1=rrkRYqOqSivZww-LOo+DvKFA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] perf pmu: Improve CPU core PMU HW event list
- ordering
-To: John Garry <john.garry@huawei.com>
+X-MS-Office365-Filtering-Correlation-Id: c8bb0dac-2164-4458-89c0-08d812b2d745
+X-MS-TrafficTypeDiagnostic: BYAPR02MB4264:
+X-Microsoft-Antispam-PRVS: <BYAPR02MB4264DA3FE3428B6CE535CBD9AF9A0@BYAPR02MB4264.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:644;
+X-Forefront-PRVS: 04371797A5
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: +NxA606+esr0jqu+cZUech+mIMOIXjlheTV/P4iCUv2hABu87LIUEya+l4j2bu+/m9yyXIpGKC5qnhN4ODVd1BRrWmmwyoZMAwJyYl9p59K8/gU5ChkF3d881gdxXqEDCrxl1Ik40MXv/rbjzX9HxOtXcyVwj8gNMTuKeghSQ0XZIBf+vuXrrijSHkEpGqSyaPivmtFGzu8IN2/ye+pLhM/L8pFrL9UB7QzBYyXz4HvnqT9fADh7cry5Z9OaT2HRsz8W9ojwhJKQbm9yd/W3V6wvdoFpnNrqs0f5l5/3Of+VgzeWPoqpevU9wzi82B3Gc+0SSvw19jtKfCSidf+6xLzdLzD8vXkCZnii0pFIUXsgawj1bNwzwXOXMH8H0nKpGDzI03x3X2sesYwdw8rCrg==
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jun 2020 11:37:39.7982 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c8bb0dac-2164-4458-89c0-08d812b2d745
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB4264
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_043115_523081_19BBD549 
-X-CRM114-Status: GOOD (  19.01  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200617_043743_377925_9BE14423 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [namhyung[at]gmail.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.65 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [40.107.92.63 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ [40.107.92.63 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,194 +141,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ian Rogers <irogers@google.com>,
- Andi Kleen <ak@linux.intel.com>, Peter Zijlstra <peterz@infradead.org>,
- will@kernel.org, linuxarm@huawei.com,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, git@xilinx.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+This patch series does the following:
+-protect direction in/out with a spinlock
+-Add binding for Versal gpio
+-Add binding for pmc gpio node
+-Add Versal support
+-Disable the irq if it is not a wakeup source
+-Add pmc gpio support
+-Remove error prints in EPROBE_DEFER
 
-On Wed, Jun 17, 2020 at 6:06 PM John Garry <john.garry@huawei.com> wrote:
->
-> For perf list, the CPU core PMU HW event ordering is such that not all
-> events may will be listed adjacent - consider this example:
->
-> $ tools/perf/perf list
->
-> List of pre-defined events (to be used in -e):
->
->   duration_time                                      [Tool event]
->
->   branch-instructions OR cpu/branch-instructions/    [Kernel PMU event]
->   branch-misses OR cpu/branch-misses/                [Kernel PMU event]
->   bus-cycles OR cpu/bus-cycles/                      [Kernel PMU event]
->   cache-misses OR cpu/cache-misses/                  [Kernel PMU event]
->   cache-references OR cpu/cache-references/          [Kernel PMU event]
->   cpu-cycles OR cpu/cpu-cycles/                      [Kernel PMU event]
->   cstate_core/c3-residency/                          [Kernel PMU event]
->   cstate_core/c6-residency/                          [Kernel PMU event]
->   cstate_core/c7-residency/                          [Kernel PMU event]
->   cstate_pkg/c2-residency/                           [Kernel PMU event]
->   cstate_pkg/c3-residency/                           [Kernel PMU event]
->   cstate_pkg/c6-residency/                           [Kernel PMU event]
->   cstate_pkg/c7-residency/                           [Kernel PMU event]
->   cycles-ct OR cpu/cycles-ct/                        [Kernel PMU event]
->   cycles-t OR cpu/cycles-t/                          [Kernel PMU event]
->   el-abort OR cpu/el-abort/                          [Kernel PMU event]
->   el-capacity OR cpu/el-capacity/                    [Kernel PMU event]
->
-> Notice in the above example how the cstate_core PMU events are mixed in
-> the middle of the CPU core events.
->
-> For my arm64 platform, all the uncore events get mixed in, making the list
-> very disorganised:
->  page-faults OR faults                              [Software event]
->   task-clock                                         [Software event]
->   duration_time                                      [Tool event]
->   L1-dcache-load-misses                              [Hardware cache event]
->   L1-dcache-loads                                    [Hardware cache event]
->   L1-icache-load-misses                              [Hardware cache event]
->   L1-icache-loads                                    [Hardware cache event]
->   branch-load-misses                                 [Hardware cache event]
->   branch-loads                                       [Hardware cache event]
->   dTLB-load-misses                                   [Hardware cache event]
->   dTLB-loads                                         [Hardware cache event]
->   iTLB-load-misses                                   [Hardware cache event]
->   iTLB-loads                                         [Hardware cache event]
->   br_mis_pred OR armv8_pmuv3_0/br_mis_pred/          [Kernel PMU event]
->   br_mis_pred_retired OR armv8_pmuv3_0/br_mis_pred_retired/ [Kernel PMU event]
->   br_pred OR armv8_pmuv3_0/br_pred/                  [Kernel PMU event]
->   br_retired OR armv8_pmuv3_0/br_retired/            [Kernel PMU event]
->   br_return_retired OR armv8_pmuv3_0/br_return_retired/ [Kernel PMU event]
->   bus_access OR armv8_pmuv3_0/bus_access/            [Kernel PMU event]
->   bus_cycles OR armv8_pmuv3_0/bus_cycles/            [Kernel PMU event]
->   cid_write_retired OR armv8_pmuv3_0/cid_write_retired/ [Kernel PMU event]
->   cpu_cycles OR armv8_pmuv3_0/cpu_cycles/            [Kernel PMU event]
->   dtlb_walk OR armv8_pmuv3_0/dtlb_walk/              [Kernel PMU event]
->   exc_return OR armv8_pmuv3_0/exc_return/            [Kernel PMU event]
->   exc_taken OR armv8_pmuv3_0/exc_taken/              [Kernel PMU event]
->   hisi_sccl1_ddrc0/act_cmd/                          [Kernel PMU event]
->   hisi_sccl1_ddrc0/flux_rcmd/                        [Kernel PMU event]
->   hisi_sccl1_ddrc0/flux_rd/                          [Kernel PMU event]
->   hisi_sccl1_ddrc0/flux_wcmd/                        [Kernel PMU event]
->   hisi_sccl1_ddrc0/flux_wr/                          [Kernel PMU event]
->   hisi_sccl1_ddrc0/pre_cmd/                          [Kernel PMU event]
->   hisi_sccl1_ddrc0/rnk_chg/                          [Kernel PMU event]
->
-> ...
->
->   hisi_sccl7_l3c21/wr_hit_cpipe/                     [Kernel PMU event]
->   hisi_sccl7_l3c21/wr_hit_spipe/                     [Kernel PMU event]
->   hisi_sccl7_l3c21/wr_spipe/                         [Kernel PMU event]
->   inst_retired OR armv8_pmuv3_0/inst_retired/        [Kernel PMU event]
->   inst_spec OR armv8_pmuv3_0/inst_spec/              [Kernel PMU event]
->   itlb_walk OR armv8_pmuv3_0/itlb_walk/              [Kernel PMU event]
->   l1d_cache OR armv8_pmuv3_0/l1d_cache/              [Kernel PMU event]
->   l1d_cache_refill OR armv8_pmuv3_0/l1d_cache_refill/ [Kernel PMU event]
->   l1d_cache_wb OR armv8_pmuv3_0/l1d_cache_wb/        [Kernel PMU event]
->   l1d_tlb OR armv8_pmuv3_0/l1d_tlb/                  [Kernel PMU event]
->   l1d_tlb_refill OR armv8_pmuv3_0/l1d_tlb_refill/    [Kernel PMU event]
->
-> So the events are list alphabetically. However, CPU core event listing is
-> special from commit dc098b35b56f ("perf list: List kernel supplied event
-> aliases"), in that the alias and full event is shown (in that order).
-> As such, the core events may become sparse.
->
-> Improve this by grouping the CPU core events and ensure that they are
-> listed first for kernel PMU events. For the first example, above, this
-> now looks like:
->
-> duration_time                                      [Tool event]
->   branch-instructions OR cpu/branch-instructions/    [Kernel PMU event]
->   branch-misses OR cpu/branch-misses/                [Kernel PMU event]
->   bus-cycles OR cpu/bus-cycles/                      [Kernel PMU event]
->   cache-misses OR cpu/cache-misses/                  [Kernel PMU event]
->   cache-references OR cpu/cache-references/          [Kernel PMU event]
->   cpu-cycles OR cpu/cpu-cycles/                      [Kernel PMU event]
->   cycles-ct OR cpu/cycles-ct/                        [Kernel PMU event]
->   cycles-t OR cpu/cycles-t/                          [Kernel PMU event]
->   el-abort OR cpu/el-abort/                          [Kernel PMU event]
->   el-capacity OR cpu/el-capacity/                    [Kernel PMU event]
->   el-commit OR cpu/el-commit/                        [Kernel PMU event]
->   el-conflict OR cpu/el-conflict/                    [Kernel PMU event]
->   el-start OR cpu/el-start/                          [Kernel PMU event]
->   instructions OR cpu/instructions/                  [Kernel PMU event]
->   mem-loads OR cpu/mem-loads/                        [Kernel PMU event]
->   mem-stores OR cpu/mem-stores/                      [Kernel PMU event]
->   ref-cycles OR cpu/ref-cycles/                      [Kernel PMU event]
->   topdown-fetch-bubbles OR cpu/topdown-fetch-bubbles/ [Kernel PMU event]
->   topdown-recovery-bubbles OR cpu/topdown-recovery-bubbles/ [Kernel PMU event]
->   topdown-slots-issued OR cpu/topdown-slots-issued/  [Kernel PMU event]
->   topdown-slots-retired OR cpu/topdown-slots-retired/ [Kernel PMU event]
->   topdown-total-slots OR cpu/topdown-total-slots/    [Kernel PMU event]
->   tx-abort OR cpu/tx-abort/                          [Kernel PMU event]
->   tx-capacity OR cpu/tx-capacity/                    [Kernel PMU event]
->   tx-commit OR cpu/tx-commit/                        [Kernel PMU event]
->   tx-conflict OR cpu/tx-conflict/                    [Kernel PMU event]
->   tx-start OR cpu/tx-start/                          [Kernel PMU event]
->   cstate_core/c3-residency/                          [Kernel PMU event]
->   cstate_core/c6-residency/                          [Kernel PMU event]
->   cstate_core/c7-residency/                          [Kernel PMU event]
->   cstate_pkg/c2-residency/                           [Kernel PMU event]
->   cstate_pkg/c3-residency/                           [Kernel PMU event]
->   cstate_pkg/c6-residency/                           [Kernel PMU event]
->   cstate_pkg/c7-residency/                           [Kernel PMU event]
->
-> Signed-off-by: John Garry <john.garry@huawei.com>
+---
+Changes in V2:
+- In previous series [PATCH 1/8] already applied on "linux-next".
+- Fixed checkpatch warning for spinlock description. 
+- Added description for Versal PS_GPIO and PMC_GPIO.
+Changes in V3:
+- Updated commit description for PATCH 4 and 6.
+Changes in V4:
+- Updated commit description for PATCH 2 and 3.
+---
 
-Acked-by: Namhyung Kim <namhyung@kernel.org>
+Glenn Langedock (1):
+  gpio: zynq: protect direction in/out with a spinlock
 
-Thanks
-Namhyung
+Shubhrajyoti Datta (6):
+  dt-bindings: gpio: Add binding for Versal gpio
+  devicetree-binding: Add pmc gpio node
+  gpio: zynq: Add Versal support
+  gpio: zynq: Disable the irq if it is not a wakeup source
+  gpio: zynq: Add pmc gpio support
+  gpio: zynq: Remove error prints in EPROBE_DEFER
 
+ .../devicetree/bindings/gpio/gpio-zynq.txt         |  4 +-
+ drivers/gpio/gpio-zynq.c                           | 66 +++++++++++++++++++++-
+ 2 files changed, 67 insertions(+), 3 deletions(-)
 
-> ---
->  tools/perf/util/pmu.c | 7 +++++++
->  1 file changed, 7 insertions(+)
->
-> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-> index a375364537cd..faa3e0619740 100644
-> --- a/tools/perf/util/pmu.c
-> +++ b/tools/perf/util/pmu.c
-> @@ -1400,6 +1400,7 @@ struct sevent {
->         char *pmu;
->         char *metric_expr;
->         char *metric_name;
-> +       int is_cpu;
->  };
->
->  static int cmp_sevent(const void *a, const void *b)
-> @@ -1416,6 +1417,11 @@ static int cmp_sevent(const void *a, const void *b)
->                 if (n)
->                         return n;
->         }
-> +
-> +       /* Order CPU core events to be first */
-> +       if (as->is_cpu != bs->is_cpu)
-> +               return bs->is_cpu - as->is_cpu;
-> +
->         return strcmp(as->name, bs->name);
->  }
->
-> @@ -1507,6 +1513,7 @@ void print_pmu_events(const char *event_glob, bool name_only, bool quiet_flag,
->                         aliases[j].pmu = pmu->name;
->                         aliases[j].metric_expr = alias->metric_expr;
->                         aliases[j].metric_name = alias->metric_name;
-> +                       aliases[j].is_cpu = is_cpu;
->                         j++;
->                 }
->                 if (pmu->selectable &&
-> --
-> 2.26.2
->
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
