@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D377C1FCCA0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 787F51FCCA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:41:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Sc/XyvcG0P3vQd8DIHHy1gmCsxvFDfi+3w88hu7ipKM=; b=st6CmGolSbSd2F
-	yhpbOutURqK/7a/rWhdFbSMQAS5Xsxfhj6ha2ORtZ0ZBLKhNLm/7bdTl7dmpL9C8CiYxRgP51dvCH
-	nIZMHe+3JRGavIZjpMAo6CvoG37FUhwUp6GWF0Fbh3Tktd0GAlyJy3jcqHGyvHr2EXkZKvRUH0LMH
-	gAUZwwl7zWzMClSKXrgO/Z9spTHojsZDu9d2k/qXEIOpbEH4iG1rwpo6kB+y5xHZ/y3Ehdk62w254
-	K4bSuSxWA/o0xYiVhj9eeuScwHH3/kyNXOxvFtC0ia4br3d44PeWQKJToh7Jhtupia10nU0pbocBE
-	u3IsQCsIYEXtQya7zeuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fciWmXAZD6AUUDkyc0HOAvfb9jfV5NVzsLGiIcC2Fps=; b=bxzJF1Zk/wqqh3
+	d3xk3lW+pliiT52jnycm26xXOYb3w83pMgPZpQNFL9NR5G84qMlgVk4YGSGns7PRMDpfb2XAxFxGE
+	hLm/PB/xmw2Q+1lF3VjNHF94vf6u4SlzHOTIfo62FdRQ20/HyYU9Ns3SjlOOc/t1M8UE2dg1vkGho
+	EsGVCJYh0CyMfZpf0FnbB+G/qQ7bfkCa2I9y+yIzQpW76llpqodxhqoi9GoZGYotCHtcf5DAgpdvQ
+	1gC+AyOwBE5XnhJ/O9j4+tZMLy+hfiQSDH4MLZXI49RXy5a/G4MGni4ETjGLqz3F5Fkrd752P95Ii
+	9OA4NYpUk9wKln26m2vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlWR0-000583-KN; Wed, 17 Jun 2020 11:40:50 +0000
+	id 1jlWRa-0006Nn-2X; Wed, 17 Jun 2020 11:41:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlWOa-0001UT-Hm
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:38:23 +0000
+ id 1jlWOc-0001Ws-BD
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:38:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 438A91042;
- Wed, 17 Jun 2020 04:38:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 371C81045;
+ Wed, 17 Jun 2020 04:38:21 -0700 (PDT)
 Received: from monolith.arm.com (unknown [10.37.8.7])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0CD143F71F;
- Wed, 17 Jun 2020 04:38:16 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89A583F71F;
+ Wed, 17 Jun 2020 04:38:18 -0700 (PDT)
 From: Alexandru Elisei <alexandru.elisei@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v5 0/7] arm_pmu: Use NMI for perf interrupt
-Date: Wed, 17 Jun 2020 12:38:44 +0100
-Message-Id: <20200617113851.607706-1-alexandru.elisei@arm.com>
+Subject: [PATCH v5 1/7] arm64: perf: Add missing ISB in armv8pmu_enable_event()
+Date: Wed, 17 Jun 2020 12:38:45 +0100
+Message-Id: <20200617113851.607706-2-alexandru.elisei@arm.com>
 X-Mailer: git-send-email 2.27.0
+In-Reply-To: <20200617113851.607706-1-alexandru.elisei@arm.com>
+References: <20200617113851.607706-1-alexandru.elisei@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_043820_784546_3A37778E 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20200617_043822_501515_7295C6A7 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -60,138 +62,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, will@kernel.org,
- catalin.marinas@arm.com
+Cc: mark.rutland@arm.com, Julien Thierry <julien.thierry@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, maz@kernel.org,
+ Jiri Olsa <jolsa@redhat.com>, Will Deacon <will.deacon@arm.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, catalin.marinas@arm.com,
+ Namhyung Kim <namhyung@kernel.org>, will@kernel.org,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The series makes the arm_pmu driver use NMIs for the perf interrupt when
-NMIs are available on the platform (currently, only arm64 + GICv3). To make
-it easier to play with the patches, I've pushed a branch at [1]:
+Writes to the PMXEVTYPER_EL0 register are not self-synchronising. In
+armv8pmu_enable_event(), the PE can reorder configuring the event type
+after we have enabled the counter and the interrupt. This can lead to an
+interrupt being asserted because the of the previous event type that we
+were counting, not the one that we've just enabled.
 
-$ git clone -b pmu-nmi-v5 git://linux-arm.org/linux-ae
+The same rationale applies to writes to the PMINTENSET_EL1 register. The PE
+can reorder enabling the interrupt at any point in the future after we have
+enabled the event.
 
-I've tested the series on an espressobin v7*. These are the results of
-running perf record -a -- sleep 60:
+Prevent both situations from happening by adding an ISB just before we
+enable the event counter.
 
-1. Without the patches:
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Fixes: 030896885ade ("arm64: Performance counters support")
+Reported-by: Julien Thierry <julien.thierry@arm.com>
+Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
+---
+ arch/arm64/kernel/perf_event.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-    12.68%  [k] _raw_spin_unlock_irq
-    11.08%  [k] arch_cpu_idle
-     7.86%  [k] _raw_spin_unlock_irqrestore
-     6.05%  [k] arch_counter_get_cntpct
-     2.86%  [k] __softirqentry_text_start
-     2.33%  [k] tick_nohz_idle_exit
-     [..]
-
-2. Using NMIs:
-
-    19.45%  [k] arch_counter_get_cntpct
-     5.14%  [k] __delay
-     3.32%  [k] wait_for_xmitr
-     1.99%  [k] ktime_get
-     1.00%  [k] _raw_write_lock_irqsave
-     1.00%  [.] avahi_escape_label
-     [..]
-
-When running perf record -a -- iperf3 -c 127.0.0.1 -t 60:
-
-1. Without the patches:
-
-    24.70%  [k] __arch_copy_from_user
-    21.77%  [k] __arch_copy_to_user
-     5.21%  [k] _raw_spin_unlock_irq
-     2.86%  [k] _raw_spin_unlock_irqrestore
-     1.99%  [k] __free_pages_ok
-     1.61%  [k] arch_cpu_idle
-     [..]
-
-2. Using NMIs:
-
-    23.84%  [k] __arch_copy_from_user
-    23.44%  [k] __arch_copy_to_user
-     1.23%  [k] get_page_from_freelist
-     1.16%  [k] tcp_ack
-     0.80%  [k] __free_pages_ok
-     0.78%  [k] tcp_sendmsg_locked
-     [..]
-
-I've ran the same tests in a VM when both host+guest use NMIs, and when
-neither use them. All of these tests were also ran on the model.  Similar
-results in all cases.
-
-* All the firmware versions for espressobin v7 that I've tried clear
-SCR_EL3.FIQ, which means that NMIs don't work. To make them work on the
-board, I modified the GICv3 driver. That's why I would really appreciate
-someone testing this series on a board where NMIs work without any GIC
-changes.
-
-Summary of the patches:
-* Patch 1 is a fix for a bug that Julien found during the review for v4.
-* Patches 2 and 3 remove locking from arm64 perf event code.
-* Patches 4 and 5 makes the arm64 PMU interrupt handler NMI safe.
-* Patches 6 and 7 enable the use of NMIs on arm64 with a GICv3 irqchip.
-
-Changes since v4 [2]:
-- Rebased on top of v5.8-rc1 and dropped the Tested-by tags because it's
-  been almost a year since the series has been tested.
-- Dropped patch 3 because I couldn't find any instance where
-  armv7pmu_read_counter() was called with interrupts enabled. I've also
-  tested this by running several instances of perf for a few hours, and the
-  function was called every time with interrupts disabled.
-- Dropped patches 4 and 5 because the tradeoff wasn't worth it in my
-  opinion: the irq handler was slower all the time (because it
-  saved/restored the counter select register), in exchange for being
-  slightly faster on the rare ocassions when it triggered at the beginning
-  of the critical sections.
-- Minor changes here and there to address review comments.
-
-Changes since v3 [3]:
-- Added tags
-- Fix build issue for perf_event_v6
-- Don't disable preemption in pmu->enable()
-- Always rely on IPI_IRQ_WORK to run the queued work
-- Fixed typos + cleanups
-
-Changes since v2 [4]:
-- Rebased on recent linux-next (next-20190708)
-- Fixed a number of bugs with indices (reported by Wei)
-- Minor style fixes
-
-Changes since v1 [5]:
-- Rebased on v5.1-rc1
-- Pseudo-NMI has changed a lot since then, use the (now merged) NMI API
-- Remove locking from armv7 perf_event
-- Use locking only in armv6 perf_event
-- Use direct counter/type registers insted of selector register for armv8
-
-[1] http://www.linux-arm.org/git?p=linux-ae.git;a=shortlog;h=refs/heads/pmu-nmi-v5
-[2] https://lists.infradead.org/pipermail/linux-arm-kernel/2019-July/666824.html
-[3] https://lists.infradead.org/pipermail/linux-arm-kernel/2019-July/665339.html
-[4] https://lists.infradead.org/pipermail/linux-arm-kernel/2019-March/640536.html
-[5] https://lists.infradead.org/pipermail/linux-arm-kernel/2018-January/554611.html
-
-Alexandru Elisei (1):
-  arm64: perf: Add missing ISB in armv8pmu_enable_event()
-
-Julien Thierry (5):
-  arm64: perf: Remove PMU locking
-  arm64: perf: Defer irq_work to IPI_IRQ_WORK
-  arm64: kvm: pmu: Make overflow handler NMI safe
-  arm_pmu: Introduce pmu_irq_ops
-  arm_pmu: arm64: Use NMIs for PMU
-
-Mark Rutland (1):
-  arm64: perf: Avoid PMXEV* indirection
-
- arch/arm64/kernel/perf_event.c | 138 ++++++++++++++++++++------------
- arch/arm64/kvm/pmu-emul.c      |  25 +++++-
- drivers/perf/arm_pmu.c         | 142 ++++++++++++++++++++++++++++-----
- include/kvm/arm_pmu.h          |   1 +
- 4 files changed, 235 insertions(+), 71 deletions(-)
-
+diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+index 4d7879484cec..ee180b2a5b39 100644
+--- a/arch/arm64/kernel/perf_event.c
++++ b/arch/arm64/kernel/perf_event.c
+@@ -605,6 +605,7 @@ static void armv8pmu_enable_event(struct perf_event *event)
+ 	 * Enable interrupt for this counter
+ 	 */
+ 	armv8pmu_enable_event_irq(event);
++	isb();
+ 
+ 	/*
+ 	 * Enable counter
 -- 
 2.27.0
 
