@@ -2,81 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C06091FD064
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 17:10:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0D101FD0E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 17:27:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W3azw8pa7FmskFcMKfgnGGrknHM5jwHM9OH0dfTROWM=; b=QhnfVHBn/zh2hY
-	sd9/l1tNC97wvZdzCOw1raVivgqp2l0auuA8uLwYgDgjix9vS43rCMdvAlr3Xnj7FhnKPVopSQUF9
-	TOz9lOZN40xeTQXo3VgJSk8A2vkvcX/4H45oAGtaEccrn3BNG74OikE7tC6vkqoAi7MRaOAJWCT3J
-	CniW6i3h/0bsEMsUz3mtPGb2Hiwtjo3Ahae9hfeao/FSruh0kkEN2kMmSL3j1KWhmSTnY0aSmEodr
-	8e75Hco7WfIUz9nZd4lMn6bdzprbKyxZ0U14wxbBI4oAU+VQOTxn3TR+EmR+JaH9J75rXuH9uex1k
-	S6xm+ni98svdDT9Is/Dw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dzkl961VyrXcKPN/435A3gUMcy7VS/98J4DDo/ugiyY=; b=RDKkv1ye1KeqE+
+	7gp/TpiDrE9ZpUsqT+JqytVEYy26+jOEl1O0jj8VBRK0Acnc3honjdbjTqMox9skzPGvoF5vEatM3
+	UgINWt2VithCWivmFCK25shKkFbVf8D7L21VH3eFTjux/XzdOk7p0Um+KNdJ7Tj8PFOtr0F9i0lNy
+	sPy0QM2BbZqTtfFnbCIohz+nQOwKaMoxe8QCXEfliER7Y+L6txfx1YHy+OeOIGKUHeC4SkqdXVndE
+	vlAO7Vo79oJPKs+5yXZvsGWiR/dQDSZ7GbGIL7JVYkZa3aL2hwineac+IY47wbij/TNWGFgVMsTpH
+	IrJmHJTxYvec02LCBeVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlZhU-0002PW-RN; Wed, 17 Jun 2020 15:10:04 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jlZyG-0005bF-MJ; Wed, 17 Jun 2020 15:27:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlZgP-0001Tc-33
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 15:08:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id x6so2689212wrm.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 08:08:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=+VNaCgKeSAnsN+2G9TGu/G00Sb3RTAWKbG0yrAPTqfc=;
- b=PjRd+YJaVQBUHQNA2/1ldZGAZDRGPLRJx6vn4bQ/rNkgw9VAr96cilJKYUFZfEaDA+
- HzU3AK3wJJQUDymlKwFpdQU8KjP99QeVmcn0bJsycQ7Wq5D+9EtJX0t2wxQ9iKJUqtbY
- tx+yLFVYPNGBR+uRQxD/S1Rez637Q7fxDxX81mpy6WoiSnRsothG21jfzqCrGGP5bkqy
- 0GzHx/6bP6bsZjd8PkZSKBQpPddWd2Udbro03r3t9L7GMOohEYk3boX0FZsEtZ4ewoB8
- zXP8f2QUPfY9jxga/X7alS3BShywjSYVxo2Sty0oyjTNRupb+B3rgvceGjh8LZWY2PMt
- xrqg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=+VNaCgKeSAnsN+2G9TGu/G00Sb3RTAWKbG0yrAPTqfc=;
- b=WSmaFK65tV05SraXwFcj4PsfbfJfGpdW0HO/+W/EizIfXkXDiwaZf4lMTESokLWveL
- Y1VHoBPKsIcZPwWkY3igZsdPL4XQctCpL+lW4CrjwCzV7bULpXmHJfQ/sxBo+cooHzYd
- /3dUpr9lEmq/YQ+acJXNXLCkeFHZAG9HnuLSgM9vjSXcPyt+wVAZLVzMB5u9nXhFhxG8
- F0X9KCbi44mjlPBJC+dnJ4lLIdhFnOWbu9MvG2p5B864guhnJFKGLKqXI26L6V7PacE8
- E/2oJj9cvRYGO1DQvm9eF3SMeGbh49n7yGpQxp/6MyKF95i1P7L3yqvUTLIT9FaWjtlG
- uP0Q==
-X-Gm-Message-State: AOAM533UjsWi68F0hqtLHdEbTU7pJ/VP8Ep5hBDDmAAPOqcIvpjCwU5p
- 8dUtwHq/vq0GzWXIx+ZWMfiRtA==
-X-Google-Smtp-Source: ABdhPJxX7JM0uX3X/Kwlok22E/PAQtWSfiY6CgMnhY7NTYOH/rojgKo8V80hqDPFuNDj3usNnCAXbA==
-X-Received: by 2002:a5d:4a4d:: with SMTP id v13mr1522923wrs.142.1592406534608; 
- Wed, 17 Jun 2020 08:08:54 -0700 (PDT)
-Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
- [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id j18sm35640740wrn.59.2020.06.17.08.08.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 08:08:53 -0700 (PDT)
-Date: Wed, 17 Jun 2020 16:08:50 +0100
-From: Daniel Thompson <daniel.thompson@linaro.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 00/17] Modularizing Versatile Express
-Message-ID: <20200617150850.t23gwj3p2qnduq2a@holly.lan>
-References: <20200429205825.10604-1-robh@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200429205825.10604-1-robh@kernel.org>
+ id 1jlZy8-0005ai-BZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 15:27:17 +0000
+Received: from kozik-lap.mshome.net (unknown [194.230.155.126])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B4D5F2089D;
+ Wed, 17 Jun 2020 15:27:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592407635;
+ bh=/X4RakAnjpaIbDFNGYOyhDIZuK7NZ/bC8ERbSOpBkvA=;
+ h=From:To:Subject:Date:From;
+ b=OwHTIF92HeRZSfkFxh2WikBaYElmr2tOOHq+wczjC8w+D4cMV7CFDdFe54ko9h8Cw
+ Dhr2M4C7wCI7EcZ9CEkTPhLmWM1Wedkos9O0Vik5o4HG4GwngeltE7d/KUfN3bqXRQ
+ 2rxoLcoesbWfe5ZQwBS67fBoqoopB4p9q/EdA9WM=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org
+Subject: [PATCH RESEND v2] media: samsung: Rename Samsung and Exynos to
+ lowercase
+Date: Wed, 17 Jun 2020 17:27:09 +0200
+Message-Id: <20200617152709.17756-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_080857_231761_323F7C86 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200617_082716_436488_31748641 
+X-CRM114-Status: GOOD (  11.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,114 +78,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Kevin Brodsky <Kevin.Brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Sebastian Reichel <sre@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Lee Jones <lee.jones@linaro.org>,
- Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:58:09PM -0500, Rob Herring wrote:
-> This series enables building various Versatile Express platform drivers
-> as modules. The primary target is the Fast Model FVP which is supported
-> in Android. As Android is moving towards their GKI, or generic kernel,
-> the hardware support has to be in modules. Currently ARCH_VEXPRESS
-> enables several built-in only drivers. Some of these are needed, but
-> some are only needed for older 32-bit VExpress platforms and can just
-> be disabled. For FVP, the pl111 display driver is needed. The pl111
-> driver depends on vexpress-osc clocks which had a dependency chain of
-> vexpress-config --> vexpress-syscfg --> vexpress-sysreg. These
-> components relied on fixed initcall ordering and didn't support deferred
-> probe which would have complicated making them modules. All these levels
-> of abstraction are needlessly complicated, so this series simplifies
-> things a bit by merging the vexpress-config and vexpress-syscfg
-> functionality.
-> 
-> There's a couple of other pieces to this which I've sent out separately
-> as they don't have dependencies with this series. The cross subsystem
-> dependencies in this series are mainly the ordering of enabling drivers
-> as modules.
+Fix up inconsistent usage of upper and lowercase letters in "Samsung"
+and "Exynos" names.
 
-This series results in the vexpress-a15 console not coming up until very
-late in the boot process because the console arch_initcall() ends up
-being deferred because it's dependencies are no longer use
-core_initcall() to ensure they get in first.
+"SAMSUNG" and "EXYNOS" are not abbreviations but regular trademarked
+names.  Therefore they should be written with lowercase letters starting
+with capital letter.
 
-Is there a problem registering vexpress-osc, vexpress-sysreg and
-vexpress-config as core_initcall's so the console behaves nicely
-when they are all compiled as built-ins?
+The lowercase "Exynos" name is promoted by its manufacturer Samsung
+Electronics Co., Ltd., in advertisement materials and on website.
 
+Although advertisement materials usually use uppercase "SAMSUNG", the
+lowercase version is used in all legal aspects (e.g. on Wikipedia and in
+privacy/legal statements on
+https://www.samsung.com/semiconductor/privacy-global/).
 
-Daniel.
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
+---
 
+Changes since v1:
+1. Move bindings change to separate patch.
+---
+ Documentation/admin-guide/media/fimc.rst          | 6 +++---
+ Documentation/driver-api/media/drivers/tuners.rst | 2 +-
+ drivers/media/platform/exynos4-is/media-dev.c     | 2 +-
+ drivers/media/platform/s3c-camif/camif-core.c     | 2 +-
+ 4 files changed, 6 insertions(+), 6 deletions(-)
 
+diff --git a/Documentation/admin-guide/media/fimc.rst b/Documentation/admin-guide/media/fimc.rst
+index 0b8ddc4a3008..56b149d9a527 100644
+--- a/Documentation/admin-guide/media/fimc.rst
++++ b/Documentation/admin-guide/media/fimc.rst
+@@ -2,7 +2,7 @@
+ 
+ .. include:: <isonum.txt>
+ 
+-The Samsung S5P/EXYNOS4 FIMC driver
++The Samsung S5P/Exynos4 FIMC driver
+ ===================================
+ 
+ Copyright |copy| 2012 - 2013 Samsung Electronics Co., Ltd.
+@@ -19,7 +19,7 @@ drivers/media/platform/exynos4-is directory.
+ Supported SoCs
+ --------------
+ 
+-S5PC100 (mem-to-mem only), S5PV210, EXYNOS4210
++S5PC100 (mem-to-mem only), S5PV210, Exynos4210
+ 
+ Supported features
+ ------------------
+@@ -45,7 +45,7 @@ Media device interface
+ ~~~~~~~~~~~~~~~~~~~~~~
+ 
+ The driver supports Media Controller API as defined at :ref:`media_controller`.
+-The media device driver name is "SAMSUNG S5P FIMC".
++The media device driver name is "Samsung S5P FIMC".
+ 
+ The purpose of this interface is to allow changing assignment of FIMC instances
+ to the SoC peripheral camera input at runtime and optionally to control internal
+diff --git a/Documentation/driver-api/media/drivers/tuners.rst b/Documentation/driver-api/media/drivers/tuners.rst
+index 7509be888909..d7924141c544 100644
+--- a/Documentation/driver-api/media/drivers/tuners.rst
++++ b/Documentation/driver-api/media/drivers/tuners.rst
+@@ -18,7 +18,7 @@ These differ mainly by the bandswitch byte.
+ Tuner Manufacturers
+ -------------------
+ 
+-- SAMSUNG Tuner identification: (e.g. TCPM9091PD27)
++- Samsung Tuner identification: (e.g. TCPM9091PD27)
+ 
+ .. code-block:: none
+ 
+diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
+index 9aaf3b8060d5..96e336b19cc3 100644
+--- a/drivers/media/platform/exynos4-is/media-dev.c
++++ b/drivers/media/platform/exynos4-is/media-dev.c
+@@ -1439,7 +1439,7 @@ static int fimc_md_probe(struct platform_device *pdev)
+ 	INIT_LIST_HEAD(&fmd->pipelines);
+ 	fmd->pdev = pdev;
+ 
+-	strscpy(fmd->media_dev.model, "SAMSUNG S5P FIMC",
++	strscpy(fmd->media_dev.model, "Samsung S5P FIMC",
+ 		sizeof(fmd->media_dev.model));
+ 	fmd->media_dev.ops = &fimc_md_ops;
+ 	fmd->media_dev.dev = dev;
+diff --git a/drivers/media/platform/s3c-camif/camif-core.c b/drivers/media/platform/s3c-camif/camif-core.c
+index c6fbcd7036d6..92f43c0cbc0c 100644
+--- a/drivers/media/platform/s3c-camif/camif-core.c
++++ b/drivers/media/platform/s3c-camif/camif-core.c
+@@ -304,7 +304,7 @@ static int camif_media_dev_init(struct camif_dev *camif)
+ 	int ret;
+ 
+ 	memset(md, 0, sizeof(*md));
+-	snprintf(md->model, sizeof(md->model), "SAMSUNG S3C%s CAMIF",
++	snprintf(md->model, sizeof(md->model), "Samsung S3C%s CAMIF",
+ 		 ip_rev == S3C6410_CAMIF_IP_REV ? "6410" : "244X");
+ 	strscpy(md->bus_info, "platform", sizeof(md->bus_info));
+ 	md->hw_revision = ip_rev;
+-- 
+2.17.1
 
-> 
-> A complete git branch is here[1]. Tested on Fast Model FVP Rev C.
-> 
-> v2:
-> The major change is a boot fix for 32-bit VExpress platforms with patch 3.
-> I also dropped 'power/reset: vexpress: Support building as a module' as it
-> was incomplete and not needed for this series.
-> 
-> Rob
-> 
-> [1] git://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git vexpress-modules-v4
-> 
-> Rob Herring (16):
->   ARM: vexpress: Move vexpress_flags_set() into arch code
->   arm64: vexpress: Don't select CONFIG_POWER_RESET_VEXPRESS
->   amba: Retry adding deferred devices at late_initcall
->   clk: versatile: Rework kconfig structure
->   clk: versatile: Only enable SP810 on 32-bit by default
->   clk: vexpress-osc: Use the devres clock API variants
->   clk: vexpress-osc: Support building as a module
->   mfd: vexpress-sysreg: Drop selecting CONFIG_CLKSRC_MMIO
->   mfd: vexpress-sysreg: Drop unused syscon child devices
->   mfd: vexpress-sysreg: Use devres API variants
->   mfd: vexpress-sysreg: Support building as a module
->   bus: vexpress-config: Merge vexpress-syscfg into vexpress-config
->   bus: vexpress-config: simplify config bus probing
->   vexpress: Move setting master site to vexpress-config bus
->   bus: vexpress-config: Support building as module
->   ARM: vexpress: Don't select VEXPRESS_CONFIG
-> 
->  arch/arm/mach-integrator/Kconfig         |   1 -
->  arch/arm/mach-realview/Kconfig           |   1 -
->  arch/arm/mach-versatile/Kconfig          |   1 -
->  arch/arm/mach-vexpress/Kconfig           |   4 -
->  arch/arm/mach-vexpress/core.h            |   1 +
->  arch/arm/mach-vexpress/dcscb.c           |   1 +
->  arch/arm/mach-vexpress/v2m.c             |  23 ++
->  arch/arm64/Kconfig.platforms             |   3 -
->  drivers/amba/bus.c                       |  14 +-
->  drivers/bus/Kconfig                      |   2 +-
->  drivers/bus/vexpress-config.c            | 354 ++++++++++++++++++-----
->  drivers/clk/Makefile                     |   2 +-
->  drivers/clk/versatile/Kconfig            |  24 +-
->  drivers/clk/versatile/clk-vexpress-osc.c |  20 +-
->  drivers/mfd/Kconfig                      |   5 +-
->  drivers/mfd/vexpress-sysreg.c            |  99 +------
->  drivers/misc/Kconfig                     |   9 -
->  drivers/misc/Makefile                    |   1 -
->  drivers/misc/vexpress-syscfg.c           | 280 ------------------
->  include/linux/vexpress.h                 |  30 --
->  20 files changed, 354 insertions(+), 521 deletions(-)
->  delete mode 100644 drivers/misc/vexpress-syscfg.c
-> 
-> 
-> base-commit: 8f3d9f354286745c751374f5f1fcafee6b3f3136
-> ---
-> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
