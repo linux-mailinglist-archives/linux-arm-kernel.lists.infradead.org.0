@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBF341FCD5D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:27:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F3651FCD76
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:31:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sX6vo+Y1AuIa5CMy2o5Q0z9lI73PkR6JlMoVYLRJ7tY=; b=hK5ISUHLo7TJih
-	F/mTUbrIEcpiS7niM86bNTgfEHw03lX81ukknUMmI595vfd4lTNVbGpzQhJQ5kmkt0ZvPPj3RCwNz
-	aaBCOx5qko/EMG1r87zKHuIfy4V/kPz9cYaFq9T5PIt6DfyIZXREHw1cMTczKqHDenLRjgE9z+OYo
-	ZOUMwjlAzuu8O6HGQniFP5bRmC2JqEuA7mCTJt6B+edZdVCv57hwQ90+aAvr47QfAUFO8lnt8P84v
-	czBeDa6MOypk5WLupvrCP7dPJ3NIkQTr94dx8/44UGHJRGaWpuK/OBn2SEZxmaim4j3Lnfd5vVWGH
-	RXCx1n+9tF/BV1HMAZTA==;
+	List-Owner; bh=1lUzQZ7N2rNbilSkvLjnuUMI9BCz7NYiZ+PxzlAt430=; b=dsANfRZjU8UXyh
+	Leuu/8L9pUwBj+9Or8+gevyhy5Fx8N7eAJ5h5uZS5VnCM1PeBJjoh9GMzwVzRC3U4JZEIncDQDTOe
+	RAc6NjV4+Xp270xlS2iw4D0VWUqnSoYPLln6EDcqjNdLTc1ui357/VWQA9yFly26kMqQ+Uwe8SapD
+	B1SBwvRO0ynZ+ehLoLR1XelvUoTZERdGRgzCQ4dEfphmvrKt4X8vFKBSHSion/j0KbvWxwj3yKyON
+	kmgAVUMgNaHAzSeFYuQ0ML0OULZu5//mRcss1WRc2dxgvm3sAFwBavoljFsxLVcXH74hyJdZy3mNS
+	84VtVSoFBMSGiz/RreHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlX9b-00006h-VO; Wed, 17 Jun 2020 12:26:55 +0000
-Received: from mail-eopbgr150078.outbound.protection.outlook.com
- ([40.107.15.78] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1jlXEN-0003Bk-KI; Wed, 17 Jun 2020 12:31:51 +0000
+Received: from mail-eopbgr60054.outbound.protection.outlook.com ([40.107.6.54]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlX9S-00005X-Kq
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 12:26:48 +0000
+ id 1jlXEB-0003B3-3A
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 12:31:40 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Rcia4LLVO9LaUhRJI+oE5+vNel2vjem50H/UQNQwnCO1cK8FN2AlfeiPm8Xazt6YBMIVH2PX0ua6L6KsWRQ68Zsm9nUTUEzr5tlRUGIi6yZFAE01nEQFfYo02BiR/oiRp00BR73hAW2VlYdMC6R4jJyQukjEfIHKpnnTzYlBHJj3TSIylD/DHmRj1AndG3uIrcNRkABmJjl8Bc1VeNhF91t9gQAhy/kAphVmIKy5JkwHYx3YNcFRj5f1zUeK74G5bi6coAN+niUZueYVc05Xz/R8sV/8NZGNYI82/MnLzXSHo8Fh015favM/PhqDTFOkkUt0VlLZuNzdOtOHgwr6Dw==
+ b=hgFdiNAJ9KNmUUY8iQXd76aAtM1j3f7eGJgJiK5oyWKpoGSXOSpY19N4mkuZo9IuOV0fP89yRqhbAQRP3kYejSB3GP5TsksBIjiZ8O+KeFxzeZCSBCmom89EqFO5uFPHE7nsQFO520SrmhqTF9HS86d5LZvMVJKTQI++P1PaFsD82ZAIkMER1Fc8lh8dblwgx+VEBdY+NyXzs/nN/3ObnYGuQ5dmZpp8v8dny7ZLWGPzf++2CRBHbCjeCZlRJ0CdmZ3FAReoaYdOJx5mDARnCKLORmsrXIKYVR2aopmym8rE/aOlPjkTD9NH9J8Vxmtn68gmNOZaUhqIXSKQylYJEQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3OUq3R75rdKSSnxys/SVFm1fcgb15bPx2uFsnmGFzHk=;
- b=CgBf2QQnoz3sYXzHPllFtZNDIvf2QxEfhmUX3BB8jzW4rPein6m/i/szAQoiS7+KCyEXLYuD2fcNFLU9qyFeG0tTp3rPfGsodeTKPplS3SUB4P8pZWv7mtu0nfwAhrtU60roAM3uWOX/H/308ryjr1WmBKaCa/q2Gnga3RCUoHzoNO3qnFiBjTTbmkoV38XO7O3wV6lDvPXA61FomDR9zXml20AflpEL44q5sLHCEGu2HkJnrznX2bl+4VHuNl4X96LnJOsLpv50YqG5NGhrKn/hLiNwjqllHI58YFgGlMSRyMwCpbq4qtxnZg3z+m93MlUisrKDAIbYJ+hOf87GhQ==
+ bh=Li3kh4MLDOJ1/8cznkgPZE1JxjJ2O+9lKERAUqgj7k8=;
+ b=BeE8wrEQBL3KIwzWFi5noBXsRi4qYAK2ATE/mUy+kvGzW343+A0X123U5R9gXOPUbBJQ1QVRTgqNLw+XeQEiIZLsgZA3s941+UZyMSpgs/bMt7reKOmk3DO5hPnTjl0c2dstMk3frW2JwZWQnwtisXx158ZFg4yaxXe6nvEMRtTRdj+X4fNM2awSLXrgjo+f0Gq4oKuM3s0teQzffthyhoQzFNKXBicK6nW72/0+ltWfI/6aoTaPVjSbwGM7uF9VA/JxMt1cBjsSriJzBzLDbU8kSJdzAvMoDoOpw3wJBllhN9mjQwKSMp6gcELhrvel8qnvFziyMSeB64MR0Ew7Rg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3OUq3R75rdKSSnxys/SVFm1fcgb15bPx2uFsnmGFzHk=;
- b=bebVAoV7VUoyRuMzPKTYAeZAh/U5hvmRIQ8oKnjLFB0TQrjxzQZf/rwQ/GDP95TIW+sz3eVRDPfLJWIVnEduKOowfuzLC6UY8zbJqMWssha6k1haCYxFoAUGLrNptRJtj2Kduz36iAphUo4Tfm63v0stsnz52SKqGrZCxpg4Pkg=
+ bh=Li3kh4MLDOJ1/8cznkgPZE1JxjJ2O+9lKERAUqgj7k8=;
+ b=YFGy50Rud6J8FVcvEHCY/WBTxesQaAnjapH0wbv430R4zeqhGsHFA7pPJoKd/ZCUeFoMsmO7BRl7I/a9WJ/gSxylf1SxeUC0g4U5wXFxkt0zFecqjmDZBN1VKhrDwGdbBS5TnS+Juqj9U0+5rAZ/O/AJJhkkpfk3m5v0esMd1Ec=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3881.eurprd04.prod.outlook.com (2603:10a6:8:12::28)
- with Microsoft SMTP Server (version=TLS1_2,
+ by DB3PR0402MB3818.eurprd04.prod.outlook.com (2603:10a6:8:e::29) with
+ Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.22; Wed, 17 Jun
- 2020 12:26:43 +0000
+ 2020 12:31:36 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3109.021; Wed, 17 Jun 2020
- 12:26:43 +0000
+ 12:31:36 +0000
 From: Anson Huang <anson.huang@nxp.com>
 To: Aisheng Dong <aisheng.dong@nxp.com>, "linux@armlinux.org.uk"
  <linux@armlinux.org.uk>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
@@ -66,17 +66,15 @@ To: Aisheng Dong <aisheng.dong@nxp.com>, "linux@armlinux.org.uk"
  <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
  <linux-kernel@vger.kernel.org>, "linux-clk@vger.kernel.org"
  <linux-clk@vger.kernel.org>
-Subject: RE: [PATCH V2 3/9] clk: imx: Support building SCU clock driver as
- module
-Thread-Topic: [PATCH V2 3/9] clk: imx: Support building SCU clock driver as
- module
-Thread-Index: AQHWPjGlTieDV0WYc0SOGNv5XMQ0F6jcrBWAgAAcNCA=
-Date: Wed, 17 Jun 2020 12:26:43 +0000
-Message-ID: <DB3PR0402MB39163BC04E4E5F4F6A22F6D4F59A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Subject: RE: [PATCH V2 1/9] clk: composite: Export clk_hw_register_composite()
+Thread-Topic: [PATCH V2 1/9] clk: composite: Export clk_hw_register_composite()
+Thread-Index: AQHWPjGiF9uPvLda2kWeKUSGmuz6tKjcoooAgAAmlXA=
+Date: Wed, 17 Jun 2020 12:31:35 +0000
+Message-ID: <DB3PR0402MB3916CD2DEFC64796E7869EEDF59A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 References: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
- <1591687933-19495-4-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB49660A10856A3746C7103394809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB49660A10856A3746C7103394809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <1591687933-19495-2-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB49665E5D93C2FFA8221F8660809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+In-Reply-To: <AM6PR04MB49665E5D93C2FFA8221F8660809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -86,45 +84,45 @@ authentication-results: nxp.com; dkim=none (message not signed)
 x-originating-ip: [183.192.13.100]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 01fb318e-09c7-4065-a04d-08d812b9b1e9
-x-ms-traffictypediagnostic: DB3PR0402MB3881:
+x-ms-office365-filtering-correlation-id: 50167d62-306d-45c2-8bf2-08d812ba6041
+x-ms-traffictypediagnostic: DB3PR0402MB3818:
 x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3881D5D0335E3B99567381C3F59A0@DB3PR0402MB3881.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-microsoft-antispam-prvs: <DB3PR0402MB3818B5678A1D052042EDE0F3F59A0@DB3PR0402MB3818.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3383;
 x-forefront-prvs: 04371797A5
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 22b1HaOIS2icXu9OLJJPDbGq0TwJimaRLtlfLRCRKYW2CubDF+oDWEAFkY61uyGdnoOsRt0JiBjC+wX4ZHqx/1GqxAFB1LM9kPpG7UGOhZ3ctWq5pvVdF9jp20BI7ZpPad3vkPSw2xD9ZXwfmDYWXfx0MV/NyoXs/8R59TNa/QTagx2TF9yr7c73iZsdCIlNqgEBoXVlT6hAabehww8SyJ5Q/tvNklX2UQ0JZ7V5Y3HRS5Zxbk75JlQFp8twW1FeXa8PI/OM7aXnvoNi4JtyQfjcYmwEoCGAFCOVBMW5a9tLouolqNqWC7at56gy3PLI+GOJ1mDY1pW+e76hC+BzhsVa/fXAQ09SVomxn/S9dRLtota6i+9xzSrKNFR9+wt2
+x-microsoft-antispam-message-info: 8uMBnudk81htzmBCpv0xbJzzI8VYeL0wr8Y3eMYEl+cDzZzeH3YRsNSq57e562E48vsZBVHgxwiP530WH5HygtwKe3vHxdoUUnhzCoJg9EJNSHsOV8IBkSTI6aoWGwqtCnaiefxJG/OSHX9TebzJom8ad7twOjZ9QPdXPAY9kp4WiofL9JGT67AZJYowDWStUXHaItYXeL1PftwsQiyHBEF7l80PX22uJJ4UY8FsuITTXqiSdwvZaKze5yq39GVdT8wVpeNVlkiAjspVTqJ8Iw25Yk/tviBdpri8IBaRw0blZdAPzZGzOQrnTNqF/qX4Rfys5RLVeqVHPgdC9i9knfub9BAIZ7cw2fz5H6fNU44TH8J1smtY5FV2WSCkxhlv
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(136003)(396003)(376002)(346002)(366004)(39860400002)(8676002)(33656002)(4326008)(71200400001)(2906002)(55016002)(186003)(26005)(44832011)(8936002)(5660300002)(110136005)(478600001)(9686003)(83380400001)(76116006)(7696005)(52536014)(66446008)(86362001)(316002)(64756008)(66476007)(6506007)(66556008)(7416002)(66946007)(921003);
+ SFS:(4636009)(376002)(136003)(39860400002)(396003)(366004)(346002)(186003)(8936002)(5660300002)(86362001)(2906002)(71200400001)(52536014)(6506007)(26005)(33656002)(83380400001)(8676002)(4326008)(7416002)(7696005)(316002)(478600001)(9686003)(44832011)(66476007)(66556008)(66946007)(76116006)(64756008)(66446008)(110136005)(55016002)(921003);
  DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 1ocY81cP+XOnCmjIAj6Aj5oxyPPhSuvxPDC8B9+HTGk3R9BgGln60DdVZrQr9tna54bFf7cFhQy/Xs0NFYOF8L3WeWXn5oHy1nG4b1LQaaI0kguxP4r4B0XBnqFvFoQFKt+dNxJlduxBWGTapx06wNgyIiaFE4HGJnS2dmd9S0u56uPOmN3acDZhjKfM0FlPPU/D78AJ6qOC7riC0G9j656qrieeu4n0sawy3mWKNrc8+GILRi2YwgqiTfZqjF8TwaZM1hzoqbd/bLaPdaz2vC5gB51I4eZyt5fmbypNYMeM5iqxglO2xZICViKIY9ya6u+SMFhJjfPuivYn8yY6azkotkUrs2HH5CTkhClEx0XI0r325A2XXqXnAe6/8rmA5nIHPAShVLKPxavqet2IYghERO/nVj6aVosa6rQZNiMedcgu6XK/O43ZSLjiM7LbRUoG4M7aCXtsNUMLgSNYaMQmoCIpI8BcdDr9E1uJNLFS/1YROOAU3o8o+tpYERwZ
+x-ms-exchange-antispam-messagedata: +B8UFrimNTTbV9P6c538d3YktTI6yheOEtvwsVz+m6HJlXUVEQdu/G+Tp0RmjN4jw611HjvDz+JBjTgTvdNkmzS4wwgH6lD2DgbygMMz4pvvIPYw31Dyn7/qVN599RG5b6oe+NRskpjdjXB55DLGdZpEGvxahVSZnwFgz9TbizUZT3nbZZRcjkAtFc56941vWVRhA3/I3CVRpTvLDLMooWUeWsIM75dPH2eY8DJsMYj3zkh2DJnErr+hAAH2rBekwSjUUxJwmlg1IuoUoZhLUOXq/RyDidRo2CGKLn46hRz+3L3Bl2jlLqUQvHUf6gbcSmaLEqJ1bNSzxC7PvbY73ywFoUjrZ9ujqceMF2BhbrNGir1tCwCp/XMx8dl2/AZGDoCZBtFiXen7MLmr7KczhamLyxQI8e9EirMgqd3wyvOoQ4qJahl6nBlB8x8qzxIfLGDbC0vMTeNsptAfN527JL86kg3euU6TNRbeIbjkGtdhd1JbwaP8ujBV0GaSNfQe
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 01fb318e-09c7-4065-a04d-08d812b9b1e9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jun 2020 12:26:43.4164 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 50167d62-306d-45c2-8bf2-08d812ba6041
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jun 2020 12:31:35.9881 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: EAyzG1FAKzgN9l8prxplXvKAxKDnnMYkWHKmnIt1hwKXhOlH5cW6ifB3eXxwDEB/SN2WJG9gvBLD0atG9EU8TQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3881
+X-MS-Exchange-CrossTenant-userprincipalname: nB4ctq9WoaAU3FEkRHOnD+U6RtdO/JjLvUXughHBkI3jdiEr8lDc7tIsfGZvsAkPid/2wuRRS5aCRlvwRxHS2w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3818
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_052646_759179_B109FACD 
-X-CRM114-Status: GOOD (  19.84  )
+X-CRM114-CacheID: sfid-20200617_053139_137398_8D83FE82 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.15.78 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.78 listed in wl.mailspike.net]
+ low trust [40.107.6.54 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.54 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -150,71 +148,48 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-> Subject: RE: [PATCH V2 3/9] clk: imx: Support building SCU clock driver as
-> module
+
+> Subject: RE: [PATCH V2 1/9] clk: composite: Export
+> clk_hw_register_composite()
 > 
 > > From: Anson Huang <Anson.Huang@nxp.com>
 > > Sent: Tuesday, June 9, 2020 3:32 PM
 > >
-> > There are more and more requirements of building SoC specific drivers
-> > as modules, add support for building SCU clock driver as module to
-> > meet the requirement.
+> > Export clk_hw_register_composite() to support user built as module.
+> >
+> > ERROR: modpost: "clk_hw_register_composite"
+> > [drivers/clk/imx/mxc-clk.ko] undefined!
+> > scripts/Makefile.modpost:111: recipe for target 'Module.symvers'
+> > failed
+> > make[1]: *** [Module.symvers] Error 1
+> > make[1]: *** Deleting file 'Module.symvers'
+> > Makefile:1384: recipe for target 'modules' failed
+> > make: *** [modules] Error 2
 > >
 > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > > ---
-> > Changes since V1:
-> > 	- add ARCH_MXC to build dependency to avoid build fail on x86 arch;
-> > 	- move clk-lpcg-scu.c change in to this patch.
+> > No change.
 > > ---
-> >  drivers/clk/imx/Kconfig        | 4 ++--
-> >  drivers/clk/imx/Makefile       | 5 ++---
-> >  drivers/clk/imx/clk-lpcg-scu.c | 1 +
-> >  drivers/clk/imx/clk-scu.c      | 5 +++++
-> >  4 files changed, 10 insertions(+), 5 deletions(-)
+> >  drivers/clk/clk-composite.c | 1 +
+> >  1 file changed, 1 insertion(+)
 > >
-> > diff --git a/drivers/clk/imx/Kconfig b/drivers/clk/imx/Kconfig index
-> > db0253f..ded0643 100644
-> > --- a/drivers/clk/imx/Kconfig
-> > +++ b/drivers/clk/imx/Kconfig
-> > @@ -5,8 +5,8 @@ config MXC_CLK
-> >  	def_bool ARCH_MXC
+> > diff --git a/drivers/clk/clk-composite.c b/drivers/clk/clk-composite.c
+> > index 7376f57..2ddb54f 100644
+> > --- a/drivers/clk/clk-composite.c
+> > +++ b/drivers/clk/clk-composite.c
+> > @@ -328,6 +328,7 @@ struct clk_hw *clk_hw_register_composite(struct
+> > device *dev, const char *name,
+> >  					   rate_hw, rate_ops, gate_hw,
+> >  					   gate_ops, flags);
+> >  }
+> > +EXPORT_SYMBOL_GPL(clk_hw_register_composite);
 > >
-> >  config MXC_CLK_SCU
-> > -	bool
-> > -	depends on IMX_SCU
+> >  struct clk_hw *clk_hw_register_composite_pdata(struct device *dev,
+> >  			const char *name,
 > 
-> Keep this line as it is
-> 
-> > +	tristate "IMX SCU clock"
-> 
-> i.MX SCU Clock core driver
-> 
-> > +	depends on ARCH_MXC && IMX_SCU
-> >
-> >  config CLK_IMX8MM
-> >  	bool "IMX8MM CCM Clock Driver"
-> > diff --git a/drivers/clk/imx/Makefile b/drivers/clk/imx/Makefile index
-> > 928f874..1af8cff 100644
-> > --- a/drivers/clk/imx/Makefile
-> > +++ b/drivers/clk/imx/Makefile
-> > @@ -21,9 +21,8 @@ obj-$(CONFIG_MXC_CLK) += \
-> >  	clk-sscg-pll.o \
-> >  	clk-pll14xx.o
-> >
-> > -obj-$(CONFIG_MXC_CLK_SCU) += \
-> > -	clk-scu.o \
-> > -	clk-lpcg-scu.o
-> > +mxc-clk-scu-objs += clk-scu.o clk-lpcg-scu.o
-> > +obj-$(CONFIG_MXC_CLK_SCU) += mxc-clk-scu.o
-> 
-> Like i.MX pinctrl, I'm not sure if it's really necessary to build core libraries as
-> modules. Probably the simplest way is only building platform drivers part as
-> module. And leave those core libraries built in kernel.
-> This may make the code a bit cleaner.
-> 
+> I guess you'd better add this one as well.
 
-Will discuss this with Linaro guys about it, previous requirement I received is
-all SoC specific modules need to be built as module.
+I did NOT see this is used in upstream i.MX clock driver, from my test, it is not necessary so far.
 
 Anson
 _______________________________________________
