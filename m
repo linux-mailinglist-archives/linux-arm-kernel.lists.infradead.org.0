@@ -2,97 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0661B1FCA6B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42F6A1FCA5D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:02:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m9TOlAn+zGhVnN2cYPNun8ijBmTVJgn+kCOvBM+WEFE=; b=ASE4Tgp8CETlYX
-	2pL9YZKWZSVWDCUHafi+Ghr14oh6oq2VI/mlU3GBELnE4nJPtMQYt3gx+aSz/IYjFnV2o8WuZjlTq
-	iZyrwj57ULFHBZqvMCUvds8YeNOiyM+DKy4pT8vs/ihhCvmscN0BwBpayavqpOFq/qqr+gyiw5Ttl
-	HViTmoGVPHgLZZolqGk/lLgEV/i5Xg3XhUOETr92+jQoM/7BRXc5LZ1uKhP6H+eDaHoru3HkPsEOK
-	DXeBUgZ7cw8AjqcFiLEodHhzGOE0Kr7XPd/XHCiFNCClt3buzkovGEpwfeUcz0rK5Ui8UtBcEEZFL
-	u7FXmfiYtGHANClhWwcw==;
+	List-Owner; bh=9hQCxEJGfAWmcl/JQ1rEKgKh0mqFLGHjZnuHSpGL4B8=; b=iEIdbR8w2QCpfp
+	motA6GcqF0qslu8FMitzIsJEjnRBfiH8wXryaExmZdMX0ccNmAwxzB9Vjvj8HEz87vIHfOA6C0F4P
+	okEajvQWHuVpaenn2CdmoRlyX3RoQW7kb6ZnHKQRis6JCDC1BHOb1cFYtDKhqfY6qKGDQcKK9zBk1
+	Mamssfev8hiA+fejHDhNnihWIeEg+eDnI3ZkJMR4KuTz8etoRZbFtswOdRe35qYKfdhyx+1B4qc9m
+	3SOTDyIQCoE8MtO6uw6wno9ow9COnzQqW28s2B6IuPfWupeOAoB1gJQhljf+elyxJEkG4oj9ImwsY
+	Mkcr0jF+PG3Y7N43AUSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlUuo-00046h-5y; Wed, 17 Jun 2020 10:03:30 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5])
+	id 1jlUtZ-0003RN-Uh; Wed, 17 Jun 2020 10:02:13 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlUud-00045z-NQ; Wed, 17 Jun 2020 10:03:21 +0000
-Received: from pps.filterd (m0127361.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05HA2KAQ121051; Wed, 17 Jun 2020 06:02:56 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 31q6hvq6ew-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 17 Jun 2020 06:02:55 -0400
-Received: from m0127361.ppops.net (m0127361.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 05HA2QE4121283;
- Wed, 17 Jun 2020 06:02:38 -0400
-Received: from ppma04ams.nl.ibm.com (63.31.33a9.ip4.static.sl-reverse.com
- [169.51.49.99])
- by mx0a-001b2d01.pphosted.com with ESMTP id 31q6hvq5rr-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 17 Jun 2020 06:02:38 -0400
-Received: from pps.filterd (ppma04ams.nl.ibm.com [127.0.0.1])
- by ppma04ams.nl.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 05HA1nGG006382;
- Wed, 17 Jun 2020 10:01:50 GMT
-Received: from b06avi18878370.portsmouth.uk.ibm.com
- (b06avi18878370.portsmouth.uk.ibm.com [9.149.26.194])
- by ppma04ams.nl.ibm.com with ESMTP id 31q6ch8t8m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 17 Jun 2020 10:01:49 +0000
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06avi18878370.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id 05HA1lRV64815568
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 17 Jun 2020 10:01:47 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 079CCA4053;
- Wed, 17 Jun 2020 10:01:47 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id AA8EBA4059;
- Wed, 17 Jun 2020 10:01:43 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.204.35])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Wed, 17 Jun 2020 10:01:43 +0000 (GMT)
-Date: Wed, 17 Jun 2020 13:01:41 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 4/4] Documentation/mm: Add descriptions for arch page
- table helpers
-Message-ID: <20200617100141.GC6493@linux.ibm.com>
-References: <1592192277-8421-1-git-send-email-anshuman.khandual@arm.com>
- <1592192277-8421-5-git-send-email-anshuman.khandual@arm.com>
+ id 1jlUtQ-0003Qh-OY
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:02:05 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jlUtO-0004qU-NR; Wed, 17 Jun 2020 12:02:02 +0200
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jlUtN-0004hz-Dk; Wed, 17 Jun 2020 12:02:01 +0200
+Message-ID: <c1ccb77ef0bc56b96a8ad991f8345d0ffbd76fc2.camel@pengutronix.de>
+Subject: Re: [PATCH v3 2/9] reset: Add Raspberry Pi 4 firmware reset controller
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, f.fainelli@gmail.com, 
+ gregkh@linuxfoundation.org, wahrenst@gmx.net, linux-kernel@vger.kernel.org
+Date: Wed, 17 Jun 2020 12:02:01 +0200
+In-Reply-To: <20200612171334.26385-3-nsaenzjulienne@suse.de>
+References: <20200612171334.26385-1-nsaenzjulienne@suse.de>
+ <20200612171334.26385-3-nsaenzjulienne@suse.de>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1592192277-8421-5-git-send-email-anshuman.khandual@arm.com>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-17_03:2020-06-16,
- 2020-06-17 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=1
- spamscore=0 clxscore=1011 mlxscore=0 lowpriorityscore=0 bulkscore=0
- mlxlogscore=999 cotscore=-2147483648 adultscore=0 phishscore=0
- priorityscore=1501 impostorscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2006170075
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_030319_878787_228EA945 
-X-CRM114-Status: GOOD (  14.58  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200617_030204_798812_D052CBEE 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.158.5 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -106,73 +70,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
- ziy@nvidia.com, Catalin Marinas <catalin.marinas@arm.com>,
- linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, gerald.schaefer@de.ibm.com,
- christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Cc: tim.gover@raspberrypi.org, mathias.nyman@linux.intel.com,
+ linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
+ andy.shevchenko@gmail.com, lorenzo.pieralisi@arm.com,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ helgaas@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 15, 2020 at 09:07:57AM +0530, Anshuman Khandual wrote:
-> This adds a specific description file for all arch page table helpers which
-> is in sync with the semantics being tested via CONFIG_DEBUG_VM_PGTABLE. All
-> future changes either to these descriptions here or the debug test should
-> always remain in sync.
+Hi Nicolas,
+
+On Fri, 2020-06-12 at 19:13 +0200, Nicolas Saenz Julienne wrote:
+> Raspberry Pi 4's co-processor controls some of the board's HW
+> initialization process, but it's up to Linux to trigger it when
+> relevant. Introduce a reset controller capable of interfacing with
+> RPi4's co-processor that models these firmware initialization routines as
+> reset lines.
 > 
-> Cc: Jonathan Corbet <corbet@lwn.net>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Mike Rapoport <rppt@linux.ibm.com>
-> Cc: Vineet Gupta <vgupta@synopsys.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-> Cc: Vasily Gorbik <gor@linux.ibm.com>
-> Cc: Christian Borntraeger <borntraeger@de.ibm.com>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: Borislav Petkov <bp@alien8.de>
-> Cc: "H. Peter Anvin" <hpa@zytor.com>
-> Cc: Kirill A. Shutemov <kirill@shutemov.name>
-> Cc: Paul Walmsley <paul.walmsley@sifive.com>
-> Cc: Palmer Dabbelt <palmer@dabbelt.com>
-> Cc: linux-snps-arc@lists.infradead.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: linux-s390@vger.kernel.org
-> Cc: linux-riscv@lists.infradead.org
-> Cc: x86@kernel.org
-> Cc: linux-arch@vger.kernel.org
-> Cc: linux-mm@kvack.org
-> Cc: linux-doc@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Suggested-by: Mike Rapoport <rppt@kernel.org>
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
->  Documentation/vm/arch_pgtable_helpers.rst | 258 ++++++++++++++++++++++
->  mm/debug_vm_pgtable.c                     |   6 +
->  2 files changed, 264 insertions(+)
->  create mode 100644 Documentation/vm/arch_pgtable_helpers.rst
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 
-Acked-by: Mike Rapoport <rppt@linux.ibm.com>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
+If there is a good reason for the single DT specified reset id, I can
+pick up patches 1 and 2.
+
+If you change the dts patch 4 to use a number instead of the reset id
+define for now, there wouldn't even be a dependency between these reset
+and dts patches.
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
