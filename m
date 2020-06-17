@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A17E1FCD91
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:39:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 791D81FCD92
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 14:40:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OP2Tc45tWwXDFgFKQMvAfvGFCXGrflguCm9UYTJ3Jn0=; b=N002e8lbSK+H61
-	DV772P5ygbAFIv6AhbBE6gFe9GZ+C1gYyw9KbSXVa58+Y5inP5+P1rr25ok2nCEy7q6fK2agPFpNL
-	oAPnWlFOAMtjKnbu7+aGT//AJgn6VrVHg+1ysjnf+hoFgyiyfRB35P9f4M7OTWRaj9p6WA04+q83i
-	nhCgXOXUVgogNwPQnyD3WraYFasLYzG1DxzOsWGLgs+j7JkJAkQy/LLdogSQdJGZBVRMAOiVqYuWd
-	NsX4dNLLEU+oNF4wWjgce252Yhrhj4WjjcdWLTbPAgRbEEuEPz+Vaq2bT2VxkhkNSKOEGLPoyV2ke
-	71lb4CyfHa4NbR3pVQZA==;
+	List-Owner; bh=4M8OYP9hWoxsKcdhJQD4EGrSzGSNl4iQvmPLXFET0uQ=; b=OtVgQD5Nr9ncKo
+	lYLs8rxwMcVvx882xV6Aj/2BX1hRRomRW9RFtVuKgLnjVIo55Xxx4y2jB78m64QXFWm/7FYt0KPoz
+	tfWDMK9+IeYVPiFEGX4PyfqMo4oONriYj6GvGQAHnDajgXHR4d118y/PFMvyP4FLlu2HoOXtf+LIK
+	b+wT+6VS8d34Yl19Z/gdFU37ZrQmVv0Pqz856qtZYo+1kOfVuO9+HDxAPPLu2IWBzWtav8S10sLjV
+	qvc0BWOOFIaQIdzaFWRy8IRCrPHftJygl8vTleu6S7Ha0kCa+PkRMdld+cldZ9uM3U/4GAHipXvUp
+	ZqJ4psuVPGsYvWPyrvXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlXM5-0007MB-HM; Wed, 17 Jun 2020 12:39:49 +0000
+	id 1jlXMH-0007d1-9g; Wed, 17 Jun 2020 12:40:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlXLf-0007CV-Is
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 12:39:25 +0000
+ id 1jlXLi-0007Eq-RM
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 12:39:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBC1511FB;
- Wed, 17 Jun 2020 05:39:22 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D033512FC;
+ Wed, 17 Jun 2020 05:39:24 -0700 (PDT)
 Received: from e112269-lin.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0C9353F71F;
- Wed, 17 Jun 2020 05:39:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 100DB3F71F;
+ Wed, 17 Jun 2020 05:39:22 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
  Will Deacon <will@kernel.org>
-Subject: [RFC PATCH 1/2] arm64: kvm: Save/restore MTE registers
-Date: Wed, 17 Jun 2020 13:38:43 +0100
-Message-Id: <20200617123844.29960-2-steven.price@arm.com>
+Subject: [RFC PATCH 2/2] arm64: kvm: Introduce MTE VCPU feature
+Date: Wed, 17 Jun 2020 13:38:44 +0100
+Message-Id: <20200617123844.29960-3-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200617123844.29960-1-steven.price@arm.com>
 References: <20200617123844.29960-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_053923_713843_A7CBCC94 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20200617_053927_005407_38451BA0 
+X-CRM114-Status: GOOD (  17.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,110 +74,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Define the new system registers that MTE introduces and context switch
-them. Also hide the MTE feature from the ID register as it isn't
-supported in a VM yet.
+Add a new VCPU features 'KVM_ARM_VCPU_MTE' which enables memory tagging
+on a VCPU. When enabled on any VCPU in the virtual machine this causes
+all pages that are faulted into the VM to have the PG_mte_tagged flag
+set (and the tag storage cleared if this is the first use).
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- arch/arm64/include/asm/kvm_host.h |  7 +++++++
- arch/arm64/kvm/hyp/sysreg-sr.c    | 12 ++++++++++++
- arch/arm64/kvm/sys_regs.c         |  7 +++++++
- 3 files changed, 26 insertions(+)
+ arch/arm64/include/asm/kvm_emulate.h |  3 +++
+ arch/arm64/include/asm/kvm_host.h    |  2 +-
+ arch/arm64/include/uapi/asm/kvm.h    |  1 +
+ arch/arm64/kvm/reset.c               |  8 ++++++++
+ arch/arm64/kvm/sys_regs.c            |  3 ++-
+ virt/kvm/arm/mmu.c                   | 11 +++++++++++
+ 6 files changed, 26 insertions(+), 2 deletions(-)
 
+diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+index a30b4eec7cb4..b118f466a40b 100644
+--- a/arch/arm64/include/asm/kvm_emulate.h
++++ b/arch/arm64/include/asm/kvm_emulate.h
+@@ -79,6 +79,9 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
+ 	if (cpus_have_const_cap(ARM64_MISMATCHED_CACHE_TYPE) ||
+ 	    vcpu_el1_is_32bit(vcpu))
+ 		vcpu->arch.hcr_el2 |= HCR_TID2;
++
++	if (test_bit(KVM_ARM_VCPU_MTE, vcpu->arch.features))
++		vcpu->arch.hcr_el2 |= HCR_ATA;
+ }
+ 
+ static inline unsigned long *vcpu_hcr(struct kvm_vcpu *vcpu)
 diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 32c8a675e5a4..1f10e9dee2e0 100644
+index 1f10e9dee2e0..3461639bb08a 100644
 --- a/arch/arm64/include/asm/kvm_host.h
 +++ b/arch/arm64/include/asm/kvm_host.h
-@@ -92,6 +92,9 @@ struct kvm_arch {
- 	 * supported.
- 	 */
- 	bool return_nisv_io_abort_to_user;
+@@ -37,7 +37,7 @@
+ 
+ #define KVM_MAX_VCPUS VGIC_V3_MAX_CPUS
+ 
+-#define KVM_VCPU_MAX_FEATURES 7
++#define KVM_VCPU_MAX_FEATURES 8
+ 
+ #define KVM_REQ_SLEEP \
+ 	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+index ba85bb23f060..2677e1ab8c16 100644
+--- a/arch/arm64/include/uapi/asm/kvm.h
++++ b/arch/arm64/include/uapi/asm/kvm.h
+@@ -106,6 +106,7 @@ struct kvm_regs {
+ #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
+ #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
+ #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
++#define KVM_ARM_VCPU_MTE		7 /* VCPU supports Memory Tagging */
+ 
+ struct kvm_vcpu_init {
+ 	__u32 target;
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index ab76728e2742..f87a434c0849 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -287,6 +287,14 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ 		}
+ 	}
+ 
++	if (test_bit(KVM_ARM_VCPU_MTE, vcpu->arch.features)) {
++		if (!system_supports_mte()) {
++			ret = -EINVAL;
++			goto out;
++		}
++		vcpu->kvm->arch.vcpu_has_mte = true;
++	}
 +
-+	/* If any VCPU has MTE enabled then all memory must be MTE enabled */
-+	bool vcpu_has_mte;
- };
- 
- #define KVM_NR_MEM_OBJS     40
-@@ -123,6 +126,8 @@ enum vcpu_sysreg {
- 	SCTLR_EL1,	/* System Control Register */
- 	ACTLR_EL1,	/* Auxiliary Control Register */
- 	CPACR_EL1,	/* Coprocessor Access Control */
-+	RGSR_EL1,	/* Random Allocation Tag Seed Register */
-+	GCR_EL1,	/* Tag Control Register */
- 	ZCR_EL1,	/* SVE Control */
- 	TTBR0_EL1,	/* Translation Table Base Register 0 */
- 	TTBR1_EL1,	/* Translation Table Base Register 1 */
-@@ -139,6 +144,8 @@ enum vcpu_sysreg {
- 	TPIDR_EL1,	/* Thread ID, Privileged */
- 	AMAIR_EL1,	/* Aux Memory Attribute Indirection Register */
- 	CNTKCTL_EL1,	/* Timer Control Register (EL1) */
-+	TFSRE0_EL1,	/* Tag Fault Status Register (EL0) */
-+	TFSR_EL1,	/* Tag Fault Stauts Register (EL1) */
- 	PAR_EL1,	/* Physical Address Register */
- 	MDSCR_EL1,	/* Monitor Debug System Control Register */
- 	MDCCINT_EL1,	/* Monitor Debug Comms Channel Interrupt Enable Reg */
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index 75b1925763f1..6ecee1528566 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -26,6 +26,12 @@
- static void __hyp_text __sysreg_save_common_state(struct kvm_cpu_context *ctxt)
- {
- 	ctxt->sys_regs[MDSCR_EL1]	= read_sysreg(mdscr_el1);
-+	if (system_supports_mte()) {
-+		ctxt->sys_regs[RGSR_EL1] = read_sysreg_s(SYS_RGSR_EL1);
-+		ctxt->sys_regs[GCR_EL1] = read_sysreg_s(SYS_GCR_EL1);
-+		ctxt->sys_regs[TFSRE0_EL1] = read_sysreg_s(SYS_TFSRE0_EL1);
-+		ctxt->sys_regs[TFSR_EL1] = read_sysreg_s(SYS_TFSR_EL1);
-+	}
- 
- 	/*
- 	 * The host arm64 Linux uses sp_el0 to point to 'current' and it must
-@@ -99,6 +105,12 @@ NOKPROBE_SYMBOL(sysreg_save_guest_state_vhe);
- static void __hyp_text __sysreg_restore_common_state(struct kvm_cpu_context *ctxt)
- {
- 	write_sysreg(ctxt->sys_regs[MDSCR_EL1],	  mdscr_el1);
-+	if (system_supports_mte()) {
-+		write_sysreg_s(ctxt->sys_regs[RGSR_EL1], SYS_RGSR_EL1);
-+		write_sysreg_s(ctxt->sys_regs[GCR_EL1], SYS_GCR_EL1);
-+		write_sysreg_s(ctxt->sys_regs[TFSRE0_EL1], SYS_TFSRE0_EL1);
-+		write_sysreg_s(ctxt->sys_regs[TFSR_EL1], SYS_TFSR_EL1);
-+	}
- 
- 	/*
- 	 * The host arm64 Linux uses sp_el0 to point to 'current' and it must
+ 	switch (vcpu->arch.target) {
+ 	default:
+ 		if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features)) {
 diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 51db934702b6..3ae008a9b0bd 100644
+index 3ae008a9b0bd..a6a9552d1233 100644
 --- a/arch/arm64/kvm/sys_regs.c
 +++ b/arch/arm64/kvm/sys_regs.c
-@@ -1095,6 +1095,8 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
- 		if (!vcpu_has_sve(vcpu))
+@@ -1096,7 +1096,8 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
  			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
  		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
-+	} else if (id == SYS_ID_AA64PFR1_EL1) {
-+		val &= ~(0xfUL << ID_AA64PFR1_MTE_SHIFT);
+ 	} else if (id == SYS_ID_AA64PFR1_EL1) {
+-		val &= ~(0xfUL << ID_AA64PFR1_MTE_SHIFT);
++		if (!test_bit(KVM_ARM_VCPU_MTE, vcpu->arch.features))
++			val &= ~(0xfUL << ID_AA64PFR1_MTE_SHIFT);
  	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
  		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
  			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
-@@ -1504,6 +1506,8 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index e3b9ee268823..040a7fffaa93 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -1783,6 +1783,17 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 			vma_pagesize = PMD_SIZE;
+ 	}
  
- 	{ SYS_DESC(SYS_SCTLR_EL1), access_vm_reg, reset_val, SCTLR_EL1, 0x00C50078 },
- 	{ SYS_DESC(SYS_CPACR_EL1), NULL, reset_val, CPACR_EL1, 0 },
-+	{ SYS_DESC(SYS_RGSR_EL1), trap_raz_wi, reset_unknown, RGSR_EL1 },
-+	{ SYS_DESC(SYS_GCR_EL1), trap_raz_wi, reset_unknown, GCR_EL1 },
- 	{ SYS_DESC(SYS_ZCR_EL1), NULL, reset_val, ZCR_EL1, 0, .visibility = sve_visibility },
- 	{ SYS_DESC(SYS_TTBR0_EL1), access_vm_reg, reset_unknown, TTBR0_EL1 },
- 	{ SYS_DESC(SYS_TTBR1_EL1), access_vm_reg, reset_unknown, TTBR1_EL1 },
-@@ -1528,6 +1532,9 @@ static const struct sys_reg_desc sys_reg_descs[] = {
- 	{ SYS_DESC(SYS_ERXMISC0_EL1), trap_raz_wi },
- 	{ SYS_DESC(SYS_ERXMISC1_EL1), trap_raz_wi },
- 
-+	{ SYS_DESC(SYS_TFSR_EL1), trap_raz_wi, reset_unknown, TFSR_EL1 },
-+	{ SYS_DESC(SYS_TFSRE0_EL1), trap_raz_wi, reset_unknown, TFSRE0_EL1 },
++	if (system_supports_mte() && kvm->arch.vcpu_has_mte) {
++		/*
++		 * VM will be able to see the page's tags, so we must ensure
++		 * they have been initialised.
++		 */
++		struct page *page = pfn_to_page(pfn);
 +
- 	{ SYS_DESC(SYS_FAR_EL1), access_vm_reg, reset_unknown, FAR_EL1 },
- 	{ SYS_DESC(SYS_PAR_EL1), NULL, reset_unknown, PAR_EL1 },
++		if (!test_and_set_bit(PG_mte_tagged, &page->flags))
++			mte_clear_page_tags(page_address(page), page_size(page));
++	}
++
+ 	if (writable)
+ 		kvm_set_pfn_dirty(pfn);
  
 -- 
 2.20.1
