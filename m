@@ -2,94 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5998E1FC645
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 08:36:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE9051FC666
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 08:49:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Htntj2avf8EnFxxi4xMn2D6BSNVFd673i7DtAJQVqJo=; b=ILCyeo8hQLDATS6/Jqu/RrMaV
-	mtPxiRGKKCVlx65QRl2a77SqDNBIXYCSY6A1Wc7qE+R4fVwILVQonFOovqfVtFzDzh4P684HHZORV
-	H3+6W9StYXEg5Gju+9+QUevGKUBJyD1WLcs0PJN57xLTAisvwd8y6fDey63sRIQgjvTaRUa52oDD1
-	XBTvoJMH7kZgkRyoYNwNjgs12tlLpTraVFDmRl1rBkWrnMfiMh4q9ycq+Pu8Vbyav8rl5tQdH1KHb
-	40pJejEpzHd8x97v7k9OmJWZBPaawqTgoJ/4XLLVxdJR9j+AwXK+92H4GYsjx4ag5mNCeRsN/8ZpH
-	iRsnQFxFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZOiYBM642q+1IAVe42LCDrzsiPISQMPlx14wLua/cp8=; b=RSzp4bH3iElWEP
+	9tyKFkCg7IMHQaN0bs48gWckS9pZ/G8v2aeOqXAFt7S29+FOyBMamiSAU0B7KyykbnIgafKIk/Teq
+	YJ+PluQtnJLEwhjNZA88yhu89IBuVxFKaHmni7deEbXxaqhWnbfQ6GMhnr3AKSryQeQ5w+3SDvWEm
+	kFHg46Bah0xdUASWJ8YGynMwb3ClDQ4w53iv/ME2pkKaaPrEcso44EwGT3Y1nUDXbqw/Sm9B7PvFG
+	mxKbypqFPM084bmgw9i7mzDYGoHvM025mO17OV3pTTrrUdU7aIgHSZsQwgtv5NUVdLrJndsN7nUnZ
+	idzLsrBZkswkO42JXXWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlRgY-0008Bk-FR; Wed, 17 Jun 2020 06:36:34 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jlRt4-0006La-Ga; Wed, 17 Jun 2020 06:49:30 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlRgQ-0008BL-61
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 06:36:27 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id jz3so523334pjb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jun 2020 23:36:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=0hmKmXCxCRcQALPYbnFdxEvUlQkPks6VN/iZhbvkJ4k=;
- b=rvqd9LWWq2oBP1NXSRICoyE7dBDZKyQkKvS24/nayfJSVcjw77MfPsJ5upffBnudoy
- d3z4RpewDF5dAG2sJV4heBbN11HcTwTMsG/0yKMRCgrEt1uoNhlnsJ1io3alqXV8bPUh
- sJhtTJyIPX/m7Av4cc5Aq9oU1fbTCNLw+7F2+qXN5ViVBFq+/MiL6azF9FO85ot1qneD
- Z7aFLXDuUUs9HvUQvx+7BpLXiwtVVEf0CIdQ+dG88byu+EHygjAET3XxEXQrAU1RFpiN
- AlKDCDx+9pgemETMZa8zpUkJ45Zsh+nJaf3vQzZc7n5tBI+aMOSAMIQgQppdVEX0IHFA
- IQXQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=0hmKmXCxCRcQALPYbnFdxEvUlQkPks6VN/iZhbvkJ4k=;
- b=mZRe+V724b+SXm58xZgG+dbozE/4ukne+4YGCeaB0SxG+M2f9e7f+mQzFlM0uoG3Kx
- 3eSGeaeFjgbnv4W+VD8EO5Tb491+1UMQVvmJ/RjQ73w6ZI8e26W1pH4Q33aXDT87crRH
- 7eBabslI+0gJFsXVC94JvRlnA7CrAG8Ja1Pd1c/8KKjznx5s7BLV9Hm0Yyuido03XcAy
- ZHrMtF22wjlwh1IYC/7vleFKJ2EYaqh2RH5pvs/gKuHCZe7y0hqx+xX12EvsbMtImolF
- ABQByJlKJu+Z8pK3Ub+RxBQfQ3Oy5Sdyy87YeI2EbJKsGHoSejjTGTlNv6hEkH5825qn
- IO5A==
-X-Gm-Message-State: AOAM530BtHO2LVv2ZGHXrROJ0WI4tMUXX0jhWKsdcugCk+akKSFnDxXS
- pGMRFz3IqshIu0UpT74Ee8baOg==
-X-Google-Smtp-Source: ABdhPJy43trEBsAiGCPNDdmT5lU7+nqr2aATv0kKhfWgDpMRVWaO3qJBYGDYVT47SIR/M4ppBmqQhg==
-X-Received: by 2002:a17:90a:4eca:: with SMTP id
- v10mr6784491pjl.170.1592375785192; 
- Tue, 16 Jun 2020 23:36:25 -0700 (PDT)
-Received: from google.com ([2620:15c:2ce:0:9efe:9f1:9267:2b27])
- by smtp.gmail.com with ESMTPSA id i125sm15909001pgd.21.2020.06.16.23.36.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 23:36:24 -0700 (PDT)
-Date: Tue, 16 Jun 2020 23:36:21 -0700
-From: Fangrui Song <maskray@google.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: Clang miscompiling arm64 kernel with BTI and PAC?
-Message-ID: <20200617063621.vqtplv2l3nnaye22@google.com>
-References: <20200615105524.GA2694@willie-the-truck>
- <20200615115337.GG4447@sirena.org.uk>
- <20200615120223.GC2694@willie-the-truck>
- <20200615143105.GA2283265@ubuntu-n2-xlarge-x86>
- <20200616173728.GC2129@willie-the-truck>
- <20200616174904.GA3403100@ubuntu-n2-xlarge-x86>
- <20200616175519.GD2129@willie-the-truck>
- <CAKwvOdm_0W5A+=C0uNfFfU2+wb-f4MA2B_P+15KWdGsBqfZ9rg@mail.gmail.com>
+ id 1jlRsv-0006L5-VF; Wed, 17 Jun 2020 06:49:23 +0000
+X-UUID: f6286da125d84b9a893e0c49e80b685a-20200616
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Yi8qckVCoc/BpINGsirl4HLvfSQpKF4ywGxOTUuDyXs=; 
+ b=SEgxChRfS3LDVMAH8o9E5uWCg9fLjKKTSOErgn2Nj2djudDtMkh4zDkU8uJX0nPmQS6NEBwXHv2ChHZbeOUu8K7LK0FFvc6fOeMThRxRH/QQIjZ4/aeuPNQz/jC/uFUPYP2YcpGAaQnH/e2DRLpCjC9Ob3Dk6t6bo9lEd/5Rvek=;
+X-UUID: f6286da125d84b9a893e0c49e80b685a-20200616
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1132842642; Tue, 16 Jun 2020 22:49:05 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 16 Jun 2020 23:39:10 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 14:39:10 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 17 Jun 2020 14:39:09 +0800
+Message-ID: <1592375950.27894.0.camel@mtksdaap41>
+Subject: Re: [PATCH v15 06/11] soc: mediatek: Add subsys clock control for
+ bus protection
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 17 Jun 2020 14:39:10 +0800
+In-Reply-To: <CANMq1KBRe81Sa4A6sCM2egOVRWCJbUNPsXHpfzkT33XGVZXBhg@mail.gmail.com>
+References: <1590051985-29149-1-git-send-email-weiyi.lu@mediatek.com>
+ <1590051985-29149-7-git-send-email-weiyi.lu@mediatek.com>
+ <CANMq1KBRe81Sa4A6sCM2egOVRWCJbUNPsXHpfzkT33XGVZXBhg@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOdm_0W5A+=C0uNfFfU2+wb-f4MA2B_P+15KWdGsBqfZ9rg@mail.gmail.com>
+X-TM-SNTS-SMTP: FDDAF576199A3C79306B7E064DC94874A65BB2656A13F2F45D65F88AF7F8449F2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_233626_245478_888A7CBD 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200616_234922_010043_2C989E46 
+X-CRM114-Status: GOOD (  18.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,8 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,73 +86,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Tom Stellard <tstellar@redhat.com>,
- android-kvm@google.com, Catalin Marinas <catalin.marinas@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Mark Brown <broonie@kernel.org>, Nathan Chancellor <natechancellor@gmail.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, daniel.kiss@arm.com
+Cc: James Liao <jamesjj.liao@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
+ Enric Balletbo Serra <eballetbo@gmail.com>,
+ lkml <linux-kernel@vger.kernel.org>, Fan Chen <fan.chen@mediatek.com>,
+ Devicetree List <devicetree@vger.kernel.org>, "moderated list:ARM/Mediatek
+ SoC support" <linux-mediatek@lists.infradead.org>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 2020-06-04 at 10:29 +0800, Nicolas Boichat wrote:
+> On Thu, May 21, 2020 at 5:06 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
+> >
+> > For the bus protection operations, some subsys clocks need to be enabled
+> > before releasing the protection, and vice versa.
+> > But those subsys clocks could only be controlled once its corresponding
+> > power domain is turned on first.
+> > In this patch, we add the subsys clock control into its relevant steps.
+> >
+> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-scpsys.c | 62 +++++++++++++++++++++++++++++++++++++--
+> >  1 file changed, 60 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > index 59a525a..ef2c668 100644
+> > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > [snip]
+> >         val |= PWR_ISO_BIT;
+> > @@ -498,6 +511,39 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> >         return ret;
+> >  }
+> >
+> > +static int init_subsys_clks(struct platform_device *pdev,
+> > +               const char *prefix, struct clk **clk)
+> > +{
+> > +       struct device_node *node = pdev->dev.of_node;
+> > +       u32 prefix_len, sub_clk_cnt = 0;
+> > +       struct property *prop;
+> > +       const char *clk_name;
+> > +
+> > +       prefix_len = strlen(prefix);
+> > +
+> > +       of_property_for_each_string(node, "clock-names", prop, clk_name) {
+> > +               if (!strncmp(clk_name, prefix, prefix_len) &&
+> > +                               (clk_name[prefix_len] == '-')) {
+> > +                       if (sub_clk_cnt >= MAX_SUBSYS_CLKS) {
+> > +                               dev_err(&pdev->dev,
+> > +                                       "subsys clk out of range %d\n",
+> > +                                       sub_clk_cnt);
+> > +                               return -EINVAL;
+> > +                       }
+> > +
+> > +                       clk[sub_clk_cnt] = devm_clk_get(&pdev->dev,
+> > +                                               clk_name);
+> > +
+> > +                       if (IS_ERR(clk[sub_clk_cnt]))
+> > +                               return PTR_ERR(clk[sub_clk_cnt]);
+> > +
+> > +                       sub_clk_cnt++;
+> > +               }
+> > +       }
+> > +
+> > +       return sub_clk_cnt;
+> > +}
+> > +
+> >  static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
+> >                         const char * const *name)
+> >  {
+> > @@ -596,6 +642,18 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >                 if (ret)
+> >                         return ERR_PTR(ret);
+> >
+> > +               if (data->subsys_clk_prefix) {
+> > +                       ret = init_subsys_clks(pdev,
+> > +                                       data->subsys_clk_prefix,
+> > +                                       scpd->subsys_clk);
+> > +                       if (ret < 0) {
+> > +                               dev_err(&pdev->dev,
+> > +                                       "%s: subsys clk unavailable\n",
+> > +                                       data->name);
+> 
+> init_subsys_clks should already have printed an error (directly or
+> indirectly), so this is not needed.
+> 
 
-On 2020-06-16, 'Nick Desaulniers' via Clang Built Linux wrote:
->On Tue, Jun 16, 2020 at 10:55 AM Will Deacon <will@kernel.org> wrote:
->>
->> On Tue, Jun 16, 2020 at 10:49:04AM -0700, Nathan Chancellor wrote:
->> > On Tue, Jun 16, 2020 at 06:37:28PM +0100, Will Deacon wrote:
->> > > On Mon, Jun 15, 2020 at 07:31:05AM -0700, Nathan Chancellor wrote:
->> > > > On Mon, Jun 15, 2020 at 01:02:23PM +0100, Will Deacon wrote:
->> > > > > On Mon, Jun 15, 2020 at 12:53:37PM +0100, Mark Brown wrote:
->> > > > > > ([AArch64] Fix BTI instruction emission) should fix this, it's been
->> > > > > > reviewed so should be merged shortly.
->> > > > >
->> > > > > Cheers, that's good to hear. Shall we have a guess at the clang release
->> > > > > that will get the fix, or just disable in-kernel BTI with clang for now?
->> > > > >
->> > > >
->> > > > This will be in clang 11 for sure. Tom, would it be too late to get this
->> > > > in to clang 10.0.1? If it is not, I can open a PR.
->> > >
->> > > Any update on this, please? I'd like to get the kernel fixed this week.
->> > >
->> > The AArch64 backend owner said it should be okay to add to 10.0.1:
->> > https://llvm.org/pr46327
->> >
->> > Tom just needs to pick it, I see no reason to believe that won't happen
->> > this week.
->>
->> Brill, then I'll tentatively queue the diff below...
->>
->> Thanks,
->>
->> Will
->>
->> --->8
->>
->> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->> index 31380da53689..4ae2419c14a8 100644
->> --- a/arch/arm64/Kconfig
->> +++ b/arch/arm64/Kconfig
->> @@ -1630,6 +1630,8 @@ config ARM64_BTI_KERNEL
->>         depends on CC_HAS_BRANCH_PROT_PAC_RET_BTI
->>         # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=94697
->>         depends on !CC_IS_GCC || GCC_VERSION >= 100100
->> +       # https://reviews.llvm.org/rGb8ae3fdfa579dbf366b1bb1cbfdbf8c51db7fa55
->> +       depends on !CC_IS_CLANG || CLANG_VERSION >= 100001
->>         depends on !(CC_IS_CLANG && GCOV_KERNEL)
->>         depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
->>         help
->
->That should be fine.
->Acked-by: Nick Desaulniers <ndesaulniers@google.com>
+You're right. I'll remove it in next version v16.
 
-100001 is fine.
-
-Tom has merged it into release/10.x
-https://github.com/llvm/llvm-project/commit/bf89c5aeb8915d488fa1c790e1b237b62a49c01f
+> > +                               return ERR_PTR(ret);
+> > +                       }
+> > +               }
+> > +
+> >                 genpd->name = data->name;
+> >                 genpd->power_off = scpsys_power_off;
+> >                 genpd->power_on = scpsys_power_on;
+> > --
+> > 1.8.1.1.dirty
 
 _______________________________________________
 linux-arm-kernel mailing list
