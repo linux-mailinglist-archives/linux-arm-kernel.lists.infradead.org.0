@@ -2,129 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC9641FD327
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 19:08:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC2701FD34A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 19:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hdWj1Q9aik4x6SGwzG+oo6AgglKEV9V2cB+YWhbH7mU=; b=K272vH2cg3HkJi
-	KlhRjpqlNPaYLf34PHutz6sAfl0WwZ3mf4U2x2ltgyBRs8ntJTBCrsQHWRXEwpeTsDYZN8vsVrnm8
-	t70YY796Tw7qIBID6/aqXc4DCc7p5pVz4Yv3LAS/3hIRsRai3kmfKIpoEJe94t9qXa2Tj1XHylB42
-	o2KIpozRlyolmiBVtdmxFURD/xZ5xqOe2yQBJKwI3ZoMR8yXt+hVH9gTeIxN2Rn+LpSqajWaaQZhX
-	cWRX9ADshugMPeGPpxQInfOPjZ5QSRrJoa5xspCywS9H7CD5iLepquoEs2DswN6ir3Xc1S8tBhhxd
-	55JCH3uWdYW8UC/agQsw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=dyxEBQPsG1SjlHmYh/8SDuLcb+aJN6MfR439dNEX+0M=; b=X8M1G50ijDcyQl
+	SCQ4Usu856k1FJX1hy1spPVXDWXv14Gk7d6R5YRjJANytGGdUI+Oxt/0/Ch5iAz1IJtH4qeUaCORo
+	WjTiRpxlIXeaXSMno6um+b8VrSh6IZfw495+VvJdmLn4WPDQ9ZvGmko1sG8JSoi/F1XQeQ7nN6lZA
+	bOYm3ld23CGbiqDnsS11cpqLxlm2lLnCmOAgVCxttyBvIiPbqH4OI5wsNTS5vXKR1PIZxRVUAuL2a
+	rAuxHb2qN9IGJkZzOQfCZ+1U7++bSyKAyE59h+U3aynAK4rJPPw69yefkXhc2NCgZdMfZcVPC8s9q
+	M4tycy45Tcu+jtLZmaUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlbY1-00043B-Nb; Wed, 17 Jun 2020 17:08:25 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1jlbhb-0001WM-MJ; Wed, 17 Jun 2020 17:18:19 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlbXr-00042o-7p
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 17:08:17 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200617170812epoutp04d55257ee2f7e7a5d761df8c41bf2eed5~ZY9DrCrV_0266402664epoutp04I
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 17:08:12 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200617170812epoutp04d55257ee2f7e7a5d761df8c41bf2eed5~ZY9DrCrV_0266402664epoutp04I
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1592413692;
- bh=8uegeGaZQaXzOszaS/XO+h1hPJdbqLK/6+7/IxX9QPk=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=g15sK8fOD3w4KJNmtjBxHErPstHjksqLtMEXx0r2rSgdTYAj8rmm03bkoBSsA7ulo
- HAiwj6oJOtvxIz07Tdj766S7zvd4GyIPtd/uq5IeCAC3xJueu0owdtw//jlC+YZazr
- F/msr4G6Cnw3lUr4H8pR8acd+X0+XCv9NMr/udac=
-Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTP id
- 20200617170811epcas5p4b3769a525def33d34ae8e9fadcf56672~ZY9DUx7FO0730007300epcas5p41;
- Wed, 17 Jun 2020 17:08:11 +0000 (GMT)
-Received: from epcas5p3.samsung.com ( [182.195.41.41]) by
- epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- D0.A0.09703.BFD4AEE5; Thu, 18 Jun 2020 02:08:11 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
- 20200617170810epcas5p3ea5ed916115df0f5e5908ad81b2b7b53~ZY9CPAygZ1441714417epcas5p3x;
- Wed, 17 Jun 2020 17:08:10 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200617170810epsmtrp1f826008bae2346c4157b9e7fb37b1e40~ZY9COS6mE0839208392epsmtrp1k;
- Wed, 17 Jun 2020 17:08:10 +0000 (GMT)
-X-AuditID: b6c32a4a-4cbff700000025e7-95-5eea4dfb862e
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- CA.9B.08382.AFD4AEE5; Thu, 18 Jun 2020 02:08:10 +0900 (KST)
-Received: from mshams01 (unknown [107.122.43.244]) by epsmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200617170806epsmtip2e8aa64209a416af5b6427f0b90d27713~ZY8_eTan80225202252epsmtip29;
- Wed, 17 Jun 2020 17:08:06 +0000 (GMT)
-From: "M Tamseel Shams" <m.shams@samsung.com>
-To: "'Robin Murphy'" <robin.murphy@arm.com>, <kgene@kernel.org>,
- <krzk@kernel.org>, <gregkh@linuxfoundation.org>, <jslaby@suse.com>
-In-Reply-To: <027c0955-3246-8c1e-4d0d-053a2a177dc6@arm.com>
-Subject: RE: [RFC PATCH] serial: samsung: Re-factors UART IRQ resource for
- various Samsung SoC
-Date: Wed, 17 Jun 2020 22:38:01 +0530
-Message-ID: <000101d644c9$e06bba40$a1432ec0$@samsung.com>
+ id 1jlbhS-0001Vi-TQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 17:18:12 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05HHHmcZ103922;
+ Wed, 17 Jun 2020 17:17:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : mime-version : content-type : in-reply-to;
+ s=corp-2020-01-29; bh=9VQqTPZpR0kzjjfzvsdc4Cd29YvF0dcmDmbQ6puPfZE=;
+ b=WkhgoKnEal4c9PClFZzLziJhMWKcbyIeQUkNxg7Qso6eH8O9emFNz5Yxyn80BZRLSz6q
+ +YgycPyZ+vfek55tD//ARjQCfv9w2jKX0ln7oZX06tsBb7B1pfRCTtLxs4Ova+2nhHxd
+ ukCTajQ4fUmm4HjcdFXx0OK1NUiK8w7UBM97bjqI8coEjQM+bMlEBIaJge8yY5pLDNwB
+ gpBp8atNBQgx818Es5Bagq/yfskFLGaS/F9sHbA+G3aSiCbG7a+XkfOKaOUKBO9Mx1PO
+ 1cNgg2RPzBTk2TXBhe7JW4fAiqXYeptpaqcVA5skwU61al7p/63LNcan8tHYeuDtnGyy XQ== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2130.oracle.com with ESMTP id 31q65yvmda-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 17 Jun 2020 17:17:59 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05HHDADm140357;
+ Wed, 17 Jun 2020 17:15:58 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3030.oracle.com with ESMTP id 31q66netxq-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 17 Jun 2020 17:15:58 +0000
+Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 05HHFuNR021623;
+ Wed, 17 Jun 2020 17:15:57 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 17 Jun 2020 10:15:56 -0700
+Date: Wed, 17 Jun 2020 20:15:50 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: [PATCH v2] coresight: cti: Fix error handling in probe
+Message-ID: <20200617171549.GA9686@kadam>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQKFLyHxHkUNw6bP6pRUtYOiC7jR2QHTNgWiAZJI3VmnY///wA==
-Content-Language: en-us
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrOKsWRmVeSWpSXmKPExsWy7bCmpu5v31dxBgeu6Vo8mLeNzaJ58Xo2
- iykbPjBZ9D9+zWxx/vwGdotNj6+xWlzeNYfNYsb5fUwWZxb3slsc/PCE1YHLY828NYwem1Z1
- snnsn7uG3WPzknqPvi2rGD3Wb7nK4vF5k1wAexSXTUpqTmZZapG+XQJXxom7Z1kKTgtUPDum
- 2MDYytvFyMkhIWAi8bNtF0sXIxeHkMBuRolJS36xQzifGCVuP1/MCOF8Y5RYN+0bO0zLt/V7
- mSESexkl7tz5ClX1nFHi/5ZmJpAqNgFdiUkH28CqRARaGSVaJ80ASzALrGOUaP8hAGJzClhL
- PP+5hxHEFhZIkNi8ZwUziM0ioCrRsXsDWD2vgKXExbndbBC2oMTJmU9YIOZoSyxb+JoZ4iQF
- iZ9Pl7GC2CICThJ7Dz5mhqgRl3h59AjU2Xs4JF7/r4SwXST2rJkOFReWeHV8C5QtJfGyvw3K
- zpeYP28V1PwKiZUX3kDZ9hIHrswBuoEDaL6mxPpd+hCr+CR6fz9hAglLCPBKdLQJQVQrSvzf
- 3Q81UVzi3YoprBC2h0T7pamsExgVZyF5bBaSx2YheWAWwrIFjCyrGCVTC4pz01OLTQuM8lLL
- 9YoTc4tL89L1kvNzNzGC05aW1w7Ghw8+6B1iZOJgPMQowcGsJMLr/PtFnBBvSmJlVWpRfnxR
- aU5q8SFGaQ4WJXFepR9n4oQE0hNLUrNTUwtSi2CyTBycUg1M2WmpGkJZx2QCOvMrNXO7kjyV
- frR3H7uUdnaGSqQjWxELe97ndq1XKlsqOH/vUXi+9cKdgqSEr3ONNP97aa+7X1hU2+q9INVm
- Qq+y0YPDHxL+aP+dIWe5t8DF0H+/mUh13qZv7SekfiqovXl+P6uQyej3l/9Bi6ZJ1D4wMKyY
- nNbsuvbo19TvYb4bnJZwrndRj2Hi/npKoKXEOoHtm8Lz7x9eHSuwt5/CpZzymyOi26pnyeuZ
- u471Lmaqv5MmxDmx5LbwAZO3KrMqD77k37LZY8b5yk8nJj+fFJTyeXKwTQqX5JfD/zcHb9vQ
- scBF938y12Fh35XJ5TXxfIyhue/4XI8cjmjxjbkS/j301g0lluKMREMt5qLiRABPF+rlygMA
- AA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprLIsWRmVeSWpSXmKPExsWy7bCSvO4v31dxBocvylk8mLeNzaJ58Xo2
- iykbPjBZ9D9+zWxx/vwGdotNj6+xWlzeNYfNYsb5fUwWZxb3slsc/PCE1YHLY828NYwem1Z1
- snnsn7uG3WPzknqPvi2rGD3Wb7nK4vF5k1wAexSXTUpqTmZZapG+XQJXxsRt+1gKZgpUPJzy
- nrmB8TJPFyMnh4SAicS39XuZuxi5OIQEdjNKLJ5ylQkiIS4x7dd+RghbWGLlv+fsILaQwFNG
- iZOHxEFsNgFdiUkH28CaRQS6GSWe/tzNAuIwC2xilPjz7i4TxNidjBIPO5exgrRwClhLPP+5
- B2yssECcxIWdfSwgNouAqkTH7g1gq3kFLCUuzu1mg7AFJU7OfAJWwyygLfH05lM4e9nC18wQ
- 5ylI/HwKMV9EwEli78HHzBA14hIvjx5hn8AoPAvJqFlIRs1CMmoWkpYFjCyrGCVTC4pz03OL
- DQsM81LL9YoTc4tL89L1kvNzNzGCY1BLcwfj9lUf9A4xMnEwHmKU4GBWEuF1/v0iTog3JbGy
- KrUoP76oNCe1+BCjNAeLkjjvjcKFcUIC6YklqdmpqQWpRTBZJg5OqQamap/gE6w8VVVHpeR9
- xeaeve2+U/bRqdveAZ1fbz9ak8g4o1FWe/7vX9XsFwJjvEzmcHJ6qB6Y6CnydMWRztNMDzef
- scg4KW0tZWarKdeQ9vVcx9+Db5ckfrfJneuxSrrXa9m7xXmxFj/9Q4I/Tf+VtsWoUpq99mvp
- amlr42Dt/Ud/KOvorJj2+kvF6W61p618XBsTgoutX7ltuVm/1qXr8FaWgIwplyffKUy9ZKpi
- 7Vj33XntDM3Ll/Lzdh9wDvkgYLdVumxfmFaKDWP28vPSTazq4lO/3VRlq/zV/6t59ZXuTxYf
- S9+c3KNSUyQm9OWx5bbXgkq8u+w/XTOLnXBe/Lalwr1Gt8vxB7tf7F6pxFKckWioxVxUnAgA
- UA4NIjADAAA=
-X-CMS-MailID: 20200617170810epcas5p3ea5ed916115df0f5e5908ad81b2b7b53
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200615124355epcas5p446ae2f1b63331ef87334cd7d696c3c43
-References: <CGME20200615124355epcas5p446ae2f1b63331ef87334cd7d696c3c43@epcas5p4.samsung.com>
- <20200615122609.71884-1-m.shams@samsung.com>
- <027c0955-3246-8c1e-4d0d-053a2a177dc6@arm.com>
+Content-Disposition: inline
+In-Reply-To: <CAJ9a7Vjn-1gvOY0h5eiffXgqiNu4rz=Z18hgV33WExGnLEV-nA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9655
+ signatures=668680
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ adultscore=0 phishscore=0
+ mlxscore=0 bulkscore=0 malwarescore=0 mlxlogscore=999 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2006170136
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9655
+ signatures=668680
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ lowpriorityscore=0 malwarescore=0
+ bulkscore=0 phishscore=0 adultscore=0 priorityscore=1501 mlxscore=0
+ spamscore=0 clxscore=1015 mlxlogscore=999 suspectscore=0 impostorscore=0
+ cotscore=-2147483648 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2004280000 definitions=main-2006170137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_100815_699771_158ECDF3 
-X-CRM114-Status: GOOD (  14.27  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200617_101811_037980_39740B16 
+X-CRM114-Status: GOOD (  23.00  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.86 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -132,7 +96,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -145,70 +110,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, alim.akhtar@samsung.com,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-serial@vger.kernel.org
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+There were a couple problems with error handling in the probe function:
+1)  If the "drvdata" allocation failed then it lead to a NULL
+    dereference.
+2)  On several error paths we decremented "nr_cti_cpu" before it was
+    incremented which lead to a reference counting bug.
 
-> -----Original Message-----
-> From: Robin Murphy <robin.murphy@arm.com>
-> Sent: Monday, June 15, 2020 6:43 PM
-> To: Tamseel Shams <m.shams@samsung.com>; kgene@kernel.org;
-> krzk@kernel.org; gregkh@linuxfoundation.org; jslaby@suse.com
-> Cc: linux-samsung-soc@vger.kernel.org; linux-serial@vger.kernel.org; linux-
-> kernel@vger.kernel.org; alim.akhtar@samsung.com; linux-arm-
-> kernel@lists.infradead.org
-> Subject: Re: [RFC PATCH] serial: samsung: Re-factors UART IRQ resource for
-> various Samsung SoC
-> 
-> On 2020-06-15 13:26, Tamseel Shams wrote:
-> >   	else {
-> >   		port->irq = ret;
-> >   		ourport->rx_irq = ret;
-> > -		ourport->tx_irq = ret + 1;
-> > +		if (ourport->info->irq_cnt == 1)
-> > +			ourport->tx_irq = ret;
-> > +		else
-> > +			ourport->tx_irq = ret + 1;
-> >   	}
-> >
-> > -	ret = platform_get_irq(platdev, 1);
-> > -	if (ret > 0)
-> > -		ourport->tx_irq = ret;
-> > +	if (ourport->info->irq_cnt != 1) {
-> > +		ret = platform_get_irq(platdev, 1);
-> > +		if (ret > 0)
-> > +			ourport->tx_irq = ret;
-> 
-> FWIW, if you're not going to do anything in the error case then you may as well
-> just call platform_get_irq_optional() unconditionally.
-> 
-> Robin.
-> 
-My intention behind not using 'platform_get_irq_optional' was that it does not prints the error when the 2nd interrupt resource is missing for the older UART's. I am just using it to give information to the user in error case. I can use 'platform_get_irq_optional' too.
+There were also some parts of the error handling which were not bugs but
+were messy.  The error handling was confusing to read.  It printed some
+unnecessary error messages.
 
-Thanks & Regards
-Tamseel
+The simplest way to fix these problems was to create a cti_pm_setup()
+function that did all the power management setup in one go.  That way
+when we call cti_pm_release() we don't have to deal with the
+complications of a partially configured power management config.
 
-> > +	}
-> >   	/*
-> >   	 * DMA is currently supported only on DT platforms, if DMA properties
-> >   	 * are specified.
-> > @@ -2387,6 +2393,7 @@ static struct s3c24xx_serial_drv_data
-> s3c2410_serial_drv_data = {
-> >   		.name		= "Samsung S3C2410 UART",
-> >   		.type		= PORT_S3C2410,
-> >   		.fifosize	= 16,
-> > +		.irq_cnt	= 2,
-> >   		.rx_fifomask	= S3C2410_UFSTAT_RXMASK,
-> >   		.rx_fifoshift	= S3C2410_UFSTAT_RXSHIFT,
-> >   		.rx_fifofull	= S3C2410_UFSTAT_RXFULL,
+I reversed the "if (drvdata->ctidev.cpu >= 0)" condition in cti_pm_release()
+so that it mirros the new cti_pm_setup() function.
 
+Fixes: 6a0953ce7de9 ("coresight: cti: Add CPU idle pm notifer to CTI devices")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+---
+v2: I accidentally introduced a bug in cti_pm_release() in v1.
+
+ drivers/hwtracing/coresight/coresight-cti.c | 96 ++++++++++++---------
+ 1 file changed, 54 insertions(+), 42 deletions(-)
+
+diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+index 40387d58c8e7..d2da5bf9f552 100644
+--- a/drivers/hwtracing/coresight/coresight-cti.c
++++ b/drivers/hwtracing/coresight/coresight-cti.c
+@@ -747,17 +747,50 @@ static int cti_dying_cpu(unsigned int cpu)
+ 	return 0;
+ }
+ 
++static int cti_pm_setup(struct cti_drvdata *drvdata)
++{
++	int ret;
++
++	if (drvdata->ctidev.cpu == -1)
++		return 0;
++
++	if (nr_cti_cpu)
++		goto done;
++
++	cpus_read_lock();
++	ret = cpuhp_setup_state_nocalls_cpuslocked(
++			CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
++			"arm/coresight_cti:starting",
++			cti_starting_cpu, cti_dying_cpu);
++	if (ret) {
++		cpus_read_unlock();
++		return ret;
++	}
++
++	ret = cpu_pm_register_notifier(&cti_cpu_pm_nb);
++	cpus_read_unlock();
++	if (ret) {
++		cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
++		return ret;
++	}
++
++done:
++	nr_cti_cpu++;
++	cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
++
++	return 0;
++}
++
+ /* release PM registrations */
+ static void cti_pm_release(struct cti_drvdata *drvdata)
+ {
+-	if (drvdata->ctidev.cpu >= 0) {
+-		if (--nr_cti_cpu == 0) {
+-			cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
++	if (drvdata->ctidev.cpu == -1)
++		return;
+ 
+-			cpuhp_remove_state_nocalls(
+-				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+-		}
+-		cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
++	cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
++	if (--nr_cti_cpu == 0) {
++		cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
++		cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+ 	}
+ }
+ 
+@@ -823,19 +856,14 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 
+ 	/* driver data*/
+ 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+-	if (!drvdata) {
+-		ret = -ENOMEM;
+-		dev_info(dev, "%s, mem err\n", __func__);
+-		goto err_out;
+-	}
++	if (!drvdata)
++		return -ENOMEM;
+ 
+ 	/* Validity for the resource is already checked by the AMBA core */
+ 	base = devm_ioremap_resource(dev, res);
+-	if (IS_ERR(base)) {
+-		ret = PTR_ERR(base);
+-		dev_err(dev, "%s, remap err\n", __func__);
+-		goto err_out;
+-	}
++	if (IS_ERR(base))
++		return PTR_ERR(base);
++
+ 	drvdata->base = base;
+ 
+ 	dev_set_drvdata(dev, drvdata);
+@@ -854,8 +882,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 	pdata = coresight_cti_get_platform_data(dev);
+ 	if (IS_ERR(pdata)) {
+ 		dev_err(dev, "coresight_cti_get_platform_data err\n");
+-		ret =  PTR_ERR(pdata);
+-		goto err_out;
++		return  PTR_ERR(pdata);
+ 	}
+ 
+ 	/* default to powered - could change on PM notifications */
+@@ -867,35 +894,20 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 					       drvdata->ctidev.cpu);
+ 	else
+ 		cti_desc.name = coresight_alloc_device_name(&cti_sys_devs, dev);
+-	if (!cti_desc.name) {
+-		ret = -ENOMEM;
+-		goto err_out;
+-	}
++	if (!cti_desc.name)
++		return -ENOMEM;
+ 
+ 	/* setup CPU power management handling for CPU bound CTI devices. */
+-	if (drvdata->ctidev.cpu >= 0) {
+-		cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
+-		if (!nr_cti_cpu++) {
+-			cpus_read_lock();
+-			ret = cpuhp_setup_state_nocalls_cpuslocked(
+-				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
+-				"arm/coresight_cti:starting",
+-				cti_starting_cpu, cti_dying_cpu);
+-
+-			if (!ret)
+-				ret = cpu_pm_register_notifier(&cti_cpu_pm_nb);
+-			cpus_read_unlock();
+-			if (ret)
+-				goto err_out;
+-		}
+-	}
++	ret = cti_pm_setup(drvdata);
++	if (ret)
++		return ret;
+ 
+ 	/* create dynamic attributes for connections */
+ 	ret = cti_create_cons_sysfs(dev, drvdata);
+ 	if (ret) {
+ 		dev_err(dev, "%s: create dynamic sysfs entries failed\n",
+ 			cti_desc.name);
+-		goto err_out;
++		goto pm_release;
+ 	}
+ 
+ 	/* set up coresight component description */
+@@ -908,7 +920,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 	drvdata->csdev = coresight_register(&cti_desc);
+ 	if (IS_ERR(drvdata->csdev)) {
+ 		ret = PTR_ERR(drvdata->csdev);
+-		goto err_out;
++		goto pm_release;
+ 	}
+ 
+ 	/* add to list of CTI devices */
+@@ -927,7 +939,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 	dev_info(&drvdata->csdev->dev, "CTI initialized\n");
+ 	return 0;
+ 
+-err_out:
++pm_release:
+ 	cti_pm_release(drvdata);
+ 	return ret;
+ }
+-- 
+2.27.0
 
 _______________________________________________
 linux-arm-kernel mailing list
