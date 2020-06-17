@@ -2,58 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDEB71FD558
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 21:21:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E92F61FD55B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 21:22:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6SAc/wKCPR4U+5Lxf62lS5D/m0ZEsiMXIsrT7iIyu5A=; b=EY1AlyefsHtnZJot0BVaA2e5R
-	5kJ02R/YnUxGrLUsHNE4TeIk5ZHR5SCtDrZ3eFmpb8PwYuSm53kX3oRnhoROYaTvYCQMvAQqP0v45
-	TnvLb0+U2BKkTfN+746BtcS3kde85yjntQnc0LG5ob5Si7laby6micdnDG6xuZvVgDoV2b+CmpyXG
-	yjocfQ+mU/OsO+LtgWd2C5Do8s5avwarrTPEpzI9SkYJHLlsCbVQaNuQporzIY7sxu2anq5P4IaL9
-	ppQzasVXoijkB3jPLBrVWAFW6fzBe4yPLZAPgUraFh2YP4WnXxaGmPL+cDP8AigEdFDN+9vtveUII
-	21FZrnSuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SyFIKYH5MOt8pST2+85Io/Pc2tsTth7yX36Hc6Am/FM=; b=IQn7stSJTuy2AM
+	sbvB2xNsfUYOMDwI03vDJis7ZvRwbJnx3WVFR9vLeKufeEkpUNlzTKRhKHxugDnE5jKQeM8olXqK6
+	WP7a15gj4YGCnWKvdutbBXSdDEEI+JjXJQzh5vdJOFNPNUxdk2w8i+A8GR3W7toHy37LKnd8zb2ot
+	nOJAKPHZFMwCZWqNsYdtMCmf4qbJFGIC1NFdvi+O078mOXIP7Y1pCiQqOTsY0GHdU9dIgbH/3mpQl
+	Nu517EbSh2iHnsyqn2sXWu6NGDbkkrBNMBzgl3+WGImnYcJCKjYqT15dxtUAEmqwhXJkYcbdxU1/z
+	vx/A9tzdndyHvkO0y3lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jldd5-0001Sn-9g; Wed, 17 Jun 2020 19:21:47 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jlddN-0001gE-DJ; Wed, 17 Jun 2020 19:22:05 +0000
+Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jldcw-0001Rm-Ap; Wed, 17 Jun 2020 19:21:39 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 0E869ADC9;
- Wed, 17 Jun 2020 19:21:38 +0000 (UTC)
-Message-ID: <9450f86c15ecd8435bcdbc395f8674172a975100.camel@suse.de>
-Subject: Re: [PATCH v3 4/9] ARM: dts: bcm2711: Add reset controller to xHCI
- node
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, 
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, Bjorn
- Helgaas <helgaas@kernel.org>
-Date: Wed, 17 Jun 2020 21:21:31 +0200
-In-Reply-To: <20200612171334.26385-5-nsaenzjulienne@suse.de>
-References: <20200612171334.26385-1-nsaenzjulienne@suse.de>
- <20200612171334.26385-5-nsaenzjulienne@suse.de>
-User-Agent: Evolution 3.36.3 
+ id 1jlddA-0001eM-IX
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 19:21:53 +0000
+Received: by mail-pj1-x102c.google.com with SMTP id i12so1449854pju.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jun 2020 12:21:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=o1aUz4WZqMNKDwP4gjvS29atJu0epT3vBg3ViKrDL3s=;
+ b=JKX7PHaEhzBq0KNPHLM5dBvB9PfmRefe2yZ0K/xh85bCmhnhXi2romIiW7QtmTgqZc
+ IA4xbNi03c+tuVnmedBHirpUFln0as6/UcnXInudlmNmLNkZH18VVfvqskHIWLzJUIOT
+ yQy/X9cldlxFHtuKrmnd5L9WSjEiGgjPZW3c2L5/Q5RsbZhEoqgXIg2m6/LnbcDFveZW
+ qfLPqFPt8KEc0WacXcqWAS1Ajo7meuSSG0mc1+bs4gYBt03eMXutKDiT9MnMiGuVvtF7
+ q9mFMoLMLRr942W5TchmENW5CkqnQ3/kpCehLn8ztCN3WsuGVs6FVSJ60GrVm7HIwZ1f
+ 0V6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=o1aUz4WZqMNKDwP4gjvS29atJu0epT3vBg3ViKrDL3s=;
+ b=B91kx0fqjfx8tz7oA0RRRgbIaynkEUV0peoda0B/nc8Y9XWEJ84GPbVmcva9QqSsmd
+ xUC7QIF8Ru5V6+nw7In3gI579gASTi017dqEGADG1Rb7u23u31M6FnuSxzV66t/KuzO3
+ wQQpa8esCDiTdhU1FkW8eiaGjNWNcOPKmbYdJ6vFe1snS68CGcOWHJCo8BbMGdIcP+dG
+ Vu99VzOYOWqlN8vHwAuNgnjglocAYb5ggQll7m1LAyrKVFDF8UANbAfhrCIiZNVm6WUu
+ dbm0o+f8d5PopNfP7+7HZfWJektLIWBuQZ4D3GvXSrH4jbW/qBd0VHiySWSjuGNlolrK
+ /Htw==
+X-Gm-Message-State: AOAM530WxPrs13yIjUJb92yGFfcGs2YGmzLtKSvn15RVlUgn8j8ptDCg
+ vDHa2KhT2/tn5uzwEgr4kiMaTA==
+X-Google-Smtp-Source: ABdhPJwVPXCOmvkp+d8c+tbqemzERXsgbGqGwUbZGLUarDkO+XUJO6xB5u3gxz/sOTQ9k+68HVncZw==
+X-Received: by 2002:a17:90a:7c4e:: with SMTP id
+ e14mr612307pjl.52.1592421711762; 
+ Wed, 17 Jun 2020 12:21:51 -0700 (PDT)
+Received: from kernelci-production.internal.cloudapp.net ([52.250.1.28])
+ by smtp.gmail.com with ESMTPSA id r8sm546465pgn.19.2020.06.17.12.21.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 17 Jun 2020 12:21:50 -0700 (PDT)
+Message-ID: <5eea6d4e.1c69fb81.b67fa.1f1c@mx.google.com>
+Date: Wed, 17 Jun 2020 12:21:50 -0700 (PDT)
 MIME-Version: 1.0
+X-Kernelci-Report-Type: test
+X-Kernelci-Branch: for-kernelci
+X-Kernelci-Tree: arm64
+X-Kernelci-Kernel: v5.8-rc1-8-gb9249cba25a5
+Subject: arm64/for-kernelci baseline: 22 runs,
+ 1 regressions (v5.8-rc1-8-gb9249cba25a5)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org,
+ kernelci-results@groups.io
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_122138_659943_6C1F2715 
-X-CRM114-Status: GOOD (  17.10  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_122152_623302_0A88A2C9 
+X-CRM114-Status: UNSURE (   3.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:102c listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,136 +98,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, tim.gover@raspberrypi.org,
- mathias.nyman@linux.intel.com, linux-pci@vger.kernel.org,
- linux-usb@vger.kernel.org, andy.shevchenko@gmail.com,
- lorenzo.pieralisi@arm.com, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
-Content-Type: multipart/mixed; boundary="===============1984569884263853283=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+arm64/for-kernelci baseline: 22 runs, 1 regressions (v5.8-rc1-8-gb9249cba25a5)
 
---===============1984569884263853283==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-lfIoWXagrdDHMww3Jq4T"
+Regressions Summary
+-------------------
 
+platform                     | arch  | lab          | compiler | defconfig | results
+-----------------------------+-------+--------------+----------+-----------+--------
+meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre | gcc-8    | defconfig | 4/5    
 
---=-lfIoWXagrdDHMww3Jq4T
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+  Details:  https://kernelci.org/test/job/arm64/branch/for-kernelci/kernel/v5.8-rc1-8-gb9249cba25a5/plan/baseline/
 
-Hi All,
-
-On Fri, 2020-06-12 at 19:13 +0200, Nicolas Saenz Julienne wrote:
-> The chip is hardwired to the board's PCIe bus and needs to be properly
-> setup trough a firmware routine after a PCI fundamental reset. Pass the
-> reset controller phandle that takes care of triggering the
-> initialization to the relevant PCI device.
->
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
->
-> ---
->
-> Changes since v2:
->  - Use dt-bindings to access IDs
->
-> Changes since v1:
->  - Update to match new binding
->
->  arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 9 +++++++++
->  1 file changed, 9 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> index 0cef95058fb0..e20979013414 100644
-> --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> @@ -4,6 +4,8 @@
->  #include "bcm2835-rpi.dtsi"
->  #include "bcm283x-rpi-usb-peripheral.dtsi"
->
-> +#include <dt-bindings/reset/raspberrypi,firmware-reset.h>
-> +
->  / {
->  	compatible =3D "raspberrypi,4-model-b", "brcm,bcm2711";
->  	model =3D "Raspberry Pi 4 Model B";
-> @@ -207,6 +209,13 @@ phy1: ethernet-phy@1 {
->  	};
->  };
->
-> +&pcie0 {
-> +	usb@1,0 {
-> +		reg =3D <0 0 0 0 0>;
-> +		resets =3D <&reset RASPBERRYPI_FIRMWARE_RESET_ID_USB>;
-> +	};
-> +};
-> +
-
-I'm now double-guessing this is correct. With this lspci -tv output:
-
-[0000:00]---00.0-[01]----00.0  VIA Technologies, Inc. VL805 USB 3.0 Host Co=
-ntroller
-
-The DT patch should be more like this:
-
-+&pcie0 {
-+       pci@0 {
-+               #address-cells =3D <3>;
-+               #size-cells =3D <2>;
-+               ranges;
-+
-+               reg =3D <0 0 0 0 0>;
-+
-+               usb@1,0 {
-+                       reg =3D <0x10000 0 0 0 0>;
-+                       resets =3D <&reset RASPBERRYPI_FIRMWARE_RESET_ID_US=
-B>;
-+               };
-+       };
-+};
-
-Small details aside I'm pretty confident this is the way to go, but would
-appreciate some comments/validation.
-
-Regards,
-Nicolas
+  Test:     baseline
+  Tree:     arm64
+  Branch:   for-kernelci
+  Describe: v5.8-rc1-8-gb9249cba25a5
+  URL:      https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+  SHA:      b9249cba25a5dce5de87e5404503a5e11832c2dd 
 
 
---=-lfIoWXagrdDHMww3Jq4T
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7qbTsACgkQlfZmHno8
-x/4CVggAn3Z1hf15FCwZBqJ5vtu95aPDbATL/d0KQ7jGrs66dTwaOP6aBJFw48YF
-0wKRsvMe9LukIRSOBh9HluSEszmQj7/hUGRYcsXaBgmHeOVs9PCXDbJb0/XtgBwF
-3EvokrD1MRS9bcpXwVOCKsMu+wjaGMlCiiJ6wmvD2ffybDPtYA19Xci86XF3Y2WT
-PTeuhEXh+/+wADvH/z0Gi4ivdIAh6FGLbdaSSVgEpf1JChHkSH0anKhw78keHGWK
-WXifnT/7XqG9VtvNNmFvQ1+q7MoyyJlzCn/NXfNuhjmBV+A6gxhefrVRq+P2yeb7
-LzlXGvG8m8RsQQgt1TlpTQwfAjB8KQ==
-=jUpw
------END PGP SIGNATURE-----
-
---=-lfIoWXagrdDHMww3Jq4T--
+Test Regressions
+---------------- 
 
 
+platform                     | arch  | lab          | compiler | defconfig | results
+-----------------------------+-------+--------------+----------+-----------+--------
+meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre | gcc-8    | defconfig | 4/5    
 
---===============1984569884263853283==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+  Details:     https://kernelci.org/test/plan/id/5eea637e3559c1c82997bf10
+
+  Results:     4 PASS, 1 FAIL, 0 SKIP
+  Full config: defconfig
+  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
+  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.8-rc1-8-gb9249cba25a5/arm64/defconfig/gcc-8/lab-baylibre/baseline-meson-gxl-s805x-libretech-ac.txt
+  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.8-rc1-8-gb9249cba25a5/arm64/defconfig/gcc-8/lab-baylibre/baseline-meson-gxl-s805x-libretech-ac.html
+  Rootfs:      http://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-11-g17e793fa4728/arm64/baseline/rootfs.cpio.gz 
+
+  * baseline.dmesg.emerg: https://kernelci.org/test/case/id/5eea637e3559c1c82997bf15
+      failing since 19 days (last pass: v5.7-rc6-124-g96bc42ff0a82, first fail: v5.7-rc7-156-g46909976c59d)
+      2 lines  
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1984569884263853283==--
-
-
