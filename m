@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9398C1FD999
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 01:23:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C667C1FD99A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 01:24:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=fzKx1ifkxMAutn58f5na7hkEIg/GlhyRn7+2tj2BSEg=; b=eCA
-	xjHN9UEnUCR3qIo52z2eOMWcj/tZEEkuDw1AhREsEjDZUrF5dcH8WB4/QIXmfnIk/qlZEgjNCBfyt
-	5RSv6AEWFDOK6IqHIKofXARll1Wyzbx4KJQNYXGsAexf/P0U8DQakg7mRXL/uyHP9JfQocnTxNhBz
-	RDKfE7if4ppZXgZujI6l4Xwh+xUeB7QJk6LPQO+JAAmFiHfiX6pMx5qX8aZakcOQTyWTvdhEO82Ju
-	Nn91QzoMn+9qnGdVSg8Mq6Lpy7wRF/GLXa1wMWL0vn6/yQ8Qx6oziJSFvQJSochjz20ph2kxYWgYQ
-	oHhJRUnmjUmIcAjJIK4Z2akjQK9/5Cg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=FT+ljcYIEx9yWOcLK1DSNgn877mxEJgm/448FVXLwp4=; b=mVChKt0WCZSk+QzyJ5lTPdGOMW
+	z5rUZH+/6EjjfqFkEErRKQUpLBzQO6TIJasTbrOJ/m5FmTZIFaziMx0ZhMwSyK3Bz1oaTYhyQvdw9
+	2mYlYgLtpl7NwK4hhTzbhpFe4lRb8Mx2GT8Hn3i+jj/vv2NiHN5co5JrYzjaCwcZOLwJOdqCk2vD1
+	cyOhcN38XZklyrwPUDz6X5N0YlnBmodVsbW7e/CMN7I49Ho1+nUCSGvUlXTfuNCCFlArrtG22UIdr
+	JTCJFhdIZy7LtUZpuc9DepG3DmzYYfTlbwzf2YavMBGZDKwm77kxmvLwMibPscOf+y4OMpGE/SpMq
+	19o1wCwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlhPK-0003K0-Ob; Wed, 17 Jun 2020 23:23:50 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jlhPZ-0003S8-FJ; Wed, 17 Jun 2020 23:24:05 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlhPA-0003JM-Vn
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 23:23:42 +0000
-Received: by mail-qt1-x841.google.com with SMTP id z2so953254qts.5
+ id 1jlhPD-0003Jm-S3
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 23:23:45 +0000
+Received: by mail-qt1-x842.google.com with SMTP id z2so953347qts.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 16:23:40 -0700 (PDT)
+ Wed, 17 Jun 2020 16:23:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=M1W5JCcAmvM3NM9z+y7B1BH7N1sBcCpXiGiIv6U/evo=;
- b=sJD9gstBLDX4rtShLtMERYrPXWxSNfaNzs7fTTPyCSOEWeNsOYHeNTnQ6vIF8W6t7y
- TMpa4pStguSQRy4YUH5LYBBi0HFLgVcC3ZCjYT1ldiZmNxuXnMo1FgynZT+cSQrSRZs3
- nWcm/snvLBUSL71mXKlpoS8WMsBKAWW31doW8BgxlZee0Yi5y/xu0pxUr1FbBMuTyvc6
- whUH7Qzneu/e1nz7ERUZmx2UWPqZnNA0yvKTYbtAkKqUF9PiwZkitv6+z7LXRl8U1tKX
- 99ae4HzNj1JfupFMhoD2yooRGdBo27/a1ShtoRNCcfS86spsGEwOFKuoEtrzSFwRLxUw
- 2ouQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=xFbmZ2mBad+QESgZ3lzL2w1td3mq39Msg/iEa+3hrWU=;
+ b=PydwoDGCeyJGnjQd6dXyQGeTKXjdVeLYfxsY7SEB+6a0jSVW0Oo0UJRvBJPInJBiJN
+ 0V9SfMv4m3oAehHFgH/cJoPtXZNpvUP9cM7TLQv592+2kqbnfk66kgo2+qlurNQGJ3JG
+ Gy3M/QAN+SYbIps+kBkVx6u0yxjxMbU2tiHbuspcUuyC0LBKySmvfbMKaR/8m24qu4Pg
+ Vbd9LBB94XXX5lbdL5ix4AGlpwV1Is4qt/y1HlNtRAKVTXktiR6mrSw83no2FujNTAe3
+ YwhY4oTXJUDPX1/uV7aDiERSCSPYDAvpIwhTpzKWwPTym4G2iM1d8A8SZsv7/AnlJspC
+ 95gg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=M1W5JCcAmvM3NM9z+y7B1BH7N1sBcCpXiGiIv6U/evo=;
- b=JUcOI2MC4h19+jYdmP0xxIzKWuQZ4xZQx4c9yNGiIQI12SMOay6ZOZTSZYU7shCtTv
- woZ+grtnqyrlTI+zrreXd0NatOfTNH/ytbxOabahmKtjOhFh7H1EItP0Qdz8B2G5EVLQ
- 7qev23O6Z0eGpqHtw7MRpCm36YbQq47PvlGc3kwUVK0DPQBGPUH7S+oSPHM7yLv9x/cY
- 174mUahOpxB6vSG/XwVmIvINsEKQXKDt7xnMAm/zc0qFXDxGHAYuxlp56T8x25x73NiS
- W0Xo0kDojlRKYNjASVuxDG+HHEtfA3+ZQqRIhT2uEPel6VGqemvuLqs2hJw6Ry+WNFzp
- G4jA==
-X-Gm-Message-State: AOAM533t0RGFGb+mjy6DWgM1tbuaXEbr0caRIM2Hs4GcE/hMb+oYhpBd
- Fzi5axo6CmtubAsEvovm5io=
-X-Google-Smtp-Source: ABdhPJwqWjv1azBUyucrsIvWMF7FrFMPejZ/YHWjciIWSAp3XcMAeD9171II+TCI10VvWhq9tKz0tw==
-X-Received: by 2002:ac8:6bd3:: with SMTP id b19mr1609791qtt.27.1592436219429; 
- Wed, 17 Jun 2020 16:23:39 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=xFbmZ2mBad+QESgZ3lzL2w1td3mq39Msg/iEa+3hrWU=;
+ b=H18ryk4x/V3i4qMiY+Pd23LSAcxn2P7gSTuqpfrDV7YVDQcH+7a4y/1JqdE2niqkyE
+ fLowlhClrsxtSLH8yaLMXN+zD56qudbQqlsE4WtQxjB/+tOBYHDWzg6uIxIjF60WblZz
+ eCdmzz85FJUaztdFMdcb1Nca+3A2/n8ZHx77jSn1f9BjoRze5VQz+TBlPAJ7/haKS+nU
+ Z39BlZBWQq88TSF7EiSwrxmlvrTfaIMDQJ2T3fhbeCozdbXqV9itvemjJ9ziIWVhnFPW
+ 3ghEnuIIkuiPr4yJIKPMk6524NL0qogDQZG+JKhq/L/4OyaDFlC5Yn+N7lGRHm5UzEqY
+ DD1Q==
+X-Gm-Message-State: AOAM5313LXHj+nZwyDg0A0RelMWzItERDouVmFmAsZXwAeYXGgqrT+lu
+ Owftupkzv4BWNZ/zkPjCZ2E=
+X-Google-Smtp-Source: ABdhPJwU28vc5bbv3CFTYs8fJzYxU1v95JhiyqYw4VI2fPPFD0Gh2K0emzSaKP1m6VJ9DZXKWbzQsA==
+X-Received: by 2002:ac8:3f70:: with SMTP id w45mr1618201qtk.253.1592436222770; 
+ Wed, 17 Jun 2020 16:23:42 -0700 (PDT)
 Received: from localhost.localdomain ([2804:14c:482:92b:9524:444f:ca0e:d637])
  by smtp.gmail.com with ESMTPSA id
- 70sm1357551qkk.10.2020.06.17.16.23.36
+ 70sm1357551qkk.10.2020.06.17.16.23.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 16:23:38 -0700 (PDT)
+ Wed, 17 Jun 2020 16:23:41 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH 1/2] ARM: dts: imx6qdl-sabresd: Pass phy-reset-duration
-Date: Wed, 17 Jun 2020 20:22:48 -0300
-Message-Id: <20200617232249.7201-1-festevam@gmail.com>
+Subject: [PATCH 2/2] ARM: dts: imx6qdl-sabresd: Add an mdio node
+Date: Wed, 17 Jun 2020 20:22:49 -0300
+Message-Id: <20200617232249.7201-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200617232249.7201-1-festevam@gmail.com>
+References: <20200617232249.7201-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_162341_023427_28C14FA6 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200617_162343_905864_93CE5385 
+X-CRM114-Status: GOOD (  11.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [festevam[at]gmail.com]
@@ -103,32 +106,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the AR8031 datasheet:
+imx6qdl-sabresd has an Atheros AR8031 Ethernet PHY at address 1.
 
-"When using crystal, clock is generated internally after the power is
-stable. In order to get reliable power-on-reset, it is recommended to
-keep asserting the reset low signal long enough (10 ms) to ensure the
-clock is stable and clock-to-reset (1 ms) requirement is satisfied."
+The AR8031 provides a 125MHz clock to the ENET_REF_CLK i.MX6 pin.
 
-Pass the 'phy-reset-duration' property to meet such requirement.
+Improve the Ethernet representation by adding an mdio node with such
+information.
+
+An advantage of adding the mdio node is that the AR8031 initialization
+code in the mx6sabresd board file in U-Boot can totally be removed.
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- arch/arm/boot/dts/imx6qdl-sabresd.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/imx6qdl-sabresd.dtsi | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
 diff --git a/arch/arm/boot/dts/imx6qdl-sabresd.dtsi b/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-index 28b35ccb3757..9697211b7693 100644
+index 9697211b7693..fb70ae0811af 100644
 --- a/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
 +++ b/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-@@ -204,6 +204,7 @@
+@@ -203,10 +203,21 @@
+ 	pinctrl-names = "default";
  	pinctrl-0 = <&pinctrl_enet>;
  	phy-mode = "rgmii-id";
++	phy-handle = <&phy>;
  	phy-reset-gpios = <&gpio1 25 GPIO_ACTIVE_LOW>;
-+	phy-reset-duration = <10>;
+ 	phy-reset-duration = <10>;
  	fsl,magic-packet;
  	status = "okay";
++
++	mdio {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		phy: ethernet-phy@1 {
++			reg = <1>;
++			qca,clk-out-frequency = <125000000>;
++		};
++	};
  };
+ 
+ &hdmi {
 -- 
 2.17.1
 
