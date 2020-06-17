@@ -2,51 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60A631FCB06
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:41:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3A0D1FCB27
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:44:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Agj81PeRhYb7yj0FRTHLDeVZW7j8o+JePprIywO1eho=; b=PjAWKP3VKDZbenlkQGJQF983+
-	ZFjwp6SHmiEfMI81jG1oy4CqhzomW2Xk10qT0fS2uCETIx/icC5m4HRNDejpManb3lltJKeV1mtq6
-	Ozd8IHVXXFY9daiuURUHnrIgv1Eh1gsD77BIJUpJttd6Q8X1A+XoUXAbEfmQTBs7GC4SgUJgmAdjo
-	i7eSVj74xK/hyEvVKhgI5iIWWnRK4wI1xpfg6TPOp61uvfLCqEg4Pd9bTT/cePb/jobgwnG2AxyYK
-	mI/Zf+RCfr0iA0oecylIbRfhq04hiB5b2fgpFghiBf1gvdU5Hs4jOCzH+WX+cUMqaODLHBkavKz6C
-	iHE7su6ZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iu6lDKInLYRplqOq3jKui7l8i2F56/5TBH1J4qo4rVg=; b=RQizDXjhoVVMa0
+	mDzLOR0WzW28mXyUjpm0UwEHqivYla1KJd/zTzSA09zHLpvz6cZjn2cRR/aFT115giO2IEWX3tMCn
+	EFBo8uXddorQTbaeeV+rZdaKzGu/QhZqs96nHmN0EfsS1urK87M1FaJBD85xUk3W4vTv0+HGNwoMF
+	Vmm7ZCE8itOdUDpPjyjrYooU/tQNUDQDYp3zvctvjit4Uta43Gsp6PaGzNfWHTChwl/MjjYjU4xLS
+	RebZn8yNCAYv4C6Kg3Zr0LuO0FrzFTCjSMqeD1EI1TQLWfU+xlQFK4mbaTbJMVTkaP6yVPBwOSwJT
+	enuh2TK/gBcMJxS78O1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlVV3-00064c-Ab; Wed, 17 Jun 2020 10:40:57 +0000
+	id 1jlVYD-0006hO-Eb; Wed, 17 Jun 2020 10:44:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlVUu-00063z-2N
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:40:49 +0000
+ id 1jlVY5-0006h1-9e
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:44:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC958C0A;
- Wed, 17 Jun 2020 03:40:46 -0700 (PDT)
-Received: from [10.37.12.67] (unknown [10.37.12.67])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9D923F71F;
- Wed, 17 Jun 2020 03:40:44 -0700 (PDT)
-Subject: Re: [PATCH 0/4] Restore big.LITTLE cpuidle driver for Exynos
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- Anand Moon <linux.amoon@gmail.com>
-References: <CGME20200616081248eucas1p168faa343ce333a28c8fd3cf9a6a58b3c@eucas1p1.samsung.com>
- <20200616081230.31198-1-m.szyprowski@samsung.com>
- <CANAwSgStsYP5fBB7z7-Reo2BP4ZQPT6RN4s8QdLGVGhKCDA_Ng@mail.gmail.com>
- <3e6b5dbb-a8a2-e3db-d740-53e13676455c@samsung.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <6b2ac503-62e1-35a6-6dc7-232597367396@arm.com>
-Date: Wed, 17 Jun 2020 11:40:42 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4960031B;
+ Wed, 17 Jun 2020 03:44:03 -0700 (PDT)
+Received: from e112269-lin.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A73D53F71F;
+ Wed, 17 Jun 2020 03:44:01 -0700 (PDT)
+From: Steven Price <steven.price@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>
+Subject: [PATCH] KVM: arm64: kvm_reset_vcpu() return code incorrect with SVE
+Date: Wed, 17 Jun 2020 11:43:39 +0100
+Message-Id: <20200617104339.35094-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <3e6b5dbb-a8a2-e3db-d740-53e13676455c@samsung.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_034048_153524_64B814C8 
-X-CRM114-Status: GOOD (  19.81  )
+X-CRM114-CacheID: sfid-20200617_034405_378695_7387D11C 
+X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,72 +60,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Linux PM list <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Dave Martin <Dave.Martin@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Steven Price <steven.price@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+If SVE is enabled then 'ret' can be assigned the return value of
+kvm_vcpu_enable_sve() which may be 0 causing future "goto out" sites to
+erroneously return 0 on failure rather than -EINVAL as expected.
 
+Remove the initialisation of 'ret' and make setting the return value
+explicit to avoid this situation in the future.
 
-On 6/17/20 10:48 AM, Marek Szyprowski wrote:
-> Hi Anand,
-> 
-> On 16.06.2020 22:58, Anand Moon wrote:
->> On Tue, 16 Jun 2020 at 13:44, Marek Szyprowski <m.szyprowski@samsung.com> wrote:
->>> The ARM big.LITTLE cpuidle driver has been enabled and tested on Samsung
->>> Exynos 5420/5800 based Peach Pit/Pi Chromebooks and in fact it worked
->>> only on those boards.
->>>
->>> However, support for it was broken by the commit 833b5794e330 ("ARM:
->>> EXYNOS: reset Little cores when cpu is up") and then never enabled in the
->>> exynos_defconfig. This patchset provides the needed fix to the common
->>> code and restores support for it. Thanks to Lukasz Luba who motivated me
->>> to take a look into this issue.
->>>
->> Thanks for this updates.
->>
->> But I feel some DTS changes are missing for example
->> d2e5c871ed8a drivers: cpuidle: initialize big.LITTLE driver through DT
-> 
-> This is not strictly needed. The bl-cpuidle matches also to the A7/A15
-> CPU product ids and it is properly instantiated on the Peach Pit/Pi
-> Chromebooks. Those CPU DT properties were added as a future-proof
-> generic solution. I won't hurt to add them though.
+Fixes: 9a3cdf26e336 ("KVM: arm64/sve: Allow userspace to enable SVE for vcpus")
+Reported-by: James Morse <james.morse@arm.com>
+Signed-off-by: Steven Price <steven.price@arm.com>
+---
+The problematic chunk isn't visible in the diff, so reproduced here:
 
-> 
->> But I feel that this feature is not working as desired since
->> still some missing code changes for cluster idle states are missing.
->> like clock  PWR_CTR and PWR_CTRL2.
-> 
-> I cannot judge now. All I can test now is a that the boards enters those
-> idle states and system works stable. I cannot measure power consumption,
-> because currently I have only remote access to the boards.
+	if (!kvm_arm_vcpu_sve_finalized(vcpu)) {
+		if (test_bit(KVM_ARM_VCPU_SVE, vcpu->arch.features)) {
+			ret = kvm_vcpu_enable_sve(vcpu);
+			if (ret)
+				goto out;
+		}
+	} else {
+		kvm_vcpu_reset_sve(vcpu);
+	}
 
-I agree with Marek. This can be done incrementally. The series fixes the
-code path which was working. After the investigation with a power
-meter, a proper set of new patches might come if needed.
+ arch/arm64/kvm/reset.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
-As a hint to measure this power consumption difference, because it
-might be tricky, I would suggest to heat up the SoC. The main
-difference between wfi and deeper idle which cut the power
-to some components (like caches) should be seen at higher voltage
-OPP and higher temperature. It's due to the fact that static power
-(leakage) is related to Vdd and temperature -
-higher voltage -> higher leakage
-higher temp -> higher leakage
-This difference (idle state 0 vs 1) should be amplified in the
-above scenario and easier to measure.
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index d3b209023727..f1057603b756 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -245,7 +245,7 @@ static int kvm_vcpu_enable_ptrauth(struct kvm_vcpu *vcpu)
+  */
+ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ {
+-	int ret = -EINVAL;
++	int ret;
+ 	bool loaded;
+ 	u32 pstate;
+ 
+@@ -269,15 +269,19 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ 
+ 	if (test_bit(KVM_ARM_VCPU_PTRAUTH_ADDRESS, vcpu->arch.features) ||
+ 	    test_bit(KVM_ARM_VCPU_PTRAUTH_GENERIC, vcpu->arch.features)) {
+-		if (kvm_vcpu_enable_ptrauth(vcpu))
++		if (kvm_vcpu_enable_ptrauth(vcpu)) {
++			ret = -EINVAL;
+ 			goto out;
++		}
+ 	}
+ 
+ 	switch (vcpu->arch.target) {
+ 	default:
+ 		if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features)) {
+-			if (!cpus_have_const_cap(ARM64_HAS_32BIT_EL1))
++			if (cpus_have_const_cap(ARM64_HAS_32BIT_EL1)) {
++				ret = -EINVAL;
+ 				goto out;
++			}
+ 			pstate = VCPU_RESET_PSTATE_SVC;
+ 		} else {
+ 			pstate = VCPU_RESET_PSTATE_EL1;
+-- 
+2.20.1
 
-I am going to review this series after finishing hotplug tests.
-
-Regards,
-Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
