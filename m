@@ -2,57 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B87161FCB29
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:45:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58BF91FCB3A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:48:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BD8z4EUFxaI0Ts4VHkCSc/SrhnBgLBa5mtZ8EsuaZzw=; b=tJfNr4Q9ygH7NSeYLEp1H58Kn
-	hF7XKxzz43s0bn1gtqZWjTo0NhE2R0ed6/01E659UzybQT6QETm9gx6Oh4MgXj+YTf8oQ/0d4wd/u
-	a7QCVQph51q09tUGguxtn9DhMN6drhK/Z0U6bo8qRv2/pLbX8cwT4+VP86GtVAxWBuYHbhBZtWAHy
-	qYzo088KDor+h8/SE1oaNPyYmOFpSDkMclZFGwSApRt3QOqxIl8ObhdCfrmvqyAeTwSVeibg+Y7hn
-	F0wQhL6TQ40QALcloxvJV68MSYhuRoE/ngOrqU/pz4dHAJJjjn4VqIrrSNbqzWDUnxPP2nvMshzOI
-	KpP+xBRyA==;
+	 bh=sv4g9DLgjkVcC8Yi33IykhQSwi0IcgLAF1DI40rEScA=; b=a1x4Thy4otR4tkF7eq833sPci
+	r54qs/xqPjfzSsIRUQSuMYCCZKZoqaX1ofC3rDCB2CmT96OyF/74QUw7iC3ubp91igMyXh6LxpS2t
+	ItZo48ZJ5NfWR127aJAZVOdzX/xq7nSNxl6ZJqbXB/pjxgCQZFs6u5iTba0F6iAbaAcLDwJV5zv2v
+	6eZYwBbIRjJd6rHGS3tx7Log/03R0Ki8IZq/w0rIGcJEBWSlzglg12qXa0p3M75ij8fz0/75TxX6b
+	KNhUeyr7EoIA0t3s9zIkROsCcyLFlYouEG36PHAHZEyc1HZc2DcNJOk4Lor2U90QYXLdPxzurOE16
+	E0De4zuZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlVZJ-0001BW-12; Wed, 17 Jun 2020 10:45:21 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jlVbn-0001XL-Ln; Wed, 17 Jun 2020 10:47:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlVZ7-0000NX-Ez; Wed, 17 Jun 2020 10:45:11 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 79F5AAC12;
- Wed, 17 Jun 2020 10:45:11 +0000 (UTC)
-Message-ID: <b324122e8bd93302215a77d0dcf6d8b2897d3597.camel@suse.de>
-Subject: Re: [PATCH v3 2/9] reset: Add Raspberry Pi 4 firmware reset controller
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Philipp Zabel <p.zabel@pengutronix.de>, f.fainelli@gmail.com, 
- gregkh@linuxfoundation.org, wahrenst@gmx.net, linux-kernel@vger.kernel.org
-Date: Wed, 17 Jun 2020 12:44:59 +0200
-In-Reply-To: <c1ccb77ef0bc56b96a8ad991f8345d0ffbd76fc2.camel@pengutronix.de>
-References: <20200612171334.26385-1-nsaenzjulienne@suse.de>
- <20200612171334.26385-3-nsaenzjulienne@suse.de>
- <c1ccb77ef0bc56b96a8ad991f8345d0ffbd76fc2.camel@pengutronix.de>
-User-Agent: Evolution 3.36.3 
+ id 1jlVbc-0001WJ-A3
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:47:45 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6BF7A208B3;
+ Wed, 17 Jun 2020 10:47:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592390863;
+ bh=6JWW2IP5OHhYePQHs/w7+V8xyYWD4Gc3HpAFhwrnPQQ=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=GJUFTinrfqpCCrY4NycRdNUZ2Hro8zeipOC3ZMeVPii/BDDvlXnBMP143bd1M6+3w
+ jZJdMZR9Zt9pg5mpCY2oNSQW932LM+KXWtSA8g/yE6ibZpH3DnLHhf5Rx/J4TtcA8a
+ KLSepr+obpjiYgiYjluC3GM0PJa+Dmzj2i7W5jug=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jlVbZ-003l3h-Ua; Wed, 17 Jun 2020 11:47:42 +0100
 MIME-Version: 1.0
+Date: Wed, 17 Jun 2020 11:47:41 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH] KVM: arm64: kvm_reset_vcpu() return code incorrect with
+ SVE
+In-Reply-To: <20200617104339.35094-1-steven.price@arm.com>
+References: <20200617104339.35094-1-steven.price@arm.com>
+User-Agent: Roundcube Webmail/1.4.5
+Message-ID: <c9761495762abe174e6546122916fc38@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: steven.price@arm.com, catalin.marinas@arm.com,
+ will@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Dave.Martin@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_034509_664708_2ED0C222 
-X-CRM114-Status: GOOD (  13.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_034744_391867_20AF577F 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,96 +92,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tim.gover@raspberrypi.org, mathias.nyman@linux.intel.com,
- linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- andy.shevchenko@gmail.com, lorenzo.pieralisi@arm.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- helgaas@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1443651899485297283=="
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Dave Martin <Dave.Martin@arm.com>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Steven,
 
---===============1443651899485297283==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-KqcsH4zLbO6uBhNeqN+i"
+On 2020-06-17 11:43, Steven Price wrote:
+> If SVE is enabled then 'ret' can be assigned the return value of
+> kvm_vcpu_enable_sve() which may be 0 causing future "goto out" sites to
+> erroneously return 0 on failure rather than -EINVAL as expected.
+> 
+> Remove the initialisation of 'ret' and make setting the return value
+> explicit to avoid this situation in the future.
+> 
+> Fixes: 9a3cdf26e336 ("KVM: arm64/sve: Allow userspace to enable SVE for 
+> vcpus")
+> Reported-by: James Morse <james.morse@arm.com>
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+> The problematic chunk isn't visible in the diff, so reproduced here:
+> 
+> 	if (!kvm_arm_vcpu_sve_finalized(vcpu)) {
+> 		if (test_bit(KVM_ARM_VCPU_SVE, vcpu->arch.features)) {
+> 			ret = kvm_vcpu_enable_sve(vcpu);
+> 			if (ret)
+> 				goto out;
+> 		}
+> 	} else {
+> 		kvm_vcpu_reset_sve(vcpu);
+> 	}
+> 
+>  arch/arm64/kvm/reset.c | 10 +++++++---
+>  1 file changed, 7 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+> index d3b209023727..f1057603b756 100644
+> --- a/arch/arm64/kvm/reset.c
+> +++ b/arch/arm64/kvm/reset.c
+> @@ -245,7 +245,7 @@ static int kvm_vcpu_enable_ptrauth(struct kvm_vcpu 
+> *vcpu)
+>   */
+>  int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+>  {
+> -	int ret = -EINVAL;
+> +	int ret;
+>  	bool loaded;
+>  	u32 pstate;
+> 
+> @@ -269,15 +269,19 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+> 
+>  	if (test_bit(KVM_ARM_VCPU_PTRAUTH_ADDRESS, vcpu->arch.features) ||
+>  	    test_bit(KVM_ARM_VCPU_PTRAUTH_GENERIC, vcpu->arch.features)) {
+> -		if (kvm_vcpu_enable_ptrauth(vcpu))
+> +		if (kvm_vcpu_enable_ptrauth(vcpu)) {
+> +			ret = -EINVAL;
+>  			goto out;
+> +		}
+>  	}
+> 
+>  	switch (vcpu->arch.target) {
+>  	default:
+>  		if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features)) {
+> -			if (!cpus_have_const_cap(ARM64_HAS_32BIT_EL1))
+> +			if (cpus_have_const_cap(ARM64_HAS_32BIT_EL1)) {
 
+Do you really mean this? Seems counter-productive... :-(
 
---=-KqcsH4zLbO6uBhNeqN+i
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+> +				ret = -EINVAL;
+>  				goto out;
+> +			}
+>  			pstate = VCPU_RESET_PSTATE_SVC;
+>  		} else {
+>  			pstate = VCPU_RESET_PSTATE_EL1;
 
-On Wed, 2020-06-17 at 12:02 +0200, Philipp Zabel wrote:
-> Hi Nicolas,
->=20
-> On Fri, 2020-06-12 at 19:13 +0200, Nicolas Saenz Julienne wrote:
-> > Raspberry Pi 4's co-processor controls some of the board's HW
-> > initialization process, but it's up to Linux to trigger it when
-> > relevant. Introduce a reset controller capable of interfacing with
-> > RPi4's co-processor that models these firmware initialization routines =
-as
-> > reset lines.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
->=20
-> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+Thanks,
 
-Thanks!
-
-> If there is a good reason for the single DT specified reset id, I can
-> pick up patches 1 and 2.
-
-The idea here is to make sure we're reasonably covered against further chan=
-ges
-in firmware. If we define constraints too narrow it can be a pain to suppor=
-t
-new features without breaking backwards compatibility in dt.
-
-> If you change the dts patch 4 to use a number instead of the reset id
-> define for now, there wouldn't even be a dependency between these reset
-> and dts patches.
-
-I was under the impression that having an explicit definition was nice to h=
-ave.
-What's troubling about creating the dependency?
-
-Regards,
-Nicolas
-
-
---=-KqcsH4zLbO6uBhNeqN+i
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7p9CwACgkQlfZmHno8
-x/7mAAgAgVtbDaKmFM/GZJ/GA7I4dmOhQBlzhWyHsjI2Hp+6ZFKIGY+b9KqVzMdX
-5nQP/wqDPSfiq8LzYvCRWo0totXpsNghOxPEIp9RAbhDDp/la2hLGKtQei0BxmeU
-sl3JZAVMm1WpgjN7KTX7wTYttJ+NfRoGa2JRtyw2joFKcBhJUN3OCnC398MJJGfA
-6Dqy4My6ptKkdJeQL/7KO6vgojwV52bcvEl/lnCD9IdeKJdyNdR8VqWN66Uhr+SW
-SDwBOUcoE82o/bzlYOuQ4wPpDKAEwibDXQcRmapmYiKL1HackBHYB40sWjp2VuOh
-8MBdmCLRl4oR7yWnPESbeQOwEshLGg==
-=9ROq
------END PGP SIGNATURE-----
-
---=-KqcsH4zLbO6uBhNeqN+i--
-
-
-
---===============1443651899485297283==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1443651899485297283==--
-
-
