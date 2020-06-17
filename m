@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDF71FD5B0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 22:01:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A8911FD5C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 22:11:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WjvjDl8psldGX2s2MnYX5go2cC7kAXmdktHgu3L/gfQ=; b=HBdtgvF3WOsgNn
-	OzKrjWL8ZLSq0qOTq6BulRpnfs4TzJV04Eh1E2YALO1OmvTxM65Tuz03qyaYZvYM65t13sfsUU421
-	rD/TCkDot29KjFCvlWf7woY4r3PxaSOvs0yF1l+AxgQySFC+kP1R61p+728IuyKqCuVFgdmZYBv98
-	3t+g3YVB5cBRYJmlbPz0NU7Td2kBa+ZrIiqHCgOgRVuOvaWCfBxy4RA/9s6es9e2afm342+9iS2Of
-	BX/4fDydT7R9JGPg0/Z3yxmQ7WzhC9ir04pGW4BcOx8dpzBsVEtWiOOSOUzDaE4TMYqtMecdcaxN7
-	C+igu+5ZFEBBtnIs/qBQ==;
+	List-Owner; bh=k+JTL1+pj7G7sCaXHrVBlyNzMovL7zWx3l/65/uXFjo=; b=kiXksUvP7a4PXP
+	7Fw1CnesMG5Fq5r7cpidkI+a72g/EHUp6rgcGxoE7NCya9oQmhRDj+BXIWG4d2Yq6uc4/Yy4GzW1e
+	1rRhTlP2Xiesh0KzMSJp127HxBtBW9Qe7Bg7SpALVCBWw6RU456CC9Ssd2E4pGkQhHrejhlmKOCSz
+	niu/4zFKTJWkohEmL639R6Jer8K4mxe2+jXP9CcpNrIJInjT9/HU/0JAFHv5CgXZlD8LoV2wWV5Q0
+	4Jv7kNStutwqT2X3q39NZP+7ThWVEiNdu8NBnSAKwC+OUcmTPZrYZWgqBVCVOrIg3IsJAAXmYdoSF
+	htmyYy9utSWNIhxtqROQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jleFM-000130-Jf; Wed, 17 Jun 2020 20:01:20 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jlePJ-0006nB-Rq; Wed, 17 Jun 2020 20:11:37 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jleFC-000127-QA
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 20:01:14 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id h22so1589409pjf.1
+ id 1jlePB-0006mi-Ee
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 20:11:31 +0000
+Received: by mail-pg1-x541.google.com with SMTP id d4so1820709pgk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jun 2020 13:01:09 -0700 (PDT)
+ Wed, 17 Jun 2020 13:11:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:content-transfer-encoding:in-reply-to:references
  :subject:from:cc:to:date:message-id:user-agent;
- bh=caNCPxuwnsfme3cJQ3yFnZipKvQl8RiDyCwsEjsLsMc=;
- b=X27pYeMzeBegpSXYr94WQ9cQIx8qfoKI7mRjZFuswG0wtv2Fk0MvxnXTKKZn2wySjq
- XdXkAxGseiME2d5R6P6OTH3Hu3IXnbw6OaWe4/UQHwh8egU/Zeb/T/Yoa7mgMmoyDvmO
- Mf5NUUL0VBTx07Qg5Vblr2/bsdgQoz2/oi92w=
+ bh=iwU3Uapaa3onoSAa/cQNtCWQ+psb2ZF2Ycxgsf9m2No=;
+ b=FNypNJwMhZyDwZF3X+cvlmqkSKN2xq4/vTmsDolgRgHjeD7GZEtLcshazHNC5R4KJK
+ JoHIR9g5rAj9b0MCOtjGg20l4IroyzNnYPgUX7ViuQfDNrDdS4mp6YnIP3jqrfrQCn2e
+ x01NZsfIs0REa95raOfTJgrxXW0+XlwgQMjWc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:content-transfer-encoding
  :in-reply-to:references:subject:from:cc:to:date:message-id
  :user-agent;
- bh=caNCPxuwnsfme3cJQ3yFnZipKvQl8RiDyCwsEjsLsMc=;
- b=ZLYbMz+o72TAS7grRvSsmQiEbzwXnZQMME5z+HL3vB7smxzAuvW9J0Ab3YfHmmuxw3
- xkl9n9tUXMyJhAqAlkG3JLe8FSxAUMIQNkxsUahGaS5pIeFyE1ARpRDhuOrx8E0Nzxyk
- MqOaWoTbApkkU4yQPMl64eFWb92ZOwUOc4ELdw8Dcw56yaYhXy3eHtFT7GtHf437VktY
- hjBZygdNlJKXe0ynV24SE6hlOwL6R/B7jVtQq47Js9u2bEnmDm70NL8FPYQ4EE7s7G9p
- iBpE+vV/4SLCLMx+/Ch+HteUmCZooAHGJa1fmIx3yPELJkVWV3wRLyV/RiLilwkYRiEF
- GTaQ==
-X-Gm-Message-State: AOAM530PnBScoWC7RnTOs9oV4TYNx2BLpP+8eXyFIWCUCZkzEvu+QoVx
- bcrwNia3ltmiqlm2slUVeIjJ0Q==
-X-Google-Smtp-Source: ABdhPJyPwoUI6HSyoEhh3ukwzEqMPFmJ63d2Boybwl/wQzQT0a3lfMeOWwHvgWFA8yyGf8DRLkfEnQ==
-X-Received: by 2002:a17:90a:ce11:: with SMTP id
- f17mr654054pju.123.1592424069090; 
- Wed, 17 Jun 2020 13:01:09 -0700 (PDT)
+ bh=iwU3Uapaa3onoSAa/cQNtCWQ+psb2ZF2Ycxgsf9m2No=;
+ b=ITw5fye4uuoZ2k1RhPsQ5dPfIESD583uSk9YvvXEMM4obKr93F/vC8JolXU7dczT6Z
+ 1GsKS2wcJcPQPIuI1nUsxtlqpsv2jqc+ySYyK/+3yjUlaSzAVaCNkmu9dRvoELurystp
+ SWFxmGebVt27G2GHPkPBQXOJ3CVG3lpCESLjp9TEnhEouq7pJFEeGo9KI54VZ175JJAe
+ u6JGr0PmjaQP+4lNggjgIAPo3fw61vXNCixC66W+fpNxbpdbpXXXE417EPyrde+q/AHZ
+ 0466q+T3/mvxwqrew8TmtibQP6AFTRGmvaRfOjIkzQzyWHSUIn9h4sFx/tBwwF1Dll37
+ bHEw==
+X-Gm-Message-State: AOAM530mBtM37ECOCJ9fJ1u19ediyG7noD4CdxxF0JcmQTwUE/SwAhhG
+ TEVeEy/md93R9RXQjSBA9aQ7BA==
+X-Google-Smtp-Source: ABdhPJze7KWNIqZmmx4kM1KIUJsLbt7Ba+rKLjvtLlbz+ohTX+djkiHUsqJSJ+HCDqL6EjntToGD+A==
+X-Received: by 2002:a62:dd97:: with SMTP id w145mr388087pff.23.1592424688381; 
+ Wed, 17 Jun 2020 13:11:28 -0700 (PDT)
 Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id h7sm599873pgg.17.2020.06.17.13.01.08
+ by smtp.gmail.com with ESMTPSA id 67sm584147pga.44.2020.06.17.13.11.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 13:01:08 -0700 (PDT)
+ Wed, 17 Jun 2020 13:11:27 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200617113851.607706-2-alexandru.elisei@arm.com>
+In-Reply-To: <20200617113851.607706-3-alexandru.elisei@arm.com>
 References: <20200617113851.607706-1-alexandru.elisei@arm.com>
- <20200617113851.607706-2-alexandru.elisei@arm.com>
-Subject: Re: [PATCH v5 1/7] arm64: perf: Add missing ISB in
- armv8pmu_enable_event()
+ <20200617113851.607706-3-alexandru.elisei@arm.com>
+Subject: Re: [PATCH v5 2/7] arm64: perf: Avoid PMXEV* indirection
 From: Stephen Boyd <swboyd@chromium.org>
 To: Alexandru Elisei <alexandru.elisei@arm.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Date: Wed, 17 Jun 2020 13:01:07 -0700
-Message-ID: <159242406774.62212.13909672383879587787@swboyd.mtv.corp.google.com>
+Date: Wed, 17 Jun 2020 13:11:27 -0700
+Message-ID: <159242468708.62212.1739215996563155762@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_130110_846080_1B228878 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20200617_131129_508706_F9D7DF41 
+X-CRM114-Status: GOOD (  22.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -112,36 +110,221 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Alexandru Elisei (2020-06-17 04:38:45)
-> Writes to the PMXEVTYPER_EL0 register are not self-synchronising. In
-> armv8pmu_enable_event(), the PE can reorder configuring the event type
-> after we have enabled the counter and the interrupt. This can lead to an
-> interrupt being asserted because the of the previous event type that we
-
-'because the of the' doesn't read properly.
-
-> were counting, not the one that we've just enabled.
+Quoting Alexandru Elisei (2020-06-17 04:38:46)
+> From: Mark Rutland <mark.rutland@arm.com>
 > 
-> The same rationale applies to writes to the PMINTENSET_EL1 register. The PE
-> can reorder enabling the interrupt at any point in the future after we have
-> enabled the event.
+> Currently we access the counter registers and their respective type
+> registers indirectly. This requires us to write to PMSELR, issue an ISB,
+> then access the relevant PMXEV* registers.
 > 
-> Prevent both situations from happening by adding an ISB just before we
-> enable the event counter.
+> This is unfortunate, because:
+> 
+> * Under virtualization, accessing one registers requires two traps to
+
+one register? Not plural presumably.
+
+>   the hypervisor, even though we could access the register directly with
+>   a single trap.
+> 
+> * We have to issue an ISB which we could otherwise avoid the cost of.
+> 
+> * When we use NMIs, the NMI handler will have to save/restore the select
+>   register in case the code it preempted was attempting to access a
+>   counter or its type register.
+> 
+> We can avoid these issues by directly accessing the relevant registers.
+> This patch adds helpers to do so.
+> 
+> In armv8pmu_enable_event() we still need the ISB to prevent the PE from
+> reordering the write to PMINTENSET_EL1 register. If the interrupt is
+> enabled before we disable the counter and the new event is configured,
+> we might get an interrupt triggered by the previously programmed event
+> overflowing, but which we wrongly attribute to the event that we are
+> enabling.
+> 
+> In the process, remove the comment that refers to the ARMv7 PMU.
+> 
+> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Namhyung Kim <namhyung@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> [Julien T.: Don't inline read/write functions to avoid big code-size
+>         increase, remove unused read_pmevtypern function,
+>         fix counter index issue.]
+> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+> [Removed comment, removed trailing semicolons in macros, added ISB]
+> Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
+> ---
+>  arch/arm64/kernel/perf_event.c | 95 +++++++++++++++++++++++++++++-----
+>  1 file changed, 81 insertions(+), 14 deletions(-)
 > 
 > diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> index 4d7879484cec..ee180b2a5b39 100644
+> index ee180b2a5b39..e95b5ca70a53 100644
 > --- a/arch/arm64/kernel/perf_event.c
 > +++ b/arch/arm64/kernel/perf_event.c
-> @@ -605,6 +605,7 @@ static void armv8pmu_enable_event(struct perf_event *event)
->          * Enable interrupt for this counter
+> @@ -323,6 +323,73 @@ static inline bool armv8pmu_event_is_chained(struct perf_event *event)
+>  #define        ARMV8_IDX_TO_COUNTER(x) \
+>         (((x) - ARMV8_IDX_COUNTER0) & ARMV8_PMU_COUNTER_MASK)
+>  
+> +/*
+> + * This code is really good
+> + */
+
+Superb!
+
+> +
+> +#define PMEVN_CASE(n, case_macro) \
+> +       case n: case_macro(n); break
+> +
+> +#define PMEVN_SWITCH(x, case_macro)                            \
+> +       do {                                                    \
+> +               switch (x) {                                    \
+> +               PMEVN_CASE(0,  case_macro);                     \
+> +               PMEVN_CASE(1,  case_macro);                     \
+> +               PMEVN_CASE(2,  case_macro);                     \
+> +               PMEVN_CASE(3,  case_macro);                     \
+> +               PMEVN_CASE(4,  case_macro);                     \
+> +               PMEVN_CASE(5,  case_macro);                     \
+> +               PMEVN_CASE(6,  case_macro);                     \
+> +               PMEVN_CASE(7,  case_macro);                     \
+> +               PMEVN_CASE(8,  case_macro);                     \
+> +               PMEVN_CASE(9,  case_macro);                     \
+> +               PMEVN_CASE(10, case_macro);                     \
+> +               PMEVN_CASE(11, case_macro);                     \
+> +               PMEVN_CASE(12, case_macro);                     \
+> +               PMEVN_CASE(13, case_macro);                     \
+> +               PMEVN_CASE(14, case_macro);                     \
+> +               PMEVN_CASE(15, case_macro);                     \
+> +               PMEVN_CASE(16, case_macro);                     \
+> +               PMEVN_CASE(17, case_macro);                     \
+> +               PMEVN_CASE(18, case_macro);                     \
+> +               PMEVN_CASE(19, case_macro);                     \
+> +               PMEVN_CASE(20, case_macro);                     \
+> +               PMEVN_CASE(21, case_macro);                     \
+> +               PMEVN_CASE(22, case_macro);                     \
+> +               PMEVN_CASE(23, case_macro);                     \
+> +               PMEVN_CASE(24, case_macro);                     \
+> +               PMEVN_CASE(25, case_macro);                     \
+> +               PMEVN_CASE(26, case_macro);                     \
+> +               PMEVN_CASE(27, case_macro);                     \
+> +               PMEVN_CASE(28, case_macro);                     \
+> +               PMEVN_CASE(29, case_macro);                     \
+> +               PMEVN_CASE(30, case_macro);                     \
+> +               default: WARN(1, "Invalid PMEV* index");        \
+
+Missing newline on that WARN message?
+
+> +               }                                               \
+> +       } while (0)
+> +
+> +#define RETURN_READ_PMEVCNTRN(n) \
+> +       return read_sysreg(pmevcntr##n##_el0)
+> +static unsigned long read_pmevcntrn(int n)
+> +{
+> +       PMEVN_SWITCH(n, RETURN_READ_PMEVCNTRN);
+> +       return 0;
+> +}
+> +
+> +#define WRITE_PMEVCNTRN(n) \
+> +       write_sysreg(val, pmevcntr##n##_el0)
+> +static void write_pmevcntrn(int n, unsigned long val)
+> +{
+> +       PMEVN_SWITCH(n, WRITE_PMEVCNTRN);
+> +}
+> +
+> +#define WRITE_PMEVTYPERN(n) \
+> +       write_sysreg(val, pmevtyper##n##_el0)
+> +static void write_pmevtypern(int n, unsigned long val)
+> +{
+> +       PMEVN_SWITCH(n, WRITE_PMEVTYPERN);
+> +}
+> +
+>  static inline u32 armv8pmu_pmcr_read(void)
+>  {
+>         return read_sysreg(pmcr_el0);
+> @@ -351,17 +418,11 @@ static inline int armv8pmu_counter_has_overflowed(u32 pmnc, int idx)
+>         return pmnc & BIT(ARMV8_IDX_TO_COUNTER(idx));
+>  }
+>  
+> -static inline void armv8pmu_select_counter(int idx)
+> +static inline u32 armv8pmu_read_evcntr(int idx)
+>  {
+>         u32 counter = ARMV8_IDX_TO_COUNTER(idx);
+> -       write_sysreg(counter, pmselr_el0);
+> -       isb();
+> -}
+>  
+> -static inline u64 armv8pmu_read_evcntr(int idx)
+> -{
+> -       armv8pmu_select_counter(idx);
+> -       return read_sysreg(pmxevcntr_el0);
+> +       return read_pmevcntrn(counter);
+>  }
+>  
+>  static inline u64 armv8pmu_read_hw_counter(struct perf_event *event)
+> @@ -433,8 +494,9 @@ static u64 armv8pmu_read_counter(struct perf_event *event)
+>  
+>  static inline void armv8pmu_write_evcntr(int idx, u64 value)
+>  {
+> -       armv8pmu_select_counter(idx);
+> -       write_sysreg(value, pmxevcntr_el0);
+> +       u32 counter = ARMV8_IDX_TO_COUNTER(idx);
+
+Might be a good idea to make ARMV8_IDX_TO_COUNTER a static inline
+function that has a return type of u32. I had to go check the code to
+make sure it wasn't something larger.
+
+> +
+> +       write_pmevcntrn(counter, value);
+>  }
+>  
+>  static inline void armv8pmu_write_hw_counter(struct perf_event *event,
+> @@ -469,9 +531,10 @@ static void armv8pmu_write_counter(struct perf_event *event, u64 value)
+>  
+>  static inline void armv8pmu_write_evtype(int idx, u32 val)
+>  {
+> -       armv8pmu_select_counter(idx);
+> +       u32 counter = ARMV8_IDX_TO_COUNTER(idx);
+> +
+>         val &= ARMV8_PMU_EVTYPE_MASK;
+> -       write_sysreg(val, pmxevtyper_el0);
+> +       write_pmevtypern(counter, val);
+>  }
+>  
+>  static inline void armv8pmu_write_event_type(struct perf_event *event)
+> @@ -491,7 +554,10 @@ static inline void armv8pmu_write_event_type(struct perf_event *event)
+>                 armv8pmu_write_evtype(idx - 1, hwc->config_base);
+>                 armv8pmu_write_evtype(idx, chain_evt);
+>         } else {
+> -               armv8pmu_write_evtype(idx, hwc->config_base);
+> +               if (idx == ARMV8_IDX_CYCLE_COUNTER)
+> +                       write_sysreg(hwc->config_base, pmccfiltr_el0);
+> +               else
+> +                       armv8pmu_write_evtype(idx, hwc->config_base);
+>         }
+>  }
+>  
+> @@ -595,9 +661,10 @@ static void armv8pmu_enable_event(struct perf_event *event)
+>          * Disable counter
 >          */
->         armv8pmu_enable_event_irq(event);
+>         armv8pmu_disable_event_counter(event);
 > +       isb();
 
-Please add a comment before the isb() explaining the situation. Nobody
-knows what this is for when reading the code and they don't want to do
-git archaeology to figure it out.
+Same comment about uncommented isb().
+
+>  
+>         /*
+> -        * Set event (if destined for PMNx counters).
+> +        * Set event.
+>          */
+>         armv8pmu_write_event_type(event);
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
