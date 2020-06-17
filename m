@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 552811FD897
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 00:19:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 045581FD8A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 00:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H4YW+Jr+8JieGEvU9utfBWKmW9+JeVS6qKpiPsh1Lh0=; b=Z6alZM3Bc8JbrS
-	9ZYAkJFv8Z1mbwDR4qItnyFgfBFztcEBtFlN2DxBPY3zRGhDpZ3/pehSrg0zO9nsNgiiYYHyPOv/Q
-	1Uqijtx7X2CN0gEzeHKmWW75sJ8TSIGs6J9LeYPtdAp+FjhC6M9lDIjZJvrAKY3mymG0djHY63vzB
-	373gx4wwTo86ScXE9tnUAr73fR1XDrMkXpJU2LDvrTmpPueFKvK1jQ0rKhrSSLvSNHCmPTrGYAyCY
-	IWAlPx9k+eAzvoYjuTs97uVgdk8ZAWr6Sjt+6pBChMkO6cwYV/VN1FFd2cJnLBSPD6TW3BcrS4g/J
-	YGhiNCBdQ6UMHZ/+Tn1g==;
+	List-Owner; bh=gPUJbz8aAtXN6wTv1ed/n7zxwiydmKMmIoN6qXywjpo=; b=NNN0uQkuBq9A/4
+	joBjYZmJzeDUEBUXMxM5dZfEGxsQM1SA4tosWudvp6B6wITQVuovRjAog4qOP7sUX8Lgn0IquhKHa
+	lkNI1QVXrD3AV5xWx7JpUJErgx1XanZjbXKKhN/P3S6h63ThT2Jbtd7aDYzmhcu24/pPqFqORFSKO
+	/u6dyC7jASb4ECJE31U2Hzz6kTuZIQyXhi/nJ8IMRtHEu/AvT4zMhoUgW3eLB8IKpNACUrlnUinhV
+	/nrLs9WrJkAm683PgQ7HPEbzU9vxeTfiqyS8pX8OqkhREcfJ8S0ZOwCXrgfN8cH8cmyWWpxlIJykm
+	BoOLp9A18wC1zud+wPdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlgOX-00052S-On; Wed, 17 Jun 2020 22:18:57 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jlgSa-00083R-Ji; Wed, 17 Jun 2020 22:23:08 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlgNv-0004Zg-CT; Wed, 17 Jun 2020 22:18:21 +0000
-Received: by mail-il1-f196.google.com with SMTP id i1so3860485ils.11;
- Wed, 17 Jun 2020 15:18:19 -0700 (PDT)
+ id 1jlgSL-00082p-IB
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 22:22:54 +0000
+Received: by mail-io1-f66.google.com with SMTP id x189so4799056iof.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jun 2020 15:22:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=Uz7g0bB18ztxeQgM+/H4yxv4w/AtkVlw+WDwFr6g8Ao=;
- b=cLAn3Uy2JGBY4VCicjcrIKA77BQn3VluMHTTHDrkTdGafcEEOci4r8iID25LTq7+nz
- QakZ7nQaDBGu4f1uHu37WGmN1+9CeYDqwL/ELHsqFlHbP7DZkj11AARW4x5VXD1N2xEj
- hVfws41xhtx1oUExAXDbMadNvSnKxV3PlZ7yfoFnOEXFMtFqfybVowe1JqUV5q+XWKoT
- vvTbxFaC+ih8qss+Yge88gVsFxDXt9RXJWk2x8AbBlPJcL+aHYNjjECTH60BWlXlubdh
- 2Iy79dc1lHEey/hg7M/7jz4kkoWBAlwFkxbVE4JhQ+GMlpAKwPNExl6ArA67N5V1SymF
- VS0w==
-X-Gm-Message-State: AOAM532KhCxiQmkh3Xuodwadqn5W4sJVlRh73gQ5C8CzKoVnHZBqc5Ck
- 9pUeBNfEl3TPpLSQd+V2rw==
-X-Google-Smtp-Source: ABdhPJwldBKKgVwMhWTp6+BTPDjZ5+GjxiMRxxsH5coqpGLhBPEg/c67Ti4jXWHLFczF1LllOIWBwg==
-X-Received: by 2002:a92:cb03:: with SMTP id s3mr1132707ilo.161.1592432298592; 
- Wed, 17 Jun 2020 15:18:18 -0700 (PDT)
+ bh=cZs4DMmV9+4KYcd4h6vQwLKgeDMHogArG6hcyQ007uM=;
+ b=cvRc/MNMQR3YEwOe/rsdm187SueYqUkvC9MV8T/OkClJ4v1TdxJJnZ103HAETmzd7q
+ eHLWxlQbgo6PDzOrn3qYRFzpSx9V/KbaxVMmyxyd9n04we7/+WJXaX316RO6rCUo88Kc
+ uiDWSomqKeun3fUaVIVDlRNhre8wi3F4MZJblgOkU4A3HJWrr4tzh2aXp7GjO4/G9heg
+ EUy7HMVIqmuv2dSatwYhycQLz71HWZmBfF95hJKR6mRGFl3q1uFyYtEUgeSYcl76g9Gr
+ peB1cXohz+cS7ceb4u7oxc2PUscWwhuySU70GdeNtNJtkXAMWOdkvAzLiOrYcb973fsm
+ SirA==
+X-Gm-Message-State: AOAM531NOcGAWJ/mh5Ag0ikqbnL+maofx91JjNEnfIfd5QiYR5aPp75b
+ gK0/YuMD33cNTRU5AE2wmA==
+X-Google-Smtp-Source: ABdhPJwVLzRisP+uIxnL1NbxlXTfqVaPm1HmkXIu0ChWO56rldgx6wkKleV2KmMwEts15aMvaS5Bcw==
+X-Received: by 2002:a6b:8d44:: with SMTP id p65mr1805887iod.24.1592432571789; 
+ Wed, 17 Jun 2020 15:22:51 -0700 (PDT)
 Received: from xps15 ([64.188.179.253])
- by smtp.gmail.com with ESMTPSA id t72sm552531ilk.23.2020.06.17.15.18.17
+ by smtp.gmail.com with ESMTPSA id p25sm630019iog.47.2020.06.17.15.22.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 15:18:18 -0700 (PDT)
-Received: (nullmailer pid 2934152 invoked by uid 1000);
- Wed, 17 Jun 2020 22:18:17 -0000
-Date: Wed, 17 Jun 2020 16:18:17 -0600
+ Wed, 17 Jun 2020 15:22:51 -0700 (PDT)
+Received: (nullmailer pid 2941342 invoked by uid 1000);
+ Wed, 17 Jun 2020 22:22:48 -0000
+Date: Wed, 17 Jun 2020 16:22:48 -0600
 From: Rob Herring <robh@kernel.org>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 1/2] dt-bindings: clk: g12a-clkc: Add NNA CLK Source
- clock IDs
-Message-ID: <20200617221817.GA2934098@bogus>
-References: <20200610083012.5024-1-narmstrong@baylibre.com>
- <20200610083012.5024-2-narmstrong@baylibre.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Subject: Re: [PATCH v2 2/3] dt-bindings: rtc: add microchip,sam9x60-rtt
+Message-ID: <20200617222248.GA2941290@bogus>
+References: <1591779936-18577-1-git-send-email-claudiu.beznea@microchip.com>
+ <1591779936-18577-3-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200610083012.5024-2-narmstrong@baylibre.com>
+In-Reply-To: <1591779936-18577-3-git-send-email-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_151819_435853_D9B1D454 
-X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-CacheID: sfid-20200617_152253_599085_B07A9253 
+X-CRM114-Status: UNSURE (   8.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -67,7 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [209.85.166.66 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -77,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
+ [209.85.166.66 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,25 +92,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Dmitry Shmidt <dimitrysh@google.com>,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- jbrunet@baylibre.com
+Cc: linux-rtc@vger.kernel.org, a.zummo@towertech.it,
+ alexandre.belloni@bootlin.com, jason@lakedaemon.net,
+ devicetree@vger.kernel.org, maz@kernel.org, linux-kernel@vger.kernel.org,
+ ludovic.desroches@microchip.com, robh+dt@kernel.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 10 Jun 2020 10:30:11 +0200, Neil Armstrong wrote:
-> From: Dmitry Shmidt <dimitrysh@google.com>
+On Wed, 10 Jun 2020 12:05:35 +0300, Claudiu Beznea wrote:
+> Add microchip,sam9x60-rtt to compatible list.
 > 
-> This adds the Neural Network Accelerator IP source clocks.
-> 
-> Signed-off-by: Dmitry Shmidt <dimitrysh@google.com>
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  include/dt-bindings/clock/g12a-clkc.h | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
