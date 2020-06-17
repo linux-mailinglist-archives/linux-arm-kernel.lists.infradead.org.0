@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5438B1FD938
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 00:49:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E1081FD92C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 00:49:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pOOqFliCjP8kBhuAvitFx9PFamUcJZmjk/MmQsOJm6A=; b=LiMfRAXHx+LFna
-	B+vlCUzf3pBcMOP70kcnY90n0GpMFx/huLiSwBy74IJCbGnFtWE3VdZ7uES8D01IS46wWQt3SpSLN
-	dt/gCOXiYFXFW01+w4F6nxaG91vJraES45dWmGTHbKa5zxKeiB6RvTqPi0+lxjyuhhdc1/H9revzC
-	25BHloF9TXaWOMet2McNcufVcey/ea3YKVyv3Yz0GzMzsVTw5PW2HjSfzldkvWzoBIhMR63T6mRl0
-	gsGrxzRVm1IGd0/nzCG463IGRs4BhQ3Tmu9DR46Soy/PgNTGJym/RTk23Wt0G/IfEtV8lYiV9YYnJ
-	UoMdC1zz4hvsfWmx9HyA==;
+	List-Owner; bh=4b7oCZ1mBMcAVDBg9TxEGpyoled7KzEmVH1uPIyvF7M=; b=d7LfQYTmrrgV0l
+	oijYQQxWBl/CIPKUhIczsPBzFCsFMVd/LJ/XMSaUOsYo0Ms4Ouknsh8vr6C/N6fHeQon+JZt7YdM5
+	VyReJFbb0ZM4fHdRhy36CAGOBfaYbYgTcblK6ZJ3ln5sBvgMm6d6lFBQZD+9R4UZ/i307Sy/Yshae
+	DyVu19Q1s5TN5wiTkjCOGnUzBKWf7qF9g1TwxYXx7u/i7aN5Sept6UeHBSQLxU2bp2E6rd1C23758
+	PuwfmDJRxtl8ugE32eOQvJgeuN6vZ9cGNAhaAeCpFvAHYEEqUZJkaLvKMY6BabsBziNsoWlgw55D+
+	mPrKG319I/Km7AF2aV9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlgrt-0007kJ-4H; Wed, 17 Jun 2020 22:49:17 +0000
-Received: from ns2.baikalelectronics.ru ([94.125.187.42]
+	id 1jlgrd-0007az-QP; Wed, 17 Jun 2020 22:49:01 +0000
+Received: from mx.chip.baikal.ru ([94.125.187.42]
  helo=mail.baikalelectronics.ru)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlgrS-0007YA-S8
+ id 1jlgrS-0007YB-Ru
  for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 22:48:52 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 834DA80045E4;
- Wed, 17 Jun 2020 22:48:38 +0000 (UTC)
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 3388F803202C;
+ Wed, 17 Jun 2020 22:48:39 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at baikalelectronics.ru
 Received: from mail.baikalelectronics.ru ([127.0.0.1])
  by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 9FpGH8Tr9p4p; Thu, 18 Jun 2020 01:48:35 +0300 (MSK)
+ with ESMTP id E5LHdbCVmdSw; Thu, 18 Jun 2020 01:48:38 +0300 (MSK)
 From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
 To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Jiri Slaby <jslaby@suse.com>
-Subject: [PATCH v6 1/3] serial: 8250: Add 8250 port clock update method
-Date: Thu, 18 Jun 2020 01:48:11 +0300
-Message-ID: <20200617224813.23853-2-Sergey.Semin@baikalelectronics.ru>
+ <gregkh@linuxfoundation.org>, Jiri Slaby <jslaby@suse.com>, Andy Shevchenko
+ <andriy.shevchenko@linux.intel.com>
+Subject: [PATCH v6 2/3] serial: 8250_dw: Simplify the ref clock rate setting
+ procedure
+Date: Thu, 18 Jun 2020 01:48:12 +0300
+Message-ID: <20200617224813.23853-3-Sergey.Semin@baikalelectronics.ru>
 In-Reply-To: <20200617224813.23853-1-Sergey.Semin@baikalelectronics.ru>
 References: <20200617224813.23853-1-Sergey.Semin@baikalelectronics.ru>
 MIME-Version: 1.0
 X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_154851_261786_575222BD 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20200617_154851_079993_BCDBDFDC 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,32 +65,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-mips@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- Maxime Ripard <mripard@kernel.org>,
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, Maxime Ripard <mripard@kernel.org>,
  Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
  Serge Semin <Sergey.Semin@baikalelectronics.ru>,
- Serge Semin <fancer.lancer@gmail.com>, linux-serial@vger.kernel.org, Andy
- Shevchenko <andriy.shevchenko@linux.intel.com>, Will Deacon <will@kernel.org>,
+ Serge Semin <fancer.lancer@gmail.com>, linux-serial@vger.kernel.org,
+ linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some platforms can be designed in a way so the UART port reference clock
-might be asynchronously changed at some point. In Baikal-T1 SoC this may
-happen due to the reference clock being shared between two UART ports, on
-the Allwinner SoC the reference clock is derived from the CPU clock, so
-any CPU frequency change should get to be known/reflected by/in the UART
-controller as well. But it's not enough to just update the
-uart_port->uartclk field of the corresponding UART port, the 8250
-controller reference clock divisor should be altered so to preserve
-current baud rate setting. All of these things is done in a coherent
-way by calling the serial8250_update_uartclk() method provided in this
-patch. Though note that it isn't supposed to be called from within the
-UART port callbacks because the locks using to the protect the UART port
-data are already taken in there.
+Really instead of twice checking the clk_round_rate() return value
+we could do it once, and if it isn't error the clock rate can be changed.
+By doing so we decrease a number of ret-value tests and remove a weird
+goto-based construction implemented in the dw8250_set_termios() method.
 
 Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
 Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
@@ -102,75 +95,41 @@ Cc: linux-arm-kernel@lists.infradead.org
 
 ---
 
-Changelog v4:
-- Export serial8250_update_uartclk() symbol for GPL modules only.
+Changelog v3:
+- This is a new patch.
 ---
- drivers/tty/serial/8250/8250_port.c | 38 +++++++++++++++++++++++++++++
- include/linux/serial_8250.h         |  2 ++
- 2 files changed, 40 insertions(+)
+ drivers/tty/serial/8250/8250_dw.c | 15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/tty/serial/8250/8250_port.c b/drivers/tty/serial/8250/8250_port.c
-index 4d83c85a7389..5596868c8832 100644
---- a/drivers/tty/serial/8250/8250_port.c
-+++ b/drivers/tty/serial/8250/8250_port.c
-@@ -2628,6 +2628,44 @@ static unsigned int serial8250_get_baud_rate(struct uart_port *port,
- 				  (port->uartclk + tolerance) / 16);
- }
+diff --git a/drivers/tty/serial/8250/8250_dw.c b/drivers/tty/serial/8250/8250_dw.c
+index aab3cccc6789..12866083731d 100644
+--- a/drivers/tty/serial/8250/8250_dw.c
++++ b/drivers/tty/serial/8250/8250_dw.c
+@@ -282,20 +282,13 @@ static void dw8250_set_termios(struct uart_port *p, struct ktermios *termios,
  
-+/*
-+ * Note in order to avoid the tty port mutex deadlock don't use the next method
-+ * within the uart port callbacks. Primarily it's supposed to be utilized to
-+ * handle a sudden reference clock rate change.
-+ */
-+void serial8250_update_uartclk(struct uart_port *port, unsigned int uartclk)
-+{
-+	struct uart_8250_port *up = up_to_u8250p(port);
-+	unsigned int baud, quot, frac = 0;
-+	struct ktermios *termios;
-+	unsigned long flags;
-+
-+	mutex_lock(&port->state->port.mutex);
-+
-+	if (port->uartclk == uartclk)
-+		goto out_lock;
-+
-+	port->uartclk = uartclk;
-+	termios = &port->state->port.tty->termios;
-+
-+	baud = serial8250_get_baud_rate(port, termios, NULL);
-+	quot = serial8250_get_divisor(port, baud, &frac);
-+
-+	spin_lock_irqsave(&port->lock, flags);
-+
-+	uart_update_timeout(port, termios->c_cflag, baud);
-+
-+	serial8250_set_divisor(port, baud, quot, frac);
-+	serial_port_out(port, UART_LCR, up->lcr);
-+	serial8250_out_MCR(up, UART_MCR_DTR | UART_MCR_RTS);
-+
-+	spin_unlock_irqrestore(&port->lock, flags);
-+
-+out_lock:
-+	mutex_unlock(&port->state->port.mutex);
-+}
-+EXPORT_SYMBOL_GPL(serial8250_update_uartclk);
-+
- void
- serial8250_do_set_termios(struct uart_port *port, struct ktermios *termios,
- 			  struct ktermios *old)
-diff --git a/include/linux/serial_8250.h b/include/linux/serial_8250.h
-index 6545f8cfc8fa..2b70f736b091 100644
---- a/include/linux/serial_8250.h
-+++ b/include/linux/serial_8250.h
-@@ -155,6 +155,8 @@ extern int early_serial_setup(struct uart_port *port);
+ 	clk_disable_unprepare(d->clk);
+ 	rate = clk_round_rate(d->clk, baud * 16);
+-	if (rate < 0)
+-		ret = rate;
+-	else if (rate == 0)
+-		ret = -ENOENT;
+-	else
++	if (rate > 0) {
+ 		ret = clk_set_rate(d->clk, rate);
++		if (!ret)
++			p->uartclk = rate;
++	}
+ 	clk_prepare_enable(d->clk);
  
- extern int early_serial8250_setup(struct earlycon_device *device,
- 					 const char *options);
-+extern void serial8250_update_uartclk(struct uart_port *port,
-+				      unsigned int uartclk);
- extern void serial8250_do_set_termios(struct uart_port *port,
- 		struct ktermios *termios, struct ktermios *old);
- extern void serial8250_do_set_ldisc(struct uart_port *port,
+-	if (ret)
+-		goto out;
+-
+-	p->uartclk = rate;
+-
+-out:
+ 	p->status &= ~UPSTAT_AUTOCTS;
+ 	if (termios->c_cflag & CRTSCTS)
+ 		p->status |= UPSTAT_AUTOCTS;
 -- 
 2.26.2
 
