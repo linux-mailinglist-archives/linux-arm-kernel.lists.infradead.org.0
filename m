@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 655901FCBBF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:06:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88AFC1FCBF4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 13:14:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PyaA+nC1bBsMXoNVzvLJqge5QjCzmOrOJpxEqkM8CaI=; b=jPlmhFCqT/j1LL
-	ymxLLUlvomeXz9mxiC8EUtqP4ZOf3JCASG3eAFnVNtZ+cJDHLkk+i6yeiJIyOojUiYLg6y4eT2tni
-	Fvh8+GfCLaLNAkT4P4mfj4T2/5Cy1ZNzzzVA1H1yx0JnSqaVAPYkm8BKvnUe5KaKcpYpbhK1ieQys
-	mLKDUFJSEFm2P9DZrD5mIlWroUwc8+U86gbQ5YfrD1rmGgR+g4kskZOspxtVI2sMmADDNA7+QqfcS
-	zK+2kV5Lf57pZ8rf80Fgq4Jcn8Zk5OcDbstW5bKIl5bW6KMk/jtf9iGXSVbWPgLybaWsOKVW3R41k
-	0PEXSgVz10r00q23qEXQ==;
+	List-Owner; bh=AgQQC7HMoB/ZCNWBGQKQLR0iYzYjZLhY5DqbqksFjEI=; b=SIqkWuAmi4W9n7
+	0Z4lg110f2Z+X6nkkqfHE241hHwlF/TLyRgE+FhO7HsAL9Kv6b1mbd6WrdXfyhw9MjJA0CtM98pzi
+	U0RJbHRyxvu9r+A7VwdEfMsY8UWMgE5ORfdErB1c57yzMqAjfPlQ3sGpHcZ3SbyqgvlD4GztyIiIR
+	+QH6UlPO68up/s4T7uV/quhU/lw21dvdOzlh1VG1kEGsYIKGhiDFjmaY0JHnJZpovejp0coG8ZRWP
+	XtEpSviLF3//BEmnjtuRWOmlpHdSwM40SxgQvMR8OHQoMidSqyGaQp4xYeL9IXoRnGHnpuXDz7INl
+	HdenkWLy2qBft11SHGWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlVtb-0006rv-5l; Wed, 17 Jun 2020 11:06:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlVtQ-0006rK-Rz
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 11:06:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33FD31FB;
- Wed, 17 Jun 2020 04:06:08 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 849EF3F71F;
- Wed, 17 Jun 2020 04:06:07 -0700 (PDT)
-Date: Wed, 17 Jun 2020 12:06:05 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 2/2] arm64/sve: Eliminate data races on sve_default_vl
-Message-ID: <20200617110605.GQ25945@arm.com>
-References: <1591808590-20210-1-git-send-email-Dave.Martin@arm.com>
- <1591808590-20210-3-git-send-email-Dave.Martin@arm.com>
- <20200616131808.GA1040@lca.pw>
- <20200616150451.GA1941@willie-the-truck>
- <20200616161704.GN25945@arm.com>
- <20200616171926.GA2129@willie-the-truck>
- <20200617094054.GP25945@arm.com>
- <20200617100832.GA3368@willie-the-truck>
+	id 1jlW0y-0001bX-Dw; Wed, 17 Jun 2020 11:13:56 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlW0m-0001Zu-Fy; Wed, 17 Jun 2020 11:13:46 +0000
+X-UUID: f00480a9d1dd4fa2aa6a81242804e1ae-20200617
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=JjpDADDiCK+qlE9hxMEA1Nw1DRsXUx4e15ajv8iZahc=; 
+ b=pehOUXfm2oBtRs2IrjhACQQlFXiHBIHTYly3LBPvh2EFc/JUzpUduysubyCEp2a/wCG+6jFC7eiqzwVBb4/yZ1tR+Q1Z5LLUVy+/QdsXqr7Hy/m7/2DyfnHRHetlrzbU9vkvB9wPOZrF7BkctoOn6qeuqZHHbwd9Fe/IjCF7wN8=;
+X-UUID: f00480a9d1dd4fa2aa6a81242804e1ae-20200617
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 913058749; Wed, 17 Jun 2020 03:13:28 -0800
+Received: from MTKMBS32N1.mediatek.inc (172.27.4.71) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 17 Jun 2020 04:13:35 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS32N1.mediatek.inc
+ (172.27.4.71) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Wed, 17 Jun 2020 19:13:34 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 17 Jun 2020 19:13:31 +0800
+Message-ID: <1592392265.20080.11.camel@mhfsdcap03>
+Subject: Re: [PATCH v4 5/7] iommu/mediatek: Add sub_comm id in translation
+ fault
+From: Yong Wu <yong.wu@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Wed, 17 Jun 2020 19:11:05 +0800
+In-Reply-To: <4418c5a7-3f17-9d00-43b2-4ffc5d458116@gmail.com>
+References: <20200617030029.4082-1-chao.hao@mediatek.com>
+ <20200617030029.4082-6-chao.hao@mediatek.com>
+ <4418c5a7-3f17-9d00-43b2-4ffc5d458116@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200617100832.GA3368@willie-the-truck>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+X-TM-SNTS-SMTP: 79947D4BE307F06ECA65FD2E22387D3FF8C1D8F5738CBBCA8FB0B3F504850C092000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_040608_993147_9F7ECEDE 
-X-CRM114-Status: GOOD (  27.96  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_041344_544842_4590CC8B 
+X-CRM114-Status: GOOD (  24.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,108 +86,180 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Qian Cai <cai@lca.pw>,
+Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
+ wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, Chao Hao <chao.hao@mediatek.com>,
+ iommu@lists.linux-foundation.org, Rob
+ Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 17, 2020 at 11:08:32AM +0100, Will Deacon wrote:
-> On Wed, Jun 17, 2020 at 10:40:54AM +0100, Dave Martin wrote:
-> > On Tue, Jun 16, 2020 at 06:19:27PM +0100, Will Deacon wrote:
-> > > diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
-> > > index d9eee9194511..55c8f3ec6705 100644
-> > > --- a/arch/arm64/kernel/fpsimd.c
-> > > +++ b/arch/arm64/kernel/fpsimd.c
-> > > @@ -349,7 +349,7 @@ static unsigned int find_supported_vector_length(unsigned int vl)
-> > >  	return sve_vl_from_vq(__bit_to_vq(bit));
-> > >  }
-> > >  
-> > > -#ifdef CONFIG_SYSCTL
-> > > +#if defined(CONFIG_ARM64_SVE) && defined(CONFIG_SYSCTL)
-> > >  
-> > >  static int sve_proc_do_default_vl(struct ctl_table *table, int write,
-> > >  				  void *buffer, size_t *lenp, loff_t *ppos)
-> > > @@ -394,9 +394,9 @@ static int __init sve_sysctl_init(void)
-> > >  	return 0;
-> > >  }
-> > >  
-> > > -#else /* ! CONFIG_SYSCTL */
-> > > +#else /* ! (CONFIG_ARM64_SVE && CONFIG_SYSCTL) */
-> > >  static int __init sve_sysctl_init(void) { return 0; }
-> > > -#endif /* ! CONFIG_SYSCTL */
-> > > +#endif /* ! (CONFIG_ARM64_SVE && CONFIG_SYSCTL) */
-> > 
-> > Hmm, I guess that works, but it still seems cumbersome.  #ifdefs do
-> > tend to breed as the code gets extended, so I'd worked hard to
-> > eliminate them as much as possible.
+Hi Matthias,
+
+Thanks very much for your review.
+
+On Wed, 2020-06-17 at 11:17 +0200, Matthias Brugger wrote:
 > 
-> This is just extending an existing #ifdef though, and I don't think it
-> makes any sense to compile in the SVE sysctl logic if SVE is not enabled.
-> If CONFIG_SYSCTL didn't exist, this code would almost certainly be inside
-> a CONFIG_SVE block anyway.
-
-Only code that's unreachable from inside the translation unit needs to
-be #ifdeffed.  For the rest, the compiler knows how to determine what's
-used (indeed, it's better at it than humans).
-
-Originally I relied on #ifdefs more, but I needed a lot of them, and it
-was hell to rebase every time anything needed to be moved around.
-
-Currently I don't see anything that gets compiled in if CONFIG_SYSCTL=n.
-Other than what was already compiled before this patch.  We still need
-to track the default vl, because it depends on the hardware; however it's
-effectively ro-after-init if CONFIG_SYSCTL=n.
-
-I think that complicating the #ifdef conditions in this file is a
-slippery slope, but I guess it's the it's up to the maintainer whether
-to care about that.
-
-Am I missing something?
-
-> > Can't we simply leave the helpers outside the #ifdef, and do this?
+> On 17/06/2020 05:00, Chao Hao wrote:
+> > The max larb number that a iommu HW support is 8(larb0~larb7 in the below
+> > diagram).
+> > If the larb's number is over 8, we use a sub_common for merging
+> > several larbs into one larb. At this case, we will extend larb_id:
+> > bit[11:9] means common-id;
+> > bit[8:7] means subcommon-id;
+> > From these two variable, we could get the real larb number when
+> > translation fault happen.
+> > The diagram is as below:
+> > 		 EMI
+> > 		  |
+> > 		IOMMU
+> > 		  |
+> >            -----------------
+> > 	   |               |
+> > 	common1   	common0
+> > 	   |		   |
+> > 	   -----------------
+> > 		  |
+> >              smi common
+> > 		  |
+> >   ------------------------------------
+> >   |       |       |       |     |    |
+> >  3'd0    3'd1    3'd2    3'd3  ...  3'd7   <-common_id(max is 8)
+> >   |       |       |       |     |    |
+> > Larb0   Larb1     |     Larb3  ... Larb7
+> > 		  |
+> > 	    smi sub common
+> > 		  |
+> >      --------------------------
+> >      |        |       |       |
+> >     2'd0     2'd1    2'd2    2'd3   <-sub_common_id(max is 4)
+> >      |        |       |       |
+> >    Larb8    Larb9   Larb10  Larb11
 > > 
-> >  /* Default VL for tasks that don't set it explicitly: */
-> >  static int __sve_default_vl = -1;
-> >  
-> > -static int get_sve_default_vl(void)
-> > +static inline int get_sve_default_vl(void)
-> >  {
-> >  	return READ_ONCE(__sve_default_vl);
-> >  }
-> >  
-> > -static void set_sve_default_vl(int val)
-> > +static inline void set_sve_default_vl(int val)
-> >  {
-> >  	WRITE_ONCE(__sve_default_vl, val);
-> >  }
+> > In this patch we extern larb_remap[] to larb_remap[8][4] for this.
 > 
-> That would work too, although I'd be wary of somebody removing the inline
-> later on because "the compiler knows best about inlining decisions". I'd
+> extern -> extend
+> 
+> > larb_remap[x][y]: x mean common-id above, y means subcommon_id above.
+> 
+> mean -> means
+> 
+> > 
+> > We can also distinguish if the M4U HW has sub_common by has_sub_comm
+> > property.
+> > 
+> > Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> > Reviewed-by: Yong Wu <yong.wu@mediatek.com>
+> > ---
+> >  drivers/iommu/mtk_iommu.c | 20 +++++++++++++-------
+> >  drivers/iommu/mtk_iommu.h |  3 ++-
+> >  2 files changed, 15 insertions(+), 8 deletions(-)
+> > 
+> > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> > index f23919feba4e..a687e8db0e51 100644
+> > --- a/drivers/iommu/mtk_iommu.c
+> > +++ b/drivers/iommu/mtk_iommu.c
+> > @@ -91,6 +91,8 @@
+> >  #define REG_MMU1_INVLD_PA			0x148
+> >  #define REG_MMU0_INT_ID				0x150
+> >  #define REG_MMU1_INT_ID				0x154
+> > +#define F_MMU_INT_ID_COMM_ID(a)			(((a) >> 9) & 0x7)
+> > +#define F_MMU_INT_ID_SUB_COMM_ID(a)		(((a) >> 7) & 0x3)
+> >  #define F_MMU_INT_ID_LARB_ID(a)			(((a) >> 7) & 0x7)
+> >  #define F_MMU_INT_ID_PORT_ID(a)			(((a) >> 2) & 0x1f)
+> >  
+> > @@ -229,7 +231,7 @@ static irqreturn_t mtk_iommu_isr(int irq, void *dev_id)
+> >  	struct mtk_iommu_data *data = dev_id;
+> >  	struct mtk_iommu_domain *dom = data->m4u_dom;
+> >  	u32 int_state, regval, fault_iova, fault_pa;
+> > -	unsigned int fault_larb, fault_port;
+> > +	unsigned int fault_larb, fault_port, sub_comm = 0;
+> >  	bool layer, write;
+> >  
+> >  	/* Read error info from registers */
+> > @@ -245,10 +247,14 @@ static irqreturn_t mtk_iommu_isr(int irq, void *dev_id)
+> >  	}
+> >  	layer = fault_iova & F_MMU_FAULT_VA_LAYER_BIT;
+> >  	write = fault_iova & F_MMU_FAULT_VA_WRITE_BIT;
+> > -	fault_larb = F_MMU_INT_ID_LARB_ID(regval);
+> >  	fault_port = F_MMU_INT_ID_PORT_ID(regval);
+> > -
+> > -	fault_larb = data->plat_data->larbid_remap[fault_larb];
+> > +	if (data->plat_data->has_sub_comm) {
+> > +		fault_larb = F_MMU_INT_ID_COMM_ID(regval);
+> > +		sub_comm = F_MMU_INT_ID_SUB_COMM_ID(regval);
+> > +	} else {
+> > +		fault_larb = F_MMU_INT_ID_LARB_ID(regval);
+> > +	}
+> > +	fault_larb = data->plat_data->larbid_remap[fault_larb][sub_comm];
+> >  
+> >  	if (report_iommu_fault(&dom->domain, data->dev, fault_iova,
+> >  			       write ? IOMMU_FAULT_WRITE : IOMMU_FAULT_READ)) {
+> > @@ -778,7 +784,7 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+> >  	.has_bclk       = true,
+> >  	.has_vld_pa_rng = true,
+> >  	.inv_sel_reg    = REG_MMU_INV_SEL_GEN1,
+> > -	.larbid_remap   = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+> > +	.larbid_remap   = {{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}},
+> >  };
+> >  
+> >  static const struct mtk_iommu_plat_data mt8173_data = {
+> > @@ -787,14 +793,14 @@ static const struct mtk_iommu_plat_data mt8173_data = {
+> >  	.has_bclk     = true,
+> >  	.reset_axi    = true,
+> >  	.inv_sel_reg  = REG_MMU_INV_SEL_GEN1,
+> > -	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
+> > +	.larbid_remap = {{0}, {1}, {2}, {3}, {4}, {5}}, /* Linear mapping. */
+> >  };
+> >  
+> >  static const struct mtk_iommu_plat_data mt8183_data = {
+> >  	.m4u_plat     = M4U_MT8183,
+> >  	.reset_axi    = true,
+> >  	.inv_sel_reg  = REG_MMU_INV_SEL_GEN1,
+> > -	.larbid_remap = {0, 4, 5, 6, 7, 2, 3, 1},
+> > +	.larbid_remap = {{0}, {4}, {5}, {6}, {7}, {2}, {3}, {1}},
+> >  };
+> >  
+> >  static const struct of_device_id mtk_iommu_of_ids[] = {
+> > diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> > index afd7a2de5c1e..d51ff99c2c71 100644
+> > --- a/drivers/iommu/mtk_iommu.h
+> > +++ b/drivers/iommu/mtk_iommu.h
+> > @@ -41,10 +41,11 @@ struct mtk_iommu_plat_data {
+> >  	/* HW will use the EMI clock if there isn't the "bclk". */
+> >  	bool                has_bclk;
+> >  	bool		    has_misc_ctrl;
+> > +	bool		    has_sub_comm;
+> >  	bool                has_vld_pa_rng;
+> >  	bool                reset_axi;
+> >  	u32                 inv_sel_reg;
+> > -	unsigned char       larbid_remap[MTK_LARB_NR_MAX];
+> > +	unsigned char       larbid_remap[8][4];
+> 
+> MTK_LARB_NR_MAX is 16, why do you decrease it to 8?
 
-AFAIK inline is widely used for static functions in headers for precisely
-this reason.  I have tried to use __maybe_unused (or even #ifdefs) in
-the past to be more explicit, but got shouted at.  We could optionally
-use __maybe_unused here if you think that's more self-explanatory.
+From the diagram above, the max number of the larbs that could connected
+with a IOMMU HW is 8. thus, 8 is right here for each a IOMMU HW.
 
-> also say that calling set_sve_default_vl() is an error if CONFIG_SVE is
-> not defined as we really want get_sve_default_vl() to return -1
-> unconditionally in that case. Having set_sve_default_vl() inside the
-> #ifdef ensures that.
+as I commented when v3. mt2712 have the larbs over 8 since it has 2
+IOMMU HWes.
 
-Fair point, I'm not sure how valuable it is.  We manage without it thus
-far: prior to these changes, the sve_default_vl variable was not #ifdeffed.
+and MTK_LARB_NR_MAX means the max larbs number that this SoC support.
+Keep its value as is.
 
-> I don't care too strongly either way, but I already queued my diff last
-> night [1] in order to fix linux-next, so I'd prefer not to drop it unless
-> there's a functional reason to do so.
 
-Ack, since this change would be purely to ease future maintanence (or
-not, if you judge it's not useful), it's not urgent.
-
-Cheers
----Dave
+> Should we use a define for the subcommon as well?
+> 
+> Regards,
+> Matthias
+> 
+> >  };
+> >  
+> >  struct mtk_iommu_domain;
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
