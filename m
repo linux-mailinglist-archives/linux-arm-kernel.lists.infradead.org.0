@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 731681FCB4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:50:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C28FA1FCB72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jun 2020 12:54:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pijOpWtHseGLMR+kt1nL5MlDJRvPJOEu4UcdSH4I8uU=; b=nVwJPk50fUBJwPzXUmrQy+V61
-	hxBc9wNWrcZtZn7iFoslMEdgiuqL/+3q6YZlCj4TJ6YEFum3B0BJgE4ulQFZkZb1N5sKkXUwwRy0X
-	01g7moeD6OFpSmKLPk+jZfJ5wA4+WjqBvGWMF1JhBITql6g+wxSBXilApW36BlqsHNQRgCrSdND+z
-	SH2DdmrhvJowgBXTtwFSqA8ofB4Su4SNYjWSYpkwqYrWqGyZP6Kjap7/hiCKyEzQaL2JKSopMqhcp
-	+8ocFVr0kbIg9S072yhwoJCfvUYb3td+MVuI7KmB0hR338BWTUC20wKjCwMA1F4g/YffDluj0mBlq
-	GKmx99AwQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lfe+SRoofbzsFFIvBZRaBI+PH1esHeqjLEe7zARnHHA=; b=fbJqszZsUXww2x
+	WCQkIU4Mph2Zq7ej398qeiVJGheoirtxNDFX/XBfZtKJVYFK4HpBOBmADHjAnzo3bI8mnsQCuGSNP
+	k5HdPSenDQtuBtO91PuWxOH1AkC8Xx/Nbhg4u9Z0exEO9YoTU1jUoY9BhmM5eQQY1JxFSEbIEc4A4
+	3RNQph0gIENAiljPdTIb75v9W4hVSgXepGDWxka7u7piab9cNuXjUuROYBon0EivmYjh4n3ykkn9i
+	he4pGAu1rUsrBf1Av3oJagJjWEZakoz/tXMd8cNPZxxAlWKxqyPU4t4/6TFCbg5rD2Qu5NBMsV8Ix
+	MB3rvtvVEwsVLo27F/+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlVeM-0004gN-SE; Wed, 17 Jun 2020 10:50:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlVeA-0004fw-Lc
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:50:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B32B31B;
- Wed, 17 Jun 2020 03:50:22 -0700 (PDT)
-Received: from [192.168.1.84] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ACC3F3F71F;
- Wed, 17 Jun 2020 03:50:20 -0700 (PDT)
-Subject: Re: [PATCH] KVM: arm64: kvm_reset_vcpu() return code incorrect with
- SVE
-To: Marc Zyngier <maz@kernel.org>
-References: <20200617104339.35094-1-steven.price@arm.com>
- <c9761495762abe174e6546122916fc38@kernel.org>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <969fe724-de5a-897b-fd55-ca48656e1c46@arm.com>
-Date: Wed, 17 Jun 2020 11:50:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jlVhh-0005z2-Lw; Wed, 17 Jun 2020 10:54:01 +0000
+Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlVhX-0005yQ-Ms
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jun 2020 10:53:53 +0000
+Received: by mail-ej1-x642.google.com with SMTP id y13so1832386eju.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jun 2020 03:53:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lCVEonbpFZmz0/ZeZBC256oe8W32YGcEqtUscl42Jjk=;
+ b=N6FV9zn0+vHCrQgrVC1C0J/mPAwm539PdN5uB7k0b9RkMCTH5U+h4TNko9RWYTFJS0
+ aycV7lZQuWVgH8fVnSepk8Xz4VRR0fWiURSOHJK9kMY/TeSTYqHhqujymcLZK8nILAq8
+ YRnZdRC+EuIeN9ZsLl8ItTHgnLXHEd4/8J1RICT4DwDfOwhleGOwVqvM5R9dnz8aZtuO
+ BJrqqCIPEirrFFQ+oaDBvgOulTo2An6MX+DdR6/Q8wn/r+pwJkOrMtEF6QcvlqVKRjrt
+ Q3wuXeWMZBbTXMuBU1zwm5ArFFPkRslx4tiWzIl5cKnTCZggSehVm90BWCG6qsbLOv9E
+ 86nw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lCVEonbpFZmz0/ZeZBC256oe8W32YGcEqtUscl42Jjk=;
+ b=L4CCllXnrzczYhRqko3YpjOg+6zoVcNGqpKGw39DgppwAAbbavYetGRSFOPHSgFqm1
+ lF5oRo7Dt1PWNfhPo2wnjSiRZnXoB9darZvgRq7mcAwVioykeRbd93+WgJXI5pdRXEJ3
+ yHwBlS2xm1hJY4eaGfRuIaOArIv8FvUOk+eoNKiGEGlUUZOXglO3/YZhL/hr4bfE+pJ0
+ 8kvcIUngr7iEE4BCHvIiyoZis0/m1pXgqAb+5S6ZnXifgNfvVpfRxJQJdFD20td2Y8Cd
+ yOhWYcjv1h4DjieDP2yJBpu8A5tLEuGK5/G3HkechewtrW5a+HYY0mnD/6Dg99q+wMJx
+ B4PQ==
+X-Gm-Message-State: AOAM532KtshWKP92rIhn1kdYHU5vZYjdxF/JNri669BEMxznh9QXp0SQ
+ oSuMvojcnTaDJASP/HdPhbA1SnDFA+y/6LHLIPtirw==
+X-Google-Smtp-Source: ABdhPJzM/QMiOA2pfu6giruDymL/vgxx992VCpmzw/lfID1zaGXgd0e96O1FEVsGBiSkriQxR1i1J10b+Xiy3GtvffU=
+X-Received: by 2002:a17:906:118b:: with SMTP id
+ n11mr7055515eja.328.1592391230007; 
+ Wed, 17 Jun 2020 03:53:50 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <c9761495762abe174e6546122916fc38@kernel.org>
-Content-Language: en-GB
+References: <20200612121047.GF4282@kadam> <20200612121133.GA1139533@mwanda>
+ <20200612174215.GI4282@kadam>
+In-Reply-To: <20200612174215.GI4282@kadam>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Wed, 17 Jun 2020 11:53:39 +0100
+Message-ID: <CAJ9a7ViP_PTiSnYnOYbH=LRXUroWT04rmdswZEdakoWjevUi4Q@mail.gmail.com>
+Subject: Re: [PATCH] coresight: cti: Fix error handling in probe
+To: Dan Carpenter <dan.carpenter@oracle.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_035022_796444_A052D974 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200617_035351_816637_4F3099FB 
+X-CRM114-Status: GOOD (  14.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,67 +92,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Dave Martin <Dave.Martin@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ kernel-janitors@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTcvMDYvMjAyMCAxMTo0NywgTWFyYyBaeW5naWVyIHdyb3RlOgo+IEhpIFN0ZXZlbiwKPiAK
-PiBPbiAyMDIwLTA2LTE3IDExOjQzLCBTdGV2ZW4gUHJpY2Ugd3JvdGU6Cj4+IElmIFNWRSBpcyBl
-bmFibGVkIHRoZW4gJ3JldCcgY2FuIGJlIGFzc2lnbmVkIHRoZSByZXR1cm4gdmFsdWUgb2YKPj4g
-a3ZtX3ZjcHVfZW5hYmxlX3N2ZSgpIHdoaWNoIG1heSBiZSAwIGNhdXNpbmcgZnV0dXJlICJnb3Rv
-IG91dCIgc2l0ZXMgdG8KPj4gZXJyb25lb3VzbHkgcmV0dXJuIDAgb24gZmFpbHVyZSByYXRoZXIg
-dGhhbiAtRUlOVkFMIGFzIGV4cGVjdGVkLgo+Pgo+PiBSZW1vdmUgdGhlIGluaXRpYWxpc2F0aW9u
-IG9mICdyZXQnIGFuZCBtYWtlIHNldHRpbmcgdGhlIHJldHVybiB2YWx1ZQo+PiBleHBsaWNpdCB0
-byBhdm9pZCB0aGlzIHNpdHVhdGlvbiBpbiB0aGUgZnV0dXJlLgo+Pgo+PiBGaXhlczogOWEzY2Rm
-MjZlMzM2ICgiS1ZNOiBhcm02NC9zdmU6IEFsbG93IHVzZXJzcGFjZSB0byBlbmFibGUgU1ZFIAo+
-PiBmb3IgdmNwdXMiKQo+PiBSZXBvcnRlZC1ieTogSmFtZXMgTW9yc2UgPGphbWVzLm1vcnNlQGFy
-bS5jb20+Cj4+IFNpZ25lZC1vZmYtYnk6IFN0ZXZlbiBQcmljZSA8c3RldmVuLnByaWNlQGFybS5j
-b20+Cj4+IC0tLQo+PiBUaGUgcHJvYmxlbWF0aWMgY2h1bmsgaXNuJ3QgdmlzaWJsZSBpbiB0aGUg
-ZGlmZiwgc28gcmVwcm9kdWNlZCBoZXJlOgo+Pgo+PiDCoMKgwqDCoGlmICgha3ZtX2FybV92Y3B1
-X3N2ZV9maW5hbGl6ZWQodmNwdSkpIHsKPj4gwqDCoMKgwqDCoMKgwqAgaWYgKHRlc3RfYml0KEtW
-TV9BUk1fVkNQVV9TVkUsIHZjcHUtPmFyY2guZmVhdHVyZXMpKSB7Cj4+IMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgcmV0ID0ga3ZtX3ZjcHVfZW5hYmxlX3N2ZSh2Y3B1KTsKPj4gwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBpZiAocmV0KQo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ290
-byBvdXQ7Cj4+IMKgwqDCoMKgwqDCoMKgIH0KPj4gwqDCoMKgwqB9IGVsc2Ugewo+PiDCoMKgwqDC
-oMKgwqDCoCBrdm1fdmNwdV9yZXNldF9zdmUodmNwdSk7Cj4+IMKgwqDCoMKgfQo+Pgo+PiDCoGFy
-Y2gvYXJtNjQva3ZtL3Jlc2V0LmMgfCAxMCArKysrKysrLS0tCj4+IMKgMSBmaWxlIGNoYW5nZWQs
-IDcgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtNjQva3ZtL3Jlc2V0LmMgYi9hcmNoL2FybTY0L2t2bS9yZXNldC5jCj4+IGluZGV4IGQzYjIw
-OTAyMzcyNy4uZjEwNTc2MDNiNzU2IDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybTY0L2t2bS9yZXNl
-dC5jCj4+ICsrKyBiL2FyY2gvYXJtNjQva3ZtL3Jlc2V0LmMKPj4gQEAgLTI0NSw3ICsyNDUsNyBA
-QCBzdGF0aWMgaW50IGt2bV92Y3B1X2VuYWJsZV9wdHJhdXRoKHN0cnVjdCBrdm1fdmNwdSAKPj4g
-KnZjcHUpCj4+IMKgICovCj4+IMKgaW50IGt2bV9yZXNldF92Y3B1KHN0cnVjdCBrdm1fdmNwdSAq
-dmNwdSkKPj4gwqB7Cj4+IC3CoMKgwqAgaW50IHJldCA9IC1FSU5WQUw7Cj4+ICvCoMKgwqAgaW50
-IHJldDsKPj4gwqDCoMKgwqAgYm9vbCBsb2FkZWQ7Cj4+IMKgwqDCoMKgIHUzMiBwc3RhdGU7Cj4+
-Cj4+IEBAIC0yNjksMTUgKzI2OSwxOSBAQCBpbnQga3ZtX3Jlc2V0X3ZjcHUoc3RydWN0IGt2bV92
-Y3B1ICp2Y3B1KQo+Pgo+PiDCoMKgwqDCoCBpZiAodGVzdF9iaXQoS1ZNX0FSTV9WQ1BVX1BUUkFV
-VEhfQUREUkVTUywgdmNwdS0+YXJjaC5mZWF0dXJlcykgfHwKPj4gwqDCoMKgwqDCoMKgwqDCoCB0
-ZXN0X2JpdChLVk1fQVJNX1ZDUFVfUFRSQVVUSF9HRU5FUklDLCB2Y3B1LT5hcmNoLmZlYXR1cmVz
-KSkgewo+PiAtwqDCoMKgwqDCoMKgwqAgaWYgKGt2bV92Y3B1X2VuYWJsZV9wdHJhdXRoKHZjcHUp
-KQo+PiArwqDCoMKgwqDCoMKgwqAgaWYgKGt2bV92Y3B1X2VuYWJsZV9wdHJhdXRoKHZjcHUpKSB7
-Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9IC1FSU5WQUw7Cj4+IMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4gK8KgwqDCoMKgwqDCoMKgIH0KPj4gwqDCoMKgwqAg
-fQo+Pgo+PiDCoMKgwqDCoCBzd2l0Y2ggKHZjcHUtPmFyY2gudGFyZ2V0KSB7Cj4+IMKgwqDCoMKg
-IGRlZmF1bHQ6Cj4+IMKgwqDCoMKgwqDCoMKgwqAgaWYgKHRlc3RfYml0KEtWTV9BUk1fVkNQVV9F
-TDFfMzJCSVQsIHZjcHUtPmFyY2guZmVhdHVyZXMpKSB7Cj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIGlmICghY3B1c19oYXZlX2NvbnN0X2NhcChBUk02NF9IQVNfMzJCSVRfRUwxKSkKPj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKGNwdXNfaGF2ZV9jb25zdF9jYXAoQVJNNjRfSEFTXzMy
-QklUX0VMMSkpIHsKPiAKPiBEbyB5b3UgcmVhbGx5IG1lYW4gdGhpcz8gU2VlbXMgY291bnRlci1w
-cm9kdWN0aXZlLi4uIDotKAoKQ2xlYXJseSBub3QuLi4gSSdtIHJlYWxseSBub3Qgc3VyZSBob3cg
-SSBtYW5hZ2VkIHRvIHNjcmV3IHRoYXQgdXAgc28gCmJhZGx5IDooCgpJJ20gZ2xhZCBzb21lb25l
-IGlzIGF3YWtlIQoKU29ycnkgYWJvdXQgdGhhdCwKClN0ZXZlCgo+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgIHJldCA9IC1FSU5WQUw7Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIGdvdG8gb3V0Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Cj4+IMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCBwc3RhdGUgPSBWQ1BVX1JFU0VUX1BTVEFURV9TVkM7Cj4+IMKg
-wqDCoMKgwqDCoMKgwqAgfSBlbHNlIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBzdGF0
-ZSA9IFZDUFVfUkVTRVRfUFNUQVRFX0VMMTsKPiAKPiBUaGFua3MsCj4gCj4gIMKgwqDCoMKgwqDC
-oMKgIE0uCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+Hi Dan,
+
+On Fri, 12 Jun 2020 at 18:43, Dan Carpenter <dan.carpenter@oracle.com> wrote:
+>
+> On Fri, Jun 12, 2020 at 03:11:33PM +0300, Dan Carpenter wrote:
+> > +static int cti_pm_setup(struct cti_drvdata *drvdata)
+> > +{
+> > +     int ret;
+> > +
+> > +     if (drvdata->ctidev.cpu == -1)
+> > +             return 0;
+> > +
+> > +     if (nr_cti_cpu)
+> > +             goto done;
+> > +
+> > +     cpus_read_lock();
+>         ^^^^^^^^^^^^^^^^
+> One thing which I do wonder is why we have locking here but not in the
+> cti_pm_release() function.  That was how the original code was so the
+> patch doesn't change anything, but I am curious.
+>
+
+Good point - the CTI PM code was modelled on the same code in the ETM
+drivers, which show the same pattern.
+Perhaps something we need to revisit in both drivers.
+
+Regards
+
+Mike
+
+> > +     ret = cpuhp_setup_state_nocalls_cpuslocked(
+> > +                     CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
+> > +                     "arm/coresight_cti:starting",
+> > +                     cti_starting_cpu, cti_dying_cpu);
+> > +     if (ret) {
+> > +             cpus_read_unlock();
+> > +             return ret;
+> > +     }
+> > +
+> > +     ret = cpu_pm_register_notifier(&cti_cpu_pm_nb);
+> > +     cpus_read_unlock();
+> > +     if (ret) {
+> > +             cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+> > +             return ret;
+> > +     }
+> > +
+> > +done:
+> > +     nr_cti_cpu++;
+> > +     cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
+> > +
+> > +     return 0;
+> > +}
+> > +
+> >  /* release PM registrations */
+> >  static void cti_pm_release(struct cti_drvdata *drvdata)
+> >  {
+> > -     if (drvdata->ctidev.cpu >= 0) {
+> > -             if (--nr_cti_cpu == 0) {
+> > -                     cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
+> > +     if (drvdata->ctidev.cpu == -1)
+> > +             return;
+> >
+> > -                     cpuhp_remove_state_nocalls(
+> > -                             CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+> > -             }
+> > -             cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
+> > +     cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
+> > +     if (--nr_cti_cpu == 0) {
+> > +             cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
+> > +             cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+> >       }
+> >  }
+>
+> regards,
+> dan carpenter
+>
+
+
+-- 
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
