@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20F091FDF48
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:41:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 076B21FDF4B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:42:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cwinyz6YuE57JSKJ4b1EmScnwsB4ffJXCScMuMs0Omw=; b=gsh/ULxSk4w8Fx
-	JXT3W/1TlRYl5GgyCKKJEdDFu5pjdrvryeAlXrMrYgAsSp8RcRaQ0HJmLIu5g4H165SCHeTiTros6
-	sdoOtdTgshnJaQvwwEE7qtx2l+LzF3UTZPu/zIqfURGHz5o3ek39FbRNtMHoIMoOK9+6Wg2fR1F4o
-	ST85Sz1zDv3wdzWs/gtND+0jEo/ysFf5wXIery6b1M1MS7z3YvR7U+bJRrj6mqrXV99EMafv6jId9
-	Sh0MlMg+on3BtjawCVz3R8c70b2BzD83/kn/uwqbLyYgA8jAMP3+zEOHKy9fHPSxwKTlVuL98gB5R
-	VGeobvjHRvYm9KPw6PzQ==;
+	List-Owner; bh=dIJgZWNikeCHN02ob86ULC1PDgRxaJOrYNXpRySU2Oo=; b=FsInUXQ4tgYqso
+	VPoqsC5R0B434PvkBE8cmCEmYCyIaUNcwPl2mG5JL7BioW+Du9zi3DduS4gmyztC9RDVRjhlSYdDS
+	Ww1lv8rt9k6Kmp/0R+S1Twpj0huw9LEgFAKRus3LhmpxnZbStu1T8mKU6/KKxAl7ZUJTRI5yp/ux1
+	UXZEgJrJMu77uzK2ZWZT2Nf93ehpP1rDTaaPv9OWUzpppbDkzkAwM139veOsZa9wej+Ke7ZJ4gmq1
+	08+cNqJBlSvFEiQeGojHfPsQztTdRaaqBIYIzWYTGvkk6P7cxfomFK33e7kWVMjDYMCC1EntmCIWv
+	7spmFBTf1SkaEdkpJ7aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljYT-0005ef-NJ; Thu, 18 Jun 2020 01:41:25 +0000
+	id 1jljZ5-0006I3-T4; Thu, 18 Jun 2020 01:42:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljBK-0008DV-KO
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:32 +0000
+ id 1jljBN-0008Fb-GY
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B2BEF21D82;
- Thu, 18 Jun 2020 01:17:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6E0B206F1;
+ Thu, 18 Jun 2020 01:17:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443049;
- bh=PQr83LUcwriW/k0i0ijFpVbSvPAoZsnTtGv9nIb/nts=;
+ s=default; t=1592443052;
+ bh=y7fxfotTlOnXluKVTV4AayibhTWYQl/IVgmeQ0l5TAs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kIZTLY93c1iKAlBDBHn6/5nAK8k2LxjN481ryVncENtFFoVB7I2XXVc53q7cJkc6Y
- 0yFFQMgPvP/E1uDinYZ31ga2V/0+tesrLhb++jRgHEBpNAtN5D5tvglPQqdMq+OV+x
- xgtz4xBS+8iiGQgXniVokFEvrSKQng3JbPh3a5YY=
+ b=Afbe4DscnBkXY5dGbmNd7BX2Krv6vD5vSrRBsl9/iNAswZ02Wad2YOW/M3Z3AVbqV
+ /sVCyu5gfPd0QIAbFQlJ1kqlxASz7A8svYCoBOupv2UR6J23uOMmDD6kcnroxFHBqo
+ fA8AHz+SzN6PQjNf3i2rhQAe+tvA3zcgODCy1FM0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 043/266] PCI: aardvark: Don't blindly enable ASPM
- L0s and don't write to read-only register
-Date: Wed, 17 Jun 2020 21:12:48 -0400
-Message-Id: <20200618011631.604574-43-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 045/266] arm64: dts: fvp/juno: Fix node address
+ fields
+Date: Wed, 17 Jun 2020 21:12:50 -0400
+Message-Id: <20200618011631.604574-45-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181730_748227_C839D0D8 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200617_181733_671443_D6FFB06D 
+X-CRM114-Status: GOOD (  10.62  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,58 +80,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Maciej Nowak <tmn505@gmail.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Sasha Levin <sashal@kernel.org>,
- linux-pci@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?UTF-8?q?Pali=20Roh=C3=A1r?= <pali@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Sudeep Holla <sudeep.holla@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogUGFsaSBSb2jDoXIgPHBhbGlAa2VybmVsLm9yZz4KClsgVXBzdHJlYW0gY29tbWl0IDkw
-YzZjYjRhMzU1ZTdiZWZjYjU1N2QyMTdkMWQ4YjhiZDU4NzVhMDUgXQoKVHJ5aW5nIHRvIGNoYW5n
-ZSBMaW5rIFN0YXR1cyByZWdpc3RlciBkb2VzIG5vdCBoYXZlIGFueSBlZmZlY3QgYXMgdGhpcwpp
-cyBhIHJlYWQtb25seSByZWdpc3Rlci4gVHJ5aW5nIHRvIG92ZXJ3cml0ZSBiaXRzIGZvciBOZWdv
-dGlhdGVkIExpbmsKV2lkdGggZG9lcyBub3QgbWFrZSBzZW5zZS4KCkluIGZ1dHVyZSBwcm9wZXIg
-Y2hhbmdlIG9mIGxpbmsgd2lkdGggY2FuIGJlIGRvbmUgdmlhIExhbmUgQ291bnQgU2VsZWN0CmJp
-dHMgaW4gUENJZSBDb250cm9sIDAgcmVnaXN0ZXIuCgpUcnlpbmcgdG8gdW5jb25kaXRpb25hbGx5
-IGVuYWJsZSBBU1BNIEwwcyB2aWEgQVNQTSBDb250cm9sIGJpdHMgaW4gTGluawpDb250cm9sIHJl
-Z2lzdGVyIGlzIHdyb25nLiBUaGVyZSBzaG91bGQgYmUgYXQgbGVhc3Qgc29tZSBkZXRlY3Rpb24g
-aWYKZW5kcG9pbnQgc3VwcG9ydHMgTDBzIGFzIGlzbid0IG1hbmRhdG9yeS4KCk1vcmVvdmVyIEFT
-UE0gQ29udHJvbCBiaXRzIGluIExpbmsgQ29udHJvbCByZWdpc3RlciBhcmUgY29udHJvbGxlZCBi
-eQpwY2llL2FzcG0uYyBjb2RlIHdoaWNoIHNldHMgaXQgYWNjb3JkaW5nIHRvIHN5c3RlbSBBU1BN
-IHNldHRpbmdzLAppbW1lZGlhdGVseSBhZnRlciBhYXJkdmFyayBkcml2ZXIgcHJvYmVzLiBTbyBz
-ZXR0aW5nIHRoZXNlIGJpdHMgYnkKYWFyZHZhcmsgZHJpdmVyIGhhcyBubyBsb25nIHJ1bm5pbmcg
-ZWZmZWN0LgoKUmVtb3ZlIGNvZGUgd2hpY2ggdG91Y2hlcyBBU1BNIEwwcyBiaXRzIGZyb20gdGhp
-cyBkcml2ZXIgYW5kIGxldAprZXJuZWwncyBBU1BNIGltcGxlbWVudGF0aW9uIHRvIHNldCBBU1BN
-IHN0YXRlIHByb3Blcmx5LgoKU29tZSB1c2VycyBhcmUgcmVwb3J0aW5nIGlzc3VlcyB0aGF0IHRo
-aXMgY29kZSBpcyBwcm9ibGVtYXRpYyBmb3Igc29tZQpJbnRlbCB3aWZpIGNhcmRzIGFuZCByZW1v
-dmluZyBpdCBmaXhlcyB0aGVtLCBzZWUgZS5nLjoKaHR0cHM6Ly9idWd6aWxsYS5rZXJuZWwub3Jn
-L3Nob3dfYnVnLmNnaT9pZD0xOTYzMzkKCklmIHByb2JsZW1zIHdpdGggSW50ZWwgd2lmaSBjYXJk
-cyBvY2N1ciBldmVuIGFmdGVyIHRoaXMgY29tbWl0LCB0aGVuCnBjaWUvYXNwbS5jIGNvZGUgY291
-bGQgYmUgbW9kaWZpZWQgLyBob29rZWQgdG8gbm90IGVuYWJsZSBBU1BNIEwwcyBzdGF0ZQpmb3Ig
-YWZmZWN0ZWQgcHJvYmxlbWF0aWMgY2FyZHMuCgpMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9y
-Zy9yLzIwMjAwNDMwMDgwNjI1LjI2MDcwLTMtcGFsaUBrZXJuZWwub3JnClRlc3RlZC1ieTogVG9t
-YXN6IE1hY2llaiBOb3dhayA8dG1uNTA1QGdtYWlsLmNvbT4KU2lnbmVkLW9mZi1ieTogUGFsaSBS
-b2jDoXIgPHBhbGlAa2VybmVsLm9yZz4KU2lnbmVkLW9mZi1ieTogTG9yZW56byBQaWVyYWxpc2kg
-PGxvcmVuem8ucGllcmFsaXNpQGFybS5jb20+CkFja2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBr
-ZXJuZWwub3JnPgpBY2tlZC1ieTogVGhvbWFzIFBldGF6em9uaSA8dGhvbWFzLnBldGF6em9uaUBi
-b290bGluLmNvbT4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3Jn
-PgotLS0KIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMgfCA0IC0tLS0KIDEg
-ZmlsZSBjaGFuZ2VkLCA0IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2Nv
-bnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJk
-dmFyay5jCmluZGV4IDk3MjQ1ZTA3NjU0OC4uZjI0ODFlODBlMjcyIDEwMDY0NAotLS0gYS9kcml2
-ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJkdmFyay5jCisrKyBiL2RyaXZlcnMvcGNpL2NvbnRy
-b2xsZXIvcGNpLWFhcmR2YXJrLmMKQEAgLTM0NCwxMCArMzQ0LDYgQEAgc3RhdGljIHZvaWQgYWR2
-a19wY2llX3NldHVwX2h3KHN0cnVjdCBhZHZrX3BjaWUgKnBjaWUpCiAKIAlhZHZrX3BjaWVfd2Fp
-dF9mb3JfbGluayhwY2llKTsKIAotCXJlZyA9IFBDSUVfQ09SRV9MSU5LX0wwU19FTlRSWSB8Ci0J
-CSgxIDw8IFBDSUVfQ09SRV9MSU5LX1dJRFRIX1NISUZUKTsKLQlhZHZrX3dyaXRlbChwY2llLCBy
-ZWcsIFBDSUVfQ09SRV9MSU5LX0NUUkxfU1RBVF9SRUcpOwotCiAJcmVnID0gYWR2a19yZWFkbChw
-Y2llLCBQQ0lFX0NPUkVfQ01EX1NUQVRVU19SRUcpOwogCXJlZyB8PSBQQ0lFX0NPUkVfQ01EX01F
-TV9BQ0NFU1NfRU4gfAogCQlQQ0lFX0NPUkVfQ01EX0lPX0FDQ0VTU19FTiB8Ci0tIAoyLjI1LjEK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+From: Andre Przywara <andre.przywara@arm.com>
+
+[ Upstream commit bb5cce12ac717c7462217cd493ed701d12d6dbce ]
+
+The Arm Ltd. boards were using an outdated address convention in the DT
+node names, by separating the high from the low 32-bits of an address by
+a comma.
+
+Remove the comma from the node name suffix to be DT spec compliant.
+
+Link: https://lore.kernel.org/r/20200513103016.130417-3-andre.przywara@arm.com
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/arm/boot/dts/vexpress-v2m-rs1.dtsi              | 10 +++++-----
+ arch/arm64/boot/dts/arm/foundation-v8.dtsi           |  4 ++--
+ arch/arm64/boot/dts/arm/juno-motherboard.dtsi        |  6 +++---
+ arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi |  2 +-
+ arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi     |  6 +++---
+ 5 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
+index dfae90adbb7c..ce64bfb22f22 100644
+--- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
++++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
+@@ -31,7 +31,7 @@ motherboard {
+ 			#interrupt-cells = <1>;
+ 			ranges;
+ 
+-			nor_flash: flash@0,00000000 {
++			nor_flash: flash@0 {
+ 				compatible = "arm,vexpress-flash", "cfi-flash";
+ 				reg = <0 0x00000000 0x04000000>,
+ 				      <4 0x00000000 0x04000000>;
+@@ -41,13 +41,13 @@ partitions {
+ 				};
+ 			};
+ 
+-			psram@1,00000000 {
++			psram@100000000 {
+ 				compatible = "arm,vexpress-psram", "mtd-ram";
+ 				reg = <1 0x00000000 0x02000000>;
+ 				bank-width = <4>;
+ 			};
+ 
+-			ethernet@2,02000000 {
++			ethernet@202000000 {
+ 				compatible = "smsc,lan9118", "smsc,lan9115";
+ 				reg = <2 0x02000000 0x10000>;
+ 				interrupts = <15>;
+@@ -59,14 +59,14 @@ ethernet@2,02000000 {
+ 				vddvario-supply = <&v2m_fixed_3v3>;
+ 			};
+ 
+-			usb@2,03000000 {
++			usb@203000000 {
+ 				compatible = "nxp,usb-isp1761";
+ 				reg = <2 0x03000000 0x20000>;
+ 				interrupts = <16>;
+ 				port1-otg;
+ 			};
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				compatible = "simple-bus";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+diff --git a/arch/arm64/boot/dts/arm/foundation-v8.dtsi b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
+index 2a6aa43241b3..05d1657170b4 100644
+--- a/arch/arm64/boot/dts/arm/foundation-v8.dtsi
++++ b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
+@@ -151,7 +151,7 @@ smb@8000000 {
+ 				<0 0 41 &gic 0 GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
+ 				<0 0 42 &gic 0 GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+ 
+-		ethernet@2,02000000 {
++		ethernet@202000000 {
+ 			compatible = "smsc,lan91c111";
+ 			reg = <2 0x02000000 0x10000>;
+ 			interrupts = <15>;
+@@ -178,7 +178,7 @@ v2m_refclk32khz: refclk32khz {
+ 			clock-output-names = "v2m:refclk32khz";
+ 		};
+ 
+-		iofpga@3,00000000 {
++		iofpga@300000000 {
+ 			compatible = "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+diff --git a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
+index 9f60dacb4f80..1234a8cfc0a9 100644
+--- a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
+@@ -103,7 +103,7 @@ nmi-button {
+ 				};
+ 			};
+ 
+-			flash@0,00000000 {
++			flash@0 {
+ 				/* 2 * 32MiB NOR Flash memory mounted on CS0 */
+ 				compatible = "arm,vexpress-flash", "cfi-flash";
+ 				reg = <0 0x00000000 0x04000000>;
+@@ -120,7 +120,7 @@ partitions {
+ 				};
+ 			};
+ 
+-			ethernet@2,00000000 {
++			ethernet@200000000 {
+ 				compatible = "smsc,lan9118", "smsc,lan9115";
+ 				reg = <2 0x00000000 0x10000>;
+ 				interrupts = <3>;
+@@ -133,7 +133,7 @@ ethernet@2,00000000 {
+ 				vddvario-supply = <&mb_fixed_3v3>;
+ 			};
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				compatible = "simple-bus";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
+index 57b0b9d7f3fa..29e6962c70bd 100644
+--- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
++++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
+@@ -9,7 +9,7 @@ smb@8000000 {
+ 		motherboard {
+ 			arm,v2m-memory-map = "rs2";
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				virtio-p9@140000 {
+ 					compatible = "virtio,mmio";
+ 					reg = <0x140000 0x200>;
+diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
+index 03a7bf079c8f..ad20076357f5 100644
+--- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
++++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
+@@ -17,14 +17,14 @@ motherboard {
+ 			#interrupt-cells = <1>;
+ 			ranges;
+ 
+-			flash@0,00000000 {
++			flash@0 {
+ 				compatible = "arm,vexpress-flash", "cfi-flash";
+ 				reg = <0 0x00000000 0x04000000>,
+ 				      <4 0x00000000 0x04000000>;
+ 				bank-width = <4>;
+ 			};
+ 
+-			ethernet@2,02000000 {
++			ethernet@202000000 {
+ 				compatible = "smsc,lan91c111";
+ 				reg = <2 0x02000000 0x10000>;
+ 				interrupts = <15>;
+@@ -51,7 +51,7 @@ v2m_refclk32khz: refclk32khz {
+ 				clock-output-names = "v2m:refclk32khz";
+ 			};
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				compatible = "simple-bus";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
