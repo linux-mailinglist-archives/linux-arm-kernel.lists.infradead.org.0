@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BEF41FE29F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:03:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EDBD1FE2B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:04:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6O7kM1OTVtPUKJcapxN1S253uI9tr++XAkxm7J4iKwo=; b=eWcW5nq15mTuMx
-	k7rPkgWXtcq8m00qpMFjsHFnjFg0cA+dNMRHkGesn8gtBLl4zJHCK54Nnwd1m4wWeJ7UwG4sjdh6O
-	TgDD42yRdghbAUJVMYd7tFHV7FLKExBR/4KBzp6CB3ey68FRAwW1N9ZGjvbkDrAJrQ0VkAR25Ui3x
-	09jsV1kFvKx9UDhTnc1NLEvX2DH/+z5+l46ZZJQ5/fSlBWItVN133KQemUqHFLzQytfudkB0TEcW+
-	3c/WKeY0vq3prJ5qxnRS5trLX5zu5DMattnO915nahEGjYy0Fab9+e7wn16ny0DyOQKRZD5ed3EMu
-	+xw25zXo0cHWsGCIhJ9A==;
+	List-Owner; bh=WgqlFhc5UxeLdum22RgtNz2X5YYbr6h22AslMtgqZAQ=; b=uUaRE7NF/kAcKA
+	gNwR4bZsj38YGFhBnbHLSPI8b3iPEp0vP15qYYG2J7ilyIGi2xD7XFM8GL25ELKeYiOeCuIplifl3
+	GvJfQqt/LC3ON6VMxEiTvQXVpu8/n/mcY2l6JSkpWZwFyxpmXzQAhFVHRlxKRvPPslTY/Rr6DI4n+
+	s8BJfwLqt756wel/X+C6zkgk4GiHmrAbeMAj8GIiK9mXvWS+FZNqclljqzn2QqoTtbZNgK8DbIvZr
+	ausEHYouwXWJYJUMoHlEoeeQrjJujunhHfaT2DdEzZUH1miLBE49dh+rW6+6BFwJjzIWVp3nFupKN
+	LQ1YDTlRh6JVfug+1oDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljtZ-0000sQ-J9; Thu, 18 Jun 2020 02:03:13 +0000
+	id 1jljuE-0001Pv-4H; Thu, 18 Jun 2020 02:03:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljLs-000570-01
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:28:28 +0000
+ id 1jljLy-0005Cs-Li
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:28:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B5560221F3;
- Thu, 18 Jun 2020 01:28:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 77DEC221FC;
+ Thu, 18 Jun 2020 01:28:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443702;
- bh=egjh4KR1n2yvreET00hqFOEmkwK3ljyyUEcCR/XFy2w=;
+ s=default; t=1592443710;
+ bh=5d3vNDNuQvODzfrN0SzSBAhnNYtyMFSiHtXdBNldzrM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HGRrari0kKo9lXrbNg6hDOfkQplMvvOz/Cfd5PAtBR70F//HiQkD8p7K+dkswprcR
- +jiKKQ59F8qarPfiAD34tYEe4W60Zn5GL/AgnQzt024GTXzH6W7t3CP3k7KVUSvB4A
- m25c0MS6QqZKfG6C5xL7VYBgbANGpaq9qCz+mh9w=
+ b=hHSPhEzRjzXQOHUyz7TiToRdSaOGobj8qTXgBZyJODCvGaUbpCqLTnF5PAKHxVuzB
+ gGdqhh7+q2X+sohXt4oaX+GLC/lFmMm4T+8qt1uCfLhCc5WVo1dDvadiorDWkKsO5K
+ STdC+3Wfddx0VXkLzYoyKGz3e1wWZCAgSphso5TA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 02/80] clk: sunxi: Fix incorrect usage of
- round_down()
-Date: Wed, 17 Jun 2020 21:27:01 -0400
-Message-Id: <20200618012819.609778-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 08/80] ARM: integrator: Add some Kconfig selections
+Date: Wed, 17 Jun 2020 21:27:07 -0400
+Message-Id: <20200618012819.609778-8-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012819.609778-1-sashal@kernel.org>
 References: <20200618012819.609778-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182824_108079_B6C4CCB8 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20200617_182830_809932_A32B2F60 
+X-CRM114-Status: GOOD (  11.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,45 +79,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>,
- Rikard Falkeborn <rikard.falkeborn@gmail.com>, linux-clk@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
 
-[ Upstream commit ee25d9742dabed3fd18158b518f846abeb70f319 ]
+[ Upstream commit d2854bbe5f5c4b4bec8061caf4f2e603d8819446 ]
 
-round_down() can only round to powers of 2. If round_down() is asked
-to round to something that is not a power of 2, incorrect results are
-produced. The incorrect results can be both too large and too small.
+The CMA and DMA_CMA Kconfig options need to be selected
+by the Integrator in order to produce boot console on some
+Integrator systems.
 
-Instead, use rounddown() which can round to any number.
+The REGULATOR and REGULATOR_FIXED_VOLTAGE need to be
+selected in order to boot the system from an external
+MMC card when using MMCI/PL181 from the device tree
+probe path.
 
-Fixes: 6a721db180a2 ("clk: sunxi: Add A31 clocks support")
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Select these things directly from the Kconfig so we are
+sure to be able to bring the systems up with console
+from any device tree.
+
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/sunxi/clk-sunxi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mach-integrator/Kconfig | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/clk/sunxi/clk-sunxi.c b/drivers/clk/sunxi/clk-sunxi.c
-index f2c9274b8bd5..369164f0bd0e 100644
---- a/drivers/clk/sunxi/clk-sunxi.c
-+++ b/drivers/clk/sunxi/clk-sunxi.c
-@@ -98,7 +98,7 @@ static void sun6i_a31_get_pll1_factors(struct factors_request *req)
- 	 * Round down the frequency to the closest multiple of either
- 	 * 6 or 16
- 	 */
--	u32 round_freq_6 = round_down(freq_mhz, 6);
-+	u32 round_freq_6 = rounddown(freq_mhz, 6);
- 	u32 round_freq_16 = round_down(freq_mhz, 16);
+diff --git a/arch/arm/mach-integrator/Kconfig b/arch/arm/mach-integrator/Kconfig
+index cefe44f6889b..ba124f8704fa 100644
+--- a/arch/arm/mach-integrator/Kconfig
++++ b/arch/arm/mach-integrator/Kconfig
+@@ -3,6 +3,8 @@ menuconfig ARCH_INTEGRATOR
+ 	depends on ARCH_MULTI_V4T || ARCH_MULTI_V5 || ARCH_MULTI_V6
+ 	select ARM_AMBA
+ 	select COMMON_CLK_VERSATILE
++	select CMA
++	select DMA_CMA
+ 	select HAVE_TCM
+ 	select ICST
+ 	select MFD_SYSCON
+@@ -34,14 +36,13 @@ config INTEGRATOR_IMPD1
+ 	select ARM_VIC
+ 	select GPIO_PL061
+ 	select GPIOLIB
++	select REGULATOR
++	select REGULATOR_FIXED_VOLTAGE
+ 	help
+ 	  The IM-PD1 is an add-on logic module for the Integrator which
+ 	  allows ARM(R) Ltd PrimeCells to be developed and evaluated.
+ 	  The IM-PD1 can be found on the Integrator/PP2 platform.
  
- 	if (round_freq_6 > round_freq_16)
+-	  To compile this driver as a module, choose M here: the
+-	  module will be called impd1.
+-
+ config INTEGRATOR_CM7TDMI
+ 	bool "Integrator/CM7TDMI core module"
+ 	depends on ARCH_INTEGRATOR_AP
 -- 
 2.25.1
 
