@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2532A1FF1B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 14:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9C121FF1CB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 14:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w5VnT922RR3nC5S4rfmlM95wVSfkk6tq1fKYxG/3uQU=; b=c5yepmd9lxUEyx
-	xj25Ptr+aXF3pwId8oWCONSGMrQYtOX5BcBQ6WxHlUx/6HyrZoN8eX6dzHnjIN6iHR1IiClzvt7Xo
-	YlhmBnfoMU28pOPbVG7p/c/lOAaXFlepUQ9H5qak1JQ2iZ4I8uSTY1q6cFz65XZygr7vDaTKVEQUS
-	KKmhzzYUZczJ+ctID7uBEguFIqKvUN0UL3N08Rq+lV4BflwsbAuLqISe5zezTq/Nenx6kG/27tlGs
-	VzMPuOX9t6spmKUiyIjY2y504KpUGMtlv2LGzpquuKkF5pqqotbDYGVfEDyjgqRu6jcMNM0Efv67r
-	yd8rCCa9Mj6TFnxPqYrw==;
+	List-Owner; bh=hEFVUjYqKuoQMW5+8XYfZDdvcGB34WH2DQP6WIBTLFc=; b=SSK78KURGX9HEe
+	DorS5ng+92JqzSRlcRI560mphXbfdlKDAfOtmuxlAJLBswqfVBqL9CrWMznkIkhggrUWewpTjjMYN
+	RrqOimDubGW1FcgPGhjDDlC3FiWb1aC0FPgMhhp61OjAW9jtj/QjCDTNX6Abk+pWl6eANkV0EWZQN
+	aPhcL1qlKl6Uuvuhgbyde26L1ErGHSWP4LJYwqo34liRI2MAziPBcnP/bMP1fgVqnLxZpTahFiD+f
+	HcRi8wOJ9Ea0VZbY8BvqsJfSO5zUCnJDOuKJP9QtLy37qWDq+nXdFpzlu4PUSV+2q5sNK3CfQ84Ey
+	CJyZPK6ZWLoevjYPtGfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jltfg-0007LY-Aw; Thu, 18 Jun 2020 12:29:32 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jltg0-0007jK-Qt; Thu, 18 Jun 2020 12:29:52 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jltcQ-0004ec-FH
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 12:26:13 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a6so1622805wmm.5
+ id 1jltcX-0004kK-1X
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 12:26:18 +0000
+Received: by mail-wr1-x443.google.com with SMTP id x6so5824595wrm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 05:26:10 -0700 (PDT)
+ Thu, 18 Jun 2020 05:26:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZWFc0DVeN94ZorqAG0h9WFrQjJa3oixBCGpefiLhYCk=;
- b=cAT7JpNu8uYVJil5fY5XhY46HnbgEBY79aUy9b0HsXpqe+pJHcIa6qJerEc/bB5+O+
- Gz62x7AgUxwQ/BFtfwrofVT/+c0XxDC9yK3l/Q2W6aS/Y2paBbPxsBBpnGXy4Y8UMGlf
- O0cpju70gmPfxRH5GOekLp67QDsk3bLLxrojuzzpn1EEK5jHe7pqUA8e958AfepvwssZ
- iV0UyEvDvPxyGhBrWue2gtxLQ8aCNq/oLNqKqJyfzd/jlL46F1zSHfFVIZTqNkgexiZx
- fnl/epwDF21x7kEzroS5fiZVhlKLuuaNS0ny2gJd50CDOxx0LED5J+27mYQoUSrS0JFG
- G1pA==
+ bh=eoJNhGWephHh2kHxeUxYOokymywaEEsB1soK0bgoMag=;
+ b=TEXYXyhlg3yz0B8UIHkZXn6oAo3avJRrYkTyA9xaGkqdf5nonfGKN+VqZuKiArfpyg
+ C4p/meD1W8zwxsQnM57O6GwJ4OdMceJ9XCYBBSHM7mMozUWAEhbCA6F0qm/dj2K9xK/e
+ k/mK2fqb1vNFuJxs07bips/lRohz68SPOfmnqdd/TRIFyt5B/5+ceGinZ5PANTif+PWr
+ EsACQ5qWGE413ytIYmfBVWTRRrjBhtqAGsGUFtYXw/Qx7SCxH8auMx0siwVhfPpoacYz
+ Z4e+upQ9X957zGzIo//NEh3QnseeF0MDGnex47/HvPWSesAyd77vTORe6vQxrdY/0Gsg
+ YedA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZWFc0DVeN94ZorqAG0h9WFrQjJa3oixBCGpefiLhYCk=;
- b=BYfcryAxwby9T/mzjKLPchYqUERqxGL2FCmGxcqwtNKFT49G6546ZFqT5brz6p3PgK
- W/rvvoBS2XiKWiuARksTO3q/nescrXwz7IEzLatWRnOXb7KwzK7E/p2HdzI9xUPj2x3y
- kDrNcT9BnuxexCEk/2YlBkENgUCE7ksMIYoCU8ShTldXLz9ClLiEyIvp9uRBBDPDSEqt
- ToFDVKWlmE+NUYDxD7duAnEF695f3Q5QyUoeP8YlUSsteZt0UQzVbrqBSIjSYnJS7zq8
- ba53k5IhyDVaWWQMrwQhgmitVmGQ6m07krEqlJ+MOSPgq/Ce/AzJgLhQDhv0ixwGOy5S
- 5bFg==
-X-Gm-Message-State: AOAM530mVq6B0OCe6xWyBZxD9euT+JfCjb0fZqp9kpLqQla9Df93Y2NV
- 0h4tDIuVbodBGnUhoab+bWJcMQ==
-X-Google-Smtp-Source: ABdhPJya5GO8Zl0HV6LSvzozL5C9Dr+dLPC276lCmkiUmdKYLUZWlckw0Wm4xUiI+YGZ54d6YuYw/Q==
-X-Received: by 2002:a1c:4804:: with SMTP id v4mr3813586wma.21.1592483168452;
- Thu, 18 Jun 2020 05:26:08 -0700 (PDT)
+ bh=eoJNhGWephHh2kHxeUxYOokymywaEEsB1soK0bgoMag=;
+ b=cU8MGV9L+CJK3LaNwTpa1KmwH3GFURZlRt1li9KNMPnv3w0BtLUCSufzRSnj9eKugB
+ rP/aL9GXrzYdx0QspxE9Bp+Yb1COz4GTEVDTeQ2zMaKbBJC7l5EvAKu5/sbY5tSJxpoE
+ wxAKhPcPU98vPA+A8katkwPxtUjn59zpPD7lpm7bK0T8IKsFwiITAKgIeNVtwC/zI0wc
+ gT5iHZ8USWFt6HUGf+9fktZlNEcP+exlA+Al5cL3m0GyXyjSEA517/6APK+xtbAsPHm5
+ sowHP7CldcxaQL1YXggU6pUAN67L6963YcbVwjrsrz0xUpd3nr+i5jNm9fXFUUGBR/vA
+ FZvg==
+X-Gm-Message-State: AOAM53282Dm8PE9mVa+g2TyVPWIni2Ae3aa/fp8pglHWvDarnoKIBEDE
+ 0Vd6RvFDOiMQBoe0o7O3XwjejQ==
+X-Google-Smtp-Source: ABdhPJxWu2jWVCT4QdDVDT6jQzuNA/gmHgg6owA60mBPTRcDkKwon5A4vNDF90GMtDZwYVwwGKyFJQ==
+X-Received: by 2002:adf:97cb:: with SMTP id t11mr4371001wrb.314.1592483175166; 
+ Thu, 18 Jun 2020 05:26:15 -0700 (PDT)
 Received: from localhost ([2a01:4b00:8523:2d03:c1af:c724:158a:e200])
- by smtp.gmail.com with ESMTPSA id d11sm3502736wrm.64.2020.06.18.05.26.07
+ by smtp.gmail.com with ESMTPSA id t188sm3491013wmt.27.2020.06.18.05.26.14
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 18 Jun 2020 05:26:07 -0700 (PDT)
+ Thu, 18 Jun 2020 05:26:14 -0700 (PDT)
 From: David Brazdil <dbrazdil@google.com>
 To: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
  James Morse <james.morse@arm.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: [PATCH v3 11/15] arm64: kvm: Split hyp/timer-sr.c to VHE/nVHE
-Date: Thu, 18 Jun 2020 13:25:33 +0100
-Message-Id: <20200618122537.9625-12-dbrazdil@google.com>
+Subject: [PATCH v3 15/15] arm64: kvm: Lift instrumentation restrictions on VHE
+Date: Thu, 18 Jun 2020 13:25:37 +0100
+Message-Id: <20200618122537.9625-16-dbrazdil@google.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200618122537.9625-1-dbrazdil@google.com>
 References: <20200618122537.9625-1-dbrazdil@google.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_052610_551770_538AC291 
-X-CRM114-Status: GOOD (  17.10  )
+X-CRM114-CacheID: sfid-20200618_052617_288982_16B23815 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,166 +115,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch is part of a series which builds KVM's non-VHE hyp code separately
-from VHE and the rest of the kernel.
+With VHE and nVHE executable code completely separated, remove build config
+that disabled GCOV/KASAN/UBSAN/KCOV instrumentation for VHE as these now
+execute under the same memory mappings as the rest of the kernel.
 
-timer-sr.c contains a HVC handler for setting CNTVOFF_EL2 and two helper
-functions for controlling access to physical counter. The former is shared
-between VHE/nVHE and is kept in timer-sr.c but compiled under both configs.
-The latter are nVHE-specific and are moved to nvhe/timer-sr.c.
+No violations are currently being reported by either KASAN or UBSAN.
 
 Signed-off-by: David Brazdil <dbrazdil@google.com>
 ---
- arch/arm64/include/asm/kvm_hyp.h   |  2 ++
- arch/arm64/kernel/image-vars.h     |  3 ---
- arch/arm64/kvm/hyp/nvhe/Makefile   |  3 ++-
- arch/arm64/kvm/hyp/nvhe/timer-sr.c | 43 ++++++++++++++++++++++++++++++
- arch/arm64/kvm/hyp/timer-sr.c      | 36 -------------------------
- 5 files changed, 47 insertions(+), 40 deletions(-)
- create mode 100644 arch/arm64/kvm/hyp/nvhe/timer-sr.c
+ arch/arm64/kvm/hyp/Makefile | 8 --------
+ 1 file changed, 8 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kvm_hyp.h b/arch/arm64/include/asm/kvm_hyp.h
-index c8bbd221aac0..8a1510f521fe 100644
---- a/arch/arm64/include/asm/kvm_hyp.h
-+++ b/arch/arm64/include/asm/kvm_hyp.h
-@@ -63,8 +63,10 @@ void __vgic_v3_save_aprs(struct vgic_v3_cpu_if *cpu_if);
- void __vgic_v3_restore_aprs(struct vgic_v3_cpu_if *cpu_if);
- int __vgic_v3_perform_cpuif_access(struct kvm_vcpu *vcpu);
+diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+index 5f4f217532e0..cd0c3936d266 100644
+--- a/arch/arm64/kvm/hyp/Makefile
++++ b/arch/arm64/kvm/hyp/Makefile
+@@ -11,11 +11,3 @@ obj-$(CONFIG_KVM_INDIRECT_VECTORS) += smccc_wa.o
  
-+#ifdef __KVM_NVHE_HYPERVISOR__
- void __timer_enable_traps(struct kvm_vcpu *vcpu);
- void __timer_disable_traps(struct kvm_vcpu *vcpu);
-+#endif
- 
- #ifdef __KVM_NVHE_HYPERVISOR__
- void __sysreg_save_state_nvhe(struct kvm_cpu_context *ctxt);
-diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
-index ddaae7267ab1..94bfc61b3f51 100644
---- a/arch/arm64/kernel/image-vars.h
-+++ b/arch/arm64/kernel/image-vars.h
-@@ -68,9 +68,6 @@ __kvm_nvhe___guest_exit = __guest_exit;
- __kvm_nvhe___hyp_panic_string = __hyp_panic_string;
- __kvm_nvhe___hyp_stub_vectors = __hyp_stub_vectors;
- __kvm_nvhe___icache_flags = __icache_flags;
--__kvm_nvhe___kvm_timer_set_cntvoff = __kvm_timer_set_cntvoff;
--__kvm_nvhe___timer_disable_traps = __timer_disable_traps;
--__kvm_nvhe___timer_enable_traps = __timer_enable_traps;
- __kvm_nvhe___vgic_v2_perform_cpuif_access = __vgic_v2_perform_cpuif_access;
- __kvm_nvhe___vgic_v3_activate_traps = __vgic_v3_activate_traps;
- __kvm_nvhe___vgic_v3_deactivate_traps = __vgic_v3_deactivate_traps;
-diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile b/arch/arm64/kvm/hyp/nvhe/Makefile
-index d242e437cf89..4ec34abce0a9 100644
---- a/arch/arm64/kvm/hyp/nvhe/Makefile
-+++ b/arch/arm64/kvm/hyp/nvhe/Makefile
-@@ -7,7 +7,8 @@ asflags-y := -D__KVM_NVHE_HYPERVISOR__
- ccflags-y := -D__KVM_NVHE_HYPERVISOR__ -fno-stack-protector \
- 	     -DDISABLE_BRANCH_PROFILING $(DISABLE_STACKLEAK_PLUGIN)
- 
--obj-y := sysreg-sr.o debug-sr.o switch.o tlb.o hyp-init.o ../hyp-entry.o
-+obj-y := ../timer-sr.o timer-sr.o sysreg-sr.o debug-sr.o switch.o tlb.o \
-+	 hyp-init.o ../hyp-entry.o
- 
- obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
- extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
-diff --git a/arch/arm64/kvm/hyp/nvhe/timer-sr.c b/arch/arm64/kvm/hyp/nvhe/timer-sr.c
-new file mode 100644
-index 000000000000..f0e694743883
---- /dev/null
-+++ b/arch/arm64/kvm/hyp/nvhe/timer-sr.c
-@@ -0,0 +1,43 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Copyright (C) 2012-2015 - ARM Ltd
-+ * Author: Marc Zyngier <marc.zyngier@arm.com>
-+ */
-+
-+#include <clocksource/arm_arch_timer.h>
-+#include <linux/compiler.h>
-+#include <linux/kvm_host.h>
-+
-+#include <asm/kvm_hyp.h>
-+
-+/*
-+ * Should only be called on non-VHE systems.
-+ * VHE systems use EL2 timers and configure EL1 timers in kvm_timer_init_vhe().
-+ */
-+void __hyp_text __timer_disable_traps(struct kvm_vcpu *vcpu)
-+{
-+	u64 val;
-+
-+	/* Allow physical timer/counter access for the host */
-+	val = read_sysreg(cnthctl_el2);
-+	val |= CNTHCTL_EL1PCTEN | CNTHCTL_EL1PCEN;
-+	write_sysreg(val, cnthctl_el2);
-+}
-+
-+/*
-+ * Should only be called on non-VHE systems.
-+ * VHE systems use EL2 timers and configure EL1 timers in kvm_timer_init_vhe().
-+ */
-+void __hyp_text __timer_enable_traps(struct kvm_vcpu *vcpu)
-+{
-+	u64 val;
-+
-+	/*
-+	 * Disallow physical timer access for the guest
-+	 * Physical counter access is allowed
-+	 */
-+	val = read_sysreg(cnthctl_el2);
-+	val &= ~CNTHCTL_EL1PCEN;
-+	val |= CNTHCTL_EL1PCTEN;
-+	write_sysreg(val, cnthctl_el2);
-+}
-diff --git a/arch/arm64/kvm/hyp/timer-sr.c b/arch/arm64/kvm/hyp/timer-sr.c
-index fb5c0be33223..6c620d807857 100644
---- a/arch/arm64/kvm/hyp/timer-sr.c
-+++ b/arch/arm64/kvm/hyp/timer-sr.c
-@@ -4,45 +4,9 @@
-  * Author: Marc Zyngier <marc.zyngier@arm.com>
-  */
- 
--#include <clocksource/arm_arch_timer.h>
--#include <linux/compiler.h>
--#include <linux/kvm_host.h>
+ hyp-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
+ 	 debug-sr.o entry.o switch.o fpsimd.o tlb.o hyp-entry.o
 -
- #include <asm/kvm_hyp.h>
- 
- void __hyp_text __kvm_timer_set_cntvoff(u64 cntvoff)
- {
- 	write_sysreg(cntvoff, cntvoff_el2);
- }
--
--/*
-- * Should only be called on non-VHE systems.
-- * VHE systems use EL2 timers and configure EL1 timers in kvm_timer_init_vhe().
-- */
--void __hyp_text __timer_disable_traps(struct kvm_vcpu *vcpu)
--{
--	u64 val;
--
--	/* Allow physical timer/counter access for the host */
--	val = read_sysreg(cnthctl_el2);
--	val |= CNTHCTL_EL1PCTEN | CNTHCTL_EL1PCEN;
--	write_sysreg(val, cnthctl_el2);
--}
--
--/*
-- * Should only be called on non-VHE systems.
-- * VHE systems use EL2 timers and configure EL1 timers in kvm_timer_init_vhe().
-- */
--void __hyp_text __timer_enable_traps(struct kvm_vcpu *vcpu)
--{
--	u64 val;
--
--	/*
--	 * Disallow physical timer access for the guest
--	 * Physical counter access is allowed
--	 */
--	val = read_sysreg(cnthctl_el2);
--	val &= ~CNTHCTL_EL1PCEN;
--	val |= CNTHCTL_EL1PCTEN;
--	write_sysreg(val, cnthctl_el2);
--}
+-# KVM code is run at a different exception code with a different map, so
+-# compiler instrumentation that inserts callbacks or checks into the code may
+-# cause crashes. Just disable it.
+-GCOV_PROFILE	:= n
+-KASAN_SANITIZE	:= n
+-UBSAN_SANITIZE	:= n
+-KCOV_INSTRUMENT	:= n
 -- 
 2.27.0
 
