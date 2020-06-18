@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 534DB1FDEB6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:38:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ED431FDECE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:39:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ppIMWeiuMA1b+oEZMRkuKahewYuUxI90YTm85+Vb0eY=; b=obagelZFYk2tXZ
-	97cq4b8aO9b6W5ENpeB60MGHw4cwDhgb7AwaGB8qt+dywu6a4S8CmBpbkmNSQx0f86iInyMFrF7oF
-	WokxI3tZl6BUVHNR4PL07Lkqk+cNNqA7/0wIjUzA1WGzFwiCgRyfTaraS1IiERSW5ufOdLE0QrJ/i
-	Og3xmRznEcfaMLKIMjFMcq8MZwPNcUJBqq8Ysmlu4/EJY3vTW3SFrlWRTuKpfM6gcgcIVzuELN5zS
-	jWBwQtz3omsIvEbuA4TeNz2XDn2ac1Sbhgoe5WJKTDq9Fnct5bDW7bNN11H2Hq2821rUQv0nl4xEQ
-	uvqlsHvh+ACSrMeQZLew==;
+	List-Owner; bh=vbUTuGYJQl3hMHeBvz0efmvDoPEdW1ffGsqfRbpZv60=; b=NBYofKxPMGAVb0
+	xoEIf9FzjbNnCXQUpWYz/x0o13DiKQHky12EvSXH1nCy7q9Y1G94EHvAUST9agYDKseVKMQHuFhYi
+	UPmcccuyASu2jwGt76gmwvjLe81cGq0k0ZVIw24sUK8URDqF8ExxLJaJ70kfJxXonFjqDEnJs9nJM
+	EwKCIMTFIV+O7tQOlEAO/j6gac8PqbkLbaknrtVmeSX8TD2UXrdqnfZThYHr9qa41nmYmKQCHG2jD
+	qWZ282WB0mE9M/CjhqLX+ot2qWAn/f4RLWz5pqUAJ9LyOPZbWI5P72EwwmTKf06eaEsTgwWWgBreS
+	oYhWnPt2lP6Zfa8gzCwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljVq-00019U-KN; Thu, 18 Jun 2020 01:38:42 +0000
+	id 1jljW9-0001Ny-9h; Thu, 18 Jun 2020 01:39:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljAh-0007m4-PR
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:54 +0000
+ id 1jljAj-0007n6-0W
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D02B221ED;
- Thu, 18 Jun 2020 01:16:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3CF1F21D82;
+ Thu, 18 Jun 2020 01:16:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443010;
- bh=t32yjB2TpLN1r28meG1mSbZ0wZv5Q6aRzPklQgdrAlU=;
+ s=default; t=1592443012;
+ bh=IpR4HNJXUDdiEFmDyXxup3+kAUvzyGFEXZQ74v7sxU8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JT0XRErpDSnNdNjPcLG749wXthqBX4y8zDORyOITbjbwtCChx+KKFD+AzjYgj9/Ek
- EPhzlZE3GKAbPNNdSSwfYz0yB1PhEfc2DKEkR8pI/hAQcS++K/cQX9XAXvIyK2bGQf
- dlfhM3He4QnzLzBNKh75wI+PuGSCJ9NfM5z0trLw=
+ b=ZAuwKHzFQp2t/jLv4Hp6sA1ai2WdhMYMQTmzvs76JY4nKsBU4Zh5DPs2L9EWzJwbN
+ CeRt9ftuAAQz/L+H8hMXUrgr19ZhejJKdOXYijvOtWUq8uZyR3Nk0Po65cJAudqS8o
+ 1C9v0oOaJ+xCmPULEQdzMVX4aFMNU4apXeNInhU4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 014/266] ARM: integrator: Add some Kconfig
- selections
-Date: Wed, 17 Jun 2020 21:12:19 -0400
-Message-Id: <20200618011631.604574-14-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 015/266] ARM: dts: stm32: Add missing ethernet PHY
+ reset on AV96
+Date: Wed, 17 Jun 2020 21:12:20 -0400
+Message-Id: <20200618011631.604574-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181651_929425_904DDBAE 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20200617_181653_220653_115709A9 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,66 +81,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Marek Vasut <marex@denx.de>, Sasha Levin <sashal@kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Linus Walleij <linus.walleij@linaro.org>
+From: Marek Vasut <marex@denx.de>
 
-[ Upstream commit d2854bbe5f5c4b4bec8061caf4f2e603d8819446 ]
+[ Upstream commit 010ca9fe500bfe365860b50220ff80541c18f0e1 ]
 
-The CMA and DMA_CMA Kconfig options need to be selected
-by the Integrator in order to produce boot console on some
-Integrator systems.
+Add PHY reset GPIO on AV96 ethernet PHY.
 
-The REGULATOR and REGULATOR_FIXED_VOLTAGE need to be
-selected in order to boot the system from an external
-MMC card when using MMCI/PL181 from the device tree
-probe path.
-
-Select these things directly from the Kconfig so we are
-sure to be able to bring the systems up with console
-from any device tree.
-
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Signed-off-by: Marek Vasut <marex@denx.de>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Patrice Chotard <patrice.chotard@st.com>
+Cc: Patrick Delaunay <patrick.delaunay@st.com>
+Cc: linux-stm32@st-md-mailman.stormreply.com
+To: linux-arm-kernel@lists.infradead.org
+Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-integrator/Kconfig | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/mach-integrator/Kconfig b/arch/arm/mach-integrator/Kconfig
-index 982eabc36163..2406cab73835 100644
---- a/arch/arm/mach-integrator/Kconfig
-+++ b/arch/arm/mach-integrator/Kconfig
-@@ -4,6 +4,8 @@ menuconfig ARCH_INTEGRATOR
- 	depends on ARCH_MULTI_V4T || ARCH_MULTI_V5 || ARCH_MULTI_V6
- 	select ARM_AMBA
- 	select COMMON_CLK_VERSATILE
-+	select CMA
-+	select DMA_CMA
- 	select HAVE_TCM
- 	select ICST
- 	select MFD_SYSCON
-@@ -35,14 +37,13 @@ config INTEGRATOR_IMPD1
- 	select ARM_VIC
- 	select GPIO_PL061
- 	select GPIOLIB
-+	select REGULATOR
-+	select REGULATOR_FIXED_VOLTAGE
- 	help
- 	  The IM-PD1 is an add-on logic module for the Integrator which
- 	  allows ARM(R) Ltd PrimeCells to be developed and evaluated.
- 	  The IM-PD1 can be found on the Integrator/PP2 platform.
- 
--	  To compile this driver as a module, choose M here: the
--	  module will be called impd1.
--
- config INTEGRATOR_CM7TDMI
- 	bool "Integrator/CM7TDMI core module"
- 	depends on ARCH_INTEGRATOR_AP
+diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+index 2e4742c53d04..7b8c3f25861c 100644
+--- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
++++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+@@ -91,6 +91,9 @@ mdio0 {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 		compatible = "snps,dwmac-mdio";
++		reset-gpios = <&gpioz 2 GPIO_ACTIVE_LOW>;
++		reset-delay-us = <1000>;
++
+ 		phy0: ethernet-phy@7 {
+ 			reg = <7>;
+ 		};
 -- 
 2.25.1
 
