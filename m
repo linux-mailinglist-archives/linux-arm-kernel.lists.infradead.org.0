@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 910C81FFC8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 22:31:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 685101FFD08
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 23:00:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hiWGPjJSzxjNaTvbX0iMq/z4C2tJqGpAefjgun3ZSPA=; b=nKf
-	eelYA8kkXNF8oiCDXNp0H8E4j/OLnbbCPqj8ikCG8mVD4GBoG9thD5tdkqhCEK1PW8Dbkyu/KzbEK
-	iMAOS2csurO8ugUMxMCmI0EeuagJ641MI/GtNNaSSwQ5bVaq6ieDgeWGrbahnXaiqI96McuUD3En1
-	QpZcoWXKNTkxvuiiDJc2n7rlx532tw4dd+dynKWmrd5/oKwLis7NvMVhVbj3MzB920E0e4tt0qMYt
-	NYGkAOEp/OrprfBp4nmSjKwcmf2AyfESmlKrLIszngC6q05Srr/k47tioETQY3QirhqAirXSXW0x6
-	Lp8DMmtVXyU0UkVBlkdCisIdO4gyCtQ==;
+	References:List-Owner; bh=SY1qQodgF+L86sGh0dNtJPlYOdk8S+D4dHu6wbemR28=; b=Qwg
+	h4YmYkXmVGbeIlPUjzBGktlnyMz4ygpZsoMYdrsUpm/iTOg2zCRJEzMgAiFxeRSsPNL3msWwuJlj8
+	mK8LKQ00g1eYhCNsUd7lIuLtTKGwgvZ2mVjIMRUrWP6h8aC+ve0X4a1/hIx17TwIYD1ktmMUen62d
+	gYFW+5g/cXzpcb846fNpPvLzroAlG3QgKufr3QEqsSwv04ZnrnNP9fQW56n6rsaBvl4PC2ywJOeYy
+	gnk9srZIUS+nc+6gEKCEiBkhqtLPEz/cLflf9uyL6O0PfWiQXLzVJiUhPTLG7DdqhPJTU802KEh9H
+	xoywt0qZ7zAy+wYsZ5p9pNCx9ottGQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jm1CP-0004F7-Hh; Thu, 18 Jun 2020 20:31:49 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1jm1eM-00065z-77; Thu, 18 Jun 2020 21:00:42 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jm1CE-0004EJ-NG
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 20:31:41 +0000
-IronPort-SDR: lrp8z1twKtWgoDiSVJreIp8mIxTbGzTSuGbwj3SmU8UML4TJi8n2MJqRpID1GdSXI6yQEsH2UU
- +X0jXX7B9epg==
-X-IronPort-AV: E=McAfee;i="6000,8403,9656"; a="142651529"
+ id 1jm1eD-00065J-01
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 21:00:34 +0000
+IronPort-SDR: NfU6TpDQnixKjahttVOlYtRt/cl/hEuEhqHcQJbnzLh7+m9REhUm/HjSoUdsC0KuA1/mL2U8Ja
+ YjH21964qgjA==
+X-IronPort-AV: E=McAfee;i="6000,8403,9656"; a="207964075"
 X-IronPort-AV: E=Sophos;i="5.75,252,1589266800"; 
- d="gz'50?scan'50,208,50";a="142651529"
+ d="gz'50?scan'50,208,50";a="207964075"
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 18 Jun 2020 13:31:37 -0700
-IronPort-SDR: RAE3MRBvbBNaiDIFg4ScZ0nMKexTiG/3OJpjMNIemZfDiU8LCEw5WdXTFgfe20iXntokm5KxNB
- 1jEixUepP1Rg==
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 18 Jun 2020 14:00:30 -0700
+IronPort-SDR: w6y92QYOPRzZqUwJWk2pY941DnuIfTX3NOdBR4Oagek2enpVVpu1P9/LtWPIwkqaVZxwPMcjxY
+ guV/A/ku1bOQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="5.75,252,1589266800"; 
- d="gz'50?scan'50,208,50";a="352522926"
+ d="gz'50?scan'50,208,50";a="291896602"
 Received: from lkp-server02.sh.intel.com (HELO 5ce11009e457) ([10.239.97.151])
- by orsmga001.jf.intel.com with ESMTP; 18 Jun 2020 13:31:35 -0700
+ by orsmga002.jf.intel.com with ESMTP; 18 Jun 2020 14:00:26 -0700
 Received: from kbuild by 5ce11009e457 with local (Exim 4.92)
  (envelope-from <lkp@intel.com>)
- id 1jm1CA-0000P5-Am; Thu, 18 Jun 2020 20:31:34 +0000
-Date: Fri, 19 Jun 2020 04:30:43 +0800
+ id 1jm1e5-0000QR-SG; Thu, 18 Jun 2020 21:00:25 +0000
+Date: Fri, 19 Jun 2020 04:59:26 +0800
 From: kernel test robot <lkp@intel.com>
 To: Wendy Liang <wendy.liang@xilinx.com>
-Subject: [xlnx:master 10/20]
- drivers/misc/xilinx-ai-engine/ai-engine-dev.c:165:2: warning: ignoring
+Subject: [xlnx:master 12/20]
+ drivers/misc/xilinx-ai-engine/ai-engine-fpga.c:21:2: warning: ignoring
  return value of 'mutex_lock_interruptible', declared with attribute
  warn_unused_result
-Message-ID: <202006190440.xdgI2sMg%lkp@intel.com>
+Message-ID: <202006190423.uLKdGAqw%lkp@intel.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="pWyiEgJYm5f9v55/"
+Content-Type: multipart/mixed; boundary="5vNYLRcllDrimb99"
 Content-Disposition: inline
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_133138_985616_0999512C 
-X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-CacheID: sfid-20200618_140033_200666_C4EE225D 
+X-CRM114-Status: UNSURE (   3.65  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.100 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,19 +86,19 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---pWyiEgJYm5f9v55/
+--5vNYLRcllDrimb99
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
 tree:   https://github.com/Xilinx/linux-xlnx master
 head:   319e5bc767fe351a63744daa9cdd69b1915956d0
-commit: b4164ed1bbab5999a8b30dc25eaaa3200ff1fe59 [10/20] misc: ai-engine: Move AI engine reg access to kernel
+commit: e24d5dbb603552c4cb9c9e946c78055a60f83d85 [12/20] misc: ai-engine: Add FPGA bridge to AI engine partition
 config: alpha-allyesconfig (attached as .config)
 compiler: alpha-linux-gcc (GCC) 9.3.0
 reproduce (this is a W=1 build):
         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
         chmod +x ~/bin/make.cross
-        git checkout b4164ed1bbab5999a8b30dc25eaaa3200ff1fe59
+        git checkout e24d5dbb603552c4cb9c9e946c78055a60f83d85
         # save the attached .config to linux build tree
         COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-9.3.0 make.cross ARCH=alpha 
 
@@ -107,113 +107,49 @@ Reported-by: kernel test robot <lkp@intel.com>
 
 All warnings (new ones prefixed by >>, old ones prefixed by <<):
 
-drivers/misc/xilinx-ai-engine/ai-engine-dev.c: In function 'aie_request_partition_from_id':
->> drivers/misc/xilinx-ai-engine/ai-engine-dev.c:165:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-165 |  mutex_lock_interruptible(&adev->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-dev.c:175:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-175 |  mutex_lock_interruptible(&apart->mlock);
+drivers/misc/xilinx-ai-engine/ai-engine-fpga.c: In function 'aie_fpga_bridge_enable_set':
+>> drivers/misc/xilinx-ai-engine/ai-engine-fpga.c:21:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
+21 |  mutex_lock_interruptible(&apart->mlock);
 |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-dev.c: In function 'aie_enquire_partitions':
-drivers/misc/xilinx-ai-engine/ai-engine-dev.c:97:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-97 |  mutex_lock_interruptible(&adev->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
---
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'aie_part_release':
->> drivers/misc/xilinx-ai-engine/ai-engine-part.c:253:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-253 |  mutex_lock_interruptible(&apart->mlock);
+drivers/misc/xilinx-ai-engine/ai-engine-fpga.c: In function 'aie_fpga_bridge_enable_show':
+drivers/misc/xilinx-ai-engine/ai-engine-fpga.c:35:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
+35 |  mutex_lock_interruptible(&apart->mlock);
 |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'aie_part_ioctl':
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:366:3: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-366 |   mutex_lock_interruptible(&apart->mlock);
-|   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'aie_part_write_iter':
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:276:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-276 |  mutex_lock_interruptible(&apart->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'aie_part_read_iter':
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:296:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-296 |  mutex_lock_interruptible(&apart->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'of_aie_part_probe':
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:514:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-514 |  mutex_lock_interruptible(&adev->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'aie_create_partition':
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:429:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-429 |  mutex_lock_interruptible(&adev->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:476:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-476 |  mutex_lock_interruptible(&adev->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/xilinx-ai-engine/ai-engine-part.c: In function 'aie_part_release_device':
-drivers/misc/xilinx-ai-engine/ai-engine-part.c:401:2: warning: ignoring return value of 'mutex_lock_interruptible', declared with attribute warn_unused_result [-Wunused-result]
-401 |  mutex_lock_interruptible(&adev->mlock);
-|  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-vim +/mutex_lock_interruptible +165 drivers/misc/xilinx-ai-engine/ai-engine-dev.c
+vim +/mutex_lock_interruptible +21 drivers/misc/xilinx-ai-engine/ai-engine-fpga.c
 
-   150	
-   151	/**
-   152	 * aie_request_partition_from_id() - request AI engine partition from id
-   153	 * @adev: AI engine device
-   154	 * @partition_id: partition id
-   155	 * @return: partition pointer if partition exists, otherwise, NULL.
-   156	 *
-   157	 * This function finds a defined partition which matches the specified
-   158	 * partition id, request it by increasing the refcount, and returns it.
-   159	 */
-   160	struct aie_partition *aie_request_partition_from_id(struct aie_device *adev,
-   161							    u32 partition_id)
-   162	{
-   163		struct aie_partition *apart;
-   164	
- > 165		mutex_lock_interruptible(&adev->mlock);
-   166		apart = aie_get_partition_from_id(adev, partition_id);
-   167		if (!apart) {
-   168			dev_err(&adev->dev,
-   169				"request partition %u failed, not exist.\n",
-   170				partition_id);
-   171			mutex_unlock(&adev->mlock);
-   172			return ERR_PTR(-EINVAL);
-   173		}
-   174	
-   175		mutex_lock_interruptible(&apart->mlock);
-   176		if (apart->status & XAIE_PART_STATUS_INUSE) {
-   177			mutex_unlock(&apart->mlock);
-   178			dev_err(&adev->dev,
-   179				"request partition %u failed, partition in use.\n",
-   180				partition_id);
-   181			apart = ERR_PTR(-EBUSY);
-   182		} else {
-   183			/*
-   184			 * TBD:
-   185			 * 1. setup NOC AXI MM config to only generate error events
-   186			 *    for slave error and decode error.
-   187			 * 2. scan to see which tiles have been clock gated.
-   188			 *
-   189			 * This needs to be done before the AI engine partition is
-   190			 * exported for user to access.
-   191			 */
-   192			apart->status = XAIE_PART_STATUS_INUSE;
-   193			mutex_unlock(&apart->mlock);
-   194		}
-   195		mutex_unlock(&adev->mlock);
-   196	
-   197		return apart;
-   198	}
-   199	
+     9	
+    10	static int aie_fpga_bridge_enable_set(struct fpga_bridge *bridge, bool enable)
+    11	{
+    12		struct aie_partition *apart = bridge->priv;
+    13	
+    14		/*
+    15		 * TBD:
+    16		 * "Enable" should enable the SHIM tile configuration.
+    17		 * "Disable" should should disable SHIM DMAs, and wait
+    18		 * until SHIM DMA stops, and disable SHIM
+    19		 * to PL streams within partition.
+    20		 */
+  > 21		mutex_lock_interruptible(&apart->mlock);
+    22		if (enable)
+    23			apart->status |= XAIE_PART_STATUS_BRIDGE_ENABLED;
+    24		else
+    25			apart->status &= ~XAIE_PART_STATUS_BRIDGE_ENABLED;
+    26		mutex_unlock(&apart->mlock);
+    27		return 0;
+    28	}
+    29	
 
 ---
 0-DAY CI Kernel Test Service, Intel Corporation
 https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
---pWyiEgJYm5f9v55/
+--5vNYLRcllDrimb99
 Content-Type: application/gzip
 Content-Disposition: attachment; filename=".config.gz"
 Content-Transfer-Encoding: base64
 
-H4sICArM614AAy5jb25maWcAjFxbc9s4sn7fX6HKvOw+zKxv0Wb2lB9AEpQw4i0AKFl+YSmO
+H4sICIPS614AAy5jb25maWcAjFxbc9s4sn7fX6HKvOw+zKxv0Wb2lB9AEpQw4i0AKFl+YSmO
 knGNY7tsZXfz7083eGtcSKcqVTH7a4BAo9E3gPrlb78s2PfT07fD6f7u8PDwY/H1+Hh8OZyO
 nxdf7h+O/7dIykVR6gVPhP4NmLP7x+//++fh4fnPw+L9b1e/nS02x5fH48Mifnr8cv/1OzS9
 f3r82y9/g3+/APHbM/Ty8u+FafHrA7b+9evd3eLvqzj+x+L33y5/OwPOuCxSsWriuBGqAeT6
@@ -1321,7 +1257,7 @@ JbnwvKfNQnz7IyylOw5K1/oO2P1jxQrUpbFOnE1PkjsfXTTxIi3j1LcgNBdW0CZ2w1vH+zZj
 LckFqjmgG/MnyhaqDWwC9QKJA/V7TAsOp81FELMzpKW0YLs4xZFFU97Uq7BYmNP/ANdHsoDW
 zgMA
 
---pWyiEgJYm5f9v55/
+--5vNYLRcllDrimb99
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -1332,5 +1268,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---pWyiEgJYm5f9v55/--
+--5vNYLRcllDrimb99--
 
