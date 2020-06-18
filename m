@@ -2,175 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5BC11FF077
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 13:26:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B83AC1FF085
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 13:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9HbSy1h89RF3J/nbUmZKSf+yWtziiaM3pkJpxQP5afE=; b=aMNDXfSiJT81/d
-	75Nb+c8loD0+h9gCJ8ivPrDToi3axzypekALLX7RDjg3GFtDXZxtRaIAD41YsDPgQg61joQPoeXgQ
-	+nSjmTPs850ZEF4eoU+fytKpK7GcqT+5bvKhd43sDhLdZwLuTkyD+U7XbvJjzlIVzuJfOUqrUzwwn
-	HDJzlycjYvbIQM3Vg1RY2oW4p0+KlG4IFVFkPvCvof0zUop0kGqi2YnW7Ix3v7rCNsS61l21FgjgC
-	1/lwGfuLC0wrjEVaq2Io89mZeRWmpHTFClOlCVYphrSRM34BYqvwoXJiM+y/Tu/hIHTRkKbwsQYal
-	4WKgoCDbJCupHNPndpfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=AIMLv4i9ndR8k2QyaQ4lDH5hg1lGiZa3RUj78i5tCe0=; b=hWd86nXU00rmO7cgt/R69wglKn
+	c5M+BTMRnq3ceEHOiQGvyE7uL2lcNHKb7vTrZ5taTmzYMOC5g48lAjHxY+cnuW5c8Skru0TFaUCuY
+	OUBnenkLsTrqpn38pdTo7mc6aRcoq4mPClmgXxHKNuo3uXFoB+hhDYJ3rw5mSc5rkv051aUPZtz2f
+	RDz4hyfJ6JE80ThOVkBNSeE1i70NgheXv+lWcL/nmTz7Ab4xzuOdv05v2APMjkcPauL2WQEacBXln
+	rRQ9LTnOPBfgXUCE3Jt6hKCF52DzrAMCwp/gGbWxxGUhd654i3X0i2msWwJYoR7kD3G1UKwv9YGcE
+	9uhvtpGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlsg8-00043v-UF; Thu, 18 Jun 2020 11:25:56 +0000
-Received: from mail-db8eur05on2082.outbound.protection.outlook.com
- ([40.107.20.82] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jlsli-0007fo-KL; Thu, 18 Jun 2020 11:31:42 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlsg0-000430-6O
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 11:25:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V2ARjDOvZeAmmi7omaaiORdqNdrDqahdVN1iE+pMOJk=;
- b=Jo5zBZ9ueQ3qb8u88dNJDWnRlAiQvhKsBQjTD1ixefMQIQZBodnZjUcp1kPVH9xUTgxNjl6mfCOoYYt2mdFTOwHM5DVp3fEX1CzropVXHNFuXfAQtrO/qw8ZPKQ6/8e0ZAemizWcYEqxHszOdez7U6wTNdKa/AH6JhaGAWzSIG8=
-Received: from AM6P193CA0038.EURP193.PROD.OUTLOOK.COM (2603:10a6:209:8e::15)
- by VI1PR0802MB2365.eurprd08.prod.outlook.com (2603:10a6:800:9f::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.22; Thu, 18 Jun
- 2020 11:25:44 +0000
-Received: from AM5EUR03FT051.eop-EUR03.prod.protection.outlook.com
- (2603:10a6:209:8e:cafe::6a) by AM6P193CA0038.outlook.office365.com
- (2603:10a6:209:8e::15) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.21 via Frontend
- Transport; Thu, 18 Jun 2020 11:25:44 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
- dmarc=bestguesspass action=none header.from=arm.com;
-Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
- 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- AM5EUR03FT051.mail.protection.outlook.com (10.152.16.246) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3109.22 via Frontend Transport; Thu, 18 Jun 2020 11:25:44 +0000
-Received: ("Tessian outbound 09efa10eaf29:v59");
- Thu, 18 Jun 2020 11:25:44 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: 4f2182586558f48f
-X-CR-MTA-TID: 64aa7808
-Received: from 91ccf4400be1.1
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 16573015-7582-4C68-8B3C-C9061C319F8B.1; 
- Thu, 18 Jun 2020 11:25:38 +0000
-Received: from EUR02-VE1-obe.outbound.protection.outlook.com
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 91ccf4400be1.1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Thu, 18 Jun 2020 11:25:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Dm075R50YFn8SBmGqa8dVLGrNjMJTD15aVJjUd6EcZ3OUpxIlVbtHcWstcZOGhXXIl7ybtb3hexig3POsIYGqZoQ6Ml2CB0G1Pu/VGEkGwqVlpQuO3KGY6TT9O61026+azc19nzzD9nS3c0wwBh2Q4tXYjJ5KJTGgBFyvrcUT4QDPaj9xvJs0JaVkoUoMjRI4LAXYSfqUTmk29JY+U2rv/oYZE4+c3FGZbSktnrBsC0OBHGx1nNTYig2LMOZYGsQnCl6m713Ue9wF2z1Yz892Q8OV2D/9s8Xove19OiCePyNpE3jtYZhH3BHRqlrRX3hNoQgBWd2qWfN7CDfkRXH/A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V2ARjDOvZeAmmi7omaaiORdqNdrDqahdVN1iE+pMOJk=;
- b=ULsK2ADJyxt/Ns9TQqQbs/CJNlNqd6Kh7H8hAsCKXYmPGCeyxofonKnIjeEKRFHEJdFkID9GvoDgpxhz6lLyWoiQlZZRSo8fJC6/h0z36a1OUYvcGDZGpTU4zjew8c9D+48dRdj49+kUx1mGrOKpTSmJv3AcrU5bnLMc5Y6FfE4cguaulLsO26Ii+T3RdtwOh7Hf/S1LR6l0mmHXGPMxdcXSkwzbI3zDQm+T/tLfhFmTFkZnyuqi5Lgum50nEfdmhzLOLUQP5XGlEmgUeM3EUCYJj/4LxABkgoCpnzqsuHeC6Ic47wgbt2PHltfhA76yyUpxDWCUVshMavO9KIbrXA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V2ARjDOvZeAmmi7omaaiORdqNdrDqahdVN1iE+pMOJk=;
- b=Jo5zBZ9ueQ3qb8u88dNJDWnRlAiQvhKsBQjTD1ixefMQIQZBodnZjUcp1kPVH9xUTgxNjl6mfCOoYYt2mdFTOwHM5DVp3fEX1CzropVXHNFuXfAQtrO/qw8ZPKQ6/8e0ZAemizWcYEqxHszOdez7U6wTNdKa/AH6JhaGAWzSIG8=
-Received: from AM6PR08MB5256.eurprd08.prod.outlook.com (2603:10a6:20b:e7::32)
- by AM6PR08MB4786.eurprd08.prod.outlook.com (2603:10a6:20b:cc::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.22; Thu, 18 Jun
- 2020 11:25:37 +0000
-Received: from AM6PR08MB5256.eurprd08.prod.outlook.com
- ([fe80::8520:b5eb:3f43:2859]) by AM6PR08MB5256.eurprd08.prod.outlook.com
- ([fe80::8520:b5eb:3f43:2859%7]) with mapi id 15.20.3088.028; Thu, 18 Jun 2020
- 11:25:37 +0000
-From: Daniel Kiss <Daniel.Kiss@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: bti: Require clang >= 10.0.1 for in-kernel BTI
- support
-Thread-Topic: [PATCH] arm64: bti: Require clang >= 10.0.1 for in-kernel BTI
- support
-Thread-Index: AQHWRA0mMtI4PqQFIEO3S/h8Wwqr+6jcheGAgAG4ZAA=
-Date: Thu, 18 Jun 2020 11:25:36 +0000
-Message-ID: <FDC366D9-2DE2-4362-87D7-1560872CC71F@arm.com>
-References: <20200616183630.2445-1-will@kernel.org>
- <20200617090923.GA4613@sirena.org.uk>
-In-Reply-To: <20200617090923.GA4613@sirena.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Apple Mail (2.3608.80.23.2.2)
-Authentication-Results-Original: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=arm.com;
-x-originating-ip: [2001:4c4c:1b20:6f00:9549:acb8:ec95:efd3]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 30b2865a-b40f-499d-c1cf-08d8137a5740
-x-ms-traffictypediagnostic: AM6PR08MB4786:|VI1PR0802MB2365:
-X-Microsoft-Antispam-PRVS: <VI1PR0802MB236533C38CE0DE7A1F8754F4EC9B0@VI1PR0802MB2365.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-nodisclaimer: true
-x-ms-oob-tlc-oobclassifiers: OLM:416;OLM:416;
-x-forefront-prvs: 0438F90F17
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: Z3jyuniAa6oLX+1h4NLXPbyqLNfcbBozY6eqClnC0rwujgL9XA1PnC0kj2/KoDJjjmrfsyqXabbZ0Ye/g+1DhdQ6Veu9RebNETRmGiH5Na4ZEnt6YR123QCSg1DH7dfo2rohZt/GYc0Yxj6gn4K1CIrTL5dtkjqdlkY2UX1MAGcuO1d/+np5trMc+ct96uqmsx3h9ifqs1CoegDbiQrHac9Y8NJW9c0x5vLOIEpTKf76MLZfK4KYwR2VFXPwjMQ2mgPHzhlZOaZa0gFY+MaiGix1Q1oEa4ssppkEVOHMXq5XqeyEDTulxQiBF1IHRGsM+px9DSLg3QGNxhGXtU1HOQ==
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
- SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:AM6PR08MB5256.eurprd08.prod.outlook.com;
- PTR:; CAT:NONE; SFTY:;
- SFS:(4636009)(366004)(39860400002)(376002)(396003)(136003)(346002)(2906002)(4326008)(91956017)(54906003)(316002)(6512007)(66946007)(76116006)(186003)(5660300002)(66446008)(33656002)(4744005)(66476007)(66556008)(64756008)(71200400001)(53546011)(6506007)(36756003)(478600001)(6486002)(2616005)(6916009)(8676002)(8936002)(86362001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: cDVJ0pRlMuRmMZLKUmBCqzDeMPJ2AlEuawJiVzUJNp1I0Kzx+PHxjB/n53K2AR7e3eeqQwu7HLQW1Xfk54g4bGsRpAhJ7DeDM8lEozWPIsqbRLdv2w0SGDXrmug/eOIpyIz5Iuvb9qxrZe336Zv6xBymY09T0P6FKxNyTODhqXVHy9XDtyMNuFeAonJSqjsqemce5+7ULkdCxKekQxGROkgP2YTQpKLumbvmpCMlqM9P/klAudwgsZN9TSglWIJM4GfoBfBUAlpOFxoUaJU1p/YqyD1v2MvSlNlKhojXGSpcrCS+gxz+5XSZ87A5wdon+pn0VAF4R5eZ3PE7sH1xUGXLC2kyZzKgUhkUA6KlQaJCCSbZM67hkptC6zIE8DFhfRv3ybxdokCpZk9g1Dsxb29g0PFPRh1oWLKmLs1tWJArlOKaw02mq2b67wTyND36Kp8IbP6lVdDbqVoMtvhtN8NDVArQ4uZN64XFXL27XwndOLLA8WGFaz2twCz3sicJPheroyhKdpt3HJCGNfD5ZTaF3xkc+jV70K2B/ZO5QbMBH5Q3CDjdoI/LlIh/VRrQ
-x-ms-exchange-transport-forked: True
-Content-ID: <BA64AE058851B04B9DCDC8A1C88243B7@eurprd08.prod.outlook.com>
+ id 1jlslY-0007eo-JR
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 11:31:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1592479893; x=1624015893;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=fDjMVXtMTZ2HWY9E00w48WZpz44oyO+oc1cgMEc4zbo=;
+ b=oo3h2kVewcdNCUozcMd4WfocVLFegEDm/bmHFZrzlviLAHfOJxHrsfxi
+ aOp8RPHMfIiEr8q3KAlzXjYzASbnqQTInGecr0NLEPv4V/ZpGAAuaXWYH
+ AWKnH18UhaAEKAcDZM0OHLeljNUXKsec3vnpLPAjS/tUxFrgVlvK5e8un
+ 3BAW5lHXuW3163ycgQR5Ex26V2ZfO5GpZFCcUUAkjBvCQ0JUG6DTQFKx3
+ pUTdAI11UGXw7sxsGmBq7GkbQfNXNwvEIymHYSdMwIL4EK4iw+R2ACIxw
+ P9h5K5vtNUCUHGk2epe4DJI2x2mujke/LCGhUIBJqAwFv+4a/PSWZWN6K A==;
+IronPort-SDR: gvlMpEiR3kTqMCQ+dV6NdL/esUxVuocXP1AeqEbyxu1npCzRzbdK8z2zOG+e/SYFQLGd2uunbH
+ p00mHThX6/jwwxLe4xvLBq1NjxIuFa5BAlwgSjowFWCJyjJyebF1fmjiTJ71QPHR5dVSwneZ8l
+ O5CDBeA8wpD+cet1lIu/FZHlRzf38ZbR8yhAyzy0xY+v+ZFV1HXxmw+yLouAzs8fu40Kjfri1+
+ 7Aqag/bVSuIyQRwQhibQWrJFGjIGBzN6wrH0aB7rhgkTLfquguXu8a0ete6xKM7ekvSBQiPOF6
+ fns=
+X-IronPort-AV: E=Sophos;i="5.73,526,1583218800"; d="scan'208";a="79965936"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 Jun 2020 04:31:29 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1979.3; Thu, 18 Jun 2020 04:31:21 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1979.3
+ via Frontend Transport; Thu, 18 Jun 2020 04:31:19 -0700
+References: <20200616082556.27877-1-lars.povlsen@microchip.com>
+ <20200616082556.27877-4-lars.povlsen@microchip.com>
+ <b44120d8-67fe-4ba3-bc76-80a5a0970dad@roeck-us.net>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH v3 3/3] hwmon: sparx5: Add Sparx5 SoC temperature driver
+In-Reply-To: <b44120d8-67fe-4ba3-bc76-80a5a0970dad@roeck-us.net>
+Date: Thu, 18 Jun 2020 13:31:24 +0200
+Message-ID: <87ftaswqyb.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR08MB4786
-Original-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=arm.com;
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT051.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; CTRY:IE; LANG:en; SCL:1; SRV:;
- IPV:CAL; SFV:NSPM; H:64aa7808-outbound-1.mta.getcheckrecipient.com;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; CAT:NONE; SFTY:;
- SFS:(4636009)(39860400002)(376002)(396003)(136003)(346002)(46966005)(2906002)(26005)(82740400003)(70586007)(4326008)(70206006)(54906003)(47076004)(316002)(6512007)(186003)(5660300002)(33656002)(36906005)(4744005)(107886003)(53546011)(6506007)(36756003)(478600001)(6862004)(336012)(6486002)(2616005)(82310400002)(8676002)(81166007)(356005)(8936002)(86362001);
- DIR:OUT; SFP:1101; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 42d4dd09-3f86-493b-ae32-08d8137a52f0
-X-Forefront-PRVS: 0438F90F17
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: BT464uhN3/Il9Xthkt5a9y7i4ffJn48/nUEocEHtlb7WfQEff/3P7rbl+Kyf7MBBs5+cqHK9VJTbAyBrSuSZdDRjrgKw0fgYP4XGWPYmZMNJaDC+ID8JQOMCKj6TLJqBy8kFiTJVUR/jQVLTw3v/itso1+geu5jRVeyprVRI6vWn5NOQt3TO1MnAawUNogWUF4nLVGz/VAs6i2VBl305LDdxhfSbUBZSPaMPunV1i3Kjy+sPv41OTlm1v8x0hqAGUzLdfS4LTrX9e/1dVJLCBBtO1RipfoCjo2habCiMfGCT8ZlwNSAzgSQm7VLfqJYSNLzjfa0VeuTEWlP6W6uRjE/1Kg+nMOzciGXeM9SnsNAH2esQOOuRMHofQEkjHK839AMMFdYIkzzGWjCt62c16w==
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2020 11:25:44.3135 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 30b2865a-b40f-499d-c1cf-08d8137a5740
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0802MB2365
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_042548_237399_04E43E96 
-X-CRM114-Status: UNSURE (   6.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200618_043132_666157_EE421037 
+X-CRM114-Status: GOOD (  20.26  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.82 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.82 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.71.150.166 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -182,28 +97,247 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Stellard <tstellar@redhat.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Mark Brown <broonie@kernel.org>, Nathan Chancellor <natechancellor@gmail.com>,
- "kernel-team@android.com" <kernel-team@android.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-hwmon@vger.kernel.org, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Acked-by: Daniel Kiss <daniel.kiss@arm.com>
 
-> On 17 Jun 2020, at 11:09, Mark Brown <broonie@kernel.org> wrote:
-> 
-> On Tue, Jun 16, 2020 at 07:36:30PM +0100, Will Deacon wrote:
->> Unfortunately, most versions of clang that support BTI are capable of
->> miscompiling the kernel when converting a switch statement into a jump
->> table. As an example, attempting to spawn a KVM guest results in a panic:
-> 
-> Reviewed-by: Mark Brown <broonie@kernel.org>
+Guenter Roeck writes:
 
+> On 6/16/20 1:25 AM, Lars Povlsen wrote:
+>> This patch adds a temperature sensor driver to the Sparx5 SoC.
+>>
+>> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+>> ---
+>>  drivers/hwmon/Kconfig       |  10 +++
+>>  drivers/hwmon/Makefile      |   1 +
+>>  drivers/hwmon/sparx5-temp.c | 136 ++++++++++++++++++++++++++++++++++++
+>
+> This will also require documentation in
+>         Documentation/hwmon/sparx5-temp.rst
+>
+>>  3 files changed, 147 insertions(+)
+>>  create mode 100644 drivers/hwmon/sparx5-temp.c
+>>
+>> diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
+>> index 288ae9f63588c..7fb5e0c6c6306 100644
+>> --- a/drivers/hwmon/Kconfig
+>> +++ b/drivers/hwmon/Kconfig
+>> @@ -515,6 +515,16 @@ config SENSORS_I5K_AMB
+>>         This driver can also be built as a module. If so, the module
+>>         will be called i5k_amb.
+>>
+>> +config SENSORS_SPARX5
+>> +     tristate "Sparx5 SoC temperature sensor"
+>> +     depends on ARCH_SPARX5 || COMPILE_TEST
+>> +     help
+>> +       If you say yes here you get support for temperature monitoring
+>> +       with the Microchip Sparx5 SoC.
+>> +
+>> +       This driver can also be built as a module. If so, the module
+>> +       will be called sparx5-temp.
+>> +
+>>  config SENSORS_F71805F
+>>       tristate "Fintek F71805F/FG, F71806F/FG and F71872F/FG"
+>>       depends on !PPC
+>> diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
+>> index 3e32c21f5efe3..857293f650412 100644
+>> --- a/drivers/hwmon/Makefile
+>> +++ b/drivers/hwmon/Makefile
+>> @@ -167,6 +167,7 @@ obj-$(CONFIG_SENSORS_SMM665)      += smm665.o
+>>  obj-$(CONFIG_SENSORS_SMSC47B397)+= smsc47b397.o
+>>  obj-$(CONFIG_SENSORS_SMSC47M1)       += smsc47m1.o
+>>  obj-$(CONFIG_SENSORS_SMSC47M192)+= smsc47m192.o
+>> +obj-$(CONFIG_SENSORS_SPARX5) += sparx5-temp.o
+>>  obj-$(CONFIG_SENSORS_STTS751)        += stts751.o
+>>  obj-$(CONFIG_SENSORS_AMC6821)        += amc6821.o
+>>  obj-$(CONFIG_SENSORS_TC74)   += tc74.o
+>> diff --git a/drivers/hwmon/sparx5-temp.c b/drivers/hwmon/sparx5-temp.c
+>> new file mode 100644
+>> index 0000000000000..4ed8a2aec3ae9
+>> --- /dev/null
+>> +++ b/drivers/hwmon/sparx5-temp.c
+>> @@ -0,0 +1,136 @@
+>> +// SPDX-License-Identifier: GPL-2.0-or-later
+>> +/* Sparx5 SoC temperature sensor driver
+>> + *
+>> + * Copyright (C) 2020 Lars Povlsen <lars.povlsen@microchip.com>
+>> + */
+>> +
+>> +#include <linux/module.h>
+>> +#include <linux/init.h>
+>> +#include <linux/hwmon.h>
+>> +#include <linux/io.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/mod_devicetable.h>
+>> +#include <linux/bitfield.h>
+>
+> Alphabetic order, please.
+
+Ack.
+
+>
+>> +
+>> +#define TEMP_CTRL            0
+>> +#define TEMP_CFG             4
+>> +#define  TEMP_CFG_CYCLES     GENMASK(24, 15)
+>> +#define  TEMP_CFG_ENA                BIT(0)
+>> +#define TEMP_STAT            8
+>> +#define  TEMP_STAT_VALID     BIT(12)
+>> +#define  TEMP_STAT_TEMP              GENMASK(11, 0)
+>> +
+>> +struct s5_hwmon {
+>> +     void __iomem *base;
+>> +};
+>> +
+>> +static void s5_temp_enable(struct s5_hwmon *hwmon)
+>> +{
+>> +     u32 val = readl(hwmon->base + TEMP_CFG);
+>> +     u32 clk = 250;
+>> +
+>
+> Unnecessary variable, and magic number. It would be better to use a define
+> or at least explain what the number is for. Also, if this is associated with
+> a system clock, would it make sense to use the clock subsystem API to get
+> the rate ?
+>
+
+Yes, valid point. Changed to reference the system AHB clock, so DT and
+bindings updated as well. (The magic number is clock ticks per 1us).
+
+I am sending an update asap.
+
+Thank you for your comments, they are highly appreciated!
+
+Cheers,
+
+---Lars
+
+>> +     val &= ~TEMP_CFG_CYCLES;
+>> +     val |= FIELD_PREP(TEMP_CFG_CYCLES, clk);
+>> +     val |= TEMP_CFG_ENA;
+>> +
+>> +     writel(val, hwmon->base + TEMP_CFG);
+>> +}
+>> +
+>> +static int s5_read(struct device *dev, enum hwmon_sensor_types type,
+>> +                u32 attr, int channel, long *temp)
+>> +{
+>> +     struct s5_hwmon *hwmon = dev_get_drvdata(dev);
+>> +     int rc = 0, value;
+>> +     u32 stat;
+>> +
+>> +     switch (attr) {
+>> +     case hwmon_temp_input:
+>> +             stat = readl_relaxed(hwmon->base + TEMP_STAT);
+>> +             if (!(stat & TEMP_STAT_VALID))
+>> +                     return -EIO;
+>> +             value = stat & TEMP_STAT_TEMP;
+>> +             value = DIV_ROUND_CLOSEST(value * 3522, 4096) - 1094;
+>
+> A comment describing the calculation would be useful, not only to help
+> the reader but also to help me verify if the calculation is correct
+> (especially since datasheets don't seem to be public).
+>
+
+I have added the register docs and commented the calculations.
+
+>> +             value *= 100;
+>> +             *temp = value;
+>> +             break;
+>> +     default:
+>> +             rc = -EOPNOTSUPP;
+>> +             break;
+>> +     }
+>> +
+>> +     return rc;
+>> +}
+>> +
+>> +static umode_t s5_is_visible(const void *_data, enum hwmon_sensor_types type,
+>> +                          u32 attr, int channel)
+>> +{
+>> +     if (type != hwmon_temp)
+>> +             return 0;
+>> +
+>> +     switch (attr) {
+>> +     case hwmon_temp_input:
+>> +             return 0444;
+>> +     default:
+>> +             return 0;
+>> +     }
+>> +}
+>> +
+>> +static const struct hwmon_channel_info *s5_info[] = {
+>> +     HWMON_CHANNEL_INFO(chip, HWMON_C_REGISTER_TZ),
+>> +     HWMON_CHANNEL_INFO(temp, HWMON_T_INPUT),
+>> +     NULL
+>> +};
+>> +
+>> +static const struct hwmon_ops s5_hwmon_ops = {
+>> +     .is_visible = s5_is_visible,
+>> +     .read = s5_read,
+>> +};
+>> +
+>> +static const struct hwmon_chip_info s5_chip_info = {
+>> +     .ops = &s5_hwmon_ops,
+>> +     .info = s5_info,
+>> +};
+>> +
+>> +static int s5_temp_probe(struct platform_device *pdev)
+>> +{
+>> +     struct device *hwmon_dev;
+>> +     struct s5_hwmon *hwmon;
+>> +
+>> +     hwmon = devm_kzalloc(&pdev->dev, sizeof(*hwmon), GFP_KERNEL);
+>> +     if (!hwmon)
+>> +             return -ENOMEM;
+>> +
+>> +     hwmon->base = devm_platform_ioremap_resource(pdev, 0);
+>> +     if (IS_ERR(hwmon->base))
+>> +             return PTR_ERR(hwmon->base);
+>> +
+>> +     s5_temp_enable(hwmon);
+>> +
+>> +     hwmon_dev = devm_hwmon_device_register_with_info(&pdev->dev,
+>> +                                                      "s5_temp",
+>> +                                                      hwmon,
+>> +                                                      &s5_chip_info,
+>> +                                                      NULL);
+>> +
+>> +     return PTR_ERR_OR_ZERO(hwmon_dev);
+>> +}
+>> +
+>> +const struct of_device_id s5_temp_match[] = {
+>> +     { .compatible = "microchip,sparx5-temp" },
+>> +     {},
+>> +};
+>> +MODULE_DEVICE_TABLE(of, s5_temp_match);
+>> +
+>> +static struct platform_driver s5_temp_driver = {
+>> +     .probe = s5_temp_probe,
+>> +     .driver = {
+>> +             .name = "sparx5-temp",
+>> +             .of_match_table = s5_temp_match,
+>> +     },
+>> +};
+>> +
+>> +module_platform_driver(s5_temp_driver);
+>> +
+>> +MODULE_AUTHOR("Lars Povlsen <lars.povlsen@microchip.com>");
+>> +MODULE_DESCRIPTION("Sparx5 SoC temperature sensor driver");
+>> +MODULE_LICENSE("GPL");
+>>
+
+-- 
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
