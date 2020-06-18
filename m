@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 076B21FDF4B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:42:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 030BE1FDF4D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dIJgZWNikeCHN02ob86ULC1PDgRxaJOrYNXpRySU2Oo=; b=FsInUXQ4tgYqso
-	VPoqsC5R0B434PvkBE8cmCEmYCyIaUNcwPl2mG5JL7BioW+Du9zi3DduS4gmyztC9RDVRjhlSYdDS
-	Ww1lv8rt9k6Kmp/0R+S1Twpj0huw9LEgFAKRus3LhmpxnZbStu1T8mKU6/KKxAl7ZUJTRI5yp/ux1
-	UXZEgJrJMu77uzK2ZWZT2Nf93ehpP1rDTaaPv9OWUzpppbDkzkAwM139veOsZa9wej+Ke7ZJ4gmq1
-	08+cNqJBlSvFEiQeGojHfPsQztTdRaaqBIYIzWYTGvkk6P7cxfomFK33e7kWVMjDYMCC1EntmCIWv
-	7spmFBTf1SkaEdkpJ7aQ==;
+	List-Owner; bh=SdgCs69WQfuoPOaw90ZMrZ2BK32sxq6Ec9E1uTO1KRg=; b=ZKYpvV6qZS/6U6
+	CuKXibh24ravUCEX4vlW3Geq98YWKsGqsVtD/m1NC4DFHNjQWunSVCszJumKoF3mur3L1HHx7wgwx
+	gmRyI4zK5m8s+ZGg/VQzMo6ttTVuBzykLnlzd6tFRPrJV9kmDaL0l8ri72FyGaR1xrv9ee56jolG3
+	Rsh9osWTN2kkvQMXu5ThpalmdwQdHaM7iHPAkqxN31EiweJCnzqGfa8SNPrFs18YDe/4VielSxgB7
+	E98dEUVR0YQBvtTKo4ii7vryhc7AmrW+BRc9l7RRrOW0a3FEZzwyimxIPHLk4l90RNbV4gKTQBYyF
+	NcCayL9HNm9ieCje/Ykg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljZ5-0006I3-T4; Thu, 18 Jun 2020 01:42:03 +0000
+	id 1jljZQ-0006VP-0x; Thu, 18 Jun 2020 01:42:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljBN-0008Fb-GY
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:36 +0000
+ id 1jljBP-0008HT-U0
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D6E0B206F1;
- Thu, 18 Jun 2020 01:17:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5BE8621D90;
+ Thu, 18 Jun 2020 01:17:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443052;
- bh=y7fxfotTlOnXluKVTV4AayibhTWYQl/IVgmeQ0l5TAs=;
+ s=default; t=1592443055;
+ bh=St+32PWtOnP3r5Q0VnSaOgp8ULPNXgJlQD252LrToqI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Afbe4DscnBkXY5dGbmNd7BX2Krv6vD5vSrRBsl9/iNAswZ02Wad2YOW/M3Z3AVbqV
- /sVCyu5gfPd0QIAbFQlJ1kqlxASz7A8svYCoBOupv2UR6J23uOMmDD6kcnroxFHBqo
- fA8AHz+SzN6PQjNf3i2rhQAe+tvA3zcgODCy1FM0=
+ b=d+ivjD8VWifDsUTjT5+6fbBgXBefpI5rTRhLbfbSWNa8YeLJOHhHfaGfuYUdbpBnu
+ bE8RBcaXlbTAU1QFpJocupIRz2524gOvvk5zi0GEPEQODrdHQ7zTaWb6Lg0OpS8q+T
+ g7ltwHb+oGGdoCFcDgRUaIl7E5g76RvgdLwFlMSg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 045/266] arm64: dts: fvp/juno: Fix node address
- fields
-Date: Wed, 17 Jun 2020 21:12:50 -0400
-Message-Id: <20200618011631.604574-45-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 047/266] coresight: tmc: Fix TMC mode read in
+ tmc_read_prepare_etb()
+Date: Wed, 17 Jun 2020 21:12:52 -0400
+Message-Id: <20200618011631.604574-47-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181733_671443_D6FFB06D 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20200617_181736_031859_E4295427 
+X-CRM114-Status: GOOD (  13.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,178 +80,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andre Przywara <andre.przywara@arm.com>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 
-[ Upstream commit bb5cce12ac717c7462217cd493ed701d12d6dbce ]
+[ Upstream commit 347adb0d6385c3220dc01ab61807a5b1892901cc ]
 
-The Arm Ltd. boards were using an outdated address convention in the DT
-node names, by separating the high from the low 32-bits of an address by
-a comma.
+On some QCOM platforms like SC7180, SDM845 and SM8150,
+reading TMC mode register without proper coresight power
+management can lead to async exceptions like the one in
+the call trace below in tmc_read_prepare_etb(). This can
+happen if the user tries to read the TMC etf data via
+device node without setting up source and the sink first.
+Fix this by having a check for coresight sysfs mode
+before reading TMC mode management register.
 
-Remove the comma from the node name suffix to be DT spec compliant.
+ Kernel panic - not syncing: Asynchronous SError Interrupt
+ CPU: 7 PID: 2605 Comm: hexdump Tainted: G S                5.4.30 #122
+ Call trace:
+  dump_backtrace+0x0/0x188
+  show_stack+0x20/0x2c
+  dump_stack+0xdc/0x144
+  panic+0x168/0x36c
+  panic+0x0/0x36c
+  arm64_serror_panic+0x78/0x84
+  do_serror+0x130/0x138
+  el1_error+0x84/0xf8
+  tmc_read_prepare_etb+0x88/0xb8
+  tmc_open+0x40/0xd8
+  misc_open+0x120/0x158
+  chrdev_open+0xb8/0x1a4
+  do_dentry_open+0x268/0x3a0
+  vfs_open+0x34/0x40
+  path_openat+0x39c/0xdf4
+  do_filp_open+0x90/0x10c
+  do_sys_open+0x150/0x3e8
+  __arm64_compat_sys_openat+0x28/0x34
+  el0_svc_common+0xa8/0x160
+  el0_svc_compat_handler+0x2c/0x38
+  el0_svc_compat+0x8/0x10
 
-Link: https://lore.kernel.org/r/20200513103016.130417-3-andre.przywara@arm.com
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Fixes: 4525412a5046 ("coresight: tmc: making prepare/unprepare functions generic")
+Reported-by: Stephen Boyd <swboyd@chromium.org>
+Suggested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Link: https://lore.kernel.org/r/20200518180242.7916-14-mathieu.poirier@linaro.org
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/vexpress-v2m-rs1.dtsi              | 10 +++++-----
- arch/arm64/boot/dts/arm/foundation-v8.dtsi           |  4 ++--
- arch/arm64/boot/dts/arm/juno-motherboard.dtsi        |  6 +++---
- arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi |  2 +-
- arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi     |  6 +++---
- 5 files changed, 14 insertions(+), 14 deletions(-)
+ drivers/hwtracing/coresight/coresight-tmc-etf.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-index dfae90adbb7c..ce64bfb22f22 100644
---- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-+++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-@@ -31,7 +31,7 @@ motherboard {
- 			#interrupt-cells = <1>;
- 			ranges;
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+index d0cc3985b72a..36cce2bfb744 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+@@ -596,13 +596,6 @@ int tmc_read_prepare_etb(struct tmc_drvdata *drvdata)
+ 		goto out;
+ 	}
  
--			nor_flash: flash@0,00000000 {
-+			nor_flash: flash@0 {
- 				compatible = "arm,vexpress-flash", "cfi-flash";
- 				reg = <0 0x00000000 0x04000000>,
- 				      <4 0x00000000 0x04000000>;
-@@ -41,13 +41,13 @@ partitions {
- 				};
- 			};
+-	/* There is no point in reading a TMC in HW FIFO mode */
+-	mode = readl_relaxed(drvdata->base + TMC_MODE);
+-	if (mode != TMC_MODE_CIRCULAR_BUFFER) {
+-		ret = -EINVAL;
+-		goto out;
+-	}
+-
+ 	/* Don't interfere if operated from Perf */
+ 	if (drvdata->mode == CS_MODE_PERF) {
+ 		ret = -EINVAL;
+@@ -616,8 +609,15 @@ int tmc_read_prepare_etb(struct tmc_drvdata *drvdata)
+ 	}
  
--			psram@1,00000000 {
-+			psram@100000000 {
- 				compatible = "arm,vexpress-psram", "mtd-ram";
- 				reg = <1 0x00000000 0x02000000>;
- 				bank-width = <4>;
- 			};
+ 	/* Disable the TMC if need be */
+-	if (drvdata->mode == CS_MODE_SYSFS)
++	if (drvdata->mode == CS_MODE_SYSFS) {
++		/* There is no point in reading a TMC in HW FIFO mode */
++		mode = readl_relaxed(drvdata->base + TMC_MODE);
++		if (mode != TMC_MODE_CIRCULAR_BUFFER) {
++			ret = -EINVAL;
++			goto out;
++		}
+ 		__tmc_etb_disable_hw(drvdata);
++	}
  
--			ethernet@2,02000000 {
-+			ethernet@202000000 {
- 				compatible = "smsc,lan9118", "smsc,lan9115";
- 				reg = <2 0x02000000 0x10000>;
- 				interrupts = <15>;
-@@ -59,14 +59,14 @@ ethernet@2,02000000 {
- 				vddvario-supply = <&v2m_fixed_3v3>;
- 			};
- 
--			usb@2,03000000 {
-+			usb@203000000 {
- 				compatible = "nxp,usb-isp1761";
- 				reg = <2 0x03000000 0x20000>;
- 				interrupts = <16>;
- 				port1-otg;
- 			};
- 
--			iofpga@3,00000000 {
-+			iofpga@300000000 {
- 				compatible = "simple-bus";
- 				#address-cells = <1>;
- 				#size-cells = <1>;
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8.dtsi b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-index 2a6aa43241b3..05d1657170b4 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-@@ -151,7 +151,7 @@ smb@8000000 {
- 				<0 0 41 &gic 0 GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
- 				<0 0 42 &gic 0 GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
- 
--		ethernet@2,02000000 {
-+		ethernet@202000000 {
- 			compatible = "smsc,lan91c111";
- 			reg = <2 0x02000000 0x10000>;
- 			interrupts = <15>;
-@@ -178,7 +178,7 @@ v2m_refclk32khz: refclk32khz {
- 			clock-output-names = "v2m:refclk32khz";
- 		};
- 
--		iofpga@3,00000000 {
-+		iofpga@300000000 {
- 			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
-diff --git a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-index 9f60dacb4f80..1234a8cfc0a9 100644
---- a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-@@ -103,7 +103,7 @@ nmi-button {
- 				};
- 			};
- 
--			flash@0,00000000 {
-+			flash@0 {
- 				/* 2 * 32MiB NOR Flash memory mounted on CS0 */
- 				compatible = "arm,vexpress-flash", "cfi-flash";
- 				reg = <0 0x00000000 0x04000000>;
-@@ -120,7 +120,7 @@ partitions {
- 				};
- 			};
- 
--			ethernet@2,00000000 {
-+			ethernet@200000000 {
- 				compatible = "smsc,lan9118", "smsc,lan9115";
- 				reg = <2 0x00000000 0x10000>;
- 				interrupts = <3>;
-@@ -133,7 +133,7 @@ ethernet@2,00000000 {
- 				vddvario-supply = <&mb_fixed_3v3>;
- 			};
- 
--			iofpga@3,00000000 {
-+			iofpga@300000000 {
- 				compatible = "simple-bus";
- 				#address-cells = <1>;
- 				#size-cells = <1>;
-diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
-index 57b0b9d7f3fa..29e6962c70bd 100644
---- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
-+++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
-@@ -9,7 +9,7 @@ smb@8000000 {
- 		motherboard {
- 			arm,v2m-memory-map = "rs2";
- 
--			iofpga@3,00000000 {
-+			iofpga@300000000 {
- 				virtio-p9@140000 {
- 					compatible = "virtio,mmio";
- 					reg = <0x140000 0x200>;
-diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-index 03a7bf079c8f..ad20076357f5 100644
---- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-+++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-@@ -17,14 +17,14 @@ motherboard {
- 			#interrupt-cells = <1>;
- 			ranges;
- 
--			flash@0,00000000 {
-+			flash@0 {
- 				compatible = "arm,vexpress-flash", "cfi-flash";
- 				reg = <0 0x00000000 0x04000000>,
- 				      <4 0x00000000 0x04000000>;
- 				bank-width = <4>;
- 			};
- 
--			ethernet@2,02000000 {
-+			ethernet@202000000 {
- 				compatible = "smsc,lan91c111";
- 				reg = <2 0x02000000 0x10000>;
- 				interrupts = <15>;
-@@ -51,7 +51,7 @@ v2m_refclk32khz: refclk32khz {
- 				clock-output-names = "v2m:refclk32khz";
- 			};
- 
--			iofpga@3,00000000 {
-+			iofpga@300000000 {
- 				compatible = "simple-bus";
- 				#address-cells = <1>;
- 				#size-cells = <1>;
+ 	drvdata->reading = true;
+ out:
 -- 
 2.25.1
 
