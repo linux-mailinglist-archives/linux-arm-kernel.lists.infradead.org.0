@@ -2,65 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3991D1FEB5F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 08:16:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7668B1FEB47
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 08:10:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=epqY1dMRtwyRU+102Rp/mIUzCX4FDDsFm4mHXfHvRTA=; b=TN+7cG7dMtUdQe
-	7xuJBfuZ7ZQqKjfPDZcs8InMGtstBL8WdvNTFby+1uU9aqI5shZLN8nUQH0cu9+9hCsV5wWvOIdD3
-	BJ3m/iERuORTAxLK/xrsdEMxPrIG7d8GTsX+3/Qn5xaQbuX8mAjWKCaUgP4eayM4OxDViN1j2Jpga
-	+2FySkIS9GUweAV7yTtgbRz9+ttAIDITEpfq2BaVTbXS5McZbuqZA8ELvl31jpZKhpUCpd4NqUQBN
-	ZH+wqRXiXMZLvLi4+O6u+gNfWVmTp9h8T2fMbA7gbGKqMFLnilFaIjDVl8RGAWabX2/lJTpfLSJvD
-	K3uxF57SnnTb+1tduYaA==;
+	List-Owner; bh=pPSJPgWDloDfci/a6Ru8TltfMOAY6X4r0H1kgNPtaSA=; b=kmwS6dttwI2fNc
+	C67Dn2XnHkq8eOrnjc1DeA7zUk32dSRdG7pzkYtwlqeGHRuaOCQeEeU3o7BCK/Xdg1hHTOUA46NVi
+	qTh8UKPg2cYzuHTOc0gtlbMbfYgIhEV43QPo9JCGxMrfhfUnD/FoXPRvt1qxo3jdgDNcNJ22sdlyI
+	7HZdHBgNUI+zfKxCZRYHwhJMYhtpd9OMAF+G+rSiHyFCUvXyxFEbKpQ58hv2Mk0HM6Dp/LPMImK5Q
+	zVMhCDe3jqeFN2igjzOBv58wtCszmDXniVACyJG99+PaQ1G4MhvHIKGudAudh0lyquf/u0LjV8Kpe
+	ZLJFRFEcem/qg+UdNHbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlnqv-0000pf-7r; Thu, 18 Jun 2020 06:16:45 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jlnkg-0004Lh-Mm; Thu, 18 Jun 2020 06:10:18 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlnpK-00061P-OD
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 06:15:08 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 87737200068;
- Thu, 18 Jun 2020 08:15:05 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 880DF200C24;
- Thu, 18 Jun 2020 08:15:01 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C3BC54030D;
- Thu, 18 Jun 2020 14:14:55 +0800 (SGT)
-From: Shengjiu Wang <shengjiu.wang@nxp.com>
-To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/5] ARM: dts: imx6sx-sabreauto: Add cs42888 sound card support
-Date: Thu, 18 Jun 2020 14:03:49 +0800
-Message-Id: <98c07c00c833080b561a2310cafcc79f8af78704.1592460381.git.shengjiu.wang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1592460381.git.shengjiu.wang@nxp.com>
-References: <cover.1592460381.git.shengjiu.wang@nxp.com>
-In-Reply-To: <cover.1592460381.git.shengjiu.wang@nxp.com>
-References: <cover.1592460381.git.shengjiu.wang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jlnkT-0002kT-Nl
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 06:10:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1592460603;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=cwbt/3ySXfcYjFWFtTtB8EpyCpCNxYQXgY4FcRbcGqU=;
+ b=anmrhHz4L+gLMBBFGxP1g5KVs7gYOaqJDn6ycOKWmLsDcwPAuOeQcBDJ+pE5mTHQDa65Lz
+ w6ewQMHXSAeKbGGdL3DseOC0DmATRhhkson5iKzc39qqQvYwZdTUiDWjbVJZOgWwmj+lrw
+ iLQZWySdVZP6JxlqDkx0jquulSi5DpU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-300-sjVYZ3nLN_mM4x2_FAYRXQ-1; Thu, 18 Jun 2020 02:07:57 -0400
+X-MC-Unique: sjVYZ3nLN_mM4x2_FAYRXQ-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1AB8F107ACF6;
+ Thu, 18 Jun 2020 06:07:56 +0000 (UTC)
+Received: from colo-mx.corp.redhat.com
+ (colo-mx02.intmail.prod.int.phx2.redhat.com [10.5.11.21])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 1347560CD0;
+ Thu, 18 Jun 2020 06:07:56 +0000 (UTC)
+Received: from zmail17.collab.prod.int.phx2.redhat.com
+ (zmail17.collab.prod.int.phx2.redhat.com [10.5.83.19])
+ by colo-mx.corp.redhat.com (Postfix) with ESMTP id D485714CC3;
+ Thu, 18 Jun 2020 06:07:55 +0000 (UTC)
+Date: Thu, 18 Jun 2020 02:07:55 -0400 (EDT)
+From: Jan Stancek <jstancek@redhat.com>
+To: CKI Project <cki-project@redhat.com>
+Message-ID: <163954071.16503342.1592460475593.JavaMail.zimbra@redhat.com>
+In-Reply-To: <cki.72F10DD5A2.1F8H07UJY5@redhat.com>
+References: <cki.72F10DD5A2.1F8H07UJY5@redhat.com>
+Subject: =?utf-8?Q?Re:_=E2=9D=8C_FAIL:_Test_report_for_kerne?=
+ =?utf-8?Q?l_5.8.0-rc1-b9249cb.cki_(arm-next)?=
+MIME-Version: 1.0
+X-Originating-IP: [10.43.17.25, 10.4.195.11]
+Thread-Topic: =?utf-8?B?4p2MIEZBSUw6?= Test report for kernel
+ 5.8.0-rc1-b9249cb.cki (arm-next)
+Thread-Index: 5AXxqHArwUH8PpBoI+WfNlkgWa7y7w==
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_231507_095560_0117E25C 
-X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-CacheID: sfid-20200617_231005_872124_FF06FF29 
+X-CRM114-Status: UNSURE (   8.22  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [205.139.110.120 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,154 +103,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin marinas <catalin.marinas@arm.com>,
+ Memory Management <mm-qe@redhat.com>, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Complete the ESAI node and Add cs42888 sound card support.
-
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
----
- arch/arm/boot/dts/imx6sx-sabreauto.dts | 75 ++++++++++++++++++++++++++
- arch/arm/boot/dts/imx6sx.dtsi          |  4 ++
- 2 files changed, 79 insertions(+)
-
-diff --git a/arch/arm/boot/dts/imx6sx-sabreauto.dts b/arch/arm/boot/dts/imx6sx-sabreauto.dts
-index 772b8ac5d637..76a4c06e0ff2 100644
---- a/arch/arm/boot/dts/imx6sx-sabreauto.dts
-+++ b/arch/arm/boot/dts/imx6sx-sabreauto.dts
-@@ -67,6 +67,36 @@
- 		vin-supply = <&reg_can_en>;
- 	};
- 
-+	reg_cs42888: cs42888_supply {
-+		compatible = "regulator-fixed";
-+		regulator-name = "cs42888_supply";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+	};
-+
-+	sound-cs42888 {
-+		compatible = "fsl,imx6-sabreauto-cs42888",
-+			     "fsl,imx-audio-cs42888";
-+		model = "imx-cs42888";
-+		audio-cpu = <&esai>;
-+		audio-asrc = <&asrc>;
-+		audio-codec = <&cs42888>;
-+		audio-routing =
-+			"Line Out Jack", "AOUT1L",
-+			"Line Out Jack", "AOUT1R",
-+			"Line Out Jack", "AOUT2L",
-+			"Line Out Jack", "AOUT2R",
-+			"Line Out Jack", "AOUT3L",
-+			"Line Out Jack", "AOUT3R",
-+			"Line Out Jack", "AOUT4L",
-+			"Line Out Jack", "AOUT4R",
-+			"AIN1L", "Line In Jack",
-+			"AIN1R", "Line In Jack",
-+			"AIN2L", "Line In Jack",
-+			"AIN2R", "Line In Jack";
-+	};
-+
- 	sound-spdif {
- 		compatible = "fsl,imx-audio-spdif";
- 		model = "imx-spdif";
-@@ -79,6 +109,25 @@
- 	clock-frequency = <24576000>;
- };
- 
-+&clks {
-+	assigned-clocks = <&clks IMX6SX_PLL4_BYPASS_SRC>,
-+			  <&clks IMX6SX_PLL4_BYPASS>,
-+			  <&clks IMX6SX_CLK_PLL4_POST_DIV>;
-+	assigned-clock-parents = <&clks IMX6SX_CLK_LVDS2_IN>,
-+				 <&clks IMX6SX_PLL4_BYPASS_SRC>;
-+	assigned-clock-rates = <0>, <0>, <24576000>;
-+};
-+
-+&esai {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_esai>;
-+	assigned-clocks = <&clks IMX6SX_CLK_ESAI_SEL>,
-+			<&clks IMX6SX_CLK_ESAI_EXTAL>;
-+	assigned-clock-parents = <&clks IMX6SX_CLK_PLL4_AUDIO_DIV>;
-+	assigned-clock-rates = <0>, <24576000>;
-+	status = "okay";
-+};
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_enet1>;
-@@ -200,6 +249,21 @@
- 		>;
- 	};
- 
-+	pinctrl_esai: esaigrp {
-+		fsl,pins = <
-+			MX6SX_PAD_CSI_DATA00__ESAI_TX_CLK   0x1b030
-+			MX6SX_PAD_CSI_DATA01__ESAI_TX_FS    0x1b030
-+			MX6SX_PAD_CSI_HSYNC__ESAI_TX0       0x1b030
-+			MX6SX_PAD_CSI_DATA04__ESAI_TX1      0x1b030
-+			MX6SX_PAD_CSI_DATA06__ESAI_TX2_RX3  0x1b030
-+			MX6SX_PAD_CSI_DATA07__ESAI_TX3_RX2  0x1b030
-+			MX6SX_PAD_CSI_DATA02__ESAI_RX_CLK   0x1b030
-+			MX6SX_PAD_CSI_DATA03__ESAI_RX_FS    0x1b030
-+			MX6SX_PAD_CSI_VSYNC__ESAI_TX5_RX0   0x1b030
-+			MX6SX_PAD_CSI_DATA05__ESAI_TX4_RX1  0x1b030
-+		>;
-+	};
-+
- 	pinctrl_flexcan1: flexcan1grp {
- 		fsl,pins = <
- 			MX6SX_PAD_QSPI1B_DQS__CAN1_TX   0x1b020
-@@ -326,6 +390,17 @@
- 	pinctrl-0 = <&pinctrl_i2c2>;
- 	status = "okay";
- 
-+	cs42888: cs42888@48 {
-+		compatible = "cirrus,cs42888";
-+		reg = <0x48>;
-+		clocks = <&anaclk2 0>;
-+		clock-names = "mclk";
-+		VA-supply = <&reg_cs42888>;
-+		VD-supply = <&reg_cs42888>;
-+		VLS-supply = <&reg_cs42888>;
-+		VLC-supply = <&reg_cs42888>;
-+	};
-+
- 	touchscreen@4 {
- 		compatible = "eeti,egalax_ts";
- 		reg = <0x04>;
-diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-index 8dc412b3862b..9f4f3c0aace5 100644
---- a/arch/arm/boot/dts/imx6sx.dtsi
-+++ b/arch/arm/boot/dts/imx6sx.dtsi
-@@ -341,6 +341,7 @@
- 				};
- 
- 				esai: esai@2024000 {
-+					compatible = "fsl,imx6sx-esai", "fsl,imx35-esai";
- 					reg = <0x02024000 0x4000>;
- 					interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
- 					clocks = <&clks IMX6SX_CLK_ESAI_IPG>,
-@@ -350,6 +351,9 @@
- 						 <&clks IMX6SX_CLK_SPBA>;
- 					clock-names = "core", "mem", "extal",
- 						      "fsys", "spba";
-+					dmas = <&sdma 23 21 0>,
-+					       <&sdma 24 21 0>;
-+					dma-names = "rx", "tx";
- 					status = "disabled";
- 				};
- 
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ci0tLS0tIE9yaWdpbmFsIE1lc3NhZ2UgLS0tLS0KPiAKPiBIZWxsbywKPiAKPiBXZSByYW4gYXV0
+b21hdGVkIHRlc3RzIG9uIGEgcmVjZW50IGNvbW1pdCBmcm9tIHRoaXMga2VybmVsIHRyZWU6Cj4g
+Cj4gICAgICAgIEtlcm5lbCByZXBvOgo+ICAgICAgICBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1
+Yi9zY20vbGludXgva2VybmVsL2dpdC9hcm02NC9saW51eC5naXQKPiAgICAgICAgICAgICBDb21t
+aXQ6IGI5MjQ5Y2JhMjVhNSAtIGFybTY0OiBidGk6IFJlcXVpcmUgY2xhbmcgPj0gMTAuMC4xIGZv
+cgo+ICAgICAgICAgICAgIGluLWtlcm5lbCBCVEkgc3VwcG9ydAo+IAo+IFRoZSByZXN1bHRzIG9m
+IHRoZXNlIGF1dG9tYXRlZCB0ZXN0cyBhcmUgcHJvdmlkZWQgYmVsb3cuCj4gCj4gICAgIE92ZXJh
+bGwgcmVzdWx0OiBGQUlMRUQgKHNlZSBkZXRhaWxzIGJlbG93KQo+ICAgICAgICAgICAgICBNZXJn
+ZTogT0sKPiAgICAgICAgICAgIENvbXBpbGU6IE9LCj4gICAgICAgICAgICAgIFRlc3RzOiBGQUlM
+RUQKPiAKPiBBbGwga2VybmVsIGJpbmFyaWVzLCBjb25maWcgZmlsZXMsIGFuZCBsb2dzIGFyZSBh
+dmFpbGFibGUgZm9yIGRvd25sb2FkIGhlcmU6Cj4gCj4gICBodHRwczovL2NraS1hcnRpZmFjdHMu
+czMudXMtZWFzdC0yLmFtYXpvbmF3cy5jb20vaW5kZXguaHRtbD9wcmVmaXg9ZGF0YXdhcmVob3Vz
+ZS8yMDIwLzA2LzE3LzYwMjE4NAo+IAo+IE9uZSBvciBtb3JlIGtlcm5lbCB0ZXN0cyBmYWlsZWQ6
+Cj4gCj4gICAgIGFhcmNoNjQ6Cj4gICAgICDinYwgTFRQCgpta25vZDA3IC0gdXBkYXRlZAogIGh0
+dHBzOi8vZ2l0aHViLmNvbS9saW51eC10ZXN0LXByb2plY3QvbHRwL2NvbW1pdC8xM2ZjZmEyZDZi
+ZGQxZmI3MWM0NTI4YjQ3MTcwZThlOGZiM2E4YTMyCgpzZXRuczAxIC0gQ2hyaXN0aWFuIHBvc3Rl
+ZCBhIHBhdGNoCiAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC8yMDIwMDYxNjIyNTYxMi40
+MDY4Nzk5LTEtY2hyaXN0aWFuLmJyYXVuZXJAdWJ1bnR1LmNvbS8KCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
