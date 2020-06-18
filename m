@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEB171FEDE9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:40:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EAB71FEDE8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:39:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Jl9kCLEXAZKqMbztiSl3cNEMsaQ+gLuaY/RrycOIeX8=; b=P5Y+xcco2cttfiz48Uxhtyzv8Y
-	skfpY+dvXbouH/z87AsC1FckF4OIS46p/8xOY44g7/lm4GIoG4yh5PslxmhnZubybRYni21PeXS2h
-	D0OSE6e2IueYCCU7hASPx72Da9Jeq/JSrOabO85RuTIKaFN97fslfoWNLGsNPDFBpNST2lwdrmqZF
-	h/6g+tJb4pHG8DwJ06iHtVPZvwIMWewB3m/7u5WcSUKvHp4ip4Y9mPZTr9Z1IubphRB7h4d55RixN
-	6JSnWqyauk7kfLGptcQpq7UlM8xo3VdatgDS7S16gNA4K2wXDEJSC3+4r/jPKwO3NPHycg6tX9IaO
-	uRO1DJNQ==;
+	bh=R8SzG+0pNAnhoVDffj2FbM1ZGJ5R2pFQH/V7HKjBAzo=; b=DTdkwpOCeM0q1QegjJ/DYeS5/B
+	vYt+bOogOkbp9P4ROIsJW98cUC1zk6lIuBtB0JKojfdtaNtszmElldV0SRsXQtdKdUfdMXJiUrMJt
+	7uwjuOgBhQ7j9dPP5t10N+M4X8ybEaMGqArFOssLne5Q88TZ4qlnhi8Gn6drW0umL9qEzzPMmNuVf
+	5LjLLT7R7PPA7FvyowyJdZ99eoyL07qKyc6f17hsu0PNTH3Ghypkh84OYPSnChph13yVzd1o/hEtf
+	sjh6tIE7wRfdaR1DDCgpIqlPAfNhbG7s8N8aCG6XTbQ1PM9CoLRiZEhZqANuia/Pzco9sTvp3o76l
+	xcgh3ExQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlq5c-0004AW-Vk; Thu, 18 Jun 2020 08:40:04 +0000
+	id 1jlq5F-0003jr-3j; Thu, 18 Jun 2020 08:39:41 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlq44-0002Vt-A5
+ id 1jlq44-0002XF-6m
  for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:38:29 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 18 Jun 2020 17:38:26 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id E406C60057;
- Thu, 18 Jun 2020 17:38:26 +0900 (JST)
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 18 Jun 2020 17:38:27 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 75A22180B51;
+ Thu, 18 Jun 2020 17:38:27 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Thu, 18 Jun 2020 17:38:26 +0900
+ Thu, 18 Jun 2020 17:38:27 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 5E0AB1A12AD;
- Thu, 18 Jun 2020 17:38:26 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 1A10B1A12AD;
+ Thu, 18 Jun 2020 17:38:27 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
@@ -42,15 +42,15 @@ To: Bjorn Helgaas <bhelgaas@google.com>,
  Rob Herring <robh+dt@kernel.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
  Marc Zyngier <maz@kernel.org>
-Subject: [PATCH v5 4/6] PCI: uniphier: Add iATU register support
-Date: Thu, 18 Jun 2020 17:38:11 +0900
-Message-Id: <1592469493-1549-5-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v5 5/6] PCI: uniphier: Add error message when failed to get phy
+Date: Thu, 18 Jun 2020 17:38:12 +0900
+Message-Id: <1592469493-1549-6-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_013828_484951_7B45243E 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20200618_013828_362445_2029ABB1 
+X-CRM114-Status: GOOD (  17.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,31 +80,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This gets iATU register area from reg property. In Synopsys DWC version
-4.80 or later, since iATU register area is separated from core register
-area, this area is necessary to get from DT independently.
+Even if phy driver doesn't probe, the error message can't be distinguished
+from other errors. This displays error message caused by the phy driver
+explicitly.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- drivers/pci/controller/dwc/pcie-uniphier.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/pci/controller/dwc/pcie-uniphier.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
-index 5ce2479..c37a968 100644
+index c37a968..8356dd3 100644
 --- a/drivers/pci/controller/dwc/pcie-uniphier.c
 +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
-@@ -451,6 +451,11 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->pci.dbi_base))
- 		return PTR_ERR(priv->pci.dbi_base);
+@@ -470,8 +470,12 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
+ 		return PTR_ERR(priv->rst);
  
-+	priv->pci.atu_base =
-+		devm_platform_ioremap_resource_byname(pdev, "atu");
-+	if (IS_ERR(priv->pci.atu_base))
-+		priv->pci.atu_base = NULL;
-+
- 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "link");
- 	priv->base = devm_ioremap_resource(dev, res);
- 	if (IS_ERR(priv->base))
+ 	priv->phy = devm_phy_optional_get(dev, "pcie-phy");
+-	if (IS_ERR(priv->phy))
+-		return PTR_ERR(priv->phy);
++	if (IS_ERR(priv->phy)) {
++		ret = PTR_ERR(priv->phy);
++		if (ret != -EPROBE_DEFER)
++			dev_err(dev, "Failed to get phy (%d)\n", ret);
++		return ret;
++	}
+ 
+ 	platform_set_drvdata(pdev, priv);
+ 
 -- 
 2.7.4
 
