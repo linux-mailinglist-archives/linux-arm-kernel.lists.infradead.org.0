@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC9321FE1F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:58:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C67A1FE212
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:59:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YGr5lNd/dFj1rx8QY0CT2ds/XtjLifrhYp9vQoUMpJk=; b=heejfDNxLcEM1f
-	LqMSrT3H5FWIhIctiqu3u6YI2jv9ax59iaPJeRGWUKYdubIhWfN4kPNyYTTAaMlHd3RNidoaMsp/v
-	1jbCrxhFOmCtuJ67ugt80CYb0tDNmX6xbdgmRuzx+m/O3yUrquMX0mD3UKO+ckSY10NUDAb0pVCit
-	kc5wZpMvOvkJPDGSysSGQ5+3PGTFSxfP6iByzed+rNc+IV6luaUB0hGAxEDZJ8szTvVXzeoiA4o0t
-	Cmg75EiKqtFFMiwLE9pvNhTLzxscBj9lb0qSm0yMCVWMFtsX2maEQPEgcy4BuHN+HEAQGUHhpgogV
-	QejuH23KPOtS5NzFN+ng==;
+	List-Owner; bh=3o4FezsyyaSajn4lx5XaR0zGDBn9IIp0MJCGLDzostM=; b=N8Kkg8VSc8uSNC
+	xIiiP9JbLHpMtdN9a3QZqFvZYH2yzKKVYRJsW+kxLfvqdKT1EaForwG6oBboiSL/wOHH+GCOW00Ie
+	wDBL7GlUz3kKq7BSI5gXm5cyLSNQVLGmGFdzOdmtewQD39KIIxeUjKp828aoTV/TQmVJC7hkgQ/uE
+	EbDmbwE/bI2NJLy0nBJx8NavIQp43guI3mhRcUnGyYic3H5HM5b/nz4iddgsu0YjfjR2xn1kQPmWi
+	Wrk3ZhAdj0r28IjPKFZ/YdN6fXVIS9QS4ftKfijZ8PxXVniOLHWIdUCvjFIMls59oRrz2vMk8StD2
+	Vfyzl7cTlIvASJC5Uwxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljp1-0002wq-14; Thu, 18 Jun 2020 01:58:31 +0000
+	id 1jljpi-0003ZV-Eu; Thu, 18 Jun 2020 01:59:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljIu-0001hw-Ef
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:25:23 +0000
+ id 1jljJS-0002te-BL
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:26:00 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A618820732;
- Thu, 18 Jun 2020 01:25:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E8A462088E;
+ Thu, 18 Jun 2020 01:25:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443519;
- bh=YmP3ifafcjtKfldtqwSH0BbuY65DTyKzX4gymrPB5Ts=;
+ s=default; t=1592443553;
+ bh=+bbfq/lOHEvGvceV96zCfrP87tJ+zhiGJCMnu/R7Jj0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WRuHW7Uw+XGNXB6s25VoU7E343GWZCS/ET4hfLGMlnpT7X1N5W9KXZqxb46B0s9/S
- fIx20p5GUJX5RCg/dWbPAcc3p2/IZDPaLUwUygU4G642u/L6zO3lcB30TSS970SJec
- vjOHO3CqSwcAFgExu87xbuJTy+4L+vPPPHCeRQdo=
+ b=zlxnjJrl3bjircbiSOcl3cxwp4kDodipNAf+jROLhfVdov3If8QX+xmuqqxqCYKJx
+ sqewsxJwEUUDGXI7GKXruf9j8hKPqfSdrQ+PnTh/G7iuPB363AaFDwIxb+xN+Rx1SY
+ +77Pg00vHSgBdZaT6j/ILAi0DnwS59lhxbaqe82g=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 142/172] pinctrl: freescale: imx: Fix an error
- handling path in 'imx_pinctrl_probe()'
-Date: Wed, 17 Jun 2020 21:21:48 -0400
-Message-Id: <20200618012218.607130-142-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 168/172] drm/sun4i: hdmi ddc clk: Fix size of m
+ divider
+Date: Wed, 17 Jun 2020 21:22:14 -0400
+Message-Id: <20200618012218.607130-168-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012218.607130-1-sashal@kernel.org>
 References: <20200618012218.607130-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182520_609353_26339172 
-X-CRM114-Status: GOOD (  14.04  )
+X-CRM114-CacheID: sfid-20200617_182554_451763_308BE5E1 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,80 +80,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Sasha Levin <sashal@kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+From: Jernej Skrabec <jernej.skrabec@siol.net>
 
-[ Upstream commit 11d8da5cabf7c6c3263ba2cd9c00260395867048 ]
+[ Upstream commit 54e1e06bcf1cf6e7ac3f86daa5f7454add24b494 ]
 
-'pinctrl_unregister()' should not be called to undo
-'devm_pinctrl_register_and_init()', it is already handled by the framework.
+m divider in DDC clock register is 4 bits wide. Fix that.
 
-This simplifies the error handling paths of the probe function.
-The 'imx_free_resources()' can be removed as well.
-
-Fixes: a51c158bf0f7 ("pinctrl: imx: use radix trees for groups and functions")
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-Link: https://lore.kernel.org/r/20200530204955.588962-1-christophe.jaillet@wanadoo.fr
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Fixes: 9c5681011a0c ("drm/sun4i: Add HDMI support")
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Link: https://patchwork.freedesktop.org/patch/msgid/20200413095457.1176754-1-jernej.skrabec@siol.net
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/freescale/pinctrl-imx.c | 19 ++-----------------
- 1 file changed, 2 insertions(+), 17 deletions(-)
+ drivers/gpu/drm/sun4i/sun4i_hdmi.h         | 2 +-
+ drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c b/drivers/pinctrl/freescale/pinctrl-imx.c
-index b04edc22dad7..90d414dd792c 100644
---- a/drivers/pinctrl/freescale/pinctrl-imx.c
-+++ b/drivers/pinctrl/freescale/pinctrl-imx.c
-@@ -662,16 +662,6 @@ static int imx_pinctrl_probe_dt(struct platform_device *pdev,
- 	return 0;
- }
+diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi.h b/drivers/gpu/drm/sun4i/sun4i_hdmi.h
+index b685ee11623d..a13e14dd7746 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_hdmi.h
++++ b/drivers/gpu/drm/sun4i/sun4i_hdmi.h
+@@ -152,7 +152,7 @@
+ #define SUN4I_HDMI_DDC_CMD_IMPLICIT_WRITE	3
  
--/*
-- * imx_free_resources() - free memory used by this driver
-- * @info: info driver instance
-- */
--static void imx_free_resources(struct imx_pinctrl *ipctl)
--{
--	if (ipctl->pctl)
--		pinctrl_unregister(ipctl->pctl);
--}
--
- int imx_pinctrl_probe(struct platform_device *pdev,
- 		      const struct imx_pinctrl_soc_info *info)
- {
-@@ -762,21 +752,16 @@ int imx_pinctrl_probe(struct platform_device *pdev,
- 					     &ipctl->pctl);
- 	if (ret) {
- 		dev_err(&pdev->dev, "could not register IMX pinctrl driver\n");
--		goto free;
-+		return ret;
- 	}
+ #define SUN4I_HDMI_DDC_CLK_REG		0x528
+-#define SUN4I_HDMI_DDC_CLK_M(m)			(((m) & 0x7) << 3)
++#define SUN4I_HDMI_DDC_CLK_M(m)			(((m) & 0xf) << 3)
+ #define SUN4I_HDMI_DDC_CLK_N(n)			((n) & 0x7)
  
- 	ret = imx_pinctrl_probe_dt(pdev, ipctl);
- 	if (ret) {
- 		dev_err(&pdev->dev, "fail to probe dt properties\n");
--		goto free;
-+		return ret;
- 	}
+ #define SUN4I_HDMI_DDC_LINE_CTRL_REG	0x540
+diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c
+index e826da34e919..14b6762567fb 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c
++++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c
+@@ -37,7 +37,7 @@ static unsigned long sun4i_ddc_calc_divider(unsigned long rate,
+ 	unsigned long best_rate = 0;
+ 	u8 best_m = 0, best_n = 0, _m, _n;
  
- 	dev_info(&pdev->dev, "initialized IMX pinctrl driver\n");
+-	for (_m = 0; _m < 8; _m++) {
++	for (_m = 0; _m < 16; _m++) {
+ 		for (_n = 0; _n < 8; _n++) {
+ 			unsigned long tmp_rate;
  
- 	return pinctrl_enable(ipctl->pctl);
--
--free:
--	imx_free_resources(ipctl);
--
--	return ret;
- }
 -- 
 2.25.1
 
