@@ -2,199 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D2051FED66
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C9A51FED6A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:18:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Y+XY+/7OTzV71X/CR5NdgQi65NqN1U+PcmfdErNId4=; b=JvrvOIWuyZZxDg
-	771/Fia/fuX5JqktgTioMBIqZdow+VndlNRG4Zlq/MGU6/HBKTb7gs4Nd0viFuARw2dXsISRpQyVP
-	3g2265VXAsRTp8U5f1P0gsf56lW8xi+Alhc9aOLFATbIwu8rF67j/2Ao9MR7PXA2okphI4zVreTlq
-	zo1RWEMY0S2sW2sIw2ZPmSvY13gTZkIeP+nllotp1DozG/ZRu8Xkw2HXwWQB3fNiF0BuK1pYiyHQ4
-	xa+2+XTZO4EOPUSDbURAEVRRW0o9WIui0vINUL+79lvtKsZgqLWQN7PJsRqEx9HLS1yebIwyAn5qK
-	ur6w5I3oaj472bHyJ/tA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YY3xDCuZbRS6EpLGrDKG4sYGTD3VtaxCITbpmciBkBE=; b=sPDE1Q3ohHMszF
+	SGgrsJjXGtfNQefyV86RWGrGZygVMM+FOGh4FotPpc2vRnC4TkIEcS5PkvzOBsIbTjo7QwFQdCM4o
+	n5xsgOJFgyn6/N1TeASXTaRyz5HoKBGoSkftDi48QJaZE+ggmY4525x1SQmjsXnma9b9+Wd6FNSzu
+	V0xh3h1i1M5ffqBO003kY11fjGlHz/9TnKKNIW4BNvZDSteG16ga7twwJVf9ngOtrIwYIToS/+JMD
+	XWiRwTW4/J8GfXIpLYxz7NN9yCEfiORT/wi/xFb2F26P3ooIXwSG3R1wbyfcoC66D9QQ9B4452n7g
+	pWbtahN9Bw9965re19Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlpkg-0005Hf-5q; Thu, 18 Jun 2020 08:18:26 +0000
-Received: from mail-bn7nam10on2040.outbound.protection.outlook.com
- ([40.107.92.40] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
+	id 1jlpl4-0005Tw-4i; Thu, 18 Jun 2020 08:18:50 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlpkC-00052b-AL
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:17:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ikafvLqMomfNlzW00fyWcEjDQY5ty3+hZJr5ClGaseKMnDXdW5s/UKAQnRBV6AXPnkfmIy2txs8CBT2mj+I9nQnznOfeq050EFdpKmuawHBfU3eLX5210NBJM8ez5afu3tMhSfDoY1jCVNP0pMROJQbFiPWBgrwERI/Xx1MdX2VKwLq3WlmoD1c8wq+ffvXXtYE5PHEVRerdYE3Dlc3W4iwYwTV4htjjdxLAn3EisEQoYUVu1PNC4RZgk1YN6lsbSpxEYas9Uqt0aFwxx5G6mL0XzX6JCMIwdZ53cpQ3KySLMuqPhFPTKRRb725fePtFgBWkTiXpTKLUcyKSiHnuXQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7EiZxW/oPrSr0QWuUexGDkFnaDl5AdDDpMOwIHhU9Y4=;
- b=YZEkgXj9lzMiIFiLoRbSvkvkJIB36E2V52hJ0zyFX6aFNYXjnNfCRaDtjXT6O+MG8ifTCZZpbGmSRasWUO9JQaVpLKcahKesOEZmK0UQEE+HVSSw0rGlMaapCtbHZKBaZgInB6zECzvOmSuNCIA7LkrJExVjRKrD5L3MzEXIvIggres6YsbTBJJeMsFgaq0t7bYNrlPkh0VmiuBFD8PUZKSq50X9xGrpuomZJcSsN+kWGhGj1kMCGIJnv4dnFINNRe/k8A5N1BDZhSNzDnl8nIao9JXKdGY1PqwH1mecPDsNMrhlM3q8tJJsE96qAcR2u5ZkW7BRCSeNphtahK+5zw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=siemens.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7EiZxW/oPrSr0QWuUexGDkFnaDl5AdDDpMOwIHhU9Y4=;
- b=NyhW5sqmaa+3Ljjb+H4jingWC7A3MXSesBa7R3UBqw46cnag582zM/yvsSBdjzwekmurPZ+BVTEMHENtohDMWEd+Xxmh3PSdntwAjt62i8p7TQ10+WEMLfNubh9RfqM2XL39ndg2EtEuM9z/12t74eICP5gcFnUKdtGFdqQtxrA=
-Received: from SN4PR0701CA0022.namprd07.prod.outlook.com
- (2603:10b6:803:28::32) by SN6PR02MB5470.namprd02.prod.outlook.com
- (2603:10b6:805:eb::19) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.22; Thu, 18 Jun
- 2020 08:17:53 +0000
-Received: from SN1NAM02FT005.eop-nam02.prod.protection.outlook.com
- (2603:10b6:803:28:cafe::c6) by SN4PR0701CA0022.outlook.office365.com
- (2603:10b6:803:28::32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3109.21 via Frontend
- Transport; Thu, 18 Jun 2020 08:17:53 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; siemens.com; dkim=none (message not signed)
- header.d=none;siemens.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT005.mail.protection.outlook.com (10.152.72.117) with Microsoft SMTP
- Server id 15.20.3088.18 via Frontend Transport; Thu, 18 Jun 2020 08:17:53
- +0000
-Received: from [149.199.38.66] (port=57697 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jlpj5-00037Z-AJ; Thu, 18 Jun 2020 01:16:47 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jlpk8-0002o6-Oy; Thu, 18 Jun 2020 01:17:52 -0700
-Received: from xsj-pvapsmtp01 (mailman.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 05I8HgD5024798; 
- Thu, 18 Jun 2020 01:17:42 -0700
-Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1jlpjy-0002lK-54; Thu, 18 Jun 2020 01:17:42 -0700
-Subject: Re: [PATCH] Revert "tty: xilinx_uartps: Fix missing id assignment to
- the console"
-To: Jan Kiszka <jan.kiszka@siemens.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <f4092727-d8f5-5f91-2c9f-76643aace993@siemens.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Autocrypt: addr=michals@xilinx.com; keydata=
- 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
- 0Z1MQlmNcq2bhOMzTxuXX2NDzUZs4aqEyZQ=
-Message-ID: <912c9e31-1696-799e-555b-322d08155dcc@xilinx.com>
-Date: Thu, 18 Jun 2020 10:17:39 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
+ id 1jlpkG-00057S-TF
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:18:02 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id u8so2196469pje.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jun 2020 01:18:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0/j4lz8e312J9gqDQle5+Czh+8aD3rzQh6Eq9ULGAuI=;
+ b=RrkJOwr/g8SsBdGksexkQvk3ctT+Mb6RiwWgiCOlkIGDk12nQIblPpzjXep8RUF9q8
+ PyESA919QIjX4IaVj2aFv4rejKo0Y0pBtREGjS8m/S7Vaos7yTd5mRk7TK9CvD2JCenG
+ zfA5zNiw6q94EYYiq7Sn5KCulLcCaQyUsZlCyO3W3XoRQPQOHCccie7xzFQt6AWeHvbd
+ s2PJ73zTxE3+1w1gv0XC/lJ0NFGAUMwOyGswCKuA17cUL0cAZxRbkiVqCupRI/gWWm5R
+ 3BGiTbjS/wnWA5aYvWpUd3suBl8xY0jn+1H1WaSOqSRQmcp0+L0KxKF8JN5Ma6WyJOsx
+ +hLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0/j4lz8e312J9gqDQle5+Czh+8aD3rzQh6Eq9ULGAuI=;
+ b=G3fnktERx50cSWFNGKlLmtNEM7ZeLRh+2MAp7NQhr/CbI2jvCd/oyNrRSMTQ10feVh
+ 4CrIQX9ooVoW2lRy+GY1ZIUQ0gyCaEQiSBfNM3A3xbfI5qtUh0UXDr3FKcp8NzQn7Chl
+ 5pH9K9ocZ4Zq0HVEnASJ1aRD9Sk58L2iqA0N7yzQSsfDXpT7C07RodYcH+v11wmWWFU1
+ ikpRrevZTsu3pPu51EMOI/ssl72+zStF6jEMBw1MWonA9l0FQYT0VhEnBfo4s35W2aMx
+ 80ueZLL2zL3rIchXZ8zACQWFsebt0gIZ5gQ+8NGtfnGTtPz8JZdFdLE9JFAalBEjNTo4
+ F4tA==
+X-Gm-Message-State: AOAM533qwdQMoBb6/DdBZ67veS9gYNZB9KqLKuWjp5PLyFuBw8RZnLip
+ 0paqOWhjakTFnov8J2qT2ffoWZgk9OYtSLAmAJA=
+X-Google-Smtp-Source: ABdhPJyscf5NEQ/BIUYwjTjCSvoTJNw50TUXXg+adzLOX+5uYCSAsbfWwtwy5S9Aw9ln921/3ZR8DWJVxNYy8OXTtfU=
+X-Received: by 2002:a17:90a:220f:: with SMTP id
+ c15mr3206084pje.129.1592468279221; 
+ Thu, 18 Jun 2020 01:17:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <f4092727-d8f5-5f91-2c9f-76643aace993@siemens.com>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(346002)(376002)(396003)(39860400002)(136003)(46966005)(70206006)(70586007)(54906003)(36756003)(110136005)(47076004)(316002)(2616005)(9786002)(44832011)(478600001)(6666004)(31696002)(4326008)(336012)(5660300002)(8936002)(186003)(2906002)(356005)(26005)(82310400002)(81166007)(83380400001)(8676002)(426003)(82740400003)(31686004)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: f844e9a2-9ce7-4c43-d9b1-08d813601910
-X-MS-TrafficTypeDiagnostic: SN6PR02MB5470:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB5470B7B6CA536E10FA8AD14AC69B0@SN6PR02MB5470.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:192;
-X-Forefront-PRVS: 0438F90F17
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: CG9U9oVx9mRRxvszzPCyQuzES4H7xXbquF6hdZDRTjvl3XY+Xr1D3JfGUmIpOMD6jiDeyqnlWjX2eHB8my0nDvB8ZVZROU//1e+fYmPFIyeWy0WyKeBhUPXjsJOx/Em6UEwxVX9zbUyNXCgtC0NybcBPGHMddTDHZEb85pSfjc0VUuxlS/PRqcffIBMFeGhBzdJOHn/lSyC+2vBpUje5J553nmldFjAXo1NPTZWTSEeSQdGibLAV8qmN1ZIvanTYeencxRyyelVsxHuT7Xzra2YEYX1E/pDSEMC9YakEFNdhl4m0yw+hai7fSEVSxqPwn9VTKsbRgmKtnrxsNJODiPuuS2wczGJNyXZJFiqjaaaW00/tJQHBZiOVu+ZuRuGR0JA4SM1ZvyVJ9Z7dvu53uvtGNrin89YvEDEXr+gkQ4A=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2020 08:17:53.1138 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f844e9a2-9ce7-4c43-d9b1-08d813601910
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB5470
+References: <20200617224813.23853-1-Sergey.Semin@baikalelectronics.ru>
+In-Reply-To: <20200617224813.23853-1-Sergey.Semin@baikalelectronics.ru>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Thu, 18 Jun 2020 11:17:47 +0300
+Message-ID: <CAHp75VfPEdxN1UeKJ+gCWpgJymK7YzQs1Lznq1aBfoRNBiMHbQ@mail.gmail.com>
+Subject: Re: [PATCH RESEND v6 0/3] serial: 8250_dw: Fix ref clock usage
+To: Serge Semin <Sergey.Semin@baikalelectronics.ru>,
+ Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_011756_360335_DAE3DF89 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200618_011800_996192_AC6E6309 
+X-CRM114-Status: GOOD (  23.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.92.40 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.92.40 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -207,51 +94,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
+Cc: Maxime Ripard <mripard@kernel.org>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- stable@vger.kernel.org, linux-serial <linux-serial@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Serge Semin <fancer.lancer@gmail.com>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
  Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Will Deacon <will@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Jun 18, 2020 at 1:52 AM Serge Semin
+<Sergey.Semin@baikalelectronics.ru> wrote:
+>
+> Greg, Jiri. We've missed the last merge window. It would be pity to miss
+> the next one. Please review/merge in the series.
+>
+> Regarding the patchset. It might be dangerous if an UART port reference
+> clock rate is suddenly changed. In particular the 8250 port drivers
+> (and AFAICS most of the tty drivers using common clock framework clocks)
+> rely either on the exclusive reference clock utilization or on the ref
+> clock rate being always constant. Needless to say that it turns out not
+> true and if some other service suddenly changes the clock rate behind an
+> UART port driver back no good can happen. So the port might not only end
+> up with an invalid uartclk value saved, but may also experience a
+> distorted output/input data since such action will effectively update the
+> programmed baud-clock. We discovered such problem on Baikal-T1 SoC where
+> two DW 8250 ports have got a shared reference clock. Allwinner SoC is
+> equipped with an UART, which clock is derived from the CPU PLL clock
+> source, so the CPU frequency change might be propagated down up to the
+> serial port reference clock. This patchset provides a way to fix the
+> problem to the 8250 serial port controllers and mostly fixes it for the
+> DW 8250-compatible UART. I say mostly because due to not having a facility
+> to pause/stop and resume/restart on-going transfers we implemented the
+> UART clock rate update procedure executed post factum of the actual
+> reference clock rate change.
+>
+> In addition the patchset includes a small optimization patch. It
+> simplifies the DW APB UART ref clock rate setting procedure a bit.
+>
+> This patchset is rebased and tested on the mainline Linux kernel 5.7-rc4:
+> base-commit: 0e698dfa2822 ("Linux 5.7-rc4")
+> tag: v5.7-rc4
+
+I'm wondering how this will collaborate with runtime PM.
+
+> Changelog v3:
+> - Refactor the original patch to adjust the UART port divisor instead of
+>   requesting an exclusive ref clock utilization.
+>
+> Changelog v4:
+> - Discard commit b426bf0fb085 ("serial: 8250: Fix max baud limit in generic
+>   8250 port") since Greg has already merged it into the tty-next branch.
+> - Use EXPORT_SYMBOL_GPL() for the serial8250_update_uartclk() method.
+>
+> Changelog v5:
+> - Refactor dw8250_clk_work_cb() function cheking the clk_get_rate()
+>   return value for being erroneous and exit if it is.
+> - Don't update p->uartclk in the port startup. It will be updated later in
+>   the same procedure at the set_termios() function being invoked by the
+>   serial_core anyway.
+>
+> Changelog v6:
+> - Resend
+>
+> Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+> Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
+> Cc: Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>
+> Cc: Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
+> Cc: Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>
+> Cc: Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>
+> Cc: Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>
+> Cc: Vadim Vlasov <V.Vlasov@baikalelectronics.ru>
+> Cc: Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: linux-mips@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-serial@vger.kernel.org
+> Cc: linux-kernel@vger.kernel.org
+>
+> Serge Semin (3):
+>   serial: 8250: Add 8250 port clock update method
+>   serial: 8250_dw: Simplify the ref clock rate setting procedure
+>   serial: 8250_dw: Fix common clocks usage race condition
+>
+>  drivers/tty/serial/8250/8250_dw.c   | 116 +++++++++++++++++++++++++---
+>  drivers/tty/serial/8250/8250_port.c |  38 +++++++++
+>  include/linux/serial_8250.h         |   2 +
+>  3 files changed, 144 insertions(+), 12 deletions(-)
+>
+> --
+> 2.26.2
+>
 
 
-On 18. 06. 20 10:11, Jan Kiszka wrote:
-> From: Jan Kiszka <jan.kiszka@siemens.com>
-> 
-> This reverts commit 2ae11c46d5fdc46cb396e35911c713d271056d35.
-> 
-> It turned out to break the ultra96-rev1, e.g., which uses uart1 as
-> serial0 (and stdout-path = "serial0:115200n8").
-> 
-> Cc: stable <stable@vger.kernel.org>
-> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> ---
->  drivers/tty/serial/xilinx_uartps.c | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-> index 35e9e8faf8de..ac137b6a1dc1 100644
-> --- a/drivers/tty/serial/xilinx_uartps.c
-> +++ b/drivers/tty/serial/xilinx_uartps.c
-> @@ -1459,7 +1459,6 @@ static int cdns_uart_probe(struct platform_device *pdev)
->  		cdns_uart_uart_driver.nr = CDNS_UART_NR_PORTS;
->  #ifdef CONFIG_SERIAL_XILINX_PS_UART_CONSOLE
->  		cdns_uart_uart_driver.cons = &cdns_uart_console;
-> -		cdns_uart_console.index = id;
->  #endif
->  
->  		rc = uart_register_driver(&cdns_uart_uart_driver);
-> 
-
-Reviewed-by: Michal Simek <michal.simek@xilinx.com>
-Tested-by: Michal Simek <michal.simek@xilinx.com>
-
-Thanks,
-Michal
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
