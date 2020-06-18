@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 014DF1FF54F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 16:48:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 988001FF552
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 16:48:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zib1PnPStHBahE8NRb7E8QgnHvp416ZZQzYPGaHhnyk=; b=CsnAe1h7x5us6E
-	SKofyn+wgI4/R7nOc2Xf3Zs+CLI4HA/wjyneBqbsXcHAxLCIXL+y1ykydmVzSzjiTd6qSPyvJpXrV
-	BI4JTCSBQALPLh8dxAnfsgEX1ahRWIasrHYt+ekX93MWC0euNkl9Tz9O39ox/casToBDYVNU0cUvM
-	xXzcme+6nRMd+aEVHzD+0x+OzvEXz6BMVoCmldHLJp6IONAvM/WD3rN/dSlqE5BLVbKqHziyVcYXb
-	hUJV1ulHn+sONpBylZA3CmtqRmcicGyKuADS5/suhMKyperTiRwi1J4COQoXBoyK4Code1gDyI6+H
-	I2y5/5LxR18ThlJSedjw==;
+	List-Owner; bh=qZ5wbg9Npq1Fij6bnxSNug/Y67Mf+8g5hXXg5i1VUxM=; b=JSryNvd36+KmvJ
+	kMBNEqDf6RMPCKP9HvdGyin7hrITHurD2F8oxrysrju3grGfC+KGEOh0/p1qN1CQD9znDgsrFtXaj
+	gItKJJSCBzoFv3//0WAsbtPkxky9xp9a5QUsie6qmrJUgfHjERXqp56dhlq2fTrjSTZkVMca21ZL4
+	CUmXz7tV56WV2oXYJEA5yvLz43lYSZGnIFuJajZrGwBtbZyIKHFyJBsvQJsYyuLdV8cvXdtggdKy9
+	t6FymFauul76uokhkH9hl+CJXnR/Wkig3y5P6TfyFWXvzr9KJwzWKF5pNpZ3XWrwAr4doSyLYWUZ8
+	KHsUw7yKjmvVN1weJHbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlvpX-00077t-Do; Thu, 18 Jun 2020 14:47:51 +0000
+	id 1jlvq1-0007c8-U5; Thu, 18 Jun 2020 14:48:21 +0000
 Received: from 195-192-102-148.dyn.cablelink.at ([195.192.102.148]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlvoN-0006OL-B5; Thu, 18 Jun 2020 14:46:40 +0000
+ id 1jlvoQ-0006Ri-Ld; Thu, 18 Jun 2020 14:46:43 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: [PATCH 3/6] exec: cleanup the count() function
-Date: Thu, 18 Jun 2020 16:46:24 +0200
-Message-Id: <20200618144627.114057-4-hch@lst.de>
+Subject: [PATCH 4/6] exec: split prepare_arg_pages
+Date: Thu, 18 Jun 2020 16:46:25 +0200
+Message-Id: <20200618144627.114057-5-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200618144627.114057-1-hch@lst.de>
 References: <20200618144627.114057-1-hch@lst.de>
@@ -54,52 +54,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove the max argument as it is hard wired to MAX_ARG_STRINGS, and
-give the function a slightly less generic name.
+Move counting the arguments and enviroment variables out of
+prepare_arg_pages and rename the rest of the function to check_arg_limit.
+This prepares for a version of do_execvat that takes kernel pointers.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/exec.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ fs/exec.c | 26 ++++++++++++++------------
+ 1 file changed, 14 insertions(+), 12 deletions(-)
 
 diff --git a/fs/exec.c b/fs/exec.c
-index 4e5db0e35797a5..a5d91f8b1341d5 100644
+index a5d91f8b1341d5..34781db6bf6889 100644
 --- a/fs/exec.c
 +++ b/fs/exec.c
-@@ -407,9 +407,9 @@ get_user_arg_ptr(const char __user *const __user *argv, int nr)
+@@ -435,20 +435,10 @@ static int count_strings(const char __user *const __user *argv)
+ 	return i;
  }
  
- /*
-- * count() counts the number of strings in array ARGV.
-+ * count_strings() counts the number of strings in array ARGV.
-  */
--static int count(const char __user *const __user *argv, int max)
-+static int count_strings(const char __user *const __user *argv)
- {
- 	int i = 0;
- 
-@@ -423,7 +423,7 @@ static int count(const char __user *const __user *argv, int max)
- 			if (IS_ERR(p))
- 				return -EFAULT;
- 
--			if (i >= max)
-+			if (i >= MAX_ARG_STRINGS)
- 				return -E2BIG;
- 			++i;
- 
-@@ -441,11 +441,11 @@ static int prepare_arg_pages(struct linux_binprm *bprm,
+-static int prepare_arg_pages(struct linux_binprm *bprm,
+-		const char __user *const __user *argv,
+-		const char __user *const __user *envp)
++static int check_arg_limit(struct linux_binprm *bprm)
  {
  	unsigned long limit, ptr_size;
  
--	bprm->argc = count(argv, MAX_ARG_STRINGS);
-+	bprm->argc = count_strings(argv);
- 	if (bprm->argc < 0)
- 		return bprm->argc;
+-	bprm->argc = count_strings(argv);
+-	if (bprm->argc < 0)
+-		return bprm->argc;
+-
+-	bprm->envc = count_strings(envp);
+-	if (bprm->envc < 0)
+-		return bprm->envc;
+-
+ 	/*
+ 	 * Limit to 1/4 of the max stack size or 3/4 of _STK_LIM
+ 	 * (whichever is smaller) for the argv+env strings.
+@@ -1886,7 +1876,19 @@ int do_execveat(int fd, struct filename *filename,
+ 	if (retval)
+ 		goto out_unmark;
  
--	bprm->envc = count(envp, MAX_ARG_STRINGS);
+-	retval = prepare_arg_pages(bprm, argv, envp);
++	bprm->argc = count_strings(argv);
++	if (bprm->argc < 0) {
++		retval = bprm->argc;
++		goto out;
++	}
++
 +	bprm->envc = count_strings(envp);
- 	if (bprm->envc < 0)
- 		return bprm->envc;
++	if (bprm->envc < 0) {
++		retval = bprm->envc;
++		goto out;
++	}
++
++	retval = check_arg_limit(bprm);
+ 	if (retval < 0)
+ 		goto out;
  
 -- 
 2.26.2
