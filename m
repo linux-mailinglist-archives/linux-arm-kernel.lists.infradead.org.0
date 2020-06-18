@@ -2,83 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE0F81FF93B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 18:29:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB7131FF955
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 18:34:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p/UxgI9McKqMSbHbWFt74WpTNVKavQP5aLgobU4Tw7E=; b=h5jelpoDw7sNVX
-	aRvDNHcX9CI6NxLY9xriKFneZkipB20WEYRFveegz1l8gzP2Wz7aLFBoxYSP27fuWvTkwyOlEOEXZ
-	iyhGZr5x/H15rTvBKO/rGSrnTXD7l+f1uAQrVWa87NOddT4lwypijtQtTw/HDzNijaLwoHqMBHq1p
-	iBdcF9hZmaFQy3IpcVe+YG3adI4dhdAuvB43wap51SiyglF9CJT10ZYDNlS+aLngNciOSBojHCJr6
-	WlkMmrJteJ23hrTF7IMnmSEaMPnm4ZRJAB1ywu4kZo2EDkIEckJ9YNHKVPlARux9/rdtSFLSwDiDn
-	JeY+qaUQI4gRM539nMaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8SoyxZ0jj73ixMQ7lR1DKRiY6wQt/zDfPT1sPbBbPxk=; b=cdoukXVkhr48qg7uqI/hcF4lL
+	FqqJSimsCNUx24tBpv8Qv4fnAnnL7guqcBeQyMJFMmmuaUoCCl6oWhAdSr+D///z57smEscVggobN
+	bUYP17vouxSTQt8opJH/kN+l/gPflgtuarBWwwpy4Pou494GsXeOGT5YmwHH2xKSVf7QgW1XCLscu
+	bo0v0jAp0FiXyFQ9GM70/fXtECnVKUKGkVs8JIAMaVclHMmqrvjNpXq3MT3WdHPiqy7pHN4PhVqpQ
+	fLqg/crmHSkZ9fX86wwRbHc7V0mgWgxLGWDIbRZBmcknml4/9RMSF1Gp4b+ib5GSzD0RFvQKAVo7X
+	7Inym/47g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlxPT-0005iT-Ph; Thu, 18 Jun 2020 16:29:03 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jlxV4-0000UF-RB; Thu, 18 Jun 2020 16:34:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlxPJ-0005ga-3c
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 16:28:54 +0000
-Received: by mail-wr1-x441.google.com with SMTP id c3so6683695wru.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 09:28:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=5BtInqn0HK3LhGSOqpzcc+VvzjO2vK+SIfcb8Zyst/s=;
- b=odevfLHS7udDSNGRylCeO2GK+VEz1OY9+pY2RckNxWlzBCRG2hlFpNf6+gr8PKu4Iv
- tj1G1Vcxfz9LG+ygke6gIxql+cjGYpQ1mY6VdpdPlChpWDonM3PefuwcFBoJfWjZV/o+
- CR6xRglkdlXJoE51Sz7C2YMHN+mc9IwFc7P9kBuZck3wBty1M5Su/3/dhyDCecbVI5aH
- leQZVIOvdX1cwxW42QZRnwUFG7hLl7P7CljP2Km/bqlU2XWuvtEPLbskejDHm//uKQlz
- 2IYDidYF2v8ay1rj1c0D9+gwTeVaMxh7naQQ8/I3zIQApSSo49rOYomcAMVweMTcXx1j
- U0VQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=5BtInqn0HK3LhGSOqpzcc+VvzjO2vK+SIfcb8Zyst/s=;
- b=EbMY9etpt66H+XcDzrLrx12B6rnjvGi8hSdif27Z+m4KNNMqpGxEoH+VaEXVrNr7C9
- fH57y+TQPbVq1KcGzkLUskEmK7RuI/4M5j+PS8ff5Slldhq5PokiKWGyCCZOAioaU0F9
- SaSpAoF/zWaOPIxckA6m1yrjdJcVQ86hQJ9jInWg8vd0bBJuUAb04se9JwXvf4xMWOx+
- qq2YbY67jMMhOzSNwFe3JJDbVi7MKQkyUfqPwnMfzN/KAjE1wad4akySx8LTCzayCCgL
- PnBQY3h5/IULY8QxRYcRTohX3Ne+DA1DIicGztGrdgMTHmhQ0+1kir2U3Riw3+KaRkL4
- uffQ==
-X-Gm-Message-State: AOAM5312UUUsStsgTdHt4cxYrb6rY0h5rs/4mOZEzjYhftszVMMJKY/W
- AVwBmYnmeZggIv3tZ24D8RsMiA==
-X-Google-Smtp-Source: ABdhPJz6qa2JKgQLkPKOqwNTFZMVh3JmnZ6aw7y5et5eRtOtT3vbCB5EdZXzl9SVv6nhMcSGytpKjQ==
-X-Received: by 2002:adf:ec42:: with SMTP id w2mr5505499wrn.269.1592497731532; 
- Thu, 18 Jun 2020 09:28:51 -0700 (PDT)
-Received: from dell ([95.149.164.118])
- by smtp.gmail.com with ESMTPSA id z7sm3185948wmb.42.2020.06.18.09.28.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 09:28:50 -0700 (PDT)
-Date: Thu, 18 Jun 2020 17:28:49 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v4 1/2] thermal: add support for the MCU controlled FAN
- on Khadas boards
-Message-ID: <20200618162849.GH954398@dell>
-References: <20200618133818.15857-1-narmstrong@baylibre.com>
- <20200618133818.15857-2-narmstrong@baylibre.com>
+ id 1jlxUw-0000Tg-IR
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 16:34:44 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3A5F2080D;
+ Thu, 18 Jun 2020 16:34:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592498082;
+ bh=eVyEMYcH3w0tu/t9tmx43Zd823558bcJbUdQrBCBp4c=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=HvgtGquIIepvj2gQkKFmCpbCeAgAeeIo7rCFhFWj26c+6IajL8BvAWaMt/UCkLjBj
+ Vtdzg6b/vnsNPFtyukEyPsuxiiDQ5nOPcGjyj1C4NTiv/RWhz9FGbzBk2HXK3F60XQ
+ aftQCISswXvKXTI+OuS8zmbSzVxSrPM211c2bCl0=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jlxUu-004EIo-A4; Thu, 18 Jun 2020 17:34:40 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200618133818.15857-2-narmstrong@baylibre.com>
+Date: Thu, 18 Jun 2020 17:34:40 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: David Brazdil <dbrazdil@google.com>
+Subject: Re: [PATCH v3 03/15] arm64: kvm: Add build rules for separate nVHE
+ object files
+In-Reply-To: <20200618122537.9625-4-dbrazdil@google.com>
+References: <20200618122537.9625-1-dbrazdil@google.com>
+ <20200618122537.9625-4-dbrazdil@google.com>
+User-Agent: Roundcube Webmail/1.4.5
+Message-ID: <09976ea31931481f4e00d627dc5e06fe@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: dbrazdil@google.com, will@kernel.org,
+ catalin.marinas@arm.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ android-kvm@google.com, kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_092853_146606_28457D8B 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200618_093442_647119_7CEC42D2 
+X-CRM114-Status: GOOD (  23.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,34 +93,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kucheria@verdurent.com, linux-pm@vger.kernel.org, khilman@baylibre.com,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
- Amit Kucheria <amit.kucheria@linaro.org>, linux-amlogic@lists.infradead.org,
- rui.zhang@intel.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kernel-team@android.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ android-kvm@google.com, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCAxOCBKdW4gMjAyMCwgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cgo+IFRoZSBuZXcgS2hh
-ZGFzIFZJTTIgYW5kIFZJTTMgYm9hcmRzIGNvbnRyb2xzIHRoZSBjb29saW5nIGZhbiB2aWEgdGhl
-Cj4gb24tYm9hcmQgbWljcm9jb250cm9sbGVyLgo+IAo+IFRoaXMgaW1wbGVtZW50cyB0aGUgRkFO
-IGNvbnRyb2wgYXMgdGhlcm1hbCBkZXZpY2VzIGFuZCBhcyBjZWxsIG9mIHRoZSBLaGFkYXMKPiBN
-Q1UgTUZEIGRyaXZlci4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBOZWlsIEFybXN0cm9uZyA8bmFybXN0
-cm9uZ0BiYXlsaWJyZS5jb20+Cj4gUmV2aWV3ZWQtYnk6IEFtaXQgS3VjaGVyaWEgPGFtaXQua3Vj
-aGVyaWFAbGluYXJvLm9yZz4KCklzIHRoaXMgYW4gQWNrPwoKSWYgc28sIGRvIHlvdSByZXF1aXJl
-IGEgcHVsbC1yZXF1ZXN0PwoKPiAtLS0KPiBIaSBMZWUsCj4gCj4gQ291bGQgeW91IGFwcGx5IHRo
-aXMgcGF0Y2ggdmlhIHRoZSBNRkQgdHJlZSBzaW5jZSBpdCBkZXBlbmRzIG9uCj4gdGhlIGxpbnV4
-L21mZC9raGFkYXMtbWN1LmggaGVhZGVyID8KPiAKPiBUaGlzIHBhdGNoIGlzIHVuY2hhbmdlZCBm
-cm9tIHRoZSB2MyBzZXJpZS4KPiAKPiBUaGFua3MsCj4gTmVpbAo+IAo+ICBkcml2ZXJzL3RoZXJt
-YWwvS2NvbmZpZyAgICAgICAgICB8ICAxMSArKwo+ICBkcml2ZXJzL3RoZXJtYWwvTWFrZWZpbGUg
-ICAgICAgICB8ICAgMSArCj4gIGRyaXZlcnMvdGhlcm1hbC9raGFkYXNfbWN1X2Zhbi5jIHwgMTc0
-ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgMyBmaWxlcyBjaGFuZ2VkLCAxODYg
-aW5zZXJ0aW9ucygrKQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy90aGVybWFsL2toYWRh
-c19tY3VfZmFuLmMKCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KU2VuaW9yIFRlY2huaWNhbCBM
-ZWFkIC0gRGV2ZWxvcGVyIFNlcnZpY2VzCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3
-YXJlIGZvciBBcm0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9n
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+Hi David,
+
+On 2020-06-18 13:25, David Brazdil wrote:
+> Add new folder arch/arm64/kvm/hyp/nvhe and a Makefile for building code 
+> that
+> runs in EL2 under nVHE KVM.
+> 
+> Compile each source file into a `.hyp.tmp.o` object first, then prefix 
+> all
+> its symbols with "__kvm_nvhe_" using `objcopy` and produce a `.hyp.o`.
+> Suffixes were chosen so that it would be possible for VHE and nVHE to 
+> share
+> some source files, but compiled with different CFLAGS. nVHE build rules 
+> add
+> -D__KVM_NVHE_HYPERVISOR__.
+> 
+> The nVHE ELF symbol prefix is added to kallsyms.c as ignored. EL2-only 
+> symbols
+> will never appear in EL1 stack traces.
+> 
+> Signed-off-by: David Brazdil <dbrazdil@google.com>
+> ---
+>  arch/arm64/kernel/image-vars.h   | 12 +++++++++++
+>  arch/arm64/kvm/hyp/Makefile      |  2 +-
+>  arch/arm64/kvm/hyp/nvhe/Makefile | 35 ++++++++++++++++++++++++++++++++
+>  scripts/kallsyms.c               |  1 +
+>  4 files changed, 49 insertions(+), 1 deletion(-)
+>  create mode 100644 arch/arm64/kvm/hyp/nvhe/Makefile
+> 
+> diff --git a/arch/arm64/kernel/image-vars.h 
+> b/arch/arm64/kernel/image-vars.h
+> index be0a63ffed23..f32b406e90c0 100644
+> --- a/arch/arm64/kernel/image-vars.h
+> +++ b/arch/arm64/kernel/image-vars.h
+> @@ -51,4 +51,16 @@ __efistub__ctype		= _ctype;
+> 
+>  #endif
+> 
+> +#ifdef CONFIG_KVM
+> +
+> +/*
+> + * KVM nVHE code has its own symbol namespace prefixed by __kvm_nvhe_, 
+> to
+> + * isolate it from the kernel proper. The following symbols are 
+> legally
+> + * accessed by it, therefore provide aliases to make them linkable.
+> + * Do not include symbols which may not be safely accessed under 
+> hypervisor
+> + * memory mappings.
+> + */
+> +
+> +#endif /* CONFIG_KVM */
+> +
+>  #endif /* __ARM64_KERNEL_IMAGE_VARS_H */
+> diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+> index 5d8357ddc234..5f4f217532e0 100644
+> --- a/arch/arm64/kvm/hyp/Makefile
+> +++ b/arch/arm64/kvm/hyp/Makefile
+> @@ -6,7 +6,7 @@
+>  ccflags-y += -fno-stack-protector -DDISABLE_BRANCH_PROFILING \
+>  		$(DISABLE_STACKLEAK_PLUGIN)
+> 
+> -obj-$(CONFIG_KVM) += hyp.o
+> +obj-$(CONFIG_KVM) += hyp.o nvhe/
+>  obj-$(CONFIG_KVM_INDIRECT_VECTORS) += smccc_wa.o
+> 
+>  hyp-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o 
+> sysreg-sr.o \
+> diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile 
+> b/arch/arm64/kvm/hyp/nvhe/Makefile
+> new file mode 100644
+> index 000000000000..7d64235dba62
+> --- /dev/null
+> +++ b/arch/arm64/kvm/hyp/nvhe/Makefile
+> @@ -0,0 +1,35 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +#
+> +# Makefile for Kernel-based Virtual Machine module, HYP/nVHE part
+> +#
+> +
+> +asflags-y := -D__KVM_NVHE_HYPERVISOR__
+> +ccflags-y := -D__KVM_NVHE_HYPERVISOR__ -fno-stack-protector \
+> +	     -DDISABLE_BRANCH_PROFILING $(DISABLE_STACKLEAK_PLUGIN)
+> +
+> +obj-y :=
+> +
+> +obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
+> +extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
+> +
+> +$(obj)/%.hyp.tmp.o: $(src)/%.c FORCE
+> +	$(call if_changed_rule,cc_o_c)
+> +$(obj)/%.hyp.tmp.o: $(src)/%.S FORCE
+> +	$(call if_changed_rule,as_o_S)
+> +$(obj)/%.hyp.o: $(obj)/%.hyp.tmp.o FORCE
+> +	$(call if_changed,hypcopy)
+> +
+> +quiet_cmd_hypcopy = HYPCOPY $@
+> +      cmd_hypcopy = $(OBJCOPY) --prefix-symbols=__kvm_nvhe_ $< $@
+> +
+> +# KVM nVHE code is run at a different exception code with a different 
+> map, so
+> +# compiler instrumentation that inserts callbacks or checks into the 
+> code may
+> +# cause crashes. Just disable it.
+> +GCOV_PROFILE	:= n
+> +KASAN_SANITIZE	:= n
+> +UBSAN_SANITIZE	:= n
+> +KCOV_INSTRUMENT	:= n
+> +
+> +# Skip objtool checking for this directory because nVHE code is 
+> compiled with
+> +# non-standard build rules.
+> +OBJECT_FILES_NON_STANDARD := y
+> diff --git a/scripts/kallsyms.c b/scripts/kallsyms.c
+> index 6dc3078649fa..0096cd965332 100644
+> --- a/scripts/kallsyms.c
+> +++ b/scripts/kallsyms.c
+> @@ -109,6 +109,7 @@ static bool is_ignored_symbol(const char *name, 
+> char type)
+>  		".LASANPC",		/* s390 kasan local symbols */
+>  		"__crc_",		/* modversions */
+>  		"__efistub_",		/* arm64 EFI stub namespace */
+> +		"__kvm_nvhe_",		/* arm64 non-VHE KVM namespace */
+>  		NULL
+>  	};
+
+I guess that one of the first use of this __KVM_NVHE_HYPERVISOR__
+flag could be the has_vhe() predicate: if you're running the nVHE
+code, you are *guaranteed* not to use VHE at all.
+
+Something like:
+
+diff --git a/arch/arm64/include/asm/virt.h 
+b/arch/arm64/include/asm/virt.h
+index 5051b388c654..b2cb8fce43dd 100644
+--- a/arch/arm64/include/asm/virt.h
++++ b/arch/arm64/include/asm/virt.h
+@@ -85,10 +85,8 @@ static inline bool is_kernel_in_hyp_mode(void)
+
+  static __always_inline bool has_vhe(void)
+  {
+-	if (cpus_have_final_cap(ARM64_HAS_VIRT_HOST_EXTN))
+-		return true;
+-
+-	return false;
++	return (__is_defined(__KVM_NVHE_HYPERVISOR__) &&
++		cpus_have_final_cap(ARM64_HAS_VIRT_HOST_EXTN));
+  }
+
+  #endif /* __ASSEMBLY__ */
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
