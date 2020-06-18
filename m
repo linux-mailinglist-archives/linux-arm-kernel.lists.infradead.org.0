@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10E111FDB0C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:10:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A988F1FDB1D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:10:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pugS7OLKjP4pgaEa1+9/PZbw3I9D8HxZE4cVKpsrWbQ=; b=TQ+0EvXAAD8Sbc
-	+xDYiqRFEXKe2CjijfKG4oo9nvKheelrGiJZZN2CnuvlIABwM2dQQIKRqxrdBfPvaB309i/TQ1Dp6
-	WVR2S00BaSdyeiHTR0byEshP/295QcGKYL5kbRBwifzsLX+RIU6lkDC+GhPjezoU+hq0BaL1qjGoo
-	Lo9mH0u00HjhRSN6I/MlU0u3y5dOtG+IaO1+cRgGkzaA1m2lfdJfu8Ka4o/R/jztQtgLg3L7R4Iva
-	dUZ5dvEl5Swleg/TmKC6G3/UcYJ5WKm1zOxmd9rwKAvXD4qY3ei0VMDmsplsB5P2AcRB1Czp2Xh/Z
-	rJUw9s44t6q8xfve+4oA==;
+	List-Owner; bh=lrUlAvn9Ealv2nCu6j401ZfGTWrLMy0HGnnRAwG/I90=; b=PQFQI3jVriDUAX
+	2b+0z6ygW2keWbyrVdtxG6O7oC34oxm7ZGA8EJ0uzNE2dFKB7yuQ7W2Bgt1nvzbrZGSo/7aayHxVr
+	hKe9jr0NExhYPHRKDF9mFEzkoxP0LWpbZduCpzLSm0Wnyx5EaqsYBnRu7DFPtw4vXo4l1bvzNs3ob
+	utGDV1kRISluihpT5vGNOfzEHpTFMVtA+Ds+2E+uEJgF/tJ/eJzI/aAh6DtwzRUWGMLL/JtyC3gFV
+	xPlk4jDQY3u1rC0HQ4oGZVXzbWUMJLvKRjK9pyphFFZHeGogm/e8On3zYH7wtLW5cvhWG1pKqjdVs
+	fesZq60uteHjQZX0DOEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlj3u-0005e9-9g; Thu, 18 Jun 2020 01:09:50 +0000
+	id 1jlj4W-000662-Rk; Thu, 18 Jun 2020 01:10:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj2i-0004m5-I6; Thu, 18 Jun 2020 01:08:38 +0000
+ id 1jlj2l-0004qm-So; Thu, 18 Jun 2020 01:08:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 43B502193E;
- Thu, 18 Jun 2020 01:08:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 42EF22193E;
+ Thu, 18 Jun 2020 01:08:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442515;
- bh=FswHuYxu6DWVPksDcw0Gd/5+qzNNCvjR4o8+UIvMPlQ=;
+ s=default; t=1592442519;
+ bh=LxL7S9dAh4/os9b+6g3X1dJuv95ULz6V2uieImdNiH4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ScALaiQJqeOC++HsvzKtzfXnskEwgj7GWMSuDPZ41estDhmYTsSFoS2n7z1P/QzzS
- j/oIgQcjzS0RrHYilPrO4VJ764Jy1QzF1nlahSZ5LX2V7Uk+DJZW4LYvx5Y4avSDA4
- pHfCaELYpK0luOl2Jfwy5FxzEqR7UvRKGcq+LosU=
+ b=AAyZD+CtvDXX3NXhh0Mc4sTe3c7fzfYaNNyVghCnHmisAS3SBpvy6sOb/X+7sKHUj
+ +VzdCH+cDN970k1d4amziub/GPi5CSjhgTAnA5gbX9aylCsE46efGp6zzxKrYoM/ID
+ dkS/jIAxSBFBUFn0NoAomwGPKRnmzLrMG6D3wy+A=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 021/388] arm64: dts: meson-gxbb-kii-pro: fix board
- compatible
-Date: Wed, 17 Jun 2020 21:01:58 -0400
-Message-Id: <20200618010805.600873-21-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 024/388] arm64: dts: meson: fixup SCP sram nodes
+Date: Wed, 17 Jun 2020 21:02:01 -0400
+Message-Id: <20200618010805.600873-24-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,8 +48,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_180836_636945_EBB4C6DF 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20200617_180840_311546_F82695A4 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,34 +89,81 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Neil Armstrong <narmstrong@baylibre.com>
 
-[ Upstream commit d120b5f98031eefc22164ae8c6ea3711e7a04c19 ]
+[ Upstream commit 9ecded10b4b6af238da0c86197b0418912e7513e ]
 
-Remove the uneeded "amlogic,p201", "amlogic,s905" in the board compatible list.
+The GX and AXG SCP sram nodes were using invalid compatible and
+node names for the sram entries.
 
-It fixes:
-meson-gxbb-kii-pro.dt.yaml: /: compatible: ['videostrong,kii-pro', 'amlogic,p201', 'amlogic,s905', 'amlogic,meson-gxbb'] is not valid under any of the given schemas
+Fixup the sram entries node names, and use proper compatible for them.
+
+It notably fixes:
+sram@c8000000: 'scp-shmem@0', 'scp-shmem@200' do not match any of the regexes: '^([a-z]*-)?sram(-section)?@[a-f0-9]+$', 'pinctrl-[0-9]+'
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 Signed-off-by: Kevin Hilman <khilman@baylibre.com>
-Link: https://lore.kernel.org/r/20200326165958.19274-5-narmstrong@baylibre.com
+Link: https://lore.kernel.org/r/20200326165958.19274-3-narmstrong@baylibre.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/amlogic/meson-axg.dtsi |  6 +++---
+ arch/arm64/boot/dts/amlogic/meson-gx.dtsi  | 10 +++++-----
+ 2 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
-index 6c9cc45fb417..e8394a8269ee 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
-@@ -11,7 +11,7 @@
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/leds/common.h>
- / {
--	compatible = "videostrong,kii-pro", "amlogic,p201", "amlogic,s905", "amlogic,meson-gxbb";
-+	compatible = "videostrong,kii-pro", "amlogic,meson-gxbb";
- 	model = "Videostrong KII Pro";
+diff --git a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
+index aace3d32a3df..8e6281c685fa 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
+@@ -1735,18 +1735,18 @@ sd_emmc_c: mmc@7000 {
+ 		};
  
- 	leds {
+ 		sram: sram@fffc0000 {
+-			compatible = "amlogic,meson-axg-sram", "mmio-sram";
++			compatible = "mmio-sram";
+ 			reg = <0x0 0xfffc0000 0x0 0x20000>;
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges = <0 0x0 0xfffc0000 0x20000>;
+ 
+-			cpu_scp_lpri: scp-shmem@13000 {
++			cpu_scp_lpri: scp-sram@13000 {
+ 				compatible = "amlogic,meson-axg-scp-shmem";
+ 				reg = <0x13000 0x400>;
+ 			};
+ 
+-			cpu_scp_hpri: scp-shmem@13400 {
++			cpu_scp_hpri: scp-sram@13400 {
+ 				compatible = "amlogic,meson-axg-scp-shmem";
+ 				reg = <0x13400 0x400>;
+ 			};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
+index 03f79fe045b7..e2bb68ec8502 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
+@@ -398,20 +398,20 @@ gic: interrupt-controller@c4301000 {
+ 		};
+ 
+ 		sram: sram@c8000000 {
+-			compatible = "amlogic,meson-gx-sram", "amlogic,meson-gxbb-sram", "mmio-sram";
++			compatible = "mmio-sram";
+ 			reg = <0x0 0xc8000000 0x0 0x14000>;
+ 
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges = <0 0x0 0xc8000000 0x14000>;
+ 
+-			cpu_scp_lpri: scp-shmem@0 {
+-				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
++			cpu_scp_lpri: scp-sram@0 {
++				compatible = "amlogic,meson-gxbb-scp-shmem";
+ 				reg = <0x13000 0x400>;
+ 			};
+ 
+-			cpu_scp_hpri: scp-shmem@200 {
+-				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
++			cpu_scp_hpri: scp-sram@200 {
++				compatible = "amlogic,meson-gxbb-scp-shmem";
+ 				reg = <0x13400 0x400>;
+ 			};
+ 		};
 -- 
 2.25.1
 
