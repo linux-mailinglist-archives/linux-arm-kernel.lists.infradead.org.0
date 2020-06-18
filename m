@@ -2,72 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98D701FEFCC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 12:41:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2634E1FEFD2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 12:44:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3zbsVJGTLuGKM7GtoVBkHMChPXvINq3z9sSJk9Zv5Zw=; b=X6dDr3dyKtVGAX
-	BwHh7jq1GRSlo3C462sxb+KfRIfZcjsGrfys/HkofyO9o8IqA/Q60WvFbeNv2fWTPGmb5J/Q0L+32
-	6VptmZVtxRkxVBcgDq6gshs4R4hg4xxFFRKXSnIOc5ygY3tMOUFrLpcGzQ7RQgORrkDWQ57A5lZdQ
-	R04u36ys9BnyZo5JjqkLffkymY4zP1erN1cyRgLQHsUMDqIqU/bpa4alNJOdOO0Wntha4JtmEgCNS
-	yBPsZt0bRzSNT147U3YMxeBXOKUXf97zgUWAWDzJbeg5L9PSMd/AO0m4Ar83GgyXwixH9r03sbk9e
-	ujmXaP5cuksui1HHGhIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sNuBwOscZ3fFOB5b3UFBzwSxUOpbhbT7/CuQrhvdoYc=; b=WOswwuMHrPwnWZtRAPAR3e5zO
+	D9OBPIxacZgXy9/LwUV+xVnTAPIVdK6PSvme0FWb3vSEywp677WXDjeBxk54v+iFYo6t+BRnX9JxE
+	tr9u60NIHFcQFWlMLS33sF0gnWQjVl+zoFd9heh6P/SDH9GB2BPN6LHf9sOLoPCpPabPMT09sCD0B
+	hDH8eM3qa2UmDc/lluk6x2p7h6iKviHEOEd4I0EQ9CNU5yiBpyjM4+8UsQlR+dzd3BTrCg2hNggE9
+	EN+3FDjw6fz4/XEfCJNx6pBtQsyGJe8rR6zuXii0fC9RPyuTmgYT25vibkHHhRCqfphLeUXk+MJT3
+	nDOL06sOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlryx-0007mY-VH; Thu, 18 Jun 2020 10:41:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlrye-0007Ue-SF
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 10:41:02 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6FF432078D;
- Thu, 18 Jun 2020 10:40:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592476860;
- bh=d47JNBDZ8HjBsWecMHBNaWgIc0Y2d08em6JOHbbn70w=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dvbhEaD338Bux0jtW8vZs1CQenKznloBU9gk1WfzE6BY/OvDUdSQFkoaG7MXg45Oe
- eUWHMMeP7KHvWb9bpr9T9HswneWAolWQQKBMhpZCRXVEc9Rx0dt2LInqYLJbuX3L/I
- mWutvlef6ACRmIOOpuD8P7meyHqJaj+5xBrUVkik=
-From: Will Deacon <will@kernel.org>
-To: Barry Song <song.bao.hua@hisilicon.com>, nsaenzjulienne@suse.de,
- steve.capper@arm.com, catalin.marinas@arm.com, akpm@linux-foundation.org,
- rppt@linux.ibm.com
-Subject: Re: [PATCH v3] arm64: mm: reserve hugetlb CMA after numa_init
-Date: Thu, 18 Jun 2020 11:40:48 +0100
-Message-Id: <159247315562.10407.5629141346603814230.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200617215828.25296-1-song.bao.hua@hisilicon.com>
-References: <20200617215828.25296-1-song.bao.hua@hisilicon.com>
+	id 1jls1i-00009X-5m; Thu, 18 Jun 2020 10:44:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jls1Z-000090-Mj
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 10:44:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85A7E1045;
+ Thu, 18 Jun 2020 03:44:00 -0700 (PDT)
+Received: from [192.168.1.84] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 432363F6CF;
+ Thu, 18 Jun 2020 03:43:57 -0700 (PDT)
+Subject: Re: [RFC PATCH 1/2] arm64: kvm: Save/restore MTE registers
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20200617123844.29960-1-steven.price@arm.com>
+ <20200617123844.29960-2-steven.price@arm.com> <20200617140546.GE5388@gaia>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <313f5656-b306-72bb-5804-40d20a2cba1e@arm.com>
+Date: Thu, 18 Jun 2020 11:43:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20200617140546.GE5388@gaia>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_034100_941732_D3EC40F4 
-X-CRM114-Status: UNSURE (   7.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200618_034401_780400_F991594A 
+X-CRM114-Status: GOOD (  19.04  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,31 +64,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- linuxarm@huawei.com, Matthias Brugger <matthias.bgg@gmail.com>,
- Will Deacon <will@kernel.org>, Roman Gushchin <guro@fb.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Dave P Martin <Dave.Martin@arm.com>, James Morse <James.Morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 18 Jun 2020 09:58:28 +1200, Barry Song wrote:
-> hugetlb_cma_reserve() is called at the wrong place. numa_init has not been
-> done yet. so all reserved memory will be located at node0.
+On 17/06/2020 15:05, Catalin Marinas wrote:
+> On Wed, Jun 17, 2020 at 01:38:43PM +0100, Steven Price wrote:
+>> diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+>> index 75b1925763f1..6ecee1528566 100644
+>> --- a/arch/arm64/kvm/hyp/sysreg-sr.c
+>> +++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+>> @@ -26,6 +26,12 @@
+>>   static void __hyp_text __sysreg_save_common_state(struct kvm_cpu_context *ctxt)
+>>   {
+>>   	ctxt->sys_regs[MDSCR_EL1]	= read_sysreg(mdscr_el1);
+>> +	if (system_supports_mte()) {
+>> +		ctxt->sys_regs[RGSR_EL1] = read_sysreg_s(SYS_RGSR_EL1);
+>> +		ctxt->sys_regs[GCR_EL1] = read_sysreg_s(SYS_GCR_EL1);
+>> +		ctxt->sys_regs[TFSRE0_EL1] = read_sysreg_s(SYS_TFSRE0_EL1);
+>> +		ctxt->sys_regs[TFSR_EL1] = read_sysreg_s(SYS_TFSR_EL1);
+>> +	}
+> 
+> TFSR_EL1 is not a common register as we have the TFSR_EL2 as well. So
+> you'd have to access it as read_sysreg_el1(SYS_TFSR) so that, in the VHE
+> case, it generates TFSR_EL12, otherwise you just save the host register.
 
-Applied to arm64 (for-next/fixes), thanks!
+Ah, thanks for pointing that out - I'd got myself confused with the 
+whole VHE _EL12 registers. I'd managed to miss that TFSR is banked.
 
-[1/1] arm64: mm: reserve hugetlb CMA after numa_init
-      https://git.kernel.org/arm64/c/618e07865b74
+> Also, since TFSR*_EL1 can be set asynchronously, I think we need to set
+> the SCTLR_EL2.ITFSB bit so that the register update is synchronised on
+> entry to EL2. With VHE we get this automatically as part of
+> SCTLR_EL1_SET but it turns out that we have another SCTLR_ELx_FLAGS
+> macro for the non-VHE case (why not calling this SCTLR_EL2_* I have no
+> idea).
 
-Cheers,
--- 
-Will
+I hadn't noticed that there was a different set for the non-VHE case 
+which was missing ITFSB - I'll update that.
 
-https://fixes.arm64.dev
-https://next.arm64.dev
-https://will.arm64.dev
+Thanks,
+
+Steve
+
+>>   	/*
+>>   	 * The host arm64 Linux uses sp_el0 to point to 'current' and it must
+>> @@ -99,6 +105,12 @@ NOKPROBE_SYMBOL(sysreg_save_guest_state_vhe);
+>>   static void __hyp_text __sysreg_restore_common_state(struct kvm_cpu_context *ctxt)
+>>   {
+>>   	write_sysreg(ctxt->sys_regs[MDSCR_EL1],	  mdscr_el1);
+>> +	if (system_supports_mte()) {
+>> +		write_sysreg_s(ctxt->sys_regs[RGSR_EL1], SYS_RGSR_EL1);
+>> +		write_sysreg_s(ctxt->sys_regs[GCR_EL1], SYS_GCR_EL1);
+>> +		write_sysreg_s(ctxt->sys_regs[TFSRE0_EL1], SYS_TFSRE0_EL1);
+>> +		write_sysreg_s(ctxt->sys_regs[TFSR_EL1], SYS_TFSR_EL1);
+>> +	}
+> 
+> Similarly here, you override the TFSR_EL2 with VHE enabled.
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
