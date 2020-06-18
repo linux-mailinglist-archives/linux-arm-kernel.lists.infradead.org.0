@@ -2,91 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4F141FEF92
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 12:22:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 399EF1FEFB7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 12:35:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0LuzGkae72QJOl3WHeGwfgApbVN7+rHq5Myp3IeEIk8=; b=pzH+STVX94Dpoi
-	BpBLAocIKLh4UsrIs21fOcWF275gK1soa478fWyutDxR96PshzkE79uSG2/VN0eYIhsKbezH2M71f
-	qKtXQTjXw7h7xFpfLywy2dM8G5/3YfUdKmdIpH1KCsA+oAyDghoqxfJEYeppe8KPb/5tA9tKvzO2G
-	UGZmpaH18jgVvIn9VEnBaJHwqMYHv2FsExqH9ZrXG6o7dewQ2//WO932reNQ8+dD+VVmAsKKm/MVU
-	gh0ewudmAfY6SO6Jk5uZiK34Pr9Pz690+YE7EUzgmryXGT9qHFP7tuc+pfwoyTkxdS69cX+05RJ6w
-	PvOVaeDC7FY5Ll0YXSdA==;
+	List-Owner; bh=CCUmvDnUmXqeG5uXgYsiGG3hsf/TD4JYMLBiIJ4oE1M=; b=a+lHb67EAKnR4o
+	o2TrClYXtbwkk7KgEHIps+lgKKPj8pwNAJ8stpO3JfLzja1sbAhpbUYHiEoZGcb5qju1P2ygYB4xW
+	zdWsGC3VkckqZx8FSvD2CKl1yr40rgEq7feCUGrZmdH1v0OTd8S+7RzddnmiaKhvj+EnDNZg9UKUY
+	nx8nmsSk3SGqCgAIk1eGWcXDIvCXXdLmtBncH9UoV+6sne0+mf+Jv5JCXlfnu1ylt59/Jm/2ssknP
+	tDdRQs74nHrcRarPveTZXHiaD5QO/u7t6Llvz/wNh5Ls5dGu4qQIZ8D/vzytQneicmSUV/0dCRZZR
+	ImF19qBW0O1lF4hJuTpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlrgX-0002Gr-9T; Thu, 18 Jun 2020 10:22:17 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlrgD-0002GA-44
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 10:21:59 +0000
-Received: by mail-wr1-x442.google.com with SMTP id t18so5463567wru.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 03:21:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=lc5UhnoSRIFlDb4bTQaq1FSaNFdyYRNankkKgGtxJsM=;
- b=QPX3pcoULeRgdl8S5TEBqcc2VmR03uompZGl6g1kKu/NL/Em080sZdrASGWlK2EQRg
- iUYJsnXXUuP2l5H7lghNfhm6e7DfDZB8JWnUn/tbYdwvBsdWpJxLgaxEnYJHjgnzgMpw
- 3mFqngduzWwpciQJbBRQ6kl7j45e0UBKM1hAa1EJYMHfJvlYzWJ//F47grKwJm5rybRQ
- CCUxDrkozG6yAeZhvuCKl0HwzlLaxg+lYcM2Su9Ry8rFRDbWNCkQQcs5sjzzUtuat/iC
- sbbBUI9tpgXk8vu/WmvuTSBlogl7qf38y/XHzRnS5x0dXCCEbTe/9v2vRKE8Acmh3sOQ
- PRSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=lc5UhnoSRIFlDb4bTQaq1FSaNFdyYRNankkKgGtxJsM=;
- b=kYui1xSVV9UzgTXvHmAkbP7/BVkPM5iyUbJJjUAt1SoMGiu/C7byYlTLwccctaPU9e
- 4QlTCbDy6wPwG8tuFhYyS0VghyuThG5MNMIr5j7hT193DseXWA4QoQ2E5SXlmBXbfH0M
- hvMECgv5M6Byy9fbWktNB0gAdl89dCh0P8YDGZvkM9jHphpfvuGuuc1FMLuT3KG8i1KK
- Y/79Ec5szJ5ssv3h58R/s/QR0WfQOtToHmk1geWuaXeL/U5B9oiIOMB4SOcMDwbbVg9Z
- SzaFojvvqWWHelDZXvuTyl0AlH38EQyN7KWWV4bGRM6iBNwlaq16MlUzjY8uZF9sWNSN
- H2sQ==
-X-Gm-Message-State: AOAM532mUJx6Jtf7lmSXec5t9xcap1f4fbcdtk87onTJwdXqu0styTky
- afsg+Xu2Mp9D8VJRZQIhGCUYGA==
-X-Google-Smtp-Source: ABdhPJz5DhYnsCs3A52DCuEOd991w1DHFP+dRXEye2MKbtUEcRSXIjOpqlaA34AoVsAb5kpvszgzgA==
-X-Received: by 2002:adf:e588:: with SMTP id l8mr4057736wrm.255.1592475715609; 
- Thu, 18 Jun 2020 03:21:55 -0700 (PDT)
-Received: from dell ([95.149.164.118])
- by smtp.gmail.com with ESMTPSA id h188sm3145127wmh.2.2020.06.18.03.21.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 03:21:54 -0700 (PDT)
-Date: Thu, 18 Jun 2020 11:21:53 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: [GIT PULL] Immutable branch between MFD and Clocksource due for the
- v5.9 merge window
-Message-ID: <20200618102153.GF954398@dell>
-References: <20200603125439.23275-1-benjamin.gaignard@st.com>
+	id 1jlrtI-00031S-3C; Thu, 18 Jun 2020 10:35:28 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlrsy-00027C-M3; Thu, 18 Jun 2020 10:35:08 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 47CD230018A;
+ Thu, 18 Jun 2020 12:35:06 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 338BD20C227A0; Thu, 18 Jun 2020 12:35:06 +0200 (CEST)
+Date: Thu, 18 Jun 2020 12:35:06 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH 2/3] arm64: use PAGE_KERNEL_ROX directly in alloc_insn_page
+Message-ID: <20200618103506.GH576905@hirez.programming.kicks-ass.net>
+References: <20200618064307.32739-1-hch@lst.de>
+ <20200618064307.32739-3-hch@lst.de>
+ <90234f58-e83a-7f20-62a7-80a4e81cde95@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200603125439.23275-1-benjamin.gaignard@st.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_032157_165977_8CE6C579 
-X-CRM114-Status: GOOD (  11.32  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+In-Reply-To: <90234f58-e83a-7f20-62a7-80a4e81cde95@redhat.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,44 +53,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alexandre.torgue@st.com,
- daniel.lezcano@linaro.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, mcoquelin.stm32@gmail.com, tglx@linutronix.de,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+Cc: linux-hyperv@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ x86@kernel.org, Dexuan Cui <decui@microsoft.com>, linux-kernel@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-mm@kvack.org,
+ Jessica Yu <jeyu@kernel.org>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWxsIGJ1dCB0aGUgQVJNIHBhdGNoZXMsIHdoaWNoIHNob3VsZCBiZSByb3V0ZWQgdmlhIEFybS1T
-b0MuCgpFbmpveSEKClRoZSBmb2xsb3dpbmcgY2hhbmdlcyBzaW5jZSBjb21taXQgYjNhOWUzYjk2
-MjJhZTEwMDY0ODI2ZGNjYjRmN2E1MmJkODhjNzQwNzoKCiAgTGludXggNS44LXJjMSAoMjAyMC0w
-Ni0xNCAxMjo0NTowNCAtMDcwMCkKCmFyZSBhdmFpbGFibGUgaW4gdGhlIEdpdCByZXBvc2l0b3J5
-IGF0OgoKICBnaXQ6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvbGVl
-L21mZC5naXQgaWItbWZkLWNsb2Nrc291cmNlLXY1LjkKCmZvciB5b3UgdG8gZmV0Y2ggY2hhbmdl
-cyB1cCB0byA0OGI0MWM1ZTJkZTZjNTJjOTBlZmE5OWNmYTEyMmE1ZGE3YTdmMGNkOgoKICBjbG9j
-a3NvdXJjZTogQWRkIExvdyBQb3dlciBTVE0zMiB0aW1lcnMgZHJpdmVyICgyMDIwLTA2LTE4IDEx
-OjE5OjU4ICswMTAwKQoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpJbW11dGFibGUgYnJhbmNoIGJldHdlZW4gTUZEIGFuZCBD
-bG9ja3NvdXJjZSBkdWUgZm9yIHRoZSB2NS45IG1lcmdlIHdpbmRvdwoKLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpCZW5qYW1p
-biBHYWlnbmFyZCAoNCk6CiAgICAgIGR0LWJpbmRpbmdzOiBtZmQ6IERvY3VtZW50IFNUTTMyIGxv
-dyBwb3dlciB0aW1lciBiaW5kaW5ncwogICAgICBtZmQ6IHN0bTMyOiBBZGQgZGVmaW5lcyB0byBi
-ZSB1c2VkIGZvciBjbGtldmVudCBwdXJwb3NlCiAgICAgIG1mZDogc3RtMzI6IEVuYWJsZSByZWdt
-YXAgZmFzdF9pbyBmb3Igc3RtMzItbHB0aW1lcgogICAgICBjbG9ja3NvdXJjZTogQWRkIExvdyBQ
-b3dlciBTVE0zMiB0aW1lcnMgZHJpdmVyCgogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvbWZkL3N0
-LHN0bTMyLWxwdGltZXIueWFtbCAgfCAgIDUgKwogZHJpdmVycy9jbG9ja3NvdXJjZS9LY29uZmln
-ICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDQgKwogZHJpdmVycy9jbG9ja3NvdXJjZS9NYWtl
-ZmlsZSAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwogZHJpdmVycy9jbG9ja3NvdXJjZS90
-aW1lci1zdG0zMi1scC5jICAgICAgICAgICAgICAgfCAyMjEgKysrKysrKysrKysrKysrKysrKysr
-CiBkcml2ZXJzL21mZC9zdG0zMi1scHRpbWVyLmMgICAgICAgICAgICAgICAgICAgICAgICB8ICAg
-MSArCiBpbmNsdWRlL2xpbnV4L21mZC9zdG0zMi1scHRpbWVyLmggICAgICAgICAgICAgICAgICB8
-ICAgNSArCiA2IGZpbGVzIGNoYW5nZWQsIDIzNyBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9kZSAx
-MDA2NDQgZHJpdmVycy9jbG9ja3NvdXJjZS90aW1lci1zdG0zMi1scC5jCgotLSAKTGVlIEpvbmVz
-IFvmnY7nkLzmlq9dClNlbmlvciBUZWNobmljYWwgTGVhZCAtIERldmVsb3BlciBTZXJ2aWNlcwpM
-aW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQXJtIFNvQ3MKRm9sbG93IExp
-bmFybzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Jun 18, 2020 at 10:55:58AM +0200, David Hildenbrand wrote:
+> On 18.06.20 08:43, Christoph Hellwig wrote:
+> > Use PAGE_KERNEL_ROX directly instead of allocating RWX and setting the
+> > page read-only just after the allocation.
+> > 
+> > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> > ---
+> >  arch/arm64/kernel/probes/kprobes.c | 12 +++---------
+> >  1 file changed, 3 insertions(+), 9 deletions(-)
+> > 
+> > diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+> > index d1c95dcf1d7833..cbe49cd117cfec 100644
+> > --- a/arch/arm64/kernel/probes/kprobes.c
+> > +++ b/arch/arm64/kernel/probes/kprobes.c
+> > @@ -120,15 +120,9 @@ int __kprobes arch_prepare_kprobe(struct kprobe *p)
+> >  
+> >  void *alloc_insn_page(void)
+> >  {
+> > -	void *page;
+> > -
+> > -	page = vmalloc_exec(PAGE_SIZE);
+> > -	if (page) {
+> > -		set_memory_ro((unsigned long)page, 1);
+> > -		set_vm_flush_reset_perms(page);
+> > -	}
+> > -
+> > -	return page;
+> > +	return __vmalloc_node_range(PAGE_SIZE, 1, VMALLOC_START, VMALLOC_END,
+> > +			GFP_KERNEL, PAGE_KERNEL_ROX, VM_FLUSH_RESET_PERMS,
+> > +			NUMA_NO_NODE, __func__);
+> 
+> I do wonder if something like vmalloc_prot(size, prot) would make this
+> (and the other two users) easier to read.
+> 
+> So instead of ripping out vmalloc_exec(), converting it into
+> vmalloc_prot() instead.
+> 
+> Did you consider that?
+
+For x86 Christoph did module_alloc_prot(), which is in his more
+extensive set of patches addressing this. I suspect that would be the
+right thing for ARM64 as well.
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
