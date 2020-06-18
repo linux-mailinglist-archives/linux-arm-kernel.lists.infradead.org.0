@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CE101FE195
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:56:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AFB41FE197
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:56:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IdW/cqB2qoy2z5N4xntYXzFm8th8ma5Zryhj8Ym1aAw=; b=LuTzl6ydIj9kUt
-	FDg9QT0q+nETksKd9P4j9oymzwRV7jvUiJdOpUe/b4j5eLDuNE5s2L5gpfhVrgAwMSeet5TKpThJD
-	Irw2MI+lPbMjsmALoW6bmHfVt8DuhuDQTora/p2lwraKFU+WmMwIECbYedhzsrFotouq2Dqlwap8i
-	MxYM/s44X0C3YUeH+GwowXB8Mfn4vP2F91tZnUudwcW9CBmBmJFWc0BpBp859VmHE5CYTGCg6AoYy
-	AmVxr8mcUCDzOdPQLvCXUq42JXm8Hamw7mVYAAoUQL2MAt8ToBYGxlCvdUkAmjw0Ct3aG8Dav06VT
-	16W+4QizpaPHTmVLFQfg==;
+	List-Owner; bh=R1PvDSCPIXxQZjdC0mLTHZ5iu7KWer5VUdfDKtINhu0=; b=qd0sJFyn0Yelah
+	MG96bwBB9DljTOgGma9A3KvRY5NxTFZGYYr7z8IHviqtvHmoTZyz6rE9nSj7TYxHLN5VnefXhnNGp
+	tNfxh1bZDTqGV5kwOffx6PeK/tGmq4gNvuxqXQ539P2y7VtL77hJ1XJCNxUwnt3A0I67HdQEFsYtc
+	z/yhDxR0w8NO5ik/G+LMpQ62JaoF/XL/6OHmwiSKVztkYxRTHY2C/nlhpb/u/M6nBTE+uUlSPnerQ
+	HBDbYUU2mwVbMRNj7JJBxehogBFWYdP7zDPE99je1Lh6+M9fE1jmwjjg919BBjv7llX+0S5a0ftTm
+	3NfASOqAz+YHv4oVHSSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljma-0000h1-9R; Thu, 18 Jun 2020 01:56:00 +0000
+	id 1jljmx-00014T-PB; Thu, 18 Jun 2020 01:56:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljHl-0007P4-LC; Thu, 18 Jun 2020 01:24:12 +0000
+ id 1jljI0-0007bT-Aw
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:24:28 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9F0B921974;
- Thu, 18 Jun 2020 01:24:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 38D23214DB;
+ Thu, 18 Jun 2020 01:24:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443448;
- bh=T8yuiFplhkHxiUAjaifpVYPPuG9x26CJk7BTd3i7XHc=;
+ s=default; t=1592443463;
+ bh=Wp7xYEDfCCMqchX8R5l+t2q9Sok+IQ7gDVnbpgkFYfA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EvfamgsdMcDi45MjCdx80Lf9b7CLDIZdS562dVqnNqVrcEilDdHcPOuU4EtqzLkJG
- 9dNHPfLYOFpWdyA4JN74Iet10054aZJ8fSfk/IxmoMjp5uVEfzHxOzxp6rx/2p7zeD
- 516EyGBWILz9/0BxcXNDZeocOvtQEGjCzN9bu99w=
+ b=FFZk0otTZRQKdNI0IqujhMaSfyEGIM5VV2e/oIVMT8lLvYwFsW7xkmsiFg0CybWOG
+ q/2bSW2nUNmM2vGi2+8qJFsvt9gfWYjzTMvO6W3xoEI6CXvUCWLPBLdIRjPPtYq7GS
+ DDk95axXZoJPNHqLHlT36b3ixlabzccxCbwN1OUc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 084/172] pinctrl: rockchip: fix memleak in
- rockchip_dt_node_to_map
-Date: Wed, 17 Jun 2020 21:20:50 -0400
-Message-Id: <20200618012218.607130-84-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 096/172] usb/ohci-platform: Fix a warning when
+ hibernating
+Date: Wed, 17 Jun 2020 21:21:02 -0400
+Message-Id: <20200618012218.607130-96-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012218.607130-1-sashal@kernel.org>
 References: <20200618012218.607130-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182409_828828_8024410A 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20200617_182424_421831_EB1D6AC9 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,72 +80,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Oliver Neukum <oneukum@suse.de>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Tony Prisk <linux@prisktech.co.nz>, Alan Stern <stern@rowland.harvard.edu>,
+ Qais Yousef <qais.yousef@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+From: Qais Yousef <qais.yousef@arm.com>
 
-[ Upstream commit d7faa8ffb6be57bf8233a4b5a636d76b83c51ce7 ]
+[ Upstream commit 1cb3b0095c3d0bb96912bfbbce4fc006d41f367c ]
 
-In function rockchip_dt_node_to_map, a new_map variable is
-allocated by:
+The following warning was observed when attempting to suspend to disk
+using a USB flash as a swap device.
 
-new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
-		       GFP_KERNEL);
+[  111.779649] ------------[ cut here ]------------
+[  111.788382] URB (____ptrval____) submitted while active
+[  111.796646] WARNING: CPU: 3 PID: 365 at drivers/usb/core/urb.c:363 usb_submit_urb+0x3d8/0x590
+[  111.805417] Modules linked in:
+[  111.808584] CPU: 3 PID: 365 Comm: kworker/3:2 Not tainted 5.6.0-rc6-00002-gdfd1731f9a3e-dirty #545
+[  111.817796] Hardware name: ARM Juno development board (r2) (DT)
+[  111.823896] Workqueue: usb_hub_wq hub_event
+[  111.828217] pstate: 60000005 (nZCv daif -PAN -UAO)
+[  111.833156] pc : usb_submit_urb+0x3d8/0x590
+[  111.837471] lr : usb_submit_urb+0x3d8/0x590
+[  111.841783] sp : ffff800018de38b0
+[  111.845205] x29: ffff800018de38b0 x28: 0000000000000003
+[  111.850682] x27: ffff000970530b20 x26: ffff8000133fd000
+[  111.856159] x25: ffff8000133fd000 x24: ffff800018de3b38
+[  111.861635] x23: 0000000000000004 x22: 0000000000000c00
+[  111.867112] x21: 0000000000000000 x20: 00000000fffffff0
+[  111.872589] x19: ffff0009704e7a00 x18: ffffffffffffffff
+[  111.878065] x17: 00000000a7c8f4bc x16: 000000002af33de8
+[  111.883542] x15: ffff8000133fda88 x14: 0720072007200720
+[  111.889019] x13: 0720072007200720 x12: 0720072007200720
+[  111.894496] x11: 0000000000000000 x10: 00000000a5286134
+[  111.899973] x9 : 0000000000000002 x8 : ffff000970c837a0
+[  111.905449] x7 : 0000000000000000 x6 : ffff800018de3570
+[  111.910926] x5 : 0000000000000001 x4 : 0000000000000003
+[  111.916401] x3 : 0000000000000000 x2 : ffff800013427118
+[  111.921879] x1 : 9d4e965b4b7d7c00 x0 : 0000000000000000
+[  111.927356] Call trace:
+[  111.929892]  usb_submit_urb+0x3d8/0x590
+[  111.933852]  hub_activate+0x108/0x7f0
+[  111.937633]  hub_resume+0xac/0x148
+[  111.941149]  usb_resume_interface.isra.10+0x60/0x138
+[  111.946265]  usb_resume_both+0xe4/0x140
+[  111.950225]  usb_runtime_resume+0x24/0x30
+[  111.954365]  __rpm_callback+0xdc/0x138
+[  111.958236]  rpm_callback+0x34/0x98
+[  111.961841]  rpm_resume+0x4a8/0x720
+[  111.965445]  rpm_resume+0x50c/0x720
+[  111.969049]  __pm_runtime_resume+0x4c/0xb8
+[  111.973276]  usb_autopm_get_interface+0x28/0x60
+[  111.977948]  hub_event+0x80/0x16d8
+[  111.981466]  process_one_work+0x2a4/0x748
+[  111.985604]  worker_thread+0x48/0x498
+[  111.989387]  kthread+0x13c/0x140
+[  111.992725]  ret_from_fork+0x10/0x18
+[  111.996415] irq event stamp: 354
+[  111.999756] hardirqs last  enabled at (353): [<ffff80001019ea1c>] console_unlock+0x504/0x5b8
+[  112.008441] hardirqs last disabled at (354): [<ffff8000100a95d0>] do_debug_exception+0x1a8/0x258
+[  112.017479] softirqs last  enabled at (350): [<ffff8000100818a4>] __do_softirq+0x4bc/0x568
+[  112.025984] softirqs last disabled at (343): [<ffff8000101145a4>] irq_exit+0x144/0x150
+[  112.034129] ---[ end trace dc96030b9cf6c8a3 ]---
 
-This uses devres and attaches new_map to the pinctrl driver.
-This cause a leak since new_map is not released when the probed
-driver is removed. Fix it by using kcalloc to allocate new_map
-and free it in `rockchip_dt_free_map`
+The problem was tracked down to a missing call to
+pm_runtime_set_active() on resume in ohci-platform.
 
-Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-Link: https://lore.kernel.org/r/20200506100903.15420-1-dafna.hirschfeld@collabora.com
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Link: https://lore.kernel.org/lkml/20200323143857.db5zphxhq4hz3hmd@e107158-lin.cambridge.arm.com/
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
+Signed-off-by: Qais Yousef <qais.yousef@arm.com>
+CC: Tony Prisk <linux@prisktech.co.nz>
+CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+CC: Mathias Nyman <mathias.nyman@intel.com>
+CC: Oliver Neukum <oneukum@suse.de>
+CC: linux-arm-kernel@lists.infradead.org
+CC: linux-usb@vger.kernel.org
+CC: linux-kernel@vger.kernel.org
+Link: https://lore.kernel.org/r/20200518154931.6144-1-qais.yousef@arm.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/pinctrl-rockchip.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/usb/host/ohci-platform.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
-index 8d83817935da..005df24f5b3f 100644
---- a/drivers/pinctrl/pinctrl-rockchip.c
-+++ b/drivers/pinctrl/pinctrl-rockchip.c
-@@ -507,8 +507,8 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+diff --git a/drivers/usb/host/ohci-platform.c b/drivers/usb/host/ohci-platform.c
+index 65a1c3fdc88c..f40112c5920d 100644
+--- a/drivers/usb/host/ohci-platform.c
++++ b/drivers/usb/host/ohci-platform.c
+@@ -301,6 +301,11 @@ static int ohci_platform_resume(struct device *dev)
  	}
  
- 	map_num += grp->npins;
--	new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
--								GFP_KERNEL);
+ 	ohci_resume(hcd, false);
 +
-+	new_map = kcalloc(map_num, sizeof(*new_map), GFP_KERNEL);
- 	if (!new_map)
- 		return -ENOMEM;
- 
-@@ -518,7 +518,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
- 	/* create mux map */
- 	parent = of_get_parent(np);
- 	if (!parent) {
--		devm_kfree(pctldev->dev, new_map);
-+		kfree(new_map);
- 		return -EINVAL;
- 	}
- 	new_map[0].type = PIN_MAP_TYPE_MUX_GROUP;
-@@ -545,6 +545,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
- static void rockchip_dt_free_map(struct pinctrl_dev *pctldev,
- 				    struct pinctrl_map *map, unsigned num_maps)
- {
-+	kfree(map);
++	pm_runtime_disable(dev);
++	pm_runtime_set_active(dev);
++	pm_runtime_enable(dev);
++
+ 	return 0;
  }
- 
- static const struct pinctrl_ops rockchip_pctrl_ops = {
+ #endif /* CONFIG_PM_SLEEP */
 -- 
 2.25.1
 
