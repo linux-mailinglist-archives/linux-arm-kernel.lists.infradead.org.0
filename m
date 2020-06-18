@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D33971FF84C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 17:57:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBD501FF850
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 17:57:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gEoWNIbt8OokOqKuvHDlCdRc0zPu0QXmQWNJRMjpB3U=; b=U2lEI/RmhXLICQ
-	Ztw1up/yA+xUSJZ7iYjQDZJiYteXEQlbPLbdM06+qeg0BmOOy66TaQROZki0KPlX9mKJ8UoqOwepd
-	ryyemXQbyfCgr0atx8x7Ly7bs/ToRGYW9LqoQnVXS4Era42MQnsel9lYUCsLEau5pXR66/tlKFUM8
-	ianvtynlErMddDGNtQY3e/mxcETIhoWSZnhA6q3slmrfIOO4zyeoqjXB8j3B+ONOaWXynXxXhnMQ1
-	sWaYfmkgItyF+3UcQ3vyCKhxZVzI6hgWSEaTrCjGrC6BQImwYdP7FNjc0N2BKTsP3zGR4RvM7Dl1d
-	1JfwnCv7088YTkHRyPJw==;
+	List-Owner; bh=RRIalcTUnXrCJJkDxJkdHbExJUa5gfQkz/aJ2ji/JgM=; b=pJKwEQB1Ifi1ay
+	PMlSgboThLkceB2QskP5qBlQdRvk8nZgZHJFz3DvzNHWQyv5p1W6kZD/shN4diDibSSk0S9oM6Gwe
+	UAkJgaTaTAiUurA+/Wuv1rqvqGgmZ9KNXScMvKVA+wj+w66sxoeFhzBQbBx7FgGgRCmsGUhzovNdg
+	+mT8TnUJgsD1mAQSikBtBQxlB/rHsBOLph8EiP6Q7kSHcW2//HwuDea+5OCc7Rr1U0jCUvT8nMaBu
+	3cQHcmhDOS1+R8LXKgKUkhTmoS6XSXg2ohmYfiAEC/9wHTcnDFMSw9TIqt1EhjAMTOV8T84L9N3/F
+	A0XQ1QKwSR9msN7LaFng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlwuP-0007bV-2N; Thu, 18 Jun 2020 15:56:57 +0000
-Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
+	id 1jlwuf-0007zW-4L; Thu, 18 Jun 2020 15:57:13 +0000
+Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlwqL-0002Ch-J8
+ id 1jlwqM-0002Db-K4
  for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 15:52:55 +0000
-Received: by mail-ej1-x641.google.com with SMTP id p20so6897034ejd.13
+Received: by mail-ej1-x644.google.com with SMTP id y13so6959914eju.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 08:52:45 -0700 (PDT)
+ Thu, 18 Jun 2020 08:52:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FY0aPXr4T1XKvh6YqCT/xGUuNfXzsIgkFE1SNeWNDTU=;
- b=h0r3TSsbVyAd/GgpK2IGqK86/znVI1rJ0Spx39sObm1jycjjG19VLycMXWz+PqwAN1
- oJI824ldExIo5cDBCcj0Ykma1Yj12YE9UxnQUpmC2qwfvxAhm44lkQ/X5pRfLXPtH9Xn
- 58s1XcNZnylhoa5mj1clF3V/tN61SIwOU5PuOJz7lf44dVjhinD4zYC005kKGHt8NHyB
- pOmYn3TiDbLE9pcftz7/UUy3qwXjdz10rktsWo+MzTpkvFAVrA3BQxS77yG/SRKHV3bN
- eE4pDvlRXb9dT7bdEDJdIHi9I5KBg2fxj0Ez+BMUb+E08Ehg0Oi7tTdLqUqvYvMJap3t
- WJPg==
+ bh=OszwHFuvAODAZ4JcDGk8vTdgEsm3AXU3gmIMXDwpr1E=;
+ b=CXa/IxLq2sAhhWXEwadxVdBTNRXCjnNRJ86QHDU2Mv2XE4055xNa1KydScB6wK21ZB
+ cXy76zowZ7DH6oYph6Pl7OuFVuh4YQj0mvtW0MxteQ4UcjzMXY+xljI/4UnbdNVn8beh
+ plIgdS+Z0wk8kS8Nt5E8eD6lwtdFgeDqCh4xStJzlWi7O9hNV7KqxuDuPglptEYvakjg
+ 4gRgbFs6be6neKEhVJpZF7i5q6uxLLCAUoZE3762HcKHIu0WyhDcJaTICqaeIgkR/5so
+ ELvNZAlx+cNLKnbAJ14SIMrBO5wUtNh1LjFnDsET/fpJA6CuAxpepH0+ZH331HeSTxGC
+ PuMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=FY0aPXr4T1XKvh6YqCT/xGUuNfXzsIgkFE1SNeWNDTU=;
- b=RF0VekTZyDnG8nZk6QxsRNyTt5W4CdItIHcZx3fmiAEOIbbr/Ynxq7dGQv0Ga/WeHi
- 7QXJ0B0jCDUEWaQKhrl9ffDZFSbTV4kcan5nytAvzGdB25ZvBg+vs6U+hwdXRdaQLFEJ
- 6IsjCxlCwI/zLelOXFTYDojVcP054XsD3aGTJ/IAzviuNhlyHEisfH8iC4bO/Q1mGoWv
- MRdTIApwcxCYZ+Xcz9R/rAwfJaW9lTXSUQB4lkBP/zlDgUzFLcHFObAPIgWQWVK98dFV
- TM1IEyvWNKA6fJlkbT3MOFHIcGxR9m7jP/PhxmGleWpRaiDn1XQeL62NhHoUnABetME9
- ms0A==
-X-Gm-Message-State: AOAM531WuSU1WebO4uOgCj3wXvtA+GrKdfyVDgMlGa1COWcu3+Qh0KTf
- Fv7pAtQiFuPAZCRPULYvXftThlspIkblUQ==
-X-Google-Smtp-Source: ABdhPJxPqR2tMmpRqJZE3NxKQ3H6rUsjM+EqJN0+OqhoA1wLKcbML/g//NRUZvq8y8ascWv+p439Rg==
-X-Received: by 2002:a17:906:3e0c:: with SMTP id
- k12mr4362788eji.441.1592495564354; 
- Thu, 18 Jun 2020 08:52:44 -0700 (PDT)
+ bh=OszwHFuvAODAZ4JcDGk8vTdgEsm3AXU3gmIMXDwpr1E=;
+ b=D4fmLWGfW2AqHME/oFG41U8hPMxp46q9d8meEiL/v9ymvj9iz/0R2l18lkAK4b0678
+ 1WjtMNzTTIQdIuUS0kP9UJj09Wyet755lZvYPcHADqKnTiVjVv4LRYsTdffgfESJIWvP
+ RmnRx6kj82rmmYdlrsSrzAlAE6jb2Zc357QL2S4C3Kd+RnEMIOgw/986APIHr6NRr2II
+ CBb6aghijaqpbdb8AAJR1gfzkcKBjBsbRNq5w4OmyRvPssAQovj5eDItxe0J1YEmnmw9
+ up4ak/8IrwwbePUGQgsHDH4G/eFTtvXchrtw/GKntItwMHHfXM8vTWUZDnNAOKY4mjbJ
+ YDDg==
+X-Gm-Message-State: AOAM533dlZSAjlLXfyPht5RTy7Rpbi9ZnAXTTY7pXe76AB6heT0yWM8Y
+ N1zKLI/6bsabLG2ZoKtlNcsygA==
+X-Google-Smtp-Source: ABdhPJyc8Mnmi4a1Aktae1QZY9O3zjJrhf37UfpwnWXbqDPMbp6c+LvxNDW5UP6lbOX5cvWPvekjsQ==
+X-Received: by 2002:a17:906:9257:: with SMTP id
+ c23mr4487938ejx.86.1592495565343; 
+ Thu, 18 Jun 2020 08:52:45 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:1715:4e26:a7e0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id 63sm2402267edy.8.2020.06.18.08.52.43
+ by smtp.gmail.com with ESMTPSA id 63sm2402267edy.8.2020.06.18.08.52.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 08:52:43 -0700 (PDT)
+ Thu, 18 Jun 2020 08:52:44 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
  linux-mm@kvack.org
-Subject: [PATCH v8 05/12] iommu/io-pgtable-arm: Move some definitions to a
- header
-Date: Thu, 18 Jun 2020 17:51:18 +0200
-Message-Id: <20200618155125.1548969-6-jean-philippe@linaro.org>
+Subject: [PATCH v8 06/12] arm64: cpufeature: Export symbol
+ read_sanitised_ftr_reg()
+Date: Thu, 18 Jun 2020 17:51:19 +0200
+Message-Id: <20200618155125.1548969-7-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200618155125.1548969-1-jean-philippe@linaro.org>
 References: <20200618155125.1548969-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_085245_672975_D6973104 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20200618_085246_743067_24968F78 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,128 +103,37 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: fenghua.yu@intel.com, jacob.jun.pan@linux.intel.com,
  Jean-Philippe Brucker <jean-philippe@linaro.org>, catalin.marinas@arm.com,
- joro@8bytes.org, robin.murphy@arm.com, hch@infradead.org,
- zhengxiang9@huawei.com, Jonathan.Cameron@huawei.com, zhangfei.gao@linaro.org,
- will@kernel.org, xuzaibo@huawei.com, baolu.lu@linux.intel.com
+ joro@8bytes.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ robin.murphy@arm.com, hch@infradead.org, zhengxiang9@huawei.com,
+ Jonathan.Cameron@huawei.com, zhangfei.gao@linaro.org, will@kernel.org,
+ xuzaibo@huawei.com, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Extract some of the most generic TCR defines, so they can be reused by
-the page table sharing code.
+The SMMUv3 driver would like to read the MMFR0 PARANGE field in order to
+share CPU page tables with devices. Allow the driver to be built as
+module by exporting the read_sanitized_ftr_reg() cpufeature symbol.
 
-Acked-by: Will Deacon <will@kernel.org>
+Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/io-pgtable-arm.h | 30 ++++++++++++++++++++++++++++++
- drivers/iommu/io-pgtable-arm.c | 27 ++-------------------------
- MAINTAINERS                    |  3 +--
- 3 files changed, 33 insertions(+), 27 deletions(-)
- create mode 100644 drivers/iommu/io-pgtable-arm.h
+ arch/arm64/kernel/cpufeature.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/iommu/io-pgtable-arm.h b/drivers/iommu/io-pgtable-arm.h
-new file mode 100644
-index 0000000000000..ba7cfdf7afa03
---- /dev/null
-+++ b/drivers/iommu/io-pgtable-arm.h
-@@ -0,0 +1,30 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+#ifndef IO_PGTABLE_ARM_H_
-+#define IO_PGTABLE_ARM_H_
-+
-+#define ARM_LPAE_TCR_TG0_4K		0
-+#define ARM_LPAE_TCR_TG0_64K		1
-+#define ARM_LPAE_TCR_TG0_16K		2
-+
-+#define ARM_LPAE_TCR_TG1_16K		1
-+#define ARM_LPAE_TCR_TG1_4K		2
-+#define ARM_LPAE_TCR_TG1_64K		3
-+
-+#define ARM_LPAE_TCR_SH_NS		0
-+#define ARM_LPAE_TCR_SH_OS		2
-+#define ARM_LPAE_TCR_SH_IS		3
-+
-+#define ARM_LPAE_TCR_RGN_NC		0
-+#define ARM_LPAE_TCR_RGN_WBWA		1
-+#define ARM_LPAE_TCR_RGN_WT		2
-+#define ARM_LPAE_TCR_RGN_WB		3
-+
-+#define ARM_LPAE_TCR_PS_32_BIT		0x0ULL
-+#define ARM_LPAE_TCR_PS_36_BIT		0x1ULL
-+#define ARM_LPAE_TCR_PS_40_BIT		0x2ULL
-+#define ARM_LPAE_TCR_PS_42_BIT		0x3ULL
-+#define ARM_LPAE_TCR_PS_44_BIT		0x4ULL
-+#define ARM_LPAE_TCR_PS_48_BIT		0x5ULL
-+#define ARM_LPAE_TCR_PS_52_BIT		0x6ULL
-+
-+#endif /* IO_PGTABLE_ARM_H_ */
-diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-index 04fbd4bf0ff9f..f71a2eade04ab 100644
---- a/drivers/iommu/io-pgtable-arm.c
-+++ b/drivers/iommu/io-pgtable-arm.c
-@@ -20,6 +20,8 @@
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 4ae41670c2e6b..ba1e17ad17447 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1068,6 +1068,7 @@ u64 read_sanitised_ftr_reg(u32 id)
+ 		return 0;
+ 	return regp->sys_val;
+ }
++EXPORT_SYMBOL_GPL(read_sanitised_ftr_reg);
  
- #include <asm/barrier.h>
- 
-+#include "io-pgtable-arm.h"
-+
- #define ARM_LPAE_MAX_ADDR_BITS		52
- #define ARM_LPAE_S2_MAX_CONCAT_PAGES	16
- #define ARM_LPAE_MAX_LEVELS		4
-@@ -100,23 +102,6 @@
- #define ARM_LPAE_PTE_MEMATTR_DEV	(((arm_lpae_iopte)0x1) << 2)
- 
- /* Register bits */
--#define ARM_LPAE_TCR_TG0_4K		0
--#define ARM_LPAE_TCR_TG0_64K		1
--#define ARM_LPAE_TCR_TG0_16K		2
--
--#define ARM_LPAE_TCR_TG1_16K		1
--#define ARM_LPAE_TCR_TG1_4K		2
--#define ARM_LPAE_TCR_TG1_64K		3
--
--#define ARM_LPAE_TCR_SH_NS		0
--#define ARM_LPAE_TCR_SH_OS		2
--#define ARM_LPAE_TCR_SH_IS		3
--
--#define ARM_LPAE_TCR_RGN_NC		0
--#define ARM_LPAE_TCR_RGN_WBWA		1
--#define ARM_LPAE_TCR_RGN_WT		2
--#define ARM_LPAE_TCR_RGN_WB		3
--
- #define ARM_LPAE_VTCR_SL0_MASK		0x3
- 
- #define ARM_LPAE_TCR_T0SZ_SHIFT		0
-@@ -124,14 +109,6 @@
- #define ARM_LPAE_VTCR_PS_SHIFT		16
- #define ARM_LPAE_VTCR_PS_MASK		0x7
- 
--#define ARM_LPAE_TCR_PS_32_BIT		0x0ULL
--#define ARM_LPAE_TCR_PS_36_BIT		0x1ULL
--#define ARM_LPAE_TCR_PS_40_BIT		0x2ULL
--#define ARM_LPAE_TCR_PS_42_BIT		0x3ULL
--#define ARM_LPAE_TCR_PS_44_BIT		0x4ULL
--#define ARM_LPAE_TCR_PS_48_BIT		0x5ULL
--#define ARM_LPAE_TCR_PS_52_BIT		0x6ULL
--
- #define ARM_LPAE_MAIR_ATTR_SHIFT(n)	((n) << 3)
- #define ARM_LPAE_MAIR_ATTR_MASK		0xff
- #define ARM_LPAE_MAIR_ATTR_DEVICE	0x04
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 68f21d46614c4..2e3220273e4d5 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1499,8 +1499,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Maintained
- F:	Documentation/devicetree/bindings/iommu/arm,smmu*
- F:	drivers/iommu/arm-smmu*
--F:	drivers/iommu/io-pgtable-arm-v7s.c
--F:	drivers/iommu/io-pgtable-arm.c
-+F:	drivers/iommu/io-pgtable-arm*
- 
- ARM SUB-ARCHITECTURES
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ #define read_sysreg_case(r)	\
+ 	case r:		return read_sysreg_s(r)
 -- 
 2.27.0
 
