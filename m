@@ -2,73 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56C0D1FE07F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:49:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51BF21FDEA9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:36:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tciZ0GD1/d4N4dRC6n65wHIHdgv55mYl7FtCoIyA+rQ=; b=T39AWX/o0uCIBs
-	Yvfl624rQk9BKCfWXgLDOKaVpciUC5ycuwvhuJegT+g+QnahkqKbVv3VyAuY39nq90BKr0TUEfpBi
-	vi3bazKuSDdkRX6NV9RUI+t5yOlT7hMHOAJYVUs/9HN2SP/PD+os1/wH8nF1xSpjuod01CphX/3xx
-	fkSnC/xaKAuGH0GSun6n87hdKYHMp2n2ifZ6SYMWMDRIGlIrOkwrc6ZZpod5j18vyF0iMPHR5RiRq
-	o2oJKP+v0ryaxXXNso5g9AvK0G5UMA/sHtWlyKFS99ac3jKe6lWjUoO1QGXimuPa2OpHOEbv+IRIv
-	qtEnMAAj3nP8cY4VBbuw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+Ru54Asx8rw8AOhA5uUnYGZ+3nbNjvp1Wbew4D5UZAw=; b=sjQ
+	ga/Geg461nR3eJ+q99g24RlTtu+L0TFueruIF68Sej8ghROBsYo0gD6a+8N5BT8GiEz11NoQuPMhB
+	Q5kHjEMYMa27AOpdAV/KFsPmMTsg0H202n+4G/5X3+tRbk6yWO8fLEfPiotbgx+1anjX/FGnUa8rK
+	SZUdtc0JV3NcTr1hvAjK43VwgA/dPPbARy8HweIoNTsaT6j3dow6fICx3DBB5GhA7cPnx7Sniz9e/
+	j4HXLaanFkQs+r6aEq4J4FuOQ0clebGxayJoLYBHC8T8InfARuLyzLGaWj8ovTbIiPMc9ZwQ2kfCO
+	CHwfhT0YNKcFq+Wi/2mQxMCNG7Zx0UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljgY-0007wS-HT; Thu, 18 Jun 2020 01:49:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljEZ-0004dA-0U
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:20:57 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F0B9021D80;
- Thu, 18 Jun 2020 01:20:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443250;
- bh=p1QxLNtIiF1Wd6fV8oE0kvXASll9STFxqv84ZPOaiNY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lqDt3RbiHV38RhGzp1J/y2fNFPiT2fV9TiSmnxltWWEw7UGAFKGYvaejecGyTs+bn
- IOKVKT3Eu6pmfQgf/v/5Ytpnxmy+AbBxxJUabutXRAHKpejon+M0bbKvHVvM3TYmJX
- FwzehTmQSBSuh/uvfU/+c5HLx+/J/+ste7bpN22o=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 199/266] misc: xilinx-sdfec: improve
- get_user_pages_fast() error handling
-Date: Wed, 17 Jun 2020 21:15:24 -0400
-Message-Id: <20200618011631.604574-199-sashal@kernel.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
-References: <20200618011631.604574-1-sashal@kernel.org>
-MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+	id 1jljTo-0007mx-85; Thu, 18 Jun 2020 01:36:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jljA8-0007Lj-GQ; Thu, 18 Jun 2020 01:16:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8BB6C31B;
+ Wed, 17 Jun 2020 18:16:13 -0700 (PDT)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.80.176])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3351C3F6CF;
+ Wed, 17 Jun 2020 18:16:02 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH V3 (RESEND) 0/3] arm64: Enable vmemmap mapping from device
+ memory
+Date: Thu, 18 Jun 2020 06:45:27 +0530
+Message-Id: <1592442930-9380-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182051_188753_B2547C3A 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200617_181616_659033_9FA4913E 
+X-CRM114-Status: GOOD (  12.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,107 +58,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- John Hubbard <jhubbard@nvidia.com>, Dragan Cvetic <dragan.cvetic@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Derek Kiernan <derek.kiernan@xilinx.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@samba.org>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Fenghua Yu <fenghua.yu@intel.com>, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Andy Lutomirski <luto@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Tony Luck <tony.luck@intel.com>, linux-kernel@vger.kernel.org,
+ Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: John Hubbard <jhubbard@nvidia.com>
+This series enables vmemmap backing memory allocation from device memory
+ranges on arm64. But before that, it enables vmemmap_populate_basepages()
+and vmemmap_alloc_block_buf() to accommodate struct vmem_altmap based
+alocation requests.
 
-[ Upstream commit 57343d51613227373759f5b0f2eede257fd4b82e ]
+This series applies on 5.8-rc1.
 
-This fixes the case of get_user_pages_fast() returning a -errno.
-The result needs to be stored in a signed integer. And for safe
-signed/unsigned comparisons, it's best to keep everything signed.
-And get_user_pages_fast() also expects a signed value for number
-of pages to pin.
+Pending Question:
 
-Therefore, change most relevant variables, from u32 to int. Leave
-"n" unsigned, for convenience in checking for overflow. And provide
-a WARN_ON_ONCE() and early return, if overflow occurs.
+altmap_alloc_block_buf() does not have any other remaining users in the
+tree after this change. Should it be converted into a static function and
+it's declaration be dropped from the header (include/linux/mm.h). Avoided
+doing so because I was not sure if there are any off-tree users or not.
 
-Also, as long as we're tidying up: rename the page array from page,
-to pages, in order to match the conventions used in most other call
-sites.
+Changes in V3:
 
-Fixes: 20ec628e8007e ("misc: xilinx_sdfec: Add ability to configure LDPC")
-Cc: Derek Kiernan <derek.kiernan@xilinx.com>
-Cc: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Michal Simek <michal.simek@xilinx.com>
+- Dropped comment from free_hotplug_page_range() per Robin
+- Modified comment in unmap_hotplug_range() per Robin
+- Enabled altmap support in vmemmap_alloc_block_buf() per Robin
+
+Changes in V2: (https://lkml.org/lkml/2020/3/4/475)
+
+- Rebased on latest hot-remove series (v14) adding P4D page table support
+
+Changes in V1: (https://lkml.org/lkml/2020/1/23/12)
+
+- Added an WARN_ON() in unmap_hotplug_range() when altmap is
+  provided without the page table backing memory being freed
+
+Changes in RFC V2: (https://lkml.org/lkml/2019/10/21/11)
+
+- Changed the commit message on 1/2 patch per Will
+- Changed the commit message on 2/2 patch as well
+- Rebased on arm64 memory hot remove series (v10)
+
+RFC V1: (https://lkml.org/lkml/2019/6/28/32)
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Paul Walmsley <paul.walmsley@sifive.com>
+Cc: Palmer Dabbelt <palmer@dabbelt.com>
+Cc: Tony Luck <tony.luck@intel.com>
+Cc: Fenghua Yu <fenghua.yu@intel.com>
+Cc: Dave Hansen <dave.hansen@linux.intel.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: David Hildenbrand <david@redhat.com>
+Cc: Mike Rapoport <rppt@linux.ibm.com>
+Cc: Michal Hocko <mhocko@suse.com>
+Cc: "Matthew Wilcox (Oracle)" <willy@infradead.org>
+Cc: "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Dan Williams <dan.j.williams@intel.com>
+Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
 Cc: linux-arm-kernel@lists.infradead.org
-Signed-off-by: John Hubbard <jhubbard@nvidia.com>
-Link: https://lore.kernel.org/r/20200527012628.1100649-2-jhubbard@nvidia.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/misc/xilinx_sdfec.c | 27 +++++++++++++++++----------
- 1 file changed, 17 insertions(+), 10 deletions(-)
+Cc: linux-ia64@vger.kernel.org
+Cc: linux-riscv@lists.infradead.org
+Cc: x86@kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-mm@kvack.org
+Cc: linux-kernel@vger.kernel.org
 
-diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-index 48ba7e02bed7..d4c14b617201 100644
---- a/drivers/misc/xilinx_sdfec.c
-+++ b/drivers/misc/xilinx_sdfec.c
-@@ -602,10 +602,10 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
- 			      const u32 depth)
- {
- 	u32 reg = 0;
--	u32 res;
--	u32 n, i;
-+	int res, i, nr_pages;
-+	u32 n;
- 	u32 *addr = NULL;
--	struct page *page[MAX_NUM_PAGES];
-+	struct page *pages[MAX_NUM_PAGES];
- 
- 	/*
- 	 * Writes that go beyond the length of
-@@ -622,15 +622,22 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
- 	if ((len * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE)
- 		n += 1;
- 
--	res = get_user_pages_fast((unsigned long)src_ptr, n, 0, page);
--	if (res < n) {
--		for (i = 0; i < res; i++)
--			put_page(page[i]);
-+	if (WARN_ON_ONCE(n > INT_MAX))
-+		return -EINVAL;
-+
-+	nr_pages = n;
-+
-+	res = get_user_pages_fast((unsigned long)src_ptr, nr_pages, 0, pages);
-+	if (res < nr_pages) {
-+		if (res > 0) {
-+			for (i = 0; i < res; i++)
-+				put_page(pages[i]);
-+		}
- 		return -EINVAL;
- 	}
- 
--	for (i = 0; i < n; i++) {
--		addr = kmap(page[i]);
-+	for (i = 0; i < nr_pages; i++) {
-+		addr = kmap(pages[i]);
- 		do {
- 			xsdfec_regwrite(xsdfec,
- 					base_addr + ((offset + reg) *
-@@ -639,7 +646,7 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
- 			reg++;
- 		} while ((reg < len) &&
- 			 ((reg * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE));
--		put_page(page[i]);
-+		put_page(pages[i]);
- 	}
- 	return reg;
- }
+Anshuman Khandual (3):
+  mm/sparsemem: Enable vmem_altmap support in vmemmap_populate_basepages()
+  mm/sparsemem: Enable vmem_altmap support in vmemmap_alloc_block_buf()
+  arm64/mm: Enable vmem_altmap support for vmemmap mappings
+
+ arch/arm64/mm/mmu.c       | 59 ++++++++++++++++++++++++++-------------
+ arch/ia64/mm/discontig.c  |  2 +-
+ arch/powerpc/mm/init_64.c | 10 +++----
+ arch/riscv/mm/init.c      |  2 +-
+ arch/x86/mm/init_64.c     | 12 ++++----
+ include/linux/mm.h        |  8 ++++--
+ mm/sparse-vmemmap.c       | 38 ++++++++++++++++++++-----
+ 7 files changed, 87 insertions(+), 44 deletions(-)
+
 -- 
-2.25.1
+2.20.1
 
 
 _______________________________________________
