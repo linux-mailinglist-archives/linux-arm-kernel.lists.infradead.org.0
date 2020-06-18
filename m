@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 038AC1FDE0A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:30:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0314C1FDE18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:30:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8BeroXNBTFl7aLfdZisNZto5Eh6zBaqZb33iwC3v7ek=; b=TxwIzUP61+rRCB
-	Tt+y9Ee8SrnwAcxjTvUEKyQJRXz62UQazxGCrP6pZ75fj4SKhDT+e97q+JLWAOwb/OD9Hha88xMcW
-	d40JUV4bxjmu3JR13QH2NCIBEBxzk0UFKb0s30BIF62HBJtv6Tsi0MuuDUAEkiuvOc0PxtM0LYhIM
-	0FAGaDsdJQvUGr1B3L6rPKPXkP2cC6S8f+jx8fcLnpcIqt179D6t2YxhAHrtGgRuDXl69id9FKN4U
-	yenOOAXBZpaJxAQTKD2s1Hk6a4Aw/rItDStcrhuUNzmgh9aQ77PSSOZ17HOdGct8pW3WuEhposch3
-	VeoaU8sJf9envbCy3Rhg==;
+	List-Owner; bh=74+zw9bfM1oCCK2J5J3mOqRsoqR68DufLiDgy2+KBQk=; b=qVrqy9cuD8QJU7
+	QVmgiJGYbQFbUYIOO6kLxyY/9sP7g8W6y9jC/WnaDasqVgj7FD+RmCFPxGM0xQZHWcsu+ucxDBZf6
+	GXBMYQQx26oMZatU6nCa7EzLMCsJ8CyP1WDX/PXm9xyZP1QZTF3FWQFIWQqrGFpaBSiFPQrXz/36S
+	rkXQLEpMjUmlJk+N9dRqGf7SBVHAKGUKgFHfHHs2JcdjfjqwQBLl4sSriFTpCRcfArOUVkLLls+Ht
+	+ybDEzP/Q86Zv6osj6YYjfB73IrVV7NgRwPhjEXjJhRF5Xx66qnBuG40ukcI4+OCSIMVHRgKId4Ic
+	z57J+dIzgLK1RNPqXGAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljNj-0006EX-3d; Thu, 18 Jun 2020 01:30:19 +0000
+	id 1jljO9-0000WQ-JV; Thu, 18 Jun 2020 01:30:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj7x-0003JE-O7
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:14:03 +0000
+ id 1jlj7y-0003KJ-Uo
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:14:04 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 53E9921974;
- Thu, 18 Jun 2020 01:14:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9459C21D7B;
+ Thu, 18 Jun 2020 01:14:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442841;
- bh=jooARIFQyutBq1ygAucaUY+mBk/+xG06hczMM+cGxrQ=;
+ s=default; t=1592442842;
+ bh=Jiv2L8x1UrhUVZJ3+GJukZ7OLVFFYw+CmLuVM0LVPtU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jbyG4FTpYNczbsQY+Nn9innScIf3jK36+4gT1eELVXfpc5tWp1qsDCre8CMP4Gnwe
- NU4dU/pZ+0XQxqMkhBNCDqato9/A18eADp93RZPFkh8qYv2f/R8zvF+pOPc+S1BQuz
- nlCk9yAuf7P3lUTNyKa9njIfTlQfZX0BK561Gmk8=
+ b=cQ7Fm1k+AKPzjqzKsfXRA7cfcueEbtCEuK59uPtZ+4l/30P8eveuEXf+IDSqKoKPM
+ x2QxmAGh1Q/MI95W/El+oEvZF4U17/A9AOyfO1vX96v/W2Ppo0+NOK5rBybYzq0uVr
+ PEa6sXK8pFEq549B50Yyq9ru9Y0WN/3IoHyA1rUA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 274/388] mfd: stmfx: Fix stmfx_irq_init error path
-Date: Wed, 17 Jun 2020 21:06:11 -0400
-Message-Id: <20200618010805.600873-274-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 275/388] mfd: stmfx: Disable IRQ in suspend to
+ avoid spurious interrupt
+Date: Wed, 17 Jun 2020 21:06:12 -0400
+Message-Id: <20200618010805.600873-275-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181401_808632_0F47C9F4 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20200617_181403_119749_381A0180 
+X-CRM114-Status: GOOD (  11.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,45 +90,64 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Amelie Delaunay <amelie.delaunay@st.com>
 
-[ Upstream commit 60c2c4bcb9202acad4cc26af20b44b6bd7874f7b ]
+[ Upstream commit 97eda5dcc2cde5dcc778bef7a9344db3b6bf8ef5 ]
 
-In case the interrupt signal can't be configured, IRQ domain needs to be
-removed.
+When STMFX supply is stopped, spurious interrupt can occur. To avoid that,
+disable the interrupt in suspend before disabling the regulator and
+re-enable it at the end of resume.
 
 Fixes: 06252ade9156 ("mfd: Add ST Multi-Function eXpander (STMFX) core driver")
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/mfd/stmfx.c | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+ drivers/mfd/stmfx.c       | 6 ++++++
+ include/linux/mfd/stmfx.h | 1 +
+ 2 files changed, 7 insertions(+)
 
 diff --git a/drivers/mfd/stmfx.c b/drivers/mfd/stmfx.c
-index fde6541e347c..1977fe95f876 100644
+index 1977fe95f876..711979afd90a 100644
 --- a/drivers/mfd/stmfx.c
 +++ b/drivers/mfd/stmfx.c
-@@ -287,14 +287,19 @@ static int stmfx_irq_init(struct i2c_client *client)
- 
- 	ret = regmap_write(stmfx->map, STMFX_REG_IRQ_OUT_PIN, irqoutpin);
+@@ -296,6 +296,8 @@ static int stmfx_irq_init(struct i2c_client *client)
  	if (ret)
--		return ret;
-+		goto irq_exit;
+ 		goto irq_exit;
  
- 	ret = devm_request_threaded_irq(stmfx->dev, client->irq,
- 					NULL, stmfx_irq_handler,
- 					irqtrigger | IRQF_ONESHOT,
- 					"stmfx", stmfx);
++	stmfx->irq = client->irq;
++
+ 	return 0;
+ 
+ irq_exit:
+@@ -486,6 +488,8 @@ static int stmfx_suspend(struct device *dev)
  	if (ret)
--		stmfx_irq_exit(client);
-+		goto irq_exit;
-+
-+	return 0;
-+
-+irq_exit:
-+	stmfx_irq_exit(client);
+ 		return ret;
  
- 	return ret;
++	disable_irq(stmfx->irq);
++
+ 	if (stmfx->vdd)
+ 		return regulator_disable(stmfx->vdd);
+ 
+@@ -529,6 +533,8 @@ static int stmfx_resume(struct device *dev)
+ 	if (ret)
+ 		return ret;
+ 
++	enable_irq(stmfx->irq);
++
+ 	return 0;
  }
+ #endif
+diff --git a/include/linux/mfd/stmfx.h b/include/linux/mfd/stmfx.h
+index 3c67983678ec..744dce63946e 100644
+--- a/include/linux/mfd/stmfx.h
++++ b/include/linux/mfd/stmfx.h
+@@ -109,6 +109,7 @@ struct stmfx {
+ 	struct device *dev;
+ 	struct regmap *map;
+ 	struct regulator *vdd;
++	int irq;
+ 	struct irq_domain *irq_domain;
+ 	struct mutex lock; /* IRQ bus lock */
+ 	u8 irq_src;
 -- 
 2.25.1
 
