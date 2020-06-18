@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C016C1FE315
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:06:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44BA11FE316
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SRcSkeuWL0RONeevSNf4hrRKDT6+lsbIo29G4ek6Y5M=; b=J3IZonksw4fVUP
-	g2GMAefUHGdEMe7VfYi5UXqwf6AoAshnKhDpgyjZdDe6SBRSEgJn7ScpqM7mrxeFV8AbPpAIH15My
-	irRTn7jdApdtXJpC/Kb3ULhKjJ+P3Sxqj2LXhHwzIO074KXf8Nz8dvDC4OJxCQ0P0/UK8el1lURiB
-	ESayEMjnCRCcpqAXPaYJHSVYPSr5fChXJQmNE50grqmTbLaIqFRzIFt9vSYKqV76uHDB7rH306Ne/
-	rCbEcyha34fu1qS35bE84KNs9tSZI2tgy3TmebH+A2XggswfwN7sQTAm8K3f97aqCnKoMN1ztRc8J
-	tJ3QFO109pEdjpJsRooQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=65nB5lFRI82ZxJ5fL45eC9uGsqn5EIuxKj1VGV7e9sc=; b=a7AtZZodtsa5r1
+	YIEFNfgutZM80BtG+SyO3MNA1g8LHuhiaHJ9WvLegdBf0LP8tYyMrTe7R6UeCyMsY53m2CHJh34Wp
+	qai6erx1WS/S76oCOhIr+q5gTjXUNXnEOhMw90VI21CjcxIbTlxyoBbYiFXBwapDlJA5mKv05wfjq
+	xnm5T4W3GblbaNoYUEONgr8RxlnjlUkbQ1QT0dr17w/wEXFNVv405MRCcW9Zuk4AvO34UQ3Dv6fC0
+	sXeqZY7rQQSoMxENGKiWb2nZi1BtsM7fbg8/ywHQkWoobnD++RA2EYJZ10c5MdzeJdjvgiBLDfRR/
+	QwrAsUNZGj9eobyNZMdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljwb-0005we-BY; Thu, 18 Jun 2020 02:06:21 +0000
+	id 1jljx1-0006HA-OD; Thu, 18 Jun 2020 02:06:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljNY-0006y9-9g
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:30:21 +0000
+ id 1jljON-0000uY-4s
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:31:06 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0BCD222228;
- Thu, 18 Jun 2020 01:30:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 61AE82224B;
+ Thu, 18 Jun 2020 01:30:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443806;
- bh=5zEtzJuWRo1Jwn5HqRi+yeM2H7mdgFA/fudPDaMECuU=;
- h=From:To:Cc:Subject:Date:From;
- b=nsfXgJDkDqzq53Q75/wNP1zJmbWLiu0/T0YGpWKxmbPZBoId3qcWOK7OxW9WS9lkW
- EQsVLTtq53zMvCweBFC1TcGgPfTSI7J80/EJkKU6njnJ1L4LD4nLqFMhpOb70Bz5A+
- +uox8z4lBB/DkxnUK5Rw2D3Lt5pRintfSkDj41DA=
+ s=default; t=1592443858;
+ bh=bN2KIVJIjUAP1Q6GRQwg8pd++HsnTFuJoBLlUKk/NAw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=st+onyCNMbePTsTxS7Vi3MgXndbPP/d7OejOg2vJw259kYY6ZiAzFCwYbtXUMVM9h
+ eeAd9jAwmv+1UrUlzheEEdMG/JvGvRvCuvHpg+9gqF/K3Z5aSXGluXRLhA9Fu6KPRn
+ M00ImbEZdh5zVujbx1bTUp2iJUwPY4f9BR5+epBM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 01/60] clk: sunxi: Fix incorrect usage of
- round_down()
-Date: Wed, 17 Jun 2020 21:29:05 -0400
-Message-Id: <20200618013004.610532-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 41/60] usb/ohci-platform: Fix a warning when
+ hibernating
+Date: Wed, 17 Jun 2020 21:29:45 -0400
+Message-Id: <20200618013004.610532-41-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200618013004.610532-1-sashal@kernel.org>
+References: <20200618013004.610532-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_183008_503855_1ED4F709 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20200617_183059_421828_11EE0BA6 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,45 +80,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>,
- Rikard Falkeborn <rikard.falkeborn@gmail.com>, linux-clk@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Oliver Neukum <oneukum@suse.de>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Tony Prisk <linux@prisktech.co.nz>, Alan Stern <stern@rowland.harvard.edu>,
+ Qais Yousef <qais.yousef@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+From: Qais Yousef <qais.yousef@arm.com>
 
-[ Upstream commit ee25d9742dabed3fd18158b518f846abeb70f319 ]
+[ Upstream commit 1cb3b0095c3d0bb96912bfbbce4fc006d41f367c ]
 
-round_down() can only round to powers of 2. If round_down() is asked
-to round to something that is not a power of 2, incorrect results are
-produced. The incorrect results can be both too large and too small.
+The following warning was observed when attempting to suspend to disk
+using a USB flash as a swap device.
 
-Instead, use rounddown() which can round to any number.
+[  111.779649] ------------[ cut here ]------------
+[  111.788382] URB (____ptrval____) submitted while active
+[  111.796646] WARNING: CPU: 3 PID: 365 at drivers/usb/core/urb.c:363 usb_submit_urb+0x3d8/0x590
+[  111.805417] Modules linked in:
+[  111.808584] CPU: 3 PID: 365 Comm: kworker/3:2 Not tainted 5.6.0-rc6-00002-gdfd1731f9a3e-dirty #545
+[  111.817796] Hardware name: ARM Juno development board (r2) (DT)
+[  111.823896] Workqueue: usb_hub_wq hub_event
+[  111.828217] pstate: 60000005 (nZCv daif -PAN -UAO)
+[  111.833156] pc : usb_submit_urb+0x3d8/0x590
+[  111.837471] lr : usb_submit_urb+0x3d8/0x590
+[  111.841783] sp : ffff800018de38b0
+[  111.845205] x29: ffff800018de38b0 x28: 0000000000000003
+[  111.850682] x27: ffff000970530b20 x26: ffff8000133fd000
+[  111.856159] x25: ffff8000133fd000 x24: ffff800018de3b38
+[  111.861635] x23: 0000000000000004 x22: 0000000000000c00
+[  111.867112] x21: 0000000000000000 x20: 00000000fffffff0
+[  111.872589] x19: ffff0009704e7a00 x18: ffffffffffffffff
+[  111.878065] x17: 00000000a7c8f4bc x16: 000000002af33de8
+[  111.883542] x15: ffff8000133fda88 x14: 0720072007200720
+[  111.889019] x13: 0720072007200720 x12: 0720072007200720
+[  111.894496] x11: 0000000000000000 x10: 00000000a5286134
+[  111.899973] x9 : 0000000000000002 x8 : ffff000970c837a0
+[  111.905449] x7 : 0000000000000000 x6 : ffff800018de3570
+[  111.910926] x5 : 0000000000000001 x4 : 0000000000000003
+[  111.916401] x3 : 0000000000000000 x2 : ffff800013427118
+[  111.921879] x1 : 9d4e965b4b7d7c00 x0 : 0000000000000000
+[  111.927356] Call trace:
+[  111.929892]  usb_submit_urb+0x3d8/0x590
+[  111.933852]  hub_activate+0x108/0x7f0
+[  111.937633]  hub_resume+0xac/0x148
+[  111.941149]  usb_resume_interface.isra.10+0x60/0x138
+[  111.946265]  usb_resume_both+0xe4/0x140
+[  111.950225]  usb_runtime_resume+0x24/0x30
+[  111.954365]  __rpm_callback+0xdc/0x138
+[  111.958236]  rpm_callback+0x34/0x98
+[  111.961841]  rpm_resume+0x4a8/0x720
+[  111.965445]  rpm_resume+0x50c/0x720
+[  111.969049]  __pm_runtime_resume+0x4c/0xb8
+[  111.973276]  usb_autopm_get_interface+0x28/0x60
+[  111.977948]  hub_event+0x80/0x16d8
+[  111.981466]  process_one_work+0x2a4/0x748
+[  111.985604]  worker_thread+0x48/0x498
+[  111.989387]  kthread+0x13c/0x140
+[  111.992725]  ret_from_fork+0x10/0x18
+[  111.996415] irq event stamp: 354
+[  111.999756] hardirqs last  enabled at (353): [<ffff80001019ea1c>] console_unlock+0x504/0x5b8
+[  112.008441] hardirqs last disabled at (354): [<ffff8000100a95d0>] do_debug_exception+0x1a8/0x258
+[  112.017479] softirqs last  enabled at (350): [<ffff8000100818a4>] __do_softirq+0x4bc/0x568
+[  112.025984] softirqs last disabled at (343): [<ffff8000101145a4>] irq_exit+0x144/0x150
+[  112.034129] ---[ end trace dc96030b9cf6c8a3 ]---
 
-Fixes: 6a721db180a2 ("clk: sunxi: Add A31 clocks support")
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+The problem was tracked down to a missing call to
+pm_runtime_set_active() on resume in ohci-platform.
+
+Link: https://lore.kernel.org/lkml/20200323143857.db5zphxhq4hz3hmd@e107158-lin.cambridge.arm.com/
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
+Signed-off-by: Qais Yousef <qais.yousef@arm.com>
+CC: Tony Prisk <linux@prisktech.co.nz>
+CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+CC: Mathias Nyman <mathias.nyman@intel.com>
+CC: Oliver Neukum <oneukum@suse.de>
+CC: linux-arm-kernel@lists.infradead.org
+CC: linux-usb@vger.kernel.org
+CC: linux-kernel@vger.kernel.org
+Link: https://lore.kernel.org/r/20200518154931.6144-1-qais.yousef@arm.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/sunxi/clk-sunxi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/usb/host/ohci-platform.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/clk/sunxi/clk-sunxi.c b/drivers/clk/sunxi/clk-sunxi.c
-index 9c79af0c03b2..2cec9e83831f 100644
---- a/drivers/clk/sunxi/clk-sunxi.c
-+++ b/drivers/clk/sunxi/clk-sunxi.c
-@@ -311,7 +311,7 @@ static void sun6i_a31_get_pll1_factors(u32 *freq, u32 parent_rate,
- 	 * Round down the frequency to the closest multiple of either
- 	 * 6 or 16
- 	 */
--	u32 round_freq_6 = round_down(freq_mhz, 6);
-+	u32 round_freq_6 = rounddown(freq_mhz, 6);
- 	u32 round_freq_16 = round_down(freq_mhz, 16);
+diff --git a/drivers/usb/host/ohci-platform.c b/drivers/usb/host/ohci-platform.c
+index c2669f185f65..0e5580e6f35c 100644
+--- a/drivers/usb/host/ohci-platform.c
++++ b/drivers/usb/host/ohci-platform.c
+@@ -339,6 +339,11 @@ static int ohci_platform_resume(struct device *dev)
+ 	}
  
- 	if (round_freq_6 > round_freq_16)
+ 	ohci_resume(hcd, false);
++
++	pm_runtime_disable(dev);
++	pm_runtime_set_active(dev);
++	pm_runtime_enable(dev);
++
+ 	return 0;
+ }
+ #endif /* CONFIG_PM_SLEEP */
 -- 
 2.25.1
 
