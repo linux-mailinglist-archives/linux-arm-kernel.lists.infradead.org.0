@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 111961FDF4A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:41:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20F091FDF48
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:41:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZGgpj41Rg+SSEzwqE8nc9QuDv3dBSmLaZ2QRsmijytQ=; b=Yu7tDXtjzrrbOR
-	gNh8Ezlt6OiuiQGVk/87RZTDBLFzEEpAgjYqXvPGMXFKgig+k4we2XSYLbOi+1Cg/IsD1kR4snUQG
-	nNZznqN+EEkntl/xGZOo1Gv8pMUW41WVtAW9jhRnUDvzocT2bYmAEgnz6tlGqLOWC4ueURX6BRVcd
-	gwQzBZys6Mkr3e8WByum7t8BxaMFNDQWGuDrPB9UrWi1hJaxED370uDkWPl6Lm1XMzWJ/fMDFL4AF
-	ehJgpVhHuhWlbtDDZSZvGb+hvvlvCQoqHnFbJJKyV1Hg2/sHDljuT8lNXjrB9L+zm/dh8l2N+fpGF
-	xmTj7dqo7uFFt8J37SMQ==;
+	List-Owner; bh=Cwinyz6YuE57JSKJ4b1EmScnwsB4ffJXCScMuMs0Omw=; b=gsh/ULxSk4w8Fx
+	JXT3W/1TlRYl5GgyCKKJEdDFu5pjdrvryeAlXrMrYgAsSp8RcRaQ0HJmLIu5g4H165SCHeTiTros6
+	sdoOtdTgshnJaQvwwEE7qtx2l+LzF3UTZPu/zIqfURGHz5o3ek39FbRNtMHoIMoOK9+6Wg2fR1F4o
+	ST85Sz1zDv3wdzWs/gtND+0jEo/ysFf5wXIery6b1M1MS7z3YvR7U+bJRrj6mqrXV99EMafv6jId9
+	Sh0MlMg+on3BtjawCVz3R8c70b2BzD83/kn/uwqbLyYgA8jAMP3+zEOHKy9fHPSxwKTlVuL98gB5R
+	VGeobvjHRvYm9KPw6PzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljYn-00060o-2I; Thu, 18 Jun 2020 01:41:45 +0000
+	id 1jljYT-0005ef-NJ; Thu, 18 Jun 2020 01:41:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljBI-0008CP-Li
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:31 +0000
+ id 1jljBK-0008DV-KO
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 68FC7206F1;
- Thu, 18 Jun 2020 01:17:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B2BEF21D82;
+ Thu, 18 Jun 2020 01:17:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443048;
- bh=KHiBjjQXyS2XbbFWRPkBxHYIWFZ7BXKEogmoM+xGfb0=;
+ s=default; t=1592443049;
+ bh=PQr83LUcwriW/k0i0ijFpVbSvPAoZsnTtGv9nIb/nts=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=B7SJ7m+eI8UsHMRAUQRLD10fUM+ctRMzto0FjA6nMBPtRLSFrEuJTBaSUGYzepOL3
- dZT4HsxNwWzxanxUrtvfkL9+z3i4DZ9GtywteP9mZAUO0sLIjVKoAupkVzLjYaEs4c
- Wcf34f+4mWVr1u84NGESCh4nrlMZTHFFqLfppAjY=
+ b=kIZTLY93c1iKAlBDBHn6/5nAK8k2LxjN481ryVncENtFFoVB7I2XXVc53q7cJkc6Y
+ 0yFFQMgPvP/E1uDinYZ31ga2V/0+tesrLhb++jRgHEBpNAtN5D5tvglPQqdMq+OV+x
+ xgtz4xBS+8iiGQgXniVokFEvrSKQng3JbPh3a5YY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 042/266] arm64: dts: fvp: Fix GIC child nodes
-Date: Wed, 17 Jun 2020 21:12:47 -0400
-Message-Id: <20200618011631.604574-42-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 043/266] PCI: aardvark: Don't blindly enable ASPM
+ L0s and don't write to read-only register
+Date: Wed, 17 Jun 2020 21:12:48 -0400
+Message-Id: <20200618011631.604574-43-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181728_995821_DDE772ED 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20200617_181730_748227_C839D0D8 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,182 +80,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tomasz Maciej Nowak <tmn505@gmail.com>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Sasha Levin <sashal@kernel.org>,
+ linux-pci@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ =?UTF-8?q?Pali=20Roh=C3=A1r?= <pali@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andre Przywara <andre.przywara@arm.com>
-
-[ Upstream commit 78631aecc52c4b2adcf611769df2ff9c67ac16d0 ]
-
-The GIC DT nodes for the fastmodels were not fully compliant with the
-DT binding, which has certain expectations about child nodes and their
-size and address cells values.
-
-Use smaller #address-cells and #size-cells values, as the binding
-requests, and adjust the reg properties accordingly.
-This requires adjusting the interrupt nexus nodes as well, as one
-field of the interrupt-map property depends on the GIC's address-size.
-
-Since the .dts files share interrupt nexus nodes across different
-interrupt controllers (GICv2 vs. GICv3), we need to use the only
-commonly allowed #address-size value of <1> for both.
-
-Link: https://lore.kernel.org/r/20200513103016.130417-11-andre.przywara@arm.com
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- .../boot/dts/arm/foundation-v8-gicv2.dtsi     |  2 +-
- .../boot/dts/arm/foundation-v8-gicv3.dtsi     |  8 +-
- arch/arm64/boot/dts/arm/foundation-v8.dtsi    | 86 +++++++++----------
- 3 files changed, 48 insertions(+), 48 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi b/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
-index 15fe81738e94..dfb23dfc0b0f 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
-@@ -8,7 +8,7 @@ / {
- 	gic: interrupt-controller@2c001000 {
- 		compatible = "arm,cortex-a15-gic", "arm,cortex-a9-gic";
- 		#interrupt-cells = <3>;
--		#address-cells = <2>;
-+		#address-cells = <1>;
- 		interrupt-controller;
- 		reg = <0x0 0x2c001000 0 0x1000>,
- 		      <0x0 0x2c002000 0 0x2000>,
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi b/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
-index f2c75c756039..906f51935b36 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
-@@ -8,9 +8,9 @@ / {
- 	gic: interrupt-controller@2f000000 {
- 		compatible = "arm,gic-v3";
- 		#interrupt-cells = <3>;
--		#address-cells = <2>;
--		#size-cells = <2>;
--		ranges;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0x0 0x0 0x2f000000 0x100000>;
- 		interrupt-controller;
- 		reg =	<0x0 0x2f000000 0x0 0x10000>,
- 			<0x0 0x2f100000 0x0 0x200000>,
-@@ -22,7 +22,7 @@ gic: interrupt-controller@2f000000 {
- 		its: its@2f020000 {
- 			compatible = "arm,gic-v3-its";
- 			msi-controller;
--			reg = <0x0 0x2f020000 0x0 0x20000>;
-+			reg = <0x20000 0x20000>;
- 		};
- 	};
- };
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8.dtsi b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-index 3f78373f708a..2a6aa43241b3 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-@@ -107,49 +107,49 @@ smb@8000000 {
- 
- 		#interrupt-cells = <1>;
- 		interrupt-map-mask = <0 0 63>;
--		interrupt-map = <0 0  0 &gic 0 0 GIC_SPI  0 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  1 &gic 0 0 GIC_SPI  1 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  2 &gic 0 0 GIC_SPI  2 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  3 &gic 0 0 GIC_SPI  3 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  4 &gic 0 0 GIC_SPI  4 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  5 &gic 0 0 GIC_SPI  5 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  6 &gic 0 0 GIC_SPI  6 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  7 &gic 0 0 GIC_SPI  7 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  8 &gic 0 0 GIC_SPI  8 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0  9 &gic 0 0 GIC_SPI  9 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 10 &gic 0 0 GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 11 &gic 0 0 GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 12 &gic 0 0 GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 13 &gic 0 0 GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 14 &gic 0 0 GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 15 &gic 0 0 GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 16 &gic 0 0 GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 17 &gic 0 0 GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 18 &gic 0 0 GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 19 &gic 0 0 GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 20 &gic 0 0 GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 21 &gic 0 0 GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 22 &gic 0 0 GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 23 &gic 0 0 GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 24 &gic 0 0 GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 25 &gic 0 0 GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 26 &gic 0 0 GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 27 &gic 0 0 GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 28 &gic 0 0 GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 29 &gic 0 0 GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 30 &gic 0 0 GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 31 &gic 0 0 GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 32 &gic 0 0 GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 33 &gic 0 0 GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 34 &gic 0 0 GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 35 &gic 0 0 GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 36 &gic 0 0 GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 37 &gic 0 0 GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 38 &gic 0 0 GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 39 &gic 0 0 GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 40 &gic 0 0 GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 41 &gic 0 0 GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
--				<0 0 42 &gic 0 0 GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map = <0 0  0 &gic 0 GIC_SPI  0 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  1 &gic 0 GIC_SPI  1 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  2 &gic 0 GIC_SPI  2 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  3 &gic 0 GIC_SPI  3 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  4 &gic 0 GIC_SPI  4 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  5 &gic 0 GIC_SPI  5 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  6 &gic 0 GIC_SPI  6 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  7 &gic 0 GIC_SPI  7 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  8 &gic 0 GIC_SPI  8 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0  9 &gic 0 GIC_SPI  9 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 10 &gic 0 GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 11 &gic 0 GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 12 &gic 0 GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 13 &gic 0 GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 14 &gic 0 GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 15 &gic 0 GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 16 &gic 0 GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 17 &gic 0 GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 18 &gic 0 GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 19 &gic 0 GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 20 &gic 0 GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 21 &gic 0 GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 22 &gic 0 GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 23 &gic 0 GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 24 &gic 0 GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 25 &gic 0 GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 26 &gic 0 GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 27 &gic 0 GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 28 &gic 0 GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 29 &gic 0 GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 30 &gic 0 GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 31 &gic 0 GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 32 &gic 0 GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 33 &gic 0 GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 34 &gic 0 GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 35 &gic 0 GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 36 &gic 0 GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 37 &gic 0 GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 38 &gic 0 GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 39 &gic 0 GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 40 &gic 0 GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 41 &gic 0 GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 42 &gic 0 GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
- 
- 		ethernet@2,02000000 {
- 			compatible = "smsc,lan91c111";
--- 
-2.25.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogUGFsaSBSb2jDoXIgPHBhbGlAa2VybmVsLm9yZz4KClsgVXBzdHJlYW0gY29tbWl0IDkw
+YzZjYjRhMzU1ZTdiZWZjYjU1N2QyMTdkMWQ4YjhiZDU4NzVhMDUgXQoKVHJ5aW5nIHRvIGNoYW5n
+ZSBMaW5rIFN0YXR1cyByZWdpc3RlciBkb2VzIG5vdCBoYXZlIGFueSBlZmZlY3QgYXMgdGhpcwpp
+cyBhIHJlYWQtb25seSByZWdpc3Rlci4gVHJ5aW5nIHRvIG92ZXJ3cml0ZSBiaXRzIGZvciBOZWdv
+dGlhdGVkIExpbmsKV2lkdGggZG9lcyBub3QgbWFrZSBzZW5zZS4KCkluIGZ1dHVyZSBwcm9wZXIg
+Y2hhbmdlIG9mIGxpbmsgd2lkdGggY2FuIGJlIGRvbmUgdmlhIExhbmUgQ291bnQgU2VsZWN0CmJp
+dHMgaW4gUENJZSBDb250cm9sIDAgcmVnaXN0ZXIuCgpUcnlpbmcgdG8gdW5jb25kaXRpb25hbGx5
+IGVuYWJsZSBBU1BNIEwwcyB2aWEgQVNQTSBDb250cm9sIGJpdHMgaW4gTGluawpDb250cm9sIHJl
+Z2lzdGVyIGlzIHdyb25nLiBUaGVyZSBzaG91bGQgYmUgYXQgbGVhc3Qgc29tZSBkZXRlY3Rpb24g
+aWYKZW5kcG9pbnQgc3VwcG9ydHMgTDBzIGFzIGlzbid0IG1hbmRhdG9yeS4KCk1vcmVvdmVyIEFT
+UE0gQ29udHJvbCBiaXRzIGluIExpbmsgQ29udHJvbCByZWdpc3RlciBhcmUgY29udHJvbGxlZCBi
+eQpwY2llL2FzcG0uYyBjb2RlIHdoaWNoIHNldHMgaXQgYWNjb3JkaW5nIHRvIHN5c3RlbSBBU1BN
+IHNldHRpbmdzLAppbW1lZGlhdGVseSBhZnRlciBhYXJkdmFyayBkcml2ZXIgcHJvYmVzLiBTbyBz
+ZXR0aW5nIHRoZXNlIGJpdHMgYnkKYWFyZHZhcmsgZHJpdmVyIGhhcyBubyBsb25nIHJ1bm5pbmcg
+ZWZmZWN0LgoKUmVtb3ZlIGNvZGUgd2hpY2ggdG91Y2hlcyBBU1BNIEwwcyBiaXRzIGZyb20gdGhp
+cyBkcml2ZXIgYW5kIGxldAprZXJuZWwncyBBU1BNIGltcGxlbWVudGF0aW9uIHRvIHNldCBBU1BN
+IHN0YXRlIHByb3Blcmx5LgoKU29tZSB1c2VycyBhcmUgcmVwb3J0aW5nIGlzc3VlcyB0aGF0IHRo
+aXMgY29kZSBpcyBwcm9ibGVtYXRpYyBmb3Igc29tZQpJbnRlbCB3aWZpIGNhcmRzIGFuZCByZW1v
+dmluZyBpdCBmaXhlcyB0aGVtLCBzZWUgZS5nLjoKaHR0cHM6Ly9idWd6aWxsYS5rZXJuZWwub3Jn
+L3Nob3dfYnVnLmNnaT9pZD0xOTYzMzkKCklmIHByb2JsZW1zIHdpdGggSW50ZWwgd2lmaSBjYXJk
+cyBvY2N1ciBldmVuIGFmdGVyIHRoaXMgY29tbWl0LCB0aGVuCnBjaWUvYXNwbS5jIGNvZGUgY291
+bGQgYmUgbW9kaWZpZWQgLyBob29rZWQgdG8gbm90IGVuYWJsZSBBU1BNIEwwcyBzdGF0ZQpmb3Ig
+YWZmZWN0ZWQgcHJvYmxlbWF0aWMgY2FyZHMuCgpMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9y
+Zy9yLzIwMjAwNDMwMDgwNjI1LjI2MDcwLTMtcGFsaUBrZXJuZWwub3JnClRlc3RlZC1ieTogVG9t
+YXN6IE1hY2llaiBOb3dhayA8dG1uNTA1QGdtYWlsLmNvbT4KU2lnbmVkLW9mZi1ieTogUGFsaSBS
+b2jDoXIgPHBhbGlAa2VybmVsLm9yZz4KU2lnbmVkLW9mZi1ieTogTG9yZW56byBQaWVyYWxpc2kg
+PGxvcmVuem8ucGllcmFsaXNpQGFybS5jb20+CkFja2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBr
+ZXJuZWwub3JnPgpBY2tlZC1ieTogVGhvbWFzIFBldGF6em9uaSA8dGhvbWFzLnBldGF6em9uaUBi
+b290bGluLmNvbT4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3Jn
+PgotLS0KIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMgfCA0IC0tLS0KIDEg
+ZmlsZSBjaGFuZ2VkLCA0IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2Nv
+bnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJk
+dmFyay5jCmluZGV4IDk3MjQ1ZTA3NjU0OC4uZjI0ODFlODBlMjcyIDEwMDY0NAotLS0gYS9kcml2
+ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJkdmFyay5jCisrKyBiL2RyaXZlcnMvcGNpL2NvbnRy
+b2xsZXIvcGNpLWFhcmR2YXJrLmMKQEAgLTM0NCwxMCArMzQ0LDYgQEAgc3RhdGljIHZvaWQgYWR2
+a19wY2llX3NldHVwX2h3KHN0cnVjdCBhZHZrX3BjaWUgKnBjaWUpCiAKIAlhZHZrX3BjaWVfd2Fp
+dF9mb3JfbGluayhwY2llKTsKIAotCXJlZyA9IFBDSUVfQ09SRV9MSU5LX0wwU19FTlRSWSB8Ci0J
+CSgxIDw8IFBDSUVfQ09SRV9MSU5LX1dJRFRIX1NISUZUKTsKLQlhZHZrX3dyaXRlbChwY2llLCBy
+ZWcsIFBDSUVfQ09SRV9MSU5LX0NUUkxfU1RBVF9SRUcpOwotCiAJcmVnID0gYWR2a19yZWFkbChw
+Y2llLCBQQ0lFX0NPUkVfQ01EX1NUQVRVU19SRUcpOwogCXJlZyB8PSBQQ0lFX0NPUkVfQ01EX01F
+TV9BQ0NFU1NfRU4gfAogCQlQQ0lFX0NPUkVfQ01EX0lPX0FDQ0VTU19FTiB8Ci0tIAoyLjI1LjEK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
