@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3F9F1FDC7A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:19:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAADC1FDC9C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:21:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e2WiXyJl43gaLXL17qVwjRByqi/WnZ4EO2RgZwgQP4Q=; b=k0gnhIUI9/QZnf
-	sJN31qgnG9FNQz9ZJjDJi1vzBihQV2O1hiMiIRB3+Fw4GjlfPmWNIGcyfRVq59yoS/U9svI3iHAz2
-	LiNOWcwkHXwn/qZfjvBM08Hm+5qDm21FpN0wjNRwGcsDInwQoIxxNv+mbNICxYUe5Ji6lPMaR1PF4
-	1LjgeCcbWdpQXsPAQt660WF3oUEJeFHk/pnYLDMTFqdo4roUhoqMLGmSdjv/t1lTXnwXNcsJbwCrn
-	ogHTk3iEqUPiQkhoqzi/j/gI8ZF8hK/GIyW3QOM0ToPF+cALQuXKBbIFoO9JGYNTJpCcKGXrrw/9/
-	ogwacG8edeXkjI5nuhRg==;
+	List-Owner; bh=vuClGCXbgUFBHDqDgAr1gF8cGYVIw3KMKq6agrvuLzU=; b=GNJg0oiJ89gCJM
+	J/pP71NmkB2sOHfJYsOQZtvLDTGkKR/EmQIjZJJ68IpFp67hVMKM3/agWypXsh5fl3OlzT9AYZUYf
+	jtKjT2YXUlKjgUvho7oypBwVtz6aO6WYcBDsKm/GFRxIDKAwvE7CKT1L87hC1PWHS98dKBjaRv/jp
+	mjGyXh8lTLEiaTIIwdDvyMpeNZPtDgy+sg+8q2wRtCDKP8zBZWGQwsV4QiMSLtpkRo04fHFxYnnDb
+	YTtN923ixDpuVCvgOyWrINXzeMZlxvXdBuCN+WRlPBOkTuC4BDMbruJBi6HswFTVYmXglBqaIM1hD
+	l7CNWnjbBtKsqWFD7B+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljDQ-0001ED-WE; Thu, 18 Jun 2020 01:19:41 +0000
+	id 1jljEZ-0004M3-H0; Thu, 18 Jun 2020 01:20:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj5T-0001Dr-On; Thu, 18 Jun 2020 01:11:29 +0000
+ id 1jlj5b-0001KF-85; Thu, 18 Jun 2020 01:11:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 54E6620CC7;
- Thu, 18 Jun 2020 01:11:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B61CF21924;
+ Thu, 18 Jun 2020 01:11:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442687;
- bh=3i9CW9vR+vvaNTTVUkiKlJA0CPyN9WMXuwYIQbi6hqQ=;
+ s=default; t=1592442693;
+ bh=1GHEktr/FGZJLGxJRB9jHKx37ExbftyAROwdmO92/to=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=UaHqaSGKuMBNSO4GVdz+Dg6V22FOVcHsEnveuLNmMydlIsEWdmyIMB4ETRnq4XW9L
- 42uobZyg0uN/OtzNQgaw1Iy2kR04RR4mfKJxmRD506vWcX7RMcph/k24YSn3WluH0B
- WKY36q+uPO1xAOnqYghKMPLRxr74VcuzZVvwrBDc=
+ b=IRo+xIWUceqgRKC+HTHebBzVPHj4eK2s8puR8I1+wjZhzxR0m0bPvtHGwl0iRwJ1G
+ XMhFNMB3okpdubvLaW8bsp0XJOnYolxCiXajPcij71JP7Pz5yaF/Rt0xyRisAXthcQ
+ /LifQeFIW72+b/Hmuq0iBTsCQ/Wk2KfO0p4oCwPE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 153/388] clk: meson: meson8b: Fix the vclk_div{1, 2,
- 4, 6, 12}_en gate bits
-Date: Wed, 17 Jun 2020 21:04:10 -0400
-Message-Id: <20200618010805.600873-153-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 158/388] arm64: dts: meson-g12b-ugoos-am6: fix
+ board compatible
+Date: Wed, 17 Jun 2020 21:04:15 -0400
+Message-Id: <20200618010805.600873-158-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181127_849696_70B7A6CF 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20200617_181135_350891_15BC3A1C 
+X-CRM114-Status: GOOD (  10.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,88 +79,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
 
-[ Upstream commit 8bb629cfb28f4dad9d47f69249366e50ae5edc25 ]
+[ Upstream commit 5c28dcbb3a1be167c07784b5f710ec602a57bea2 ]
 
-The DIV{1,2,4,6,12}_EN bits are actually located in HHI_VID_CLK_CNTL
-register:
-- HHI_VID_CLK_CNTL[0] = DIV1_EN
-- HHI_VID_CLK_CNTL[1] = DIV2_EN
-- HHI_VID_CLK_CNTL[2] = DIV4_EN
-- HHI_VID_CLK_CNTL[3] = DIV6_EN
-- HHI_VID_CLK_CNTL[4] = DIV12_EN
+Add missing amlogic,s922x in the board compatible list.
 
-Update the bits accordingly so we will enable the bits in the correct
-register once we switch these clocks to be mutable.
+It fixes:
+meson-g12b-ugoos-am6.dt.yaml: /: compatible: ['ugoos,am6', 'amlogic,g12b'] is not valid under any of the given schemas
 
-Fixes: 6cb57c678bb70e ("clk: meson: meson8b: add the read-only video clock trees")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-Link: https://lore.kernel.org/r/20200417184127.1319871-4-martin.blumenstingl@googlemail.com
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Link: https://lore.kernel.org/r/20200326165958.19274-4-narmstrong@baylibre.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/meson/meson8b.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-index ecd78cdca8ce..5f375799ce46 100644
---- a/drivers/clk/meson/meson8b.c
-+++ b/drivers/clk/meson/meson8b.c
-@@ -1213,7 +1213,7 @@ static struct clk_regmap meson8b_vclk_in_en = {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+index 06c5430eb92d..fdaacfd96b97 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+@@ -14,7 +14,7 @@
+ #include <dt-bindings/sound/meson-g12a-tohdmitx.h>
  
- static struct clk_regmap meson8b_vclk_div1_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 0,
- 	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1243,7 +1243,7 @@ static struct clk_fixed_factor meson8b_vclk_div2_div = {
+ / {
+-	compatible = "ugoos,am6", "amlogic,g12b";
++	compatible = "ugoos,am6", "amlogic,s922x", "amlogic,g12b";
+ 	model = "Ugoos AM6";
  
- static struct clk_regmap meson8b_vclk_div2_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 1,
- 	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1273,7 +1273,7 @@ static struct clk_fixed_factor meson8b_vclk_div4_div = {
- 
- static struct clk_regmap meson8b_vclk_div4_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 2,
- 	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1303,7 +1303,7 @@ static struct clk_fixed_factor meson8b_vclk_div6_div = {
- 
- static struct clk_regmap meson8b_vclk_div6_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 3,
- 	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1333,7 +1333,7 @@ static struct clk_fixed_factor meson8b_vclk_div12_div = {
- 
- static struct clk_regmap meson8b_vclk_div12_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 4,
- 	},
- 	.hw.init = &(struct clk_init_data){
+ 	aliases {
 -- 
 2.25.1
 
