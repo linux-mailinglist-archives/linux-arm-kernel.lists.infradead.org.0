@@ -2,51 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39A5F1FEB5B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 08:15:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F5381FEB5C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 08:16:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3lraBlqGJCBUUqzdq/oO7yLF2VVn9aZH/gVxqHCuaKQ=; b=tiZgHffKdrvyqs
-	NPioXHYhNZm3OFx/euTDv4OzY1MFY+Z3YNmYyo7B96mdwaF6GseIgzKzqaDLxnAILtNYYG/jNHoID
-	mgW9oJMV+APPl4xXkfoP6aJuoWoFpdVEE827L4oXHX42pS8tzniGOuiLAQIFJDj4/cwdUuQOP6u//
-	lY6sURhFw9Db66mQEwNj16/LRkNV+IlPNa7iRV+8IaajFIEXSlfOHW35HRx+hIQSyBLJ506oMkMUt
-	0wIEAzmLjTaWR+CMU4h0YaiUAe0Bv4xOuFBFl4sucJ5PFC1Id3zhO5hfhYlRzbA3+vg10L3NtjzBm
-	/GtF+oZu07aRy4Y0B3LA==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=El9fIsiykFvNai3SuMhVL0yQL6xo0VqEkeJqb+kLVKw=; b=dO2WLYZgJzgzU6
+	i17ZbEkLOlKMQfdVtbxQW52PNvGmwUqBg5MisrG5pIQaXPdSNHRtE7AydrbPwqncWJGn8ETo9eXDt
+	ypbXjMQK64mpfDxmyvRuYuG9BRu72fpsQnw8KPuwJAswbhSMcAxVXTZcXZRIyZ/AQTSaKRBVmCkxI
+	iiDFCWjI1oZdVKCJfe3XPq6VcOM83oJSr3tt5arNJYm60snv5Fvd7bmMBNmScbeFpKvfllBKQW+vf
+	jQCYkAE/s/0demLyu7PmGpHbtFuieaagGYCenvoLMlOlTPSykRVFTIC+smaVoMsBnoRH5oBY4MZIE
+	nFaLusZOBcJxRGmYL9oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlnpu-0008IG-2P; Thu, 18 Jun 2020 06:15:42 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jlnq8-00007j-B9; Thu, 18 Jun 2020 06:15:56 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlnpH-0005e2-UQ
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 06:15:06 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D33D61A0E3C;
- Thu, 18 Jun 2020 08:14:59 +0200 (CEST)
+ id 1jlnpI-0005eR-Vp
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 06:15:08 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 67F3E200C1E;
+ Thu, 18 Jun 2020 08:15:01 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0EA441A00D4;
- Thu, 18 Jun 2020 08:14:56 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 97C66200068;
+ Thu, 18 Jun 2020 08:14:57 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 048B64024F;
- Thu, 18 Jun 2020 14:14:50 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F302440302;
+ Thu, 18 Jun 2020 14:14:51 +0800 (SGT)
 From: Shengjiu Wang <shengjiu.wang@nxp.com>
 To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/5] Add audio support for imx6sx platform
-Date: Thu, 18 Jun 2020 14:03:44 +0800
-Message-Id: <cover.1592460381.git.shengjiu.wang@nxp.com>
+Subject: [PATCH 1/5] ARM: dts: imx6sx: Enable ASRC device
+Date: Thu, 18 Jun 2020 14:03:45 +0800
+Message-Id: <b3935b4ab4590be4880f4f16fdcfaf0d7e0bbdd9.1592460381.git.shengjiu.wang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1592460381.git.shengjiu.wang@nxp.com>
+References: <cover.1592460381.git.shengjiu.wang@nxp.com>
+In-Reply-To: <cover.1592460381.git.shengjiu.wang@nxp.com>
+References: <cover.1592460381.git.shengjiu.wang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_231504_992737_2B083809 
-X-CRM114-Status: UNSURE (   6.24  )
+X-CRM114-CacheID: sfid-20200617_231505_176629_C1BB74A4 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -54,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,24 +78,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add audio support for imx6sx platform.
-Enable ASRC, ESAI, SPDIF, MQS.
+Add compatible string, update the clock table,
+add fsl,asrc-rate and fsl,asrc-width property.
 
-Shengjiu Wang (5):
-  ARM: dts: imx6sx: Enable ASRC device
-  ARM: dts: imx6sx-sdb: Add MQS support
-  ARM: dts: imx6sx-sdb: Add SPDIF support
-  ARM: dts: imx6sx-sabreauto: Add SPDIF support
-  ARM: dts: imx6sx-sabreauto: Add cs42888 sound card support
+Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
+---
+ arch/arm/boot/dts/imx6sx.dtsi | 26 ++++++++++++++++++--------
+ 1 file changed, 18 insertions(+), 8 deletions(-)
 
- arch/arm/boot/dts/Makefile             |  1 +
- arch/arm/boot/dts/imx6sx-sabreauto.dts | 96 ++++++++++++++++++++++++++
- arch/arm/boot/dts/imx6sx-sdb-mqs.dts   | 48 +++++++++++++
- arch/arm/boot/dts/imx6sx-sdb.dtsi      | 30 ++++++++
- arch/arm/boot/dts/imx6sx.dtsi          | 36 +++++++---
- 5 files changed, 203 insertions(+), 8 deletions(-)
- create mode 100644 arch/arm/boot/dts/imx6sx-sdb-mqs.dts
-
+diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
+index 94e3df47d1ad..7d4856ffd239 100644
+--- a/arch/arm/boot/dts/imx6sx.dtsi
++++ b/arch/arm/boot/dts/imx6sx.dtsi
+@@ -390,18 +390,28 @@
+ 				};
+ 
+ 				asrc: asrc@2034000 {
++					compatible = "fsl,imx6sx-asrc", "fsl,imx53-asrc";
+ 					reg = <0x02034000 0x4000>;
+ 					interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
+-					clocks = <&clks IMX6SX_CLK_ASRC_MEM>,
+-						 <&clks IMX6SX_CLK_ASRC_IPG>,
+-						 <&clks IMX6SX_CLK_SPDIF>,
+-						 <&clks IMX6SX_CLK_SPBA>;
+-					clock-names = "mem", "ipg", "asrck", "spba";
+-					dmas = <&sdma 17 20 1>, <&sdma 18 20 1>,
+-					       <&sdma 19 20 1>, <&sdma 20 20 1>,
+-					       <&sdma 21 20 1>, <&sdma 22 20 1>;
++					clocks = <&clks IMX6SX_CLK_ASRC_IPG>,
++						<&clks IMX6SX_CLK_ASRC_MEM>, <&clks 0>,
++						<&clks 0>, <&clks 0>, <&clks 0>, <&clks 0>,
++						<&clks 0>, <&clks 0>, <&clks 0>, <&clks 0>,
++						<&clks 0>, <&clks 0>, <&clks 0>, <&clks 0>,
++						<&clks IMX6SX_CLK_SPDIF>, <&clks 0>, <&clks 0>,
++						<&clks IMX6SX_CLK_SPBA>;
++					clock-names = "mem", "ipg", "asrck_0",
++						"asrck_1", "asrck_2", "asrck_3", "asrck_4",
++						"asrck_5", "asrck_6", "asrck_7", "asrck_8",
++						"asrck_9", "asrck_a", "asrck_b", "asrck_c",
++						"asrck_d", "asrck_e", "asrck_f", "spba";
++					dmas = <&sdma 17 23 1>, <&sdma 18 23 1>,
++					       <&sdma 19 23 1>, <&sdma 20 23 1>,
++					       <&sdma 21 23 1>, <&sdma 22 23 1>;
+ 					dma-names = "rxa", "rxb", "rxc",
+ 						    "txa", "txb", "txc";
++					fsl,asrc-rate  = <48000>;
++					fsl,asrc-width = <16>;
+ 					status = "okay";
+ 				};
+ 			};
 -- 
 2.21.0
 
