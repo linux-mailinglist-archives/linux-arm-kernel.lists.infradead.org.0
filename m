@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43DEB1FDCBD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:21:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05E701FDCB8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:21:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jxgZDXFZlBmfKznIJuRuMHEPr4w8BknDsBDaLxWDTkY=; b=opsApfWMbN5lMd
-	r9+Oja90jib7nk51HcyDliwLVz8uCB1sctars8fO8c4ACnwh4KFDBmqnoJMvXoSGtbuIw0eC+wzFr
-	kI3v6jm35mjwY6xrZvefEmFzksvQBuLERBEIDNAj9RisBE50X78l0Lg4mXEXeh0r0Vmw8tYTo4w9g
-	1CGkSgs+YiMKPPVbqKaVVP/kjgp4xseHFTkQTdpWYs9kWWjlgv4ruvfex3/xfLyPHs05dNb/De1cB
-	FYjXprR1IchOW36eYkQDPKOfvO/SeD31zic6Xpp485mwL/H3wRvxdBpXBsNERFbEzA8SrLdEqADaf
-	ZTD2py5IrjyumAgCw1oA==;
+	List-Owner; bh=1hJFktkhY/MjGCSsBlElSYCseVG0GHYkkPy+KilrGJY=; b=iEJf66N8nTgpKQ
+	xr22r7cE7IYRnuvIBptbUQxBAkXWALSmbE/iPZZm0NqB6yoEOl0fQtp/4/da9or/cetrY8w22f3pO
+	V3mWgxrRhfYbRfqTaKyj+TMOLo5iFOQA5Ths9/bTMOXfogUAukrol5KZKhPaUCsohRUAKmWNugGU5
+	O7cTZyHIcVOooFd3YOQQl5m3lHdGcwNxPMwUtodH2VwLYHrfHwQxkie/i6KvY0oUQtu2GKcTML0ZA
+	Qi8hjstzzhfsaYPsDhbpB9p2mrUtGIPEtgQoyiZyNST9IVfe/ZWbfjwleA5zFV0FzjgyExHP94NjU
+	WHpC9eaCG0lBSF3jElPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljFa-0005Bu-5P; Thu, 18 Jun 2020 01:21:54 +0000
+	id 1jljFJ-0004wg-7O; Thu, 18 Jun 2020 01:21:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj5e-0001O4-QB; Thu, 18 Jun 2020 01:11:49 +0000
+ id 1jlj5i-0001Qs-Rr
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:11:51 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3CA2E21974;
- Thu, 18 Jun 2020 01:11:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2062320B1F;
+ Thu, 18 Jun 2020 01:11:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442698;
- bh=nZiTh/x0+BJwJJK5EHwTZcOVVxfwS36S2zGYTDgC4ZU=;
+ s=default; t=1592442702;
+ bh=HyWkwtaU0/RoTtrJwEMQ2IOLdNbG66utKfyAaE3FH+A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pkBgkTForBTTz7VuKwDRtFnFgF0uth22pPe8HWvv/eR2EzEDHNtctM1s6peFUozzm
- clqDAKZtJ5n6L9YsFkPmFdNHX38nE29A5PpwkvyXCBmzR80W3vy5xhDbUQIci1OCLc
- eQ3gC0GlSm2sLmtGXDorDHNbco7jNGy41ajTCpu0=
+ b=cUF3JzZ3cCUoQpbPWImubojPtFYTPfi8wT4uIpw20TjE8Kml/ZWFCnowBTIWQGPFW
+ TFpNH9HMaYOtZ9rM+qnC56QpPjmVMWD1G9luDcpqo2RLK4pKxh7hEdRonrxXJiOKhE
+ hAoPW0Gr8BB+mgwTkSL6RdUbY7lef8pmlQJy8gS8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 161/388] clk: meson: meson8b: Don't rely on u-boot
- to init all GP_PLL registers
-Date: Wed, 17 Jun 2020 21:04:18 -0400
-Message-Id: <20200618010805.600873-161-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 164/388] ARM: dts: aspeed: ast2600: Set arch timer
+ always-on
+Date: Wed, 17 Jun 2020 21:04:21 -0400
+Message-Id: <20200618010805.600873-164-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181139_466552_A0C16AAD 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20200617_181143_057726_AB933BCF 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,90 +80,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, Eddie James <eajames@linux.ibm.com>,
+ Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+From: Eddie James <eajames@linux.ibm.com>
 
-[ Upstream commit a29ae8600d50ece1856b062a39ed296b8b952259 ]
+[ Upstream commit c998f40f2ae6a48e93206e2c1ea0691479989611 ]
 
-Not all u-boot versions initialize the HHI_GP_PLL_CNTL[2-5] registers.
-In that case all HHI_GPLL_PLL_CNTL[1-5] registers are 0x0 and when
-booting Linux the PLL fails to lock.
-The initialization sequence from u-boot is:
-- put the PLL into reset
-- write 0x59C88000 to HHI_GP_PLL_CNTL2
-- write 0xCA463823 to HHI_GP_PLL_CNTL3
-- write 0x0286A027 to HHI_GP_PLL_CNTL4
-- write 0x00003000 to HHI_GP_PLL_CNTL5
-- set M, N, OD and the enable bit
-- take the PLL out of reset
-- check if it has locked
-- disable the PLL
+According to ASPEED, FTTMR010 is not intended to be used in the AST2600.
+The arch timer should be used, but Linux doesn't enable high-res timers
+without being assured that the arch timer is always on, so set that
+property in the devicetree.
 
-In Linux we already initialize M, N, OD, the enable and the reset bits.
-Also the HHI_GP_PLL_CNTL[2-5] registers with these magic values (the
-exact meaning is unknown) so the PLL can lock when the vendor u-boot did
-not initialize these registers yet.
+The FTTMR010 device is described by set to disabled.
 
-Fixes: b882964b376f21 ("clk: meson: meson8b: add support for the GP_PLL clock on Meson8m2")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-Link: https://lore.kernel.org/r/20200501215717.735393-1-martin.blumenstingl@googlemail.com
+This fixes highres timer support for AST2600.
+
+Fixes: 2ca5646b5c2f ("ARM: dts: aspeed: Add AST2600 and EVB")
+Signed-off-by: Eddie James <eajames@linux.ibm.com>
+Reviewed-by: Joel Stanley <joel@jms.id.au>
+Signed-off-by: Joel Stanley <joel@jms.id.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/meson/meson8b.c | 9 +++++++++
- drivers/clk/meson/meson8b.h | 4 ++++
- 2 files changed, 13 insertions(+)
+ arch/arm/boot/dts/aspeed-g6.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-index 5f375799ce46..11f6b868cf2b 100644
---- a/drivers/clk/meson/meson8b.c
-+++ b/drivers/clk/meson/meson8b.c
-@@ -1918,6 +1918,13 @@ static struct clk_regmap meson8b_mali = {
- 	},
- };
+diff --git a/arch/arm/boot/dts/aspeed-g6.dtsi b/arch/arm/boot/dts/aspeed-g6.dtsi
+index 0a29b3b57a9d..fd0e483737a0 100644
+--- a/arch/arm/boot/dts/aspeed-g6.dtsi
++++ b/arch/arm/boot/dts/aspeed-g6.dtsi
+@@ -65,6 +65,7 @@ timer {
+ 			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(2) | IRQ_TYPE_LEVEL_LOW)>;
+ 		clocks = <&syscon ASPEED_CLK_HPLL>;
+ 		arm,cpu-registers-not-fw-configured;
++		always-on;
+ 	};
  
-+static const struct reg_sequence meson8m2_gp_pll_init_regs[] = {
-+	{ .reg = HHI_GP_PLL_CNTL2,	.def = 0x59c88000 },
-+	{ .reg = HHI_GP_PLL_CNTL3,	.def = 0xca463823 },
-+	{ .reg = HHI_GP_PLL_CNTL4,	.def = 0x0286a027 },
-+	{ .reg = HHI_GP_PLL_CNTL5,	.def = 0x00003000 },
-+};
-+
- static const struct pll_params_table meson8m2_gp_pll_params_table[] = {
- 	PLL_PARAMS(182, 3),
- 	{ /* sentinel */ },
-@@ -1951,6 +1958,8 @@ static struct clk_regmap meson8m2_gp_pll_dco = {
- 			.width   = 1,
- 		},
- 		.table = meson8m2_gp_pll_params_table,
-+		.init_regs = meson8m2_gp_pll_init_regs,
-+		.init_count = ARRAY_SIZE(meson8m2_gp_pll_init_regs),
- 	},
- 	.hw.init = &(struct clk_init_data){
- 		.name = "gp_pll_dco",
-diff --git a/drivers/clk/meson/meson8b.h b/drivers/clk/meson/meson8b.h
-index c889fbeec30f..c91fb07fcb65 100644
---- a/drivers/clk/meson/meson8b.h
-+++ b/drivers/clk/meson/meson8b.h
-@@ -20,6 +20,10 @@
-  * [0] http://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf
-  */
- #define HHI_GP_PLL_CNTL			0x40  /* 0x10 offset in data sheet */
-+#define HHI_GP_PLL_CNTL2		0x44  /* 0x11 offset in data sheet */
-+#define HHI_GP_PLL_CNTL3		0x48  /* 0x12 offset in data sheet */
-+#define HHI_GP_PLL_CNTL4		0x4C  /* 0x13 offset in data sheet */
-+#define HHI_GP_PLL_CNTL5		0x50  /* 0x14 offset in data sheet */
- #define HHI_VIID_CLK_DIV		0x128 /* 0x4a offset in data sheet */
- #define HHI_VIID_CLK_CNTL		0x12c /* 0x4b offset in data sheet */
- #define HHI_GCLK_MPEG0			0x140 /* 0x50 offset in data sheet */
+ 	ahb {
+@@ -368,6 +369,7 @@ timer: timer@1e782000 {
+ 						<&gic  GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&syscon ASPEED_CLK_APB1>;
+ 				clock-names = "PCLK";
++				status = "disabled";
+                         };
+ 
+ 			uart1: serial@1e783000 {
 -- 
 2.25.1
 
