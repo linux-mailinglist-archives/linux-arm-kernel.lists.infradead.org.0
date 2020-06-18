@@ -2,58 +2,127 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D286E1FE930
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 05:02:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70B041FE940
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 05:09:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=EZZAs8oOqmU0EeDgyv3SzT6QZAe14vihljpn3hEl3VE=; b=hbfawIau4W/m+K
-	bqDWem25V01BeOPzfg/eo0X4QTRJL7TyR4a1YYndAOY+VOHyEFQkQfkf78d5koM25sjHfzhmLkSCA
-	SE7qrjDgac7Q5Z2U5hvKBGQAq9dOMSq+TjbR43JsYMTYvhIK1uA+83pPwYH+JtPywBXpFBhnegLKv
-	nv5atg4CrGjbG7/588LpEYMXmidW0EP6ufzgwHT6PetCPzhByrQzi7dEv9jwP8qipa2Dq3pD+dngl
-	nJlJ4NaURPq1OyTQdETcRc/lPHyEDhmbO9ioJvwcPjdS7PkXheT+fom6jCFfo9zLa6sROdcBfkrui
-	gM6B6LyZVUiR5Lg5CI4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RDgHFKXbPi12RbWoEUCb4ezC597AaDubmm3h8YhlC2I=; b=vAva0rTq7O8PXY
+	jo2XYOjY3UYUrkY6aRgcIOI7/IaSaOnb1YAXWigfIRQLmXoTp98NyfdcjjmBsvBjhd3bJEGpRJ8C3
+	1IuSw5O4+/AnZh3op42PVdG2nkmpTIBUX2cih9jZ5zY3KrGaS+dEUxNWQiQGD9hXZ9OTSxmamfWgO
+	0FygElCAFbnOfzuO1/Q2Bk35BDmxTGEfZ8MP2Vcf48LPuX9OXSFLsjL8QCrryMsMSgmRBSJqe8Vmh
+	o7djR43tvg5XFfodIujC9vHRXxuncg0cRWwc8EfhQLGintg6Do1k22maCli50pRjPMcwjxrFJSw4j
+	FepUiJRB+d49HcRhw/EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlkoM-0002RZ-Gw; Thu, 18 Jun 2020 03:01:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jlkvX-0005ip-Ij; Thu, 18 Jun 2020 03:09:19 +0000
+Received: from mail-eopbgr40060.outbound.protection.outlook.com ([40.107.4.60]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlkoD-0002QP-GY; Thu, 18 Jun 2020 03:01:47 +0000
-Received: from localhost (mobile-166-170-222-206.mycingular.net
- [166.170.222.206])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F3240208C7;
- Thu, 18 Jun 2020 03:01:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592449303;
- bh=D+RIBaE1e99GexBp+YDaMWHaXlTMDUSMPXDMbSLsLhU=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=rvspTLk/7iukyPQFUzJrN85r6rr4OtLWCMuGAvhlQQgoCThyT5PA5LDTn4FYkkLfF
- Dhz/y4545V7+UmxzWJxFbRbIXf8ZXXZwvcNKQgfAZ/6UR5RD69gDLOBtFHpP48Gblt
- Kn4t75RU6lP8zLcyLuU06yvIETn4t/g8p0HJDz1I=
-Date: Wed, 17 Jun 2020 22:01:41 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Jim Quinlan <james.quinlan@broadcom.com>
-Subject: Re: [PATCH v5 09/12] PCI: brcmstb: Set internal memory viewport sizes
-Message-ID: <20200618030141.GA2041805@bjorn-Precision-5520>
+ id 1jlkvJ-0005i4-Vw
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 03:09:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dNpfzGSC0nss96TQ+dKNtYS6dsHC6a8A71AaVYFlYlxmtvXvDCSkdULkrS6CVUz5QfFi5DMx2BQM+QwK5zNSugKqOLs34T2HoMvPB2w7JBis5ek7Te+08HkR31PvVdL5P0ghEvi+AEYANvpLPF6Yq6syo5Rla3b7+9rtMzgerf2DIHN96bXF14KRxTAg6MBEETnI6DBHUwdetCFVxIaLYeypPkLbgEQnn7xHwdM+2VMLgX5kxMEgxpxyKnWvkCim24mM5qUIbX9jtPX4f9qb+7EOHa7s6DvLgnZPr1e3SW8n4X3Pic8X5XYHt6zCbhPlAtxKk+Zo1OVdm+z/5P6JUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=I9N7KL5y5sB/09UbOBaQVac7PGw07PfTmIAtVc9280o=;
+ b=f2KXpebcufsEYl5Hgvi5QpS2xaeKl8UFbNOTkGXrn1HxqMg1XOQ70GVOEDymu4ij40W2Qqa2hssw02XmAiwN/mzXD9udo4W2e5CFa+1D5IIviVD6m2wHv6zHZOPPEUmv7iVKqtol+Kp3CQGprZcta6go6/HmaWshaJY1HJDEwRNQN0j3mvsW/T1jA80daFynnt/d4IGUQzPnaRTS59ZcvH27nkvxB+XPAyzMI5aamnmZFs482TtB898rbCX4egRwepRS2pyuza25QhJek02yRUMv2/vRCPNDyJEsmfYfnNadMsn9PzzPckcUHFSDFINt8yuBS2m9cJnXwYnExckdMg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=I9N7KL5y5sB/09UbOBaQVac7PGw07PfTmIAtVc9280o=;
+ b=YUP79wwAZudW1wQVhg2qYdR/eYqvDb+ujg8f+jy9WxZOCqv7nDMagZs13AKn6HppJNRIopcBYqDkamWw8A4VrnbR9sAxFEyNsGygVUxeAgXxTl1V+TlcS2M4F/OxF4p4MCMJHJI+eTt2HLO4OqWOy5ncxeDNy7QkEn4nYBbZDUg=
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
+ by AM6PR04MB4136.eurprd04.prod.outlook.com (2603:10a6:209:4e::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18; Thu, 18 Jun
+ 2020 03:09:00 +0000
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3088.028; Thu, 18 Jun 2020
+ 03:09:00 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "linux@armlinux.org.uk"
+ <linux@armlinux.org.uk>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "oleksandr.suvorov@toradex.com"
+ <oleksandr.suvorov@toradex.com>, Stefan Agner <stefan.agner@toradex.com>,
+ "arnd@arndb.de" <arnd@arndb.de>, Abel Vesa <abel.vesa@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "allison@lohutok.net" <allison@lohutok.net>, "gregkh@linuxfoundation.org"
+ <gregkh@linuxfoundation.org>, "info@metux.net" <info@metux.net>, Leonard
+ Crestez <leonard.crestez@nxp.com>, Andy Duan <fugang.duan@nxp.com>, Daniel
+ Baluta <daniel.baluta@nxp.com>, "yuehaibing@huawei.com"
+ <yuehaibing@huawei.com>, "sfr@canb.auug.org.au" <sfr@canb.auug.org.au>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-clk@vger.kernel.org"
+ <linux-clk@vger.kernel.org>
+Subject: RE: [PATCH V2 2/9] ARM: imx: Select MXC_CLK for ARCH_MXC
+Thread-Topic: [PATCH V2 2/9] ARM: imx: Select MXC_CLK for ARCH_MXC
+Thread-Index: AQHWPjGjLfNEVvc8HUmhxuTW0pJGcKjcqIMggAAi6gCAAPOSIA==
+Date: Thu, 18 Jun 2020 03:09:00 +0000
+Message-ID: <AM6PR04MB496647CBE140DFF73DCBBEED809B0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
+ <1591687933-19495-3-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB4966F4A5E0276AEDB5605260809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39160682846B99E0A3762AF1F59A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB39160682846B99E0A3762AF1F59A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 1f3ca449-c087-4494-f462-08d81334f2d7
+x-ms-traffictypediagnostic: AM6PR04MB4136:
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR04MB41360610BC7A99CD889B5074809B0@AM6PR04MB4136.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
+x-forefront-prvs: 0438F90F17
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: DNKYYE1jTP8ri2bNtyQAcME9rM1ClxLQ10aM5q2BbTtrgiScsgZDjKKg2HqNQWuq01KTt53a2TArC2tpQWlWIj+oTtOcEGfxT1amilUE3c01AfCE+YvVnw2cvBvspHoEt/uEnAkc5tCSMFmkd3zuWwI7jBESSmifE+RhoFVsWfsmhMSitcYzrHXTM0WFdIkRIwDB5GIeiPbcd0IuVxA+e5hHLKyHHmBcDd9VtFMK1KUCh7lrcWjAGL5Bg8OQnm0XZENCVBdQGL0E3XSJ/Z9/Hxqbcxemg7gmzmkp7Bx70JYCZvvk9uw/JavDgOdOsyLPc9aOm3992h1kvRl+jc0cByxKrRAlVaJgfcm3ollPRUHehPZhY2YqhKz35FY1cwxP3g35dubUWmaCBhROQtORWQ==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(136003)(39860400002)(366004)(346002)(376002)(396003)(66556008)(76116006)(66476007)(86362001)(5660300002)(66446008)(186003)(71200400001)(66946007)(7416002)(64756008)(52536014)(6506007)(44832011)(53546011)(9686003)(2906002)(55016002)(110136005)(478600001)(8676002)(4326008)(26005)(83380400001)(33656002)(316002)(8936002)(7696005)(21314003)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: P0fT3/EponGUnv8d0C3+UrKHGPBjo7bi+IuWb+iqKYx0VeIdUoFitlnA/4t8h7V/tEJZoD6U6Z3dbFPrB7hukKF6ttLUjMV5WxvNpbrcttFGLcfMY7BowqmutXeT9uK5RrrPatShzQ4GHYh2cXWGL/Qw0XbeFHHaJiO7u1xpjiEcSMMW7IhwDNATOYrpldiHD0POLcl90MkobPBDffL52yhseHG40MnGiW1EFbELtdqVbEvOLAhydN6Unb6cnUeVvIV58YSAFH+xHj2lEnjRyjV6WTkpuMUY4kzJ17zYnW3Rm1AdqIUhy71VnZgwl4bKK+ibLvhKI7avBk918/+Tu2pAMc957/OO0X9aS8yMDCH71wxAtPWw9OtUclRI9QbpqXRUSUrGjjYdqjp1OC4nJS27iKwY0ViN7jczCzpSrD3FMOSeGdgAHl0PJOSgtvyIZYFJ1ENAi9zalbn2tiqlOyhgvKOvSSFtNZ09ZvgJe4L5CUDDMku3PTWtvlRxgFf7
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+-6iNx1j5uK=nL-H32qthxEwZe+KOxtqCG4TPJxD+WdzMQFrA@mail.gmail.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1f3ca449-c087-4494-f462-08d81334f2d7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jun 2020 03:09:00.4512 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FMlTjhfhZqlaQeGYy9S1XglhPt3nngRme9BE0/9CdkrKOO0Ai50i9/j9QlRX2vskZM7Le/zuUFmnMe4DITwT/Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_200145_673207_09E710D0 
-X-CRM114-Status: GOOD (  36.02  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200617_200906_121901_F9BF4446 
+X-CRM114-Status: GOOD (  13.47  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.4.60 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.4.60 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -62,7 +131,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,242 +142,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 17, 2020 at 01:28:12PM -0400, Jim Quinlan wrote:
-> Hello Bjorn,
+> From: Anson Huang <anson.huang@nxp.com>
+> Sent: Wednesday, June 17, 2020 8:36 PM
 > 
-> On Tue, Jun 16, 2020 at 6:05 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > Subject: RE: [PATCH V2 2/9] ARM: imx: Select MXC_CLK for ARCH_MXC
 > >
-> > On Tue, Jun 16, 2020 at 04:55:16PM -0400, Jim Quinlan wrote:
-> > > BrcmSTB PCIe controllers are intimately connected to the memory
-> > > controller(s) on the SOC.  There is a "viewport" for each memory controller
-> > > that allows inbound accesses to CPU memory.  Each viewport's size must be
-> > > set to a power of two, and that size must be equal to or larger than the
-> > > amount of memory each controller supports.
+> > > From: Anson Huang <Anson.Huang@nxp.com>
+> > > Sent: Tuesday, June 9, 2020 3:32 PM
+> > >
+> > > i.MX common clock drivers may support module build, so it is NOT
+> > > selected by default, for ARCH_MXC ARMv7 platforms, need to select it
+> > > manually to make build pass.
+> > >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > >
-> > This describes some requirements, but doesn't actually say what this
-> > patch *does*.
+> > Can't the original def_xxx work?
 > >
-> > I *think* it reads the viewport sizes from the "brcm,scb-sizes" DT
-> > property instead of computing something from "dma-ranges".  Looks like
-> > it also adds support for SCB1 and SCB2.
-> >
-> > Those seem interesting, but don't really come through in the subject
-> > or even the commit log.
-> >
-> > If I understand correctly, this is all for DMA ("inbound accesses to
-> > CPU memory").  I think it would be worth mentioning "DMA", since
-> > that's the common term for this.
+> > config MXC_CLK
+> >         tristate
+> >         def_tristate ARCH_MXC
 > 
+> Such change will make MXC_CLK=y even all i.MX8 SoCs clock drivers are selected
+> as module, so it does NOT meet the requirement of module support. Below is
+> from .config when all
+> i.MX8 SoCs clock drivers are configured to module.
 > 
-> I have changed the commit message to the text below.  Please let me
-> know if it requires more work
-> Thanks, Jim
+>  CONFIG_MXC_CLK=y
+>  CONFIG_MXC_CLK_SCU=m
+>  CONFIG_CLK_IMX8MM=m
+>  CONFIG_CLK_IMX8MN=m
+>  CONFIG_CLK_IMX8MP=m
+>  CONFIG_CLK_IMX8MQ=m
+>  CONFIG_CLK_IMX8QXP=m
 > 
-> PCI: brcmstb: Set internal memory DMA viewport sizes
 
-Did you not set the viewport sizes before?
+It works at my side.
+Below is my changes based on your patchset:
+$ git diff
+diff --git a/arch/arm/mach-imx/Kconfig b/arch/arm/mach-imx/Kconfig
+index 47b10d20f411..e7d7b90e2cf8 100644
+--- a/arch/arm/mach-imx/Kconfig
++++ b/arch/arm/mach-imx/Kconfig
+@@ -4,7 +4,6 @@ menuconfig ARCH_MXC
+        depends on ARCH_MULTI_V4_V5 || ARCH_MULTI_V6_V7 || ARM_SINGLE_ARMV7M
+        select ARCH_SUPPORTS_BIG_ENDIAN
+        select CLKSRC_IMX_GPT
+-       select MXC_CLK
+        select GENERIC_IRQ_CHIP
+        select GPIOLIB
+        select PINCTRL
+diff --git a/drivers/clk/imx/Kconfig b/drivers/clk/imx/Kconfig
+index 26cedbfe386c..f7b3e3a2cb9f 100644
+--- a/drivers/clk/imx/Kconfig
++++ b/drivers/clk/imx/Kconfig
+@@ -3,6 +3,7 @@
+ config MXC_CLK
+        tristate "IMX clock"
+        depends on ARCH_MXC
++       def_tristate ARCH_MXC
+ 
+ config MXC_CLK_SCU
+        tristate "IMX SCU clock"
 
-> BrcmSTB PCIe controllers are intimately connected to the memory
-> controller(s) on the SOC.  There is a "viewport" for each memory controller
-> that allows inbound DMA acceses to CPU memory.  Each viewport's size must
-> be set to a power of two, and that size must be equal to or larger than the
-> amount of memory each controller supports.  Unfortunately the viewport
-> sizes cannot be ascertained from the "dma-ranges" property so they have
-> their own property, "brcm,scb-sizes".
+Regards
+Aisheng
 
-s/inbound DMA acceses to CPU memory/DMA/
-
-"Accesses" is redundant since the "A" in "DMA" stands for "access".
-I'm not sure "inbound" adds anything and might confuse since DMA may
-be either a read or write of CPU memory.
-
-I assume *all* drivers need to know the address and size of regions in
-"dma-ranges".  Is there something special about this device that means
-it needs something different?
-
-I guess it's the base/extension split?  That couldn't be described as
-two separate DMA ranges?
-
-Could/should the new property have a name somehow related to
-"dma-ranges"?
-
-Should "dma-ranges" be documented in
-Documentation/devicetree/bindings/pci/pci.txt instead of the
-individual device bindings?
-
-> There may be one to three memory controllers; they are indicated by the
-> term SCBi.  Each controller has a base region and an optional extension
-> region.  In physical memory, the base and extension regions are not
-> adjacent, but in PCIe-space they are.  Further, the 1-3 viewports are also
-> adjacent in PCIe-space.
-> 
-> The SCB settings work in conjunction with the "dma-ranges' offsets to
-> enable non-identity mappings between system memory and PCIe space.
-
-s/ranges'/ranges"/ (mismatched quotes)
-
-This describes the hardware, but still doesn't actually say what this
-patch *does*.
-
-If I'm a user, why do I want this patch?  Does it fix something that
-didn't work before?  Does it increase the amount of DMA-able memory?
-
-What does this mean in terms of backwards compatibility with old DTs?
-Does this work with old DTs that don't have "brcm,scb-sizes"?  Maybe
-this is all related to specific devices that weren't supported before,
-so there *are* no old DTs for them?  I can't tell from the binding
-update or the patch that this is related to specific devices.
-
-> > > Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
-> > > Acked-by: Florian Fainelli <f.fainelli@gmail.com>
-> > > ---
-> > >  drivers/pci/controller/pcie-brcmstb.c | 68 ++++++++++++++++++++-------
-> > >  1 file changed, 50 insertions(+), 18 deletions(-)
-> > >
-> > > diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> > > index 9189406fd35c..39f77709c6a2 100644
-> > > --- a/drivers/pci/controller/pcie-brcmstb.c
-> > > +++ b/drivers/pci/controller/pcie-brcmstb.c
-> > > @@ -57,6 +57,8 @@
-> > >  #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK     0x300000
-> > >  #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128              0x0
-> > >  #define  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK          0xf8000000
-> > > +#define  PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK          0x07c00000
-> > > +#define  PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK          0x0000001f
-> > >
-> > >  #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO             0x400c
-> > >  #define PCIE_MEM_WIN0_LO(win)        \
-> > > @@ -154,6 +156,7 @@
-> > >  #define SSC_STATUS_OFFSET            0x1
-> > >  #define SSC_STATUS_SSC_MASK          0x400
-> > >  #define SSC_STATUS_PLL_LOCK_MASK     0x800
-> > > +#define PCIE_BRCM_MAX_MEMC           3
-> > >
-> > >  #define IDX_ADDR(pcie)                       (pcie->reg_offsets[EXT_CFG_INDEX])
-> > >  #define DATA_ADDR(pcie)                      (pcie->reg_offsets[EXT_CFG_DATA])
-> > > @@ -260,6 +263,8 @@ struct brcm_pcie {
-> > >       const int               *reg_field_info;
-> > >       enum pcie_type          type;
-> > >       struct reset_control    *rescal;
-> > > +     int                     num_memc;
-> > > +     u64                     memc_size[PCIE_BRCM_MAX_MEMC];
-> > >  };
-> > >
-> > >  /*
-> > > @@ -715,22 +720,44 @@ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
-> > >                                                       u64 *rc_bar2_offset)
-> > >  {
-> > >       struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
-> > > -     struct device *dev = pcie->dev;
-> > >       struct resource_entry *entry;
-> > > +     struct device *dev = pcie->dev;
-> > > +     u64 lowest_pcie_addr = ~(u64)0;
-> > > +     int ret, i = 0;
-> > > +     u64 size = 0;
-> > >
-> > > -     entry = resource_list_first_type(&bridge->dma_ranges, IORESOURCE_MEM);
-> > > -     if (!entry)
-> > > -             return -ENODEV;
-> > > +     resource_list_for_each_entry(entry, &bridge->dma_ranges) {
-> > > +             u64 pcie_beg = entry->res->start - entry->offset;
-> > >
-> > > +             size += entry->res->end - entry->res->start + 1;
-> > > +             if (pcie_beg < lowest_pcie_addr)
-> > > +                     lowest_pcie_addr = pcie_beg;
-> > > +     }
-> > >
-> > > -     /*
-> > > -      * The controller expects the inbound window offset to be calculated as
-> > > -      * the difference between PCIe's address space and CPU's. The offset
-> > > -      * provided by the firmware is calculated the opposite way, so we
-> > > -      * negate it.
-> > > -      */
-> > > -     *rc_bar2_offset = -entry->offset;
-> > > -     *rc_bar2_size = 1ULL << fls64(entry->res->end - entry->res->start);
-> > > +     if (lowest_pcie_addr == ~(u64)0) {
-> > > +             dev_err(dev, "DT node has no dma-ranges\n");
-> > > +             return -EINVAL;
-> > > +     }
-> > > +
-> > > +     ret = of_property_read_variable_u64_array(pcie->np, "brcm,scb-sizes", pcie->memc_size, 1,
-> > > +                                               PCIE_BRCM_MAX_MEMC);
-> > > +
-> > > +     if (ret <= 0) {
-> > > +             /* Make an educated guess */
-> > > +             pcie->num_memc = 1;
-> > > +             pcie->memc_size[0] = 1 << fls64(size - 1);
-> > > +     } else {
-> > > +             pcie->num_memc = ret;
-> > > +     }
-> > > +
-> > > +     /* Each memc is viewed through a "port" that is a power of 2 */
-> > > +     for (i = 0, size = 0; i < pcie->num_memc; i++)
-> > > +             size += pcie->memc_size[i];
-> > > +
-> > > +     /* System memory starts at this address in PCIe-space */
-> > > +     *rc_bar2_offset = lowest_pcie_addr;
-> > > +     /* The sum of all memc views must also be a power of 2 */
-> > > +     *rc_bar2_size = 1ULL << fls64(size - 1);
-> > >
-> > >       /*
-> > >        * We validate the inbound memory view even though we should trust
-> > > @@ -782,12 +809,11 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
-> > >       void __iomem *base = pcie->base;
-> > >       struct device *dev = pcie->dev;
-> > >       struct resource_entry *entry;
-> > > -     unsigned int scb_size_val;
-> > >       bool ssc_good = false;
-> > >       struct resource *res;
-> > >       int num_out_wins = 0;
-> > >       u16 nlw, cls, lnksta;
-> > > -     int i, ret;
-> > > +     int i, ret, memc;
-> > >       u32 tmp, aspm_support;
-> > >
-> > >       /* Reset the bridge */
-> > > @@ -824,11 +850,17 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
-> > >       writel(upper_32_bits(rc_bar2_offset),
-> > >              base + PCIE_MISC_RC_BAR2_CONFIG_HI);
-> > >
-> > > -     scb_size_val = rc_bar2_size ?
-> > > -                    ilog2(rc_bar2_size) - 15 : 0xf; /* 0xf is 1GB */
-> > >       tmp = readl(base + PCIE_MISC_MISC_CTRL);
-> > > -     u32p_replace_bits(&tmp, scb_size_val,
-> > > -                       PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK);
-> > > +     for (memc = 0; memc < pcie->num_memc; memc++) {
-> > > +             u32 scb_size_val = ilog2(pcie->memc_size[memc]) - 15;
-> > > +
-> > > +             if (memc == 0)
-> > > +                     u32p_replace_bits(&tmp, scb_size_val, PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK);
-> > > +             else if (memc == 1)
-> > > +                     u32p_replace_bits(&tmp, scb_size_val, PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK);
-> > > +             else if (memc == 2)
-> > > +                     u32p_replace_bits(&tmp, scb_size_val, PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK);
-> > > +     }
-> > >       writel(tmp, base + PCIE_MISC_MISC_CTRL);
-> > >
-> > >       /*
-> > > --
-> > > 2.17.1
-> > >
-
+> Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
