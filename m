@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EE6E1FEDCD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:39:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEB171FEDE9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:40:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tPaQ91lT7rbzanSx2di8xmp7RPbG01sNLPqNOBICuwI=; b=NJFpCRhbb5xtegTZK0PgfqlvyZ
-	on2qIXWs3/8M4gpxW+LF0xmXPT+UOcWCHQV0QAYav1boJyKydk0qCv6dMNaChh8M+/xRvDtbHFWgI
-	YIPrrQe9c4AcQUSUCRWUyKDVW1OqqhxtDNeGbG0yieNM3svDHcQzxWcQSC3nUXgb3SzYrZ+z8a2/K
-	5s2R3EUwm9YaAAVyX8rA8ak7e1KQYtqiIEZV4tXpbclZbGXUskpbecZxzoxbXo00lx8Uko1Zso4jC
-	ubPKhl1NJT/Djb3MMiPnbh83Nk2J2QWo2tm2c+g6ntJsGmBuVa1gJi7A9eNj3tkjgULgeX9BsXuMc
-	kLVg+NXg==;
+	bh=Jl9kCLEXAZKqMbztiSl3cNEMsaQ+gLuaY/RrycOIeX8=; b=P5Y+xcco2cttfiz48Uxhtyzv8Y
+	skfpY+dvXbouH/z87AsC1FckF4OIS46p/8xOY44g7/lm4GIoG4yh5PslxmhnZubybRYni21PeXS2h
+	D0OSE6e2IueYCCU7hASPx72Da9Jeq/JSrOabO85RuTIKaFN97fslfoWNLGsNPDFBpNST2lwdrmqZF
+	h/6g+tJb4pHG8DwJ06iHtVPZvwIMWewB3m/7u5WcSUKvHp4ip4Y9mPZTr9Z1IubphRB7h4d55RixN
+	6JSnWqyauk7kfLGptcQpq7UlM8xo3VdatgDS7S16gNA4K2wXDEJSC3+4r/jPKwO3NPHycg6tX9IaO
+	uRO1DJNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlq4W-0002jc-VM; Thu, 18 Jun 2020 08:38:56 +0000
+	id 1jlq5c-0004AW-Vk; Thu, 18 Jun 2020 08:40:04 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlq43-0002Wm-6Z
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:38:28 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ id 1jlq44-0002Vt-A5
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:38:29 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 18 Jun 2020 17:38:26 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 6B432180B51;
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id E406C60057;
  Thu, 18 Jun 2020 17:38:26 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
  Thu, 18 Jun 2020 17:38:26 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 9911D1A12AD;
- Thu, 18 Jun 2020 17:38:25 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 5E0AB1A12AD;
+ Thu, 18 Jun 2020 17:38:26 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
@@ -42,16 +42,15 @@ To: Bjorn Helgaas <bhelgaas@google.com>,
  Rob Herring <robh+dt@kernel.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
  Marc Zyngier <maz@kernel.org>
-Subject: [PATCH v5 3/6] dt-bindings: PCI: uniphier: Add iATU register
- description
-Date: Thu, 18 Jun 2020 17:38:10 +0900
-Message-Id: <1592469493-1549-4-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v5 4/6] PCI: uniphier: Add iATU register support
+Date: Thu, 18 Jun 2020 17:38:11 +0900
+Message-Id: <1592469493-1549-5-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_013827_354530_F7C915BC 
-X-CRM114-Status: GOOD (  14.97  )
+X-CRM114-CacheID: sfid-20200618_013828_484951_7B45243E 
+X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -81,27 +80,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the dt-bindings, "atu" reg-names is required to get the register space
-for iATU in Synopsys DWC version 4.80 or later.
+This gets iATU register area from reg property. In Synopsys DWC version
+4.80 or later, since iATU register area is separated from core register
+area, this area is necessary to get from DT independently.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/pci/uniphier-pcie.txt | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/pci/controller/dwc/pcie-uniphier.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/pci/uniphier-pcie.txt b/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-index 1fa2c59..c4b7381 100644
---- a/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-@@ -16,6 +16,7 @@ Required properties:
-     "dbi"    - controller configuration registers
-     "link"   - SoC-specific glue layer registers
-     "config" - PCIe configuration space
-+    "atu"    - iATU registers for DWC version 4.80 or later
- - clocks: A phandle to the clock gate for PCIe glue layer including
- 	the host controller.
- - resets: A phandle to the reset line for PCIe glue layer including
+diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
+index 5ce2479..c37a968 100644
+--- a/drivers/pci/controller/dwc/pcie-uniphier.c
++++ b/drivers/pci/controller/dwc/pcie-uniphier.c
+@@ -451,6 +451,11 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->pci.dbi_base))
+ 		return PTR_ERR(priv->pci.dbi_base);
+ 
++	priv->pci.atu_base =
++		devm_platform_ioremap_resource_byname(pdev, "atu");
++	if (IS_ERR(priv->pci.atu_base))
++		priv->pci.atu_base = NULL;
++
+ 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "link");
+ 	priv->base = devm_ioremap_resource(dev, res);
+ 	if (IS_ERR(priv->base))
 -- 
 2.7.4
 
