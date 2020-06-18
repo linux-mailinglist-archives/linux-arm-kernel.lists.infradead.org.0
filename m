@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2F0E1FF09B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 13:34:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D39311FF0D3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 13:44:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U3cT+rChcvGFeU7ODE+PcVA6l1xTAG8jSA6wXuEASNE=; b=KKL3+mGeM+NZ/p
-	QXU8dGCLGNjCZjwIisCXuNgMUpx8FYt3FRyla0C1+TKmKQQ/o8t0VyTH3Z8ZPiU8O8JWDS8ZPDinQ
-	vUlclon5LtX+cTXKL3mMa+cSQTSs5rooCapT1gL740umJdJNT1zl8dMFpRXe7eWX659UF2ku8p1FI
-	Gl7MbS5A9x6U4DX7NgH01FgbFEZw1X51jjoDpY3ozvP9V8QQWrOhF6SBFnYqe25st6iOrggojN6uv
-	lfUwE2Be1lmvEA61DSiqSTfAhhiLMzMxe14ZAu9iqu4eyDFf+/7mg+cc+mtrVBn67A8y6ur2q3Thw
-	AQrLqa2OP/ZpSqU29iBA==;
+	List-Owner; bh=Z8oDcD7Wsmdz0SPv0x/384AgM+o+29ehPXZ3Mvc4KBA=; b=lbG4/rRJPOvZjs
+	KmmgGltzK3Y9R77csramm4dhI42vIzLpFZvshRNO3A7jiPQUyQFvZYXpCkTvcQjSJWkySO0LEDk9I
+	ZNRvXpj+MIcHP8EaI69bUNTWxyVIX1DU4J2pIMzfQBs0ZZl9TfQaDd5OoBwzan0VQrlHXY2Ll2tMd
+	GRkzzAFKPHhYHL2ILlWfH0grOLH5Ug7Aeg+9GOzPCqNU6Cq4cPoE7kiCuP8VePLPnTZCfO5CHap6p
+	nedsphuLty9rvF0KdjpWdbkTShjQVJd+bNYgWd7ayEyZRCJE1VIN6zprKa1H9qxdVtG8ykEXkfXvv
+	vNQ66vY3MQL9HEZcU0GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlsoP-0008HV-92; Thu, 18 Jun 2020 11:34:29 +0000
+	id 1jlsxw-0007L8-DN; Thu, 18 Jun 2020 11:44:20 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlsoC-0008FO-GC; Thu, 18 Jun 2020 11:34:17 +0000
-X-UUID: 3823626af74141f195f9991c2f1b8534-20200618
+ id 1jlsxl-0007JU-6m; Thu, 18 Jun 2020 11:44:10 +0000
+X-UUID: 6dd98d46b1514099a06d55f147177786-20200618
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=hw1Pb8jVQk9FC4VBMjRDMJKfMp8kJn7O5WM3f/NAK3Y=; 
- b=sc2Q/pV320OfrmW8HqdxmtNmKtaZW8dmL0ofVKpkMGFriyYj1M6MGXgAXRTNg3AdV5cEjZZoaTXH7r0kIIqJEqmmt6uWkvF9uXXDdyG3axGi6dB93aDfxu9UVrPlGmRxpH31GJWi7Tr1Ox6EsZWIEy05vDZDHYROl3RL+tbuzrQ=;
-X-UUID: 3823626af74141f195f9991c2f1b8534-20200618
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ bh=B71l7gQY32AVSPj0Iz+n3QYxFS0Q7pqS5cd7ybjbLfI=; 
+ b=pHIIJTxF+ujBhphha1txOcO4GzJ8KtLNRU+9vtVMd0VNDgd7fwGuRfa9IxX8+yQmdcCghHVt4fxWByjTBoNV3ZV1OM8Fmr2xmRKVdO3iMqzMwgV5AaERlkrcuaF9gP8YZ8nH6HTAQQ2dB3FzcERFnxaY9ABOcqAhIIvm+0VgU7w=;
+X-UUID: 6dd98d46b1514099a06d55f147177786-20200618
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <hanks.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 123669692; Thu, 18 Jun 2020 03:33:59 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 18 Jun 2020 04:34:09 -0700
+ with ESMTP id 867150420; Thu, 18 Jun 2020 03:43:55 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 18 Jun 2020 04:34:04 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Thu, 18 Jun 2020 19:34:02 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -47,17 +47,19 @@ To: Linus Walleij <linus.walleij@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Michael
  Turquette" <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, "Sean
  Wang" <sean.wang@kernel.org>
-Subject: [PATCH v6 3/7] pinctrl: mediatek: avoid virtual gpio trying to set reg
-Date: Thu, 18 Jun 2020 19:33:34 +0800
-Message-ID: <1592480018-3340-4-git-send-email-hanks.chen@mediatek.com>
+Subject: [PATCH v6 5/7] pinctrl: mediatek: add mt6779 eint support
+Date: Thu, 18 Jun 2020 19:33:36 +0800
+Message-ID: <1592480018-3340-6-git-send-email-hanks.chen@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1592480018-3340-1-git-send-email-hanks.chen@mediatek.com>
 References: <1592480018-3340-1-git-send-email-hanks.chen@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 8C82BBF0C2C048DF0D06905D2C1624E4734FF640109C428B357B14E8BF7619632000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_043416_547946_21773F24 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200618_044409_258011_8E8AC7EF 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,88 +101,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-for virtual gpios, they should not do reg setting and
-should behave as expected for eint function.
+add driver setting to support mt6779 eint
 
+Acked-by: Sean Wang <sean.wang@kernel.org>
 Signed-off-by: Hanks Chen <hanks.chen@mediatek.com>
 Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
 ---
- drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c |   25 ++++++++++++++++++++++
- drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.h |    1 +
- drivers/pinctrl/mediatek/pinctrl-paris.c         |    7 ++++++
- 3 files changed, 33 insertions(+)
+ drivers/pinctrl/mediatek/pinctrl-mt6779.c |    8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c b/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c
-index b77b18f..c53e2c3 100644
---- a/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c
-+++ b/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c
-@@ -243,6 +243,28 @@ static int mtk_xt_find_eint_num(struct mtk_pinctrl *hw, unsigned long eint_n)
- 	return EINT_NA;
- }
+diff --git a/drivers/pinctrl/mediatek/pinctrl-mt6779.c b/drivers/pinctrl/mediatek/pinctrl-mt6779.c
+index 145bf22..3282260 100644
+--- a/drivers/pinctrl/mediatek/pinctrl-mt6779.c
++++ b/drivers/pinctrl/mediatek/pinctrl-mt6779.c
+@@ -731,11 +731,19 @@
+ 	"iocfg_rt", "iocfg_lt", "iocfg_tl",
+ };
  
-+/*
-+ * Virtual GPIO only used inside SOC and not being exported to outside SOC.
-+ * Some modules use virtual GPIO as eint (e.g. pmif or usb).
-+ * In MTK platform, external interrupt (EINT) and GPIO is 1-1 mapping
-+ * and we can set GPIO as eint.
-+ * But some modules use specific eint which doesn't have real GPIO pin.
-+ * So we use virtual GPIO to map it.
-+ */
++static const struct mtk_eint_hw mt6779_eint_hw = {
++	.port_mask = 7,
++	.ports     = 6,
++	.ap_num    = 195,
++	.db_cnt    = 13,
++};
 +
-+bool mtk_is_virt_gpio(struct mtk_pinctrl *hw, unsigned int gpio_n)
-+{
-+	const struct mtk_pin_desc *desc;
-+	bool virt_gpio = false;
-+
-+	desc = (const struct mtk_pin_desc *)&hw->soc->pins[gpio_n];
-+
-+	if (desc->funcs && !desc->funcs[desc->eint.eint_m].name)
-+		virt_gpio = true;
-+
-+	return virt_gpio;
-+}
-+
- static int mtk_xt_get_gpio_n(void *data, unsigned long eint_n,
- 			     unsigned int *gpio_n,
- 			     struct gpio_chip **gpio_chip)
-@@ -295,6 +317,9 @@ static int mtk_xt_set_gpio_as_eint(void *data, unsigned long eint_n)
- 	if (err)
- 		return err;
- 
-+	if (mtk_is_virt_gpio(hw, gpio_n))
-+		return 0;
-+
- 	desc = (const struct mtk_pin_desc *)&hw->soc->pins[gpio_n];
- 
- 	err = mtk_hw_set_value(hw, desc, PINCTRL_PIN_REG_MODE,
-diff --git a/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.h b/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.h
-index 27df087..bd079f4f 100644
---- a/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.h
-+++ b/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.h
-@@ -315,4 +315,5 @@ int mtk_pinconf_adv_drive_set(struct mtk_pinctrl *hw,
- int mtk_pinconf_adv_drive_get(struct mtk_pinctrl *hw,
- 			      const struct mtk_pin_desc *desc, u32 *val);
- 
-+bool mtk_is_virt_gpio(struct mtk_pinctrl *hw, unsigned int gpio_n);
- #endif /* __PINCTRL_MTK_COMMON_V2_H */
-diff --git a/drivers/pinctrl/mediatek/pinctrl-paris.c b/drivers/pinctrl/mediatek/pinctrl-paris.c
-index 90a432b..a23c182 100644
---- a/drivers/pinctrl/mediatek/pinctrl-paris.c
-+++ b/drivers/pinctrl/mediatek/pinctrl-paris.c
-@@ -769,6 +769,13 @@ static int mtk_gpio_get_direction(struct gpio_chip *chip, unsigned int gpio)
- 	if (gpio >= hw->soc->npins)
- 		return -EINVAL;
- 
-+	/*
-+	 * "Virtual" GPIOs are always and only used for interrupts
-+	 * Since they are only used for interrupts, they are always inputs
-+	 */
-+	if (mtk_is_virt_gpio(hw, gpio))
-+		return 1;
-+
- 	desc = (const struct mtk_pin_desc *)&hw->soc->pins[gpio];
- 
- 	err = mtk_hw_get_value(hw, desc, PINCTRL_PIN_REG_DIR, &value);
+ static const struct mtk_pin_soc mt6779_data = {
+ 	.reg_cal = mt6779_reg_cals,
+ 	.pins = mtk_pins_mt6779,
+ 	.npins = ARRAY_SIZE(mtk_pins_mt6779),
+ 	.ngrps = ARRAY_SIZE(mtk_pins_mt6779),
++	.eint_hw = &mt6779_eint_hw,
+ 	.gpio_m = 0,
+ 	.ies_present = true,
+ 	.base_names = mt6779_pinctrl_register_base_names,
 -- 
 1.7.9.5
 _______________________________________________
