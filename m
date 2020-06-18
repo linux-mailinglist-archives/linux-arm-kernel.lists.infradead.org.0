@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3889E1FDD46
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:25:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0DDF1FDD74
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:26:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OShqZHJV6cBQLDEHqP+h6+vBOuuMC3KxIEogEBhmur0=; b=adZLuTw6NPlgwg
-	TnXMNsJM1tKg0+nO8KtWpfRiNoBIjheWeOp6RilVe974QYaveB8znc3Lwf/VREjl8oTqYmb3smpNI
-	OOWse/dTxXcuH4zB4B7vizj9nT9VDB1zVwKtT+tBObPUkw+mhsW1f7H5+DgP2QqJIYCGZNyUSPSQB
-	kMD4rlnktEbJtucowI7zSsB4BJv6LlAO5q0oa1VdyezYSxhi1DrY3iMU1tuO+J0oI6UYXiuOARBWN
-	407ZkEy5sGRrCLm3typMYV0gR6Ptrfh04KOSOfE83QJPsav9HioXcuwSUhyPaEMDYsmm9TwKN8MgJ
-	MMz0yZdjnT1KjcpnjYCQ==;
+	List-Owner; bh=P9up3rpbA2AloJANZ+56K3rdo1qHi4wC01izXB69MRs=; b=iosqPk5ZWF1XiG
+	GdG4c+1tp6UzHsIIJ+shO5/AO+r/rCw0lrVKtZFGRWlK0JAAaaYEegxx9t8EJXTX6anhJ+QWetEhs
+	h+YNJ5XhPggyC1BlNnBGdODhvL27H8Pdbzv3xmADB6zlKGRzYVb2WDaSo6gdo+KCJHnniPpYNCkrh
+	6j3ysz2Bb8SzhPAr63mLIv14AsFfnFfVEOtx7bym8DdZSybLClsM7En735erNP+FdcruG7IZCeUod
+	nB8TG74v+CiXuMspi0TR6YucHFaQhlOXfX92CKoP0wPf8sD5/L7KXxfKk81eXTOVqvUPgIFlLbNn8
+	h9xp3ZzVT1n+FE0zLH8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljJ5-00082k-1H; Thu, 18 Jun 2020 01:25:31 +0000
+	id 1jljK2-0003GR-EV; Thu, 18 Jun 2020 01:26:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj6v-0002U3-R6
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:12:59 +0000
+ id 1jlj71-0002YH-IG
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:13:06 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4590C221ED;
- Thu, 18 Jun 2020 01:12:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E4E5214DB;
+ Thu, 18 Jun 2020 01:13:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442777;
- bh=Ofauh1tBppSKUpqFNfZSf4nuYCyIJ5cLtkEC6ulDfek=;
+ s=default; t=1592442782;
+ bh=ogNUmHb4ecHAb3xp0gFwbZJRDxgJbUk5Zy0HwUo3QbM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Y5itvmspFirUGLJ7e4a4hbJeCNnbdXNJ81Lek596J2A8OXmbCLtcg2roRUb8aowDn
- /gW1dwnCKHocalOTC6uxHXstGX56M9VCj9tWfJiiVpKUuLIHtQmHCVkbcygGUMJFYJ
- v3SaIX/1KpgXnOoJUOGyCS11unp6HeMOVHg7gGm8=
+ b=iomfH5F2e1MPXSIL4LniY2fzXvlFgV9CjbLYokI+7d0Zle+cUGZMnlbRSgZLYctW5
+ gUnNj+Nl1CHvljDckwDNQdZ/1jvYj9C2bTb8UcPmShXG87SGa6TMicPyCUIFXxROYD
+ 7G9juesyDK2VyOvhvdphGbM6yOod/jUQQa6CTdT8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 223/388] PCI: aardvark: Issue PERST via GPIO
-Date: Wed, 17 Jun 2020 21:05:20 -0400
-Message-Id: <20200618010805.600873-223-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 227/388] iommu/arm-smmu-v3: Don't reserve
+ implementation defined register space
+Date: Wed, 17 Jun 2020 21:05:24 -0400
+Message-Id: <20200618010805.600873-227-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181257_928745_CB13A01E 
-X-CRM114-Status: GOOD (  17.09  )
+X-CRM114-CacheID: sfid-20200617_181303_731179_CDDFE13D 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,87 +80,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Maciej Nowak <tmn505@gmail.com>, Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?UTF-8?q?Pali=20Roh=C3=A1r?= <pali@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Will Deacon <will@kernel.org>, iommu@lists.linux-foundation.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogUGFsaSBSb2jDoXIgPHBhbGlAa2VybmVsLm9yZz4KClsgVXBzdHJlYW0gY29tbWl0IDUx
-NjlhOTg1MWRhYWEyNzgyYTdiZDJiYjgzZDViMWJkMjI0YjI4NzkgXQoKQWRkIHN1cHBvcnQgZm9y
-IGlzc3VpbmcgUEVSU1QgdmlhIEdQSU8gc3BlY2lmaWVkIGluICdyZXNldC1ncGlvcycKcHJvcGVy
-dHkgKGFzIGRlc2NyaWJlZCBpbiBQQ0kgZGV2aWNlIHRyZWUgYmluZGluZ3MpLgoKU29tZSBidWdn
-eSBjYXJkcyAoZS5nLiBDb21wZXggV0xFOTAwVlggb3IgV0xFMTIxNikgYXJlIG5vdCBkZXRlY3Rl
-ZAphZnRlciByZWJvb3Qgd2hlbiBQRVJTVCBpcyBub3QgaXNzdWVkIGR1cmluZyBkcml2ZXIgaW5p
-dGlhbGl6YXRpb24uCgpJZiBib290bG9hZGVyIGFscmVhZHkgZW5hYmxlZCBsaW5rIHRyYWluaW5n
-IHRoZW4gaXNzdWluZyBQRVJTVCBoYXMgbm8KZWZmZWN0IGZvciBzb21lIGJ1Z2d5IGNhcmRzIChl
-LmcuIENvbXBleCBXTEU5MDBWWCkgYW5kIHRoZXNlIGNhcmRzIGFyZQpub3QgZGV0ZWN0ZWQuIFdl
-IHRoZXJlZm9yZSBjbGVhciB0aGUgTElOS19UUkFJTklOR19FTiByZWdpc3RlciBiZWZvcmUuCgpJ
-dCB3YXMgb2JzZXJ2ZWQgdGhhdCBDb21wZXggV0xFOTAwVlggY2FyZCBuZWVkcyB0byBiZSBpbiBQ
-RVJTVCByZXNldApmb3IgYXQgbGVhc3QgMTBtcyBpZiBib290bG9hZGVyIGVuYWJsZWQgbGluayB0
-cmFpbmluZy4KClRlc3RlZCBvbiBUdXJyaXMgTU9YLgoKTGluazogaHR0cHM6Ly9sb3JlLmtlcm5l
-bC5vcmcvci8yMDIwMDQzMDA4MDYyNS4yNjA3MC02LXBhbGlAa2VybmVsLm9yZwpUZXN0ZWQtYnk6
-IFRvbWFzeiBNYWNpZWogTm93YWsgPHRtbjUwNUBnbWFpbC5jb20+ClNpZ25lZC1vZmYtYnk6IFBh
-bGkgUm9ow6FyIDxwYWxpQGtlcm5lbC5vcmc+ClNpZ25lZC1vZmYtYnk6IExvcmVuem8gUGllcmFs
-aXNpIDxsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29tPgpBY2tlZC1ieTogVGhvbWFzIFBldGF6em9u
-aSA8dGhvbWFzLnBldGF6em9uaUBib290bGluLmNvbT4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2
-aW4gPHNhc2hhbEBrZXJuZWwub3JnPgotLS0KIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFh
-cmR2YXJrLmMgfCA0MyArKysrKysrKysrKysrKysrKysrKysrKysrKy0KIDEgZmlsZSBjaGFuZ2Vk
-LCA0MiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
-Y2kvY29udHJvbGxlci9wY2ktYWFyZHZhcmsuYyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNp
-LWFhcmR2YXJrLmMKaW5kZXggZTIwMmY5NTRlYjg0Li4yZWNjNzljMDNhZGUgMTAwNjQ0Ci0tLSBh
-L2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMKKysrIGIvZHJpdmVycy9wY2kv
-Y29udHJvbGxlci9wY2ktYWFyZHZhcmsuYwpAQCAtOSw2ICs5LDcgQEAKICAqLwogCiAjaW5jbHVk
-ZSA8bGludXgvZGVsYXkuaD4KKyNpbmNsdWRlIDxsaW51eC9ncGlvLmg+CiAjaW5jbHVkZSA8bGlu
-dXgvaW50ZXJydXB0Lmg+CiAjaW5jbHVkZSA8bGludXgvaXJxLmg+CiAjaW5jbHVkZSA8bGludXgv
-aXJxZG9tYWluLmg+CkBAIC0xOCw2ICsxOSw3IEBACiAjaW5jbHVkZSA8bGludXgvcGxhdGZvcm1f
-ZGV2aWNlLmg+CiAjaW5jbHVkZSA8bGludXgvbXNpLmg+CiAjaW5jbHVkZSA8bGludXgvb2ZfYWRk
-cmVzcy5oPgorI2luY2x1ZGUgPGxpbnV4L29mX2dwaW8uaD4KICNpbmNsdWRlIDxsaW51eC9vZl9w
-Y2kuaD4KIAogI2luY2x1ZGUgIi4uL3BjaS5oIgpAQCAtMjA0LDYgKzIwNiw3IEBAIHN0cnVjdCBh
-ZHZrX3BjaWUgewogCWludCByb290X2J1c19ucjsKIAlpbnQgbGlua19nZW47CiAJc3RydWN0IHBj
-aV9icmlkZ2VfZW11bCBicmlkZ2U7CisJc3RydWN0IGdwaW9fZGVzYyAqcmVzZXRfZ3BpbzsKIH07
-CiAKIHN0YXRpYyBpbmxpbmUgdm9pZCBhZHZrX3dyaXRlbChzdHJ1Y3QgYWR2a19wY2llICpwY2ll
-LCB1MzIgdmFsLCB1NjQgcmVnKQpAQCAtMzMwLDEwICszMzMsMzEgQEAgc3RhdGljIHZvaWQgYWR2
-a19wY2llX3RyYWluX2xpbmsoc3RydWN0IGFkdmtfcGNpZSAqcGNpZSkKIAlkZXZfZXJyKGRldiwg
-ImxpbmsgbmV2ZXIgY2FtZSB1cFxuIik7CiB9CiAKK3N0YXRpYyB2b2lkIGFkdmtfcGNpZV9pc3N1
-ZV9wZXJzdChzdHJ1Y3QgYWR2a19wY2llICpwY2llKQoreworCXUzMiByZWc7CisKKwlpZiAoIXBj
-aWUtPnJlc2V0X2dwaW8pCisJCXJldHVybjsKKworCS8qIFBFUlNUIGRvZXMgbm90IHdvcmsgZm9y
-IHNvbWUgY2FyZHMgd2hlbiBsaW5rIHRyYWluaW5nIGlzIGVuYWJsZWQgKi8KKwlyZWcgPSBhZHZr
-X3JlYWRsKHBjaWUsIFBDSUVfQ09SRV9DVFJMMF9SRUcpOworCXJlZyAmPSB+TElOS19UUkFJTklO
-R19FTjsKKwlhZHZrX3dyaXRlbChwY2llLCByZWcsIFBDSUVfQ09SRV9DVFJMMF9SRUcpOworCisJ
-LyogMTBtcyBkZWxheSBpcyBuZWVkZWQgZm9yIHNvbWUgY2FyZHMgKi8KKwlkZXZfaW5mbygmcGNp
-ZS0+cGRldi0+ZGV2LCAiaXNzdWluZyBQRVJTVCB2aWEgcmVzZXQgR1BJTyBmb3IgMTBtc1xuIik7
-CisJZ3Bpb2Rfc2V0X3ZhbHVlX2NhbnNsZWVwKHBjaWUtPnJlc2V0X2dwaW8sIDEpOworCXVzbGVl
-cF9yYW5nZSgxMDAwMCwgMTEwMDApOworCWdwaW9kX3NldF92YWx1ZV9jYW5zbGVlcChwY2llLT5y
-ZXNldF9ncGlvLCAwKTsKK30KKwogc3RhdGljIHZvaWQgYWR2a19wY2llX3NldHVwX2h3KHN0cnVj
-dCBhZHZrX3BjaWUgKnBjaWUpCiB7CiAJdTMyIHJlZzsKIAorCWFkdmtfcGNpZV9pc3N1ZV9wZXJz
-dChwY2llKTsKKwogCS8qIFNldCB0byBEaXJlY3QgbW9kZSAqLwogCXJlZyA9IGFkdmtfcmVhZGwo
-cGNpZSwgQ1RSTF9DT05GSUdfUkVHKTsKIAlyZWcgJj0gfihDVFJMX01PREVfTUFTSyA8PCBDVFJM
-X01PREVfU0hJRlQpOwpAQCAtNDA2LDcgKzQzMCw4IEBAIHN0YXRpYyB2b2lkIGFkdmtfcGNpZV9z
-ZXR1cF9odyhzdHJ1Y3QgYWR2a19wY2llICpwY2llKQogCiAJLyoKIAkgKiBQRVJTVCMgc2lnbmFs
-IGNvdWxkIGhhdmUgYmVlbiBhc3NlcnRlZCBieSBwaW5jdHJsIHN1YnN5c3RlbSBiZWZvcmUKLQkg
-KiBwcm9iZSgpIGNhbGxiYWNrIGhhcyBiZWVuIGNhbGxlZCwgbWFraW5nIHRoZSBlbmRwb2ludCBn
-b2luZyBpbnRvCisJICogcHJvYmUoKSBjYWxsYmFjayBoYXMgYmVlbiBjYWxsZWQgb3IgaXNzdWVk
-IGV4cGxpY2l0bHkgYnkgcmVzZXQgZ3BpbworCSAqIGZ1bmN0aW9uIGFkdmtfcGNpZV9pc3N1ZV9w
-ZXJzdCgpLCBtYWtpbmcgdGhlIGVuZHBvaW50IGdvaW5nIGludG8KIAkgKiBmdW5kYW1lbnRhbCBy
-ZXNldC4gQXMgcmVxdWlyZWQgYnkgUENJIEV4cHJlc3Mgc3BlYyBhIGRlbGF5IGZvciBhdAogCSAq
-IGxlYXN0IDEwMG1zIGFmdGVyIHN1Y2ggYSByZXNldCBiZWZvcmUgbGluayB0cmFpbmluZyBpcyBu
-ZWVkZWQuCiAJICovCkBAIC0xMDQ2LDYgKzEwNzEsMjIgQEAgc3RhdGljIGludCBhZHZrX3BjaWVf
-cHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAl9CiAJcGNpZS0+cm9vdF9idXNf
-bnIgPSBidXMtPnN0YXJ0OwogCisJcGNpZS0+cmVzZXRfZ3BpbyA9IGRldm1fZ3Bpb2RfZ2V0X2Zy
-b21fb2Zfbm9kZShkZXYsIGRldi0+b2Zfbm9kZSwKKwkJCQkJCSAgICAgICAicmVzZXQtZ3Bpb3Mi
-LCAwLAorCQkJCQkJICAgICAgIEdQSU9EX09VVF9MT1csCisJCQkJCQkgICAgICAgInBjaWUxLXJl
-c2V0Iik7CisJcmV0ID0gUFRSX0VSUl9PUl9aRVJPKHBjaWUtPnJlc2V0X2dwaW8pOworCWlmIChy
-ZXQpIHsKKwkJaWYgKHJldCA9PSAtRU5PRU5UKSB7CisJCQlwY2llLT5yZXNldF9ncGlvID0gTlVM
-TDsKKwkJfSBlbHNlIHsKKwkJCWlmIChyZXQgIT0gLUVQUk9CRV9ERUZFUikKKwkJCQlkZXZfZXJy
-KGRldiwgIkZhaWxlZCB0byBnZXQgcmVzZXQtZ3BpbzogJWlcbiIsCisJCQkJCXJldCk7CisJCQly
-ZXR1cm4gcmV0OworCQl9CisJfQorCiAJcmV0ID0gb2ZfcGNpX2dldF9tYXhfbGlua19zcGVlZChk
-ZXYtPm9mX25vZGUpOwogCWlmIChyZXQgPD0gMCB8fCByZXQgPiAzKQogCQlwY2llLT5saW5rX2dl
-biA9IDM7Ci0tIAoyLjI1LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+
+[ Upstream commit 52f3fab0067d6fa9e99c1b7f63265dd48ca76046 ]
+
+Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
+inside the first 64kB region of the SMMU. Since PMCG are managed by a
+separate driver, this layout causes resource reservation conflicts
+during boot.
+
+To avoid this conflict, don't reserve the MMIO regions that are
+implementation defined. Although devm_ioremap_resource() still works on
+full pages under the hood, this way we benefit from resource conflict
+checks.
+
+Fixes: 7d839b4b9e00 ("perf/smmuv3: Add arm64 smmuv3 pmu driver")
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+Link: https://lore.kernel.org/r/20200513110255.597203-1-jean-philippe@linaro.org
+Signed-off-by: Will Deacon <will@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/iommu/arm-smmu-v3.c | 35 +++++++++++++++++++++++++++++++----
+ 1 file changed, 31 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 82508730feb7..af21d24a09e8 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -171,6 +171,8 @@
+ #define ARM_SMMU_PRIQ_IRQ_CFG1		0xd8
+ #define ARM_SMMU_PRIQ_IRQ_CFG2		0xdc
+ 
++#define ARM_SMMU_REG_SZ			0xe00
++
+ /* Common MSI config fields */
+ #define MSI_CFG0_ADDR_MASK		GENMASK_ULL(51, 2)
+ #define MSI_CFG2_SH			GENMASK(5, 4)
+@@ -628,6 +630,7 @@ struct arm_smmu_strtab_cfg {
+ struct arm_smmu_device {
+ 	struct device			*dev;
+ 	void __iomem			*base;
++	void __iomem			*page1;
+ 
+ #define ARM_SMMU_FEAT_2_LVL_STRTAB	(1 << 0)
+ #define ARM_SMMU_FEAT_2_LVL_CDTAB	(1 << 1)
+@@ -733,9 +736,8 @@ static struct arm_smmu_option_prop arm_smmu_options[] = {
+ static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
+ 						 struct arm_smmu_device *smmu)
+ {
+-	if ((offset > SZ_64K) &&
+-	    (smmu->options & ARM_SMMU_OPT_PAGE0_REGS_ONLY))
+-		offset -= SZ_64K;
++	if (offset > SZ_64K)
++		return smmu->page1 + offset - SZ_64K;
+ 
+ 	return smmu->base + offset;
+ }
+@@ -4021,6 +4023,18 @@ err_reset_pci_ops: __maybe_unused;
+ 	return err;
+ }
+ 
++static void __iomem *arm_smmu_ioremap(struct device *dev, resource_size_t start,
++				      resource_size_t size)
++{
++	struct resource res = {
++		.flags = IORESOURCE_MEM,
++		.start = start,
++		.end = start + size - 1,
++	};
++
++	return devm_ioremap_resource(dev, &res);
++}
++
+ static int arm_smmu_device_probe(struct platform_device *pdev)
+ {
+ 	int irq, ret;
+@@ -4056,10 +4070,23 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+ 	}
+ 	ioaddr = res->start;
+ 
+-	smmu->base = devm_ioremap_resource(dev, res);
++	/*
++	 * Don't map the IMPLEMENTATION DEFINED regions, since they may contain
++	 * the PMCG registers which are reserved by the PMU driver.
++	 */
++	smmu->base = arm_smmu_ioremap(dev, ioaddr, ARM_SMMU_REG_SZ);
+ 	if (IS_ERR(smmu->base))
+ 		return PTR_ERR(smmu->base);
+ 
++	if (arm_smmu_resource_size(smmu) > SZ_64K) {
++		smmu->page1 = arm_smmu_ioremap(dev, ioaddr + SZ_64K,
++					       ARM_SMMU_REG_SZ);
++		if (IS_ERR(smmu->page1))
++			return PTR_ERR(smmu->page1);
++	} else {
++		smmu->page1 = smmu->base;
++	}
++
+ 	/* Interrupt lines */
+ 
+ 	irq = platform_get_irq_byname_optional(pdev, "combined");
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
