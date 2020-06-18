@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47B831FE12B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:53:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 806D81FE140
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:53:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WgqlFhc5UxeLdum22RgtNz2X5YYbr6h22AslMtgqZAQ=; b=RhDczg2KSdWkhW
-	K1LNhl/lqjfVR96Pz3WG4zlyMhPK5nCbZhwNpM5UJ/kVOXq0a+SybMB0yXqr1BkyRwg1vrN59ASiC
-	pDR4TbT6yEesteKEZcfVmh5nrV/vi70Md8pPaoyRyIs4dsZmyrDy+5opR2icCRtHORsDGp8J+jckG
-	SUfRpK1RTUyMX3fuw3BoOPF4aE/sA3bSrrGJOA1fkHQiTxeQD+2pdj2af3A/RZ+tuJsPPpcoD/DuK
-	R9ldKADN94i4K2w2Wbuvhp8aJTBC8b+tcXS74h9Eng3NzFpks9ZpJCkGn0iMeoOKuVdvo8aB8SJ7n
-	oIdzc+0ff/mlfUZJWxaw==;
+	List-Owner; bh=i/6YXNqJTLEUvzhtQCJKcHRDMPUyrr1bRreAwShjuQ4=; b=E054a0YpUCVih0
+	taUm2c1Ayt8nRR05vfgoB82ySJzwNSHK87MMPyFfje4RIzlkqomaoQnuSOJ8vtc0pa59NQv4ZhBMv
+	+W5jdWYjDfapSYsCOMBKH1C3WOxjvrB5RRLzFsBQ569ERmSyu3dmjbHXBQUuxPFDVIuGJjxHvNYm8
+	ESnI3otBRxcrXTiVhBMknlA+Q7nCsY1UGKqKOqBtjxAUIwemJnzi74ZLNIpPhPsOa5YbnFGob9SR5
+	DxQhur6FjGP8P1ougMBn1ztZmqCT9vWZXN0T51+Lo624zg1BsJk2J6zzJ1kRiNo+7l/kjuuERL1SZ
+	FmZT8KPlmTx++vh5q8Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljk0-0004ag-Ia; Thu, 18 Jun 2020 01:53:20 +0000
+	id 1jljkK-0004r1-3x; Thu, 18 Jun 2020 01:53:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljGF-00065C-5x
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:22:36 +0000
+ id 1jljGR-0006H7-Bt
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:22:49 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 75E9021D82;
- Thu, 18 Jun 2020 01:22:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E063F20663;
+ Thu, 18 Jun 2020 01:22:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443354;
- bh=5d3vNDNuQvODzfrN0SzSBAhnNYtyMFSiHtXdBNldzrM=;
+ s=default; t=1592443366;
+ bh=Y+FVK3XqVDpUBlVHDkpJylAgXIYqiz5DwJdh4HVr6Pg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=uDzzTZkeiHiY2fwxFMzNCZ9BPTlk082HXQWZg57j+yVuWo3/jlk5By8eR8NvoIoIx
- tBF4FUZzxuLRtsFaH5+ZMEPqdQfWxKCHv7Fw2HgIfpXh316xo+W0Mgn0+oHx5lYnLj
- czWOSAhJZ+NqRSfJ2WUTL77/J7tthN5nGp1IUiR0=
+ b=szqLUu2Rv6ZmJxy5pRh/1r16pFNG748aMENpMK+GBz4mQjWhP+4TM1zzHEWNs8bjL
+ xBYkc2UXNJZOGgXIEZOOo5XbcTDGPbtQ4LOvzYNpQtKZNCV6Gv3GNXs0zuaQ83rCuP
+ dZXn4fx0u4JNj1DbtmM1yGv8WwRsIR1HFxopuZ5Q=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 012/172] ARM: integrator: Add some Kconfig
- selections
-Date: Wed, 17 Jun 2020 21:19:38 -0400
-Message-Id: <20200618012218.607130-12-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 022/172] clk: samsung: Mark top ISP and CAM
+ clocks on Exynos542x as critical
+Date: Wed, 17 Jun 2020 21:19:48 -0400
+Message-Id: <20200618012218.607130-22-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012218.607130-1-sashal@kernel.org>
 References: <20200618012218.607130-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182235_333586_5E3C75A7 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20200617_182247_478707_67B6D0FD 
+X-CRM114-Status: GOOD (  10.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,66 +80,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Linus Walleij <linus.walleij@linaro.org>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit d2854bbe5f5c4b4bec8061caf4f2e603d8819446 ]
+[ Upstream commit e47bd937e602bb4379546095d1bd0b9871fa60c2 ]
 
-The CMA and DMA_CMA Kconfig options need to be selected
-by the Integrator in order to produce boot console on some
-Integrator systems.
+The TOP 'aclk*_isp', 'aclk550_cam', 'gscl_wa' and 'gscl_wb' clocks must
+be kept enabled all the time to allow proper access to power management
+control for the ISP and CAM power domains. The last two clocks, although
+related to GScaler device and GSCL power domain, provides also the
+I_WRAP_CLK signal to MIPI CSIS0/1 devices, which are a part of CAM power
+domain and are needed for proper power on/off sequence.
 
-The REGULATOR and REGULATOR_FIXED_VOLTAGE need to be
-selected in order to boot the system from an external
-MMC card when using MMCI/PL181 from the device tree
-probe path.
+Currently there are no drivers for the devices, which are part of CAM and
+ISP power domains yet. This patch only fixes the race between disabling
+the unused power domains and disabling unused clocks, which randomly
+resulted in the following error during boot:
 
-Select these things directly from the Kconfig so we are
-sure to be able to bring the systems up with console
-from any device tree.
+Power domain CAM disable failed
+Power domain ISP disable failed
 
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Fixes: 318fa46cc60d ("clk/samsung: exynos542x: mark some clocks as critical")
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-integrator/Kconfig | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/clk/samsung/clk-exynos5420.c | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm/mach-integrator/Kconfig b/arch/arm/mach-integrator/Kconfig
-index cefe44f6889b..ba124f8704fa 100644
---- a/arch/arm/mach-integrator/Kconfig
-+++ b/arch/arm/mach-integrator/Kconfig
-@@ -3,6 +3,8 @@ menuconfig ARCH_INTEGRATOR
- 	depends on ARCH_MULTI_V4T || ARCH_MULTI_V5 || ARCH_MULTI_V6
- 	select ARM_AMBA
- 	select COMMON_CLK_VERSATILE
-+	select CMA
-+	select DMA_CMA
- 	select HAVE_TCM
- 	select ICST
- 	select MFD_SYSCON
-@@ -34,14 +36,13 @@ config INTEGRATOR_IMPD1
- 	select ARM_VIC
- 	select GPIO_PL061
- 	select GPIOLIB
-+	select REGULATOR
-+	select REGULATOR_FIXED_VOLTAGE
- 	help
- 	  The IM-PD1 is an add-on logic module for the Integrator which
- 	  allows ARM(R) Ltd PrimeCells to be developed and evaluated.
- 	  The IM-PD1 can be found on the Integrator/PP2 platform.
+diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+index 6473af8903c5..662bb441f139 100644
+--- a/drivers/clk/samsung/clk-exynos5420.c
++++ b/drivers/clk/samsung/clk-exynos5420.c
+@@ -597,7 +597,7 @@ static const struct samsung_div_clock exynos5800_div_clks[] __initconst = {
  
--	  To compile this driver as a module, choose M here: the
--	  module will be called impd1.
--
- config INTEGRATOR_CM7TDMI
- 	bool "Integrator/CM7TDMI core module"
- 	depends on ARCH_INTEGRATOR_AP
+ static const struct samsung_gate_clock exynos5800_gate_clks[] __initconst = {
+ 	GATE(CLK_ACLK550_CAM, "aclk550_cam", "mout_user_aclk550_cam",
+-				GATE_BUS_TOP, 24, 0, 0),
++				GATE_BUS_TOP, 24, CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_ACLK432_SCALER, "aclk432_scaler", "mout_user_aclk432_scaler",
+ 				GATE_BUS_TOP, 27, CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_MAU_EPLL, "mau_epll", "mout_user_mau_epll",
+@@ -984,25 +984,25 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+ 	GATE(0, "aclk300_jpeg", "mout_user_aclk300_jpeg",
+ 			GATE_BUS_TOP, 4, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk333_432_isp0", "mout_user_aclk333_432_isp0",
+-			GATE_BUS_TOP, 5, 0, 0),
++			GATE_BUS_TOP, 5, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk300_gscl", "mout_user_aclk300_gscl",
+ 			GATE_BUS_TOP, 6, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk333_432_gscl", "mout_user_aclk333_432_gscl",
+ 			GATE_BUS_TOP, 7, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk333_432_isp", "mout_user_aclk333_432_isp",
+-			GATE_BUS_TOP, 8, 0, 0),
++			GATE_BUS_TOP, 8, CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_PCLK66_GPIO, "pclk66_gpio", "mout_user_pclk66_gpio",
+ 			GATE_BUS_TOP, 9, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk66_psgen", "mout_user_aclk66_psgen",
+ 			GATE_BUS_TOP, 10, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk266_isp", "mout_user_aclk266_isp",
+-			GATE_BUS_TOP, 13, 0, 0),
++			GATE_BUS_TOP, 13, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk166", "mout_user_aclk166",
+ 			GATE_BUS_TOP, 14, CLK_IGNORE_UNUSED, 0),
+ 	GATE(CLK_ACLK333, "aclk333", "mout_user_aclk333",
+ 			GATE_BUS_TOP, 15, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk400_isp", "mout_user_aclk400_isp",
+-			GATE_BUS_TOP, 16, 0, 0),
++			GATE_BUS_TOP, 16, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk400_mscl", "mout_user_aclk400_mscl",
+ 			GATE_BUS_TOP, 17, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk200_disp1", "mout_user_aclk200_disp1",
+@@ -1208,8 +1208,10 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+ 			GATE_IP_GSCL1, 3, 0, 0),
+ 	GATE(CLK_SMMU_FIMCL1, "smmu_fimcl1", "dout_gscl_blk_333",
+ 			GATE_IP_GSCL1, 4, 0, 0),
+-	GATE(CLK_GSCL_WA, "gscl_wa", "sclk_gscl_wa", GATE_IP_GSCL1, 12, 0, 0),
+-	GATE(CLK_GSCL_WB, "gscl_wb", "sclk_gscl_wb", GATE_IP_GSCL1, 13, 0, 0),
++	GATE(CLK_GSCL_WA, "gscl_wa", "sclk_gscl_wa", GATE_IP_GSCL1, 12,
++			CLK_IS_CRITICAL, 0),
++	GATE(CLK_GSCL_WB, "gscl_wb", "sclk_gscl_wb", GATE_IP_GSCL1, 13,
++			CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_SMMU_FIMCL3, "smmu_fimcl3,", "dout_gscl_blk_333",
+ 			GATE_IP_GSCL1, 16, 0, 0),
+ 	GATE(CLK_FIMC_LITE3, "fimc_lite3", "aclk333_432_gscl",
 -- 
 2.25.1
 
