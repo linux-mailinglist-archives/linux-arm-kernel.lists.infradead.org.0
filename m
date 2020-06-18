@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 364A61FF1A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 14:27:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 097411FF1A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 14:27:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IgZQmkLWAaJB3IEDYgLoj1Z1L96vabM029SMN1MHGUU=; b=Au62jQDt9E1ADI
-	u5dSe5B8yIa+8pp+l8cR3z8rIOEcnk+O42wPfK6wxfa8XSEkEF1EqE9D41BpG+yVqa6aVbl+OSHm+
-	K1FgFXuXgnruxkwGIgKOShW1daZ7qSxUNb9YPhDK9gA7RJ4guzp6iUljpDSK/9kRvmtXWD+O56hIK
-	W/KmapOQYQ4y3EEcVEAxaGkalliDp0EOqRIrXHRkqyrpF6iAcyTiYct5+fdgP7xSV1sgmrgJYehgi
-	OObel1T7SkNWcRszkf4miySy/NgY5sWPSn0dgWx8fqoOR2XYiREze3HgOlpbOUq3dlRnJ2Wa5GM+5
-	YQy6v6+G5nWj7iYqANEg==;
+	List-Owner; bh=ZNvhqcfszIFvLjSOgXowKAMrsFTGEwMSTWxpkpg05VU=; b=QxrZrnmoMTskot
+	U+ctuUO5e3Aat9XQBZQztKbk+bzTqxaWRWzDg0DTlT6L7UkQaoADBLjfvKNHKMkz/ody3ELW18kXa
+	Vqrx4pXvqJrxdlf/J4a0aJhr2y/UzrFfi6q2crQGudebDSHKwgf2LKr3VsalAV3bEfGH3sjmmTn2y
+	WrSTV7EheAe0Ghq03aR5ZHwwjdNUv5SOApEu+M68H9L1nGEMDvUB+MZV2lpxeh0FG7m9ZE3Wkg5z2
+	+7nqpIsLEL4dN5etd8WPfEqP31BcAq1diLVyKSN6h/g6HErXYAjAgxoib1RRljK0RHW6WtdT+fanB
+	CRNIhINrKkOxqHO6kOLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jltdi-0005ZF-98; Thu, 18 Jun 2020 12:27:30 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1jltdB-0004zB-6D; Thu, 18 Jun 2020 12:26:57 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jltcE-0004T2-I0
+ id 1jltcC-0004T6-N7
  for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 12:25:59 +0000
-Received: by mail-wr1-x433.google.com with SMTP id x6so5823352wrm.13
+Received: by mail-wr1-x442.google.com with SMTP id p5so5821853wrw.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 05:25:53 -0700 (PDT)
+ Thu, 18 Jun 2020 05:25:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=EI3NYrtwn6qJxPWPwh60aHXJB+vFaqkjVnXPNPOUvlM=;
- b=N30CS11r8sn0rGiPBf7Y+li2ePVY+jY9p3+fPyUt6oXi+Hb8X9cFUGgXLuswEudrWb
- R6lpv7ssWn6pFLjvITdLvoqc8nOphTTAvpILm710A8CgQ6SfXSwMc0ch4EVXyguq4LUj
- e1V29s0KvlvbpnQt+mdxjze4D4q9izalNSzHHXOoel0ZK0U/wkcHr3zLXg3k1JT0WNMf
- ebCEtjNPbgocdWIiK3vxM93imD08qIV19XzPFFVGBrRIUx3JGvYWOLYUNrlW4Pa8qDGT
- /PeUsKnG272Pgn2Ehdx9Qpj8vfpth/Hd2z5bPv219EmkHrvL6DPUSlEQnRrknv78BM1/
- ghwg==
+ bh=9UqUeY7OXLgzhtG0HSCI0KGyw2fojhVrUyAizWtz3uQ=;
+ b=lDL+1M12TpapBiE/BxxPn7H/Zdg//ebIYbJekkz1AV0ZryE1ikhGJ5S23TJI3xERzk
+ 4VVo1NVYtqQQ9io/3n17rVZorxQ9hPbukspNmDlfaI201Arw7MDytSRjgsfWxCgQIjrO
+ v5VNJRuIhv08aJGwKRn/Q74a80Gs0DKvQn0oa9bycdXCe5JH2D6sYktAaqxQC9rv+tma
+ gnM9hF6A9VlmIvGMFAnurXHJedhdR2pEHgINA7A81uqJKqgzZgjRE4XVIzDOs+5YXMnC
+ dyvhAbfkN+IHx2AactUh9w6/nvIPTHquaz6kXgqjknUS+4TILH16apm8+74uWp3+5oZ4
+ HzOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=EI3NYrtwn6qJxPWPwh60aHXJB+vFaqkjVnXPNPOUvlM=;
- b=P1B4/dfDFOO7buFCKlIPeAAttiFmnXOtWE3m6Cfd8NlS/b/zYtELtIRbQJvJRu5tkI
- r1GCIGpJpuFMdG7UDSXFrhiMVtqmzM8+Tk2/Om1Ll0HpaDOgB6o3wRZuw50odPJZRyHL
- 7UxCOqBMwuBlZ59B+47MJz4pbfYS6l2rXmjsLbBc2vz/SWAxYuTXqmTLahXJ7ySB4MfI
- VQn4wZLgejw5ehHMaGhKkqb9MML8g+8N3a2+i9llcTVFxXGqNt+gq1DZOYkrlia7p0pT
- 9/DOc8r6q9bARCzWF+sl7vGvklyNRNqwFP33YRSTOpF+2WK5rerM0nS2js5GFgV4VMnz
- /x6A==
-X-Gm-Message-State: AOAM531oNwMsQrRCHdbOZ2iHieyF4pGNup2U9rfmjIld9JvUbNuBUf/3
- DFaE07KT3LGtObOoIT5pHjzNag==
-X-Google-Smtp-Source: ABdhPJwa2EW6p36Iawe8UNLmui6v2zHWYcLTdQb2AQWxuuBBIWLUvLId9MfLH1gRIgvgURkn+W35jg==
-X-Received: by 2002:adf:f08b:: with SMTP id n11mr4229961wro.312.1592483152531; 
- Thu, 18 Jun 2020 05:25:52 -0700 (PDT)
+ bh=9UqUeY7OXLgzhtG0HSCI0KGyw2fojhVrUyAizWtz3uQ=;
+ b=KSroX/kVYbRPb41EruFWmzUs/w5r7u4k+1qjvxm4hgOVpIyyvr4UTUMpbX+iTYMI5A
+ 84/cGeUL4tHgamryROtwPlojKXmIJXzVmEmgtk59wGhQBB0HIVkM5vq84LUKJAsbAelu
+ eiHcmVEWJvm7nKWw5L4fKwJ7ToE0JtfotgYV33ZlTG9ESqC5TKstukRoSXAEEPy+WNXW
+ m+biNiVy5tlz7QT0efh2XQR+sqd+7hOe3g0IQW3whfbmu0MuwYcsQ9tL91/y3M9frqPt
+ f/MMQ9afFXzlhOBzczQk2ITdTMfdKaqmKGbCohOHVnbMVYBeXvLmxwxRqD0haIOzY777
+ vd/Q==
+X-Gm-Message-State: AOAM532amcRzFtBGgJf+ICGF5lB9YoruaJCamMlB/Q9he9KADbWBBGh6
+ GsGYRLxvIPkvJLFzfjr4SEYa7Q==
+X-Google-Smtp-Source: ABdhPJzcWJJmllc8nXAIXAc3nGaGVvG8RkpVHVgkWk2PFkI55fnUiJ1XjM/incD87Yee3o8Ny+J3vQ==
+X-Received: by 2002:a5d:664e:: with SMTP id f14mr4427208wrw.6.1592483154144;
+ Thu, 18 Jun 2020 05:25:54 -0700 (PDT)
 Received: from localhost ([2a01:4b00:8523:2d03:c1af:c724:158a:e200])
- by smtp.gmail.com with ESMTPSA id n1sm3343936wrp.10.2020.06.18.05.25.51
+ by smtp.gmail.com with ESMTPSA id u13sm3336611wrp.53.2020.06.18.05.25.53
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 18 Jun 2020 05:25:51 -0700 (PDT)
+ Thu, 18 Jun 2020 05:25:53 -0700 (PDT)
 From: David Brazdil <dbrazdil@google.com>
 To: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
  James Morse <james.morse@arm.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: [PATCH v3 02/15] arm64: kvm: Move __smccc_workaround_1_smc to .rodata
-Date: Thu, 18 Jun 2020 13:25:24 +0100
-Message-Id: <20200618122537.9625-3-dbrazdil@google.com>
+Subject: [PATCH v3 03/15] arm64: kvm: Add build rules for separate nVHE object
+ files
+Date: Thu, 18 Jun 2020 13:25:25 +0100
+Message-Id: <20200618122537.9625-4-dbrazdil@google.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200618122537.9625-1-dbrazdil@google.com>
 References: <20200618122537.9625-1-dbrazdil@google.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_052558_593207_133D928B 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20200618_052556_759445_139A2F1E 
+X-CRM114-Status: GOOD (  17.93  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:433 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,90 +115,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This snippet of assembly is used by cpu_errata.c to overwrite parts of KVM hyp
-vector. Move it to its own source file and change its ELF section to .rodata.
+Add new folder arch/arm64/kvm/hyp/nvhe and a Makefile for building code that
+runs in EL2 under nVHE KVM.
+
+Compile each source file into a `.hyp.tmp.o` object first, then prefix all
+its symbols with "__kvm_nvhe_" using `objcopy` and produce a `.hyp.o`.
+Suffixes were chosen so that it would be possible for VHE and nVHE to share
+some source files, but compiled with different CFLAGS. nVHE build rules add
+-D__KVM_NVHE_HYPERVISOR__.
+
+The nVHE ELF symbol prefix is added to kallsyms.c as ignored. EL2-only symbols
+will never appear in EL1 stack traces.
 
 Signed-off-by: David Brazdil <dbrazdil@google.com>
 ---
- arch/arm64/kvm/hyp/Makefile    |  1 +
- arch/arm64/kvm/hyp/hyp-entry.S | 16 ----------------
- arch/arm64/kvm/hyp/smccc_wa.S  | 30 ++++++++++++++++++++++++++++++
- 3 files changed, 31 insertions(+), 16 deletions(-)
- create mode 100644 arch/arm64/kvm/hyp/smccc_wa.S
+ arch/arm64/kernel/image-vars.h   | 12 +++++++++++
+ arch/arm64/kvm/hyp/Makefile      |  2 +-
+ arch/arm64/kvm/hyp/nvhe/Makefile | 35 ++++++++++++++++++++++++++++++++
+ scripts/kallsyms.c               |  1 +
+ 4 files changed, 49 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/kvm/hyp/nvhe/Makefile
 
-diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
-index 8c9880783839..5d8357ddc234 100644
---- a/arch/arm64/kvm/hyp/Makefile
-+++ b/arch/arm64/kvm/hyp/Makefile
-@@ -7,6 +7,7 @@ ccflags-y += -fno-stack-protector -DDISABLE_BRANCH_PROFILING \
- 		$(DISABLE_STACKLEAK_PLUGIN)
+diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
+index be0a63ffed23..f32b406e90c0 100644
+--- a/arch/arm64/kernel/image-vars.h
++++ b/arch/arm64/kernel/image-vars.h
+@@ -51,4 +51,16 @@ __efistub__ctype		= _ctype;
  
- obj-$(CONFIG_KVM) += hyp.o
-+obj-$(CONFIG_KVM_INDIRECT_VECTORS) += smccc_wa.o
- 
- hyp-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
- 	 debug-sr.o entry.o switch.o fpsimd.o tlb.o hyp-entry.o
-diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
-index 9c5cfb04170e..d362fad97cc8 100644
---- a/arch/arm64/kvm/hyp/hyp-entry.S
-+++ b/arch/arm64/kvm/hyp/hyp-entry.S
-@@ -318,20 +318,4 @@ SYM_CODE_START(__bp_harden_hyp_vecs)
- 1:	.org __bp_harden_hyp_vecs + __BP_HARDEN_HYP_VECS_SZ
- 	.org 1b
- SYM_CODE_END(__bp_harden_hyp_vecs)
--
--	.popsection
--
--SYM_CODE_START(__smccc_workaround_1_smc)
--	esb
--	sub	sp, sp, #(8 * 4)
--	stp	x2, x3, [sp, #(8 * 0)]
--	stp	x0, x1, [sp, #(8 * 2)]
--	mov	w0, #ARM_SMCCC_ARCH_WORKAROUND_1
--	smc	#0
--	ldp	x2, x3, [sp, #(8 * 0)]
--	ldp	x0, x1, [sp, #(8 * 2)]
--	add	sp, sp, #(8 * 4)
--1:	.org __smccc_workaround_1_smc + __SMCCC_WORKAROUND_1_SMC_SZ
--	.org 1b
--SYM_CODE_END(__smccc_workaround_1_smc)
  #endif
-diff --git a/arch/arm64/kvm/hyp/smccc_wa.S b/arch/arm64/kvm/hyp/smccc_wa.S
-new file mode 100644
-index 000000000000..aa25b5428e77
---- /dev/null
-+++ b/arch/arm64/kvm/hyp/smccc_wa.S
-@@ -0,0 +1,30 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
+ 
++#ifdef CONFIG_KVM
++
 +/*
-+ * Copyright (C) 2015-2018 - ARM Ltd
-+ * Author: Marc Zyngier <marc.zyngier@arm.com>
++ * KVM nVHE code has its own symbol namespace prefixed by __kvm_nvhe_, to
++ * isolate it from the kernel proper. The following symbols are legally
++ * accessed by it, therefore provide aliases to make them linkable.
++ * Do not include symbols which may not be safely accessed under hypervisor
++ * memory mappings.
 + */
 +
-+#include <linux/arm-smccc.h>
++#endif /* CONFIG_KVM */
 +
-+#include <asm/kvm_asm.h>
-+#include <asm/kvm_mmu.h>
+ #endif /* __ARM64_KERNEL_IMAGE_VARS_H */
+diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+index 5d8357ddc234..5f4f217532e0 100644
+--- a/arch/arm64/kvm/hyp/Makefile
++++ b/arch/arm64/kvm/hyp/Makefile
+@@ -6,7 +6,7 @@
+ ccflags-y += -fno-stack-protector -DDISABLE_BRANCH_PROFILING \
+ 		$(DISABLE_STACKLEAK_PLUGIN)
+ 
+-obj-$(CONFIG_KVM) += hyp.o
++obj-$(CONFIG_KVM) += hyp.o nvhe/
+ obj-$(CONFIG_KVM_INDIRECT_VECTORS) += smccc_wa.o
+ 
+ hyp-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
+diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile b/arch/arm64/kvm/hyp/nvhe/Makefile
+new file mode 100644
+index 000000000000..7d64235dba62
+--- /dev/null
++++ b/arch/arm64/kvm/hyp/nvhe/Makefile
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: GPL-2.0
++#
++# Makefile for Kernel-based Virtual Machine module, HYP/nVHE part
++#
 +
-+	/*
-+	 * This is not executed directly and is instead copied into the vectors
-+	 * by install_bp_hardening_cb().
-+	 */
-+	.data
-+	.pushsection	.rodata
-+	.global		__smccc_workaround_1_smc
-+__smccc_workaround_1_smc:
-+	esb
-+	sub	sp, sp, #(8 * 4)
-+	stp	x2, x3, [sp, #(8 * 0)]
-+	stp	x0, x1, [sp, #(8 * 2)]
-+	mov	w0, #ARM_SMCCC_ARCH_WORKAROUND_1
-+	smc	#0
-+	ldp	x2, x3, [sp, #(8 * 0)]
-+	ldp	x0, x1, [sp, #(8 * 2)]
-+	add	sp, sp, #(8 * 4)
-+1:	.org __smccc_workaround_1_smc + __SMCCC_WORKAROUND_1_SMC_SZ
-+	.org 1b
++asflags-y := -D__KVM_NVHE_HYPERVISOR__
++ccflags-y := -D__KVM_NVHE_HYPERVISOR__ -fno-stack-protector \
++	     -DDISABLE_BRANCH_PROFILING $(DISABLE_STACKLEAK_PLUGIN)
++
++obj-y :=
++
++obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
++extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
++
++$(obj)/%.hyp.tmp.o: $(src)/%.c FORCE
++	$(call if_changed_rule,cc_o_c)
++$(obj)/%.hyp.tmp.o: $(src)/%.S FORCE
++	$(call if_changed_rule,as_o_S)
++$(obj)/%.hyp.o: $(obj)/%.hyp.tmp.o FORCE
++	$(call if_changed,hypcopy)
++
++quiet_cmd_hypcopy = HYPCOPY $@
++      cmd_hypcopy = $(OBJCOPY) --prefix-symbols=__kvm_nvhe_ $< $@
++
++# KVM nVHE code is run at a different exception code with a different map, so
++# compiler instrumentation that inserts callbacks or checks into the code may
++# cause crashes. Just disable it.
++GCOV_PROFILE	:= n
++KASAN_SANITIZE	:= n
++UBSAN_SANITIZE	:= n
++KCOV_INSTRUMENT	:= n
++
++# Skip objtool checking for this directory because nVHE code is compiled with
++# non-standard build rules.
++OBJECT_FILES_NON_STANDARD := y
+diff --git a/scripts/kallsyms.c b/scripts/kallsyms.c
+index 6dc3078649fa..0096cd965332 100644
+--- a/scripts/kallsyms.c
++++ b/scripts/kallsyms.c
+@@ -109,6 +109,7 @@ static bool is_ignored_symbol(const char *name, char type)
+ 		".LASANPC",		/* s390 kasan local symbols */
+ 		"__crc_",		/* modversions */
+ 		"__efistub_",		/* arm64 EFI stub namespace */
++		"__kvm_nvhe_",		/* arm64 non-VHE KVM namespace */
+ 		NULL
+ 	};
+ 
 -- 
 2.27.0
 
