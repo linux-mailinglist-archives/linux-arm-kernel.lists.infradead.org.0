@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDC471FDF50
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:43:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D83C61FDF7C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:43:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nBlPsr0GMS8UlV2eBezO5faCbgmohyOc0gl0ZNIBKkA=; b=ltMdNmN7gY6OyF
-	SQS0nEsOH2Mtw4jQ0MhZSSpwvQuFVe4vuMXR54DYS/QB16cXSAKHbsIxWE2PhWQ7CkdJ9EEPIgcXV
-	JlIoEfjvZGYc8hCKP/UWpLcxWUMBhkyact2IUu35Tin/I63uLL514B/YZUSXztTrKfnIWpFVHr5Nr
-	cxQvJOjomz4SCMkC3fnz49rZoZb41qkTf1ZQ+IWxundAz8IXL3lfASCnRE3oYHsoJoFCitUK0Zkho
-	dkjKYIIZhGbqT7AyKQCoZpzm1XTNYdEuSoF+Mcz+AJxpnr3rWi8Ln0oxonZI8SYce6tM8ZliY0DWi
-	CRGxEfyPiXlup3mEoV4w==;
+	List-Owner; bh=19jf38gtH0ruBND4trzpVYnO9opW/I7rZT5/mh1gQXU=; b=tH6oBKefFeu3zU
+	kNk3dIa6nEOvYQV4U27EEIYQd/u/lX6zOoXrtLh0A8oq0akAiDv6r0PM02h0biT1zlbpRMgQ9j9jZ
+	AJM9EURi3+X0MGNlx/vi/KdqtNAgbdKPnmVZ1FrnOSfkvtZdwdi2mTr3aGmpf51l/LLRzJMQAUN3N
+	GpyuYq4CUu3FsrSLaR0wpFZRF2mkDNmbPvXIjbqIKimm1dRdU5S59DRYv1wHjKJU72rpUbEHD2NGB
+	z9sW3Xy9IMBkn3wp0XCyPMypNTwyNBvGBd8Zc0JGOe3eMx0K151x/17LmvBAgRNa5MlKk1K5tEN6t
+	NYIKIGEQeRlFYC9v2ipA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljZp-0006qk-Hw; Thu, 18 Jun 2020 01:42:49 +0000
+	id 1jljaE-0007G3-Oa; Thu, 18 Jun 2020 01:43:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljBd-0008Qj-4O
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:52 +0000
+ id 1jljC8-0000No-VJ; Thu, 18 Jun 2020 01:18:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0EBA421D94;
- Thu, 18 Jun 2020 01:17:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 454F221D90;
+ Thu, 18 Jun 2020 01:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443068;
- bh=VtHKZqz2xn017e+T2y5e0Ye8xv7zSR2bJF9S5Y+Nafo=;
+ s=default; t=1592443100;
+ bh=Vp54ozwgS+zCLet7Ygucfwe5ReCS07oSecflLunDtuM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=z2Guuey0nuXjE+4sf6oGbEjiUkmdL5qLQdo/L8MS9rXjgwBQkr5IvJaty8aDB5H8P
- A5nu1CflQ5VMoUjy1jQKqEwcl7qNCDQtn3OEYIIEbtjVDxngnKOPG2RUK/b9hFpPI8
- 9smf7/T5yloaDscPTCaeMsqdlpdzZ1G6vEQVjuP4=
+ b=yNR8t7Ek0qwvdj+643ndskzWDr6dxA0KZiBahePhU06U/lkY38ZG5l3UFfotrqmbc
+ 2LxMKyShnRRUBUu1DwK43aZfL/Hb4lsZ/XCGCBxh8rsBGDDP0fXYov4fzNH7Fenkvp
+ rQNLQuKvCwhrFElSrqgTAtzB5Ghk6zKwPjfhnAIw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 057/266] clk: zynqmp: fix memory leak in
- zynqmp_register_clocks
-Date: Wed, 17 Jun 2020 21:13:02 -0400
-Message-Id: <20200618011631.604574-57-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 079/266] ASoC: meson: add missing free_irq() in
+ error path
+Date: Wed, 17 Jun 2020 21:13:24 -0400
+Message-Id: <20200618011631.604574-79-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181749_396126_012FB008 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20200617_181821_038008_689F07C6 
+X-CRM114-Status: GOOD (  11.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,106 +79,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>, Sasha Levin <sashal@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
- linux-clk@vger.kernel.org, Jolly Shah <jolly.shah@xilinx.com>,
- Quanyang Wang <quanyang.wang@windriver.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ "Pavel Machek \(CIP\)" <pavel@denx.de>, Mark Brown <broonie@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Quanyang Wang <quanyang.wang@windriver.com>
+From: "Pavel Machek (CIP)" <pavel@denx.de>
 
-[ Upstream commit 58b0fb86260063f86afecaebf4056c876fff2a19 ]
+[ Upstream commit 3b8a299a58b2afce464ae11324b59dcf0f1d10a7 ]
 
-This is detected by kmemleak running on zcu102 board:
+free_irq() is missing in case of error, fix that.
 
-unreferenced object 0xffffffc877e48180 (size 128):
-comm "swapper/0", pid 1, jiffies 4294892909 (age 315.436s)
-hex dump (first 32 bytes):
-64 70 5f 76 69 64 65 6f 5f 72 65 66 5f 64 69 76 dp_video_ref_div
-31 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1...............
-backtrace:
-[<00000000c9be883b>] __kmalloc_track_caller+0x200/0x380
-[<00000000f02c3809>] kvasprintf+0x7c/0x100
-[<00000000e51dde4d>] kasprintf+0x60/0x80
-[<0000000092298b05>] zynqmp_register_clocks+0x29c/0x398
-[<00000000faaff182>] zynqmp_clock_probe+0x3cc/0x4c0
-[<000000005f5986f0>] platform_drv_probe+0x58/0xa8
-[<00000000d5810136>] really_probe+0xd8/0x2a8
-[<00000000f5b671be>] driver_probe_device+0x5c/0x100
-[<0000000038f91fcf>] __device_attach_driver+0x98/0xb8
-[<000000008a3f2ac2>] bus_for_each_drv+0x74/0xd8
-[<000000001cb2783d>] __device_attach+0xe0/0x140
-[<00000000c268031b>] device_initial_probe+0x24/0x30
-[<000000006998de4b>] bus_probe_device+0x9c/0xa8
-[<00000000647ae6ff>] device_add+0x3c0/0x610
-[<0000000071c14bb8>] of_device_add+0x40/0x50
-[<000000004bb5d132>] of_platform_device_create_pdata+0xbc/0x138
+Signed-off-by: Pavel Machek (CIP) <pavel@denx.de>
+Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
 
-This is because that when num_nodes is larger than 1, clk_out is
-allocated using kasprintf for these nodes but only the last node's
-clk_out is freed.
-
-Signed-off-by: Quanyang Wang <quanyang.wang@windriver.com>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
-Link: https://lkml.kernel.org/r/1583185843-20707-5-git-send-email-jolly.shah@xilinx.com
-Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Link: https://lore.kernel.org/r/20200606153103.GA17905@amd
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/zynqmp/clkc.c | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
+ sound/soc/meson/axg-fifo.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/zynqmp/clkc.c b/drivers/clk/zynqmp/clkc.c
-index a11f93ecbf34..6f057ab9df03 100644
---- a/drivers/clk/zynqmp/clkc.c
-+++ b/drivers/clk/zynqmp/clkc.c
-@@ -558,7 +558,7 @@ static struct clk_hw *zynqmp_register_clk_topology(int clk_id, char *clk_name,
- {
- 	int j;
- 	u32 num_nodes, clk_dev_id;
--	char *clk_out = NULL;
-+	char *clk_out[MAX_NODES];
- 	struct clock_topology *nodes;
- 	struct clk_hw *hw = NULL;
+diff --git a/sound/soc/meson/axg-fifo.c b/sound/soc/meson/axg-fifo.c
+index d286dff3171d..898ef1d5608f 100644
+--- a/sound/soc/meson/axg-fifo.c
++++ b/sound/soc/meson/axg-fifo.c
+@@ -244,7 +244,7 @@ static int axg_fifo_pcm_open(struct snd_pcm_substream *ss)
+ 	/* Enable pclk to access registers and clock the fifo ip */
+ 	ret = clk_prepare_enable(fifo->pclk);
+ 	if (ret)
+-		return ret;
++		goto free_irq;
  
-@@ -572,16 +572,16 @@ static struct clk_hw *zynqmp_register_clk_topology(int clk_id, char *clk_name,
- 		 * Intermediate clock names are postfixed with type of clock.
- 		 */
- 		if (j != (num_nodes - 1)) {
--			clk_out = kasprintf(GFP_KERNEL, "%s%s", clk_name,
-+			clk_out[j] = kasprintf(GFP_KERNEL, "%s%s", clk_name,
- 					    clk_type_postfix[nodes[j].type]);
- 		} else {
--			clk_out = kasprintf(GFP_KERNEL, "%s", clk_name);
-+			clk_out[j] = kasprintf(GFP_KERNEL, "%s", clk_name);
- 		}
- 
- 		if (!clk_topology[nodes[j].type])
- 			continue;
- 
--		hw = (*clk_topology[nodes[j].type])(clk_out, clk_dev_id,
-+		hw = (*clk_topology[nodes[j].type])(clk_out[j], clk_dev_id,
- 						    parent_names,
- 						    num_parents,
- 						    &nodes[j]);
-@@ -590,9 +590,12 @@ static struct clk_hw *zynqmp_register_clk_topology(int clk_id, char *clk_name,
- 				     __func__,  clk_dev_id, clk_name,
- 				     PTR_ERR(hw));
- 
--		parent_names[0] = clk_out;
-+		parent_names[0] = clk_out[j];
- 	}
--	kfree(clk_out);
+ 	/* Setup status2 so it reports the memory pointer */
+ 	regmap_update_bits(fifo->map, FIFO_CTRL1,
+@@ -264,8 +264,14 @@ static int axg_fifo_pcm_open(struct snd_pcm_substream *ss)
+ 	/* Take memory arbitror out of reset */
+ 	ret = reset_control_deassert(fifo->arb);
+ 	if (ret)
+-		clk_disable_unprepare(fifo->pclk);
++		goto free_clk;
 +
-+	for (j = 0; j < num_nodes; j++)
-+		kfree(clk_out[j]);
-+
- 	return hw;
++	return 0;
+ 
++free_clk:
++	clk_disable_unprepare(fifo->pclk);
++free_irq:
++	free_irq(fifo->irq, ss);
+ 	return ret;
  }
  
 -- 
