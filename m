@@ -2,63 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFBB91FF32B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 15:35:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C58331FF3C2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 15:50:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EiasdRzHE7tkbLalLD4PDu850JcaBIxQTekozRa2iF4=; b=kv6O8NZuD9zPkc
-	OP3d+ac/n9uFO67dgX2kVsKtOXy8AKv0djdmd1ri3Iq918RgclYC3IHyJ5O9Ltgh5HUCayE905ukg
-	7/6IStK9h4JquIdS+FMuwmRcYXbIF0cS4FqqDTIJuDvBvCIX3KROUe1W7mHnFN1YWFVPLclt81STC
-	UJcLkNUJnsmmaSoJHmy/gVDYhIhFlw9YexfW6TPREyd1bS8GxjioSJrOhPJYwRpI+EbjT36fJ2p2d
-	KZG+VSuFdvidDExb9lH6o6OyJR0fVJ9yOpfO+AsvakOTgOwLknSVngP2BLZqRGYM8lL9uQKfe3ccO
-	qKyRQa/U6VaD0Mtm7YiQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZkW6BNFiZmVch13uoeYrJJiLjr7Rywf7i75RsF7wgSg=; b=eB3DGAQgEF9Wo5
+	SZSC/cbFcRQGxtkemh5nd9oLDaQdsINoJpyIRecZM4Gf8GtKvVzt1EtNbAXbncGR5FpCzTX0BrtV8
+	jBbUc1aBEYwwZDyibq+Xf/qLeC0+J0i6m1tAsdmttSeof8wmn7WjPdFAjEJC42KcsHzYGkSMaecFN
+	mFI8x1PiBdcBRN5dQMzGCLSqBP+aMEjJdj6krg064gVnX214Eh/wvf+2YNY1op2CFUeFaYr9Qib6a
+	KakZFrQE3JDTTdkdxJuVMwQzRv2IMKSW4e1Ryrx/PYQk7w1etmy+2e9CRhS//yliiROJ91cDfq3jE
+	bLhHp4sIXZqSHi/TNxyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jluhQ-0006mv-V9; Thu, 18 Jun 2020 13:35:24 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jluwF-00016T-PI; Thu, 18 Jun 2020 13:50:43 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jluhF-0006Bv-UW
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 13:35:15 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id B642BECFB37E2950F84A;
- Thu, 18 Jun 2020 21:35:06 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Thu, 18 Jun 2020 21:34:59 +0800
-From: Wei Yongjun <weiyongjun1@huawei.com>
-To: Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, 
- "James E.J. Bottomley" <jejb@linux.ibm.com>, "Martin K. Petersen"
- <martin.petersen@oracle.com>, Kukjin Kim <kgene@kernel.org>, "Krzysztof
- Kozlowski" <krzk@kernel.org>, Kiwoong Kim <kwmad.kim@samsung.com>, "Seungwon
- Jeon" <essuuj@gmail.com>
-Subject: [PATCH -next] scsi: ufs: ufs-exynos: Fix return value check in
- exynos_ufs_init()
-Date: Thu, 18 Jun 2020 13:38:37 +0000
-Message-ID: <20200618133837.127274-1-weiyongjun1@huawei.com>
-X-Mailer: git-send-email 2.20.1
+ id 1jluw6-00015P-Mx
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 13:50:36 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 0D7846736F; Thu, 18 Jun 2020 15:50:28 +0200 (CEST)
+Date: Thu, 18 Jun 2020 15:50:27 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH 2/3] arm64: use PAGE_KERNEL_ROX directly in alloc_insn_page
+Message-ID: <20200618135027.GA23534@lst.de>
+References: <20200618064307.32739-1-hch@lst.de>
+ <20200618064307.32739-3-hch@lst.de>
+ <90234f58-e83a-7f20-62a7-80a4e81cde95@redhat.com>
+ <20200618103506.GH576905@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200618103506.GH576905@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_063514_155418_8CC1FDC5 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200618_065034_898262_0690E263 
+X-CRM114-Status: GOOD (  20.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,64 +61,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org,
- kernel-janitors@vger.kernel.org, Hulk Robot <hulkci@huawei.com>,
- Wei Yongjun <weiyongjun1@huawei.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-hyperv@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ Dexuan Cui <decui@microsoft.com>, linux-kernel@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-mm@kvack.org,
+ Jessica Yu <jeyu@kernel.org>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case of error, the function devm_ioremap_resource() returns ERR_PTR()
-and never returns NULL. The NULL test in the return value check should
-be replaced with IS_ERR().
+On Thu, Jun 18, 2020 at 12:35:06PM +0200, Peter Zijlstra wrote:
+> On Thu, Jun 18, 2020 at 10:55:58AM +0200, David Hildenbrand wrote:
+> > On 18.06.20 08:43, Christoph Hellwig wrote:
+> > > Use PAGE_KERNEL_ROX directly instead of allocating RWX and setting the
+> > > page read-only just after the allocation.
+> > > 
+> > > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> > > ---
+> > >  arch/arm64/kernel/probes/kprobes.c | 12 +++---------
+> > >  1 file changed, 3 insertions(+), 9 deletions(-)
+> > > 
+> > > diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+> > > index d1c95dcf1d7833..cbe49cd117cfec 100644
+> > > --- a/arch/arm64/kernel/probes/kprobes.c
+> > > +++ b/arch/arm64/kernel/probes/kprobes.c
+> > > @@ -120,15 +120,9 @@ int __kprobes arch_prepare_kprobe(struct kprobe *p)
+> > >  
+> > >  void *alloc_insn_page(void)
+> > >  {
+> > > -	void *page;
+> > > -
+> > > -	page = vmalloc_exec(PAGE_SIZE);
+> > > -	if (page) {
+> > > -		set_memory_ro((unsigned long)page, 1);
+> > > -		set_vm_flush_reset_perms(page);
+> > > -	}
+> > > -
+> > > -	return page;
+> > > +	return __vmalloc_node_range(PAGE_SIZE, 1, VMALLOC_START, VMALLOC_END,
+> > > +			GFP_KERNEL, PAGE_KERNEL_ROX, VM_FLUSH_RESET_PERMS,
+> > > +			NUMA_NO_NODE, __func__);
+> > 
+> > I do wonder if something like vmalloc_prot(size, prot) would make this
+> > (and the other two users) easier to read.
+> > 
+> > So instead of ripping out vmalloc_exec(), converting it into
+> > vmalloc_prot() instead.
+> > 
+> > Did you consider that?
+> 
+> For x86 Christoph did module_alloc_prot(), which is in his more
+> extensive set of patches addressing this. I suspect that would be the
+> right thing for ARM64 as well.
 
-Fixes: 55f4b1f73631 ("scsi: ufs: ufs-exynos: Add UFS host support for Exynos SoCs")
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
----
- drivers/scsi/ufs/ufs-exynos.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+Yes.  The somewhat hacky way I added it cause problems for UML, so I
+instead plan to do a series converting all architectures over to
+module_alloc_prot, plus lots of other cleanups in the area that I
+noticed.
 
-diff --git a/drivers/scsi/ufs/ufs-exynos.c b/drivers/scsi/ufs/ufs-exynos.c
-index 440f2af83d9c..c918fbc6ca60 100644
---- a/drivers/scsi/ufs/ufs-exynos.c
-+++ b/drivers/scsi/ufs/ufs-exynos.c
-@@ -950,25 +950,25 @@ static int exynos_ufs_init(struct ufs_hba *hba)
- 	/* exynos-specific hci */
- 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "vs_hci");
- 	ufs->reg_hci = devm_ioremap_resource(dev, res);
--	if (!ufs->reg_hci) {
-+	if (IS_ERR(ufs->reg_hci)) {
- 		dev_err(dev, "cannot ioremap for hci vendor register\n");
--		return -ENOMEM;
-+		return PTR_ERR(ufs->reg_hci);
- 	}
- 
- 	/* unipro */
- 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "unipro");
- 	ufs->reg_unipro = devm_ioremap_resource(dev, res);
--	if (!ufs->reg_unipro) {
-+	if (IS_ERR(ufs->reg_unipro)) {
- 		dev_err(dev, "cannot ioremap for unipro register\n");
--		return -ENOMEM;
-+		return PTR_ERR(ufs->reg_unipro);
- 	}
- 
- 	/* ufs protector */
- 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "ufsp");
- 	ufs->reg_ufsp = devm_ioremap_resource(dev, res);
--	if (!ufs->reg_ufsp) {
-+	if (IS_ERR(ufs->reg_ufsp)) {
- 		dev_err(dev, "cannot ioremap for ufs protector register\n");
--		return -ENOMEM;
-+		return PTR_ERR(ufs->reg_ufsp);
- 	}
- 
- 	ret = exynos_ufs_parse_dt(dev, ufs);
-
-
-
+I don't think vmalloc_prot is a good idea per se, as there only few
+potential users, and I don't want too many vmalloc APIs.
 
 _______________________________________________
 linux-arm-kernel mailing list
