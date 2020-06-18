@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C31C81FDE38
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:31:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1CEE1FDE3D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:31:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dlLySuY84jOoaQLLBmdHy3DYUUUJsJfVeBpbjU56PnU=; b=JEDzHCuhdyRgxs
-	daTNfYf10rn5fWeD6Ewl+WRblyW8O1FJCYwlxFLTh2GnM2zH/cVcPClazOskBVxOr2gX6Y0DYaPhZ
-	dx4Zgos83CXw14O3WAxo39/a5z8EnsVF5Gbj2813m3hpXA4l9U5WmcQLplvDXKygK8MpXHGZ1eAT/
-	9SZ0wuuJlV7uq/tEMgPeW3YJruOtEyaaiqkDTTSM7bJuXwqRCwsOuNlt5OGhHIz3OpmeVyK5aZXBu
-	R1d2IUC/+OU9zYoJfQWCLRDOvekmx/n2CtRLNPOfVZQhwVvnHMLh29wQmUAcytPxAcGLfe8QmUnpa
-	UNa0AVQooAOdHu3zaIPQ==;
+	List-Owner; bh=wjKeJS6aQaWmsiPNYQJ5QHATV7PICuEZzZdNqHfmYQ0=; b=ZD0Lnkc/bGn0a9
+	IanBGcRRlgyaKSAvNGzVMpnhxbCQxglMwdEqJHGu+BAL/euRSZAtu0R0fboBaaYK8Dm1yPP2n3KwJ
+	LninFLORFQAf0Xna7NIETQXpGzutqIlbxSReVmgSUU28rVT6tqIP2Fjb82rsyFLLSZu39PYfZJmpP
+	rcksYZorJ+ifm5kQpiNK6SCbAA0isUrs1nNAsp6nj7ZKpB2aCQPJZlDcCR2dKoULhPnxTW/GYVNyE
+	Qa/D8Esn5yPkMp4vrdN4CnV2y8PCIXwmHRCWgbzd8jiRoIXgV5v4KnAxuia8PzDhmzy+bDb1h0787
+	wf1QYNjlVdtVwJL2YGqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljOs-000122-7W; Thu, 18 Jun 2020 01:31:30 +0000
+	id 1jljPB-0001Io-Co; Thu, 18 Jun 2020 01:31:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj8A-0003TC-GS
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:14:17 +0000
+ id 1jlj8K-0003b6-Nf
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:14:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0459821D7B;
- Thu, 18 Jun 2020 01:14:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 501B9221EE;
+ Thu, 18 Jun 2020 01:14:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442853;
- bh=wxagRCdDmLBVpwWsJ/YZCGc4NdGxBQAmrVSKQTkcppM=;
+ s=default; t=1592442864;
+ bh=rbuICGyWG8fCTI3u8+UUBOuYEADzK0pn45InuIr1ir0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wIVu9cNQurT8hjqqVnuFPYpTTPcVjur4fVsYdg3TMj3buMmS24yDa2yGQ8nbVowWQ
- 2rse+h2UyrjGdyFs+WGqPshMOwpyh02WaZXZNTeB9QvAUdQMsB4odDiopF3cOmiTrh
- Px9Q7leFSamuEdb/SCI10rfAtDtkuQWlA4VTh2nQ=
+ b=C7j2BEup8WL3U981bpi3+nzNQBm1AKC1z0+8N/T1qr0mH9DZJsAAJwQVxhaFjrqJs
+ A2WnoH4/HZ4ATXfsSbK0lx6X9AdznwCpVhS3LKwHP0MGSvWWu08WUaLlb+oQj/6of7
+ WGXsLiqAMebUXyrqWecZVEax0PcbRYP87DfQTlbw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 284/388] clk: zynqmp: Fix divider2 calculation
-Date: Wed, 17 Jun 2020 21:06:21 -0400
-Message-Id: <20200618010805.600873-284-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 292/388] misc: xilinx-sdfec: improve
+ get_user_pages_fast() error handling
+Date: Wed, 17 Jun 2020 21:06:29 -0400
+Message-Id: <20200618010805.600873-292-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181414_606968_551D103D 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20200617_181424_849012_98077FF6 
+X-CRM114-Status: GOOD (  15.91  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,93 +80,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>, Sasha Levin <sashal@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Jolly Shah <jolly.shah@xilinx.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ John Hubbard <jhubbard@nvidia.com>, Dragan Cvetic <dragan.cvetic@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Derek Kiernan <derek.kiernan@xilinx.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tejas Patel <tejas.patel@xilinx.com>
+From: John Hubbard <jhubbard@nvidia.com>
 
-[ Upstream commit b8c1049c68d634a412ed5980ae666ed7c8839305 ]
+[ Upstream commit 57343d51613227373759f5b0f2eede257fd4b82e ]
 
-zynqmp_get_divider2_val() calculates, divider value of type DIV2 clock,
-considering best possible combination of DIV1 and DIV2.
+This fixes the case of get_user_pages_fast() returning a -errno.
+The result needs to be stored in a signed integer. And for safe
+signed/unsigned comparisons, it's best to keep everything signed.
+And get_user_pages_fast() also expects a signed value for number
+of pages to pin.
 
-To find best possible values of DIV1 and DIV2, DIV1's parent rate
-should be consider and not DIV2's parent rate since it would rate of
-div1 clock. Consider a below topology,
+Therefore, change most relevant variables, from u32 to int. Leave
+"n" unsigned, for convenience in checking for overflow. And provide
+a WARN_ON_ONCE() and early return, if overflow occurs.
 
-	out_clk->div2_clk->div1_clk->fixed_parent
+Also, as long as we're tidying up: rename the page array from page,
+to pages, in order to match the conventions used in most other call
+sites.
 
-where out_clk = (fixed_parent/div1_clk) / div2_clk, so parent clock
-of div1_clk (i.e. out_clk) should be divided by div1_clk and div2_clk.
-
-Existing code divides parent rate of div2_clk's clock instead of
-div1_clk's parent rate, which is wrong.
-
-Fix the same by considering div1's parent clock rate.
-
-Fixes: 4ebd92d2e228 ("clk: zynqmp: Fix divider calculation")
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
-Link: https://lkml.kernel.org/r/1583185843-20707-3-git-send-email-jolly.shah@xilinx.com
-Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Fixes: 20ec628e8007e ("misc: xilinx_sdfec: Add ability to configure LDPC")
+Cc: Derek Kiernan <derek.kiernan@xilinx.com>
+Cc: Dragan Cvetic <dragan.cvetic@xilinx.com>
+Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Michal Simek <michal.simek@xilinx.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Signed-off-by: John Hubbard <jhubbard@nvidia.com>
+Link: https://lore.kernel.org/r/20200527012628.1100649-2-jhubbard@nvidia.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/zynqmp/divider.c | 17 ++++++++++++-----
- 1 file changed, 12 insertions(+), 5 deletions(-)
+ drivers/misc/xilinx_sdfec.c | 27 +++++++++++++++++----------
+ 1 file changed, 17 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
-index 4be2cc76aa2e..9bc4f9409aea 100644
---- a/drivers/clk/zynqmp/divider.c
-+++ b/drivers/clk/zynqmp/divider.c
-@@ -111,23 +111,30 @@ static unsigned long zynqmp_clk_divider_recalc_rate(struct clk_hw *hw,
- 
- static void zynqmp_get_divider2_val(struct clk_hw *hw,
- 				    unsigned long rate,
--				    unsigned long parent_rate,
- 				    struct zynqmp_clk_divider *divider,
- 				    int *bestdiv)
+diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
+index 71bbaa56bdb5..e2766aad9e14 100644
+--- a/drivers/misc/xilinx_sdfec.c
++++ b/drivers/misc/xilinx_sdfec.c
+@@ -602,10 +602,10 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
+ 			      const u32 depth)
  {
- 	int div1;
- 	int div2;
- 	long error = LONG_MAX;
--	struct clk_hw *parent_hw = clk_hw_get_parent(hw);
--	struct zynqmp_clk_divider *pdivider = to_zynqmp_clk_divider(parent_hw);
-+	unsigned long div1_prate;
-+	struct clk_hw *div1_parent_hw;
-+	struct clk_hw *div2_parent_hw = clk_hw_get_parent(hw);
-+	struct zynqmp_clk_divider *pdivider =
-+				to_zynqmp_clk_divider(div2_parent_hw);
+ 	u32 reg = 0;
+-	u32 res;
+-	u32 n, i;
++	int res, i, nr_pages;
++	u32 n;
+ 	u32 *addr = NULL;
+-	struct page *page[MAX_NUM_PAGES];
++	struct page *pages[MAX_NUM_PAGES];
  
- 	if (!pdivider)
- 		return;
+ 	/*
+ 	 * Writes that go beyond the length of
+@@ -622,15 +622,22 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
+ 	if ((len * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE)
+ 		n += 1;
  
-+	div1_parent_hw = clk_hw_get_parent(div2_parent_hw);
-+	if (!div1_parent_hw)
-+		return;
+-	res = get_user_pages_fast((unsigned long)src_ptr, n, 0, page);
+-	if (res < n) {
+-		for (i = 0; i < res; i++)
+-			put_page(page[i]);
++	if (WARN_ON_ONCE(n > INT_MAX))
++		return -EINVAL;
 +
-+	div1_prate = clk_hw_get_rate(div1_parent_hw);
- 	*bestdiv = 1;
- 	for (div1 = 1; div1 <= pdivider->max_div;) {
- 		for (div2 = 1; div2 <= divider->max_div;) {
--			long new_error = ((parent_rate / div1) / div2) - rate;
-+			long new_error = ((div1_prate / div1) / div2) - rate;
- 
- 			if (abs(new_error) < abs(error)) {
- 				*bestdiv = div2;
-@@ -192,7 +199,7 @@ static long zynqmp_clk_divider_round_rate(struct clk_hw *hw,
- 	 */
- 	if (div_type == TYPE_DIV2 &&
- 	    (clk_hw_get_flags(hw) & CLK_SET_RATE_PARENT)) {
--		zynqmp_get_divider2_val(hw, rate, *prate, divider, &bestdiv);
-+		zynqmp_get_divider2_val(hw, rate, divider, &bestdiv);
++	nr_pages = n;
++
++	res = get_user_pages_fast((unsigned long)src_ptr, nr_pages, 0, pages);
++	if (res < nr_pages) {
++		if (res > 0) {
++			for (i = 0; i < res; i++)
++				put_page(pages[i]);
++		}
+ 		return -EINVAL;
  	}
  
- 	if ((clk_hw_get_flags(hw) & CLK_SET_RATE_PARENT) && divider->is_frac)
+-	for (i = 0; i < n; i++) {
+-		addr = kmap(page[i]);
++	for (i = 0; i < nr_pages; i++) {
++		addr = kmap(pages[i]);
+ 		do {
+ 			xsdfec_regwrite(xsdfec,
+ 					base_addr + ((offset + reg) *
+@@ -639,7 +646,7 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
+ 			reg++;
+ 		} while ((reg < len) &&
+ 			 ((reg * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE));
+-		put_page(page[i]);
++		put_page(pages[i]);
+ 	}
+ 	return reg;
+ }
 -- 
 2.25.1
 
