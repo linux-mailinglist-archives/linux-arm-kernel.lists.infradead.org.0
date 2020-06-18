@@ -2,62 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77A071FF456
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 16:12:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C09A91FF464
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 16:13:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=faawFrTMcwEJ84MQnf/T//FfByOObw8k1IzeApvz50k=; b=Bzb22yFupQd7yP
-	nRcTMqGLEeWpI+IaKW8HEM0IF8E1SoOdt543iGFsguMrs56rM3YT1mwL4PQxHETZpl2F9LndONExL
-	JzWKtHSAc0fJvrcXuzlZ/OmRnyEsK3aEuf9y330Dd4T4F2i5+4lxvEBXJl4cxdYhm8RTq5XmAh8uj
-	+ndFqiCegXqL6TE58VZqBkTp4NXGy5dfWwwROPBzirP2G9O8cCSefz/5JbTsEZkAPt83rjI65Z2zQ
-	mTMG5a1yG0oDnW8N/8T0J4/fxlfz4SUK15vNaSjWLZKrVMJUz8yHw/kNQfYH/dpPHAqjNhh+xpYF5
-	AteMPSro+bxW5pe1epzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g3iKplD7Pvg8HS9KkDfYYCHDV5TGslL/eoASM2mVqAs=; b=jZLqCbDb/1V/yG
+	1WDa6JDZN+5PMjuUNQVhGti8H6ouIN3G3qGk8gzC6kV2POBvp5dNZ69ZVV1ZFpbOZqNUWA0CUlD/X
+	fnglOX0KUZyVwoD2/HmT8pmiR7kpO0Bt6EBRVn0j6ikDUyFDRnHi/aman3U+1OyPkS7LU8yi2AYum
+	3sIVvlK5+YlcIciUny/0wXlrKOrCKJnBFrE4VyTz4AOtYEm9uo/ViQ1O96pCqbLH4FzS6vW4OQK0o
+	r6FjnujPg9gXfaIQDndoc7fssUL9Aan8P4qH9sO36IIA8gpsdPKpplYI2VzVdJYRTy3W0BCfXiheh
+	5oFvDB8kMV2SM065IWNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlvHR-0006qV-3D; Thu, 18 Jun 2020 14:12:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jlvIe-0007Ra-EA; Thu, 18 Jun 2020 14:13:52 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlvHI-0006pu-0t
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 14:12:30 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 90AD620739;
- Thu, 18 Jun 2020 14:12:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592489546;
- bh=YzMGpPxwn9AB5Bi9LqHSOrGngjJIA4v8AX0yTeStR9c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zs8iBuP/eY1tFldFscWOc3uxOGp48oxVTis0VVEghQPbRAS7kniEf9PykZBQIS6G6
- ra7Hnl+Kdn8CIJwyVOmj/KQkKnCzQjzY2UiOLT8YiW401OzakXA0x/OMjbYk5wKzLA
- Ir47h6gbE+M2ZdEcf/idTWGEAhSFnIt4pom5LDMo=
-Date: Thu, 18 Jun 2020 22:12:20 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: Re: [PATCH v8 1/5] ARM: dts: add Protonic PRTI6Q board
-Message-ID: <20200618141217.GA32496@dragon>
-References: <20200520154116.12909-1-o.rempel@pengutronix.de>
- <20200520154116.12909-2-o.rempel@pengutronix.de>
+ id 1jlvIU-0007Pp-BP
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 14:13:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1592489622; x=1624025622;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=qaISx7kIwjmQW7aDNabN0pTA9+hEP2G3tl7DISJo728=;
+ b=ukaVhsEIfTUfT7Nu/hEGisajPLCOGfrkAQeiyGzliA1UkgR/LRqDhF1z
+ 5cCUbl8IQwpEURdFrD3Km6j2HSiV/bp5lh1/Vn08hk/l4uDPhrqp7vmqJ
+ rYqJ78J4mz4yYZps5f8pHYr+8WI+uQO4yl8BWwiwnvE4Iw4rVk6zJyEvV
+ F+XIlbiyZCJZsi1Pir5/VGUXh0iig45nUbQsPsxoKKjzvYQjBEoETHIFS
+ LhJ3BLjvahIbcSu4e62XBDt4Arbq283EKIXZe7mDT1n1REqUKi5okuDno
+ z7V+nDgn5WD7B8xS763936ITqXTWQaixnLPUcXP2MIuAcFwgz81ZRtq0Y g==;
+IronPort-SDR: sEbG+n7Y5rb+0x5y9CdXAzEWIdWjG5Kma7Ynmj+Zj2Qu/3OMszzWTPCAqqs+E8WTvCRW/mqsJj
+ 3vHrK5iA/79+6/evapQR0z6lceHxts0aQJOcwYCwnO721lpEFaCNgG6FemyVlLw0yUf2Gu2Ha8
+ V7VQgFxE4buHu2moCLZUrhfaswWwZ9gI7iuox+ju/+BpoEByh0+KUUwv+GyX8IU2wqc1X+mOJ7
+ kw5geagDknZPZxMjAXy4urmVs8eEc0HulzPp8gr5wTDTA6wq8CbC9hsrjqNymps5V3bfsHmLEn
+ 7ms=
+X-IronPort-AV: E=Sophos;i="5.73,526,1583218800"; d="scan'208";a="78953791"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 Jun 2020 07:13:40 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1979.3; Thu, 18 Jun 2020 07:13:33 -0700
+Received: from soft-dev15.microsemi.net (10.10.115.15) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1979.3 via Frontend Transport; Thu, 18 Jun 2020 07:13:31 -0700
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Adrian Hunter
+ <adrian.hunter@intel.com>, SoC Team <soc@kernel.org>
+Subject: [PATCH v4 0/3] mmc: Adding support for Microchip Sparx5 SoC
+Date: Thu, 18 Jun 2020 16:13:23 +0200
+Message-ID: <20200618141326.25723-1-lars.povlsen@microchip.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520154116.12909-2-o.rempel@pengutronix.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_071228_112164_6E0224A7 
-X-CRM114-Status: GOOD (  20.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200618_071342_479220_960E8068 
+X-CRM114-Status: GOOD (  10.04  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [68.232.149.84 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,792 +93,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- devicetree@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- David Jander <david@protonic.nl>, Fabio Estevam <festevam@gmail.com>,
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 05:41:12PM +0200, Oleksij Rempel wrote:
-> Protonic PRTI6Q is a development board and a base class for different
-> specific customer application boards based on the i.MX6 family of SoCs,
-> developed by Protonic Holland.
-> 
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: David Jander <david@protonic.nl>
-> Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
-> ---
->  arch/arm/boot/dts/Makefile            |   1 +
->  arch/arm/boot/dts/imx6q-prti6q.dts    | 541 ++++++++++++++++++++++++++
->  arch/arm/boot/dts/imx6qdl-prti6q.dtsi | 165 ++++++++
->  3 files changed, 707 insertions(+)
->  create mode 100644 arch/arm/boot/dts/imx6q-prti6q.dts
->  create mode 100644 arch/arm/boot/dts/imx6qdl-prti6q.dtsi
-> 
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index e8dd992013973..206a36a50575e 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -538,6 +538,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
->  	imx6q-pico-nymph.dtb \
->  	imx6q-pico-pi.dtb \
->  	imx6q-pistachio.dtb \
-> +	imx6q-prti6q.dtb \
->  	imx6q-rex-pro.dtb \
->  	imx6q-sabreauto.dtb \
->  	imx6q-sabrelite.dtb \
-> diff --git a/arch/arm/boot/dts/imx6q-prti6q.dts b/arch/arm/boot/dts/imx6q-prti6q.dts
-> new file mode 100644
-> index 0000000000000..d8ea9a3f415a8
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/imx6q-prti6q.dts
-> @@ -0,0 +1,541 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-> +/*
-> + * Copyright (c) 2014 Protonic Holland
-> + */
-> +
-> +/dts-v1/;
-> +#include "imx6q.dtsi"
-> +#include "imx6qdl-prti6q.dtsi"
-> +#include <dt-bindings/leds/common.h>
-> +#include <dt-bindings/sound/fsl-imx-audmux.h>
-> +
-> +/ {
-> +	model = "Protonic PRTI6Q board";
-> +	compatible = "prt,prti6q", "fsl,imx6q";
+This is an add-on series to the main SoC Sparx5 series
+(Message-ID: <20200615133242.24911-1-lars.povlsen@microchip.com>
 
-Undocumented compatible?
+It adds eMMC support for Sparx5, by adding a driver for the SoC SDHCI
+controller, DT configuration and DT binding documentation.
 
-> +
-> +	memory@10000000 {
-> +		device_type = "memory";
-> +		reg = <0x10000000 0xf0000000>;
-> +	};
-> +
-> +	backlight_lcd: backlight-lcd {
-> +		compatible = "pwm-backlight";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_backlight>;
-> +		pwms = <&pwm1 0 5000000>;
-> +		brightness-levels = <0 16 64 255>;
-> +		num-interpolated-steps = <16>;
-> +		default-brightness-level = <16>;
+Changes in v4:
+- Disable clock if sdhci_add_host() fails
+- Remove dev_err if sdhci_add_host() fails
 
-It should be an index into brightness-levels.
+Changes in v3:
+- Add dt-bindings for property "microchip,clock-delay"
+- Enforce "microchip,clock-delay" valid range in driver
+- Removed a noisy pr_debug() in sdhci_sparx5_adma_write_desc()
 
-> +		power-supply = <&reg_3v3>;
-> +		enable-gpios = <&gpio4 28 GPIO_ACTIVE_HIGH>;
-> +	};
-> +
-> +	can_osc: can-osc {
-> +		compatible = "fixed-clock";
-> +		#clock-cells = <0>;
-> +		clock-frequency = <25000000>;
-> +	};
-> +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_leds>;
-> +
-> +		led-debug0 {
-> +			function = LED_FUNCTION_STATUS;
-> +			gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "heartbeat";
-> +		};
-> +
-> +		led-debug1 {
-> +			function = LED_FUNCTION_SD;
-> +			gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "disk-activity";
-> +		};
-> +	};
-> +
-> +	panel {
-> +		compatible = "kyo,tcg121xglp";
-> +		backlight = <&backlight_lcd>;
-> +
-> +		port {
-> +			panel_in: endpoint {
-> +				remote-endpoint = <&lvds0_out>;
-> +			};
-> +		};
-> +	};
-> +
-> +	reg_1v8: regulator-1v8 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "1v8";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +		regulator-always-on;
+Changes in v2:
+- Changes in driver as per review comments
+ - Drop debug code
+ - Drop sysfs code
+ - use usleep_range()
+ - use mmc_hostname() in pr_debug()
+ - Remove deactivated code
+ - Minor cosmetics
 
-What's the point of having always-on property for a regulator without
-on/off control?
+Lars Povlsen (3):
+  dt-bindings: mmc: Add Sparx5 SDHCI controller bindings
+  sdhci: sparx5: Add Sparx5 SoC eMMC driver
+  arm64: dts: sparx5: Add Sparx5 eMMC support
 
-> +	};
-> +
-> +	reg_wifi: regulator-wifi {
-> +		compatible = "regulator-fixed";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_wifi_npd>;
-> +		enable-active-high;
-> +		gpio = <&gpio1 26 GPIO_ACTIVE_HIGH>;
-> +		regulator-max-microvolt = <1800000>;
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-name = "regulator-WL12xx";
-> +		startup-delay-us = <70000>;
-> +	};
-> +
-> +	sound {
-> +		compatible = "simple-audio-card";
-> +		simple-audio-card,name = "prti6q-sgtl5000";
-> +		simple-audio-card,format = "i2s";
-> +		simple-audio-card,widgets =
-> +			"Microphone", "Microphone Jack",
-> +			"Line", "Line In Jack",
-> +			"Headphone", "Headphone Jack",
-> +			"Speaker", "External Speaker";
-> +		simple-audio-card,routing =
-> +			"MIC_IN", "Microphone Jack",
-> +			"LINE_IN", "Line In Jack",
-> +			"Headphone Jack", "HP_OUT",
-> +			"External Speaker", "LINE_OUT";
-> +
-> +		simple-audio-card,cpu {
-> +			sound-dai = <&ssi1>;
-> +			system-clock-frequency = <0>;
-> +		};
-> +
-> +		simple-audio-card,codec {
-> +			sound-dai = <&sgtl5000>;
-> +			bitclock-master;
-> +			frame-master;
-> +		};
-> +	};
-> +
-> +	sound-spdif {
-> +		compatible = "fsl,imx-audio-spdif";
-> +		model = "imx-spdif";
-> +		spdif-controller = <&spdif>;
-> +		spdif-in;
-> +		spdif-out;
-> +	};
-> +};
-> +
-> +&audmux {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_audmux>;
-> +	status = "okay";
-> +
-> +	mux_ssi1 {
+ .../mmc/microchip,dw-sparx5-sdhci.yaml        |  65 +++++
+ arch/arm64/boot/dts/microchip/sparx5.dtsi     |  24 ++
+ .../boot/dts/microchip/sparx5_pcb125.dts      |  23 ++
+ .../boot/dts/microchip/sparx5_pcb134_emmc.dts |  23 ++
+ .../boot/dts/microchip/sparx5_pcb135_emmc.dts |  23 ++
+ drivers/mmc/host/Kconfig                      |  13 +
+ drivers/mmc/host/Makefile                     |   1 +
+ drivers/mmc/host/sdhci-of-sparx5.c            | 269 ++++++++++++++++++
+ 8 files changed, 441 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mmc/microchip,dw-sparx5-sdhci.yaml
+ create mode 100644 drivers/mmc/host/sdhci-of-sparx5.c
 
-We recommend to use hyphen than underscore in node name.
-
-> +		fsl,audmux-port = <0>;
-> +		fsl,port-config = <
-> +			IMX_AUDMUX_V2_PTCR_SYN		0
-> +			IMX_AUDMUX_V2_PTCR_TFSEL(2)	0
-> +			IMX_AUDMUX_V2_PTCR_TCSEL(2)	0
-> +			IMX_AUDMUX_V2_PTCR_TFSDIR	0
-> +			IMX_AUDMUX_V2_PTCR_TCLKDIR IMX_AUDMUX_V2_PDCR_RXDSEL(2)
-> +		>;
-> +	};
-> +
-> +	mux_pins3 {
-> +		fsl,audmux-port = <2>;
-> +		fsl,port-config = <
-> +			IMX_AUDMUX_V2_PTCR_SYN IMX_AUDMUX_V2_PDCR_RXDSEL(0)
-> +			0		       IMX_AUDMUX_V2_PDCR_TXRXEN
-> +		>;
-> +	};
-> +};
-> +
-> +&can2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_can2>;
-> +	status = "okay";
-> +};
-> +
-> +&ecspi1 {
-> +	cs-gpios = <&gpio3 19 GPIO_ACTIVE_HIGH>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_ecspi1>;
-> +	status = "okay";
-> +
-> +	flash@0 {
-> +		compatible = "jedec,spi-nor";
-> +		reg = <0>;
-> +		spi-max-frequency = <20000000>;
-> +	};
-> +};
-> +
-> +&ecspi2 {
-> +	cs-gpios = <&gpio2 26 GPIO_ACTIVE_HIGH>, <&gpio4 25 GPIO_ACTIVE_HIGH>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_ecspi2 &pinctrl_ecspi2_cs>;
-> +	status = "okay";
-> +
-> +	can@0 {
-> +		compatible = "microchip,mcp2515";
-> +		reg = <0>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_can3>;
-> +		clocks = <&can_osc>;
-> +		interrupts-extended = <&gpio3 20 IRQ_TYPE_LEVEL_LOW>;
-> +		spi-max-frequency = <5000000>;
-> +	};
-> +
-> +	adc@1 {
-> +		compatible = "ti,adc128s052";
-> +		reg = <1>;
-> +		spi-max-frequency = <2000000>;
-> +		vref-supply = <&reg_3v3>;
-> +	};
-> +};
-> +
-> +&ecspi3 {
-> +	cs-gpios = <&gpio4 24 GPIO_ACTIVE_HIGH>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_ecspi3>;
-> +	status = "okay";
-> +};
-> +
-> +&can1 {
-
-It's out of alphabetic order.
-
-> +	pinctrl-0 = <&pinctrl_can1>;
-> +};
-> +
-> +&fec {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_enet>;
-> +	phy-mode = "rgmii-id";
-> +	phy-handle = <&rgmii_phy>;
-> +	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		/* Microchip KSZ9031RNX PHY */
-> +		rgmii_phy: ethernet-phy@0 {
-> +			reg = <0>;
-> +			interrupts-extended = <&gpio1 28 IRQ_TYPE_LEVEL_LOW>;
-> +			reset-gpios = <&gpio1 25 GPIO_ACTIVE_LOW>;
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <300>;
-> +		};
-> +	};
-> +};
-> +
-> +&hdmi {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_hdmi>;
-> +	ddc-i2c-bus = <&i2c2>;
-> +	status = "okay";
-> +};
-> +
-> +&i2c1 {
-> +	sgtl5000: audio-codec@a {
-> +		compatible = "fsl,sgtl5000";
-> +		reg = <0xa>;
-> +		#sound-dai-cells = <0>;
-> +		clocks = <&clks 201>;
-> +		VDDA-supply = <&reg_3v3>;
-> +		VDDIO-supply = <&reg_3v3>;
-> +		VDDD-supply = <&reg_1v8>;
-> +	};
-> +};
-> +
-> +/* DDC */
-> +&i2c2 {
-> +	clock-frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c2>;
-> +	status = "okay";
-> +};
-> +
-> +&i2c3 {
-> +	adc@49 {
-> +		compatible = "ti,ads1015";
-> +		reg = <0x49>;
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		/* can2_l */
-> +		channel@4 {
-> +			reg = <4>;
-> +			ti,gain = <3>;
-> +			ti,datarate = <3>;
-> +		};
-> +
-> +		/* can2_h */
-> +		channel@5 {
-> +			reg = <5>;
-> +			ti,gain = <3>;
-> +			ti,datarate = <3>;
-> +		};
-> +
-> +		/* can1_l */
-> +		channel@6 {
-> +			reg = <6>;
-> +			ti,gain = <3>;
-> +			ti,datarate = <3>;
-> +		};
-> +
-> +		/* can1_h */
-> +		channel@7 {
-> +			reg = <7>;
-> +			ti,gain = <3>;
-> +			ti,datarate = <3>;
-> +		};
-> +	};
-> +};
-> +
-> +&pcie {
-> +	status = "okay";
-> +};
-> +
-> +&pwm1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_pwm1>;
-> +	status = "okay";
-> +};
-> +
-> +&ldb {
-> +	status = "okay";
-> +
-> +	lvds-channel@0 {
-> +		status = "okay";
-> +
-> +		port@4 {
-> +			reg = <4>;
-> +
-> +			lvds0_out: endpoint {
-> +				remote-endpoint = <&panel_in>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&sata {
-> +	status = "okay";
-> +};
-> +
-> +&snvs_poweroff {
-> +	status = "okay";
-> +};
-> +
-> +&spdif {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_spdif>;
-> +	status = "okay";
-> +};
-> +
-> +&ssi1 {
-> +	#sound-dai-cells = <0>;
-> +	fsl,mode = "ac97-slave";
-> +	status = "okay";
-> +};
-> +
-> +&uart2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart2>;
-> +	status = "okay";
-> +};
-> +
-> +&uart5 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart5>;
-> +	status = "okay";
-> +};
-> +
-> +&usbotg {
-> +	pinctrl-0 = <&pinctrl_usbotg &pinctrl_usbotg_id>;
-> +};
-> +
-> +&usdhc2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usdhc2>;
-> +	non-removable;
-> +	vmmc-supply = <&reg_wifi>;
-> +	cap-power-off-card;
-> +	keep-power-in-suspend;
-> +	status = "okay";
-> +
-> +	wifi {
-> +		compatible = "ti,wl1271";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_wifi>;
-> +		interrupts-extended = <&gpio1 30 IRQ_TYPE_LEVEL_HIGH>;
-> +		ref-clock-frequency = "38400000";
-> +		tcxo-clock-frequency = "19200000";
-> +	};
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl_audmux: audmuxgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_CSI0_MCLK__CCM_CLKO1		0x030b0
-> +			MX6QDL_PAD_CSI0_DAT7__AUD3_RXD		0x130b0
-> +			MX6QDL_PAD_CSI0_DAT4__AUD3_TXC		0x130b0
-> +			MX6QDL_PAD_CSI0_DAT5__AUD3_TXD		0x110b0
-> +			MX6QDL_PAD_CSI0_DAT6__AUD3_TXFS		0x130b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_backlight: backlightgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_DISP0_DAT7__GPIO4_IO28	0x1b0b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_can2: can2grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_KEY_COL4__FLEXCAN2_TX 0x80000000
-> +			MX6QDL_PAD_KEY_ROW4__FLEXCAN2_RX 0x80000000
-
-Code proper pin configuration value.
-
-> +		>;
-> +	};
-> +
-> +	pinctrl_can3: can3grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_EIM_D20__GPIO3_IO20		0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_ecspi1: ecspi1grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_EIM_D17__ECSPI1_MISO		0x100b1
-> +			MX6QDL_PAD_EIM_D18__ECSPI1_MOSI		0x100b1
-> +			MX6QDL_PAD_EIM_D16__ECSPI1_SCLK		0x100b1
-> +			/* CS */
-> +			MX6QDL_PAD_EIM_D19__GPIO3_IO19		0x000b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_ecspi2: ecspi2grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_EIM_OE__ECSPI2_MISO		0x100b1
-> +			MX6QDL_PAD_EIM_CS0__ECSPI2_SCLK		0x100b1
-> +			MX6QDL_PAD_EIM_CS1__ECSPI2_MOSI		0x100b1
-> +			MX6QDL_PAD_EIM_RW__GPIO2_IO26		0x000b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_ecspi2_cs: ecspi2csgrp {
-> +		fsl,pins = <
-> +			/* ADC128S022 CS */
-> +			MX6QDL_PAD_DISP0_DAT4__GPIO4_IO25	0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_ecspi3: ecspi3grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_DISP0_DAT0__ECSPI3_SCLK	0x100b1
-> +			MX6QDL_PAD_DISP0_DAT1__ECSPI3_MOSI	0x100b1
-> +			MX6QDL_PAD_DISP0_DAT2__ECSPI3_MISO	0x100b1
-> +			MX6QDL_PAD_DISP0_DAT3__GPIO4_IO24	0x000b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_enet: enetgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_RGMII_RXC__RGMII_RXC		0x1b030
-> +			MX6QDL_PAD_RGMII_RD0__RGMII_RD0		0x1b030
-> +			MX6QDL_PAD_RGMII_RD1__RGMII_RD1		0x1b030
-> +			MX6QDL_PAD_RGMII_RD2__RGMII_RD2		0x1b030
-> +			MX6QDL_PAD_RGMII_RD3__RGMII_RD3		0x1b030
-> +			MX6QDL_PAD_RGMII_RX_CTL__RGMII_RX_CTL	0x1b030
-> +			MX6QDL_PAD_RGMII_TXC__RGMII_TXC		0x10030
-> +			MX6QDL_PAD_RGMII_TD0__RGMII_TD0		0x10030
-> +			MX6QDL_PAD_RGMII_TD1__RGMII_TD1		0x10030
-> +			MX6QDL_PAD_RGMII_TD2__RGMII_TD2		0x10030
-> +			MX6QDL_PAD_RGMII_TD3__RGMII_TD3		0x10030
-> +			MX6QDL_PAD_RGMII_TX_CTL__RGMII_TX_CTL	0x10030
-> +			MX6QDL_PAD_ENET_REF_CLK__ENET_TX_CLK	0x10030
-> +			MX6QDL_PAD_ENET_MDIO__ENET_MDIO		0x10030
-> +			MX6QDL_PAD_ENET_MDC__ENET_MDC		0x10030
-> +
-> +			/* Phy reset */
-> +			MX6QDL_PAD_ENET_CRS_DV__GPIO1_IO25	0x1b0b0
-> +			MX6QDL_PAD_ENET_TX_EN__GPIO1_IO28	0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_hdmi: hdmigrp {
-> +		fsl,pins = <
-> +			/* NOTE: DDC is done via I2C2, so DON'T
-> +			 * configure DDC pins for HDMI!
-> +			 */
-> +			MX6QDL_PAD_EIM_A25__HDMI_TX_CEC_LINE	0x1f8b0
-> +		>;
-> +	};
-> +
-> +	/* DDC */
-> +	pinctrl_i2c2: i2c2grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_KEY_COL3__I2C2_SCL	0x4001b8b1
-> +			MX6QDL_PAD_KEY_ROW3__I2C2_SDA	0x4001b8b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_leds: ledsgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_GPIO_8__GPIO1_IO08		0x1b0b0
-> +			MX6QDL_PAD_GPIO_9__GPIO1_IO09		0x1b0b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_pwm1: pwm1grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_DISP0_DAT8__PWM1_OUT		0x1b0b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_spdif: spdifgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_GPIO_16__SPDIF_IN		0x1b0b0
-> +			MX6QDL_PAD_GPIO_19__SPDIF_OUT		0x1b0b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart2: uart2grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_EIM_D26__UART2_RX_DATA	0x1b0b1
-> +			MX6QDL_PAD_EIM_D27__UART2_TX_DATA	0x1b0b1
-> +			MX6QDL_PAD_EIM_D28__UART2_DTE_CTS_B	0x1b0b1
-> +			MX6QDL_PAD_EIM_D29__UART2_DTE_RTS_B	0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart5: uart5grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_KEY_COL1__UART5_TX_DATA	0x1b0b1
-> +			MX6QDL_PAD_KEY_ROW1__UART5_RX_DATA	0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usbotg_id: usbotgidgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_ENET_RX_ER__USB_OTG_ID	0x1f058
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2: usdhc2grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_SD2_CMD__SD2_CMD		0x170b9
-> +			MX6QDL_PAD_SD2_CLK__SD2_CLK		0x100b9
-> +			MX6QDL_PAD_SD2_DAT0__SD2_DATA0		0x170b9
-> +			MX6QDL_PAD_SD2_DAT1__SD2_DATA1		0x170b9
-> +			MX6QDL_PAD_SD2_DAT2__SD2_DATA2		0x170b9
-> +			MX6QDL_PAD_SD2_DAT3__SD2_DATA3		0x170b9
-> +		>;
-> +	};
-> +
-> +	pinctrl_wifi: wifigrp {
-> +		fsl,pins = <
-> +			/* WL12xx IRQ */
-> +			MX6QDL_PAD_ENET_TXD0__GPIO1_IO30	0x10880
-> +		>;
-> +	};
-> +
-> +	pinctrl_wifi_npd: wifinpd {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_ENET_RXD1__GPIO1_IO26	0x1b8b0
-> +		>;
-> +	};
-> +};
-> diff --git a/arch/arm/boot/dts/imx6qdl-prti6q.dtsi b/arch/arm/boot/dts/imx6qdl-prti6q.dtsi
-> new file mode 100644
-> index 0000000000000..b9ac70b9a4513
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/imx6qdl-prti6q.dtsi
-> @@ -0,0 +1,165 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-> +/*
-> + * Copyright (c) 2014 Protonic Holland
-> + */
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +
-> +/ {
-> +	chosen {
-> +		stdout-path = &uart4;
-> +	};
-> +
-> +	reg_3v3: regulator-3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "3v3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	reg_usb_h1_vbus: regulator-h1-vbus {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "h1-vbus";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	reg_usb_otg_vbus: regulator-otg-vbus {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "otg-vbus";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		gpio = <&gpio3 22 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +	};
-> +};
-> +
-> +&can1 {
-> +	pinctrl-names = "default";
-> +	status = "okay";
-
-It doesn't make a lot of sense and hurts the readability.  Merge it
-into can1 in imx6q-prti6q.dts.
-
-Shawn
-
-> +};
-> +
-> +&i2c1 {
-> +	clock-frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c1>;
-> +	status = "okay";
-> +};
-> +
-> +&i2c3 {
-> +	clock-frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c3>;
-> +	status = "okay";
-> +
-> +	temperature-sensor@70 {
-> +		compatible = "ti,tmp103";
-> +		reg = <0x70>;
-> +	};
-> +};
-> +
-> +&uart4 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart4>;
-> +	status = "okay";
-> +};
-> +
-> +&usbh1 {
-> +	vbus-supply = <&reg_usb_h1_vbus>;
-> +	phy_type = "utmi";
-> +	dr_mode = "host";
-> +	status = "okay";
-> +};
-> +
-> +&usbotg {
-> +	vbus-supply = <&reg_usb_otg_vbus>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usbotg>;
-> +	phy_type = "utmi";
-> +	dr_mode = "host";
-> +	disable-over-current;
-> +	status = "okay";
-> +};
-> +
-> +&usdhc1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usdhc1>;
-> +	cd-gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;
-> +	status = "okay";
-> +};
-> +
-> +&usdhc3 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usdhc3>;
-> +	bus-width = <8>;
-> +	non-removable;
-> +	status = "okay";
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl_can1: can1grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_KEY_ROW2__FLEXCAN1_RX	0x80000000
-> +			MX6QDL_PAD_KEY_COL2__FLEXCAN1_TX	0x80000000
-> +		>;
-> +	};
-> +
-> +	pinctrl_i2c1: i2c1grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_CSI0_DAT8__I2C1_SDA		0x4001f8b1
-> +			MX6QDL_PAD_CSI0_DAT9__I2C1_SCL		0x4001f8b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_i2c3: i2c3grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_GPIO_5__I2C3_SCL		0x4001b8b1
-> +			MX6QDL_PAD_GPIO_6__I2C3_SDA		0x4001b8b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart4: uart4grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_KEY_COL0__UART4_TX_DATA	0x1b0b1
-> +			MX6QDL_PAD_KEY_ROW0__UART4_RX_DATA	0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1: usdhc1grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_SD1_CMD__SD1_CMD		0x170f9
-> +			MX6QDL_PAD_SD1_CLK__SD1_CLK		0x100f9
-> +			MX6QDL_PAD_SD1_DAT0__SD1_DATA0		0x170f9
-> +			MX6QDL_PAD_SD1_DAT1__SD1_DATA1		0x170f9
-> +			MX6QDL_PAD_SD1_DAT2__SD1_DATA2		0x170f9
-> +			MX6QDL_PAD_SD1_DAT3__SD1_DATA3		0x170f9
-> +			MX6QDL_PAD_GPIO_1__GPIO1_IO01		0x1b0b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc3: usdhc3grp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_SD3_CMD__SD3_CMD		0x17099
-> +			MX6QDL_PAD_SD3_CLK__SD3_CLK		0x10099
-> +			MX6QDL_PAD_SD3_DAT0__SD3_DATA0		0x17099
-> +			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x17099
-> +			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x17099
-> +			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x17099
-> +			MX6QDL_PAD_SD3_DAT4__SD3_DATA4		0x17099
-> +			MX6QDL_PAD_SD3_DAT5__SD3_DATA5		0x17099
-> +			MX6QDL_PAD_SD3_DAT6__SD3_DATA6		0x17099
-> +			MX6QDL_PAD_SD3_DAT7__SD3_DATA7		0x17099
-> +			MX6QDL_PAD_SD3_RST__SD3_RESET		0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usbotg: usbotggrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_EIM_D21__USB_OTG_OC	0x1b0b0
-> +			MX6QDL_PAD_EIM_D22__GPIO3_IO22	0x1b0b0
-> +		>;
-> +	};
-> +};
-> -- 
-> 2.26.2
-> 
+--
+2.27.0
 
 _______________________________________________
 linux-arm-kernel mailing list
