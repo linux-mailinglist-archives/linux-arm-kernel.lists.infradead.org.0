@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0EA61FF4CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 16:34:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 855191FF4D3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 16:36:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dAmftaNhg/IqlPNAEqP1d1EvP2LBv015wpb71jn2Obg=; b=lkbIKq+vAbHUNJ
-	X0JkygD0Wkw+H3JYKXSJrufn5cIWGcYcBHZ26rK5IGJeF7ErGfrFkFL0UrTSFwwQlE9Zh55HX8O2u
-	RrLkNg36ZF5/YS1LB3nOXZJS3PFyY5gIgncJlZ7C8PYq9/cM0SeM6bYxKpnMz0HKzGQ1jB3x5sTlv
-	5FOOfTWFj1g1OG2XSPkUijzIWRlvKkRx/DnsG0/72D0NPz79uYi1exFjBOWbAT9XGy7wLTVlL7oQw
-	0FlorupBNR7w1eZtmMQuwyAojl14dLYx+QUSt5eo0tz/DHDPZjJcgEBHW06Nb57ZFG1gfFSj2gZPc
-	hjDRWo1er1l4T+cqsfsQ==;
+	List-Owner; bh=xs9gsFMeLLINgd+yX58TIMn4tzwcdYxk5cuZOkCqhEo=; b=nrRGKGuTC4sN7+
+	+eKWnGqaghWleR56FIcntnWWQTo1ExQ3mjaYjNFtwLn95hJRLvzydDiRJrLIbAJbmXNtDrNhA5B+T
+	F37xf3bdOrcbmRP1pkiY4uCV5EAHsueSTRgloeKp54BHmi4VeBKf5nNl9DdkDOy8QKeMTkm7pRB7Z
+	drihkgaAPZuXQvbvutPIrCfLB6kHTElQhOhEzevbuPypYYr3g6iiDJf9/Wi0qst0RkGAwYHpmQTW+
+	b0u0/XFkOc+lNH2oXtmpGeick62k9Xe7lsrtbhDNxRMwX00Occ4oBYN0UtcPRSk/N92xGkDK4xYIE
+	7vRAyuAlC1+XOzWhsumw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlvcN-00056v-KC; Thu, 18 Jun 2020 14:34:15 +0000
+	id 1jlveH-0007xJ-Vp; Thu, 18 Jun 2020 14:36:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlvbz-0004wg-1G
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 14:33:53 +0000
+ id 1jlve7-0007wx-31
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 14:36:04 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 40390207E8;
- Thu, 18 Jun 2020 14:33:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AFAAB20773;
+ Thu, 18 Jun 2020 14:36:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592490830;
- bh=C7ZYkDUKtqNmQK9XpqU0E9C/xc5qiOrmi1v9i16eauo=;
+ s=default; t=1592490962;
+ bh=RWb0EG4AA1t/dDxJ4cQzZzWxAFTWvxEs6/gsnf64rjQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WcD1MxsJYeK3+FbwpQ9EuBja9XRN1Hzk7g34G64GdYbtOyFzJt0gOJqGhLZR8rFGd
- C47ToJctnLFdFxLDtGaWWn6vjEpPC2S+i3ok2O1UCb9UU0fo87STJZZ9MIIREBcHpJ
- jh6eppxd8O2w+BbeRxTeaXNpXX0sFrcTv0bxjhKc=
-Date: Thu, 18 Jun 2020 22:33:46 +0800
+ b=xujRlONhy/QxHYnmfV06xqi5FAqnmqD2oMbTyj8lBGS/7aMeVmxM3fF3bFAzzkm4S
+ geS+SHB1wN0GDCIlqtcFMvTXLWTqwtr5li2TbAUwtTGPN2EOlMCaLJE0MnxB7MBWus
+ wH5FGntEK7KV9U9kuGgXcDOQxa/fOZR7wAZaegGs=
+Date: Thu, 18 Jun 2020 22:35:57 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Yuantian Tang <andy.tang@nxp.com>
-Subject: Re: [PATCH] arm64: dts: ls1028a: add one more thermal zone support
-Message-ID: <20200618143345.GD464@dragon>
-References: <20200525073827.13272-1-andy.tang@nxp.com>
+To: Daniel Baluta <daniel.baluta@gmail.com>
+Subject: Re: [PATCH] arm64: dts: imx8mm-beacon: Fix voltages on LDO1 and LDO2
+Message-ID: <20200618143556.GE464@dragon>
+References: <20200526170939.104111-1-aford173@gmail.com>
+ <CAEnQRZCv0KbVkGUoVz-Sz3XwQyFY-5KZXfLoFw6u5amxGSCVgg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200525073827.13272-1-andy.tang@nxp.com>
+In-Reply-To: <CAEnQRZCv0KbVkGUoVz-Sz3XwQyFY-5KZXfLoFw6u5amxGSCVgg@mail.gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_073352_796395_5CE5011A 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200618_073603_154197_F2F85201 
+X-CRM114-Status: GOOD (  13.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,22 +77,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Devicetree List <devicetree@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ aford@beaconembedded.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Adam Ford <aford173@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 25, 2020 at 03:38:27PM +0800, Yuantian Tang wrote:
-> There are 2 thermal zones in ls1028a soc. Current dts only
-> includes one. This patch adds the other thermal zone node
-> in dts to enable it.
-> 
-> Signed-off-by: Yuantian Tang <andy.tang@nxp.com>
+On Tue, May 26, 2020 at 08:43:24PM +0300, Daniel Baluta wrote:
+> On Tue, May 26, 2020 at 8:11 PM Adam Ford <aford173@gmail.com> wrote:
+> >
+> > LDO1 and LDO2 settings are wrong and case the voltage to go above the
+> > maximum level of 2.15V permitted by the SoC to 3.0V.
+> >
+> > This patch is based on work done on the i.MX8M Mini-EVK which utilizes
+> > the same fix.
+> >
+> > Fixes: 593816fa2f35 ("arm64: dts: imx: Add Beacon i.MX8m-Mini development kit")
+> >
+> > Signed-off-by: Adam Ford <aford173@gmail.com>
+> No need for a new line between fixes and signed-off-by.
 
-Applied, thanks.
+I fixed it up and applied the patch.
+
+> 
+> With that:
+> 
+> Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+
+Thanks.
+
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
