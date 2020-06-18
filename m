@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBD501FF850
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 17:57:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CA2E1FF854
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 17:58:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RRIalcTUnXrCJJkDxJkdHbExJUa5gfQkz/aJ2ji/JgM=; b=pJKwEQB1Ifi1ay
-	PMlSgboThLkceB2QskP5qBlQdRvk8nZgZHJFz3DvzNHWQyv5p1W6kZD/shN4diDibSSk0S9oM6Gwe
-	UAkJgaTaTAiUurA+/Wuv1rqvqGgmZ9KNXScMvKVA+wj+w66sxoeFhzBQbBx7FgGgRCmsGUhzovNdg
-	+mT8TnUJgsD1mAQSikBtBQxlB/rHsBOLph8EiP6Q7kSHcW2//HwuDea+5OCc7Rr1U0jCUvT8nMaBu
-	3cQHcmhDOS1+R8LXKgKUkhTmoS6XSXg2ohmYfiAEC/9wHTcnDFMSw9TIqt1EhjAMTOV8T84L9N3/F
-	A0XQ1QKwSR9msN7LaFng==;
+	List-Owner; bh=N2EnDiM3JTv3/P3P+AxSHMkav/i+K2mdelbpWX/OKv4=; b=KtzZJa7uBcn3PQ
+	Cv+vnZKbLgjLPVQ5MPHBYMsrpjWbO2tPy4EV3WKN81dQ5R2maGCOvLYhZaC71RQpjtuzLV+dHxIzf
+	YLZ1iCOaXOU2HTh5pM6WskyQL31AadV2T66eJBsQbSS7KXH0qa1m6B1aR49dBfV6ST0YoRiDHvfYe
+	gmQdP0fmsDKtZczL8skBP8IENDK7MJuSvebCdVlbk1KMxnNjWYi3YlkS1BlfvWfKa8ZGuQrdkqm2A
+	aKbZv2Kob8f6KZIBI+8ha4dRS7vLqzXygUtp0Ljx2BAnQGb6NTx1mvtntU2WPn5jHLUR6+FPvUKL+
+	FfuebMjgiMeWNuvGNl+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlwuf-0007zW-4L; Thu, 18 Jun 2020 15:57:13 +0000
-Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
+	id 1jlwvO-0000Cz-F8; Thu, 18 Jun 2020 15:57:58 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlwqM-0002Db-K4
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 15:52:55 +0000
-Received: by mail-ej1-x644.google.com with SMTP id y13so6959914eju.2
+ id 1jlwqN-0002Eb-ML
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 15:52:58 +0000
+Received: by mail-ej1-x641.google.com with SMTP id gl26so6922014ejb.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 08:52:46 -0700 (PDT)
+ Thu, 18 Jun 2020 08:52:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OszwHFuvAODAZ4JcDGk8vTdgEsm3AXU3gmIMXDwpr1E=;
- b=CXa/IxLq2sAhhWXEwadxVdBTNRXCjnNRJ86QHDU2Mv2XE4055xNa1KydScB6wK21ZB
- cXy76zowZ7DH6oYph6Pl7OuFVuh4YQj0mvtW0MxteQ4UcjzMXY+xljI/4UnbdNVn8beh
- plIgdS+Z0wk8kS8Nt5E8eD6lwtdFgeDqCh4xStJzlWi7O9hNV7KqxuDuPglptEYvakjg
- 4gRgbFs6be6neKEhVJpZF7i5q6uxLLCAUoZE3762HcKHIu0WyhDcJaTICqaeIgkR/5so
- ELvNZAlx+cNLKnbAJ14SIMrBO5wUtNh1LjFnDsET/fpJA6CuAxpepH0+ZH331HeSTxGC
- PuMA==
+ bh=WJ6cCCV8E6DMFD7HqvFq9WRcUvuKrkpNdYaDLNUVviA=;
+ b=nbPHVqQ4T+kuk9t8qrzVLGO2UEs5ToyO9mWMZ41PrASGRYC47YvXea1KDC9gDv25Md
+ jtIzi3L7g542lm5vl1vNYWnl3LW7kdNQbBQKQwC2PkP5LFi6I9SJt1E2rpG/3mGzYBB2
+ htIOMn3gzhav+OS8Em4uEM8SHSczva7uyIuO04C1EYODgPhoZxpLfS8AM5ED8QgXim4R
+ rY/YaGnn+bWlzEiIY8ceUIF6biDZiVmVaE6Kmg/zKCqHph9n17pkcS7fCpstKVVP8VuY
+ l4nA+Ux69hXavZ4QiDwUcRa3y8V/VIWa3AJEl/xf41kb1fLuFalWazAHILTp/PWsqczP
+ HkPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OszwHFuvAODAZ4JcDGk8vTdgEsm3AXU3gmIMXDwpr1E=;
- b=D4fmLWGfW2AqHME/oFG41U8hPMxp46q9d8meEiL/v9ymvj9iz/0R2l18lkAK4b0678
- 1WjtMNzTTIQdIuUS0kP9UJj09Wyet755lZvYPcHADqKnTiVjVv4LRYsTdffgfESJIWvP
- RmnRx6kj82rmmYdlrsSrzAlAE6jb2Zc357QL2S4C3Kd+RnEMIOgw/986APIHr6NRr2II
- CBb6aghijaqpbdb8AAJR1gfzkcKBjBsbRNq5w4OmyRvPssAQovj5eDItxe0J1YEmnmw9
- up4ak/8IrwwbePUGQgsHDH4G/eFTtvXchrtw/GKntItwMHHfXM8vTWUZDnNAOKY4mjbJ
- YDDg==
-X-Gm-Message-State: AOAM533dlZSAjlLXfyPht5RTy7Rpbi9ZnAXTTY7pXe76AB6heT0yWM8Y
- N1zKLI/6bsabLG2ZoKtlNcsygA==
-X-Google-Smtp-Source: ABdhPJyc8Mnmi4a1Aktae1QZY9O3zjJrhf37UfpwnWXbqDPMbp6c+LvxNDW5UP6lbOX5cvWPvekjsQ==
-X-Received: by 2002:a17:906:9257:: with SMTP id
- c23mr4487938ejx.86.1592495565343; 
- Thu, 18 Jun 2020 08:52:45 -0700 (PDT)
+ bh=WJ6cCCV8E6DMFD7HqvFq9WRcUvuKrkpNdYaDLNUVviA=;
+ b=los4qfc0Hhd1nKgSlf66hoQszRfq3xv10c2Th7btX8rfSv7S7fvsn2iKbUBSw9aWRZ
+ TSV5C2juwlvLqlTrRKY9IbHvU9lA7A/UQSJsQvvOc3Qwg4hGsH6R5zlXfcLG2VBxiUDi
+ L5PyozYdTAGZ0wItwLciNdFQBOEO+EMtWJ7edeibAMVKH5U37z9l/bfCR713adSGCyCD
+ z8sc2v/NqpXgPKCArwlyScd43iEnO8rHxeWDqee+47ALeqTgJ/dMO3m/pEGTLEtgCc+G
+ jTqYAnGMlNeYpKnsyJMLJ57HbuG1mdpZ1EHilKYwru+O8T7Zw+8i3PPU7IvvHIOtJHTx
+ feQg==
+X-Gm-Message-State: AOAM5325BNOdYI3qZmUTltK1n+HzuZQwLgQo1HBpInFXmVXMwvVYwp9k
+ ba1j5mMjE7fGjezaMNaKxN2jwg==
+X-Google-Smtp-Source: ABdhPJwT/k720uyCWIrCGDDjhYeelrlNaUkLfPLh0LBU3DqPpBSXfORheDk7AjOINMKzueIk2y95Ug==
+X-Received: by 2002:a17:907:2052:: with SMTP id
+ pg18mr4376057ejb.513.1592495566301; 
+ Thu, 18 Jun 2020 08:52:46 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:1715:4e26:a7e0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id 63sm2402267edy.8.2020.06.18.08.52.44
+ by smtp.gmail.com with ESMTPSA id 63sm2402267edy.8.2020.06.18.08.52.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 08:52:44 -0700 (PDT)
+ Thu, 18 Jun 2020 08:52:45 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
  linux-mm@kvack.org
-Subject: [PATCH v8 06/12] arm64: cpufeature: Export symbol
- read_sanitised_ftr_reg()
-Date: Thu, 18 Jun 2020 17:51:19 +0200
-Message-Id: <20200618155125.1548969-7-jean-philippe@linaro.org>
+Subject: [PATCH v8 07/12] iommu/arm-smmu-v3: Share process page tables
+Date: Thu, 18 Jun 2020 17:51:20 +0200
+Message-Id: <20200618155125.1548969-8-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200618155125.1548969-1-jean-philippe@linaro.org>
 References: <20200618155125.1548969-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_085246_743067_24968F78 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200618_085247_786109_079495B5 
+X-CRM114-Status: GOOD (  19.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:644 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,28 +110,233 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SMMUv3 driver would like to read the MMFR0 PARANGE field in order to
-share CPU page tables with devices. Allow the driver to be built as
-module by exporting the read_sanitized_ftr_reg() cpufeature symbol.
+With Shared Virtual Addressing (SVA), we need to mirror CPU TTBR, TCR,
+MAIR and ASIDs in SMMU contexts. Each SMMU has a single ASID space split
+into two sets, shared and private. Shared ASIDs correspond to those
+obtained from the arch ASID allocator, and private ASIDs are used for
+"classic" map/unmap DMA.
+
+A possible conflict happens when trying to use a shared ASID that has
+already been allocated for private use by the SMMU driver. This will be
+addressed in a later patch by replacing the private ASID. At the
+moment we return -EBUSY.
+
+Each mm_struct shared with the SMMU will have a single context
+descriptor. Add a refcount to keep track of this. It will be protected
+by the global SVA lock.
 
 Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- arch/arm64/kernel/cpufeature.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/iommu/arm-smmu-v3.c | 150 +++++++++++++++++++++++++++++++++++-
+ 1 file changed, 146 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 4ae41670c2e6b..ba1e17ad17447 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1068,6 +1068,7 @@ u64 read_sanitised_ftr_reg(u32 id)
- 		return 0;
- 	return regp->sys_val;
- }
-+EXPORT_SYMBOL_GPL(read_sanitised_ftr_reg);
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 937aa1af428d5..cabd942e4cbf3 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -22,6 +22,7 @@
+ #include <linux/iommu.h>
+ #include <linux/iopoll.h>
+ #include <linux/module.h>
++#include <linux/mmu_context.h>
+ #include <linux/msi.h>
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+@@ -33,6 +34,8 @@
  
- #define read_sysreg_case(r)	\
- 	case r:		return read_sysreg_s(r)
+ #include <linux/amba/bus.h>
+ 
++#include "io-pgtable-arm.h"
++
+ /* MMIO registers */
+ #define ARM_SMMU_IDR0			0x0
+ #define IDR0_ST_LVL			GENMASK(28, 27)
+@@ -589,6 +592,9 @@ struct arm_smmu_ctx_desc {
+ 	u64				ttbr;
+ 	u64				tcr;
+ 	u64				mair;
++
++	refcount_t			refs;
++	struct mm_struct		*mm;
+ };
+ 
+ struct arm_smmu_l1_ctx_desc {
+@@ -727,6 +733,7 @@ struct arm_smmu_option_prop {
+ };
+ 
+ static DEFINE_XARRAY_ALLOC1(asid_xa);
++static DEFINE_MUTEX(sva_lock);
+ 
+ static struct arm_smmu_option_prop arm_smmu_options[] = {
+ 	{ ARM_SMMU_OPT_SKIP_PREFETCH, "hisilicon,broken-prefetch-cmd" },
+@@ -1662,7 +1669,8 @@ static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+ #ifdef __BIG_ENDIAN
+ 			CTXDESC_CD_0_ENDI |
+ #endif
+-			CTXDESC_CD_0_R | CTXDESC_CD_0_A | CTXDESC_CD_0_ASET |
++			CTXDESC_CD_0_R | CTXDESC_CD_0_A |
++			(cd->mm ? 0 : CTXDESC_CD_0_ASET) |
+ 			CTXDESC_CD_0_AA64 |
+ 			FIELD_PREP(CTXDESC_CD_0_ASID, cd->asid) |
+ 			CTXDESC_CD_0_V;
+@@ -1766,12 +1774,144 @@ static void arm_smmu_free_cd_tables(struct arm_smmu_domain *smmu_domain)
+ 	cdcfg->cdtab = NULL;
+ }
+ 
+-static void arm_smmu_free_asid(struct arm_smmu_ctx_desc *cd)
++static void arm_smmu_init_cd(struct arm_smmu_ctx_desc *cd)
+ {
++	refcount_set(&cd->refs, 1);
++}
++
++static bool arm_smmu_free_asid(struct arm_smmu_ctx_desc *cd)
++{
++	bool free;
++	struct arm_smmu_ctx_desc *old_cd;
++
+ 	if (!cd->asid)
+-		return;
++		return false;
++
++	free = refcount_dec_and_test(&cd->refs);
++	if (free) {
++		old_cd = xa_erase(&asid_xa, cd->asid);
++		WARN_ON(old_cd != cd);
++	}
++	return free;
++}
++
++static struct arm_smmu_ctx_desc *arm_smmu_share_asid(u16 asid)
++{
++	struct arm_smmu_ctx_desc *cd;
+ 
+-	xa_erase(&asid_xa, cd->asid);
++	cd = xa_load(&asid_xa, asid);
++	if (!cd)
++		return NULL;
++
++	if (cd->mm) {
++		/* All devices bound to this mm use the same cd struct. */
++		refcount_inc(&cd->refs);
++		return cd;
++	}
++
++	/* Ouch, ASID is already in use for a private cd. */
++	return ERR_PTR(-EBUSY);
++}
++
++__maybe_unused
++static struct arm_smmu_ctx_desc *arm_smmu_alloc_shared_cd(struct mm_struct *mm)
++{
++	u16 asid;
++	int ret = 0;
++	u64 tcr, par, reg;
++	struct arm_smmu_ctx_desc *cd;
++	struct arm_smmu_ctx_desc *old_cd = NULL;
++
++	lockdep_assert_held(&sva_lock);
++
++	asid = mm_context_get(mm);
++	if (!asid)
++		return ERR_PTR(-ESRCH);
++
++	cd = kzalloc(sizeof(*cd), GFP_KERNEL);
++	if (!cd) {
++		ret = -ENOMEM;
++		goto err_put_context;
++	}
++
++	arm_smmu_init_cd(cd);
++
++	old_cd = arm_smmu_share_asid(asid);
++	if (IS_ERR(old_cd)) {
++		ret = PTR_ERR(old_cd);
++		goto err_free_cd;
++	} else if (old_cd) {
++		if (WARN_ON(old_cd->mm != mm)) {
++			ret = -EINVAL;
++			goto err_free_cd;
++		}
++		kfree(cd);
++		mm_context_put(mm);
++		return old_cd;
++	}
++
++	/* Fails if a private ASID has been allocated since we last checked */
++	ret = xa_insert(&asid_xa, asid, cd, GFP_KERNEL);
++	if (ret)
++		goto err_free_cd;
++
++	tcr = FIELD_PREP(CTXDESC_CD_0_TCR_T0SZ, 64ULL - VA_BITS) |
++	      FIELD_PREP(CTXDESC_CD_0_TCR_IRGN0, ARM_LPAE_TCR_RGN_WBWA) |
++	      FIELD_PREP(CTXDESC_CD_0_TCR_ORGN0, ARM_LPAE_TCR_RGN_WBWA) |
++	      FIELD_PREP(CTXDESC_CD_0_TCR_SH0, ARM_LPAE_TCR_SH_IS) |
++	      CTXDESC_CD_0_TCR_EPD1 | CTXDESC_CD_0_AA64;
++
++	switch (PAGE_SIZE) {
++	case SZ_4K:
++		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_4K);
++		break;
++	case SZ_16K:
++		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_16K);
++		break;
++	case SZ_64K:
++		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_64K);
++		break;
++	default:
++		WARN_ON(1);
++		ret = -EINVAL;
++		goto err_free_asid;
++	}
++
++	reg = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1);
++	par = cpuid_feature_extract_unsigned_field(reg, ID_AA64MMFR0_PARANGE_SHIFT);
++	tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_IPS, par);
++
++	cd->ttbr = virt_to_phys(mm->pgd);
++	cd->tcr = tcr;
++	/*
++	 * MAIR value is pretty much constant and global, so we can just get it
++	 * from the current CPU register
++	 */
++	cd->mair = read_sysreg(mair_el1);
++	cd->asid = asid;
++	cd->mm = mm;
++
++	return cd;
++
++err_free_asid:
++	arm_smmu_free_asid(cd);
++err_free_cd:
++	kfree(cd);
++err_put_context:
++	mm_context_put(mm);
++	return ERR_PTR(ret);
++}
++
++__maybe_unused
++static void arm_smmu_free_shared_cd(struct arm_smmu_ctx_desc *cd)
++{
++	lockdep_assert_held(&sva_lock);
++
++	if (arm_smmu_free_asid(cd)) {
++		/* Unpin ASID */
++		mm_context_put(cd->mm);
++		kfree(cd);
++	}
+ }
+ 
+ /* Stream table manipulation functions */
+@@ -2481,6 +2621,8 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+ 	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+ 	typeof(&pgtbl_cfg->arm_lpae_s1_cfg.tcr) tcr = &pgtbl_cfg->arm_lpae_s1_cfg.tcr;
+ 
++	arm_smmu_init_cd(&cfg->cd);
++
+ 	ret = xa_alloc(&asid_xa, &asid, &cfg->cd,
+ 		       XA_LIMIT(1, (1 << smmu->asid_bits) - 1), GFP_KERNEL);
+ 	if (ret)
 -- 
 2.27.0
 
