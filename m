@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEFBD1FDBCA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:14:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7F451FDBDF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:15:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CBzsOsj2iTJl//8Gn70oDW9OL2GifWvF9TKHhpLWitU=; b=GmGzx33ekIH6s9
-	AeCuDIXTOKrCwJOxYoEw53XwJx6p6Tqdh3jnaWMcseM0BiNOlRwSPms7MZKVXmAK9j3bqItPLho3m
-	Iympj+IRR8FHg0M75lBTR+IiAgRRzN9os3VhLbFOGlu9Ggc/OfYd3xvHHHdtVbafl2HC2u9OATOtT
-	sfTBjxWVW/GIT2dlD6lxsRtMMKJWBtmOG39jym9T6XOfUr1l+CG2ojKH8VF5V39ZQFVVud4oxrePb
-	/jT/xl6UhDj7GHzmCwk5gCm8oO7TBPtiWOV6x3pjgziKt1/JQcExeT/QSf7Fua2KNjYs2H7DXxbmy
-	wp818xWe9qdKb9vX9kkw==;
+	List-Owner; bh=UD1fIAFcwkN0A2E6xwQET9qqwCyQtSErDyAkemSIZ4I=; b=db3LwIU/hGdW3X
+	Ydjhg/TDOIYNAaQotgxGVq3nL1Rk9JUEeJipLDucMmjuyvRrWo0oqh6mIHo9+t22usAel7L8iQMLn
+	HOKfZm6BB7s2M0zl2uKjS4SQWKbQc1Zsq3G0kDlCrbx70/ZktIMvtb0EfzWCcmtxrzcrcd6L4Se6E
+	Va2urqGTfZsXhMQKqCGj2aN75I8WL1DAIv1B1ibdkeJA62ERlaU4HNS7gjGb7yADmNja3iA9Mh1GG
+	KfUvvCuoxD4laGI2sf1f8CCcs1qbHVPa+/CXYdh8LBMEmJKgvhb22xxuFy7E2zZc5wr2YDxzXxvqw
+	D9CIRtN3agDYu9cjRqow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlj8i-0003cj-1J; Thu, 18 Jun 2020 01:14:48 +0000
+	id 1jlj9C-0003uO-Bi; Thu, 18 Jun 2020 01:15:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj3o-0005t7-T0
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:09:47 +0000
+ id 1jlj47-00069H-M8
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:10:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 19E6021D7E;
- Thu, 18 Jun 2020 01:09:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3E132221EA;
+ Thu, 18 Jun 2020 01:10:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442584;
- bh=YGX0lrnfxqvr/T0mkwVDpFrgfYUGjzlfvTyPYgsITqY=;
+ s=default; t=1592442603;
+ bh=ihHrUJsOCew8oKzpD6uj34VNb3wBjlV3dDlrBrZhBnA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ByQITHnCSDbR7BToO+0RZvFIIgKGpv+vqRMOSLCnxbV7pHChj8PsZ8U+xNLN6P3Pv
- uuhYnwag/CnCKRQehEBg2IAVSk8B4tD+fCXvXG2RJ76XWADz7NYJOilJzTjwM/sdD8
- 2L1fvN3tutiXIayo8kViPhvmH/tY8QIg+ZcEsW/w=
+ b=XEiYq+8LGen4idONssMiAplT1dl7YRgXqF1hCzlmixiAyPUr2hqIUwfOz9Zt2h1Ro
+ H1dgX5JG9GK3QtGVF7mS5HmQSzghzkytHEiAX/hG0tVMKpXpk6GmonbOsvG+7yyLjW
+ l4c97cgzeIvbzfQXKpn98g8LBMmB7eGeSsBAML70=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 075/388] clk: zynqmp: fix memory leak in
- zynqmp_register_clocks
-Date: Wed, 17 Jun 2020 21:02:52 -0400
-Message-Id: <20200618010805.600873-75-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 089/388] clk: sprd: fix compile-testing
+Date: Wed, 17 Jun 2020 21:03:06 -0400
+Message-Id: <20200618010805.600873-89-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_180945_058081_082BF22A 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20200617_181003_803753_BF0BEE62 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,108 +79,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>, Sasha Levin <sashal@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
- linux-clk@vger.kernel.org, Jolly Shah <jolly.shah@xilinx.com>,
- Quanyang Wang <quanyang.wang@windriver.com>,
+Cc: Sasha Levin <sashal@kernel.org>, linux-clk@vger.kernel.org,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>, Arnd Bergmann <arnd@arndb.de>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Quanyang Wang <quanyang.wang@windriver.com>
+From: Arnd Bergmann <arnd@arndb.de>
 
-[ Upstream commit 58b0fb86260063f86afecaebf4056c876fff2a19 ]
+[ Upstream commit b5f73d47f34b238221ac771b5fe4907df621d7cb ]
 
-This is detected by kmemleak running on zcu102 board:
+I got a build failure with CONFIG_ARCH_SPRD=m when the
+main portion of the clock driver failed to get linked into
+the kernel:
 
-unreferenced object 0xffffffc877e48180 (size 128):
-comm "swapper/0", pid 1, jiffies 4294892909 (age 315.436s)
-hex dump (first 32 bytes):
-64 70 5f 76 69 64 65 6f 5f 72 65 66 5f 64 69 76 dp_video_ref_div
-31 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1...............
-backtrace:
-[<00000000c9be883b>] __kmalloc_track_caller+0x200/0x380
-[<00000000f02c3809>] kvasprintf+0x7c/0x100
-[<00000000e51dde4d>] kasprintf+0x60/0x80
-[<0000000092298b05>] zynqmp_register_clocks+0x29c/0x398
-[<00000000faaff182>] zynqmp_clock_probe+0x3cc/0x4c0
-[<000000005f5986f0>] platform_drv_probe+0x58/0xa8
-[<00000000d5810136>] really_probe+0xd8/0x2a8
-[<00000000f5b671be>] driver_probe_device+0x5c/0x100
-[<0000000038f91fcf>] __device_attach_driver+0x98/0xb8
-[<000000008a3f2ac2>] bus_for_each_drv+0x74/0xd8
-[<000000001cb2783d>] __device_attach+0xe0/0x140
-[<00000000c268031b>] device_initial_probe+0x24/0x30
-[<000000006998de4b>] bus_probe_device+0x9c/0xa8
-[<00000000647ae6ff>] device_add+0x3c0/0x610
-[<0000000071c14bb8>] of_device_add+0x40/0x50
-[<000000004bb5d132>] of_platform_device_create_pdata+0xbc/0x138
+ERROR: modpost: "sprd_pll_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_comp_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_clk_probe" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_clk_regmap_init" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
 
-This is because that when num_nodes is larger than 1, clk_out is
-allocated using kasprintf for these nodes but only the last node's
-clk_out is freed.
+This is a combination of two trivial bugs:
 
-Signed-off-by: Quanyang Wang <quanyang.wang@windriver.com>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
-Link: https://lkml.kernel.org/r/1583185843-20707-5-git-send-email-jolly.shah@xilinx.com
-Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+- A platform should not be 'tristate', it should be a 'bool' symbol
+  like the other platforms, if only for consistency, and to avoid
+  surprises like this one.
+
+- The clk Makefile does not traverse into the sprd subdirectory
+  if the platform is disabled but the drivers are enabled for
+  compile-testing.
+
+Fixing either of the two would be sufficient to address the link failure,
+but for correctness, both need to be changed.
+
+Fixes: 2b1b799d7630 ("arm64: change ARCH_SPRD Kconfig to tristate")
+Fixes: d41f59fd92f2 ("clk: sprd: Add common infrastructure")
+Acked-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/zynqmp/clkc.c | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
+ arch/arm64/Kconfig.platforms | 2 +-
+ drivers/clk/Makefile         | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/zynqmp/clkc.c b/drivers/clk/zynqmp/clkc.c
-index 10e89f23880b..b66c3a62233a 100644
---- a/drivers/clk/zynqmp/clkc.c
-+++ b/drivers/clk/zynqmp/clkc.c
-@@ -558,7 +558,7 @@ static struct clk_hw *zynqmp_register_clk_topology(int clk_id, char *clk_name,
- {
- 	int j;
- 	u32 num_nodes, clk_dev_id;
--	char *clk_out = NULL;
-+	char *clk_out[MAX_NODES];
- 	struct clock_topology *nodes;
- 	struct clk_hw *hw = NULL;
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index 55d70cfe0f9e..3c7e310fd8bf 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -248,7 +248,7 @@ config ARCH_TEGRA
+ 	  This enables support for the NVIDIA Tegra SoC family.
  
-@@ -572,16 +572,16 @@ static struct clk_hw *zynqmp_register_clk_topology(int clk_id, char *clk_name,
- 		 * Intermediate clock names are postfixed with type of clock.
- 		 */
- 		if (j != (num_nodes - 1)) {
--			clk_out = kasprintf(GFP_KERNEL, "%s%s", clk_name,
-+			clk_out[j] = kasprintf(GFP_KERNEL, "%s%s", clk_name,
- 					    clk_type_postfix[nodes[j].type]);
- 		} else {
--			clk_out = kasprintf(GFP_KERNEL, "%s", clk_name);
-+			clk_out[j] = kasprintf(GFP_KERNEL, "%s", clk_name);
- 		}
+ config ARCH_SPRD
+-	tristate "Spreadtrum SoC platform"
++	bool "Spreadtrum SoC platform"
+ 	help
+ 	  Support for Spreadtrum ARM based SoCs
  
- 		if (!clk_topology[nodes[j].type])
- 			continue;
- 
--		hw = (*clk_topology[nodes[j].type])(clk_out, clk_dev_id,
-+		hw = (*clk_topology[nodes[j].type])(clk_out[j], clk_dev_id,
- 						    parent_names,
- 						    num_parents,
- 						    &nodes[j]);
-@@ -590,9 +590,12 @@ static struct clk_hw *zynqmp_register_clk_topology(int clk_id, char *clk_name,
- 				     __func__,  clk_dev_id, clk_name,
- 				     PTR_ERR(hw));
- 
--		parent_names[0] = clk_out;
-+		parent_names[0] = clk_out[j];
- 	}
--	kfree(clk_out);
-+
-+	for (j = 0; j < num_nodes; j++)
-+		kfree(clk_out[j]);
-+
- 	return hw;
- }
- 
+diff --git a/drivers/clk/Makefile b/drivers/clk/Makefile
+index f4169cc2fd31..60e811d3f226 100644
+--- a/drivers/clk/Makefile
++++ b/drivers/clk/Makefile
+@@ -105,7 +105,7 @@ obj-$(CONFIG_CLK_SIFIVE)		+= sifive/
+ obj-$(CONFIG_ARCH_SIRF)			+= sirf/
+ obj-$(CONFIG_ARCH_SOCFPGA)		+= socfpga/
+ obj-$(CONFIG_PLAT_SPEAR)		+= spear/
+-obj-$(CONFIG_ARCH_SPRD)			+= sprd/
++obj-y					+= sprd/
+ obj-$(CONFIG_ARCH_STI)			+= st/
+ obj-$(CONFIG_ARCH_STRATIX10)		+= socfpga/
+ obj-$(CONFIG_ARCH_SUNXI)		+= sunxi/
 -- 
 2.25.1
 
