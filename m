@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CA0E1FE240
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:01:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC7291FE25C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:01:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dd0OmLtSZoLhQ218whlMeXFf5/jljgWFdYHkcP6XeVI=; b=BAG4zB+nY6LqZB
-	65r88B2zAiy8g+xFUbAabZiOHTKrC/Mhh34fnNNJORYiWCa6jek0TI6yvElJvfw3qDGYuoMHmKT30
-	ibsfyi1Ne3hYpwrL6b6JXLQ8YHowSNkAsZw5TcWE80oOVgI6nWYiIdlCQx6Ros5fC+lq1huLdevWH
-	QHixIqO2VYef6P0KplXiqGnZiNudre1xGyS1MIG3XLgovKbMuypn6zOyLVmLLTL8Hm+T0CVGgPQxS
-	lL5KpnNPMbS1WUTq7PvfOv99UL1bHm73uJRvkkgJLkye2piLxXjZFylj6l9f1x9EIvnGzqY2A5pkK
-	oP8430Vk2NZwEDgzGG8g==;
+	List-Owner; bh=cFlPtJuqQl6rD3Wx96id9UZDs2/qoO+UMyF7GT2NmfQ=; b=JIRhyVkv+cxEkz
+	rB3M9efl25xKmWnEZO/23sRmGxxVoOPXCB/Q+5aTL4SrOwQi9sXlZ8VU41Qga13TrvCGT05lLnl91
+	pcMjvuV72I+JRYUV5q5gjURo3XL2jsXb9XsqlLfun1F4YQgzoSWphlZ9R6Gri9XBEcdxO++p9U47R
+	C74grawxTk8G/cfX/B3s/+i4ihDMvDl9NZ228LgiTmyrabbmBey/odI1VR+Qefhu4jScqNNGht0kV
+	mgH/HtfY0MsBW9sAnWw5kRpvOdlN+EbFPVPB6jVhlYNowZkpxYqsVgnss++OFhC4936dfN/eklQ/z
+	bbxdJf7o52iOzKd0lyCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljrN-0007MK-OA; Thu, 18 Jun 2020 02:00:57 +0000
+	id 1jljrb-0007cb-FV; Thu, 18 Jun 2020 02:01:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljKw-0004NM-Ni
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:27:28 +0000
+ id 1jljL7-0004V9-7C
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:27:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58BBA21D7F;
- Thu, 18 Jun 2020 01:27:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8278721D7F;
+ Thu, 18 Jun 2020 01:27:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443646;
- bh=L5jxM9QxIyUVuj7z141yzzSyh/Vb4RBgGamMQWmlHcg=;
+ s=default; t=1592443656;
+ bh=Flrymzj7xKoNR3ii4S2WrF0gCIeQgYf6yrjx/q00FdQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=moc1RpAu3LdA/XAhOsaHh+H/oIoCTL9Ge6EVJS0StdyMu+QiY3g0pIG7P+QI+4BXo
- NtVHxmRtrfDmIETMTYh8I2+dxR0wd1m8KnHLMVn5cialMgcLzZj6Q3CNEohDD2Hkwt
- 9LtAvzLOoDJKk68I9lKgVpO+mJfurpWLFU+yma94=
+ b=PJ7I+k5PyBtQKSNLqgTxIyHEaNR38h7JcHzn+0CfFpRhSsJAXlS1QoA5YyQmnZ39L
+ CI+d2CX+L4qZjB2mkEsLPh+rHcONAvxhw30DGovxf8dHnKiP38oWrrlnZgDR+yet6V
+ zbu+ipiJAIW76isJGvXduhw45MhVKtTNCz3KcvUM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 067/108] clk: samsung: exynos5433: Add
- IGNORE_UNUSED flag to sclk_i2s1
-Date: Wed, 17 Jun 2020 21:25:19 -0400
-Message-Id: <20200618012600.608744-67-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 075/108] usb: gadget: lpc32xx_udc: don't
+ dereference ep pointer before null check
+Date: Wed, 17 Jun 2020 21:25:27 -0400
+Message-Id: <20200618012600.608744-75-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012600.608744-1-sashal@kernel.org>
 References: <20200618012600.608744-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182726_808460_F2180F8B 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20200617_182737_379714_DADF1C8E 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,75 +80,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Sasha Levin <sashal@kernel.org>, Colin Ian King <colin.king@canonical.com>,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Felipe Balbi <balbi@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Szyprowski <m.szyprowski@samsung.com>
+From: Colin Ian King <colin.king@canonical.com>
 
-[ Upstream commit 25bdae0f1c6609ceaf55fe6700654f0be2253d8e ]
+[ Upstream commit eafa80041645cd7604c4357b1a0cd4a3c81f2227 ]
 
-Mark the SCLK clock for Exynos5433 I2S1 device with IGNORE_UNUSED flag to
-match its behaviour with SCLK clock for AUD_I2S (I2S0) device until
-a proper fix for Exynos I2S driver is ready.
+Currently pointer ep is being dereferenced before it is null checked
+leading to a null pointer dereference issue.  Fix this by only assigning
+pointer udc once ep is known to be not null.  Also remove a debug
+message that requires a valid udc which may not be possible at that
+point.
 
-This fixes the following synchronous abort issue revealed by the probe
-order change caused by the commit 93d2e4322aa7 ("of: platform: Batch
-fwnode parsing when adding all top level devices")
-
-Internal error: synchronous external abort: 96000210 [#1] PREEMPT SMP
-Modules linked in:
-CPU: 0 PID: 50 Comm: kworker/0:1 Not tainted 5.7.0-rc5+ #701
-Hardware name: Samsung TM2E board (DT)
-Workqueue: events deferred_probe_work_func
-pstate: 60000005 (nZCv daif -PAN -UAO)
-pc : samsung_i2s_probe+0x768/0x8f0
-lr : samsung_i2s_probe+0x688/0x8f0
-...
-Call trace:
- samsung_i2s_probe+0x768/0x8f0
- platform_drv_probe+0x50/0xa8
- really_probe+0x108/0x370
- driver_probe_device+0x54/0xb8
- __device_attach_driver+0x90/0xc0
- bus_for_each_drv+0x70/0xc8
- __device_attach+0xdc/0x140
- device_initial_probe+0x10/0x18
- bus_probe_device+0x94/0xa0
- deferred_probe_work_func+0x70/0xa8
- process_one_work+0x2a8/0x718
- worker_thread+0x48/0x470
- kthread+0x134/0x160
- ret_from_fork+0x10/0x1c
-Code: 17ffffaf d503201f f94086c0 91003000 (88dffc00)
----[ end trace ccf721c9400ddbd6 ]---
-
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Addresses-Coverity: ("Dereference before null check")
+Fixes: 24a28e428351 ("USB: gadget driver for LPC32xx")
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
+Signed-off-by: Felipe Balbi <balbi@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/samsung/clk-exynos5433.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/usb/gadget/udc/lpc32xx_udc.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/samsung/clk-exynos5433.c b/drivers/clk/samsung/clk-exynos5433.c
-index 1d2265f9ee97..1c327d5de98c 100644
---- a/drivers/clk/samsung/clk-exynos5433.c
-+++ b/drivers/clk/samsung/clk-exynos5433.c
-@@ -1674,7 +1674,8 @@ static const struct samsung_gate_clock peric_gate_clks[] __initconst = {
- 	GATE(CLK_SCLK_PCM1, "sclk_pcm1", "sclk_pcm1_peric",
- 			ENABLE_SCLK_PERIC, 7, CLK_SET_RATE_PARENT, 0),
- 	GATE(CLK_SCLK_I2S1, "sclk_i2s1", "sclk_i2s1_peric",
--			ENABLE_SCLK_PERIC, 6, CLK_SET_RATE_PARENT, 0),
-+			ENABLE_SCLK_PERIC, 6,
-+			CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED, 0),
- 	GATE(CLK_SCLK_SPI2, "sclk_spi2", "sclk_spi2_peric", ENABLE_SCLK_PERIC,
- 			5, CLK_SET_RATE_PARENT, 0),
- 	GATE(CLK_SCLK_SPI1, "sclk_spi1", "sclk_spi1_peric", ENABLE_SCLK_PERIC,
+diff --git a/drivers/usb/gadget/udc/lpc32xx_udc.c b/drivers/usb/gadget/udc/lpc32xx_udc.c
+index ac2aa04ca657..710793161795 100644
+--- a/drivers/usb/gadget/udc/lpc32xx_udc.c
++++ b/drivers/usb/gadget/udc/lpc32xx_udc.c
+@@ -1615,17 +1615,17 @@ static int lpc32xx_ep_enable(struct usb_ep *_ep,
+ 			     const struct usb_endpoint_descriptor *desc)
+ {
+ 	struct lpc32xx_ep *ep = container_of(_ep, struct lpc32xx_ep, ep);
+-	struct lpc32xx_udc *udc = ep->udc;
++	struct lpc32xx_udc *udc;
+ 	u16 maxpacket;
+ 	u32 tmp;
+ 	unsigned long flags;
+ 
+ 	/* Verify EP data */
+ 	if ((!_ep) || (!ep) || (!desc) ||
+-	    (desc->bDescriptorType != USB_DT_ENDPOINT)) {
+-		dev_dbg(udc->dev, "bad ep or descriptor\n");
++	    (desc->bDescriptorType != USB_DT_ENDPOINT))
+ 		return -EINVAL;
+-	}
++
++	udc = ep->udc;
+ 	maxpacket = usb_endpoint_maxp(desc);
+ 	if ((maxpacket == 0) || (maxpacket > ep->maxpacket)) {
+ 		dev_dbg(udc->dev, "bad ep descriptor's packet size\n");
+@@ -1873,7 +1873,7 @@ static int lpc32xx_ep_dequeue(struct usb_ep *_ep, struct usb_request *_req)
+ static int lpc32xx_ep_set_halt(struct usb_ep *_ep, int value)
+ {
+ 	struct lpc32xx_ep *ep = container_of(_ep, struct lpc32xx_ep, ep);
+-	struct lpc32xx_udc *udc = ep->udc;
++	struct lpc32xx_udc *udc;
+ 	unsigned long flags;
+ 
+ 	if ((!ep) || (ep->hwep_num <= 1))
+@@ -1883,6 +1883,7 @@ static int lpc32xx_ep_set_halt(struct usb_ep *_ep, int value)
+ 	if (ep->is_in)
+ 		return -EAGAIN;
+ 
++	udc = ep->udc;
+ 	spin_lock_irqsave(&udc->lock, flags);
+ 
+ 	if (value == 1) {
 -- 
 2.25.1
 
