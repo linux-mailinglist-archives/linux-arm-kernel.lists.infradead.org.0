@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F8A51FDEEF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:39:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 153AC1FDF2B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:39:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4xMwetqAbinnUMQ/bjH2Qs3vDYQGCklIXTaTI95K+Uo=; b=l2i2QS2p4SqqZv
-	ihRmMmtjnNdIo/bYbnA/s3yNMgrSPaZ3K695mM5lxsdDJWsUVJepHCkrs/my/0ACIRMyHy4dx5+M3
-	87xuEXUfgy10ek18uJY9jbE/h5yCih7SRwEdQs7tRlAJ7+ev9pVYtb/TQRd5sG08y0iIF9ueSqXED
-	AYltoiHSDaHgxibSwyFMVx9n87+8kgDFsFh3IVjF/33ltopSA6RBM+oRjOecVCjAIrOA1NTqmGWCK
-	6fnhshB9fUGwQuvDMgAsJf7nsyIYl14xwnlc00Q2iU0mbGYgQA04pELZMIrD2pP51qkdCjAPa4Pq0
-	yTVdVhSujEQKSJ3EklIg==;
+	List-Owner; bh=n84dK9H5oU0Quz9WtUYQsMqLPGXs7q9x45Byk6RRrFE=; b=uPoifj+JyBJt6d
+	U1FXqQt+VykzqORCSOTVs/LD63z02BdqxhtHbLOkABVNPbFKv+kfYqjTIAHl/l65ywkYgDYPFgMmp
+	MXKpT9Oz4mA6i6N9xK+SDBHrjIjxD/do8WERscd0PL+/IXKFUFoRXqAMDOOYJaeMCiggWVilqDbDR
+	Fx+BVZsuzYOr0ypYboCkw7aV4vBY0yM9JfGxL5L1baVmFvpE8yWzaLLsuG2eEr9jT/ztPMz+AKcJR
+	REeMurj+WjfAqsWUoqUZeJaMA9QaZriqMZOspfXTafTY99PCwEgzxkRKKSMWwvzexu0PtRGsOvjOC
+	shRdjkiykEjai6AjZIMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljWW-0001f2-5A; Thu, 18 Jun 2020 01:39:24 +0000
+	id 1jljWt-0001yd-MR; Thu, 18 Jun 2020 01:39:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljAn-0007pO-Ax; Thu, 18 Jun 2020 01:16:59 +0000
+ id 1jljB2-00080x-J4
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:17:16 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8CF30221F1;
- Thu, 18 Jun 2020 01:16:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F94E21D82;
+ Thu, 18 Jun 2020 01:17:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443016;
- bh=ejk+EJeYRWoeW8FoFfjEIL1i0K7Nwb2TypozSGEzoCY=;
+ s=default; t=1592443031;
+ bh=888Jc3QOglMoOyYRAqKKyDwxmx47rmmkZ4WPk0QR3qY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NpzjMFI5RjgI7IXJ5IOdgjj+h+G/yY08Kl2wsTS4hvOW0FhD4TESIzU2W/qZZY/kq
- X1LZlGnEWqL7LFSXEM3hXPuW8RcRlz6rp/0mcypFd0Lwt2tOgpVl2X1hadDIT4LEkL
- MZvAP6ps821+nCHeo7KTGCMYQbvhePWnd3ZVAaR8=
+ b=EQBtimaxX3ik/MKqAdGZ0CxWW9JLCX+gnrch4GLVmQ6+Fa6BLcLuT987LYOgjXM5/
+ x8kfOhLKuw3ePGS4tH81e64vsvMM3nU+ZMfPyudZjglDp0h3ImQF9NSjOIlE8g/eyE
+ EEwNA8te6L2Fl407DcOKTHEfIe4KiXhT9q9AWysk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 018/266] arm64: dts: meson: fixup SCP sram nodes
-Date: Wed, 17 Jun 2020 21:12:23 -0400
-Message-Id: <20200618011631.604574-18-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 030/266] clk: samsung: Mark top ISP and CAM clocks
+ on Exynos542x as critical
+Date: Wed, 17 Jun 2020 21:12:35 -0400
+Message-Id: <20200618011631.604574-30-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -48,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181657_445264_3DDD3083 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200617_181712_819698_234728F6 
+X-CRM114-Status: GOOD (  10.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,91 +80,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Neil Armstrong <narmstrong@baylibre.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit 9ecded10b4b6af238da0c86197b0418912e7513e ]
+[ Upstream commit e47bd937e602bb4379546095d1bd0b9871fa60c2 ]
 
-The GX and AXG SCP sram nodes were using invalid compatible and
-node names for the sram entries.
+The TOP 'aclk*_isp', 'aclk550_cam', 'gscl_wa' and 'gscl_wb' clocks must
+be kept enabled all the time to allow proper access to power management
+control for the ISP and CAM power domains. The last two clocks, although
+related to GScaler device and GSCL power domain, provides also the
+I_WRAP_CLK signal to MIPI CSIS0/1 devices, which are a part of CAM power
+domain and are needed for proper power on/off sequence.
 
-Fixup the sram entries node names, and use proper compatible for them.
+Currently there are no drivers for the devices, which are part of CAM and
+ISP power domains yet. This patch only fixes the race between disabling
+the unused power domains and disabling unused clocks, which randomly
+resulted in the following error during boot:
 
-It notably fixes:
-sram@c8000000: 'scp-shmem@0', 'scp-shmem@200' do not match any of the regexes: '^([a-z]*-)?sram(-section)?@[a-f0-9]+$', 'pinctrl-[0-9]+'
+Power domain CAM disable failed
+Power domain ISP disable failed
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
-Link: https://lore.kernel.org/r/20200326165958.19274-3-narmstrong@baylibre.com
+Fixes: 318fa46cc60d ("clk/samsung: exynos542x: mark some clocks as critical")
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-axg.dtsi |  6 +++---
- arch/arm64/boot/dts/amlogic/meson-gx.dtsi  | 10 +++++-----
- 2 files changed, 8 insertions(+), 8 deletions(-)
+ drivers/clk/samsung/clk-exynos5420.c | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-index bb4a2acb9970..502c4ac45c29 100644
---- a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-@@ -1728,18 +1728,18 @@ sd_emmc_c: mmc@7000 {
- 		};
+diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+index 27fd274e92f8..dfef5f0833db 100644
+--- a/drivers/clk/samsung/clk-exynos5420.c
++++ b/drivers/clk/samsung/clk-exynos5420.c
+@@ -540,7 +540,7 @@ static const struct samsung_div_clock exynos5800_div_clks[] __initconst = {
  
- 		sram: sram@fffc0000 {
--			compatible = "amlogic,meson-axg-sram", "mmio-sram";
-+			compatible = "mmio-sram";
- 			reg = <0x0 0xfffc0000 0x0 0x20000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0 0x0 0xfffc0000 0x20000>;
- 
--			cpu_scp_lpri: scp-shmem@13000 {
-+			cpu_scp_lpri: scp-sram@13000 {
- 				compatible = "amlogic,meson-axg-scp-shmem";
- 				reg = <0x13000 0x400>;
- 			};
- 
--			cpu_scp_hpri: scp-shmem@13400 {
-+			cpu_scp_hpri: scp-sram@13400 {
- 				compatible = "amlogic,meson-axg-scp-shmem";
- 				reg = <0x13400 0x400>;
- 			};
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-index 6733050d735f..ce230d6ac35c 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-@@ -345,20 +345,20 @@ gic: interrupt-controller@c4301000 {
- 		};
- 
- 		sram: sram@c8000000 {
--			compatible = "amlogic,meson-gx-sram", "amlogic,meson-gxbb-sram", "mmio-sram";
-+			compatible = "mmio-sram";
- 			reg = <0x0 0xc8000000 0x0 0x14000>;
- 
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0 0x0 0xc8000000 0x14000>;
- 
--			cpu_scp_lpri: scp-shmem@0 {
--				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
-+			cpu_scp_lpri: scp-sram@0 {
-+				compatible = "amlogic,meson-gxbb-scp-shmem";
- 				reg = <0x13000 0x400>;
- 			};
- 
--			cpu_scp_hpri: scp-shmem@200 {
--				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
-+			cpu_scp_hpri: scp-sram@200 {
-+				compatible = "amlogic,meson-gxbb-scp-shmem";
- 				reg = <0x13400 0x400>;
- 			};
- 		};
+ static const struct samsung_gate_clock exynos5800_gate_clks[] __initconst = {
+ 	GATE(CLK_ACLK550_CAM, "aclk550_cam", "mout_user_aclk550_cam",
+-				GATE_BUS_TOP, 24, 0, 0),
++				GATE_BUS_TOP, 24, CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_ACLK432_SCALER, "aclk432_scaler", "mout_user_aclk432_scaler",
+ 				GATE_BUS_TOP, 27, CLK_IS_CRITICAL, 0),
+ };
+@@ -940,25 +940,25 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+ 	GATE(0, "aclk300_jpeg", "mout_user_aclk300_jpeg",
+ 			GATE_BUS_TOP, 4, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk333_432_isp0", "mout_user_aclk333_432_isp0",
+-			GATE_BUS_TOP, 5, 0, 0),
++			GATE_BUS_TOP, 5, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk300_gscl", "mout_user_aclk300_gscl",
+ 			GATE_BUS_TOP, 6, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk333_432_gscl", "mout_user_aclk333_432_gscl",
+ 			GATE_BUS_TOP, 7, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk333_432_isp", "mout_user_aclk333_432_isp",
+-			GATE_BUS_TOP, 8, 0, 0),
++			GATE_BUS_TOP, 8, CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_PCLK66_GPIO, "pclk66_gpio", "mout_user_pclk66_gpio",
+ 			GATE_BUS_TOP, 9, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk66_psgen", "mout_user_aclk66_psgen",
+ 			GATE_BUS_TOP, 10, CLK_IGNORE_UNUSED, 0),
+ 	GATE(0, "aclk266_isp", "mout_user_aclk266_isp",
+-			GATE_BUS_TOP, 13, 0, 0),
++			GATE_BUS_TOP, 13, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk166", "mout_user_aclk166",
+ 			GATE_BUS_TOP, 14, CLK_IGNORE_UNUSED, 0),
+ 	GATE(CLK_ACLK333, "aclk333", "mout_user_aclk333",
+ 			GATE_BUS_TOP, 15, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk400_isp", "mout_user_aclk400_isp",
+-			GATE_BUS_TOP, 16, 0, 0),
++			GATE_BUS_TOP, 16, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk400_mscl", "mout_user_aclk400_mscl",
+ 			GATE_BUS_TOP, 17, CLK_IS_CRITICAL, 0),
+ 	GATE(0, "aclk200_disp1", "mout_user_aclk200_disp1",
+@@ -1158,8 +1158,10 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+ 			GATE_IP_GSCL1, 3, 0, 0),
+ 	GATE(CLK_SMMU_FIMCL1, "smmu_fimcl1", "dout_gscl_blk_333",
+ 			GATE_IP_GSCL1, 4, 0, 0),
+-	GATE(CLK_GSCL_WA, "gscl_wa", "sclk_gscl_wa", GATE_IP_GSCL1, 12, 0, 0),
+-	GATE(CLK_GSCL_WB, "gscl_wb", "sclk_gscl_wb", GATE_IP_GSCL1, 13, 0, 0),
++	GATE(CLK_GSCL_WA, "gscl_wa", "sclk_gscl_wa", GATE_IP_GSCL1, 12,
++			CLK_IS_CRITICAL, 0),
++	GATE(CLK_GSCL_WB, "gscl_wb", "sclk_gscl_wb", GATE_IP_GSCL1, 13,
++			CLK_IS_CRITICAL, 0),
+ 	GATE(CLK_SMMU_FIMCL3, "smmu_fimcl3,", "dout_gscl_blk_333",
+ 			GATE_IP_GSCL1, 16, 0, 0),
+ 	GATE(CLK_FIMC_LITE3, "fimc_lite3", "aclk333_432_gscl",
 -- 
 2.25.1
 
