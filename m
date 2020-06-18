@@ -2,141 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 489841FEECE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 11:39:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7C1C1FEEF2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 11:46:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R71yl/JHKDwisOpvU/IPsXD0avADIvWerWw6ROYUtUI=; b=pzy4X13r+6vqVr
-	5W1I9+Ltf2GmAHFuAvxIkSVfJyV4gFz1ZSw15XLRG+p6VWxjCgG3S7Nuk7XcHTkZmPfCKRsR4NNZy
-	xCcoX1SqXilIys5dg919tZT/MNACqidIuT4i70SCEf7mT/tUZyS347zY2TfNyY9uDtm+Xb8tni0Zd
-	qKsgxW8mUOGgPoKl71SlQzjAc82lMLskCdskhPBXs0toUx75mueDqy11RXQ5RnxSEESnZvv2QmKt6
-	M8RNgeRhU0a1QDWKxTI/K1d0JQJflLWZwv65EPnNbkYnehCF3UvS3ycPlFVz/3F1Fw3TRHcZY4OK4
-	cXa0BYXzyyM3F26EBMOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7WNr/IPKlkuJYuO3X14ypWA61HB+T9xGGhafjycFpWY=; b=C4WhCve6bM/mtnc8v3fo6r174
+	AyldG2vmTHiTDANP4uDVR6A5K0WxlibzlRsEU4Kj05EdwBprQMOsGVtRP88+lD0hYP0qbu37wK7Vr
+	OQ8zDUJFwOzcFrwZ1j1R9n//ciA//0OLrNolP87ZgFhJJ9LDLiC0UU+6divSmfwLS0zJz0SEmSSQT
+	/QTR2xKHbYEjbtjblu0VXcodqu5TgpoYBPqtqhpv/Mz0DDCz4BWPF8nzZCn77JMi7eUsR2p1o81i9
+	ZX1Sfjk1UOSNHsTbMI6+HVWWMEhAG6juWJRbHD5UCjPTLGlATlxyl928pLOmIrQdu5gn7Xw3hGdM5
+	eMTRX4Eag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlr14-0003LZ-Oq; Thu, 18 Jun 2020 09:39:26 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jlr7Y-0001Zv-2A; Thu, 18 Jun 2020 09:46:08 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlr0u-0003Kf-NV
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 09:39:18 +0000
-Received: by mail-wr1-x443.google.com with SMTP id q11so5338051wrp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 02:39:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Y0bpfyCrWt4zdb6/EXasOU3eozhBYxN9FnwzUj24PuQ=;
- b=HrFXgaGS7FFW9ZOTUWlteIRaEZJwVITr5ZAu2e5bdEoy147Js7Q5r2LGOa4voki6g8
- HkoaScEFNyzMmgarJOTQIWYtKS2qHA8iuwffCBbKyjMEU/xsL66QRzxXXiTTxYxun0OF
- O1qgqkUB5Futt/bNmPzw94+KN/bBBXSFNzt5WTx9JX2P5LjOGiKaToAJT4rD/uMd4Pj7
- YZQlvsFNqR7PgKAv1NA1KA7XZCIa0H2iU4Oqj4ajoneQMHMFUkjYTM/47M1vR1tWh0C+
- vcNilQK19bPM6sz20IYs5wp/LjD7xhS9wqZXFwsgP0M67BqdGJsduLgNZAnvFB0Rk41f
- D6AA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Y0bpfyCrWt4zdb6/EXasOU3eozhBYxN9FnwzUj24PuQ=;
- b=VtAIjYdwnyw4mJRTEOXPa9kbvQmc4R6ZFASPve606yZAlTuNpGjSGQpBc1nl4g3AZY
- 87YsQeB/0VSMt7A2OoKcKdyTe5J3BtViK2d45uJlFgLnll38uNHLh8gKQ68JxF4lln1+
- bW9fWPRnO8KPRopxZ/on0ERE2IIE/u81VxAr/pu6ofs50itYdQxLjhCrGLjpJbyYXgHh
- r1NY5iHnIJSAZJYd4CMrGJh3pgK9TvT80f7sGePlBuvU+TTSiTNjfb4ow1/t6kO4ykv1
- xf9Nho6ymYjuHqBwfxPabEcTg1ri82gbXM071d7MmAHehQsO0/Wc7aYzypsyf8FmNlSW
- Vj8w==
-X-Gm-Message-State: AOAM533peyCdFHTCe9Ouv08VHfaWQQ86EDAE+10WGn0S3eu72/7t++Sn
- P0jTba6hUCm8VWC8i0lsTLLmvQ==
-X-Google-Smtp-Source: ABdhPJyny8MDP2sg5Mtlq0GbaCcSgZBavlAzzJe7n1sbnDyHK+gk5UBc1SkF5CD/s9Dt8tirFraflQ==
-X-Received: by 2002:adf:db47:: with SMTP id f7mr3801168wrj.101.1592473154635; 
- Thu, 18 Jun 2020 02:39:14 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:9902:c1f0:76c7:9dbc?
- ([2a01:e35:2ec0:82b0:9902:c1f0:76c7:9dbc])
- by smtp.gmail.com with ESMTPSA id d11sm2912413wrm.64.2020.06.18.02.39.12
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 18 Jun 2020 02:39:13 -0700 (PDT)
-Subject: Re: [PATCH v3 0/5] mfd: Add support for Khadas Microcontroller
-To: Lee Jones <lee.jones@linaro.org>
-References: <20200608091739.2368-1-narmstrong@baylibre.com>
- <20200618081957.GD2608702@dell>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <0421002f-5e09-b292-9066-310bd6a5ead8@baylibre.com>
-Date: Thu, 18 Jun 2020 11:39:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jlr7P-0001Z5-8a
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 09:46:01 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 7AEEF22EEB;
+ Thu, 18 Jun 2020 11:45:43 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1592473543;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=p/EpsEvkLtARNDo2Bm4Z1jVdGL5ztBpdeE0BcLhfcDA=;
+ b=MKmfpeyDXVHfAqeDAeRd9RLD1wrNJD06QQp0PI+8vft4/5rRiaQeiPV9/LYaMFoo+azkED
+ Cy4VHS0Pt5oN2EbQVXPozyPNjL3nVtNLHiP3gsFqZqi7v1D1Km2kusiQ1Fl3Fe9rYZ7X5X
+ OlNpzoQCaYmwuyAU82nrGGADG4BbGcQ=
 MIME-Version: 1.0
-In-Reply-To: <20200618081957.GD2608702@dell>
-Content-Language: en-US
+Date: Thu, 18 Jun 2020 11:45:43 +0200
+From: Michael Walle <michael@walle.cc>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [SPAM] [PATCH v3 1/1] mfd: Add I2C based System Configuaration
+ (SYSCON) access
+In-Reply-To: <20200618080223.951737-1-lee.jones@linaro.org>
+References: <20200618080223.951737-1-lee.jones@linaro.org>
+User-Agent: Roundcube Webmail/1.4.5
+Message-ID: <46f098524c7bf13dd6adbd1faeb8c758@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_023916_825463_83623A8E 
-X-CRM114-Status: GOOD (  19.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200618_024559_497644_B650B2BA 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -149,92 +79,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kucheria@verdurent.com, linux-pm@vger.kernel.org, khilman@baylibre.com,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, rui.zhang@intel.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ bgolaszewski@baylibre.com, broonie@kernel.org,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 18/06/2020 10:19, Lee Jones wrote:
-> On Mon, 08 Jun 2020, Neil Armstrong wrote:
+Am 2020-06-18 10:02, schrieb Lee Jones:
+> The existing SYSCON implementation only supports MMIO (memory mapped)
+> accesses, facilitated by Regmap.  This extends support for registers
+> held behind I2C busses.
 > 
->> The new Khadas VIM2, VIM3 and Edge boards embeds an on-board microcontroller
->> connected via I2C.
->>
->> This Microcontroller is present on the Khadas VIM1, VIM2, VIM3 and Edge
->> boards.
->>
->> It has multiple boot control features like password check, power-on
->> options, power-off control and system FAN control on recent boards.
->>
->> Thie serie adds :
->> - the bindings
->> - the MFD driver
->> - the Thermal Cooling cell driver
->> - updates MAINTAINERS
->> - add support into the Khadas VIM3/VIM3L DT
->>
->> Changes since v2 at [3]:
->> - Removed NVMEM driver for separate submission
->> - fixed MFD driver, header and Kconfig
->> - fixed Thermal Kconfig
->> - fixed MAINTAINERS files and path
->>
->> Changes since RFC v1 at [2]:
->> - moved hwmon driver to thermal-only
->> - moved the SM1 thermal nodes in a separate serie
->> - added the bindings review tag from rob
->>
->> [1] http://lore.kernel.org/r/20200512093916.19676-1-narmstrong@baylibre.com
->> [2] http://lore.kernel.org/r/20200421080102.22796-1-narmstrong@baylibre.com
->> [3] http://lore.kernel.org/r/20200512132613.31507-1-narmstrong@baylibre.com
->>
->> Neil Armstrong (5):
->>   dt-bindings: mfd: add Khadas Microcontroller bindings
->>   mfd: add support for the Khadas System control Microcontroller
->>   thermal: add support for the MCU controlled FAN on Khadas boards
->>   MAINTAINERS: add myself as maintainer for Khadas MCU drivers
->>   arm64: dts: meson-khadas-vim3: add Khadas MCU nodes
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+> Changelog:
 > 
-> I'm a bit concerned by the missing patches from my inbox.
-
-Oops sorry, I'll resend the full serie with you in CC
-
+> v2 => v3
+>   - Change 'is CONFIG' present check to include loadable modules
+>     - s/#ifdef CONFIG_MFD_SYSCON_I2C/#if 
+> IS_ENABLED(CONFIG_MFD_SYSCON_I2C)/
 > 
-> Looks like you omitted to send me patch 3 and 5.
+> v1 => v2
+>   - Remove legacy references to OF
+>   - Allow building as a module (fixes h8300 0-day issue)
 > 
-> Hopefully the Thermal patch doesn't depend on the MFD one!
-
-It does ! It includes the include/linux/mfd/khadas-mcu.h file
-
-Amit reviewed the thermal patches already.
-
-Neil
-
+> drivers/mfd/Kconfig            |  7 +++
+>  drivers/mfd/Makefile           |  1 +
+>  drivers/mfd/syscon-i2c.c       | 90 ++++++++++++++++++++++++++++++++++
+>  include/linux/mfd/syscon-i2c.h | 26 ++++++++++
+>  4 files changed, 124 insertions(+)
+>  create mode 100644 drivers/mfd/syscon-i2c.c
+>  create mode 100644 include/linux/mfd/syscon-i2c.h
 > 
->>  .../devicetree/bindings/mfd/khadas,mcu.yaml   |  44 +++++
->>  MAINTAINERS                                   |   9 +
->>  .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |  23 +++
->>  drivers/mfd/Kconfig                           |  21 +++
->>  drivers/mfd/Makefile                          |   1 +
->>  drivers/mfd/khadas-mcu.c                      | 142 ++++++++++++++
->>  drivers/thermal/Kconfig                       |  11 ++
->>  drivers/thermal/Makefile                      |   1 +
->>  drivers/thermal/khadas_mcu_fan.c              | 174 ++++++++++++++++++
->>  include/linux/mfd/khadas-mcu.h                |  91 +++++++++
->>  10 files changed, 517 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/mfd/khadas,mcu.yaml
->>  create mode 100644 drivers/mfd/khadas-mcu.c
->>  create mode 100644 drivers/thermal/khadas_mcu_fan.c
->>  create mode 100644 include/linux/mfd/khadas-mcu.h
->>
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index 0a59249198d34..f25f80f68edca 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -1300,6 +1300,13 @@ config MFD_SYSCON
+>  	  Select this option to enable accessing system control registers
+>  	  via regmap.
 > 
+> +config MFD_SYSCON_I2C
+> +	tristate "System Controller Register R/W Based on I2C Regmap"
+> +	select REGMAP_I2C
+> +	help
+> +	  Select this option to enable accessing system control registers
+> +	  via I2C using regmap.
+> +
+>  config MFD_DAVINCI_VOICECODEC
+>  	tristate
+>  	select MFD_CORE
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index f935d10cbf0fc..0aec1f42ac979 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -219,6 +219,7 @@ obj-$(CONFIG_MFD_RK808)		+= rk808.o
+>  obj-$(CONFIG_MFD_RN5T618)	+= rn5t618.o
+>  obj-$(CONFIG_MFD_SEC_CORE)	+= sec-core.o sec-irq.o
+>  obj-$(CONFIG_MFD_SYSCON)	+= syscon.o
+> +obj-$(CONFIG_MFD_SYSCON_I2C)	+= syscon-i2c.o
+>  obj-$(CONFIG_MFD_LM3533)	+= lm3533-core.o lm3533-ctrlbank.o
+>  obj-$(CONFIG_MFD_VEXPRESS_SYSREG)	+= vexpress-sysreg.o
+>  obj-$(CONFIG_MFD_RETU)		+= retu-mfd.o
+> diff --git a/drivers/mfd/syscon-i2c.c b/drivers/mfd/syscon-i2c.c
+> new file mode 100644
+> index 0000000000000..be20ff45ece07
+> --- /dev/null
+> +++ b/drivers/mfd/syscon-i2c.c
+> @@ -0,0 +1,90 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * System Control Driver accessed over I2C
+> + *
+> + * Copyright (C) 2020 Linaro Ltd.
+> + *
+> + * Author: Lee Jones <lee.jones@linaro.org>
+> + */
+> +
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/i2c.h>
+> +#include <linux/list.h>
+> +#include <linux/mfd/syscon-i2c.h>
+> +#include <linux/regmap.h>
+> +
+> +static DEFINE_SPINLOCK(syscon_i2c_list_slock);
+> +static LIST_HEAD(syscon_i2c_list);
+> +
+> +struct syscon {
+> +	struct device *dev;
+> +	struct regmap *regmap;
+> +	struct list_head list;
+> +};
+> +
+> +static const struct regmap_config syscon_i2c_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 8,
+> +};
 
+What about other configs? eg. 16 bit offsets. And putting that
+config into the device tree, was always pushed back so far.
+
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
