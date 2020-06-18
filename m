@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 487F91FDEB2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:38:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E4BD1FDEB5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:38:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Csr9QmleejwdOeL1ycj4Som/sml0yud2G3WmwCHYBWM=; b=QuLTSFj163kgYS
-	8pcuzRkBsIBxyC0m+SCSF1QYVXoOSeV0HvN1smbLISc6TPswrZjceGXSZCbjb+Wd5lWKuzHnjW2o7
-	lAfA0m8mMlivgdM3qupzWYGmKIOArnCxuiMFIyKK97cwRiifmm0QTWbR28FevbdFqNZa+4DQ4MyBG
-	U42nVdlDNqLTcFQ/8qJrzhP4gudujfpiLuPkOObutjohQQtU2jW58XVwkt7LJexlvU/OYDXzu0St9
-	4dl2A7Dg+oLZi9deXU7DPcHKPh5pQXPsHxCwCQcS8rGwcSUahTbjA6Jryj3jBkVl854kD4AKMBxlL
-	xKk4I9mS/WeoJszf6Iww==;
+	List-Owner; bh=EDkpoJMv2Ase6T37OzKZVLcab/dCAcAWpC3hqySuxZs=; b=Z60uHoshrfhnYW
+	nw7JAac/+A36fUo9wz/oo1kHWcPwQrQDqhrm/R/o98+GFheoT1ssCjlnKKn60zN2qeGxQ8K5/qX4W
+	K0BjusZAMn7pT5Y7QJgAS0f9V3H0rnZbL1LnC4qtov1ZqXGjyI09n+iVuPUP2eYUtMy/PAeRI62ze
+	NHQ4tZ0h0npZ/l6PCQBEWf+ueW4nlTNMn8yem5+BRtFIKXfIVFkdydib4A1+D3Ujcx2qh+Kv6CeKc
+	7iJzRq58qOtSDrAhI5a0bKg5zw4Cl4zA4PSfgmGFDQi+jqeAy8Mko8xTNx7VIcsLjp/rKoru2jn1d
+	BUXbbL+lvVH1t1QkXYXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljV3-0000Oj-Ti; Thu, 18 Jun 2020 01:37:53 +0000
+	id 1jljVd-0000uP-I9; Thu, 18 Jun 2020 01:38:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljAR-0007aQ-7m
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:39 +0000
+ id 1jljAV-0007e3-I3
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:44 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E955B21D79;
- Thu, 18 Jun 2020 01:16:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A9F2C221EB;
+ Thu, 18 Jun 2020 01:16:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442994;
- bh=kCjSyXO6zz3ZUcp39RHJO7Kc3CAczW6G8wj8OXTDw7c=;
+ s=default; t=1592442998;
+ bh=1TLicUZauJHHS4QjENC7dQsJoviJc/aajGrqaoOUPoE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Pfzm2EiJhiNrUFsB0mLO+NQRo/eNHQz7j4Hd+x7xmyeN70Siv/9VEs/QEWm2uBBBA
- KuV3vnit8GsCPFyGVQBunwSHVhIFVLgegrWvg1cWCCgVdtyzsaLaxSu4gpOSrSvTGD
- kA77t05vH8eKlRDmqo2wqtrJIQN1EuYLfSvNH9hE=
+ b=VzPLrvNfCVF9z/B3zRKxRuvQbTQElO5BrZ77TcOETvCzdIwyV63aCVtH9jVEo6CCb
+ ZVj5MMTnVsSb2w2BWVLKAxjyXh+8O1y1rWsfP+mv7GfAbWszneL451yKXYgvU0Zsgq
+ 0Nr1jJ4+aP4nhru4DMBWzbqXPWih5bG20qyYurCM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 002/266] clk: sunxi: Fix incorrect usage of
- round_down()
-Date: Wed, 17 Jun 2020 21:12:07 -0400
-Message-Id: <20200618011631.604574-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 005/266] ASoC: SOF: imx8: Fix randbuild error
+Date: Wed, 17 Jun 2020 21:12:10 -0400
+Message-Id: <20200618011631.604574-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181635_329826_4BE97F9F 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20200617_181639_694150_236A3116 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,45 +79,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>,
- Rikard Falkeborn <rikard.falkeborn@gmail.com>, linux-clk@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ YueHaibing <yuehaibing@huawei.com>, Hulk Robot <hulkci@huawei.com>,
+ Mark Brown <broonie@kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, sound-open-firmware@alsa-project.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+From: YueHaibing <yuehaibing@huawei.com>
 
-[ Upstream commit ee25d9742dabed3fd18158b518f846abeb70f319 ]
+[ Upstream commit fe17e6cdc0fefca96ba9659be4b2b07487cbf0c5 ]
 
-round_down() can only round to powers of 2. If round_down() is asked
-to round to something that is not a power of 2, incorrect results are
-produced. The incorrect results can be both too large and too small.
+when do randconfig like this:
+CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
+CONFIG_SND_SOC_SOF_IMX8=y
+CONFIG_SND_SOC_SOF_OF=y
+CONFIG_IMX_DSP=m
+CONFIG_IMX_SCU=y
 
-Instead, use rounddown() which can round to any number.
+there is a link error:
 
-Fixes: 6a721db180a2 ("clk: sunxi: Add A31 clocks support")
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
+imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
+
+Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
+
+Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+Link: https://lore.kernel.org/r/20200409071832.2039-2-daniel.baluta@oss.nxp.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/sunxi/clk-sunxi.c | 2 +-
+ sound/soc/sof/imx/Kconfig | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/clk/sunxi/clk-sunxi.c b/drivers/clk/sunxi/clk-sunxi.c
-index 27201fd26e44..e1aa1fbac48a 100644
---- a/drivers/clk/sunxi/clk-sunxi.c
-+++ b/drivers/clk/sunxi/clk-sunxi.c
-@@ -90,7 +90,7 @@ static void sun6i_a31_get_pll1_factors(struct factors_request *req)
- 	 * Round down the frequency to the closest multiple of either
- 	 * 6 or 16
- 	 */
--	u32 round_freq_6 = round_down(freq_mhz, 6);
-+	u32 round_freq_6 = rounddown(freq_mhz, 6);
- 	u32 round_freq_16 = round_down(freq_mhz, 16);
- 
- 	if (round_freq_6 > round_freq_16)
+diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
+index 71f318bc2c74..b4f0426685c4 100644
+--- a/sound/soc/sof/imx/Kconfig
++++ b/sound/soc/sof/imx/Kconfig
+@@ -14,7 +14,7 @@ if SND_SOC_SOF_IMX_TOPLEVEL
+ config SND_SOC_SOF_IMX8_SUPPORT
+ 	bool "SOF support for i.MX8"
+ 	depends on IMX_SCU
+-	depends on IMX_DSP
++	select IMX_DSP
+ 	help
+           This adds support for Sound Open Firmware for NXP i.MX8 platforms
+           Say Y if you have such a device.
 -- 
 2.25.1
 
