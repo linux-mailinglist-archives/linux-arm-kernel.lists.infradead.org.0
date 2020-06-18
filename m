@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC2751FE1FA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:58:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC9321FE1F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:58:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bcxef4pd23bfZdjmsocSfdNFgc118iCZsG5qCpcuGDA=; b=XBXDwnYHUBF/J+
-	8uKoB4LssfAz9w0XeI39d5/6fOvKdZmeJpxcZSQvGG27mASjhvc8V7NgEeBn/GeBVI7X7nPGYY6+T
-	B4Yh0t6V1cmpl4VmLj4qD24B3WpfjxQLZK9ZVOfmiWK80ZMsyyJOzw+vfJrKCbEyooL4n3Enj+Iu+
-	vVT8OT3m/Lm+qPnd+iOFdsUyXvyHl+pgvewHPm+UAGDqmPWZZZ+YBe/pkr8l2BgHqQDDlVHZr9RU+
-	YQal70HIWBfUcz+3wuAlSig4iYkPvr9ucpccRD4VBjpbRKAk1deTSAXSLwEXZ5q7o+GJ6qLa4hwa9
-	tSm2fIDre4yUZOveFg9Q==;
+	List-Owner; bh=YGr5lNd/dFj1rx8QY0CT2ds/XtjLifrhYp9vQoUMpJk=; b=heejfDNxLcEM1f
+	LqMSrT3H5FWIhIctiqu3u6YI2jv9ax59iaPJeRGWUKYdubIhWfN4kPNyYTTAaMlHd3RNidoaMsp/v
+	1jbCrxhFOmCtuJ67ugt80CYb0tDNmX6xbdgmRuzx+m/O3yUrquMX0mD3UKO+ckSY10NUDAb0pVCit
+	kc5wZpMvOvkJPDGSysSGQ5+3PGTFSxfP6iByzed+rNc+IV6luaUB0hGAxEDZJ8szTvVXzeoiA4o0t
+	Cmg75EiKqtFFMiwLE9pvNhTLzxscBj9lb0qSm0yMCVWMFtsX2maEQPEgcy4BuHN+HEAQGUHhpgogV
+	QejuH23KPOtS5NzFN+ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljpL-0003DR-Tz; Thu, 18 Jun 2020 01:58:51 +0000
+	id 1jljp1-0002wq-14; Thu, 18 Jun 2020 01:58:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljIt-0001Wq-3K
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:25:22 +0000
+ id 1jljIu-0001hw-Ef
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:25:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 748D12083B;
- Thu, 18 Jun 2020 01:25:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A618820732;
+ Thu, 18 Jun 2020 01:25:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443518;
- bh=pWp5whErmJ4Ic7w6wL0o19Xjfyw0DXak7LVcI12+LI8=;
+ s=default; t=1592443519;
+ bh=YmP3ifafcjtKfldtqwSH0BbuY65DTyKzX4gymrPB5Ts=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cRSo04dZkrWUWYCJ8v6fttMdaECQUl1+OvNnsbX3L8Rfh5pWEEE3BMCt1YSx8VJAb
- riKWXLpUQSFufPEv+4SIpR0Tbw48f/CnwxaAbocurjv1wCrhvhUnuYNIy6NZtOkRPJ
- 8qDROkUx/TRxrhcmlUh9TUV0GpIwKGzBYFNOr5cQ=
+ b=WRuHW7Uw+XGNXB6s25VoU7E343GWZCS/ET4hfLGMlnpT7X1N5W9KXZqxb46B0s9/S
+ fIx20p5GUJX5RCg/dWbPAcc3p2/IZDPaLUwUygU4G642u/L6zO3lcB30TSS970SJec
+ vjOHO3CqSwcAFgExu87xbuJTy+4L+vPPPHCeRQdo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 141/172] pinctrl: imxl: Fix an error handling
- path in 'imx1_pinctrl_core_probe()'
-Date: Wed, 17 Jun 2020 21:21:47 -0400
-Message-Id: <20200618012218.607130-141-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 142/172] pinctrl: freescale: imx: Fix an error
+ handling path in 'imx_pinctrl_probe()'
+Date: Wed, 17 Jun 2020 21:21:48 -0400
+Message-Id: <20200618012218.607130-142-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012218.607130-1-sashal@kernel.org>
 References: <20200618012218.607130-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182519_390852_65E0E08C 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20200617_182520_609353_26339172 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,8 +80,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-gpio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Sasha Levin <sashal@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
  Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -91,34 +91,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
-[ Upstream commit 9eb728321286c4b31e964d2377fca2368526d408 ]
+[ Upstream commit 11d8da5cabf7c6c3263ba2cd9c00260395867048 ]
 
-When 'pinctrl_register()' has been turned into 'devm_pinctrl_register()',
-an error handling path has not been updated.
+'pinctrl_unregister()' should not be called to undo
+'devm_pinctrl_register_and_init()', it is already handled by the framework.
 
-Axe a now unneeded 'pinctrl_unregister()'.
+This simplifies the error handling paths of the probe function.
+The 'imx_free_resources()' can be removed as well.
 
-Fixes: e55e025d1687 ("pinctrl: imxl: Use devm_pinctrl_register() for pinctrl registration")
+Fixes: a51c158bf0f7 ("pinctrl: imx: use radix trees for groups and functions")
 Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Link: https://lore.kernel.org/r/20200530201952.585798-1-christophe.jaillet@wanadoo.fr
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+Link: https://lore.kernel.org/r/20200530204955.588962-1-christophe.jaillet@wanadoo.fr
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/freescale/pinctrl-imx1-core.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/pinctrl/freescale/pinctrl-imx.c | 19 ++-----------------
+ 1 file changed, 2 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/pinctrl/freescale/pinctrl-imx1-core.c b/drivers/pinctrl/freescale/pinctrl-imx1-core.c
-index deb7870b3d1a..961c24e0cc8f 100644
---- a/drivers/pinctrl/freescale/pinctrl-imx1-core.c
-+++ b/drivers/pinctrl/freescale/pinctrl-imx1-core.c
-@@ -638,7 +638,6 @@ int imx1_pinctrl_core_probe(struct platform_device *pdev,
+diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c b/drivers/pinctrl/freescale/pinctrl-imx.c
+index b04edc22dad7..90d414dd792c 100644
+--- a/drivers/pinctrl/freescale/pinctrl-imx.c
++++ b/drivers/pinctrl/freescale/pinctrl-imx.c
+@@ -662,16 +662,6 @@ static int imx_pinctrl_probe_dt(struct platform_device *pdev,
+ 	return 0;
+ }
  
- 	ret = of_platform_populate(pdev->dev.of_node, NULL, NULL, &pdev->dev);
- 	if (ret) {
+-/*
+- * imx_free_resources() - free memory used by this driver
+- * @info: info driver instance
+- */
+-static void imx_free_resources(struct imx_pinctrl *ipctl)
+-{
+-	if (ipctl->pctl)
 -		pinctrl_unregister(ipctl->pctl);
- 		dev_err(&pdev->dev, "Failed to populate subdevices\n");
- 		return ret;
+-}
+-
+ int imx_pinctrl_probe(struct platform_device *pdev,
+ 		      const struct imx_pinctrl_soc_info *info)
+ {
+@@ -762,21 +752,16 @@ int imx_pinctrl_probe(struct platform_device *pdev,
+ 					     &ipctl->pctl);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "could not register IMX pinctrl driver\n");
+-		goto free;
++		return ret;
  	}
+ 
+ 	ret = imx_pinctrl_probe_dt(pdev, ipctl);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "fail to probe dt properties\n");
+-		goto free;
++		return ret;
+ 	}
+ 
+ 	dev_info(&pdev->dev, "initialized IMX pinctrl driver\n");
+ 
+ 	return pinctrl_enable(ipctl->pctl);
+-
+-free:
+-	imx_free_resources(ipctl);
+-
+-	return ret;
+ }
 -- 
 2.25.1
 
