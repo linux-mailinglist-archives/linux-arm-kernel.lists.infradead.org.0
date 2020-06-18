@@ -2,54 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C58331FF3C2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 15:50:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D31041FF400
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 15:58:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZkW6BNFiZmVch13uoeYrJJiLjr7Rywf7i75RsF7wgSg=; b=eB3DGAQgEF9Wo5
-	SZSC/cbFcRQGxtkemh5nd9oLDaQdsINoJpyIRecZM4Gf8GtKvVzt1EtNbAXbncGR5FpCzTX0BrtV8
-	jBbUc1aBEYwwZDyibq+Xf/qLeC0+J0i6m1tAsdmttSeof8wmn7WjPdFAjEJC42KcsHzYGkSMaecFN
-	mFI8x1PiBdcBRN5dQMzGCLSqBP+aMEjJdj6krg064gVnX214Eh/wvf+2YNY1op2CFUeFaYr9Qib6a
-	KakZFrQE3JDTTdkdxJuVMwQzRv2IMKSW4e1Ryrx/PYQk7w1etmy+2e9CRhS//yliiROJ91cDfq3jE
-	bLhHp4sIXZqSHi/TNxyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=a148lIV7FxzK0vg/eZFaHs+x2RpgOozbtDxPgO8UMqY=; b=aPb9/EIsARXyv/PnouIgBjuPa
+	gO/xdtzUrDSaI1V/2YzgJbg3MGa8/6cv/QLPI4GmEK+bQymLs0EDOR9kqwu79g7b3eUCOXWBHHGzt
+	lQZFf06SwblXbln+McS7blX4pljRKdgMCicJ0SRKtKH2D3JDljZunzaMVEC+nUXEkzrd+U+5PxTRf
+	1riOzke6jp+ZGiGCY8ucLqcbeV5sTSHoYc0QL2q/lhGum0W3eyMEPGPhfXn3AD9ESs+WijSM4aoik
+	MvoXKyVU1ipwh60lYOjeCifOd15c2blt/H93vPghyV48hZy79anBOnn+/CqS32P01yuW07rrI4yfH
+	NWvEXcCxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jluwF-00016T-PI; Thu, 18 Jun 2020 13:50:43 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1jlv3E-0004Hz-MK; Thu, 18 Jun 2020 13:57:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jluw6-00015P-Mx
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 13:50:36 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 0D7846736F; Thu, 18 Jun 2020 15:50:28 +0200 (CEST)
-Date: Thu, 18 Jun 2020 15:50:27 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH 2/3] arm64: use PAGE_KERNEL_ROX directly in alloc_insn_page
-Message-ID: <20200618135027.GA23534@lst.de>
-References: <20200618064307.32739-1-hch@lst.de>
- <20200618064307.32739-3-hch@lst.de>
- <90234f58-e83a-7f20-62a7-80a4e81cde95@redhat.com>
- <20200618103506.GH576905@hirez.programming.kicks-ass.net>
+ id 1jlv36-0004Hc-QK
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 13:57:50 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C69B12082F;
+ Thu, 18 Jun 2020 13:57:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592488667;
+ bh=LnYEKbo5XLm8oVGmH1Jg4y8ZvUiouHun1liXREq5bac=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=BvEtPq7yWq1HoWLreLAPoRHu9zg2dv4gVjA+/sWolyzzhzCuYfusljrsDt7PCh1Rl
+ 8VzOVSWJVHPKOQf8ENECav3J03US/j4/DonegZKfy7eWRDwY3D9dWQ05qwLpA4LpOi
+ HaPbrU2sScJRWJ14HAyMty8l/Dv/fn0Im1rhu9eQ=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jlv34-004BYE-2D; Thu, 18 Jun 2020 14:57:46 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200618103506.GH576905@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+Date: Thu, 18 Jun 2020 14:57:45 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: David Brazdil <dbrazdil@google.com>
+Subject: Re: [PATCH v3 02/15] arm64: kvm: Move __smccc_workaround_1_smc to
+ .rodata
+In-Reply-To: <20200618122537.9625-3-dbrazdil@google.com>
+References: <20200618122537.9625-1-dbrazdil@google.com>
+ <20200618122537.9625-3-dbrazdil@google.com>
+User-Agent: Roundcube Webmail/1.4.5
+Message-ID: <02322fdac903aa1786c334d0ddd7f38a@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: dbrazdil@google.com, will@kernel.org,
+ catalin.marinas@arm.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ android-kvm@google.com, kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_065034_898262_0690E263 
-X-CRM114-Status: GOOD (  20.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200618_065748_892064_2B290D53 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,69 +93,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- Dexuan Cui <decui@microsoft.com>, linux-kernel@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-mm@kvack.org,
- Jessica Yu <jeyu@kernel.org>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: kernel-team@android.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ android-kvm@google.com, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 18, 2020 at 12:35:06PM +0200, Peter Zijlstra wrote:
-> On Thu, Jun 18, 2020 at 10:55:58AM +0200, David Hildenbrand wrote:
-> > On 18.06.20 08:43, Christoph Hellwig wrote:
-> > > Use PAGE_KERNEL_ROX directly instead of allocating RWX and setting the
-> > > page read-only just after the allocation.
-> > > 
-> > > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> > > ---
-> > >  arch/arm64/kernel/probes/kprobes.c | 12 +++---------
-> > >  1 file changed, 3 insertions(+), 9 deletions(-)
-> > > 
-> > > diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
-> > > index d1c95dcf1d7833..cbe49cd117cfec 100644
-> > > --- a/arch/arm64/kernel/probes/kprobes.c
-> > > +++ b/arch/arm64/kernel/probes/kprobes.c
-> > > @@ -120,15 +120,9 @@ int __kprobes arch_prepare_kprobe(struct kprobe *p)
-> > >  
-> > >  void *alloc_insn_page(void)
-> > >  {
-> > > -	void *page;
-> > > -
-> > > -	page = vmalloc_exec(PAGE_SIZE);
-> > > -	if (page) {
-> > > -		set_memory_ro((unsigned long)page, 1);
-> > > -		set_vm_flush_reset_perms(page);
-> > > -	}
-> > > -
-> > > -	return page;
-> > > +	return __vmalloc_node_range(PAGE_SIZE, 1, VMALLOC_START, VMALLOC_END,
-> > > +			GFP_KERNEL, PAGE_KERNEL_ROX, VM_FLUSH_RESET_PERMS,
-> > > +			NUMA_NO_NODE, __func__);
-> > 
-> > I do wonder if something like vmalloc_prot(size, prot) would make this
-> > (and the other two users) easier to read.
-> > 
-> > So instead of ripping out vmalloc_exec(), converting it into
-> > vmalloc_prot() instead.
-> > 
-> > Did you consider that?
+Hi David,
+
+On 2020-06-18 13:25, David Brazdil wrote:
+> This snippet of assembly is used by cpu_errata.c to overwrite parts of 
+> KVM hyp
+> vector. Move it to its own source file and change its ELF section to 
+> .rodata.
 > 
-> For x86 Christoph did module_alloc_prot(), which is in his more
-> extensive set of patches addressing this. I suspect that would be the
-> right thing for ARM64 as well.
+> Signed-off-by: David Brazdil <dbrazdil@google.com>
+> ---
+>  arch/arm64/kvm/hyp/Makefile    |  1 +
+>  arch/arm64/kvm/hyp/hyp-entry.S | 16 ----------------
+>  arch/arm64/kvm/hyp/smccc_wa.S  | 30 ++++++++++++++++++++++++++++++
+>  3 files changed, 31 insertions(+), 16 deletions(-)
+>  create mode 100644 arch/arm64/kvm/hyp/smccc_wa.S
+> 
+> diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+> index 8c9880783839..5d8357ddc234 100644
+> --- a/arch/arm64/kvm/hyp/Makefile
+> +++ b/arch/arm64/kvm/hyp/Makefile
+> @@ -7,6 +7,7 @@ ccflags-y += -fno-stack-protector 
+> -DDISABLE_BRANCH_PROFILING \
+>  		$(DISABLE_STACKLEAK_PLUGIN)
+> 
+>  obj-$(CONFIG_KVM) += hyp.o
+> +obj-$(CONFIG_KVM_INDIRECT_VECTORS) += smccc_wa.o
+> 
+>  hyp-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o 
+> sysreg-sr.o \
+>  	 debug-sr.o entry.o switch.o fpsimd.o tlb.o hyp-entry.o
+> diff --git a/arch/arm64/kvm/hyp/hyp-entry.S 
+> b/arch/arm64/kvm/hyp/hyp-entry.S
+> index 9c5cfb04170e..d362fad97cc8 100644
+> --- a/arch/arm64/kvm/hyp/hyp-entry.S
+> +++ b/arch/arm64/kvm/hyp/hyp-entry.S
+> @@ -318,20 +318,4 @@ SYM_CODE_START(__bp_harden_hyp_vecs)
+>  1:	.org __bp_harden_hyp_vecs + __BP_HARDEN_HYP_VECS_SZ
+>  	.org 1b
+>  SYM_CODE_END(__bp_harden_hyp_vecs)
+> -
+> -	.popsection
 
-Yes.  The somewhat hacky way I added it cause problems for UML, so I
-instead plan to do a series converting all architectures over to
-module_alloc_prot, plus lots of other cleanups in the area that I
-noticed.
+I'd be tempted to leave the .popsection in place, if only for symmetry  
+with the initial .pushsection.
 
-I don't think vmalloc_prot is a good idea per se, as there only few
-potential users, and I don't want too many vmalloc APIs.
+> -
+> -SYM_CODE_START(__smccc_workaround_1_smc)
+> -	esb
+> -	sub	sp, sp, #(8 * 4)
+> -	stp	x2, x3, [sp, #(8 * 0)]
+> -	stp	x0, x1, [sp, #(8 * 2)]
+> -	mov	w0, #ARM_SMCCC_ARCH_WORKAROUND_1
+> -	smc	#0
+> -	ldp	x2, x3, [sp, #(8 * 0)]
+> -	ldp	x0, x1, [sp, #(8 * 2)]
+> -	add	sp, sp, #(8 * 4)
+> -1:	.org __smccc_workaround_1_smc + __SMCCC_WORKAROUND_1_SMC_SZ
+> -	.org 1b
+> -SYM_CODE_END(__smccc_workaround_1_smc)
+>  #endif
+> diff --git a/arch/arm64/kvm/hyp/smccc_wa.S 
+> b/arch/arm64/kvm/hyp/smccc_wa.S
+> new file mode 100644
+> index 000000000000..aa25b5428e77
+> --- /dev/null
+> +++ b/arch/arm64/kvm/hyp/smccc_wa.S
+> @@ -0,0 +1,30 @@
+> +/* SPDX-License-Identifier: GPL-2.0-only */
+> +/*
+> + * Copyright (C) 2015-2018 - ARM Ltd
+> + * Author: Marc Zyngier <marc.zyngier@arm.com>
+> + */
+> +
+> +#include <linux/arm-smccc.h>
+> +
+> +#include <asm/kvm_asm.h>
+> +#include <asm/kvm_mmu.h>
+> +
+> +	/*
+> +	 * This is not executed directly and is instead copied into the 
+> vectors
+> +	 * by install_bp_hardening_cb().
+> +	 */
+> +	.data
+> +	.pushsection	.rodata
+> +	.global		__smccc_workaround_1_smc
+> +__smccc_workaround_1_smc:
+
+You probably want to replace this with SYM_DATA_START (and SYM_DATA_END 
+at the end).
+
+> +	esb
+> +	sub	sp, sp, #(8 * 4)
+> +	stp	x2, x3, [sp, #(8 * 0)]
+> +	stp	x0, x1, [sp, #(8 * 2)]
+> +	mov	w0, #ARM_SMCCC_ARCH_WORKAROUND_1
+> +	smc	#0
+> +	ldp	x2, x3, [sp, #(8 * 0)]
+> +	ldp	x0, x1, [sp, #(8 * 2)]
+> +	add	sp, sp, #(8 * 4)
+> +1:	.org __smccc_workaround_1_smc + __SMCCC_WORKAROUND_1_SMC_SZ
+> +	.org 1b
+
+Otherwise, looks good.
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
