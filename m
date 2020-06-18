@@ -2,97 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED6D1FEE33
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:57:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E94131FEE6D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 11:15:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4DTU3f79pNHzOX/JHh/CubUyqrNT6PTHEKKns5Oc5t4=; b=SxEzravQhW31xs
-	eFk1aqVlMMKOXRZreCB++HW+sCnGSBTt7gVhP+73Lls/YZkbxUB7ZIGkYriTWnC2efqobpZS1G75U
-	1QdtBWnkACLB/UKut86NweDCChrcgeu4Iw3OSQhMTf4caox6YucM11xPOXxLkwmzIVX060RRVKAmo
-	v3OpuLvDyuSUI7UHssSG3ptj9l2Z6sg3s1Lirsuy6DeHb0Izg+0jAMBDlIzD2o+2GmgTjJ4sH5LRa
-	fAhgay1zVwRlpEXw8uLOkI+XC1phyl4PqVljuKQkwoeUX0j7hEI3IBMBjqpssP4TV4i2Yw6EBrTAb
-	g0j/2lcvMGXk+UBbXMBQ==;
+	List-Owner; bh=pZ+K1rdfMEf0eAKq+HDK90NZK9lmOxDAwo4pwcAQvjc=; b=tYvcu9z+6US3rB
+	cUfMADNiJMUjVHyzYQm8xzRetIBkEIFOsPD7HDZxcHYsTFg5fx2Szrd2BowtBHLwgU2bH3+1hGgTV
+	G1bWgbJX9gxUUIkvX+PePiD9ZNck0Xp8CYqqvsT7fpnpTf4ee6rZcdxr2bSf2rvLFa1Zr1gX8Ucdb
+	ZF+cAE1/yYNOY9t9oyzDU4GRpkJX0/j79HgC1YYK/AYgMc+PxiymY/KWZsFlcE3f3qGMuX8ggpEcL
+	5bvqs7w8ViGr5tYcYk2jzIl02zYMCp8mcVoGP9aCznM2gXWwrnj9b2PRgs1GW3ZSGRCUYppAa+yC7
+	lkkJTBnIRjmZCELwAUdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlqMS-0001Yn-Sb; Thu, 18 Jun 2020 08:57:28 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jlqe3-0006D3-7X; Thu, 18 Jun 2020 09:15:39 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlqMG-0001Y9-F1; Thu, 18 Jun 2020 08:57:18 +0000
-Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 05I8XHsP166386; Thu, 18 Jun 2020 04:56:54 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 31r44t239w-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 18 Jun 2020 04:56:54 -0400
-Received: from m0098396.ppops.net (m0098396.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 05I8Xovn168995;
- Thu, 18 Jun 2020 04:56:53 -0400
-Received: from ppma04fra.de.ibm.com (6a.4a.5195.ip4.static.sl-reverse.com
- [149.81.74.106])
- by mx0a-001b2d01.pphosted.com with ESMTP id 31r44t2396-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 18 Jun 2020 04:56:53 -0400
-Received: from pps.filterd (ppma04fra.de.ibm.com [127.0.0.1])
- by ppma04fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 05I8tl9e022242;
- Thu, 18 Jun 2020 08:56:50 GMT
-Received: from b06avi18626390.portsmouth.uk.ibm.com
- (b06avi18626390.portsmouth.uk.ibm.com [9.149.26.192])
- by ppma04fra.de.ibm.com with ESMTP id 31r18v04f3-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 18 Jun 2020 08:56:50 +0000
-Received: from d06av24.portsmouth.uk.ibm.com (mk.ibm.com [9.149.105.60])
- by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id 05I8tTmP62915032
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 18 Jun 2020 08:55:29 GMT
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id DC5ED4204C;
- Thu, 18 Jun 2020 08:56:46 +0000 (GMT)
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id BBBA14203F;
- Thu, 18 Jun 2020 08:56:43 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.204.36])
- by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Thu, 18 Jun 2020 08:56:43 +0000 (GMT)
-Date: Thu, 18 Jun 2020 11:56:41 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 (RESEND) 0/3] arm64: Enable vmemmap mapping from
- device memory
-Message-ID: <20200618085641.GE6493@linux.ibm.com>
-References: <1592442930-9380-1-git-send-email-anshuman.khandual@arm.com>
+ id 1jlqdp-0006Bi-Di; Thu, 18 Jun 2020 09:15:27 +0000
+X-UUID: 1b16b2177ec54973b3d323cb56490067-20200618
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=4XnqJ20IExga/K0IhPzstjZ7zg9Stdygd6pci2+yWAc=; 
+ b=CVo1LLaj/bLv/34Qw0lYsCGE0OrALjDzYWCBKeZGuV+xQ3RmI6L5eX5nOpqEgjwIT60kNz8sSV28Blwn0dABSfY1j1Xd3CGF8R13DcZHX70JHXxH4cZQx9KDqjPb7Zst5NkAxNaojoqwBS2YA8JWMZCM6E+2OhnNNzZK+QZFAVQ=;
+X-UUID: 1b16b2177ec54973b3d323cb56490067-20200618
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <macpaul.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 470742135; Thu, 18 Jun 2020 01:14:10 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 18 Jun 2020 02:14:11 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 18 Jun 2020 17:14:10 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Thu, 18 Jun 2020 17:14:09 +0800
+From: Macpaul Lin <macpaul.lin@mediatek.com>
+To: Alan Stern <stern@rowland.harvard.edu>, Felipe Balbi <balbi@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, <linux-usb@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, Jim Lin <jilin@nvidia.com>, Siqi Lin
+ <siqilin@google.com>, Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ Macpaul Lin <macpaul.lin@gmail.com>
+Subject: [PATCH v3] usb: replace hardcode maximum usb string length by
+ definition
+Date: Thu, 18 Jun 2020 17:13:38 +0800
+Message-ID: <1592471618-29428-1-git-send-email-macpaul.lin@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1592201855-8218-1-git-send-email-macpaul.lin@mediatek.com>
+References: <1592201855-8218-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1592442930-9380-1-git-send-email-anshuman.khandual@arm.com>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-18_04:2020-06-17,
- 2020-06-18 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 spamscore=0
- priorityscore=1501 impostorscore=0 mlxscore=0 mlxlogscore=999
- clxscore=1011 lowpriorityscore=0 malwarescore=0 suspectscore=0 bulkscore=0
- phishscore=0 cotscore=-2147483648 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2006180065
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_015716_505424_37F02D2A 
-X-CRM114-Status: GOOD (  21.50  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200618_021525_472553_F392FA9B 
+X-CRM114-Status: GOOD (  11.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.156.1 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,126 +91,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Pavel Tatashin <pasha.tatashin@soleen.com>,
- Andy Lutomirski <luto@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: Macpaul Lin <macpaul.lin@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 18, 2020 at 06:45:27AM +0530, Anshuman Khandual wrote:
-> This series enables vmemmap backing memory allocation from device memory
-> ranges on arm64. But before that, it enables vmemmap_populate_basepages()
-> and vmemmap_alloc_block_buf() to accommodate struct vmem_altmap based
-> alocation requests.
-> 
-> This series applies on 5.8-rc1.
-> 
-> Pending Question:
-> 
-> altmap_alloc_block_buf() does not have any other remaining users in
-> the tree after this change. Should it be converted into a static
-> function and it's declaration be dropped from the header
-> (include/linux/mm.h). Avoided doing so because I was not sure if there
-> are any off-tree users or not.
+Replace hardcode maximum usb string length (126 bytes) by definition
+"MAX_USB_STRING_LEN".
 
-Well, off-tree users probably have an active fork anyway so they could
-switch to vmemmap_alloc_block_buf()...
+Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
+---
+Changes for v2:
+  - Add definition "MAX_USB_STRING_LEN" in ch9.h instead of in usb.h.
+    Thanks for Alan's suggestion.
+Changes for v3:
+  - Rebase to 5.8-rc1 and resolve conflict.
 
-Regardless, can you please update Documentation/vm/memory-model.rst to
-keep it in sync with the code?
+ drivers/usb/gadget/composite.c |    4 ++--
+ drivers/usb/gadget/configfs.c  |    2 +-
+ drivers/usb/gadget/usbstring.c |    4 ++--
+ include/uapi/linux/usb/ch9.h   |    3 +++
+ 4 files changed, 8 insertions(+), 5 deletions(-)
 
-> Changes in V3:
-> 
-> - Dropped comment from free_hotplug_page_range() per Robin
-> - Modified comment in unmap_hotplug_range() per Robin
-> - Enabled altmap support in vmemmap_alloc_block_buf() per Robin
-> 
-> Changes in V2: (https://lkml.org/lkml/2020/3/4/475)
-> 
-> - Rebased on latest hot-remove series (v14) adding P4D page table support
-> 
-> Changes in V1: (https://lkml.org/lkml/2020/1/23/12)
-> 
-> - Added an WARN_ON() in unmap_hotplug_range() when altmap is
->   provided without the page table backing memory being freed
-> 
-> Changes in RFC V2: (https://lkml.org/lkml/2019/10/21/11)
-> 
-> - Changed the commit message on 1/2 patch per Will
-> - Changed the commit message on 2/2 patch as well
-> - Rebased on arm64 memory hot remove series (v10)
-> 
-> RFC V1: (https://lkml.org/lkml/2019/6/28/32)
-> 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Paul Walmsley <paul.walmsley@sifive.com>
-> Cc: Palmer Dabbelt <palmer@dabbelt.com>
-> Cc: Tony Luck <tony.luck@intel.com>
-> Cc: Fenghua Yu <fenghua.yu@intel.com>
-> Cc: Dave Hansen <dave.hansen@linux.intel.com>
-> Cc: Andy Lutomirski <luto@kernel.org>
-> Cc: Peter Zijlstra <peterz@infradead.org>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: David Hildenbrand <david@redhat.com>
-> Cc: Mike Rapoport <rppt@linux.ibm.com>
-> Cc: Michal Hocko <mhocko@suse.com>
-> Cc: "Matthew Wilcox (Oracle)" <willy@infradead.org>
-> Cc: "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
-> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-ia64@vger.kernel.org
-> Cc: linux-riscv@lists.infradead.org
-> Cc: x86@kernel.org
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: linux-mm@kvack.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Anshuman Khandual (3):
->   mm/sparsemem: Enable vmem_altmap support in vmemmap_populate_basepages()
->   mm/sparsemem: Enable vmem_altmap support in vmemmap_alloc_block_buf()
->   arm64/mm: Enable vmem_altmap support for vmemmap mappings
-> 
->  arch/arm64/mm/mmu.c       | 59 ++++++++++++++++++++++++++-------------
->  arch/ia64/mm/discontig.c  |  2 +-
->  arch/powerpc/mm/init_64.c | 10 +++----
->  arch/riscv/mm/init.c      |  2 +-
->  arch/x86/mm/init_64.c     | 12 ++++----
->  include/linux/mm.h        |  8 ++++--
->  mm/sparse-vmemmap.c       | 38 ++++++++++++++++++++-----
->  7 files changed, 87 insertions(+), 44 deletions(-)
-> 
-> -- 
-> 2.20.1
-> 
-
+diff --git a/drivers/usb/gadget/composite.c b/drivers/usb/gadget/composite.c
+index cb4950c..d0de016 100644
+--- a/drivers/usb/gadget/composite.c
++++ b/drivers/usb/gadget/composite.c
+@@ -1041,7 +1041,7 @@ static void collect_langs(struct usb_gadget_strings **sp, __le16 *buf)
+ 	while (*sp) {
+ 		s = *sp;
+ 		language = cpu_to_le16(s->language);
+-		for (tmp = buf; *tmp && tmp < &buf[126]; tmp++) {
++		for (tmp = buf; *tmp && tmp < &buf[MAX_USB_STRING_LEN]; tmp++) {
+ 			if (*tmp == language)
+ 				goto repeat;
+ 		}
+@@ -1116,7 +1116,7 @@ static int get_string(struct usb_composite_dev *cdev,
+ 			collect_langs(sp, s->wData);
+ 		}
+ 
+-		for (len = 0; len <= 126 && s->wData[len]; len++)
++		for (len = 0; len <= MAX_USB_STRING_LEN && s->wData[len]; len++)
+ 			continue;
+ 		if (!len)
+ 			return -EINVAL;
+diff --git a/drivers/usb/gadget/configfs.c b/drivers/usb/gadget/configfs.c
+index 32b637e..70dd4ba 100644
+--- a/drivers/usb/gadget/configfs.c
++++ b/drivers/usb/gadget/configfs.c
+@@ -115,7 +115,7 @@ static int usb_string_copy(const char *s, char **s_copy)
+ 	char *str;
+ 	char *copy = *s_copy;
+ 	ret = strlen(s);
+-	if (ret > 126)
++	if (ret > MAX_USB_STRING_LEN)
+ 		return -EOVERFLOW;
+ 
+ 	str = kstrdup(s, GFP_KERNEL);
+diff --git a/drivers/usb/gadget/usbstring.c b/drivers/usb/gadget/usbstring.c
+index 7c24d1c..8a8d647 100644
+--- a/drivers/usb/gadget/usbstring.c
++++ b/drivers/usb/gadget/usbstring.c
+@@ -55,9 +55,9 @@
+ 		return -EINVAL;
+ 
+ 	/* string descriptors have length, tag, then UTF16-LE text */
+-	len = min ((size_t) 126, strlen (s->s));
++	len = min((size_t)MAX_USB_STRING_LEN, strlen(s->s));
+ 	len = utf8s_to_utf16s(s->s, len, UTF16_LITTLE_ENDIAN,
+-			(wchar_t *) &buf[2], 126);
++			(wchar_t *) &buf[2], MAX_USB_STRING_LEN);
+ 	if (len < 0)
+ 		return -EINVAL;
+ 	buf [0] = (len + 1) * 2;
+diff --git a/include/uapi/linux/usb/ch9.h b/include/uapi/linux/usb/ch9.h
+index 2b623f3..cc02d05 100644
+--- a/include/uapi/linux/usb/ch9.h
++++ b/include/uapi/linux/usb/ch9.h
+@@ -364,6 +364,9 @@ struct usb_config_descriptor {
+ 
+ /*-------------------------------------------------------------------------*/
+ 
++/* USB String descriptors can contain at most 126 characters. */
++#define MAX_USB_STRING_LEN	126
++
+ /* USB_DT_STRING: String descriptor */
+ struct usb_string_descriptor {
+ 	__u8  bLength;
 -- 
-Sincerely yours,
-Mike.
-
+1.7.9.5
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
