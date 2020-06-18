@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 960EE1FDAF2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:09:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10E111FDB0C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:10:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yw7jNS/hMTclihdkirPpt9gSmnuGBLF1L4B1Slpa2qw=; b=foGuLN3Z2Cr9Mr
-	JVBvCa4N3Y7DxP9FYMD0kFvzV9k7RM6xestA0MbAbgTBVV4LPkHfQiN96DG68O3y1PbYvJPKH2p3K
-	WEnEwvteMDhFxBsoBe/hBsC5CZ05+J0TlSPvrxsny9GY8jz6OEQNDTWe/GpTtIxX6oBRwFFZCCKXy
-	jCPffmxL/0EpOxPSa24rQXIZzyQaAXyAbDB6TWxVvvwN3WN7DYdpIKgxRTieG5NqZGpsT2Hx7uMw2
-	RzzX7jh+uDqLgzKN0ov/aFh/9YgWP0zQfAoNKoqV7HgqvMWEdO8qQuLcO6UR1SGCOQImJeHs0cORW
-	A8D3NBEik3zAZsR+DVIw==;
+	List-Owner; bh=pugS7OLKjP4pgaEa1+9/PZbw3I9D8HxZE4cVKpsrWbQ=; b=TQ+0EvXAAD8Sbc
+	+xDYiqRFEXKe2CjijfKG4oo9nvKheelrGiJZZN2CnuvlIABwM2dQQIKRqxrdBfPvaB309i/TQ1Dp6
+	WVR2S00BaSdyeiHTR0byEshP/295QcGKYL5kbRBwifzsLX+RIU6lkDC+GhPjezoU+hq0BaL1qjGoo
+	Lo9mH0u00HjhRSN6I/MlU0u3y5dOtG+IaO1+cRgGkzaA1m2lfdJfu8Ka4o/R/jztQtgLg3L7R4Iva
+	dUZ5dvEl5Swleg/TmKC6G3/UcYJ5WKm1zOxmd9rwKAvXD4qY3ei0VMDmsplsB5P2AcRB1Czp2Xh/Z
+	rJUw9s44t6q8xfve+4oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlj3U-0005DM-Aw; Thu, 18 Jun 2020 01:09:24 +0000
+	id 1jlj3u-0005e9-9g; Thu, 18 Jun 2020 01:09:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj2c-0004gH-My
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:08:32 +0000
+ id 1jlj2i-0004m5-I6; Thu, 18 Jun 2020 01:08:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 239E321D6C;
- Thu, 18 Jun 2020 01:08:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 43B502193E;
+ Thu, 18 Jun 2020 01:08:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442510;
- bh=inQ6fBwnGkvWMuEiTQOAKZvZoNCHTgESJuWH3PswLnw=;
+ s=default; t=1592442515;
+ bh=FswHuYxu6DWVPksDcw0Gd/5+qzNNCvjR4o8+UIvMPlQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zfrjFbVBXXqui+DQ5iCJJui2Ol2tPlzgau1de2gov4xympUJ8oxoJ/LmV0/hq2yRQ
- uXpqUgIMJ5xnulfx8TzSNY7vLjEJVmhyiLohuHSW7W4gzhK+v0vSRIF+P//VL0fJG/
- hHUCdHrMzLp8o3mLoAhDPGiUnczbYD7gy42X4MFY=
+ b=ScALaiQJqeOC++HsvzKtzfXnskEwgj7GWMSuDPZ41estDhmYTsSFoS2n7z1P/QzzS
+ j/oIgQcjzS0RrHYilPrO4VJ764Jy1QzF1nlahSZ5LX2V7Uk+DJZW4LYvx5Y4avSDA4
+ pHfCaELYpK0luOl2Jfwy5FxzEqR7UvRKGcq+LosU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 018/388] ARM: dts: stm32: Add missing ethernet PHY
- reset on AV96
-Date: Wed, 17 Jun 2020 21:01:55 -0400
-Message-Id: <20200618010805.600873-18-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 021/388] arm64: dts: meson-gxbb-kii-pro: fix board
+ compatible
+Date: Wed, 17 Jun 2020 21:01:58 -0400
+Message-Id: <20200618010805.600873-21-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_180830_771924_17C36F28 
-X-CRM114-Status: UNSURE (   9.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200617_180836_636945_EBB4C6DF 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,53 +79,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Sasha Levin <sashal@kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- Patrice Chotard <patrice.chotard@st.com>,
- Patrick Delaunay <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Vasut <marex@denx.de>
+From: Neil Armstrong <narmstrong@baylibre.com>
 
-[ Upstream commit 010ca9fe500bfe365860b50220ff80541c18f0e1 ]
+[ Upstream commit d120b5f98031eefc22164ae8c6ea3711e7a04c19 ]
 
-Add PHY reset GPIO on AV96 ethernet PHY.
+Remove the uneeded "amlogic,p201", "amlogic,s905" in the board compatible list.
 
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Patrice Chotard <patrice.chotard@st.com>
-Cc: Patrick Delaunay <patrick.delaunay@st.com>
-Cc: linux-stm32@st-md-mailman.stormreply.com
-To: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+It fixes:
+meson-gxbb-kii-pro.dt.yaml: /: compatible: ['videostrong,kii-pro', 'amlogic,p201', 'amlogic,s905', 'amlogic,meson-gxbb'] is not valid under any of the given schemas
+
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Link: https://lore.kernel.org/r/20200326165958.19274-5-narmstrong@baylibre.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 425175f7d83c..081037b510bc 100644
---- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -92,6 +92,9 @@ mdio0 {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
- 		compatible = "snps,dwmac-mdio";
-+		reset-gpios = <&gpioz 2 GPIO_ACTIVE_LOW>;
-+		reset-delay-us = <1000>;
-+
- 		phy0: ethernet-phy@7 {
- 			reg = <7>;
- 		};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
+index 6c9cc45fb417..e8394a8269ee 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
+@@ -11,7 +11,7 @@
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/leds/common.h>
+ / {
+-	compatible = "videostrong,kii-pro", "amlogic,p201", "amlogic,s905", "amlogic,meson-gxbb";
++	compatible = "videostrong,kii-pro", "amlogic,meson-gxbb";
+ 	model = "Videostrong KII Pro";
+ 
+ 	leds {
 -- 
 2.25.1
 
