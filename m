@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9D4E1FDE3E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:32:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBABF1FDE41
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:32:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eQtPYdl8WNScKWxsn+ETe0dUwttS4q/3dW/WvMAOJ4U=; b=kd7yqG6I1LOzCV
-	7FeZH4hhqlV0lbavTA71l5M4YGnEUtpceH+POL2X33GAgcWRmrptnTSK5EuKlRH9EUzwtOpWU20/4
-	Pl7uViJMCrjq7bueVKmg6M6Km5UdGf5NBPiFHuoaOUJIV8t6tcal57hrFRkgCmJQdrcSA20ojJjjl
-	UtQ8EvFr1tfk7Du6f6iOPOMOgjv/aFrT22vnLM3PmduV1NtsnusFxv53LwZ9UteXIFR1Ue9y+gQBW
-	/UArrY3ZeMywcL/twm9GTP0pez7hXLeKGgXOEfU1alq7qub+rzgIS/8r/1W4usAzxVjOpyqXJ1cjR
-	a54RDlWcSy37of+LjfMw==;
+	List-Owner; bh=uVLWRjn5LkUpIpQInId6hhO9ktv/hPbprBNnVUTKTcc=; b=pqzT3UzeQS6g7b
+	93wSh8Sg5RPUDQgK1ythUjQujyRIzFS+k/O5vWhNVxrmzB7sZ5vYuRHJKmXovNLGjwOEQHKBR/x4J
+	IjCwbqO1YhaGw8ni4FH7D+rVh9Xc9VAvD7+DML6m/fr9jzPcxbFV7oQ1ON3HOTOxuPC/UVDw3TKQa
+	q5SK7RNmsJ/f6j7HJtdzsl5wTIUiTzFtRbXM+iBOkrYtGS6O8rQwWH2W98kTQ42cXZOn7HdYCMbs/
+	4NtdqM5P4C/7DtLf256+t2vs7cLfXBIstzBhWHyxuSXXHwP7ZIZg8cUlyD4IzXTSZsfUbTGOyZ/rO
+	gqBBEEQ+6x4NsykbL89w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljPN-0001XT-M5; Thu, 18 Jun 2020 01:32:01 +0000
+	id 1jljPk-0001uY-Hm; Thu, 18 Jun 2020 01:32:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj8V-0003jy-3k
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:14:40 +0000
+ id 1jlj8b-0003oR-IP; Thu, 18 Jun 2020 01:14:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B230221D7E;
- Thu, 18 Jun 2020 01:14:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 991F021D7B;
+ Thu, 18 Jun 2020 01:14:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442874;
- bh=IgxoX0dS7tQSm492V5SCVu1eGtYviV5OFE6vUo6NCXA=;
+ s=default; t=1592442880;
+ bh=C9xgWZti7O/tY/68M+B2d5Sea5VvYliiybYRgFZ/Vts=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LszBUIfvimymPLQXwwylFVUcDTKosxudXH54mAbhkfHvPzTgyc69iinRO/gIYhsQO
- FGE7U6m5HfhFxUD4b8tBuacK+UBcmM3JRHlTpPKmoVlxJLWpEzh/KzIgxFF8n4ReyU
- p2ccx/D6lG3SV6IqMvdL4mZYSKnnnEuIe+IE2bL8=
+ b=mxWh+sGSYOQCfXqdzz4a1vp8cfbKm/5girp/XuZ/5OONUgZP9WAowt/s6AbRz0j/W
+ iKRTGtSviMBbQ2obcbn4o91KyOK+XyUnpSq5R8A1d3f5+CI9OfDLMaemayxLme/yX/
+ 4JzTGH9tkSEZ8q13lulR31rGWdMsHoq+A5HIV7tc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 300/388] ARM: davinci: fix build failure without
- I2C
-Date: Wed, 17 Jun 2020 21:06:37 -0400
-Message-Id: <20200618010805.600873-300-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 305/388] usb: dwc3: meson-g12a: fix error path
+ when fetching the reset line fails
+Date: Wed, 17 Jun 2020 21:06:42 -0400
+Message-Id: <20200618010805.600873-305-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181435_290269_B1301D43 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20200617_181441_738029_CD255D91 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,87 +79,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Arnd Bergmann <arnd@arndb.de>
+Cc: Sasha Levin <sashal@kernel.org>, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Yue Wang <yue.wang@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-[ Upstream commit 147922f91965e734664374a3f226adfeaa586d72 ]
+[ Upstream commit be8c1001a7e681e8813882a42ed51c8dbffd8800 ]
 
-The two supplies are referenced outside of #ifdef CONFIG_I2C but
-defined inside, which breaks the build if that is not built-in:
+Disable and unprepare the clocks when devm_reset_control_get_shared()
+fails. This fixes the error path as this must disable the clocks which
+were previously enabled.
 
-mach-davinci/board-dm644x-evm.c:861:21: error: use of undeclared identifier 'fixed_supplies_1_8v'
-                                     ARRAY_SIZE(fixed_supplies_1_8v), 1800000);
-                                                ^
-mach-davinci/board-dm644x-evm.c:861:21: error: use of undeclared identifier 'fixed_supplies_1_8v'
-mach-davinci/board-dm644x-evm.c:861:21: error: use of undeclared identifier 'fixed_supplies_1_8v'
-mach-davinci/board-dm644x-evm.c:860:49: error: use of undeclared identifier 'fixed_supplies_1_8v'
-        regulator_register_always_on(0, "fixed-dummy", fixed_supplies_1_8v,
-
-I don't know if the regulators are used anywhere without I2C, but
-always registering them seems to be the safe choice here.
-
-On a related note, it might be best to also deal with CONFIG_I2C=m
-across the file, unless this is going to be moved to DT and removed
-really soon anyway.
-
-Link: https://lore.kernel.org/r/20200527133746.643895-1-arnd@arndb.de
-Fixes: 5e06d19694a4 ("ARM: davinci: dm644x-evm: Add Fixed regulators needed for tlv320aic33")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Fixes: 1e355f21d3fb96 ("usb: dwc3: Add Amlogic A1 DWC3 glue")
+Cc: Yue Wang <yue.wang@amlogic.com>
+Cc: Hanjie Lin <hanjie.lin@amlogic.com>
+Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Link: https://lore.kernel.org/r/20200526202943.715220-2-martin.blumenstingl@googlemail.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-davinci/board-dm644x-evm.c | 26 ++++++++++++------------
- 1 file changed, 13 insertions(+), 13 deletions(-)
+ drivers/usb/dwc3/dwc3-meson-g12a.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/mach-davinci/board-dm644x-evm.c b/arch/arm/mach-davinci/board-dm644x-evm.c
-index 3461d12bbfc0..a5d3708fedf6 100644
---- a/arch/arm/mach-davinci/board-dm644x-evm.c
-+++ b/arch/arm/mach-davinci/board-dm644x-evm.c
-@@ -655,19 +655,6 @@ static struct i2c_board_info __initdata i2c_info[] =  {
- 	},
- };
+diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+index 2d257bdfe848..eabb3bb6fcaa 100644
+--- a/drivers/usb/dwc3/dwc3-meson-g12a.c
++++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+@@ -505,7 +505,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->reset)) {
+ 		ret = PTR_ERR(priv->reset);
+ 		dev_err(dev, "failed to get device reset, err=%d\n", ret);
+-		return ret;
++		goto err_disable_clks;
+ 	}
  
--/* Fixed regulator support */
--static struct regulator_consumer_supply fixed_supplies_3_3v[] = {
--	/* Baseboard 3.3V: 5V -> TPS54310PWP -> 3.3V */
--	REGULATOR_SUPPLY("AVDD", "1-001b"),
--	REGULATOR_SUPPLY("DRVDD", "1-001b"),
--};
--
--static struct regulator_consumer_supply fixed_supplies_1_8v[] = {
--	/* Baseboard 1.8V: 5V -> TPS54310PWP -> 1.8V */
--	REGULATOR_SUPPLY("IOVDD", "1-001b"),
--	REGULATOR_SUPPLY("DVDD", "1-001b"),
--};
--
- #define DM644X_I2C_SDA_PIN	GPIO_TO_PIN(2, 12)
- #define DM644X_I2C_SCL_PIN	GPIO_TO_PIN(2, 11)
- 
-@@ -700,6 +687,19 @@ static void __init evm_init_i2c(void)
- }
- #endif
- 
-+/* Fixed regulator support */
-+static struct regulator_consumer_supply fixed_supplies_3_3v[] = {
-+	/* Baseboard 3.3V: 5V -> TPS54310PWP -> 3.3V */
-+	REGULATOR_SUPPLY("AVDD", "1-001b"),
-+	REGULATOR_SUPPLY("DRVDD", "1-001b"),
-+};
-+
-+static struct regulator_consumer_supply fixed_supplies_1_8v[] = {
-+	/* Baseboard 1.8V: 5V -> TPS54310PWP -> 1.8V */
-+	REGULATOR_SUPPLY("IOVDD", "1-001b"),
-+	REGULATOR_SUPPLY("DVDD", "1-001b"),
-+};
-+
- #define VENC_STD_ALL	(V4L2_STD_NTSC | V4L2_STD_PAL)
- 
- /* venc standard timings */
+ 	ret = reset_control_reset(priv->reset);
 -- 
 2.25.1
 
