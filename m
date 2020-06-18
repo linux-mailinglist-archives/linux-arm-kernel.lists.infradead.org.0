@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0CE31FFA00
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 19:17:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F1961FFA1D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 19:24:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3HgESGr8foMQ1wOBKr9VIYCKwdiCq/EE3tqonU0NGrw=; b=o0PSx4u+c62MPJb2jUAEMDACP
-	DQMjh52h9qjOObLOOb64VoG2OqF8q0vBSj7H4UgxwD6zZYZU8EcLNvNpgysRVTX1srTyJ3sO2ROHZ
-	KuAdVMWTpBkrm/ZlOAQ59tlvLuSknnMXHJ4Cst+Bk/3UWCny/lzPbbfy6QmeXqpdU2/0+t0SMdI96
-	6TFtNtM6j+Jhw0pYjWx6aEY1TI+K/GpFz08qx4XcuIQdlADbrq62d+MpZryf7+zPUmH5zUImdntP6
-	6/fJwet3vMMz3dknHTJGZr2bWe08ak1R44QbjgNpiihnzejm36uG2do4rZZTtBkqwl4UVdDT2YO5r
-	m56KoVnmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cxCxUQ2nKY/LkVc5HIy3P+D2S8XBHGo/bPRL1nl6p1M=; b=LLIg+tOLWbFpaC
+	fSIXo4BulOw0z2bEfZPFbz3rQeRCKfuUJT+AWD+g7t6IWAVcka/1WYUKc49tTQw5Xf3unCXdlSHw2
+	W9tZ0QWJXo/NHMHXyV3RDRRdZKGGZoVI0GWnLSz46sQK/w1UH1OxR6IqEEaKDyX0kvfEZmq25Iszi
+	c33CNreQBGajOMSkZXWRdIwBAbqxQGjJQbiha/Eq7sWNeaAUsGUO2fqOCvFRPnPIKeIzBd5+zW4PH
+	zUfUTZKCGUVrQoMBYAOxhEHFc7cO4o8npWvwd9LES4XQHyuKZZqgMr0yF5rzEa4fqQvqer1rKC06q
+	bzS3Mm9EQ6WqAlcMDI+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlyAJ-0005Hm-0j; Thu, 18 Jun 2020 17:17:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlyA9-0005HF-NW
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 17:17:19 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 006A9208C7;
- Thu, 18 Jun 2020 17:17:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592500637;
- bh=eL4F8Kzo3o9RQxZKCFKk2WmbmW81b+JZJvufTVRGoVc=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=FjpChfRFuzNA1hzyuFXgjNiiUoytl+mE4ASzMnCLh4bGjsFK92BzszTP8gY2A9df1
- m4C0Xk3I6EERAgSZV0WkGE+5T31B7laDOsYHxEAa165+yMS5mEnwtwb4DNcBv7PShN
- 4n2GcePF+s5K7MBxK8s1Pj3kB1RGqria9DRMl7bk=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jlyA7-004Epg-GX; Thu, 18 Jun 2020 18:17:15 +0100
+	id 1jlyHQ-0000Uw-BT; Thu, 18 Jun 2020 17:24:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlyHG-0000UR-SB
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 17:24:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F334031B;
+ Thu, 18 Jun 2020 10:24:37 -0700 (PDT)
+Received: from e119603-lin.cambridge.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 725D23F6CF;
+ Thu, 18 Jun 2020 10:24:36 -0700 (PDT)
+Date: Thu, 18 Jun 2020 18:24:30 +0100
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH v8 9/9] firmware: arm_scmi: Add Base notifications support
+Message-ID: <20200618172430.GA9998@e119603-lin.cambridge.arm.com>
+References: <20200520081118.54897-1-cristian.marussi@arm.com>
+ <20200520081118.54897-10-cristian.marussi@arm.com>
+ <20200608170239.GA13622@bogus>
 MIME-Version: 1.0
-Date: Thu, 18 Jun 2020 18:17:15 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: David Brazdil <dbrazdil@google.com>
-Subject: Re: [PATCH v3 05/15] arm64: kvm: Build hyp-entry.S separately for
- VHE/nVHE
-In-Reply-To: <20200618122537.9625-6-dbrazdil@google.com>
-References: <20200618122537.9625-1-dbrazdil@google.com>
- <20200618122537.9625-6-dbrazdil@google.com>
-User-Agent: Roundcube Webmail/1.4.5
-Message-ID: <5029f8fb4a7816e11de7469c09347c79@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: dbrazdil@google.com, will@kernel.org,
- catalin.marinas@arm.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- android-kvm@google.com, kernel-team@android.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200608170239.GA13622@bogus>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_101717_806679_E73F83B9 
-X-CRM114-Status: GOOD (  23.89  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200618_102438_997203_76A85605 
+X-CRM114-Status: GOOD (  32.36  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,295 +64,269 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- android-kvm@google.com, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: cristian.marussi@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ Jonathan.Cameron@Huawei.com, dave.martin@arm.com, lukasz.luba@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi David,
+On Mon, Jun 08, 2020 at 06:02:39PM +0100, Sudeep Holla wrote:
+> On Wed, May 20, 2020 at 09:11:18AM +0100, Cristian Marussi wrote:
+> > Make SCMI Base protocol register with the notification core.
+> >
+> > Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> > ---
+> > V6 --> V7
+> > - fixed report.timestamp type
+> > - fix max_payld_sz initialization
+> > - fix report layout and initialization
+> > - expose SCMI_EVENT_ in linux/scmi_protocol.h
+> > V5 --> V6
+> > - added handle argument to fill_custom_report()
+> > V4 --> V5
+> > - fixed unsual return construct
+> > V3 --> V4
+> > - scmi_event field renamed
+> > V2 --> V3
+> > - added handle awareness
+> > V1 --> V2
+> > - simplified .set_notify_enabled() implementation moving the ALL_SRCIDs
+> >   logic out of protocol. ALL_SRCIDs logic is now in charge of the
+> >   notification core, together with proper reference counting of enables
+> > - switched to devres protocol-registration
+> > ---
+> >  drivers/firmware/arm_scmi/base.c | 118 +++++++++++++++++++++++++++++--
+> >  include/linux/scmi_protocol.h    |   9 +++
+> >  2 files changed, 123 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
+> > index ce7d9203e41b..dcb098d8d823 100644
+> > --- a/drivers/firmware/arm_scmi/base.c
+> > +++ b/drivers/firmware/arm_scmi/base.c
+> > @@ -5,7 +5,13 @@
+> >   * Copyright (C) 2018 ARM Ltd.
+> >   */
+> >
+> > +#include <linux/scmi_protocol.h>
+> > +
+> >  #include "common.h"
+> > +#include "notify.h"
+> > +
+> > +#define SCMI_BASE_NUM_SOURCES		1
+> > +#define SCMI_BASE_MAX_CMD_ERR_COUNT	1024
+> >
+> 
+> I am not sure of this, see below.
+> 
+Ok
 
-On 2020-06-18 13:25, David Brazdil wrote:
-> This patch is part of a series which builds KVM's non-VHE hyp code 
-> separately
-> from VHE and the rest of the kernel.
+> >  enum scmi_base_protocol_cmd {
+> >  	BASE_DISCOVER_VENDOR = 0x3,
+> > @@ -19,16 +25,25 @@ enum scmi_base_protocol_cmd {
+> >  	BASE_RESET_AGENT_CONFIGURATION = 0xb,
+> >  };
+> >
+> > -enum scmi_base_protocol_notify {
+> > -	BASE_ERROR_EVENT = 0x0,
+> > -};
+> > -
+> >  struct scmi_msg_resp_base_attributes {
+> >  	u8 num_protocols;
+> >  	u8 num_agents;
+> >  	__le16 reserved;
+> >  };
+> >
+> > +struct scmi_msg_base_error_notify {
+> > +	__le32 event_control;
+> > +#define BASE_TP_NOTIFY_ALL	BIT(0)
+> > +};
+> > +
+> > +struct scmi_base_error_notify_payld {
+> > +	__le32 agent_id;
+> > +	__le32 error_status;
+> > +#define IS_FATAL_ERROR(x)	((x) & BIT(31))
+> > +#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
+> > +	__le64 msg_reports[SCMI_BASE_MAX_CMD_ERR_COUNT];
+> 
+> This entire payload needs to fit in shmem and having huge shmem just
+> for this sounds not so good to me. If this can be large, it needs to
+> be iterated multiple times to get the full log.
+> 
 
-The above comment doesn't really belong here, and us only fit for the 
-cover letter.
+I think it's a good point, if a platform implementation would generate
+such jumbo payloads for this events no matter what the actual trasport
+message size was, we're definitely going to receive corrupted packets.
+
+Spec says about BASE_ERROR_EVENT:
+
+Bits[9:0]	Command count, number of commands in the
+		command list. A value of zero is possible if the
+		error cannot be attributed.
+
+I'll ask Souvik if it's not the case to amend the spec to highlight this
+possibility. (being errors notifications I suppose platform could simply
+chunk the big packet in multiple pieces to fit into the current transport)
+
+Anyway reviewing this implementation this payld struct here is defined as
+to be big enough to contain the maximum allowed size by the current spec,
+it is not that I am expecting to strictly receive packets sized exacly as
+that; it's the same appproach I use thorughout the notifications: I reserve
+an area big enough to hold any possible packet (.max_payld_sz) and then I
+just check that I received a packets that fits (sizeof(*p) < payld_sz), in
+case I received a variable length payload event packet as this, or check,
+for other fixed-size payload events, that the received packet is of the
+exact specified length.
+
+It's just that I'm trying to pre-allocate spare areas that can fit any
+possible packet length (if variable) for any possible transport.
+
+> > +};
+> > +
+> >  /**
+> >   * scmi_base_attributes_get() - gets the implementation details
+> >   *	that are associated with the base protocol.
+> > @@ -222,6 +237,95 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
+> >  	return ret;
+> >  }
+> >
+> > +static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
+> > +{
+> > +	int ret;
+> > +	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
+> > +	struct scmi_xfer *t;
+> > +	struct scmi_msg_base_error_notify *cfg;
+> > +
+> > +	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
+> > +				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	cfg = t->tx.buf;
+> > +	cfg->event_control = cpu_to_le32(evt_cntl);
+> > +
+> > +	ret = scmi_do_xfer(handle, t);
+> > +
+> > +	scmi_xfer_put(handle, t);
+> > +	return ret;
+> > +}
+> > +
+> > +static bool scmi_base_set_notify_enabled(const struct scmi_handle *handle,
+> > +					 u8 evt_id, u32 src_id, bool enable)
+> > +{
+> > +	int ret;
+> > +
+> > +	ret = scmi_base_error_notify(handle, enable);
+> > +	if (ret)
+> > +		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] ret:%d\n",
+> > +			SCMI_PROTOCOL_BASE, evt_id, ret);
+> > +
+> 
+> I would make all these debug as they are not fatal. The users can decide
+> if they are fatal and log it appropriately.
+> 
+
+Ok.
+
+> > +	return !ret;
+> > +}
+> > +
+> > +static void *scmi_base_fill_custom_report(const struct scmi_handle *handle,
+> > +					  u8 evt_id, u64 timestamp,
+> > +					  const void *payld, size_t payld_sz,
+> > +					  void *report, u32 *src_id)
+> > +{
+> > +	void *rep = NULL;
+> > +
+> > +	switch (evt_id) {
+> > +	case SCMI_EVENT_BASE_ERROR_EVENT:
+> 
+> Drop switch for now, just check for evt_id to be SCMI_EVENT_BASE_ERROR_EVENT.
+> 
+
+Ok
+> > +	{
+> > +		int i;
+> > +		const struct scmi_base_error_notify_payld *p = payld;
+> > +		struct scmi_base_error_report *r = report;
+> > +
+> > +		/*
+> > +		 * BaseError notification payload is variable in size but
+> > +		 * up to a maximum length determined by the struct ponted by p.
+> > +		 * Instead payld_sz is the effective length of this notification
+> > +		 * payload so cannot be greater of the maximum allowed size as
+> > +		 * pointed by p.
+> > +		 */
+> > +		if (sizeof(*p) < payld_sz)
+> > +			break;
+> > +
+> > +		r->timestamp = timestamp;
+> > +		r->agent_id = le32_to_cpu(p->agent_id);
+> > +		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
+> > +		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
+> > +		for (i = 0; i < r->cmd_count; i++)
+> > +			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
+> > +		*src_id = 0;
+> > +		rep = r;
+> > +		break;
+> > +	}
+> > +	default:
+> > +		break;
+> > +	}
+> > +
+> > +	return rep;
+> > +}
+> > +
+> > +static const struct scmi_event base_events[] = {
+> > +	{
+> > +		.id = SCMI_EVENT_BASE_ERROR_EVENT,
+> > +		.max_payld_sz = sizeof(struct scmi_base_error_notify_payld),
+> > +		.max_report_sz = sizeof(struct scmi_base_error_report) +
+> > +				  SCMI_BASE_MAX_CMD_ERR_COUNT * sizeof(u64),
+> > +	},
+> > +};
+> > +
+> > +static const struct scmi_protocol_event_ops base_event_ops = {
+> > +	.set_notify_enabled = scmi_base_set_notify_enabled,
+> > +	.fill_custom_report = scmi_base_fill_custom_report,
+> > +};
+> > +
+> >  int scmi_base_protocol_init(struct scmi_handle *h)
+> >  {
+> >  	int id, ret;
+> > @@ -256,6 +360,12 @@ int scmi_base_protocol_init(struct scmi_handle *h)
+> >  	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
+> >  		rev->num_agents);
+> >
+> > +	scmi_register_protocol_events(handle,
+> > +				      SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
+> 
+> The size 4 * PAGE_SZ is not clear. For me this can't be more that
+> max_msg_size.
+
+This is the size required by this protocol for the per-protocol kfifo queue
+allocation: it is anyway wrong as my aim was to default to 4k (or 16k for this
+possibly jumbo sized packet), but this way is needlessly bound to the configured
+PAGE_SIZE.
+
+I'll introduce a define for a base 4k proto queue size and use that.
 
 > 
-> hyp-entry.S contains implementation of KVM hyp vectors. This code is 
-> mostly
-> shared between VHE/nVHE, therefore compile it under both VHE and nVHE 
-> build
-> rules. nVHE-specific host HVC handler is hidden behind 
-> __KVM_NVHE_HYPERVISOR__.
+> The comments in this patch applies to last 5 patches(all protocols basically)
 > 
-> Adjust code which selects which KVM hyp vecs to install to choose the 
-> correct
-> VHE/nVHE symbol.
-> 
-> Signed-off-by: David Brazdil <dbrazdil@google.com>
-> ---
->  arch/arm64/include/asm/kvm_asm.h |  7 ++++++-
->  arch/arm64/include/asm/kvm_mmu.h | 16 ++++++++++------
->  arch/arm64/include/asm/mmu.h     |  7 -------
->  arch/arm64/kernel/cpu_errata.c   |  4 +++-
->  arch/arm64/kernel/image-vars.h   | 12 ++++++++++++
->  arch/arm64/kvm/hyp/hyp-entry.S   |  2 ++
->  arch/arm64/kvm/hyp/nvhe/Makefile |  2 +-
->  arch/arm64/kvm/va_layout.c       |  2 +-
->  8 files changed, 35 insertions(+), 17 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/kvm_asm.h 
-> b/arch/arm64/include/asm/kvm_asm.h
-> index 6a682d66a640..2baa69324cc9 100644
-> --- a/arch/arm64/include/asm/kvm_asm.h
-> +++ b/arch/arm64/include/asm/kvm_asm.h
-> @@ -76,7 +76,12 @@ struct kvm_vcpu;
->  extern char __kvm_hyp_init[];
->  extern char __kvm_hyp_init_end[];
-> 
-> -extern char __kvm_hyp_vector[];
-> +DECLARE_KVM_HYP_SYM(__kvm_hyp_vector);
-> +
-> +#ifdef CONFIG_KVM_INDIRECT_VECTORS
-> +DECLARE_KVM_HYP_SYM(__bp_harden_hyp_vecs);
-> +extern atomic_t arm64_el2_vector_last_slot;
-> +#endif
-> 
->  extern void __kvm_flush_vm_context(void);
->  extern void __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t 
-> ipa);
-> diff --git a/arch/arm64/include/asm/kvm_mmu.h 
-> b/arch/arm64/include/asm/kvm_mmu.h
-> index b12bfc1f051a..5bfc7ee61997 100644
-> --- a/arch/arm64/include/asm/kvm_mmu.h
-> +++ b/arch/arm64/include/asm/kvm_mmu.h
-> @@ -461,11 +461,15 @@ extern int __kvm_harden_el2_vector_slot;
->  static inline void *kvm_get_hyp_vector(void)
->  {
->  	struct bp_hardening_data *data = arm64_get_bp_hardening_data();
-> -	void *vect = kern_hyp_va(kvm_ksym_ref(__kvm_hyp_vector));
->  	int slot = -1;
-> +	void *vect = kern_hyp_va(has_vhe()
-> +		? kvm_ksym_ref(__kvm_hyp_vector)
-> +		: kvm_ksym_ref_nvhe(__kvm_hyp_vector));
 
-If you are introducing has_vhe() at this stage, then you might as well 
-not apply kernel_hyp_va() to the address. This also make the declaration 
-block look a bit ugly (yes, I'm a bit of a maniac). I'd rather see 
-something like:
+Ok I'll do.
 
-diff --git a/arch/arm64/include/asm/kvm_mmu.h 
-b/arch/arm64/include/asm/kvm_mmu.h
-index 5bfc7ee61997..e915c47744bc 100644
---- a/arch/arm64/include/asm/kvm_mmu.h
-+++ b/arch/arm64/include/asm/kvm_mmu.h
-@@ -457,19 +457,25 @@ static inline int kvm_write_guest_lock(struct kvm 
-*kvm, gpa_t gpa,
-  extern void *__kvm_bp_vect_base;
-  extern int __kvm_harden_el2_vector_slot;
 
-+#define get_hyp_vector_address(v)				\
-+({								\
-+	void *__v;						\
-+	if (has_vhe())						\
-+		__v = kvm_ksym_ref(v);				\
-+	else							\
-+		__v = kern_hyp_va(kvm_ksym_ref_nvhe(v));	\
-+	__v;							\
-+})
-+
-  /*  This is called on both VHE and !VHE systems */
-  static inline void *kvm_get_hyp_vector(void)
-  {
-  	struct bp_hardening_data *data = arm64_get_bp_hardening_data();
-+	void *vect = get_hyp_vector_address(__kvm_hyp_vector);
-  	int slot = -1;
--	void *vect = kern_hyp_va(has_vhe()
--		? kvm_ksym_ref(__kvm_hyp_vector)
--		: kvm_ksym_ref_nvhe(__kvm_hyp_vector));
+Thanks
 
-  	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR) && data->fn) {
--		vect = kern_hyp_va(has_vhe()
--			? kvm_ksym_ref(__bp_harden_hyp_vecs)
--			: kvm_ksym_ref_nvhe(__bp_harden_hyp_vecs));
-+		vect = get_hyp_vector_address(__bp_harden_hyp_vecs);
-  		slot = data->hyp_vectors_slot;
-  	}
+Cristian
 
-> 
->  	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR) && data->fn) {
-> -		vect = kern_hyp_va(kvm_ksym_ref(__bp_harden_hyp_vecs));
-> +		vect = kern_hyp_va(has_vhe()
-> +			? kvm_ksym_ref(__bp_harden_hyp_vecs)
-> +			: kvm_ksym_ref_nvhe(__bp_harden_hyp_vecs));
->  		slot = data->hyp_vectors_slot;
->  	}
-> 
-> @@ -494,12 +498,11 @@ static inline int kvm_map_vectors(void)
->  	 *  HBP +  HEL2 -> use hardened vertors and use exec mapping
->  	 */
->  	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR)) {
-> -		__kvm_bp_vect_base = kvm_ksym_ref(__bp_harden_hyp_vecs);
-> -		__kvm_bp_vect_base = kern_hyp_va(__kvm_bp_vect_base);
-> +		__kvm_bp_vect_base = 
-> kern_hyp_va(kvm_ksym_ref_nvhe(__bp_harden_hyp_vecs));
->  	}
-> 
->  	if (cpus_have_const_cap(ARM64_HARDEN_EL2_VECTORS)) {
-> -		phys_addr_t vect_pa = __pa_symbol(__bp_harden_hyp_vecs);
-> +		phys_addr_t vect_pa = 
-> __pa_symbol(kvm_nvhe_sym(__bp_harden_hyp_vecs));
->  		unsigned long size = __BP_HARDEN_HYP_VECS_SZ;
-> 
->  		/*
-> @@ -518,7 +521,8 @@ static inline int kvm_map_vectors(void)
->  #else
->  static inline void *kvm_get_hyp_vector(void)
->  {
-> -	return kern_hyp_va(kvm_ksym_ref(__kvm_hyp_vector));
-> +	return kern_hyp_va(has_vhe() ? kvm_ksym_ref(__kvm_hyp_vector)
-> +				     : kvm_ksym_ref_nvhe(__kvm_hyp_vector));
->  }
-> 
->  static inline int kvm_map_vectors(void)
-> diff --git a/arch/arm64/include/asm/mmu.h 
-> b/arch/arm64/include/asm/mmu.h
-> index 68140fdd89d6..4d913f6dd366 100644
-> --- a/arch/arm64/include/asm/mmu.h
-> +++ b/arch/arm64/include/asm/mmu.h
-> @@ -42,13 +42,6 @@ struct bp_hardening_data {
->  	bp_hardening_cb_t	fn;
->  };
-> 
-> -#if (defined(CONFIG_HARDEN_BRANCH_PREDICTOR) ||	\
-> -     defined(CONFIG_HARDEN_EL2_VECTORS))
-> -
-> -extern char __bp_harden_hyp_vecs[];
-> -extern atomic_t arm64_el2_vector_last_slot;
-> -#endif  /* CONFIG_HARDEN_BRANCH_PREDICTOR || CONFIG_HARDEN_EL2_VECTORS 
-> */
-> -
->  #ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
->  DECLARE_PER_CPU_READ_MOSTLY(struct bp_hardening_data, 
-> bp_hardening_data);
-> 
-> diff --git a/arch/arm64/kernel/cpu_errata.c 
-> b/arch/arm64/kernel/cpu_errata.c
-> index ad06d6802d2e..318b76a62c56 100644
-> --- a/arch/arm64/kernel/cpu_errata.c
-> +++ b/arch/arm64/kernel/cpu_errata.c
-> @@ -117,7 +117,9 @@ DEFINE_PER_CPU_READ_MOSTLY(struct
-> bp_hardening_data, bp_hardening_data);
->  static void __copy_hyp_vect_bpi(int slot, const char *hyp_vecs_start,
->  				const char *hyp_vecs_end)
->  {
-> -	void *dst = lm_alias(__bp_harden_hyp_vecs + slot * SZ_2K);
-> +	char *vec = has_vhe() ? __bp_harden_hyp_vecs
-> +			      : kvm_nvhe_sym(__bp_harden_hyp_vecs);
-
-If we get this construct often, then something that abstracts
-the uggliness of the symbol duality would be nice...
-
-> +	void *dst = lm_alias(vec + slot * SZ_2K);
->  	int i;
-> 
->  	for (i = 0; i < SZ_2K; i += 0x80)
-> diff --git a/arch/arm64/kernel/image-vars.h 
-> b/arch/arm64/kernel/image-vars.h
-> index 89affa38b143..dc7ee85531f5 100644
-> --- a/arch/arm64/kernel/image-vars.h
-> +++ b/arch/arm64/kernel/image-vars.h
-> @@ -61,9 +61,11 @@ __efistub__ctype		= _ctype;
->   * memory mappings.
->   */
-> 
-> +__kvm_nvhe___guest_exit = __guest_exit;
->  __kvm_nvhe___kvm_enable_ssbs = __kvm_enable_ssbs;
->  __kvm_nvhe___kvm_flush_vm_context = __kvm_flush_vm_context;
->  __kvm_nvhe___kvm_get_mdcr_el2 = __kvm_get_mdcr_el2;
-> +__kvm_nvhe___kvm_handle_stub_hvc = __kvm_handle_stub_hvc;
->  __kvm_nvhe___kvm_timer_set_cntvoff = __kvm_timer_set_cntvoff;
->  __kvm_nvhe___kvm_tlb_flush_local_vmid = __kvm_tlb_flush_local_vmid;
->  __kvm_nvhe___kvm_tlb_flush_vmid = __kvm_tlb_flush_vmid;
-> @@ -75,6 +77,16 @@ __kvm_nvhe___vgic_v3_read_vmcr = 
-> __vgic_v3_read_vmcr;
->  __kvm_nvhe___vgic_v3_restore_aprs = __vgic_v3_restore_aprs;
->  __kvm_nvhe___vgic_v3_save_aprs = __vgic_v3_save_aprs;
->  __kvm_nvhe___vgic_v3_write_vmcr = __vgic_v3_write_vmcr;
-> +__kvm_nvhe_abort_guest_exit_end = abort_guest_exit_end;
-> +__kvm_nvhe_abort_guest_exit_start = abort_guest_exit_start;
-> +__kvm_nvhe_arm64_enable_wa2_handling = arm64_enable_wa2_handling;
-> +__kvm_nvhe_arm64_ssbd_callback_required = 
-> arm64_ssbd_callback_required;
-> +__kvm_nvhe_hyp_panic = hyp_panic;
-> +__kvm_nvhe_kimage_voffset = kimage_voffset;
-> +__kvm_nvhe_kvm_host_data = kvm_host_data;
-> +__kvm_nvhe_kvm_patch_vector_branch = kvm_patch_vector_branch;
-> +__kvm_nvhe_kvm_update_va_mask = kvm_update_va_mask;
-> +__kvm_nvhe_panic = panic;
-> 
->  #endif /* CONFIG_KVM */
-> 
-> diff --git a/arch/arm64/kvm/hyp/hyp-entry.S 
-> b/arch/arm64/kvm/hyp/hyp-entry.S
-> index d362fad97cc8..7e3c72fa634f 100644
-> --- a/arch/arm64/kvm/hyp/hyp-entry.S
-> +++ b/arch/arm64/kvm/hyp/hyp-entry.S
-> @@ -40,6 +40,7 @@ el1_sync:				// Guest trapped into EL2
->  	ccmp	x0, #ESR_ELx_EC_HVC32, #4, ne
->  	b.ne	el1_trap
-> 
-> +#ifdef __KVM_NVHE_HYPERVISOR__
->  	mrs	x1, vttbr_el2		// If vttbr is valid, the guest
->  	cbnz	x1, el1_hvc_guest	// called HVC
-> 
-> @@ -74,6 +75,7 @@ el1_sync:				// Guest trapped into EL2
-> 
->  	eret
->  	sb
-> +#endif /* __KVM_NVHE_HYPERVISOR__ */
-> 
->  el1_hvc_guest:
->  	/*
-> diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile 
-> b/arch/arm64/kvm/hyp/nvhe/Makefile
-> index 7d64235dba62..c68801e24950 100644
-> --- a/arch/arm64/kvm/hyp/nvhe/Makefile
-> +++ b/arch/arm64/kvm/hyp/nvhe/Makefile
-> @@ -7,7 +7,7 @@ asflags-y := -D__KVM_NVHE_HYPERVISOR__
->  ccflags-y := -D__KVM_NVHE_HYPERVISOR__ -fno-stack-protector \
->  	     -DDISABLE_BRANCH_PROFILING $(DISABLE_STACKLEAK_PLUGIN)
-> 
-> -obj-y :=
-> +obj-y := ../hyp-entry.o
-> 
->  obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
->  extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
-> diff --git a/arch/arm64/kvm/va_layout.c b/arch/arm64/kvm/va_layout.c
-> index a4f48c1ac28c..157d106235f7 100644
-> --- a/arch/arm64/kvm/va_layout.c
-> +++ b/arch/arm64/kvm/va_layout.c
-> @@ -150,7 +150,7 @@ void kvm_patch_vector_branch(struct alt_instr *alt,
->  	/*
->  	 * Compute HYP VA by using the same computation as kern_hyp_va()
->  	 */
-> -	addr = (uintptr_t)kvm_ksym_ref(__kvm_hyp_vector);
-> +	addr = (uintptr_t)kvm_ksym_ref_nvhe(__kvm_hyp_vector);
->  	addr &= va_mask;
->  	addr |= tag_val << tag_lsb;
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+> --
+> Regards,
+> Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
