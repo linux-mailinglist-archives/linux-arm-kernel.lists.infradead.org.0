@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 645AD1FDE9C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:36:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 487F91FDEB2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:38:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zjr3vMy0r9GPi928uvprImrcrEJqNiQ73B+Lxi8mZX0=; b=IpmhJeAZfG3GDi
-	2Sp+x3JOA/8JU28rnEbIaOmRfuACCfavp4Jvg0ND1suHAKMKL3wsnsm4MJm9A07MfKMMUPke9dYrs
-	kAMZreWuBniKYLqXehqgMKi2eepJeYiEUciLbwEkBhnGSuKxXNcRZAhTUOwF2aQtF78Lr9dMbPdXy
-	xwLLR0U6lr4xOBiVg8QvtmEMjTbWtJbvarASJvmjaHEEbCgYSfU0QP6/kooKGWJkWB3vMNCrfrr40
-	pWqnUhtsj8GmCEDoGlM/6qGxT7kp4Ocp+YYDpZ21hGwTKYz9qZXUqbbOo9iYbO4FW6B/c81hynWxT
-	2CqWItkKK8h21s71W5ng==;
+	List-Owner; bh=Csr9QmleejwdOeL1ycj4Som/sml0yud2G3WmwCHYBWM=; b=QuLTSFj163kgYS
+	8pcuzRkBsIBxyC0m+SCSF1QYVXoOSeV0HvN1smbLISc6TPswrZjceGXSZCbjb+Wd5lWKuzHnjW2o7
+	lAfA0m8mMlivgdM3qupzWYGmKIOArnCxuiMFIyKK97cwRiifmm0QTWbR28FevbdFqNZa+4DQ4MyBG
+	U42nVdlDNqLTcFQ/8qJrzhP4gudujfpiLuPkOObutjohQQtU2jW58XVwkt7LJexlvU/OYDXzu0St9
+	4dl2A7Dg+oLZi9deXU7DPcHKPh5pQXPsHxCwCQcS8rGwcSUahTbjA6Jryj3jBkVl854kD4AKMBxlL
+	xKk4I9mS/WeoJszf6Iww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljTF-0007Jz-1H; Thu, 18 Jun 2020 01:36:01 +0000
+	id 1jljV3-0000Oj-Ti; Thu, 18 Jun 2020 01:37:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljA0-0007G9-Ak
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:09 +0000
+ id 1jljAR-0007aQ-7m
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1CB28221F1;
- Thu, 18 Jun 2020 01:16:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E955B21D79;
+ Thu, 18 Jun 2020 01:16:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442967;
- bh=AIM68VyQmCJv9NVAjJep09xySiU1PdQUeWOx6nIZLZU=;
+ s=default; t=1592442994;
+ bh=kCjSyXO6zz3ZUcp39RHJO7Kc3CAczW6G8wj8OXTDw7c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=U8txIk0hou5UswgieO/yHeKqkjMK5EzuRww/hSx5uVbtaSUu7mcEqp3xkl4UrjAT2
- Jk+rKi6LNl79Xek7yV1DNQo5NNHekDeiDp5FGKk62J6TvF55db/rzykX6wIR7Ct3Kg
- eHDI8MDYbQ+aIHV9gL9xK3gFvTyJZIPQG9CUIZGE=
+ b=Pfzm2EiJhiNrUFsB0mLO+NQRo/eNHQz7j4Hd+x7xmyeN70Siv/9VEs/QEWm2uBBBA
+ KuV3vnit8GsCPFyGVQBunwSHVhIFVLgegrWvg1cWCCgVdtyzsaLaxSu4gpOSrSvTGD
+ kA77t05vH8eKlRDmqo2wqtrJIQN1EuYLfSvNH9hE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 372/388] scsi: acornscsi: Fix an error handling
- path in acornscsi_probe()
-Date: Wed, 17 Jun 2020 21:07:49 -0400
-Message-Id: <20200618010805.600873-372-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 002/266] clk: sunxi: Fix incorrect usage of
+ round_down()
+Date: Wed, 17 Jun 2020 21:12:07 -0400
+Message-Id: <20200618011631.604574-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
-References: <20200618010805.600873-1-sashal@kernel.org>
+In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
+References: <20200618011631.604574-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181608_477979_54DD412B 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20200617_181635_329826_4BE97F9F 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +80,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- linux-arm-kernel@lists.infradead.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>, linux-scsi@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>,
+ Rikard Falkeborn <rikard.falkeborn@gmail.com>, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
 
-[ Upstream commit 42c76c9848e13dbe0538d7ae0147a269dfa859cb ]
+[ Upstream commit ee25d9742dabed3fd18158b518f846abeb70f319 ]
 
-'ret' is known to be 0 at this point.  Explicitly return -ENOMEM if one of
-the 'ecardm_iomap()' calls fail.
+round_down() can only round to powers of 2. If round_down() is asked
+to round to something that is not a power of 2, incorrect results are
+produced. The incorrect results can be both too large and too small.
 
-Link: https://lore.kernel.org/r/20200530081622.577888-1-christophe.jaillet@wanadoo.fr
-Fixes: e95a1b656a98 ("[ARM] rpc: acornscsi: update to new style ecard driver")
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+Instead, use rounddown() which can round to any number.
+
+Fixes: 6a721db180a2 ("clk: sunxi: Add A31 clocks support")
+Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/scsi/arm/acornscsi.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/clk/sunxi/clk-sunxi.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/scsi/arm/acornscsi.c b/drivers/scsi/arm/acornscsi.c
-index ddb52e7ba622..9a912fd0f70b 100644
---- a/drivers/scsi/arm/acornscsi.c
-+++ b/drivers/scsi/arm/acornscsi.c
-@@ -2911,8 +2911,10 @@ static int acornscsi_probe(struct expansion_card *ec, const struct ecard_id *id)
+diff --git a/drivers/clk/sunxi/clk-sunxi.c b/drivers/clk/sunxi/clk-sunxi.c
+index 27201fd26e44..e1aa1fbac48a 100644
+--- a/drivers/clk/sunxi/clk-sunxi.c
++++ b/drivers/clk/sunxi/clk-sunxi.c
+@@ -90,7 +90,7 @@ static void sun6i_a31_get_pll1_factors(struct factors_request *req)
+ 	 * Round down the frequency to the closest multiple of either
+ 	 * 6 or 16
+ 	 */
+-	u32 round_freq_6 = round_down(freq_mhz, 6);
++	u32 round_freq_6 = rounddown(freq_mhz, 6);
+ 	u32 round_freq_16 = round_down(freq_mhz, 16);
  
- 	ashost->base = ecardm_iomap(ec, ECARD_RES_MEMC, 0, 0);
- 	ashost->fast = ecardm_iomap(ec, ECARD_RES_IOCFAST, 0, 0);
--	if (!ashost->base || !ashost->fast)
-+	if (!ashost->base || !ashost->fast) {
-+		ret = -ENOMEM;
- 		goto out_put;
-+	}
- 
- 	host->irq = ec->irq;
- 	ashost->host = host;
+ 	if (round_freq_6 > round_freq_16)
 -- 
 2.25.1
 
