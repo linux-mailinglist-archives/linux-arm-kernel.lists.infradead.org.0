@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0314C1FDE18
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:30:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 084C71FDE1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:31:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=74+zw9bfM1oCCK2J5J3mOqRsoqR68DufLiDgy2+KBQk=; b=qVrqy9cuD8QJU7
-	QVmgiJGYbQFbUYIOO6kLxyY/9sP7g8W6y9jC/WnaDasqVgj7FD+RmCFPxGM0xQZHWcsu+ucxDBZf6
-	GXBMYQQx26oMZatU6nCa7EzLMCsJ8CyP1WDX/PXm9xyZP1QZTF3FWQFIWQqrGFpaBSiFPQrXz/36S
-	rkXQLEpMjUmlJk+N9dRqGf7SBVHAKGUKgFHfHHs2JcdjfjqwQBLl4sSriFTpCRcfArOUVkLLls+Ht
-	+ybDEzP/Q86Zv6osj6YYjfB73IrVV7NgRwPhjEXjJhRF5Xx66qnBuG40ukcI4+OCSIMVHRgKId4Ic
-	z57J+dIzgLK1RNPqXGAA==;
+	List-Owner; bh=S4t9DcKAGsq1xRTMUXRsGocV+tPUsaIe8IS2x0AwgCI=; b=OLP36SiFfxoAh0
+	jQ5GHo/ZgnTQcAWXxhQv8KU3blwaAe8o99OouQ+TzQzmAxaTW1jtFaueRDBw4s1nHTXRbWVraExHk
+	WXLvAtnoAeXuM8kKVkZDzjD5OjCS5bu/hA1xVHulUsM5koEW4MXX6DnNmeqM1YHRjR+DVlFzvl6+o
+	qAkTLC6NZaLPT7mzzB1KwX6i7QiiotBfX25NGl//FmGzCqmj2Dne96110KkwpKCreFaKwNzM/VFu9
+	fFOTo/Ldf+aJXJJfOk3KQsGR/vaF++E6D9CR3ea4x8/P4nR8IsYUBNTkoIOVWPhSAG1JQw7A7gFB8
+	W5LkIuM/MH8PvE29WUSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljO9-0000WQ-JV; Thu, 18 Jun 2020 01:30:45 +0000
+	id 1jljOR-0000kV-M7; Thu, 18 Jun 2020 01:31:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj7y-0003KJ-Uo
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:14:04 +0000
+ id 1jlj88-0003RY-1L; Thu, 18 Jun 2020 01:14:14 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9459C21D7B;
- Thu, 18 Jun 2020 01:14:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 32C7D221EA;
+ Thu, 18 Jun 2020 01:14:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442842;
- bh=Jiv2L8x1UrhUVZJ3+GJukZ7OLVFFYw+CmLuVM0LVPtU=;
+ s=default; t=1592442851;
+ bh=wKX1ufoesJrahDJvQwblpOGk12X8sdXC+leoopU/RTc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cQ7Fm1k+AKPzjqzKsfXRA7cfcueEbtCEuK59uPtZ+4l/30P8eveuEXf+IDSqKoKPM
- x2QxmAGh1Q/MI95W/El+oEvZF4U17/A9AOyfO1vX96v/W2Ppo0+NOK5rBybYzq0uVr
- PEa6sXK8pFEq549B50Yyq9ru9Y0WN/3IoHyA1rUA=
+ b=iqqMZg+A59ECaGSP7IROXrwRlMldBoc74sbbyZx622l8y1WeT45N08JWHwhr4RqI4
+ I3/P1QsbVJn3PnlFRpU90wivbn9E6Ls8i0/e3ddLm0zBCUK8Bqqt0IoAyy7bCUQG+s
+ 2KLqR2lHUiV3UOewtpV+BSyGL7TsUKfnxYT29Hoo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 275/388] mfd: stmfx: Disable IRQ in suspend to
- avoid spurious interrupt
-Date: Wed, 17 Jun 2020 21:06:12 -0400
-Message-Id: <20200618010805.600873-275-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 282/388] clk: bcm2835: Fix return type of
+ bcm2835_register_gate
+Date: Wed, 17 Jun 2020 21:06:19 -0400
+Message-Id: <20200618010805.600873-282-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181403_119749_381A0180 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20200617_181412_244486_6EF3F1A3 
+X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,74 +79,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Amelie Delaunay <amelie.delaunay@st.com>,
- Lee Jones <lee.jones@linaro.org>, linux-stm32@st-md-mailman.stormreply.com,
+Cc: Sasha Levin <sashal@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Nathan Chancellor <natechancellor@gmail.com>, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Amelie Delaunay <amelie.delaunay@st.com>
+From: Nathan Chancellor <natechancellor@gmail.com>
 
-[ Upstream commit 97eda5dcc2cde5dcc778bef7a9344db3b6bf8ef5 ]
+[ Upstream commit f376c43bec4f8ee8d1ba5c5c4cfbd6e84fb279cb ]
 
-When STMFX supply is stopped, spurious interrupt can occur. To avoid that,
-disable the interrupt in suspend before disabling the regulator and
-re-enable it at the end of resume.
+bcm2835_register_gate is used as a callback for the clk_register member
+of bcm2835_clk_desc, which expects a struct clk_hw * return type but
+bcm2835_register_gate returns a struct clk *.
 
-Fixes: 06252ade9156 ("mfd: Add ST Multi-Function eXpander (STMFX) core driver")
-Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
+This discrepancy is hidden by the fact that bcm2835_register_gate is
+cast to the typedef bcm2835_clk_register by the _REGISTER macro. This
+turns out to be a control flow integrity violation, which is how this
+was noticed.
+
+Change the return type of bcm2835_register_gate to be struct clk_hw *
+and use clk_hw_register_gate to do so. This should be a non-functional
+change as clk_register_gate calls clk_hw_register_gate anyways but this
+is needed to avoid issues with further changes.
+
+Fixes: b19f009d4510 ("clk: bcm2835: Migrate to clk_hw based registration and OF APIs")
+Link: https://github.com/ClangBuiltLinux/linux/issues/1028
+Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+Link: https://lkml.kernel.org/r/20200516080806.1459784-1-natechancellor@gmail.com
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/mfd/stmfx.c       | 6 ++++++
- include/linux/mfd/stmfx.h | 1 +
- 2 files changed, 7 insertions(+)
+ drivers/clk/bcm/clk-bcm2835.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/mfd/stmfx.c b/drivers/mfd/stmfx.c
-index 1977fe95f876..711979afd90a 100644
---- a/drivers/mfd/stmfx.c
-+++ b/drivers/mfd/stmfx.c
-@@ -296,6 +296,8 @@ static int stmfx_irq_init(struct i2c_client *client)
- 	if (ret)
- 		goto irq_exit;
- 
-+	stmfx->irq = client->irq;
-+
- 	return 0;
- 
- irq_exit:
-@@ -486,6 +488,8 @@ static int stmfx_suspend(struct device *dev)
- 	if (ret)
- 		return ret;
- 
-+	disable_irq(stmfx->irq);
-+
- 	if (stmfx->vdd)
- 		return regulator_disable(stmfx->vdd);
- 
-@@ -529,6 +533,8 @@ static int stmfx_resume(struct device *dev)
- 	if (ret)
- 		return ret;
- 
-+	enable_irq(stmfx->irq);
-+
- 	return 0;
+diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
+index ded13ccf768e..7c845c293af0 100644
+--- a/drivers/clk/bcm/clk-bcm2835.c
++++ b/drivers/clk/bcm/clk-bcm2835.c
+@@ -1448,13 +1448,13 @@ static struct clk_hw *bcm2835_register_clock(struct bcm2835_cprman *cprman,
+ 	return &clock->hw;
  }
- #endif
-diff --git a/include/linux/mfd/stmfx.h b/include/linux/mfd/stmfx.h
-index 3c67983678ec..744dce63946e 100644
---- a/include/linux/mfd/stmfx.h
-+++ b/include/linux/mfd/stmfx.h
-@@ -109,6 +109,7 @@ struct stmfx {
- 	struct device *dev;
- 	struct regmap *map;
- 	struct regulator *vdd;
-+	int irq;
- 	struct irq_domain *irq_domain;
- 	struct mutex lock; /* IRQ bus lock */
- 	u8 irq_src;
+ 
+-static struct clk *bcm2835_register_gate(struct bcm2835_cprman *cprman,
++static struct clk_hw *bcm2835_register_gate(struct bcm2835_cprman *cprman,
+ 					 const struct bcm2835_gate_data *data)
+ {
+-	return clk_register_gate(cprman->dev, data->name, data->parent,
+-				 CLK_IGNORE_UNUSED | CLK_SET_RATE_GATE,
+-				 cprman->regs + data->ctl_reg,
+-				 CM_GATE_BIT, 0, &cprman->regs_lock);
++	return clk_hw_register_gate(cprman->dev, data->name, data->parent,
++				    CLK_IGNORE_UNUSED | CLK_SET_RATE_GATE,
++				    cprman->regs + data->ctl_reg,
++				    CM_GATE_BIT, 0, &cprman->regs_lock);
+ }
+ 
+ typedef struct clk_hw *(*bcm2835_clk_register)(struct bcm2835_cprman *cprman,
 -- 
 2.25.1
 
