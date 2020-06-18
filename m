@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFDC31FDFCE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:44:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10CB11FDFDF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:44:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/JXmGbvyea0iMZSEguVVIFp10mJH9LHS2VX8hnBYzBI=; b=eCRnv+lLth5evz
-	oZFk38lXOton5QNOeGVgBxBN3MffHEOZnPt7LiVGdiEWk3G8Ch10alokED30wyJbBji6hEBUDXDYa
-	SfLyxy9C/bLt5DnJDTzWqfgmCeB9p+7czhx32TtrXhT0HlZm/M9r9yu0PaIZNYCSSKXqgMXTjolRh
-	3FPpicR1+8ooww3zKe0GU1b+DbVRBZPvfuth6//hnGUhDbLX2g79CCe+RJAWDBVf2NwaCAxB2Y812
-	u2RwnwacssBJuy8zzUQfIRHudAHz23hoXsfnrkt9Jg1VWBJzWdmBz84TG+JCc7QBtZ54qASkotYTi
-	un1HhURFndUZ7nQTwHvg==;
+	List-Owner; bh=rDlIHEkyl3n1FoUF+Toqaf9dO0w7JHZVu62KYwi+O38=; b=ZuQ5uSaGRjrnut
+	iTuav0PSHPYS/V4gj5mqpYyRbgwBJVbMpZbHO7jTIXevB/enBuf8svYgcwHX+dIYF3R9FmfZyCKV2
+	ytCACnlP6Qkn/Barn1mkvtrtq8z2HdRIPC/xZj9INH/WaMOohrLGjW7e30V0ErEk+36Q/wZi+zoCH
+	JinDtMNqkOeM/8c4UqR7T6R6z4chHFyw+iTx6/XFLf8+9Bzql0zMfYJqQTOhU1Q1qy3obDVJfBrwn
+	AivY5z9x4E1FSRYtZvJ9dyAkop2UKqRhK5b9WKtlsVt8eUMdCEgQsCIRG35wUVjarmeNG+U/QRfYZ
+	rbRVvfV5i43Q5dFecFJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljaq-0007qE-Kp; Thu, 18 Jun 2020 01:43:52 +0000
+	id 1jljbF-0008Ae-Vo; Thu, 18 Jun 2020 01:44:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljCN-0000aO-2r
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:18:41 +0000
+ id 1jljCi-0000pS-Gb; Thu, 18 Jun 2020 01:18:58 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B47E21D79;
- Thu, 18 Jun 2020 01:18:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2010E21D82;
+ Thu, 18 Jun 2020 01:18:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443114;
- bh=wM5/3fhrr5hm7+nYevMQXH53D3Fdmtgqhuy6Kc3sOwA=;
+ s=default; t=1592443136;
+ bh=Zemdb6Gh2fXWhmsy+EqLLEiMhrL7ra6MUS3oNMd/tFg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ibpGB3pVbZx/49Lygs9q/VY0XWrzskyx3k8/3OoRkC8ipHz//P9U/0QQFD+qPb/Yq
- sGK7rTBs27EgCq32zUAuE4bSsFnjowuarkeGvMiOH4n33ISJqadWuv1OWUExGomZQ+
- 9CtvnwqYc2xTLgv0Di+9BJsK0ZdJOmqaSQnLqD5w=
+ b=wW9R581mLc0DMX2tpetIRPlyU+oOJChb4KY0JP8o34n7le3BOUPpzAZzcVjFg0BB2
+ 3pyDyU/SLIlvXyazAgRRgmbbrJCbnw07GPHB/8898g4ae/Xrh+EEmxZmLNkJZfx4C9
+ UlpQo0L3G23CCQfjVtBhR4y8frqseGE7fF8aLCLk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 090/266] ARM: dts: sun8i-h2-plus-bananapi-m2-zero:
- Fix led polarity
-Date: Wed, 17 Jun 2020 21:13:35 -0400
-Message-Id: <20200618011631.604574-90-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 107/266] clk: meson: meson8b: Fix the first parent
+ of vid_pll_in_sel
+Date: Wed, 17 Jun 2020 21:13:52 -0400
+Message-Id: <20200618011631.604574-107-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181835_161050_505FCE5C 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20200617_181856_610624_E25AD4D1 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,39 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>,
- =?UTF-8?q?Vincent=20Stehl=C3=A9?= <vincent.stehle@laposte.net>,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogVmluY2VudCBTdGVobMOpIDx2aW5jZW50LnN0ZWhsZUBsYXBvc3RlLm5ldD4KClsgVXBz
-dHJlYW0gY29tbWl0IDM0YjY4MjZkZjc0NjJjNTQxNzUyY2Y4YjFkZTI2OTFiMjZkNzhhZTAgXQoK
-VGhlIFBXUi1MRUQgb24gdGhlIGJhbmFuYXBpIG0yIHplcm8gYm9hcmQgaXMgb24gd2hlbiBncGlv
-IFBMMTAgaXMgbG93LgpUaGlzIGhhcyBiZWVuIHZlcmlmaWVkIG9uIGEgYm9hcmQgYW5kIGluIHRo
-ZSBzY2hlbWF0aWNzIFsxXS4KClsxXTogaHR0cDovL3dpa2kuYmFuYW5hLXBpLm9yZy9CYW5hbmFf
-UGlfQlBJLU0yX1pFUk8jRG9jdW1lbnRzCgpGaXhlczogOGI4MDYxZmNiZmFlICgiQVJNOiBkdHM6
-IHN1bjhpOiBoMis6IGFkZCBzdXBwb3J0IGZvciBCYW5hbmEgUGkgTTIgWmVybyBib2FyZCIpClNp
-Z25lZC1vZmYtYnk6IFZpbmNlbnQgU3RlaGzDqSA8dmluY2VudC5zdGVobGVAbGFwb3N0ZS5uZXQ+
-CkNjOiBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFvc2MuaW8+CkNjOiBNYXhpbWUgUmlwYXJkIDxt
-cmlwYXJkQGtlcm5lbC5vcmc+ClNpZ25lZC1vZmYtYnk6IE1heGltZSBSaXBhcmQgPG1heGltZUBj
-ZXJuby50ZWNoPgpTaWduZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5lbC5vcmc+
-Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktaDItcGx1cy1iYW5hbmFwaS1tMi16ZXJvLmR0
-cyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoK
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWgyLXBsdXMtYmFuYW5hcGktbTIt
-emVyby5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9zdW44aS1oMi1wbHVzLWJhbmFuYXBpLW0yLXpl
-cm8uZHRzCmluZGV4IGQyNzdkMDQzMDMxYi4uNGM2NzA0ZTRjNTdlIDEwMDY0NAotLS0gYS9hcmNo
-L2FybS9ib290L2R0cy9zdW44aS1oMi1wbHVzLWJhbmFuYXBpLW0yLXplcm8uZHRzCisrKyBiL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWgyLXBsdXMtYmFuYW5hcGktbTItemVyby5kdHMKQEAgLTMx
-LDcgKzMxLDcgQEAgbGVkcyB7CiAKIAkJcHdyX2xlZCB7CiAJCQlsYWJlbCA9ICJiYW5hbmFwaS1t
-Mi16ZXJvOnJlZDpwd3IiOwotCQkJZ3Bpb3MgPSA8JnJfcGlvIDAgMTAgR1BJT19BQ1RJVkVfSElH
-SD47IC8qIFBMMTAgKi8KKwkJCWdwaW9zID0gPCZyX3BpbyAwIDEwIEdQSU9fQUNUSVZFX0xPVz47
-IC8qIFBMMTAgKi8KIAkJCWRlZmF1bHQtc3RhdGUgPSAib24iOwogCQl9OwogCX07Ci0tIAoyLjI1
-LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+[ Upstream commit da1978ac3d6cf278dedf5edbf350445a0fff2f08 ]
+
+Use hdmi_pll_lvds_out as parent of the vid_pll_in_sel clock. It's not
+easy to see that the vendor kernel does the same, but it actually does.
+meson_clk_pll_ops in mainline still cannot fully recalculate all rates
+from the HDMI PLL registers because some register bits (at the time of
+writing it's unknown which bits are used for this) double the HDMI PLL
+output rate (compared to simply considering M, N and FRAC) for some (but
+not all) PLL settings.
+
+Update the vid_pll_in_sel parent so our clock calculation works for
+simple clock settings like the CVBS output (where no rate doubling is
+going on). The PLL ops need to be fixed later on for more complex clock
+settings (all HDMI rates).
+
+Fixes: 6cb57c678bb70 ("clk: meson: meson8b: add the read-only video clock trees")
+Suggested-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+Link: https://lore.kernel.org/r/20200417184127.1319871-2-martin.blumenstingl@googlemail.com
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/clk/meson/meson8b.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
+index 8856ce476ccf..ab0b56daec54 100644
+--- a/drivers/clk/meson/meson8b.c
++++ b/drivers/clk/meson/meson8b.c
+@@ -1071,7 +1071,7 @@ static struct clk_regmap meson8b_vid_pll_in_sel = {
+ 		 * Meson8m2: vid2_pll
+ 		 */
+ 		.parent_hws = (const struct clk_hw *[]) {
+-			&meson8b_hdmi_pll_dco.hw
++			&meson8b_hdmi_pll_lvds_out.hw
+ 		},
+ 		.num_parents = 1,
+ 		.flags = CLK_SET_RATE_PARENT,
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
