@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E4BD1FDEB5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:38:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 534DB1FDEB6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:38:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EDkpoJMv2Ase6T37OzKZVLcab/dCAcAWpC3hqySuxZs=; b=Z60uHoshrfhnYW
-	nw7JAac/+A36fUo9wz/oo1kHWcPwQrQDqhrm/R/o98+GFheoT1ssCjlnKKn60zN2qeGxQ8K5/qX4W
-	K0BjusZAMn7pT5Y7QJgAS0f9V3H0rnZbL1LnC4qtov1ZqXGjyI09n+iVuPUP2eYUtMy/PAeRI62ze
-	NHQ4tZ0h0npZ/l6PCQBEWf+ueW4nlTNMn8yem5+BRtFIKXfIVFkdydib4A1+D3Ujcx2qh+Kv6CeKc
-	7iJzRq58qOtSDrAhI5a0bKg5zw4Cl4zA4PSfgmGFDQi+jqeAy8Mko8xTNx7VIcsLjp/rKoru2jn1d
-	BUXbbL+lvVH1t1QkXYXQ==;
+	List-Owner; bh=ppIMWeiuMA1b+oEZMRkuKahewYuUxI90YTm85+Vb0eY=; b=obagelZFYk2tXZ
+	97cq4b8aO9b6W5ENpeB60MGHw4cwDhgb7AwaGB8qt+dywu6a4S8CmBpbkmNSQx0f86iInyMFrF7oF
+	WokxI3tZl6BUVHNR4PL07Lkqk+cNNqA7/0wIjUzA1WGzFwiCgRyfTaraS1IiERSW5ufOdLE0QrJ/i
+	Og3xmRznEcfaMLKIMjFMcq8MZwPNcUJBqq8Ysmlu4/EJY3vTW3SFrlWRTuKpfM6gcgcIVzuELN5zS
+	jWBwQtz3omsIvEbuA4TeNz2XDn2ac1Sbhgoe5WJKTDq9Fnct5bDW7bNN11H2Hq2821rUQv0nl4xEQ
+	uvqlsHvh+ACSrMeQZLew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljVd-0000uP-I9; Thu, 18 Jun 2020 01:38:29 +0000
+	id 1jljVq-00019U-KN; Thu, 18 Jun 2020 01:38:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljAV-0007e3-I3
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:44 +0000
+ id 1jljAh-0007m4-PR
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:16:54 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A9F2C221EB;
- Thu, 18 Jun 2020 01:16:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2D02B221ED;
+ Thu, 18 Jun 2020 01:16:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442998;
- bh=1TLicUZauJHHS4QjENC7dQsJoviJc/aajGrqaoOUPoE=;
+ s=default; t=1592443010;
+ bh=t32yjB2TpLN1r28meG1mSbZ0wZv5Q6aRzPklQgdrAlU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=VzPLrvNfCVF9z/B3zRKxRuvQbTQElO5BrZ77TcOETvCzdIwyV63aCVtH9jVEo6CCb
- ZVj5MMTnVsSb2w2BWVLKAxjyXh+8O1y1rWsfP+mv7GfAbWszneL451yKXYgvU0Zsgq
- 0Nr1jJ4+aP4nhru4DMBWzbqXPWih5bG20qyYurCM=
+ b=JT0XRErpDSnNdNjPcLG749wXthqBX4y8zDORyOITbjbwtCChx+KKFD+AzjYgj9/Ek
+ EPhzlZE3GKAbPNNdSSwfYz0yB1PhEfc2DKEkR8pI/hAQcS++K/cQX9XAXvIyK2bGQf
+ dlfhM3He4QnzLzBNKh75wI+PuGSCJ9NfM5z0trLw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 005/266] ASoC: SOF: imx8: Fix randbuild error
-Date: Wed, 17 Jun 2020 21:12:10 -0400
-Message-Id: <20200618011631.604574-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 014/266] ARM: integrator: Add some Kconfig
+ selections
+Date: Wed, 17 Jun 2020 21:12:19 -0400
+Message-Id: <20200618011631.604574-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181639_694150_236A3116 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20200617_181651_929425_904DDBAE 
+X-CRM114-Status: GOOD (  11.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,57 +80,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- YueHaibing <yuehaibing@huawei.com>, Hulk Robot <hulkci@huawei.com>,
- Mark Brown <broonie@kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>,
- linux-arm-kernel@lists.infradead.org, sound-open-firmware@alsa-project.org
+Cc: Sasha Levin <sashal@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: YueHaibing <yuehaibing@huawei.com>
+From: Linus Walleij <linus.walleij@linaro.org>
 
-[ Upstream commit fe17e6cdc0fefca96ba9659be4b2b07487cbf0c5 ]
+[ Upstream commit d2854bbe5f5c4b4bec8061caf4f2e603d8819446 ]
 
-when do randconfig like this:
-CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
-CONFIG_SND_SOC_SOF_IMX8=y
-CONFIG_SND_SOC_SOF_OF=y
-CONFIG_IMX_DSP=m
-CONFIG_IMX_SCU=y
+The CMA and DMA_CMA Kconfig options need to be selected
+by the Integrator in order to produce boot console on some
+Integrator systems.
 
-there is a link error:
+The REGULATOR and REGULATOR_FIXED_VOLTAGE need to be
+selected in order to boot the system from an external
+MMC card when using MMCI/PL181 from the device tree
+probe path.
 
-sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
-imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
+Select these things directly from the Kconfig so we are
+sure to be able to bring the systems up with console
+from any device tree.
 
-Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
-
-Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-Link: https://lore.kernel.org/r/20200409071832.2039-2-daniel.baluta@oss.nxp.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/sof/imx/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mach-integrator/Kconfig | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
-index 71f318bc2c74..b4f0426685c4 100644
---- a/sound/soc/sof/imx/Kconfig
-+++ b/sound/soc/sof/imx/Kconfig
-@@ -14,7 +14,7 @@ if SND_SOC_SOF_IMX_TOPLEVEL
- config SND_SOC_SOF_IMX8_SUPPORT
- 	bool "SOF support for i.MX8"
- 	depends on IMX_SCU
--	depends on IMX_DSP
-+	select IMX_DSP
+diff --git a/arch/arm/mach-integrator/Kconfig b/arch/arm/mach-integrator/Kconfig
+index 982eabc36163..2406cab73835 100644
+--- a/arch/arm/mach-integrator/Kconfig
++++ b/arch/arm/mach-integrator/Kconfig
+@@ -4,6 +4,8 @@ menuconfig ARCH_INTEGRATOR
+ 	depends on ARCH_MULTI_V4T || ARCH_MULTI_V5 || ARCH_MULTI_V6
+ 	select ARM_AMBA
+ 	select COMMON_CLK_VERSATILE
++	select CMA
++	select DMA_CMA
+ 	select HAVE_TCM
+ 	select ICST
+ 	select MFD_SYSCON
+@@ -35,14 +37,13 @@ config INTEGRATOR_IMPD1
+ 	select ARM_VIC
+ 	select GPIO_PL061
+ 	select GPIOLIB
++	select REGULATOR
++	select REGULATOR_FIXED_VOLTAGE
  	help
-           This adds support for Sound Open Firmware for NXP i.MX8 platforms
-           Say Y if you have such a device.
+ 	  The IM-PD1 is an add-on logic module for the Integrator which
+ 	  allows ARM(R) Ltd PrimeCells to be developed and evaluated.
+ 	  The IM-PD1 can be found on the Integrator/PP2 platform.
+ 
+-	  To compile this driver as a module, choose M here: the
+-	  module will be called impd1.
+-
+ config INTEGRATOR_CM7TDMI
+ 	bool "Integrator/CM7TDMI core module"
+ 	depends on ARCH_INTEGRATOR_AP
 -- 
 2.25.1
 
