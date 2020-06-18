@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD1EA1FDDA3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:27:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB4D31FDDC6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:28:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ik4gji1gdg3JmaxrDiHGcB/Ki/lZQi0sWsNouuKa86g=; b=nX+Da6O2k6mWg2
-	rShNw+2Zge7kTCLnfQzwFFO+sgJxzTN4MbK3QKY2ZKG7s642b0k9FEcQte4ggHhiFo40P1GE8QR+k
-	YzQb9vW5LHkORGDePnjplGXGjHEAbUihTgS3H8y8HG7UFMY8dwJqHHhLmyyzeZyhUERpGQNQhTt0L
-	wOFPlnpMv70M65PxKLMeG/AWvj5TydCKNXychMRJMLW6cO0m1Qdg6cywNFPVtljUGZq9tkMi402o/
-	C4+uRUPhHa1/c9gNFt50e9S945baunGnasNJqThjuqcYez6GgpTZL9S8kWp3dEuxxEpgyvsWxPEiQ
-	et3wN7Ybuj+NeTe/8KPg==;
+	List-Owner; bh=26UvTnFO/mTUDresyib5n24JrnQqgacJYZKgu2EsACE=; b=YVGDSfcOsc7dSc
+	deGdo+z6oDCqaVYvUZUZOasY//YLtmlI9hamP6NzYRmRk2tiu6ulakLkCgz8+xod+1smzbPegmP+e
+	jilLQgz8/o63uLcd+cXhPaZjaRl3tsobo9upSl20VlaR+yAUWh5B+/b6Wt29Or3kJ7cFHlSEK7slk
+	mbKskYOQX4kpVvVL3uRbhUBmEzHuvf947WCkQBj502BgOmBp2qTqfQK4aXrtjYOw49Vxcr7Bl/T5p
+	D5xvmS40HzGb4yWAO4o5lKWZ385Y1zH5gSDykWqoWXBN85shP9GuT/HYXcmmnum224/JsmNhDyBvH
+	pxswdH1vOmMfiur1SuNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljKw-00047i-Cx; Thu, 18 Jun 2020 01:27:26 +0000
+	id 1jljLm-0004mY-TB; Thu, 18 Jun 2020 01:28:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj7F-0002jf-Eb
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:13:18 +0000
+ id 1jlj7G-0002ko-SO; Thu, 18 Jun 2020 01:13:20 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 07B9221D7E;
- Thu, 18 Jun 2020 01:13:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5479C21974;
+ Thu, 18 Jun 2020 01:13:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442796;
- bh=13GwXvTMOXsEYR0IfY7cgtgAMSISLoKBnsBmY4n0ne8=;
+ s=default; t=1592442798;
+ bh=o7jQeRpPUwhbbMSmXYLCbTuET0qoCT5C8qjj9tJ+f9g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sKWy91zrIqBODGqJloj7+6yLKiOsgbYb3vdeZnFZS04/m+7GmXDWTtLtEoewYDfEo
- YDaZZc9hLeXt25IzXqnszTk+OCwS3G9FTGmBTlSIAMoirsi06uR7bgtA+nl8eTIbcl
- RYfyf4EoGjzeJAwEGmzlXMY3SaVFQryljWviXFfQ=
+ b=sDI9CgYH/MZrcBK7yWFVhgpLodROJmMfrWux7187D+dye1yZxHtwl2wpSgpDPH4hE
+ Byiu6skEslryl71TTGAm3S6ADHmry3lZzf33sIb67tdPit4mylqUM5eVLzJEzFNpDU
+ LkJeNuiCxVuchWgGqN3eTeybNA/SH06aNpdjO0w0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 238/388] clk: samsung: exynos5433: Add
- IGNORE_UNUSED flag to sclk_i2s1
-Date: Wed, 17 Jun 2020 21:05:35 -0400
-Message-Id: <20200618010805.600873-238-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 239/388] ARM: dts: meson: Switch existing boards
+ with RGMII PHY to "rgmii-id"
+Date: Wed, 17 Jun 2020 21:05:36 -0400
+Message-Id: <20200618010805.600873-239-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,7 +49,7 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181317_570831_A1B7654B 
+X-CRM114-CacheID: sfid-20200617_181319_080146_72599E6A 
 X-CRM114-Status: GOOD (  12.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,75 +79,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Szyprowski <m.szyprowski@samsung.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-[ Upstream commit 25bdae0f1c6609ceaf55fe6700654f0be2253d8e ]
+[ Upstream commit 005231128e9e97461e81fa32421957a7664317ca ]
 
-Mark the SCLK clock for Exynos5433 I2S1 device with IGNORE_UNUSED flag to
-match its behaviour with SCLK clock for AUD_I2S (I2S0) device until
-a proper fix for Exynos I2S driver is ready.
+Let the PHY generate the RX and TX delay on the Odroid-C1 and MXIII
+Plus.
 
-This fixes the following synchronous abort issue revealed by the probe
-order change caused by the commit 93d2e4322aa7 ("of: platform: Batch
-fwnode parsing when adding all top level devices")
+Previously we did not know that these boards used an RX delay. We
+assumed that setting the TX delay on the MAC side It turns out that
+these boards also require an RX delay of 2ns (verified on Odroid-C1,
+but the u-boot code uses the same setup on both boards). Ethernet only
+worked because u-boot added this RX delay on the MAC side.
 
-Internal error: synchronous external abort: 96000210 [#1] PREEMPT SMP
-Modules linked in:
-CPU: 0 PID: 50 Comm: kworker/0:1 Not tainted 5.7.0-rc5+ #701
-Hardware name: Samsung TM2E board (DT)
-Workqueue: events deferred_probe_work_func
-pstate: 60000005 (nZCv daif -PAN -UAO)
-pc : samsung_i2s_probe+0x768/0x8f0
-lr : samsung_i2s_probe+0x688/0x8f0
-...
-Call trace:
- samsung_i2s_probe+0x768/0x8f0
- platform_drv_probe+0x50/0xa8
- really_probe+0x108/0x370
- driver_probe_device+0x54/0xb8
- __device_attach_driver+0x90/0xc0
- bus_for_each_drv+0x70/0xc8
- __device_attach+0xdc/0x140
- device_initial_probe+0x10/0x18
- bus_probe_device+0x94/0xa0
- deferred_probe_work_func+0x70/0xa8
- process_one_work+0x2a8/0x718
- worker_thread+0x48/0x470
- kthread+0x134/0x160
- ret_from_fork+0x10/0x1c
-Code: 17ffffaf d503201f f94086c0 91003000 (88dffc00)
----[ end trace ccf721c9400ddbd6 ]---
+The 4ns TX delay was also wrong and the result of using an unsupported
+RGMII TX clock divider setting. This has been fixed in the driver with
+commit bd6f48546b9cb7 ("net: stmmac: dwmac-meson8b: Fix the RGMII TX
+delay on Meson8b/8m2 SoCs").
 
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Switch to phy-mode "rgmii-id" to let the PHY side handle all the delays,
+(as recommended by the Ethernet maintainers anyways) to correctly
+describe the need for a 2ns RX as well as 2ns TX delay on these boards.
+This fixes the Ethernet performance on Odroid-C1 where there was a huge
+amount of packet loss when transmitting data due to the incorrect TX
+delay.
+
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+Link: https://lore.kernel.org/r/20200512215148.540322-3-martin.blumenstingl@googlemail.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/samsung/clk-exynos5433.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/meson8b-odroidc1.dts    | 3 +--
+ arch/arm/boot/dts/meson8m2-mxiii-plus.dts | 4 +---
+ 2 files changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/samsung/clk-exynos5433.c b/drivers/clk/samsung/clk-exynos5433.c
-index 4b1aa9382ad2..6f29ecd0442e 100644
---- a/drivers/clk/samsung/clk-exynos5433.c
-+++ b/drivers/clk/samsung/clk-exynos5433.c
-@@ -1706,7 +1706,8 @@ static const struct samsung_gate_clock peric_gate_clks[] __initconst = {
- 	GATE(CLK_SCLK_PCM1, "sclk_pcm1", "sclk_pcm1_peric",
- 			ENABLE_SCLK_PERIC, 7, CLK_SET_RATE_PARENT, 0),
- 	GATE(CLK_SCLK_I2S1, "sclk_i2s1", "sclk_i2s1_peric",
--			ENABLE_SCLK_PERIC, 6, CLK_SET_RATE_PARENT, 0),
-+			ENABLE_SCLK_PERIC, 6,
-+			CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED, 0),
- 	GATE(CLK_SCLK_SPI2, "sclk_spi2", "sclk_spi2_peric", ENABLE_SCLK_PERIC,
- 			5, CLK_SET_RATE_PARENT, 0),
- 	GATE(CLK_SCLK_SPI1, "sclk_spi1", "sclk_spi1_peric", ENABLE_SCLK_PERIC,
+diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts b/arch/arm/boot/dts/meson8b-odroidc1.dts
+index a2a47804fc4a..cb21ac9f517c 100644
+--- a/arch/arm/boot/dts/meson8b-odroidc1.dts
++++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
+@@ -202,9 +202,8 @@ &ethmac {
+ 	pinctrl-0 = <&eth_rgmii_pins>;
+ 	pinctrl-names = "default";
+ 
+-	phy-mode = "rgmii";
+ 	phy-handle = <&eth_phy>;
+-	amlogic,tx-delay-ns = <4>;
++	phy-mode = "rgmii-id";
+ 
+ 	nvmem-cells = <&ethernet_mac_address>;
+ 	nvmem-cell-names = "mac-address";
+diff --git a/arch/arm/boot/dts/meson8m2-mxiii-plus.dts b/arch/arm/boot/dts/meson8m2-mxiii-plus.dts
+index d54477b1001c..cc498191ddd1 100644
+--- a/arch/arm/boot/dts/meson8m2-mxiii-plus.dts
++++ b/arch/arm/boot/dts/meson8m2-mxiii-plus.dts
+@@ -69,9 +69,7 @@ &ethmac {
+ 	pinctrl-names = "default";
+ 
+ 	phy-handle = <&eth_phy0>;
+-	phy-mode = "rgmii";
+-
+-	amlogic,tx-delay-ns = <4>;
++	phy-mode = "rgmii-id";
+ 
+ 	mdio {
+ 		compatible = "snps,dwmac-mdio";
 -- 
 2.25.1
 
