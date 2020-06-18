@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A7A01FE2F8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:05:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E9B01FE2FA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:06:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ISmjeLqxd6E8hN9oImc7KaXyk0zxXfLXRHUeJs2HLKk=; b=oVL52RU22+3hsw
-	T4We0Ik5SzV5TTn3dNLt711gtl53+XneNjtbGn8uBjcGZvg94EICnGGKG3eWnOgkHj4H3sWmapl7F
-	dtqBTmya/kEeqywAMzOaQOglA+acvPEVr2l6YIA/C+ubAnEMw2qB5G/gmlQobSJwDWXUouttnGTwb
-	/GcYMcmM2CVX2B0HLBnQw1g13iUPVwngtqxx8/cbdo6ywUC8H4B5ZBc6YvSeZ5cpWGRLv1DaLLuY1
-	nE/JlFIVBIg4r2BKQVPv0SUYMytJHN+vOEL1sYsGvfpY2B/Ffj2zJioyaIfywmGPjGQDRTA8LsXJl
-	7kDE5Oeq2hAeGXTBZhyA==;
+	List-Owner; bh=RI1Lh2lL+j/DSOspRcMt5v66f+Hah8PWz4o5zUMB+ZY=; b=laHwVCZ1ZkNm1R
+	e6QPGLOmytv9HqDer6/fFHNvZxJ1Ew1wXyUXg/uop+T1d1NCF8q2/PNWCkDbKKd1UEuZc727GMY21
+	XwxnEhlNDeRJLhc6xRJwUAJnl5dcyYGGMNYdOAjZ8hK77SvR0tXGtNyrnItMFTSHt6AAh03RwDOJ8
+	z7La3ZsmBsop98cL4eQv62dMiO+j/pnBlECFl8AkS9f+wCLd8Z4zvZK6+eYC0dACQXuea3PUW2CMH
+	Z4WbmZeUvuVDgWgFeptQ21Ucx3ZC4AhLjRgvlBDMvHk9KLNf8zImOgsbkc5ExhKLVHFMRtffyLuc1
+	cEQEd4ldpzYwysRUlMGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljvt-0005Kh-2j; Thu, 18 Jun 2020 02:05:37 +0000
+	id 1jljwJ-0005as-1S; Thu, 18 Jun 2020 02:06:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljNJ-0006Ig-QS
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:29:55 +0000
+ id 1jljNU-0006Xh-Bf
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:30:20 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 68B772224B;
- Thu, 18 Jun 2020 01:29:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D9ED322248;
+ Thu, 18 Jun 2020 01:30:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443793;
- bh=d8qrNxiJ5pT/MSaN6ds/NnYwzajL2zhxp4yLqKg+Jnw=;
+ s=default; t=1592443803;
+ bh=w1Fn5hNivPkHo01+vQNRBChxXLG0OTgTaZXmGrUOtNM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=igLJjaQMl8tOz2tArpv1xwVOCXoc6FGdK5V6hiutgihZz5ECEzyh17Uh/FmIaJO1i
- D9+xdW0K5Hp4dxoF4m685lIZshGkD74jGqPj1tIMStBULnTUAbhWIRfyQrnVhZFtOL
- /dON055HIN4EzXru7l27012+dXFVRdqZoR+PA8tw=
+ b=KlgfPZLdxSDFYu8SeTT1Ib3nhc16eSB2f8t4n/iohEpLA/xVTosLoclBM2AuYz5DV
+ tyKmwc8yJBndkYDP9Oy/zLAv8PhgeDFO1R2wOwhJRpcTNNqWu1ud9hLveertlschci
+ Q/hM20jOdL1QI8gbBdt6o8628U2g4hpzj515bask=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 73/80] pinctrl: imxl: Fix an error handling path
- in 'imx1_pinctrl_core_probe()'
-Date: Wed, 17 Jun 2020 21:28:12 -0400
-Message-Id: <20200618012819.609778-73-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 80/80] scsi: acornscsi: Fix an error handling path
+ in acornscsi_probe()
+Date: Wed, 17 Jun 2020 21:28:19 -0400
+Message-Id: <20200618012819.609778-80-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012819.609778-1-sashal@kernel.org>
 References: <20200618012819.609778-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182954_063759_43153852 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20200617_183004_499315_3E9F8A4F 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,10 +80,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-gpio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
+Cc: Sasha Levin <sashal@kernel.org>,
  Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>, linux-scsi@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -91,34 +91,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
-[ Upstream commit 9eb728321286c4b31e964d2377fca2368526d408 ]
+[ Upstream commit 42c76c9848e13dbe0538d7ae0147a269dfa859cb ]
 
-When 'pinctrl_register()' has been turned into 'devm_pinctrl_register()',
-an error handling path has not been updated.
+'ret' is known to be 0 at this point.  Explicitly return -ENOMEM if one of
+the 'ecardm_iomap()' calls fail.
 
-Axe a now unneeded 'pinctrl_unregister()'.
-
-Fixes: e55e025d1687 ("pinctrl: imxl: Use devm_pinctrl_register() for pinctrl registration")
+Link: https://lore.kernel.org/r/20200530081622.577888-1-christophe.jaillet@wanadoo.fr
+Fixes: e95a1b656a98 ("[ARM] rpc: acornscsi: update to new style ecard driver")
 Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Link: https://lore.kernel.org/r/20200530201952.585798-1-christophe.jaillet@wanadoo.fr
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/freescale/pinctrl-imx1-core.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/scsi/arm/acornscsi.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/pinctrl/freescale/pinctrl-imx1-core.c b/drivers/pinctrl/freescale/pinctrl-imx1-core.c
-index e2cca91fd266..68108c4c3969 100644
---- a/drivers/pinctrl/freescale/pinctrl-imx1-core.c
-+++ b/drivers/pinctrl/freescale/pinctrl-imx1-core.c
-@@ -642,7 +642,6 @@ int imx1_pinctrl_core_probe(struct platform_device *pdev,
+diff --git a/drivers/scsi/arm/acornscsi.c b/drivers/scsi/arm/acornscsi.c
+index 12b88294d667..76ad20e49126 100644
+--- a/drivers/scsi/arm/acornscsi.c
++++ b/drivers/scsi/arm/acornscsi.c
+@@ -2913,8 +2913,10 @@ static int acornscsi_probe(struct expansion_card *ec, const struct ecard_id *id)
  
- 	ret = of_platform_populate(pdev->dev.of_node, NULL, NULL, &pdev->dev);
- 	if (ret) {
--		pinctrl_unregister(ipctl->pctl);
- 		dev_err(&pdev->dev, "Failed to populate subdevices\n");
- 		return ret;
- 	}
+ 	ashost->base = ecardm_iomap(ec, ECARD_RES_MEMC, 0, 0);
+ 	ashost->fast = ecardm_iomap(ec, ECARD_RES_IOCFAST, 0, 0);
+-	if (!ashost->base || !ashost->fast)
++	if (!ashost->base || !ashost->fast) {
++		ret = -ENOMEM;
+ 		goto out_put;
++	}
+ 
+ 	host->irq = ec->irq;
+ 	ashost->host = host;
 -- 
 2.25.1
 
