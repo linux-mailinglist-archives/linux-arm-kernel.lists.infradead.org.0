@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 699451FE0B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:50:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EE1C1FE0CB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:50:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KyXgdAT/65W3grYMqJwI2NINm8gmM7pU6rMUEk2MBBM=; b=odauzSLtCoD9me
-	sAheXFcBKGkUbtal/EJYNjAYU1J7tUKgm2TM3mbThwVuu46XLj62td/87uFK10mb4ctOmFYwsWElT
-	LJK3FDmxi20Dc4vACLg3EJ3uSsgTvopnY5hHT5NsZD0X1Qg/uYOaPsMzIoLOjdjK3J6mjZJtDWbiV
-	+P1wYWurOLeNEpevJNMthtHRJ5UKWym4aEuhP04/ksaWWyl1yYhjk1kH5/nOeKReSXsszqCzRvC0C
-	4UXVgAwZZxZCBZyGlrNIjprP3tFJ/FDvAV+mVe2cbsqtQEXH5kTIjgPfF40h2/Caxag4TjM9aBB9o
-	dPDedXHCvsb87uKq130Q==;
+	List-Owner; bh=lpoRhbyqQu1soN8evzAQu2mPEV+04foYIWP6FcaooyU=; b=HGdHkVdGa51L7j
+	ITkHgRYwjh4Pr8P+AD52EKbsYe+a++xRMre5tYZ77Q3HuV2AqG+yvKS36mIzK+keIIfXKOZM6Ywb4
+	KWgIRfNXsztsB/ITEeBB2WFNvlxHcGWvEjpWWQhLHwZdCj6gfmTuDv87EydjpTSBF8X4gzOB8QXDo
+	h2oW0wg9++HandhUDf3GQdEJ6MwwIT5j4VK5x94zCXqKLhpE+PaBXzK1tcvuq0QDA9COfveqira/s
+	IWOSCXVByjiWjR9aqfdEEkan4+6uqkiUY7rXEjr9/rb5cLrQq+daJj1VDTiJ3BOMaHqt9hScXjnp6
+	w2w6i4I/59pgnkN5EIjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljh0-0008DV-8s; Thu, 18 Jun 2020 01:50:14 +0000
+	id 1jljhV-0002QX-Gc; Thu, 18 Jun 2020 01:50:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljEo-0004ox-MC
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:21:12 +0000
+ id 1jljEz-0004wt-Gt; Thu, 18 Jun 2020 01:21:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4DDD520CC7;
- Thu, 18 Jun 2020 01:21:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B82C320663;
+ Thu, 18 Jun 2020 01:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443266;
- bh=IgNxQZbR1gZR1QJHVrko2DBUykRdC1v95tFrjcV+KKg=;
+ s=default; t=1592443276;
+ bh=q6q9H6WERydXHsFxXw1t9PgwznLXrB3iVaZ9haQcOfM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=heBrRSHOPQlgBCPnpPXwELFQIzOzfLJ5nreX9BN+AVIOgzFYWQUPa7ZVek3TWOa6Z
- JRsCpYSQ2R3uTWuM04ehFsZZX9UCiQDIskBNRYKLP9lI22uhg9/Finqlv5rcywdkwC
- blIoI+ZjfddqQR8Ani1GouMk+R1c78Iojhz1RdlQ=
+ b=EZ0xpsx/Mv4pcImlFnqg9BfLYgHWQUT6ett+poa7ock36vRBOOLi007kYzoiCnnSr
+ LcnFUyTTdzmUXkebAxkqWrNOqWMMZmQ7jl9RgOtPYBRtu0g57sLRLsweHix70nY65J
+ U5xuEsyZ3Hrd7v+nbEV7+Qr5G4O74Y47CjhoOt7k=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 212/266] mailbox: zynqmp-ipi: Fix NULL vs IS_ERR()
- check in zynqmp_ipi_mbox_probe()
-Date: Wed, 17 Jun 2020 21:15:37 -0400
-Message-Id: <20200618011631.604574-212-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 221/266] scsi: ufs: Don't update urgent bkops
+ level when toggling auto bkops
+Date: Wed, 17 Jun 2020 21:15:46 -0400
+Message-Id: <20200618011631.604574-221-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618011631.604574-1-sashal@kernel.org>
 References: <20200618011631.604574-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182106_843512_3B55D627 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20200617_182117_676691_E64E2133 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,85 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Jassi Brar <jaswinder.singh@linaro.org>,
- Wei Yongjun <weiyongjun1@huawei.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-scsi@vger.kernel.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>,
+ Can Guo <cang@codeaurora.org>, linux-mediatek@lists.infradead.org,
+ Stanley Chu <stanley.chu@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Wei Yongjun <weiyongjun1@huawei.com>
+From: Can Guo <cang@codeaurora.org>
 
-[ Upstream commit 445aeeb569f8d7904f8cf80b7c6826bb651ef80e ]
+[ Upstream commit be32acff43800c87dc5c707f5d47cc607b76b653 ]
 
-In case of error, the function devm_ioremap() returns NULL pointer not
-ERR_PTR(). So we should check whether the return value of devm_ioremap()
-is NULL instead of IS_ERR.
+Urgent bkops level is used to compare against actual bkops status read from
+UFS device. Urgent bkops level is set during initialization and might be
+updated in exception event handler during runtime. But it should not be
+updated to the actual bkops status every time when auto bkops is toggled.
+Otherwise, if urgent bkops level is updated to 0, auto bkops shall always
+be kept enabled.
 
-Fixes: 4981b82ba2ff ("mailbox: ZynqMP IPI mailbox controller")
-Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
-Signed-off-by: Jassi Brar <jaswinder.singh@linaro.org>
+Link: https://lore.kernel.org/r/1590632686-17866-1-git-send-email-cang@codeaurora.org
+Fixes: 24366c2afbb0 ("scsi: ufs: Recheck bkops level if bkops is disabled")
+Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
+Signed-off-by: Can Guo <cang@codeaurora.org>
+Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/mailbox/zynqmp-ipi-mailbox.c | 20 ++++++++------------
- 1 file changed, 8 insertions(+), 12 deletions(-)
+ drivers/scsi/ufs/ufshcd.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/mailbox/zynqmp-ipi-mailbox.c b/drivers/mailbox/zynqmp-ipi-mailbox.c
-index 86887c9a349a..f9cc674ba9b7 100644
---- a/drivers/mailbox/zynqmp-ipi-mailbox.c
-+++ b/drivers/mailbox/zynqmp-ipi-mailbox.c
-@@ -504,10 +504,9 @@ static int zynqmp_ipi_mbox_probe(struct zynqmp_ipi_mbox *ipi_mbox,
- 		mchan->req_buf_size = resource_size(&res);
- 		mchan->req_buf = devm_ioremap(mdev, res.start,
- 					      mchan->req_buf_size);
--		if (IS_ERR(mchan->req_buf)) {
-+		if (!mchan->req_buf) {
- 			dev_err(mdev, "Unable to map IPI buffer I/O memory\n");
--			ret = PTR_ERR(mchan->req_buf);
--			return ret;
-+			return -ENOMEM;
- 		}
- 	} else if (ret != -ENODEV) {
- 		dev_err(mdev, "Unmatched resource %s, %d.\n", name, ret);
-@@ -520,10 +519,9 @@ static int zynqmp_ipi_mbox_probe(struct zynqmp_ipi_mbox *ipi_mbox,
- 		mchan->resp_buf_size = resource_size(&res);
- 		mchan->resp_buf = devm_ioremap(mdev, res.start,
- 					       mchan->resp_buf_size);
--		if (IS_ERR(mchan->resp_buf)) {
-+		if (!mchan->resp_buf) {
- 			dev_err(mdev, "Unable to map IPI buffer I/O memory\n");
--			ret = PTR_ERR(mchan->resp_buf);
--			return ret;
-+			return -ENOMEM;
- 		}
- 	} else if (ret != -ENODEV) {
- 		dev_err(mdev, "Unmatched resource %s.\n", name);
-@@ -543,10 +541,9 @@ static int zynqmp_ipi_mbox_probe(struct zynqmp_ipi_mbox *ipi_mbox,
- 		mchan->req_buf_size = resource_size(&res);
- 		mchan->req_buf = devm_ioremap(mdev, res.start,
- 					      mchan->req_buf_size);
--		if (IS_ERR(mchan->req_buf)) {
-+		if (!mchan->req_buf) {
- 			dev_err(mdev, "Unable to map IPI buffer I/O memory\n");
--			ret = PTR_ERR(mchan->req_buf);
--			return ret;
-+			return -ENOMEM;
- 		}
- 	} else if (ret != -ENODEV) {
- 		dev_err(mdev, "Unmatched resource %s.\n", name);
-@@ -559,10 +556,9 @@ static int zynqmp_ipi_mbox_probe(struct zynqmp_ipi_mbox *ipi_mbox,
- 		mchan->resp_buf_size = resource_size(&res);
- 		mchan->resp_buf = devm_ioremap(mdev, res.start,
- 					       mchan->resp_buf_size);
--		if (IS_ERR(mchan->resp_buf)) {
-+		if (!mchan->resp_buf) {
- 			dev_err(mdev, "Unable to map IPI buffer I/O memory\n");
--			ret = PTR_ERR(mchan->resp_buf);
--			return ret;
-+			return -ENOMEM;
- 		}
- 	} else if (ret != -ENODEV) {
- 		dev_err(mdev, "Unmatched resource %s.\n", name);
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index bc73181b0405..2b6853c7375c 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -5101,7 +5101,6 @@ static int ufshcd_bkops_ctrl(struct ufs_hba *hba,
+ 		err = ufshcd_enable_auto_bkops(hba);
+ 	else
+ 		err = ufshcd_disable_auto_bkops(hba);
+-	hba->urgent_bkops_lvl = curr_status;
+ out:
+ 	return err;
+ }
 -- 
 2.25.1
 
