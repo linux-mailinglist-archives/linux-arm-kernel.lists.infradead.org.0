@@ -2,37 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C82E1FEDCC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:38:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F1351FEDCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:39:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ygEemtLZLQ3IMJyXchMQKMqzj4xck+JwjQoIjvzuQ74=; b=q+8
-	M0vWmeDyR1ta/ytncg4GJdrHwwHBeHmIrEsrBNhzFggVwc9lUm0YHfhukm8+XCt7e95tAoYQ0K80p
-	/x4WtYBgKL+GJ25aFjlzDXeEcd2RAu4jwwqMJE95yt6DAeiWnRXfa37VLbpZn3UKrAwOFz+ek349k
-	1cP1oWOM8lpqwwLl9gS39bwvZdMJfeB7NNaFOx9zJcyXmJ4wb7Qhf5WSpiXjFAjD3AbMiY66bvSLL
-	rdlIn61ZjCPAjtI01x1i/K4fVIImLFVLmf4yXHy8CD1qC8OLxlyuDoFEX5+rs/0Zt9FthDZYzULXp
-	f0ML57tFPQEvVCDgOruW4iBmcBFYOig==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xiVw2mQVZlPB0td0X1thucqkzWT22l9o3YiVKUeofdI=; b=AVHzjJ/+EikmuKSvAJSWCiSvwj
+	zbgKaT3k7m7/OgXHNOkDnmot6YE4iye2OuAFqXzlvg10KjmvFdTkE2p7US6sG2oTORSJrEBRMd/Ji
+	6lw9ORCvEJdVdZ1pPjfSvyzIZV+urSBnxU+hdVxklQDNNh4Ebewdy6IsDc5Tu0W6NL0WxMLCpg6Xu
+	LPowLXPScTRgA3P8nrMRQYuX54Y6a6F9qaAjbz/tT+gjYfYsjH/H9yv8WKthu+cKHoEjcrlYZgMn2
+	PpX7nitj5rAjLsq7ecrd41BMZxt0/l8SANqM+KBKSaLI2iVryQAGAKQMpZHgd0TlApDIr/dPAdNdo
+	HQ5vCbGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlq4F-0002YW-7f; Thu, 18 Jun 2020 08:38:39 +0000
+	id 1jlq4p-0002yP-Gm; Thu, 18 Jun 2020 08:39:15 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlq42-0002Vt-DA
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:38:27 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 18 Jun 2020 17:38:23 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 4B19960066;
- Thu, 18 Jun 2020 17:38:23 +0900 (JST)
+ id 1jlq43-0002Wn-Or
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:38:29 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 18 Jun 2020 17:38:24 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 528D6180B51;
+ Thu, 18 Jun 2020 17:38:24 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Thu, 18 Jun 2020 17:38:23 +0900
+ Thu, 18 Jun 2020 17:38:24 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id D588B1A12AD;
- Thu, 18 Jun 2020 17:38:22 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id D09501A12AD;
+ Thu, 18 Jun 2020 17:38:23 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
@@ -41,14 +42,15 @@ To: Bjorn Helgaas <bhelgaas@google.com>,
  Rob Herring <robh+dt@kernel.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
  Marc Zyngier <maz@kernel.org>
-Subject: [PATCH v5 0/6] PCI: uniphier: Add features for UniPhier PCIe host
- controller
-Date: Thu, 18 Jun 2020 17:38:07 +0900
-Message-Id: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v5 1/6] PCI: dwc: Add msi_host_isr() callback
+Date: Thu, 18 Jun 2020 17:38:08 +0900
+Message-Id: <1592469493-1549-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1592469493-1549-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_013826_563604_02EF3AE4 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20200618_013827_932338_09106758 
+X-CRM114-Status: GOOD (  16.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,51 +80,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds some features for UniPhier PCIe host controller.
+This adds msi_host_isr() callback function support to describe
+SoC-dependent service triggered by MSI.
 
-- Add support for PME and AER invoked by MSI interrupt
-- Add iATU register view support for PCIe version >= 4.80
-- Add an error message when failing to get phy driver
+For example, when AER interrupt is triggered by MSI, the callback function
+reads SoC-dependent registers and detects that the interrupt is from AER,
+and invoke AER interrupts related to MSI.
 
-This adds a new function called by MSI handler in DesignWare PCIe framework,
-that invokes PME and AER funcions to detect the factor from SoC-dependent
-registers.
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Jingoo Han <jingoohan1@gmail.com>
+Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+---
+ drivers/pci/controller/dwc/pcie-designware-host.c | 3 +++
+ drivers/pci/controller/dwc/pcie-designware.h      | 1 +
+ 2 files changed, 4 insertions(+)
 
-Changes since v4:
-- Add Acked-by: line to dwc patch
-
-Changes since v3:
-- Move msi_host_isr() call into dw_handle_msi_irq()
-- Move uniphier_pcie_misc_isr() call into the guard of chained_irq
-- Use a bool argument is_msi instead of pci_msi_enabled()
-- Consolidate handler calls for the same interrupt
-- Fix typos in commit messages
-
-Changes since v2:
-- Avoid printing phy error message in case of EPROBE_DEFER
-- Fix iATU register mapping method
-- dt-bindings: Add Acked-by: line
-- Fix typos in commit messages
-- Use devm_platform_ioremap_resource_byname()
-
-Changes since v1:
-- Add check if struct resource is NULL
-- Fix warning in the type of dev_err() argument
-
-Kunihiko Hayashi (6):
-  PCI: dwc: Add msi_host_isr() callback
-  PCI: uniphier: Add misc interrupt handler to invoke PME and AER
-  dt-bindings: PCI: uniphier: Add iATU register description
-  PCI: uniphier: Add iATU register support
-  PCI: uniphier: Add error message when failed to get phy
-  PCI: uniphier: Use devm_platform_ioremap_resource_byname()
-
- .../devicetree/bindings/pci/uniphier-pcie.txt      |  1 +
- drivers/pci/controller/dwc/pcie-designware-host.c  |  3 +
- drivers/pci/controller/dwc/pcie-designware.h       |  1 +
- drivers/pci/controller/dwc/pcie-uniphier.c         | 73 +++++++++++++++++-----
- 4 files changed, 63 insertions(+), 15 deletions(-)
-
+diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+index 0a4a5aa..026edb1 100644
+--- a/drivers/pci/controller/dwc/pcie-designware-host.c
++++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+@@ -83,6 +83,9 @@ irqreturn_t dw_handle_msi_irq(struct pcie_port *pp)
+ 	u32 status, num_ctrls;
+ 	irqreturn_t ret = IRQ_NONE;
+ 
++	if (pp->ops->msi_host_isr)
++		pp->ops->msi_host_isr(pp);
++
+ 	num_ctrls = pp->num_vectors / MAX_MSI_IRQS_PER_CTRL;
+ 
+ 	for (i = 0; i < num_ctrls; i++) {
+diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
+index 656e00f..e741967 100644
+--- a/drivers/pci/controller/dwc/pcie-designware.h
++++ b/drivers/pci/controller/dwc/pcie-designware.h
+@@ -170,6 +170,7 @@ struct dw_pcie_host_ops {
+ 	void (*scan_bus)(struct pcie_port *pp);
+ 	void (*set_num_vectors)(struct pcie_port *pp);
+ 	int (*msi_host_init)(struct pcie_port *pp);
++	void (*msi_host_isr)(struct pcie_port *pp);
+ };
+ 
+ struct pcie_port {
 -- 
 2.7.4
 
