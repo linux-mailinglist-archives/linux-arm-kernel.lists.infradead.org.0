@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 791B11FDC30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:17:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 700721FDC33
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:18:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cddPiPsoJ9SXnB1rQPGD1Y7kmmY8nCb4srYlWOpKW+s=; b=bBexbHB/qA0bRt
-	6L8RNPVyPVUPC/WAjgfExI2pKECEM08xLFtAqVKHmEGvOwtla+SSBGxSmf/q/pXTz7fcb1vqYy8bL
-	Ea7SCPSS/yhoBq7oQ4uc8p0nMrTNPBvIUH9uVWk+I0tc3ftywTUhP0Ek+A4crDPW+pO1NnBmlcwd3
-	lwA5ONWswECHVYJYBmCmVdTloH4ygSB9YmsVEEDVDUyt1Na6JJO/JpC8DtiNnbfChddtLNYEYiyMz
-	j7q8PtMOJGPqcaJFILKB85B3a0h20JFFtiV1Dtu4VdpKkvKlQty7NZgZe00d9CIBjMPbmTUpPZCVK
-	tHjZ56l85n6/t7JN12sA==;
+	List-Owner; bh=i8wbLEFyar8/KWPB6MZG/9FsO9JBlT0ZaUfygOkKgao=; b=LuI3xsFSES1bU8
+	ayrofd2q6HruS9BUWA8hw0dhNdcFfBd+yLmyOV2dS3coigu00cWWiZLWhg3VeKLDTRnzlQr2D1uzB
+	6bZhrzQ4gHZwxZFKLUkbzMDYwJzFnUo+dqK2sgL6NFmcbC7q7RmuJ4ZOosU1DQS8yZlAdOAma0KuU
+	JFEd4BuZjsn64wEHdynXM95DeugtMnB16Eoy0kriz2+9SGUt0+3nx5m3qDGl+6qnbicVp/awtT+Db
+	yjUwLC/bru75T72lDL1Bu+rQ4idVODDuzVruUp+v0p4rcVXm/okQKKv/M19ADfQy6jYjd/DpJnk8G
+	h+E3eOtQRtiz+BBqa7Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljBQ-0007yw-EJ; Thu, 18 Jun 2020 01:17:36 +0000
+	id 1jljBo-0008JB-7l; Thu, 18 Jun 2020 01:18:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj4i-0000Tc-GI; Thu, 18 Jun 2020 01:10:42 +0000
+ id 1jlj4m-0000XL-DV; Thu, 18 Jun 2020 01:10:47 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 588E921924;
- Thu, 18 Jun 2020 01:10:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 340CF221FA;
+ Thu, 18 Jun 2020 01:10:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442640;
- bh=PAdD7kghUO96P8C/+xHGK6WZnHxci/xvKvwN8bHF4cg=;
+ s=default; t=1592442644;
+ bh=+M0W5qBbHTPjU1IEEobOMiZujG9hxISML1JRsZPtPdA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mLc5w3+yDpQAL+KGPxE7ggQNKTgObHywR4xeebhOMC8hhaZirFwG0wadLuvVxaDYc
- M1Gza333BkZQuEmwXcR6rlTtqKAichzRaQ11yIbiJoTjlKA1bj92iINELPuYX5+g4O
- zuNq9icmvcQSpNjciUoz6XlpA/oQZ6AYSbOMQOdk=
+ b=vd2uZbKD2Ul2FKiwxWd9kVMVRRMFSqEDDPIakzR+makaXrgofbbgRDfD+goyngmcF
+ TQXyzQYF8lsF/xKT3pANXNjeB8VrZw84W6Skx0a2K8iOWmfZ1QguS8gTEkJ5ERu7iv
+ tdCahUV5W9ZRZUil2ALTAnjxooetfwPaEQG8h1Uw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 115/388] arm64: dts: realtek: rtd129x: Fix GIC CPU
- masks for RTD1293
-Date: Wed, 17 Jun 2020 21:03:32 -0400
-Message-Id: <20200618010805.600873-115-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 118/388] staging: mt7621-pci: fix PCIe interrupt
+ mapping
+Date: Wed, 17 Jun 2020 21:03:35 -0400
+Message-Id: <20200618010805.600873-118-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181040_603204_4F63E617 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200617_181044_529950_F6E0B6E0 
+X-CRM114-Status: GOOD (  15.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,73 +79,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
- linux-arm-kernel@lists.infradead.org, linux-realtek-soc@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgoKWyBVcHN0cmVhbSBjb21t
-aXQgMzE4ODhjOGJlMTQ4NmRhZjJjMzRiYTZjNTgxMjk2MzVlNDlkNTY0YSBdCgpDb252ZXJ0IGZy
-b20gR0lDX0NQVV9NQVNLX1JBVygpIHRvIEdJQ19DUFVfTUFTS19TSU1QTEUoKS4KCkluIGNhc2Ug
-b2YgUlREMTI5MyBhZGp1c3QgdGhlIGFyY2ggdGltZXIgYW5kIFZHSUMgaW50ZXJydXB0cycKQ1BV
-IG1hc2tzIHRvIGl0cyBzbWFsbGVyIG51bWJlciBvZiBDUFVzLgoKRml4ZXM6IGNmOTc2ZjY2MGVl
-OCAoImFybTY0OiBkdHM6IHJlYWx0ZWs6IEFkZCBSVEQxMjkzIGFuZCBTeW5vbG9neSBEUzQxOGoi
-KQpTaWduZWQtb2ZmLWJ5OiBBbmRyZWFzIEbDpHJiZXIgPGFmYWVyYmVyQHN1c2UuZGU+ClNpZ25l
-ZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxAa2VybmVsLm9yZz4KLS0tCiBhcmNoL2FybTY0
-L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5My5kdHNpIHwgMTIgKysrKysrKystLS0tCiBhcmNoL2Fy
-bTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5NS5kdHNpIHwgIDggKysrKy0tLS0KIGFyY2gvYXJt
-NjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjk2LmR0c2kgfCAgOCArKysrLS0tLQogMyBmaWxlcyBj
-aGFuZ2VkLCAxNiBpbnNlcnRpb25zKCspLCAxMiBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9h
-cmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5My5kdHNpIGIvYXJjaC9hcm02NC9ib290
-L2R0cy9yZWFsdGVrL3J0ZDEyOTMuZHRzaQppbmRleCBiZDRlMjI3MjNmN2IuLjJkOTJiNTZhYzk0
-ZCAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOTMuZHRzaQor
-KysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5My5kdHNpCkBAIC0zNiwxNiAr
-MzYsMjAgQEAgbDI6IGwyLWNhY2hlIHsKIAl0aW1lciB7CiAJCWNvbXBhdGlibGUgPSAiYXJtLGFy
-bXY4LXRpbWVyIjsKIAkJaW50ZXJydXB0cyA9IDxHSUNfUFBJIDEzCi0JCQkoR0lDX0NQVV9NQVNL
-X1JBVygweGYpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT4sCisJCQkoR0lDX0NQVV9NQVNLX1NJTVBM
-RSgyKSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+LAogCQkJICAgICA8R0lDX1BQSSAxNAotCQkJKEdJ
-Q19DUFVfTUFTS19SQVcoMHhmKSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+LAorCQkJKEdJQ19DUFVf
-TUFTS19TSU1QTEUoMikgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPiwKIAkJCSAgICAgPEdJQ19QUEkg
-MTEKLQkJCShHSUNfQ1BVX01BU0tfUkFXKDB4ZikgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPiwKKwkJ
-CShHSUNfQ1BVX01BU0tfU0lNUExFKDIpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT4sCiAJCQkgICAg
-IDxHSUNfUFBJIDEwCi0JCQkoR0lDX0NQVV9NQVNLX1JBVygweGYpIHwgSVJRX1RZUEVfTEVWRUxf
-TE9XKT47CisJCQkoR0lDX0NQVV9NQVNLX1NJTVBMRSgyKSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+
-OwogCX07CiB9OwogCiAmYXJtX3BtdSB7CiAJaW50ZXJydXB0LWFmZmluaXR5ID0gPCZjcHUwPiwg
-PCZjcHUxPjsKIH07CisKKyZnaWMgeworCWludGVycnVwdHMgPSA8R0lDX1BQSSA5IChHSUNfQ1BV
-X01BU0tfU0lNUExFKDIpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT47Cit9OwpkaWZmIC0tZ2l0IGEv
-YXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOTUuZHRzaSBiL2FyY2gvYXJtNjQvYm9v
-dC9kdHMvcmVhbHRlay9ydGQxMjk1LmR0c2kKaW5kZXggOTNmMGUxZDk3NzIxLi4zNGY2Y2M2ZjE2
-ZmUgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjk1LmR0c2kK
-KysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOTUuZHRzaQpAQCAtNjEsMTMg
-KzYxLDEzIEBAIHRlZUAxMDEwMDAwMCB7CiAJdGltZXIgewogCQljb21wYXRpYmxlID0gImFybSxh
-cm12OC10aW1lciI7CiAJCWludGVycnVwdHMgPSA8R0lDX1BQSSAxMwotCQkJKEdJQ19DUFVfTUFT
-S19SQVcoMHhmKSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+LAorCQkJKEdJQ19DUFVfTUFTS19TSU1Q
-TEUoNCkgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPiwKIAkJCSAgICAgPEdJQ19QUEkgMTQKLQkJCShH
-SUNfQ1BVX01BU0tfUkFXKDB4ZikgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPiwKKwkJCShHSUNfQ1BV
-X01BU0tfU0lNUExFKDQpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT4sCiAJCQkgICAgIDxHSUNfUFBJ
-IDExCi0JCQkoR0lDX0NQVV9NQVNLX1JBVygweGYpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT4sCisJ
-CQkoR0lDX0NQVV9NQVNLX1NJTVBMRSg0KSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+LAogCQkJICAg
-ICA8R0lDX1BQSSAxMAotCQkJKEdJQ19DUFVfTUFTS19SQVcoMHhmKSB8IElSUV9UWVBFX0xFVkVM
-X0xPVyk+OworCQkJKEdJQ19DUFVfTUFTS19TSU1QTEUoNCkgfCBJUlFfVFlQRV9MRVZFTF9MT1cp
-PjsKIAl9OwogfTsKIApkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0
-ZDEyOTYuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjk2LmR0c2kKaW5k
-ZXggMGY5ZTU5Y2FjMDg2Li5mYjg2NGExMzljOTcgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQvYm9v
-dC9kdHMvcmVhbHRlay9ydGQxMjk2LmR0c2kKKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFs
-dGVrL3J0ZDEyOTYuZHRzaQpAQCAtNTAsMTMgKzUwLDEzIEBAIGwyOiBsMi1jYWNoZSB7CiAJdGlt
-ZXIgewogCQljb21wYXRpYmxlID0gImFybSxhcm12OC10aW1lciI7CiAJCWludGVycnVwdHMgPSA8
-R0lDX1BQSSAxMwotCQkJKEdJQ19DUFVfTUFTS19SQVcoMHhmKSB8IElSUV9UWVBFX0xFVkVMX0xP
-Vyk+LAorCQkJKEdJQ19DUFVfTUFTS19TSU1QTEUoNCkgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPiwK
-IAkJCSAgICAgPEdJQ19QUEkgMTQKLQkJCShHSUNfQ1BVX01BU0tfUkFXKDB4ZikgfCBJUlFfVFlQ
-RV9MRVZFTF9MT1cpPiwKKwkJCShHSUNfQ1BVX01BU0tfU0lNUExFKDQpIHwgSVJRX1RZUEVfTEVW
-RUxfTE9XKT4sCiAJCQkgICAgIDxHSUNfUFBJIDExCi0JCQkoR0lDX0NQVV9NQVNLX1JBVygweGYp
-IHwgSVJRX1RZUEVfTEVWRUxfTE9XKT4sCisJCQkoR0lDX0NQVV9NQVNLX1NJTVBMRSg0KSB8IElS
-UV9UWVBFX0xFVkVMX0xPVyk+LAogCQkJICAgICA8R0lDX1BQSSAxMAotCQkJKEdJQ19DUFVfTUFT
-S19SQVcoMHhmKSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+OworCQkJKEdJQ19DUFVfTUFTS19TSU1Q
-TEUoNCkgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPjsKIAl9OwogfTsKIAotLSAKMi4yNS4xCgoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+
+[ Upstream commit fab6710e4c51f4eb622f95a08322ab5fdbe3f295 ]
+
+MT7621 has three assigned interrupts for the pcie. This
+interrupts should properly being mapped taking into account
+which devices are finally connected in which bus according
+to link status. So the irq mappings should be as follows
+according to link status (three bits indicating which devices
+are link up):
+
+* For PCIe Bus 1 slot 0:
+  - status = 0x2 || status = 0x6 => IRQ = pcie1_irq (24).
+  - status = 0x4 => IRQ = pcie2_irq (25).
+  - default => IRQ = pcie0_irq (23).
+* For PCIe Bus 2 slot 0:
+  - status = 0x5 || status = 0x6 => IRQ = pcie2_irq (25).
+  - default => IRQ = pcie1_irq (24).
+* For PCIe Bus 2 slot 1:
+  - status = 0x5 || status = 0x6 => IRQ = pcie2_irq (25).
+  - default => IRQ = pcie1_irq (24).
+* For PCIe Bus 3 any slot:
+  - default => IRQ = pcie2_irq (25).
+
+Because of this, the function 'of_irq_parse_and_map_pci' cannot
+be used and we need to change device tree information from using
+the 'interrupt-map' and 'interrupt-map-mask' properties into an
+'interrupts' property to be able to get irq information from the
+ports using the 'platform_get_irq' and storing an 'irq-map' into
+the pcie driver data node to properly map correct irq using a
+new 'mt7621_map_irq' function where this map will be read and the
+correct irq returned.
+
+Fixes: 46d093124df4 ("staging: mt7621-pci: improve interrupt mapping")
+Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Link: https://lore.kernel.org/r/20200413055942.2714-1-sergio.paracuellos@gmail.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/staging/mt7621-dts/mt7621.dtsi  |  9 +++----
+ drivers/staging/mt7621-pci/pci-mt7621.c | 36 +++++++++++++++++++++++--
+ 2 files changed, 38 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/staging/mt7621-dts/mt7621.dtsi b/drivers/staging/mt7621-dts/mt7621.dtsi
+index 9e5cf68731bb..82aa93634eda 100644
+--- a/drivers/staging/mt7621-dts/mt7621.dtsi
++++ b/drivers/staging/mt7621-dts/mt7621.dtsi
+@@ -523,11 +523,10 @@ pcie: pcie@1e140000 {
+ 			0x01000000 0 0x00000000 0x1e160000 0 0x00010000 /* io space */
+ 		>;
+ 
+-		#interrupt-cells = <1>;
+-		interrupt-map-mask = <0xF0000 0 0 1>;
+-		interrupt-map = <0x10000 0 0 1 &gic GIC_SHARED 4 IRQ_TYPE_LEVEL_HIGH>,
+-				<0x20000 0 0 1 &gic GIC_SHARED 24 IRQ_TYPE_LEVEL_HIGH>,
+-				<0x30000 0 0 1 &gic GIC_SHARED 25 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-parent = <&gic>;
++		interrupts = <GIC_SHARED 4 IRQ_TYPE_LEVEL_HIGH
++				GIC_SHARED 24 IRQ_TYPE_LEVEL_HIGH
++				GIC_SHARED 25 IRQ_TYPE_LEVEL_HIGH>;
+ 
+ 		status = "disabled";
+ 
+diff --git a/drivers/staging/mt7621-pci/pci-mt7621.c b/drivers/staging/mt7621-pci/pci-mt7621.c
+index b9d460a9c041..36207243a71b 100644
+--- a/drivers/staging/mt7621-pci/pci-mt7621.c
++++ b/drivers/staging/mt7621-pci/pci-mt7621.c
+@@ -97,6 +97,7 @@
+  * @pcie_rst: pointer to port reset control
+  * @gpio_rst: gpio reset
+  * @slot: port slot
++ * @irq: GIC irq
+  * @enabled: indicates if port is enabled
+  */
+ struct mt7621_pcie_port {
+@@ -107,6 +108,7 @@ struct mt7621_pcie_port {
+ 	struct reset_control *pcie_rst;
+ 	struct gpio_desc *gpio_rst;
+ 	u32 slot;
++	int irq;
+ 	bool enabled;
+ };
+ 
+@@ -120,6 +122,7 @@ struct mt7621_pcie_port {
+  * @dev: Pointer to PCIe device
+  * @io_map_base: virtual memory base address for io
+  * @ports: pointer to PCIe port information
++ * @irq_map: irq mapping info according pcie link status
+  * @resets_inverted: depends on chip revision
+  * reset lines are inverted.
+  */
+@@ -135,6 +138,7 @@ struct mt7621_pcie {
+ 	} offset;
+ 	unsigned long io_map_base;
+ 	struct list_head ports;
++	int irq_map[PCIE_P2P_MAX];
+ 	bool resets_inverted;
+ };
+ 
+@@ -279,6 +283,16 @@ static void setup_cm_memory_region(struct mt7621_pcie *pcie)
+ 	}
+ }
+ 
++static int mt7621_map_irq(const struct pci_dev *pdev, u8 slot, u8 pin)
++{
++	struct mt7621_pcie *pcie = pdev->bus->sysdata;
++	struct device *dev = pcie->dev;
++	int irq = pcie->irq_map[slot];
++
++	dev_info(dev, "bus=%d slot=%d irq=%d\n", pdev->bus->number, slot, irq);
++	return irq;
++}
++
+ static int mt7621_pci_parse_request_of_pci_ranges(struct mt7621_pcie *pcie)
+ {
+ 	struct device *dev = pcie->dev;
+@@ -330,6 +344,7 @@ static int mt7621_pcie_parse_port(struct mt7621_pcie *pcie,
+ {
+ 	struct mt7621_pcie_port *port;
+ 	struct device *dev = pcie->dev;
++	struct platform_device *pdev = to_platform_device(dev);
+ 	struct device_node *pnode = dev->of_node;
+ 	struct resource regs;
+ 	char name[10];
+@@ -371,6 +386,12 @@ static int mt7621_pcie_parse_port(struct mt7621_pcie *pcie,
+ 	port->slot = slot;
+ 	port->pcie = pcie;
+ 
++	port->irq = platform_get_irq(pdev, slot);
++	if (port->irq < 0) {
++		dev_err(dev, "Failed to get IRQ for PCIe%d\n", slot);
++		return -ENXIO;
++	}
++
+ 	INIT_LIST_HEAD(&port->list);
+ 	list_add_tail(&port->list, &pcie->ports);
+ 
+@@ -585,13 +606,15 @@ static int mt7621_pcie_init_virtual_bridges(struct mt7621_pcie *pcie)
+ {
+ 	u32 pcie_link_status = 0;
+ 	u32 n;
+-	int i;
++	int i = 0;
+ 	u32 p2p_br_devnum[PCIE_P2P_MAX];
++	int irqs[PCIE_P2P_MAX];
+ 	struct mt7621_pcie_port *port;
+ 
+ 	list_for_each_entry(port, &pcie->ports, list) {
+ 		u32 slot = port->slot;
+ 
++		irqs[i++] = port->irq;
+ 		if (port->enabled)
+ 			pcie_link_status |= BIT(slot);
+ 	}
+@@ -614,6 +637,15 @@ static int mt7621_pcie_init_virtual_bridges(struct mt7621_pcie *pcie)
+ 		 (p2p_br_devnum[1] << PCIE_P2P_BR_DEVNUM1_SHIFT) |
+ 		 (p2p_br_devnum[2] << PCIE_P2P_BR_DEVNUM2_SHIFT));
+ 
++	/* Assign IRQs */
++	n = 0;
++	for (i = 0; i < PCIE_P2P_MAX; i++)
++		if (pcie_link_status & BIT(i))
++			pcie->irq_map[n++] = irqs[i];
++
++	for (i = n; i < PCIE_P2P_MAX; i++)
++		pcie->irq_map[i] = -1;
++
+ 	return 0;
+ }
+ 
+@@ -638,7 +670,7 @@ static int mt7621_pcie_register_host(struct pci_host_bridge *host,
+ 	host->busnr = pcie->busn.start;
+ 	host->dev.parent = pcie->dev;
+ 	host->ops = &mt7621_pci_ops;
+-	host->map_irq = of_irq_parse_and_map_pci;
++	host->map_irq = mt7621_map_irq;
+ 	host->swizzle_irq = pci_common_swizzle;
+ 	host->sysdata = pcie;
+ 
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
