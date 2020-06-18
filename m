@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A988F1FDB1D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:10:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33E4E1FDB22
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:10:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lrUlAvn9Ealv2nCu6j401ZfGTWrLMy0HGnnRAwG/I90=; b=PQFQI3jVriDUAX
-	2b+0z6ygW2keWbyrVdtxG6O7oC34oxm7ZGA8EJ0uzNE2dFKB7yuQ7W2Bgt1nvzbrZGSo/7aayHxVr
-	hKe9jr0NExhYPHRKDF9mFEzkoxP0LWpbZduCpzLSm0Wnyx5EaqsYBnRu7DFPtw4vXo4l1bvzNs3ob
-	utGDV1kRISluihpT5vGNOfzEHpTFMVtA+Ds+2E+uEJgF/tJ/eJzI/aAh6DtwzRUWGMLL/JtyC3gFV
-	xPlk4jDQY3u1rC0HQ4oGZVXzbWUMJLvKRjK9pyphFFZHeGogm/e8On3zYH7wtLW5cvhWG1pKqjdVs
-	fesZq60uteHjQZX0DOEw==;
+	List-Owner; bh=tvX1bT+Un2fq3RS/hBE//tvjsYvyVuO59oobnkIFDwQ=; b=bT13JCU2GH/Nfu
+	WY/t1jol8YSaoRyvS3oo32aqvS9e7ziFmKoa/Z+ZX+CuSZpI9uYjxza8wR4niX9Z6BPrx34aI9tcj
+	vWyFAmC8To5Q0pAgQ/ug9HxGYBbGSCFs3pBfDOo6RY4c9xZ8h78g+DwI9bkRL42J0bD/rfJ/rRbAL
+	IU0IlrnT2Km7P/FUdcoZlmlQ6YDukL0dzkKxZ+a/jB9Ah5c36Ry8p2N1TVYZxYBoGYwuMfNGhcyVJ
+	cMm/eiywVdVBpWgVlEG8gbQ6HC0D6SYes/M6Bcgl2o6Qw7Skgk8ZR2+mjdIKo5FSYVAhEVCb7SJxA
+	GWnlV6kGqOFKTV8uJiHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlj4W-000662-Rk; Thu, 18 Jun 2020 01:10:28 +0000
+	id 1jlj4p-0000J1-GJ; Thu, 18 Jun 2020 01:10:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj2l-0004qm-So; Thu, 18 Jun 2020 01:08:43 +0000
+ id 1jlj2v-0004z3-6H; Thu, 18 Jun 2020 01:08:51 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 42EF22193E;
- Thu, 18 Jun 2020 01:08:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BEBE021D7A;
+ Thu, 18 Jun 2020 01:08:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442519;
- bh=LxL7S9dAh4/os9b+6g3X1dJuv95ULz6V2uieImdNiH4=;
+ s=default; t=1592442527;
+ bh=OIkYKz3Teuu888niQkYcJHwn7SaAQqASF6j8tkUdRrw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AAyZD+CtvDXX3NXhh0Mc4sTe3c7fzfYaNNyVghCnHmisAS3SBpvy6sOb/X+7sKHUj
- +VzdCH+cDN970k1d4amziub/GPi5CSjhgTAnA5gbX9aylCsE46efGp6zzxKrYoM/ID
- dkS/jIAxSBFBUFn0NoAomwGPKRnmzLrMG6D3wy+A=
+ b=ORZCshixEbxl+1pA6bA58N5Nda1/zN1MXq1YtQwP4/8FNM9FC8/tJb+EC3HQcSVYB
+ Sub/QzcR+dzp44uWho/ajWMionBagu0+grJzwEwhx8mixRQoBzs/GERWOM+TqrxYO5
+ 60SwCaBNW2ceT0rhKiquF5ZiFn+TjQvZT1cWVWNE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 024/388] arm64: dts: meson: fixup SCP sram nodes
-Date: Wed, 17 Jun 2020 21:02:01 -0400
-Message-Id: <20200618010805.600873-24-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 031/388] PCI: brcmstb: Fix window register offset
+ from 4 to 8
+Date: Wed, 17 Jun 2020 21:02:08 -0400
+Message-Id: <20200618010805.600873-31-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -48,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_180840_311546_F82695A4 
-X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-CacheID: sfid-20200617_180849_485064_79258556 
+X-CRM114-Status: UNSURE (   9.05  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,91 +80,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Jim Quinlan <jquinlan@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Neil Armstrong <narmstrong@baylibre.com>
+From: Jim Quinlan <jquinlan@broadcom.com>
 
-[ Upstream commit 9ecded10b4b6af238da0c86197b0418912e7513e ]
+[ Upstream commit 077a4fa92a615a4d0f86eae68d777b9dd5e5a95b ]
 
-The GX and AXG SCP sram nodes were using invalid compatible and
-node names for the sram entries.
+The outbound memory window registers were being referenced
+with an incorrect stride offset.  This probably wasn't noticed
+previously as there was likely only one such window employed.
 
-Fixup the sram entries node names, and use proper compatible for them.
-
-It notably fixes:
-sram@c8000000: 'scp-shmem@0', 'scp-shmem@200' do not match any of the regexes: '^([a-z]*-)?sram(-section)?@[a-f0-9]+$', 'pinctrl-[0-9]+'
-
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
-Link: https://lore.kernel.org/r/20200326165958.19274-3-narmstrong@baylibre.com
+Link: https://lore.kernel.org/r/20200507201544.43432-3-james.quinlan@broadcom.com
+Fixes: c0452137034b ("PCI: brcmstb: Add Broadcom STB PCIe host controller driver")
+Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-axg.dtsi |  6 +++---
- arch/arm64/boot/dts/amlogic/meson-gx.dtsi  | 10 +++++-----
- 2 files changed, 8 insertions(+), 8 deletions(-)
+ drivers/pci/controller/pcie-brcmstb.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-index aace3d32a3df..8e6281c685fa 100644
---- a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-@@ -1735,18 +1735,18 @@ sd_emmc_c: mmc@7000 {
- 		};
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index 6d79d14527a6..c9ecc4d639c1 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -54,11 +54,11 @@
  
- 		sram: sram@fffc0000 {
--			compatible = "amlogic,meson-axg-sram", "mmio-sram";
-+			compatible = "mmio-sram";
- 			reg = <0x0 0xfffc0000 0x0 0x20000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0 0x0 0xfffc0000 0x20000>;
+ #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO		0x400c
+ #define PCIE_MEM_WIN0_LO(win)	\
+-		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + ((win) * 4)
++		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + ((win) * 8)
  
--			cpu_scp_lpri: scp-shmem@13000 {
-+			cpu_scp_lpri: scp-sram@13000 {
- 				compatible = "amlogic,meson-axg-scp-shmem";
- 				reg = <0x13000 0x400>;
- 			};
+ #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI		0x4010
+ #define PCIE_MEM_WIN0_HI(win)	\
+-		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + ((win) * 4)
++		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + ((win) * 8)
  
--			cpu_scp_hpri: scp-shmem@13400 {
-+			cpu_scp_hpri: scp-sram@13400 {
- 				compatible = "amlogic,meson-axg-scp-shmem";
- 				reg = <0x13400 0x400>;
- 			};
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-index 03f79fe045b7..e2bb68ec8502 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-@@ -398,20 +398,20 @@ gic: interrupt-controller@c4301000 {
- 		};
- 
- 		sram: sram@c8000000 {
--			compatible = "amlogic,meson-gx-sram", "amlogic,meson-gxbb-sram", "mmio-sram";
-+			compatible = "mmio-sram";
- 			reg = <0x0 0xc8000000 0x0 0x14000>;
- 
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0 0x0 0xc8000000 0x14000>;
- 
--			cpu_scp_lpri: scp-shmem@0 {
--				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
-+			cpu_scp_lpri: scp-sram@0 {
-+				compatible = "amlogic,meson-gxbb-scp-shmem";
- 				reg = <0x13000 0x400>;
- 			};
- 
--			cpu_scp_hpri: scp-shmem@200 {
--				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
-+			cpu_scp_hpri: scp-sram@200 {
-+				compatible = "amlogic,meson-gxbb-scp-shmem";
- 				reg = <0x13400 0x400>;
- 			};
- 		};
+ #define PCIE_MISC_RC_BAR1_CONFIG_LO			0x402c
+ #define  PCIE_MISC_RC_BAR1_CONFIG_LO_SIZE_MASK		0x1f
 -- 
 2.25.1
 
