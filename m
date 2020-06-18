@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C9A11FDE5C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CC461FDE5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:34:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ygs59iDkeW49rHoBMQxdbQUjhxDnOG8V9hMEnxokBeE=; b=od4rFGHmlBuzfy
-	7UWhkgy+JQGs5bpqHVhsBN6Bp7itpygbbRtDL5z5uu7PllBPvQ0lNrjpNK4ea1GpI2M+yoxtEOstk
-	lMlkZOP7vbiU0kH0bj7gnCt1PNVa3j6aLY1CBTaHm7yNZVAQ7oATaPggAjD4g2ZZGhpEGmCv1woyK
-	h4FfUP3M5MfDa9ojbiA2k6y3cvCCwWDnt9PaORRUi6cOqDfHN5r+zBJnM1B+JYxBlz7lvld07099Q
-	k/zga0XVA/YIDiNtyvucbVziOh7aUQskwtSM4bDwlmFG+i5htGWDOrmkGS+XEGnuEIMtfZGbal/rZ
-	py2s0WAQhS4rTl0H4gxQ==;
+	List-Owner; bh=3SDnpepF5Zif90+xZKr5zWkSTnM/DNj9HMH7Uu8V/Zg=; b=coF735PFRQR2sx
+	2dABYjo/8p3ePBEJgaCV0UGYNLezB/FgXLXPdfqvbKqWUErxPUsD2YZv0HssyffuH+/6Tyd5hebaM
+	9ypdjCuN5gpVUOhaFur0V9ps2w92y6w9spVaQ40QVL4ELIpz8pM5Fp+98EKWNNk/+BhKuvhMx7mwO
+	cb/hhsgYA5GR3ElMXCCVP7cDR5c5cbu1XNAD0xk6lTqb1+a/HtLMCMk8EJcwLMqpPMB2Ww5gnD8Kb
+	J1YPONHCnyxRaQR8f20eKPmrRGwESCIAvsFi1quLGeB9sbq4zgLnn99NOr6I/xxtNgXY/bug1ABoj
+	WhkH4cADecM5ritqyYbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljRr-0003fW-L3; Thu, 18 Jun 2020 01:34:35 +0000
+	id 1jljRN-0003MZ-Ng; Thu, 18 Jun 2020 01:34:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj90-00049G-Kh
+ id 1jlj90-0004JB-Uv
  for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:15:09 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 83DFA20EDD;
- Thu, 18 Jun 2020 01:15:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C4637221EA;
+ Thu, 18 Jun 2020 01:15:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442904;
- bh=DdzfsFUTBuNCx27Rd/SiNHCfH/ifH2yDGhE13vpwydM=;
+ s=default; t=1592442905;
+ bh=FgPG6cCgUeE3avIJ+Y2VCR4P+1TbrZ2c2zsyKos1QuI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sRdrQw0HHzarDlyxwquBKjgiqKZ8TCBym7DQkUr1ioMz4RkmzzL66TOmT33i1Lyv1
- vO6Zmf+enSGxKIrnthIqV8WfhTfLyEeav4TjSj6xMfFkTqYnpbvAstbFOfsiCuHBrj
- SR7gNl+7Vc3+t+cUQQD48G1Gza9XzoyT+LhmY7HI=
+ b=u93fT35/LXUAGvqxB03JFmkW/0XADitz3UwkPKN5EAmxYCwiobhvlyPjOwunxI20x
+ 8VIRvH5E5BbWbt+DZDudBuumg62B2O0tAA9bKBVE45EsEJz0ctpNiem3PyyYVyNQ91
+ zo6zj2IHzD353gc7XXGKOMEXe+jHqCWwCG7SdrH4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 324/388] pinctrl: sirf: add missing put_device()
- call in sirfsoc_gpio_probe()
-Date: Wed, 17 Jun 2020 21:07:01 -0400
-Message-Id: <20200618010805.600873-324-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 325/388] pinctrl: freescale: imx: Fix an error
+ handling path in 'imx_pinctrl_probe()'
+Date: Wed, 17 Jun 2020 21:07:02 -0400
+Message-Id: <20200618010805.600873-325-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181507_310484_FB080F70 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20200617_181507_316010_BE270E36 
+X-CRM114-Status: GOOD (  14.14  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,86 +80,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, yu kuai <yukuai3@huawei.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Sasha Levin <sashal@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: yu kuai <yukuai3@huawei.com>
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
-[ Upstream commit 66339f2fba3fa05b0507e1887e4c6abcfc6228a3 ]
+[ Upstream commit 11d8da5cabf7c6c3263ba2cd9c00260395867048 ]
 
-A coccicheck run provided information like the following:
+'pinctrl_unregister()' should not be called to undo
+'devm_pinctrl_register_and_init()', it is already handled by the framework.
 
-drivers/pinctrl/sirf/pinctrl-sirf.c:798:2-8: ERROR: missing put_device;
-call of_find_device_by_node on line 792, but without a corresponding
-object release within this function.
+This simplifies the error handling paths of the probe function.
+The 'imx_free_resources()' can be removed as well.
 
-Generated by: scripts/coccinelle/free/put_device.cocci
-
-Thus add a jump target to fix the exception handling for this
-function implementation.
-
-Fixes: 5130216265f6 ("PINCTRL: SiRF: add GPIO and GPIO irq support in CSR SiRFprimaII")
-Signed-off-by: yu kuai <yukuai3@huawei.com>
-Link: https://lore.kernel.org/r/20200603013532.755220-1-yukuai3@huawei.com
+Fixes: a51c158bf0f7 ("pinctrl: imx: use radix trees for groups and functions")
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+Link: https://lore.kernel.org/r/20200530204955.588962-1-christophe.jaillet@wanadoo.fr
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/sirf/pinctrl-sirf.c | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
+ drivers/pinctrl/freescale/pinctrl-imx.c | 19 ++-----------------
+ 1 file changed, 2 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/pinctrl/sirf/pinctrl-sirf.c b/drivers/pinctrl/sirf/pinctrl-sirf.c
-index 1ebcb957c654..63a287d5795f 100644
---- a/drivers/pinctrl/sirf/pinctrl-sirf.c
-+++ b/drivers/pinctrl/sirf/pinctrl-sirf.c
-@@ -794,13 +794,17 @@ static int sirfsoc_gpio_probe(struct device_node *np)
- 		return -ENODEV;
- 
- 	sgpio = devm_kzalloc(&pdev->dev, sizeof(*sgpio), GFP_KERNEL);
--	if (!sgpio)
--		return -ENOMEM;
-+	if (!sgpio) {
-+		err = -ENOMEM;
-+		goto out_put_device;
-+	}
- 	spin_lock_init(&sgpio->lock);
- 
- 	regs = of_iomap(np, 0);
--	if (!regs)
--		return -ENOMEM;
-+	if (!regs) {
-+		err = -ENOMEM;
-+		goto out_put_device;
-+	}
- 
- 	sgpio->chip.gc.request = sirfsoc_gpio_request;
- 	sgpio->chip.gc.free = sirfsoc_gpio_free;
-@@ -824,8 +828,10 @@ static int sirfsoc_gpio_probe(struct device_node *np)
- 	girq->parents = devm_kcalloc(&pdev->dev, SIRFSOC_GPIO_NO_OF_BANKS,
- 				     sizeof(*girq->parents),
- 				     GFP_KERNEL);
--	if (!girq->parents)
--		return -ENOMEM;
-+	if (!girq->parents) {
-+		err = -ENOMEM;
-+		goto out_put_device;
-+	}
- 	for (i = 0; i < SIRFSOC_GPIO_NO_OF_BANKS; i++) {
- 		bank = &sgpio->sgpio_bank[i];
- 		spin_lock_init(&bank->lock);
-@@ -868,6 +874,8 @@ static int sirfsoc_gpio_probe(struct device_node *np)
- 	gpiochip_remove(&sgpio->chip.gc);
- out:
- 	iounmap(regs);
-+out_put_device:
-+	put_device(&pdev->dev);
- 	return err;
+diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c b/drivers/pinctrl/freescale/pinctrl-imx.c
+index 9f42036c5fbb..1f81569c7ae3 100644
+--- a/drivers/pinctrl/freescale/pinctrl-imx.c
++++ b/drivers/pinctrl/freescale/pinctrl-imx.c
+@@ -774,16 +774,6 @@ static int imx_pinctrl_probe_dt(struct platform_device *pdev,
+ 	return 0;
  }
  
+-/*
+- * imx_free_resources() - free memory used by this driver
+- * @info: info driver instance
+- */
+-static void imx_free_resources(struct imx_pinctrl *ipctl)
+-{
+-	if (ipctl->pctl)
+-		pinctrl_unregister(ipctl->pctl);
+-}
+-
+ int imx_pinctrl_probe(struct platform_device *pdev,
+ 		      const struct imx_pinctrl_soc_info *info)
+ {
+@@ -874,23 +864,18 @@ int imx_pinctrl_probe(struct platform_device *pdev,
+ 					     &ipctl->pctl);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "could not register IMX pinctrl driver\n");
+-		goto free;
++		return ret;
+ 	}
+ 
+ 	ret = imx_pinctrl_probe_dt(pdev, ipctl);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "fail to probe dt properties\n");
+-		goto free;
++		return ret;
+ 	}
+ 
+ 	dev_info(&pdev->dev, "initialized IMX pinctrl driver\n");
+ 
+ 	return pinctrl_enable(ipctl->pctl);
+-
+-free:
+-	imx_free_resources(ipctl);
+-
+-	return ret;
+ }
+ 
+ static int __maybe_unused imx_pinctrl_suspend(struct device *dev)
 -- 
 2.25.1
 
