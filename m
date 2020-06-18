@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EE531FDE5E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:35:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E73B61FDE62
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:35:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s0Ol/J9iL41EQiBIJLwzfTiKnUSCI/6A0SOwrVuNGM0=; b=EUXMBS5y4ekcj3
-	HYwGhov2XUEivB7fbIp7FcgEEkr0Xh3/2QZPeyWNQ+FCkHK9dJekOV1dqHlNpC0ZqVEeYSxuy4utm
-	NVkY6OHqKpzV6cBK7yR6JrNVmLjkLytvH+7jbSC3cOOxvIb+GgJG5oF5gpV7B1PVv1gHsk62+/ERN
-	qz3mw/OrU2cmMg24MoNjVircWuZucmxjISZAjr4fXt4aYF8N/LS1p9KJXnPI/uKYi9Z14vqdetK7h
-	4XHTJtL75BDu0QJNnLI2SUFp9SLq6Ny0AkppebeeYvbtweKYlA7T1PZzZyE89n9BjYxJRDU+/Gibq
-	laaHbVXo+NcZz8XROmwQ==;
+	List-Owner; bh=6MSW8nkJ9qXhhjC9feGsAix4YjBMNYD269aQ8u4oi4Q=; b=dtOLGM0oCY1WvR
+	BmsDibFGUinHEkp0kym4JC/0cgLmnI/ydpnVquOxgE5z5NTsHheAA5dl9uLeqgsWEWGRalexgozeK
+	f2Cbw4acvscOMu4rYpjDMawuG6S8r49sJO7PY2GyQf1LKzsF5q2Wqh1eCnnJca9Ot3fepzp9E0kHu
+	4NdWYlkI67mKQkw/uocjrH3aHaXnhCR8JyZ2qKOtfnIFIiaNfMZz3GMHFktSqFcIvJcKhvnL/Zmpn
+	9wKhhWxWvMUYAvWsXt5oZTiJEMAew5MtEap4Hk81nKt/Zs4uDn7KUDSXxDn512MPkStunJXiD4O6L
+	ROFlR+ZrMy9sk52zeN4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljS8-0003uW-IP; Thu, 18 Jun 2020 01:34:52 +0000
+	id 1jljSY-00049t-DP; Thu, 18 Jun 2020 01:35:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj92-0004Xk-Qz
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:15:11 +0000
+ id 1jlj9e-0006y1-Rc
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:15:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 31AB92193E;
- Thu, 18 Jun 2020 01:15:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A52BC221F1;
+ Thu, 18 Jun 2020 01:15:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442907;
- bh=pa5xwxs/YMVeg48Xp1oAklH4xCcH4s/8Z/abaSwieRU=;
+ s=default; t=1592442946;
+ bh=sBv8mpqJlknnPCCg6c7Y2sFeS2VKiUqxb+y5UoFtA5s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZeB0sSOxuTdEuw/vxZcykWXgQK5g1r40nstHIQ5wAmp7vNY67FtyxSl7/KXvAwfkE
- VW76I0KgXCg6GtCs4I1TBun2VnAwKy1zE0IK9KOYZHF3gYqlLmlMOMgugMxIzZJNs2
- 4RKqzqBmmAIYz/q1hhtrFXMhOUvBtN9nqLJA2Yio=
+ b=eBMN59X/INkILvufa15dM0M9RLLW7LMCWfWGbYpUP6NoKUMvMSYdtownlHvwXcD4T
+ 0dro0vuinBcFY6RvpdgzH/7nOKmEPwihN0DKteGT9Z8H0sM7QiE1J3GmOWk76wjmzN
+ dgO+fFEJxOT0v/pPLva0Ymzpf9Q9IKNmzZlfmpFY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 326/388] pinctrl: freescale: imx: Use
- 'devm_of_iomap()' to avoid a resource leak in case of error in
- 'imx_pinctrl_probe()'
-Date: Wed, 17 Jun 2020 21:07:03 -0400
-Message-Id: <20200618010805.600873-326-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 356/388] mailbox: imx: Add context save/restore
+ for suspend/resume
+Date: Wed, 17 Jun 2020 21:07:33 -0400
+Message-Id: <20200618010805.600873-356-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -51,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181509_217727_1E79AE80 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20200617_181546_930096_A99480D5 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,55 +80,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- linux-gpio@vger.kernel.org, Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- Dan Carpenter <dan.carpenter@oracle.com>, linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Anson Huang <Anson.Huang@nxp.com>, Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+From: Dong Aisheng <aisheng.dong@nxp.com>
 
-[ Upstream commit ba403242615c2c99e27af7984b1650771a2cc2c9 ]
+[ Upstream commit ba5f9fa0ca85a6137fa35efd3a1256d8bb6bc5ff ]
 
-Use 'devm_of_iomap()' instead 'of_iomap()' to avoid a resource leak in
-case of error.
+For "mem" mode suspend on i.MX8 SoCs, MU settings could be
+lost because its power is off, so save/restore is needed
+for MU settings during suspend/resume. However, the restore
+can ONLY be done when MU settings are actually lost, for the
+scenario of settings NOT lost in "freeze" mode suspend, since
+there could be still IPC going on multiple CPUs, restoring the
+MU settings could overwrite the TIE by mistake and cause system
+freeze, so need to make sure ONLY restore the MU settings when
+it is powered off, Anson fixes this by checking whether restore
+is actually needed when resume.
 
-Update the error handling code accordingly.
-
-Fixes: 26d8cde5260b ("pinctrl: freescale: imx: add shared input select reg support")
-Suggested-by: Dan Carpenter <dan.carpenter@oracle.com>
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Reviewed-by: Dan Carpenter <dan.carpenter@oracle.com>
-Link: https://lore.kernel.org/r/20200602200626.677981-1-christophe.jaillet@wanadoo.fr
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Signed-off-by: Jassi Brar <jaswinder.singh@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/freescale/pinctrl-imx.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/mailbox/imx-mailbox.c | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c b/drivers/pinctrl/freescale/pinctrl-imx.c
-index 1f81569c7ae3..cb7e0f08d2cf 100644
---- a/drivers/pinctrl/freescale/pinctrl-imx.c
-+++ b/drivers/pinctrl/freescale/pinctrl-imx.c
-@@ -824,12 +824,13 @@ int imx_pinctrl_probe(struct platform_device *pdev,
- 				return -EINVAL;
- 			}
+diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+index 9d6f0217077b..478308fb82cc 100644
+--- a/drivers/mailbox/imx-mailbox.c
++++ b/drivers/mailbox/imx-mailbox.c
+@@ -66,6 +66,8 @@ struct imx_mu_priv {
+ 	struct clk		*clk;
+ 	int			irq;
  
--			ipctl->input_sel_base = of_iomap(np, 0);
-+			ipctl->input_sel_base = devm_of_iomap(&pdev->dev, np,
-+							      0, NULL);
- 			of_node_put(np);
--			if (!ipctl->input_sel_base) {
-+			if (IS_ERR(ipctl->input_sel_base)) {
- 				dev_err(&pdev->dev,
- 					"iomuxc input select base address not found\n");
--				return -ENOMEM;
-+				return PTR_ERR(ipctl->input_sel_base);
- 			}
- 		}
- 	}
++	u32 xcr;
++
+ 	bool			side_b;
+ };
+ 
+@@ -558,12 +560,45 @@ static const struct of_device_id imx_mu_dt_ids[] = {
+ };
+ MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
+ 
++static int imx_mu_suspend_noirq(struct device *dev)
++{
++	struct imx_mu_priv *priv = dev_get_drvdata(dev);
++
++	priv->xcr = imx_mu_read(priv, priv->dcfg->xCR);
++
++	return 0;
++}
++
++static int imx_mu_resume_noirq(struct device *dev)
++{
++	struct imx_mu_priv *priv = dev_get_drvdata(dev);
++
++	/*
++	 * ONLY restore MU when context lost, the TIE could
++	 * be set during noirq resume as there is MU data
++	 * communication going on, and restore the saved
++	 * value will overwrite the TIE and cause MU data
++	 * send failed, may lead to system freeze. This issue
++	 * is observed by testing freeze mode suspend.
++	 */
++	if (!imx_mu_read(priv, priv->dcfg->xCR))
++		imx_mu_write(priv, priv->xcr, priv->dcfg->xCR);
++
++	return 0;
++}
++
++static const struct dev_pm_ops imx_mu_pm_ops = {
++	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_mu_suspend_noirq,
++				      imx_mu_resume_noirq)
++};
++
+ static struct platform_driver imx_mu_driver = {
+ 	.probe		= imx_mu_probe,
+ 	.remove		= imx_mu_remove,
+ 	.driver = {
+ 		.name	= "imx_mu",
+ 		.of_match_table = imx_mu_dt_ids,
++		.pm = &imx_mu_pm_ops,
+ 	},
+ };
+ module_platform_driver(imx_mu_driver);
 -- 
 2.25.1
 
