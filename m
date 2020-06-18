@@ -2,78 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60C261FF6BA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 17:29:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E980A1FF794
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 17:42:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=46pJFQrx+tBM9dYksrLR/YflmFVWsxVx/LjwgaZDwCo=; b=amcoIDMFyfIdZ2
-	XiLrZmcae1XH/jIu6uB+d3ngMm/Vy6ZSxzTF+bdX1Qwxn7AnIMgWwYRSWm+lh7Lo5GU2ftT/1dmgj
-	hojYxoSLObafb+sDUce34nzVqHpyzVGBw+9P8k0mG6UaTLOv5pUjXvGIuN8r3UJGJn/Peq4RL/vtz
-	a/f/A81E6d8Ko0YVHMwF0eR4UXf5e/jyw2f3H8uBDRl15nG3v9iNQxcd39ZeoXn1lEB54v8UUzF0+
-	cCUPUSah3TeMT6dBTsVseJ2Wjize9SvBBBoakJEOTByKMtybX9aRVKh3HLYH/4UWyhDG4UQbFOi8z
-	JbZvEOSzI9/zUVFYQjNg==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=je57tnQYOTKSw7yqAy/ixWdncJg3EXGwuRPNyx9ktuU=; b=Mb3mHawyT4vDPk
+	0iLwg0gMmhlqm0+VwvseFboVds8qBTg4XNVMeQFllGwV2q/W6WiWSOi1AuHYhjqhFPMcpUIPxtvWw
+	K97AH1q4/2NKjot5FdHSlItzphmhoN9pagUGsbD6n78fw8II7Xr8jOEB+Tltu38u3Lj7wN1PaSu12
+	I/s2LTLm/1GIKP6ZvkKB6w42L59Hos53cdt0vXO9zZvVg2GleoFl3/6Co1y3vklDAdMrfcnzDufqQ
+	5auhfM1dCElMmfqMXNBxIRYfSjp+0p1miejlSCqjZb9y51tzqqjhX0J4u4FCc3XwrPd2rAFKni70I
+	981iA3Qb5U/ejMbN9spg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlwTh-0003Sz-7I; Thu, 18 Jun 2020 15:29:21 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1jlwgP-0005cA-Vf; Thu, 18 Jun 2020 15:42:30 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlwTX-0003Rl-RI
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 15:29:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592494151; x=1624030151;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=zm+f5NC0s8tHPMJu0+UciLLciIrxqv4wIAMMNwcR3sg=;
- b=BF8Tire8Q5NHBxQHLauDK8JQOB3xfD5T9fo7TeUIki7YqjcpNfLONWcp
- kL90Ekqy2bLpJzrzcM8YiByOgBWoSghOt+S06WWmjXTP2IfvBGgr96jZD
- Fsf3AE0Nvh8GY7UE1oQ+7S2SCUu6zwnGgFz2jwetq/ZIelKuHUlC16QVA
- ZDYjH5oI9E25ZCYTcQP4ESlOIRpihpcddjPcq/2WWmI5yUOMrtPg1SZZn
- 0mDuH3lVQBsCKdqiW4GlDyFDXv0OZ6TxdZeJEBD0GvI9kYRRwl27H6GEK
- qhusU6Dc6UT/6X7Tt47cCEwopj/KD8nXFaSjlRGHGZDbjC9IvJTugpTGB A==;
-IronPort-SDR: BBpKP0k80BnzTU0KNlP6t6swWUaLBzHXrPQ8Ly60CEey804TPvXbbsK0m9ZcnqXXTXx822ANG2
- uTjRRrwsDJ9VfbqeLQKzOHZnHHGzijHMuUujh2w0D0ixwz1XliJhUfghlM28+0Iqf8gNGTADoI
- bOzRHkPl+n1YoaZnqRUXMMfXQYqhVJJz3zn9GTz29hdb3KKVxH5wg/1d64f0eYJIYaOjqVpaMQ
- 3pvBw6dGw7pVNd4i5lXU9OiJwxG3/1yI/9RsYapsRpqt0ZS/gONstlQ6mOcGYUxQ7Kcms8rDfj
- 26g=
-X-IronPort-AV: E=Sophos;i="5.75,251,1589266800"; d="scan'208";a="16258207"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 18 Jun 2020 08:29:06 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1979.3; Thu, 18 Jun 2020 08:29:05 -0700
-Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Thu, 18 Jun 2020 08:28:46 -0700
-From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-To: <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] ARM: dts: at91: sama5d2_xplained: Remove pdmic node
-Date: Thu, 18 Jun 2020 18:28:45 +0300
-Message-ID: <20200618152845.682723-1-codrin.ciubotariu@microchip.com>
-X-Mailer: git-send-email 2.25.1
+ id 1jlweM-00049I-K5
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 15:40:26 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200618154014euoutp02c2848a1fcdf51b962652a8756c9becf3~ZrZi7IZgr1254412544euoutp02M
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jun 2020 15:40:14 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200618154014euoutp02c2848a1fcdf51b962652a8756c9becf3~ZrZi7IZgr1254412544euoutp02M
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1592494814;
+ bh=wHz+1oT1mS/67aiyQy0jjk1GsbyT14KOgyDUgQzHDZU=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=Ag9q+tFWmDXhDm2cIUIZjsvXfGhdYVHowynuAxfDQ8wtbhFc6ftvZtjuBJsH2AQjj
+ ELn5z6fTZnb8tkdkejgLfKWe2woE+MTd2DIGBO8Rkx7ckrUMsrUuQcOlUz3+TKNwZe
+ zLr5cwUZ8/9+m4+ACGXbBzGjaeH3zzVCKzNL1lKA=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200618154014eucas1p1750552d5d5fd172efdc4726bcfe4d745~ZrZitQfH_0074000740eucas1p1t;
+ Thu, 18 Jun 2020 15:40:14 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 4A.CE.60679.EDA8BEE5; Thu, 18
+ Jun 2020 16:40:14 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200618154014eucas1p236960ab27d628f94d68a6b8ddb8b07ff~ZrZiS_kei0608806088eucas1p2J;
+ Thu, 18 Jun 2020 15:40:14 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200618154014eusmtrp29d2b3c5366f970ed2dd895b043a9f389~ZrZiSTB2S0399203992eusmtrp2O;
+ Thu, 18 Jun 2020 15:40:14 +0000 (GMT)
+X-AuditID: cbfec7f4-0e5ff7000001ed07-16-5eeb8ade86ee
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id AE.DE.08375.DDA8BEE5; Thu, 18
+ Jun 2020 16:40:13 +0100 (BST)
+Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200618154013eusmtip14d3be64110190393ab466c1b0ffef720~ZrZhr5eCw0864308643eusmtip1E;
+ Thu, 18 Jun 2020 15:40:13 +0000 (GMT)
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
+ linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v6 00/36] DRM: fix struct sg_table nents vs. orig_nents misuse
+Date: Thu, 18 Jun 2020 17:39:21 +0200
+Message-Id: <20200618153956.29558-1-m.szyprowski@samsung.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrBKsWRmVeSWpSXmKPExsWy7djPc7r3ul7HGfycKGXRe+4kk8XGGetZ
+ Lf5vm8hsceXrezaLlauPMlks2G9t8eXKQyaLTY+vsVpc3jWHzWLtkbvsFgc/PGF14PZYM28N
+ o8febwtYPLZ/e8Dqcb/7OJPH5iX1Hrf/PWb2mHxjOaPH7psNbB59W1YxenzeJBfAFcVlk5Ka
+ k1mWWqRvl8CV8ejLVdaCNr+Kc5+9Gxgn2HUxcnJICJhIHHm9k6mLkYtDSGAFo0Tz6RlMIAkh
+ gS+MEvMP5kIkPjNKHDuzmAWm4337RmaIxHJGiZO370G1A3Ucub+bGaSKTcBQouttFxuILSLQ
+ yihxopcHxGYWmMEkcfR1KYgtLBAgMWfBVLB6FgFViTUPvoKt5hWwlWjc8ZwJYpu8xOoNB5gh
+ 4oISJ2c+YYGYIy/RvHU22BUSAqfYJV5++88I0eAice7jVahmYYlXx7ewQ9gyEv93zmeCaGhm
+ lHh4bi07hNPDKHG5aQZUt7XEnXO/gM7mAFqhKbF+lz6IKSHgKLH7gxSEySdx460gxA18EpO2
+ TWeGCPNKdLQJQcxQk5h1fB3c1oMXLjFD2B4SZ3d1s0BCN1Zi9fNm9gmMCrOQfDYLyWezEE5Y
+ wMi8ilE8tbQ4Nz212CgvtVyvODG3uDQvXS85P3cTIzB9nf53/MsOxl1/kg4xCnAwKvHwvgh5
+ HSfEmlhWXJl7iFGCg1lJhNfp7Ok4Id6UxMqq1KL8+KLSnNTiQ4zSHCxK4rzGi17GCgmkJ5ak
+ ZqemFqQWwWSZODilGhjzm25PVC1mr8r4pbtG6I/+90wbFaYnHFN4L7Sp3Iv8Lz5/7Q/7iXJ6
+ u0T/r9+nFu/d+Ep9VuW/Q17acnrGDaFqPs0FbhZtbcIelmou7PaF77b7+v1UKy9YJroj4Jrw
+ S/5N/+5cX7s2v3OCubZA3pv/MpIqzDZNfaxXXn9endn082UQs6TeNyWW4oxEQy3mouJEAH47
+ 1ANbAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrOIsWRmVeSWpSXmKPExsVy+t/xu7p3u17HGSzbZGXRe+4kk8XGGetZ
+ Lf5vm8hsceXrezaLlauPMlks2G9t8eXKQyaLTY+vsVpc3jWHzWLtkbvsFgc/PGF14PZYM28N
+ o8febwtYPLZ/e8Dqcb/7OJPH5iX1Hrf/PWb2mHxjOaPH7psNbB59W1YxenzeJBfAFaVnU5Rf
+ WpKqkJFfXGKrFG1oYaRnaGmhZ2RiqWdobB5rZWSqpG9nk5Kak1mWWqRvl6CX8ejLVdaCNr+K
+ c5+9Gxgn2HUxcnJICJhIvG/fyNzFyMUhJLCUUaLtwgVmiISMxMlpDawQtrDEn2tdbBBFnxgl
+ 9na+ZwNJsAkYSnS9hUiICHQySkzr/sgO4jALzGOSWPTwEDtIlbCAn8THbQ/BxrIIqEqsefCV
+ CcTmFbCVaNzxnAlihbzE6g0HmCHighInZz5h6WLkABqkLrF+nhBImBmopHnrbOYJjPyzkFTN
+ QqiahaRqASPzKkaR1NLi3PTcYkO94sTc4tK8dL3k/NxNjMBI23bs5+YdjJc2Bh9iFOBgVOLh
+ fRHyOk6INbGsuDL3EKMEB7OSCK/T2dNxQrwpiZVVqUX58UWlOanFhxhNgV6YyCwlmpwPTAJ5
+ JfGGpobmFpaG5sbmxmYWSuK8HQIHY4QE0hNLUrNTUwtSi2D6mDg4pRoY+Xvypjz8yL1jizJv
+ uUT+Yt73029yXVxvejBv1U4e6VevtRVuhs6abJKoW9Xeq6+1NujC750dJZzeBjxek+NVJkZX
+ 1B8S8QsXa/jo/Gb++74JnR7lKzm/1sxRfbGoW+lmkcNZiamhbv1tFvz/JjoLaVTquPyIie0U
+ eb20m29jmVgMZ9tZ/kIlluKMREMt5qLiRAC9LcEoygIAAA==
+X-CMS-MailID: 20200618154014eucas1p236960ab27d628f94d68a6b8ddb8b07ff
+X-Msg-Generator: CA
+X-RootMTR: 20200618154014eucas1p236960ab27d628f94d68a6b8ddb8b07ff
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200618154014eucas1p236960ab27d628f94d68a6b8ddb8b07ff
+References: <CGME20200618154014eucas1p236960ab27d628f94d68a6b8ddb8b07ff@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_082911_971874_7BBF460C 
-X-CRM114-Status: UNSURE (   8.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200618_084022_926787_CECF4C0C 
+X-CRM114-Status: GOOD (  22.15  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [216.71.154.253 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -82,6 +124,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,69 +137,213 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ludovic.desroches@microchip.com, Codrin
- Ciubotariu <codrin.ciubotariu@microchip.com>, alexandre.belloni@bootlin.com,
- robh+dt@kernel.org
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PDMIC needs PDM microphones to work. sama5d2 xplained doesn't have
-such microphones, so there is no reason to enable PDMIC and take the
-pins since there is no-one using them.
+Dear All,
 
-Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
----
+During the Exynos DRM GEM rework and fixing the issues in the.
+drm_prime_sg_to_page_addr_arrays() function [1] I've noticed that most
+drivers in DRM framework incorrectly use nents and orig_nents entries of
+the struct sg_table.
 
-Changes in v2:
- - rebased on top of at91-dt;
- - added more details in the commit description;
- - changed subject from:
-  "[PATCH 3/3] Revert "ARM: at91/dt: sama5d2 Xplained: add pdmic node""
-to
-  "[PATCH v2] ARM: dts: at91: sama5d2_xplained: Remove pdmic node"
+In case of the most DMA-mapping implementations exchanging those two
+entries or using nents for all loops on the scatterlist is harmless,
+because they both have the same value. There exists however a DMA-mapping
+implementations, for which such incorrect usage breaks things. The nents
+returned by dma_map_sg() might be lower than the nents passed as its
+parameter and this is perfectly fine. DMA framework or IOMMU is allowed
+to join consecutive chunks while mapping if such operation is supported
+by the underlying HW (bus, bridge, IOMMU, etc). Example of the case
+where dma_map_sg() might return 1 'DMA' chunk for the 4 'physical' pages
+is described here [2]
+
+The DMA-mapping framework documentation [3] states that dma_map_sg()
+returns the numer of the created entries in the DMA address space.
+However the subsequent calls to dma_sync_sg_for_{device,cpu} and
+dma_unmap_sg must be called with the original number of entries passed to
+dma_map_sg. The common pattern in DRM drivers were to assign the
+dma_map_sg() return value to sg_table->nents and use that value for
+the subsequent calls to dma_sync_sg_* or dma_unmap_sg functions. Also
+the code iterated over nents times to access the pages stored in the
+processed scatterlist, while it should use orig_nents as the numer of
+the page entries.
+
+I've tried to identify all such incorrect usage of sg_table->nents and
+this is a result of my research. It looks that the incorrect pattern has
+been copied over the many drivers mainly in the DRM subsystem. Too bad in
+most cases it even worked correctly if the system used a simple, linear
+DMA-mapping implementation, for which swapping nents and orig_nents
+doesn't make any difference. To avoid similar issues in the future, I've
+introduced a common wrappers for DMA-mapping calls, which operate directly
+on the sg_table objects. I've also added wrappers for iterating over the
+scatterlists stored in the sg_table objects and applied them where
+possible. This, together with some common DRM prime helpers, allowed me
+to almost get rid of all nents/orig_nents usage in the drivers. I hope
+that such change makes the code robust, easier to follow and copy/paste
+safe.
+
+The biggest TODO is DRM/i915 driver and I don't feel brave enough to fix
+it fully. The driver creatively uses sg_table->orig_nents to store the
+size of the allocate scatterlist and ignores the number of the entries
+returned by dma_map_sg function. In this patchset I only fixed the
+sg_table objects exported by dmabuf related functions. I hope that I
+didn't break anything there.
+
+Patches are based on top of Linux next-20200618. The required changes to
+DMA-mapping framework has been already merged to v5.8-rc1.
+
+If possible I would like ask for merging most of the patches via DRM
+tree.
+
+Best regards,
+Marek Szyprowski
 
 
- arch/arm/boot/dts/at91-sama5d2_xplained.dts | 16 ----------------
- 1 file changed, 16 deletions(-)
+References:
 
-diff --git a/arch/arm/boot/dts/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-index 0e17df568d0b..058fae1b4a76 100644
---- a/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-+++ b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
-@@ -168,16 +168,6 @@ timer1: timer@1 {
- 				};
- 			};
- 
--			pdmic@f8018000 {
--				pinctrl-names = "default";
--				pinctrl-0 = <&pinctrl_pdmic_default>;
--				atmel,model = "PDMIC @ sama5d2_xplained";
--				atmel,mic-min-freq = <1000000>;
--				atmel,mic-max-freq = <3246000>;
--				atmel,mic-offset = <0x0>;
--				status = "okay";
--			};
--
- 			uart1: serial@f8020000 {
- 				pinctrl-names = "default";
- 				pinctrl-0 = <&pinctrl_uart1_default>;
-@@ -599,12 +589,6 @@ pinctrl_macb0_phy_irq: macb0_phy_irq {
- 					bias-disable;
- 				};
- 
--				pinctrl_pdmic_default: pdmic_default {
--					pinmux = <PIN_PB26__PDMIC_DAT>,
--						<PIN_PB27__PDMIC_CLK>;
--					bias-disable;
--				};
--
- 				pinctrl_qspi0_default: qspi0_default {
- 					sck_cs {
- 						pinmux = <PIN_PA22__QSPI0_SCK>,
+[1] https://lkml.org/lkml/2020/3/27/555
+[2] https://lkml.org/lkml/2020/3/29/65
+[3] Documentation/DMA-API-HOWTO.txt
+[4] https://lore.kernel.org/linux-iommu/20200512121931.GD20393@lst.de/T/#ma18c958a48c3b241d5409517fa7d192eef87459b
+
+Changelog:
+
+v6:
+- rebased onto Linux next-20200618, which is based on v5.8-rc1; fixed conflicts
+
+v5: https://lore.kernel.org/linux-iommu/20200513132114.6046-1-m.szyprowski@samsung.com/T/
+- fixed some minor style issues and typos
+- fixed lack of the attrs argument in ion, dmabuf, rapidio, fastrpc and
+  vfio patches
+
+v4: https://lore.kernel.org/linux-iommu/20200512121931.GD20393@lst.de/T/
+- added for_each_sgtable_* wrappers and applied where possible
+- added drm_prime_get_contiguous_size() and applied where possible
+- applied drm_prime_sg_to_page_addr_arrays() where possible to remove page
+  extraction from sg_table objects
+- added documentation for the introduced wrappers
+- improved patches description a bit
+
+v3: https://lore.kernel.org/dri-devel/20200505083926.28503-1-m.szyprowski@samsung.com/
+- introduce dma_*_sgtable_* wrappers and use them in all patches
+
+v2: https://lore.kernel.org/linux-iommu/c01c9766-9778-fd1f-f36e-2dc7bd376ba4@arm.com/T/
+- dropped most of the changes to drm/i915
+- added fixes for rcar-du, xen, media and ion
+- fixed a few issues pointed by kbuild test robot
+- added wide cc: list for each patch
+
+v1: https://lore.kernel.org/linux-iommu/c01c9766-9778-fd1f-f36e-2dc7bd376ba4@arm.com/T/
+- initial version
+
+
+Patch summary:
+
+Marek Szyprowski (36):
+  drm: prime: add common helper to check scatterlist contiguity
+  drm: prime: use sgtable iterators in
+    drm_prime_sg_to_page_addr_arrays()
+  drm: core: fix common struct sg_table related issues
+  drm: amdgpu: fix common struct sg_table related issues
+  drm: armada: fix common struct sg_table related issues
+  drm: etnaviv: fix common struct sg_table related issues
+  drm: exynos: use common helper for a scatterlist contiguity check
+  drm: exynos: fix common struct sg_table related issues
+  drm: i915: fix common struct sg_table related issues
+  drm: lima: fix common struct sg_table related issues
+  drm: mediatek: use common helper for a scatterlist contiguity check
+  drm: mediatek: use common helper for extracting pages array
+  drm: msm: fix common struct sg_table related issues
+  drm: omapdrm: use common helper for extracting pages array
+  drm: omapdrm: fix common struct sg_table related issues
+  drm: panfrost: fix common struct sg_table related issues
+  drm: radeon: fix common struct sg_table related issues
+  drm: rockchip: use common helper for a scatterlist contiguity check
+  drm: rockchip: fix common struct sg_table related issues
+  drm: tegra: fix common struct sg_table related issues
+  drm: v3d: fix common struct sg_table related issues
+  drm: virtio: fix common struct sg_table related issues
+  drm: vmwgfx: fix common struct sg_table related issues
+  xen: gntdev: fix common struct sg_table related issues
+  drm: host1x: fix common struct sg_table related issues
+  drm: rcar-du: fix common struct sg_table related issues
+  dmabuf: fix common struct sg_table related issues
+  staging: ion: remove dead code
+  staging: ion: fix common struct sg_table related issues
+  staging: tegra-vde: fix common struct sg_table related issues
+  misc: fastrpc: fix common struct sg_table related issues
+  rapidio: fix common struct sg_table related issues
+  samples: vfio-mdev/mbochs: fix common struct sg_table related issues
+  media: pci: fix common ALSA DMA-mapping related codes
+  videobuf2: use sgtable-based scatterlist wrappers
+  drm: xen: fix common struct sg_table related issues
+
+ drivers/dma-buf/heaps/heap-helpers.c          | 13 ++-
+ drivers/dma-buf/udmabuf.c                     |  7 +-
+ drivers/gpu/drm/amd/amdgpu/amdgpu_dma_buf.c   |  6 +-
+ drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c       |  9 +-
+ drivers/gpu/drm/amd/amdgpu/amdgpu_vram_mgr.c  |  8 +-
+ drivers/gpu/drm/armada/armada_gem.c           | 12 +--
+ drivers/gpu/drm/drm_cache.c                   |  2 +-
+ drivers/gpu/drm/drm_gem_cma_helper.c          | 23 +----
+ drivers/gpu/drm/drm_gem_shmem_helper.c        | 14 +--
+ drivers/gpu/drm/drm_prime.c                   | 86 ++++++++++---------
+ drivers/gpu/drm/etnaviv/etnaviv_gem.c         | 12 ++-
+ drivers/gpu/drm/etnaviv/etnaviv_mmu.c         | 13 +--
+ drivers/gpu/drm/exynos/exynos_drm_g2d.c       | 10 +--
+ drivers/gpu/drm/exynos/exynos_drm_gem.c       | 23 +----
+ drivers/gpu/drm/i915/gem/i915_gem_dmabuf.c    | 11 +--
+ .../gpu/drm/i915/gem/selftests/mock_dmabuf.c  |  7 +-
+ drivers/gpu/drm/lima/lima_gem.c               | 11 ++-
+ drivers/gpu/drm/lima/lima_vm.c                |  5 +-
+ drivers/gpu/drm/mediatek/mtk_drm_gem.c        | 37 ++------
+ drivers/gpu/drm/msm/msm_gem.c                 | 13 ++-
+ drivers/gpu/drm/msm/msm_gpummu.c              | 14 ++-
+ drivers/gpu/drm/msm/msm_iommu.c               |  2 +-
+ drivers/gpu/drm/omapdrm/omap_gem.c            | 20 ++---
+ drivers/gpu/drm/panfrost/panfrost_gem.c       |  4 +-
+ drivers/gpu/drm/panfrost/panfrost_mmu.c       |  7 +-
+ drivers/gpu/drm/radeon/radeon_ttm.c           | 11 ++-
+ drivers/gpu/drm/rcar-du/rcar_du_vsp.c         |  3 +-
+ drivers/gpu/drm/rockchip/rockchip_drm_gem.c   | 42 +++------
+ drivers/gpu/drm/tegra/gem.c                   | 27 +++---
+ drivers/gpu/drm/tegra/plane.c                 | 15 ++--
+ drivers/gpu/drm/v3d/v3d_mmu.c                 | 17 ++--
+ drivers/gpu/drm/virtio/virtgpu_object.c       | 36 ++++----
+ drivers/gpu/drm/virtio/virtgpu_vq.c           | 12 ++-
+ drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c    | 17 +---
+ drivers/gpu/drm/xen/xen_drm_front_gem.c       |  2 +-
+ drivers/gpu/host1x/job.c                      | 22 ++---
+ .../common/videobuf2/videobuf2-dma-contig.c   | 41 ++++-----
+ .../media/common/videobuf2/videobuf2-dma-sg.c | 32 +++----
+ .../common/videobuf2/videobuf2-vmalloc.c      | 12 +--
+ drivers/media/pci/cx23885/cx23885-alsa.c      |  2 +-
+ drivers/media/pci/cx25821/cx25821-alsa.c      |  2 +-
+ drivers/media/pci/cx88/cx88-alsa.c            |  2 +-
+ drivers/media/pci/saa7134/saa7134-alsa.c      |  2 +-
+ drivers/media/platform/vsp1/vsp1_drm.c        |  8 +-
+ drivers/misc/fastrpc.c                        |  4 +-
+ drivers/rapidio/devices/rio_mport_cdev.c      |  8 +-
+ drivers/staging/android/ion/ion.c             | 25 +++---
+ drivers/staging/android/ion/ion.h             |  1 -
+ drivers/staging/android/ion/ion_heap.c        | 53 +++---------
+ drivers/staging/android/ion/ion_system_heap.c |  2 +-
+ drivers/staging/media/tegra-vde/iommu.c       |  4 +-
+ drivers/xen/gntdev-dmabuf.c                   | 13 ++-
+ include/drm/drm_prime.h                       |  2 +
+ samples/vfio-mdev/mbochs.c                    |  3 +-
+ 54 files changed, 311 insertions(+), 478 deletions(-)
+
 -- 
-2.25.1
+2.17.1
 
 
 _______________________________________________
