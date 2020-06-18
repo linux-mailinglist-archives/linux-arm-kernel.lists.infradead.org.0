@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDBBC1FE186
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:55:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CE101FE195
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:56:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EWa3jxk1sWiP5q3e1w28xWzkEIjb++IDOfVrU7UJN7k=; b=B1kVmuNd318AI2
-	KRXDyv46M52QwGCL8yPYjUz51wbmk/mm3Vi2nRYFgM5yP/rEdijVUbqtOvB2la5d8Qw2afKWMzC6W
-	z8AFvGB8Oy/i3ENUVcQjyUf09OOPcvjzvqkTkQEuX+wwLXxaHcRgGujfkqhdEODGueIeBKLl1LRTY
-	3FDOqpnFODROJFC2JPRhuKClad0iflDdVC9V3Ye7+a5CQTbu5lFnowmsZrFLhur4tgQHHJrZcj5pa
-	0I3QCdnRVvPmXzVUmf70/4AjLHfpu9AZITEm24CQqZjmFpp9hkHsqKWqnkamGfHYaAv2++lc5tXB6
-	f1iialz6btyJpbfjA2nw==;
+	List-Owner; bh=IdW/cqB2qoy2z5N4xntYXzFm8th8ma5Zryhj8Ym1aAw=; b=LuTzl6ydIj9kUt
+	FDg9QT0q+nETksKd9P4j9oymzwRV7jvUiJdOpUe/b4j5eLDuNE5s2L5gpfhVrgAwMSeet5TKpThJD
+	Irw2MI+lPbMjsmALoW6bmHfVt8DuhuDQTora/p2lwraKFU+WmMwIECbYedhzsrFotouq2Dqlwap8i
+	MxYM/s44X0C3YUeH+GwowXB8Mfn4vP2F91tZnUudwcW9CBmBmJFWc0BpBp859VmHE5CYTGCg6AoYy
+	AmVxr8mcUCDzOdPQLvCXUq42JXm8Hamw7mVYAAoUQL2MAt8ToBYGxlCvdUkAmjw0Ct3aG8Dav06VT
+	16W+4QizpaPHTmVLFQfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljmK-0000OO-Hb; Thu, 18 Jun 2020 01:55:44 +0000
+	id 1jljma-0000h1-9R; Thu, 18 Jun 2020 01:56:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljHC-0006vq-27
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:23:36 +0000
+ id 1jljHl-0007P4-LC; Thu, 18 Jun 2020 01:24:12 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C538521D82;
- Thu, 18 Jun 2020 01:23:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F0B921974;
+ Thu, 18 Jun 2020 01:24:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443413;
- bh=6xPYoE8X7XkNTACLzWGx9psDyOiI/Nu4/wzkklbhQnI=;
+ s=default; t=1592443448;
+ bh=T8yuiFplhkHxiUAjaifpVYPPuG9x26CJk7BTd3i7XHc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=p9Hhi0dJ7HyaJG8bDOnZQzN2bASs+7a6XnWSYapbz+st4OHJb3pnq2O37FnDAcLpR
- zhEOcP1JooJ9J06cYpr9/djQg/WHDNiebo16VTMzRROXKBMI9GJGlw1aFNGW3KQTt6
- KGje+IEyP61qM1LzOLxp++FSnyd0c6wpktBhVbgM=
+ b=EvfamgsdMcDi45MjCdx80Lf9b7CLDIZdS562dVqnNqVrcEilDdHcPOuU4EtqzLkJG
+ 9dNHPfLYOFpWdyA4JN74Iet10054aZJ8fSfk/IxmoMjp5uVEfzHxOzxp6rx/2p7zeD
+ 516EyGBWILz9/0BxcXNDZeocOvtQEGjCzN9bu99w=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 056/172] ARM: dts:
- sun8i-h2-plus-bananapi-m2-zero: Fix led polarity
-Date: Wed, 17 Jun 2020 21:20:22 -0400
-Message-Id: <20200618012218.607130-56-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 084/172] pinctrl: rockchip: fix memleak in
+ rockchip_dt_node_to_map
+Date: Wed, 17 Jun 2020 21:20:50 -0400
+Message-Id: <20200618012218.607130-84-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012218.607130-1-sashal@kernel.org>
 References: <20200618012218.607130-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182334_254954_502C06A8 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20200617_182409_828828_8024410A 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,39 +79,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>,
- =?UTF-8?q?Vincent=20Stehl=C3=A9?= <vincent.stehle@laposte.net>,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>,
+ Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogVmluY2VudCBTdGVobMOpIDx2aW5jZW50LnN0ZWhsZUBsYXBvc3RlLm5ldD4KClsgVXBz
-dHJlYW0gY29tbWl0IDM0YjY4MjZkZjc0NjJjNTQxNzUyY2Y4YjFkZTI2OTFiMjZkNzhhZTAgXQoK
-VGhlIFBXUi1MRUQgb24gdGhlIGJhbmFuYXBpIG0yIHplcm8gYm9hcmQgaXMgb24gd2hlbiBncGlv
-IFBMMTAgaXMgbG93LgpUaGlzIGhhcyBiZWVuIHZlcmlmaWVkIG9uIGEgYm9hcmQgYW5kIGluIHRo
-ZSBzY2hlbWF0aWNzIFsxXS4KClsxXTogaHR0cDovL3dpa2kuYmFuYW5hLXBpLm9yZy9CYW5hbmFf
-UGlfQlBJLU0yX1pFUk8jRG9jdW1lbnRzCgpGaXhlczogOGI4MDYxZmNiZmFlICgiQVJNOiBkdHM6
-IHN1bjhpOiBoMis6IGFkZCBzdXBwb3J0IGZvciBCYW5hbmEgUGkgTTIgWmVybyBib2FyZCIpClNp
-Z25lZC1vZmYtYnk6IFZpbmNlbnQgU3RlaGzDqSA8dmluY2VudC5zdGVobGVAbGFwb3N0ZS5uZXQ+
-CkNjOiBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFvc2MuaW8+CkNjOiBNYXhpbWUgUmlwYXJkIDxt
-cmlwYXJkQGtlcm5lbC5vcmc+ClNpZ25lZC1vZmYtYnk6IE1heGltZSBSaXBhcmQgPG1heGltZUBj
-ZXJuby50ZWNoPgpTaWduZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5lbC5vcmc+
-Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktaDItcGx1cy1iYW5hbmFwaS1tMi16ZXJvLmR0
-cyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoK
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWgyLXBsdXMtYmFuYW5hcGktbTIt
-emVyby5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9zdW44aS1oMi1wbHVzLWJhbmFuYXBpLW0yLXpl
-cm8uZHRzCmluZGV4IDFkYjI1NDExMzVhNy4uMDBlMGQ2OTQwYzMwIDEwMDY0NAotLS0gYS9hcmNo
-L2FybS9ib290L2R0cy9zdW44aS1oMi1wbHVzLWJhbmFuYXBpLW0yLXplcm8uZHRzCisrKyBiL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWgyLXBsdXMtYmFuYW5hcGktbTItemVyby5kdHMKQEAgLTMy
-LDcgKzMyLDcgQEAgbGVkcyB7CiAKIAkJcHdyX2xlZCB7CiAJCQlsYWJlbCA9ICJiYW5hbmFwaS1t
-Mi16ZXJvOnJlZDpwd3IiOwotCQkJZ3Bpb3MgPSA8JnJfcGlvIDAgMTAgR1BJT19BQ1RJVkVfSElH
-SD47IC8qIFBMMTAgKi8KKwkJCWdwaW9zID0gPCZyX3BpbyAwIDEwIEdQSU9fQUNUSVZFX0xPVz47
-IC8qIFBMMTAgKi8KIAkJCWRlZmF1bHQtc3RhdGUgPSAib24iOwogCQl9OwogCX07Ci0tIAoyLjI1
-LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+
+[ Upstream commit d7faa8ffb6be57bf8233a4b5a636d76b83c51ce7 ]
+
+In function rockchip_dt_node_to_map, a new_map variable is
+allocated by:
+
+new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
+		       GFP_KERNEL);
+
+This uses devres and attaches new_map to the pinctrl driver.
+This cause a leak since new_map is not released when the probed
+driver is removed. Fix it by using kcalloc to allocate new_map
+and free it in `rockchip_dt_free_map`
+
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Link: https://lore.kernel.org/r/20200506100903.15420-1-dafna.hirschfeld@collabora.com
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/pinctrl/pinctrl-rockchip.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
+index 8d83817935da..005df24f5b3f 100644
+--- a/drivers/pinctrl/pinctrl-rockchip.c
++++ b/drivers/pinctrl/pinctrl-rockchip.c
+@@ -507,8 +507,8 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+ 	}
+ 
+ 	map_num += grp->npins;
+-	new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
+-								GFP_KERNEL);
++
++	new_map = kcalloc(map_num, sizeof(*new_map), GFP_KERNEL);
+ 	if (!new_map)
+ 		return -ENOMEM;
+ 
+@@ -518,7 +518,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+ 	/* create mux map */
+ 	parent = of_get_parent(np);
+ 	if (!parent) {
+-		devm_kfree(pctldev->dev, new_map);
++		kfree(new_map);
+ 		return -EINVAL;
+ 	}
+ 	new_map[0].type = PIN_MAP_TYPE_MUX_GROUP;
+@@ -545,6 +545,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+ static void rockchip_dt_free_map(struct pinctrl_dev *pctldev,
+ 				    struct pinctrl_map *map, unsigned num_maps)
+ {
++	kfree(map);
+ }
+ 
+ static const struct pinctrl_ops rockchip_pctrl_ops = {
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
