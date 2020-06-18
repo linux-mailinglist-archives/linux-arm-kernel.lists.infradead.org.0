@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 849141FED33
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:09:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7257F1FED55
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 10:16:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3BqPOj1WwVZ+kAE+kBdhqQO3uB73DQkwWqtKZYaqjyI=; b=ux/FpqIj0W7Ata
-	3Mp1AnfgVGJrU/6WdgM0kdW7+dHv+hARFNTCeHatm2iz27L1VRpdGaPKWP18kYy5Cg4Un8/yp5qmu
-	o/5UX/bDSSrMaY0c/SjsSBjK8LBjXMhlkmswfsGfacOkl+SKEHL4lydVvkOlPhIDUlpwCwBJHaZQg
-	xPmgltcgpdRxf1m+vcm2TLueCOHq4C7jh6tWU2krKh9fbicx/G9tRAQW9eD8iQ5OKsb79jY9fZLWG
-	iIgh0mrjtlXdFwzSGezA+usCg3lJpjRYW/pqq6JePOm3Z9iUuttN3TfXGqC/a7viji+H/PdvtS0BB
-	N7pFv6PDcSZfdVPn/4rw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zPVfzpxdKUZmZFXL4IHIzka0ZseDFHtD/0l9G8VXBts=; b=OwlzX53fJQVrC7
+	ucGc/1U0KY0VYpn+RjAE6gth24j2MHUt5bn5/Sb5vXEqo1Tazt20wUUHSUmGdvCo72jfegfyl+6YJ
+	0E/6ICqlbgSfNwtwYh8/5lrqT2h7MJLhz2wQ0YAwuOXvjh9FADDuyAo6lTrcK4rV/sO9nFZVynJMV
+	1XpDpWe+zNGZwdTD6ErAVFxke8CtaVSYdXXF8AWeyhU/y8dS8D1Pupw1Pb3K6lc011sZJW8GgYJVl
+	7/2mq1ObUfmu6yal4u1b1yBSKGLa70vNnKd2+2dCoF2NUcVfmdwRmnafOEQCq/C/hF8dlBpfSY+QZ
+	kBu9TUCZMRjTRn+3o3vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlpbV-0006yS-QV; Thu, 18 Jun 2020 08:08:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlpbJ-0006xm-6G
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:08:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85FC731B;
- Thu, 18 Jun 2020 01:08:41 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.67])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CC4633F6CF;
- Thu, 18 Jun 2020 01:08:39 -0700 (PDT)
-Date: Thu, 18 Jun 2020 09:08:33 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH 2/2] cpufreq: arm_scmi: Set fast_switch_possible
- conditionally
-Message-ID: <20200618080833.GA20559@bogus>
-References: <20200617094332.8391-1-nicola.mazzucato@arm.com>
- <20200617094332.8391-2-nicola.mazzucato@arm.com>
- <20200617124753.GA15211@bogus>
- <20200618061420.5q7xsldakax2zro5@vireshk-i7>
+	id 1jlpj3-0004Tw-N7; Thu, 18 Jun 2020 08:16:45 +0000
+Received: from thoth.sbs.de ([192.35.17.2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlpiu-0001N9-Ia
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 08:16:38 +0000
+Received: from mail2.sbs.de (mail2.sbs.de [192.129.41.66])
+ by thoth.sbs.de (8.15.2/8.15.2) with ESMTPS id 05I8Bhvw013177
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 18 Jun 2020 10:11:43 +0200
+Received: from [167.87.31.88] ([167.87.31.88])
+ by mail2.sbs.de (8.15.2/8.15.2) with ESMTP id 05I8BetX029723;
+ Thu, 18 Jun 2020 10:11:41 +0200
+From: Jan Kiszka <jan.kiszka@siemens.com>
+Subject: [PATCH] Revert "tty: xilinx_uartps: Fix missing id assignment to the
+ console"
+To: Michal Simek <michal.simek@xilinx.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Message-ID: <f4092727-d8f5-5f91-2c9f-76643aace993@siemens.com>
+Date: Thu, 18 Jun 2020 10:11:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200618061420.5q7xsldakax2zro5@vireshk-i7>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_010848_246901_6F434D7E 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200618_011636_916608_D9362F3E 
+X-CRM114-Status: GOOD (  10.34  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.35.17.2 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.35.17.2 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,33 +67,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- Nicola Mazzucato <nicola.mazzucato@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, lukasz.luba@arm.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ stable@vger.kernel.org, linux-serial <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBKdW4gMTgsIDIwMjAgYXQgMTE6NDQ6MjBBTSArMDUzMCwgVmlyZXNoIEt1bWFyIHdy
-b3RlOgo+IE9uIDE3LTA2LTIwLCAxMzo0NywgU3VkZWVwIEhvbGxhIHdyb3RlOgo+ID4gVGhpcyBp
-cyBmaXJzdCBzdGVwIHRvd2FyZHMgYXZvaWRpbmcgcG9sbGluZyBiYXNlZCBjcHVmcmVxIHNldCBp
-ZiBmaXJtd2FyZQo+ID4gaGFzIGZhc3QgYWNjZXNzIHJlZ2lzdGVycyB0aGF0IGJ5cGFzcyBub3Jt
-YWwgbWFpbGJveCBiYXNlZCBtZXNzYWdpbmcuCj4gPgo+ID4gSWYgeW91IGhhcHB5IHdpdGggdGhp
-cyBhbmQgcHJvdmlkZSBhY2ssIEkgd2lsbCB0YWtlIHRoaXMgYWxvbmcgd2l0aCBzY21pCj4gPiBj
-aGFuZ2VzIHZpYSBBUk0gU29DLiBIb3BlIHRoYXQgaXMgZmluZSBieSB5b3UuCj4KPiBTdWRlZXAs
-Cj4KPiBJIGFtIG5vdCBzdXJlIGhvdyBpdCBjb25jZXJucyBtZSBmcmFua2x5IDopCj4KClNvcnJ5
-IEkgd2Fzbid0IGNsZWFyLgoKPiBBRkFJQ1QsIHRoaXMgaXMgZW5hYmxpbmcgZmFzdCBzd2l0Y2gg
-YmFzZWQgb24gc29tZSBtZWNoYW5pc20gKGludGVybmFsCj4gdG8gc2NtaSkgYW5kIHNvIGVpdGhl
-ciB0aGUgY3B1ZnJlcSBkcml2ZXIgd2lsbCBoYXZlIGZhc3Qtc3dpdGNoCj4gZW5hYmxlZCBvciBu
-b3QsIGFuZCBib3RoIGFyZSBmaW5lIGJ5IHRoZSBjcHVmcmVxIGNvcmUuCj4KCkluZGVlZC4KCj4g
-QW5kIHNvIEkgYW0gY29uZnVzZWQgb24gd2h5IG15IEFjayBpcyBpbXBvcnRhbnQgaGVyZSA6KQo+
-CgpHZW5lcmFsbHkgQVJNIFNvQyB0ZWFtIGV4cGVjdHMgYSBzdGFtcCBmcm9tIG90aGVyIHN1YnN5
-c3RlbSBtYWludGFpbmVycwppZiB0aGV5IGFyZSBwdWxsaW5nIGl0LiBJIHVuZGVyc3RhbmQgdGhl
-cmUgaXMgbW9yZSBmaXJtd2FyZSBhc3BlY3QgdGhhbgpjcHVmcmVxIGFzcGVjdCBoZXJlLCBidXQg
-c3RpbGwgd2UgbWF5IG5lZWQgeW91ciBzdGFtcCB0byB0aGlzIPCfmIkgZm9yCmxvZ2lzdGljIHJl
-YXNvbnMuCgotLQpSZWdhcmRzLApTdWRlZXAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Jan Kiszka <jan.kiszka@siemens.com>
+
+This reverts commit 2ae11c46d5fdc46cb396e35911c713d271056d35.
+
+It turned out to break the ultra96-rev1, e.g., which uses uart1 as
+serial0 (and stdout-path = "serial0:115200n8").
+
+Cc: stable <stable@vger.kernel.org>
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+ drivers/tty/serial/xilinx_uartps.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
+index 35e9e8faf8de..ac137b6a1dc1 100644
+--- a/drivers/tty/serial/xilinx_uartps.c
++++ b/drivers/tty/serial/xilinx_uartps.c
+@@ -1459,7 +1459,6 @@ static int cdns_uart_probe(struct platform_device *pdev)
+ 		cdns_uart_uart_driver.nr = CDNS_UART_NR_PORTS;
+ #ifdef CONFIG_SERIAL_XILINX_PS_UART_CONSOLE
+ 		cdns_uart_uart_driver.cons = &cdns_uart_console;
+-		cdns_uart_console.index = id;
+ #endif
+ 
+ 		rc = uart_register_driver(&cdns_uart_uart_driver);
+-- 
+2.26.2
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
