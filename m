@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A36B41FE23F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:00:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CA0E1FE240
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 04:01:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UpJO0fpxR9UKfmnvAHVO88PYBISCBStj59fAeX3D6Ug=; b=Rf/IPC7sD5sQ1U
-	H7h4dmXzGNLq8s0jgR9uCm7MoEm6u9VpGyqKEV+NAGRrNfK48Y37AkLPlJtxU9jr3iWmT8zxJ5AjS
-	xzCquVviCZeqGe04kZM8qwRANRZa24y451mxRcah0OBcVJa/iDD/C/aqke9knvGFCZOG9ua2A0kCr
-	I6x3MrKluXv47R5r0wRStQhoTsi4POLa+bFG4aFBs4yVeQc7H1WdvQofs07QT8CPOxJqER0jGqYhd
-	0OpyJBV5KtOiHFh1SXApSyfrDnTrVl1PUQjxa+NsRDPs4AJmtTmR0cHGDwKGTeDjpfTuw/6S9080z
-	CNwrlNSclwPxk9mHQmDw==;
+	List-Owner; bh=Dd0OmLtSZoLhQ218whlMeXFf5/jljgWFdYHkcP6XeVI=; b=BAG4zB+nY6LqZB
+	65r88B2zAiy8g+xFUbAabZiOHTKrC/Mhh34fnNNJORYiWCa6jek0TI6yvElJvfw3qDGYuoMHmKT30
+	ibsfyi1Ne3hYpwrL6b6JXLQ8YHowSNkAsZw5TcWE80oOVgI6nWYiIdlCQx6Ros5fC+lq1huLdevWH
+	QHixIqO2VYef6P0KplXiqGnZiNudre1xGyS1MIG3XLgovKbMuypn6zOyLVmLLTL8Hm+T0CVGgPQxS
+	lL5KpnNPMbS1WUTq7PvfOv99UL1bHm73uJRvkkgJLkye2piLxXjZFylj6l9f1x9EIvnGzqY2A5pkK
+	oP8430Vk2NZwEDgzGG8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljr4-00076g-Bo; Thu, 18 Jun 2020 02:00:38 +0000
+	id 1jljrN-0007MK-OA; Thu, 18 Jun 2020 02:00:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jljKr-0004Im-Ht
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:27:24 +0000
+ id 1jljKw-0004NM-Ni
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jun 2020 01:27:28 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 126BD21D7F;
- Thu, 18 Jun 2020 01:27:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 58BBA21D7F;
+ Thu, 18 Jun 2020 01:27:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592443641;
- bh=5i03AouEWOGV0POpF6whTdCHW3N74DdNXTfig95nBU0=;
+ s=default; t=1592443646;
+ bh=L5jxM9QxIyUVuj7z141yzzSyh/Vb4RBgGamMQWmlHcg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NXE9AtqO8VeJ//rp/KlsHGMSWvX4dIoJbdxFKMJByU5OxWtEYL8reZ+m1f0YeFumr
- Jy+YIJGu2pthsfsjJOiJP3hgcg2CrLpEVLLRhckgSJEybsY2At03ODOPK0LdYLy9o7
- +AkMLIoXIEnXEHMioEnJ66i//1OV6jkqqXVeGNrI=
+ b=moc1RpAu3LdA/XAhOsaHh+H/oIoCTL9Ge6EVJS0StdyMu+QiY3g0pIG7P+QI+4BXo
+ NtVHxmRtrfDmIETMTYh8I2+dxR0wd1m8KnHLMVn5cialMgcLzZj6Q3CNEohDD2Hkwt
+ 9LtAvzLOoDJKk68I9lKgVpO+mJfurpWLFU+yma94=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 063/108] usb/ohci-platform: Fix a warning when
- hibernating
-Date: Wed, 17 Jun 2020 21:25:15 -0400
-Message-Id: <20200618012600.608744-63-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 067/108] clk: samsung: exynos5433: Add
+ IGNORE_UNUSED flag to sclk_i2s1
+Date: Wed, 17 Jun 2020 21:25:19 -0400
+Message-Id: <20200618012600.608744-67-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618012600.608744-1-sashal@kernel.org>
 References: <20200618012600.608744-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_182722_031126_F2929D99 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20200617_182726_808460_F2180F8B 
+X-CRM114-Status: GOOD (  12.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,110 +80,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Oliver Neukum <oneukum@suse.de>,
- Mathias Nyman <mathias.nyman@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- Tony Prisk <linux@prisktech.co.nz>, Alan Stern <stern@rowland.harvard.edu>,
- Qais Yousef <qais.yousef@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Qais Yousef <qais.yousef@arm.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit 1cb3b0095c3d0bb96912bfbbce4fc006d41f367c ]
+[ Upstream commit 25bdae0f1c6609ceaf55fe6700654f0be2253d8e ]
 
-The following warning was observed when attempting to suspend to disk
-using a USB flash as a swap device.
+Mark the SCLK clock for Exynos5433 I2S1 device with IGNORE_UNUSED flag to
+match its behaviour with SCLK clock for AUD_I2S (I2S0) device until
+a proper fix for Exynos I2S driver is ready.
 
-[  111.779649] ------------[ cut here ]------------
-[  111.788382] URB (____ptrval____) submitted while active
-[  111.796646] WARNING: CPU: 3 PID: 365 at drivers/usb/core/urb.c:363 usb_submit_urb+0x3d8/0x590
-[  111.805417] Modules linked in:
-[  111.808584] CPU: 3 PID: 365 Comm: kworker/3:2 Not tainted 5.6.0-rc6-00002-gdfd1731f9a3e-dirty #545
-[  111.817796] Hardware name: ARM Juno development board (r2) (DT)
-[  111.823896] Workqueue: usb_hub_wq hub_event
-[  111.828217] pstate: 60000005 (nZCv daif -PAN -UAO)
-[  111.833156] pc : usb_submit_urb+0x3d8/0x590
-[  111.837471] lr : usb_submit_urb+0x3d8/0x590
-[  111.841783] sp : ffff800018de38b0
-[  111.845205] x29: ffff800018de38b0 x28: 0000000000000003
-[  111.850682] x27: ffff000970530b20 x26: ffff8000133fd000
-[  111.856159] x25: ffff8000133fd000 x24: ffff800018de3b38
-[  111.861635] x23: 0000000000000004 x22: 0000000000000c00
-[  111.867112] x21: 0000000000000000 x20: 00000000fffffff0
-[  111.872589] x19: ffff0009704e7a00 x18: ffffffffffffffff
-[  111.878065] x17: 00000000a7c8f4bc x16: 000000002af33de8
-[  111.883542] x15: ffff8000133fda88 x14: 0720072007200720
-[  111.889019] x13: 0720072007200720 x12: 0720072007200720
-[  111.894496] x11: 0000000000000000 x10: 00000000a5286134
-[  111.899973] x9 : 0000000000000002 x8 : ffff000970c837a0
-[  111.905449] x7 : 0000000000000000 x6 : ffff800018de3570
-[  111.910926] x5 : 0000000000000001 x4 : 0000000000000003
-[  111.916401] x3 : 0000000000000000 x2 : ffff800013427118
-[  111.921879] x1 : 9d4e965b4b7d7c00 x0 : 0000000000000000
-[  111.927356] Call trace:
-[  111.929892]  usb_submit_urb+0x3d8/0x590
-[  111.933852]  hub_activate+0x108/0x7f0
-[  111.937633]  hub_resume+0xac/0x148
-[  111.941149]  usb_resume_interface.isra.10+0x60/0x138
-[  111.946265]  usb_resume_both+0xe4/0x140
-[  111.950225]  usb_runtime_resume+0x24/0x30
-[  111.954365]  __rpm_callback+0xdc/0x138
-[  111.958236]  rpm_callback+0x34/0x98
-[  111.961841]  rpm_resume+0x4a8/0x720
-[  111.965445]  rpm_resume+0x50c/0x720
-[  111.969049]  __pm_runtime_resume+0x4c/0xb8
-[  111.973276]  usb_autopm_get_interface+0x28/0x60
-[  111.977948]  hub_event+0x80/0x16d8
-[  111.981466]  process_one_work+0x2a4/0x748
-[  111.985604]  worker_thread+0x48/0x498
-[  111.989387]  kthread+0x13c/0x140
-[  111.992725]  ret_from_fork+0x10/0x18
-[  111.996415] irq event stamp: 354
-[  111.999756] hardirqs last  enabled at (353): [<ffff80001019ea1c>] console_unlock+0x504/0x5b8
-[  112.008441] hardirqs last disabled at (354): [<ffff8000100a95d0>] do_debug_exception+0x1a8/0x258
-[  112.017479] softirqs last  enabled at (350): [<ffff8000100818a4>] __do_softirq+0x4bc/0x568
-[  112.025984] softirqs last disabled at (343): [<ffff8000101145a4>] irq_exit+0x144/0x150
-[  112.034129] ---[ end trace dc96030b9cf6c8a3 ]---
+This fixes the following synchronous abort issue revealed by the probe
+order change caused by the commit 93d2e4322aa7 ("of: platform: Batch
+fwnode parsing when adding all top level devices")
 
-The problem was tracked down to a missing call to
-pm_runtime_set_active() on resume in ohci-platform.
+Internal error: synchronous external abort: 96000210 [#1] PREEMPT SMP
+Modules linked in:
+CPU: 0 PID: 50 Comm: kworker/0:1 Not tainted 5.7.0-rc5+ #701
+Hardware name: Samsung TM2E board (DT)
+Workqueue: events deferred_probe_work_func
+pstate: 60000005 (nZCv daif -PAN -UAO)
+pc : samsung_i2s_probe+0x768/0x8f0
+lr : samsung_i2s_probe+0x688/0x8f0
+...
+Call trace:
+ samsung_i2s_probe+0x768/0x8f0
+ platform_drv_probe+0x50/0xa8
+ really_probe+0x108/0x370
+ driver_probe_device+0x54/0xb8
+ __device_attach_driver+0x90/0xc0
+ bus_for_each_drv+0x70/0xc8
+ __device_attach+0xdc/0x140
+ device_initial_probe+0x10/0x18
+ bus_probe_device+0x94/0xa0
+ deferred_probe_work_func+0x70/0xa8
+ process_one_work+0x2a8/0x718
+ worker_thread+0x48/0x470
+ kthread+0x134/0x160
+ ret_from_fork+0x10/0x1c
+Code: 17ffffaf d503201f f94086c0 91003000 (88dffc00)
+---[ end trace ccf721c9400ddbd6 ]---
 
-Link: https://lore.kernel.org/lkml/20200323143857.db5zphxhq4hz3hmd@e107158-lin.cambridge.arm.com/
-Acked-by: Alan Stern <stern@rowland.harvard.edu>
-Signed-off-by: Qais Yousef <qais.yousef@arm.com>
-CC: Tony Prisk <linux@prisktech.co.nz>
-CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-CC: Mathias Nyman <mathias.nyman@intel.com>
-CC: Oliver Neukum <oneukum@suse.de>
-CC: linux-arm-kernel@lists.infradead.org
-CC: linux-usb@vger.kernel.org
-CC: linux-kernel@vger.kernel.org
-Link: https://lore.kernel.org/r/20200518154931.6144-1-qais.yousef@arm.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/usb/host/ohci-platform.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/clk/samsung/clk-exynos5433.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/usb/host/ohci-platform.c b/drivers/usb/host/ohci-platform.c
-index 61fe2b985070..742cefa22c2b 100644
---- a/drivers/usb/host/ohci-platform.c
-+++ b/drivers/usb/host/ohci-platform.c
-@@ -355,6 +355,11 @@ static int ohci_platform_resume(struct device *dev)
- 	}
- 
- 	ohci_resume(hcd, false);
-+
-+	pm_runtime_disable(dev);
-+	pm_runtime_set_active(dev);
-+	pm_runtime_enable(dev);
-+
- 	return 0;
- }
- #endif /* CONFIG_PM_SLEEP */
+diff --git a/drivers/clk/samsung/clk-exynos5433.c b/drivers/clk/samsung/clk-exynos5433.c
+index 1d2265f9ee97..1c327d5de98c 100644
+--- a/drivers/clk/samsung/clk-exynos5433.c
++++ b/drivers/clk/samsung/clk-exynos5433.c
+@@ -1674,7 +1674,8 @@ static const struct samsung_gate_clock peric_gate_clks[] __initconst = {
+ 	GATE(CLK_SCLK_PCM1, "sclk_pcm1", "sclk_pcm1_peric",
+ 			ENABLE_SCLK_PERIC, 7, CLK_SET_RATE_PARENT, 0),
+ 	GATE(CLK_SCLK_I2S1, "sclk_i2s1", "sclk_i2s1_peric",
+-			ENABLE_SCLK_PERIC, 6, CLK_SET_RATE_PARENT, 0),
++			ENABLE_SCLK_PERIC, 6,
++			CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED, 0),
+ 	GATE(CLK_SCLK_SPI2, "sclk_spi2", "sclk_spi2_peric", ENABLE_SCLK_PERIC,
+ 			5, CLK_SET_RATE_PARENT, 0),
+ 	GATE(CLK_SCLK_SPI1, "sclk_spi1", "sclk_spi1_peric", ENABLE_SCLK_PERIC,
 -- 
 2.25.1
 
