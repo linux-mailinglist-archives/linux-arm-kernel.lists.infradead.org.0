@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80A7F1FDCD5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:23:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF1081FDCD9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jun 2020 03:23:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TyeGyfSiYd8Rq+UPmXAC4ERQd1RmYNTWW7PrlukLxIc=; b=saluPwQ3pwXIWo
-	3trp9WL2MWyXbQ08hGtz7OvwFk/ddSBd5cldldsDN8su67gZs2hEy2jF8kr4WbZ2Aykx/QW0lg3YE
-	Vlsjr3bde/XnYLWgtJBtdC1XPSK5qtXOSPnNSa5SEs1tTnkWM/BlaaIt+3GQPnDaCcwZxvNEkIeeN
-	gxHeh24qZbj6/LFrkwJmJKN2pkptv278OOsIrXvZzS5nveFJ9l+hY6VkaIHIRfZxzuVVKam0QSGu1
-	XQmumUOnNJVullvp6exC/ckleTmEQ1B+u/wy/yunneG6POZChaXWB9j1jMmf40rz0qy3n6A6l13gc
-	vQMoV1SBGdsOG1j6VCtg==;
+	List-Owner; bh=VpeAt2GDkA8alF9WRrMLMFi+4Ik7MYxh2nvzy+EOFnE=; b=o+7fBLPBJqL0Sr
+	U7m+5yDzrl4tA4edhZJlUFy2qhN5MSF5uOh7G5kL6aR2tnyiflfrhGYTDYIA/qDWY+2lW14yW8lky
+	S599ZuMBojlEXyk8f3QCGJ1MckNFL83+i5pR6gTT4HwjsWRiexlDSwHqW3Lt1av7RR2WF12exazKu
+	+6Ymq1et8O1St6NqPFGrZiK7oIA0Vw5LyPjYQbJ/K56AEhs7374Vq5ECz+AT3FFoivRPJg2mHkOow
+	ZCPWLChG1C+Y2GroCEIgsUcHOnVro3TuP0gdUGXv1bKEnm8xC4OB2WxDzOvtseIyC2kK19dtnslfB
+	Xdw01vVhDA7MLNSBNEkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljGd-0006CF-Ud; Thu, 18 Jun 2020 01:23:00 +0000
+	id 1jljGu-0006Sf-Ni; Thu, 18 Jun 2020 01:23:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj65-0001hx-99; Thu, 18 Jun 2020 01:12:08 +0000
+ id 1jlj68-0001kl-EV; Thu, 18 Jun 2020 01:12:10 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C0B1E21924;
- Thu, 18 Jun 2020 01:12:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF521214DB;
+ Thu, 18 Jun 2020 01:12:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442724;
- bh=tSkrvnMpksnJQhC64AZxp0y0YhNgOq7eJDfG0aV9Ngs=;
+ s=default; t=1592442727;
+ bh=lmsOjpJfu1F/07xtNKZqZw1bsoKKOBllErHB92ejtMc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YcRGsN56A8Ustpk3K5nxRYuyhwyI5psnJ1B1rarHSykTDwVWOUAh2dzVfPLX60Ac2
- SVytTJGkciqdki3jNLAUagPDxhlbZ16CC//CJSUMeYWPj0fc1nRUphCNhsqn/3lw5f
- BLrnHP6D0rJd25SW2h8tEzB6XYeWvxrj4PP+yJdE=
+ b=PZ6MzIOaugBA/g2Wf9m1vzM4ijJcm03pDC4uK7O2uWisbMydpPHo3Q/mJ+MDZC1D6
+ YJxu32lDkhGdgICn/zxdfDylij2Y02UQBmr4687lt5TyBu8Vmw02EH+4XvxWY5OMx/
+ nu8y/Liz7m9tt/gGBJuiHvXt0ZTSTvZFRCi9gsEI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 182/388] PCI: brcmstb: Assert fundamental reset on
- initialization
-Date: Wed, 17 Jun 2020 21:04:39 -0400
-Message-Id: <20200618010805.600873-182-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 184/388] remoteproc/mediatek: fix invalid use of
+ sizeof in scp_ipi_init()
+Date: Wed, 17 Jun 2020 21:04:41 -0400
+Message-Id: <20200618010805.600873-184-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -49,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181205_376884_D4FC324B 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200617_181208_609890_8F0BD5E6 
+X-CRM114-Status: GOOD (  10.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,48 +79,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- linux-pci@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+Cc: Sasha Levin <sashal@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, linux-remoteproc@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Hulk Robot <hulkci@huawei.com>,
+ Wei Yongjun <weiyongjun1@huawei.com>, linux-mediatek@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+From: Wei Yongjun <weiyongjun1@huawei.com>
 
-[ Upstream commit 22e21e51ce755399fd42055a3f668ee4af370881 ]
+[ Upstream commit 8096f80a5c09b716be207eb042c4e40d6cdefbd2 ]
 
-While preparing the driver for upstream this detail was missed.
+sizeof() when applied to a pointer typed expression gives the
+size of the pointer, not that of the pointed data.
 
-If not asserted during the initialization process, devices connected on
-the bus will not be made aware of the internal reset happening. This,
-potentially resulting in unexpected behavior.
-
-Link: https://lore.kernel.org/r/20200507172020.18000-1-nsaenzjulienne@suse.de
-Fixes: c0452137034b ("PCI: brcmstb: Add Broadcom STB PCIe host controller driver")
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Fixes: 63c13d61eafe ("remoteproc/mediatek: add SCP support for mt8183")
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Link: https://lore.kernel.org/r/20200509084237.36293-1-weiyongjun1@huawei.com
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pci/controller/pcie-brcmstb.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/remoteproc/mtk_scp.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-index c9ecc4d639c1..2297910bf6e4 100644
---- a/drivers/pci/controller/pcie-brcmstb.c
-+++ b/drivers/pci/controller/pcie-brcmstb.c
-@@ -697,6 +697,7 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
+index 2bead57c9cf9..ac13e7b046a6 100644
+--- a/drivers/remoteproc/mtk_scp.c
++++ b/drivers/remoteproc/mtk_scp.c
+@@ -132,8 +132,8 @@ static int scp_ipi_init(struct mtk_scp *scp)
+ 		(struct mtk_share_obj __iomem *)(scp->sram_base + recv_offset);
+ 	scp->send_buf =
+ 		(struct mtk_share_obj __iomem *)(scp->sram_base + send_offset);
+-	memset_io(scp->recv_buf, 0, sizeof(scp->recv_buf));
+-	memset_io(scp->send_buf, 0, sizeof(scp->send_buf));
++	memset_io(scp->recv_buf, 0, sizeof(*scp->recv_buf));
++	memset_io(scp->send_buf, 0, sizeof(*scp->send_buf));
  
- 	/* Reset the bridge */
- 	brcm_pcie_bridge_sw_init_set(pcie, 1);
-+	brcm_pcie_perst_set(pcie, 1);
- 
- 	usleep_range(100, 200);
- 
+ 	return 0;
+ }
 -- 
 2.25.1
 
