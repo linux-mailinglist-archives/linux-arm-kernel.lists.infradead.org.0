@@ -2,75 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 165AE200B64
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 16:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3391200C3C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 16:45:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jlE2Lvf/8o073fTp/wxH9VQuK38w79qCnWPd5TPFyj8=; b=kj2zjXAXe4IZ2+
-	0eKtua63KmurywAl1jBrJRzmJj0oM0IWq7cHVlFdWbSAGwc9XjnYtLbWcq1vGg3wL7ulSohxcAeO+
-	AyNSbkgLm62mKZv5pB0nR2l7uh9DwNuMYziuI3li7wMawIFg3K436iQnl7ghmc4mRUeG6auS5HIKo
-	G+zpyjL4b0/s/eYWJiraWO+xGZmUN4v8Ysaz0Hb7Foa1rv8VKkG2dBNS0JZp6+BTzWi79uMSRVlvQ
-	Cfix4aRyHvJaijnO+vvqMBmkAxg6BYH99ejQm2HqZOwLeIN1onBODq+GoUYjhA9zGVFdNN9kPG+FH
-	CHaYsLC0hL87Ea1Dv6cw==;
+	List-Owner; bh=0548ZC4kzMCmoRGS8msZMD2m79eLJMWNmJ/B8d2el5o=; b=aZOnldoR8uidFQ
+	6WD8hiILW+KWfPVzpBMejGaq557vbMxM2JSq2OkQBBRcJhXPKe467E91VeruqtMzJCms1q2etp1Aq
+	Y9c+coumfvqM6MmVHX8WpcqJCwmIrSnH1rH1Bp9HR03k8Ls8ucwmgUTx5DEPcfu0/9N993erK2cip
+	H4eGJyX+8geDsoP1yQgYqcT76h/wfiuxNcciUYpPFr4CAwdPSu19oTXp8H45lC++hHIufvIg/ZVrp
+	9Qqc072kkyaQnZqazVhUglZdVsBaT2IjkUo6l6MnHXnAe87qIaBG0XViNYADovsm8FWJKLlPv+1ZJ
+	BKNftBPDYPi4Qj0/J2Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmHyd-0004GE-4N; Fri, 19 Jun 2020 14:26:43 +0000
+	id 1jmIGc-0008Ss-Md; Fri, 19 Jun 2020 14:45:18 +0000
 Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmHyT-0004FS-0C
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 14:26:34 +0000
-Received: by mail-ed1-x541.google.com with SMTP id e12so7786108eds.2
+ id 1jmIGQ-0007JU-Fs
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 14:45:08 +0000
+Received: by mail-ed1-x541.google.com with SMTP id x25so7798657edr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jun 2020 07:26:31 -0700 (PDT)
+ Fri, 19 Jun 2020 07:45:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=8bSED8zl4CrcAER1VVpY4315eH4pyEInk1CBmUlC8tM=;
- b=iJvxOSObVw2uCB3dpRtcU1+kdibcBS4VTzuVUkFDbJVkDGJR2vlGw1hTcAs3wM2Tam
- XGi4UOs8uNemmHbnWqlm0CCGzeFJ81SiGAP0SwH7Pq2QUFjq0FJY5CzfOnE0Tcvvxa2m
- zuXPu5ApOTcKe/fumgtPG45HXts8sUHlDVrWYW02ekrxE9PYZ1ywUt16YRcoS/I3jUvL
- 91dteczkbB3+8EXmotE3WGfHl++X8J55oGhOmEYbvRuO5ckaTbuRvRyHKFPfe8f02czo
- lyY6L3nu3z9lFdHy1m0520iP8gG50EdpjIO7ycRH5byCsniK2u7Gtpwq+FFQI5OhqFqN
- xmhA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=n3TBE7tx6S7GnpZVCrwlr/3N+oOzUPGbvusmUOmG/T0=;
+ b=AxLuXevQ37Qe6irR4ELS8KP+FbtI7KzXJI7NPPBrQFIdiz2bPyjW2dwsDyUEuAZ6Gj
+ obAXbSqGvGp46HL1svoQ4ohhMLjIhlffXnHZ/rd6JE333aLAHAfe6p6IEAkDpMyo0pXz
+ 3gqCLLWBaQXFA+AKx51giDtpvGcOTXpNZQBkXRmjuL5/eK+mv5WjFpQ7EHYykN0iQqJQ
+ 5tiAnbC+hsmw05IcJKVRoieT8Q91BROe1dS0b8nEaqn6ub+ly4za5VRH9v4PT/EhZQS7
+ GynsqTBgTG8dn/wZF0n7EHmYWJlx404GKADvC7euqmHvIFUdOyYzOlOpc7sXgaE5Mzfs
+ JnlA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=8bSED8zl4CrcAER1VVpY4315eH4pyEInk1CBmUlC8tM=;
- b=t204SwRaPePkhZ937lijIVe9HqwcBm7K/JBrqlr+o4A7qMAmJQOdzHvOKlMh3hjjCl
- Cd7kNSuBlnYwfrN8809PyXJ7+p4n2VtDAWzwBFk3NWeQ/cNuZQjopXAYjb+t4nzCk+iK
- WkrqKP+EWFiyJYVMQW0hflkUPRbkf7NoOL5AIryHIkpXjW2JsEabu5pcsER0sWqevHlf
- mXSq/WXzJF8Oy8ckzJd6mw6AmYDctP5Co6AupX6EJgm+n/0Fj74U9/bg9UOY7+YEJcTD
- KVF4NbpomeOqG+GewmKlhgnNpQfoytz0KkSue2ioCgsFRtcXttC8IrLtWZ6bIkmT9ZPe
- VLLw==
-X-Gm-Message-State: AOAM530I1tE6WjuJ3MweLpSH/NWn8qX0f3tTg9JXZ8aFLaXtpc2ungBx
- Q2KqmH+ZcD938KUGr0+wg6w=
-X-Google-Smtp-Source: ABdhPJyRnKu5OL+gzHHN41FCxTU48KdilWSjIzi6WQc3xDaIKuUdLn5JhaB8ICPJhCHJj3DTR4VdSA==
-X-Received: by 2002:a05:6402:a42:: with SMTP id
- bt2mr3539290edb.42.1592576789902; 
- Fri, 19 Jun 2020 07:26:29 -0700 (PDT)
-Received: from ltop.local ([2a02:a03f:b7f9:7600:904f:be8d:1d92:9974])
- by smtp.gmail.com with ESMTPSA id j16sm4736461edp.35.2020.06.19.07.26.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 19 Jun 2020 07:26:29 -0700 (PDT)
-Date: Fri, 19 Jun 2020 16:26:28 +0200
-From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-To: Syed Nayyar Waris <syednwaris@gmail.com>
-Subject: Re: [PATCH v8 4/4] gpio: xilinx: Utilize for_each_set_clump macro
-Message-ID: <20200619142628.burfxyjoe5uouzuz@ltop.local>
-References: <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
- <202006160420.iatdr9ab%lkp@intel.com>
- <CACG_h5oiA8mDpTjtyGFYR4eptbxppN9tq+2wUj8T1hsbZ5h47A@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=n3TBE7tx6S7GnpZVCrwlr/3N+oOzUPGbvusmUOmG/T0=;
+ b=NfI++Ztd9knj8x5xj4RK92ovMBlqOCIpP7Dbe/IaLZfi4kxyNxs2XReipBbW55yobl
+ nSVv1IW6fcAnZnXL6la/jFcsJjmmm0b6d162AfL3T/Y9rZBD4O8NSDRr0dgLcnrEziRY
+ 7QW4k5DmnCXgwBm/E2YpD083fpJuTY8CtBMoBmCi/BqvvF+7g/6K4ohLoI5ItfcDZ5vd
+ 1pLvpRfbD2KX+/QLZXSYIe36r6H6P5PDhX3DBnm4NUYRTortWEx3dvA4T7EXpb/Fq+q+
+ ZOhsbMUNjIiLkj3cgxOJ7NBlFOq7wmJgD3n0rM6V2yuInyeLD9j0iEmsMyHZssAIjrAx
+ jZCQ==
+X-Gm-Message-State: AOAM531nqGF18rfoANGz+3tKBvqPGJneFaJx1eS1m40k6GdDsHQuDovv
+ kPbq+/ncikzkIfkuCyNxHd0YCTCPYab0tiOUTx4=
+X-Google-Smtp-Source: ABdhPJyrHWOsI7xCVBWiV5yZaFNfurId9widfkp7/AgosrKLWEbgVSdn17jhr9iXO5CndhUq8INILlVyez+GNc7k8GQ=
+X-Received: by 2002:aa7:da14:: with SMTP id r20mr3712651eds.7.1592577904398;
+ Fri, 19 Jun 2020 07:45:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACG_h5oiA8mDpTjtyGFYR4eptbxppN9tq+2wUj8T1hsbZ5h47A@mail.gmail.com>
+References: <CGME20200619103702eucas1p1c57147013bbac3968f6ba073caec68b5@eucas1p1.samsung.com>
+ <20200619103636.11974-1-m.szyprowski@samsung.com>
+ <20200619103636.11974-14-m.szyprowski@samsung.com>
+In-Reply-To: <20200619103636.11974-14-m.szyprowski@samsung.com>
+From: Rob Clark <robdclark@gmail.com>
+Date: Fri, 19 Jun 2020 07:45:32 -0700
+Message-ID: <CAF6AEGv9We+wD72_px3mucsXQuTFZ3ZX_CAA1LTysMBdiDcEFw@mail.gmail.com>
+Subject: Re: [PATCH v7 13/36] drm: msm: fix common struct sg_table related
+ issues
+To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_072633_060085_F8B89735 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200619_074506_591662_FC6A8D6F 
+X-CRM114-Status: GOOD (  22.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -81,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [luc.vanoostenryck[at]gmail.com]
+ provider [robdclark[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,42 +95,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, kernel test robot <lkp@intel.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+Cc: freedreno <freedreno@lists.freedesktop.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, Sean Paul <sean@poorly.run>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+ dri-devel <dri-devel@lists.freedesktop.org>, linaro-mm-sig@lists.linaro.org,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 16, 2020 at 11:27:18AM +0530, Syed Nayyar Waris wrote:
+On Fri, Jun 19, 2020 at 3:37 AM Marek Szyprowski
+<m.szyprowski@samsung.com> wrote:
+>
+> The Documentation/DMA-API-HOWTO.txt states that the dma_map_sg() function
+> returns the number of the created entries in the DMA address space.
+> However the subsequent calls to the dma_sync_sg_for_{device,cpu}() and
+> dma_unmap_sg must be called with the original number of the entries
+> passed to the dma_map_sg().
+>
+> struct sg_table is a common structure used for describing a non-contiguous
+> memory buffer, used commonly in the DRM and graphics subsystems. It
+> consists of a scatterlist with memory pages and DMA addresses (sgl entry),
+> as well as the number of scatterlist entries: CPU pages (orig_nents entry)
+> and DMA mapped pages (nents entry).
+>
+> It turned out that it was a common mistake to misuse nents and orig_nents
+> entries, calling DMA-mapping functions with a wrong number of entries or
+> ignoring the number of mapped entries returned by the dma_map_sg()
+> function.
+>
+> To avoid such issues, lets use a common dma-mapping wrappers operating
+> directly on the struct sg_table objects and use scatterlist page
+> iterators where possible. This, almost always, hides references to the
+> nents and orig_nents entries, making the code robust, easier to follow
+> and copy/paste safe.
+>
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 
-Hi, 
+Acked-by: Rob Clark <robdclark@gmail.com>
 
-> Regarding the compilation warning reported above:
-> 
-> "sparse: shift too big (64) for type unsigned long" at line 639
-> "sparse: invalid access past the end of 'old' (8 8)" at line 638
-> 
-> Kindly refer to the code above, at these line numbers.
-> 
-> I am in the process of fixing this warning. But what would be the fix?
-> ? At the moment can't think of a code-fix to make the compilation
-> warning disappear (specially at line 639). Can anyone please explain
-> to me the meaning of the compilation warning more deeply?
+(let me know if you want me to take this one in via msm-next or if the
+plan is to take the series via drm-misc)
 
-This error message is caused by sparse doing the check too early.
-There is thus nothing to be fixed for it in this code.
 
-Best regards,
--- Luc
+> ---
+>  drivers/gpu/drm/msm/msm_gem.c    | 13 +++++--------
+>  drivers/gpu/drm/msm/msm_gpummu.c | 14 ++++++--------
+>  drivers/gpu/drm/msm/msm_iommu.c  |  2 +-
+>  3 files changed, 12 insertions(+), 17 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/msm/msm_gem.c b/drivers/gpu/drm/msm/msm_gem.c
+> index 38b0c0e1f83e..e0d5fd36ea8f 100644
+> --- a/drivers/gpu/drm/msm/msm_gem.c
+> +++ b/drivers/gpu/drm/msm/msm_gem.c
+> @@ -53,11 +53,10 @@ static void sync_for_device(struct msm_gem_object *msm_obj)
+>         struct device *dev = msm_obj->base.dev->dev;
+>
+>         if (get_dma_ops(dev) && IS_ENABLED(CONFIG_ARM64)) {
+> -               dma_sync_sg_for_device(dev, msm_obj->sgt->sgl,
+> -                       msm_obj->sgt->nents, DMA_BIDIRECTIONAL);
+> +               dma_sync_sgtable_for_device(dev, msm_obj->sgt,
+> +                                           DMA_BIDIRECTIONAL);
+>         } else {
+> -               dma_map_sg(dev, msm_obj->sgt->sgl,
+> -                       msm_obj->sgt->nents, DMA_BIDIRECTIONAL);
+> +               dma_map_sgtable(dev, msm_obj->sgt, DMA_BIDIRECTIONAL, 0);
+>         }
+>  }
+>
+> @@ -66,11 +65,9 @@ static void sync_for_cpu(struct msm_gem_object *msm_obj)
+>         struct device *dev = msm_obj->base.dev->dev;
+>
+>         if (get_dma_ops(dev) && IS_ENABLED(CONFIG_ARM64)) {
+> -               dma_sync_sg_for_cpu(dev, msm_obj->sgt->sgl,
+> -                       msm_obj->sgt->nents, DMA_BIDIRECTIONAL);
+> +               dma_sync_sgtable_for_cpu(dev, msm_obj->sgt, DMA_BIDIRECTIONAL);
+>         } else {
+> -               dma_unmap_sg(dev, msm_obj->sgt->sgl,
+> -                       msm_obj->sgt->nents, DMA_BIDIRECTIONAL);
+> +               dma_unmap_sgtable(dev, msm_obj->sgt, DMA_BIDIRECTIONAL, 0);
+>         }
+>  }
+>
+> diff --git a/drivers/gpu/drm/msm/msm_gpummu.c b/drivers/gpu/drm/msm/msm_gpummu.c
+> index 310a31b05faa..319f06c28235 100644
+> --- a/drivers/gpu/drm/msm/msm_gpummu.c
+> +++ b/drivers/gpu/drm/msm/msm_gpummu.c
+> @@ -30,21 +30,19 @@ static int msm_gpummu_map(struct msm_mmu *mmu, uint64_t iova,
+>  {
+>         struct msm_gpummu *gpummu = to_msm_gpummu(mmu);
+>         unsigned idx = (iova - GPUMMU_VA_START) / GPUMMU_PAGE_SIZE;
+> -       struct scatterlist *sg;
+> +       struct sg_dma_page_iter dma_iter;
+>         unsigned prot_bits = 0;
+> -       unsigned i, j;
+>
+>         if (prot & IOMMU_WRITE)
+>                 prot_bits |= 1;
+>         if (prot & IOMMU_READ)
+>                 prot_bits |= 2;
+>
+> -       for_each_sg(sgt->sgl, sg, sgt->nents, i) {
+> -               dma_addr_t addr = sg->dma_address;
+> -               for (j = 0; j < sg->length / GPUMMU_PAGE_SIZE; j++, idx++) {
+> -                       gpummu->table[idx] = addr | prot_bits;
+> -                       addr += GPUMMU_PAGE_SIZE;
+> -               }
+> +       for_each_sgtable_dma_page(sgt, &dma_iter, 0) {
+> +               dma_addr_t addr = sg_page_iter_dma_address(&dma_iter);
+> +
+> +               BUILD_BUG_ON(GPUMMU_PAGE_SIZE != PAGE_SIZE);
+> +               gpummu->table[idx++] = addr | prot_bits;
+>         }
+>
+>         /* we can improve by deferring flush for multiple map() */
+> diff --git a/drivers/gpu/drm/msm/msm_iommu.c b/drivers/gpu/drm/msm/msm_iommu.c
+> index 3a381a9674c9..6c31e65834c6 100644
+> --- a/drivers/gpu/drm/msm/msm_iommu.c
+> +++ b/drivers/gpu/drm/msm/msm_iommu.c
+> @@ -36,7 +36,7 @@ static int msm_iommu_map(struct msm_mmu *mmu, uint64_t iova,
+>         struct msm_iommu *iommu = to_msm_iommu(mmu);
+>         size_t ret;
+>
+> -       ret = iommu_map_sg(iommu->domain, iova, sgt->sgl, sgt->nents, prot);
+> +       ret = iommu_map_sgtable(iommu->domain, iova, sgt, prot);
+>         WARN_ON(!ret);
+>
+>         return (ret == len) ? 0 : -EINVAL;
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
