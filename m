@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12765200468
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 10:53:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 617BF20048E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:05:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UN8XhN6/FZJIuzTHAhtHsdtNjJV4rgnEmlF6KvoZHUc=; b=jZE
-	o/ZmEO7Le08xx6G4UojBjcNZC/iqyBqrgf8BmXaAkbkJIugsy5cLJAGi8QJOmbadQb0qIso7y7S2G
-	SDUcg1A3S0FvaYmBpaDsIrGdFmgyfGPZxDUq1s0UqcVb3/UW+FxwWvkX+2v9gQZ5xRYQzBvlHYXqa
-	BwVGxB6sBnCH51yiC5K/1QRYx5nAlFxqnf4LROCgGNuBXBlquyKTe1WGY17hhpPQg/Oy1IrK4spfO
-	+t2o8dGV+29DOqE/+CJuoDG6IWqUU7+tKCeDvUewBbcYZ0LjYzI3s/ZCe7AOg7pbcDqwAyxg6GPTl
-	mqfEqETgQV945i2LBLO2jl3jwDEHOUA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RQtQm9RzqZ+771+6T2dg5ze6O73ueOUFbPZ20SBi3qc=; b=l8Pf/3s4AgI7/B
+	cVO3xqTHre8R8dQJYCD9MkFJBA+jSF10jmUbsN15ShOs/AbOSUzCZDCRaMrFYGJm60e+yV1c1Pghs
+	GvUg9yBLWNInNJanzC8n1xQ9QZfGpW8CAHs3INibEXZCxsGR3U3srP+4tPfQFNGL0Mrk4A0ukK360
+	BmDnoy1T3XkZ+SO0hLDrWfRErpSxqdQ8oTYi3Oiaug0rOX5KSZTrJnPYfDuiHj0OPzWwI9/9An0Rt
+	HzVOMANwtOlcja+vrztr2UZksHb3BER/O8dNGHvVUv1GiM7xwNX1FUNOgu1dbLljRIi7zM0X5/AU6
+	BTPpz0qqqTin3npxAmaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmCm1-0002ZU-Gc; Fri, 19 Jun 2020 08:53:21 +0000
-Received: from lucky1.263xmail.com ([211.157.147.134])
+	id 1jmCxg-0001cF-Dt; Fri, 19 Jun 2020 09:05:24 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmClr-0002YD-A5; Fri, 19 Jun 2020 08:53:12 +0000
-Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 6ADA7BFCA3;
- Fri, 19 Jun 2020 16:53:05 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P10491T139788078274304S1592556784649283_; 
- Fri, 19 Jun 2020 16:53:05 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <01c70fabecef316f33fcc8cfd259d260>
-X-RL-SENDER: hjc@rock-chips.com
-X-SENDER: hjc@rock-chips.com
-X-LOGIN-NAME: hjc@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Sandy Huang <hjc@rock-chips.com>
-To: heiko@sntech.de, Sandy Huang <hjc@rock-chips.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH v2] drm/rockchip: vop: fix vop full rgb24 r/b color error
-Date: Fri, 19 Jun 2020 16:53:02 +0800
-Message-Id: <20200619085302.2263-1-hjc@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jmCxK-0000uP-QE
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 09:05:04 +0000
+IronPort-SDR: R/LCN//fq7w4zv+6W/bOs8hg7IoYi9yoXGOtwTjvo2QL3cIudiAQWa1IS9soytN6cTrtf7uqCf
+ uWu4DEcthmBg==
+X-IronPort-AV: E=McAfee;i="6000,8403,9656"; a="130261274"
+X-IronPort-AV: E=Sophos;i="5.75,254,1589266800"; d="scan'208";a="130261274"
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 19 Jun 2020 02:05:01 -0700
+IronPort-SDR: kF7t/FU4z5wGAUzCozSJdjd4BBAbdDGgBBHDlB9u9WN/LIQDdScZQmzCyhb/NdB4JlLBMi1ZDx
+ 6ziPktrLxEQw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.75,254,1589266800"; d="scan'208";a="310110943"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga002.fm.intel.com with ESMTP; 19 Jun 2020 02:04:58 -0700
+Received: from andy by smile with local (Exim 4.94)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jmCxI-00ERf1-JA; Fri, 19 Jun 2020 12:05:00 +0300
+Date: Fri, 19 Jun 2020 12:05:00 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Syed Nayyar Waris <syednwaris@gmail.com>
+Subject: Re: [PATCH v8 4/4] gpio: xilinx: Utilize for_each_set_clump macro
+Message-ID: <20200619090500.GC2428291@smile.fi.intel.com>
+References: <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
+ <202006160420.iatdr9ab%lkp@intel.com>
+ <CACG_h5qUZsR7Zd9a+BQJqyuJZBrv-en+gC-sgcV+xV+A5ZOBhA@mail.gmail.com>
+ <CAHp75Ve_=LwV6fO3ESgbCOVDVr=C5wrnAJX9od9evFvHU5-Krw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAHp75Ve_=LwV6fO3ESgbCOVDVr=C5wrnAJX9od9evFvHU5-Krw@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_015311_538499_55039E9F 
-X-CRM114-Status: GOOD (  12.29  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200619_020502_934326_F97495A6 
+X-CRM114-Status: GOOD (  20.77  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.134 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.134 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,91 +77,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- andy.yan@rock-chips.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: kbuild-all@lists.01.org, kernel test robot <lkp@intel.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RGB888 format msb is red component and the lsb is blue component,
-at vop full platform this is swapped, and this is different from vop
-lite and vop next, so add this patch to fix it.
+On Fri, Jun 19, 2020 at 11:38:59AM +0300, Andy Shevchenko wrote:
+> On Fri, Jun 19, 2020 at 10:02 AM Syed Nayyar Waris <syednwaris@gmail.com> wrote:
+> 
+> ...
+> 
+> > > config: sparc64-randconfig-s032-20200615 (attached as .config)
+> > > compiler: sparc64-linux-gcc (GCC) 9.3.0
+> > > reproduce:
+> > >         # apt-get install sparse
+> > >         # sparse version: v0.6.2-rc1-3-g55607964-dirty
+> > >         # save the attached .config to linux build tree
+> > >         make W=1 C=1 ARCH=sparc64 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+> 
+> ...
+> 
+> > > sparse warnings: (new ones prefixed by >>)
+> > >
+> > > >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
+> > > >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
+> > >    include/linux/bitmap.h:594:63: sparse: sparse: shift too big (64) for type unsigned long
+> > > >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
+> > > >> include/linux/bitmap.h:638:17: sparse: sparse: invalid access past the end of 'old' (8 8)
+> 
+> > It seems to me that to reproduce this warning, I have to use the
+> > sparc64 compiler. I have installed 'sparc64-linux-gnu-gcc' on my
+> > computer.
+> 
+> Sparse is not a compiler.
 
-v2:
-    move to has_rb_swapped() function.
+On x86_64:
 
-Signed-off-by: Sandy Huang <hjc@rock-chips.com>
----
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 21 +++++++++++++++++----
- 1 file changed, 17 insertions(+), 4 deletions(-)
+  CHECK   drivers/gpio/gpio-xilinx.c
+  include/linux/bitmap.h:639:45: warning: shift too big (64) for type unsigned long
+  include/linux/bitmap.h:639:45: warning: shift too big (64) for type unsigned long
+  include/linux/bitmap.h:594:63: warning: shift too big (64) for type unsigned long
+  include/linux/bitmap.h:639:45: warning: shift too big (64) for type unsigned long
+  include/linux/bitmap.h:638:17: warning: invalid access past the end of 'old' (8 8)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index c80f7d9fd13f..99bdb5a2a185 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -132,6 +132,7 @@ struct vop_win {
- 
- struct rockchip_rgb;
- struct vop {
-+	uint32_t version;
- 	struct drm_crtc crtc;
- 	struct device *dev;
- 	struct drm_device *drm_dev;
-@@ -248,17 +249,28 @@ static inline void vop_cfg_done(struct vop *vop)
- 	VOP_REG_SET(vop, common, cfg_done, 1);
- }
- 
--static bool has_rb_swapped(uint32_t format)
-+static bool has_rb_swapped(struct vop *vop, uint32_t format)
- {
-+	bool rb_swapped;
-+
- 	switch (format) {
- 	case DRM_FORMAT_XBGR8888:
- 	case DRM_FORMAT_ABGR8888:
- 	case DRM_FORMAT_BGR888:
- 	case DRM_FORMAT_BGR565:
--		return true;
-+		rb_swapped = true;
- 	default:
--		return false;
-+		rb_swapped = false;
- 	}
-+
-+	/*
-+	 * VOP full need to do rb swap to show rgb888/bgr888 format color correctly
-+	 */
-+	if ((format == DRM_FORMAT_RGB888 || format == DRM_FORMAT_BGR888) &&
-+	    VOP_MAJOR(vop->version) == 3)
-+		rb_swapped = !rb_swapped;
-+
-+	return rb_swapped;
- }
- 
- static enum vop_data_format vop_convert_format(uint32_t format)
-@@ -988,7 +1000,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 	VOP_WIN_SET(vop, win, dsp_info, dsp_info);
- 	VOP_WIN_SET(vop, win, dsp_st, dsp_st);
- 
--	rb_swap = has_rb_swapped(fb->format->format);
-+	rb_swap = has_rb_swapped(vop, fb->format->format);
- 	VOP_WIN_SET(vop, win, rb_swap, rb_swap);
- 
- 	/*
-@@ -2091,6 +2103,7 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
- 	vop->dev = dev;
- 	vop->data = vop_data;
- 	vop->drm_dev = drm_dev;
-+	vop->version = vop_data->version;
- 	dev_set_drvdata(dev, vop);
- 
- 	vop_win_init(vop);
+> > I have to specify that this compiler needs to be used for build
+> > process. How/ Where do I specify this?
+> >
+> > I have downloaded the config.gz (has config file) and placed it at the
+> > root of the linux kernel project tree. But the Makefile STILL has
+> > 'gcc' as the compiler. When I build, it is the 'gcc' compiler being
+> > used and not 'sparc64-linux-gnu-gcc'. I know I can manually change the
+> > Makefile to use sparc64 compiler, but I think there must be some more
+> > elegant way to do this, perhaps using make menuconfig?
+> 
+> If you wish to run a compilation, download a compiler from [1], and,
+> after adding its bin/ folder to PATH, run
+> make CROSS_COMPILE=sparc64-linux- ARCH=sparc64 ... # first generate .config
+> 
+> > Kindly illuminate as to how shall I reproduce the compiler warning.
+> 
+> > > 803024b6c8a375 Syed Nayyar Waris      2020-06-15 @638           map[index + 1] &= ~BITMAP_LAST_WORD_MASK(start + nbits);
+> > > 803024b6c8a375 Syed Nayyar Waris      2020-06-15 @639           map[index + 1] |= (value >> space);
+> 
+> Hmm... I think I sent a reply [2] where I explained how space can be
+> 64. Do you agree with analysis?
+> 
+> [1]: https://mirrors.edge.kernel.org/pub/tools/crosstool/
+> [2]: https://lore.kernel.org/lkml/20200616081428.GP2428291@smile.fi.intel.com/
+
 -- 
-2.17.1
-
+With Best Regards,
+Andy Shevchenko
 
 
 
