@@ -2,70 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 617BF20048E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:05:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CDF920049B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:07:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RQtQm9RzqZ+771+6T2dg5ze6O73ueOUFbPZ20SBi3qc=; b=l8Pf/3s4AgI7/B
-	cVO3xqTHre8R8dQJYCD9MkFJBA+jSF10jmUbsN15ShOs/AbOSUzCZDCRaMrFYGJm60e+yV1c1Pghs
-	GvUg9yBLWNInNJanzC8n1xQ9QZfGpW8CAHs3INibEXZCxsGR3U3srP+4tPfQFNGL0Mrk4A0ukK360
-	BmDnoy1T3XkZ+SO0hLDrWfRErpSxqdQ8oTYi3Oiaug0rOX5KSZTrJnPYfDuiHj0OPzWwI9/9An0Rt
-	HzVOMANwtOlcja+vrztr2UZksHb3BER/O8dNGHvVUv1GiM7xwNX1FUNOgu1dbLljRIi7zM0X5/AU6
-	BTPpz0qqqTin3npxAmaA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Vmt/g6MWOMeoo2NH+wUH0fZNtluKAqRc5iRdJeSDPBg=; b=F62ekToNS66xF/
+	vUevacr1On6IHj+RHbnfOKk7q316aXUsGSm6psLoxXLaXWS1WdMVDFhthnkYOMWmA3ORy/RZXkzE3
+	z7XXHRxgaN5itEuDREkX4v36TN++wbNfPGrDX8o7IRbu/3sx83MXQcoXpu/iXmHHQ0vr82JfIXssN
+	v84x5yAU3UX3gVhfhLyJI+X0RkMhluuEzN8CSxGOW7E9mPHuTlD2lwWLw5cfb2TGAXyIpxP9cPoiw
+	bnn96kaM1khpte6cuyGH02Nn3T4hUkBXS7q0a5bEA0Tc30tQue07vG8Zy8F4p3LbtEQyI0G9bv3Fo
+	KHL7HX33bbmbQwx1jReQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmCxg-0001cF-Dt; Fri, 19 Jun 2020 09:05:24 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1jmCzF-0003jV-RK; Fri, 19 Jun 2020 09:07:01 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmCxK-0000uP-QE
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 09:05:04 +0000
-IronPort-SDR: R/LCN//fq7w4zv+6W/bOs8hg7IoYi9yoXGOtwTjvo2QL3cIudiAQWa1IS9soytN6cTrtf7uqCf
- uWu4DEcthmBg==
-X-IronPort-AV: E=McAfee;i="6000,8403,9656"; a="130261274"
-X-IronPort-AV: E=Sophos;i="5.75,254,1589266800"; d="scan'208";a="130261274"
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 19 Jun 2020 02:05:01 -0700
-IronPort-SDR: kF7t/FU4z5wGAUzCozSJdjd4BBAbdDGgBBHDlB9u9WN/LIQDdScZQmzCyhb/NdB4JlLBMi1ZDx
- 6ziPktrLxEQw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.75,254,1589266800"; d="scan'208";a="310110943"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga002.fm.intel.com with ESMTP; 19 Jun 2020 02:04:58 -0700
-Received: from andy by smile with local (Exim 4.94)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jmCxI-00ERf1-JA; Fri, 19 Jun 2020 12:05:00 +0300
-Date: Fri, 19 Jun 2020 12:05:00 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Syed Nayyar Waris <syednwaris@gmail.com>
-Subject: Re: [PATCH v8 4/4] gpio: xilinx: Utilize for_each_set_clump macro
-Message-ID: <20200619090500.GC2428291@smile.fi.intel.com>
-References: <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
- <202006160420.iatdr9ab%lkp@intel.com>
- <CACG_h5qUZsR7Zd9a+BQJqyuJZBrv-en+gC-sgcV+xV+A5ZOBhA@mail.gmail.com>
- <CAHp75Ve_=LwV6fO3ESgbCOVDVr=C5wrnAJX9od9evFvHU5-Krw@mail.gmail.com>
+ id 1jmCz4-0003iS-4b
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 09:06:51 +0000
+Received: by mail-ej1-x643.google.com with SMTP id n24so9433270ejd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jun 2020 02:06:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=beagleboard-org.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HvGH7Pv4foao4L50irRdHfsqjrsvjQfU69J0IADDQqk=;
+ b=P80z4dP158kR74roWZEYDQTGhtpYz6jZRYW/KrObAPurFivXZAr0jRWDh4vGLGQlVP
+ BGoJN72IF1ztehvJlOH7VQ5lRuSEsczEAAdkVSTrMtvhFteZ6dncfBdUxz4pjtc/Dbp4
+ iwRulvaJGMhtYWLXNNhVhPYbglLZLC4oprRohBrrGqWAzNXkCUIl9bbmlCCP/gUukUEf
+ To9rjqcP1jeXGrI6Q2X7VrMWbWIOU2IMo68c3V/JrFPGLyUzP+vZJlFuc64eARetUsZk
+ FoQdlw3xxGAfH8nUlwlcD1xshgLsWakRySyu9qVdkyXg224zO3HRfHoI8KsTp0iDEVoB
+ Fh2g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HvGH7Pv4foao4L50irRdHfsqjrsvjQfU69J0IADDQqk=;
+ b=dbzveY/OPI/eWq2S4Q+nFF7jP5WBWBy+IF8O4hgqNa7Rz1fo2va+GLFcQYaWhk8H63
+ 6qi3pPkAZoaH3ttK90fdXmdlJrkj5w4lv2r8WA38Ax+xkKI/BFYZcystFy7201FIXOvX
+ wDEGy0o+VSN9wxRvPYjo5a505306/4G6e0Y9ayHutPdOuNMBkUcHE0fqAwMNJAfDl6Z3
+ Py7T0Q9qc825IPbHS4LKSWjy0KJ+nNXtYkcHOfpO3HwrYnTSUZEYU1VtvI+R60reZWPm
+ P5XV/AK/WWimLwj7A0vaAFWUWqKGuUq7+XKql9TsKKaQD7im8F4tjR8c4zfYKrorO5Gb
+ /VqQ==
+X-Gm-Message-State: AOAM530abIJNFRB5lmbdhv0grwbKJByPpLNvTjNVguNZn2AwjB5hGjtb
+ +6KweQwRZj+kMJEf7UHKcUpvTw==
+X-Google-Smtp-Source: ABdhPJzYJAW/a3AmTwbnULTmzoFTpukWQQAUa1C0VYxyzK6eiXdwk67c0W3bjz/BfvoRWLinvzdfAQ==
+X-Received: by 2002:a17:906:fc06:: with SMTP id
+ ov6mr2795189ejb.184.1592557608029; 
+ Fri, 19 Jun 2020 02:06:48 -0700 (PDT)
+Received: from localhost.localdomain
+ ([2001:16b8:5c68:7901:5c06:6064:338b:4004])
+ by smtp.gmail.com with ESMTPSA id dm1sm4653650ejc.99.2020.06.19.02.06.46
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 19 Jun 2020 02:06:46 -0700 (PDT)
+From: Drew Fustini <drew@beagleboard.org>
+To: Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Haojian Zhuang <haojian.zhuang@linaro.org>, devicetree@vger.kernel.org,
+ =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
+ Jason Kridner <jkridner@beagleboard.org>,
+ Robert Nelson <robertcnelson@gmail.com>
+Subject: [PATCH v2 0/3] pinctrl: single: support #pinctrl-cells = 2
+Date: Fri, 19 Jun 2020 11:06:05 +0200
+Message-Id: <20200619090608.94948-1-drew@beagleboard.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHp75Ve_=LwV6fO3ESgbCOVDVr=C5wrnAJX9od9evFvHU5-Krw@mail.gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_020502_934326_F97495A6 
-X-CRM114-Status: GOOD (  20.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200619_020650_204006_953A2AFE 
+X-CRM114-Status: GOOD (  10.28  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,87 +100,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, kernel test robot <lkp@intel.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Drew Fustini <drew@beagleboard.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 19, 2020 at 11:38:59AM +0300, Andy Shevchenko wrote:
-> On Fri, Jun 19, 2020 at 10:02 AM Syed Nayyar Waris <syednwaris@gmail.com> wrote:
-> 
-> ...
-> 
-> > > config: sparc64-randconfig-s032-20200615 (attached as .config)
-> > > compiler: sparc64-linux-gcc (GCC) 9.3.0
-> > > reproduce:
-> > >         # apt-get install sparse
-> > >         # sparse version: v0.6.2-rc1-3-g55607964-dirty
-> > >         # save the attached .config to linux build tree
-> > >         make W=1 C=1 ARCH=sparc64 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-> 
-> ...
-> 
-> > > sparse warnings: (new ones prefixed by >>)
-> > >
-> > > >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
-> > > >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
-> > >    include/linux/bitmap.h:594:63: sparse: sparse: shift too big (64) for type unsigned long
-> > > >> include/linux/bitmap.h:639:45: sparse: sparse: shift too big (64) for type unsigned long
-> > > >> include/linux/bitmap.h:638:17: sparse: sparse: invalid access past the end of 'old' (8 8)
-> 
-> > It seems to me that to reproduce this warning, I have to use the
-> > sparc64 compiler. I have installed 'sparc64-linux-gnu-gcc' on my
-> > computer.
-> 
-> Sparse is not a compiler.
+Currently, pinctrl-single only allows #pinctrl-cells = 1.
 
-On x86_64:
+This series will allow pinctrl-single to also support #pinctrl-cells = 2
 
-  CHECK   drivers/gpio/gpio-xilinx.c
-  include/linux/bitmap.h:639:45: warning: shift too big (64) for type unsigned long
-  include/linux/bitmap.h:639:45: warning: shift too big (64) for type unsigned long
-  include/linux/bitmap.h:594:63: warning: shift too big (64) for type unsigned long
-  include/linux/bitmap.h:639:45: warning: shift too big (64) for type unsigned long
-  include/linux/bitmap.h:638:17: warning: invalid access past the end of 'old' (8 8)
+If "pinctrl-single,pins" has 3 arguments (offset, conf, mux) then
+pcs_parse_one_pinctrl_entry() does an OR operation on to get the
+value to store in the register.
+    
+To take advantage of #pinctrl-cells = 2, the AM33XX_PADCONF macro in
+omap.h is modified to keep pin conf and pin mux values separate.
 
-> > I have to specify that this compiler needs to be used for build
-> > process. How/ Where do I specify this?
-> >
-> > I have downloaded the config.gz (has config file) and placed it at the
-> > root of the linux kernel project tree. But the Makefile STILL has
-> > 'gcc' as the compiler. When I build, it is the 'gcc' compiler being
-> > used and not 'sparc64-linux-gnu-gcc'. I know I can manually change the
-> > Makefile to use sparc64 compiler, but I think there must be some more
-> > elegant way to do this, perhaps using make menuconfig?
-> 
-> If you wish to run a compilation, download a compiler from [1], and,
-> after adding its bin/ folder to PATH, run
-> make CROSS_COMPILE=sparc64-linux- ARCH=sparc64 ... # first generate .config
-> 
-> > Kindly illuminate as to how shall I reproduce the compiler warning.
-> 
-> > > 803024b6c8a375 Syed Nayyar Waris      2020-06-15 @638           map[index + 1] &= ~BITMAP_LAST_WORD_MASK(start + nbits);
-> > > 803024b6c8a375 Syed Nayyar Waris      2020-06-15 @639           map[index + 1] |= (value >> space);
-> 
-> Hmm... I think I sent a reply [2] where I explained how space can be
-> 64. Do you agree with analysis?
-> 
-> [1]: https://mirrors.edge.kernel.org/pub/tools/crosstool/
-> [2]: https://lore.kernel.org/lkml/20200616081428.GP2428291@smile.fi.intel.com/
+v2 changes:
+- remove outer parentheses from AM33XX_PADCONF macro as it causes a
+  compile error in dtc.  I had added it per suggestion from checkpatch
+  about having parentheses around complex values.
+
+Drew Fustini (3):
+  ARM: dts: change AM33XX_PADCONF macro separate conf and mux
+  ARM: dts: am33xx-l4: change #pinctrl-cells from 1 to 2
+  pinctrl: single: parse #pinctrl-cells = 2
+
+ arch/arm/boot/dts/am33xx-l4.dtsi   |  2 +-
+ drivers/pinctrl/pinctrl-single.c   | 11 +++++++++--
+ include/dt-bindings/pinctrl/omap.h |  2 +-
+ 3 files changed, 11 insertions(+), 4 deletions(-)
 
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.25.1
 
 
 _______________________________________________
