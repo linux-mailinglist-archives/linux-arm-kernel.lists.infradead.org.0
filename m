@@ -2,57 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2806D1FFFB8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 03:35:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7ACDC1FFFC2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 03:38:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kihM3tSZhg9GNaOjKf7u5KliW2kPtZD59l8d9FLHHgY=; b=XwkV55G7mz7xdR
-	tBid0CN4ul3CfiYMMTTOcRYXo9Fr2Txk4x9d5bWVPxkN79n0EX4JYmojQOHWkwmF5BRcm4f1wiiQS
-	IRCTCm1wKt0iZZA5U0q/LiRZ4X/Z3O5J/lW4UsOCnQA9ynlUFe8YQHWqz3Ne6VEs9EL64zt07tiur
-	qnSyV1TZggiRmnNIamzHIxZsglU6goj4/tO1cpp827nv0sYX3vyfsoogj4RopyhKtg+2DvdXUw9jO
-	KO5t0Hrgq50JyZhscMvf12oFKkEzTx4vCvhIF4rOI46gG+BuqW1kx2SoVu8k48Z6Jlh2Kxu4Q6oFJ
-	vgUBWn0liHLmvUoJueRQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hmgp1abyQ9l5XvvWFkwq/un/VfUeAtNxm2lTndXxPrA=; b=MAFOVdmZvbcfJx
+	nF20GLwHPZjZ+kXdkTYR3Gm2BBdluLKeKbC+o88yV9B08LiB2lijJwHIq0WTUPHAb/HXfAlqEwqiO
+	cCCmxOqs0JbkwId2cYUCFmKrdUuDhi/00nyE9s/hv7WrZHVp3HwDu+3PpM/GUuoUIA7tx1nioWtsJ
+	HmJ2G//G8z8DmgqlpZ2ucIJSrVWEoFnbBfpFPJs7Vyx9fmKUNeaA955pB6kIhDcTQTxZHDb00Q2gB
+	cAlqq5tLcAi0ZDANTUfzULVd2xtMBc3QZrgYKG7oYAwfDpTR++FPf8K6hWDTW3ixKnmL8e5oCiZXW
+	GYOO0YwzeD/KLClT54EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jm5w3-0008Ix-2Q; Fri, 19 Jun 2020 01:35:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jm5vj-0008I5-3r; Fri, 19 Jun 2020 01:34:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 238DFD6E;
- Thu, 18 Jun 2020 18:34:50 -0700 (PDT)
-Received: from [10.163.81.119] (unknown [10.163.81.119])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 216703F73C;
- Thu, 18 Jun 2020 18:34:41 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 (RESEND) 0/3] arm64: Enable vmemmap mapping from device
- memory
-To: Mike Rapoport <rppt@linux.ibm.com>
-References: <1592442930-9380-1-git-send-email-anshuman.khandual@arm.com>
- <20200618085641.GE6493@linux.ibm.com>
-Message-ID: <27f8c6f9-3970-6f02-dff4-7ca15bee7138@arm.com>
-Date: Fri, 19 Jun 2020 07:04:35 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jm5yg-0002iX-4O; Fri, 19 Jun 2020 01:37:58 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jm5yW-0002iB-G8
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 01:37:49 +0000
+Received: by mail-il1-f196.google.com with SMTP id c75so7842902ila.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jun 2020 18:37:47 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=eAZuGyOCUcDGHINX2PjuvDVGtEm9kqJQdEnXysFjpws=;
+ b=ILd6SXcNqWECgw4QCncG7RAIsJX7di3jRZtwQGVPpar//aSe/IN/c9pmAeiUy/+Dq3
+ Gwu4+aBQ/A+MxhKX/nuO5JXO5g84ozSBccRx66xaF7ilTlyDh0sd5qFh7TalQ6xsnUmE
+ TZCwlQ8fPPl3avbl6XZMtxUMadsPtNmwMufBqGuqvFGBjCZWXS2IQral7jpoDZY81LAC
+ jnImULx9nglTFKkUjkwrkUXW/mSUMv1k3K8UJZ0BcCbbTvQy51Zl/WgJ8GPA6YktFYAa
+ 4VfSTJSzEDsaJ4dHovx/H1dvRMlPIUDj6NS2H2Ij1G/rYr6pxhz4upJ8wmX8CjduYtB9
+ zIwg==
+X-Gm-Message-State: AOAM531GfP6vKLO9PlZTjsDgMPd+C4rnLHcI+vyZgOBxT2mc2t+yhz8y
+ zadKP0IqT/k7NaWqud4iuD4=
+X-Google-Smtp-Source: ABdhPJz5WKD2GJFTKbjZdXgRBc5OLyvEKmwOdNWmzub07kHtawv2Fz7DCjunIOTasR1YrjYIsxcNMA==
+X-Received: by 2002:a92:dacf:: with SMTP id o15mr1339712ilq.36.1592530662192; 
+ Thu, 18 Jun 2020 18:37:42 -0700 (PDT)
+Received: from localhost ([2601:647:5b00:1161:a4cc:eef9:fbc0:2781])
+ by smtp.gmail.com with ESMTPSA id z16sm2385916ilz.64.2020.06.18.18.37.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 18 Jun 2020 18:37:40 -0700 (PDT)
+Date: Thu, 18 Jun 2020 18:37:39 -0700
+From: Moritz Fischer <mdf@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 1/5] dt-bindings: fpga: xilinx-slave-serial: valid for
+ the 7 Series too
+Message-ID: <20200619013739.GA3685@epycbox.lan>
+References: <20200611211144.9421-1-luca@lucaceresoli.net>
+ <20200617223841.GA2967136@bogus>
 MIME-Version: 1.0
-In-Reply-To: <20200618085641.GE6493@linux.ibm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200617223841.GA2967136@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_183455_198107_69A0327A 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200618_183748_539051_68C6D76D 
+X-CRM114-Status: GOOD (  10.38  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [moritz.fischer.private[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,57 +88,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Pavel Tatashin <pasha.tatashin@soleen.com>,
- Andy Lutomirski <luto@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: devicetree@vger.kernel.org, linux-fpga@vger.kernel.org,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Moritz Fischer <mdf@kernel.org>,
+ Luca Ceresoli <luca@lucaceresoli.net>, Anatolij Gustschin <agust@denx.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 06/18/2020 02:26 PM, Mike Rapoport wrote:
-> On Thu, Jun 18, 2020 at 06:45:27AM +0530, Anshuman Khandual wrote:
->> This series enables vmemmap backing memory allocation from device memory
->> ranges on arm64. But before that, it enables vmemmap_populate_basepages()
->> and vmemmap_alloc_block_buf() to accommodate struct vmem_altmap based
->> alocation requests.
->>
->> This series applies on 5.8-rc1.
->>
->> Pending Question:
->>
->> altmap_alloc_block_buf() does not have any other remaining users in
->> the tree after this change. Should it be converted into a static
->> function and it's declaration be dropped from the header
->> (include/linux/mm.h). Avoided doing so because I was not sure if there
->> are any off-tree users or not.
+On Wed, Jun 17, 2020 at 04:38:41PM -0600, Rob Herring wrote:
+> On Thu, 11 Jun 2020 23:11:40 +0200, Luca Ceresoli wrote:
+> > The Xilinx 7-series uses the same protocol, mention that.
+> > 
+> > Signed-off-by: Luca Ceresoli <luca@lucaceresoli.net>
+> > ---
+> >  .../devicetree/bindings/fpga/xilinx-slave-serial.txt     | 9 ++++++---
+> >  1 file changed, 6 insertions(+), 3 deletions(-)
+> > 
 > 
-> Well, off-tree users probably have an active fork anyway so they could
-> switch to vmemmap_alloc_block_buf()...
+> Acked-by: Rob Herring <robh@kernel.org>
+Applied to for-next,
 
-Sure, will make the function a static and remove it's declaration
-from the header.
-
-> 
-> Regardless, can you please update Documentation/vm/memory-model.rst to
-> keep it in sync with the code?
-Sure, will do.
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
