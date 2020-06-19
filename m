@@ -2,49 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00FCF200643
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:29:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03504200636
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:28:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bdia3qEr6dAG8qs7kVABHrzQzm2T17c2MVWApDePmDA=; b=KHgvcUIqa/QY3V
-	MaJ2JLasZYhAp8jsNi8cjMd7R2SCiImzl9KYGxCmhcvMlh038AyEUGkFLH9+VgyagvpYK6F4qPJFj
-	TstWh8gXkx12xHO0sCXYa+WB/u05qxuYS7b44+6UaiQ7D+HVE9sOGwAUltlpTNYrrb+mcyGW2EJpW
-	Tx5qYTmrRto94PoFS9urO0sL2iUpPvMGOkica5QGQY5GFIyk8MVs6vOqvc6f8Ww1OR3zrDekdHzlm
-	CB58Bj+eCgtvt9PbPEdzHm4r3N2T5UY5zI3JeWwWwO63W3cNdhXuH5nZmvoWqX0Nmj4tUGaBTz7n1
-	QHA+NOQJ9ePSrnFMzvXg==;
+	List-Owner; bh=zI/RarwsJjp10DmJJNJ3RXe4VU8pPdqutAmUguWu7tg=; b=DqgHNS9/Jf1K2u
+	NnmybP+FAKAqLphMr9B6vEqFW9L4ZOLad2DYMNYak2DCGLH6tnoFUfanvMlpWOmGTO0loScE/8mEh
+	2iM7itaSLs2nXY909cE0i7mMa6jW2KwlSfNV5bNv9T7u8X3mVw9wLVnig5UeuGoKJv5GrdEteFUoa
+	tdSiFr7QkmgCWBEsdmf5f3TImZGyV+W0nQNB/oKOU1WNOJBuARHx1uGeW64C3EmvvGklrBsQ1N63j
+	9oYfCr3VmKbOfFYSDI4QLI6QfbgyglMKre0muyzFBISRTQ9eI6di5fyFW/y/BdJeF0bwaWJ82h5/n
+	f7VNB81zs6JRzU3oEXhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmEGj-0005hI-TO; Fri, 19 Jun 2020 10:29:09 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jmEFu-00057o-Ta; Fri, 19 Jun 2020 10:28:18 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmEFj-00056R-RA; Fri, 19 Jun 2020 10:28:09 +0000
+ id 1jmEFj-00056S-5B; Fri, 19 Jun 2020 10:28:08 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 425E12A51F9
+ (Authenticated sender: eballetbo) with ESMTPSA id 5DCD92A51FB
 From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 1/7] dt-bindings: arm64: dts: mediatek: Add
- mt8183-kukui-krane-sku176
-Date: Fri, 19 Jun 2020 12:27:51 +0200
-Message-Id: <20200619102757.1358675-2-enric.balletbo@collabora.com>
+Subject: [PATCH 2/7] arm64: dts: mt6358: Add the compatible for the regulators
+Date: Fri, 19 Jun 2020 12:27:52 +0200
+Message-Id: <20200619102757.1358675-3-enric.balletbo@collabora.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200619102757.1358675-1-enric.balletbo@collabora.com>
 References: <20200619102757.1358675-1-enric.balletbo@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_032808_003194_5BD1203B 
-X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-CacheID: sfid-20200619_032807_322447_9374237C 
+X-CRM114-Status: UNSURE (   7.71  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -61,9 +58,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: erwanaliasr1@gmail.com, drinkcat@chromium.org, devicetree@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- Mars Cheng <mars.cheng@mediatek.com>, hsinyi@chromium.org,
- matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ hsinyi@chromium.org, matthias.bgg@gmail.com,
  Collabora Kernel ML <kernel@collabora.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -71,29 +67,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The krane-sku176 is the Lenovo IdeaPad Duet Chromebook. A 2-in-1
-detachable device using the MediaTek MT8183 SoC.
+The regulators are expected to be instantiated with matching the
+device-tree compatible, so add the proper compatible name under the
+regulators node.
 
 Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 ---
 
- Documentation/devicetree/bindings/arm/mediatek.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt6358.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/mediatek.yaml b/Documentation/devicetree/bindings/arm/mediatek.yaml
-index abc544dde6920..30908963ae261 100644
---- a/Documentation/devicetree/bindings/arm/mediatek.yaml
-+++ b/Documentation/devicetree/bindings/arm/mediatek.yaml
-@@ -114,4 +114,9 @@ properties:
-           - enum:
-               - mediatek,mt8183-evb
-           - const: mediatek,mt8183
-+      - description: Google Krane (Lenovo IdeaPad Duet, 10e,...)
-+        items:
-+          - const: google,krane-sku176
-+          - const: google,krane
-+          - const: mediatek,mt8183
- ...
+diff --git a/arch/arm64/boot/dts/mediatek/mt6358.dtsi b/arch/arm64/boot/dts/mediatek/mt6358.dtsi
+index 9361ada0c497e..fa159b20379e4 100644
+--- a/arch/arm64/boot/dts/mediatek/mt6358.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt6358.dtsi
+@@ -16,6 +16,8 @@ mt6358codec: mt6358codec {
+ 		};
+ 
+ 		mt6358regulator: mt6358regulator {
++			compatible = "mediatek,mt6358-regulator";
++
+ 			mt6358_vdram1_reg: buck_vdram1 {
+ 				regulator-name = "vdram1";
+ 				regulator-min-microvolt = <500000>;
 -- 
 2.27.0
 
