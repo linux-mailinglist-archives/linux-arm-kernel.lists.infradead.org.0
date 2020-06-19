@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EFE201B11
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 21:16:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62FDB201B19
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 21:17:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C5yyu07XIuoz0r6UQPbF8S5AFKQbvaYGGpwXlwfKlXw=; b=OkF
-	Hx3OLCXZ3nBuHtQcgVw2/S45E7vOzS1yVk/Ir9bC+swqe5wY+npxSm7xbe54LRRt9zfFxkExXTGHc
-	jb4yd8DBGLUH+hNep7x6Ik3qt5oulJTkyLuRznXo/z2odMRZkMY4hxhdlpFXRnDRDCiWGFStEVAwj
-	No/ZR6uhKz4bHb2OqR3LJnWfqBovx+PF183gPG98A2Wfmu16ZAHBJ8YJNhqGTOegk2Bm8ZrMPCXDl
-	WKtWadiX99TGKT+HElVVt2ArVYKvP/qkf0akcy+F8im66e/2ai+8gtb8rxgy5O8E2Lq3gT8FzysWa
-	oLyc3e6s2Q3cDBNmH+1o99hoaRuyBSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wML8DQWEKqhvNTLfEK+bHovQMPNNyUrbSLI+jFSWFLI=; b=ZWeWnLC7clw8i8jwj5Ae6AIXW
+	zIDCh284XK9n6s7G/fIKxmsUiZKp0+vGwqbwOcLsNCUeD1aQIubZtY/Z3f+AxvuFWTshqoJJDz0IK
+	uxHvmvUkQSld94DXdz0o997U9L7z7AKHNm/IzRXvV8wbGMF2EwOfImo0vrVkKfrhQv3j/nzUMS1ES
+	cYlPzSbq/cI9z6CavAmYjnm+a3fx0+UUnqOqpVLkFtUv54Wud1sRA4i75zim89bL3DMZ+EL7pZfWH
+	eRy+w7jfgIN1fSJIIa66+4ZaUfTDykH+axkPfTRsfP8ryjIFwa+LqOH04v/bSYMVX/20XmHXjSXtK
+	NZ5KFoSsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmMVE-0004B0-18; Fri, 19 Jun 2020 19:16:40 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmMV6-0004AS-32
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 19:16:33 +0000
-Received: by mail-pl1-x642.google.com with SMTP id n9so4293239plk.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jun 2020 12:16:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=QpjsOQ81m2+7Vf1tKhbI0NPMb57wPuYHIHejUZfeOx0=;
- b=W+x4CClX3BaHnLSt/1xtF5HA5oIJlM8A+EGmUOOouefvbHiG6YC0Wsg8b7CB6Pp8f5
- pEyFrNb9aZk1QdlliapBCUCIem9PZnRIF1pNDG541eEWKTNagxIBWk/a5ThEjdUHubXI
- O2fstgpGQQrTlufuHR2nutPWOwG7k0KKO0UPw=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=QpjsOQ81m2+7Vf1tKhbI0NPMb57wPuYHIHejUZfeOx0=;
- b=kNIAx6yG7XLNxt13OrXA8WAk8ncAADzMrChpWH45MW88tYYXMItmdFPCdxc10929FI
- vo7EbnpW5pEY1p+Pdwj8NCOSG6gVvpjen+HB97oWnE0ypUsDdN8TPiPXBRQGfk9dajWZ
- WMcsWF6tSAojyGFm8SFIszLWLZw2I5xAfJEbRCoOxGNNN0mf9uc03BFwcYEhnjuAakuF
- 2m+fwwW6ZoI+y/Xb126nIDpaRbE5QMLsSPo4JtHygNuyIVx3BbJpf/j9bycT/vBX8VzO
- U3F/dAoM9HHiSkpSUwwBAxzWLT03nXuJUuV1yKcpCJRpxSw8a1TVU+Nnb7MH8kScvT0T
- 6wWw==
-X-Gm-Message-State: AOAM531jsJbnPj33BSkUjzyD1DVgUlVntwzqZOQcVWuClL98uL4PLmAg
- /WHHz2j4F2ZuymDM18vc0egZMQ==
-X-Google-Smtp-Source: ABdhPJwNurzM+LygEC0YiX0wuysnxgJPszpw0mtEo9Y7176XsIpQNBKYeTFSdYlDE/YRvgnE/WhMHg==
-X-Received: by 2002:a17:90b:50d:: with SMTP id
- r13mr4895894pjz.94.1592594190698; 
- Fri, 19 Jun 2020 12:16:30 -0700 (PDT)
-Received: from localhost.localdomain ([42.111.138.30])
- by smtp.gmail.com with ESMTPSA id 12sm6482743pfj.149.2020.06.19.12.16.25
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 19 Jun 2020 12:16:30 -0700 (PDT)
-From: Suniel Mahesh <sunil@amarulasolutions.com>
-To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
- gregkh@linuxfoundation.org, sashal@kernel.org
-Subject: [PATCH] arch: arm: imx6qdl-icore: Fix OTG_ID pin and sdcard detect
-Date: Sat, 20 Jun 2020 00:46:13 +0530
-Message-Id: <1592594173-13497-1-git-send-email-sunil@amarulasolutions.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jmMVq-0004RK-R3; Fri, 19 Jun 2020 19:17:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jmMVi-0004Qh-MB
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 19:17:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C7CEB2B;
+ Fri, 19 Jun 2020 12:17:07 -0700 (PDT)
+Received: from [10.57.9.128] (unknown [10.57.9.128])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 49DD33F73C;
+ Fri, 19 Jun 2020 12:17:06 -0700 (PDT)
+Subject: Re: [PATCH v8 4/4] gpio: xilinx: Utilize for_each_set_clump macro
+To: Syed Nayyar Waris <syednwaris@gmail.com>, linus.walleij@linaro.org,
+ akpm@linux-foundation.org
+References: <cover.1592224128.git.syednwaris@gmail.com>
+ <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <7c0bcc9e-ab76-b356-7da6-6eb8b3868610@arm.com>
+Date: Fri, 19 Jun 2020 20:17:05 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.9.0
+MIME-Version: 1.0
+In-Reply-To: <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_121632_559782_F3F3CBE9 
-X-CRM114-Status: GOOD (  11.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200619_121710_809445_9E62FA16 
+X-CRM114-Status: GOOD (  25.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,78 +65,180 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, jagan@amarulasolutions.com,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: bgolaszewski@baylibre.com, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ vilhelm.gray@gmail.com, andriy.shevchenko@linux.intel.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Michael Trimarchi <michael@amarulasolutions.com>
+On 2020-06-15 13:54, Syed Nayyar Waris wrote:
+> This patch reimplements the xgpio_set_multiple function in
+> drivers/gpio/gpio-xilinx.c to use the new for_each_set_clump macro.
+> Instead of looping for each bit in xgpio_set_multiple
+> function, now we can check each channel at a time and save cycles.
+> 
+> Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> Cc: Michal Simek <michal.simek@xilinx.com>
+> Signed-off-by: Syed Nayyar Waris <syednwaris@gmail.com>
+> Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+> ---
+> Changes in v8:
+>   - No change.
+> 
+> Changes in v7:
+>   - No change.
+> 
+> Changes in v6:
+>   - No change.
+> 
+> Changes in v5:
+>   - Minor change: Inline values '32' and '64' in code for better
+>     code readability.
+> 
+> Changes in v4:
+>   - Minor change: Inline values '32' and '64' in code for better
+>     code readability.
+> 
+> Changes in v3:
+>   - No change.
+> 
+> Changes in v2:
+>   - No change.
+> 
+>   drivers/gpio/gpio-xilinx.c | 62 ++++++++++++++++++++------------------
+>   1 file changed, 32 insertions(+), 30 deletions(-)
+> 
+> diff --git a/drivers/gpio/gpio-xilinx.c b/drivers/gpio/gpio-xilinx.c
+> index 67f9f82e0db0..e81092dea27e 100644
+> --- a/drivers/gpio/gpio-xilinx.c
+> +++ b/drivers/gpio/gpio-xilinx.c
+> @@ -136,39 +136,41 @@ static void xgpio_set(struct gpio_chip *gc, unsigned int gpio, int val)
+>   static void xgpio_set_multiple(struct gpio_chip *gc, unsigned long *mask,
+>   			       unsigned long *bits)
+>   {
+> -	unsigned long flags;
+> +	unsigned long flags[2];
+>   	struct xgpio_instance *chip = gpiochip_get_data(gc);
+> -	int index = xgpio_index(chip, 0);
+> -	int offset, i;
+> -
+> -	spin_lock_irqsave(&chip->gpio_lock[index], flags);
+> -
+> -	/* Write to GPIO signals */
+> -	for (i = 0; i < gc->ngpio; i++) {
+> -		if (*mask == 0)
+> -			break;
+> -		/* Once finished with an index write it out to the register */
+> -		if (index !=  xgpio_index(chip, i)) {
+> -			xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
+> -				       index * XGPIO_CHANNEL_OFFSET,
+> -				       chip->gpio_state[index]);
+> -			spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
+> -			index =  xgpio_index(chip, i);
+> -			spin_lock_irqsave(&chip->gpio_lock[index], flags);
+> -		}
+> -		if (__test_and_clear_bit(i, mask)) {
+> -			offset =  xgpio_offset(chip, i);
+> -			if (test_bit(i, bits))
+> -				chip->gpio_state[index] |= BIT(offset);
+> -			else
+> -				chip->gpio_state[index] &= ~BIT(offset);
+> -		}
+> +	u32 *const state = chip->gpio_state;
+> +	unsigned int *const width = chip->gpio_width;
 
-The current pin muxing scheme muxes GPIO_1 pad for USB_OTG_ID
-but the TRM mentions GPIO_1 pad is muxed for card detetcion,
-because of which when card is inserted, usb otg is enumerated
-and the card is never detected.
+Immutable pointers to mutable data are pretty unusual, especially for 
+temporary local variables. Let me share my thought process upon seeing this:
 
-[   64.492645] cfg80211: failed to load regulatory.db
-[   64.492657] imx-sdma 20ec000.sdma: external firmware not found, using ROM firmware
-[   76.343711] ci_hdrc ci_hdrc.0: EHCI Host Controller
-[   76.349742] ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 2
-[   76.388862] ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00
-[   76.396650] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.08
-[   76.405412] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
-[   76.412763] usb usb2: Product: EHCI Host Controller
-[   76.417666] usb usb2: Manufacturer: Linux 5.8.0-rc1-next-20200618 ehci_hcd
-[   76.424623] usb usb2: SerialNumber: ci_hdrc.0
-[   76.431755] hub 2-0:1.0: USB hub found
-[   76.435862] hub 2-0:1.0: 1 port detected
+- hmm, is "* const" simply a mistake that's meant to be "const *"?
+- <scan the rest of the function> no, updating chip->gpio_state seems 
+appropriate, so it can't be that.
+- does anything take the address of either of these variables that might 
+justify it?
+- <scan the rest of the function again> nope, they're only ever used by 
+value
+- hmm, maybe it's just paranoia, but in that case why isn't width "const 
+* const" since chip->gpio_width shouldn't need to be modified?
+- hmm...
 
-Fix the pin muxing as per TRM by muxing ENET_RX_ER pad for USB_OTG_ID
-and GPIO_1 pad for card detect.
+And at that point I've spent nearly a minute parsing what should have 
+been be some trivial definitions of local shorthand variables. Defensive 
+programming is all very well, but the distraction to readers (I can't be 
+the only one) can easily outweigh any perceived value in trying to 
+harden against theoretical future developer error in a straightforward 
+~30-line function.
 
-[   22.449165] mmc0: host does not support reading read-only switch, assuming write-enable
-[   22.459992] mmc0: new high speed SDHC card at address 0001
-[   22.469725] mmcblk0: mmc0:0001 EB1QT 29.8 GiB
-[   22.478856]  mmcblk0: p1 p2
+> +	unsigned long offset, clump;
+> +	size_t index;
+> +
+> +	DECLARE_BITMAP(old, 64);
+> +	DECLARE_BITMAP(new, 64);
+> +	DECLARE_BITMAP(changed, 64);
+> +
+> +	spin_lock_irqsave(&chip->gpio_lock[0], flags[0]);
+> +	spin_lock_irqsave(&chip->gpio_lock[1], flags[1]);
 
-Cc: stable@vger.kernel.org
-Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
-Signed-off-by: Suniel Mahesh <sunil@amarulasolutions.com>
----
-NOTE:
-- patch tested on i.Core 1.5 MX6 DL
----
- arch/arm/boot/dts/imx6qdl-icore.dtsi | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Why _irqsave on the inner lock? (think about it...)
 
-diff --git a/arch/arm/boot/dts/imx6qdl-icore.dtsi b/arch/arm/boot/dts/imx6qdl-icore.dtsi
-index 756f3a9..12997da 100644
---- a/arch/arm/boot/dts/imx6qdl-icore.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-icore.dtsi
-@@ -397,7 +397,7 @@
- 
- 	pinctrl_usbotg: usbotggrp {
- 		fsl,pins = <
--			MX6QDL_PAD_GPIO_1__USB_OTG_ID 0x17059
-+			MX6QDL_PAD_ENET_RX_ER__USB_OTG_ID 0x17059
- 		>;
- 	};
- 
-@@ -409,6 +409,7 @@
- 			MX6QDL_PAD_SD1_DAT1__SD1_DATA1 0x17070
- 			MX6QDL_PAD_SD1_DAT2__SD1_DATA2 0x17070
- 			MX6QDL_PAD_SD1_DAT3__SD1_DATA3 0x17070
-+			MX6QDL_PAD_GPIO_1__GPIO1_IO01  0x1b0b0
- 		>;
- 	};
- 
--- 
-2.7.4
+> +
+> +	bitmap_set_value(old, state[0], 0, width[0]);
+> +	bitmap_set_value(old, state[1], width[0], width[1]);
+> +	bitmap_replace(new, old, bits, mask, gc->ngpio);
+> +
+> +	bitmap_set_value(old, state[0], 0, 32);
+> +	bitmap_set_value(old, state[1], 32, 32);
+> +	state[0] = bitmap_get_value(new, 0, width[0]);
+> +	state[1] = bitmap_get_value(new, width[0], width[1]);
+> +	bitmap_set_value(new, state[0], 0, 32);
+> +	bitmap_set_value(new, state[1], 32, 32);
+> +	bitmap_xor(changed, old, new, 64);
+> +
+> +	for_each_set_clump(offset, clump, changed, 64, 32) {
+> +		index = offset / 32;
+> +		xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
+> +				index * XGPIO_CHANNEL_OFFSET,
+> +				state[index]);
+>   	}
 
+TBH this looks like a rather overcomplicated and horribly inefficient 
+way of doing:
+
+	if (((u32 *)changed)[0])
+		xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET,
+				state[0]);
+	if (((u32 *)changed)[1])
+		xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
+				XGPIO_CHANNEL_OFFSET, state[1]);
+
+(and doing the changed/state update itself one word at a time for each 
+condition would probably be a fair bit more efficient in terms of 
+minimising spilling to the stack on 32-bit machines)
+
+I can see this API having merit if the clumps are a weird size or 
+expected to be significantly sparse in the bitmap, but making 
+out-of-line calls to an iterator which itself involves another 
+out-of-line call and an integer division, all just to process two halves 
+of a 64-bit value, seems... unnecessarily silly :/
+
+[drive-by review since I had a "packing small values into bitmaps" 
+use-case and wondered if there might be anything interesting here]
+
+Robin.
+
+>   
+> -	xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
+> -		       index * XGPIO_CHANNEL_OFFSET, chip->gpio_state[index]);
+> -
+> -	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
+> +	spin_unlock_irqrestore(&chip->gpio_lock[1], flags[1]);
+> +	spin_unlock_irqrestore(&chip->gpio_lock[0], flags[0]);
+>   }
+>   
+>   /**
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
