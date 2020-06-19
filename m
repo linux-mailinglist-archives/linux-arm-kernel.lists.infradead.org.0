@@ -2,81 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3F8C201BFE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 22:09:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0102201BEA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 22:04:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=voXG16IMd40xGHwZTcIn/lca2jKZmVn+6qctNYCsnz8=; b=ZkNIQwZuJoYXQi
-	GVeo1lHSO6ikaylw/4dI76mWyYkWwB3+YBO21YJA1upnCR19r5OzaHrqqp6BYteZSdZPeUHoItSh9
-	ZX6JWqYMUatpEBTuwXp7qAW+RSTdFHdBOpDK+354urUdiSWS14KEK1AA58zljTaJ/8p/CP4epAIuB
-	VNHFd0t2wowIifFIIe3hEvg5OjZ9LgyJxiIc3CYGT5sCe77KVlGz2oxYm9ihCUCwWMdyz0wh4NzoL
-	/1hwISiph2BwcZRaBCc3JwoErpg1VtWY8TgsHYemyepHnTEmgl6FeBKUrOUQZbj7pNUhnnuxAK85O
-	jln1NA8SGgmHbCn6ZUVg==;
+	List-Owner; bh=3zgGO/KPx3DlREEIVmg07gd9DTLOWYzNHc0/IiJ6lBc=; b=ebSgVeAl5zvmRk
+	f9CBSxNVytwWdWoNBs+Y2+2zSzsXBjron8BPqIcpZ1w7HYvEKPexajlLAK0s9LIBVBcffnaM+Zbki
+	5sBGJkKl2bsm6pHMJIySZBMetg/fTzM3CA9pFb701Od5t4zxNGwxQshw+feRfYe+To63QJHPuqgbp
+	OzwKCElZz2YAtXP6NJRhgXdC3ZDlTNafZiaUhF/agqZmC2QwGiA/+AfjcZ+fdPRU8pyiTz1/kfSeJ
+	T2WfLVZ9ZHw7Z6t5WBL5XgOWXSgb2P1ujAe7hh3E8VnVG4Q/1WPLUvRT6N72CTfnk0aR2ilrKeWGt
+	gNEpfyYnJNAo2wnrAz5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmNKW-0001gq-LF; Fri, 19 Jun 2020 20:09:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmNKK-0001gR-I3; Fri, 19 Jun 2020 20:09:30 +0000
-X-UUID: 712aac6958764fd99d30ded06fa6d129-20200619
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=mQyV9oA90nw/l5PmfxypuRikaoz6DxZG8g7s7v+PD9k=; 
- b=YBER7Q2WRljruntiQ6zyStuFdkQtWZ7R6Tq0zW5RVVV5wSla9HrpOfeAWUZv668elKofn1ZgulLBHjDlUt+dtldpbWp4IwbXdWFolN03Qkp3BteheX+J6q7k2vn5WJOKtU1YjePZpTsckpRki5dbloIsyIAW+3XwZDqQ1ltiF5g=;
-X-UUID: 712aac6958764fd99d30ded06fa6d129-20200619
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <sean.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1051897526; Fri, 19 Jun 2020 12:09:23 -0800
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 12:59:18 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 20 Jun 2020 03:59:15 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Sat, 20 Jun 2020 03:59:11 +0800
-From: <sean.wang@mediatek.com>
-To: <robh+dt@kernel.org>, <gregkh@linuxfoundation.org>, <jslaby@suse.com>,
- <andriy.shevchenko@linux.intel.com>, <robert.jarzmik@free.fr>,
- <arnd@arndb.de>, <p.zabel@pengutronix.de>, <joel@jms.id.au>,
- <david@lechnology.com>, <jan.kiszka@siemens.com>,
- <heikki.krogerus@linux.intel.com>, <hpeter@gmail.com>, <vigneshr@ti.com>,
- <matthias.bgg@gmail.com>, <tthayer@opensource.altera.com>
-Subject: [PATCH v4] tty: serial: don't do termios for BTIF
-Date: Sat, 20 Jun 2020 03:59:14 +0800
-Message-ID: <78efa2b1e2599deff4d838b05b4054ec5ac2976a.1592595601.git.sean.wang@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
+	id 1jmNF4-0006Xz-Ne; Fri, 19 Jun 2020 20:04:02 +0000
+Received: from ns2.baikalchip.com ([94.125.187.42]
+ helo=mail.baikalelectronics.ru)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jmNEI-00063E-WA
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 20:03:17 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 0291980045E5;
+ Fri, 19 Jun 2020 20:03:13 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id En_02CvNG5Pe; Fri, 19 Jun 2020 23:03:09 +0300 (MSK)
+From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Jiri Slaby <jslaby@suse.com>
+Subject: [PATCH v7 0/3] serial: 8250_dw: Fix ref clock usage
+Date: Fri, 19 Jun 2020 23:02:48 +0300
+Message-ID: <20200619200251.9066-1-Sergey.Semin@baikalelectronics.ru>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F0184A2B374C0FECDB916DDE74159AA926AA2C638F0BA363607752D2529A60792000:8
-X-MTK: N
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_130928_604024_22B0B820 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200619_130315_395991_ED0BCCAD 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,98 +60,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ryder Lee <ryder.lee@mediatek.com>, Steven
- Liu <steven.liu@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Maxime Ripard <mripard@kernel.org>,
+ Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ Serge Semin <fancer.lancer@gmail.com>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ Serge Semin <Sergey.Semin@baikalelectronics.ru>, Arnd Bergmann <arnd@arndb.de>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ linux-serial@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sean Wang <sean.wang@mediatek.com>
+Greg, Jiri. We've missed the last merge window. It would be pity to miss
+the next one. Please review/merge in the series.
 
-Bluetooth Interface (BTIF) is designed dedicatedly for MediaTek SOC with
-BT in order to be instead of the UART interface between BT module and Host
-CPU, and not exported to user space to access.
+Regarding the patchset. It might be dangerous if an UART port reference
+clock rate is suddenly changed. In particular the 8250 port drivers
+(and AFAICS most of the tty drivers using common clock framework clocks)
+rely either on the exclusive reference clock utilization or on the ref
+clock rate being always constant. Needless to say that it turns out not
+true and if some other service suddenly changes the clock rate behind an
+UART port driver back no good can happen. So the port might not only end
+up with an invalid uartclk value saved, but may also experience a
+distorted output/input data since such action will effectively update the
+programmed baud-clock. We discovered such problem on Baikal-T1 SoC where
+two DW 8250 ports have got a shared reference clock. Allwinner SoC is
+equipped with an UART, which clock is derived from the CPU PLL clock
+source, so the CPU frequency change might be propagated down up to the
+serial port reference clock. This patchset provides a way to fix the
+problem to the 8250 serial port controllers and mostly fixes it for the
+DW 8250-compatible UART. I say mostly because due to not having a facility
+to pause/stop and resume/restart on-going transfers we implemented the
+UART clock rate update procedure executed post factum of the actual
+reference clock rate change.
 
-As the UART design, BTIF will be an APB slave and can transmit or receive
-data by MCU access, but doesn't provide termios function like baudrate and
-flow control setup.
+In addition the patchset includes a small optimization patch. It
+simplifies the DW APB UART ref clock rate setting procedure a bit.
 
-Even LCR on offset 0xC that is just a FAKELCR
-a. If FAKELCR[7] is equaled to 1, RBR(0x00), THR(0x00), IER(0x04)
-   will not be readable/writable.
+This patchset is rebased and tested on the mainline Linux kernel 5.7-rc4:
+base-commit: 0e698dfa2822 ("Linux 5.7-rc4")
+tag: v5.7-rc4
 
-b. If FAKELCR is equaled to 0xBF, RBR(0x00), THR(0x00), IER(0x04),
-   IIR(0x08), and LSR(0x14) will not be readable/writable.
+Changelog v3:
+- Refactor the original patch to adjust the UART port divisor instead of
+  requesting an exclusive ref clock utilization.
 
-So adding a new capability 'UART_CAP_NTIO' for the unusual unsupported
-case.
+Changelog v4:
+- Discard commit b426bf0fb085 ("serial: 8250: Fix max baud limit in generic
+  8250 port") since Greg has already merged it into the tty-next branch.
+- Use EXPORT_SYMBOL_GPL() for the serial8250_update_uartclk() method.
 
-The bluetooth driver would use BTIF device as a serdev. So the termios
-still function would be called in kernelspace from ttyport_open in
-drivers/tty/serdev/serdev-ttyprt.c.
+Changelog v5:
+- Refactor dw8250_clk_work_cb() function cheking the clk_get_rate()
+  return value for being erroneous and exit if it is.
+- Don't update p->uartclk in the port startup. It will be updated later in
+  the same procedure at the set_termios() function being invoked by the
+  serial_core anyway.
 
-Fixes: 1c16ae65e250 ("serial: 8250: of: Add new port type for MediaTek BTIF controller on MT7622/23 SoC")
-Cc: Steven Liu <steven.liu@mediatek.com>
-Signed-off-by: Sean Wang <sean.wang@mediatek.com>
-Signed-off-by: Ryder Lee <ryder.lee@mediatek.com>
+Changelog v6:
+- Resend
 
---
-v1->v2:
-no change on termios->c_cflag and refine commit message
+Link: https://lore.kernel.org/linux-serial/20200617224813.23853-1-Sergey.Semin@baikalelectronics.ru
+Changelog v7:
+- Wake the device up on the serial port divider update.
 
-v2->v3:
-change the naming from NMOD to NTIO as TIO is a well established prefix
-for termios IOCTLs.
+Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
+Cc: Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>
+Cc: Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
+Cc: Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>
+Cc: Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>
+Cc: Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>
+Cc: Vadim Vlasov <V.Vlasov@baikalelectronics.ru>
+Cc: Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>
+Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Cc: Maxime Ripard <mripard@kernel.org>
+Cc: Will Deacon <will@kernel.org>
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: linux-mips@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-serial@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
 
-v3->v4:
-1. remove appropriate tag
-2. add the explanation why the termios is required even when the connection
-   isn't exported to userspace.
----
- drivers/tty/serial/8250/8250.h      | 1 +
- drivers/tty/serial/8250/8250_port.c | 5 ++++-
- 2 files changed, 5 insertions(+), 1 deletion(-)
+Serge Semin (3):
+  serial: 8250: Add 8250 port clock update method
+  serial: 8250_dw: Simplify the ref clock rate setting procedure
+  serial: 8250_dw: Fix common clocks usage race condition
 
-diff --git a/drivers/tty/serial/8250/8250.h b/drivers/tty/serial/8250/8250.h
-index 52bb21205bb6..0d9d3bfe48af 100644
---- a/drivers/tty/serial/8250/8250.h
-+++ b/drivers/tty/serial/8250/8250.h
-@@ -82,6 +82,7 @@ struct serial8250_config {
- #define UART_CAP_MINI	(1 << 17)	/* Mini UART on BCM283X family lacks:
- 					 * STOP PARITY EPAR SPAR WLEN5 WLEN6
- 					 */
-+#define UART_CAP_NTIO	(1 << 18)	/* UART doesn't do termios */
- 
- #define UART_BUG_QUOT	(1 << 0)	/* UART has buggy quot LSB */
- #define UART_BUG_TXEN	(1 << 1)	/* UART has buggy TX IIR status */
-diff --git a/drivers/tty/serial/8250/8250_port.c b/drivers/tty/serial/8250/8250_port.c
-index 1632f7d25acc..af54db877efe 100644
---- a/drivers/tty/serial/8250/8250_port.c
-+++ b/drivers/tty/serial/8250/8250_port.c
-@@ -286,7 +286,7 @@ static const struct serial8250_config uart_config[] = {
- 		.tx_loadsz	= 16,
- 		.fcr		= UART_FCR_ENABLE_FIFO |
- 				  UART_FCR_CLEAR_RCVR | UART_FCR_CLEAR_XMIT,
--		.flags		= UART_CAP_FIFO,
-+		.flags		= UART_CAP_FIFO | UART_CAP_NTIO,
- 	},
- 	[PORT_NPCM] = {
- 		.name		= "Nuvoton 16550",
-@@ -2640,6 +2640,9 @@ serial8250_do_set_termios(struct uart_port *port, struct ktermios *termios,
- 	unsigned long flags;
- 	unsigned int baud, quot, frac = 0;
- 
-+	if (up->capabilities & UART_CAP_NTIO)
-+		return;
-+
- 	if (up->capabilities & UART_CAP_MINI) {
- 		termios->c_cflag &= ~(CSTOPB | PARENB | PARODD | CMSPAR);
- 		if ((termios->c_cflag & CSIZE) == CS5 ||
+ drivers/tty/serial/8250/8250_dw.c   | 116 +++++++++++++++++++++++++---
+ drivers/tty/serial/8250/8250_port.c |  40 ++++++++++
+ include/linux/serial_8250.h         |   2 +
+ 3 files changed, 146 insertions(+), 12 deletions(-)
+
 -- 
-2.25.1
+2.26.2
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
