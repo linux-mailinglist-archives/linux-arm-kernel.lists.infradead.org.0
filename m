@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E596200328
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 10:03:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FCE0200325
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 10:02:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fs9MfhZbRoRy/DMZ2ZmkmC+mxzBCCtqZL5UWqvDddi0=; b=GY8YP1v/87DpTh
-	F6MSyqUEmPyUaPDDPPrby66k9AXytJONl//OHYfW9HPP8lQv7v5SDTvRCcq15m3TPoVbLvyLv5h+c
-	VGdoPWhWNLhYm5Opx0V0Xg6JFGqpeB4Z7BdkwvYy4imrXTQJTfGJTMm9BsOi+zTaLj5QPT8r4Zimg
-	vA7FofZ+jCYRoNMoZACmR+NvHZTmmVVdq7eT/jK7AhrmmqeCJ/U0gXBiYwyHzTWiILkF+g3Hyfr/w
-	mpJig5RJkiram2K7MGtgDIjR8LUMe1cF+3Y9AaQr36ZTwx/T6m1GReyEQUORNOVRJJf00VcvCpgWx
-	TvGhOw0YQopXqlZRB98A==;
+	List-Owner; bh=Bb+MyR310GCuwBI86oug2k6i01WdZ6so8LKMOucmVZY=; b=Szxu4beiSMRm8w
+	F/mrcB+121Adl7u5GyQ/vrzn3Cw1zsHBQnSf1GlijT1y/0f4cSv39+FpZQsiwZLRoleddYS7EYDpl
+	GmbDfHMxzkc6QzDfdlDY0mG96NEuujL14RM7s0Eu0MaHOp7EcRmBkdbUdwF6nQPWS1iwWKtAEtzkV
+	HQz9IKHcKqq2DH10AGjyjJyMJEfV8olmCo6wxyl2QDzlz5IyJn8eZh46DWSKl06u/u4UBwYPI5mFP
+	c1GgkUNiGQQEhSu9UuA74X0KR7lqhiU5Kcd3l2oxS/bHmassJNhtVV64FQwZJ71lCY4BA41HrHwEx
+	xiXHb8BmAhgdFTuk/Eyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmBzK-0004Y0-1l; Fri, 19 Jun 2020 08:03:02 +0000
+	id 1jmByp-00040a-4d; Fri, 19 Jun 2020 08:02:31 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmByO-0003ng-Jy
- for linux-arm-kernel@bombadil.infradead.org; Fri, 19 Jun 2020 08:02:04 +0000
+ id 1jmByL-0003ng-EH
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 19 Jun 2020 08:02:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=jrpWqwr6gxDZXjZjn9e9Oi0WiEuMgPli9MmYhcvxs+A=; b=c9EuuQxBpjoGZa0QscXlKb3yyY
- 3giHJXuxFGJukqyVx3nucRYwSWOZVB64LgN3TMAPCjZF3p+j6szR8Tr4/JKs8xfOE2ySq8MES1f96
- DIZKpP6OgqEniVAdXfOIEzar1RBC1U7UBD6HhCFJXlFzUVr2CYoxpS+k+t2ijrKFiktkxZy5Qgn/f
- tqUDJ3ID52k5/NFo8o/Garc99TDD/XIdu8qK+Bkd4+QTWoyjszyfZ/PAFkWIKdX9DQpIGcauWgGE9
- dL4Mz2g+qvS/pmMAu/kJa82aHIWVY/ZnzAGxGWzrw7yQHh/E7H7t+x/cixpqZGG5pG+bRraBUhoDH
- JOCxYnIw==;
+ bh=Zi6il7YI7zPQiB6XJVahLpHNmVxm1Kb8LXTefx2GSfc=; b=gQ24CT6yCKVY2tKM5dohqgyL5N
+ hHj63D4MMOlime00HSwh4h12PbSZLiih77R1fAovi8fy2nzOzGtTyInTOjR8ziwtsvKWTAeN9Lgp1
+ TBXKM468nq1AIxO9vdW/5pncew2qQj0pixGO1G08ckjAikL3oJ5edijVnuYADmD1rJj1NZ3xweBss
+ RvJ65m84wCbl9sJHlcTXOZuFDvvIJ5wNeJI8QyiPTIj8L1ezH9gyvFY+WOaLkqWdsN6ukQHiX+97/
+ BMPxELgkSuxs+prK/+o1I8Qza+SrKllirGLagNCAOVeD4ftALTprfNgVRxhyLKS9gKpCJol8+MIXB
+ 0qeztWoA==;
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmBvi-00029g-ID
+ id 1jmBvi-00029i-K0
  for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 07:59:19 +0000
 Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
  helo=dude02.lab.pengutronix.de)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mtr@pengutronix.de>)
- id 1jmBvf-0007WC-UA; Fri, 19 Jun 2020 09:59:15 +0200
+ id 1jmBvf-0007WD-VS; Fri, 19 Jun 2020 09:59:15 +0200
 Received: from mtr by dude02.lab.pengutronix.de with local (Exim 4.92)
  (envelope-from <mtr@pengutronix.de>)
- id 1jmBvf-0004vi-CA; Fri, 19 Jun 2020 09:59:15 +0200
+ id 1jmBvf-0004vl-Ca; Fri, 19 Jun 2020 09:59:15 +0200
 From: Michael Tretter <m.tretter@pengutronix.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [RESEND PATCH v3 1/6] soc: xilinx: vcu: drop useless success message
-Date: Fri, 19 Jun 2020 09:59:08 +0200
-Message-Id: <20200619075913.18900-2-m.tretter@pengutronix.de>
+Subject: [RESEND PATCH v3 2/6] ARM: dts: define indexes for output clocks
+Date: Fri, 19 Jun 2020 09:59:09 +0200
+Message-Id: <20200619075913.18900-3-m.tretter@pengutronix.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200619075913.18900-1-m.tretter@pengutronix.de>
 References: <20200619075913.18900-1-m.tretter@pengutronix.de>
@@ -79,7 +79,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dhaval Shah <dshah@xilinx.com>,
+Cc: Dhaval Shah <dshah@xilinx.com>, Rob Herring <robh@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Michael Tretter <m.tretter@pengutronix.de>,
  Michal Simek <michal.simek@xilinx.com>, kernel@pengutronix.de,
@@ -89,27 +89,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The message that the driver was successfully probed only adds useless
-noise. Drop the message.
+The VCU System-Level Control provides 4 clocks. Defined indexes for
+these clocks.
 
 Signed-off-by: Michael Tretter <m.tretter@pengutronix.de>
+Acked-by: Rob Herring <robh@kernel.org>
 ---
- drivers/soc/xilinx/xlnx_vcu.c | 2 --
- 1 file changed, 2 deletions(-)
+ include/dt-bindings/clock/xlnx-vcu.h | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 include/dt-bindings/clock/xlnx-vcu.h
 
-diff --git a/drivers/soc/xilinx/xlnx_vcu.c b/drivers/soc/xilinx/xlnx_vcu.c
-index a3aa40996f13..dcd8e7824b06 100644
---- a/drivers/soc/xilinx/xlnx_vcu.c
-+++ b/drivers/soc/xilinx/xlnx_vcu.c
-@@ -571,8 +571,6 @@ static int xvcu_probe(struct platform_device *pdev)
- 
- 	dev_set_drvdata(&pdev->dev, xvcu);
- 
--	dev_info(&pdev->dev, "%s: Probed successfully\n", __func__);
--
- 	return 0;
- 
- error_pll_ref:
+diff --git a/include/dt-bindings/clock/xlnx-vcu.h b/include/dt-bindings/clock/xlnx-vcu.h
+new file mode 100644
+index 000000000000..f2a5ea9c4155
+--- /dev/null
++++ b/include/dt-bindings/clock/xlnx-vcu.h
+@@ -0,0 +1,15 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (C) 2020 Pengutronix, Michael Tretter <kernel@pengutronix.de>
++ */
++
++#ifndef _DT_BINDINGS_CLOCK_XLNX_VCU_H
++#define _DT_BINDINGS_CLOCK_XLNX_VCU_H
++
++#define CLK_XVCU_ENC_CORE		0
++#define CLK_XVCU_ENC_MCU		1
++#define CLK_XVCU_DEC_CORE		2
++#define CLK_XVCU_DEC_MCU		3
++#define CLK_XVCU_MAX			4
++
++#endif /* _DT_BINDINGS_CLOCK_XLNX_VCU_H */
 -- 
 2.20.1
 
