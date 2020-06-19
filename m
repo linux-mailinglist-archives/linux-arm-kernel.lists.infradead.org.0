@@ -2,60 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93C0C2005A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:44:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1AEA2005AB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:45:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CJhNgWRnlI8anUkIG3spqjTOjvISLRAROjp6DyMDu8U=; b=OJtbCCgbaMudq4PpBT4j151XF
-	59cpnO3pZy4LYl4Qfk1paZ9tH9Y9RRqWcwj8+FuIaUH47JkMhEnsYpvjKYeONDtQcGLobec6D4WIm
-	5+Qa6sVBePNYlZmX8hZ0Xve+Q/Rh7uIfRdMR1HnHuqUpiYDv/i1bHH9rocHEzGFqI6cuB5O3oXxOx
-	PZMdqF++AOyusvgyfBsdJt+NlJJ45zslwV509jMoECCwaXkIFPnFRP6wT9FhON95VupPe2PS/1kd3
-	qzFLZKneVbLhGeo8rKNKqCbL1EqN1VRFTgKD2MDX018TiEHG9o/ss55uHO+jbCYbO94ovQ76kNh8l
-	Ntcsx9zPQ==;
+	 bh=TXXrS6uge+FmKyPLu1wV1E3etE0EqV6Lyx5OMKTrk0Y=; b=cN9zFw1MzOzGnSaq0/MF7ci3E
+	c7418yAmW3jGKj5HboSIhe7AuV3o1TAkKIrgp/a8zVuQH0rrdWQUAN3xN7UVS+YY/J5c8E7FwEEvj
+	v+G9AXtKIqyv0zuIm28Mr3GEOgDAPVK3nfnkdnzIbsVluxGPUoLaxEJ2vsN+gI/jlZiHpRYydsZTe
+	JuNt7EvQqRVRI4i92wxoC9f2V5xqWTrWO3PL79HbERFe5H5AqYi/rCfaJD6lHuBGSxjj7XJRMF6yl
+	CNMVvzvlbtRILKWSBL1f4WGQB93bTsRtg9qXBw0JY7hMwOL/h5cSvO6yaOjc610RsXDMyzILldJoi
+	XyON+6XKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmDZ3-00067R-Ab; Fri, 19 Jun 2020 09:44:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmDYr-00066j-Vl
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 09:43:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D1392B;
- Fri, 19 Jun 2020 02:43:49 -0700 (PDT)
-Received: from [10.57.9.128] (unknown [10.57.9.128])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5BE7C3F71F;
- Fri, 19 Jun 2020 02:43:47 -0700 (PDT)
-Subject: Re: [PATCH v6 35/36] videobuf2: use sgtable-based scatterlist wrappers
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-References: <20200618153956.29558-1-m.szyprowski@samsung.com>
- <CGME20200618154038eucas1p1acd4fcdd183de4c19c4004778527a755@eucas1p1.samsung.com>
- <20200618153956.29558-36-m.szyprowski@samsung.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <c2808024-943a-f46e-6ad8-5579a507bfdf@arm.com>
-Date: Fri, 19 Jun 2020 10:43:46 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
+	id 1jmDaI-0006SN-Ux; Fri, 19 Jun 2020 09:45:19 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jmDa0-0006QO-BU; Fri, 19 Jun 2020 09:45:01 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id DB8E6AEB2;
+ Fri, 19 Jun 2020 09:44:56 +0000 (UTC)
+Message-ID: <bdc91c1b015d2f02bd0ea90ae81a122123c62b38.camel@suse.de>
+Subject: Re: [PATCH v5 00/27] clk: bcm: rpi: Add support for BCM2711
+ firmware clocks
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stephen Boyd <sboyd@kernel.org>, Maxime Ripard <maxime@cerno.tech>
+Date: Fri, 19 Jun 2020 11:44:54 +0200
+In-Reply-To: <159255945796.62212.5838238989498858379@swboyd.mtv.corp.google.com>
+References: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
+ <159255945796.62212.5838238989498858379@swboyd.mtv.corp.google.com>
+User-Agent: Evolution 3.36.3 
 MIME-Version: 1.0
-In-Reply-To: <20200618153956.29558-36-m.szyprowski@samsung.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_024351_880522_C658F46F 
-X-CRM114-Status: GOOD (  22.90  )
+X-CRM114-CacheID: sfid-20200619_024500_539101_AFF22A99 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,128 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pawel Osciak <pawel@osciak.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>, Mike Turquette <mturquette@baylibre.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ Phil Elwell <phil@raspberrypi.com>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6104126909227736772=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-06-18 16:39, Marek Szyprowski wrote:
-> Use recently introduced common wrappers operating directly on the struct
-> sg_table objects and scatterlist page iterators to make the code a bit
-> more compact, robust, easier to follow and copy/paste safe.
-> 
-> No functional change, because the code already properly did all the
-> scaterlist related calls.
-> 
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> ---
->   .../common/videobuf2/videobuf2-dma-contig.c   | 41 ++++++++-----------
->   .../media/common/videobuf2/videobuf2-dma-sg.c | 32 ++++++---------
->   .../common/videobuf2/videobuf2-vmalloc.c      | 12 ++----
->   3 files changed, 34 insertions(+), 51 deletions(-)
-> 
-> diff --git a/drivers/media/common/videobuf2/videobuf2-dma-contig.c b/drivers/media/common/videobuf2/videobuf2-dma-contig.c
-> index f4b4a7c135eb..ba01a8692d88 100644
-> --- a/drivers/media/common/videobuf2/videobuf2-dma-contig.c
-> +++ b/drivers/media/common/videobuf2/videobuf2-dma-contig.c
-> @@ -48,16 +48,15 @@ struct vb2_dc_buf {
->   
->   static unsigned long vb2_dc_get_contiguous_size(struct sg_table *sgt)
->   {
-> -	struct scatterlist *s;
->   	dma_addr_t expected = sg_dma_address(sgt->sgl);
-> -	unsigned int i;
-> +	struct sg_dma_page_iter dma_iter;
->   	unsigned long size = 0;
->   
-> -	for_each_sg(sgt->sgl, s, sgt->nents, i) {
-> -		if (sg_dma_address(s) != expected)
-> +	for_each_sgtable_dma_page(sgt, &dma_iter, 0) {
-> +		if (sg_page_iter_dma_address(&dma_iter) != expected)
->   			break;
-> -		expected = sg_dma_address(s) + sg_dma_len(s);
-> -		size += sg_dma_len(s);
-> +		expected += PAGE_SIZE;
-> +		size += PAGE_SIZE;
 
-Same comment as for the DRM version. In fact, given that it's the same 
-function with the same purpose, might it be worth hoisting out as a 
-generic helper for the sg_table API itself?
+--===============6104126909227736772==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-fZ7yXxkuArogoYxiG0Gc"
 
->   	}
->   	return size;
->   }
-[...]
-> diff --git a/drivers/media/common/videobuf2/videobuf2-dma-sg.c b/drivers/media/common/videobuf2/videobuf2-dma-sg.c
-> index 92072a08af25..6ddf953efa11 100644
-> --- a/drivers/media/common/videobuf2/videobuf2-dma-sg.c
-> +++ b/drivers/media/common/videobuf2/videobuf2-dma-sg.c
-> @@ -142,9 +142,8 @@ static void *vb2_dma_sg_alloc(struct device *dev, unsigned long dma_attrs,
->   	 * No need to sync to the device, this will happen later when the
->   	 * prepare() memop is called.
->   	 */
-> -	sgt->nents = dma_map_sg_attrs(buf->dev, sgt->sgl, sgt->orig_nents,
-> -				      buf->dma_dir, DMA_ATTR_SKIP_CPU_SYNC);
-> -	if (!sgt->nents)
-> +	if (dma_map_sgtable(buf->dev, sgt, buf->dma_dir,
-> +			    DMA_ATTR_SKIP_CPU_SYNC)) {
 
-As 0-day's explosions of nonsense imply, there's a rogue bracket here...
+--=-fZ7yXxkuArogoYxiG0Gc
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
->   		goto fail_map;
->   
->   	buf->handler.refcount = &buf->refcount;
-> @@ -180,8 +179,8 @@ static void vb2_dma_sg_put(void *buf_priv)
->   	if (refcount_dec_and_test(&buf->refcount)) {
->   		dprintk(1, "%s: Freeing buffer of %d pages\n", __func__,
->   			buf->num_pages);
-> -		dma_unmap_sg_attrs(buf->dev, sgt->sgl, sgt->orig_nents,
-> -				   buf->dma_dir, DMA_ATTR_SKIP_CPU_SYNC);
-> +		dma_unmap_sgtable(buf->dev, sgt, buf->dma_dir,
-> +				  DMA_ATTR_SKIP_CPU_SYNC);
->   		if (buf->vaddr)
->   			vm_unmap_ram(buf->vaddr, buf->num_pages);
->   		sg_free_table(buf->dma_sgt);
-> @@ -202,8 +201,7 @@ static void vb2_dma_sg_prepare(void *buf_priv)
->   	if (buf->db_attach)
->   		return;
->   
-> -	dma_sync_sg_for_device(buf->dev, sgt->sgl, sgt->orig_nents,
-> -			       buf->dma_dir);
-> +	dma_sync_sgtable_for_device(buf->dev, sgt, buf->dma_dir);
->   }
->   
->   static void vb2_dma_sg_finish(void *buf_priv)
-> @@ -215,7 +213,7 @@ static void vb2_dma_sg_finish(void *buf_priv)
->   	if (buf->db_attach)
->   		return;
->   
-> -	dma_sync_sg_for_cpu(buf->dev, sgt->sgl, sgt->orig_nents, buf->dma_dir);
-> +	dma_sync_sgtable_for_cpu(buf->dev, sgt, buf->dma_dir);
->   }
->   
->   static void *vb2_dma_sg_get_userptr(struct device *dev, unsigned long vaddr,
-> @@ -258,9 +256,8 @@ static void *vb2_dma_sg_get_userptr(struct device *dev, unsigned long vaddr,
->   	 * No need to sync to the device, this will happen later when the
->   	 * prepare() memop is called.
->   	 */
-> -	sgt->nents = dma_map_sg_attrs(buf->dev, sgt->sgl, sgt->orig_nents,
-> -				      buf->dma_dir, DMA_ATTR_SKIP_CPU_SYNC);
-> -	if (!sgt->nents)
-> +	if (dma_map_sgtable(buf->dev, sgt, buf->dma_dir,
-> +			    DMA_ATTR_SKIP_CPU_SYNC)) {
+On Fri, 2020-06-19 at 02:37 -0700, Stephen Boyd wrote:
+> Quoting Maxime Ripard (2020-06-15 01:40:40)
+> > Hi,
+> >=20
+> > Since the whole DRM/HDMI support began to grow fairly big, I've chosen
+> > to split away the two discussions between the firmware clocks and the
+> > HDMI support.
+> >=20
+> > Let me know what you think,
+> > Maxime
+>=20
+> Do you want this to go through clk tree? Or looking for acks/review
+> tags?
+>=20
 
-... and here.
+FWIW I don't mind taking the device tree changes trough the RPi soc tree.
 
-Robin.
+Regards,
+Nicolas
+
+
+--=-fZ7yXxkuArogoYxiG0Gc
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7siRYACgkQlfZmHno8
+x/5pSQf/exFv/66MuXsAeM5ue9vwfKbkmJ1AI4WY+HeyniqK7yARVlufqNDDHNry
+JW+BPgp/zFe6ZMhVfD/l9xc/tf3dn0vT/CINKP2Uhgey4GeVZ+TuekJ9pOQmlDjt
+HaormE0veBP+pk07pwOj7vXUNEd5spHlMjdu/xPT0NgZXQanvBy+NYIRZjWSXjs2
+pmxNSsSr9LGT2ypipzUtyqAtILTUobwgXFAWNeSp9uxyHD+V2qLatUtJCbP+Lqii
+nrosXYxiGw4CaZ2Ypl14pcOfQ24nsaAQNInTDetN47MCJtJZDcINclfqG0IWfvE3
+2+ZxejWhAankUhgBWQDZXcoPsLcgkA==
+=Fnq6
+-----END PGP SIGNATURE-----
+
+--=-fZ7yXxkuArogoYxiG0Gc--
+
+
+
+--===============6104126909227736772==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6104126909227736772==--
+
+
