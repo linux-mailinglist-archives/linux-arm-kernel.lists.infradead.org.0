@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D9E9200752
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:52:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E1BA20075C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:56:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=erGyDlaR/Gmkm2MUa2DOaK1ADczKohgxcD+E+IEfnNk=; b=PMXAE0CjfTplzB
-	Knu8UQGnvinigWcT8sFmxT04/OUNP18BL8zUwKJQBDBRmxhcie2Abvw7+El7VRrnI/mrZHg3KxrwU
-	+L++ue2odcxy7E79JeZthWd9qVI4I3obYH/KVI8BJhJY2u3jO6IDu+CS1Kqr31CIgq9XgHOh6sgyT
-	YBQ/5P4XxCXmBJ+cwUBY7hajB/meCH3hOaaxLC6qfZa/4y+6lgDRhr1HTpmE+3fmEqiYkJjgdCSoN
-	eV00kLCv8KYCymVEtb8fYp7Ko8MR833ROvj1l78iyfTNBdmUt1Wts9j917ZKHrLq62bJNAW+v2ecS
-	lQQQdQcebozLiNfrlugA==;
+	List-Owner; bh=hu82ln3zX1jU7FBzj67w15wSpqrls0Hyxtjy6Ber148=; b=oSMzmtf1AmdSzy
+	5vxnII53h3lQb/iffraaCSxtPydR/w7ay7kpu0ApSRJA53rX493kvbWgi/WOFHh9BPBmz38IkDtee
+	yIcBEUOMrmUgbh5PpP+LsGWSn694l/ar3v2mgMq9Xzym7tlKWOsnmVvl3RHTDFzEZmUkXSWNz7lj5
+	WNyrkoJ/UOtqv/EsTioXUQEy5+6qV3rj9tzPV4GU8MnXAgIn1PuUz2ipKR3hT9GqyZOL/FlXEpiE9
+	MUA+E46sTT1OkuQPmXemKryD66BjU+wrGHdUrRCoI0u2DPho7vcvag+KtV9EQ2uxfBwM2KLJLSkyk
+	xX43QwNg7VXWSk/kDEDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmEdS-0000Fx-PG; Fri, 19 Jun 2020 10:52:38 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jmEhM-0003mW-GH; Fri, 19 Jun 2020 10:56:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmEd3-0008WJ-BO; Fri, 19 Jun 2020 10:52:18 +0000
-X-UUID: 50802570af7d4ff3b65cc8c556800f6f-20200619
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=gLyZez7zoj9lEggZKjZhObz4KPttckUsAiOpo+MoMv8=; 
- b=u41T8bgvRxbYNhF5iQVVk9FXc6UvS0j/TVxf9jjgfTYUEvIpqYxdi9DtRJYFc4mruH/tkp3pffkU4VdX+ea5yNlDI85BUHBsrAU9SJLoKwbK46/wJVgOP27516TZimen906NIWrPxSePZCMT0lIr/b4ndjoABmnWnlSW7RXMzM4=;
-X-UUID: 50802570af7d4ff3b65cc8c556800f6f-20200619
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chao.hao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1348649251; Fri, 19 Jun 2020 02:50:52 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 03:50:52 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 18:50:50 +0800
-Received: from [10.15.20.246] (10.15.20.246) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 19 Jun 2020 18:50:49 +0800
-Message-ID: <1592563824.5692.1.camel@mbjsdccf07>
-Subject: Re: [PATCH v4 7/7] iommu/mediatek: Add mt6779 basic support
-From: chao hao <Chao.Hao@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Fri, 19 Jun 2020 18:50:24 +0800
-In-Reply-To: <9618cc95-99ac-63d0-f502-335e38819842@gmail.com>
-References: <20200617030029.4082-1-chao.hao@mediatek.com>
- <20200617030029.4082-8-chao.hao@mediatek.com>
- <64f63ccc-92a4-191c-3566-de00c9e04ca2@gmail.com>
- <1592481247.12647.9.camel@mbjsdccf07>
- <9618cc95-99ac-63d0-f502-335e38819842@gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jmEh4-0003m6-3U
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 10:56:23 +0000
+Received: from pali.im (pali.im [31.31.79.79])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EE88A2070A;
+ Fri, 19 Jun 2020 10:56:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592564181;
+ bh=lV1+A7bMoEGDBQ8uA1/9V3ySmJlveKx+p0zRy9lWR3w=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=pgwsv5aJtotabI2+zSJ7wHUq4N42CoxNVJGMzfX6UzU/YPThQpKRVLnDN3UAmzTs6
+ WqxQaGQU3ToNaal7MfirJJD9yTzcqKrpte1lJ+tNmAQ/K6PZQlzN26lcuP6LKpdQRB
+ B4hu1N48nRwqYrGhx9ZW9IszvzcwExuuKUUY6a1Y=
+Received: by pali.im (Postfix)
+ id 9E2FD820; Fri, 19 Jun 2020 12:56:18 +0200 (CEST)
+Date: Fri, 19 Jun 2020 12:56:18 +0200
+From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
+ Remi Pommarel <repk@triplefau.lt>,
+ Tomasz Maciej Nowak <tmn505@gmail.com>, Xogium <contact@xogium.me>
+Subject: Re: [PATCH] PCI: aardvark: Indicate error in 'val' when config read
+ fails
+Message-ID: <20200619105618.aksoivu4gb5ex3s3@pali>
+References: <20200601130315.18895-1-pali@kernel.org>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200601130315.18895-1-pali@kernel.org>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_035213_418023_09E2DA10 
-X-CRM114-Status: GOOD (  25.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200619_035622_167036_31BCE4AD 
+X-CRM114-Status: GOOD (  17.89  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,8 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,161 +86,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
- wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, Chao Hao <chao.hao@mediatek.com>,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
+Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-06-18 at 18:00 +0200, Matthias Brugger wrote:
-> 
-> On 18/06/2020 13:54, chao hao wrote:
-> > On Wed, 2020-06-17 at 11:33 +0200, Matthias Brugger wrote:
-> >>
-> >> On 17/06/2020 05:00, Chao Hao wrote:
-> >>> 1. Start from mt6779, INVLDT_SEL move to offset=0x2c, so we add
-> >>>    REG_MMU_INV_SEL_GEN2 definition and mt6779 uses it.
-> >>> 2. Change PROTECT_PA_ALIGN from 128 byte to 256 byte.
-> >>> 3. For REG_MMU_CTRL_REG register, we only need to change bit[2:0],
-> >>>    others bits keep default value, ex: enable victim tlb.
-> >>> 4. Add mt6779_data to support mm_iommu HW init.
-> >>>
-> >>> Change since v3:
-> >>> 1. When setting MMU_CTRL_REG, we don't need to include mt8173.
-> >>>
-> >>> Cc: Yong Wu <yong.wu@mediatek.com>
-> >>> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
-> >>> ---
-> >>>  drivers/iommu/mtk_iommu.c | 20 ++++++++++++++++++--
-> >>>  drivers/iommu/mtk_iommu.h |  1 +
-> >>>  2 files changed, 19 insertions(+), 2 deletions(-)
-> >>>
-> >>> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> >>> index c706bca6487e..def2e996683f 100644
-> >>> --- a/drivers/iommu/mtk_iommu.c
-> >>> +++ b/drivers/iommu/mtk_iommu.c
-> >>> @@ -37,6 +37,11 @@
-> >>>  #define REG_MMU_INVLD_START_A			0x024
-> >>>  #define REG_MMU_INVLD_END_A			0x028
-> >>>  
-> >>> +/* In latest Coda, MMU_INV_SEL's offset is changed to 0x02c.
-> >>> + * So we named offset = 0x02c to "REG_MMU_INV_SEL_GEN2"
-> >>> + * and offset = 0x038 to "REG_MMU_INV_SEL_GEN1".
-> >>> + */
-> >>
-> >> Please delete the comment, this should be understandable from the git history
-> > 
-> > ok, thanks
-> > 
-> >>
-> >>> +#define REG_MMU_INV_SEL_GEN2			0x02c
-> >>>  #define REG_MMU_INV_SEL_GEN1			0x038
-> >>>  #define F_INVLD_EN0				BIT(0)
-> >>>  #define F_INVLD_EN1				BIT(1)
-> >>> @@ -98,7 +103,7 @@
-> >>>  #define F_MMU_INT_ID_LARB_ID(a)			(((a) >> 7) & 0x7)
-> >>>  #define F_MMU_INT_ID_PORT_ID(a)			(((a) >> 2) & 0x1f)
-> >>>  
-> >>> -#define MTK_PROTECT_PA_ALIGN			128
-> >>> +#define MTK_PROTECT_PA_ALIGN			256
-> >>
-> >> Do we need 512 bytes for all gen2 IOMMUs?
-> >> I'm not sure if we should add this in plat_data or if we should just bump up the
-> >> value for all SoCs.
-> >> In both cases this should be a separate patch.
-> >>
-> > From mt6779, MTK_PROTECT_PA_ALIGN is extend to 256 bytes and don't be
-> > changed for a long time from our HW designer comment. The legacy iommu
-> > also can use it, mabye it doesn't set it by platform.
-> > 
-> 
-> Ok then just bump it to 256 in a new patch. Thanks for clarification.
-
-  Ok, thanks
-
-> > 
-> >>>  
-> >>>  /*
-> >>>   * Get the local arbiter ID and the portid within the larb arbiter
-> >>> @@ -543,11 +548,12 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
-> >>>  		return ret;
-> >>>  	}
-> >>>  
-> >>> +	regval = readl_relaxed(data->base + REG_MMU_CTRL_REG);
-> >>>  	if (data->plat_data->m4u_plat == M4U_MT8173)
-> >>>  		regval = F_MMU_PREFETCH_RT_REPLACE_MOD |
-> >>>  			 F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173;
-> >>>  	else
-> >>> -		regval = F_MMU_TF_PROT_TO_PROGRAM_ADDR;
-> >>> +		regval |= F_MMU_TF_PROT_TO_PROGRAM_ADDR;
-> >>
-> >> Why do we change this, is it that the bootloader for mt6779 set some values in
-> >> the register we have to keep? In this case I think we should update the regval
-> >> accordingly.
-> > 
-> > For REG_MMU_CTRL_REG, bit[12] represents victim_tlb_en feature and
-> > victim_tlb is enable defaultly(bit[12]=1),but if we use "regval =
-> > F_MMU_TF_PROT_TO_PROGRAM_ADDR", victim_tlb will disable, it will drop
-> > iommu performace for mt6779
-> > 
-> 
-> Got it. Please put that in a separate patch then.
-> 
-  Ok, thanks
-
-> Regards,
-> Matthias
-> 
-> > 
-> >>
-> >>>  	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
-> >>>  
-> >>>  	regval = F_L2_MULIT_HIT_EN |
-> >>> @@ -797,6 +803,15 @@ static const struct mtk_iommu_plat_data mt2712_data = {
-> >>>  	.larbid_remap   = {{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}},
-> >>>  };
-> >>>  
-> >>> +static const struct mtk_iommu_plat_data mt6779_data = {
-> >>> +	.m4u_plat      = M4U_MT6779,
-> >>> +	.has_sub_comm  = true,
-> >>> +	.has_wr_len    = true,
-> >>> +	.has_misc_ctrl = true,
-> >>> +	.inv_sel_reg   = REG_MMU_INV_SEL_GEN2,
-> >>> +	.larbid_remap  = {{0}, {1}, {2}, {3}, {5}, {7, 8}, {10}, {9}},
-> >>> +};
-> >>> +
-> >>>  static const struct mtk_iommu_plat_data mt8173_data = {
-> >>>  	.m4u_plat     = M4U_MT8173,
-> >>>  	.has_4gb_mode = true,
-> >>> @@ -815,6 +830,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
-> >>>  
-> >>>  static const struct of_device_id mtk_iommu_of_ids[] = {
-> >>>  	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
-> >>> +	{ .compatible = "mediatek,mt6779-m4u", .data = &mt6779_data},
-> >>>  	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
-> >>>  	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
-> >>>  	{}
-> >>> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-> >>> index 9971cedd72ea..fb79e710c8d9 100644
-> >>> --- a/drivers/iommu/mtk_iommu.h
-> >>> +++ b/drivers/iommu/mtk_iommu.h
-> >>> @@ -31,6 +31,7 @@ struct mtk_iommu_suspend_reg {
-> >>>  enum mtk_iommu_plat {
-> >>>  	M4U_MT2701,
-> >>>  	M4U_MT2712,
-> >>> +	M4U_MT6779,
-> >>>  	M4U_MT8173,
-> >>>  	M4U_MT8183,
-> >>>  };
-> >>>
-> > 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8gTG9yZW56byEgQ291bGQgeW91IHBsZWFzZSByZXZpZXcgdGhpcyBwYXRjaD8KCk9uIE1v
+bmRheSAwMSBKdW5lIDIwMjAgMTU6MDM6MTUgUGFsaSBSb2jDoXIgd3JvdGU6Cj4gTW9zdCBjYWxs
+ZXJzIG9mIGNvbmZpZyByZWFkIGRvIG5vdCBjaGVjayBmb3IgcmV0dXJuIHZhbHVlLiBCdXQgbW9z
+dCBvZiB0aGUKPiBvbmVzIHRoYXQgZG8sIGNoZWNrcyBmb3IgZXJyb3IgaW5kaWNhdGlvbiBpbiAn
+dmFsJyB2YXJpYWJsZS4KPiAKPiBUaGlzIHBhdGNoIHVwZGF0ZXMgZXJyb3IgaGFuZGxpbmcgaW4g
+YWR2a19wY2llX3JkX2NvbmYoKSBmdW5jdGlvbi4gSWYgUElPCj4gdHJhbnNmZXIgZmFpbHMgdGhl
+biAndmFsJyB2YXJpYWJsZSBpcyBzZXQgdG8gMHhmZmZmZmZmZiB3aGljaCBpbmRpY2F0ZXMKPiBm
+YWlsdHVyZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBQYWxpIFJvaMOhciA8cGFsaUBrZXJuZWwub3Jn
+PgoKSSBzaG91bGQgYWRkIGNyZWRpdCBmb3IgQmpvcm4gYXMgaGUgZm91bmQgdGhpcyBpc3N1ZQoK
+UmVwb3J0ZWQtYnk6IEJqb3JuIEhlbGdhYXMgPGhlbGdhYXNAa2VybmVsLm9yZz4KCj4gLS0tCj4g
+IGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMgfCA0ICsrKy0KPiAgMSBmaWxl
+IGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1naXQg
+YS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJkdmFyay5jIGIvZHJpdmVycy9wY2kvY29u
+dHJvbGxlci9wY2ktYWFyZHZhcmsuYwo+IGluZGV4IDUzYTRjZmQ3ZDM3Ny4uNzgzYTdmMWYyYzQ0
+IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMKPiAr
+KysgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJkdmFyay5jCj4gQEAgLTY5MSw4ICs2
+OTEsMTAgQEAgc3RhdGljIGludCBhZHZrX3BjaWVfcmRfY29uZihzdHJ1Y3QgcGNpX2J1cyAqYnVz
+LCB1MzIgZGV2Zm4sCj4gIAlhZHZrX3dyaXRlbChwY2llLCAxLCBQSU9fU1RBUlQpOwo+ICAKPiAg
+CXJldCA9IGFkdmtfcGNpZV93YWl0X3BpbyhwY2llKTsKPiAtCWlmIChyZXQgPCAwKQo+ICsJaWYg
+KHJldCA8IDApIHsKPiArCQkqdmFsID0gMHhmZmZmZmZmZjsKPiAgCQlyZXR1cm4gUENJQklPU19T
+RVRfRkFJTEVEOwo+ICsJfQo+ICAKPiAgCWFkdmtfcGNpZV9jaGVja19waW9fc3RhdHVzKHBjaWUp
+Owo+ICAKPiAtLSAKPiAyLjIwLjEKPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
