@@ -2,56 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1AEA2005AB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:45:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 313602005C3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:52:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TXXrS6uge+FmKyPLu1wV1E3etE0EqV6Lyx5OMKTrk0Y=; b=cN9zFw1MzOzGnSaq0/MF7ci3E
-	c7418yAmW3jGKj5HboSIhe7AuV3o1TAkKIrgp/a8zVuQH0rrdWQUAN3xN7UVS+YY/J5c8E7FwEEvj
-	v+G9AXtKIqyv0zuIm28Mr3GEOgDAPVK3nfnkdnzIbsVluxGPUoLaxEJ2vsN+gI/jlZiHpRYydsZTe
-	JuNt7EvQqRVRI4i92wxoC9f2V5xqWTrWO3PL79HbERFe5H5AqYi/rCfaJD6lHuBGSxjj7XJRMF6yl
-	CNMVvzvlbtRILKWSBL1f4WGQB93bTsRtg9qXBw0JY7hMwOL/h5cSvO6yaOjc610RsXDMyzILldJoi
-	XyON+6XKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bhfMf2Ufgnodlhu3axo0B3tc0NKxUNvhBoCJKvLn1Kk=; b=jP1U/XiZmryTbC
+	8mICiebikkXz8PCDA0vg+DwCmwGudCdPI3CMD+YNr8DOFh7sNUGSX6OXiP+A/wNcjsTJT36FXqEl8
+	PWpwWM6GcAvPIMOCzZSGrfp+ozLrI0Aj92ihFcTfCD6lHZjEReLCYloa6D7TvhIY6mZmWyCTeDFQV
+	5hf5YYE/F2ac2yDyUspGnON2jfmIBrHfmRf0HQ+GCc/1So5xED0Qk8zJvE0COwUBS93UgCg3k2Gzq
+	B6QHTUB5Ig8WPsrzTpAH4Yls6EBDIeZTS1l3fvnDOck2wTlk64VZi6NN5EyOxX1x0fxw1+DBc8m8Y
+	uhXhU5VCFGHia2pe03Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmDaI-0006SN-Ux; Fri, 19 Jun 2020 09:45:19 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jmDgq-0005is-0J; Fri, 19 Jun 2020 09:52:04 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmDa0-0006QO-BU; Fri, 19 Jun 2020 09:45:01 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id DB8E6AEB2;
- Fri, 19 Jun 2020 09:44:56 +0000 (UTC)
-Message-ID: <bdc91c1b015d2f02bd0ea90ae81a122123c62b38.camel@suse.de>
-Subject: Re: [PATCH v5 00/27] clk: bcm: rpi: Add support for BCM2711
- firmware clocks
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stephen Boyd <sboyd@kernel.org>, Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 19 Jun 2020 11:44:54 +0200
-In-Reply-To: <159255945796.62212.5838238989498858379@swboyd.mtv.corp.google.com>
-References: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
- <159255945796.62212.5838238989498858379@swboyd.mtv.corp.google.com>
-User-Agent: Evolution 3.36.3 
+ id 1jmDgC-0005Ph-Ip
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 09:51:25 +0000
+Received: by mail-wr1-x441.google.com with SMTP id q2so6616725wrv.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jun 2020 02:51:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=LnPwgU2Ku49ZJqPfwVOOBQKnYQ6yhIFp57++bexGok8=;
+ b=FJ9xI3Wc7r4gcCFA8b8VjMefoKs5sNRH3+a0+UgRIipP3eDy53lralSiPmJ2KKUFPg
+ c8JE5injQrqn5LsaHztBYGk8O4wl0wTfZQ6+qhNUY9qhfFCkv8b1pnDv5iH18Xdm0WMi
+ eKKFHQDAzU8UZiB0zYkRR1sUz5Gv/fxVnDv6KD3O75/BkpcJa/5+cnKfmquBjd4ldZ8H
+ LJ8RPvIoEisWbDMTOmgvM92LnIDCMnfxSjjZWuGO3e2YkGQhBsChs0Lk1ivwcgtZLQDx
+ bXA4SH/dgcKnh9hM7Rtsy7wMH4IVdnpAo8z8gw8PFBje6DFMogBezcJDiPBM088rzVZl
+ vegg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=LnPwgU2Ku49ZJqPfwVOOBQKnYQ6yhIFp57++bexGok8=;
+ b=Tuq5hcavl98u2VI+B79Y6fTQDR8ywk15bSnT3EhnQO/B9VkvXVyiWg5kI4VA8YRqvQ
+ W1quE1+7bFRaqIF1snTvwYFGWnDmUZ0nuKLzolRuRNjQpKTcdXULtbahphV4x9D2EgR2
+ l903s975tn2WfPo8ERD8qzn4oGM8Q63M76AsGBjdKERO6HF734hFM7YjZVX9kh2CIUOy
+ Ci+hZkHzpWOjsgKcZ7rn8auRK0ZGaQ090LRsMVGS9qOcuuKVREs3fG4RFHgB7Isk5ub5
+ Ce5N8DPEiV4x5l8gzHp7INkShBh4kgEd4vTJIuu24h5VWwf95X2SC3Ir5uKlvPGMuZr7
+ YX7A==
+X-Gm-Message-State: AOAM530QILBdWqgTPBJ3ytNN/Lo3naIZQ/hUK4LJq7u5EbGyd90jK52O
+ Xljl1I7+R64phARXIeQMOPH89A==
+X-Google-Smtp-Source: ABdhPJy/P5GyQ6zftQjFqjZk4Eo0bUBjfqGjrRHEc55ESeQvI7/VsuC7NR2YjKFzBIldf4CGa6pbQw==
+X-Received: by 2002:a5d:67c8:: with SMTP id n8mr3139455wrw.343.1592560282184; 
+ Fri, 19 Jun 2020 02:51:22 -0700 (PDT)
+Received: from google.com ([2a01:4b00:8523:2d03:d994:d48b:4a9:7c2b])
+ by smtp.gmail.com with ESMTPSA id n7sm6628302wrx.82.2020.06.19.02.51.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 19 Jun 2020 02:51:21 -0700 (PDT)
+Date: Fri, 19 Jun 2020 10:51:20 +0100
+From: David Brazdil <dbrazdil@google.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v3 02/15] arm64: kvm: Move __smccc_workaround_1_smc to
+ .rodata
+Message-ID: <20200619095120.wenkbs5bl3wbyiyh@google.com>
+References: <20200618122537.9625-1-dbrazdil@google.com>
+ <20200618122537.9625-3-dbrazdil@google.com>
+ <02322fdac903aa1786c334d0ddd7f38a@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <02322fdac903aa1786c334d0ddd7f38a@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_024500_539101_AFF22A99 
-X-CRM114-Status: GOOD (  12.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200619_025124_643863_B46D1247 
+X-CRM114-Status: GOOD (  11.08  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,80 +105,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, Mike Turquette <mturquette@baylibre.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- Phil Elwell <phil@raspberrypi.com>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6104126909227736772=="
+Cc: kernel-team@android.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ android-kvm@google.com, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hey Marc,
 
---===============6104126909227736772==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-fZ7yXxkuArogoYxiG0Gc"
+> > -	.popsection
+> 
+> I'd be tempted to leave the .popsection in place, if only for symmetry  with
+> the initial .pushsection.
 
+I removed it because other .S files don't pop either. It must have been added
+here purely for the smccc workaround code. Happy to add it back if you prefer,
+but the pushsection is removed later in the series, so this would disappear
+as well.
 
---=-fZ7yXxkuArogoYxiG0Gc
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+> > +	.pushsection	.rodata
+> > +	.global		__smccc_workaround_1_smc
+> > +__smccc_workaround_1_smc:
+> 
+> You probably want to replace this with SYM_DATA_START (and SYM_DATA_END at
+> the end).
 
-On Fri, 2020-06-19 at 02:37 -0700, Stephen Boyd wrote:
-> Quoting Maxime Ripard (2020-06-15 01:40:40)
-> > Hi,
-> >=20
-> > Since the whole DRM/HDMI support began to grow fairly big, I've chosen
-> > to split away the two discussions between the firmware clocks and the
-> > HDMI support.
-> >=20
-> > Let me know what you think,
-> > Maxime
->=20
-> Do you want this to go through clk tree? Or looking for acks/review
-> tags?
->=20
+Done
 
-FWIW I don't mind taking the device tree changes trough the RPi soc tree.
-
-Regards,
-Nicolas
-
-
---=-fZ7yXxkuArogoYxiG0Gc
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7siRYACgkQlfZmHno8
-x/5pSQf/exFv/66MuXsAeM5ue9vwfKbkmJ1AI4WY+HeyniqK7yARVlufqNDDHNry
-JW+BPgp/zFe6ZMhVfD/l9xc/tf3dn0vT/CINKP2Uhgey4GeVZ+TuekJ9pOQmlDjt
-HaormE0veBP+pk07pwOj7vXUNEd5spHlMjdu/xPT0NgZXQanvBy+NYIRZjWSXjs2
-pmxNSsSr9LGT2ypipzUtyqAtILTUobwgXFAWNeSp9uxyHD+V2qLatUtJCbP+Lqii
-nrosXYxiGw4CaZ2Ypl14pcOfQ24nsaAQNInTDetN47MCJtJZDcINclfqG0IWfvE3
-2+ZxejWhAankUhgBWQDZXcoPsLcgkA==
-=Fnq6
------END PGP SIGNATURE-----
-
---=-fZ7yXxkuArogoYxiG0Gc--
-
-
-
---===============6104126909227736772==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks for reviewing,
+David
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6104126909227736772==--
-
-
