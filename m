@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DCC4200724
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:45:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86804200717
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:45:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,113 +11,113 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OFDxexKIa91Sbh8WlTl5yChjym/MubiOMCdwtbGj0t8=; b=FEJ1Mt6v00JJbfVvFBWWKIlDfm
-	vAYiE80MinlFny3NbwS326OwhxrDUQw1jQ43YvcV4DiIBsbNdlUPFcLotTOqYSZL6thPRojIa867N
-	uXTm4AO1PX1pNeE47PF+p4uYvbyN7Xr1M7hAzshbzIsX0mG4+orOlFdmhlEG/1KTTS66effKDRvc0
-	sjkoxkK02xlgYmGR0bt0B8/MINqCJ+6UKGOqIqGIT7UyVwKNxrtT3CRlFUfqEdMMraVSUHytwXtIH
-	2aDBlxGuOvYO41UzizKVK2pRdDQi1TqY0LG/hL88CsPwh7QYXTku43Fk1HLBOAvFKu8D2xNSNZ3PK
-	Exji3Ipg==;
+	bh=yC0baFMZNVfFaAc0QFMHaGColNFxhYJEDx5r4j26RVs=; b=kepAHAc1DVOFis8o2cCibY2Tep
+	DmGuS8Dh+MHAJ0DM7Jcly2BNK+XuB1rCOPf1pPJog9mcKuEcNp9vPLnX+KAHB82i55s9dGhGm6nN0
+	Ci9XDd8yfHavEX6Ii5Nxy2en8yQJvXXjGhNMTWcQ73ve9LbsDTnUu9sKc5JEH0Mp06E3CxQFkoxCH
+	VbGQV5ocS8QawwEWTC1MfSYJEui0K/ZHpjePWPb21Y+rhWxjQjaS3nei/eREJs4KVzNkJhL/jB9l+
+	rkQdGp0g+daojPCbY0pMvRuGAuFTIk/iFkZqg4D/8PWX5aQt3kLdMwhbF3cfvqUjYH3GQegqeJIFE
+	ZY+G2lMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmEWW-0006Bq-7R; Fri, 19 Jun 2020 10:45:28 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jmEW3-0005sX-Lo; Fri, 19 Jun 2020 10:44:59 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmEOU-0005IE-5B
+ id 1jmEOU-0005IY-Ma
  for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 10:37:12 +0000
 Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200619103708euoutp02d216464953e39dc6c7a208c36e889a60~Z66MORzxe2242122421euoutp02g
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200619103709euoutp01ccd72fe3b581d6bf6dea69e6a5bdbdbb~Z66MkCO6L1896418964euoutp01E
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jun 2020 10:37:08 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200619103708euoutp02d216464953e39dc6c7a208c36e889a60~Z66MORzxe2242122421euoutp02g
+ Fri, 19 Jun 2020 10:37:09 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200619103709euoutp01ccd72fe3b581d6bf6dea69e6a5bdbdbb~Z66MkCO6L1896418964euoutp01E
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1592563028;
- bh=uyLNNIvv2MacHWbC1kIyq87V6/1Lwqz4qF9sgZlX0go=;
+ s=mail20170921; t=1592563029;
+ bh=JYSuV/X7Iq6Np2NNRKIL4EU8XZWM2woWhDUr1+VfApo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fPglaMcpD1iqvVMRrPccRA8g+OUkJHEssvfUzTUdjVG99+1N2kqDpmEWpnTUEYyFE
- CItD+Km3Y6SKqwr+9eKJ0OU0KfL5elUyU9pK9PsT4fva8cFo0BGsSFv6DdbGoRuSj2
- 2yCtdZSFYyhol0knRC11f0DKmz/ERYXUX2xhpNqg=
+ b=imFDpD0mfOjAwu7LhzDF3dK25XcCTCsX+MNxwallHxAZ0U3nK3t4n2DCJewyvdYgA
+ V6zUuxYkiV4KjSEjzZHCAUkI/ADBGMFoRsnDIhlSxRpDGf92pbKu89CeFUvK12SrN2
+ pGXyKxUsKYadbyCiNh74SiZITe++mfW1fHqA596M=
 Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200619103708eucas1p20bd7695ba9ab15e3512198e8a5ef4598~Z66L2FkqX3081430814eucas1p2v;
+ 20200619103708eucas1p25d569a3ec93e3c5820c85efc4a2a9704~Z66MU8EqH1691016910eucas1p2A;
  Fri, 19 Jun 2020 10:37:08 +0000 (GMT)
 Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 98.9D.05997.4559CEE5; Fri, 19
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 99.9D.05997.4559CEE5; Fri, 19
  Jun 2020 11:37:08 +0100 (BST)
 Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200619103708eucas1p2207ebc9373b820797675b91060a2a597~Z66LitD-v3081530815eucas1p2f;
+ 20200619103708eucas1p230ca99e915e759bc0e93cd844c91b311~Z66MCvAPT2888828888eucas1p2p;
  Fri, 19 Jun 2020 10:37:08 +0000 (GMT)
 Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
  eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200619103707eusmtrp138cd5bb658fd293d222a7d24344a0b3f~Z66LeRRGf0949709497eusmtrp1c;
- Fri, 19 Jun 2020 10:37:07 +0000 (GMT)
-X-AuditID: cbfec7f4-65dff7000000176d-f5-5eec95547b8f
+ 20200619103708eusmtrp1d5e2caf48e4b7e049f4152b025863c12~Z66MCGLp40949709497eusmtrp1d;
+ Fri, 19 Jun 2020 10:37:08 +0000 (GMT)
+X-AuditID: cbfec7f4-65dff7000000176d-f7-5eec9554b36b
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id C0.1B.06017.3559CEE5; Fri, 19
- Jun 2020 11:37:07 +0100 (BST)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id A1.1B.06017.4559CEE5; Fri, 19
+ Jun 2020 11:37:08 +0100 (BST)
 Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
  eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200619103707eusmtip27f073bab198a77cbcf9cf6569ae6a75b~Z66K0OCoz0302303023eusmtip2S;
+ 20200619103707eusmtip28e525a8905d6ccea6dc0ac791343f768~Z66LbZHa70244902449eusmtip2q;
  Fri, 19 Jun 2020 10:37:07 +0000 (GMT)
 From: Marek Szyprowski <m.szyprowski@samsung.com>
 To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
  linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v7 22/36] drm: virtio: fix common struct sg_table related
+Subject: [PATCH v7 23/36] drm: vmwgfx: fix common struct sg_table related
  issues
-Date: Fri, 19 Jun 2020 12:36:22 +0200
-Message-Id: <20200619103636.11974-23-m.szyprowski@samsung.com>
+Date: Fri, 19 Jun 2020 12:36:23 +0200
+Message-Id: <20200619103636.11974-24-m.szyprowski@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200619103636.11974-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrGKsWRmVeSWpSXmKPExsWy7djP87ohU9/EGXSdE7boPXeSyWLjjPWs
- Fv+3TWS2uPL1PZvFytVHmSwW7Le2eHbrJLPFlysPmSw2Pb7GanF51xw2i7VH7rJbHPzwhNVi
- +dl5bA68HmvmrWH02PttAYvH9m8PWD3udx9n8ti8pN7j9r/HzB6Tbyxn9Nh9s4HN4/2+q2we
- fVtWMXp83iQXwB3FZZOSmpNZllqkb5fAlXFjchtbwTP1inVLHrM3MF5Q6GLk5JAQMJFY+/c3
- SxcjF4eQwApGieZV35khnC+MEmfuNTB2MXIAOZ8ZJS4rwTSc/L0FqmY5o0TXgrWMcA13bm1g
- BKliEzCU6HrbxQZiiwi0Mkqc6OUBKWIWeMEk0fZ3M1iRsECQxL71R5lBbBYBVYnjx/rAbF4B
- O4mtD/awQqyTl1i94QBYnBMo/rrlICvIIAmBY+wSx2eeYoEocpHYde4QlC0s8er4FnYIW0bi
- 9OQeFoiGZkaJh+fWskM4PUD/NM1ghKiylrhz7hcbyKPMApoS63fpQ4QdJV6962YBCUsI8Enc
- eCsIEmYGMidtm84MEeaV6GgTgqhWk5h1fB3c2oMXLjFD2B4S53b9YIOE0ERGiS1Xf7FPYJSf
- hbBsASPjKkbx1NLi3PTUYqO81HK94sTc4tK8dL3k/NxNjMDUdPrf8S87GHf9STrEKMDBqMTD
- +yLkdZwQa2JZcWXuIUYJDmYlEV6ns6fjhHhTEiurUovy44tKc1KLDzFKc7AoifMaL3oZKySQ
- nliSmp2aWpBaBJNl4uCUamA0Mbw7Q0+Ap+2LskKM/sGIuwey3+5YmyCU7Pb+4vxq5ej/Du31
- KQ9bpP4+OarZ9G36RW/+7OLrCx12+97+HRrYePmm2iaZGe/0VZRXVLek/hT880q858dv0Ufc
- WZv2Xpbjv7tg6lzz7nIGnbCfzf7ibufOePFmHm7gm1z6+r7e0nvWx9av3jZHiaU4I9FQi7mo
- OBEA7hm+ukkDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprBIsWRmVeSWpSXmKPExsVy+t/xe7rBU9/EGXx4ZW7Re+4kk8XGGetZ
- Lf5vm8hsceXrezaLlauPMlks2G9t8ezWSWaLL1ceMllsenyN1eLyrjlsFmuP3GW3OPjhCavF
- 8rPz2Bx4PdbMW8PosffbAhaP7d8esHrc7z7O5LF5Sb3H7X+PmT0m31jO6LH7ZgObx/t9V9k8
- +rasYvT4vEkugDtKz6Yov7QkVSEjv7jEVina0MJIz9DSQs/IxFLP0Ng81srIVEnfziYlNSez
- LLVI3y5BL+PG5Da2gmfqFeuWPGZvYLyg0MXIySEhYCJx8vcWZhBbSGApo8SUpRIQcRmJk9Ma
- WCFsYYk/17rYuhi5gGo+MUqs/juVBSTBJmAo0fUWIiEi0MkoMa37IzuIwyzwgUni399/bCBV
- wgIBEhuf32MCsVkEVCWOH+sDW8crYCex9cEeqBXyEqs3HACLcwLFX7ccZIU4yVZi+YL3zBMY
- +RYwMqxiFEktLc5Nzy020itOzC0uzUvXS87P3cQIjJVtx35u2cHY9S74EKMAB6MSD++LkNdx
- QqyJZcWVuYcYJTiYlUR4nc6ejhPiTUmsrEotyo8vKs1JLT7EaAp01ERmKdHkfGAc55XEG5oa
- mltYGpobmxubWSiJ83YIHIwREkhPLEnNTk0tSC2C6WPi4JRqYLThv1RzMELvbONxvuuWm/5I
- 7H8z9c/e3mKrRjbFrYWn439WHKzfdlRk8/nVT95lzXwmMuEiq9+dzRbMqxh25K7Wy9rwRrVR
- +4DzMaZQj9XVz+50By5UNNj5IGPTo0vCxwU+WpSFzdPx6r1mdVLo0Ld8s1+sYsfP1LnxeeYq
- Klk/6vjDZvuxL1yJpTgj0VCLuag4EQCZ6W+rqwIAAA==
-X-CMS-MailID: 20200619103708eucas1p2207ebc9373b820797675b91060a2a597
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrGKsWRmVeSWpSXmKPExsWy7djP87ohU9/EGXw8aWzRe+4kk8XGGetZ
+ Lf5vm8hsceXrezaLlauPMlks2G9t8eXKQyaLTY+vsVq8OXKM0eLyrjlsFmuP3GW3OPjhCavF
+ 6k5HB16PNfPWMHrs/baAxWP7twesHve7jzN5bF5S73H732Nmj8k3ljN67L7ZwObRt2UVo8fn
+ TXIe7+a/ZQvgjuKySUnNySxLLdK3S+DKaG5uYC+YIF7xufcLSwPjIuEuRk4OCQETibN7drF2
+ MXJxCAmsYJRYt+8JlPOFUeLEj2Y2COczo0TD48/sMC2X7u2HqlrOKLFy+x2Elr0L17CCVLEJ
+ GEp0ve1iA7FFBFqBZvXygBQxC/xlkrj0eBJYkbBAkMSvPZ1AYzk4WARUJfr3gh3FK2An8fzh
+ WSaIbfISqzccYAaxOYHir1sOgi2TEDjELjH7yFMWiCIXiVMHnrNB2MISr45vgTpVRuL05B4W
+ iIZmRomH59ayQzg9jBKXm2YwQlRZS9w594sN5ApmAU2J9bv0IcKOEhsvLmYGCUsI8EnceCsI
+ EmYGMidtmw4V5pXoaBOCqFaTmHV8HdzagxcuMUPYHhJvN9xihATQRGAwvlrHOoFRfhbCsgWM
+ jKsYxVNLi3PTU4uN8lLL9YoTc4tL89L1kvNzNzECU9Ppf8e/7GDc9SfpEKMAB6MSD++LkNdx
+ QqyJZcWVuYcYJTiYlUR4nc6ejhPiTUmsrEotyo8vKs1JLT7EKM3BoiTOa7zoZayQQHpiSWp2
+ ampBahFMlomDU6qBUXzDgxrL+tsNZbF3ngoHGsnNvWNc3l97f7ennFFX3Vqx94LyNXN/B8Zk
+ W0aKXTcSb1N4yNqWFF1mc4Q7Nbk7vjvaJmDmlun7FmqVmu8LVpyptmOec8S0aa0yl4pme3vr
+ ztyiualVvKmo76Jr6E2VvNnpfFcjH9TMXeRtwMq749PcWYbP9ZiVWIozEg21mIuKEwESs3Y4
+ SQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprGIsWRmVeSWpSXmKPExsVy+t/xe7ohU9/EGWz5oWTRe+4kk8XGGetZ
+ Lf5vm8hsceXrezaLlauPMlks2G9t8eXKQyaLTY+vsVq8OXKM0eLyrjlsFmuP3GW3OPjhCavF
+ 6k5HB16PNfPWMHrs/baAxWP7twesHve7jzN5bF5S73H732Nmj8k3ljN67L7ZwObRt2UVo8fn
+ TXIe7+a/ZQvgjtKzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxL
+ LdK3S9DLaG5uYC+YIF7xufcLSwPjIuEuRk4OCQETiUv39rN2MXJxCAksZZQ4/+c4K0RCRuLk
+ tAYoW1jiz7UuNoiiT4wSB49OAEuwCRhKdL2FSIgIdDJKTOv+yA6SYBZoZpY4/7IWxBYWCJD4
+ fOQ1UJyDg0VAVaJ/L9hmXgE7iecPzzJBLJCXWL3hADOIzQkUf91yEGy+kICtxPIF75knMPIt
+ YGRYxSiSWlqcm55bbKRXnJhbXJqXrpecn7uJERgn24793LKDsetd8CFGAQ5GJR7eFyGv44RY
+ E8uKK3MPMUpwMCuJ8DqdPR0nxJuSWFmVWpQfX1Sak1p8iNEU6KaJzFKiyfnAGM4riTc0NTS3
+ sDQ0NzY3NrNQEuftEDgYIySQnliSmp2aWpBaBNPHxMEp1cC4qkHoZszCrXx6FiotsSyN85rr
+ vrvFyJyboNofei/6rl7Cuztv44JdZ5/1maWT+qVYuGqii6T85yqGDe/r1+y1X9xi0u5RtkNk
+ gXHDZ4tJrn8zO5oTOVdUyH6On1Ty6NOCgyy3X0Zx75tgPvGd3r4vC9bMmGo6TZ5rr8uLRUtu
+ 6LE4KCYwdVorsRRnJBpqMRcVJwIAJj6XtakCAAA=
+X-CMS-MailID: 20200619103708eucas1p230ca99e915e759bc0e93cd844c91b311
 X-Msg-Generator: CA
-X-RootMTR: 20200619103708eucas1p2207ebc9373b820797675b91060a2a597
+X-RootMTR: 20200619103708eucas1p230ca99e915e759bc0e93cd844c91b311
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20200619103708eucas1p2207ebc9373b820797675b91060a2a597
+X-CMS-RootMailID: 20200619103708eucas1p230ca99e915e759bc0e93cd844c91b311
 References: <20200619103636.11974-1-m.szyprowski@samsung.com>
- <CGME20200619103708eucas1p2207ebc9373b820797675b91060a2a597@eucas1p2.samsung.com>
+ <CGME20200619103708eucas1p230ca99e915e759bc0e93cd844c91b311@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_033710_355492_9363C880 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20200619_033710_899347_E1088768 
+X-CRM114-Status: GOOD (  14.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
+ high trust [210.118.77.11 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
+ [210.118.77.11 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -141,10 +141,10 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, virtualization@lists.linux-foundation.org,
- Gerd Hoffmann <kraxel@redhat.com>, Daniel Vetter <daniel@ffwll.ch>,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
+ David Airlie <airlied@linux.ie>, Roland Scheidegger <sroland@vmware.com>,
+ VMware Graphics <linux-graphics-maintainer@vmware.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -176,112 +176,56 @@ nents and orig_nents entries, making the code robust, easier to follow
 and copy/paste safe.
 
 Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Acked-by: Gerd Hoffmann <kraxel@redhat.com>
+Acked-by: Roland Scheidegger <sroland@vmware.com>
 ---
- drivers/gpu/drm/virtio/virtgpu_object.c | 36 ++++++++++++++-----------
- drivers/gpu/drm/virtio/virtgpu_vq.c     | 12 ++++-----
- 2 files changed, 26 insertions(+), 22 deletions(-)
+ drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c | 17 ++++-------------
+ 1 file changed, 4 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/gpu/drm/virtio/virtgpu_object.c b/drivers/gpu/drm/virtio/virtgpu_object.c
-index 346cef5ce251..c3b9e3cf786e 100644
---- a/drivers/gpu/drm/virtio/virtgpu_object.c
-+++ b/drivers/gpu/drm/virtio/virtgpu_object.c
-@@ -72,9 +72,8 @@ void virtio_gpu_cleanup_object(struct virtio_gpu_object *bo)
+diff --git a/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c b/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c
+index bf0bc4697959..861c383c9780 100644
+--- a/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c
++++ b/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c
+@@ -362,8 +362,7 @@ static void vmw_ttm_unmap_from_dma(struct vmw_ttm_tt *vmw_tt)
+ {
+ 	struct device *dev = vmw_tt->dev_priv->dev->dev;
  
- 		if (shmem->pages) {
- 			if (shmem->mapped) {
--				dma_unmap_sg(vgdev->vdev->dev.parent,
--					     shmem->pages->sgl, shmem->mapped,
--					     DMA_TO_DEVICE);
-+				dma_unmap_sgtable(vgdev->vdev->dev.parent,
-+					     shmem->pages, DMA_TO_DEVICE, 0);
- 				shmem->mapped = 0;
- 			}
- 
-@@ -157,13 +156,13 @@ static int virtio_gpu_object_shmem_init(struct virtio_gpu_device *vgdev,
- 	}
- 
- 	if (use_dma_api) {
--		shmem->mapped = dma_map_sg(vgdev->vdev->dev.parent,
--					   shmem->pages->sgl,
--					   shmem->pages->nents,
--					   DMA_TO_DEVICE);
--		*nents = shmem->mapped;
-+		ret = dma_map_sgtable(vgdev->vdev->dev.parent,
-+				      shmem->pages, DMA_TO_DEVICE, 0);
-+		if (ret)
-+			return ret;
-+		*nents = shmem->mapped = shmem->pages->nents;
- 	} else {
--		*nents = shmem->pages->nents;
-+		*nents = shmem->pages->orig_nents;
- 	}
- 
- 	*ents = kmalloc_array(*nents, sizeof(struct virtio_gpu_mem_entry),
-@@ -173,13 +172,20 @@ static int virtio_gpu_object_shmem_init(struct virtio_gpu_device *vgdev,
- 		return -ENOMEM;
- 	}
- 
--	for_each_sg(shmem->pages->sgl, sg, *nents, si) {
--		(*ents)[si].addr = cpu_to_le64(use_dma_api
--					       ? sg_dma_address(sg)
--					       : sg_phys(sg));
--		(*ents)[si].length = cpu_to_le32(sg->length);
--		(*ents)[si].padding = 0;
-+	if (use_dma_api) {
-+		for_each_sgtable_dma_sg(shmem->pages, sg, si) {
-+			(*ents)[si].addr = cpu_to_le64(sg_dma_address(sg));
-+			(*ents)[si].length = cpu_to_le32(sg_dma_len(sg));
-+			(*ents)[si].padding = 0;
-+		}
-+	} else {
-+		for_each_sgtable_sg(shmem->pages, sg, si) {
-+			(*ents)[si].addr = cpu_to_le64(sg_phys(sg));
-+			(*ents)[si].length = cpu_to_le32(sg->length);
-+			(*ents)[si].padding = 0;
-+		}
- 	}
-+
- 	return 0;
+-	dma_unmap_sg(dev, vmw_tt->sgt.sgl, vmw_tt->sgt.nents,
+-		DMA_BIDIRECTIONAL);
++	dma_unmap_sgtable(dev, &vmw_tt->sgt, DMA_BIDIRECTIONAL, 0);
+ 	vmw_tt->sgt.nents = vmw_tt->sgt.orig_nents;
  }
  
-diff --git a/drivers/gpu/drm/virtio/virtgpu_vq.c b/drivers/gpu/drm/virtio/virtgpu_vq.c
-index 9e663a5d9952..e5765db85c20 100644
---- a/drivers/gpu/drm/virtio/virtgpu_vq.c
-+++ b/drivers/gpu/drm/virtio/virtgpu_vq.c
-@@ -302,7 +302,7 @@ static struct sg_table *vmalloc_to_sgt(char *data, uint32_t size, int *sg_ents)
- 		return NULL;
- 	}
+@@ -383,16 +382,8 @@ static void vmw_ttm_unmap_from_dma(struct vmw_ttm_tt *vmw_tt)
+ static int vmw_ttm_map_for_dma(struct vmw_ttm_tt *vmw_tt)
+ {
+ 	struct device *dev = vmw_tt->dev_priv->dev->dev;
+-	int ret;
+-
+-	ret = dma_map_sg(dev, vmw_tt->sgt.sgl, vmw_tt->sgt.orig_nents,
+-			 DMA_BIDIRECTIONAL);
+-	if (unlikely(ret == 0))
+-		return -ENOMEM;
  
--	for_each_sg(sgt->sgl, sg, *sg_ents, i) {
-+	for_each_sgtable_sg(sgt, sg, i) {
- 		pg = vmalloc_to_page(data);
- 		if (!pg) {
- 			sg_free_table(sgt);
-@@ -603,9 +603,8 @@ void virtio_gpu_cmd_transfer_to_host_2d(struct virtio_gpu_device *vgdev,
- 	struct virtio_gpu_object_shmem *shmem = to_virtio_gpu_shmem(bo);
+-	vmw_tt->sgt.nents = ret;
+-
+-	return 0;
++	return dma_map_sgtable(dev, &vmw_tt->sgt, DMA_BIDIRECTIONAL, 0);
+ }
  
- 	if (use_dma_api)
--		dma_sync_sg_for_device(vgdev->vdev->dev.parent,
--				       shmem->pages->sgl, shmem->pages->nents,
--				       DMA_TO_DEVICE);
-+		dma_sync_sgtable_for_device(vgdev->vdev->dev.parent,
-+					    shmem->pages, DMA_TO_DEVICE);
+ /**
+@@ -449,10 +440,10 @@ static int vmw_ttm_map_dma(struct vmw_ttm_tt *vmw_tt)
+ 		if (unlikely(ret != 0))
+ 			goto out_sg_alloc_fail;
  
- 	cmd_p = virtio_gpu_alloc_cmd(vgdev, &vbuf, sizeof(*cmd_p));
- 	memset(cmd_p, 0, sizeof(*cmd_p));
-@@ -1019,9 +1018,8 @@ void virtio_gpu_cmd_transfer_to_host_3d(struct virtio_gpu_device *vgdev,
- 	struct virtio_gpu_object_shmem *shmem = to_virtio_gpu_shmem(bo);
+-		if (vsgt->num_pages > vmw_tt->sgt.nents) {
++		if (vsgt->num_pages > vmw_tt->sgt.orig_nents) {
+ 			uint64_t over_alloc =
+ 				sgl_size * (vsgt->num_pages -
+-					    vmw_tt->sgt.nents);
++					    vmw_tt->sgt.orig_nents);
  
- 	if (use_dma_api)
--		dma_sync_sg_for_device(vgdev->vdev->dev.parent,
--				       shmem->pages->sgl, shmem->pages->nents,
--				       DMA_TO_DEVICE);
-+		dma_sync_sgtable_for_device(vgdev->vdev->dev.parent,
-+					    shmem->pages, DMA_TO_DEVICE);
- 
- 	cmd_p = virtio_gpu_alloc_cmd(vgdev, &vbuf, sizeof(*cmd_p));
- 	memset(cmd_p, 0, sizeof(*cmd_p));
+ 			ttm_mem_global_free(glob, over_alloc);
+ 			vmw_tt->sg_alloc_size -= over_alloc;
 -- 
 2.17.1
 
