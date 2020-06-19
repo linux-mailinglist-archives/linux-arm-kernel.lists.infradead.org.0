@@ -2,48 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E22D200264
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 09:02:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CBC42002D2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 09:38:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m6aSHrD9QhkHL+WtWtJOwjlhXhgLwOjS1r8FfW50l6A=; b=If1+/XeVm78NKI
-	CwP5Iw33EIuJ3HRZZiIO8FMiuQD9o/YKl5NsEkzbaxBNA/TNdY4JXC8t2o8kKfNsknzc1gvZU4sCi
-	RunLZlza7+/wR2a8tTq47dHGcOv1oebNvQBtLTQ5vhEuwj1MBic+1FEuyNPDPzq9agX24IP8PiPYY
-	dsd5zdrcyKbbcAnToxGRYncHvot2vqKbiWl8h72LjlGBzlYZghUcUS6jZ2QmeKMeYwGiQ2gr1tmA6
-	Uo55S+dcBQiZZz+e/obRDlUoOpOU5S2Cr3GLbgTZKDDehVoeAkluhZ8bXIj8upxMi2ZGwEZ9m+3u2
-	/ouWy3xevCBgWyYkbcbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=UmYlD9pPEh1DuK3zqxPR+A7wwvbyeb5GtsVnL/DiQB0=; b=KwFiAm637JaLuvcV9rJ8yHRFw
+	d15CSFcsGYTdxtAuKzI12o+eXJrQM6ORDDH1g9PUDcNPKzcHZpWgYAnKI1tfI+x3ucjnWySsEDDs4
+	AIlKNXnOI/dzf/RtCXQ/4Pk/YERLPmrbXzrqvE4uROhxMFW5E2Pw5OD2Gtw+YUiIyIOc2fW+7Jt10
+	/Xc+XR0eep59clFsX5oEk8H+yY8KunOpRV3UoL4YjjKlm/5jP2ZTPPTM+K2ArnQiO/6RnceJuTphX
+	VOz378FLB0hKk2xLXn9xfF85oHDT+dcwonY8Yv9L1FJ/i5Y/CZGS5QnAQ/fqB7PHCv1ZfmV6OVKQu
+	/b5OefCcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmB2x-00070i-Tj; Fri, 19 Jun 2020 07:02:43 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jmBb4-00026S-Ml; Fri, 19 Jun 2020 07:37:58 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmB2l-0006zX-97; Fri, 19 Jun 2020 07:02:35 +0000
-Received: from p5b127c2f.dip0.t-ipconnect.de ([91.18.124.47]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jmB2d-00087c-5B; Fri, 19 Jun 2020 09:02:23 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Sandy Huang <hjc@rock-chips.com>
-Subject: Re: [PATCH] drm/rockchip: vop: fix vop full rgb24 r/b color error
-Date: Fri, 19 Jun 2020 09:02:22 +0200
-Message-ID: <2786595.VspqIdsi2r@phil>
-In-Reply-To: <20200619021251.22991-1-hjc@rock-chips.com>
-References: <20200619021251.22991-1-hjc@rock-chips.com>
+ id 1jmBaw-00025e-Lc
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 07:37:52 +0000
+IronPort-SDR: 9uvMBidwC3yA5p0WKqO1Cby3/HnJtxkW1ofLg1HkHGOZWH7QFK3F/q8fjviMPiYMi20mhPXoz7
+ JEA6fXxayzIw==
+X-IronPort-AV: E=McAfee;i="6000,8403,9656"; a="122609130"
+X-IronPort-AV: E=Sophos;i="5.75,254,1589266800"; d="scan'208";a="122609130"
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 19 Jun 2020 00:37:44 -0700
+IronPort-SDR: XYZWdVGYUe/61m4AmPuMZ44LKzT8q3wgxhCQMZc/etz3ldN7EQtZqDxkLnynU90uCPGu4AfgJ1
+ d1FLThvGm/+w==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.75,254,1589266800"; d="scan'208";a="262240443"
+Received: from blu2-mobl3.ccr.corp.intel.com (HELO [10.249.173.221])
+ ([10.249.173.221])
+ by fmsmga007.fm.intel.com with ESMTP; 19 Jun 2020 00:37:31 -0700
+Subject: Re: [PATCH v8 03/12] iommu/sva: Add PASID helpers
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ linux-mm@kvack.org
+References: <20200618155125.1548969-1-jean-philippe@linaro.org>
+ <20200618155125.1548969-4-jean-philippe@linaro.org>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <e2363732-e891-8263-16f1-c60b70d46ebc@linux.intel.com>
+Date: Fri, 19 Jun 2020 15:37:30 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.9.0
 MIME-Version: 1.0
+In-Reply-To: <20200618155125.1548969-4-jean-philippe@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_000234_097041_74F0EEBF 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200619_003750_720210_689B4114 
+X-CRM114-Status: GOOD (  22.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -56,88 +76,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- andy.yan@rock-chips.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: fenghua.yu@intel.com, jacob.jun.pan@linux.intel.com,
+ catalin.marinas@arm.com, joro@8bytes.org, robin.murphy@arm.com,
+ hch@infradead.org, zhengxiang9@huawei.com, Jonathan.Cameron@huawei.com,
+ zhangfei.gao@linaro.org, will@kernel.org, xuzaibo@huawei.com,
+ baolu.lu@linux.intel.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sandy,
+Hi Jean,
 
-Am Freitag, 19. Juni 2020, 04:12:51 CEST schrieb Sandy Huang:
-> RGB888 format msb is red component and the lsb is blue component,
-> at vop full platform this is swapped, and this is different from vop
-> lite and vop next, so add this patch to fix it.
+On 2020/6/18 23:51, Jean-Philippe Brucker wrote:
+> Let IOMMU drivers allocate a single PASID per mm. Store the mm in the
+> IOASID set to allow refcounting and searching mm by PASID, when handling
+> an I/O page fault.
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 
-just me struggling with color formats ... and wondering why this never
-came up so far - with Version 3 being all major SoCs of the last years.
+Reviewed-by: Lu Baolu <baolu.lu@linux.intel.com>
 
-So I guess the reason that nobody noticed so far is, that most things
-will use ARGB888 instead of RGB888?
+Best regards,
+baolu
 
-One implementation nit below as well.
-
-> Signed-off-by: Sandy Huang <hjc@rock-chips.com>
 > ---
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 8 ++++++++
->  1 file changed, 8 insertions(+)
+> v7->v8: rename to IOMMU_SVA_LIB (Lu Baolu)
+> ---
+>   drivers/iommu/Kconfig         |  5 +++
+>   drivers/iommu/Makefile        |  1 +
+>   drivers/iommu/iommu-sva-lib.h | 15 +++++++
+>   drivers/iommu/iommu-sva-lib.c | 85 +++++++++++++++++++++++++++++++++++
+>   4 files changed, 106 insertions(+)
+>   create mode 100644 drivers/iommu/iommu-sva-lib.h
+>   create mode 100644 drivers/iommu/iommu-sva-lib.c
 > 
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> index c80f7d9fd13f..1c17048ad737 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> @@ -132,6 +132,7 @@ struct vop_win {
->  
->  struct rockchip_rgb;
->  struct vop {
-> +	uint32_t version;
->  	struct drm_crtc crtc;
->  	struct device *dev;
->  	struct drm_device *drm_dev;
-> @@ -989,6 +990,12 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
->  	VOP_WIN_SET(vop, win, dsp_st, dsp_st);
->  
->  	rb_swap = has_rb_swapped(fb->format->format);
-> +	/*
-> +	 * VOP full need to do rb swap to show rgb888/bgr888 format color correctly
-> +	 */
-
-one-line-comment?
-	/* VOP-full needs rb_swap for correctly showing rgb888/bgr888 */
-
-> +	if ((fb->format->format == DRM_FORMAT_RGB888 || fb->format->format == DRM_FORMAT_BGR888) &&
-> +	    VOP_MAJOR(vop->version) == 3)
-> +		rb_swap = !rb_swap;
-
-can we move this into the existing has_rb_swapped() function?
-Like doing
-	rb_swap = has_rb_swapped(vop, fb->format->format)
-and adding your conditional to the end there?
-
-
-Thanks
-Heiko
-
-
->  	VOP_WIN_SET(vop, win, rb_swap, rb_swap);
->  
->  	/*
-> @@ -2091,6 +2098,7 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
->  	vop->dev = dev;
->  	vop->data = vop_data;
->  	vop->drm_dev = drm_dev;
-> +	vop->version = vop_data->version;
->  	dev_set_drvdata(dev, vop);
->  
->  	vop_win_init(vop);
+> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
+> index b510f67dfa499..74a10e7a8d082 100644
+> --- a/drivers/iommu/Kconfig
+> +++ b/drivers/iommu/Kconfig
+> @@ -102,6 +102,11 @@ config IOMMU_DMA
+>   	select IRQ_MSI_IOMMU
+>   	select NEED_SG_DMA_LENGTH
+>   
+> +# Shared Virtual Addressing library
+> +config IOMMU_SVA_LIB
+> +	bool
+> +	select IOASID
+> +
+>   config FSL_PAMU
+>   	bool "Freescale IOMMU support"
+>   	depends on PCI
+> diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
+> index 342190196dfb0..0fe5a7f9bc69c 100644
+> --- a/drivers/iommu/Makefile
+> +++ b/drivers/iommu/Makefile
+> @@ -38,3 +38,4 @@ obj-$(CONFIG_S390_IOMMU) += s390-iommu.o
+>   obj-$(CONFIG_QCOM_IOMMU) += qcom_iommu.o
+>   obj-$(CONFIG_HYPERV_IOMMU) += hyperv-iommu.o
+>   obj-$(CONFIG_VIRTIO_IOMMU) += virtio-iommu.o
+> +obj-$(CONFIG_IOMMU_SVA_LIB) += iommu-sva-lib.o
+> diff --git a/drivers/iommu/iommu-sva-lib.h b/drivers/iommu/iommu-sva-lib.h
+> new file mode 100644
+> index 0000000000000..b40990aef3fde
+> --- /dev/null
+> +++ b/drivers/iommu/iommu-sva-lib.h
+> @@ -0,0 +1,15 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * SVA library for IOMMU drivers
+> + */
+> +#ifndef _IOMMU_SVA_LIB_H
+> +#define _IOMMU_SVA_LIB_H
+> +
+> +#include <linux/ioasid.h>
+> +#include <linux/mm_types.h>
+> +
+> +int iommu_sva_alloc_pasid(struct mm_struct *mm, ioasid_t min, ioasid_t max);
+> +void iommu_sva_free_pasid(struct mm_struct *mm);
+> +struct mm_struct *iommu_sva_find(ioasid_t pasid);
+> +
+> +#endif /* _IOMMU_SVA_LIB_H */
+> diff --git a/drivers/iommu/iommu-sva-lib.c b/drivers/iommu/iommu-sva-lib.c
+> new file mode 100644
+> index 0000000000000..db7e6c104d6b0
+> --- /dev/null
+> +++ b/drivers/iommu/iommu-sva-lib.c
+> @@ -0,0 +1,85 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Helpers for IOMMU drivers implementing SVA
+> + */
+> +#include <linux/mutex.h>
+> +#include <linux/sched/mm.h>
+> +
+> +#include "iommu-sva-lib.h"
+> +
+> +static DEFINE_MUTEX(iommu_sva_lock);
+> +static DECLARE_IOASID_SET(iommu_sva_pasid);
+> +
+> +/**
+> + * iommu_sva_alloc_pasid - Allocate a PASID for the mm
+> + * @mm: the mm
+> + * @min: minimum PASID value (inclusive)
+> + * @max: maximum PASID value (inclusive)
+> + *
+> + * Try to allocate a PASID for this mm, or take a reference to the existing one
+> + * provided it fits within the [min, max] range. On success the PASID is
+> + * available in mm->pasid, and must be released with iommu_sva_free_pasid().
+> + *
+> + * Returns 0 on success and < 0 on error.
+> + */
+> +int iommu_sva_alloc_pasid(struct mm_struct *mm, ioasid_t min, ioasid_t max)
+> +{
+> +	int ret = 0;
+> +	ioasid_t pasid;
+> +
+> +	if (min == INVALID_IOASID || max == INVALID_IOASID ||
+> +	    min == 0 || max < min)
+> +		return -EINVAL;
+> +
+> +	mutex_lock(&iommu_sva_lock);
+> +	if (mm->pasid) {
+> +		if (mm->pasid >= min && mm->pasid <= max)
+> +			ioasid_get(mm->pasid);
+> +		else
+> +			ret = -EOVERFLOW;
+> +	} else {
+> +		pasid = ioasid_alloc(&iommu_sva_pasid, min, max, mm);
+> +		if (pasid == INVALID_IOASID)
+> +			ret = -ENOMEM;
+> +		else
+> +			mm->pasid = pasid;
+> +	}
+> +	mutex_unlock(&iommu_sva_lock);
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(iommu_sva_alloc_pasid);
+> +
+> +/**
+> + * iommu_sva_free_pasid - Release the mm's PASID
+> + * @mm: the mm.
+> + *
+> + * Drop one reference to a PASID allocated with iommu_sva_alloc_pasid()
+> + */
+> +void iommu_sva_free_pasid(struct mm_struct *mm)
+> +{
+> +	mutex_lock(&iommu_sva_lock);
+> +	if (ioasid_put(mm->pasid))
+> +		mm->pasid = 0;
+> +	mutex_unlock(&iommu_sva_lock);
+> +}
+> +EXPORT_SYMBOL_GPL(iommu_sva_free_pasid);
+> +
+> +/* ioasid wants a void * argument */
+> +static bool __mmget_not_zero(void *mm)
+> +{
+> +	return mmget_not_zero(mm);
+> +}
+> +
+> +/**
+> + * iommu_sva_find() - Find mm associated to the given PASID
+> + * @pasid: Process Address Space ID assigned to the mm
+> + *
+> + * On success a reference to the mm is taken, and must be released with mmput().
+> + *
+> + * Returns the mm corresponding to this PASID, or an error if not found.
+> + */
+> +struct mm_struct *iommu_sva_find(ioasid_t pasid)
+> +{
+> +	return ioasid_find(&iommu_sva_pasid, pasid, __mmget_not_zero);
+> +}
+> +EXPORT_SYMBOL_GPL(iommu_sva_find);
 > 
-
-
-
-
 
 _______________________________________________
 linux-arm-kernel mailing list
