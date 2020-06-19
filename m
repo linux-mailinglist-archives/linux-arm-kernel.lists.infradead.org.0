@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69FE62007D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 13:31:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 814F92007E0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 13:32:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1LP9X6rrIlYIDFiPE7x/Tz4DkgawjgaDRNgTx1cJMY4=; b=UvKgCNsO9uSzUN
-	+aGBplgq6VmVB2xXXfev5If1QahzwMPsJSf8f7JwF5VpLb0hp68tPs8NdRo8qr+LoZ1ZgTDnseTaU
-	3575OJX9Czaap6AxuOeJLsLGXXSpTwoCSYs7m3SBRzdJs+fsmBhn3ylgysFj3k/u7C1tZsrflFD6X
-	lNJ80VuS0Ofy6bFru3iE7BYOWbPgPOp3pvKMH+CcxzT54judiARLDC6L4CEuZemTJIimh68E1ivM+
-	xWltipwbzBr0qk7SFCkSgl7aY6VdMyPncfZ6bOClyarM+dIv+uprh0SZVpRj0nlw2lwrsZigNeCjS
-	4B9YRlCYzznv8KHuMInw==;
+	List-Owner; bh=s6gLn0kGCUu4gevVsUlkL+ta0LkWg2RYpBshNuIR7Zg=; b=V2waJNg21GjIIH
+	GgUiimU0e41SpJHXrGRT0gglNdqDHjotsPgm3fBu/LlfKDTAjeWAVVbnkIcL9IImewzfWt1EhxLUT
+	TumGxFuqx+xXq8j6kGiEivV4xoR8nQ9b1gneidqpWwUaWOW18JtL6YZDAgPSoIDvv8uHjO0x5gDnt
+	aLEONyxmnfqYcuQSHEsAEcXBs8eK3YI2ouJV8TrgeYYQnoZvMcRasFLeNCPqhJ5xgLFTNhRmrBL1Q
+	IoLuy8tRQ/uQC7AFN+PhxXImWiiCIX67PtD7R7NihKx4LXbgraxPdPgM+nWWdEqHzNI+haZwY7pAp
+	TiPdSxrFkAgpfPVZOwhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmFFQ-0000NQ-Qg; Fri, 19 Jun 2020 11:31:52 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1jmFG1-0000q6-1s; Fri, 19 Jun 2020 11:32:29 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmFFE-0000My-AP
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 11:31:43 +0000
+ id 1jmFFJ-0000NK-Ff
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 11:31:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592566300; x=1624102300;
+ t=1592566305; x=1624102305;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=Vr7IJg82w/CxJvBCjz5G7ZncKTloNcb8/f99H0MqnqE=;
- b=isDeX7WAyEjMFHEJqjJwe/P8XdS6vSQAGT4pQxmTNenPhivVgdd7QVVJ
- 2KV2qQgc7THwtSncRihBsVZVPpE1Eo3BNw28eyajKXx4pIfXVCRnHxiRQ
- UpGpFTiAptfC0Z9v12cb6jvDlfHWzAPpYjuwkVySJu0hlMGcBY8uH0ho+
- qqiSeq7+NPFAnT0vM3HXUHGStkljXBIZVUFQdtjc4rIQsoUy83CYfTbaI
- o8nJ5HLTO5pNAxvNj5tv1x4J+RVQWd9BUp/FWtLKD4EnpM9O/y4+vfGIX
- pdIWFIzdnaAeOx7UusUx+abZEaaaHcPVUxKL+mUd+fqvHgOuKYPAFde+C Q==;
-IronPort-SDR: ovZN+q40DWbaLSrFs6pWzRK3NpqROuHV46otC456nLKeagstpAR5XWzA4d/KafQBZd58wwYIb1
- yr5qJ8PLB8cI/n17tVOMIJcGxC2Lp8qT1TgX8CQip2HNUp187R+r3e8S44kbM5M7A2zZTkqrsS
- n39MTY/jCbSYn107W0tcNIsXPcdzhEaME9CamDaZaVM2arNHGQQGC3zbOfhzeuSDZH4J4PWsGi
- Sgd3JLErv0N23lSzjwVDDmR69t21WlpYpf0xTaUzQNMBO+PaBM95g5H9m+qrKgNltpP+xeYim5
- cpo=
-X-IronPort-AV: E=Sophos;i="5.75,255,1589266800"; d="scan'208";a="16373015"
+ bh=kjTc0lDvbX2q6sDCdQDYyLFYSA/iqLUPgJ9XmdVLoX8=;
+ b=fbXKb2JhmOJ8+KZo1cGdijzi7T0KE0eEqXrnroCP9Rzc8BI1YYSDbMW5
+ 6ZCHXS2ffSo91E8U30wp7BduqMzBPxHrFMLkLaUd7+P9rDzM6XL3DDcJH
+ UUsGz0UUF79BPf41oc9u9+ar3r8PtzKGS3vQk9GXapbXiYlzOWdv8N/2V
+ x1gNmbJjvY4Ty3kvLbe8yDYlgUmXlfULmGISTRtpHTFRVrbtssuobZwAF
+ hI4jW3cNnx8gpDweCKIUcc6pqH0sYsSnWf6KtJ2dn7HndT6CMzlv5xkoq
+ NBaY1ZybeR0Q/aELudI/3OXBM+1yx807ZyGhp4n/tnGI4pf1e6orWkVEK A==;
+IronPort-SDR: 5tCxH3ZJH1R1MOehWYbR4JGvWH+LB4qV1roaxoIyERCaBUOysCw7AgLP7tYaRj14i25qWM+vrV
+ u2kq8M87IAhUemDJBkbUetsqUXoYpITgnjXHPd2NsWGC8UFo6mXVOi3P13s+yX4cTB4TwkPyYl
+ ORM4KQcnCevmqr0r1/qIToyhzUabojpcvQID7dzgMSZ8QCtiG5K19zeMxHarNB29P65aMf/l71
+ YvJCZGmp5nikwJRhgdvarphCqsAepOmPQhO09ceA3xtUqdKa0Io+xqK7JGhcpDRLDG8bD2/4d1
+ 2KI=
+X-IronPort-AV: E=Sophos;i="5.75,255,1589266800"; d="scan'208";a="84298531"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 Jun 2020 04:31:35 -0700
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 19 Jun 2020 04:31:37 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1979.3; Fri, 19 Jun 2020 04:31:28 -0700
+ 15.1.1979.3; Fri, 19 Jun 2020 04:31:30 -0700
 Received: from soft-dev15.microsemi.net (10.10.115.15) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Fri, 19 Jun 2020 04:31:26 -0700
+ 15.1.1979.3 via Frontend Transport; Fri, 19 Jun 2020 04:31:28 -0700
 From: Lars Povlsen <lars.povlsen@microchip.com>
 To: Mark Brown <broonie@kernel.org>, SoC Team <soc@kernel.org>
-Subject: [PATCH v2 1/6] spi: dw: Add support for RX sample delay register
-Date: Fri, 19 Jun 2020 13:31:16 +0200
-Message-ID: <20200619113121.9984-2-lars.povlsen@microchip.com>
+Subject: [PATCH v2 2/6] arm64: dts: sparx5: Add SPI controller
+Date: Fri, 19 Jun 2020 13:31:17 +0200
+Message-ID: <20200619113121.9984-3-lars.povlsen@microchip.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200619113121.9984-1-lars.povlsen@microchip.com>
 References: <20200619113121.9984-1-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_043140_446231_07E33592 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20200619_043145_541513_747A23BF 
+X-CRM114-Status: UNSURE (   8.03  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [216.71.154.253 listed in wl.mailspike.net]
+ medium trust [68.232.147.91 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [68.232.147.91 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,107 +106,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This add support for the RX_SAMPLE_DLY register. If enabled in the
-Designware IP, it allows tuning of the rx data signal by means of an
-internal rx sample fifo.
-
-The register is controlled by the snps,rx-sample-delay-ns DT
-property, which is defined per SPI slave.
-
-The register is located at offset 0xf0, and if the option is not
-enabled in the IP, changing the register will have no effect. The
-register will only be written if any slave defines a nonzero value
-(after scaling by the clock period).
+This adds a SPI controller to the Microchip Sparx5 SoC
 
 Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 ---
- drivers/spi/spi-dw-core.c | 20 ++++++++++++++++++++
- drivers/spi/spi-dw.h      |  2 ++
- 2 files changed, 22 insertions(+)
+ arch/arm64/boot/dts/microchip/sparx5.dtsi | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/drivers/spi/spi-dw-core.c b/drivers/spi/spi-dw-core.c
-index 323c66c5db506..d249f25cbff7f 100644
---- a/drivers/spi/spi-dw-core.c
-+++ b/drivers/spi/spi-dw-core.c
-@@ -12,6 +12,7 @@
- #include <linux/delay.h>
- #include <linux/slab.h>
- #include <linux/spi/spi.h>
-+#include <linux/of.h>
+diff --git a/arch/arm64/boot/dts/microchip/sparx5.dtsi b/arch/arm64/boot/dts/microchip/sparx5.dtsi
+index 7e811e24f0e99..2404bcc08b89d 100644
+--- a/arch/arm64/boot/dts/microchip/sparx5.dtsi
++++ b/arch/arm64/boot/dts/microchip/sparx5.dtsi
+@@ -14,6 +14,7 @@ / {
+ 	#size-cells = <1>;
  
- #include "spi-dw.h"
+ 	aliases {
++		spi0 = &spi0;
+ 		serial0 = &uart0;
+ 		serial1 = &uart1;
+ 	};
+@@ -155,6 +156,19 @@ uart1: serial@600102000 {
+ 			status = "disabled";
+ 		};
  
-@@ -26,6 +27,8 @@ struct chip_data {
- 
- 	u16 clk_div;		/* baud rate divider */
- 	u32 speed_hz;		/* baud rate */
++		spi0: spi@600104000 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			compatible = "microchip,sparx5-spi";
++			reg = <0x6 0x00104000 0x40>;
++			num-cs = <16>;
++			reg-io-width = <4>;
++			reg-shift = <2>;
++			clocks = <&ahb_clk>;
++			interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
++			status = "disabled";
++		};
 +
-+	u32 rx_sample_dly;	/* RX sample delay */
- };
- 
- #ifdef CONFIG_DEBUG_FS
-@@ -52,6 +55,7 @@ static const struct debugfs_reg32 dw_spi_dbgfs_regs[] = {
- 	DW_SPI_DBGFS_REG("DMACR", DW_SPI_DMACR),
- 	DW_SPI_DBGFS_REG("DMATDLR", DW_SPI_DMATDLR),
- 	DW_SPI_DBGFS_REG("DMARDLR", DW_SPI_DMARDLR),
-+	DW_SPI_DBGFS_REG("RX_SAMPLE_DLY", DW_SPI_RX_SAMPLE_DLY),
- };
- 
- static int dw_spi_debugfs_init(struct dw_spi *dws)
-@@ -328,6 +332,12 @@ static int dw_spi_transfer_one(struct spi_controller *master,
- 	if (master->can_dma && master->can_dma(master, spi, transfer))
- 		dws->dma_mapped = master->cur_msg_mapped;
- 
-+	/* Update RX sample delay if required */
-+	if (dws->curr_rx_sample_dly != chip->rx_sample_dly) {
-+		dw_writel(dws, DW_SPI_RX_SAMPLE_DLY, chip->rx_sample_dly);
-+		dws->curr_rx_sample_dly = chip->rx_sample_dly;
-+	}
-+
- 	/* For poll mode just disable all interrupts */
- 	spi_mask_intr(dws, 0xff);
- 
-@@ -380,10 +390,20 @@ static int dw_spi_setup(struct spi_device *spi)
- 	/* Only alloc on first setup */
- 	chip = spi_get_ctldata(spi);
- 	if (!chip) {
-+		struct dw_spi *dws = spi_controller_get_devdata(spi->controller);
-+		u32 rx_sample_dly;
-+
- 		chip = kzalloc(sizeof(struct chip_data), GFP_KERNEL);
- 		if (!chip)
- 			return -ENOMEM;
- 		spi_set_ctldata(spi, chip);
-+		/* Is rx_sample_dly defined for a slave? */
-+		if (device_property_read_u32(&spi->dev,
-+					     "snps,rx-sample-delay-ns",
-+					     &rx_sample_dly) == 0)
-+			chip->rx_sample_dly = DIV_ROUND_CLOSEST(rx_sample_dly,
-+								NSEC_PER_SEC /
-+								dws->max_freq);
- 	}
- 
- 	chip->tmode = SPI_TMOD_TR;
-diff --git a/drivers/spi/spi-dw.h b/drivers/spi/spi-dw.h
-index 151ba316619e6..f9243bf2a662b 100644
---- a/drivers/spi/spi-dw.h
-+++ b/drivers/spi/spi-dw.h
-@@ -34,6 +34,7 @@
- #define DW_SPI_IDR			0x58
- #define DW_SPI_VERSION			0x5c
- #define DW_SPI_DR			0x60
-+#define DW_SPI_RX_SAMPLE_DLY		0xf0
- #define DW_SPI_CS_OVERRIDE		0xf4
- 
- /* Bit fields in CTRLR0 */
-@@ -140,6 +141,7 @@ struct dw_spi {
- 	u8			n_bytes;	/* current is a 1/2 bytes op */
- 	irqreturn_t		(*transfer_handler)(struct dw_spi *dws);
- 	u32			current_freq;	/* frequency in hz */
-+	u32			curr_rx_sample_dly;
- 
- 	/* DMA info */
- 	struct dma_chan		*txchan;
+ 		timer1: timer@600105000 {
+ 			compatible = "snps,dw-apb-timer";
+ 			reg = <0x6 0x00105000 0x1000>;
 -- 
 2.27.0
 
