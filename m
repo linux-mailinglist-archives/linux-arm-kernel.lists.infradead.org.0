@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 974D0201376
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 18:06:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29EBC201377
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 18:06:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQTX2NGRudjwUYosBkUk0MPrrrZ/tqg3obpU6s5N3DY=; b=cd3sjN/bzYMjbw
-	rO83LrwlHCeK4CyQsBNllBQi1hhvte9ZF+Zu9Gs24h5znWv14EH77Z8Q/lDJv5aa/czlKJc2F0sf7
-	zwqCudeOd7EEnXIRhfRk3zWsAmsZy5VrVo4hWM3V3IagjADTVTCXLRgH+e0nJNF7vYDbK+7IkKOF/
-	1j1HiJvdztgxA4lVliXhtNSnz4dnM3dFuqFbW6pe+sWt0EYQwlD3j7UMNyiQo7PfooaDZQGpxICCs
-	1DSILLSHUZRaKIZ2KyrDhUPyTjyW2W7qW1ITbdzLD06RXxz54THGoRthNYsQc+UesQRGnvJqkp3hx
-	9qjq3VJIaw4uP52sK7Qg==;
+	List-Owner; bh=d4B+V/YfzljDEDRqxCY6NmXMloN+yJGJPh8GfGWXh5c=; b=XFpfjkgRgnKt4k
+	MPhHKM2MfV/T2MoxIS0Bj0GPllAUSVvcAVR1TMVEcOAKoKo6Zw7xwoWqNETXlEHcOZbuq7wRJaEq8
+	izG7w1su8fgKf1GTeaTT+YeM0eig3twdqR2feZaXYwiZP03zP+Nqv1wiQen7eG5TuWafiK1BEN8It
+	wV3F5tVQIcmopp0s0rIBPlqSb2YZsifpHkNl0DzC3RlDeNptPqua49nRxxXXECTLqbEUoMmz4eXi9
+	8RFSGwXG9nsRRFuOvRqTaqDVSlqvNNz8mErVFwlEqB+JqNBtrw8kGp2nxI5N/+fYvVhblDkC8/jdY
+	r4mO+59t9q8Bp3SNgrGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmJWk-0007P6-Tv; Fri, 19 Jun 2020 16:06:02 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jmJWx-0007VY-RM; Fri, 19 Jun 2020 16:06:15 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmJWa-0007NI-Nb
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 16:05:56 +0000
+ id 1jmJWb-0007Ne-8V
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 16:05:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1592582750;
+ s=mimecast20190719; t=1592582751;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=oYNDwtlfjBw7SDjKSzeBn7nLzHhEdZ/Papn4VLBZIoQ=;
- b=DR0iL+qhgQRMGu0+pi9ozkSWA9RZplz2ROxeI66V0quJTSLEH2phNnj0fg4HORCCl/M+DC
- 7x/3nUfOfkIqxu42fztqeb2enA/6pJpWx15HpURxHl5bB57qwyNsAQtyJ/tvbdB7DlWKqR
- AiafomENbQfhx5ra2HoJtDI68f0C6LY=
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com
- [209.85.219.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-300-ap83WTudPbW_rmICpMABIg-1; Fri, 19 Jun 2020 12:05:48 -0400
-X-MC-Unique: ap83WTudPbW_rmICpMABIg-1
-Received: by mail-qv1-f71.google.com with SMTP id p18so7038201qvy.11
+ bh=u3Vh1HVYE5zmkqw2sOdn8zxGKpBRt5nL/FWkJRhYB9o=;
+ b=auMWhZingg4YPFTzlRTHzAqgM/tTO/vVAvPMfR78pFFYmpZfGUzft9naFadvwgPundLeRn
+ yrK+R7X/yHT/nM6958aSM9QiGzlaLlp1X6r2vg01dK6QRhSfDNtPvKuIN428GwQuE7QFmB
+ adpyYE1zcCWmX/rgIzJUUoz3p6m/w0s=
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
+ [209.85.219.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-441-__cMNmxPOh-ASaI9IyTGfQ-1; Fri, 19 Jun 2020 12:05:50 -0400
+X-MC-Unique: __cMNmxPOh-ASaI9IyTGfQ-1
+Received: by mail-qv1-f69.google.com with SMTP id ca16so1070207qvb.17
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jun 2020 09:05:48 -0700 (PDT)
+ Fri, 19 Jun 2020 09:05:50 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oYNDwtlfjBw7SDjKSzeBn7nLzHhEdZ/Papn4VLBZIoQ=;
- b=HDSr/jNTMJPwtYXvrHZCxW4EzBV9bC73Eu7tSnUEFSLpibMueZhsVb99Mj90zaDy45
- TpHC05sOcHrwt6atTT18N3fxc6bB9lDBDQUpCJSmqd/eDB5lw5BlHZ6DpieaIOQMlsV5
- 6dEjhkNqb1XuoymULvJDWPXs7n34NRTuk2nlAvfG0SqZBp5CRmVN2yTnu9j2zouYDrhw
- kZ0CT06EBhuHvAelIeYw4AVA/rN4abOSscgfbSfqFJIO6otVuLQvzbRabaQo45u+UO9F
- YmkYd1SJQVBvimgKjo9bwr9piA4bPlyTxygTRziQCGQ+iicjCKSslNeElXLb0gpchLcu
- m89Q==
-X-Gm-Message-State: AOAM533fo9HsEOmOKzv6F5Lpf41oMugaDi+RIzgPE7PEURA08BHHQ72E
- uSZ0SGki5dmRsUT1KbF3HutyePBHR2OwsplXWj73c64LXkRTE6ikSZR40/EWrfd8lFSWqMSkzWb
- 7xAFNDvZyMCW5zshbGwW26ukEGOV8GSeVKSk=
-X-Received: by 2002:aed:21c8:: with SMTP id m8mr4187969qtc.224.1592582747638; 
- Fri, 19 Jun 2020 09:05:47 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJxzQfwrOgEHeZ4fmlf+FrgeIhkxqk3pvz1Rd9/fj39BAorh/CRlZ+KkHZPVWnZcxaKSEJpm8Q==
-X-Received: by 2002:aed:21c8:: with SMTP id m8mr4187936qtc.224.1592582747304; 
- Fri, 19 Jun 2020 09:05:47 -0700 (PDT)
+ bh=u3Vh1HVYE5zmkqw2sOdn8zxGKpBRt5nL/FWkJRhYB9o=;
+ b=Q59KOja48Vih1n+Q8VPmvyH4HSWGz0evi0XEZXMqlVI99r6Wo85KgrjrmPkWfoBFMz
+ YmOrIH9zCZOsg0tqE6Kpwh1Kr2SWyEAlFOJvALTiKF9pBO0gG8UYnL5X7hvoPu4gMuui
+ v++7hCenxOPc8e1kBgIuzceX/FPHvSQyUcO49LQ+P0DDd06laA7pIwyG8fq9cG2p9pFU
+ umaROQGi6mywB/Ol5oLNVhJ/k42d118IHN+4ReyYcjO0AHASC6aKKVMid+16WkoeknsT
+ xvsN+An3B8phnszzgsWfSYsvKRtrQI/md609Wtforcn3eGUjGIzinlSB8lDXnPHetp/k
+ JKWw==
+X-Gm-Message-State: AOAM530pnhyIUnfjTdjQVgsbK/MEeC87z97dLdDaSaIE0CSD7YcyeudE
+ mQXQ7hI6ikjEl/kQiAhwsvQ0e1ihuoPBA3Y3yTTzheW9zWlmpXYGtfZD+i8wTjZmC3/UA9UKHTJ
+ TSQZhkwiK7APzh0u8LLcc680WCirQK88UqHo=
+X-Received: by 2002:ae9:e841:: with SMTP id a62mr4262424qkg.497.1592582749502; 
+ Fri, 19 Jun 2020 09:05:49 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJySpRUMhXyNfEl10XktKVgqTs3uRy85zxUDqvWPGZZNqeyiCaJtUfJ8ugLHtIHHC9pHiVb8gQ==
+X-Received: by 2002:ae9:e841:: with SMTP id a62mr4262393qkg.497.1592582749242; 
+ Fri, 19 Jun 2020 09:05:49 -0700 (PDT)
 Received: from xz-x1.redhat.com ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id g11sm6412604qkk.123.2020.06.19.09.05.45
+ by smtp.gmail.com with ESMTPSA id g11sm6412604qkk.123.2020.06.19.09.05.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 19 Jun 2020 09:05:46 -0700 (PDT)
+ Fri, 19 Jun 2020 09:05:48 -0700 (PDT)
 From: Peter Xu <peterx@redhat.com>
 To: linux-kernel@vger.kernel.org,
 	linux-mm@kvack.org
-Subject: [PATCH 04/26] mm/arm: Use general page fault accounting
-Date: Fri, 19 Jun 2020 12:05:16 -0400
-Message-Id: <20200619160538.8641-5-peterx@redhat.com>
+Subject: [PATCH 05/26] mm/arm64: Use general page fault accounting
+Date: Fri, 19 Jun 2020 12:05:17 -0400
+Message-Id: <20200619160538.8641-6-peterx@redhat.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200619160538.8641-1-peterx@redhat.com>
 References: <20200619160538.8641-1-peterx@redhat.com>
@@ -77,18 +77,18 @@ MIME-Version: 1.0
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_090552_840470_0E20EAFA 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20200619_090553_375010_2FC94924 
+X-CRM114-Status: GOOD (  16.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [205.139.110.61 listed in wl.mailspike.net]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -111,9 +111,10 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Andrea Arcangeli <aarcange@redhat.com>,
- Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
- peterx@redhat.com, Linus Torvalds <torvalds@linux-foundation.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, peterx@redhat.com,
+ Linus Torvalds <torvalds@linux-foundation.org>,
  linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
  Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
  Gerald Schaefer <gerald.schaefer@de.ibm.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -123,85 +124,85 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Use the general page fault accounting by passing regs into handle_mm_fault().
 It naturally solve the issue of multiple page fault accounting when page fault
-retry happened.  To do this, we need to pass the pt_regs pointer into
-__do_page_fault().
+retry happened.  To do this, we pass pt_regs pointer into __do_page_fault().
 
-Fix PERF_COUNT_SW_PAGE_FAULTS perf event manually for page fault retries, by
-moving it before taking mmap_sem.
-
-CC: Russell King <linux@armlinux.org.uk>
+CC: Catalin Marinas <catalin.marinas@arm.com>
 CC: Will Deacon <will@kernel.org>
 CC: linux-arm-kernel@lists.infradead.org
 Signed-off-by: Peter Xu <peterx@redhat.com>
 ---
- arch/arm/mm/fault.c | 25 ++++++-------------------
- 1 file changed, 6 insertions(+), 19 deletions(-)
+ arch/arm64/mm/fault.c | 29 ++++++-----------------------
+ 1 file changed, 6 insertions(+), 23 deletions(-)
 
-diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
-index 0d6be0f4f27c..8530befee012 100644
---- a/arch/arm/mm/fault.c
-+++ b/arch/arm/mm/fault.c
-@@ -201,7 +201,8 @@ static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 5f6607b951b8..09b206521559 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -398,7 +398,8 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
+ #define VM_FAULT_BADACCESS	0x020000
  
- static vm_fault_t __kprobes
- __do_page_fault(struct mm_struct *mm, unsigned long addr, unsigned int fsr,
--		unsigned int flags, struct task_struct *tsk)
-+		unsigned int flags, struct task_struct *tsk,
-+		struct pt_regs *regs)
+ static vm_fault_t __do_page_fault(struct mm_struct *mm, unsigned long addr,
+-			   unsigned int mm_flags, unsigned long vm_flags)
++				  unsigned int mm_flags, unsigned long vm_flags,
++				  struct pt_regs *regs)
  {
- 	struct vm_area_struct *vma;
- 	vm_fault_t fault;
-@@ -223,7 +224,7 @@ __do_page_fault(struct mm_struct *mm, unsigned long addr, unsigned int fsr,
- 		goto out;
- 	}
+ 	struct vm_area_struct *vma = find_vma(mm, addr);
  
--	return handle_mm_fault(vma, addr & PAGE_MASK, flags, NULL);
-+	return handle_mm_fault(vma, addr & PAGE_MASK, flags, regs);
+@@ -422,7 +423,7 @@ static vm_fault_t __do_page_fault(struct mm_struct *mm, unsigned long addr,
+ 	 */
+ 	if (!(vma->vm_flags & vm_flags))
+ 		return VM_FAULT_BADACCESS;
+-	return handle_mm_fault(vma, addr & PAGE_MASK, mm_flags, NULL);
++	return handle_mm_fault(vma, addr & PAGE_MASK, mm_flags, regs);
+ }
  
- check_stack:
- 	/* Don't allow expansion below FIRST_USER_ADDRESS */
-@@ -265,6 +266,8 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
- 	if ((fsr & FSR_WRITE) && !(fsr & FSR_CM))
- 		flags |= FAULT_FLAG_WRITE;
+ static bool is_el0_instruction_abort(unsigned int esr)
+@@ -444,7 +445,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ {
+ 	const struct fault_info *inf;
+ 	struct mm_struct *mm = current->mm;
+-	vm_fault_t fault, major = 0;
++	vm_fault_t fault;
+ 	unsigned long vm_flags = VM_ACCESS_FLAGS;
+ 	unsigned int mm_flags = FAULT_FLAG_DEFAULT;
  
-+	perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS, 1, regs, addr);
-+
- 	/*
- 	 * As per x86, we may deadlock here.  However, since the kernel only
- 	 * validly references user space from well defined areas of the code,
-@@ -289,7 +292,7 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+@@ -510,8 +511,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
  #endif
  	}
  
--	fault = __do_page_fault(mm, addr, fsr, flags, tsk);
-+	fault = __do_page_fault(mm, addr, fsr, flags, tsk, regs);
+-	fault = __do_page_fault(mm, addr, mm_flags, vm_flags);
+-	major |= fault & VM_FAULT_MAJOR;
++	fault = __do_page_fault(mm, addr, mm_flags, vm_flags, regs);
  
- 	/* If we need to retry but a fatal signal is pending, handle the
- 	 * signal first. We do not need to release the mmap_sem because
-@@ -301,23 +304,7 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
- 		return 0;
- 	}
- 
--	/*
--	 * Major/minor page fault accounting is only done on the
--	 * initial attempt. If we go through a retry, it is extremely
--	 * likely that the page will be found in page cache at that point.
--	 */
--
--	perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS, 1, regs, addr);
- 	if (!(fault & VM_FAULT_ERROR) && flags & FAULT_FLAG_ALLOW_RETRY) {
--		if (fault & VM_FAULT_MAJOR) {
--			tsk->maj_flt++;
--			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MAJ, 1,
--					regs, addr);
+ 	/* Quick path to respond to signals */
+ 	if (fault_signal_pending(fault, regs)) {
+@@ -532,25 +532,8 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	 * Handle the "normal" (no error) case first.
+ 	 */
+ 	if (likely(!(fault & (VM_FAULT_ERROR | VM_FAULT_BADMAP |
+-			      VM_FAULT_BADACCESS)))) {
+-		/*
+-		 * Major/minor page fault accounting is only done
+-		 * once. If we go through a retry, it is extremely
+-		 * likely that the page will be found in page cache at
+-		 * that point.
+-		 */
+-		if (major) {
+-			current->maj_flt++;
+-			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MAJ, 1, regs,
+-				      addr);
 -		} else {
--			tsk->min_flt++;
--			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MIN, 1,
--					regs, addr);
+-			current->min_flt++;
+-			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MIN, 1, regs,
+-				      addr);
 -		}
- 		if (fault & VM_FAULT_RETRY) {
- 			flags |= FAULT_FLAG_TRIED;
- 			goto retry;
+-
++			      VM_FAULT_BADACCESS))))
+ 		return 0;
+-	}
+ 
+ 	/*
+ 	 * If we are in kernel mode at this point, we have no context to
 -- 
 2.26.2
 
