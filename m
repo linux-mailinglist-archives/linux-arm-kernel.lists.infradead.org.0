@@ -2,79 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 821EA200538
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:34:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3993420051D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 11:32:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gpbd+JW+kGmFdRDJMmwY6vDnrv3ql2NlG/ZiLbBvlQ8=; b=rK24JyWWG7yF62jwTe2/pgoL9
-	tsGAvFmDd0iBBRrZ7W3pZUTYoW0o7DNNZyeLOeKDxSPc7VP04BudD0BzUgFHcwcPSf3jTEqUO3CgJ
-	c11aM/4sdf6X8G9biKxgRmGy8iDpEG30Q6Q5l5k+BHu29p3Y14tZ9ssTKEUoVzu8WcCRP/3bjS/LG
-	GkhAGX23sVtuP2RjqY0skSoCsDul/P2Kz2uLSMGKnlcXcwPw7XaQP/jh393gccFP45fpDyKiSo+92
-	0rKfxQcsulpRuZ+PhJ8xYr7wrgwlPJa+Z6sQJCpQzDg5KbTSxlxjd2lGeYkvrb/+KaFc+79Rz7EMs
-	FzEZ1kqSw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=NpU1Zx1KATFRYnBtlivP2f+OBD5Cuxp1DrYyu3pKftk=; b=sqYPt1EW7/Ggmzvbc+O66AbAQm
+	qqsDO5miaqaNud/GWcYTQgP6cQLI4VQRwd4lS29U356QxjygN0NOUr6bQXRawl8fWHK0kJgYWyhAN
+	0ZnUqq2I/sp8I7bXJoLTC9ZnyuxurXiD4txAunfmUqJWVGLJQUl3pO7olzPqPOJh9qCXSMGiB7R40
+	L4noffk2Xs4xdLyNML4NivqUXgZC3XtF4QmftybPrNvLpKrkEn6PnCHPru7PaULc4eDf0GebBybUc
+	4661c5mPwif85Rg41+nfntZvj2MvIVUwn0H5WSlGyGLyzaMI6iZGbCavJQBDGI/iLeTQtit9Vg9MD
+	MamJtVAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmDPf-0005je-QW; Fri, 19 Jun 2020 09:34:19 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmDNR-0003hw-CN; Fri, 19 Jun 2020 09:32:03 +0000
-Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 67FA2E988E;
- Fri, 19 Jun 2020 17:30:28 +0800 (CST)
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [172.16.12.64] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P10489T139787484784384S1592559028011652_; 
- Fri, 19 Jun 2020 17:30:28 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <62c480b8cc5a488bc414f885ceaa2db0>
-X-RL-SENDER: shawn.lin@rock-chips.com
-X-SENDER: lintao@rock-chips.com
-X-LOGIN-NAME: shawn.lin@rock-chips.com
-X-FST-TO: linux-arm-kernel@lists.infradead.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-Subject: =?UTF-8?Q?Re=3a_=5bRESEND_PATCH=5d_Revert_=22clk=3a_rockchip=3a_fix?=
- =?UTF-8?Q?_wrong_mmc_sample_phase_shift_for_rk3328=22=e3=80=90=e8=af=b7?=
- =?UTF-8?B?5rOo5oSP77yM6YKu5Lu255SxbGludXgtcm9ja2NoaXAtYm91bmNlcytzaGF3bi5s?=
- =?UTF-8?B?aW49cm9jay1jaGlwcy5jb21AbGlzdHMuaW5mcmFkZWFkLm9yZ+S7o+WPkeOAkQ==?=
-To: Robin Murphy <robin.murphy@arm.com>, heiko@sntech.de,
- mturquette@baylibre.com, sboyd@kernel.org
-References: <c80eb52e34c03f817586b6b7912fbd4e31be9079.1589475794.git.robin.murphy@arm.com>
-From: Shawn Lin <shawn.lin@rock-chips.com>
-Message-ID: <0dd5e173-a656-a1be-0a44-1ea8a03ca6fd@rock-chips.com>
-Date: Fri, 19 Jun 2020 17:30:27 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.0
-MIME-Version: 1.0
-In-Reply-To: <c80eb52e34c03f817586b6b7912fbd4e31be9079.1589475794.git.robin.murphy@arm.com>
+	id 1jmDNu-00048v-8R; Fri, 19 Jun 2020 09:32:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jmDMi-0003C5-Il
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 09:31:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8BD6913A1;
+ Fri, 19 Jun 2020 02:31:15 -0700 (PDT)
+Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
+ [10.169.40.35])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5EEF03F71F;
+ Fri, 19 Jun 2020 02:31:09 -0700 (PDT)
+From: Jianyong Wu <jianyong.wu@arm.com>
+To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
+ tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
+ maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
+ will@kernel.org, suzuki.poulose@arm.com, steven.price@arm.com
+Subject: [RFC PATCH v13 4/9] ptp: Reorganize ptp_kvm module to make it
+ arch-independent.
+Date: Fri, 19 Jun 2020 17:30:28 +0800
+Message-Id: <20200619093033.58344-5-jianyong.wu@arm.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200619093033.58344-1-jianyong.wu@arm.com>
+References: <20200619093033.58344-1-jianyong.wu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_023201_757547_55CAD321 
-X-CRM114-Status: GOOD (  19.72  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200619_023116_790940_F718E4AF 
+X-CRM114-Status: GOOD (  19.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.132 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,74 +66,298 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, shawn.lin@rock-chips.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: justin.he@arm.com, Wei.Chen@arm.com, kvm@vger.kernel.org,
+ Steve.Capper@arm.com, jianyong.wu@arm.com, linux-kernel@vger.kernel.org,
+ Kaly.Xin@arm.com, nd@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Currently, ptp_kvm modules implementation is only for x86 which includs
+large part of arch-specific code.  This patch move all of those code
+into new arch related file in the same directory.
 
-On 2020/6/19 1:56, Robin Murphy wrote:
-> This reverts commit 82f4b67f018c88a7cc9337f0067ed3d6ec352648.
-> 
-> According to a subsequent revert in the vendor kernel, the original
-> change was based on unclear documentation and was in fact incorrect.
-> 
+Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+---
+ drivers/ptp/Makefile                        |  1 +
+ drivers/ptp/ptp_kvm.h                       | 11 +++
+ drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} | 80 +++++-------------
+ drivers/ptp/ptp_kvm_x86.c                   | 89 +++++++++++++++++++++
+ 4 files changed, 122 insertions(+), 59 deletions(-)
+ create mode 100644 drivers/ptp/ptp_kvm.h
+ rename drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} (63%)
+ create mode 100644 drivers/ptp/ptp_kvm_x86.c
 
-Reviewed-by: Shawn Lin <shawn.lin@rock-chips.com>
-
-> Emprically, my board's HS200 eMMC at 200MHZ apparently gets lucky with a
-> phase where this had no impact, but limiting max-frequency to 150MHz to
-> match the nominal capability of the I/O pins made it virtually unusable,
-> constantly throwing errors and retuning. With this revert, it starts
-> behaving perfectly at 150MHz too.
-> 
-> Fixes: 82f4b67f018c ("clk: rockchip: fix wrong mmc sample phase shift for rk3328")
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
-> 
-> Resending with the edited commit log I actually meant, rather than the
-> earlier draft I managed to generate the previuous patch from, since that
-> one seems to have slipped through the cracks anyway.
-> 
-> ybetter commit message
->   drivers/clk/rockchip/clk-rk3328.c | 8 ++++----
->   1 file changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/clk/rockchip/clk-rk3328.c b/drivers/clk/rockchip/clk-rk3328.c
-> index c186a1985bf4..2429b7c2a8b3 100644
-> --- a/drivers/clk/rockchip/clk-rk3328.c
-> +++ b/drivers/clk/rockchip/clk-rk3328.c
-> @@ -808,22 +808,22 @@ static struct rockchip_clk_branch rk3328_clk_branches[] __initdata = {
->   	MMC(SCLK_SDMMC_DRV, "sdmmc_drv", "clk_sdmmc",
->   	    RK3328_SDMMC_CON0, 1),
->   	MMC(SCLK_SDMMC_SAMPLE, "sdmmc_sample", "clk_sdmmc",
-> -	    RK3328_SDMMC_CON1, 0),
-> +	    RK3328_SDMMC_CON1, 1),
->   
->   	MMC(SCLK_SDIO_DRV, "sdio_drv", "clk_sdio",
->   	    RK3328_SDIO_CON0, 1),
->   	MMC(SCLK_SDIO_SAMPLE, "sdio_sample", "clk_sdio",
-> -	    RK3328_SDIO_CON1, 0),
-> +	    RK3328_SDIO_CON1, 1),
->   
->   	MMC(SCLK_EMMC_DRV, "emmc_drv", "clk_emmc",
->   	    RK3328_EMMC_CON0, 1),
->   	MMC(SCLK_EMMC_SAMPLE, "emmc_sample", "clk_emmc",
-> -	    RK3328_EMMC_CON1, 0),
-> +	    RK3328_EMMC_CON1, 1),
->   
->   	MMC(SCLK_SDMMC_EXT_DRV, "sdmmc_ext_drv", "clk_sdmmc_ext",
->   	    RK3328_SDMMC_EXT_CON0, 1),
->   	MMC(SCLK_SDMMC_EXT_SAMPLE, "sdmmc_ext_sample", "clk_sdmmc_ext",
-> -	    RK3328_SDMMC_EXT_CON1, 0),
-> +	    RK3328_SDMMC_EXT_CON1, 1),
->   };
->   
->   static const char *const rk3328_critical_clocks[] __initconst = {
-> 
-
+diff --git a/drivers/ptp/Makefile b/drivers/ptp/Makefile
+index 7aff75f745dc..baac6f5b243b 100644
+--- a/drivers/ptp/Makefile
++++ b/drivers/ptp/Makefile
+@@ -4,6 +4,7 @@
+ #
+ 
+ ptp-y					:= ptp_clock.o ptp_chardev.o ptp_sysfs.o
++ptp_kvm-y				:= ptp_kvm_$(ARCH).o ptp_kvm_common.o
+ obj-$(CONFIG_PTP_1588_CLOCK)		+= ptp.o
+ obj-$(CONFIG_PTP_1588_CLOCK_DTE)	+= ptp_dte.o
+ obj-$(CONFIG_PTP_1588_CLOCK_INES)	+= ptp_ines.o
+diff --git a/drivers/ptp/ptp_kvm.h b/drivers/ptp/ptp_kvm.h
+new file mode 100644
+index 000000000000..4bf1802bbeb8
+--- /dev/null
++++ b/drivers/ptp/ptp_kvm.h
+@@ -0,0 +1,11 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++/*
++ * Virtual PTP 1588 clock for use with KVM guests
++ *
++ * Copyright (C) 2017 Red Hat Inc.
++ */
++
++int kvm_arch_ptp_init(void);
++int kvm_arch_ptp_get_clock(struct timespec64 *ts);
++int kvm_arch_ptp_get_crosststamp(unsigned long *cycle,
++		struct timespec64 *tspec, void *cs);
+diff --git a/drivers/ptp/ptp_kvm.c b/drivers/ptp/ptp_kvm_common.c
+similarity index 63%
+rename from drivers/ptp/ptp_kvm.c
+rename to drivers/ptp/ptp_kvm_common.c
+index 658d33fc3195..8d8a9bcd1d22 100644
+--- a/drivers/ptp/ptp_kvm.c
++++ b/drivers/ptp/ptp_kvm_common.c
+@@ -8,15 +8,16 @@
+ #include <linux/err.h>
+ #include <linux/init.h>
+ #include <linux/kernel.h>
++#include <linux/slab.h>
+ #include <linux/module.h>
+ #include <uapi/linux/kvm_para.h>
+ #include <asm/kvm_para.h>
+-#include <asm/pvclock.h>
+-#include <asm/kvmclock.h>
+ #include <uapi/asm/kvm_para.h>
+ 
+ #include <linux/ptp_clock_kernel.h>
+ 
++#include "ptp_kvm.h"
++
+ struct kvm_ptp_clock {
+ 	struct ptp_clock *ptp_clock;
+ 	struct ptp_clock_info caps;
+@@ -24,56 +25,29 @@ struct kvm_ptp_clock {
+ 
+ static DEFINE_SPINLOCK(kvm_ptp_lock);
+ 
+-static struct pvclock_vsyscall_time_info *hv_clock;
+-
+-static struct kvm_clock_pairing clock_pair;
+-static phys_addr_t clock_pair_gpa;
+-
+ static int ptp_kvm_get_time_fn(ktime_t *device_time,
+ 			       struct system_counterval_t *system_counter,
+ 			       void *ctx)
+ {
+-	unsigned long ret;
++	unsigned long ret, cycle;
+ 	struct timespec64 tspec;
+-	unsigned version;
+-	int cpu;
+-	struct pvclock_vcpu_time_info *src;
++	struct clocksource *cs;
+ 
+ 	spin_lock(&kvm_ptp_lock);
+ 
+ 	preempt_disable_notrace();
+-	cpu = smp_processor_id();
+-	src = &hv_clock[cpu].pvti;
+-
+-	do {
+-		/*
+-		 * We are using a TSC value read in the hosts
+-		 * kvm_hc_clock_pairing handling.
+-		 * So any changes to tsc_to_system_mul
+-		 * and tsc_shift or any other pvclock
+-		 * data invalidate that measurement.
+-		 */
+-		version = pvclock_read_begin(src);
+-
+-		ret = kvm_hypercall2(KVM_HC_CLOCK_PAIRING,
+-				     clock_pair_gpa,
+-				     KVM_CLOCK_PAIRING_WALLCLOCK);
+-		if (ret != 0) {
+-			pr_err_ratelimited("clock pairing hypercall ret %lu\n", ret);
+-			spin_unlock(&kvm_ptp_lock);
+-			preempt_enable_notrace();
+-			return -EOPNOTSUPP;
+-		}
+-
+-		tspec.tv_sec = clock_pair.sec;
+-		tspec.tv_nsec = clock_pair.nsec;
+-		ret = __pvclock_read_cycles(src, clock_pair.tsc);
+-	} while (pvclock_read_retry(src, version));
++	ret = kvm_arch_ptp_get_crosststamp(&cycle, &tspec, &cs);
++	if (ret != 0) {
++		pr_err_ratelimited("clock pairing hypercall ret %lu\n", ret);
++		spin_unlock(&kvm_ptp_lock);
++		preempt_enable_notrace();
++		return -EOPNOTSUPP;
++	}
+ 
+ 	preempt_enable_notrace();
+ 
+-	system_counter->cycles = ret;
+-	system_counter->cs = &kvm_clock;
++	system_counter->cycles = cycle;
++	system_counter->cs = cs;
+ 
+ 	*device_time = timespec64_to_ktime(tspec);
+ 
+@@ -116,17 +90,13 @@ static int ptp_kvm_gettime(struct ptp_clock_info *ptp, struct timespec64 *ts)
+ 
+ 	spin_lock(&kvm_ptp_lock);
+ 
+-	ret = kvm_hypercall2(KVM_HC_CLOCK_PAIRING,
+-			     clock_pair_gpa,
+-			     KVM_CLOCK_PAIRING_WALLCLOCK);
++	ret = kvm_arch_ptp_get_clock(&tspec);
+ 	if (ret != 0) {
+ 		pr_err_ratelimited("clock offset hypercall ret %lu\n", ret);
+ 		spin_unlock(&kvm_ptp_lock);
+ 		return -EOPNOTSUPP;
+ 	}
+ 
+-	tspec.tv_sec = clock_pair.sec;
+-	tspec.tv_nsec = clock_pair.nsec;
+ 	spin_unlock(&kvm_ptp_lock);
+ 
+ 	memcpy(ts, &tspec, sizeof(struct timespec64));
+@@ -166,21 +136,13 @@ static void __exit ptp_kvm_exit(void)
+ 
+ static int __init ptp_kvm_init(void)
+ {
+-	long ret;
+-
+-	if (!kvm_para_available())
+-		return -ENODEV;
+-
+-	clock_pair_gpa = slow_virt_to_phys(&clock_pair);
+-	hv_clock = pvclock_get_pvti_cpu0_va();
++	int ret;
+ 
+-	if (!hv_clock)
+-		return -ENODEV;
+-
+-	ret = kvm_hypercall2(KVM_HC_CLOCK_PAIRING, clock_pair_gpa,
+-			KVM_CLOCK_PAIRING_WALLCLOCK);
+-	if (ret == -KVM_ENOSYS || ret == -KVM_EOPNOTSUPP)
+-		return -ENODEV;
++	ret = kvm_arch_ptp_init();
++	if (ret) {
++		pr_err("fail to initialize ptp_kvm");
++		return -EOPNOTSUPP;
++	}
+ 
+ 	kvm_ptp_clock.caps = ptp_kvm_caps;
+ 
+diff --git a/drivers/ptp/ptp_kvm_x86.c b/drivers/ptp/ptp_kvm_x86.c
+new file mode 100644
+index 000000000000..aabed1b08a0d
+--- /dev/null
++++ b/drivers/ptp/ptp_kvm_x86.c
+@@ -0,0 +1,89 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Virtual PTP 1588 clock for use with KVM guests
++ *
++ * Copyright (C) 2017 Red Hat Inc.
++ */
++
++#include <linux/device.h>
++#include <linux/kernel.h>
++#include <asm/pvclock.h>
++#include <asm/kvmclock.h>
++#include <linux/module.h>
++#include <uapi/asm/kvm_para.h>
++#include <uapi/linux/kvm_para.h>
++#include <linux/ptp_clock_kernel.h>
++
++phys_addr_t clock_pair_gpa;
++struct kvm_clock_pairing clock_pair;
++struct pvclock_vsyscall_time_info *hv_clock;
++
++int kvm_arch_ptp_init(void)
++{
++	int ret;
++
++	if (!kvm_para_available())
++		return -ENODEV;
++
++	clock_pair_gpa = slow_virt_to_phys(&clock_pair);
++	hv_clock = pvclock_get_pvti_cpu0_va();
++	if (!hv_clock)
++		return -ENODEV;
++
++	ret = kvm_hypercall2(KVM_HC_CLOCK_PAIRING, clock_pair_gpa,
++			     KVM_CLOCK_PAIRING_WALLCLOCK);
++	if (ret == -KVM_ENOSYS || ret == -KVM_EOPNOTSUPP)
++		return -ENODEV;
++
++	return 0;
++}
++
++int kvm_arch_ptp_get_clock(struct timespec64 *ts)
++{
++	long ret;
++
++	ret = kvm_hypercall2(KVM_HC_CLOCK_PAIRING,
++			     clock_pair_gpa,
++			     KVM_CLOCK_PAIRING_WALLCLOCK);
++	if (ret != 0)
++		return -EOPNOTSUPP;
++
++	ts->tv_sec = clock_pair.sec;
++	ts->tv_nsec = clock_pair.nsec;
++
++	return 0;
++}
++
++int kvm_arch_ptp_get_crosststamp(unsigned long *cycle, struct timespec64 *tspec,
++			      struct clocksource **cs)
++{
++	unsigned long ret;
++	unsigned int version;
++	int cpu;
++	struct pvclock_vcpu_time_info *src;
++
++	cpu = smp_processor_id();
++	src = &hv_clock[cpu].pvti;
++
++	do {
++		/*
++		 * We are using a TSC value read in the hosts
++		 * kvm_hc_clock_pairing handling.
++		 * So any changes to tsc_to_system_mul
++		 * and tsc_shift or any other pvclock
++		 * data invalidate that measurement.
++		 */
++		version = pvclock_read_begin(src);
++
++		ret = kvm_hypercall2(KVM_HC_CLOCK_PAIRING,
++				     clock_pair_gpa,
++				     KVM_CLOCK_PAIRING_WALLCLOCK);
++		tspec->tv_sec = clock_pair.sec;
++		tspec->tv_nsec = clock_pair.nsec;
++		*cycle = __pvclock_read_cycles(src, clock_pair.tsc);
++	} while (pvclock_read_retry(src, version));
++
++	*cs = &kvm_clock;
++
++	return 0;
++}
+-- 
+2.17.1
 
 
 _______________________________________________
