@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D4DC1FFFCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 03:38:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 145131FFFDD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 03:48:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b+AcWogUmECzGN74Wqrm2sjNLph5H5vCSBldZmU6Xbk=; b=EraQ4IQ4XLlekW
-	w+VywId8OEsrZ+mAbLafr8D1yHCDhIDz5zRDDdRNkNW8YkGxmGeXbXbQCjo9J8+lqtPhAbrmtrPXU
-	EHd4RTuHBb/oHkCzDhaqDEejreLJ0smDHC9xi45lh1xQFoo3cGLOBOOPW3lVYrt9aG32n+f944Tvn
-	jdLC9SDVt1unh7v42+1a0qZp05dLdaNtvGxQqzL4zxrOie8OVF2fC9yn1IQ2Ho84t36PQf+MaJb8g
-	vxxtI12TBR/gNGrmNicbB0+/VlpOpqIzXwWsvhEkRrXk2tlwd8uelo9NcRurMDBq1Ivy7cz0B02lm
-	vn2CtIMBRqjMe37RrXtg==;
+	List-Owner; bh=BUb/QF0RYMdgUvF0oMIiKIVmPWBVhIKOqUYjliBrCog=; b=qXVeXO7b0fveVz
+	NUXlo/Q/XaTTwBKTDvTjAxMvk4+uRTTO7lC10Hfza0uBvEGpDka8CBIguY7FTtrjIFONNareE/C7S
+	d6Z0phl7WRjhbT+LIw9Do86JUdwipgZEGWew+BoaGr9qPP4M8FMWuRHPE6U5lUS9I6EvSb8o80R9z
+	581NCO3YkjcfxkSDHDPtP2nRvL4hJwSdXgN6cyTHuOqlX9gDzrcrhNoyVBWCyJ4wOvVwCvvLUlmWA
+	aVpL1+zHYrJChXSOVxOfNfNznH2gE05hpQMf1yB0hwsFAMxkXCszwstdINAn4w0smE8niJLkM/V/b
+	5dBEMnrF1u8cXaqpp6tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jm5zQ-0003Dm-Oc; Fri, 19 Jun 2020 01:38:44 +0000
-Received: from mail-il1-f193.google.com ([209.85.166.193])
+	id 1jm68S-000179-G7; Fri, 19 Jun 2020 01:48:04 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jm5zE-0003Cz-UY
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 01:38:34 +0000
-Received: by mail-il1-f193.google.com with SMTP id 9so7836494ilg.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 18:38:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=XYe4dm89OvAp8NEAW4Mj6NX5Hz+7LzKddjXjWWo+/oA=;
- b=bz5sh9a8CHSHrsF/jdeAQt7lWd9EqY4TXqrjwNeQ/35lcO7eZc+rEtv+y/H0edaQo6
- XtATrQqtPqQQRrZI1xxGBfvsx9t1Iy8mEVmS90VlO0IAVHh2nkkOJeK0enpnsnjx1Qw0
- iNRPiMaHSaA3FUdzXVwEFMMtxLZRt2dAvSaxarUZDpfMmlCZqb+kkcovMvWeFmtE2GB9
- kVrG4kFWXWI1bIdNQZl5Y3+h7apuS5kl9sPipDwEOpqav6gZMabYP84ZLAo8iq81+qw6
- +WOOwn0OPEcNaFTgxU0HdIWPoOUba/+vp3bitrVedybOBAYs2tVIdb1MxhPQ3BtykCAs
- t4mg==
-X-Gm-Message-State: AOAM532D3+1l5BCaCSAT9k7tUwDDrY5pzkqoRpSZLq9PlcB/mS2WKptV
- PHQghULcBnmaL3BQ+LCVBqc=
-X-Google-Smtp-Source: ABdhPJxBolKVx4TEXm9JJNyf4PvqzmqX6Mg/A7H1vOeO8iTVX7Nm4yElXMnQyAEt9w4m2bvywoLVsg==
-X-Received: by 2002:a92:d112:: with SMTP id a18mr1353053ilb.3.1592530711973;
- Thu, 18 Jun 2020 18:38:31 -0700 (PDT)
-Received: from localhost ([2601:647:5b00:1161:a4cc:eef9:fbc0:2781])
- by smtp.gmail.com with ESMTPSA id z16sm2386746ilz.64.2020.06.18.18.38.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 18:38:31 -0700 (PDT)
-Date: Thu, 18 Jun 2020 18:38:30 -0700
-From: Moritz Fischer <mdf@kernel.org>
-To: Luca Ceresoli <luca@lucaceresoli.net>
-Subject: Re: [PATCH 3/5] fpga manager: xilinx-spi: remove unneeded, mistyped
- variables
-Message-ID: <20200619013830.GC3685@epycbox.lan>
-References: <20200611211144.9421-1-luca@lucaceresoli.net>
- <20200611211144.9421-3-luca@lucaceresoli.net>
+ id 1jm68J-00015V-45; Fri, 19 Jun 2020 01:47:56 +0000
+X-UUID: 70a54a09e5934659829bcf1d3912993c-20200618
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=DE1s9SBibd4ThP5Mt1aI+rVY3mxb520JHblT3mUqGaQ=; 
+ b=nPYs9bQSvMx758JJes/N3Y8rvqsdPvHmviSI1TY6cSoPhSkjVX3Bmzk7BUDczhxNNAtPCh9+pATpCY2K/6fX/he20/r8cXVlnMmHS159p+QMO59fvhnPatJVJ2ctHETzepaZc5tN9PDF8fNQHm/KIHoRrmGU6+bGJUj3uO84ge8=;
+X-UUID: 70a54a09e5934659829bcf1d3912993c-20200618
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1401431628; Thu, 18 Jun 2020 17:47:49 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 18 Jun 2020 18:47:42 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 19 Jun 2020 09:47:39 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 19 Jun 2020 09:47:44 +0800
+Message-ID: <1592531264.19628.2.camel@mtkswgap22>
+Subject: Re: Security Random Number Generator support
+From: Neal Liu <neal.liu@mediatek.com>
+To: Marc Zyngier <maz@kernel.org>
+Date: Fri, 19 Jun 2020 09:47:44 +0800
+In-Reply-To: <c3d5d4a79c7fe158cae117ff79ab332b@kernel.org>
+References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
+ <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
+ <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
+ <1591169342.4878.9.camel@mtkswgap22>
+ <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
+ <1591170857.19414.5.camel@mtkswgap22>
+ <c3d5d4a79c7fe158cae117ff79ab332b@kernel.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200611211144.9421-3-luca@lucaceresoli.net>
+X-TM-SNTS-SMTP: DFDBAF610BC86DD2371E32B64FAA3749787DA7AB10884CFFC46B8422DC8468052000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_183832_982767_E4502095 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200618_184755_170496_2015A8BF 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [moritz.fischer.private[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,65 +89,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-fpga@vger.kernel.org,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Moritz Fischer <mdf@kernel.org>,
- Anatolij Gustschin <agust@denx.de>, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>, Julius Werner <jwerner@google.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>, Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>, Jose.Marinho@arm.com,
+ Sean Wang <sean.wang@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org, Ard
+ Biesheuvel <ardb@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 11:11:42PM +0200, Luca Ceresoli wrote:
-> Using variables does not add readability here: parameters passed
-> to udelay*() are obviously in microseconds and their meaning is clear
-> from the context.
-> 
-> The type is also wrong, udelay expects an unsigned long.
-> 
-> Signed-off-by: Luca Ceresoli <luca@lucaceresoli.net>
-> ---
->  drivers/fpga/xilinx-spi.c | 6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/fpga/xilinx-spi.c b/drivers/fpga/xilinx-spi.c
-> index 79106626c3f8..799ae04301be 100644
-> --- a/drivers/fpga/xilinx-spi.c
-> +++ b/drivers/fpga/xilinx-spi.c
-> @@ -41,8 +41,6 @@ static int xilinx_spi_write_init(struct fpga_manager *mgr,
->  				 const char *buf, size_t count)
->  {
->  	struct xilinx_spi_conf *conf = mgr->priv;
-> -	const size_t prog_latency_7500us = 7500;
-> -	const size_t prog_pulse_1us = 1;
->  
->  	if (info->flags & FPGA_MGR_PARTIAL_RECONFIG) {
->  		dev_err(&mgr->dev, "Partial reconfiguration not supported.\n");
-> @@ -51,7 +49,7 @@ static int xilinx_spi_write_init(struct fpga_manager *mgr,
->  
->  	gpiod_set_value(conf->prog_b, 1);
->  
-> -	udelay(prog_pulse_1us); /* min is 500 ns */
-> +	udelay(1); /* min is 500 ns */
->  
->  	gpiod_set_value(conf->prog_b, 0);
->  
-> @@ -61,7 +59,7 @@ static int xilinx_spi_write_init(struct fpga_manager *mgr,
->  	}
->  
->  	/* program latency */
-> -	usleep_range(prog_latency_7500us, prog_latency_7500us + 100);
-> +	usleep_range(7500, 7600);
->  	return 0;
->  }
->  
-> -- 
-> 2.27.0
-> 
-Applied to for-next,
+Hi Marc,
 
-Thanks!
+On Thu, 2020-06-18 at 10:50 +0100, Marc Zyngier wrote:
+> On 2020-06-03 08:54, Neal Liu wrote:
+> 
+> Hi Neal,
+> 
+> > Do you know which ARM expert could edict this standard?
+> > Or is there any chance that we can make one? And be reviewed by
+> > maintainers?
+> 
+> It appears that ARM just released a beta version of the spec at [1].
+> 
+> I'd encourage you (and anyone else) to have a look at it and provide 
+> feedback to ARM.
+> 
+> Thanks,
+> 
+>          M.
+> 
+> [1] 
+> https://developer.arm.com/-/media/Files/pdf/DEN0098-True_Random_Number_Generator_Firmware_Interface-1.0BET2.pdf
 
+I also received this spec from ARM. I'll take a look and see if it meets
+our needs.
+Thanks for your sharing.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
