@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84B3E1FFFC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 03:38:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D4DC1FFFCC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 03:38:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gcKDXkQu2nCfSGa70XoMBb+KH/V1ltxXIAR53RHUtn8=; b=HgCjSgOX+Iw6JN
-	Fk4yay2XqeO+325+RSgox2BjCL1xR56c5a2oqbGaDoG+wuTZmIicylHVc6Fwmgo7TKUP/UFbdXiBX
-	H2R3cXr7yPLAajActLac6w/p+Vqvf14dhDEza7wPeA4VMvJeAQ3FPpl6mZ/zfterHrqDJKOImjMLg
-	/4omreLSfj6TxWCqY/VBsuORC8/J3ces+i+3LHpUGePaO6I9oRVOa9jtKgQQvgMlO7CSuvJatsWna
-	WZwNIK6a7OwKkq1ZEKL4wnnmTyQTwkpGtMvDq5M8x4GRsHVtsBvL26BoTV3r9IQp5gF2PeZWzYCx6
-	f2PVFdZP6OXqpSRWG6IQ==;
+	List-Owner; bh=b+AcWogUmECzGN74Wqrm2sjNLph5H5vCSBldZmU6Xbk=; b=EraQ4IQ4XLlekW
+	w+VywId8OEsrZ+mAbLafr8D1yHCDhIDz5zRDDdRNkNW8YkGxmGeXbXbQCjo9J8+lqtPhAbrmtrPXU
+	EHd4RTuHBb/oHkCzDhaqDEejreLJ0smDHC9xi45lh1xQFoo3cGLOBOOPW3lVYrt9aG32n+f944Tvn
+	jdLC9SDVt1unh7v42+1a0qZp05dLdaNtvGxQqzL4zxrOie8OVF2fC9yn1IQ2Ho84t36PQf+MaJb8g
+	vxxtI12TBR/gNGrmNicbB0+/VlpOpqIzXwWsvhEkRrXk2tlwd8uelo9NcRurMDBq1Ivy7cz0B02lm
+	vn2CtIMBRqjMe37RrXtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jm5z6-0002x7-26; Fri, 19 Jun 2020 01:38:24 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jm5zQ-0003Dm-Oc; Fri, 19 Jun 2020 01:38:44 +0000
+Received: from mail-il1-f193.google.com ([209.85.166.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jm5ys-0002wF-Sc
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 01:38:12 +0000
-Received: by mail-il1-f195.google.com with SMTP id 9so7835928ilg.12
+ id 1jm5zE-0003Cz-UY
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 01:38:34 +0000
+Received: by mail-il1-f193.google.com with SMTP id 9so7836494ilg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jun 2020 18:38:09 -0700 (PDT)
+ Thu, 18 Jun 2020 18:38:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=Ipp8uVtoQzp7J8CQ83R/TtPzLH+p8MFeBwT9doR7Bw8=;
- b=KCNiTGhrSx9rl3gL10eymLMqQWkYiZrHUiwk2kbibfT7hqJbJjmOMIYixSItJPCBCn
- y5mVLsK6YwRjYXTTOJNJO+z3fkHBMt9ACn4HQVZcKVQV09Z6bQVv3tr5CnxTQVDiCHuL
- LT6BaysWdj7GB2t2lpBiiW++K95hUwTy6c4juedeASBQ5zXeiU36cb4S6KWLeyWMELuh
- BtxXxoOuCAOcc0iKPjsGz+xzDmPqHXGQ18i/Amz1763T6RMEqF83+04Z7AOnXmgEH8Cq
- rQtzgrstbOInR5w0pBu77DSA7yOkeUef6wOLV2D1u4Lfsn2DAwWjx9l5o8yiugCvxmA1
- RNnQ==
-X-Gm-Message-State: AOAM532HhVkqZkFgnMV4FfNj3iNig2nqTODmMJIg1dNkH0RWLcQO/CPG
- rMfvRNIAhLEmm9nlq8qy2Ag=
-X-Google-Smtp-Source: ABdhPJyMasH+ZMphKT3AZHNSh9RoTjEPaUpLIsSQB9A+7bEUSCOiWkJq+p4UzJxMEzOYsMS9CZkwxw==
-X-Received: by 2002:a92:5b15:: with SMTP id p21mr1456935ilb.22.1592530689102; 
- Thu, 18 Jun 2020 18:38:09 -0700 (PDT)
+ bh=XYe4dm89OvAp8NEAW4Mj6NX5Hz+7LzKddjXjWWo+/oA=;
+ b=bz5sh9a8CHSHrsF/jdeAQt7lWd9EqY4TXqrjwNeQ/35lcO7eZc+rEtv+y/H0edaQo6
+ XtATrQqtPqQQRrZI1xxGBfvsx9t1Iy8mEVmS90VlO0IAVHh2nkkOJeK0enpnsnjx1Qw0
+ iNRPiMaHSaA3FUdzXVwEFMMtxLZRt2dAvSaxarUZDpfMmlCZqb+kkcovMvWeFmtE2GB9
+ kVrG4kFWXWI1bIdNQZl5Y3+h7apuS5kl9sPipDwEOpqav6gZMabYP84ZLAo8iq81+qw6
+ +WOOwn0OPEcNaFTgxU0HdIWPoOUba/+vp3bitrVedybOBAYs2tVIdb1MxhPQ3BtykCAs
+ t4mg==
+X-Gm-Message-State: AOAM532D3+1l5BCaCSAT9k7tUwDDrY5pzkqoRpSZLq9PlcB/mS2WKptV
+ PHQghULcBnmaL3BQ+LCVBqc=
+X-Google-Smtp-Source: ABdhPJxBolKVx4TEXm9JJNyf4PvqzmqX6Mg/A7H1vOeO8iTVX7Nm4yElXMnQyAEt9w4m2bvywoLVsg==
+X-Received: by 2002:a92:d112:: with SMTP id a18mr1353053ilb.3.1592530711973;
+ Thu, 18 Jun 2020 18:38:31 -0700 (PDT)
 Received: from localhost ([2601:647:5b00:1161:a4cc:eef9:fbc0:2781])
- by smtp.gmail.com with ESMTPSA id a187sm705318iog.2.2020.06.18.18.38.08
+ by smtp.gmail.com with ESMTPSA id z16sm2386746ilz.64.2020.06.18.18.38.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 18:38:08 -0700 (PDT)
-Date: Thu, 18 Jun 2020 18:38:07 -0700
+ Thu, 18 Jun 2020 18:38:31 -0700 (PDT)
+Date: Thu, 18 Jun 2020 18:38:30 -0700
 From: Moritz Fischer <mdf@kernel.org>
 To: Luca Ceresoli <luca@lucaceresoli.net>
-Subject: Re: [PATCH 2/5] fpga manager: xilinx-spi: valid for the 7 Series too
-Message-ID: <20200619013807.GB3685@epycbox.lan>
+Subject: Re: [PATCH 3/5] fpga manager: xilinx-spi: remove unneeded, mistyped
+ variables
+Message-ID: <20200619013830.GC3685@epycbox.lan>
 References: <20200611211144.9421-1-luca@lucaceresoli.net>
- <20200611211144.9421-2-luca@lucaceresoli.net>
+ <20200611211144.9421-3-luca@lucaceresoli.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200611211144.9421-2-luca@lucaceresoli.net>
+In-Reply-To: <20200611211144.9421-3-luca@lucaceresoli.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_183810_920539_B0D8B100 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20200618_183832_982767_E4502095 
+X-CRM114-Status: GOOD (  16.22  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
+ no trust [209.85.166.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -73,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
+ [209.85.166.193 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -96,33 +97,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 11:11:41PM +0200, Luca Ceresoli wrote:
-> The Xilinx 7-series uses the same protocol, mention that.
+On Thu, Jun 11, 2020 at 11:11:42PM +0200, Luca Ceresoli wrote:
+> Using variables does not add readability here: parameters passed
+> to udelay*() are obviously in microseconds and their meaning is clear
+> from the context.
+> 
+> The type is also wrong, udelay expects an unsigned long.
 > 
 > Signed-off-by: Luca Ceresoli <luca@lucaceresoli.net>
 > ---
->  drivers/fpga/xilinx-spi.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/fpga/xilinx-spi.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
 > 
 > diff --git a/drivers/fpga/xilinx-spi.c b/drivers/fpga/xilinx-spi.c
-> index 272ee0c22822..79106626c3f8 100644
+> index 79106626c3f8..799ae04301be 100644
 > --- a/drivers/fpga/xilinx-spi.c
 > +++ b/drivers/fpga/xilinx-spi.c
-> @@ -1,6 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0-only
->  /*
-> - * Xilinx Spartan6 Slave Serial SPI Driver
-> + * Xilinx Spartan6 and 7 Series Slave Serial SPI Driver
->   *
->   * Copyright (C) 2017 DENX Software Engineering
->   *
+> @@ -41,8 +41,6 @@ static int xilinx_spi_write_init(struct fpga_manager *mgr,
+>  				 const char *buf, size_t count)
+>  {
+>  	struct xilinx_spi_conf *conf = mgr->priv;
+> -	const size_t prog_latency_7500us = 7500;
+> -	const size_t prog_pulse_1us = 1;
+>  
+>  	if (info->flags & FPGA_MGR_PARTIAL_RECONFIG) {
+>  		dev_err(&mgr->dev, "Partial reconfiguration not supported.\n");
+> @@ -51,7 +49,7 @@ static int xilinx_spi_write_init(struct fpga_manager *mgr,
+>  
+>  	gpiod_set_value(conf->prog_b, 1);
+>  
+> -	udelay(prog_pulse_1us); /* min is 500 ns */
+> +	udelay(1); /* min is 500 ns */
+>  
+>  	gpiod_set_value(conf->prog_b, 0);
+>  
+> @@ -61,7 +59,7 @@ static int xilinx_spi_write_init(struct fpga_manager *mgr,
+>  	}
+>  
+>  	/* program latency */
+> -	usleep_range(prog_latency_7500us, prog_latency_7500us + 100);
+> +	usleep_range(7500, 7600);
+>  	return 0;
+>  }
+>  
 > -- 
 > 2.27.0
 > 
-
 Applied to for-next,
 
-Thanks
+Thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
