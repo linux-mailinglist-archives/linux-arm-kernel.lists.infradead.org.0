@@ -2,68 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 720742005E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:01:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 387CF2005DE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:01:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FDNy4Wnx2hQRHcKzmqZBVLQkAnt9keKvx+QzC+Lr3+0=; b=mPtLm65L6XFTsO
-	clPjNzzY9yQHKzBmhd3dVMfQlDg+dW8r/RxkPaPtYZFun466hUwscXbo0wfg7/43IdohDjAjxaaHX
-	6vfapTsEs1hFAiybMP0nGVX8Y35MM5kzkaFT4Iu26tjfzHpO2LlzCzPVRzeZ3OQQR77/C7lTP6lct
-	3p3gREdTDQcFYUWRPjmJ/lVBDmQAQSbOkcEYRnRYqGj71sM5qsUxZtKqMiu3BZ1PzUPKhcaW4sTlu
-	o6becEYUZPHQcX6hO/HZrqlt+6aFrBlK+NbG7SWK1tNdEtcTo0/xy9lJJ1nLnb+/czBLEKq+uB6gL
-	vD2BLWYQksQKjTMKS6mA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=m2M2umqQR0fRM2MitQ4dRTCPrIGjjdQdE8m1Zhtj694=; b=NmXBXC2R1MdQZe
+	ggHnePlQ+WwnG7bxPzH4lRkEqEe0eW67t7WeH3CQGYgIcX+PLIV3jAt8wciAWNUZXVXYLeQmjw/+Q
+	exftWYeGEzhMHBOjFWabxnBz/Qz0GOae7q0DNCdjHKXPD/uKAv3vOpt2nFTMhZywZl4waxbwMB57E
+	mhcPzFCjFHJ+39NahG2hWwOn5l0T2m/8SXwNgLQNSeRRboCE5TGWbH3Apr2wF3vlp0NP8uzu/hfHW
+	sTClhBwjelC6kCi9ZMbDitFcXFgnxsCmirsMLrA59CYPcgs3RRMaYh9BiJUUcQz4ssUgsuSVyug8G
+	kGvHwsUodpXN+/+mgBww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmDXX-0005NC-ED; Fri, 19 Jun 2020 09:42:27 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jmDpL-0003VD-9g; Fri, 19 Jun 2020 10:00:51 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmDXL-0005ME-3M; Fri, 19 Jun 2020 09:42:16 +0000
-X-UUID: bae763d8d5284383a1462e4494f386ac-20200619
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=h/UQEjXf6uvMc+oxKD1tqte0usDqTFwha7l55rvLaKo=; 
- b=QswppJNE8Ds+KTlNb4GTUjbx8Mwd1ZIxbpmoFoyOHYUXyHOIIwYqL8ynRW3GxH8zBjnuM1YgwGjf2KhNut+MBfyImRbeDnJ+Nu4q3pXCydo/Qn8JShmRu1SXVeq8e7lY5vcKREp3tjDwhWm4UpXbkVuHh53LoF+F7EkzZwf1AmA=;
-X-UUID: bae763d8d5284383a1462e4494f386ac-20200619
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <neal.liu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 717118113; Fri, 19 Jun 2020 01:42:57 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 02:42:05 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 17:42:01 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Fri, 19 Jun 2020 17:42:01 +0800
-From: Neal Liu <neal.liu@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v2 1/2] dt-bindings: devapc: add bindings for devapc-mt6873
-Date: Fri, 19 Jun 2020 17:41:59 +0800
-Message-ID: <1592559720-8482-2-git-send-email-neal.liu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1592559720-8482-1-git-send-email-neal.liu@mediatek.com>
-References: <1592559720-8482-1-git-send-email-neal.liu@mediatek.com>
+ id 1jmDpA-0003Tm-G2
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 10:00:44 +0000
+Received: by mail-wr1-x442.google.com with SMTP id v3so1591793wrc.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jun 2020 03:00:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=UZXWIhi2JKTWw6Cc/lNPfLOjvy62Sib67v3SwJdAy9E=;
+ b=TjdV8onDBzT2Fd5JUETTWnxdRXMWvNSPi67LA6nIqFPpqNiJvobLr0ALm9aRibwrHX
+ YaTjaIZZ6p5StfugYuDi63G88gDDBSKRz/PlrRIts6IaGq88ODld47jQFXkvAJ+0Kcn0
+ bQSWZ5vQhGfCLFlKWYnkIJyvKoAwFvfRslVJzIjTzw9FISHJxymMTd86EETalUOUTAzw
+ NRfAMrOSBxynfNkfPIGplyFLrm6QiI87tnbVq34bVCbZtgEn5Y8P27BWCgKksyPagdLX
+ 8BNRO0PRaNITkYUMIFTh/w12Wvit+Nmlk/xE2zeYqqf/JIhBvPNUfrww9nnPCKOycdpi
+ 70mw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=UZXWIhi2JKTWw6Cc/lNPfLOjvy62Sib67v3SwJdAy9E=;
+ b=LxkYgT8GVUZ7zRIl+tu767y1F4SxYo8NN9AgCkpHhH5zqxL9eho3ABxxIwO8V+s5Ko
+ 6CKTcAZnn7AdURtTjgZj8l4Z76Y4RhjUHPcYHF/tFt2sPmpH8mDp7/eF3qyUnsX2a6g4
+ mreRzch4Mj8kVxZHqlVjWtffjfpPXBAwLfDZLcbko1eYk78FBre2WdFe5vYlnm1R9OOl
+ rFA2R1IGBclcCDj+BtWbjfEnlDud8COup1zrdD9A6TvSwlrp4YP9GC3WdBHxg1GOQFPu
+ AzOiFAncn7ommUP31kSqU4cXy9EcKUskoy6wAFLY1UCEkN6OFTrDjENxVJVdT5LkUufg
+ p8wQ==
+X-Gm-Message-State: AOAM530oaVpAU+K9QyPjqA+sbgjn3Uf0Za40kL9IhEVm73rq1e8SsTLx
+ FaweMkVXu0vK/sTbvEBg/W4=
+X-Google-Smtp-Source: ABdhPJws5B4LSw3cMCL6rCQZt8DnliiIlRTYO2H/69HpgityD4xdHMWr1VCyqIzCIzn25aAs1eDWhw==
+X-Received: by 2002:a5d:498f:: with SMTP id r15mr3421592wrq.175.1592560838362; 
+ Fri, 19 Jun 2020 03:00:38 -0700 (PDT)
+Received: from skynet.lan (90.red-88-20-62.staticip.rima-tde.net.
+ [88.20.62.90])
+ by smtp.gmail.com with ESMTPSA id v6sm7164961wrf.61.2020.06.19.03.00.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 19 Jun 2020 03:00:37 -0700 (PDT)
+From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
+To: simon@fire.lp0.eu, jonas.gorski@gmail.com, kishon@ti.com, vkoul@kernel.org,
+ robh+dt@kernel.org, f.fainelli@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com, p.zabel@pengutronix.de,
+ krzk@kernel.org, gregkh@linuxfoundation.org, alcooperx@gmail.com,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v5 0/2] phy: bcm63xx-usbh: Add BCM63xx USBH driver
+Date: Fri, 19 Jun 2020 12:00:33 +0200
+Message-Id: <20200619100035.4032596-1-noltari@gmail.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_024215_150512_34716A72 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20200619_030042_833884_5BB40684 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [noltari[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -71,8 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,92 +103,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Neal Liu <neal.liu@mediatek.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add bindings for MT6873 devapc.
-
-Signed-off-by: Neal Liu <neal.liu@mediatek.com>
----
- .../soc/mediatek/devapc/devapc-mt6873.yaml         |   61 ++++++++++++++++++++
- 1 file changed, 61 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/soc/mediatek/devapc/devapc-mt6873.yaml
-
-diff --git a/Documentation/devicetree/bindings/soc/mediatek/devapc/devapc-mt6873.yaml b/Documentation/devicetree/bindings/soc/mediatek/devapc/devapc-mt6873.yaml
-new file mode 100644
-index 0000000..1deb7f6
---- /dev/null
-+++ b/Documentation/devicetree/bindings/soc/mediatek/devapc/devapc-mt6873.yaml
-@@ -0,0 +1,61 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+# # Copyright 2020 MediaTek Inc.
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/soc/mediatek/devapc/devapc-mt6873.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: MediaTek MT6873 Device Access Permission Control driver
-+
-+description: |
-+  MediaTek MT6873 bus frabric provides TrustZone security support and data
-+  protection to prevent slaves from being accessed by unexpected masters.
-+  The security violations are logged and sent to the processor for further
-+  analysis and countermeasures.
-+
-+maintainers:
-+  - Neal Liu <neal.liu@mediatek.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - mediatek,mt6873-devapc
-+
-+  reg:
-+    description: The base address of devapc register bank
-+    maxItems: 5
-+
-+  interrupts:
-+    description: A single interrupt specifier
-+    maxItems: 1
-+
-+  clocks:
-+    description: Contains module clock source and clock names
-+    maxItems: 1
-+
-+  clock-names:
-+    description: Names of the clocks list in clocks property
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/mt8183-clk.h>
-+    devapc: devapc@10207000 {
-+            compatible = "mediatek,mt6873-devapc";
-+            reg = <0 0x10207000 0 0x1000>,
-+                  <0 0x10274000 0 0x1000>,
-+                  <0 0x10275000 0 0x1000>,
-+                  <0 0x11020000 0 0x1000>,
-+                  <0 0x1020e000 0 0x1000>;
-+            interrupts = <GIC_SPI 187 IRQ_TYPE_LEVEL_HIGH>;
-+            clocks = <&infracfg CLK_INFRA_DEVICE_APC>;
-+            clock-names = "devapc-infra-clock";
-+    };
--- 
-1.7.9.5
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIEJDTTYzeHggVVNCSCBQSFkgZHJpdmVyIGZvciBCTUlQUy4KCnY1OiB1c2UgZGV2bV9yZXNl
+dF9jb250cm9sX2dldF9leGNsdXNpdmUuCnY0OiBmaXggZHQtYmluZGluZ3MgZG9jdW1lbnRhdGlv
+biBhbmQgaW1wcm92ZSBkZXZpY2UgbW9kZSBjb25maWcuCnYzOiBpbnRyb2R1Y2UgY2hhbmdlcyBz
+dWdnZXN0ZWQgYnkgRmxvcmlhbjoKIC0gQWRkIHN1cHBvcnQgZm9yIGRldmljZSBtb2RlLgp2Mjog
+aW50cm9kdWNlIGNoYW5nZXMgc3VnZ2VzdGVkIGJ5IEZsb3JpYW46CiAtIHBoeS1jZWxscyBjaGFu
+Z2VkIHRvIDEuCiAtIERyb3AgT0YgZGVwZW5kZW5jeSAodXNlIGRldmljZV9nZXRfbWF0Y2hfZGF0
+YSkuCiAtIERyb3AgX19pbml0Y29uc3QgZnJvbSB2YXJpYW50IHRhYmxlcy4KIC0gVXNlIGRldm1f
+Y2xrX2dldF9vcHRpb25hbC4KCsOBbHZhcm8gRmVybsOhbmRleiBSb2phcyAoMik6CiAgZHQtYmlu
+ZGluZ3M6IHBoeTogYWRkIGJjbTYzeHgtdXNiaCBiaW5kaW5ncwogIHBoeTogYmNtNjN4eC11c2Jo
+OiBBZGQgQkNNNjN4eCBVU0JIIGRyaXZlcgoKIC4uLi9iaW5kaW5ncy9waHkvYnJjbSxiY202M3h4
+LXVzYmgtcGh5LnlhbWwgICB8ICA4NCArKysrCiBkcml2ZXJzL3BoeS9icm9hZGNvbS9LY29uZmln
+ICAgICAgICAgICAgICAgICAgfCAgIDkgKwogZHJpdmVycy9waHkvYnJvYWRjb20vTWFrZWZpbGUg
+ICAgICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY202M3h4
+LXVzYmguYyAgICAgICB8IDQ1NyArKysrKysrKysrKysrKysrKysKIDQgZmlsZXMgY2hhbmdlZCwg
+NTUxIGluc2VydGlvbnMoKykKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2Rldmlj
+ZXRyZWUvYmluZGluZ3MvcGh5L2JyY20sYmNtNjN4eC11c2JoLXBoeS55YW1sCiBjcmVhdGUgbW9k
+ZSAxMDA2NDQgZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbTYzeHgtdXNiaC5jCgotLSAKMi4y
+Ny4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
