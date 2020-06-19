@@ -2,79 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58ABC200B4C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 16:22:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 165AE200B64
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 16:26:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8a1JL2wFPi7Q7eivoYXyG8Z2fRIkqS4iUHfSpaMoPlM=; b=Sz3girwYpUZBrG
-	cTyjPkU5FrbGrA5XGwS0RUqF/XpliWXwkf3upaQNCdnXAobWcbjWje7ZJQD5MQDJW8xy7rPF+VqjB
-	f0Lus8YrUsrtrGrDLnHceEsrFbfEh28xBZVW/wugU6iut2IMV40NYi7Q5F7CWSpFrEhHomkZnW+XQ
-	Nm/NcX2dK/h1OfzOM8h5KDWryDItnTlLLCFaAL4ciUDzctNcVj149n6GWRdKrvwHt5HM3IpDbv9y4
-	sZdtM2tllFcPIwQBjqKQgF0KcCNBsCb70UroZOjYuQ3m9YpCuMtv6rnxp/WkM8UU4/sg4T1/quprQ
-	Ax6taHojDlU4ccMI3OwQ==;
+	List-Owner; bh=jlE2Lvf/8o073fTp/wxH9VQuK38w79qCnWPd5TPFyj8=; b=kj2zjXAXe4IZ2+
+	0eKtua63KmurywAl1jBrJRzmJj0oM0IWq7cHVlFdWbSAGwc9XjnYtLbWcq1vGg3wL7ulSohxcAeO+
+	AyNSbkgLm62mKZv5pB0nR2l7uh9DwNuMYziuI3li7wMawIFg3K436iQnl7ghmc4mRUeG6auS5HIKo
+	G+zpyjL4b0/s/eYWJiraWO+xGZmUN4v8Ysaz0Hb7Foa1rv8VKkG2dBNS0JZp6+BTzWi79uMSRVlvQ
+	Cfix4aRyHvJaijnO+vvqMBmkAxg6BYH99ejQm2HqZOwLeIN1onBODq+GoUYjhA9zGVFdNN9kPG+FH
+	CHaYsLC0hL87Ea1Dv6cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmHuG-00012C-8B; Fri, 19 Jun 2020 14:22:12 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1jmHyd-0004GE-4N; Fri, 19 Jun 2020 14:26:43 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmHu3-00011h-67
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 14:22:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1592576518; x=1624112518;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=PKnFoxqQrAiroEcrPnCd5Y5Np27cClJYN9tqUhIZ/Xg=;
- b=g6pABK2bTmeUGYQioMYvtnpOcijPerN1f9fQS0CZ0AWHb9V8iw2W64Rl
- 1kStikK+l9a9Xpc8c/MI3sm1BDafqYOiwMlmkIN1Wqr0x8JeUkriXoSLD
- NrIwVHCoYBWG4fZ7Q2a+DMZFzTO3/FTKnFJ85LkfEOQCRNeGtvjTYmWXh
- KatlAU7H7dKWjDL4xt579gTGWQkPCF8qW0zOSfj+recB1Z2CmppsZ+9Ve
- Ps5hn1bYqBY361cT4+AaRXVgFaSfoq8LE+XHNB00ivRbswMG8PVEDwhNM
- loYdEYsXufcLKy9D3DPGmpxhPhCcGlTCU4IZGOLXcTpwI5bjDFYE03vWU w==;
-IronPort-SDR: llHCWxN4hggFAoPTbkYOKYaHtktya/T9B2Ag/hDD9VvHmE45igm4SL5Wkay8pEygalATBbfRia
- cf9ZVVjlfNqm6T9xsjEM6csv7gMMK3cLgdWRHvNYw2n1b4t9yJYUZbPywym4Kj5KaiO0E9R2Sz
- FI40TCihRLFDN/PABW8XPZl+VFigcLrEq7H/mg7aG/obRlcV8Uly+sucLK/hw/r7sv23kyD3NL
- pJXrrO4tvsORWA9PBkLW+VHxXwnL6VqasUQF90ysINxOvLi0f50qsEkDy3cLUN9FzHvO5WdVmW
- iMg=
-X-IronPort-AV: E=Sophos;i="5.75,255,1589266800"; d="scan'208";a="79101137"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 Jun 2020 07:21:58 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1979.3; Fri, 19 Jun 2020 07:21:49 -0700
-Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1979.3 via Frontend Transport; Fri, 19 Jun 2020 07:21:24 -0700
-From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-To: <linux-i2c@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-Subject: [RFC PATCH 4/4] i2c: at91: Move to generic GPIO bus recovery
-Date: Fri, 19 Jun 2020 17:19:04 +0300
-Message-ID: <20200619141904.910889-5-codrin.ciubotariu@microchip.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200619141904.910889-1-codrin.ciubotariu@microchip.com>
-References: <20200619141904.910889-1-codrin.ciubotariu@microchip.com>
+ id 1jmHyT-0004FS-0C
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 14:26:34 +0000
+Received: by mail-ed1-x541.google.com with SMTP id e12so7786108eds.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jun 2020 07:26:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=8bSED8zl4CrcAER1VVpY4315eH4pyEInk1CBmUlC8tM=;
+ b=iJvxOSObVw2uCB3dpRtcU1+kdibcBS4VTzuVUkFDbJVkDGJR2vlGw1hTcAs3wM2Tam
+ XGi4UOs8uNemmHbnWqlm0CCGzeFJ81SiGAP0SwH7Pq2QUFjq0FJY5CzfOnE0Tcvvxa2m
+ zuXPu5ApOTcKe/fumgtPG45HXts8sUHlDVrWYW02ekrxE9PYZ1ywUt16YRcoS/I3jUvL
+ 91dteczkbB3+8EXmotE3WGfHl++X8J55oGhOmEYbvRuO5ckaTbuRvRyHKFPfe8f02czo
+ lyY6L3nu3z9lFdHy1m0520iP8gG50EdpjIO7ycRH5byCsniK2u7Gtpwq+FFQI5OhqFqN
+ xmhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=8bSED8zl4CrcAER1VVpY4315eH4pyEInk1CBmUlC8tM=;
+ b=t204SwRaPePkhZ937lijIVe9HqwcBm7K/JBrqlr+o4A7qMAmJQOdzHvOKlMh3hjjCl
+ Cd7kNSuBlnYwfrN8809PyXJ7+p4n2VtDAWzwBFk3NWeQ/cNuZQjopXAYjb+t4nzCk+iK
+ WkrqKP+EWFiyJYVMQW0hflkUPRbkf7NoOL5AIryHIkpXjW2JsEabu5pcsER0sWqevHlf
+ mXSq/WXzJF8Oy8ckzJd6mw6AmYDctP5Co6AupX6EJgm+n/0Fj74U9/bg9UOY7+YEJcTD
+ KVF4NbpomeOqG+GewmKlhgnNpQfoytz0KkSue2ioCgsFRtcXttC8IrLtWZ6bIkmT9ZPe
+ VLLw==
+X-Gm-Message-State: AOAM530I1tE6WjuJ3MweLpSH/NWn8qX0f3tTg9JXZ8aFLaXtpc2ungBx
+ Q2KqmH+ZcD938KUGr0+wg6w=
+X-Google-Smtp-Source: ABdhPJyRnKu5OL+gzHHN41FCxTU48KdilWSjIzi6WQc3xDaIKuUdLn5JhaB8ICPJhCHJj3DTR4VdSA==
+X-Received: by 2002:a05:6402:a42:: with SMTP id
+ bt2mr3539290edb.42.1592576789902; 
+ Fri, 19 Jun 2020 07:26:29 -0700 (PDT)
+Received: from ltop.local ([2a02:a03f:b7f9:7600:904f:be8d:1d92:9974])
+ by smtp.gmail.com with ESMTPSA id j16sm4736461edp.35.2020.06.19.07.26.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 19 Jun 2020 07:26:29 -0700 (PDT)
+Date: Fri, 19 Jun 2020 16:26:28 +0200
+From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+To: Syed Nayyar Waris <syednwaris@gmail.com>
+Subject: Re: [PATCH v8 4/4] gpio: xilinx: Utilize for_each_set_clump macro
+Message-ID: <20200619142628.burfxyjoe5uouzuz@ltop.local>
+References: <46c05c5deeada60a13ee0de83c68583d578f42fd.1592224129.git.syednwaris@gmail.com>
+ <202006160420.iatdr9ab%lkp@intel.com>
+ <CACG_h5oiA8mDpTjtyGFYR4eptbxppN9tq+2wUj8T1hsbZ5h47A@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CACG_h5oiA8mDpTjtyGFYR4eptbxppN9tq+2wUj8T1hsbZ5h47A@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_072159_289807_F3CED941 
-X-CRM114-Status: GOOD (  12.02  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200619_072633_060085_F8B89735 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [68.232.149.84 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [luc.vanoostenryck[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,127 +101,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kamel.bouhara@bootlin.com, alexandre.belloni@bootlin.com,
- linux@armlinux.org.uk, wsa@kernel.org, ludovic.desroches@microchip.com,
- robh+dt@kernel.org, Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Cc: kbuild-all@lists.01.org, kernel test robot <lkp@intel.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make the Microchip at91 driver the first to use the generic GPIO bus
-recovery support from the I2C core and discard the driver implementation.
+On Tue, Jun 16, 2020 at 11:27:18AM +0530, Syed Nayyar Waris wrote:
 
-Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
----
- drivers/i2c/busses/i2c-at91-master.c | 69 ++--------------------------
- drivers/i2c/busses/i2c-at91.h        |  3 --
- 2 files changed, 3 insertions(+), 69 deletions(-)
+Hi, 
 
-diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
-index 363d540a8345..66864f9cf7ac 100644
---- a/drivers/i2c/busses/i2c-at91-master.c
-+++ b/drivers/i2c/busses/i2c-at91-master.c
-@@ -816,79 +816,16 @@ static int at91_twi_configure_dma(struct at91_twi_dev *dev, u32 phy_addr)
- 	return ret;
- }
- 
--static void at91_prepare_twi_recovery(struct i2c_adapter *adap)
--{
--	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
--
--	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_gpio);
--}
--
--static void at91_unprepare_twi_recovery(struct i2c_adapter *adap)
--{
--	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
--
--	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
--}
--
- static int at91_init_twi_recovery_gpio(struct platform_device *pdev,
- 				       struct at91_twi_dev *dev)
- {
- 	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
- 
--	dev->pinctrl = devm_pinctrl_get(&pdev->dev);
--	if (!dev->pinctrl || IS_ERR(dev->pinctrl)) {
-+	rinfo->pinctrl = devm_pinctrl_get(&pdev->dev);
-+	if (!rinfo->pinctrl || IS_ERR(rinfo->pinctrl)) {
- 		dev_info(dev->dev, "can't get pinctrl, bus recovery not supported\n");
--		return PTR_ERR(dev->pinctrl);
-+		return PTR_ERR(rinfo->pinctrl);
- 	}
--
--	dev->pinctrl_pins_default = pinctrl_lookup_state(dev->pinctrl,
--							 PINCTRL_STATE_DEFAULT);
--	dev->pinctrl_pins_gpio = pinctrl_lookup_state(dev->pinctrl,
--						      "gpio");
--	if (IS_ERR(dev->pinctrl_pins_default) ||
--	    IS_ERR(dev->pinctrl_pins_gpio)) {
--		dev_info(&pdev->dev, "pinctrl states incomplete for recovery\n");
--		return -EINVAL;
--	}
--
--	/*
--	 * pins will be taken as GPIO, so we might as well inform pinctrl about
--	 * this and move the state to GPIO
--	 */
--	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_gpio);
--
--	rinfo->sda_gpiod = devm_gpiod_get(&pdev->dev, "sda", GPIOD_IN);
--	if (PTR_ERR(rinfo->sda_gpiod) == -EPROBE_DEFER)
--		return -EPROBE_DEFER;
--
--	rinfo->scl_gpiod = devm_gpiod_get(&pdev->dev, "scl",
--					  GPIOD_OUT_HIGH_OPEN_DRAIN);
--	if (PTR_ERR(rinfo->scl_gpiod) == -EPROBE_DEFER)
--		return -EPROBE_DEFER;
--
--	if (IS_ERR(rinfo->sda_gpiod) ||
--	    IS_ERR(rinfo->scl_gpiod)) {
--		dev_info(&pdev->dev, "recovery information incomplete\n");
--		if (!IS_ERR(rinfo->sda_gpiod)) {
--			gpiod_put(rinfo->sda_gpiod);
--			rinfo->sda_gpiod = NULL;
--		}
--		if (!IS_ERR(rinfo->scl_gpiod)) {
--			gpiod_put(rinfo->scl_gpiod);
--			rinfo->scl_gpiod = NULL;
--		}
--		pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
--		return -EINVAL;
--	}
--
--	/* change the state of the pins back to their default state */
--	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
--
--	dev_info(&pdev->dev, "using scl, sda for recovery\n");
--
--	rinfo->prepare_recovery = at91_prepare_twi_recovery;
--	rinfo->unprepare_recovery = at91_unprepare_twi_recovery;
--	rinfo->recover_bus = i2c_generic_scl_recovery;
- 	dev->adapter.bus_recovery_info = rinfo;
- 
- 	return 0;
-diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
-index 7e7b4955ca7f..eae673ae786c 100644
---- a/drivers/i2c/busses/i2c-at91.h
-+++ b/drivers/i2c/busses/i2c-at91.h
-@@ -157,9 +157,6 @@ struct at91_twi_dev {
- 	struct at91_twi_dma dma;
- 	bool slave_detected;
- 	struct i2c_bus_recovery_info rinfo;
--	struct pinctrl *pinctrl;
--	struct pinctrl_state *pinctrl_pins_default;
--	struct pinctrl_state *pinctrl_pins_gpio;
- #ifdef CONFIG_I2C_AT91_SLAVE_EXPERIMENTAL
- 	unsigned smr;
- 	struct i2c_client *slave;
--- 
-2.25.1
+> Regarding the compilation warning reported above:
+> 
+> "sparse: shift too big (64) for type unsigned long" at line 639
+> "sparse: invalid access past the end of 'old' (8 8)" at line 638
+> 
+> Kindly refer to the code above, at these line numbers.
+> 
+> I am in the process of fixing this warning. But what would be the fix?
+> ? At the moment can't think of a code-fix to make the compilation
+> warning disappear (specially at line 639). Can anyone please explain
+> to me the meaning of the compilation warning more deeply?
 
+This error message is caused by sparse doing the check too early.
+There is thus nothing to be fixed for it in this code.
+
+Best regards,
+-- Luc
 
 _______________________________________________
 linux-arm-kernel mailing list
