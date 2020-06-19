@@ -2,58 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A043320194D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 19:21:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A2B720198F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 19:36:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mjgrU6DlmiDg9jzn0qoXSl1v3xpT4T1SFwGbuNJsisY=; b=Wloa9g/3ND46cv
-	5MhgXX19jahgiriUhj4BRdUp/npZbtA+2ukG5Mjkfl8y5Thc/mULlyptGdoLJcOMU/d8IRjUIYBhU
-	15OdelKoOLTAP4xRTf2Jy+FKPKb4O6fubgXT3MVQlKI1rCjkTfCaqAl9TxJWySPg9O+U5rN0cs+mU
-	MYY8908EuVrUf62rBKOdX/eWHuyRdrC+bjZuiA2WyltrqVGI4HOzNYefKWj08iOLB64SDkffp6REr
-	814TUW/4Q3ZhyjSuW6i2SZpwbiKMsEYt59m/BIHbOoYJVqQiwRNfcyLNZuhEOB+aFPntINbC/J4Si
-	5DSxOMTbQe4RN73s1eEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mz+PpnqlUeQLUSFJzxhr/dPhRYpw5qg37/kT2GGE9Mo=; b=kLV/7ezIVvZBQl
+	X4d4RN6S2btkKs/HMGSGDTHriq6z8ayUyGN7wnqrXskD7oucF5vVURD86BktDIkPf4IrADMqiHw3U
+	IK5trGwJBkK7a5VZ5wdeoZtCI7dRsv1Zu3vNwcpD+X4+64fe0F+CNC1ukVfV7Oe+7QjglgV+OJC0E
+	oHmQ1/I+wbdvCEmJCYaAePVmTmUvpTewvHR/HTcYDfG7KjUeTJ7BXdPPPjRX72iemdIr/Kzz+LvmU
+	GodRtD1v11gSl74MNkphcqxNbmNCVi/0rpEYjfyhx1hHxNtJ6iPcITo5dsOy+o64F0CAdK48X26l6
+	NHAWCu0i/arIxMcOSYTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmKi0-0008Tp-6Z; Fri, 19 Jun 2020 17:21:44 +0000
-Received: from mx.baikalchip.com ([94.125.187.42]
- helo=mail.baikalelectronics.ru)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmKhq-0008T9-OK
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 17:21:36 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 0C2A68030866;
- Fri, 19 Jun 2020 17:21:34 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at baikalelectronics.ru
-Received: from mail.baikalelectronics.ru ([127.0.0.1])
- by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id OQ1qZv5ucs0O; Fri, 19 Jun 2020 20:21:32 +0300 (MSK)
-Date: Fri, 19 Jun 2020 20:21:31 +0300
-From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Subject: Re: [PATCH RESEND v6 0/3] serial: 8250_dw: Fix ref clock usage
-Message-ID: <20200619172131.64qnaghsojgxetgf@mobilestation>
-References: <20200617224813.23853-1-Sergey.Semin@baikalelectronics.ru>
- <CAHp75VfPEdxN1UeKJ+gCWpgJymK7YzQs1Lznq1aBfoRNBiMHbQ@mail.gmail.com>
- <CAHp75VdD+=L4OQkwVDx2aLKRssW-qBQL2nsF48J=dCntU8N7Ng@mail.gmail.com>
+	id 1jmKwR-00010e-Lz; Fri, 19 Jun 2020 17:36:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jmKwJ-0000zo-M8
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 17:36:33 +0000
+Received: from embeddedor (unknown [189.207.59.248])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8B4AC207FC;
+ Fri, 19 Jun 2020 17:36:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592588190;
+ bh=L+tk6K8+KLeTw56G+NcQJe1v8l4u5Inpr28aIByN6bM=;
+ h=Date:From:To:Cc:Subject:From;
+ b=pFszgEe7W52VYhYygyQ81y07znn+5vd4rlFJsiO3UMl1RN0TlJ8AbdjXbaWwCm/2B
+ YYKLYOweHPapKY1Aoxb065KEKNpUvox6CHx7LTeNP1Ja5k3+QQPDs3AgB4xxaArU8c
+ oHfLTfSYF3i9C1z65G43J+1DpgFZdHNXiyXJ2Jts=
+Date: Fri, 19 Jun 2020 12:41:54 -0500
+From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
+To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jose Abreu <joabreu@synopsys.com>, "David S. Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Subject: [PATCH][next] net: stmmac: selftests: Use struct_size() in kzalloc()
+Message-ID: <20200619174154.GA21660@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAHp75VdD+=L4OQkwVDx2aLKRssW-qBQL2nsF48J=dCntU8N7Ng@mail.gmail.com>
-X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_102134_967420_6EEFC8D3 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200619_103631_744540_7F33FAB9 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,54 +78,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <mripard@kernel.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
- Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
- Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Tony Lindgren <tony@atomide.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Serge Semin <fancer.lancer@gmail.com>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>,
- Arnd Bergmann <arnd@arndb.de>,
- Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
- Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
- Jiri Slaby <jslaby@suse.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Will Deacon <will@kernel.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: netdev@vger.kernel.org, "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 18, 2020 at 11:31:44AM +0300, Andy Shevchenko wrote:
-> On Thu, Jun 18, 2020 at 11:17 AM Andy Shevchenko
-> <andy.shevchenko@gmail.com> wrote:
-> > On Thu, Jun 18, 2020 at 1:52 AM Serge Semin
-> > <Sergey.Semin@baikalelectronics.ru> wrote:
-> 
-> > I'm wondering how this will collaborate with runtime PM.
-> 
+Make use of the struct_size() helper instead of an open-coded version
+in order to avoid any potential type mistakes.
 
-> Forgot to mention the WIP repository [1] for runtime PM rework  (it
-> doesn't mean my comment against patch 3 is not valid). Tony and I are
-> working on it, you actually may be interested as well.
-> 
-> [1]: https://gitlab.com/andy-shev/next
+This code was detected with the help of Coccinelle and, audited and
+fixed manually.
 
-Thanks for the link. I'll take a look at the repo. Though our SoC doesn't
-require the RPM moderation that critically.
+Addresses-KSPP-ID: https://github.com/KSPP/linux/issues/83
+Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
+---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
--Sergey
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index e6696495f126..e113b1376fdd 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -1094,7 +1094,7 @@ static int stmmac_test_rxp(struct stmmac_priv *priv)
+ 	if (!priv->dma_cap.frpsel)
+ 		return -EOPNOTSUPP;
+ 
+-	sel = kzalloc(sizeof(*sel) + nk * sizeof(struct tc_u32_key), GFP_KERNEL);
++	sel = kzalloc(struct_size(sel, keys, nk), GFP_KERNEL);
+ 	if (!sel)
+ 		return -ENOMEM;
+ 
+-- 
+2.27.0
 
-> 
-> -- 
-> With Best Regards,
-> Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
