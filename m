@@ -2,75 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEC41200367
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 10:18:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3470D20037F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 10:21:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HkFjejsFFrQpZLKNlT5aYOYQ0GThRYXf40SwvfEpHjQ=; b=HxU8PYhxuyo3Eb
-	4CyzpUEm7oBg4BoZu0u/xvE6fNcQ9pqppR164EewMh+XRLNBYv0GwrWnkkYL7trWw1sh7r+vb46bV
-	9impekqAuEd3iEMqNi1nUPEkdyKqVzYRdDR+Jm4y+N26Zjxhr0ur/NhIfg4/fFqHlekt9OAgJIYFE
-	OI/Tk2g6mM2NjK/o0hO6uqFILuAZTYYecFpRYQ9xWvmeb1DZW4dGJv1OrlzVD3kY0LNV95uaK+pha
-	qvGglhaGshL+fdqjYn4KMkvpQfkcX/XTVMQmpQphTNlJP7i61Uxu1OQOCPNWmujxi/3s/aLYwd+9f
-	DGlLrvNLhKJA69uRygug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p086ORkCHJlT7HmrWxtGX4xDaHn0UPGt6WGZdEUKrfQ=; b=Um4pmJjXUK53WU
+	Bpz6Zfqg1I7iZMX2DkmkExcPgmaVaYrCUgOa0qg1ACz9OPMuXifij0vsULO2513hjuxrZ/mnjj/BA
+	6vOH/VG2s9gGL2AvHkKPro6FnB/NkDW6/xmT79i0M73GAesDcsLyMaX1nsga2GT7E+xamk99Iag+I
+	dlu7y96iDd1yaMXABu5hz/1NXoDD3ZBfOpLovLXYaSh9+UcAbULIynU3VMJvdGNTywwruSjRkK06Q
+	yxt4IyuS3Xv1VU22UKk7kQF0Pu2D+lRjVfP+U6ki5MsvhqCL3fSCQrb6RnMbO39RbuZIMjlh30uXz
+	tgIh4lf9eoFnEkTKZktg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmCET-0007ym-5H; Fri, 19 Jun 2020 08:18:41 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmCEK-0007yD-GR; Fri, 19 Jun 2020 08:18:33 +0000
-X-UUID: a686dedb6b2e4248b1ae541270a54c9d-20200619
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=orYip2cNeX4jAWulPNxTLp75KkNVytFZUfYQLd232YY=; 
- b=ZFv7NFOzKwkm0EPkaYYn6n4nFwzWMka7xmVFHI25rHIgRJAvLe3mQWi7rFriHLjw9eN9BNEnmQbO18b8fOBNbEPnOBgXc3sg0V75ruDKSLxr43glGaoFQX+dNCAp7ETR4c9/WSg43lx9JmftAB1M7ToqSLRWDS2kNBmSAIwG9+0=;
-X-UUID: a686dedb6b2e4248b1ae541270a54c9d-20200619
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <qiangming.xia@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1040147645; Fri, 19 Jun 2020 00:18:44 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 01:08:26 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 19 Jun 2020 16:08:25 +0800
-Received: from localhost.localdomain (10.15.20.246) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 19 Jun 2020 16:08:26 +0800
-From: Qiangming Xia <qiangming.xia@mediatek.com>
-To: <wsa@the-dreams.de>, Wolfram Sang <wsa+renesas@sang-engineering.com>
-Subject: [PATCH] i2c: mediatek: Add to support continuous mode
-Date: Fri, 19 Jun 2020 16:06:44 +0800
-Message-ID: <20200619080643.25269-1-qiangming.xia@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+	id 1jmCGp-0002aP-Sn; Fri, 19 Jun 2020 08:21:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jmCGH-0002Nt-JZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 08:20:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E408E2B;
+ Fri, 19 Jun 2020 01:20:27 -0700 (PDT)
+Received: from red-moon.arm.com (unknown [10.57.58.158])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6990E3F71F;
+ Fri, 19 Jun 2020 01:20:25 -0700 (PDT)
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 00/12] ACPI/OF: Upgrade MSI/IOMMU ID mapping APIs
+Date: Fri, 19 Jun 2020 09:20:01 +0100
+Message-Id: <20200619082013.13661-1-lorenzo.pieralisi@arm.com>
+X-Mailer: git-send-email 2.26.1
+In-Reply-To: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
+References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_011832_553078_AE6B4A44 
-X-CRM114-Status: GOOD (  11.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200619_012033_725984_B911742C 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,145 +61,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "qiangming.xia" <qiangming.xia@mediatek.com>, devicetree@vger.kernel.org,
- Qii Wang <Qii.Wang@mediatek.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Diana Craciun <diana.craciun@oss.nxp.com>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "qiangming.xia" <qiangming.xia@mediatek.com>
+This series is a v2 of a previous posting:
 
-    Mediatek i2c controller support for continuous mode,
-it allow to transfer once multiple writing messages of equal length.
-    For example, a slave need write a serial of non-continuous
-offset range in chip,e.g. writing offset 0,offset 2 and offset 4.
-Normally, it need three times i2c write operation. However,it can
-use once transfer to finish it by using continuous mode.
+v1 -> v2
 
-Change-Id: If06991e3fd32867bdeaacf15bb24864d5c5904d0
-Signed-off-by: Qiangming Xia <qiangming.xia@mediatek.com>
----
- drivers/i2c/busses/i2c-mt65xx.c | 67 +++++++++++++++++++++++++++++++++
- 1 file changed, 67 insertions(+)
+- Removed _rid() wrappers
+- Fixed !CONFIG_ACPI compilation issue
+- Converted of_pci_iommu_init() to use of_iommu_configure_dev_id()
 
-diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
-index deef69e56906..76ec65d869f6 100644
---- a/drivers/i2c/busses/i2c-mt65xx.c
-+++ b/drivers/i2c/busses/i2c-mt65xx.c
-@@ -97,6 +97,7 @@ enum mtk_trans_op {
- 	I2C_MASTER_WR = 1,
- 	I2C_MASTER_RD,
- 	I2C_MASTER_WRRD,
-+	I2C_MASTER_CONTINUOUS_WR,
- };
- 
- enum I2C_REGS_OFFSET {
-@@ -846,6 +847,9 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 					    OFFSET_TRANSFER_LEN);
- 		}
- 		mtk_i2c_writew(i2c, I2C_WRRD_TRANAC_VALUE, OFFSET_TRANSAC_LEN);
-+	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-+		mtk_i2c_writew(i2c, msgs->len / num, OFFSET_TRANSFER_LEN);
-+		mtk_i2c_writew(i2c, num, OFFSET_TRANSAC_LEN);
- 	} else {
- 		mtk_i2c_writew(i2c, msgs->len, OFFSET_TRANSFER_LEN);
- 		mtk_i2c_writew(i2c, num, OFFSET_TRANSAC_LEN);
-@@ -896,6 +900,23 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 			writel(reg_4g_mode, i2c->pdmabase + OFFSET_TX_4G_MODE);
- 		}
- 
-+		writel((u32)wpaddr, i2c->pdmabase + OFFSET_TX_MEM_ADDR);
-+		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
-+	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-+		writel(I2C_DMA_INT_FLAG_NONE, i2c->pdmabase + OFFSET_INT_FLAG);
-+		writel(I2C_DMA_CON_TX, i2c->pdmabase + OFFSET_CON);
-+		wpaddr = dma_map_single(i2c->dev, msgs->buf,
-+					msgs->len, DMA_TO_DEVICE);
-+		if (dma_mapping_error(i2c->dev, wpaddr)) {
-+			kfree(msgs->buf);
-+			return -ENOMEM;
-+		}
-+
-+		if (i2c->dev_comp->support_33bits) {
-+			reg_4g_mode = mtk_i2c_set_4g_mode(wpaddr);
-+			writel(reg_4g_mode, i2c->pdmabase + OFFSET_TX_4G_MODE);
-+		}
-+
- 		writel((u32)wpaddr, i2c->pdmabase + OFFSET_TX_MEM_ADDR);
- 		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
- 	} else {
-@@ -979,6 +1000,11 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 				 msgs->len, DMA_FROM_DEVICE);
- 
- 		i2c_put_dma_safe_msg_buf(dma_rd_buf, msgs, true);
-+	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-+		dma_unmap_single(i2c->dev, wpaddr,
-+				 msgs->len, DMA_TO_DEVICE);
-+
-+		kfree(msgs->buf);
- 	} else {
- 		dma_unmap_single(i2c->dev, wpaddr, msgs->len,
- 				 DMA_TO_DEVICE);
-@@ -1009,6 +1035,9 @@ static int mtk_i2c_transfer(struct i2c_adapter *adap,
- {
- 	int ret;
- 	int left_num = num;
-+	int i, j;
-+	u8 *dma_multi_wr_buf;
-+	struct i2c_msg multi_msg[1];
- 	struct mtk_i2c *i2c = i2c_get_adapdata(adap);
- 
- 	ret = mtk_i2c_clock_enable(i2c);
-@@ -1025,6 +1054,44 @@ static int mtk_i2c_transfer(struct i2c_adapter *adap,
- 		}
- 	}
- 
-+	if (num > 1) {
-+		for (i = 0; i < num - 1; i++) {
-+			if (!(msgs[i].flags & I2C_M_RD) && !(msgs[i+1].flags &
-+				I2C_M_RD) && (msgs[i].addr == msgs[i+1].addr)
-+					&& (msgs[i].len == msgs[i+1].len)) {
-+				continue;
-+			} else
-+				break;
-+		}
-+		if (i >= num - 1) {
-+			i2c->op = I2C_MASTER_CONTINUOUS_WR;
-+			j = 0;
-+			dma_multi_wr_buf = kzalloc(msgs->len * num, GFP_KERNEL);
-+			if (!dma_multi_wr_buf) {
-+				ret =  -ENOMEM;
-+				goto err_exit;
-+			}
-+			multi_msg->addr  = msgs->addr;
-+			multi_msg->len   = msgs->len * num;
-+			multi_msg->buf   = dma_multi_wr_buf;
-+			multi_msg->flags  = 0;
-+			while (j < num) {
-+				memcpy(dma_multi_wr_buf + msgs->len * j,
-+							msgs->buf, msgs->len);
-+				j++;
-+				msgs++;
-+				}
-+
-+			i2c->ignore_restart_irq = false;
-+			ret = mtk_i2c_do_transfer(i2c, multi_msg, num, 0);
-+			if (ret < 0)
-+				goto err_exit;
-+			ret = num;
-+				goto err_exit;
-+
-+		}
-+	}
-+
- 	if (i2c->auto_restart && num >= 2 && i2c->speed_hz > I2C_MAX_FAST_MODE_FREQ)
- 		/* ignore the first restart irq after the master code,
- 		 * otherwise the first transfer will be discarded.
+v1: https://lore.kernel.org/linux-arm-kernel/20200521130008.8266-1-lorenzo.pieralisi@arm.com/
+
+Original cover letter
+---------------------
+
+Firmware bindings provided in the ACPI IORT table[1] and device tree
+bindings define rules to carry out input/output ID mappings - ie
+retrieving an IOMMU/MSI controller input ID for a device with a given
+ID.
+
+At the moment these firmware bindings are used exclusively for PCI
+devices and their requester ID to IOMMU/MSI id mapping but there is
+nothing PCI specific in the ACPI and devicetree bindings that prevent
+the firmware and kernel from using the firmware bindings to traslate
+device IDs for any bus that requires its devices to carry out
+input/output id translations.
+
+The Freescale FSL bus is an example whereby the input/output ID
+translation kernel code put in place for PCI can be reused for devices
+attached to the bus that are not PCI devices.
+
+This series updates the kernel code to make the MSI/IOMMU input/output
+ID translation PCI agnostic and apply the resulting changes to the
+device ID space provided by the Freescale FSL bus.
+
+[1] http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
+
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Cc: "Joerg Roedel <joro@8bytes.org>
+Cc: Hanjun Guo <guohanjun@huawei.com>
+Cc: Bjorn Helgaas <bhelgaas@google.com>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Robin Murphy <robin.murphy@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Marc Zyngier <maz@kernel.org>
+
+Diana Craciun (2):
+  of/irq: make of_msi_map_get_device_domain() bus agnostic
+  bus/fsl-mc: Refactor the MSI domain creation in the DPRC driver
+
+Laurentiu Tudor (1):
+  dt-bindings: arm: fsl: Add msi-map device-tree binding for fsl-mc bus
+
+Lorenzo Pieralisi (8):
+  ACPI/IORT: Make iort_match_node_callback walk the ACPI namespace for
+    NC
+  ACPI/IORT: Make iort_get_device_domain IRQ domain agnostic
+  ACPI/IORT: Make iort_msi_map_rid() PCI agnostic
+  ACPI/IORT: Remove useless PCI bus walk
+  ACPI/IORT: Add an input ID to acpi_dma_configure()
+  of/iommu: Make of_map_rid() PCI agnostic
+  of/device: Add input id to of_dma_configure()
+  of/irq: Make of_msi_map_rid() PCI bus agnostic
+
+Makarand Pawagi (1):
+  bus: fsl-mc: Add ACPI support for fsl-mc
+
+ .../devicetree/bindings/misc/fsl,qoriq-mc.txt |  50 +++++++-
+ drivers/acpi/arm64/iort.c                     | 108 ++++++++++++------
+ drivers/acpi/scan.c                           |   8 +-
+ drivers/bus/fsl-mc/dprc-driver.c              |  31 ++---
+ drivers/bus/fsl-mc/fsl-mc-bus.c               |  79 +++++++++----
+ drivers/bus/fsl-mc/fsl-mc-msi.c               |  36 ++++--
+ drivers/bus/fsl-mc/fsl-mc-private.h           |   6 +-
+ drivers/iommu/of_iommu.c                      |  81 +++++++------
+ drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c   | 105 ++++++++++++++---
+ drivers/of/base.c                             |  42 +++----
+ drivers/of/device.c                           |   8 +-
+ drivers/of/irq.c                              |  34 +++---
+ drivers/pci/msi.c                             |   9 +-
+ include/acpi/acpi_bus.h                       |   9 +-
+ include/linux/acpi.h                          |   7 ++
+ include/linux/acpi_iort.h                     |  20 ++--
+ include/linux/of.h                            |   4 +-
+ include/linux/of_device.h                     |  16 ++-
+ include/linux/of_iommu.h                      |   6 +-
+ include/linux/of_irq.h                        |  13 ++-
+ 20 files changed, 451 insertions(+), 221 deletions(-)
+
 -- 
-2.18.0
+2.26.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
