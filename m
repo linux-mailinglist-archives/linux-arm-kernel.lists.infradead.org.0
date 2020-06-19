@@ -2,60 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 229EC201AD4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 21:02:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33EFE201B11
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 21:16:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=I5bfhBpt0AUk5rcsO9aF3myEaJZfsPufoOiQP54E9BM=; b=OeTFgUUGGcl7vDXVb+a5PETxL
-	FqLTXQsHek8p3OxpySeFIMC8mEEdg5VFupKTlHrwA2Kuc/WUK2VYBWv3yDFPJ0ynqkkofMEekJ6ye
-	87oNIEO3BPsB/75TrvF9noF3hW6xp19MLu2iAULIhPNqG+F/WrMvnKzKcgo6qGnCKRwn3iQ4iEB24
-	x40sjiJYDJqUnk58JIh37U+Q7SwjS8DZfXhc8PN9A7OFymMKbS1St6OQRNk5Oq1sLPpUoXJ1WWOiH
-	UZu2b6ZF/4v4jadZGs1uxXauMFMZoBGfE4ZsVH2DCMfro4gSCCBNyTiNrSrFHW6pDXjAKDqJwAr1R
-	Epk6Rh5wA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=C5yyu07XIuoz0r6UQPbF8S5AFKQbvaYGGpwXlwfKlXw=; b=OkF
+	Hx3OLCXZ3nBuHtQcgVw2/S45E7vOzS1yVk/Ir9bC+swqe5wY+npxSm7xbe54LRRt9zfFxkExXTGHc
+	jb4yd8DBGLUH+hNep7x6Ik3qt5oulJTkyLuRznXo/z2odMRZkMY4hxhdlpFXRnDRDCiWGFStEVAwj
+	No/ZR6uhKz4bHb2OqR3LJnWfqBovx+PF183gPG98A2Wfmu16ZAHBJ8YJNhqGTOegk2Bm8ZrMPCXDl
+	WKtWadiX99TGKT+HElVVt2ArVYKvP/qkf0akcy+F8im66e/2ai+8gtb8rxgy5O8E2Lq3gT8FzysWa
+	oLyc3e6s2Q3cDBNmH+1o99hoaRuyBSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmMH0-0003I9-2O; Fri, 19 Jun 2020 19:01:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jmMVE-0004B0-18; Fri, 19 Jun 2020 19:16:40 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmMGq-0003Hi-Dn
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 19:01:49 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 640A720EDD;
- Fri, 19 Jun 2020 19:01:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592593306;
- bh=u0tG+Ja24eW/zsPxN2mT6JO75JU8LlvEi/J70n8Lwr4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lLjd4sH/k90Vs2aT2HOFLaS72ntvDxp4p5tTeUBHyw+1r5uqj7XEmFlnlZwqmaDYW
- gwOX31T8UBREdUd2Qn2o0wlFCg8vfqf6Mgm2Tw/pf6P071v19icVykp2wxDTspZoPb
- RnknWXEfSzDB2hGIIGv/fpp5zpZXcuavC4r2wRoU=
-Date: Fri, 19 Jun 2020 20:01:44 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v2] arm64: Depend on newer binutils when building PAC
-Message-ID: <20200619190144.GA20310@sirena.org.uk>
-References: <20200619123550.48098-1-broonie@kernel.org>
- <CAKwvOdnAamgwD8UKuxMsZtmAWnY99TwwCQRcFoHBzAmL2U+W=A@mail.gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <CAKwvOdnAamgwD8UKuxMsZtmAWnY99TwwCQRcFoHBzAmL2U+W=A@mail.gmail.com>
-X-Cookie: Sacred cows make great hamburgers.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jmMV6-0004AS-32
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 19:16:33 +0000
+Received: by mail-pl1-x642.google.com with SMTP id n9so4293239plk.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jun 2020 12:16:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=QpjsOQ81m2+7Vf1tKhbI0NPMb57wPuYHIHejUZfeOx0=;
+ b=W+x4CClX3BaHnLSt/1xtF5HA5oIJlM8A+EGmUOOouefvbHiG6YC0Wsg8b7CB6Pp8f5
+ pEyFrNb9aZk1QdlliapBCUCIem9PZnRIF1pNDG541eEWKTNagxIBWk/a5ThEjdUHubXI
+ O2fstgpGQQrTlufuHR2nutPWOwG7k0KKO0UPw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=QpjsOQ81m2+7Vf1tKhbI0NPMb57wPuYHIHejUZfeOx0=;
+ b=kNIAx6yG7XLNxt13OrXA8WAk8ncAADzMrChpWH45MW88tYYXMItmdFPCdxc10929FI
+ vo7EbnpW5pEY1p+Pdwj8NCOSG6gVvpjen+HB97oWnE0ypUsDdN8TPiPXBRQGfk9dajWZ
+ WMcsWF6tSAojyGFm8SFIszLWLZw2I5xAfJEbRCoOxGNNN0mf9uc03BFwcYEhnjuAakuF
+ 2m+fwwW6ZoI+y/Xb126nIDpaRbE5QMLsSPo4JtHygNuyIVx3BbJpf/j9bycT/vBX8VzO
+ U3F/dAoM9HHiSkpSUwwBAxzWLT03nXuJUuV1yKcpCJRpxSw8a1TVU+Nnb7MH8kScvT0T
+ 6wWw==
+X-Gm-Message-State: AOAM531jsJbnPj33BSkUjzyD1DVgUlVntwzqZOQcVWuClL98uL4PLmAg
+ /WHHz2j4F2ZuymDM18vc0egZMQ==
+X-Google-Smtp-Source: ABdhPJwNurzM+LygEC0YiX0wuysnxgJPszpw0mtEo9Y7176XsIpQNBKYeTFSdYlDE/YRvgnE/WhMHg==
+X-Received: by 2002:a17:90b:50d:: with SMTP id
+ r13mr4895894pjz.94.1592594190698; 
+ Fri, 19 Jun 2020 12:16:30 -0700 (PDT)
+Received: from localhost.localdomain ([42.111.138.30])
+ by smtp.gmail.com with ESMTPSA id 12sm6482743pfj.149.2020.06.19.12.16.25
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 19 Jun 2020 12:16:30 -0700 (PDT)
+From: Suniel Mahesh <sunil@amarulasolutions.com>
+To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
+ gregkh@linuxfoundation.org, sashal@kernel.org
+Subject: [PATCH] arch: arm: imx6qdl-icore: Fix OTG_ID pin and sdcard detect
+Date: Sat, 20 Jun 2020 00:46:13 +0530
+Message-Id: <1592594173-13497-1-git-send-email-sunil@amarulasolutions.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_120148_570314_C2C959EA 
-X-CRM114-Status: GOOD (  12.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200619_121632_559782_F3F3CBE9 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,86 +92,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: KernelCI <bot@kernelci.org>, Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Daniel Kiss <Daniel.Kiss@arm.com>
-Content-Type: multipart/mixed; boundary="===============8610376464264234821=="
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, jagan@amarulasolutions.com,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Michael Trimarchi <michael@amarulasolutions.com>
 
---===============8610376464264234821==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="T4sUOijqQbZv57TR"
-Content-Disposition: inline
+The current pin muxing scheme muxes GPIO_1 pad for USB_OTG_ID
+but the TRM mentions GPIO_1 pad is muxed for card detetcion,
+because of which when card is inserted, usb otg is enumerated
+and the card is never detected.
 
+[   64.492645] cfg80211: failed to load regulatory.db
+[   64.492657] imx-sdma 20ec000.sdma: external firmware not found, using ROM firmware
+[   76.343711] ci_hdrc ci_hdrc.0: EHCI Host Controller
+[   76.349742] ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 2
+[   76.388862] ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00
+[   76.396650] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.08
+[   76.405412] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[   76.412763] usb usb2: Product: EHCI Host Controller
+[   76.417666] usb usb2: Manufacturer: Linux 5.8.0-rc1-next-20200618 ehci_hcd
+[   76.424623] usb usb2: SerialNumber: ci_hdrc.0
+[   76.431755] hub 2-0:1.0: USB hub found
+[   76.435862] hub 2-0:1.0: 1 port detected
 
---T4sUOijqQbZv57TR
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Fix the pin muxing as per TRM by muxing ENET_RX_ER pad for USB_OTG_ID
+and GPIO_1 pad for card detect.
 
-On Fri, Jun 19, 2020 at 09:55:04AM -0700, Nick Desaulniers wrote:
-> On Fri, Jun 19, 2020 at 5:35 AM Mark Brown <broonie@kernel.org> wrote:
+[   22.449165] mmc0: host does not support reading read-only switch, assuming write-enable
+[   22.459992] mmc0: new high speed SDHC card at address 0001
+[   22.469725] mmcblk0: mmc0:0001 EB1QT 29.8 GiB
+[   22.478856]  mmcblk0: p1 p2
 
-> > binutils in Debian 10) so instead refactor so we require a new enough
+Cc: stable@vger.kernel.org
+Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
+Signed-off-by: Suniel Mahesh <sunil@amarulasolutions.com>
+---
+NOTE:
+- patch tested on i.Core 1.5 MX6 DL
+---
+ arch/arm/boot/dts/imx6qdl-icore.dtsi | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-> ^ is Debian 10 what KernelCI is running, currently?
+diff --git a/arch/arm/boot/dts/imx6qdl-icore.dtsi b/arch/arm/boot/dts/imx6qdl-icore.dtsi
+index 756f3a9..12997da 100644
+--- a/arch/arm/boot/dts/imx6qdl-icore.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-icore.dtsi
+@@ -397,7 +397,7 @@
+ 
+ 	pinctrl_usbotg: usbotggrp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_GPIO_1__USB_OTG_ID 0x17059
++			MX6QDL_PAD_ENET_RX_ER__USB_OTG_ID 0x17059
+ 		>;
+ 	};
+ 
+@@ -409,6 +409,7 @@
+ 			MX6QDL_PAD_SD1_DAT1__SD1_DATA1 0x17070
+ 			MX6QDL_PAD_SD1_DAT2__SD1_DATA2 0x17070
+ 			MX6QDL_PAD_SD1_DAT3__SD1_DATA3 0x17070
++			MX6QDL_PAD_GPIO_1__GPIO1_IO01  0x1b0b0
+ 		>;
+ 	};
+ 
+-- 
+2.7.4
 
-The Docker images it uses for builds are Debian based so should be yeah
-(it's the current release) but I actually pulled that version number
-=66rom my desktop where I reproduced the problem.
-
-> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-
-Thanks.
-
-> > -       # GCC 9.1 and later inserts a .note.gnu.property section note f=
-or PAC
-> > +       # Modern compilers insert a .note.gnu.property section note for=
- PAC
-
-> It can still be helpful to note compiler version numbers (GCC 9.1,
-> clang-10).  Someday those will be ancient history, and the kernel will
-> move beyond support for those toolchain versions.  At that point,
-> having a comment makes it easy to `grep` for `gcc 9` and find all the
-> places in the code that can be cleaned up or simplified.
-
-I figured that in this case it's more the binutils version that's the
-issue than the compiler.
-
---T4sUOijqQbZv57TR
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7tC5cACgkQJNaLcl1U
-h9CAVAf/fpnSzeZcmnwbgDwiYmejxxxxM5H0Ztn3CsJ8BrZcyQO8M8jyzSOHwZP9
-6n223ROVuBraRyQBMj3MurPAHsXcu7Dq6e3tnRL54rBFLcarcOpjYpLNqKWIhsrk
-8g5fbeWRNnOrTB4Gw/VRMSOUfE4pbwgcjjy4rfjwuOOamloawOoVise7ScB4UrRZ
-j3tkOUfC5rpwtiWjdqX72VEVS5Z/amB1XUePPPRPRNzlaGDC6w8Q2MUjvetakse5
-o7SQJ5bPv2wmuY3cvUT0I3/QLcV9+fCJhHrlEavcXZVFFJpL7BPjbSmxlJMK41yA
-qYxmJUe+ahgS+K2ctFP+31QMkx0eZA==
-=XjQW
------END PGP SIGNATURE-----
-
---T4sUOijqQbZv57TR--
-
-
---===============8610376464264234821==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8610376464264234821==--
-
