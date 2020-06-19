@@ -2,89 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10C7920086C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 14:11:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E285220086A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 14:11:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=srWdvAOdV781kHfuc+PMlfVABt6O7zhE6e54YMc0AmE=; b=knoniYKKzls/SX
-	z/9sBKTZTTXMo64WlqxbZW9kBUSQ62uNRL7HIOIt9Q74DzxB5eO6a+J+TcVj4Re+illYDvC/6v0+I
-	0O8ZB6UM8M8h2UyNiJzbzMU1g+JwHR2wOMGzhp6CxybQSyxQ4FFqL1Whh76o6vzsb9trVCZ2gedf8
-	ptpTLvYuySIdY+i/3/imD7ZywaBt0/diXVxSrzUY8fgr/QOV1h2qqAmmsLoFTSvzEogxrHFoT9enx
-	7XncGGG5glPFctZtF4nZg19M/VFgZ9FoUVicMGws/yMkKN0PItS3idHQEDloHB+UEjT6lfxTsAWWt
-	SwF+p/6mUgKfNlqCp8WA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gfjAft8U52RR9tDE+N0JUnxQ46HLPmmI+fwslSloK3s=; b=EsYu7l1xmrLAcKQ8PRGDt6GGM
+	oCSPya4SB8Z7OFuYr1WqmDWgc1RGrirZX89ThVZP0QD5Nu9lqtdMWoEmVEUPzOK0t7E/iepQGac2H
+	8R+pw5tS3h4dVqz1WCDMZgSMUQdqlc09UUcn2GMTbC1/0Qs3Ni5uaTpUmL7eXYoEzseoXRWyZqp2C
+	XEqesGw/E6NqYOrcRy/a9cQcZ6foNxGfPpGVIbVj2Ye72KSnlji4iomyMyW9Rtt+0LEEt5LDJrD8C
+	xB59tlA1k4DY09/1/Xa6lCzW4UD/q4XRpnQEOEnpeupzkkQHP+eJKXsX/8MWbZe+vKlENKeRx1+v7
+	bt4sJrJGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmFrv-0004Cy-60; Fri, 19 Jun 2020 12:11:39 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jmFre-00044Q-2f; Fri, 19 Jun 2020 12:11:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmFrT-00043e-DZ
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 12:11:14 +0000
-Received: by mail-wr1-x443.google.com with SMTP id g18so386422wrm.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jun 2020 05:11:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=uw1fRJk8W9uzHYW58SXoTwxg2AWOnCyPtVa0nujwxNo=;
- b=aAA1aFkxA985YEVfjLAPiKf66EhzPWckcNx4xKon5snQWNwK/YtUsVhxAr8entll5J
- FqpecJvgTmxRT5+MvuHxJe9wSNpmI0nvvrBzF3a6gi+LUIybTOg+JYdbJqT0dZYlFxMk
- KKN+iSVJrEIms+E2BI5fXbNWVdsb2j9/Lm4zmMbjwR4aASLWSTAHS8bjK4ndoX9Radrz
- tAJ9VVNEEMY8zPNBspED7etWgK9KAxQVfeSI4+eLeelOpXXdGi5OUzXSQ1/NP3AapKjN
- 3YhofK/HVDX+bv/bUFdvGIO34LjDkJ5lop0TmHsA2yBXmfMLzQrW56prXHQF0G2R0N+F
- /h3Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=uw1fRJk8W9uzHYW58SXoTwxg2AWOnCyPtVa0nujwxNo=;
- b=KX/dx3JzS6aXOdOjVawMXpS/8RFh1nb6lMPkDdZ8E5qImFZEdLU8BiFh3ZtjKSj7Ea
- ukl4WGJVbHeGwevARNZzNtAdC9DgetL5YTwfAIMeR3VZtZlOxhp7p1ehqhTnuPVbEw7t
- c70lnQNwT4FGP49hnQQE797K+GhcUyiFmLQI9CzEKY6ZpE3y7B/opJX38axJ09ri74Da
- UL83uZz+t3sLSgXog15LIqn+vTJPYmnygBt/svI70mVgs10ECUh39M9E60uWAIsEiQPb
- mfPaEM41aqYMkPtB7Rbd0vXeZPu14TqxPIhkEyX1b6bv4gX9spgLgydKfh2YOq4GqeDB
- 9WVQ==
-X-Gm-Message-State: AOAM533BH8MkI3Zf4nysEnAWQfCTbVxmX1M9VgbmLUqdBN62N8OQvOMb
- Ng989pI9qNQKrkBFMsLloRZ11g==
-X-Google-Smtp-Source: ABdhPJzXf4aN7gKCGZYXPOoqVI1aLeO650Z1tn89qTbHzCNLC55N0Ab6rAbplKt8XgQAxTgA+V7Dkw==
-X-Received: by 2002:a5d:4282:: with SMTP id k2mr3727602wrq.196.1592568669243; 
- Fri, 19 Jun 2020 05:11:09 -0700 (PDT)
-Received: from google.com ([2a01:4b00:8523:2d03:d994:d48b:4a9:7c2b])
- by smtp.gmail.com with ESMTPSA id l8sm6886721wrq.15.2020.06.19.05.11.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 19 Jun 2020 05:11:08 -0700 (PDT)
-Date: Fri, 19 Jun 2020 13:11:06 +0100
-From: David Brazdil <dbrazdil@google.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v3 03/15] arm64: kvm: Add build rules for separate nVHE
- object files
-Message-ID: <20200619121106.sz5qxxkb53ida5qa@google.com>
-References: <20200618122537.9625-1-dbrazdil@google.com>
- <20200618122537.9625-4-dbrazdil@google.com>
- <09976ea31931481f4e00d627dc5e06fe@kernel.org>
+ id 1jmFrT-00043f-Ec
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 12:11:13 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EBFA5206F1;
+ Fri, 19 Jun 2020 12:11:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592568670;
+ bh=vyr9PHj6CVhmT+9MnB5OL7E+rP4soAv6Y11Vucj3b3c=;
+ h=Date:From:To:List-Id:Cc:Subject:References:In-Reply-To:From;
+ b=CaD3mptIYtvzN0773c7ZLSMy1q0kYfcYGjnZ56Bs8MVKpJjcy+pHOD/+pZ0g6xFJ5
+ SFyBVg/Jk17kZWQnTqIHlA/v8XWco429v77il5E7hMCilG6SQeBT842nExHGDvrttp
+ yoQm63DFw17uumLqHN6sSXYbpHJm+VuC5ZOAoa0c=
+Date: Fri, 19 Jun 2020 13:11:08 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Lars Povlsen <lars.povlsen@microchip.com>
+Subject: Re: [PATCH v2 3/6] spi: dw: Add Microchip Sparx5 support
+Message-ID: <20200619121107.GE5396@sirena.org.uk>
+References: <20200619113121.9984-1-lars.povlsen@microchip.com>
+ <20200619113121.9984-4-lars.povlsen@microchip.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <09976ea31931481f4e00d627dc5e06fe@kernel.org>
+In-Reply-To: <20200619113121.9984-4-lars.povlsen@microchip.com>
+X-Cookie: Robot, n.:
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_051112_189537_FD608DB5 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200619_051112_173097_E3294CFE 
+X-CRM114-Status: GOOD (  13.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,8 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,29 +77,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- android-kvm@google.com, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Serge Semin <fancer.lancer@gmail.com>, linux-spi@vger.kernel.org,
+ Serge Semin <Sergey.Semin@baikalelectronics.ru>, SoC Team <soc@kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1982384446218839345=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Marc,
 
-> I guess that one of the first use of this __KVM_NVHE_HYPERVISOR__
-> flag could be the has_vhe() predicate: if you're running the nVHE
-> code, you are *guaranteed* not to use VHE at all.
+--===============1982384446218839345==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="r7U+bLA8boMOj+mD"
+Content-Disposition: inline
 
-Sure, I'll add that to the next respin. If I'm reading __is_defined correctly,
-it means I have to define the flag as =1. Easy.
 
-Thanks,
--David
+--r7U+bLA8boMOj+mD
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Fri, Jun 19, 2020 at 01:31:18PM +0200, Lars Povlsen wrote:
+
+> +/*
+> + * The Designware SPI controller (referred to as master in the
+> + * documentation) automatically deasserts chip select when the tx fifo
+> + * is empty. The chip selects then needs to be driven by a CS override
+> + * register. enable is an active low signal.
+> + */
+> +static void dw_spi_sparx5_set_cs(struct spi_device *spi, bool nEnable)
+
+The value that is passed in here is the value that should be driven on
+the output pin, the driver should not be interpreting the value in any
+way here.  Documenting it as nEnable adds a layer of confusion, and it
+may not be an active high signal depending on the system.
+
+> +	if (!nEnable) {
+> +		/* Ensure CS toggles, so start off all disabled */
+> +		regmap_write(dwsmscc->syscon, SPARX5_FORCE_VAL, ~0);
+> +		/* CS override drive enable */
+> +		regmap_write(dwsmscc->syscon, SPARX5_FORCE_ENA, 1);
+
+This should just be setting the value to whatever the core asked for it
+to be set to, the driver adding extra toggles is likely to disrupt
+things.
+
+--r7U+bLA8boMOj+mD
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7sq1sACgkQJNaLcl1U
+h9ANRwf/eQZK2XAW3YLyGIGXxDzJjVKVzZnnCrpJ7/GkGV+/jpNo0ACv1EaaA90S
+eRvkEG81gwlnvf2uXRrSPPY0PFPCXEtJH5kMdyxnVp/MntfCn3LW+ZRnyENOSO9F
+jj8v+x0sFbz14ZGvYmJBibaRBSWo8moO4+d4Xb+xn77qtRq/PbBSpK6un6HeEB6B
+WYJwB+Tpz1dbnWhpU8P+Xgoe59ZRKd/QGM3ceBafhGdV3fM4EyDiIwFxYUOJymfv
+ch9nDQMBWMpg6a2tUrqs0Xq4o42a0ly2j9smRnr9DdsrGGyH9p3Re/rO+o1EZlTE
+BDRM8XigeQo6v4hZM76v+o1N+j5eiA==
+=sVTQ
+-----END PGP SIGNATURE-----
+
+--r7U+bLA8boMOj+mD--
+
+
+--===============1982384446218839345==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1982384446218839345==--
+
