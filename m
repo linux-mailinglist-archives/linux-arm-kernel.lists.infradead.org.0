@@ -2,114 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35952200750
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:52:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D9E9200752
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jun 2020 12:52:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j1FZFuNJHKo905SQzP//vioDqVaBZQVFrIQvu2UhAHo=; b=VupLNLCeq+Nwls
-	Ud5oiZ+Cd0f5G4j+qeG5a42vUCqeydbuZ8j2rmBgish/d31hbUym3ANYct9tR7Mdty0tXz9KeQpdV
-	k5zdP4wL1hRTP4gP81bgpkOhuAbRbwrbTR3W72jYreA9KRaEvbs/Lio5EPPXBxEbM/uUTRGwvvVlO
-	cKVrWvxgAzol0meZkdV67evxOBiv+4n54BJnNWDHh6Czq7OHlnqUyn/nAdnS5v67Yk5clIStUCFIE
-	M7su16FlyVW+Bh2fmk8XxaYlcs1redN9i7xAWoy8g4f4vXPYAW0ILb88IQwBNlXgQScOOxW0i6oeG
-	gGf5Z7i5Zsy+fjHvzqTQ==;
+	List-Owner; bh=erGyDlaR/Gmkm2MUa2DOaK1ADczKohgxcD+E+IEfnNk=; b=PMXAE0CjfTplzB
+	Knu8UQGnvinigWcT8sFmxT04/OUNP18BL8zUwKJQBDBRmxhcie2Abvw7+El7VRrnI/mrZHg3KxrwU
+	+L++ue2odcxy7E79JeZthWd9qVI4I3obYH/KVI8BJhJY2u3jO6IDu+CS1Kqr31CIgq9XgHOh6sgyT
+	YBQ/5P4XxCXmBJ+cwUBY7hajB/meCH3hOaaxLC6qfZa/4y+6lgDRhr1HTpmE+3fmEqiYkJjgdCSoN
+	eV00kLCv8KYCymVEtb8fYp7Ko8MR833ROvj1l78iyfTNBdmUt1Wts9j917ZKHrLq62bJNAW+v2ecS
+	lQQQdQcebozLiNfrlugA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmEd6-0008MP-RR; Fri, 19 Jun 2020 10:52:16 +0000
-Received: from mail-mw2nam10on2074.outbound.protection.outlook.com
- ([40.107.94.74] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
+	id 1jmEdS-0000Fx-PG; Fri, 19 Jun 2020 10:52:38 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmEYC-0001tB-FR
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jun 2020 10:47:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UFPh0EJgO9UETCYNBeKKVpl0f+I74ScXYDWzTEPl5yVVAYMFaIYRqM7h2MIKpC301Y60P5/f5bcYMSeuNSD+hwsrChdRoDzUuNvmZK5qIqjGoKon9hSLGosqDnXvSQE5x8MyhB1xdZgDYEZ7owwaUK8LLKS7xoOlegfiCTwHB8bRnWqJFryZIr4XHzRyQqPQTcaVo/DQQ+OATvrn81TwSmRYUDLxDsCzyn86uqq5lVil86YbI6ZzRrWDgNhJNXB1HUM6iQnalUYB3kY4/fqZ7Ki2wAsl2zH4/TrtlRnku6CQ+oXldEfuXZa4ZzqNLinRCN7YW3AlgtjOpX8MO+6bJQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AnTOMGwBRcg3XeWGhSay8kwfSx66Jlpjos2FQHxXp1E=;
- b=OCDIW/mPEClgQEYGHSwUvP5C1/zVmFsWCTSree0/N9fEp3Ff9j1HkL1zNLbyO5Pr0Mkp4/vWes0k0LZ1e1iEhFc6x6R56tAmAKv1ThpvZTtDc4a8Yjvg7Wu0L08SvztW6EM5bvn1LvLAXJSOkQP4hDE5Qzz7FGa359/OgAl5fZAvJfEPQrHVSf0hk79dlNqlUQUyL2bowUmxVm9N5cNq2jtuD8VKEA1TD3/zWOo6nEcQCeHEBKATSX8+H6zdw+nBi3+JRRHM75F26mSkyi46K4A0zDYvYd5LuJY6HWpmrS1SxYnLy0y9uYyJ4VXjiPj/mRZXhPz+knuUAn10FHbVZA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synaptics.com; dmarc=pass action=none
- header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AnTOMGwBRcg3XeWGhSay8kwfSx66Jlpjos2FQHxXp1E=;
- b=MXzcP/iUUnrOIB6I6bLGWPkplmW17vrFvhFIyehn5LmmnOKqUB7Pg4gDUAaLCwrSazbJyc7XekCVWU7i+KRpKzMBxnTVDEdxXnSxhlsltxOufh9V2BoN75waHNO7laNYA+t0KhAQyp272LsrvJe152m1n0eOI0cozbFVCvwarc4=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=synaptics.com;
-Received: from DM6PR03MB3580.namprd03.prod.outlook.com (2603:10b6:5:b2::14) by
- DM6PR03MB3481.namprd03.prod.outlook.com (2603:10b6:5:af::19) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3109.21; Fri, 19 Jun 2020 10:47:10 +0000
-Received: from DM6PR03MB3580.namprd03.prod.outlook.com
- ([fe80::3122:b605:87fd:339e]) by DM6PR03MB3580.namprd03.prod.outlook.com
- ([fe80::3122:b605:87fd:339e%6]) with mapi id 15.20.3109.023; Fri, 19 Jun 2020
- 10:47:10 +0000
-Date: Fri, 19 Jun 2020 18:45:59 +0800
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, Mark
- Rutland <mark.rutland@arm.com>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH 3/3] arm64: perf: add support for Cortex-A76
-Message-ID: <20200619184559.0a8716ec@xhacker.debian>
-In-Reply-To: <20200619184423.5e61a838@xhacker.debian>
-References: <20200619184423.5e61a838@xhacker.debian>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-ClientProxiedBy: TYBP286CA0040.JPNP286.PROD.OUTLOOK.COM
- (2603:1096:404:10a::28) To DM6PR03MB3580.namprd03.prod.outlook.com
- (2603:10b6:5:b2::14)
+ id 1jmEd3-0008WJ-BO; Fri, 19 Jun 2020 10:52:18 +0000
+X-UUID: 50802570af7d4ff3b65cc8c556800f6f-20200619
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=gLyZez7zoj9lEggZKjZhObz4KPttckUsAiOpo+MoMv8=; 
+ b=u41T8bgvRxbYNhF5iQVVk9FXc6UvS0j/TVxf9jjgfTYUEvIpqYxdi9DtRJYFc4mruH/tkp3pffkU4VdX+ea5yNlDI85BUHBsrAU9SJLoKwbK46/wJVgOP27516TZimen906NIWrPxSePZCMT0lIr/b4ndjoABmnWnlSW7RXMzM4=;
+X-UUID: 50802570af7d4ff3b65cc8c556800f6f-20200619
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chao.hao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1348649251; Fri, 19 Jun 2020 02:50:52 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 19 Jun 2020 03:50:52 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 19 Jun 2020 18:50:50 +0800
+Received: from [10.15.20.246] (10.15.20.246) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 19 Jun 2020 18:50:49 +0800
+Message-ID: <1592563824.5692.1.camel@mbjsdccf07>
+Subject: Re: [PATCH v4 7/7] iommu/mediatek: Add mt6779 basic support
+From: chao hao <Chao.Hao@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Fri, 19 Jun 2020 18:50:24 +0800
+In-Reply-To: <9618cc95-99ac-63d0-f502-335e38819842@gmail.com>
+References: <20200617030029.4082-1-chao.hao@mediatek.com>
+ <20200617030029.4082-8-chao.hao@mediatek.com>
+ <64f63ccc-92a4-191c-3566-de00c9e04ca2@gmail.com>
+ <1592481247.12647.9.camel@mbjsdccf07>
+ <9618cc95-99ac-63d0-f502-335e38819842@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from xhacker.debian (124.74.246.114) by
- TYBP286CA0040.JPNP286.PROD.OUTLOOK.COM (2603:1096:404:10a::28) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3109.22 via Frontend Transport; Fri, 19 Jun 2020 10:47:07 +0000
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-Originating-IP: [124.74.246.114]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 438e7a7e-c41f-4242-5cdc-08d8143e1e69
-X-MS-TrafficTypeDiagnostic: DM6PR03MB3481:
-X-Microsoft-Antispam-PRVS: <DM6PR03MB34811C27DA2FEEA6DB308EB0ED980@DM6PR03MB3481.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:612;
-X-Forefront-PRVS: 0439571D1D
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: YP6JhsqSE+q8ExlEqkqYKpMtEcm1PX8WTLwZv1J3YQ9yclfoJm5mkEQtgiRqL7DXNwLvwruK30rPh9v5yocxKVoEx8sRKgTUeJaRIFtuGNyKhL/S4YL322katzKmFxCamuEYOaApRKLfVa/oPJVYS4ImRco9jdUGyce3+JTK2kHuqC1ToGYqreCql9eGdlobIyP+LkJuB47vfclM1gCKDWkct/BjxhJeQsFaUhtqtdoiGHUiXfVy4c0qMecN9xMOxHjzqbYQjFUk+v9rAextyWthUgvATP1LW7v8LfTtn9vkq2QW3zub8RHpw+mWn8WB
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR03MB3580.namprd03.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(39860400002)(396003)(136003)(376002)(346002)(366004)(66476007)(6666004)(66946007)(66556008)(5660300002)(86362001)(52116002)(16526019)(7696005)(186003)(55016002)(9686003)(4744005)(956004)(8676002)(2906002)(6506007)(1076003)(26005)(83380400001)(110136005)(316002)(8936002)(4326008)(478600001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: j3dFSseKrBJbZl3dwNYHbdsPcYwn0/mUL3aR1eC8QvR5tM/acAHFxqcACwerQUQ2zWjbgfm2jgnU4DgT+VYqPdQPnMekpwSvomGAKnBq/vBOtzopznW5QzNr0HV0zKh8iUbsOL1Gg/TftQOXABIRpX/NVBXWdGQCha5Lgq/XLTgEMXNSrzVNFSb+b4ZqKMTDgZTx+V5HaOhD712kzWoxfPwfTQieaR3A5zeUbjzTqr9npwkHDR85ykqf7L3C7j/CkUsxfDKlNLcf2eXL9wGYPXdrJfTOEcplVRHPYeEPAgfq2MT0Nzm4FlcvLRX/96k2EPwMSvNvJyhRiMorpB+klr3AV2G6G5KZrnIM2242ajVS5qqIcidYRlKfD4L4kNQkg9cbfSyhsfeS/tEf9irLHRP4yf8KZr4qfe5vMcbGiyZVzHG3AwS+J9q5k9WBYJPZjTrWhHCu052JjNWaQTv/ZlpGd9ukzhx1eT3qD+yp35M4rtdgu983UImRQCmfbpEh
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 438e7a7e-c41f-4242-5cdc-08d8143e1e69
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Jun 2020 10:47:10.6632 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: I6szFAOk9hnsCha/FJAJ/f5n/vuia3NeaP7t4bxJWA7NSlLHjWO2hi8NYshBS/zpkIFIzpnX6/JO8G6n761qmw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB3481
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_034712_547265_B3B796DF 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200619_035213_418023_09E2DA10 
+X-CRM114-Status: GOOD (  25.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.94.74 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.94.74 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,37 +86,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
+ wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, Chao Hao <chao.hao@mediatek.com>,
+ iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Cortex-A76 uses some implementation defined perf events. Per
-Cortex-A76 TRM r4p0, section C2.3 PMU Events (pages C2-386 to C2-394),
-we can reuse Cortex-A57's perf events mapping currently.
+On Thu, 2020-06-18 at 18:00 +0200, Matthias Brugger wrote:
+> 
+> On 18/06/2020 13:54, chao hao wrote:
+> > On Wed, 2020-06-17 at 11:33 +0200, Matthias Brugger wrote:
+> >>
+> >> On 17/06/2020 05:00, Chao Hao wrote:
+> >>> 1. Start from mt6779, INVLDT_SEL move to offset=0x2c, so we add
+> >>>    REG_MMU_INV_SEL_GEN2 definition and mt6779 uses it.
+> >>> 2. Change PROTECT_PA_ALIGN from 128 byte to 256 byte.
+> >>> 3. For REG_MMU_CTRL_REG register, we only need to change bit[2:0],
+> >>>    others bits keep default value, ex: enable victim tlb.
+> >>> 4. Add mt6779_data to support mm_iommu HW init.
+> >>>
+> >>> Change since v3:
+> >>> 1. When setting MMU_CTRL_REG, we don't need to include mt8173.
+> >>>
+> >>> Cc: Yong Wu <yong.wu@mediatek.com>
+> >>> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> >>> ---
+> >>>  drivers/iommu/mtk_iommu.c | 20 ++++++++++++++++++--
+> >>>  drivers/iommu/mtk_iommu.h |  1 +
+> >>>  2 files changed, 19 insertions(+), 2 deletions(-)
+> >>>
+> >>> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> >>> index c706bca6487e..def2e996683f 100644
+> >>> --- a/drivers/iommu/mtk_iommu.c
+> >>> +++ b/drivers/iommu/mtk_iommu.c
+> >>> @@ -37,6 +37,11 @@
+> >>>  #define REG_MMU_INVLD_START_A			0x024
+> >>>  #define REG_MMU_INVLD_END_A			0x028
+> >>>  
+> >>> +/* In latest Coda, MMU_INV_SEL's offset is changed to 0x02c.
+> >>> + * So we named offset = 0x02c to "REG_MMU_INV_SEL_GEN2"
+> >>> + * and offset = 0x038 to "REG_MMU_INV_SEL_GEN1".
+> >>> + */
+> >>
+> >> Please delete the comment, this should be understandable from the git history
+> > 
+> > ok, thanks
+> > 
+> >>
+> >>> +#define REG_MMU_INV_SEL_GEN2			0x02c
+> >>>  #define REG_MMU_INV_SEL_GEN1			0x038
+> >>>  #define F_INVLD_EN0				BIT(0)
+> >>>  #define F_INVLD_EN1				BIT(1)
+> >>> @@ -98,7 +103,7 @@
+> >>>  #define F_MMU_INT_ID_LARB_ID(a)			(((a) >> 7) & 0x7)
+> >>>  #define F_MMU_INT_ID_PORT_ID(a)			(((a) >> 2) & 0x1f)
+> >>>  
+> >>> -#define MTK_PROTECT_PA_ALIGN			128
+> >>> +#define MTK_PROTECT_PA_ALIGN			256
+> >>
+> >> Do we need 512 bytes for all gen2 IOMMUs?
+> >> I'm not sure if we should add this in plat_data or if we should just bump up the
+> >> value for all SoCs.
+> >> In both cases this should be a separate patch.
+> >>
+> > From mt6779, MTK_PROTECT_PA_ALIGN is extend to 256 bytes and don't be
+> > changed for a long time from our HW designer comment. The legacy iommu
+> > also can use it, mabye it doesn't set it by platform.
+> > 
+> 
+> Ok then just bump it to 256 in a new patch. Thanks for clarification.
 
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
----
- arch/arm64/kernel/perf_event.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+  Ok, thanks
 
-diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-index 55e1d75af708..4fb13fbdc2df 100644
---- a/arch/arm64/kernel/perf_event.c
-+++ b/arch/arm64/kernel/perf_event.c
-@@ -1127,7 +1127,7 @@ static int armv8_a75_pmu_init(struct arm_pmu *cpu_pmu)
- static int armv8_a76_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a76",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_a57_map_event, NULL, NULL);
- }
- 
- static int armv8_a77_pmu_init(struct arm_pmu *cpu_pmu)
--- 
-2.27.0
+> > 
+> >>>  
+> >>>  /*
+> >>>   * Get the local arbiter ID and the portid within the larb arbiter
+> >>> @@ -543,11 +548,12 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+> >>>  		return ret;
+> >>>  	}
+> >>>  
+> >>> +	regval = readl_relaxed(data->base + REG_MMU_CTRL_REG);
+> >>>  	if (data->plat_data->m4u_plat == M4U_MT8173)
+> >>>  		regval = F_MMU_PREFETCH_RT_REPLACE_MOD |
+> >>>  			 F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173;
+> >>>  	else
+> >>> -		regval = F_MMU_TF_PROT_TO_PROGRAM_ADDR;
+> >>> +		regval |= F_MMU_TF_PROT_TO_PROGRAM_ADDR;
+> >>
+> >> Why do we change this, is it that the bootloader for mt6779 set some values in
+> >> the register we have to keep? In this case I think we should update the regval
+> >> accordingly.
+> > 
+> > For REG_MMU_CTRL_REG, bit[12] represents victim_tlb_en feature and
+> > victim_tlb is enable defaultly(bit[12]=1),but if we use "regval =
+> > F_MMU_TF_PROT_TO_PROGRAM_ADDR", victim_tlb will disable, it will drop
+> > iommu performace for mt6779
+> > 
+> 
+> Got it. Please put that in a separate patch then.
+> 
+  Ok, thanks
 
+> Regards,
+> Matthias
+> 
+> > 
+> >>
+> >>>  	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
+> >>>  
+> >>>  	regval = F_L2_MULIT_HIT_EN |
+> >>> @@ -797,6 +803,15 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+> >>>  	.larbid_remap   = {{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}},
+> >>>  };
+> >>>  
+> >>> +static const struct mtk_iommu_plat_data mt6779_data = {
+> >>> +	.m4u_plat      = M4U_MT6779,
+> >>> +	.has_sub_comm  = true,
+> >>> +	.has_wr_len    = true,
+> >>> +	.has_misc_ctrl = true,
+> >>> +	.inv_sel_reg   = REG_MMU_INV_SEL_GEN2,
+> >>> +	.larbid_remap  = {{0}, {1}, {2}, {3}, {5}, {7, 8}, {10}, {9}},
+> >>> +};
+> >>> +
+> >>>  static const struct mtk_iommu_plat_data mt8173_data = {
+> >>>  	.m4u_plat     = M4U_MT8173,
+> >>>  	.has_4gb_mode = true,
+> >>> @@ -815,6 +830,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
+> >>>  
+> >>>  static const struct of_device_id mtk_iommu_of_ids[] = {
+> >>>  	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
+> >>> +	{ .compatible = "mediatek,mt6779-m4u", .data = &mt6779_data},
+> >>>  	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+> >>>  	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
+> >>>  	{}
+> >>> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> >>> index 9971cedd72ea..fb79e710c8d9 100644
+> >>> --- a/drivers/iommu/mtk_iommu.h
+> >>> +++ b/drivers/iommu/mtk_iommu.h
+> >>> @@ -31,6 +31,7 @@ struct mtk_iommu_suspend_reg {
+> >>>  enum mtk_iommu_plat {
+> >>>  	M4U_MT2701,
+> >>>  	M4U_MT2712,
+> >>> +	M4U_MT6779,
+> >>>  	M4U_MT8173,
+> >>>  	M4U_MT8183,
+> >>>  };
+> >>>
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
