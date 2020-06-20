@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9831F201ED8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 01:57:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7EBF201EDF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 02:00:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HGHF50FyQxkDH/zJF80gcb1BpCvndLToAngZ8n6RpGg=; b=bAn19lPbs5dFCO
-	g7Gm5ucbdqS6gDKVd1kbW0pqqujdLgaGHUKO1v/EjJdAhO2ZV/+c4mKskuHxqreC926nfY0LPiyfs
-	H8T9HLA8QgmwJ0xGvkwS13Q6qufAS2iYW7ilEf8IV0ILk0b/43uzwPrnHrla/nh7IKOJ3q/lh3+3x
-	HZfSpR7B4RMtCB3P8PlN0rqMmAzw4sMAbgHB50y6eEVbXWduBOTW46JVFdVTDFXR06b4L+iBZmzzX
-	Rjc/URHQR20fV3i9cyNCG3jQAjruKrRqaq2oHqvUOVp1yGl7erQjTjr3RsodG8sx9iYcQBKjHxvaL
-	oeyltBMV9sB0Bs0xazKg==;
+	List-Owner; bh=ilgv84WezU9fJ1I51tHX5C8dQgGPZCavzXqii2Ux+3M=; b=Uv21APO4GgOazU
+	wyqC2hXA/T+MsBjdPwT6irIxFbJuH1vqv02mEFLoCi3LXQDwqXv9clXINFjYKuNgI7f/uFu4+gsc7
+	wnNKIH/YqGKRIa837VGIb07ZSGq2I0DLrNBpGOXMBpL4bGLEnrxCOU8Mx9S/mAuU0ol5fAfF459VQ
+	2birkMR04lGYqup/v6fzNwJrro49gSRNKauKa8mmJRgsc+bAAs4fdTZbY/yIl1qLoR377348JwsFh
+	Ua0+rwxO1VMaB4kVnrVJgVuuQY3FmiuwhJWeA+jd3M15Yq3wGd378mPUWPUtKjiUcDH1UAueFI6yI
+	vLLGw2jv/e0hzMCAm8Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmQtC-0002sf-QO; Fri, 19 Jun 2020 23:57:42 +0000
+	id 1jmQvs-0005i1-HA; Sat, 20 Jun 2020 00:00:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmQsu-0002pj-Mv; Fri, 19 Jun 2020 23:57:26 +0000
+ id 1jmQvk-0005hi-Ix
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 00:00:21 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 419A7224D1;
- Fri, 19 Jun 2020 23:57:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 17F93206D7;
+ Sat, 20 Jun 2020 00:00:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592611044;
- bh=81hRUtcVR11BsydhG8B51A5da+wdAlZkBPJ+MP1X4qw=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=RbYwyZVHiVJE4eO4PI9w4EcMOQsiwRP130Altk9bzPm+lzLVhwAxItZq1/KKihsqo
- NYbaKOFUVJIMr1K7/FH6bAAVteNK4m6qZO0uTR362x9JTrSTHSlWvYXXaEQBYvO3fb
- WtDfVAick3Z19m9i4HNnnRXJF3qhkNZfOjfjwbBA=
+ s=default; t=1592611220;
+ bh=619+Wt+vDRk64Ku14T9Siv1alCzBunMBcYsA7lo5HXw=;
+ h=In-Reply-To:References:Subject:From:To:Cc:Date:From;
+ b=Fco8Iq1m3csA/NlUxjibipKJo/3I2id/mpiACADkRzt5vBSL9HsnYpJk/7/aqE5Q6
+ /i4HgLF26WQn/5K0rPygvQ3JBAXT/MZFNL5z0YsA1c44BbAQo7B3P8Cx/RnGkyOB5i
+ 7IQEGOd6mjCIDlPWHE0UJ7eP2031Hv6NbUvDypIQ=
 MIME-Version: 1.0
-In-Reply-To: <20200619115255.6pk5xb42b5ol7bk4@gilmour.lan>
-References: <cover.98f979c2af2337c57217016d21d7c68e1ac2ce8a.1592210452.git-series.maxime@cerno.tech>
- <159255945796.62212.5838238989498858379@swboyd.mtv.corp.google.com>
- <20200619115255.6pk5xb42b5ol7bk4@gilmour.lan>
-Subject: Re: [PATCH v5 00/27] clk: bcm: rpi: Add support for BCM2711 firmware
- clocks
+In-Reply-To: <20200610140858.207329-1-noltari@gmail.com>
+References: <20200609113049.4035426-1-noltari@gmail.com>
+ <20200610140858.207329-1-noltari@gmail.com>
+Subject: Re: [PATCH v2 0/2] clk: bcm63xx-gate: add BCM6318 support
 From: Stephen Boyd <sboyd@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 19 Jun 2020 16:57:23 -0700
-Message-ID: <159261104359.62212.13637457840164649678@swboyd.mtv.corp.google.com>
+To: noltari@gmail.com
+Date: Fri, 19 Jun 2020 17:00:19 -0700
+Message-ID: <159261121936.62212.219486512557338832@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_165724_772107_F462FD83 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20200619_170020_644134_800BB6C3 
+X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,43 +77,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Mike Turquette <mturquette@baylibre.com>, Kamal Dasu <kdasu.kdev@gmail.com>,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com, lkp@intel.com,
+ mturquette@baylibre.com, f4bug@amsat.org, linux-kernel@vger.kernel.org,
+ julia.lawall@lip6.fr, robh+dt@kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, jonas.gorski@gmail.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Maxime Ripard (2020-06-19 04:52:55)
-> Hi Stephen,
-> 
-> On Fri, Jun 19, 2020 at 02:37:37AM -0700, Stephen Boyd wrote:
-> > Quoting Maxime Ripard (2020-06-15 01:40:40)
-> > > Hi,
-> > > 
-> > > Since the whole DRM/HDMI support began to grow fairly big, I've chosen
-> > > to split away the two discussions between the firmware clocks and the
-> > > HDMI support.
-> > > 
-> > > Let me know what you think,
-> > > Maxime
-> > 
-> > Do you want this to go through clk tree? Or looking for acks/review
-> > tags?
-> 
-> As far as I understood, you usually apply the bcm patches to the clk
-> tree directly, so if you could apply them it would be awesome :)
-> 
-
-Ok. Thanks for letting me know.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBBZGQgc3VwcG9ydCBmb3IgdGhlIGdhdGVkIGNsb2NrIGNvbnRyb2xsZXJzIGZvdW5kIG9uIHRo
+ZSBCQ002MzE4Lgo+IAo+IMOBbHZhcm8gRmVybsOhbmRleiBSb2phcyAoMik6Cj4gICBkdC1iaW5k
+aW5nczogY2xvY2s6IGJjbTYzeHg6IGFkZCA2MzE4IGdhdGVkIGNsb2NrIGJpbmRpbmdzCj4gICBj
+bGs6IGJjbTYzeHgtZ2F0ZTogYWRkIEJDTTYzMTggc3VwcG9ydAo+IAo+ICAuLi4vYmluZGluZ3Mv
+Y2xvY2svYnJjbSxiY202M3h4LWNsb2Nrcy50eHQgICAgfCAgMiArCj4gIGRyaXZlcnMvY2xrL2Jj
+bS9jbGstYmNtNjN4eC1nYXRlLmMgICAgICAgICAgICB8IDQ0ICsrKysrKysrKysrKysrKysrKysK
+PiAgMiBmaWxlcyBjaGFuZ2VkLCA0NiBpbnNlcnRpb25zKCspCj4gCgpTb3JyeSBwbGVhc2UgZG9u
+J3Qgc2VuZCB0aGVzZSBpbiByZXBseSB0byB0aGUgb3JpZ2luYWwgcGF0Y2ggc2VyaWVzLiBJCmhh
+dmUgYSBoYXJkIHRpbWUgZmluZGluZyBuZXcgcGF0Y2ggc2VyaWVzIGluIG15ICd0aHJlYWQgc3Vt
+bWFyeScgdmlldy4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
