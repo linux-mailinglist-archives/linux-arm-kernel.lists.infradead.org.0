@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED7DB20225C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 09:30:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B27FC20226E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 09:46:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S1AZeTtlVwvYJyRv9OqHF+Q91Z9Fyewac72PZlGrUTM=; b=bLrKlJVVuLqy3z
-	p2f0PIgNlLzp4AMCl6PLO/NxSNpNpy98Ff0zabZDpAPAOWlWscWwFifshgHi8IwiHukS1/Tru5diS
-	7Hy74YduQCr9GZ1DROK8RxJraBfHKxxEmRPOu4n1NVZEhntsVZI0cLThXYP3r9XtI0/2HeV4wz1Y+
-	05HptyPhqiInT3a7PCMk2xhDQmxddOViyjetpE4AwN2UR2vsYXnfVeL2QdkPTgz3f+toOpdLZeQaw
-	3wrbEom3QNtsH4G+91YqpHy3DbqInFzo0lbMrfR2fNYOjUpVAk+I3vVnwm8dCRTHqa3BFQbjQuznK
-	ZyejxMrsXnVUINh2hAaw==;
+	List-Owner; bh=DIU3/gTi6oXK1FCL1w8HWuQaDTBAuylNw/7WfSGUZyw=; b=TASGOvqZUhgrT1
+	g5Grly3ZNiGplJR+8Bc7bjJH42OiHb85/kgMcoE14NRyd8VUdB69qTb0woNo5Sk2C+EbubrjiiWVO
+	VlKYAJZc2+l2IAOSmWjClII5l1hCG5Q1hQngwqCH0mMPKZIMk2Fn1wgG9mNviYb3YSWSFfnFWeU9/
+	0QKIZX+rr5jB2nxJd7XTLoggGrYhfGsZiXXprv9bG7LFEjECf2Y1XuHD9Eyil9rab4N5NyfUIe2TQ
+	EUI6+8q5RLAV3cBN7ZxLuxDKWlPFzLCA00/4fve+1OTxilBr3Dx4VNA/EE43rz4qTCzwbQhhTkWtg
+	wA2LWXD+s4JUt12eEcoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmXxQ-0003Zb-Py; Sat, 20 Jun 2020 07:30:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jmYCf-0003OA-FQ; Sat, 20 Jun 2020 07:46:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmXxF-0003YF-Sc; Sat, 20 Jun 2020 07:30:23 +0000
-X-UUID: 377a25039d1746bcaa86552a2ca11c08-20200619
+ id 1jmYCT-0003N5-Hy; Sat, 20 Jun 2020 07:46:07 +0000
+X-UUID: a9c4a940a0ef41b48113af9f306c3421-20200619
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=zBsN1Wyck+84Mbm+gBiGCKGBcPWj9Ghj2Dt/tXk8j/4=; 
- b=k27ycLrKmA9/8vzoQYhodSiDjJAffxgXh0GQ5WNkFRb3h4L9PkUqWL6mKG5JopoJH2arXhNkU8bCO7s9Xx+Ai/FoJvKHL17ySJf7CFHvMcB5w/M9gG1YAnTQUhm7U1DJ2CBNEqMyPtjQ2xrssZ6p60wMHJrC5ITRxOGs6rRo5zw=;
-X-UUID: 377a25039d1746bcaa86552a2ca11c08-20200619
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ bh=W396ifFNhTXMU6Ao6v2NVBlA5nufvq++IW1xtDsWqvQ=; 
+ b=NcR1VWYdt4U4MAXZYbeRRoWiLb4MntYhpBpLtk4Yg6n6wzwMy2mwK0Au/1dKZ3E8FwpTipD4NKbGJLFP9msIeQK8ensWbybephjRq3XUhlrT6EEQXrwfRFx41nrjBSqPl0MyXaTjRXcpBuZGujVzH3sm+cGsEFN1PPvtAQ6MB4Y=;
+X-UUID: a9c4a940a0ef41b48113af9f306c3421-20200619
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yingjoe.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1768344219; Fri, 19 Jun 2020 23:30:06 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 20 Jun 2020 00:30:12 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 20 Jun 2020 15:30:11 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ with ESMTP id 1522428262; Fri, 19 Jun 2020 23:45:47 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 20 Jun 2020 00:45:53 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 20 Jun 2020 15:45:53 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 20 Jun 2020 15:30:11 +0800
-Message-ID: <1592638212.4087.5.camel@mtksdaap41>
-Subject: Re: [PATCH] i2c: mediatek: Add to support continuous mode
+ Transport; Sat, 20 Jun 2020 15:45:52 +0800
+Message-ID: <1592639154.5529.3.camel@mtksdaap41>
+Subject: Re: [PATCH v2 2/2] i2c: mediatek: Add i2c ac-timing adjust support
 From: Yingjoe Chen <yingjoe.chen@mediatek.com>
-To: Qiangming Xia <qiangming.xia@mediatek.com>
-Date: Sat, 20 Jun 2020 15:30:12 +0800
-In-Reply-To: <20200619080643.25269-1-qiangming.xia@mediatek.com>
-References: <20200619080643.25269-1-qiangming.xia@mediatek.com>
+To: Qii Wang <qii.wang@mediatek.com>
+Date: Sat, 20 Jun 2020 15:45:54 +0800
+In-Reply-To: <1589461844-15614-3-git-send-email-qii.wang@mediatek.com>
+References: <1589461844-15614-1-git-send-email-qii.wang@mediatek.com>
+ <1589461844-15614-3-git-send-email-qii.wang@mediatek.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200620_003021_934007_022AAE0C 
-X-CRM114-Status: GOOD (  17.40  )
+X-CRM114-CacheID: sfid-20200620_004605_596465_8ABA667D 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,182 +83,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, wsa@the-dreams.de, linux-kernel@vger.kernel.org,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com, wsa@the-dreams.de,
+ leilk.liu@mediatek.com, linux-kernel@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
- Qii Wang <Qii.Wang@mediatek.com>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On Fri, 2020-06-19 at 16:06 +0800, Qiangming Xia wrote:
-> From: "qiangming.xia" <qiangming.xia@mediatek.com>
-
-Please make 'From:' the same to Signed-off-by.
+Sorry for late review.
 
 
-
->     Mediatek i2c controller support for continuous mode,
-> it allow to transfer once multiple writing messages of equal length.
-
-So the limitations are writing to same address, all in same length.
-I think this is strict limitation. Do we have many this kind of usage?
-How about change this to:
-
-MediaTek i2c controller support continuous mode. This allows to write
-multiple same length messages to single address with only one setup.
-
-
->     For example, a slave need write a serial of non-continuous
-> offset range in chip,e.g. writing offset 0,offset 2 and offset 4.
-> Normally, it need three times i2c write operation. However,it can
-> use once transfer to finish it by using continuous mode.
+On Thu, 2020-05-14 at 21:09 +0800, Qii Wang wrote:
+> This patch adds a algorithm to calculate some ac-timing parameters
+> which can fully meet I2C Spec.
 > 
-> Change-Id: If06991e3fd32867bdeaacf15bb24864d5c5904d0
-
-Please drop Change-Id:
-
-
-> Signed-off-by: Qiangming Xia <qiangming.xia@mediatek.com>
+> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
 > ---
->  drivers/i2c/busses/i2c-mt65xx.c | 67 +++++++++++++++++++++++++++++++++
->  1 file changed, 67 insertions(+)
+>  drivers/i2c/busses/i2c-mt65xx.c | 328 +++++++++++++++++++++++++++++++++-------
+>  1 file changed, 277 insertions(+), 51 deletions(-)
 > 
 > diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
-> index deef69e56906..76ec65d869f6 100644
+> index 0ca6c38a..7020618 100644
 > --- a/drivers/i2c/busses/i2c-mt65xx.c
 > +++ b/drivers/i2c/busses/i2c-mt65xx.c
-> @@ -97,6 +97,7 @@ enum mtk_trans_op {
->  	I2C_MASTER_WR = 1,
->  	I2C_MASTER_RD,
->  	I2C_MASTER_WRRD,
-> +	I2C_MASTER_CONTINUOUS_WR,
->  };
+
+<...>
+
+> @@ -948,9 +1177,6 @@ static int mtk_i2c_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return -EINVAL;
 >  
->  enum I2C_REGS_OFFSET {
-> @@ -846,6 +847,9 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
->  					    OFFSET_TRANSFER_LEN);
->  		}
->  		mtk_i2c_writew(i2c, I2C_WRRD_TRANAC_VALUE, OFFSET_TRANSAC_LEN);
-> +	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-> +		mtk_i2c_writew(i2c, msgs->len / num, OFFSET_TRANSFER_LEN);
-> +		mtk_i2c_writew(i2c, num, OFFSET_TRANSAC_LEN);
->  	} else {
->  		mtk_i2c_writew(i2c, msgs->len, OFFSET_TRANSFER_LEN);
->  		mtk_i2c_writew(i2c, num, OFFSET_TRANSAC_LEN);
-> @@ -896,6 +900,23 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
->  			writel(reg_4g_mode, i2c->pdmabase + OFFSET_TX_4G_MODE);
->  		}
->  
-> +		writel((u32)wpaddr, i2c->pdmabase + OFFSET_TX_MEM_ADDR);
-> +		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
-> +	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-> +		writel(I2C_DMA_INT_FLAG_NONE, i2c->pdmabase + OFFSET_INT_FLAG);
-> +		writel(I2C_DMA_CON_TX, i2c->pdmabase + OFFSET_CON);
-> +		wpaddr = dma_map_single(i2c->dev, msgs->buf,
-> +					msgs->len, DMA_TO_DEVICE);
-> +		if (dma_mapping_error(i2c->dev, wpaddr)) {
-> +			kfree(msgs->buf);
-> +			return -ENOMEM;
-> +		}
-> +
-> +		if (i2c->dev_comp->support_33bits) {
-> +			reg_4g_mode = mtk_i2c_set_4g_mode(wpaddr);
-> +			writel(reg_4g_mode, i2c->pdmabase + OFFSET_TX_4G_MODE);
-> +		}
-> +
->  		writel((u32)wpaddr, i2c->pdmabase + OFFSET_TX_MEM_ADDR);
->  		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
->  	} else {
-> @@ -979,6 +1000,11 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
->  				 msgs->len, DMA_FROM_DEVICE);
->  
->  		i2c_put_dma_safe_msg_buf(dma_rd_buf, msgs, true);
-> +	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-> +		dma_unmap_single(i2c->dev, wpaddr,
-> +				 msgs->len, DMA_TO_DEVICE);
-> +
-> +		kfree(msgs->buf);
->  	} else {
->  		dma_unmap_single(i2c->dev, wpaddr, msgs->len,
->  				 DMA_TO_DEVICE);
-> @@ -1009,6 +1035,9 @@ static int mtk_i2c_transfer(struct i2c_adapter *adap,
->  {
->  	int ret;
->  	int left_num = num;
-> +	int i, j;
-> +	u8 *dma_multi_wr_buf;
-> +	struct i2c_msg multi_msg[1];
->  	struct mtk_i2c *i2c = i2c_get_adapdata(adap);
->  
->  	ret = mtk_i2c_clock_enable(i2c);
-> @@ -1025,6 +1054,44 @@ static int mtk_i2c_transfer(struct i2c_adapter *adap,
->  		}
->  	}
->  
-> +	if (num > 1) {
-> +		for (i = 0; i < num - 1; i++) {
-> +			if (!(msgs[i].flags & I2C_M_RD) && !(msgs[i+1].flags &
-> +				I2C_M_RD) && (msgs[i].addr == msgs[i+1].addr)
-> +					&& (msgs[i].len == msgs[i+1].len)) {
+> -	if (i2c->dev_comp->timing_adjust)
+> -		i2c->clk_src_div *= I2C_DEFAULT_CLK_DIV;
+> -
 
-Since this block is all for continuous mode check, we could move first
-flags check out and made the if in for loop simpler to read:
-
-	if (num > 1 && !(msgs[0].flags & I2C_M_RD)) {
-		for (i = 0; i < num - 1; i++) {
-			if (!(msgs[i+1].flags &	I2C_M_RD) && 
-				msgs[i].addr == msgs[i+1].addr &&
-				msgs[i].len == msgs[i+1].len) {
-
-
-> +				continue;
-> l+			} else
-> +				break;
-> +		}
-> +		if (i >= num - 1) {
-
-just check i == num -1 is enough.
-
-
-> +			i2c->op = I2C_MASTER_CONTINUOUS_WR;
-> +			j = 0;
-> +			dma_multi_wr_buf = kzalloc(msgs->len * num, GFP_KERNEL);
-
-don't need to zero it out. kmalloc is enough.
-
-> +			if (!dma_multi_wr_buf) {
-> +				ret =  -ENOMEM;
-> +				goto err_exit;
-> +			}
-> +			multi_msg->addr  = msgs->addr;
-> +			multi_msg->len   = msgs->len * num;
-> +			multi_msg->buf   = dma_multi_wr_buf;
-> +			multi_msg->flags  = 0;
-> +			while (j < num) {
-> +				memcpy(dma_multi_wr_buf + msgs->len * j,
-> +							msgs->buf, msgs->len);
-> +				j++;
-> +				msgs++;
-> +				}
-
-extra tab before the closing '}'
-
-> +
-> +			i2c->ignore_restart_irq = false;
-> +			ret = mtk_i2c_do_transfer(i2c, multi_msg, num, 0);
-> +			if (ret < 0)
-> +				goto err_exit;
-> +			ret = num;
-> +				goto err_exit;
-> +
-
-extra indent level for last goto and blank line after it.
+After this patch, the 'clock-div' property in device tree is no longer
+used for platform with timing_adjust ability.
+Please change the binding, so we don't need to provide 'clock-div' for
+these platform.
 
 Joe.C
+
+>  	if (i2c->have_pmic && !i2c->dev_comp->pmic_i2c)
+>  		return -EINVAL;
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
