@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3CE4202270
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 09:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB907202288
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 10:10:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WD34lbBKt1Y/R5RfTVBz1srK3287ZVZ89B2KBuK9C48=; b=ikLSDfUYymV1Y+
-	8yNyCueQn5d7M+EeRnoV5boJPNT82GSHGUg7k7HZRcbScsjeGYo/WNJ1Ji0+F4TdJg08/Z9PZsG7N
-	XMCpq8RRwyDYaX5pT1d4lkKoODnydyLowwhotCqTse3gbi8vtS0HUgb2Kd1mGzKe+gLCjlFWRdvYf
-	e++io3mYCHSIcbUSCcfF0d4IaLX9XLZ0SC5X2jge4wbxQICPPX30Wrk1GvWFN/MfAbfj7QAKsXEFM
-	lImwQQ4nJIf+28BlrEeouwiKsnAABnIhTCK0bkwzyvtbo//TJnrfbuBTSsDkgMvfGaLln6ZqhbP7f
-	Ht85KyTS+oKgL0NiEzJA==;
+	List-Owner; bh=Wz8D5Ts+7i6Vktn3w08SY4d9HRg4oqVc9/sS2MzSBlk=; b=t/lEBzL1S+WC9V
+	oSydPx3f2oqexIDCFpHKwuhX9Nsl5t9B0q8eMML7MdL5p8ThbJc6zAEHj328m+gElT/arxoqPqTxv
+	+INX9OSdaka9MTYFZ0UewB3BgkZZfZ0lI+39zY97VNSneZ3SN2Ezu4/nJ9sdpwdHXxfot2mkp6b9q
+	AHYDoBV8FQ6eyVAFm2xgsuH68hiXInUYvS0eiX0Gq7CX0kFYRnNBJiVlHLbS7Dujhs0817NpCV+hl
+	8DKhN2z1gQF3IfiQPizVtSu81K8a9tTLx0PzdKLIyBoz/T4PIgrkwd0Qv4bWxlEOxoP84dgWVA8dL
+	3v4LYGx4h/CM7jY/PSJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmYHD-0006J7-5o; Sat, 20 Jun 2020 07:50:59 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jmYZu-0008Hg-Vr; Sat, 20 Jun 2020 08:10:18 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmYH1-0006I0-6y; Sat, 20 Jun 2020 07:50:48 +0000
-X-UUID: 58d9ef728c9649bb994f4d7518eca079-20200619
+ id 1jmYZg-0006wP-PP; Sat, 20 Jun 2020 08:10:06 +0000
+X-UUID: c7eafeab8af74e4e89fdac868c8c3364-20200620
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=AvUptpgaY5vtm69rBameUFdSVkwK1Ir/pAP7NO3YeEs=; 
- b=V2jF7yc/M/93nrwyk6h5aprrrwtHTN+1nsgm9iWGYRuA39aBBJKwVsJ4m29qoYcLLJ3GzfxHC+VgKbLszFPudevWDrxFpp3iPtMdo1DaCexfCtxSQ68myUOAIG4bbHMe/5Q3pe2j2R4KXwe+cxPQVgsvYVUEeQNWKrBHIMD4su0=;
-X-UUID: 58d9ef728c9649bb994f4d7518eca079-20200619
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=LuqsD+9fiN2lbFcHMP7DdOurh+jzglg3Fw7+z8J7wlk=; 
+ b=D4QugH2KtbTPIDAo/1AKY0beehS7jeHrNHQzdcRxFjyhimScv9Z9akH2ZvErns9qbRVqSsnwFRfd3li3eoabtLWz2Uy1tm3XCpUBcz9u7/WxgrfyJ5nKA+uB5QzPpi7u8Ezlil7RJvrLC/BDWsIKAIH/cIycz2WGpeEX4J6Hg48=;
+X-UUID: c7eafeab8af74e4e89fdac868c8c3364-20200620
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <dongchun.zhu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 445264790; Fri, 19 Jun 2020 23:50:35 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ with ESMTP id 414303590; Sat, 20 Jun 2020 00:09:51 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 20 Jun 2020 00:50:41 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Sat, 20 Jun 2020 15:50:37 +0800
+ 15.0.1497.2; Sat, 20 Jun 2020 00:59:58 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Sat, 20 Jun 2020 15:59:54 +0800
 Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 20 Jun 2020 15:50:36 +0800
-Message-ID: <1592639284.8804.712.camel@mhfsdcap03>
-Subject: Re: [PATCH V10 2/2] media: i2c: ov02a10: Add OV02A10 image sensor
- driver
+ Transport; Sat, 20 Jun 2020 15:59:54 +0800
+Message-ID: <1592639841.8804.720.camel@mhfsdcap03>
+Subject: Re: [PATCH V10 1/2] media: dt-bindings: media: i2c: Document
+ OV02A10 bindings
 From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 To: Tomasz Figa <tfiga@chromium.org>
-Date: Sat, 20 Jun 2020 15:48:04 +0800
-In-Reply-To: <20200618191026.GA73379@chromium.org>
+Date: Sat, 20 Jun 2020 15:57:21 +0800
+In-Reply-To: <20200618191332.GB73379@chromium.org>
 References: <20200615122937.18965-1-dongchun.zhu@mediatek.com>
- <20200615122937.18965-3-dongchun.zhu@mediatek.com>
- <20200618191026.GA73379@chromium.org>
+ <20200615122937.18965-2-dongchun.zhu@mediatek.com>
+ <20200618191332.GB73379@chromium.org>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: D0A2657985C53163C7A9874FBB5025819DDEB9B1376F0FCC93D89AEE7E08052F2000:8
+X-TM-SNTS-SMTP: 63B8FA9AB489015592CF4E8009CC603B34CB263B9B48686989F7BDC7D8E93AB32000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200620_005047_264029_D121C276 
-X-CRM114-Status: GOOD (  23.86  )
+X-CRM114-CacheID: sfid-20200620_011004_840672_2F8F5EF2 
+X-CRM114-Status: GOOD (  20.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -103,333 +103,107 @@ Hi Tomasz,
 
 Thanks for the review.
 
-On Thu, 2020-06-18 at 19:10 +0000, Tomasz Figa wrote:
+On Thu, 2020-06-18 at 19:13 +0000, Tomasz Figa wrote:
 > Hi Dongchun,
 > 
-> On Mon, Jun 15, 2020 at 08:29:37PM +0800, Dongchun Zhu wrote:
-> > Add a V4L2 sub-device driver for OV02A10 image sensor.
+> On Mon, Jun 15, 2020 at 08:29:36PM +0800, Dongchun Zhu wrote:
+> > Add DT bindings documentation for Omnivision OV02A10 image sensor.
 > > 
 > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
 > > ---
-> >  MAINTAINERS                 |    1 +
-> >  drivers/media/i2c/Kconfig   |   13 +
-> >  drivers/media/i2c/Makefile  |    1 +
-> >  drivers/media/i2c/ov02a10.c | 1042 +++++++++++++++++++++++++++++++++++++++++++
-> >  4 files changed, 1057 insertions(+)
-> >  create mode 100644 drivers/media/i2c/ov02a10.c
+> >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 171 +++++++++++++++++++++
+> >  MAINTAINERS                                        |   7 +
+> >  2 files changed, 178 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
 > > 
 > 
 > Thank you for the patch. Please see my comments inline.
 > 
-> [snip]
-> > +static int ov02a10_set_fmt(struct v4l2_subdev *sd,
-> > +			   struct v4l2_subdev_pad_config *cfg,
-> > +			   struct v4l2_subdev_format *fmt)
-> > +{
-> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
+> > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > new file mode 100644
+> > index 0000000..f84be1b
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > @@ -0,0 +1,171 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +# Copyright (c) 2020 MediaTek Inc.
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> > +	mutex_lock(&ov02a10->mutex);
+> > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
 > > +
-> > +	if (ov02a10->streaming) {
-> > +		mutex_unlock(&ov02a10->mutex);
-> > +		return -EBUSY;
-> > +	}
+> > +maintainers:
+> > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
 > > +
-> > +	/* Only one sensor mode supported */
-> > +	mbus_fmt->code = ov02a10->fmt.code;
-> > +	ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
-> > +	ov02a10->fmt = fmt->format;
+> > +description: |-
+> > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
+> > +  image sensor, which is the latest production derived from Omnivision's CMOS
+> > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
+> > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
+> > +  sensor output is available via CSI-2 serial data output.
 > > +
-> > +	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY)
-> > +		*v4l2_subdev_get_try_format(sd, cfg, fmt->pad) = fmt->format;
+> > +properties:
+> > +  compatible:
+> > +    const: ovti,ov02a10
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: top mux camtg clock
+> > +      - description: divider clock
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: eclk
+> > +      - const: freq_mux
+> > +
+> > +  clock-frequency:
+> > +    description:
+> > +      Frequency of the eclk clock in Hertz.
+> > +
+> > +  dovdd-supply:
+> > +    description:
+> > +      Definition of the regulator used as Digital I/O voltage supply.
+> > +
+> > +  avdd-supply:
+> > +    description:
+> > +      Definition of the regulator used as Analog voltage supply.
+> > +
+> > +  dvdd-supply:
+> > +    description:
+> > +      Definition of the regulator used as Digital core voltage supply.
+> > +
+> > +  powerdown-gpios:
+> > +    description:
+> > +      Must be the device tree identifier of the GPIO connected to the
+> > +      PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
+> > +      or Shutdown mode. As the line is active low, it should be
+> > +      marked GPIO_ACTIVE_LOW.
 > 
-> If fmt->which is V4L2_SUBDEV_FORMAT_TRY, the internal driver state must not
-> be affected. It also should not depend on whether the sensor is streaming
-> or not. Basically it should be considered a special "candidate" format,
-> which isn't programmed to the hardware, but just stored aside.
-> 
-
-Hmm. Maybe we shall use FORMAT_TRY like this:
-struct v4l2_mbus_framefmt *frame_fmt;
-...
-if (fmt->which == V4L2_SUBDEV_FORMAT_TRY)
-	frame_fmt = v4l2_subdev_get_try_format(sd, cfg, 0);
-else
-	frame_fmt = &ov02a10->fmt;
-
-*frame_fmt = *mbus_fmt;
-
-(Remove 'ov02a10->fmt = fmt->format;' above)
-
-> > +
-> > +	mutex_unlock(&ov02a10->mutex);
-> > +
-> > +	return 0;
-> > +}
-> [snip]
-> > +static int ov02a10_power_on(struct device *dev)
-> > +{
-> > +	struct i2c_client *client = to_i2c_client(dev);
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > +	int ret;
-> > +
-> > +	gpiod_set_value_cansleep(ov02a10->rst_gpio, 0);
-> 
-> As we discussed before, the pin names mean their logical function and the
-> polarity means the function is active. In this case, we want to _activate_
-> the _reset_ so it should be 1.
-> 
-
-Yes, you are right.
-Sorry that made a mistake about powerdown/reset GPIO polarity settings.
-For instance, _reset_ pin shall be active low, not active high.
-The following state setting need to update as well.
-
-> > +	gpiod_set_value_cansleep(ov02a10->pd_gpio, 0);
-> 
-> I believe we don't want to deactivate the powerdown yet. First the clock
-> and regulator need to be enabled.
+> This line is not active low. It needs to be high for the powerdown mode
+> to be active.
 > 
 
-Fixed in next release.
+Sorry, I made a misunderstanding of the real meaning of 'line active'.
+For PD_PAD pin, 'effective' means 'sensor is shut down'.
+Yes, it's a 'shut down' signal, not a 'enable' signal.
 
+> > +    maxItems: 1
 > > +
-> > +	ret = clk_prepare_enable(ov02a10->eclk);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "failed to enable eclk\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = regulator_bulk_enable(ARRAY_SIZE(ov02a10_supply_names),
-> > +				    ov02a10->supplies);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "failed to enable regulators\n");
-> > +		goto disable_clk;
-> > +	}
-> > +	usleep_range(5000, 6000);
-> > +
-> > +	gpiod_set_value_cansleep(ov02a10->pd_gpio, 1);
+> > +  reset-gpios:
+> > +    description:
+> > +      Must be the device tree identifier of the GPIO connected to the
+> > +      RST_PD pin. If specified, it will be asserted during driver probe.
+> > +      As the line is active high, it should be marked GPIO_ACTIVE_HIGH.
 > 
-> Here we want to *deactivate* the powerdown, so the value should be 0.
+> This line is not active high. It needs to be low for the reset to be
+> active.
 > 
 
-Fixed in next release.
-
-> > +	usleep_range(5000, 6000);
-> > +
-> > +	gpiod_set_value_cansleep(ov02a10->rst_gpio, 1);
-> 
-> And here we want to *deactivate* the reset so it should be 0.
-> 
-
-Fixed in next release.
-
-> > +	usleep_range(5000, 6000);
-> > +
-> > +	ret = ov02a10_check_sensor_id(ov02a10);
-> > +	if (ret)
-> > +		goto disable_regulator;
-> > +
-> > +	return 0;
-> > +
-> > +disable_regulator:
-> > +	regulator_bulk_disable(ARRAY_SIZE(ov02a10_supply_names),
-> > +			       ov02a10->supplies);
-> > +disable_clk:
-> > +	clk_disable_unprepare(ov02a10->eclk);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int ov02a10_power_off(struct device *dev)
-> > +{
-> > +	struct i2c_client *client = to_i2c_client(dev);
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > +
-> > +	gpiod_set_value_cansleep(ov02a10->rst_gpio, 0);
-> 
-> We want to *activate* reset here, so it should be 1.
-> 
-
-Fixed in next release.
-
-> > +	clk_disable_unprepare(ov02a10->eclk);
-> > +	gpiod_set_value_cansleep(ov02a10->pd_gpio, 0);
-> 
-> We want to *activate* powerdown here, so should be 1 too.
-> 
-
-Fixed in next release.
-
-> > +	regulator_bulk_disable(ARRAY_SIZE(ov02a10_supply_names),
-> > +			       ov02a10->supplies);
-> > +
-> > +	return 0;
-> > +}
-> [snip]
-> > +static int ov02a10_probe(struct i2c_client *client)
-> > +{
-> > +	struct device *dev = &client->dev;
-> > +	struct ov02a10 *ov02a10;
-> > +	unsigned int rotation;
-> > +	unsigned int clock_lane_tx_speed;
-> > +	unsigned int i;
-> > +	int ret;
-> > +
-> > +	ov02a10 = devm_kzalloc(dev, sizeof(*ov02a10), GFP_KERNEL);
-> > +	if (!ov02a10)
-> > +		return -ENOMEM;
-> > +
-> > +	ret = ov02a10_check_hwcfg(dev, ov02a10);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to check HW configuration: %d", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	v4l2_i2c_subdev_init(&ov02a10->subdev, client, &ov02a10_subdev_ops);
-> > +	ov02a10->mipi_clock_tx_speed = OV02A10_MIPI_TX_SPEED_DEFAULT;
-> > +	ov02a10->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
-> > +
-> > +	/* Optional indication of physical rotation of sensor */
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation", &rotation);
-> > +	if (!ret && rotation == 180) {
-> > +		ov02a10->upside_down = true;
-> > +		ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
-> > +	}
-> > +
-> > +	/* Optional indication of mipi TX speed */
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
-> > +				       &clock_lane_tx_speed);
-> > +
-> > +	if (!ret)
-> > +		ov02a10->mipi_clock_tx_speed = clock_lane_tx_speed;
-> > +
-> > +	/* Get system clock (eclk) */
-> > +	ov02a10->eclk = devm_clk_get(dev, "eclk");
-> > +	if (IS_ERR(ov02a10->eclk)) {
-> > +		ret = PTR_ERR(ov02a10->eclk);
-> > +		dev_err(dev, "failed to get eclk %d\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "clock-frequency",
-> > +				       &ov02a10->eclk_freq);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to get eclk frequency\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = clk_set_rate(ov02a10->eclk, ov02a10->eclk_freq);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to set eclk frequency (24MHz)\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	if (clk_get_rate(ov02a10->eclk) != OV02A10_ECLK_FREQ) {
-> > +		dev_warn(dev, "wrong eclk frequency %d Hz, expected: %d Hz\n",
-> > +			 ov02a10->eclk_freq, OV02A10_ECLK_FREQ);
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	ov02a10->pd_gpio = devm_gpiod_get(dev, "powerdown", GPIOD_OUT_HIGH);
-> > +	if (IS_ERR(ov02a10->pd_gpio)) {
-> > +		ret = PTR_ERR(ov02a10->pd_gpio);
-> > +		dev_err(dev, "failed to get powerdown-gpios %d\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	ov02a10->rst_gpio = devm_gpiod_get(dev, "reset", GPIOD_OUT_LOW);
-> > +	if (IS_ERR(ov02a10->rst_gpio)) {
-> > +		ret = PTR_ERR(ov02a10->rst_gpio);
-> > +		dev_err(dev, "failed to get reset-gpios %d\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	for (i = 0; i < ARRAY_SIZE(ov02a10_supply_names); i++)
-> > +		ov02a10->supplies[i].supply = ov02a10_supply_names[i];
-> > +
-> > +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ov02a10_supply_names),
-> > +				      ov02a10->supplies);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to get regulators\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	mutex_init(&ov02a10->mutex);
-> > +	ov02a10->cur_mode = &supported_modes[0];
-> > +	ret = ov02a10_initialize_controls(ov02a10);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to initialize controls\n");
-> > +		goto err_destroy_mutex;
-> > +	}
-> > +
-> > +	ov02a10->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-> > +	ov02a10->subdev.entity.ops = &ov02a10_subdev_entity_ops;
-> > +	ov02a10->subdev.entity.function = MEDIA_ENT_F_CAM_SENSOR;
-> > +	ov02a10->pad.flags = MEDIA_PAD_FL_SOURCE;
-> > +	ret = media_entity_pads_init(&ov02a10->subdev.entity, 1, &ov02a10->pad);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "failed to init entity pads: %d", ret);
-> > +		goto err_free_handler;
-> > +	}
-> > +
-> > +	pm_runtime_enable(dev);
-> > +	if (!pm_runtime_enabled(dev)) {
-> > +		ret = ov02a10_power_on(dev);
-> > +		if (ret < 0) {
-> > +			dev_err(dev, "failed to power on: %d\n", ret);
-> > +			goto err_clean_entity;
-> > +		}
-> > +	}
-> > +
-> > +	ret = v4l2_async_register_subdev(&ov02a10->subdev);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to register V4L2 subdev: %d", ret);
-> > +		goto err_power_off;
-> > +	}
-> > +
-> > +	return 0;
-> > +
-> > +err_power_off:
-> > +	pm_runtime_disable(dev);
-> > +	if (!pm_runtime_enabled(dev))
-> 
-> This would be always true, resulting in unbalanced power off. Moving
-> pm_runtime_disable() after this if should work better.
-> 
-
-Yes. Fixed in next release.
-
-> > +		ov02a10_power_off(dev);
-> > +err_clean_entity:
-> > +	media_entity_cleanup(&ov02a10->subdev.entity);
-> > +err_free_handler:
-> > +	v4l2_ctrl_handler_free(ov02a10->subdev.ctrl_handler);
-> > +err_destroy_mutex:
-> > +	mutex_destroy(&ov02a10->mutex);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int ov02a10_remove(struct i2c_client *client)
-> > +{
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> > +
-> > +	v4l2_async_unregister_subdev(sd);
-> > +	media_entity_cleanup(&sd->entity);
-> > +	v4l2_ctrl_handler_free(sd->ctrl_handler);
-> > +	pm_runtime_disable(&client->dev);
-> > +	if (!pm_runtime_suspended(&client->dev))
-> 
-> Sorry, similarly to the dw9768 driver, I made a mistake and suggested the
-> wrong function. pm_runtime_status_suspended() should be correct here.
-> 
-
-That's OK.
 Fixed in next release.
 
 > Best regards,
