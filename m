@@ -2,99 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B24202039
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 05:27:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE23420203C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 05:28:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JKs8MPvk5auZB0HOQ0oTIIjPNMK2+qvhYgTWnvoz3iA=; b=eVZNrselqBuXnb
-	6Lp0NScaOzBvPRkBNwNlE+slMIw+oFQvMVxx3RwUGRPQeridZ1vOKg6mclFoJfkM12bFxnK13eGJy
-	kfvdu50wo0u+VL5saF+TzgfB8sXjnnXdjZtpgkmUQjv+k8WZQvlDF2PvzWPJf6y71exTKM/PwvjZo
-	4YgTX7FNhIrwM/zT2Hhvl4cYzxCAeke9cL7EfehbJuPbFycQleZAOIHRsHqIyxGKQEzvnKtClYZn/
-	NZ5Ek0U1/uCvcxg0rx1YxKmqeYCDST67GTQhh/rzOTSYIXfQKWhb/qv/ozhcNzBMZrT0u637gO1eu
-	B6YgT12tTBvj6CWlRk+Q==;
+	List-Owner; bh=1VoizCJvTN6ZkWkJKj1UNtrv1yJcMFqkk5uTgq0K1oI=; b=fU7o7C+6MxsIay
+	uKm4IISfhqo0BqkWrDSc2KDTZtGE0kHyJFBJ1cQgIMlXIlIGOMeiMXTNf5Gw5js0ALUT9ixw6ZW1T
+	EH1t9Cum/lPE2VO9st2SUEs89TJ/Kad0XvcClOzZ7EpXjDiCNHwpROuF8LneMb9N5jHFIen0H/Qi5
+	lhQM8ru0GD9S4lVymdGukKQPsuSuXMZF/5KjcMgmnKImbglcMz8Zq8ZRvDfnLWgoJpKY3mVMaR1Z5
+	qePo72D4XYqRN387a6zoupLE01tNVSIe4JOla46yEuD16P3Hoh0YHKDjRK2rJbJ7ELoceFUOqqWWg
+	r7V+fQRMVr7iBju6savg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmU9q-00087S-Ue; Sat, 20 Jun 2020 03:27:06 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1jmUAj-0008Oz-JB; Sat, 20 Jun 2020 03:28:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmU9f-00086b-Pj
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 03:26:57 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05K3IXU3194488;
- Sat, 20 Jun 2020 03:26:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2020-01-29;
- bh=PF84+gWPFaJNdwDpeizHfentgldpxqhtBTI+d6ZBfuM=;
- b=BT0qt+tc6qfjaZXXBP1CxgHKRKdWtr4bi40pftvAezuG/T58SvV25XVG0FwQXd7WSK66
- Oa+lbZsqPLpb4fgUip1qB9+jrl4nmQQpcW5rzRft6I+BU70rV0qvYWjLO50nXixBn0MC
- U26zhkmQ+WVKUcjUurKCMsHCLy3dNMaH5Cn+ollb6OywDNdP98yz38mvOfCdGQ2G2hDQ
- 8dZrtxDBokGC79EfdJA7Roxu4J8OQ/dMNAzraTRQX98F98pPGqmZICYbJC2OEkc1di8z
- 06nIzObYzRJnYYMpzDHGu2Iz32xkPfxK/MBEpKue+pEsXD8fseVlJ3zMLwVsFyuUqwUN 2A== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2130.oracle.com with ESMTP id 31s9vqr1vs-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sat, 20 Jun 2020 03:26:45 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05K3Jc0p005666;
- Sat, 20 Jun 2020 03:26:44 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3020.oracle.com with ESMTP id 31sa8yh28f-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sat, 20 Jun 2020 03:26:44 +0000
-Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 05K3Qggp002429;
- Sat, 20 Jun 2020 03:26:43 GMT
-Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 19 Jun 2020 20:26:42 -0700
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-To: Avri Altman <avri.altman@wdc.com>, Krzysztof Kozlowski <krzk@kernel.org>, 
- Kiwoong Kim <kwmad.kim@samsung.com>, Colin King <colin.king@canonical.com>,
- Seungwon Jeon <essuuj@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org,
- "James E . J . Bottomley" <jejb@linux.ibm.com>,
- Alim Akhtar <alim.akhtar@samsung.com>, Kukjin Kim <kgene@kernel.org>
-Subject: Re: [PATCH][next] scsi: ufs: ufs-exynos: fix spelling mistake
- "pa_granularty" -> "pa_granularity"
-Date: Fri, 19 Jun 2020 23:26:36 -0400
-Message-Id: <159262354734.7800.18123945491973468082.b4-ty@oracle.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200617084911.167359-1-colin.king@canonical.com>
-References: <20200617084911.167359-1-colin.king@canonical.com>
+ id 1jmUAZ-0008Oe-Bg
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 03:27:52 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EFD4D2311C;
+ Sat, 20 Jun 2020 03:27:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592623671;
+ bh=0D6JZ8JJv1a/lkBSX1+FdTETTuYln1rEbfJkzQ3aeIc=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=dRnvzJHI96sK/XqX8w3zM4LBGiCx16DduRQbOw7gST6lLGy+8pwDiXq81ZFdTFwAo
+ gwGbbDy2ZZtEwRWQnSCgwnNygk5XL8JmnnvXheu4j8JpO+ikEmYz21tW+GPGF7aUGp
+ dG7xlWdsPgc0r13aifchT1eNWBpaJgTYcATK7xm8=
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9657
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
- bulkscore=0 adultscore=0
- malwarescore=0 spamscore=0 mlxlogscore=960 mlxscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2006200022
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9657
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- clxscore=1011
- malwarescore=0 lowpriorityscore=0 suspectscore=0 priorityscore=1501
- mlxlogscore=983 mlxscore=0 phishscore=0 cotscore=-2147483648 spamscore=0
- adultscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2006200022
+In-Reply-To: <AM6PR04MB4966B94CFAE642E6AF5AEF79809B0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <1591687933-19495-1-git-send-email-Anson.Huang@nxp.com>
+ <1591687933-19495-4-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB49660A10856A3746C7103394809A0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39163BC04E4E5F4F6A22F6D4F59A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <AM6PR04MB4966B94CFAE642E6AF5AEF79809B0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Subject: RE: [PATCH V2 3/9] clk: imx: Support building SCU clock driver as
+ module
+From: Stephen Boyd <sboyd@kernel.org>
+To: Abel Vesa <abel.vesa@nxp.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Andy Duan <fugang.duan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Stefan Agner <stefan.agner@toradex.com>, allison@lohutok.net, arnd@arndb.de,
+ festevam@gmail.com, gregkh@linuxfoundation.org, info@metux.net,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
+ mturquette@baylibre.com, oleksandr.suvorov@toradex.com, s.hauer@pengutronix.de,
+ sfr@canb.auug.org.au, shawnguo@kernel.org, tglx@linutronix.de,
+ yuehaibing@huawei.com
+Date: Fri, 19 Jun 2020 20:27:50 -0700
+Message-ID: <159262367025.62212.11651547971712516448@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_202655_921298_3D17323D 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200619_202751_415695_F622C07A 
+X-CRM114-Status: GOOD (  12.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,10 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.86 listed in wl.mailspike.net]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -119,24 +90,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 17 Jun 2020 09:49:11 +0100, Colin King wrote:
+Quoting Aisheng Dong (2020-06-17 18:58:51)
+> > From: Anson Huang <anson.huang@nxp.com>
+> > > > +obj-$(CONFIG_MXC_CLK_SCU) += mxc-clk-scu.o
+> > >
+> > > Like i.MX pinctrl, I'm not sure if it's really necessary to build core
+> > > libraries as modules. Probably the simplest way is only building
+> > > platform drivers part as module. And leave those core libraries built in kernel.
+> > > This may make the code a bit cleaner.
+> > >
+> > 
+> > Will discuss this with Linaro guys about it, previous requirement I received is all
+> > SoC specific modules need to be built as module.
+> > 
+> 
+> Okay. AFAIK it's not conflict.
+> You still make drivers into modules.
+> Only difference is for those common libraries part, we don't convert them into module
+> Which is less meaningless.
+>  
 
-> There is a spelling mistake in a dev_warn message. Fix it.
+What is the benefit of making the core part of the SoC driver not a
+module? From the module perspective it should be perfectly fine to make
+it a module as well, and then depmod will sort out loading modules in
+the right order.
 
-Applied to 5.9/scsi-queue, thanks!
-
-[1/1] scsi: ufs: ufs-exynos: Fix spelling mistake "pa_granularty" -> "pa_granularity"
-      https://git.kernel.org/mkp/scsi/c/393403efc360
-
--- 
-Martin K. Petersen	Oracle Linux Engineering
+This is for android right?
 
 _______________________________________________
 linux-arm-kernel mailing list
