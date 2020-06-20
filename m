@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FA45201EEC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 02:05:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0B51201EED
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 02:05:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y8Da9OfNZtcJXSWXZy2P6oJDbq3+STc3hgYhDZ/I6t8=; b=Ex4Jj9ktnJo6Bi
-	LrMsqKZci4xs0M87b3xuxOGGDfOKBlGGIVvMlTQWbutalKn59NH9vw6L8HOHDu8m/mqFWw0TXgAt4
-	YzBY1E7WF1Vp91bfHAt1FDxmIobOE16FRSw8dZIpZsFSxhpr4RWgo/ywEw5rILWErBfv5HMt8mLGh
-	xJISPVfSSXK7SUy3J04KD/iajR911ASS7D/MpuBkaJodABjxCSOmv1MU4kYCMsah2s3vEGEOB59ML
-	lH17LLIxfY+CScMMkY4Hq/+1iUJPPXpv5okaFnPVdLcAxS6Vv4nSKJM7rP3UAhEr16ExdtIDmrbrp
-	AVLnD8GPu4MFUi/Yjc0A==;
+	List-Owner; bh=a98yBxroOg9sa0+gC420LnszjSKIVe3+VSDdkhrWbpo=; b=ErbES1ncijcC94
+	RnwxuLc9IREn21j65VFbGiUOMMMs+Sye0XPcObjlZOtjDWzQ46tpFvG/PdBrFd0dmfAPzAe4J/iEy
+	/9gzNWr3HjjKX2SBVhH5soq71q7BBPwVpqnC5/pwmJCFzmytsJKO0wqm4dDXGqjhIB/0DgW1//bEM
+	hMwmyBTdBQCCnZCiWcg4H6MT1yDHFv+ClCjgjkptT2LBjqPZUUHvPFYgKfrkcf0UL7g8XHv2/8Ls6
+	h15W49lsMEeabWyLhxYhS9TK1xJaeQ2GyYn2L57u18uQ5IxPK6KjtqS1HQ+jILNecf4VR6kmySW/v
+	OBtvZwnZodfw9d8m5v5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmR0g-0007WE-Os; Sat, 20 Jun 2020 00:05:26 +0000
+	id 1jmR10-0001ls-Mu; Sat, 20 Jun 2020 00:05:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmQzz-0007Oj-42
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 00:04:44 +0000
+ id 1jmR05-0007UO-JA
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 00:04:51 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 913E422517;
- Sat, 20 Jun 2020 00:04:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0D9EC22517;
+ Sat, 20 Jun 2020 00:04:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592611482;
- bh=qEBrktfTxIgLd0bwkTrvQejLbNGyViFDubVSvqrORhE=;
+ s=default; t=1592611489;
+ bh=/+3Rx0+tjte9h8se9GDAUsMV40E9CnppcJWpb/THA9o=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=tBz7BhPPUcfDXsq4YMhuXw8olwsyp1Sg37fywhX1MluV+xjLW5Vz+eI4URUDH2aN4
- A0F2eXt+C6EEuFeBUICKLxJc8GAcA0XhePWXhE27UHUYDtGuk95T2FARi/+osopLNH
- 1fk+lukBO61iKweupJmuBU/jWDAGlpuw3ajgBL7k=
+ b=LPzH8c+WtAMp17aXTSGG22gfdmzTh2Fy+8MTVLyFp/8zTc6yT1+S6odP3t757uYHE
+ kwv8DBAUjmAnq1fUw6Ukhu4QDI9MKz1nK8K1mcLBwyI9kx04a1rWnS9gQdhd8upeHc
+ RCDnW8KKh6dmq1RxWVjNwEk+gGY/ZkYtonGMTFXM=
 MIME-Version: 1.0
-In-Reply-To: <20200615090231.2932696-3-noltari@gmail.com>
+In-Reply-To: <20200615090231.2932696-4-noltari@gmail.com>
 References: <20200615090231.2932696-1-noltari@gmail.com>
- <20200615090231.2932696-3-noltari@gmail.com>
-Subject: Re: [PATCH 2/8] mips: bmips: add BCM6318 clock definitions
+ <20200615090231.2932696-4-noltari@gmail.com>
+Subject: Re: [PATCH 3/8] mips: bmips: add BCM6328 clock definitions
 From: Stephen Boyd <sboyd@kernel.org>
 To: bcm-kernel-feedback-list@broadcom.com, devicetree@vger.kernel.org, f.fainelli@gmail.com, jonas.gorski@gmail.com, julia.lawall@lip6.fr, linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, lkp@intel.com, mturquette@baylibre.com, robh+dt@kernel.org, Álvaro Fernández Rojas <noltari@gmail.com>
-Date: Fri, 19 Jun 2020 17:04:41 -0700
-Message-ID: <159261148194.62212.8588478966720274721@swboyd.mtv.corp.google.com>
+Date: Fri, 19 Jun 2020 17:04:48 -0700
+Message-ID: <159261148837.62212.337098428609440265@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_170443_187460_F13F6AEC 
+X-CRM114-CacheID: sfid-20200619_170449_695213_9391A166 
 X-CRM114-Status: UNSURE (   5.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -83,8 +83,8 @@ Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UXVvdGluZyDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgKDIwMjAtMDYtMTUgMDI6MDI6MjUpCj4g
-QWRkIGhlYWRlciB3aXRoIEJDTTYzMTggZGVmaW5pdGlvbnMgaW4gb3JkZXIgdG8gYmUgYWJsZSB0
+UXVvdGluZyDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgKDIwMjAtMDYtMTUgMDI6MDI6MjYpCj4g
+QWRkIGhlYWRlciB3aXRoIEJDTTYzMjggZGVmaW5pdGlvbnMgaW4gb3JkZXIgdG8gYmUgYWJsZSB0
 byBpbmNsdWRlIGl0IGZyb20KPiBkZXZpY2UgdHJlZSBmaWxlcy4KPiAKPiBTaWduZWQtb2ZmLWJ5
 OiDDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgPG5vbHRhcmlAZ21haWwuY29tPgo+IC0tLQoKQXBw
 bGllZCB0byBjbGstbmV4dAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
