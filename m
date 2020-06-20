@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADBED20255F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 18:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ADC1202560
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 18:38:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ykN3zRm4bPtc/wlJqnmYJnkYAnwBq1JDUNEqFIKwmu0=; b=HhN306oewMA4Ll
-	VssBdn1H5ODhtyq9Zp0wz7+ugdN4m+T9j9GnDzX2BnEO8NNxjrwXb9TT+giieinL+/aZaaTQ7soi3
-	cKn5G2wySZzi7M2FeL/7QzWGUTkgHCC6RGxKaLHMISZdZNJ7O4CXwaUvITHHLRN65CUlFMU5J9IRB
-	MVO4sfhqrw/vd4A2tQeqfENNaj7WEIwLvm689zhfm08herjl0B8Ydq2gPEKkqT/zevde/lEev1vSf
-	43xxirzkRiUvFZqGyzRS3N5N/URYx8dO+kI/mlTQ3ZQg1Nzl3HtKe5SiGi6izeGXvo+fuyjMWHJte
-	R18bb+u5dEaYB8iIcxcw==;
+	List-Owner; bh=iNE0hEzUvM7c0tnhKn1wDwwZk0VVnrIzkx2UA3XD5zo=; b=awYEPk/nbt6Bif
+	E2RyUD5GgXMMDYhW9fv7uwdyZbpqEOVFQyETfjDVxOXGZNHME77N2ijiSUDOz8epoVGG311hSLrKH
+	9Xk29D1DOpIIruj00aq32QPvVZkpm96+3Il4an3zO/GuhL5hFg3320KDlrDOxgwKL91XgHntgaxqF
+	Bv34DqjPULmoF7DlHMxXwNf3sqWi4vZheD9eAyz8PgtR3dTlEAU1GQAaKzumm3nLsN8CnCt52uZ7G
+	bCWBf8LStk5ohyQJ6RhWflCYJxlP75TXCPKI+AhVhDwkTrOJnFqp4bMEr1yI2rb92Oib72Kwwm7OP
+	rGPiLOqMYgovWau2ueUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmgVF-0000E5-2Y; Sat, 20 Jun 2020 16:38:01 +0000
-Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
+	id 1jmgVb-0000VR-Br; Sat, 20 Jun 2020 16:38:23 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmgUL-00084z-V8; Sat, 20 Jun 2020 16:37:07 +0000
-Received: by mail-ej1-x642.google.com with SMTP id k11so13582849ejr.9;
- Sat, 20 Jun 2020 09:37:05 -0700 (PDT)
+ id 1jmgUN-00085e-Az; Sat, 20 Jun 2020 16:37:08 +0000
+Received: by mail-ed1-x543.google.com with SMTP id t21so10167171edr.12;
+ Sat, 20 Jun 2020 09:37:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=TahxZALJaLCxgLMRboEQz5AGrY5Y2MzITJGz48oy1vw=;
- b=UH5336yAihXpFlkaEJC0dTEyZT1X7gcIiuPL59QjIZbud6sSevhkZmAz4bLSCjj7eg
- KReF9sbxXno8m/FJlmfAcBi75MsdGkDRBzvPSJVm7iba4+Bbb37rOlqxkrX/d3VTntgM
- 6U97hcKOC/sTO5HcD23Y553Be53z8r3Ed2FPebpONe+NCIv+KlhUn3/4MDYmeK1ugxl5
- m8jhTUKs9Rz6t7b+om8YymoapMbjPBZNkiICG8Z7TgZ+Jp09F87WTR+2/H/iypz0ycVj
- NbZY9rLg9OLN8EvZat+E42wTx0FZhv/bA2N6jHl9j+6BGY4omPOu2E5e2RhuP0WbVr/9
- RYXw==
+ bh=qI+KLgcHGZ3cTHvlkPTGBhsaWBLAUPc1zpeWREZblPA=;
+ b=O6qDxq2yMHLFGGJbsYzsI+rIDfnFsX3XKNtroD0+uW16yAEWFPWutM0w0yHux3Z9+X
+ gKXzwScCGY59HeJd2oHMZTXKA6wp+QjMoOSgRxTf2cw1kK00PaPWvfFFYNIBBL4foahL
+ ONlv1VY4rjsO/CrAvP3wKYiT2wx6eRIUZoWleXBIGq/hj8D2TqKzq+Nl085RCT1XMeSs
+ ZHe1Luhyewh50YyAL8aa/L/nOxFesF54Ae78aW7Fn3H0TPAq0M0AfphVYlUM5K+dkHKa
+ T3U9zZvBu5shDX3wNAiDNzcuohhlbr/reutpA3aNpvS9hzxrcqZ70NG1dZvEd8PX1Ng+
+ dXuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=TahxZALJaLCxgLMRboEQz5AGrY5Y2MzITJGz48oy1vw=;
- b=sglf1B/ufFUXE4EGSQgJ3LJeGN6Bz/igQIWK0AIBLSGnMWO0NYvdE3/FV5VEZp1FmY
- nf1HHdXWFk9/ZaT2E2OxOwezILklZuDh9PCWG/e6zetmS0cYzfctqxdweZRvPmQQWMfQ
- JFFOk3h2tabH5c5jeHupHyfWD3/dQ56E42eo0MmtHyDOpq7GbJ9NQZ4ClJBZ3VD0BmQx
- YTINkL9D4kJXDviPFaZrj3Oe/Wtl0eTPIP0WZFYtF17dqYJ3/iWeVH5Z10/+eBO+Eoy0
- jNHhROVfVBR4nfarp/AtiuneFYctcuGZIHJbFgA6lzEDkTvilWPmOfECVbH92xjDNx/z
- pKDA==
-X-Gm-Message-State: AOAM530pGSSuNCLcS7AB6NTL99M8lg5zcw3ggy/OXUtK1RQNN8mDH5hI
- JuMl//xmkXxqWGqjeCjd1kVYYN+P
-X-Google-Smtp-Source: ABdhPJx0Dr2mn9vLEyJDZKufVycnesKdKOX9+R36cGvaO02+1LnNq2V8x4wzWWxYO8jTTr6PFT+5/Q==
-X-Received: by 2002:a17:906:1386:: with SMTP id
- f6mr8642098ejc.66.1592671024588; 
- Sat, 20 Jun 2020 09:37:04 -0700 (PDT)
+ bh=qI+KLgcHGZ3cTHvlkPTGBhsaWBLAUPc1zpeWREZblPA=;
+ b=aHwY1IXHaMCh54SMiHZt1+yqVo9ItQ8V7Pc5efP0rImmDnLd1FJUvGiVfA1ASDlQIr
+ WaV9Ync0GC4tFw3zwJOQBRUIp74lvUIsu1JkGfxOcrBYkNYzIpznbzFyXyVLsmTyO49G
+ jpJTIP0WRnivcAIAyEEo8W3GQe+hmCP8lanevj+qY+u8sUwiA9DprHcvohiCuAxdD4cx
+ vYWQvQx7m9CWJEjA0QIB2nZGbto2vc2LIEF5PZQ1j0yATzXTFcAJBjmiOodFF42Bxdcu
+ CkpBT1wnRyoF8vT5fNx3KkTwYmfKtvKiZs5c0rnsMkMwLVoPosggmsX8AEmZhLeuhInv
+ yayg==
+X-Gm-Message-State: AOAM530GcJMssyMKrwSjqBM+LQjm2Jz0q00LFIXWbi0WmHBH1amSyl1Z
+ MjUGruyobDyWv4Gx/NkBzpc4uVey
+X-Google-Smtp-Source: ABdhPJyg/dkss/6p4dO79EJEEhEXYP+thVEqeGX7aTivWvxH3c9atiLcDkD1IPNAWMc27jcB5oB3Wg==
+X-Received: by 2002:a50:9eaf:: with SMTP id a44mr8884095edf.121.1592671025708; 
+ Sat, 20 Jun 2020 09:37:05 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300f1371df700428d5cfffeb99db8.dip0.t-ipconnect.de.
  [2003:f1:371d:f700:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id o90sm7839442edb.60.2020.06.20.09.37.03
+ by smtp.googlemail.com with ESMTPSA id o90sm7839442edb.60.2020.06.20.09.37.04
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 20 Jun 2020 09:37:03 -0700 (PDT)
+ Sat, 20 Jun 2020 09:37:05 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org,
 	khilman@baylibre.com
-Subject: [PATCH 2/3] ARM: dts: meson8b: ec100: enable the SDHC controller
-Date: Sat, 20 Jun 2020 18:36:53 +0200
-Message-Id: <20200620163654.37207-3-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 3/3] ARM: dts: meson8b: odroidc1: enable the SDHC controller
+Date: Sat, 20 Jun 2020 18:36:54 +0200
+Message-Id: <20200620163654.37207-4-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <20200620163654.37207-1-martin.blumenstingl@googlemail.com>
 References: <20200620163654.37207-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200620_093706_000090_74035AEC 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200620_093707_405709_528667DF 
+X-CRM114-Status: GOOD (  10.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,20 +107,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-EC-100 has built-in eMMC flash which is hard-wired to 3.3V VCC (which
-means it's limited to high-speed MMC modes). Enable the SDHC controller
-to access the contents of the eMMC flash.
+Odroid-C1 has an eMMC connector where users can optionally install an
+eMMC module. The eMMC modules run off a 1.8V VQMMC supply which means
+that HS-200 mode can be used (this is the highest mode that the SDHC
+controller supports). Enable the SDHC controller so eMMC modules can be
+accessed.
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- arch/arm/boot/dts/meson8b-ec100.dts | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+ arch/arm/boot/dts/meson8b-odroidc1.dts | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/arch/arm/boot/dts/meson8b-ec100.dts b/arch/arm/boot/dts/meson8b-ec100.dts
-index 163a200d5a7b..ed06102a4014 100644
---- a/arch/arm/boot/dts/meson8b-ec100.dts
-+++ b/arch/arm/boot/dts/meson8b-ec100.dts
-@@ -27,6 +27,11 @@ memory {
+diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts b/arch/arm/boot/dts/meson8b-odroidc1.dts
+index cb21ac9f517c..0c26467de4d0 100644
+--- a/arch/arm/boot/dts/meson8b-odroidc1.dts
++++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
+@@ -15,6 +15,7 @@ / {
+ 	aliases {
+ 		serial0 = &uart_AO;
+ 		mmc0 = &sd_card_slot;
++		mmc1 = &sdhc;
+ 	};
+ 
+ 	chosen {
+@@ -26,6 +27,11 @@ memory {
  		reg = <0x40000000 0x40000000>;
  	};
  
@@ -131,10 +139,10 @@ index 163a200d5a7b..ed06102a4014 100644
 +		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
 +	};
 +
- 	gpio-keys {
- 		compatible = "gpio-keys-polled";
- 		#address-cells = <1>;
-@@ -299,6 +304,26 @@ &saradc {
+ 	leds {
+ 		compatible = "gpio-leds";
+ 		blue {
+@@ -310,6 +316,26 @@ &saradc {
  	vref-supply = <&vcc_1v8>;
  };
  
@@ -145,17 +153,17 @@ index 163a200d5a7b..ed06102a4014 100644
 +	pinctrl-names = "default";
 +
 +	bus-width = <8>;
-+	max-frequency = <50000000>;
++	max-frequency = <100000000>;
 +
-+	cap-mmc-highspeed;
 +	disable-wp;
-+	non-removable;
++	cap-mmc-highspeed;
++	mmc-hs200-1_8v;
 +	no-sdio;
 +
 +	mmc-pwrseq = <&emmc_pwrseq>;
 +
 +	vmmc-supply = <&vcc_3v3>;
-+	vqmmc-supply = <&vcc_3v3>;
++	vqmmc-supply = <&vcc_1v8>;
 +};
 +
  &sdio {
