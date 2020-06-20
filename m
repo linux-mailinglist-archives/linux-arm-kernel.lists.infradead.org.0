@@ -2,108 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8421B202127
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 05:59:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAE48202121
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 05:55:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDVefo81aVitOfRmdEGen691ZCRpur7ZnhC9aXkzmL0=; b=X9g/5TClPItVTr
-	lZTkEyFlDn3SZp2hPxwbiMbWMfB8TFjjK8bYM3BLiUmK3j0r0Lj/XdE2jlTV/w8AGm1GqM0k1Kb3v
-	dXyzVAzkPDg4n7itSVuG8yZlparNsu5nnT3cwP9h1v0DS2Sn/KvwQnqEnB2OQXGkp74HrfV2f73IS
-	NC5M1oIa+gZZhk65UNon78kki4e7tqej3o/6mu7aTgNaplHh4cRd9X9s0/UVfreHEenw++fVtLMVr
-	INy1RC9VNN8e8VX+Cf7rX53vBKRnR39DWwDB8e1M85oiu/NK5gKEPqpJ903Bsm1NiYcnHQxzHXBSh
-	8QiyutGbRRMl2ypmBFMg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XcJNTksqgHBh5ZBmntJmdDuKhMY11gKImKbkJ58N19w=; b=CVbk2PzLlMOzXa
+	jZD0IpWbTbhy6dLYJgCHZMPfnJ1omoe8YLQEtEwiS3cvSjK/j3kJIxELmUrKS5/PKX3WZNT5phr+7
+	p0Pv8UTiAwKTN3lqXYXwz3+rUlw3SwLLKrNCzVRVZMM7fDgtZxbilYUSW95joLMu9rgjUQZOQmL91
+	k2tvtbCvafnyw79sS+5MurBZW/GsELFT93coxUKUJUkC7va7vW+MWKNLSMAn+Y60EtteCso+Eg9W/
+	LV8atUgRN8OSIY0GJNDReqQBV9OIjoUDMtFZ+aDLaNLXRtHsPYqkR57zSEJ/YM0vvpwe4VyyM6adH
+	gUoADYaupU3eyttC/31A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmUfb-0002It-9s; Sat, 20 Jun 2020 03:59:55 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1jmUbB-0001sc-UJ; Sat, 20 Jun 2020 03:55:21 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmUfM-0002Hi-6p; Sat, 20 Jun 2020 03:59:41 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05K3xYGG069386;
- Sat, 20 Jun 2020 03:59:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2020-01-29;
- bh=jCH3I8fpRAneS91Ia94tA1cV8cpC1hPLFvD4x1EGC0k=;
- b=QvlXEEss6T6r9k7y0sfcxvKYyepruSnUGRqIoK9/XJtFSLs1IsxQIjS69RSblTNsEGwJ
- Pu6HKtZL+eixxjGe9i8SrbSscHYWUUDlt7SkL5ShyCD4nS8IWusT7RFGqVK+rMUjnE4a
- Z3Zy7iKnDvaufjGPag6kxCfwCg4OW/VlR80eIgjk/Ph4jiW/WLA1x/wZ2kcTPH2zPadI
- /UhJQwxGetGZsuW+3hnJi2eJ4gKepn8EODjg7HU/bcVIz8+uybD4OLHMwGL1U328LP61
- RcgaaO1Op12eJa+pkqDrTaIOQc+X0kRwlYzOwyW9m8LIko5o0OSnxNu0Uw9jU7NtP9AU Jg== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2130.oracle.com with ESMTP id 31s9vqr37g-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sat, 20 Jun 2020 03:59:34 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 05K3vT10097770;
- Sat, 20 Jun 2020 03:59:34 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3020.oracle.com with ESMTP id 31sa8ykcyf-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sat, 20 Jun 2020 03:59:33 +0000
-Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 05K3xTn1023442;
- Sat, 20 Jun 2020 03:59:29 GMT
-Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 19 Jun 2020 20:26:46 -0700
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-To: alim.akhtar@samsung.com, Stanley Chu <stanley.chu@mediatek.com>,
- jejb@linux.ibm.com, avri.altman@wdc.com, linux-scsi@vger.kernel.org,
- asutoshd@codeaurora.org
-Subject: Re: [PATCH] scsi: ufs-mediatek: Make ufs_mtk_wait_link_state as
- static function
-Date: Fri, 19 Jun 2020 23:26:38 -0400
-Message-Id: <159262354733.7800.6869131850805388311.b4-ty@oracle.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200616095120.14570-1-stanley.chu@mediatek.com>
-References: <20200616095120.14570-1-stanley.chu@mediatek.com>
+ id 1jmUaw-0007u3-N3; Sat, 20 Jun 2020 03:55:09 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 1D6AD24E770376062A29;
+ Sat, 20 Jun 2020 11:54:58 +0800 (CST)
+Received: from [127.0.0.1] (10.166.213.90) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.487.0; Sat, 20 Jun 2020
+ 11:54:48 +0800
+Subject: Re: [PATCH v8 5/5] dt-bindings: chosen: Document
+ linux,low-memory-range for arm64 kdump
+To: James Morse <james.morse@arm.com>, Rob Herring <robh@kernel.org>
+References: <20200521093805.64398-1-chenzhou10@huawei.com>
+ <20200521093805.64398-6-chenzhou10@huawei.com>
+ <CAL_Jsq+EV02YBqEGoJrsJW8Y+g_GkB_LkTwWCxNCb3F+8MSdyw@mail.gmail.com>
+ <a419602e-6a85-ca35-39de-b3c26d433199@huawei.com>
+ <20200526211800.GA352001@bogus>
+ <ff7c9f68-b578-3a1a-0815-e61c6f87bc4e@arm.com>
+From: chenzhou <chenzhou10@huawei.com>
+Message-ID: <5339140e-41ee-ab20-0a3b-fcf7da82796b@huawei.com>
+Date: Sat, 20 Jun 2020 11:54:48 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9657
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
- bulkscore=0 adultscore=0
- malwarescore=0 spamscore=0 mlxlogscore=999 mlxscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2006200026
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9657
- signatures=668680
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- clxscore=1015
- malwarescore=0 lowpriorityscore=0 suspectscore=0 priorityscore=1501
- mlxlogscore=999 mlxscore=0 phishscore=0 cotscore=-2147483648 spamscore=0
- adultscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2006200026
+In-Reply-To: <ff7c9f68-b578-3a1a-0815-e61c6f87bc4e@arm.com>
+X-Originating-IP: [10.166.213.90]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_205940_336989_EA9C515E 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200619_205506_937840_DDC46C7C 
+X-CRM114-Status: GOOD (  15.81  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.35 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.86 listed in wl.mailspike.net]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,33 +72,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, "Martin K . Petersen" <martin.petersen@oracle.com>,
- andy.teng@mediatek.com, cc.chou@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- matthias.bgg@gmail.com, beanhuo@micron.com, chaotian.jing@mediatek.com,
- peter.wang@mediatek.com
+Cc: Simon Horman <horms@verge.net.au>, John.p.donnelly@oracle.com,
+ Baoquan He <bhe@redhat.com>, Will Deacon <will@kernel.org>,
+ devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Linux
+ Doc Mailing List <linux-doc@vger.kernel.org>, kexec@lists.infradead.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Arnd Bergmann <arnd@arndb.de>, Nicolas Saenz
+ Julienne <nsaenzjulienne@suse.de>, Hanjun Guo <guohanjun@huawei.com>,
+ Thomas Gleixner <tglx@linutronix.de>, pkushwaha@marvell.com, dyoung@redhat.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Jun 2020 17:51:20 +0800, Stanley Chu wrote:
+Hi James, Rob,
 
-> Fix build warning reported by kernel test robot:
-> Make ufs_mtk_wait_link_state() as static functon.
-> 
-> Warning:
-> >> drivers/scsi/ufs/ufs-mediatek.c:181:5: warning: no previous prototype
-> >> for 'ufs_mtk_wait_link_state' [-Wmissing-prototypes]
 
-Applied to 5.9/scsi-queue, thanks!
+On 2020/5/30 0:11, James Morse wrote:
+> Hi guys,
+>
+> On 26/05/2020 22:18, Rob Herring wrote:
+>> On Fri, May 22, 2020 at 11:24:11AM +0800, chenzhou wrote:
+>>> On 2020/5/21 21:29, Rob Herring wrote:
+>>>> On Thu, May 21, 2020 at 3:35 AM Chen Zhou <chenzhou10@huawei.com> wrote:
+>>>>> Add documentation for DT property used by arm64 kdump:
+>>>>> linux,low-memory-range.
+>>>>> "linux,low-memory-range" is an another memory region used for crash
+>>>>> dump kernel devices.
+>>>>> diff --git a/Documentation/devicetree/bindings/chosen.txt b/Documentation/devicetree/bindings/chosen.txt
+>>>>> index 45e79172a646..bfe6fb6976e6 100644
+>>>>> --- a/Documentation/devicetree/bindings/chosen.txt
+>>>>> +++ b/Documentation/devicetree/bindings/chosen.txt
+>>>>> +linux,low-memory-range
+>>>>> +----------------------
+>>>>> +This property (arm64 only) holds a base address and size, describing a
+>>>>> +limited region below 4G. Similar to "linux,usable-memory-range", it is
+>>>>> +an another memory range which may be considered available for use by the
+>>>>> +kernel.
+>>>> Why can't you just add a range to "linux,usable-memory-range"? It
+>>>> shouldn't be hard to figure out which part is below 4G.
+>>> The comments from James:
+>>> Won't this break if your kdump kernel doesn't know what the extra parameters are?
+>>> Or if it expects two ranges, but only gets one? These DT properties should be treated as
+>>> ABI between kernel versions, we can't really change it like this.
+>>>
+>>> I think the 'low' region is an optional-extra, that is never mapped by the first kernel. I
+>>> think the simplest thing to do is to add an 'linux,low-memory-range' that we
+>>> memblock_add() after memblock_cap_memory_range() has been called.
+>>> If its missing, or the new kernel doesn't know what its for, everything keeps working.
+>>
+>> I don't think there's a compatibility issue here though. The current 
+>> kernel doesn't care if the property is longer than 1 base+size. It only 
+>> checks if the size is less than 1 base+size.
+> Aha! I missed that.
+>
+>
+>> And yes, we can rely on 
+>> that implementation detail. It's only an ABI if an existing user 
+>> notices.
+>>
+>> Now, if the low memory is listed first, then an older kdump kernel 
+>> would get a different memory range. If that's a problem, then define 
+>> that low memory goes last. 
+> This first entry would need to be the 'crashkernel' range where the kdump kernel is
+> placed, otherwise an older kernel won't boot. The rest can be optional extras, as long as
+> we are tolerant of it being missing...
+How about like this:
 
-[1/1] scsi: ufs-mediatek: Make ufs_mtk_wait_link_state static
-      https://git.kernel.org/mkp/scsi/c/9a3cd470f8e3
+1. The low memory region remained as "Crash kernel (low)".
+2. Userspace will find "Crash kernel" and "Crash kernel (low)" region in /proc/iomem,
+and add "Crash kernel (low)" as the last range of property "linux,usable-memory-range".
 
--- 
-Martin K. Petersen	Oracle Linux Engineering
+Thanks,
+Chen Zhou
+>
+> I'll try and look at the rest of this series on Monday,
+>
+>
+> Thanks,
+>
+> James
+>
+> .
+>
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
