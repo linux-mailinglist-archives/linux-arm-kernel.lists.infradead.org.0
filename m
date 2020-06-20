@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC5FE20260B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 20:52:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1854420261C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jun 2020 21:13:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PZSDT4tiO8+XM/51qQGACjxfnZGFz8GUVIkKXU5I70c=; b=paEZVyZ+v1+2uJHCjbPeR3cBt
-	5aPudPHX5sWEtrHwNttVMVlt1C3sgxhlTv3iOfgTWxt5g0mND7p67bOGclmkzlTo7Irkg9ZlRqHQt
-	u+sRKXPRKsiM7Qc2+9I6hTRHGRO9zGWq6exmR/AbuQsGZS1/oIdq8UXxdDiGcPkwAS8gxQtfHNVQw
-	/jxMxovzLGQmrOH9IZxLyuvgbcBLOKLEnNsEy3nrdYc1/j1pvh46e1/sVVZiA5P5IlhWRgNnyBr+2
-	58ZiQ6kmDOOm+gMvJZObw2oNoH9KMi77xjKditlRg+O8oY3nYk74FCoJbUGSVoX/BvAEwnoIrB6AO
-	cwOLMGckQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AWApJPtlQPaj7/pDM2TSjRLpxABb2LkedNlhdWCIyA0=; b=UWSCRBKDUdPODe
+	kCrcNmhoQ/SFr/BmTU6Dkc7Pd5ieJ1qKXmje3Kpl9ixJ14gqk48IniNXC51+8gC5vv4MhwNjcCLZ9
+	2wLlR67gRCETnZVuoV3gG2RJGrdfD6ceKpd6oELdwoYYYNGGL+X7uV7I410gXrOHM9VTjzqFy7pKc
+	Xhu3nAXeO69bhhZXbtBPg2vtit7qM29GoDhY/3DmQBbJgNr3B9UJGl41ht4+D5EQX/f/JiDSTxpJ1
+	dszLiVbg3H263Gzw5bk8lLyyL4q3rxVgW6t1uZzFD1/fUeqwBY9oMqivTmpEhj9Zlkkw0UXEu06N2
+	ukqWnRKaRp90vNCZrgJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmiar-0007I1-DL; Sat, 20 Jun 2020 18:51:57 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1jmivC-0002Bs-4k; Sat, 20 Jun 2020 19:12:58 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmiag-0007G0-G4
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 18:51:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7AxhbJwIMNaIwTRNcQ12Omehe8rlvXqphyVqkGht4CM=; b=E0rs6IUd9KrqG6rRqxg4EJFrwQ
- tXFRLg/PEtMOHOcgpxods6HB9KNRHQFvDFtDcxy81EMd/oYja/HwjEnivHs5ntdf0oPd0Vkz9Bulf
- f3bfR5Uh6v3v7cYZxuEsXi18AkMj3N5pe0Q+Ug5jQ8GtsOtwuOQdTHDFB1vyIDNEfzd8af2sKasrW
- MTXwxXquOewdCa5QJ15QbSWO2WcyomPaGzVhJ7VGMT2fQLo+BSxFfp8gLday5kwi5Z56u3xlitfAR
- doOHo86N+Ek5uQltonuGWgoA8VtZwhZ5tCxRai5o9vsXiY3EDuDYaXfEAzL98oVohyifRM7pJkgnt
- 0MHXpPqA==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:36530 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
- (envelope-from <david@lechnology.com>)
- id 1jmiZw-0001IT-SU; Sat, 20 Jun 2020 14:51:00 -0400
-Subject: Re: [PATCH v3 3/4] counter: Add character device interface
-To: William Breathitt Gray <vilhelm.gray@gmail.com>, jic23@kernel.org
-References: <cover.1592341702.git.vilhelm.gray@gmail.com>
- <afe40ef2e24ecaca44fc229f7983cf4cde3374a8.1592341702.git.vilhelm.gray@gmail.com>
-From: David Lechner <david@lechnology.com>
-Message-ID: <8fae0659-56df-c0b5-7c0d-220feefed2b4@lechnology.com>
-Date: Sat, 20 Jun 2020 13:50:59 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jmiv3-00024L-0G
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jun 2020 19:12:50 +0000
+Received: from ravnborg.org (unknown [188.228.123.71])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 0D5A520021;
+ Sat, 20 Jun 2020 21:10:31 +0200 (CEST)
+Date: Sat, 20 Jun 2020 21:10:30 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Ricardo =?iso-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>
+Subject: Re: [PATCH v4 0/4] dt-bindings: display: ti,tfp410.txt: convert to
+ yaml
+Message-ID: <20200620191030.GB27870@ravnborg.org>
+References: <20200617094633.19663-1-ricardo.canuelo@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <afe40ef2e24ecaca44fc229f7983cf4cde3374a8.1592341702.git.vilhelm.gray@gmail.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+Content-Disposition: inline
+In-Reply-To: <20200617094633.19663-1-ricardo.canuelo@collabora.com>
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=edQTgYMH c=1 sm=1 tr=0
+ a=S6zTFyMACwkrwXSdXUNehg==:117 a=S6zTFyMACwkrwXSdXUNehg==:17
+ a=8nJEP1OIZ-IA:10 a=e5mUnYsNAAAA:8 a=g4gMLcP0b6Kv2YKJtkEA:9
+ a=wPNLvfGTeEIA:10 a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200620_115146_620863_8DF9EDAB 
-X-CRM114-Status: GOOD (  21.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200620_121249_220839_9B9A7AAD 
+X-CRM114-Status: GOOD (  17.60  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,137 +64,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, alexandre.torgue@st.com,
- linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
- alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com, syednwaris@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, jason@lakedaemon.net, airlied@linux.ie,
+ tomi.valkeinen@ti.com, dri-devel@lists.freedesktop.org, robh+dt@kernel.org,
+ Laurent.pinchart@ideasonboard.com, kernel@collabora.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/16/20 8:40 PM, William Breathitt Gray wrote:
-> This patch introduces a character device interface for the Counter
-> subsystem. Device control is exposed through standard character device
-> read and write operations.
-> 
-> A /sys/bus/counter/devices/counterX/chrdev_format sysfs attribute is
-> introduced to expose the character device data format:
-> 
-> * Users may write to this sysfs attribute to select the components they
->    want to interface -- the layout can be determined as well from the
->    order. For example:
-> 
->    # echo "C0 C3 C2" > /sys/bus/counter/devices/counter0/chrdev_format
-> 
->    This would select Counts 0, 3, and 2 (in that order) to be available
->    in the /dev/counter0 node as a contiguous memory region.
-> 
->    You can select extensions in a similar fashion:
-> 
->    # echo "C4E2 S1E0" > /sys/bus/counter/devices/counter0/chrdev_format
-> 
->    This would select extension 2 from Count 4, and extension 0 from
->    Signal 1.
-> 
-> * Users may read from this chrdev_format sysfs attribute in order to see
->    the currently configured format of the character device.
-> 
-> * Users may perform read/write operations on the /dev/counterX node
->    directly; the layout of the data is what they user has configured via
->    the chrdev_format sysfs attribute. For example:
-> 
->    # echo "C0 C1 S0 S1" > /sys/bus/counter/devices/counter0/chrdev_format
-> 
->    Yields the following /dev/counter0 memory layout:
-> 
->    +-----------------+------------------+----------+----------+
->    | Byte 0 - Byte 7 | Byte 8 - Byte 15 | Byte 16  | Byte 17  |
->    +-----------------+------------------+----------+----------+
->    | Count 0         | Count 1          | Signal 0 | Signal 2 |
->    +-----------------+------------------+----------+----------+
-> 
->    The number of bytes allotted for each component or extension is
->    determined by its respective data type: u8 will have 1 byte allotted,
->    u64 will have 8 bytes allotted, etc.
-> 
+Hi Ricardo.
 
-Instead of the proposed character device, I would really rather have one
-that gives past events instead of the current state.
+On Wed, Jun 17, 2020 at 11:46:29AM +0200, Ricardo Ca=F1uelo wrote:
+> This series converts the DT binding for the TI TFP410 DPI-to-DVI encoder
+> to json-schema.
+> =
 
-I have thought about some of the suggestions from previous version of
-this patch series and I'm starting to think something similar to the
-input and gpio subsystems would work fairly well.
+> It also fixes a minor bug in the ti-tfp410 driver that causes a
+> wrong calculation of the setup and hold times when the de-skew feature
+> is enabled. The retrieval of the de-skew value from the DT has also been
+> updated to reflect the binding changes.
+> =
 
+> Changes in v4:
+> =
 
-There would have to be a fixed size event data structure:
+>   - ti,tfp410.yaml:
+>     - "ports" node set back as required (Laurent Pinchart). This means
+>       that dove-sbc-a510.dts will not comply with the binding and will
+>       have to be fixed at some point.
+> =
 
-struct counter_event {
-	/** Best approximation of when event occurred in nanoseconds. */
-	__u64 timestamp;
-	/**
-	 * Description of the synapse that triggered the event and the
-	 * signal/counter that the value represents.
-	 */
-	__u64 descriptor;
-	/** The signal/counter value recorded when the synapse fired. */
-	__u64 value;
-};
+> The bindings have been tested with:
+> =
 
-The descriptor field would actually probably be a union of __u64 and a
-struct with its own fields to describe the synapse and signal or count.
+>   make dt_binding_check ARCH=3D<arch> DT_SCHEMA_FILES=3D<...ti,tfp410.yam=
+l>
+>   make dtbs_check ARCH=3D<arch> DT_SCHEMA_FILES=3D<...ti,tfp410.yaml>
+> =
 
-If a synapse involves more than one signal or count, then there would
-be multiple events with identical timestamps.
+> for <arch> =3D arm and arm64.
+> This uncovered a number of dts files that use the TFP410 but not through
+> I2C and don't define the ti,deskew property. These should also be fixed.
+> =
 
-Userspace programs should be able to enable only the events/synapses they
-are interested in and then the poll() the character device to wait for
-events in an efficient way instead of having to constantly read - which
-could still miss events.
+> Ricardo Ca=F1uelo (4):
+>   dt-bindings: display: ti,tfp410.txt: convert to yaml
+>   dt-bindings: display: ti,tfp410.yaml: Redefine ti,deskew property
+>   drm/bridge: tfp410: fix de-skew value retrieval from DT
+>   drm/bridge: tfp410: Fix setup and hold time calculation
 
----
+Thanks for following up and this.
+Applied to drm-misc-next.
 
-Real world use case - measuring the speed of a motor:
+	Sam
 
-At low speeds it is more accurate to measure the time difference between
-count events. In this case we would want events from two synapses. One
-triggered by the rising and falling edges of signal A and one triggered
-by the direction signal. The magnitude of the speed is calculated by
-taking the difference in timestamps between signal A events and the +/-
-sign is determined by the direction signal.
+> =
 
-At high speeds a different configuration is needed. Assuming the counter
-has a timer clock signal a synapse would be configured to fire every 10
-or 20 milliseconds. This would trigger an event that contains the count.
-The speed is calculated as the difference in counts divided by the fixed
-time interval.
+>  .../bindings/display/bridge/ti,tfp410.txt     |  66 ---------
+>  .../bindings/display/bridge/ti,tfp410.yaml    | 131 ++++++++++++++++++
+>  drivers/gpu/drm/bridge/ti-tfp410.c            |  10 +-
+>  3 files changed, 136 insertions(+), 71 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/bridge/ti,t=
+fp410.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/ti,t=
+fp410.yaml
+> =
 
-Some applications may need to do both and be able to change the
-configuration at runtime. It may start out in the low speed configuration,
-but as the speed increases, events triggered by the change in count will
-need to be disabled to prevent being overwhelmed with too many count
-events. But if the speed drops low again, the count events will need to
-be turned back on.
+> -- =
 
----
+> 2.18.0
+> =
 
-Regarding the implementation, the character device can be backed by a
-kfifo. Interrupts from the counter hardware push events to the kfifo
-and reading from the character device drains the kfifo.
-
-drivers/gpio/gpiolib.c could be a good example to follow.
-
-If we only want to allow one consumer to open the chardev at a time,
-then enabling/disabling events via sysfs would probably be fine since
-we are already sort of doing that anyway to enable/disable counters.
-But if we need to allow multiple consumers per chardev that would each
-want different events, then configuring via ioctl would be required so
-that per-file descriptor configuration could be done (each call to open()
-would create a new kfifo and ioctl would configure what gets pushed to
-that kfifo).
-
-
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
